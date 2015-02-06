@@ -7,4 +7,4 @@ Feature: Test with lettuce
   Scenario: Uppercased strings
     Given I have the string "lettuce leaves"
     When I convert the string to upper case
-    Then I see the string is "LETTUCE LEAVES"
+    Then I see the string "LETTUCE LEAVES"
