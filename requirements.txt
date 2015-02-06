@@ -1,2 +1,4 @@
 testtools==0.9.34
 lettuce==0.2.20
+beautifulsoup4==4.3.2
+lxml==3.4.1
