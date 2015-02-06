@@ -1,0 +1,2 @@
+testtools==0.9.34
+lettuce==0.2.20
