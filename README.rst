@@ -1,6 +1,10 @@
 elife-tools
 ===========
 
+.. image:: https://travis-ci.org/elifesciences/elife-tools.svg?branch=master
+   :target: https://travis-ci.org/elifesciences/elife-tools
+   :alt: Latest Version
+
 Tools for using article data in Python
 
 
