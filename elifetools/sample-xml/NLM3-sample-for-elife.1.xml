@@ -1,0 +1,1925 @@
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Archiving and Interchange DTD v3.0 20080202//EN" "archivearticle3.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">J Cell Biol</journal-id>
+      <journal-id journal-id-type="hwp">jcb</journal-id>
+      <journal-title-group>
+        <journal-title>The Journal of Cell Biology</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0021-9525</issn>
+      <issn pub-type="epub">1540-8140</issn>
+      <publisher>
+        <publisher-name>The Rockefeller University Press</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmid">21911481</article-id>
+      <article-id pub-id-type="publisher-id">201106079</article-id>
+      <article-id pub-id-type="doi">10.1083/jcb.201106079</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Articles</subject>
+          <subj-group>
+            <subject>Article</subject>
+          </subj-group>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>CENP-C recruits M18BP1 to centromeres to promote CENP-A chromatin assembly</article-title>
+        <alt-title alt-title-type="short">CENP-C&#x02013;directed CENP-A chromatin assembly</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Moree</surname>
+            <given-names>Ben</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Meyer</surname>
+            <given-names>Corey B.</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Fuller</surname>
+            <given-names>Colin J.</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Straight</surname>
+            <given-names>Aaron F.</given-names>
+          </name>
+        </contrib>
+      </contrib-group>
+      <aff><institution>Department of Biochemistry, Stanford University Medical School, Stanford, CA 94305</institution></aff>
+      <author-notes>
+        <corresp>Correspondence to Aaron F. Straight: <email>astraigh@stanford.edu</email></corresp>
+        <fn>
+          <p>B. Moree and C.B. Meyer contributed equally to this paper.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <day>19</day>
+        <month>9</month>
+        <year>2011</year>
+      </pub-date>
+      <volume>194</volume>
+      <issue>6</issue>
+      <fpage>855</fpage>
+      <lpage>871</lpage>
+      <history><date date-type="received">
+          <day>13</day>
+          <month>6</month>
+          <year>2011</year>
+        </date><date date-type="accepted">
+          <day>17</day>
+          <month>8</month>
+          <year>2011</year>
+        </date></history>
+      <permissions>
+        <copyright-statement>&#x000a9; 2011 Moree et al.</copyright-statement>
+        <copyright-year>2011</copyright-year>
+        <license license-type="openaccess" xlink:href="http://creativecommons.org/licenses/by/2.0/">
+          <license-p>This article is distributed under the terms of an Attribution&#x02013;Noncommercial&#x02013;Share Alike&#x02013;No Mirror Sites license for the first six months after the publication date (see <ext-link ext-link-type="uri" xlink:href="http://www.rupress.org/terms">http://www.rupress.org/terms</ext-link>). After six months it is available under a Creative Commons License (Attribution&#x02013;Noncommercial&#x02013;Share Alike 3.0 Unported license, as described at <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by-nc-sa/3.0/">http://creativecommons.org/licenses/by-nc-sa/3.0/</ext-link>).</license-p>
+        </license>
+      </permissions>
+      <self-uri xlink:role="icon" xlink:type="simple" xlink:href="JCB_201106079_thumb.gif"/>
+      <abstract abstract-type="precis">
+        <p>CENP-C provides a link between existing CENP-A chromatin and the proteins required for new CENP-A nucleosome assembly.</p>
+      </abstract>
+      <abstract>
+        <p>Eukaryotic chromosomes segregate by attaching to microtubules of the mitotic spindle through a chromosomal microtubule binding site called the kinetochore. Kinetochores assemble on a specialized chromosomal locus termed the centromere, which is characterized by the replacement of histone H3 in centromeric nucleosomes with the essential histone H3 variant CENP-A (centromere protein A). Understanding how CENP-A chromatin is assembled and maintained is central to understanding chromosome segregation mechanisms. CENP-A nucleosome assembly requires the Mis18 complex and the CENP-A chaperone HJURP. These factors localize to centromeres in telophase/G1, when new CENP-A chromatin is assembled. The mechanisms that control their targeting are unknown. In this paper, we identify a mechanism for recruiting the Mis18 complex protein M18BP1 to centromeres. We show that depletion of CENP-C prevents M18BP1 targeting to metaphase centromeres and inhibits CENP-A chromatin assembly. We find
+          that M18BP1 directly binds CENP-C through conserved domains in the CENP-C protein. Thus, CENP-C provides a link between existing CENP-A chromatin and the proteins required for new CENP-A nucleosome assembly.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Introduction</title>
+      <p>Accurate chromosome segregation is essential for the faithful distribution of the genome during cell division. In mitosis, each chromosome assembles a multiprotein complex called the kinetochore that serves as the primary binding site for microtubules of the mitotic spindle. The kinetochore mediates the bipolar attachment of paired chromosomes to the mitotic spindle, monitors proper chromosome&#x02013;spindle attachment through the mitotic checkpoint, and couples spindle forces to chromosome segregation at anaphase (<xref ref-type="bibr" rid="bib46">Rieder and Salmon, 1998</xref>; <xref ref-type="bibr" rid="bib13">Cleveland et al., 2003</xref>; <xref ref-type="bibr" rid="bib10">Cheeseman and Desai, 2008</xref>). The assembly site for the kinetochore is a specialized chromatin domain called the centromere that is characterized by the incorporation of the histone H3 variant CENP-A (centromere protein A) into centromeric nucleosomes (<xref ref-type="bibr" rid="bib43">Palmer et
+          al., 1987</xref>, <xref ref-type="bibr" rid="bib44">1991</xref>; <xref ref-type="bibr" rid="bib54">Sullivan et al., 1994</xref>). CENP-A chromatin recruits a collection of &#x0223c;20 proteins called the constitutive centromere-associated network (CCAN) that are bound to the chromosome throughout the cell cycle and serve as the site for mitotic kinetochore assembly. Mutation or loss of either CENP-A or proteins of the CCAN results in kinetochore formation defects and chromosome missegregation (<xref ref-type="bibr" rid="bib19">Foltz et al., 2006</xref>; <xref ref-type="bibr" rid="bib37">McClelland et al., 2007</xref>; <xref ref-type="bibr" rid="bib11">Cheeseman et al., 2008</xref>; <xref ref-type="bibr" rid="bib31">Hori et al., 2008</xref>; <xref ref-type="bibr" rid="bib2">Amano et al., 2009</xref>).</p>
+      <p>Vertebrate centromeres occur at a single region along the length of the chromosome that is maintained through mitotic and meiotic divisions. Human centromeric chromatin assembles on long stretches of repetitive &#x003b1;-satellite DNA. In rare cases, de novo centromere formation can occur outside of &#x003b1;-satellite&#x02013;containing DNA sequences, resulting in the formation of stably maintained neocentromeres marked by CENP-A nucleosomes. This suggests that the determinant of centromere position is the site of CENP-A nucleosome incorporation into chromatin and not DNA sequence (<xref ref-type="bibr" rid="bib55">Voullaire et al., 1993</xref>; <xref ref-type="bibr" rid="bib4">Barry et al., 1999</xref>; <xref ref-type="bibr" rid="bib7">Carroll and Straight, 2006</xref>; <xref ref-type="bibr" rid="bib1">Allshire and Karpen, 2008</xref>). CENP-A nucleosome assembly into chromatin occurs during a specific time window in the cell cycle, during telophase/G1 in somatic cells and
+        after anaphase chromosome segregation in embryos (<xref ref-type="bibr" rid="bib32">Jansen et al., 2007</xref>; <xref ref-type="bibr" rid="bib48">Schuh et al., 2007</xref>; <xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>). How the preexisting centromere directs the local assembly of new CENP-A nucleosomes during G1 is not known.</p>
+      <p>Several protein complexes that govern CENP-A assembly and maintenance at centromeres have been identified through genetic and biochemical studies in yeasts, flies, worms, and humans. A study of chromosome missegregation mutants in <italic>Schizosaccharomyces pombe</italic> discovered the <italic>mis16</italic> and <italic>mis18</italic> genes, which when mutated lead to a loss of Cnp1 (<italic>S. pombe</italic> CENP-A) from centromeres (<xref ref-type="bibr" rid="bib28">Hayashi et al., 2004</xref>). <italic>S. pombe mis16</italic> is homologous to the histone chaperones RbAp46 and 48, and RbAp46/48 depletion from human cells using RNAi leads to defects in CENP-A assembly (<xref ref-type="bibr" rid="bib28">Hayashi et al., 2004</xref>; <xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>). Two homologues of <italic>mis18</italic> have been identified in vertebrates, Mis18-&#x003b1; and Mis18-&#x003b2;, as well as an additional Mis18-&#x003b1;&#x02013;Mis18-&#x003b2;
+        binding protein, M18BP1 (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>). A homologue of M18BP1, <italic>knl-2</italic> (<italic>kinetochore-null 2</italic>), was discovered through RNAi screening for chromosome segregation defects in worms (<xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). Depletion of either Mis18-&#x003b1; from human cells or KNL-2 from worm embryos prevented CENP-A assembly at centromeres (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). Immunoprecipitation experiments from yeast and human cells have shown that <italic>S. pombe</italic> Mis18 can coprecipitate Mis16, and both human Mis18-&#x003b1; and M18BP1 can coprecipitate RbAp46/48 (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib27">Hayashi et al., 2008</xref>; <xref ref-type="bibr" rid="bib34">Lagana et al., 2010</xref>). Furthermore, RbAp46/48 copurifies
+        with CENP-A in affinity purification experiments from both human and fly cells (<xref ref-type="bibr" rid="bib24">Furuyama et al., 2006</xref>; <xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>). Immunoprecipitation of KNL-2 from <italic>Caenorhabditis elegans</italic> embryos also precipitates CENP-A&#x02013;containing chromatin, but the human Mis18 complex components do not appear to directly associate with soluble or nucleosomal CENP-A (<xref ref-type="bibr" rid="bib28">Hayashi et al., 2004</xref>; <xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>; <xref ref-type="bibr" rid="bib8">Carroll et al., 2009</xref>; <xref ref-type="bibr" rid="bib34">Lagana et al., 2010</xref>).</p>
+      <p>HJURP (Holliday junction&#x02013;recognizing protein)/Scm3 is a CENP-A chaperone protein that binds directly to soluble CENP-A and is required for CENP-A chromatin assembly. First identified as a suppressor of <italic>CSE4</italic> (<italic>S. cerevisiae</italic> CENP-A) mutants (<xref ref-type="bibr" rid="bib12">Chen et al., 2000</xref>), the Scm3 protein was shown to interact directly with Cse4 and was required for Cse4 association with yeast centromeres (<xref ref-type="bibr" rid="bib6">Camahort et al., 2007</xref>; <xref ref-type="bibr" rid="bib41">Mizuguchi et al., 2007</xref>; <xref ref-type="bibr" rid="bib51">Stoler et al., 2007</xref>). The <italic>S. pombe</italic> homologue of Scm3 is also required for Cnp1 localization to centromeres in fission yeast and was shown to interact with Cnp1 and with Mis16 and Mis18, thus providing another molecular link between the Mis18 complex of proteins and CENP-A (<xref ref-type="bibr" rid="bib45">Pidoux et al., 2009</xref>; <xref
+          ref-type="bibr" rid="bib56">Williams et al., 2009</xref>). In human cells, affinity purification of a soluble (nonchromatin associated) human CENP-A complex identified four proteins (CENP-A, histone H4, NPM1 [nucleophosmin 1], and HJURP) that stably associate and function as a chaperone complex for CENP-A (<xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>; <xref ref-type="bibr" rid="bib20">Foltz et al., 2009</xref>). HJURP contains a region of homology to the yeast Scm3 proteins (the Scm3 domain), and HJURP appears to function analogously to Scm3 in fungi (<xref ref-type="bibr" rid="bib47">Sanchez-Pulido et al., 2009</xref>), as RNAi-mediated depletion of HJURP from human cells or depletion of <italic>Xenopus laevis</italic> HJURP from frog egg extracts causes defects in CENP-A assembly akin to the defects resulting from Scm3 mutation in yeast (<xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>; <xref ref-type="bibr" rid="bib20">Foltz et al.,
+          2009</xref>; <xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>).</p>
+      <p>Regulating the localization of the Mis18 complex and the HJURP chaperone complex proteins is likely to be an important step in achieving spatial and temporal control of the CENP-A assembly process. In human cells, the Mis18 complex and the HJURP chaperone complex are targeted to centromeres during late anaphase/telophase and remain associated with centromeres during G1 phase, the time window during which new CENP-A assembly occurs (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>; <xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>; <xref ref-type="bibr" rid="bib20">Foltz et al., 2009</xref>; <xref ref-type="bibr" rid="bib50">Silva and Jansen, 2009</xref>). The Mis18 complex localizes to centromeres before HJURP (<xref ref-type="bibr" rid="bib20">Foltz et al., 2009</xref>), and HJURP fails to localize to centromeres in cells depleted of the Mis18 complex (<xref ref-type="bibr" rid="bib3"
+          >Barnhart et al., 2011</xref>). It has been proposed that Mis18 complex proteins may &#x0201c;prime&#x0201d; the centromere so that it is competent to load new CENP-A histone molecules (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>). However, the molecular interactions that target the Mis18 complex and the HJURP complex to centromeres are unknown.</p>
+      <p>Here, we use an in vitro system for CENP-A assembly on sperm chromatin in extracts of <italic>Xenopus</italic> eggs that recapitulates the cell cycle dependence, HJURP dependence, and Mis18 complex requirements for CENP-A assembly in cells. Using this in vitro system, we demonstrate that CENP-C is required to target the Mis18 complex protein M18BP1 to <italic>Xenopus</italic> sperm centromeres in metaphase. In the absence of CENP-C, M18BP1 and HJURP targeting to centromeres is disrupted, and new CENP-A assembly into centromeric chromatin is inhibited. We find that CENP-C interacts directly with M18BP1 and that this interaction requires both the conserved CENP-C motif and the cupin dimerization domain. Our experimental results demonstrate a novel role for CENP-C in recruiting CENP-A nucleosome assembly proteins to the centromere to ensure centromere propagation.</p>
+    </sec>
+    <sec>
+      <title>Results</title>
+      <sec>
+        <title><italic>Xenopus</italic> HJURP (xHJURP) promotes CENP-A assembly in a cell-free system</title>
+        <p>To study the assembly of CENP-A chromatin, we developed an in vitro system for CENP-A assembly in <italic>Xenopus</italic> egg extracts similar to a recently described method (<xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>). <italic>Xenopus</italic> sperm chromatin contains CENP-A, and when that chromatin is added to metaphase egg extracts, functional centromeres and kinetochores assemble at the preexisting centromere (<xref ref-type="bibr" rid="bib15">Desai et al., 1997</xref>; <xref ref-type="bibr" rid="bib40">Milks et al., 2009</xref>). To follow new CENP-A assembly in egg extracts, we translated myc epitope&#x02013;tagged CENP-A in the extracts and then added <italic>Xenopus</italic> sperm chromatin and calcium to drive the extract from metaphase into interphase. The translation of myc&#x02013;CENP-A in the extract produced a fivefold excess of myc&#x02013;CENP-A to the endogenous CENP-A (<ext-link ext-link-type="uri"
+            xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">Fig. S1 A</ext-link>) but did not result in detectable myc&#x02013;CENP-A at sperm centromeres as assayed by immunofluorescence (<xref ref-type="fig" rid="fig1">Fig. 1, A&#x02013;C</xref>; <xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>). We cloned the <italic>Xenopus</italic> homologue of HJURP (xHJURP) and tested its ability to stimulate myc&#x02013;CENP-A assembly into centromeric chromatin. We found that adding xHJURP to the extracts and releasing the extract from metaphase arrest caused a 26 &#x000b1; 11&#x02013;fold stimulation in centromeric myc&#x02013;CENP-A compared with extracts lacking exogenously added xHJURP and calcium (<xref ref-type="fig" rid="fig1">Fig. 1, B and C</xref>). Western blotting confirmed that the stimulation of myc&#x02013;CENP-A assembly was not caused by variation in myc&#x02013;CENP-A protein levels in the extract (Fig. S1 B). Myc&#x02013;CENP-A was productively
+          incorporated into chromatin as indicated by its resistance to salt extraction (Fig. S1 C), and myc&#x02013;CENP-A assembly was independent of DNA replication (Fig. S1, D and E).</p>
+        <fig id="fig1" position="float">
+          <label>Figure 1.</label>
+          <caption>
+            <p><bold>CENP-A assembly in <italic>Xenopus</italic> extracts requires xHJURP addition and mitotic exit.</bold> (A) Schematic of xHJURP-mediated CENP-A assembly assay in <italic>Xenopus</italic> egg extract. (B) Representative images from xHJURP-mediated CENP-A assembly assay. The staining for myc&#x02013;CENP-A, total CENP-A, or the merge of myc&#x02013;CENP-A, total CENP-A, and DNA is indicated above the images. Calcium, xHJURP, or myc&#x02013;CENP-A addition is shown to the left of each image row. Bar, 10 &#x000b5;m. (C) Quantification of myc&#x02013;CENP-A fluorescence intensity at centromeres for the assembly reactions represented in B, normalized to the metaphase control sample without xHJURP but with myc&#x02013;CENP-A RNA added (&#x02212;/&#x02212;/+). Mean per pixel intensity at centromeres was quantified, and &#x0003e;200 centromeres were quantified per condition. Error bars show SEM; <italic>n</italic> = 4. (D) Western blot of chromatin fractions from CENP-A
+              assembly reactions performed in the presence (+) of calcium, Myc-CENP-A, and xHJURP (+/+/+) or in the presence of calcium and Myc-CENP-A but lacking (&#x02212;) xHJURP (+/&#x02212;/+). Histone H4 was used as a loading control. <italic>n</italic> = 3.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig1"/>
+        </fig>
+        <p>We added xHJURP-FLAG to extracts and found that it localized to centromeres in interphase, similar to the endogenous protein (<ext-link ext-link-type="uri" xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">Fig. S2 A</ext-link>). Western blotting with an xHJURP-specific antibody demonstrated that addition of xHJURP to 1.6-fold the levels of HJURP present in the extract was sufficient to promote myc&#x02013;CENP-A assembly (Fig. S2, B and C). In contrast to a previous study (<xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>), we did not detect xHJURP-FLAG at metaphase centromeres (Fig. S2 A), and supplementing the extract with human HJURP (hHJURP) did not stimulate myc&#x02013;CENP-A assembly (Fig. S2, D&#x02013;H).</p>
+        <p>We measured the relative amounts of myc&#x02013;CENP-A and endogenous CENP-A in chromatin after HJURP-dependent CENP-A assembly. We recovered interphase nuclei from the assembly reactions, extracted the nuclei with 300 mM salt to remove nonnucleosomal CENP-A, and then Western blotted for CENP-A. We observed a twofold increase in total CENP-A in chromatin upon addition of calcium and xHJURP (<xref ref-type="fig" rid="fig1">Fig. 1 D</xref>), indicating that CENP-A is not over assembled under these conditions. We found that xHJURP addition led to increased incorporation of both the endogenous CENP-A and myc&#x02013;CENP-A into chromatin. The ratio of newly assembled myc&#x02013;CENP-A to CENP-A in chromatin corresponded to the ratio of myc&#x02013;CENP-A to CENP-A in the extract (3.1:1 and 3.2:1, respectively), indicating that exogenously added xHJURP stimulates assembly of endogenous and myc-tagged CENP-A with equal efficiency (<xref ref-type="fig" rid="fig1">Fig. 1 D</xref>).
+          When we omitted myc&#x02013;CENP-A from the assembly reactions, we detected a 1.2-fold increase in the levels of CENP-A in chromatin without added xHJURP (<ext-link ext-link-type="uri" xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">Fig. S3, A&#x02013;C</ext-link>) and a 1.7-fold increase in chromatin-incorporated CENP-A with xHJURP addition (Fig. S3, B and C).</p>
+        <p>We tested whether xHJURP, CENP-A, and/or sperm chromatin must be present in the extract during mitotic exit to assemble CENP-A. We added xHJURP, myc&#x02013;CENP-A, and sperm chromatin to extracts in metaphase or interphase followed by release of the metaphase extract into interphase. CENP-A assembled into chromatin regardless of the timing of xHJURP, myc&#x02013;CENP-A, and sperm chromatin addition (<ext-link ext-link-type="uri" xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">Fig. S4, A&#x02013;D</ext-link>), indicating that xHJURP, myc&#x02013;CENP-A, and sperm chromatin do not have to be present in the extract as it exits mitosis.</p>
+      </sec>
+      <sec>
+        <title>Characterization of <italic>Xenopus</italic> M18BP1</title>
+        <p>In human somatic cells and <italic>C. elegans</italic>, new CENP-A assembly requires the M18BP1/KNL-2 protein (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). To understand the functions of M18BP1 in CENP-A assembly, we cloned the <italic>Xenopus</italic> M18BP1 gene (xM18BP1) and found that two closely related isoforms of M18BP1 (xM18BP1-1 and xM18BP1-2) are expressed in <italic>Xenopus</italic> eggs. An antibody to a conserved region of xM18BP1 recognized both isoforms in frog egg extracts (<xref ref-type="fig" rid="fig2">Fig. 2 A</xref>). Unlike CENP-A, xM18BP1 was not retained in <italic>Xenopus</italic> sperm chromatin (<xref ref-type="fig" rid="fig2">Fig. 2 B</xref>). We determined the timing of M18BP1 association with centromeres in somatic cells and in egg extracts using immunofluorescence. We found that xM18BP1 localized to centromeres throughout mitosis in somatic cells and to sperm
+          centromeres in metaphase egg extracts (<xref ref-type="fig" rid="fig2">Fig. 2 C</xref> and <ext-link ext-link-type="uri" xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">Fig. S5 A</ext-link>). Upon release of the egg extract from metaphase into interphase, xM18BP1 was lost from centromeres within 30 min and then reaccumulated at centromeres 60&#x02013;75 min after calcium addition (<xref ref-type="fig" rid="fig2">Fig. 2 C</xref>).</p>
+        <fig id="fig2" position="float">
+          <label>Figure 2.</label>
+          <caption>
+            <p><bold>Characterization of <italic>Xenopus</italic> M18BP1.</bold> (A) Western blot of <italic>Xenopus</italic> egg extract with preimmune sera (Preimmune) or affinity-purified rabbit antibody raised against <italic>Xenopus</italic> M18BP1 (&#x003b1;-M18BP1). &#x003b1;-M18BP1 recognizes both isoforms of xM18BP1, and both isoforms of xM18BP1 are present in egg extract. The asterisk denotes a cross reacting band. (B) M18BP1 is not present on <italic>Xenopus</italic> sperm chromatin. After decondensation with <italic>Xenopus</italic> Nap1, <italic>Xenopus</italic> sperm chromatin shows staining for CENP-A but not M18BP1. (C) Time course of M18BP1 localization in the <italic>Xenopus</italic> egg extract. <italic>Xenopus</italic> sperm chromatin was incubated in metaphase extract for 30 min, and sperm chromatin was stained for M18BP1 at various time points after release from metaphase arrest. Time (minutes) after release from metaphase is indicated above each image column.
+              M18BP1, CENP-A, or merged M18BP1, CENP-A, and DNA staining are indicated on the left. (D) M18BP1-1 assembles at sperm centromeres in metaphase extract, and both M18BP1 isoforms assemble at sperm centromeres in interphase extract. Metaphase extracts are shown on the left, and interphase extracts are shown on the right. The FLAG epitope&#x02013;tagged M18BP1 isoform that was added to the extract is indicated on the left. Immunostaining is shown above the images. Bars, 10 &#x000b5;m.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig2"/>
+        </fig>
+        <p>Our antibody recognized both isoforms of xM18BP1; therefore, to assay the localization of each isoform separately, we expressed FLAG epitope&#x02013;tagged versions of each in metaphase and interphase extracts. We found that only M18BP1-1 localized to metaphase centromeres (<xref ref-type="fig" rid="fig2">Fig. 2 D</xref>), similar to <italic>C. elegans</italic> KNL-2, which is present at centromeres throughout mitosis (<xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). Both M18BP1-1 and M18BP1-2 localized to interphase centromeres (<xref ref-type="fig" rid="fig2">Fig. 2 D</xref>), similar to the human M18BP1 and <italic>S. pombe</italic> Mis18 proteins, which localize to centromeres during late mitosis and G1 (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>).</p>
+        <p>We determined the function of xM18BP1 in CENP-A assembly in vitro by depleting both isoforms from egg extracts and then measuring myc&#x02013;CENP-A incorporation into chromatin. In this and all subsequent CENP-A assembly reactions, myc&#x02013;CENP-A, xHJURP, and calcium were added to control and depleted extracts (+/+/+ condition, as described in <xref ref-type="fig" rid="fig1">Fig. 1 B</xref>). We were able to deplete &#x02265;90% of both isoforms from egg extracts, resulting in a 79 &#x000b1; 1.4% reduction in M18BP1 levels at metaphase centromeres and a 93 &#x000b1; 1.6% reduction in M18BP1 levels at interphase centromeres. (<xref ref-type="fig" rid="fig3">Fig. 3, A and B</xref>). In M18BP1-depleted extracts, we found that myc&#x02013;CENP-A assembly was reduced by 68 &#x000b1; 5% relative to mock-depleted extracts (<xref ref-type="fig" rid="fig3">Fig. 3, C&#x02013;E</xref>). To determine whether the defect in myc&#x02013;CENP-A assembly was specific to the loss of
+          M18BP1, we complemented the depleted extracts with endogenous levels of in vitro translated FLAG-tagged M18BP1-1 and M18BP1-2 proteins and found that myc&#x02013;CENP-A assembly was fully restored (115 &#x000b1; 18%; <xref ref-type="fig" rid="fig3">Fig. 3, C&#x02013;E</xref>). Collectively, these data indicate that xM18BP1 is required for CENP-A assembly in <italic>Xenopus</italic> egg extract, as it is in other systems.</p>
+        <fig id="fig3" position="float">
+          <label>Figure 3.</label>
+          <caption>
+            <p><bold>Depletion of M18BP1 inhibits xHJURP-mediated CENP-A assembly in extract.</bold> (A) M18BP1 depletion from egg extract inhibits M18BP1 localization to centromeres. <italic>Xenopus</italic> sperm chromatin was incubated in mock- or M18BP1-depleted metaphase and interphase extracts and stained for M18BP1 and CENP-A. The depletion condition and cell cycle stage are listed to the left of the images, and the localized proteins are indicated above the images. (B) Quantification of M18BP1 fluorescence intensity at centromeres (normalized to the levels in mock-depleted extracts) after M18BP1 depletion. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. Error bars show SEM; <italic>n</italic> = 3. (C) M18BP1 is required for CENP-A assembly in <italic>Xenopus</italic> extract. Representative images from CENP-A assembly assays performed using either mock- or M18BP1-depleted extracts that were supplemented with mock or M18BP1-FLAG IVT
+              proteins. The depletion and addback conditions are listed to the left of each image row, and the immunolocalized proteins are listed above. (D) Representative Western blots of extracts from CENP-A assembly assays described in C. The top blots show the levels of the FLAG-tagged M18BP1 isoforms added back to the extract. The bottom blots show the total M18BP1 levels in the extract. Tubulin was used as a loading control. (E) Quantification of myc&#x02013;CENP-A fluorescence intensity at centromeres for CENP-A assembly reactions described in C, which were normalized to the levels in mock-depleted extracts. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. Error bars show SEM; <italic>n</italic> = 3. Bars, 10 &#x000b5;m.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079R_RGB_Fig3"/>
+        </fig>
+      </sec>
+      <sec>
+        <title>CENP-C is required for the cell cycle&#x02013;dependent localization of M18BP1 to centromeres</title>
+        <p>M18BP1 targeting to centromeres is thought to be important for new CENP-A assembly, but how it is recruited to centromeres is unknown (<xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). Immunoprecipitation of <italic>C. elegans</italic> KNL-2 coprecipitates CENP-A chromatin, but human M18BP1 does not appear to directly bind CENP-A nucleosomes (<xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>; <xref ref-type="bibr" rid="bib8">Carroll et al., 2009</xref>). However, CENP-C directly binds CENP-A nucleosomes and is required for new CENP-A assembly (<xref ref-type="bibr" rid="bib18">Erhardt et al., 2008</xref>; <xref ref-type="bibr" rid="bib9">Carroll et al., 2010</xref>); thus, we tested whether CENP-C might recruit M18BP1 to centromeres. We depleted CENP-C from egg extracts (<xref ref-type="fig" rid="fig4">Fig. 4 A</xref>) and found that CENP-C depletion reduced M18BP1 levels at metaphase centromeres by 87 &#x000b1; 3% (<xref ref-type="fig" rid="fig4"
+            >Fig. 4, B and C</xref>). M18BP1-1, but not M18BP1-2, localized to metaphase centromeres, and we found that CENP-C depletion only affected M18BP1-1&#x02013;FLAG targeting to the centromere (Fig. S5 B). We confirmed by Western blotting that the loss of M18BP1 at centromeres was not caused by codepletion of M18BP1 with CENP-C (<xref ref-type="fig" rid="fig4">Fig. 4 F</xref>).</p>
+        <fig id="fig4" position="float">
+          <label>Figure 4.</label>
+          <caption>
+            <p><bold>CENP-C is required for M18BP1 assembly at metaphase centromeres in <italic>Xenopus</italic> egg extract.</bold> (A) Representative Western blot of mock- and CENP-C&#x02013;depleted extracts. CENP-C depletion led to a &#x0003e;90% reduction in CENP-C levels. Tubulin was used as a loading control. (B) CENP-C depletion prevented M18BP1 assembly at centromeres in metaphase. <italic>Xenopus</italic> sperm chromatin was incubated in mock- or CENP-C&#x02013;depleted metaphase extracts and stained for M18BP1 and CENP-A. The depletion conditions are listed to the left of the images, and immunolocalized proteins are listed above. (C) Quantification of M18BP1 fluorescence intensity at metaphase centromeres (normalized to the levels in mock-depleted extracts) after CENP-C depletion. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. Error bars show SEM; <italic>n</italic> = 3. (D) CENP-C depletion led to premature, increased association
+              of M18BP1 at interphase centromeres. <italic>Xenopus</italic> sperm chromatin was incubated in mock- or CENP-C&#x02013;depleted extracts and stained for M18BP1 at various time points after release from metaphase arrest. Depletion conditions are listed to the left of the images, time (minutes) after calcium addition is listed below the images, and immunolocalized proteins are listed above. (E) Quantification of M18BP1 fluorescence intensity at centromeres in mock- and CENP-C&#x02013;depleted extracts at various time points after release from metaphase arrest as described in D. Values are normalized to the levels in mock-depleted extracts 75 min after calcium addition. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. Error bars show SEM; <italic>n</italic> = 3. (F) CENP-C depletion does not significantly affect M18BP1 levels in extract. Mock- and CENP-C&#x02013;depleted extracts were Western blotted for M18BP1 and Anillin as a
+              loading control. M18BP1-1 and M18BP1-2 levels in CENP-C&#x02013;depleted extracts are 77 &#x000b1; 8 and 92 &#x000b1; 11% of control extracts, respectively (<italic>n</italic> = 3; error = SEM). Bars, 10 &#x000b5;m.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig4"/>
+        </fig>
+        <p>In contrast to the loss of M18BP1 from metaphase centromeres in CENP-C&#x02013;depleted extracts, M18BP1 prematurely localized to interphase centromeres in extracts lacking CENP-C (<xref ref-type="fig" rid="fig4">Fig. 4, D and E</xref>). In CENP-C&#x02013;depleted extracts, M18BP1 associated with centromeres within 45 min of release from mitosis, but in mock-depleted extracts, M18BP1 did not accumulate at centromeres until 60&#x02013;75 min after mitotic exit (<xref ref-type="fig" rid="fig2">Fig. 2 C</xref> and <xref ref-type="fig" rid="fig4">Fig. 4, D and E</xref>). CENP-C depletion led to increased M18BP1 at interphase centromeres (<xref ref-type="fig" rid="fig4">Fig. 4, D and E</xref>), resulting in approximately threefold more centromeric M18BP1 by 90 min after mitotic exit (<xref ref-type="fig" rid="fig4">Fig. 4 E</xref>). Both isoforms of M18BP1 localized to interphase centromeres in the CENP-C&#x02013;depleted extract (Fig. S5 B), indicating that CENP-C is required
+          for M18BP1-1 targeting to centromeres in metaphase extract only. M18BP1 depletion did not affect CENP-C levels at centromeres, showing that the localization of CENP-C does not depend on M18BP1 (Fig. S5, C and D). Collectively, our observations demonstrate that CENP-C plays a critical role in the centromere targeting of M18BP1 during metaphase but antagonizes the localization of M18BP1 during interphase.</p>
+      </sec>
+      <sec>
+        <title>CENP-C and M18BP1 promote centromere targeting of HJURP</title>
+        <p>HJURP is a CENP-A&#x02013;specific chaperone that localizes to the centromere in early G1, in which it functions to assemble new CENP-A nucleosomes into chromatin. HJURP localization to the centromere depends on the Mis18 complex (<xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>; <xref ref-type="bibr" rid="bib20">Foltz et al., 2009</xref>; <xref ref-type="bibr" rid="bib3">Barnhart et al., 2011</xref>). We tested whether CENP-C depletion and the accompanying loss of M18BP1 from metaphase centromeres would disrupt HJURP localization in <italic>Xenopus</italic> extracts. Our HJURP antibody (Fig. S2 B) does not work well for immunofluorescence, so we assayed the centromeric localization of exogenously added xHJURP-FLAG after CENP-C depletion (<xref ref-type="fig" rid="fig5">Fig. 5, A and B</xref>). We found that CENP-C depletion reduced xHJURP-FLAG levels at centromeres by 57 &#x000b1; 8% relative to control extracts, indicating that CENP-C promotes localization of
+          HJURP to centromeres (<xref ref-type="fig" rid="fig5">Fig. 5, A and B</xref>). We next tested whether M18BP1 depletion affected HJURP-FLAG localization to centromeres using the same assay (<xref ref-type="fig" rid="fig5">Fig. 5, C and D</xref>). We found that centromeric levels of HJURP-FLAG were reduced by 71 &#x000b1; 11% in M18BP1-depleted extracts relative to mock-depleted extracts (<xref ref-type="fig" rid="fig5">Fig. 5, C and D</xref>), indicating that M18BP1 promotes HJURP localization to centromeres in <italic>Xenopus</italic> egg extract as it does in human cells (<xref ref-type="bibr" rid="bib3">Barnhart et al., 2011</xref>). The HJURP targeting defects we observed were not a result of variation in HJURP-FLAG protein levels in extracts (<xref ref-type="fig" rid="fig5">Fig. 5, E and F</xref>). Our results demonstrate that both CENP-C and M18BP1 promote the recruitment of HJURP to centromeres.</p>
+        <fig id="fig5" position="float">
+          <label>Figure 5.</label>
+          <caption>
+            <p><bold>CENP-C and M18BP1 promote the recruitment of HJURP to centromeres.</bold> (A) CENP-C depletion inhibited HJURP assembly at centromeres. <italic>Xenopus</italic> sperm chromatin was incubated in mock- or CENP-C&#x02013;depleted extracts supplemented with HJURP-FLAG protein and stained for FLAG and CENP-A. The depletion conditions are listed to the left of the images, and immunolocalized proteins are listed above. (B) Quantification of HJURP-FLAG fluorescence intensity at centromeres (normalized to the levels in mock-depleted extracts) after CENP-C depletion. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. (C) M18BP1 depletion inhibited HJURP assembly at centromeres. <italic>Xenopus</italic> sperm chromatin was incubated in mock- or M18BP1-depleted extracts supplemented with HJURP-FLAG and stained for FLAG and CENP-A. The depletion conditions are listed to the left of the images, and immunolocalized proteins are listed
+              above. (D) Quantification of HJURP-FLAG fluorescence intensity at centromeres (normalized to the levels in mock-depleted extracts) after M18BP1 depletion. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. (E) Representative Western blot from HJURP-targeting assay described in A showing that equal amounts of the HJURP-FLAG protein were added to mock- and CENP-C&#x02013;depleted extracts. Tubulin is shown as a loading control. (F) Representative Western blot from HJURP-targeting assay described in C showing that equal amounts of the HJURP-FLAG protein were added to mock- and M18BP1-depleted extracts. Tubulin is shown as a loading control. Error bars show SEM; <italic>n</italic> = 3. Bars, 10 &#x000b5;m.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig5"/>
+        </fig>
+      </sec>
+      <sec>
+        <title>CENP-C is required for CENP-A assembly in <italic>Xenopus</italic> egg extract</title>
+        <p>We determined whether CENP-C depletion and the resulting defects in M18BP1 and HJURP targeting caused a defect in CENP-A assembly. Depletion of CENP-C reduced the levels of centromeric FLAG&#x02013;CENP-A by 80 &#x000b1; 8.4% compared with mock-depleted extracts (<xref ref-type="fig" rid="fig6">Fig. 6, A and B</xref>). Complementation of the extract with myc&#x02013;CENP-C restored CENP-C levels at centromeres to 40&#x02013;60% of their original levels (<xref ref-type="fig" rid="fig6">Fig. 6, A&#x02013;D</xref>; <xref ref-type="bibr" rid="bib40">Milks et al., 2009</xref>; <xref ref-type="bibr" rid="bib9">Carroll et al., 2010</xref>) and rescued FLAG&#x02013;CENP-A levels to 57 &#x000b1; 9% of that of mock-depleted extracts (<xref ref-type="fig" rid="fig6">Fig. 6, A and B</xref>). Furthermore, complementation of CENP-C&#x02013;depleted extracts with myc&#x02013;CENP-C fully rescued the M18BP1 localization defect (106 &#x000b1; 21%; <xref ref-type="fig" rid="fig6">Fig. 6, C
+            and D</xref>). Our ability to rescue CENP-A assembly and M18BP1 localization by complementation of CENP-C&#x02013;depleted extracts with myc&#x02013;CENP-C indicates that these defects are specific to the loss of CENP-C and not other factors. Collectively, these data show that CENP-C plays a critical role in new CENP-A assembly in <italic>Xenopus</italic> egg extract by promoting the centromeric localization of M18BP1 and/or HJURP.</p>
+        <fig id="fig6" position="float">
+          <label>Figure 6.</label>
+          <caption>
+            <p><bold>CENP-C depletion inhibits M18BP1 targeting to metaphase centromeres and xHJURP-dependent CENP-A assembly.</bold> (A) Depletion of CENP-C inhibits xHJURP-dependent CENP-A assembly. Representative images from CENP-A assembly assays were performed using mock- or CENP-C&#x02013;depleted extracts supplemented with mock or myc&#x02013;CENP-C IVT protein. The depletion and addback conditions are indicated to the left of the images, and immunolocalized proteins are listed above. (B) Quantification of myc&#x02013;CENP-A fluorescence intensity at centromeres for CENP-A assembly reactions described in A, which were normalized to the levels in mock-depleted extracts. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. (C) Addback of myc&#x02013;CENP-C to CENP-C&#x02013;depleted metaphase extract restores M18BP1 localization to centromeres. Representative images of sperm chromatin incubated in mock- or CENP-C&#x02013;depleted metaphase
+              extracts supplemented with mock or the myc&#x02013;CENP-C IVT protein. The depletion and addback conditions are indicated to the left of the images, and immunolocalized proteins are listed above. (D) Quantification of CENP-C and M18BP1 levels in mock- or CENP-C&#x02013;depleted metaphase extracts that were supplemented with mock or myc&#x02013;CENP-C protein. Quantification was performed as described in <xref ref-type="fig" rid="fig1">Fig. 1</xref>. Error bars show SEM; <italic>n</italic> = 3. Bars, 10 &#x000b5;m.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig6"/>
+        </fig>
+      </sec>
+      <sec>
+        <title>CENP-C directly interacts with M18BP1</title>
+        <p>To better understand how CENP-C targets M18BP1 to metaphase centromeres, we tested whether CENP-C and M18BP1 are associated in metaphase extracts. Immunoprecipitation of M18BP1 from egg extracts coprecipitated CENP-C, and immunoprecipitation of CENP-C coprecipitated isoform 1 of M18BP1 (<xref ref-type="fig" rid="fig7">Fig. 7, A and B</xref>). We confirmed that the interaction was isoform specific by translating FLAG-tagged versions of xM18BP1-1 and xM18BP1-2 in <italic>Xenopus</italic> egg extracts, immunoprecipitating the tagged xM18BP1 from the extract, and then Western blotting for CENP-C. We found that M18BP1-1 precipitated CENP-C and that this association was specific to metaphase (<xref ref-type="fig" rid="fig7">Fig. 7, C and D</xref>). We also detected coprecipitation of M18BP1-2 and CENP-C from metaphase extracts, but this interaction appeared to be less robust (<xref ref-type="fig" rid="fig7">Fig. 7, C and D</xref>) than the interaction between M18BP1-1 and CENP-C
+          given that equal amounts of FLAG-tagged M18BP1 isoforms were present in the extracts (<xref ref-type="fig" rid="fig7">Fig. 7 D</xref>). Together, this suggests that CENP-C&#x02019;s association with M18BP1 in metaphase may recruit M18BP1 to mitotic centromeres.</p>
+        <fig id="fig7" position="float">
+          <label>Figure 7.</label>
+          <caption>
+            <p><bold>CENP-C associates with M18BP1-1 in metaphase extract.</bold> (A) M18BP1 coprecipitates CENP-C from <italic>Xenopus</italic> egg extract. Western blot for CENP-C after immunoprecipitation (IP) of metaphase <italic>Xenopus</italic> extract with IgG or &#x003b1;-M18BP1. (B) CENP-C coprecipitates M18BP1 from the <italic>Xenopus</italic> egg extract. Western blot for M18BP1 after immunoprecipitation of metaphase <italic>Xenopus</italic> extract with IgG or &#x003b1;&#x02013;CENP-C. We only detected a single M18BP1 isoform (asterisk) coprecipitating with CENP-C, which migrates at the molecular mass of isoform 1. (C) M18BP1-1 associates with CENP-C in metaphase extract. FLAG epitope&#x02013;tagged M18BP1 IVT proteins were added to metaphase or interphase extracts, reactions were split in half, and M18BP1-FLAG proteins were immunoprecipitated with control (IgG) or &#x003b1;-FLAG (&#x003b1;FL) antibodies. A Western blot of the immunoprecipitates for CENP-C is shown. (D)
+              Representative Western blots from immunoprecipitation experiments described in C. Samples were taken after incubation of M18BP1-FLAG proteins in extract. (left) &#x003b1;-FLAG Western blot; (right) phospho-wee1 Western blot to assess the cell cycle state of the extract. M and I indicate metaphase and interphase extract, respectively. The molecular masses of protein standards and individual proteins in kilodaltons are listed on the left of each blot.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_GS_Fig7"/>
+        </fig>
+        <p>We determined whether CENP-C and M18BP1 bind one another by testing the coprecipitation of the two proteins translated in rabbit reticulocyte extracts in the presence of [<sup>35</sup>S]methionine. The two isoforms of M18BP1 or mCherry-tubulin as a control were mixed with unlabeled CENP-C and immunoprecipitated with either CENP-C antibody or IgG. We found that both M18BP1-1 and M18BP1-2 specifically associated with CENP-C, indicating that they directly interact (<xref ref-type="fig" rid="fig8">Fig. 8, A and B</xref>). This interaction was conserved in humans, as human M18BP1 and CENP-C bind to one another in the same assay (<xref ref-type="fig" rid="fig8">Fig. 8, C and D</xref>). Using this same in vitro binding assay, we mapped the region of CENP-C required for interaction with M18BP1-1 (<xref ref-type="fig" rid="fig8">Fig. 8, E and F</xref>). We found that a fragment of CENP-C spanning amino acids 1,191&#x02013;1,350 was sufficient to bind M18BP1-1 (<xref ref-type="fig"
+            rid="fig8">Fig. 8 F</xref>). This fragment contains the conserved CENP-C signature motif (residues 1,204&#x02013;1,226) and the N-terminal half of the conserved cupin domain (residues 1,311&#x02013;1,397), which mediates dimerization of CENP-C (<xref ref-type="fig" rid="fig8">Fig. 8 E</xref>). We found that removal of either the CENP-C motif or the cupin domain prevented the binding of CENP-C to M18BP1-1 (<xref ref-type="fig" rid="fig8">Fig. 8 F</xref>). Despite extensive mutagenesis of conserved amino acids throughout the 1,191&#x02013;1,350 region of CENP-C, we have been unable to isolate a point mutant that disrupts the interaction between M18BP1-1 and CENP-C and yet still localizes normally to centromeres (unpublished data).</p>
+        <fig id="fig8" position="float">
+          <label>Figure 8.</label>
+          <caption>
+            <p><bold>CENP-C directly interacts with M18BP1 through two conserved domains in CENP-C.</bold> (A) xCENP-C binds directly to both isoforms of xM18BP1. A representative gel from an xCENP-C&#x02013;xM18BP1 in vitro binding assay is shown. [<sup>35</sup>S]methionine-labeled in vitro translated xM18BP1-1 or xM18BP1-2 was mixed with unlabeled in vitro translated xCENP-C and immunoprecipitated with control (IgG) or &#x003b1;&#x02013;xCENP-C antibodies. Samples were run on an SDS-PAGE gel, and bound xM18BP1 protein was detected by autoradiography. mCherry (mCh)-tubulin was used as a negative control. The addition of each component is shown at the top of the gel. (B) Quantification of the CENP-C&#x02013;M18BP1 in vitro binding assay represented in A. (C) hCENP-C (hC) binds directly to hM18BP1. Representative gel from an hCENP-C&#x02013;hM18BP1 in vitro binding assay. [<sup>35</sup>S]methionine-labeled in vitro translated hM18BP1 was mixed with unlabeled in vitro translated hCENP-C
+              and immunoprecipitated with IgG or &#x003b1;&#x02013;hCENP-C antibodies. Samples were run on an SDS-PAGE gel, and bound hM18BP1 protein was detected by autoradiography. mCherry-tubulin was used as a negative control. (D) Quantification of hCENP-C&#x02013;hM18BP1 in vitro binding assay represented in C. (E) Schematic of CENP-C domains. (F) M18BP1 binding to CENP-C requires the CENP-C motif (amino acids 1,204&#x02013;1,226) and the N-terminal half of the cupin domain (amino acids 1,311&#x02013;1,397). In vitro binding assays with CENP-C fragments were performed as described in A. Domain mapping of the entire protein is shown to the left of the black vertical line, and fine-scale mapping of the C terminus is shown to the right. Error bars show SEM; <italic>n</italic> = 3. IP, immunoprecipitation.</p>
+          </caption>
+          <graphic xlink:href="JCB_201106079_RGB_Fig8"/>
+        </fig>
+      </sec>
+    </sec>
+    <sec>
+      <title>Discussion</title>
+      <p>How centromeres are maintained at the same locus through cell divisions and organismal generations is not well understood. In this study, we developed an in vitro assay for CENP-A chromatin assembly in <italic>Xenopus</italic> egg extracts and used it to study the mechanisms that recruit the factors required for new CENP-A nucleosome assembly to the centromere. Previous studies have shown that CENP-C binds to CENP-A nucleosomes and is required for CENP-A assembly (<xref ref-type="bibr" rid="bib26">Goshima et al., 2007</xref>; <xref ref-type="bibr" rid="bib18">Erhardt et al., 2008</xref>; <xref ref-type="bibr" rid="bib9">Carroll et al., 2010</xref>). We found that CENP-C is also required for M18BP1 recruitment to metaphase centromeres, and the two proteins interact directly through two highly conserved domains within CENP-C, the CENP-C motif and the cupin domain. In the absence of CENP-C, M18BP1 fails to target to centromeric chromatin, centromeric levels of HJURP are reduced,
+        and new CENP-A nucleosome assembly is inhibited. This suggests that a key function for CENP-C is to recruit factors required for new CENP-A assembly to the existing centromere.</p>
+      <sec>
+        <title>In vitro CENP-A chromatin assembly</title>
+        <p>The in vitro CENP-A assembly assay described here recapitulates several key aspects of CENP-A assembly in somatic cells. Namely, assembly of epitope-tagged CENP-A in <italic>Xenopus</italic> extracts is dependent on the CENP-A assembly factors HJURP and M18BP1, requires the exit from mitosis, and is independent of DNA replication (<xref ref-type="bibr" rid="bib49">Shelby et al., 2000</xref>; <xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib32">Jansen et al., 2007</xref>; <xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>; <xref ref-type="bibr" rid="bib17">Dunleavy et al., 2009</xref>; <xref ref-type="bibr" rid="bib20">Foltz et al., 2009</xref>; <xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>). Our observations on CENP-A assembly using this assay are similar to a recent study (<xref ref-type="bibr" rid="bib5">Bernad et al., 2011</xref>) with some noteworthy differences. In contrast to the previous study, we
+          observed no effect on myc&#x02013;CENP-A assembly when we supplemented egg extracts with hHJURP, but we observed a &#x0223c;30-fold stimulation of myc&#x02013;CENP-A assembly when we supplemented the extract with xHJURP. We also found that the assembly of exogenously added CENP-A continued throughout interphase rather than being restricted to a narrow window before replication. The differences we observe may be because there is a limited pool of CENP-A in the extract and augmenting that pool with additional CENP-A allows for CENP-A assembly at any time during interphase.</p>
+      </sec>
+      <sec>
+        <title>CENP-C recruits proteins required for new CENP-A assembly to the centromere</title>
+        <p>We find that CENP-C is required for M18BP1 targeting to metaphase centromeres and that this is likely through direct interaction between the two proteins. M18BP1 depletion does not affect the centromeric localization of CENP-C, indicating that CENP-C functions upstream of M18BP1 in <italic>Xenopus</italic> egg extract. This result contrasts with observations in <italic>C. elegans</italic>, in which KNL-2 depletion prevented localization of CeCENP-C to centromeres. However, KNL-2 depletion in <italic>C. elegans</italic> embryos also caused CeCENP-A loss from centromeric chromatin, which may have in turn prevented CeCENP-C targeting (<xref ref-type="bibr" rid="bib36">Maddox et al., 2007</xref>). We also find that CENP-C depletion reduces centromeric HJURP levels. M18BP1 depletion leads to a comparable defect in HJURP targeting, and HJURP requires M18BP1 for its localization to centromeres in human cells; thus, it is likely that the role of CENP-C in HJURP localization is
+          through M18BP1 recruitment. However, we cannot exclude the possibility that CENP-C and M18BP1 function in parallel pathways to promote HJURP recruitment to centromeres in <italic>Xenopus</italic> extract.</p>
+        <p>We have demonstrated a role for CENP-C in CENP-A assembly in <italic>Xenopus</italic> egg extracts. Complementation of CENP-C&#x02013;depleted extracts to 40&#x02013;60% of the levels in mock-depleted extracts fully restored M18BP1 targeting to centromeres, whereas CENP-A assembly was only rescued to 60% of the levels in control extracts. This suggests that other factors that are dependent on CENP-C may act in concert with M18BP1 to promote CENP-A assembly.</p>
+      </sec>
+      <sec>
+        <title>CENP-C interacts directly with M18BP1 in a cell cycle&#x02013;dependent manner</title>
+        <p>Our observations have identified a second important function for CENP-C in recruiting M18BP1 to centromeres to promote CENP-A assembly. CENP-C binds directly to M18BP1 in vitro, and this interaction requires the highly conserved CENP-C motif and the N-terminal half of the CENP-C cupin domain. The CENP-C box is an evolutionarily conserved motif found in all CENP-C homologues that is required for CENP-C targeting to centromeres (<xref ref-type="bibr" rid="bib39">Meluh and Koshland, 1995</xref>; <xref ref-type="bibr" rid="bib22">Fukagawa et al., 2001</xref>; <xref ref-type="bibr" rid="bib29">Heeger et al., 2005</xref>; <xref ref-type="bibr" rid="bib40">Milks et al., 2009</xref>), and the C-terminal cupin domain mediates dimerization of CENP-C (<xref ref-type="bibr" rid="bib53">Sugimoto et al., 1997</xref>; <xref ref-type="bibr" rid="bib14">Cohen et al., 2008</xref>). It will be interesting to determine whether CENP-C dimerization is required for the recruitment of M18BP1 to
+          CENP-A chromatin and how the CENP-C box and cupin domain influence CENP-C binding to both CENP-A nucleosomes and M18BP1.</p>
+        <p>Both isoforms of M18BP1 bind to CENP-C in vitro, but in egg extract, we primarily detect an interaction with M18BP1-1 that is specific to metaphase. This suggests that the interaction between M18BP1-2 and CENP-C is inhibited in extracts and that the interaction between M18BP1-1 and CENP-C is cell cycle regulated. Currently, we do not know whether the interaction between M18BP1 and CENP-C is regulated through CENP-C, M18BP1, or both. Previous studies have demonstrated that CENP-C is regulated differently in mitosis and interphase. In human cells, CENP-C stably associates with mitotic centromeres but is dynamic in interphase (<xref ref-type="bibr" rid="bib30">Hemmerich et al., 2008</xref>), and in chicken DT40 cells, CENP-C targeting to centromeres depends on CENP-H/I in interphase but not metaphase (<xref ref-type="bibr" rid="bib33">Kwon et al., 2007</xref>). Understanding the cell cycle&#x02013;dependent mechanisms that regulate the interaction between M18BP1 and CENP-C is
+          likely to provide important insight into the process of new CENP-A nucleosome assembly.</p>
+        <p>We have shown that human M18BP1 and CENP-C directly interact, but unlike xM18BP-1, human M18BP1 does not localize to metaphase centromeres. In contrast to xM18BP1-1, purification of M18BP1 from asynchronous HeLa cell extracts did not identify CENP-C as an M18BP1-interacting protein (<xref ref-type="bibr" rid="bib21">Fujita et al., 2007</xref>; <xref ref-type="bibr" rid="bib34">Lagana et al., 2010</xref>). The interaction between M18BP1 and CENP-C in human cells may have been below the detection limit in these experiments because the interaction is mitosis specific, and only a fraction of the total M18BP1 in extract is associated with CENP-C. It will be important to understand whether CENP-C plays a role in M18BP1 targeting to human centromeres, whether the human CENP-C&#x02013;M18BP1 interaction is regulated by the cell cycle, and how this interaction relates to the isoform specific interactions we have described in <italic>Xenopus</italic>.</p>
+      </sec>
+      <sec>
+        <title>Regulation of M18BP1 localization in interphase</title>
+        <p>In the absence of CENP-C, M18BP1 accumulates at interphase centromeres precociously and to higher levels. This demonstrates a role for CENP-C in regulating the interphase localization of M18BP1 and indicates that there exists a second, CENP-C&#x02013;independent mechanism for targeting M18BP1 to centromeres. We have previously shown that CENP-K does not localize to centromeres in CENP-C&#x02013;depleted extract (<xref ref-type="bibr" rid="bib40">Milks et al., 2009</xref>). Moreover, in human cells, removal of CENP-C causes the loss of multiple CCAN proteins from the centromere, including CENP-H, -I, -K, and -T (<xref ref-type="bibr" rid="bib9">Carroll et al., 2010</xref>; <xref ref-type="bibr" rid="bib25">Gascoigne et al., 2011</xref>). Thus, one possibility is that CENP-A chromatin itself recruits M18BP1 to interphase centromeres.</p>
+        <p>M18BP1 is required for CENP-A assembly during the exit from mitosis, but it is possible that it performs an additional function during interphase. The GTPase-activating protein MgcRacGAP was recently identified as an M18BP1-associated protein that is required for the maintenance of newly assembled CENP-A nucleosomes at interphase centromeres (<xref ref-type="bibr" rid="bib34">Lagana et al., 2010</xref>). It will be interesting to test whether M18BP1 might function in interphase to recruit MgcRacGAP to stabilize newly assembled CENP-A.</p>
+        <p>Collectively, our observations demonstrate that CENP-C plays an essential role in CENP-A assembly by localizing M18BP1 and HJURP to centromeres. By directly linking CENP-A nucleosomes with M18BP1, CENP-C may provide a mechanism to reinforce new CENP-A assembly at the site of preexisting centromeres and, thereby, ensure accurate centromere propagation. An important future goal will be to understand how the factors required for new CENP-A assembly function in concert to transfer soluble CENP-A into chromatin. The ability to assemble centromeric chromatin in vitro will provide a valuable tool for dissecting the biochemical and cell cycle regulatory mechanisms that control new CENP-A assembly and ensure faithful centromere propagation.</p>
+      </sec>
+    </sec>
+    <sec sec-type="materials|methods">
+      <title>Materials and methods</title>
+      <sec>
+        <title>Cloning and antibody generation</title>
+        <p>xHJURP (available from GenBank/EMBL/DDBJ under accession no. <ext-link ext-link-type="gen" xlink:href="HQ148662">HQ148662</ext-link>) and M18BP1 were identified through BLAST (Basic Local Alignment Search Tool) analysis and were amplified from a <italic>Xenopus</italic> ovary cDNA library by PCR. We identified two separate, but closely related, isoforms of xM18BP1, which we have designated xM18BP1-1 (GenBank accession no. <ext-link ext-link-type="gen" xlink:href="HQ148660">HQ148660</ext-link>) and xM18BP1-2 (GenBank accession no. <ext-link ext-link-type="gen" xlink:href="HQ148661">HQ148661</ext-link>).</p>
+        <p>For in vitro production of RNA or proteins, genes were cloned into the AscI and PacI sites of modified pCS2+ vectors containing insertions of epitope tag sequences adjacent to the multiple cloning site (MCS). For expression of hM18BP1, xCENP-C, xHJURP, and hHJURP in rabbit reticulocyte lysate, the <italic>xCENP-C</italic>, <italic>xHJURP</italic>, and <italic>hHJURP</italic> sequences were codon optimized for <italic>Escherichia coli</italic> and rabbit reticulocyte expression by gene synthesis (DNA 2.0). Plasmids used in this study are listed in <xref ref-type="table" rid="tbl1">Table I</xref>.</p>
+        <table-wrap id="tbl1" position="float">
+          <label>Table I.</label>
+          <caption>
+            <p>Plasmids used in this study</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <td rowspan="1" colspan="1">Plasmid name (ASP)</td>
+                <td align="center" rowspan="1" colspan="1">Construct</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="1" colspan="1">451</td>
+                <td rowspan="1" colspan="1">pGEX-6P-1 (GE Healthcare) containing a modified MCS for bacterial expression of GST-tagged proteins</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,633</td>
+                <td rowspan="1" colspan="1">GST&#x02013;xM18BP1-2<sup>161&#x02013;415</sup></td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,980</td>
+                <td rowspan="1" colspan="1">GST&#x02013;xM18BP1-1<sup>161&#x02013;375</sup></td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,639</td>
+                <td rowspan="1" colspan="1">GST-xHJURP</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,938</td>
+                <td rowspan="1" colspan="1">6His-xHJURP<sup>42&#x02013;194</sup></td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">447</td>
+                <td rowspan="1" colspan="1">pCS2+ containing a modified MCS for IVT of the protein in rabbit reticulocyte lysate or in vitro transcription of RNA</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">459</td>
+                <td rowspan="1" colspan="1">pCS2+ containing 6&#x000d7;myc sequence upstream of the MCS for IVT of the protein in rabbit reticulocyte lysate or in vitro transcription of RNA</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,730</td>
+                <td rowspan="1" colspan="1">pCS2+ containing 3&#x000d7;FLAG sequence upstream of the MCS for IVT of the protein in rabbit reticulocyte lysate or in vitro transcription of RNA</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,853</td>
+                <td rowspan="1" colspan="1">pCS2+ containing 3&#x000d7;FLAG sequence downstream of the MCS for IVT of protein in rabbit reticulocyte lysate or in vitro transcription of RNA</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,592</td>
+                <td rowspan="1" colspan="1">p447-xHJURP for production of xHJURP RNA</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,815</td>
+                <td rowspan="1" colspan="1">p447-xHJURP (codon optimized) for production of the xHJURP IVT protein</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,970</td>
+                <td rowspan="1" colspan="1">p447-hHJURP (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,968</td>
+                <td rowspan="1" colspan="1">p1853-xHJURP (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,969</td>
+                <td rowspan="1" colspan="1">p1853-hHJURP (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">559</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-A</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,819</td>
+                <td rowspan="1" colspan="1">p1730&#x02013;xCENP-A</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,870</td>
+                <td rowspan="1" colspan="1">p1853&#x02013;xM18BP1-1</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,871</td>
+                <td rowspan="1" colspan="1">p1853&#x02013;xM18BP1-2</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">867</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,330</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1&#x02013;380 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,925</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 200&#x02013;579 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,928</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 381&#x02013;711 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,926</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 580&#x02013;949 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,920</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 712&#x02013;1,190 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,927</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 950&#x02013;1,291 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,150</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1,191&#x02013;1,400 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,943</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1,204&#x02013;1,400 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,935</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1,229&#x02013;1,400 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,921</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1,191&#x02013;1,350 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,936</td>
+                <td rowspan="1" colspan="1">p459&#x02013;xCENP-C amino acids 1,191&#x02013;1,310 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">866</td>
+                <td rowspan="1" colspan="1">p447&#x02013;xCENP-C (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,350</td>
+                <td rowspan="1" colspan="1">p447&#x02013;xM18BP1-1</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,351</td>
+                <td rowspan="1" colspan="1">p447&#x02013;xM18BP1-2</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">844</td>
+                <td rowspan="1" colspan="1">p447&#x02013;hCENP-C</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,828</td>
+                <td rowspan="1" colspan="1">p447-hM18BP1 (codon optimized)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">572</td>
+                <td rowspan="1" colspan="1">p447&#x02013;mCherry-tubulin</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">1,981</td>
+                <td rowspan="1" colspan="1">p459-dTm2 (<italic>Drosophila melanogaster</italic> tropomyosin 2)</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>ASP, A.F. Straight plasmid.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Antibodies to M18BP1 and HJURP were produced in rabbits (Cocalico Biologicals). For xM18BP1 antibody production, a fragment of xM18BP1-2 spanning amino acids 161&#x02013;415 was expressed as a GST fusion in <italic>E. coli</italic> and affinity purified on glutathione agarose (Sigma-Aldrich) according to the manufacturer&#x02019;s instructions. To generate an affinity column for antibody purification, a fragment of xM18BP1-1 spanning amino acids 161&#x02013;375 was expressed as a GST fusion in <italic>E. coli</italic> and purified using glutathione agarose. Rhinovirus 3C protease was used to cleave xM18BP1-1<sup>161&#x02013;375</sup> from the GST tag after fusion protein binding to the glutathione agarose column. xM18BP1-1<sup>161&#x02013;375</sup> was further purified by chromatography on S-Sepharose by using a linear gradient from 25 mM to 1 M NaCl in 20 mM MES, pH 6.0, 10% glycerol, and 1 mM DTT. The protein was then coupled to <italic>N</italic>-hydroxy
+          succinimide&#x02013;activated Sepharose 4 Fast Flow (GE Healthcare). For xHJURP antibody production, xHJURP was expressed as a GST fusion protein and purified using glutathione agarose. To generate an affinity column for antibody purification, a fragment of xHJURP spanning amino acids 42&#x02013;194 was expressed with an N-terminal 6His tag in <italic>E. coli</italic>, affinity purified on nickel&#x02013;nitrilotriacetic acid agarose (QIAGEN) according to the manufacturer&#x02019;s instructions, and coupled to <italic>N</italic>-hydroxy succinimide&#x02013;activated Sepharose 4 Fast Flow. Other antibodies used in this study that are not commercially available are &#x003b1;&#x02013;xCENP-A (<xref ref-type="bibr" rid="bib35">Maddox et al., 2003</xref>), &#x003b1;&#x02013;xCENP-C (<xref ref-type="bibr" rid="bib40">Milks et al., 2009</xref>), &#x003b1;-xAnillin (<xref ref-type="bibr" rid="bib52">Straight et al., 2005</xref>), and &#x003b1;-myc (<xref ref-type="bibr" rid="bib40"
+            >Milks et al., 2009</xref>). The supernatant of 9E10 mouse hybridoma cells was used directly for myc immunofluorescence. The phospho-wee1 antibody was provided by J.E. Ferrell (Stanford University, Stanford, CA). Antibodies used in this study are listed in <xref ref-type="table" rid="tbl2">Table II</xref>.</p>
+        <table-wrap id="tbl2" position="float">
+          <label>Table II.</label>
+          <caption>
+            <p>Antibodies used in this study</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <td rowspan="1" colspan="1">Antibody</td>
+                <td align="center" rowspan="1" colspan="1">Species</td>
+                <td align="center" rowspan="1" colspan="1">Catalog number</td>
+                <td align="center" rowspan="1" colspan="1">Company</td>
+                <td align="center" rowspan="1" colspan="1">Dilution</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-xM18BP1</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">1.5 &#x000b5;g/ml (IF); 5 &#x000b5;g/ml O/N (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-xHJURP</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-myc</td>
+                <td align="center" rowspan="1" colspan="1">Mouse</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">1 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;&#x02013;xCENP-A</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (WB); 1 &#x000b5;g/ml (IF)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">594-&#x003b1;&#x02013;xCENP-A</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (IF)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">488-&#x003b1;&#x02013;xCENP-A</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (IF)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-xAnillin</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">1 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;&#x02013;xCENP-C</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">A.F. Straight</td>
+                <td align="center" rowspan="1" colspan="1">1 &#x000b5;g/ml (IF); 1.5 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;&#x02013;phospho-wee1</td>
+                <td rowspan="1" colspan="1"/>
+                <td rowspan="1" colspan="1"/>
+                <td align="center" rowspan="1" colspan="1">J.E. Ferrell</td>
+                <td align="center" rowspan="1" colspan="1">1:1,000 O/N (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-tubulin</td>
+                <td align="center" rowspan="1" colspan="1">Mouse</td>
+                <td align="center" rowspan="1" colspan="1">T9026</td>
+                <td align="center" rowspan="1" colspan="1">Sigma-Aldrich</td>
+                <td align="center" rowspan="1" colspan="1">0.25 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-BrdU</td>
+                <td align="center" rowspan="1" colspan="1">Mouse</td>
+                <td align="center" rowspan="1" colspan="1">555627</td>
+                <td align="center" rowspan="1" colspan="1">BD</td>
+                <td align="center" rowspan="1" colspan="1">10 &#x000b5;g/ml (IF)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;&#x02013;histone H4</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td align="center" rowspan="1" colspan="1">ab7311</td>
+                <td align="center" rowspan="1" colspan="1">Abcam</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;&#x02013;histone H2A</td>
+                <td align="center" rowspan="1" colspan="1">Rabbit</td>
+                <td align="center" rowspan="1" colspan="1">ab13923</td>
+                <td align="center" rowspan="1" colspan="1">Abcam</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">&#x003b1;-FLAG</td>
+                <td align="center" rowspan="1" colspan="1">Mouse</td>
+                <td align="center" rowspan="1" colspan="1">F1804</td>
+                <td align="center" rowspan="1" colspan="1">Sigma-Aldrich</td>
+                <td align="center" rowspan="1" colspan="1">2 &#x000b5;g/ml (IF); 1 &#x000b5;g/ml (WB)</td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">647-anti-myc</td>
+                <td align="center" rowspan="1" colspan="1">Mouse</td>
+                <td align="center" rowspan="1" colspan="1">2233</td>
+                <td align="center" rowspan="1" colspan="1">Cell Signaling Technology</td>
+                <td align="center" rowspan="1" colspan="1">20 &#x000b5;g/ml (IF)</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p>IF, immunofluorescence; O/N, overnight; WB, Western blot.</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+      </sec>
+      <sec>
+        <title><italic>Xenopus</italic> extracts and tissue culture</title>
+        <p><italic>Xenopus</italic> cytostatic factor (CSF) and interphase extracts and demembranated sperm were prepared as previously described (<xref ref-type="bibr" rid="bib16">Desai et al., 1999</xref>). In brief, <italic>Xenopus</italic> eggs were washed in MMR buffer (5 mM Na-Hepes, pH 7.8, 0.1 mM EDTA, 100 mM NaCl, 2 mM KCl, 1 mM MgCl<sub>2</sub>, and 2 mM CaCl<sub>2</sub>) and then subsequently dejellied in MMR + 2% <sc>l</sc>-cysteine. After dejellying, eggs were washed in CSF-XB buffer (100 mM KCl, 50 mM sucrose, 2 mM MgCl<sub>2</sub>, 0.1 mM CaCl<sub>2</sub>, 10 mM K-Hepes, pH 7.7, and 5 mM K-EGTA, pH 7.7) followed by washing in CSF-XB + protease inhibitor buffer (CSF-XB + 10 &#x000b5;g/ml LPC [leupeptin/pepstatin A/chymostatin]). Eggs were then placed in a 13 &#x000d7; 51&#x02013;mm ultraclear tube (Beckman Coulter) and packed by low-speed spin in a table top clinical centrifuge for 45 s. After removal of excess buffer, eggs were centrifuged in a rotor (SW50.1; Beckman
+          Coulter) for 15 min at 10,000 rpm. The soluble cytoplasmic material was removed from the centrifuge tube and supplemented with energy mix (7.5 mM creatine phosphate, 1 mM ATP, and 1 mM MgCl<sub>2</sub>), 50 mM sucrose, 10 &#x000b5;g/ml LPC, and 10 &#x000b5;g/ml cytochalasin D. Cycloheximide (Sigma-Aldrich) was added to extracts to 100 &#x000b5;g/ml, BrdU (Sigma-Aldrich) was added to extracts to 40 &#x000b5;M, and aphidicolin (Sigma-Aldrich) was added to extracts to 50 &#x000b5;g/ml. <italic>Xenopus</italic> tissue-culture (S3) cells were grown in 70% Leibovitz&#x02019;s L-15 media (Invitrogen) supplemented with 15% heat-inactivated fetal bovine serum, 100 U/ml penicillin, and 0.1 mg/ml streptomycin.</p>
+      </sec>
+      <sec>
+        <title>CENP-A assembly assay in <italic>Xenopus</italic> extract</title>
+        <p>The TnT Sp6 Coupled Rabbit Reticulocyte System (Promega) was used for in vitro transcription/translation (IVT) of plasmid DNA according to the manufacturer&#x02019;s protocol, except twice the recommended amount of DNA was added. RNA was produced using the either the mMESSAGE mMACHINE SP6 kit (Invitrogen) or the RiboMAX SP6 Large Scale RNA Production System and Ribo m<sup>7</sup>G cap analogue (Promega), and RNA was added to the extract to a final concentration of 2 &#x000b5;g RNA per 100 &#x000b5;l extract.</p>
+        <p>For standard CENP-A assembly assays, 2 &#x000b5;l HJURP IVT protein was added per 20 &#x000b5;l assembly reaction. HJURP IVT protein and myc&#x02013;xCENP-A RNA were added to CSF extract, reactions were incubated for 30 min at 16&#x02013;20&#x000b0;C to allow for translation of myc&#x02013;xCENP-A, and then cycloheximide was added to block further translation. Subsequently, demembranated sperm (final concentration of &#x0223c;3 &#x000d7; 10<sup>5</sup> sperm per 100 &#x000b5;l extract) and CaCl<sub>2</sub> (final concentration of 0.75 mM) were added, and the reaction was incubated for an additional 60&#x02013;75 min to allow for release into interphase. Reactions were then processed for immunofluorescence as described under the Immunofluorescence subheading. For experiments to test replication dependence of CENP-A assembly, DMSO or aphidicolin was added concurrent with xHJURP IVT protein and myc&#x02013;CENP-A RNA. For CENP-A assembly assays using M18BP1-depleted extracts
+            (<xref ref-type="fig" rid="fig3">Fig. 3, C and D</xref>), 1 &#x000b5;l HJURP IVT protein was added per 20 &#x000b5;l assembly reaction. For CENP-A assembly assays using CENP-C&#x02013;depleted extracts (<xref ref-type="fig" rid="fig6">Fig. 6, A and B</xref>), HJURP RNA was used instead of the HJURP IVT protein. Protocol adjustments were made so that the volume of IVT lysate added was never &#x0003e;10% of the total reaction volume.</p>
+      </sec>
+      <sec>
+        <title>Immunofluorescence</title>
+        <p><italic>Xenopus</italic> S3 cells grown on coverslips were washed with 70% PBS and then fixed for 5 min in 2% formaldehyde/0.5% Triton X-100. Coverslips were then blocked in antibody dilution buffer (20 mM Tris, pH 7.4, 150 mM NaCl, 0.1% Triton X-100, 2% BSA, and 0.1% sodium azide) and stained with &#x003b1;-xM18BP1 and &#x003b1;&#x02013;CENP-A antibody directly conjugated to the Alexa Fluor 594 fluorophore.</p>
+        <p>The localization of M18BP1 and CENP-A on demembranated sperm nuclei was assayed by adhering sperm to poly-<sc>l</sc>-lysine&#x02013;coated acid-washed coverslips without fixative, treating sperm with 5 &#x000b5;M recombinant <italic>Xenopus</italic> Nap1 in sperm dilution buffer (10 mM K<sup>+</sup> Hepes, pH 7.7, 1 mM MgCl<sub>2</sub>, 100 mM KCl, and 150 mM sucrose) for 30 min, and then fixing sperm for 5 min using 2% formaldehyde. Sperm chromatin from egg extract experiments were washed in dilution buffer (BRB-80 [80 mM K-Pipes, pH 6.8, 1 mM MgCl<sub>2</sub>, and 1 mM EGTA], 30% glycerol, 0.5% Triton X-100, and 150 mM KCl) for 5 min, fixed for 5 min using 2% formaldehyde, and spun through 40% glycerol&#x02013;BRB-80 cushions onto coverslips. For experiments to test for stable incorporation of myc&#x02013;CENP-A into chromatin, reactions were washed for 5 min in dilution buffer with increasing concentrations of KCl (0 mM&#x02013;1 M) before fixation. Sperm immunostained
+          for BrdU were postfixed with cold methanol, treated with 2 N HCl/0.5% Triton X-100 to denature DNA, and then neutralized with 0.1 M borate, pH 8.5, before immunostaining. After fixation, coverslips were blocked in antibody dilution buffer and then immunostained with the antibodies indicated in Fig. S1. Alexa Fluor&#x02013;conjugated secondary antibodies were used according to the manufacturer&#x02019;s specifications (Invitrogen). When required, coverslips were blocked using 1 mg/ml whole-rabbit IgG or whole-mouse IgG (Jackson ImmunoResearch Laboratories, Inc.).</p>
+      </sec>
+      <sec>
+        <title>Immunodepletions</title>
+        <p>Depletion experiments were performed using affinity-purified antibodies bound to protein A beads (Dynabeads; Invitrogen). For 100 &#x000b5;l extract, 2.5 &#x000b5;g &#x003b1;-xM18BP1 antibody or 0.6 &#x000b5;g &#x003b1;&#x02013;CENP-C antibody was bound to 33 &#x000b5;l of beads in 10 mM Tris-HCl, pH 7.4, 150 mM NaCl, and 0.1% Triton X-100 for 1 h at 4&#x000b0;C. An equivalent amount of whole-rabbit IgG was used for control depletions. The beads were then washed and resuspended in extract for 1 h at 4&#x000b0;C. Beads were removed from the extract by two 5-min rounds of exposure to a magnet.</p>
+      </sec>
+      <sec>
+        <title>Complementation experiments in <italic>Xenopus</italic> extract</title>
+        <p>For CENP-C addback experiments, 1 &#x000b5;l (<xref ref-type="fig" rid="fig6">Fig. 6, C and D</xref>) or 2 &#x000b5;l (<xref ref-type="fig" rid="fig6">Fig. 6, A and B</xref>) myc&#x02013;CENP-C IVT protein was added per 20 &#x000b5;l CENP-C&#x02013;depleted extract. For M18BP1 addback experiments, 0.5 &#x000b5;l each of M18BP1-1&#x02013;FLAG and M18BP1-2&#x02013;FLAG IVT proteins was added per 20 &#x000b5;l M18BP1-depleted extract. For CENP-A assembly assays using depleted extracts, myc&#x02013;CENP-C and M18BP1-FLAG IVT proteins were added to CSF extract concurrent with the addition of HJURP IVT protein and CENP-A RNA.</p>
+      </sec>
+      <sec>
+        <title>Immunoblotting</title>
+        <p>Samples were separated by SDS-PAGE and transferred onto polyvinylidene fluoride membrane (Bio-Rad Laboratories). Samples were transferred in CAPS transfer buffer (10 mM 3-(cyclohexylamino)-1-propanesulfonic acid, pH 11.3, 0.1% SDS, and 20% methanol) for CENP-A, CENP-C, H2A, and H4 or Tris-glycine transfer buffer (20 mM Tris-HCl and 200 mM glycine) for xHJURP, hHJURP, and M18BP1. Alexa Fluor 488&#x02013; or Alexa Fluor 647&#x02013;conjugated goat anti&#x02013;rabbit or anti&#x02013;mouse antibodies (1:2,500; Invitrogen) were used for detection by fluorescence using a gel imager (Typhoon 9400 Variable Mode Imager; GE Healthcare). For detection of xM18BP1, a tertiary amplification step was performed using Dylight 649&#x02013;conjugated bovine anti&#x02013;goat (1:2,500; Jackson ImmunoResearch Laboratories, Inc.). Fluorescence of detected bands was background corrected and quantified using ImageJ (National Institutes of Health). Background correction was performed by measuring
+          the integrated intensity of a region encompassing the detected band and then subtracting from that the intensity as measured in an identical region below the band in the same lane. For egg extract experiments, 2 &#x000b5;l extract was loaded into each lane.</p>
+      </sec>
+      <sec>
+        <title>Isolation of chromatin after CENP-A assembly reactions</title>
+        <p>CENP-A assembly reactions were prepared as described under the CENP-A assembly assay in <italic>Xenopus</italic> extract subheading, except reactions were prepared to a final volume of 500 &#x000b5;l. 60 min after calcium addition, assembly reactions were diluted into 2 ml dilution buffer (BRB-80 [80 mM K-Pipes, pH 6.8, 1 mM MgCl<sub>2</sub>, and 1 mM EGTA], 30% glycerol, 0.5% Triton X-100, and 300 mM KCl) and incubated for 5 min at room temperature. Reactions were then overlaid onto 5 ml of cushion (40% glycerol/80 mM Pipes, pH 6.8, 1 mM MgCl<sub>2</sub>, and 1 mM EDTA) in a 15-ml conical tube and centrifuged in a rotor (JS4.2; Beckman Coulter) for 20 min at 3,500 rpm. After centrifugation, the supernatant was removed, and the chromatin pellets were resuspended in micrococcal nuclease (MNase) buffer (250 mM NaCl, 20 mM Hepes, pH 7.7, 2 mM EDTA, 1% NP-40, 1 mM DTT, 1 mM PMSF, 1 mM benzamidine HCl, and 10 &#x000b5;g/ml LPC). Samples were then centrifuged for 5 min at 5,000
+          rpm in a microcentrifuge at 4&#x000b0;C. The supernatant was removed, and the chromatin pellets were resuspended in 50 &#x000b5;l MNase buffer supplemented with 4 mM CaCl<sub>2</sub> and sonicated for 30 s in a cup sonicator. MNase (Worthington Biochemical Corporation) was then added to a final concentration of 1 U/&#x000b5;l and incubated at 37&#x000b0;C for 15 min. After 15 min, EDTA was added to 10 mM, and the samples were sonicated for 30 s. After sonication, the samples were diluted with 50 &#x000b5;l of 4&#x000d7; sample buffer (200 mM Tris, pH 6.8, 40 mM EDTA, 0.05% bromophenol blue, 10% SDS, and 50% glycerol) to a final volume of &#x0223c;100 &#x000b5;l. For Western blots, 30 &#x000b5;l of each sample was loaded per lane.</p>
+      </sec>
+      <sec>
+        <title>Microscopy</title>
+        <p>All coverslips were mounted onto glass slides with mounting media (0.5% <italic>p</italic>-phenylenediamine, 20 mM Tris, pH 8.8, and 90% glycerol) and sealed with clear nail polish. Immunofluorescence microscopy images were acquired at room temperature using a 60&#x000d7; 1.4 NA Plan Apochromat VC oil immersion lens (Nikon), a Sedat quad filter set (Chroma Technology Corp.), and a charge-coupled device camera (CoolSNAP HQ; Photometrics) mounted on a microscope (Eclipse 80i; Nikon). Wavelength selection was performed with a Lambda 10&#x02013;3 controller and 25-mm high-speed filter wheels (Sutter Instrument). Z sections were acquired with a z-axis drive (MFC2000; Applied Scientific Instrumentation) at 0.2-&#x000b5;m intervals. Microscope instrumentation was controlled via Metamorph imaging software (Molecular Devices). Immunofluorescence microscopy images were also acquired at room temperature using a 60&#x000d7; 1.4 NA Plan Apochromat oil immersion lens (Olympus), a Sedat
+          quad filter set (Semrock, Inc.), and a charge-coupled device camera (CoolSNAP HQ) mounted on a microscope (IX70; Olympus) outfitted with a Deltavision Core system (Applied Precision). Microscope instrumentation was controlled via softWoRx 4.1.0 software (Applied Precision). Maximum intensity projections were generated from the z sections and then analyzed with custom-written software.</p>
+        <p>Images of <italic>Xenopus</italic> S3 cells were deconvolved using softWoRx 4.1.0. All images were postprocessed in Photoshop (Adobe) after data analysis for display purposes. Images were cropped and contrast adjusted. No changes to image &#x003b3; were performed.</p>
+      </sec>
+      <sec>
+        <title>Quantification of myc&#x02013;CENP-A loading percentage</title>
+        <p>To quantify the proportion of centromeres that had loaded myc&#x02013;CENP-A, we fit a Gaussian distribution to a histogram of the background subtracted per pixel intensity values at every centromere in the no-HJURP condition (best fit parameters: mean = 21.8, standard deviation = 52.39, and R<sup>2</sup> = 0.99). We then chose a cutoff for myc&#x02013;CENP-A loading as the background-subtracted intensity value, in which the cumulative distribution function of the fitted Gaussian was equal to 0.992 (corresponding to a false positive rate of 1 in 125). For each condition and each experiment, we totaled the number of centromeres whose intensity was above this cutoff and divided by the total number of centromeres counted in that condition and experiment to determine the proportion of centromeres loading myc&#x02013;CENP-A. At least 250 centromeres were counted in each condition in each experiment.</p>
+      </sec>
+      <sec>
+        <title>Image analysis</title>
+        <p>An automated image analysis was performed using custom-written software in C++. Source code and documentation for all programs used in this study are available under the Mozilla Public License as previously described (<xref ref-type="bibr" rid="bib23">Fuller and Straight, 2010</xref>). The analysis code consists of four steps: image normalization, centromere finding, cell clustering, and image quantification.</p>
+        <p>In brief, images were normalized by median filtering the image and then dividing the original image by the filtered intensity value. Centromeres were found using Otsu&#x02019;s thresholding method (<xref ref-type="bibr" rid="bib42">Otsu, 1979</xref>) modified to recursively divide regions larger than centromeres (<xref ref-type="bibr" rid="bib57">Xiong et al., 2006</xref>) and then size filtered to remove objects much larger or smaller than centromeres. Centromeres were grouped into cells using Gaussian mixture model clustering (<xref ref-type="bibr" rid="bib38">McLachlan and Basford, 1988</xref>). The initial guess for clustering the image was made by first heavily Gaussian blurring the image, thresholding the image for nonzero pixel intensities, and using the resulting regions as a first cluster approximation. These initial clusters were then refined by randomly subdividing the image and then iteratively Gaussian mixture model clustering until no new successful
+          subdivisions were made. Centromere intensities were then quantified in the original image, and the mean over the entire image was calculated. The images were manually examined to exclude misidentified centromeres, but the automated analysis was accurate enough that the manual examination did not measurably change the results. The validity of the segmentation method was verified by manual analysis of a subset of images (in which centromeres were identified by drawing circles around them). No significant difference between the two methods could be detected.</p>
+      </sec>
+      <sec>
+        <title>Online supplemental material</title>
+        <p>Fig. S1 characterizes the properties of xHJURP-mediated CENP-A assembly in the <italic>Xenopus</italic> egg extract. Fig. S2 shows the localization of xHJURP to interphase centromeres and its ability to stimulate myc&#x02013;CENP-A assembly. Fig. S3 shows xHJURP&#x02019;s ability to promote the assembly of the endogenous CENP-A present in extract. Fig. S4 characterizes the cell cycle requirements for CENP-A assembly. Fig. S5 provides additional characterization of M18BP1. Online supplemental material is available at <ext-link ext-link-type="uri" xlink:href="http://www.jcb.org/cgi/content/full/jcb.201106079/DC1">http://www.jcb.org/cgi/content/full/jcb.201106079/DC1</ext-link>.</p>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>The authors would like to thank the Straight Laboratory members for support and helpful comments and James E. Ferrell for reagents.</p>
+      <p>B. Moree was supported by T32GM007276, C.B. Meyer was supported by grants from the National Science Foundation and the National Defense Science and Engineering Graduate Fellowship Program, and C.J. Fuller was supported by a Stanford Graduate Fellowship. This work was supported by National Institutes of Health R01GM074728 to A.F. Straight.</p>
+    </ack>
+    <fn-group>
+      <fn>
+        <p><def-list>
+            <title>Abbreviations used in this paper:</title>
+            <def-item>
+              <term>CCAN</term>
+              <def>
+                <p>constitutive centromere-associated network</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>CSF</term>
+              <def>
+                <p>cytostatic factor</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>hHJURP</term>
+              <def>
+                <p>human HJURP</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>IVT</term>
+              <def>
+                <p>in vitro transcription/translation</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>MCS</term>
+              <def>
+                <p>multiple cloning site</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>MNase</term>
+              <def>
+                <p>micrococcal nuclease</p>
+              </def>
+            </def-item>
+            <def-item>
+              <term>xHJURP</term>
+              <def>
+                <p><italic>Xenopus</italic> HJURP</p>
+              </def>
+            </def-item>
+          </def-list></p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref id="bib1">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Allshire</surname>
+              <given-names>R.C.</given-names>
+            </name><name>
+              <surname>Karpen</surname>
+              <given-names>G.H.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>Epigenetic regulation of centromeric chromatin: old dogs, new tricks?</article-title>
+          <source>Nat. Rev. Genet.</source>
+          <volume>9</volume>:<fpage>923</fpage>&#x02013;<lpage>937</lpage>
+          <pub-id pub-id-type="doi">10.1038/nrg2466</pub-id><pub-id pub-id-type="pmid">19002142</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib2">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Amano</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Suzuki</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Hori</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Backer</surname>
+              <given-names>C.</given-names>
+            </name><name>
+              <surname>Okawa</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Cheeseman</surname>
+              <given-names>I.M.</given-names>
+            </name><name>
+              <surname>Fukagawa</surname>
+              <given-names>T.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>The CENP-S complex is essential for the stable assembly of outer kinetochore structure</article-title>. <source>J. Cell Biol.</source>
+          <volume>186</volume>:<fpage>173</fpage>&#x02013;<lpage>182</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200903100</pub-id><pub-id pub-id-type="pmid">19620631</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib3">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Barnhart</surname>
+              <given-names>M.C.</given-names>
+            </name><name>
+              <surname>Kuich</surname>
+              <given-names>P.H.</given-names>
+            </name><name>
+              <surname>Stellfox</surname>
+              <given-names>M.E.</given-names>
+            </name><name>
+              <surname>Ward</surname>
+              <given-names>J.A.</given-names>
+            </name><name>
+              <surname>Bassett</surname>
+              <given-names>E.A.</given-names>
+            </name><name>
+              <surname>Black</surname>
+              <given-names>B.E.</given-names>
+            </name><name>
+              <surname>Foltz</surname>
+              <given-names>D.R.</given-names>
+            </name></person-group>
+          <year>2011</year>
+          <article-title>HJURP is a CENP-A chromatin assembly factor sufficient to form a functional de novo kinetochore</article-title>. <source>J. Cell Biol.</source>
+          <volume>194</volume>:<fpage>229</fpage>&#x02013;<lpage>243</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.201012017</pub-id><pub-id pub-id-type="pmid">21768289</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib4">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Barry</surname>
+              <given-names>A.E.</given-names>
+            </name><name>
+              <surname>Howman</surname>
+              <given-names>E.V.</given-names>
+            </name><name>
+              <surname>Cancilla</surname>
+              <given-names>M.R.</given-names>
+            </name><name>
+              <surname>Saffery</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>Choo</surname>
+              <given-names>K.H.</given-names>
+            </name></person-group>
+          <year>1999</year>
+          <article-title>Sequence analysis of an 80 kb human neocentromere</article-title>. <source>Hum. Mol. Genet.</source>
+          <volume>8</volume>:<fpage>217</fpage>&#x02013;<lpage>227</lpage>
+          <pub-id pub-id-type="doi">10.1093/hmg/8.2.217</pub-id><pub-id pub-id-type="pmid">9931329</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib5">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Bernad</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>S&#x000e1;nchez</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Rivera</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Rodr&#x000ed;guez-Corsino</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Boyarchuk</surname>
+              <given-names>E.</given-names>
+            </name><name>
+              <surname>Vassias</surname>
+              <given-names>I.</given-names>
+            </name><name>
+              <surname>Ray-Gallet</surname>
+              <given-names>D.</given-names>
+            </name><name>
+              <surname>Arnaoutov</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Dasso</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Almouzni</surname>
+              <given-names>G.</given-names>
+            </name><name>
+              <surname>Losada</surname>
+              <given-names>A.</given-names>
+            </name></person-group>
+          <year>2011</year>
+          <article-title><italic>Xenopus</italic> HJURP and condensin II are required for CENP-A assembly</article-title>. <source>J. Cell Biol.</source>
+          <volume>192</volume>:<fpage>569</fpage>&#x02013;<lpage>582</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.201005136</pub-id><pub-id pub-id-type="pmid">21321101</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib6">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Camahort</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>Li</surname>
+              <given-names>B.</given-names>
+            </name><name>
+              <surname>Florens</surname>
+              <given-names>L.</given-names>
+            </name><name>
+              <surname>Swanson</surname>
+              <given-names>S.K.</given-names>
+            </name><name>
+              <surname>Washburn</surname>
+              <given-names>M.P.</given-names>
+            </name><name>
+              <surname>Gerton</surname>
+              <given-names>J.L.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Scm3 is essential to recruit the histone h3 variant cse4 to centromeres and to maintain a functional kinetochore</article-title>. <source>Mol. Cell.</source>
+          <volume>26</volume>:<fpage>853</fpage>&#x02013;<lpage>865</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molcel.2007.05.013</pub-id><pub-id pub-id-type="pmid">17569568</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib7">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Carroll</surname>
+              <given-names>C.W.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2006</year>
+          <article-title>Centromere formation: from epigenetics to self-assembly</article-title>. <source>Trends Cell Biol.</source>
+          <volume>16</volume>:<fpage>70</fpage>&#x02013;<lpage>78</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.tcb.2005.12.008</pub-id><pub-id pub-id-type="pmid">16412639</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib8">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Carroll</surname>
+              <given-names>C.W.</given-names>
+            </name><name>
+              <surname>Silva</surname>
+              <given-names>M.C.</given-names>
+            </name><name>
+              <surname>Godek</surname>
+              <given-names>K.M.</given-names>
+            </name><name>
+              <surname>Jansen</surname>
+              <given-names>L.E.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Centromere assembly requires the direct recognition of CENP-A nucleosomes by CENP-N</article-title>. <source>Nat. Cell Biol.</source>
+          <volume>11</volume>:<fpage>896</fpage>&#x02013;<lpage>902</lpage>
+          <pub-id pub-id-type="doi">10.1038/ncb1899</pub-id><pub-id pub-id-type="pmid">19543270</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib9">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Carroll</surname>
+              <given-names>C.W.</given-names>
+            </name><name>
+              <surname>Milks</surname>
+              <given-names>K.J.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2010</year>
+          <article-title>Dual recognition of CENP-A nucleosomes is required for centromere assembly</article-title>. <source>J. Cell Biol.</source>
+          <volume>189</volume>:<fpage>1143</fpage>&#x02013;<lpage>1155</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.201001013</pub-id><pub-id pub-id-type="pmid">20566683</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib10">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Cheeseman</surname>
+              <given-names>I.M.</given-names>
+            </name><name>
+              <surname>Desai</surname>
+              <given-names>A.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>Molecular architecture of the kinetochore-microtubule interface</article-title>. <source>Nat. Rev. Mol. Cell Biol.</source>
+          <volume>9</volume>:<fpage>33</fpage>&#x02013;<lpage>46</lpage>
+          <pub-id pub-id-type="doi">10.1038/nrm2310</pub-id><pub-id pub-id-type="pmid">18097444</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib11">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Cheeseman</surname>
+              <given-names>I.M.</given-names>
+            </name><name>
+              <surname>Hori</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Fukagawa</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Desai</surname>
+              <given-names>A.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>KNL1 and the CENP-H/I/K complex coordinately direct kinetochore assembly in vertebrates</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>19</volume>:<fpage>587</fpage>&#x02013;<lpage>594</lpage>
+          <pub-id pub-id-type="doi">10.1091/mbc.E07-10-1051</pub-id><pub-id pub-id-type="pmid">18045986</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib12">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Chen</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Baker</surname>
+              <given-names>R.E.</given-names>
+            </name><name>
+              <surname>Keith</surname>
+              <given-names>K.C.</given-names>
+            </name><name>
+              <surname>Harris</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Stoler</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Fitzgerald-Hayes</surname>
+              <given-names>M.</given-names>
+            </name></person-group>
+          <year>2000</year>
+          <article-title>The N terminus of the centromere H3-like protein Cse4p performs an essential function distinct from that of the histone fold domain</article-title>. <source>Mol. Cell. Biol.</source>
+          <volume>20</volume>:<fpage>7037</fpage>&#x02013;<lpage>7048</lpage>
+          <pub-id pub-id-type="doi">10.1128/MCB.20.18.7037-7048.2000</pub-id><pub-id pub-id-type="pmid">10958698</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib13">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Cleveland</surname>
+              <given-names>D.W.</given-names>
+            </name><name>
+              <surname>Mao</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Sullivan</surname>
+              <given-names>K.F.</given-names>
+            </name></person-group>
+          <year>2003</year>
+          <article-title>Centromeres and kinetochores: from epigenetics to mitotic checkpoint signaling</article-title>. <source>Cell.</source>
+          <volume>112</volume>:<fpage>407</fpage>&#x02013;<lpage>421</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0092-8674(03)00115-6</pub-id><pub-id pub-id-type="pmid">12600307</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib14">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Cohen</surname>
+              <given-names>R.L.</given-names>
+            </name><name>
+              <surname>Espelin</surname>
+              <given-names>C.W.</given-names>
+            </name><name>
+              <surname>De Wulf</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Sorger</surname>
+              <given-names>P.K.</given-names>
+            </name><name>
+              <surname>Harrison</surname>
+              <given-names>S.C.</given-names>
+            </name><name>
+              <surname>Simons</surname>
+              <given-names>K.T.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>Structural and functional dissection of Mif2p, a conserved DNA-binding kinetochore protein</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>19</volume>:<fpage>4480</fpage>&#x02013;<lpage>4491</lpage>
+          <pub-id pub-id-type="doi">10.1091/mbc.E08-03-0297</pub-id><pub-id pub-id-type="pmid">18701705</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib15">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Desai</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Deacon</surname>
+              <given-names>H.W.</given-names>
+            </name><name>
+              <surname>Walczak</surname>
+              <given-names>C.E.</given-names>
+            </name><name>
+              <surname>Mitchison</surname>
+              <given-names>T.J.</given-names>
+            </name></person-group>
+          <year>1997</year>
+          <article-title>A method that allows the assembly of kinetochore components onto chromosomes condensed in clarified <italic>Xenopus</italic> egg extracts</article-title>. <source>Proc. Natl. Acad. Sci. USA.</source>
+          <volume>94</volume>:<fpage>12378</fpage>&#x02013;<lpage>12383</lpage>
+          <pub-id pub-id-type="doi">10.1073/pnas.94.23.12378</pub-id><pub-id pub-id-type="pmid">9356457</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib16">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Desai</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Murray</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Mitchison</surname>
+              <given-names>T.J.</given-names>
+            </name><name>
+              <surname>Walczak</surname>
+              <given-names>C.E.</given-names>
+            </name></person-group>
+          <year>1999</year>
+          <article-title>The use of <italic>Xenopus</italic> egg extracts to study mitotic spindle assembly and function in vitro</article-title>. <source>Methods Cell Biol.</source>
+          <volume>61</volume>:<fpage>385</fpage>&#x02013;<lpage>412</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0091-679X(08)61991-3</pub-id><pub-id pub-id-type="pmid">9891325</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib17">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Dunleavy</surname>
+              <given-names>E.M.</given-names>
+            </name><name>
+              <surname>Roche</surname>
+              <given-names>D.</given-names>
+            </name><name>
+              <surname>Tagami</surname>
+              <given-names>H.</given-names>
+            </name><name>
+              <surname>Lacoste</surname>
+              <given-names>N.</given-names>
+            </name><name>
+              <surname>Ray-Gallet</surname>
+              <given-names>D.</given-names>
+            </name><name>
+              <surname>Nakamura</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Daigo</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Nakatani</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Almouzni-Pettinotti</surname>
+              <given-names>G.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>HJURP is a cell-cycle-dependent maintenance and deposition factor of CENP-A at centromeres</article-title>. <source>Cell.</source>
+          <volume>137</volume>:<fpage>485</fpage>&#x02013;<lpage>497</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2009.02.040</pub-id><pub-id pub-id-type="pmid">19410545</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib18">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Erhardt</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Mellone</surname>
+              <given-names>B.G.</given-names>
+            </name><name>
+              <surname>Betts</surname>
+              <given-names>C.M.</given-names>
+            </name><name>
+              <surname>Zhang</surname>
+              <given-names>W.</given-names>
+            </name><name>
+              <surname>Karpen</surname>
+              <given-names>G.H.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>Genome-wide analysis reveals a cell cycle&#x02013;dependent mechanism controlling centromere propagation</article-title>. <source>J. Cell Biol.</source>
+          <volume>183</volume>:<fpage>805</fpage>&#x02013;<lpage>818</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200806038</pub-id><pub-id pub-id-type="pmid">19047461</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib19">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Foltz</surname>
+              <given-names>D.R.</given-names>
+            </name><name>
+              <surname>Jansen</surname>
+              <given-names>L.E.</given-names>
+            </name><name>
+              <surname>Black</surname>
+              <given-names>B.E.</given-names>
+            </name><name>
+              <surname>Bailey</surname>
+              <given-names>A.O.</given-names>
+            </name><name>
+              <surname>Yates</surname>
+              <given-names>J.R.</given-names>
+              <suffix>III</suffix>
+            </name><name>
+              <surname>Cleveland</surname>
+              <given-names>D.W.</given-names>
+            </name></person-group>
+          <year>2006</year>
+          <article-title>The human CENP-A centromeric nucleosome-associated complex</article-title>. <source>Nat. Cell Biol.</source>
+          <volume>8</volume>:<fpage>458</fpage>&#x02013;<lpage>469</lpage>
+          <pub-id pub-id-type="doi">10.1038/ncb1397</pub-id><pub-id pub-id-type="pmid">16622419</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib20">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Foltz</surname>
+              <given-names>D.R.</given-names>
+            </name><name>
+              <surname>Jansen</surname>
+              <given-names>L.E.</given-names>
+            </name><name>
+              <surname>Bailey</surname>
+              <given-names>A.O.</given-names>
+            </name><name>
+              <surname>Yates</surname>
+              <given-names>J.R.</given-names>
+              <suffix>III</suffix>
+            </name><name>
+              <surname>Bassett</surname>
+              <given-names>E.A.</given-names>
+            </name><name>
+              <surname>Wood</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Black</surname>
+              <given-names>B.E.</given-names>
+            </name><name>
+              <surname>Cleveland</surname>
+              <given-names>D.W.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Centromere-specific assembly of CENP-a nucleosomes is mediated by HJURP</article-title>. <source>Cell.</source>
+          <volume>137</volume>:<fpage>472</fpage>&#x02013;<lpage>484</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2009.02.039</pub-id><pub-id pub-id-type="pmid">19410544</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib21">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Fujita</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Hayashi</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Kiyomitsu</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Toyoda</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Kokubu</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Obuse</surname>
+              <given-names>C.</given-names>
+            </name><name>
+              <surname>Yanagida</surname>
+              <given-names>M.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Priming of centromere for CENP-A recruitment by human hMis18alpha, hMis18beta, and M18BP1</article-title>. <source>Dev. Cell.</source>
+          <volume>12</volume>:<fpage>17</fpage>&#x02013;<lpage>30</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.devcel.2006.11.002</pub-id><pub-id pub-id-type="pmid">17199038</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib22">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Fukagawa</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Regnier</surname>
+              <given-names>V.</given-names>
+            </name><name>
+              <surname>Ikemura</surname>
+              <given-names>T.</given-names>
+            </name></person-group>
+          <year>2001</year>
+          <article-title>Creation and characterization of temperature-sensitive CENP-C mutants in vertebrate cells</article-title>. <source>Nucleic Acids Res.</source>
+          <volume>29</volume>:<fpage>3796</fpage>&#x02013;<lpage>3803</lpage>
+          <pub-id pub-id-type="doi">10.1093/nar/29.18.3796</pub-id><pub-id pub-id-type="pmid">11557811</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib23">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Fuller</surname>
+              <given-names>C.J.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2010</year>
+          <article-title>Image analysis benchmarking methods for high-content screen design</article-title>. <source>J. Microsc.</source>
+          <volume>238</volume>:<fpage>145</fpage>&#x02013;<lpage>161</lpage>
+          <pub-id pub-id-type="doi">10.1111/j.1365-2818.2009.03337.x</pub-id><pub-id pub-id-type="pmid">20529062</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib24">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Furuyama</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Dalal</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Henikoff</surname>
+              <given-names>S.</given-names>
+            </name></person-group>
+          <year>2006</year>
+          <article-title>Chaperone-mediated assembly of centromeric chromatin in vitro</article-title>. <source>Proc. Natl. Acad. Sci. USA.</source>
+          <volume>103</volume>:<fpage>6172</fpage>&#x02013;<lpage>6177</lpage>
+          <pub-id pub-id-type="doi">10.1073/pnas.0601686103</pub-id><pub-id pub-id-type="pmid">16601098</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib25">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Gascoigne</surname>
+              <given-names>K.E.</given-names>
+            </name><name>
+              <surname>Takeuchi</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Suzuki</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Hori</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Fukagawa</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Cheeseman</surname>
+              <given-names>I.M.</given-names>
+            </name></person-group>
+          <year>2011</year>
+          <article-title>Induced ectopic kinetochore assembly bypasses the requirement for CENP-A nucleosomes</article-title>. <source>Cell.</source>
+          <volume>145</volume>:<fpage>410</fpage>&#x02013;<lpage>422</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2011.03.031</pub-id><pub-id pub-id-type="pmid">21529714</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib26">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Goshima</surname>
+              <given-names>G.</given-names>
+            </name><name>
+              <surname>Wollman</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>Goodwin</surname>
+              <given-names>S.S.</given-names>
+            </name><name>
+              <surname>Zhang</surname>
+              <given-names>N.</given-names>
+            </name><name>
+              <surname>Scholey</surname>
+              <given-names>J.M.</given-names>
+            </name><name>
+              <surname>Vale</surname>
+              <given-names>R.D.</given-names>
+            </name><name>
+              <surname>Stuurman</surname>
+              <given-names>N.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Genes required for mitotic spindle assembly in <italic>Drosophila</italic> S2 cells</article-title>. <source>Science.</source>
+          <volume>316</volume>:<fpage>417</fpage>&#x02013;<lpage>421</lpage>
+          <pub-id pub-id-type="doi">10.1126/science.1141314</pub-id><pub-id pub-id-type="pmid">17412918</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib27">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Hayashi</surname>
+              <given-names>C.</given-names>
+            </name><name>
+              <surname>Ono</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Doi</surname>
+              <given-names>N.</given-names>
+            </name><name>
+              <surname>Kitamura</surname>
+              <given-names>F.</given-names>
+            </name><name>
+              <surname>Tagami</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Mineki</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>Arai</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Taguchi</surname>
+              <given-names>H.</given-names>
+            </name><name>
+              <surname>Yanagida</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Hirner</surname>
+              <given-names>S.</given-names>
+            </name><etal/></person-group>
+          <year>2008</year>
+          <article-title>Multiple molecular interactions implicate the connectin/titin N2A region as a modulating scaffold for p94/calpain 3 activity in skeletal muscle</article-title>. <source>J. Biol. Chem.</source>
+          <volume>283</volume>:<fpage>14801</fpage>&#x02013;<lpage>14814</lpage>
+          <pub-id pub-id-type="doi">10.1074/jbc.M708262200</pub-id><pub-id pub-id-type="pmid">18310072</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib28">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Hayashi</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Fujita</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Iwasaki</surname>
+              <given-names>O.</given-names>
+            </name><name>
+              <surname>Adachi</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>Takahashi</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Yanagida</surname>
+              <given-names>M.</given-names>
+            </name></person-group>
+          <year>2004</year>
+          <article-title>Mis16 and Mis18 are required for CENP-A loading and histone deacetylation at centromeres</article-title>. <source>Cell.</source>
+          <volume>118</volume>:<fpage>715</fpage>&#x02013;<lpage>729</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2004.09.002</pub-id><pub-id pub-id-type="pmid">15369671</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib29">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Heeger</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Leismann</surname>
+              <given-names>O.</given-names>
+            </name><name>
+              <surname>Schittenhelm</surname>
+              <given-names>R.</given-names>
+            </name><name>
+              <surname>Schraidt</surname>
+              <given-names>O.</given-names>
+            </name><name>
+              <surname>Heidmann</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Lehner</surname>
+              <given-names>C.F.</given-names>
+            </name></person-group>
+          <year>2005</year>
+          <article-title>Genetic interactions of separase regulatory subunits reveal the diverged <italic>Drosophila</italic> Cenp-C homolog</article-title>. <source>Genes Dev.</source>
+          <volume>19</volume>:<fpage>2041</fpage>&#x02013;<lpage>2053</lpage>
+          <pub-id pub-id-type="doi">10.1101/gad.347805</pub-id><pub-id pub-id-type="pmid">16140985</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib30">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Hemmerich</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Weidtkamp-Peters</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Hoischen</surname>
+              <given-names>C.</given-names>
+            </name><name>
+              <surname>Schmiedeberg</surname>
+              <given-names>L.</given-names>
+            </name><name>
+              <surname>Erliandri</surname>
+              <given-names>I.</given-names>
+            </name><name>
+              <surname>Diekmann</surname>
+              <given-names>S.</given-names>
+            </name></person-group>
+          <year>2008</year>
+          <article-title>Dynamics of inner kinetochore assembly and maintenance in living cells</article-title>. <source>J. Cell Biol.</source>
+          <volume>180</volume>:<fpage>1101</fpage>&#x02013;<lpage>1114</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200710052</pub-id><pub-id pub-id-type="pmid">18347072</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib31">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Hori</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Amano</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Suzuki</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Backer</surname>
+              <given-names>C.B.</given-names>
+            </name><name>
+              <surname>Welburn</surname>
+              <given-names>J.P.</given-names>
+            </name><name>
+              <surname>Dong</surname>
+              <given-names>Y.</given-names>
+            </name><name>
+              <surname>McEwen</surname>
+              <given-names>B.F.</given-names>
+            </name><name>
+              <surname>Shang</surname>
+              <given-names>W.H.</given-names>
+            </name><name>
+              <surname>Suzuki</surname>
+              <given-names>E.</given-names>
+            </name><name>
+              <surname>Okawa</surname>
+              <given-names>K.</given-names>
+            </name><etal/></person-group>
+          <year>2008</year>
+          <article-title>CCAN makes multiple contacts with centromeric DNA to provide distinct pathways to the outer kinetochore</article-title>. <source>Cell.</source>
+          <volume>135</volume>:<fpage>1039</fpage>&#x02013;<lpage>1052</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2008.10.019</pub-id><pub-id pub-id-type="pmid">19070575</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib32">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Jansen</surname>
+              <given-names>L.E.</given-names>
+            </name><name>
+              <surname>Black</surname>
+              <given-names>B.E.</given-names>
+            </name><name>
+              <surname>Foltz</surname>
+              <given-names>D.R.</given-names>
+            </name><name>
+              <surname>Cleveland</surname>
+              <given-names>D.W.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Propagation of centromeric chromatin requires exit from mitosis</article-title>. <source>J. Cell Biol.</source>
+          <volume>176</volume>:<fpage>795</fpage>&#x02013;<lpage>805</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200701066</pub-id><pub-id pub-id-type="pmid">17339380</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib33">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Kwon</surname>
+              <given-names>M.S.</given-names>
+            </name><name>
+              <surname>Hori</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Okada</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Fukagawa</surname>
+              <given-names>T.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>CENP-C is involved in chromosome segregation, mitotic checkpoint function, and kinetochore assembly</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>18</volume>:<fpage>2155</fpage>&#x02013;<lpage>2168</lpage>
+          <pub-id pub-id-type="doi">10.1091/mbc.E07-01-0045</pub-id><pub-id pub-id-type="pmid">17392512</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib34">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Lagana</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Dorn</surname>
+              <given-names>J.F.</given-names>
+            </name><name>
+              <surname>De Rop</surname>
+              <given-names>V.</given-names>
+            </name><name>
+              <surname>Ladouceur</surname>
+              <given-names>A.M.</given-names>
+            </name><name>
+              <surname>Maddox</surname>
+              <given-names>A.S.</given-names>
+            </name><name>
+              <surname>Maddox</surname>
+              <given-names>P.S.</given-names>
+            </name></person-group>
+          <year>2010</year>
+          <article-title>A small GTPase molecular switch regulates epigenetic centromere maintenance by stabilizing newly incorporated CENP-A</article-title>. <source>Nat. Cell Biol.</source>
+          <volume>12</volume>:<fpage>1186</fpage>&#x02013;<lpage>1193</lpage>
+          <pub-id pub-id-type="doi">10.1038/ncb2129</pub-id><pub-id pub-id-type="pmid">21102442</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib35">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Maddox</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Coughlin</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Mitchison</surname>
+              <given-names>T.J.</given-names>
+            </name><name>
+              <surname>Salmon</surname>
+              <given-names>E.D.</given-names>
+            </name></person-group>
+          <year>2003</year>
+          <article-title>Direct observation of microtubule dynamics at kinetochores in <italic>Xenopus</italic> extract spindles: implications for spindle mechanics</article-title>. <source>J. Cell Biol.</source>
+          <volume>162</volume>:<fpage>377</fpage>&#x02013;<lpage>382</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200301088</pub-id><pub-id pub-id-type="pmid">12900391</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib36">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Maddox</surname>
+              <given-names>P.S.</given-names>
+            </name><name>
+              <surname>Hyndman</surname>
+              <given-names>F.</given-names>
+            </name><name>
+              <surname>Monen</surname>
+              <given-names>J.</given-names>
+            </name><name>
+              <surname>Oegema</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Desai</surname>
+              <given-names>A.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Functional genomics identifies a Myb domain&#x02013;containing protein family required for assembly of CENP-A chromatin</article-title>. <source>J. Cell Biol.</source>
+          <volume>176</volume>:<fpage>757</fpage>&#x02013;<lpage>763</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.200701065</pub-id><pub-id pub-id-type="pmid">17339379</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib37">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>McClelland</surname>
+              <given-names>S.E.</given-names>
+            </name><name>
+              <surname>Borusu</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Amaro</surname>
+              <given-names>A.C.</given-names>
+            </name><name>
+              <surname>Winter</surname>
+              <given-names>J.R.</given-names>
+            </name><name>
+              <surname>Belwal</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>McAinsh</surname>
+              <given-names>A.D.</given-names>
+            </name><name>
+              <surname>Meraldi</surname>
+              <given-names>P.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>The CENP-A NAC/CAD kinetochore complex controls chromosome congression and spindle bipolarity</article-title>. <source>EMBO J.</source>
+          <volume>26</volume>:<fpage>5033</fpage>&#x02013;<lpage>5047</lpage>
+          <pub-id pub-id-type="doi">10.1038/sj.emboj.7601927</pub-id><pub-id pub-id-type="pmid">18007590</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib38">
+        <mixed-citation publication-type="book"><person-group person-group-type="author"><name>
+              <surname>McLachlan</surname>
+              <given-names>G.J.</given-names>
+            </name><name>
+              <surname>Basford</surname>
+              <given-names>K.E.</given-names>
+            </name></person-group>
+          <year>1988</year>
+          <article-title>Mixture Models: Inference and Applications to Clustering</article-title>. <person-group person-group-type="editor"><name>
+              <surname>Dekker</surname>
+              <given-names>M.</given-names>
+            </name></person-group>, <publisher-loc>New York</publisher-loc>
+          <comment>253 pp</comment></mixed-citation>
+      </ref>
+      <ref id="bib39">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Meluh</surname>
+              <given-names>P.B.</given-names>
+            </name><name>
+              <surname>Koshland</surname>
+              <given-names>D.</given-names>
+            </name></person-group>
+          <year>1995</year>
+          <article-title>Evidence that the MIF2 gene of <italic>Saccharomyces cerevisiae</italic> encodes a centromere protein with homology to the mammalian centromere protein CENP-C</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>6</volume>:<fpage>793</fpage>&#x02013;<lpage>807</lpage><pub-id pub-id-type="pmid">7579695</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib40">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Milks</surname>
+              <given-names>K.J.</given-names>
+            </name><name>
+              <surname>Moree</surname>
+              <given-names>B.</given-names>
+            </name><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Dissection of CENP-C-directed centromere and kinetochore assembly</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>20</volume>:<fpage>4246</fpage>&#x02013;<lpage>4255</lpage>
+          <pub-id pub-id-type="doi">10.1091/mbc.E09-05-0378</pub-id><pub-id pub-id-type="pmid">19641019</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib41">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Mizuguchi</surname>
+              <given-names>G.</given-names>
+            </name><name>
+              <surname>Xiao</surname>
+              <given-names>H.</given-names>
+            </name><name>
+              <surname>Wisniewski</surname>
+              <given-names>J.</given-names>
+            </name><name>
+              <surname>Smith</surname>
+              <given-names>M.M.</given-names>
+            </name><name>
+              <surname>Wu</surname>
+              <given-names>C.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Nonhistone Scm3 and histones CenH3-H4 assemble the core of centromere-specific nucleosomes</article-title>. <source>Cell.</source>
+          <volume>129</volume>:<fpage>1153</fpage>&#x02013;<lpage>1164</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2007.04.026</pub-id><pub-id pub-id-type="pmid">17574026</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib42">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Otsu</surname>
+              <given-names>N.</given-names>
+            </name></person-group>
+          <year>1979</year>
+          <article-title>Threshold selection method from gray-level histograms</article-title>. <source>IEEE Trans. Syst. Man Cybern.</source>
+          <volume>9</volume>:<fpage>62</fpage>&#x02013;<lpage>66</lpage>
+          <pub-id pub-id-type="doi">10.1109/TSMC.1979.4310076</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib43">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Palmer</surname>
+              <given-names>D.K.</given-names>
+            </name><name>
+              <surname>O&#x02019;Day</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Wener</surname>
+              <given-names>M.H.</given-names>
+            </name><name>
+              <surname>Andrews</surname>
+              <given-names>B.S.</given-names>
+            </name><name>
+              <surname>Margolis</surname>
+              <given-names>R.L.</given-names>
+            </name></person-group>
+          <year>1987</year>
+          <article-title>A 17-kD centromere protein (CENP-A) copurifies with nucleosome core particles and with histones</article-title>. <source>J. Cell Biol.</source>
+          <volume>104</volume>:<fpage>805</fpage>&#x02013;<lpage>815</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.104.4.805</pub-id><pub-id pub-id-type="pmid">3558482</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib44">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Palmer</surname>
+              <given-names>D.K.</given-names>
+            </name><name>
+              <surname>O&#x02019;Day</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Trong</surname>
+              <given-names>H.L.</given-names>
+            </name><name>
+              <surname>Charbonneau</surname>
+              <given-names>H.</given-names>
+            </name><name>
+              <surname>Margolis</surname>
+              <given-names>R.L.</given-names>
+            </name></person-group>
+          <year>1991</year>
+          <article-title>Purification of the centromere-specific protein CENP-A and demonstration that it is a distinctive histone</article-title>. <source>Proc. Natl. Acad. Sci. USA.</source>
+          <volume>88</volume>:<fpage>3734</fpage>&#x02013;<lpage>3738</lpage>
+          <pub-id pub-id-type="doi">10.1073/pnas.88.9.3734</pub-id><pub-id pub-id-type="pmid">2023923</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib45">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Pidoux</surname>
+              <given-names>A.L.</given-names>
+            </name><name>
+              <surname>Choi</surname>
+              <given-names>E.S.</given-names>
+            </name><name>
+              <surname>Abbott</surname>
+              <given-names>J.K.</given-names>
+            </name><name>
+              <surname>Liu</surname>
+              <given-names>X.</given-names>
+            </name><name>
+              <surname>Kagansky</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Castillo</surname>
+              <given-names>A.G.</given-names>
+            </name><name>
+              <surname>Hamilton</surname>
+              <given-names>G.L.</given-names>
+            </name><name>
+              <surname>Richardson</surname>
+              <given-names>W.</given-names>
+            </name><name>
+              <surname>Rappsilber</surname>
+              <given-names>J.</given-names>
+            </name><name>
+              <surname>He</surname>
+              <given-names>X.</given-names>
+            </name><name>
+              <surname>Allshire</surname>
+              <given-names>R.C.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Fission yeast Scm3: A CENP-A receptor required for integrity of subkinetochore chromatin</article-title>. <source>Mol. Cell.</source>
+          <volume>33</volume>:<fpage>299</fpage>&#x02013;<lpage>311</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molcel.2009.01.019</pub-id><pub-id pub-id-type="pmid">19217404</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib46">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Rieder</surname>
+              <given-names>C.L.</given-names>
+            </name><name>
+              <surname>Salmon</surname>
+              <given-names>E.D.</given-names>
+            </name></person-group>
+          <year>1998</year>
+          <article-title>The vertebrate cell kinetochore and its roles during mitosis</article-title>. <source>Trends Cell Biol.</source>
+          <volume>8</volume>:<fpage>310</fpage>&#x02013;<lpage>318</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0962-8924(98)01299-9</pub-id><pub-id pub-id-type="pmid">9704407</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib47">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Sanchez-Pulido</surname>
+              <given-names>L.</given-names>
+            </name><name>
+              <surname>Pidoux</surname>
+              <given-names>A.L.</given-names>
+            </name><name>
+              <surname>Ponting</surname>
+              <given-names>C.P.</given-names>
+            </name><name>
+              <surname>Allshire</surname>
+              <given-names>R.C.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Common ancestry of the CENP-A chaperones Scm3 and HJURP</article-title>. <source>Cell.</source>
+          <volume>137</volume>:<fpage>1173</fpage>&#x02013;<lpage>1174</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cell.2009.06.010</pub-id><pub-id pub-id-type="pmid">19563746</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib48">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Schuh</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Lehner</surname>
+              <given-names>C.F.</given-names>
+            </name><name>
+              <surname>Heidmann</surname>
+              <given-names>S.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Incorporation of <italic>Drosophila</italic> CID/CENP-A and CENP-C into centromeres during early embryonic anaphase</article-title>. <source>Curr. Biol.</source>
+          <volume>17</volume>:<fpage>237</fpage>&#x02013;<lpage>243</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.cub.2006.11.051</pub-id><pub-id pub-id-type="pmid">17222555</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib49">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Shelby</surname>
+              <given-names>R.D.</given-names>
+            </name><name>
+              <surname>Monier</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Sullivan</surname>
+              <given-names>K.F.</given-names>
+            </name></person-group>
+          <year>2000</year>
+          <article-title>Chromatin assembly at kinetochores is uncoupled from DNA replication</article-title>. <source>J. Cell Biol.</source>
+          <volume>151</volume>:<fpage>1113</fpage>&#x02013;<lpage>1118</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.151.5.1113</pub-id><pub-id pub-id-type="pmid">11086012</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib50">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Silva</surname>
+              <given-names>M.C.</given-names>
+            </name><name>
+              <surname>Jansen</surname>
+              <given-names>L.E.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>At the right place at the right time: novel CENP-A binding proteins shed light on centromere assembly</article-title>. <source>Chromosoma.</source>
+          <volume>118</volume>:<fpage>567</fpage>&#x02013;<lpage>574</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00412-009-0227-3</pub-id><pub-id pub-id-type="pmid">19590885</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib51">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Stoler</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Rogers</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Weitze</surname>
+              <given-names>S.</given-names>
+            </name><name>
+              <surname>Morey</surname>
+              <given-names>L.</given-names>
+            </name><name>
+              <surname>Fitzgerald-Hayes</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Baker</surname>
+              <given-names>R.E.</given-names>
+            </name></person-group>
+          <year>2007</year>
+          <article-title>Scm3, an essential <italic>Saccharomyces cerevisiae</italic> centromere protein required for G2/M progression and Cse4 localization</article-title>. <source>Proc. Natl. Acad. Sci. USA.</source>
+          <volume>104</volume>:<fpage>10571</fpage>&#x02013;<lpage>10576</lpage>
+          <pub-id pub-id-type="doi">10.1073/pnas.0703178104</pub-id><pub-id pub-id-type="pmid">17548816</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib52">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Straight</surname>
+              <given-names>A.F.</given-names>
+            </name><name>
+              <surname>Field</surname>
+              <given-names>C.M.</given-names>
+            </name><name>
+              <surname>Mitchison</surname>
+              <given-names>T.J.</given-names>
+            </name></person-group>
+          <year>2005</year>
+          <article-title>Anillin binds nonmuscle myosin II and regulates the contractile ring</article-title>. <source>Mol. Biol. Cell.</source>
+          <volume>16</volume>:<fpage>193</fpage>&#x02013;<lpage>201</lpage>
+          <pub-id pub-id-type="doi">10.1091/mbc.E04-08-0758</pub-id><pub-id pub-id-type="pmid">15496454</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib53">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Sugimoto</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Kuriyama</surname>
+              <given-names>K.</given-names>
+            </name><name>
+              <surname>Shibata</surname>
+              <given-names>A.</given-names>
+            </name><name>
+              <surname>Himeno</surname>
+              <given-names>M.</given-names>
+            </name></person-group>
+          <year>1997</year>
+          <article-title>Characterization of internal DNA-binding and C-terminal dimerization domains of human centromere/kinetochore autoantigen CENP-C in vitro: role of DNA-binding and self-associating activities in kinetochore organization</article-title>. <source>Chromosome Res.</source>
+          <volume>5</volume>:<fpage>132</fpage>&#x02013;<lpage>141</lpage>
+          <pub-id pub-id-type="doi">10.1023/A:1018422325569</pub-id><pub-id pub-id-type="pmid">9146917</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib54">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Sullivan</surname>
+              <given-names>K.F.</given-names>
+            </name><name>
+              <surname>Hechenberger</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Masri</surname>
+              <given-names>K.</given-names>
+            </name></person-group>
+          <year>1994</year>
+          <article-title>Human CENP-A contains a histone H3 related histone fold domain that is required for targeting to the centromere</article-title>. <source>J. Cell Biol.</source>
+          <volume>127</volume>:<fpage>581</fpage>&#x02013;<lpage>592</lpage>
+          <pub-id pub-id-type="doi">10.1083/jcb.127.3.581</pub-id><pub-id pub-id-type="pmid">7962047</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib55">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Voullaire</surname>
+              <given-names>L.E.</given-names>
+            </name><name>
+              <surname>Slater</surname>
+              <given-names>H.R.</given-names>
+            </name><name>
+              <surname>Petrovic</surname>
+              <given-names>V.</given-names>
+            </name><name>
+              <surname>Choo</surname>
+              <given-names>K.H.</given-names>
+            </name></person-group>
+          <year>1993</year>
+          <article-title>A functional marker centromere with no detectable alpha-satellite, satellite III, or CENP-B protein: activation of a latent centromere?</article-title>
+          <source>Am. J. Hum. Genet.</source>
+          <volume>52</volume>:<fpage>1153</fpage>&#x02013;<lpage>1163</lpage><pub-id pub-id-type="pmid">7684888</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib56">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Williams</surname>
+              <given-names>J.S.</given-names>
+            </name><name>
+              <surname>Hayashi</surname>
+              <given-names>T.</given-names>
+            </name><name>
+              <surname>Yanagida</surname>
+              <given-names>M.</given-names>
+            </name><name>
+              <surname>Russell</surname>
+              <given-names>P.</given-names>
+            </name></person-group>
+          <year>2009</year>
+          <article-title>Fission yeast Scm3 mediates stable assembly of Cnp1/CENP-A into centromeric chromatin</article-title>. <source>Mol. Cell.</source>
+          <volume>33</volume>:<fpage>287</fpage>&#x02013;<lpage>298</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.molcel.2009.01.017</pub-id><pub-id pub-id-type="pmid">19217403</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib57">
+        <mixed-citation publication-type="journal"><person-group person-group-type="author"><name>
+              <surname>Xiong</surname>
+              <given-names>G.</given-names>
+            </name><name>
+              <surname>Zhou</surname>
+              <given-names>X.</given-names>
+            </name><name>
+              <surname>Ji</surname>
+              <given-names>L.</given-names>
+            </name><name>
+              <surname>Bradley</surname>
+              <given-names>P.</given-names>
+            </name><name>
+              <surname>Perrimon</surname>
+              <given-names>N.</given-names>
+            </name><name>
+              <surname>Wong</surname>
+              <given-names>S.</given-names>
+            </name></person-group>
+          <year>2006</year>
+          <article-title>Segmentation of <italic>Drosophila</italic> RNAi fluorescence images using level sets</article-title>. <source>IEEE International Conference on Image Processing.</source>
+          <volume>13</volume>: <fpage>73</fpage>&#x02013;<lpage>76</lpage></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
