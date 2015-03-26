@@ -386,10 +386,7 @@ def authors(soup):
             author['article_doi'] = article_doi
             
             author['position'] = position
-            
-            # Create a unique about tag value to make fom objects function
-            author['about'] = 'author' + '_' + str(position) + '_' + article_doi
-            
+                        
             authors.append(author)
             position += 1
         
@@ -504,10 +501,7 @@ def refs(soup):
             ref['article_doi'] = article_doi
             
             ref['position'] = position
-            
-            # Create a unique about tag value to make fom objects function
-            ref['about'] = 'ref' + '_' + str(position) + '_' + article_doi
-            
+                        
             refs.append(ref)
             position += 1
     
@@ -571,10 +565,7 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            
-            # Use the component DOI as the unique about tag value
-            component['about'] = component['doi_url']
-            
+                        
             components.append(component)
             position += 1
     
