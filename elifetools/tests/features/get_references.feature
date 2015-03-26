@@ -10,10 +10,8 @@ Feature: get references from the document
 
   Examples:
     | document                    | references
-    | NLM3-sample-for-elife.1.xml | 57
-    | NLM3-sample-for-elife.2.xml | 63
-    | elife-sample-jun2012.xml    | 15
-    | elife_pmc_preview_version_17.xml | 103
+    | elife-kitchen-sink.xml      | 103
+    | elife00013.xml              | 105
 
   Scenario Outline: Count the number of references from a particular year
     Given I have the document <document>
@@ -21,10 +19,10 @@ Feature: get references from the document
     Then I get the total number of references as <references>
     
   Examples:
-    | document                    | year | references
-    | NLM3-sample-for-elife.1.xml | 1979 | 1
-    | NLM3-sample-for-elife.2.xml | 1999 | 5
-    | elife-sample-jun2012.xml    | 2008 | 2
+    | document                    | year  | references
+    | elife-kitchen-sink.xml      | 2003  | 5
+    | elife00013.xml              | 1999  | 4
+    | elife00013.xml              | 2004a | 1
     
   Scenario Outline: Count the number of references from a particular journal
     Given I have the document <document>
@@ -32,9 +30,6 @@ Feature: get references from the document
     Then I get the total number of references as <references>
     
   Examples:
-    | document                    | journal           | references
-    | NLM3-sample-for-elife.1.xml | Chromosome Res.   | 1
-    | NLM3-sample-for-elife.2.xml | J. Cell Biol.     | 16
-    | elife-sample-jun2012.xml    | Am J Trop Med Hyg | 2
-    | elife-sample-jun2012.xml    | None              | 2
-
+    | document                    | journal                       | references
+    | elife-kitchen-sink.xml      | Anaerobe                      | 1
+    | elife00013.xml              | Int J Syst Evol Microbiol     | 17

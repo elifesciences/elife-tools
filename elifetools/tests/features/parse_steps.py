@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from lettuce import *
-import parseNLM
+import parseJATS
 import os
 
 test_xml_path = world.basedir + os.sep +  "sample-xml" + os.sep
 
 # Set the default parser for when it is not specified
-pm = parseNLM
+pm = parseJATS
 
 @step('I have the document (\S+)')
 def have_the_document(step, document):
@@ -58,13 +58,17 @@ def i_get_the_total_number_of_references_as(step, number):
     assert world.references_count == number, \
         "Got %d" % world.references_count
 
-@step('I count references from the year (\d+)')
+@step('I count references from the year (\S+)')
 def count_referneces_from_the_year(step, year):
     world.references_count = 0
     references = pm.refs(world.filecontent)
     for ref in references:
         try:
             if int(ref['year']) == int(year):
+                world.references_count += 1
+        except ValueError:
+            # Probably not a number
+            if ref['year'] == year:
                 world.references_count += 1
         except(KeyError):
             continue

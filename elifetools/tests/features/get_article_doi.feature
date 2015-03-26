@@ -10,7 +10,5 @@ Feature: parse the article DOI
 
   Examples:
     | document                          | identifier   
-    | elife-sample-jun2012.xml          | 10.7554/eLife.000536
-    | NLM3-sample-for-elife.1.xml       | 10.1083/jcb.201106079 
-    | NLM3-sample-for-elife.2.xml       | 10.1083/jcb.201106010 
-    | elife_pmc_preview_version_17.xml  | 10.7554/eLife.00013 
+    | elife-kitchen-sink.xml            | 10.7554/eLife.00013
+    | elife00013.xml                    | 10.7554/eLife.00013 
