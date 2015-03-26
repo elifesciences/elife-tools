@@ -251,8 +251,19 @@ def authors(soup):
 
                 aff_node = extract_nodes(soup, "aff", attr = "id", value = rid)
                 country = extract_node_text(aff_node[0], "country")
-                institution = extract_node_text(aff_node[0], "institution")
-                department = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "department")
+                
+                # Institution is the tag with no attribute
+                institutions = extract_nodes(aff_node[0], "institution")
+                for inst in institutions:
+                    try:
+                        if(inst["content-type"] != None):
+                            # A tag attribute found, skip it
+                            pass
+                    except KeyError:
+                        institution = inst.text
+                       
+                # Department tag does have an attribute
+                department = extract_node_text(aff_node[0], "institution", attr = "content-type", value = "dept")
                 city = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "city")
                 
                 # Convert None to empty string if there is more than one affiliation

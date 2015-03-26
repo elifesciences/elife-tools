@@ -38,6 +38,10 @@ def i_see_the_number(step, number):
     assert world.pmid == number, \
         "Got %d" % int(world.pmid)
 
+@step('I get the authors')
+def i_get_the_authors(step):
+    world.authors = pm.authors(world.filecontent)
+
 @step('I count the number of authors')
 def count_the_number_of_authors(step):
     world.authors_count = len(pm.authors(world.filecontent))
@@ -47,6 +51,33 @@ def i_count_the_total_authors_as(step, number):
     number = int(number)
     assert world.authors_count == number, \
         "Got %d" % world.authors_count
+
+@step(u'I see author index (\d+) (\S+) (\d*) as (.*)')
+def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subindex, val):
+    # Turn index to int
+    index = int(index)
+    if subindex != "":
+        subindex = int(subindex)
+    
+    # Allow comparing different types
+    if val == "None":
+        val = None
+    else:
+        # Try to compare integers if it is int
+        try:
+            val = int(val)
+        except ValueError:
+            pass
+    
+    # Get the value from the author
+    if subindex != "":
+        value = world.authors[index][attribute][subindex]
+    else:
+        value = world.authors[index][attribute]
+    
+    
+    assert value == val, \
+        "Got %s" % value
 
 @step('I count the number of references')
 def count_the_number_of_references(step):
