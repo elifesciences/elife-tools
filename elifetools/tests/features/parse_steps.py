@@ -71,10 +71,19 @@ def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subinde
     
     # Get the value from the author
     if subindex != "":
-        value = world.authors[index][attribute][subindex]
+        try:
+            value = world.authors[index][attribute][subindex]
+        except KeyError:
+            value = None
     else:
-        value = world.authors[index][attribute]
-    
+        try:
+            value = world.authors[index][attribute]
+        except KeyError:
+            value = None
+            
+    # Remove new lines for when comparing against kitchen sink XML
+    if type(value) == unicode or type(value) == str:
+        value = value.replace("\n", "")
     
     assert value == val, \
         "Got %s" % value
