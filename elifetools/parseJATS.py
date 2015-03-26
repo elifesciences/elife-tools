@@ -189,10 +189,6 @@ def doi(soup):
             doi = tag.text
     return doi
         
-def pmid(soup):
-    pmid = extract_node_text(soup, "article-id", attr = "pub-id-type", value = "pmid")
-    return pmid
-        
 def authors(soup):
     """Find and return all the authors"""
     tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = "author")
