@@ -127,6 +127,15 @@ def count_the_number_of_references_from_the_journal(step, journal):
             if journal == None:
                 world.references_count += 1
 
+@step(u'I get the URL of the license')
+def i_get_the_url_of_license(step):
+    world.string = pm.license_url(world.filecontent)
+
+@step(u'I get the license')
+def i_get_the_license(step):
+    world.string = pm.license(world.filecontent)
+
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document

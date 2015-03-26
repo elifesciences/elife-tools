@@ -1242,18 +1242,6 @@ def license(soup):
         return None
     return license
 
-def license_type(soup):
-    """
-    Find the license type attribute of the license tag
-    """
-    license_type = None
-    try:
-        license_section = get_license_section(soup)
-        license_type = license_section[0]["license-type"]
-    except(IndexError):
-        return None
-    return license_type
-
 def license_url(soup):
     """
     Find the license url attribute of the license tag
