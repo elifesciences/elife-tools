@@ -800,10 +800,12 @@ def correspondence(soup):
     Find the corresp tags included in author-notes
     for primary correspondence
     """
-    correspondence = None
+    correspondence = []
     try:
         author_notes = extract_nodes(soup, "author-notes")
-        correspondence = extract_node_text(author_notes[0], "corresp")
+        correspondence_tags = extract_nodes(author_notes[0], "corresp")
+        for corr in correspondence_tags:
+            correspondence.append(corr.text)
     except(IndexError):
         # Tag not found
         return None

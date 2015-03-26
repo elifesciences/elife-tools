@@ -173,6 +173,22 @@ def i_get_the_copyright_holder(step):
 def i_get_the_article_type(step):
     world.string = pm.article_type(world.filecontent)
 
+@step(u'I have the index (\d+)')
+def i_have_the_index(step, index):
+    world.index = int(index)
+    assert world.index is not None, \
+        "Got index %d" % world.index
+    
+@step(u'I get the correspondence')
+def i_get_the_correspondence(step):
+    world.correspondence = pm.correspondence(world.filecontent)
+    
+@step(u'I see the correspondence (.*)')
+def i_see_the_correspondence(step, correspondence):
+    corr = world.correspondence[world.index]
+    assert corr == correspondence, \
+        "Got correspondence %s" % corr
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
