@@ -157,6 +157,18 @@ def i_get_the_journal_title(step):
 def i_get_the_publisher_name(step):
     world.string = pm.publisher(world.filecontent)
 
+@step(u'I get the copyright statement')
+def i_get_the_copyright_statement(step):
+    world.string = pm.copyright_statement(world.filecontent)
+    
+@step(u'I get the copyright year')
+def i_get_the_copyright_year(step):
+    world.string = pm.copyright_year(world.filecontent)
+
+@step(u'I get the copyright holder')
+def i_get_the_copyright_holder(step):
+    world.string = pm.copyright_holder(world.filecontent)
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
