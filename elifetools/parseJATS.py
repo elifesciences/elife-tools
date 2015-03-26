@@ -584,14 +584,14 @@ def journal_title(soup):
     return journal_title
 
 @strippen
-def journal_issn(soup, pub_type = None):
+def journal_issn(soup, pub_format = None):
     """
     Find and return the journal ISSN
-    typical pub_type values: ppub, epub
+    typical pub_format value: electronic
     """
-    if (pub_type == None):
+    if (pub_format == None):
         return None
-    journal_issn = extract_node_text(soup, "issn", attr = "pub-type", value = pub_type)
+    journal_issn = extract_node_text(soup, "issn", attr = "publication-format", value = pub_format)
     return journal_issn
 
 @strippen

@@ -135,6 +135,27 @@ def i_get_the_url_of_license(step):
 def i_get_the_license(step):
     world.string = pm.license(world.filecontent)
 
+@step(u'I get the journal id')
+def i_get_the_journal_id(step):
+    world.string = pm.journal_id(world.filecontent)
+    
+@step(u'I have the pub format (\S+)')
+def i_have_the_pub_format_pub_format(step, pub_format):
+    world.pub_format = pub_format
+    assert world.pub_format is not None, \
+        "Got pub_format %s" % world.pub_format
+
+@step(u'I get the issn of the journal')
+def i_get_the_issn_of_the_journal(step):
+    world.string = pm.journal_issn(world.filecontent, world.pub_format)
+    
+@step(u'I get the journal title')
+def i_get_the_journal_title(step):
+    world.string = pm.journal_title(world.filecontent)
+    
+@step(u'I get the publisher name')
+def i_get_the_publisher_name(step):
+    world.string = pm.publisher(world.filecontent)
 
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
