@@ -169,6 +169,10 @@ def i_get_the_copyright_year(step):
 def i_get_the_copyright_holder(step):
     world.string = pm.copyright_holder(world.filecontent)
 
+@step(u'I get the article type')
+def i_get_the_article_type(step):
+    world.string = pm.article_type(world.filecontent)
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
