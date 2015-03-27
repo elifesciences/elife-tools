@@ -19,4 +19,11 @@ def i_count_the_number_of_keywords(step):
 @step(u'I get the keywords')
 def i_get_the_keywords(step):
     world.list = pm.keywords(world.filecontent)
+
+@step(u'I count the number of author notes')
+def i_count_the_number_of_author_notes(step):
+    world.count = len(pm.author_notes(world.filecontent))
     
+@step(u'I get the author notes')
+def i_get_the_author_notes(step):
+    world.list = pm.author_notes(world.filecontent)
