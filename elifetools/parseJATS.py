@@ -757,10 +757,14 @@ def keywords(soup):
             if(tag["kwd-group-type"] != None):
                 # A tag attribute found, check it for correct attribute
                 if(tag["kwd-group-type"] == "author-keywords"):
-                    keywords.append(get_kwd(tag))
+                    keyword_text_list = get_kwd(tag)
+                    for k in keyword_text_list:
+                        keywords.append(k)
         except KeyError:
             # Tag attribute not found, we want this tag value
-            keywords.append(get_kwd(tag))
+            keyword_text_list = get_kwd(tag)
+            for k in keyword_text_list:
+                keywords.append(k)
 
     return keywords
 

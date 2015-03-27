@@ -11,3 +11,12 @@ def i_count_the_number_of_research_organism(step):
 @step(u'I get the research organism')
 def i_get_the_research_organism(step):
     world.list = pm.research_organism(world.filecontent)
+    
+@step(u'I count the number of keywords')
+def i_count_the_number_of_keywords(step):
+    world.count = len(pm.keywords(world.filecontent))
+    
+@step(u'I get the keywords')
+def i_get_the_keywords(step):
+    world.list = pm.keywords(world.filecontent)
+    
