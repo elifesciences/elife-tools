@@ -261,6 +261,9 @@ def i_get_the_accepted_date_year(step):
 def i_get_the_accepted_date_timestamp(step):
     world.string = pm.accepted_date_timestamp(world.filecontent)
 
+@step(u'I get the abstract')
+def i_get_the_abstract(step):
+    world.string = pm.abstract(world.filecontent)
 
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
