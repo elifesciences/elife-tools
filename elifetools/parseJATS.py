@@ -28,6 +28,20 @@ def format_text(title_text):
     textHTMLEntitiesReverted = swap_en_dashes(textHTMLEntities)
     return textHTMLEntitiesReverted
 
+def nullify(function):
+    """
+    If list length is zero then return None,
+    otherwise return the list as given
+    """
+    def wrapper(*args, **kwargs):
+        value = function(*args, **kwargs)
+        if(type(value) == list and len(value) == 0):
+            return None
+        else:
+            return value
+        return value
+    return wrapper
+
 def flatten(function):
     """
     Convert or flatten value; if list length is zero then return None,
@@ -577,7 +591,6 @@ def journal_id(soup):
     return journal_id
 
 @strippen
-@flatten
 def journal_title(soup):
     """Find and return the journal title"""
     journal_title = extract_node_text(soup, "journal-title")
@@ -657,7 +670,6 @@ def abstract(soup):
     
     return abstract
 
-@flatten
 def article_type(soup):
     """
     Find the article_type from the article tag root XML attribute
@@ -716,7 +728,7 @@ def subject_area(soup):
     
     return subject_area
 
-@flatten
+@nullify
 def research_organism(soup):
     """
     Find the research-organism from the set of kwd-group tags
@@ -733,7 +745,7 @@ def research_organism(soup):
             continue
     return research_organism
 
-@flatten
+@nullify
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
@@ -752,7 +764,7 @@ def keywords(soup):
 
     return keywords
 
-@flatten
+@nullify
 def get_kwd(tag):
     """
     For extracting individual keywords (kwd) from a parent kwd-group
@@ -764,7 +776,7 @@ def get_kwd(tag):
         keywords.append(k.text)
     return keywords
 
-@flatten
+@nullify
 @strippen
 def correspondence(soup):
     """
@@ -782,7 +794,7 @@ def correspondence(soup):
         return None
     return correspondence
 
-@flatten
+@nullify
 @strippen
 def author_notes(soup):
     """
@@ -1074,7 +1086,7 @@ def get_funding_group(soup):
     funding_group_section = extract_nodes(soup, "funding-group")
     return funding_group_section
 
-@flatten
+@nullify
 def award_group_funding_source(soup):
     """
     Find the award group funding sources, one for each
@@ -1087,7 +1099,7 @@ def award_group_funding_source(soup):
         award_group_funding_source.append(funding_source)
     return award_group_funding_source
 
-@flatten
+@nullify
 def award_group_award_id(soup):
     """
     Find the award group award id, one for each
@@ -1100,7 +1112,7 @@ def award_group_award_id(soup):
         award_group_award_id.append(award_id)
     return award_group_award_id
 
-@flatten
+@nullify
 def award_group_principle_award_recipient(soup):
     """
     Find the award group principle award recipient, one for each
@@ -1234,7 +1246,7 @@ def ack(soup):
     ack = extract_node_text(soup, "ack")
     return ack
 
-@flatten
+@nullify
 @strippen
 def conflict(soup):
     """
