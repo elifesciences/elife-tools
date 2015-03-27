@@ -714,8 +714,6 @@ def subject_area(soup):
         # Tag not found
         return None
     
-    # Remove duplicates
-    subject_area = list(set(subject_area))
     return subject_area
 
 @flatten
