@@ -311,6 +311,11 @@ def i_count_the_number_of_subject_area(step):
 def i_get_the_subject_area(step):
     world.list = pm.subject_area(world.filecontent)
 
+"""
+Note: Adding more steps seems to break other tests, so maybe
+      add more in the more_parse_steps.py file
+"""
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
