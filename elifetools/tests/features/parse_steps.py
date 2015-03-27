@@ -265,6 +265,11 @@ def i_get_the_accepted_date_timestamp(step):
 def i_get_the_abstract(step):
     world.string = pm.abstract(world.filecontent)
 
+@step(u'I get the funding statement')
+def i_get_the_funding_statement(step):
+    world.string = pm.funding_statement(world.filecontent)
+
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
