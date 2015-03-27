@@ -199,6 +199,66 @@ def i_see_the_conflict_conflict(step, conflict):
     assert con == conflict, \
         "Got conflict %s" % con
 
+@step(u'I get the pub date date')
+def i_get_the_pub_date(step):
+    world.string = pm.pub_date_date(world.filecontent)
+    
+@step(u'I get the pub date day')
+def i_get_the_pub_date_day(step):
+    world.string = pm.pub_date_day(world.filecontent)
+    
+@step(u'I get the pub date month')
+def i_get_the_pub_date_month(step):
+    world.string = pm.pub_date_month(world.filecontent)
+    
+@step(u'I get the pub date year')
+def i_get_the_pub_date_year(step):
+    world.string = pm.pub_date_year(world.filecontent)
+    
+@step(u'I get the pub date timestamp')
+def i_get_the_pub_date_timestamp(step):
+    world.string = pm.pub_date_timestamp(world.filecontent)
+
+@step(u'I get the received date date')
+def i_get_the_received_date_date(step):
+    world.string = pm.received_date_date(world.filecontent)
+    
+@step(u'I get the received date day')
+def i_get_the_received_date_day(step):
+    world.string = pm.received_date_day(world.filecontent)
+    
+@step(u'I get the received date month')
+def i_get_the_received_date_month(step):
+    world.string = pm.received_date_month(world.filecontent)
+    
+@step(u'I get the received date year')
+def i_get_the_received_date_year(step):
+    world.string = pm.received_date_year(world.filecontent)
+    
+@step(u'I get the received date timestamp')
+def i_get_the_received_date_timestamp(step):
+    world.string = pm.received_date_timestamp(world.filecontent)
+
+@step(u'I get the accepted date date')
+def i_get_the_accepted_date_date(step):
+    world.string = pm.accepted_date_date(world.filecontent)
+    
+@step(u'I get the accepted date day')
+def i_get_the_accepted_date_day(step):
+    world.string = pm.accepted_date_day(world.filecontent)
+    
+@step(u'I get the accepted date month')
+def i_get_the_accepted_date_month(step):
+    world.string = pm.accepted_date_month(world.filecontent)
+    
+@step(u'I get the accepted date year')
+def i_get_the_accepted_date_year(step):
+    world.string = pm.accepted_date_year(world.filecontent)
+    
+@step(u'I get the accepted date timestamp')
+def i_get_the_accepted_date_timestamp(step):
+    world.string = pm.accepted_date_timestamp(world.filecontent)
+
 
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')

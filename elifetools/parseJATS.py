@@ -846,34 +846,32 @@ def get_ymd(soup):
     year = extract_node_text(soup, "year")
     return (day, month, year)
 
-def get_pub_date(soup, pub_type = "ppub"):
+def get_pub_date(soup, date_type = "pub"):
     """
     Find the publishing date for populating
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
-    Default pub_type is ppub, but will revert to epub if tag is not found
+    Default date_type is pub
     """
     tz = "UTC"
     
     try:
-        pub_date_section = extract_nodes(soup, "pub-date", attr = "pub-type", value = pub_type)
+        pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
         if(len(pub_date_section) == 0):
-            if(pub_type == "ppub"):
-                pub_type = "epub"
-            pub_date_section = extract_nodes(soup, "pub-date", attr = "pub-type", value = pub_type)
+            pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
         (day, month, year) = get_ymd(pub_date_section[0])
 
     except(IndexError):
         # Tag not found, try the other
         return None
     
-    date_string = None
+    date_struct = None
     try:
-        date_string = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
+        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
     except(TypeError):
         # Date did not convert
         pass
 
-    return date_string
+    return date_struct
 
 def pub_date_date(soup):
     """
