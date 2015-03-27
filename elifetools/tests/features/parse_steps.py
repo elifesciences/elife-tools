@@ -269,6 +269,10 @@ def i_get_the_abstract(step):
 def i_get_the_funding_statement(step):
     world.string = pm.funding_statement(world.filecontent)
 
+@step(u'I get the acknowledgements')
+def i_get_the_acknowledgements(step):
+    world.string = pm.ack(world.filecontent)
+
 
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
