@@ -686,34 +686,6 @@ def get_article_meta_aff(soup):
         return None
     return aff
     
-def article_institution(soup):
-    """
-    Find the article_institution from an aff tag in the article-meta
-    that is not part of an author contrib-group
-    """
-    article_institution = None
-
-    aff = get_article_meta_aff(soup)
-    for tag in aff:
-        # Only look at the first aff tag that is not part of a contrib-group
-        if (tag.parent.name != "contrib-group"):
-            article_institution = extract_node_text(tag, "institution")
-    return article_institution
-
-def article_country(soup):
-    """
-    Find the article_country from an aff tag in the article-meta
-    that is not part of an author contrib-group
-    """
-    article_country = None
-
-    aff = get_article_meta_aff(soup)
-    for tag in aff:
-        # Only look at the first aff tag that is not part of a contrib-group
-        if (tag.parent.name != "contrib-group"):
-            article_country = extract_node_text(tag, "country")
-    return article_country
-
 def get_kwd_group(soup):
     """
     Find the kwd-group sections for further analysis to find
