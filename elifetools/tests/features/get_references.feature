@@ -33,3 +33,34 @@ Feature: get references from the document
     | document                    | journal                       | references
     | elife-kitchen-sink.xml      | Anaerobe                      | 1
     | elife00013.xml              | Int J Syst Evol Microbiol     | 17
+
+  Scenario Outline: Get references
+    Given I have the document <document>
+    When I get the references
+    And I get the list item <list_item>
+    Then I see the string <string>
+  
+  Examples:
+    | document                    | list_item                       | string
+    | elife00013.xml              | [0]['etal']                     | None
+    | elife00013.xml              | [9]['etal']                     | True
+    | elife00013.xml              | [0]['ref']                      | Agosta WC 1992 Chemical communication Scientific American Press New York
+    | elife00013.xml              | [0]['publisher_name']           | Scientific American Press
+    | elife00013.xml              | [0]['publisher_loc']            | New York
+    | elife00013.xml              | [0]['authors'][0]               | Agosta WC
+    | elife00013.xml              | [0]['article_doi']              | 10.7554/eLife.00013
+    | elife00013.xml              | [0]['position']                 | 1
+    | elife00013.xml              | [1]['ref']                      | Ahmed I Yokota A Fujiwara T 2007 Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil Int J Syst Evol Microbiol 57 986 992
+    | elife00013.xml              | [1]['authors'][0]               | Ahmed I
+    | elife00013.xml              | [1]['authors'][1]               | Yokota A
+    | elife00013.xml              | [1]['year']                     | 2007
+    | elife00013.xml              | [1]['article_title']            | Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil
+    | elife00013.xml              | [1]['source']                   | Int J Syst Evol Microbiol
+    | elife00013.xml              | [1]['volume']                   | 57
+    | elife00013.xml              | [1]['fpage']                    | 986
+    | elife00013.xml              | [1]['lpage']                    | 992
+    | elife00013.xml              | [1]['position']                 | 2
+    
+
+    
+    

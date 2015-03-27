@@ -159,6 +159,10 @@ def count_references_from_the_journal(step, journal):
             if journal == None:
                 world.count += 1
 
+@step('I get the references')
+def i_get_the_references(step):
+    world.list = pm.refs(world.filecontent)
+
 @step(u'I get the URL of the license')
 def i_get_the_url_of_license(step):
     world.string = pm.license_url(world.filecontent)

@@ -528,7 +528,9 @@ def components(soup):
     """
     components = []
     
-    component_types = ["abstract", "fig", "table-wrap", "media", "chem-struct-wrap", "sub-article"]
+    component_types = ["abstract", "fig", "table-wrap", "media",
+                       "chem-struct-wrap", "sub-article", "supplementary-material",
+                       "boxed-text"]
     
     position = 1
     

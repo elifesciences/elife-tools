@@ -27,3 +27,36 @@ def i_count_the_number_of_author_notes(step):
 @step(u'I get the author notes')
 def i_get_the_author_notes(step):
     world.list = pm.author_notes(world.filecontent)
+
+@step(u'I get the list item (.*)')
+def i_get_the_item_item(step, list_item):
+    # Given a list or dict item, we need to convert
+    #  it to the string from the world.list as specified
+    eval_string = "world.list" + list_item
+    try:
+        world.string = eval(eval_string)
+    except:
+        world.string = None
+        
+@step(u'I count the number of components')
+def i_count_the_number_of_components(step):
+    world.count = len(pm.components(world.filecontent))
+    
+@step('I count components of the type (\S+)')
+def i_count_components_of_the_type(step, type):
+    world.count = 0
+    list = pm.components(world.filecontent)
+    for item in list:
+        try:
+            if int(item['type']) == type:
+                world.count += 1
+        except ValueError:
+            # Probably not a number
+            if item['type'] == type:
+                world.count += 1
+        except(KeyError):
+            continue
+    
+@step(u'I get the components')
+def i_get_the_components(step):
+    world.list = pm.components(world.filecontent)
