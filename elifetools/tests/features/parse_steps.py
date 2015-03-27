@@ -40,20 +40,20 @@ def i_see_the_number(step, number):
 
 @step('I get the authors')
 def i_get_the_authors(step):
-    world.authors = pm.authors(world.filecontent)
+    world.list = pm.authors(world.filecontent)
 
 @step('I count the number of authors')
 def count_the_number_of_authors(step):
-    world.authors_count = len(pm.authors(world.filecontent))
+    world.count = len(pm.authors(world.filecontent))
 
-@step(u'I count the total authors as (\d+)')
-def i_count_the_total_authors_as(step, number):
+@step(u'I count the total as (\d+)')
+def i_count_the_total_as(step, number):
     number = int(number)
-    assert world.authors_count == number, \
-        "Got %d" % world.authors_count
+    assert world.count == number, \
+        "Got %d" % world.count
 
-@step(u'I see author index (\d+) (\S+) (\d*) as (.*)')
-def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subindex, val):
+@step(u'I see list index (\d+) (\S+) (\d*) as (.*)')
+def i_see_list_index_attribute_subindex_as_val(step, index, attribute, subindex, val):
     # Turn index to int
     index = int(index)
     if subindex != "":
@@ -74,12 +74,12 @@ def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subinde
     # Get the value from the author
     if subindex != "":
         try:
-            value = world.authors[index][attribute][subindex]
+            value = world.list[index][attribute][subindex]
         except KeyError:
             value = None
     else:
         try:
-            value = world.authors[index][attribute]
+            value = world.list[index][attribute]
         except KeyError:
             value = None
             
@@ -92,42 +92,42 @@ def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subinde
 
 @step('I count the number of references')
 def count_the_number_of_references(step):
-    world.references_count = len(pm.references(world.filecontent))
+    world.count = len(pm.references(world.filecontent))
 
 @step(u'I get the total number of references as (\d+)')
 def i_get_the_total_number_of_references_as(step, number):
     number = int(number)
-    assert world.references_count == number, \
-        "Got %d" % world.references_count
+    assert world.count == number, \
+        "Got %d" % world.count
 
 @step('I count references from the year (\S+)')
 def count_referneces_from_the_year(step, year):
-    world.references_count = 0
+    world.count = 0
     references = pm.refs(world.filecontent)
     for ref in references:
         try:
             if int(ref['year']) == int(year):
-                world.references_count += 1
+                world.count += 1
         except ValueError:
             # Probably not a number
             if ref['year'] == year:
-                world.references_count += 1
+                world.count += 1
         except(KeyError):
             continue
 
-@step('I count the number of references from the journal (.*$)')
-def count_the_number_of_references_from_the_journal(step, journal):
+@step('I count references from the journal (.*$)')
+def count_references_from_the_journal(step, journal):
     if (journal == 'None'):
       journal = None
-    world.references_count = 0
+    world.count = 0
     references = pm.refs(world.filecontent)
     for ref in references:
         try:
             if ref['source'] == journal:
-                world.references_count += 1
+                world.count += 1
         except(KeyError):
             if journal == None:
-                world.references_count += 1
+                world.count += 1
 
 @step(u'I get the URL of the license')
 def i_get_the_url_of_license(step):

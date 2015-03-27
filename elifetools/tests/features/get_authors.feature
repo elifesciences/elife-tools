@@ -6,7 +6,7 @@ Feature: get authors from the document
   Scenario Outline: Count the number of authors
     Given I have the document <document>
     When I count the number of authors 
-    Then I count the total authors as <authors>
+    Then I count the total as <authors>
   
   Examples:
     | document                    | authors
@@ -16,7 +16,7 @@ Feature: get authors from the document
   Scenario Outline: Get authors
     Given I have the document <document>
     When I get the authors
-    Then I see author index <idx> <attribute> <sidx> as <val>
+    Then I see list index <idx> <attribute> <sidx> as <val>
   
   Examples:
     | document                    | idx | attribute              | sidx | val

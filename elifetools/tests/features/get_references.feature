@@ -6,7 +6,7 @@ Feature: get references from the document
   Scenario Outline: Count the number of references
     Given I have the document <document>
     When I count the number of references
-    Then I get the total number of references as <references>
+    Then I count the total as <references>
 
   Examples:
     | document                    | references
@@ -26,8 +26,8 @@ Feature: get references from the document
     
   Scenario Outline: Count the number of references from a particular journal
     Given I have the document <document>
-    When I count the number of references from the journal <journal>
-    Then I get the total number of references as <references>
+    When I count references from the journal <journal>
+    Then I count the total as <references>
     
   Examples:
     | document                    | journal                       | references
