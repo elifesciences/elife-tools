@@ -794,6 +794,7 @@ def get_kwd(tag):
         keywords.append(k.text)
     return keywords
 
+@flatten
 @strippen
 def correspondence(soup):
     """
@@ -803,9 +804,9 @@ def correspondence(soup):
     correspondence = []
     try:
         author_notes = extract_nodes(soup, "author-notes")
-        correspondence_tags = extract_nodes(author_notes[0], "corresp")
-        for corr in correspondence_tags:
-            correspondence.append(corr.text)
+        tags = extract_nodes(author_notes[0], "corresp")
+        for tag in tags:
+            correspondence.append(tag.text)
     except(IndexError):
         # Tag not found
         return None
@@ -1265,14 +1266,17 @@ def ack(soup):
     ack = extract_node_text(soup, "ack")
     return ack
 
+@flatten
 @strippen
 def conflict(soup):
     """
     Find the conflict notes in footnote tag
     """
-    conflict = None
+    conflict = []
     try:
-        conflict = extract_node_text(soup, "fn", attr = "fn-type", value = "conflict")
+        tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+        for tag in tags:
+            conflict.append(tag.text) 
     except KeyError:
         return None
     return conflict

@@ -189,6 +189,17 @@ def i_see_the_correspondence(step, correspondence):
     assert corr == correspondence, \
         "Got correspondence %s" % corr
 
+@step(u'I get the conflict')
+def i_get_the_conflict(step):
+    world.conflict = pm.conflict(world.filecontent)
+    
+@step(u'I see the conflict (.*)')
+def i_see_the_conflict_conflict(step, conflict):
+    con = world.conflict[world.index]
+    assert con == conflict, \
+        "Got conflict %s" % con
+
+
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
     file_location = test_xml_path + document
