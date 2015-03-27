@@ -40,3 +40,10 @@ Feature: get authors from the document
     | elife00013.xml              | 0   | notes_footnotes        | 2    | The remaining authors have no competing interests to declare.
     | elife00013.xml              | 0   | article_doi            |      | 10.7554/eLife.00013
     | elife00013.xml              | 0   | position               |      | 1
+    | elife00013.xml              | 0   | equal_contrib          |      | True
+    | elife00013.xml              | 1   | equal_contrib          |      | True
+    | elife00013.xml              | 2   | equal_contrib          |      | None
+    | elife00013.xml              | 0   | corresponding          |      | None
+    | elife00013.xml              | 1   | corresponding          |      | None
+    | elife00013.xml              | 6   | corresponding          |      | True
+    

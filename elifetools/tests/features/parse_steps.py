@@ -62,6 +62,8 @@ def i_see_author_index_attribute_subindex_as_val(step, index, attribute, subinde
     # Allow comparing different types
     if val == "None":
         val = None
+    elif val == "True" or val == "False":
+        val = bool(val)
     else:
         # Try to compare integers if it is int
         try:
