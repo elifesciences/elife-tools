@@ -5,9 +5,8 @@ Feature: Parse the conflict tags from the article
 
   Scenario Outline: Read the conflict footnotes
     Given I have the document <document>
-    And I have the index <idx>
     When I get the conflict
-    Then I see the conflict <conflict>
+    Then I see list index <idx> as <conflict>
 
   Examples:
     | document                  | idx      | conflict   

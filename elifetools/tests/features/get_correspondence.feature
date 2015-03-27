@@ -5,9 +5,8 @@ Feature: Parse the correspondence tag from the article
 
   Scenario Outline: Read the correspondence note
     Given I have the document <document>
-    And I have the index <idx>
     When I get the correspondence
-    Then I see the correspondence <correspondence>
+    Then I see list index <idx> as <correspondence>
 
   Examples:
     | document                  | idx      | correspondence   

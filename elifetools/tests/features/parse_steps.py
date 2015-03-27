@@ -213,24 +213,12 @@ def i_have_the_index(step, index):
     
 @step(u'I get the correspondence')
 def i_get_the_correspondence(step):
-    world.correspondence = pm.correspondence(world.filecontent)
+    world.list = pm.correspondence(world.filecontent)
     
-@step(u'I see the correspondence (.*)')
-def i_see_the_correspondence(step, correspondence):
-    corr = world.correspondence[world.index]
-    assert corr == correspondence, \
-        "Got correspondence %s" % corr
-
 @step(u'I get the conflict')
 def i_get_the_conflict(step):
-    world.conflict = pm.conflict(world.filecontent)
+    world.list = pm.conflict(world.filecontent)
     
-@step(u'I see the conflict (.*)')
-def i_see_the_conflict_conflict(step, conflict):
-    con = world.conflict[world.index]
-    assert con == conflict, \
-        "Got conflict %s" % con
-
 @step(u'I get the pub date date')
 def i_get_the_pub_date(step):
     world.string = pm.pub_date_date(world.filecontent)
