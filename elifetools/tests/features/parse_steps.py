@@ -52,6 +52,36 @@ def i_count_the_total_as(step, number):
     assert world.count == number, \
         "Got %d" % world.count
 
+@step(u'I see list index (\d+) as (.*)')
+def i_see_list_index_as_val(step, index, val):
+    # Turn index to int
+    index = int(index)
+    
+    # Allow comparing different types
+    if val == "None":
+        val = None
+    elif val == "True" or val == "False":
+        val = bool(val)
+    else:
+        # Try to compare integers if it is int
+        try:
+            val = int(val)
+        except ValueError:
+            pass
+    
+    # Get the value from the list
+    try:
+        value = world.list[index]
+    except KeyError:
+        value = None
+            
+    # Remove new lines for when comparing against kitchen sink XML
+    if type(value) == unicode or type(value) == str:
+        value = value.replace("\n", "")
+    
+    assert value == val, \
+        "Got %s" % value
+
 @step(u'I see list index (\d+) (\S+) (\d*) as (.*)')
 def i_see_list_index_attribute_subindex_as_val(step, index, attribute, subindex, val):
     # Turn index to int
@@ -71,7 +101,7 @@ def i_see_list_index_attribute_subindex_as_val(step, index, attribute, subindex,
         except ValueError:
             pass
     
-    # Get the value from the author
+    # Get the value from the list
     if subindex != "":
         try:
             value = world.list[index][attribute][subindex]
@@ -273,6 +303,13 @@ def i_get_the_funding_statement(step):
 def i_get_the_acknowledgements(step):
     world.string = pm.ack(world.filecontent)
 
+@step(u'I count the number of subject area')
+def i_count_the_number_of_subject_area(step):
+    world.count = len(pm.subject_area(world.filecontent))
+    
+@step(u'I get the subject area')
+def i_get_the_subject_area(step):
+    world.list = pm.subject_area(world.filecontent)
 
 def set_file_location(doc):
     document = doc.lstrip('"').rstrip('"')
