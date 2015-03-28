@@ -28,6 +28,20 @@ def format_text(title_text):
     textHTMLEntitiesReverted = swap_en_dashes(textHTMLEntities)
     return textHTMLEntitiesReverted
 
+def nullify(function):
+    """
+    If list length is zero then return None,
+    otherwise return the list as given
+    """
+    def wrapper(*args, **kwargs):
+        value = function(*args, **kwargs)
+        if(type(value) == list and len(value) == 0):
+            return None
+        else:
+            return value
+        return value
+    return wrapper
+
 def flatten(function):
     """
     Convert or flatten value; if list length is zero then return None,
@@ -189,10 +203,6 @@ def doi(soup):
             doi = tag.text
     return doi
         
-def pmid(soup):
-    pmid = extract_node_text(soup, "article-id", attr = "pub-id-type", value = "pmid")
-    return pmid
-        
 def authors(soup):
     """Find and return all the authors"""
     tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = "author")
@@ -255,8 +265,19 @@ def authors(soup):
 
                 aff_node = extract_nodes(soup, "aff", attr = "id", value = rid)
                 country = extract_node_text(aff_node[0], "country")
-                institution = extract_node_text(aff_node[0], "institution")
-                department = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "department")
+                
+                # Institution is the tag with no attribute
+                institutions = extract_nodes(aff_node[0], "institution")
+                for inst in institutions:
+                    try:
+                        if(inst["content-type"] != None):
+                            # A tag attribute found, skip it
+                            pass
+                    except KeyError:
+                        institution = inst.text
+                       
+                # Department tag does have an attribute
+                department = extract_node_text(aff_node[0], "institution", attr = "content-type", value = "dept")
                 city = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "city")
                 
                 # Convert None to empty string if there is more than one affiliation
@@ -379,10 +400,7 @@ def authors(soup):
             author['article_doi'] = article_doi
             
             author['position'] = position
-            
-            # Create a unique about tag value to make fom objects function
-            author['about'] = 'author' + '_' + str(position) + '_' + article_doi
-            
+                        
             authors.append(author)
             position += 1
         
@@ -497,10 +515,7 @@ def refs(soup):
             ref['article_doi'] = article_doi
             
             ref['position'] = position
-            
-            # Create a unique about tag value to make fom objects function
-            ref['about'] = 'ref' + '_' + str(position) + '_' + article_doi
-            
+                        
             refs.append(ref)
             position += 1
     
@@ -513,7 +528,9 @@ def components(soup):
     """
     components = []
     
-    component_types = ["abstract", "fig", "table-wrap", "media", "chem-struct-wrap", "sub-article"]
+    component_types = ["abstract", "fig", "table-wrap", "media",
+                       "chem-struct-wrap", "sub-article", "supplementary-material",
+                       "boxed-text"]
     
     position = 1
     
@@ -564,10 +581,7 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            
-            # Use the component DOI as the unique about tag value
-            component['about'] = component['doi_url']
-            
+                        
             components.append(component)
             position += 1
     
@@ -579,21 +593,20 @@ def journal_id(soup):
     return journal_id
 
 @strippen
-@flatten
 def journal_title(soup):
     """Find and return the journal title"""
     journal_title = extract_node_text(soup, "journal-title")
     return journal_title
 
 @strippen
-def journal_issn(soup, pub_type = None):
+def journal_issn(soup, pub_format = None):
     """
     Find and return the journal ISSN
-    typical pub_type values: ppub, epub
+    typical pub_format value: electronic
     """
-    if (pub_type == None):
+    if (pub_format == None):
         return None
-    journal_issn = extract_node_text(soup, "issn", attr = "pub-type", value = pub_type)
+    journal_issn = extract_node_text(soup, "issn", attr = "publication-format", value = pub_format)
     return journal_issn
 
 @strippen
@@ -659,7 +672,6 @@ def abstract(soup):
     
     return abstract
 
-@flatten
 def article_type(soup):
     """
     Find the article_type from the article tag root XML attribute
@@ -688,34 +700,6 @@ def get_article_meta_aff(soup):
         return None
     return aff
     
-def article_institution(soup):
-    """
-    Find the article_institution from an aff tag in the article-meta
-    that is not part of an author contrib-group
-    """
-    article_institution = None
-
-    aff = get_article_meta_aff(soup)
-    for tag in aff:
-        # Only look at the first aff tag that is not part of a contrib-group
-        if (tag.parent.name != "contrib-group"):
-            article_institution = extract_node_text(tag, "institution")
-    return article_institution
-
-def article_country(soup):
-    """
-    Find the article_country from an aff tag in the article-meta
-    that is not part of an author contrib-group
-    """
-    article_country = None
-
-    aff = get_article_meta_aff(soup)
-    for tag in aff:
-        # Only look at the first aff tag that is not part of a contrib-group
-        if (tag.parent.name != "contrib-group"):
-            article_country = extract_node_text(tag, "country")
-    return article_country
-
 def get_kwd_group(soup):
     """
     Find the kwd-group sections for further analysis to find
@@ -744,11 +728,9 @@ def subject_area(soup):
         # Tag not found
         return None
     
-    # Remove duplicates
-    subject_area = list(set(subject_area))
     return subject_area
 
-@flatten
+@nullify
 def research_organism(soup):
     """
     Find the research-organism from the set of kwd-group tags
@@ -765,7 +747,7 @@ def research_organism(soup):
             continue
     return research_organism
 
-@flatten
+@nullify
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
@@ -777,14 +759,18 @@ def keywords(soup):
             if(tag["kwd-group-type"] != None):
                 # A tag attribute found, check it for correct attribute
                 if(tag["kwd-group-type"] == "author-keywords"):
-                    keywords.append(get_kwd(tag))
+                    keyword_text_list = get_kwd(tag)
+                    for k in keyword_text_list:
+                        keywords.append(k)
         except KeyError:
             # Tag attribute not found, we want this tag value
-            keywords.append(get_kwd(tag))
+            keyword_text_list = get_kwd(tag)
+            for k in keyword_text_list:
+                keywords.append(k)
 
     return keywords
 
-@flatten
+@nullify
 def get_kwd(tag):
     """
     For extracting individual keywords (kwd) from a parent kwd-group
@@ -796,22 +782,25 @@ def get_kwd(tag):
         keywords.append(k.text)
     return keywords
 
+@nullify
 @strippen
 def correspondence(soup):
     """
     Find the corresp tags included in author-notes
     for primary correspondence
     """
-    correspondence = None
+    correspondence = []
     try:
         author_notes = extract_nodes(soup, "author-notes")
-        correspondence = extract_node_text(author_notes[0], "corresp")
+        tags = extract_nodes(author_notes[0], "corresp")
+        for tag in tags:
+            correspondence.append(tag.text)
     except(IndexError):
         # Tag not found
         return None
     return correspondence
 
-@flatten
+@nullify
 @strippen
 def author_notes(soup):
     """
@@ -845,34 +834,32 @@ def get_ymd(soup):
     year = extract_node_text(soup, "year")
     return (day, month, year)
 
-def get_pub_date(soup, pub_type = "ppub"):
+def get_pub_date(soup, date_type = "pub"):
     """
     Find the publishing date for populating
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
-    Default pub_type is ppub, but will revert to epub if tag is not found
+    Default date_type is pub
     """
     tz = "UTC"
     
     try:
-        pub_date_section = extract_nodes(soup, "pub-date", attr = "pub-type", value = pub_type)
+        pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
         if(len(pub_date_section) == 0):
-            if(pub_type == "ppub"):
-                pub_type = "epub"
-            pub_date_section = extract_nodes(soup, "pub-date", attr = "pub-type", value = pub_type)
+            pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
         (day, month, year) = get_ymd(pub_date_section[0])
 
     except(IndexError):
         # Tag not found, try the other
         return None
     
-    date_string = None
+    date_struct = None
     try:
-        date_string = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
+        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
     except(TypeError):
         # Date did not convert
         pass
 
-    return date_string
+    return date_struct
 
 def pub_date_date(soup):
     """
@@ -1105,47 +1092,72 @@ def get_funding_group(soup):
     funding_group_section = extract_nodes(soup, "funding-group")
     return funding_group_section
 
-@flatten
-def award_group_funding_source(soup):
+@nullify
+def award_groups(soup):
     """
+    Find the award-group items and return a list of details
+    """
+    award_groups = []
+    
+    funding_group_section = get_funding_group(soup)
+    for fg in funding_group_section:
+        
+        award_group_tags = extract_nodes(fg, "award-group")
+        
+        for ag in award_group_tags:
+        
+            award_group = {}
+            
+            award_group['funding_source'] = award_group_funding_source(ag)
+            award_group['recipient'] = award_group_principal_award_recipient(ag)
+            award_group['award_id'] = award_group_award_id(ag)
+            
+            award_groups.append(award_group)
+    
+    return award_groups
+
+
+@nullify
+def award_group_funding_source(tag):
+    """
+    Given a funding group element
     Find the award group funding sources, one for each
     item found in the get_funding_group section
     """
     award_group_funding_source = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
-        funding_source = extract_node_text(fg, "funding-source")
-        award_group_funding_source.append(funding_source)
+    funding_source_tags = extract_nodes(tag, "funding-source")
+    for t in funding_source_tags:
+        award_group_funding_source.append(t.text)
     return award_group_funding_source
 
-@flatten
-def award_group_award_id(soup):
+@nullify
+def award_group_award_id(tag):
     """
     Find the award group award id, one for each
     item found in the get_funding_group section
     """
     award_group_award_id = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
-        award_id = extract_node_text(fg, "award-id")
-        award_group_award_id.append(award_id)
+    award_id_tags = extract_nodes(tag, "award-id")
+    for t in award_id_tags:
+        award_group_award_id.append(t.text)
     return award_group_award_id
 
-@flatten
-def award_group_principle_award_recipient(soup):
+@nullify
+def award_group_principal_award_recipient(tag):
     """
-    Find the award group principle award recipient, one for each
+    Find the award group principal award recipient, one for each
     item found in the get_funding_group section
     """
-    award_group_principle_award_recipient = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
+    award_group_principal_award_recipient = []
+    principal_award_recipients = extract_nodes(tag, "principal-award-recipient")
+    
+    for t in principal_award_recipients:
         principal_award_recipient_text = ""
-        principal_award_recipient = extract_nodes(fg, "principal-award-recipient")
+        
         try:
-            institution = extract_node_text(principal_award_recipient[0], "institution")
-            surname = extract_node_text(principal_award_recipient[0], "surname")
-            given_names = extract_node_text(principal_award_recipient[0], "given-names")
+            institution = extract_node_text(t, "institution")
+            surname = extract_node_text(t, "surname")
+            given_names = extract_node_text(t, "given-names")
             # Concatenate name and institution values if found
             #  while filtering out excess whitespace
             if(given_names):
@@ -1160,8 +1172,8 @@ def award_group_principle_award_recipient(soup):
                 principal_award_recipient_text += institution
         except IndexError:
             continue
-        award_group_principle_award_recipient.append(principal_award_recipient_text)
-    return award_group_principle_award_recipient
+        award_group_principal_award_recipient.append(principal_award_recipient_text)
+    return award_group_principal_award_recipient
 
 def funding_statement(soup):
     """
@@ -1244,18 +1256,6 @@ def license(soup):
         return None
     return license
 
-def license_type(soup):
-    """
-    Find the license type attribute of the license tag
-    """
-    license_type = None
-    try:
-        license_section = get_license_section(soup)
-        license_type = license_section[0]["license-type"]
-    except(IndexError):
-        return None
-    return license_type
-
 def license_url(soup):
     """
     Find the license url attribute of the license tag
@@ -1277,14 +1277,17 @@ def ack(soup):
     ack = extract_node_text(soup, "ack")
     return ack
 
+@nullify
 @strippen
 def conflict(soup):
     """
     Find the conflict notes in footnote tag
     """
-    conflict = None
+    conflict = []
     try:
-        conflict = extract_node_text(soup, "fn", attr = "fn-type", value = "conflict")
+        tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+        for tag in tags:
+            conflict.append(tag.text) 
     except KeyError:
         return None
     return conflict
