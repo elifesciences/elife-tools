@@ -60,3 +60,11 @@ def i_count_components_of_the_type(step, type):
 @step(u'I get the components')
 def i_get_the_components(step):
     world.list = pm.components(world.filecontent)
+    
+@step(u'I count the number of award groups')
+def i_count_the_number_of_award_groups(step):
+    world.count = len(pm.award_groups(world.filecontent))
+    
+@step(u'I get the award groups')
+def i_get_the_award_groups(step):
+    world.list = pm.award_groups(world.filecontent)

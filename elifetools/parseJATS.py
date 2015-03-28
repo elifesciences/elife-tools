@@ -1093,46 +1093,71 @@ def get_funding_group(soup):
     return funding_group_section
 
 @nullify
-def award_group_funding_source(soup):
+def award_groups(soup):
     """
+    Find the award-group items and return a list of details
+    """
+    award_groups = []
+    
+    funding_group_section = get_funding_group(soup)
+    for fg in funding_group_section:
+        
+        award_group_tags = extract_nodes(fg, "award-group")
+        
+        for ag in award_group_tags:
+        
+            award_group = {}
+            
+            award_group['funding_source'] = award_group_funding_source(ag)
+            award_group['recipient'] = award_group_principal_award_recipient(ag)
+            award_group['award_id'] = award_group_award_id(ag)
+            
+            award_groups.append(award_group)
+    
+    return award_groups
+
+
+@nullify
+def award_group_funding_source(tag):
+    """
+    Given a funding group element
     Find the award group funding sources, one for each
     item found in the get_funding_group section
     """
     award_group_funding_source = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
-        funding_source = extract_node_text(fg, "funding-source")
-        award_group_funding_source.append(funding_source)
+    funding_source_tags = extract_nodes(tag, "funding-source")
+    for t in funding_source_tags:
+        award_group_funding_source.append(t.text)
     return award_group_funding_source
 
 @nullify
-def award_group_award_id(soup):
+def award_group_award_id(tag):
     """
     Find the award group award id, one for each
     item found in the get_funding_group section
     """
     award_group_award_id = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
-        award_id = extract_node_text(fg, "award-id")
-        award_group_award_id.append(award_id)
+    award_id_tags = extract_nodes(tag, "award-id")
+    for t in award_id_tags:
+        award_group_award_id.append(t.text)
     return award_group_award_id
 
 @nullify
-def award_group_principle_award_recipient(soup):
+def award_group_principal_award_recipient(tag):
     """
-    Find the award group principle award recipient, one for each
+    Find the award group principal award recipient, one for each
     item found in the get_funding_group section
     """
-    award_group_principle_award_recipient = []
-    funding_group_section = get_funding_group(soup)
-    for fg in funding_group_section:
+    award_group_principal_award_recipient = []
+    principal_award_recipients = extract_nodes(tag, "principal-award-recipient")
+    
+    for t in principal_award_recipients:
         principal_award_recipient_text = ""
-        principal_award_recipient = extract_nodes(fg, "principal-award-recipient")
+        
         try:
-            institution = extract_node_text(principal_award_recipient[0], "institution")
-            surname = extract_node_text(principal_award_recipient[0], "surname")
-            given_names = extract_node_text(principal_award_recipient[0], "given-names")
+            institution = extract_node_text(t, "institution")
+            surname = extract_node_text(t, "surname")
+            given_names = extract_node_text(t, "given-names")
             # Concatenate name and institution values if found
             #  while filtering out excess whitespace
             if(given_names):
@@ -1147,8 +1172,8 @@ def award_group_principle_award_recipient(soup):
                 principal_award_recipient_text += institution
         except IndexError:
             continue
-        award_group_principle_award_recipient.append(principal_award_recipient_text)
-    return award_group_principle_award_recipient
+        award_group_principal_award_recipient.append(principal_award_recipient_text)
+    return award_group_principal_award_recipient
 
 def funding_statement(soup):
     """

@@ -28,7 +28,7 @@ Feature: Get components from the document
     | elife00013.xml              | sub-article   | 2
 
 
-  Scenario Outline: Count the number of components
+  Scenario Outline: Get the components
     Given I have the document <document>
     When I get the components
     And I get the list item <list_item>
