@@ -36,6 +36,24 @@ Then
 
    $ python setup.py install
 
+Example usage
+=============
+
+.. code-block:: python
+
+    >>> import parseJATS as parser
+    >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
+    >>> print parser.doi(soup)
+
+More code examples can be found in `tests/unittests/basic_usage_test.py`
+
+These code examples can be run with:
+
+.. code-block:: bash
+
+    $ cd elifetools/
+    $ python -m unittest discover -s tests/unittests/ -p *_test.py
+
 Testing
 =======
 
