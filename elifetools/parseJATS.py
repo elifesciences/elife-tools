@@ -5,6 +5,10 @@ import os
 import time
 import calendar
 
+from utils import *
+import rawJATS as raw_parser
+
+
 import logging
 logger = logging.getLogger('myapp')
 hdlr = logging.FileHandler(os.getcwd() + os.sep + 'test.log')
@@ -14,195 +18,61 @@ logger.addHandler(hdlr)
 logger.setLevel(logging.INFO)
 
 
-def swap_en_dashes(textHTMLEntities):
-    title = textHTMLEntities.replace("&#8211;", "&#x02013;")#.encode('ascii', 'xmlcharrefreplace')
-    return title
-
-def unicodeToHTMLEntities(text):
-    """Converts unicode to HTML entities.  For example '&' becomes '&amp;'."""
-    returnText = cgi.escape(text).encode('ascii', 'xmlcharrefreplace')
-    return returnText
-
-def format_text(title_text):
-    textHTMLEntities = unicodeToHTMLEntities(title_text)
-    textHTMLEntitiesReverted = swap_en_dashes(textHTMLEntities)
-    return textHTMLEntitiesReverted
-
-def nullify(function):
-    """
-    If list length is zero then return None,
-    otherwise return the list as given
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if(type(value) == list and len(value) == 0):
-            return None
-        else:
-            return value
-        return value
-    return wrapper
-
-def flatten(function):
-    """
-    Convert or flatten value; if list length is zero then return None,
-    if length of a list is 1, convert to a string, otherwise return
-    the list as given
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if(type(value) == list and len(value) == 0):
-            return None
-        elif(type(value) == list and len(value) == 1):
-            # If there is only one list element, return a singleton
-            return value[0]
-        else:
-            return value
-        return value
-    return wrapper
-
-def strip_strings(value):
-    """
-    Strip excess whitespace, on strings, and simple lists
-    using recursion
-    """
-    if (value == None):
-        return None
-    elif (type(value) == list):
-        # List, so recursively strip elements
-        for i in range(0, len(value)):
-            value[i] = strip_strings(value[i])
-        return value
-    else:
-        try:
-            value = value.replace("  ", " ")
-            return value.strip()
-        except(AttributeError):
-            return value
-
-def strip_punctuation_space(value):
-    """
-    Strip excess whitespace prior to punctuation
-    using recursion
-    """
-    if (value == None):
-        return None
-    elif (type(value) == list):
-        # List, so recursively strip elements
-        for i in range(0, len(value)):
-            value[i] = strip_punctuation_space(value[i])
-        return value
-    else:
-        try:
-            value = value.replace(" .", ".")
-            value = value.replace(" :", ":")
-            value = value.replace("( ", "(")
-            value = value.replace(" )", ")")
-            return value
-        except(AttributeError):
-            return value
-
-def strippen(function):
-    """
-    Strip excess whitespace as a decorator
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        return strip_strings(value)
-    return wrapper
-
-def inten(function):
-    """
-    Try to convert to int as a decorator
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if (value == None):
-            return None
-        else:
-            try:
-                return int(value)
-            except(TypeError):
-                return value
-    return wrapper
-
-def revert_entities(function):
-    "this is the decorator"
-    def wrapper(*args, **kwargs):
-        text = function(*args, **kwargs)
-        formatted_text = format_text(text)
-        return formatted_text
-    return wrapper
+def parse_xml(xml):
+    return BeautifulSoup(xml, ["lxml", "xml"])
 
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
-def parse_xml(xml):
-    soup = BeautifulSoup(xml, ["lxml", "xml"])
-    return soup
-
-def extract_nodes(soup, nodename, attr = None, value = None):
-    tags = soup.find_all(nodename)
-    if(attr != None and value != None):
-        # Further refine nodes by attributes
-        tags_by_value = []
-        for tag in tags:
-            try:
-                if tag[attr] == value:
-                    tags_by_value.append(tag)
-            except KeyError:
-                continue
-        return tags_by_value
-    return tags
-
-def extract_first_node(soup, nodename):
-    tags = extract_nodes(soup, nodename)
-    try:
-        tag = tags[0]
-    except(IndexError):
-        # Tag not found
-        return None
-    return tag
-
-def extract_node_text(soup, nodename, attr = None, value = None):
-    """
-    Extract node text by nodename, unless attr is supplied
-    If attr and value is specified, find all the nodes and search
-      by attr and value for the first node
-    """
-    tag_text = None
-    if(attr == None):
-        tag = extract_first_node(soup, nodename)
-        try:
-            tag_text = tag.text
-        except(AttributeError):
-            # Tag text not found
-            return None
-    else:
-        tags = extract_nodes(soup, nodename, attr, value)
-        for tag in tags:
-            try:
-                if tag[attr] == value:
-                    tag_text = tag.text
-            except KeyError:
-                continue
-    return tag_text
 
 def title(soup):
-    return article_title(soup)
-    
-@revert_entities # make cleaning up the entiteis a decorator, as we may be able to drop all this code later
-def article_title(soup):
-    title_text = extract_node_text(soup, "article-title")
-    return title_text
+    return node_text(raw_parser.title(soup))
 
 def doi(soup):
-    doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
-    for tag in doi_tags:
-        # Only look at the doi tag directly inside the article-meta section
-        if (tag.parent.name == "article-meta"):
-            doi = tag.text
-    return doi
-        
+    # the first non-nil value returned by the raw parser
+    return node_text(raw_parser.doi(soup))
+
+def journal_id(soup):
+    return node_text(raw_parser.journal_id(soup))
+
+def journal_title(soup):
+    return node_text(raw_parser.journal_title(soup))
+
+def journal_issn(soup, pub_format = None):
+    if pub_format:
+        return node_text(raw_parser.journal_issn(soup, pub_format))
+
+def publisher(soup):
+    return node_text(raw_parser.publisher(soup))
+
+def article_type(soup):
+    # no node text extraction required
+    return raw_parser.article_type(soup)
+
+def article_meta_aff(soup):
+    return node_text(raw_parser.article_meta_add(soup))
+    
+def keyword_group(soup):
+    return raw_parser.keyword_group(soup) # doesn't actually do anything?
+
+# DEPRECATED: use `keyword_group` avoid 'getters' and unnecessary abbreviations
+def get_kwd_group(soup):
+    return keyword_group(soup)
+
+
+
+
+
+
+
+
+
+
+#
+# HERE BE MONSTERS
+#
+
+
 def authors(soup):
     """Find and return all the authors"""
     tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = "author")
@@ -587,33 +457,6 @@ def components(soup):
     
     return components
 
-def journal_id(soup):
-    """Find and return the primary journal id"""
-    journal_id = extract_node_text(soup, "journal-id", attr = "journal-id-type", value = "hwp")
-    return journal_id
-
-@strippen
-def journal_title(soup):
-    """Find and return the journal title"""
-    journal_title = extract_node_text(soup, "journal-title")
-    return journal_title
-
-@strippen
-def journal_issn(soup, pub_format = None):
-    """
-    Find and return the journal ISSN
-    typical pub_format value: electronic
-    """
-    if (pub_format == None):
-        return None
-    journal_issn = extract_node_text(soup, "issn", attr = "publication-format", value = pub_format)
-    return journal_issn
-
-@strippen
-def publisher(soup):
-    publisher = extract_node_text(soup, "publisher-name")
-    return publisher
-
 @strippen
 def abstract(soup):
     """
@@ -672,42 +515,6 @@ def abstract(soup):
     
     return abstract
 
-def article_type(soup):
-    """
-    Find the article_type from the article tag root XML attribute
-    """
-    article_type = None
-    article = extract_nodes(soup, "article")
-    try:
-        article_type = article[0]['article-type']    
-    except(KeyError,IndexError):
-        # Attribute or tag not found
-        return None
-    return article_type
-
-def get_article_meta_aff(soup):
-    """
-    Find the aff tag in the article-meta
-    that is not part of an author contrib-group
-    for populating article_institution and article_country
-    """
-    aff = None
-    try:
-        article_meta = extract_nodes(soup, "article-meta")
-        aff = extract_nodes(article_meta[0], "aff")
-    except(IndexError):
-        # Tag not found
-        return None
-    return aff
-    
-def get_kwd_group(soup):
-    """
-    Find the kwd-group sections for further analysis to find
-    subject_area, research_organism, and keywords
-    """
-    kwd_group = None
-    kwd_group = extract_nodes(soup, 'kwd-group')
-    return kwd_group
 
 @strippen
 def subject_area(soup):
