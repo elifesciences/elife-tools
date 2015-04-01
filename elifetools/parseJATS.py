@@ -205,7 +205,7 @@ def authors(soup):
                 # Find elements by id
                 try:
                     corresp_node = soup.select("#" + rid)
-                    author_notes = corresp_node[0].get_text(" ")
+                    author_notes = corresp_node[0].get_text()
                     author_notes = strip_strings(author_notes)
                 except:
                     continue
@@ -230,7 +230,7 @@ def authors(soup):
                 # Find elements by id
                 try:
                     fn_node = soup.select("#" + rid)
-                    fn_text = fn_node[0].get_text(" ")
+                    fn_text = fn_node[0].get_text()
                     fn_text = strip_strings(fn_text)
                 except:
                     continue
@@ -255,7 +255,7 @@ def authors(soup):
                 # Find elements by id
                 try:
                     other_node = soup.select("#" + rid)
-                    other_text = other_node[0].get_text(" ")
+                    other_text = other_node[0].get_text()
                     other_text = strip_strings(other_text)
                 except:
                     continue
@@ -300,7 +300,7 @@ def refs(soup):
             pass
         
         # ref - human readable full reference text
-        ref_text = tag.get_text(" ")
+        ref_text = tag.get_text()
         ref_text = strip_strings(ref_text)
         # Remove excess space
         ref_text = ' '.join(ref_text.split())
@@ -429,20 +429,12 @@ def components(soup):
             # If no object-id is found, then skip this component
             continue
 
-        # Remove the object-id doi before extracting the text
-        extracted_tags = []
-        try:
-            object_id = tag.find_all(["article-id", "object-id"])
-            extracted_tags.append(object_id[0].extract())
-            #object_id[0].clear()
-        except(IndexError):
-            pass
-
-        content = strip_strings(tag.get_text(" "))
-
-        # Put the extracted tags back in, hacky as the original order is not preserved
-        for et in extracted_tags:
-            tag.insert(0, et)
+        content = ""
+        for p_tag in extract_nodes(tag, "p"):
+            if content != "":
+                # Add a space before each new paragraph for now
+                content = content + " "
+            content = content + node_text(p_tag)
             
         if(content != ""):
             component['content'] = content
