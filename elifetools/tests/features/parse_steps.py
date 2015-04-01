@@ -115,7 +115,7 @@ def i_see_list_index_attribute_subindex_as_val(step, index, attribute, subindex,
             
     # Remove new lines for when comparing against kitchen sink XML
     if type(value) == unicode or type(value) == str:
-        value = value.replace("\n", "")
+        value = value.replace("\n", "\\n")
     
     assert value == val, \
         "Got %s" % value
