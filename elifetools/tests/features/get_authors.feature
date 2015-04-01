@@ -34,6 +34,8 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | 0   | author                 |      | Rosanna A Alegado
     | elife-kitchen-sink.xml      | 0   | notes_correspondence   |      | None
     | elife-kitchen-sink.xml      | 6   | notes_correspondence   |      | *For\n                        correspondence: jon_clardy@hms.harvard.edu(JC);
+    | elife-kitchen-sink.xml      | 8   | institution            |      | Stanford University School of Medicine
+    | elife-kitchen-sink.xml      | 9   | institution            |      | None
     | elife00013.xml              | 6   | notes_correspondence   |      | *For correspondence: jon_clardy@hms.harvard.edu (JC);
     | elife00013.xml              | 0   | notes_footnotes        | 0    | †These authors contributed equally to this work
     | elife00013.xml              | 0   | notes_footnotes        | 1    | RA: Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article

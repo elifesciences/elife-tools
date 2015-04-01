@@ -138,6 +138,7 @@ def authors(soup):
                 
                 # Institution is the tag with no attribute
                 institutions = extract_nodes(aff_node[0], "institution")
+                institution = None
                 for inst in institutions:
                     try:
                         if(inst["content-type"] != None):
