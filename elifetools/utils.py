@@ -72,8 +72,8 @@ def strip_strings(value):
         return value
     else:
         try:
-            value = value.replace("  ", " ")
-            return value.strip()
+            value = value.strip()
+            return value
         except(AttributeError):
             return value
 
