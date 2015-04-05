@@ -35,8 +35,6 @@ def nullify(function):
         value = function(*args, **kwargs)
         if(type(value) == list and len(value) == 0):
             return None
-        else:
-            return value
         return value
     return wrapper
 
