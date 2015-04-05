@@ -33,3 +33,65 @@ def article_type(soup):
 
 def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
+
+def acknowledgements(soup):
+    return first(extract_nodes(soup, "ack"))
+
+def conflict(soup):
+    return extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+
+def permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    return first(extract_nodes(soup, "permissions"))
+
+def licence(soup):
+    return first(extract_nodes(permissions(soup), "license"))
+
+def licence_p(soup):
+    return first(extract_nodes(licence(soup), "license-p"))
+
+def licence_url(soup):
+    "License url attribute of the license tag"
+    return licence(soup).get("xlink:href")
+
+def copyright_statement(soup):
+    return first(extract_nodes(permissions(soup), "copyright-statement"))
+
+def copyright_year(soup):
+    return first(extract_nodes(permissions(soup), "copyright-year"))
+
+def copyright_holder(soup):
+    return first(extract_nodes(permissions(soup), "copyright-holder"))
+
+def funding_statement(soup):
+    return first(extract_nodes(soup, "funding-statement"))
+
+#
+# authors
+#
+
+
+#
+# references
+#
+
+def ref_list(soup):
+    return extract_nodes(soup, "ref")
+
+def volume(ref):
+    return extract_nodes(ref, "volume")
+
+def fpage(ref):
+    return extract_node(ref, "fpage")
+            
+def lpage(ref):
+    return extract_node(ref, "lpage")
+
+def collab(ref):
+    return extract_node(ref, "collab")
+
+def publisher_loc(ref):
+    return extract_node(ref, "publisher-loc")
+
+def publisher_name(ref):
+    return extract_node(ref, "publisher-name")
