@@ -142,43 +142,8 @@ def extract_nodes(soup, nodename, attr = None, value = None):
         return filter(lambda tag: tag.get(attr) == value, tags)
     return tags
 
-# deprecate?
-def extract_first_node(soup, nodename):
-    return first(extract_nodes(soup, nodename))
 
 #@strippen
 #@revert_entities
 def node_text(tag):
     return getattr(tag, 'text', None)
-
-
-
-#
-# deprecated
-#
-
-# double handling and mixing responsibilities.
-# use `extract_nodes` and `node_text`
-def extract_node_text(soup, nodename, attr = None, value = None):
-    """
-    Extract node text by nodename, unless attr is supplied
-    If attr and value is specified, find all the nodes and search
-      by attr and value for the first node
-    """
-    tag_text = None
-    if(attr == None):
-        tag = extract_first_node(soup, nodename)
-        try:
-            tag_text = tag.text
-        except(AttributeError):
-            # Tag text not found
-            return None
-    else:
-        tags = extract_nodes(soup, nodename, attr, value)
-        for tag in tags:
-            try:
-                if tag[attr] == value:
-                    tag_text = tag.text
-            except KeyError:
-                continue
-    return tag_text

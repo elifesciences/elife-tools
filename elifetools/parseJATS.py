@@ -123,12 +123,12 @@ def authors(soup):
             pass
         
         # Surname
-        surname = extract_node_text(tag, "surname")
+        surname = node_text(first(extract_nodes(tag, "surname")))
         if(surname != None):
             author['surname'] = surname
 
         # Given names
-        given_names = extract_node_text(tag, "given-names")
+        given_names = node_text(first(extract_nodes(tag, "given-names")))
         if(given_names != None):
             author['given_names'] = given_names
         
@@ -147,11 +147,11 @@ def authors(soup):
                 # Find the matching affiliation detail
                 rid = aff['rid']
 
-                aff_node = extract_nodes(soup, "aff", attr = "id", value = rid)
-                country = extract_node_text(aff_node[0], "country")
+                aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid))
+                country = node_text(first(extract_nodes(aff_node, "country")))
                 
                 # Institution is the tag with no attribute
-                institutions = extract_nodes(aff_node[0], "institution")
+                institutions = extract_nodes(aff_node, "institution")
                 institution = None
                 for inst in institutions:
                     try:
@@ -159,11 +159,11 @@ def authors(soup):
                             # A tag attribute found, skip it
                             pass
                     except KeyError:
-                        institution = inst.text
+                        institution = node_text(inst)
                        
                 # Department tag does have an attribute
-                department = extract_node_text(aff_node[0], "institution", attr = "content-type", value = "dept")
-                city = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "city")
+                department = node_text(first(extract_nodes(aff_node, "institution", attr = "content-type", value = "dept")))
+                city = node_text(first(extract_nodes(aff_node, "named-content", attr = "content-type", value = "city")))
                 
                 # Convert None to empty string if there is more than one affiliation
                 if((country == None) and (len(affs) > 1)):
@@ -323,17 +323,17 @@ def refs(soup):
         ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
         
         # article_title
-        article_title = extract_node_text(tag, "article-title")
+        article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
             
         # year
-        year = extract_node_text(tag, "year")
+        year = node_text(first(extract_nodes(tag, "year")))
         if(year != None):
             ref['year'] = year
             
         # source
-        source = extract_node_text(tag, "source")
+        source = node_text(first(extract_nodes(tag, "source")))
         if(source != None):
             ref['source'] = source
             
@@ -351,8 +351,8 @@ def refs(soup):
         try:
             name = extract_nodes(person_group[0], "name")
             for n in name:
-                surname = extract_node_text(n, "surname")
-                given_names = extract_node_text(n, "given-names")
+                surname = node_text(first(extract_nodes(n, "surname")))
+                given_names = node_text(first(extract_nodes(n, "given-names")))
                 # Convert all to strings in case a name component is missing
                 if(surname is None):
                     surname = ""
@@ -366,32 +366,32 @@ def refs(soup):
             pass
             
         # volume
-        volume = extract_node_text(tag, "volume")
+        volume = node_text(first(extract_nodes(tag, "volume")))
         if(volume != None):
             ref['volume'] = volume
             
         # fpage
-        fpage = extract_node_text(tag, "fpage")
+        fpage = node_text(first(extract_nodes(tag, "fpage")))
         if(fpage != None):
             ref['fpage'] = fpage
             
         # lpage
-        lpage = extract_node_text(tag, "lpage")
+        lpage = node_text(first(extract_nodes(tag, "lpage")))
         if(lpage != None):
             ref['lpage'] = lpage
             
         # collab
-        collab = extract_node_text(tag, "collab")
+        collab = node_text(first(extract_nodes(tag, "collab")))
         if(collab != None):
             ref['collab'] = collab
             
         # publisher_loc
-        publisher_loc = extract_node_text(tag, "publisher-loc")
+        publisher_loc = node_text(first(extract_nodes(tag, "publisher-loc")))
         if(publisher_loc != None):
             ref['publisher_loc'] = publisher_loc
         
         # publisher_name
-        publisher_name = extract_node_text(tag, "publisher-name")
+        publisher_name = node_text(first(extract_nodes(tag, "publisher-name")))
         if(publisher_name != None):
             ref['publisher_name'] = publisher_name
             
@@ -434,9 +434,9 @@ def components(soup):
         
         # First find the doi if present
         if(ctype == "sub-article"):
-            object_id = extract_node_text(tag, "article-id", attr = "pub-id-type", value = "doi")
+            object_id = node_text(first(extract_nodes(tag, "article-id", attr = "pub-id-type", value = "doi")))
         else:
-            object_id = extract_node_text(tag, "object-id", attr = "pub-id-type", value = "doi")
+            object_id = node_text(first(extract_nodes(tag, "object-id", attr = "pub-id-type", value = "doi")))
         if(object_id is not None):
             component['doi'] = object_id
             component['doi_url'] = 'http://dx.doi.org/' + object_id
@@ -592,9 +592,9 @@ def get_ymd(soup):
     """
     Get the year, month and day from child tags
     """
-    day = extract_node_text(soup, "day")
-    month = extract_node_text(soup, "month")
-    year = extract_node_text(soup, "year")
+    day = node_text(first(extract_nodes(soup, "day")))
+    month = node_text(first(extract_nodes(soup, "month")))
+    year = node_text(first(extract_nodes(soup, "year")))
     return (day, month, year)
 
 def get_pub_date(soup, date_type = "pub"):
@@ -918,9 +918,9 @@ def award_group_principal_award_recipient(tag):
         principal_award_recipient_text = ""
         
         try:
-            institution = extract_node_text(t, "institution")
-            surname = extract_node_text(t, "surname")
-            given_names = extract_node_text(t, "given-names")
+            institution = node_text(first(extract_nodes(t, "institution")))
+            surname = node_text(first(extract_nodes(t, "surname")))
+            given_names = node_text(first(extract_nodes(t, "given-names")))
             # Concatenate name and institution values if found
             #  while filtering out excess whitespace
             if(given_names):
@@ -943,7 +943,7 @@ def funding_statement(soup):
     Find the funding statement (one expected)
     """
     funding_statement = None
-    funding_statement = extract_node_text(soup, "funding-statement")
+    funding_statement = node_text(first(extract_nodes(soup, "funding-statement")))
     return funding_statement
 
 def get_permissions_section(soup):
@@ -962,7 +962,7 @@ def copyright_statement(soup):
     copyright_statement = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_statement = extract_node_text(permissions_section[0], "copyright-statement")
+        copyright_statement = node_text(first(extract_nodes(permissions_section[0], "copyright-statement")))
     except(IndexError):
         return None
     return copyright_statement
@@ -974,7 +974,7 @@ def copyright_year(soup):
     copyright_year = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_year = extract_node_text(permissions_section[0], "copyright-year")
+        copyright_year = node_text(first(extract_nodes(permissions_section[0], "copyright-year")))
     except(IndexError):
         return None
     try:
@@ -989,7 +989,7 @@ def copyright_holder(soup):
     copyright_holder = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_holder = extract_node_text(permissions_section[0], "copyright-holder")
+        copyright_holder = node_text(first(extract_nodes(permissions_section[0], "copyright-holder")))
     except(IndexError):
         return None
     return copyright_holder
@@ -1014,7 +1014,7 @@ def license(soup):
     license = None
     try:
         license_section = get_license_section(soup)
-        license = extract_node_text(license_section[0], "license-p")
+        license = node_text(first(extract_nodes(license_section[0], "license-p")))
     except(IndexError):
         return None
     return license
@@ -1037,7 +1037,7 @@ def ack(soup):
     Find the acknowledgements in the ack tag
     """
     ack = None
-    ack = extract_node_text(soup, "ack")
+    ack = node_text(first(extract_nodes(soup, "ack")))
     return ack
 
 @nullify
