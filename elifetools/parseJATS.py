@@ -73,10 +73,17 @@ def keywords(soup):
         keywords.append(node_text(tag))
     return keywords
 
-
-
-
-
+def subject_area(soup):
+    """
+    Find the subject areas from article-categories subject tags
+    """
+    subject_area = []
+    
+    tags = raw_parser.subject_area(soup)
+    for tag in tags:
+        subject_area.append(node_text(tag))
+        
+    return subject_area
 
 
 
@@ -521,29 +528,6 @@ def abstract(soup):
         abstract_node.insert(0, et)
     
     return abstract
-
-
-@strippen
-def subject_area(soup):
-    """
-    Find the subject areas from article-categories subject tags
-    """
-    subject_area = []
-    try:
-        article_meta = extract_nodes(soup, "article-meta")
-        article_categories = extract_nodes(article_meta[0], "article-categories")
-        subj_group = extract_nodes(article_categories[0], "subj-group")
-        for tag in subj_group:
-            tags = extract_nodes(tag, "subject")
-            for t in tags:
-                subject_area.append(t.text)
-                
-    except(IndexError):
-        # Tag not found
-        return None
-    
-    return subject_area
-
 
 @nullify
 @strippen

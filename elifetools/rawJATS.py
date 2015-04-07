@@ -35,15 +35,32 @@ def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
 
 def research_organism_keywords(soup):
-    nodes = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
-    return filter(lambda tag: tag.name == "kwd", nodes)
+    tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
+    return filter(lambda tag: tag.name == "kwd", tags)
 
 def author_keywords(soup):
     # A few articles have kwd-group with no kwd-group-type, so account for those
-    nodes = extract_nodes(soup, "kwd-group")
-    keyword_nodes = []
-    for node in nodes:
-        if (node.get("kwd-group-type") == "author-keywords" 
-            or node.get("kwd-group-type") is None):
-            keyword_nodes += filter(lambda tag: tag.name == "kwd", node)
-    return keyword_nodes
+    tags = extract_nodes(soup, "kwd-group")
+    keyword_tags = []
+    for tag in tags:
+        if (tag.get("kwd-group-type") == "author-keywords" 
+            or tag.get("kwd-group-type") is None):
+            keyword_tags += filter(lambda tag: tag.name == "kwd", tag)
+    return keyword_tags
+
+def subject_area(soup, subject_group_type = None):
+    # Supports all subject areas or just particular ones filtered by 
+    subject_area_tags = []
+    tags = extract_nodes(soup, "subject")
+    
+    subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group"
+                                            and tag.parent.parent.name == "article-categories"
+                                            and tag.parent.parent.parent.name == "article-meta"
+                                            , tags)
+    if subject_group_type is not None:
+        subject_area_tags = filter(lambda tag:
+                                    tag.attr("subj-group-type") == subject_group_type, tags)
+    return subject_area_tags
+
+def display_channel(soup):
+    return (subject_area(soup, subject_group_type = "display-channel"))
