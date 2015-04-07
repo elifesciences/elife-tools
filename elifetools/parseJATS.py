@@ -52,12 +52,26 @@ def article_type(soup):
 def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
     
-def keyword_group(soup):
-    return raw_parser.keyword_group(soup) # doesn't actually do anything?
+def research_organism(soup):
+    """
+    Find the research-organism from the set of kwd-group tags
+    """
+    research_organism = []
+    tags = raw_parser.research_organism_keywords(soup)
+    for tag in tags:
+        research_organism.append(node_text(tag))
+    return research_organism
 
-# DEPRECATED: use `keyword_group` avoid 'getters' and unnecessary abbreviations
-def get_kwd_group(soup):
-    return keyword_group(soup)
+def keywords(soup):
+    """
+    Find the keywords from the set of kwd-group tags
+    which are typically labelled as the author keywords
+    """
+    keywords = []
+    tags = raw_parser.author_keywords(soup)
+    for tag in tags:
+        keywords.append(node_text(tag))
+    return keywords
 
 
 
@@ -530,57 +544,6 @@ def subject_area(soup):
     
     return subject_area
 
-@nullify
-def research_organism(soup):
-    """
-    Find the research-organism from the set of kwd-group tags
-    """
-    research_organism = []
-    kwd_group = get_kwd_group(soup)
-    for tag in kwd_group:
-        try:
-            if(tag["kwd-group-type"] == "research-organism" or tag["kwd-group-type"] == "Research-organism"):
-                tags = extract_nodes(tag, "kwd")
-                for t in tags:
-                    research_organism.append(t.text)
-        except KeyError:
-            continue
-    return research_organism
-
-@nullify
-def keywords(soup):
-    """
-    Find the keywords from the set of kwd-group tags
-    """
-    keywords = []
-    kwd_group = get_kwd_group(soup)
-    for tag in kwd_group:
-        try:
-            if(tag["kwd-group-type"] != None):
-                # A tag attribute found, check it for correct attribute
-                if(tag["kwd-group-type"] == "author-keywords"):
-                    keyword_text_list = get_kwd(tag)
-                    for k in keyword_text_list:
-                        keywords.append(k)
-        except KeyError:
-            # Tag attribute not found, we want this tag value
-            keyword_text_list = get_kwd(tag)
-            for k in keyword_text_list:
-                keywords.append(k)
-
-    return keywords
-
-@nullify
-def get_kwd(tag):
-    """
-    For extracting individual keywords (kwd) from a parent kwd-group
-    refactored to use more than once in def keywords
-    """
-    keywords = []
-    kwd = extract_nodes(tag, "kwd")
-    for k in kwd:
-        keywords.append(k.text)
-    return keywords
 
 @nullify
 @strippen

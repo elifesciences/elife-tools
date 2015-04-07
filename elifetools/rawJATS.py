@@ -33,3 +33,17 @@ def article_type(soup):
 
 def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
+
+def research_organism_keywords(soup):
+    nodes = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
+    return filter(lambda tag: tag.name == "kwd", nodes)
+
+def author_keywords(soup):
+    # A few articles have kwd-group with no kwd-group-type, so account for those
+    nodes = extract_nodes(soup, "kwd-group")
+    keyword_nodes = []
+    for node in nodes:
+        if (node.get("kwd-group-type") == "author-keywords" 
+            or node.get("kwd-group-type") is None):
+            keyword_nodes += filter(lambda tag: tag.name == "kwd", node)
+    return keyword_nodes
