@@ -31,6 +31,18 @@ def article_type(soup):
     # returns raw data, just that the data doesn't contain any BS nodes
     return first(extract_nodes(soup, "article")).get('article-type')
 
+def pub_date(soup, date_type):
+    return first(extract_nodes(soup, "pub-date", attr = "date-type", value = date_type))
+
+def day(soup):
+    return first(extract_nodes(soup, "day"))
+
+def month(soup):
+    return first(extract_nodes(soup, "month"))
+
+def year(soup):
+    return first(extract_nodes(soup, "year"))
+
 def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
 

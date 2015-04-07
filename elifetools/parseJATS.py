@@ -97,7 +97,57 @@ def display_channel(soup):
         
     return display_channel
 
+def ymd(soup):
+    """
+    Get the year, month and day from child tags
+    """
+    day = node_text(raw_parser.day(soup))
+    month = node_text(raw_parser.month(soup))
+    year = node_text(raw_parser.year(soup))
+    return (day, month, year)
 
+def pub_date(soup):
+    """
+    Return the publishing date in struct format
+    pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
+    Default date_type is pub
+    """
+
+    pub_date = raw_parser.pub_date(soup, date_type = "pub")
+    if pub_date is None:
+        return None
+    (day, month, year) = ymd(pub_date)
+    return date_struct(year, month, day)
+
+def pub_date_date(soup):
+    """
+    Find the published date in human readable form
+    """
+    return date_text(pub_date(soup))
+
+def pub_date_day(soup):
+    """
+    Find the published date day
+    """
+    return day_text(pub_date(soup))
+
+def pub_date_month(soup):
+    """
+    Find the published date month
+    """
+    return month_text(pub_date(soup))
+    
+def pub_date_year(soup):
+    """
+    Find the published date year
+    """
+    return year_text(pub_date(soup))
+
+def pub_date_timestamp(soup):
+    """
+    Find the published date pub_date_timestamp, in UTC time
+    """
+    return date_timestamp(pub_date(soup))
 
 
 #
@@ -583,109 +633,9 @@ def author_notes(soup):
         return None
     return author_notes
 
-def get_ymd(soup):
-    """
-    Get the year, month and day from child tags
-    """
-    day = node_text(first(extract_nodes(soup, "day")))
-    month = node_text(first(extract_nodes(soup, "month")))
-    year = node_text(first(extract_nodes(soup, "year")))
-    return (day, month, year)
 
-def get_pub_date(soup, date_type = "pub"):
-    """
-    Find the publishing date for populating
-    pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
-    Default date_type is pub
-    """
-    tz = "UTC"
-    
-    try:
-        pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
-        if(len(pub_date_section) == 0):
-            pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
-        (day, month, year) = get_ymd(pub_date_section[0])
 
-    except(IndexError):
-        # Tag not found, try the other
-        return None
-    
-    date_struct = None
-    try:
-        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
-    except(TypeError):
-        # Date did not convert
-        pass
 
-    return date_struct
-
-def pub_date_date(soup):
-    """
-    Find the publishing date pub_date_date in human readable form
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def pub_date_day(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string =  time.strftime("%d", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def pub_date_month(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%m", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def pub_date_year(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def pub_date_timestamp(soup):
-    """
-    Find the publishing date pub_date_timestamp, in UTC time
-    """
-    pub_date = get_pub_date(soup)
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
 
 def get_history_date(soup, date_type = None):
     """
@@ -700,7 +650,7 @@ def get_history_date(soup, date_type = None):
     try:
         history_section = extract_nodes(soup, "history")
         history_date_section = extract_nodes(soup, "date", attr = "date-type", value = date_type)
-        (day, month, year) = get_ymd(history_date_section[0])
+        (day, month, year) = ymd(history_date_section[0])
     except(IndexError):
         # Tag not found, try the other
         return None

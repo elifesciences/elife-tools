@@ -1,5 +1,7 @@
 import cgi
 import htmlentitydefs
+import time
+import calendar
 
 def first(x):
     "returns the first element of an iterable, swallowing index errors and returning None"
@@ -131,7 +133,55 @@ def revert_entities(function):
         return formatted_text
     return wrapper
 
+def date_struct(year, month, day, tz = "UTC"):
+    """
+    Given year, month and day numeric values and a timezone
+    convert to structured date object
+    """
+    date_struct = None
+    
+    for item in year, month, day:
+        if item is None:
+            return None
+    
+    try:
+        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
+    except(TypeError, ValueError):
+        # Date did not convert due to None variables, or the date does not exist
+        pass
 
+    return date_struct
+
+def date_format(format, date_struct):
+    """
+    Convert a structured date to the given date format
+    but can return None if it fails to happen
+    """
+    date_string = None
+    if date_struct:
+        date_string = time.strftime(format, date_struct)
+    return date_string
+
+def date_text(date_struct):
+    return date_format("%B %d, %Y", date_struct)
+
+def day_text(date_struct):
+    return date_format("%d", date_struct)
+
+def month_text(date_struct):
+    return date_format("%m", date_struct)
+
+def year_text(date_struct):
+    return date_format("%Y", date_struct)
+
+def date_timestamp(date_struct):
+    timestamp = None
+    try:
+        timestamp = calendar.timegm(date_struct)
+    except:
+        # Date did not convert
+        pass
+    return timestamp
 
 
 
