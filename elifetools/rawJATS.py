@@ -59,7 +59,7 @@ def subject_area(soup, subject_group_type = None):
                                             , tags)
     if subject_group_type is not None:
         subject_area_tags = filter(lambda tag:
-                                    tag.attr("subj-group-type") == subject_group_type, tags)
+                                    tag.parent.get("subj-group-type") == subject_group_type, tags)
     return subject_area_tags
 
 def display_channel(soup):

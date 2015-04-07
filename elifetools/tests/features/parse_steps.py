@@ -303,6 +303,14 @@ def i_count_the_number_of_subject_area(step):
 def i_get_the_subject_area(step):
     world.list = pm.subject_area(world.filecontent)
 
+@step(u'I count the number of display channel')
+def i_count_the_number_of_display_channel(step):
+    world.count = len(pm.display_channel(world.filecontent))
+    
+@step(u'I get the display channel')
+def i_get_the_display_channel(step):
+    world.list = pm.display_channel(world.filecontent)
+
 """
 Note: Adding more steps seems to break other tests, so maybe
       add more in the more_parse_steps.py file
