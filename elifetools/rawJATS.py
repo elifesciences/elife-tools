@@ -34,6 +34,10 @@ def article_type(soup):
 def pub_date(soup, date_type):
     return first(extract_nodes(soup, "pub-date", attr = "date-type", value = date_type))
 
+def history_date(soup, date_type):
+    date_tags = extract_nodes(soup, "date", attr = "date-type", value = date_type)
+    return first(filter(lambda tag: tag.parent.name == "history", date_tags))
+
 def day(soup):
     return first(extract_nodes(soup, "day"))
 

@@ -119,6 +119,20 @@ def pub_date(soup):
     (day, month, year) = ymd(pub_date)
     return date_struct(year, month, day)
 
+def history_date(soup, date_type = None):
+    """
+    Find a date in the history tag for the specific date_type
+    typical date_type values: received, accepted
+    """
+    if(date_type == None):
+        return None
+    
+    history_date = raw_parser.history_date(soup, date_type)
+    if history_date is None:
+        return None
+    (day, month, year) = ymd(history_date)
+    return date_struct(year, month, day)
+
 def pub_date_date(soup):
     """
     Find the published date in human readable form
@@ -129,25 +143,92 @@ def pub_date_day(soup):
     """
     Find the published date day
     """
-    return day_text(pub_date(soup))
+    return int(day_text(pub_date(soup)))
 
 def pub_date_month(soup):
     """
     Find the published date month
     """
-    return month_text(pub_date(soup))
+    return int(month_text(pub_date(soup)))
     
 def pub_date_year(soup):
     """
     Find the published date year
     """
-    return year_text(pub_date(soup))
+    return int(year_text(pub_date(soup)))
 
 def pub_date_timestamp(soup):
     """
     Find the published date pub_date_timestamp, in UTC time
     """
     return date_timestamp(pub_date(soup))
+
+def received_date_date(soup):
+    """
+    Find the received date in human readable form
+    """
+    return date_text(history_date(soup, date_type = "received"))
+    
+def received_date_day(soup):
+    """
+    Find the received date received_date_day
+    """
+    return int(day_text(history_date(soup, date_type = "received")))
+
+def received_date_month(soup):
+    """
+    Find the received date received_date_day
+    """
+    return int(month_text(history_date(soup, date_type = "received")))
+    
+def received_date_year(soup):
+    """
+    Find the received date received_date_day
+    """
+    return int(year_text(history_date(soup, date_type = "received")))
+    
+def received_date_timestamp(soup):
+    """
+    Find the received date received_date_timestamp, in UTC time
+    """
+    return date_timestamp(history_date(soup, date_type = "received"))
+    
+def accepted_date_date(soup):
+    """
+    Find the accepted date accepted_date_date in human readable form
+    """
+    return date_text(history_date(soup, date_type = "accepted"))
+    
+def accepted_date_day(soup):
+    """
+    Find the accepted date accepted_date_day
+    """
+    return int(day_text(history_date(soup, date_type = "accepted")))
+
+def accepted_date_month(soup):
+    """
+    Find the accepted date accepted_date_day
+    """
+    return int(month_text(history_date(soup, date_type = "accepted")))
+    
+def accepted_date_year(soup):
+    """
+    Find the accepted date accepted_date_day
+    """
+    return int(year_text(history_date(soup, date_type = "accepted"))) 
+
+def accepted_date_timestamp(soup):
+    """
+    Find the accepted date accepted_date_timestamp, in UTC time
+    """
+    return date_timestamp(history_date(soup, date_type = "accepted"))
+    
+
+
+
+
+
+
 
 
 #
@@ -636,161 +717,6 @@ def author_notes(soup):
 
 
 
-
-def get_history_date(soup, date_type = None):
-    """
-    Find a date in the history tag for the specific date_type
-    typical date_type values: received, accepted
-    """
-    if(date_type == None):
-        return None
-    
-    tz = "UTC"
-    
-    try:
-        history_section = extract_nodes(soup, "history")
-        history_date_section = extract_nodes(soup, "date", attr = "date-type", value = date_type)
-        (day, month, year) = ymd(history_date_section[0])
-    except(IndexError):
-        # Tag not found, try the other
-        return None
-    return time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
-
-def received_date_date(soup):
-    """
-    Find the received date received_date_date in human readable form
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def received_date_day(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%d", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def received_date_month(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%m", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def received_date_year(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def received_date_timestamp(soup):
-    """
-    Find the received date received_date_timestamp, in UTC time
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
-    
-def accepted_date_date(soup):
-    """
-    Find the accepted date accepted_date_date in human readable form
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def accepted_date_day(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%d", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def accepted_date_month(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%m", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def accepted_date_year(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def accepted_date_timestamp(soup):
-    """
-    Find the accepted date accepted_date_timestamp, in UTC time
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
 
 def get_funding_group(soup):
     """
