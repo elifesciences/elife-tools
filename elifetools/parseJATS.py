@@ -159,7 +159,7 @@ def pub_date_year(soup):
 
 def pub_date_timestamp(soup):
     """
-    Find the published date pub_date_timestamp, in UTC time
+    Find the published date timestamp, in UTC time
     """
     return date_timestamp(pub_date(soup))
 
@@ -171,55 +171,55 @@ def received_date_date(soup):
     
 def received_date_day(soup):
     """
-    Find the received date received_date_day
+    Find the received date day
     """
     return int(day_text(history_date(soup, date_type = "received")))
 
 def received_date_month(soup):
     """
-    Find the received date received_date_day
+    Find the received date month
     """
     return int(month_text(history_date(soup, date_type = "received")))
     
 def received_date_year(soup):
     """
-    Find the received date received_date_day
+    Find the received date year
     """
     return int(year_text(history_date(soup, date_type = "received")))
     
 def received_date_timestamp(soup):
     """
-    Find the received date received_date_timestamp, in UTC time
+    Find the received date timestamp, in UTC time
     """
     return date_timestamp(history_date(soup, date_type = "received"))
     
 def accepted_date_date(soup):
     """
-    Find the accepted date accepted_date_date in human readable form
+    Find the accepted date in human readable form
     """
     return date_text(history_date(soup, date_type = "accepted"))
     
 def accepted_date_day(soup):
     """
-    Find the accepted date accepted_date_day
+    Find the accepted date day
     """
     return int(day_text(history_date(soup, date_type = "accepted")))
 
 def accepted_date_month(soup):
     """
-    Find the accepted date accepted_date_day
+    Find the accepted date month
     """
     return int(month_text(history_date(soup, date_type = "accepted")))
     
 def accepted_date_year(soup):
     """
-    Find the accepted date accepted_date_day
+    Find the accepted date year
     """
     return int(year_text(history_date(soup, date_type = "accepted"))) 
 
 def accepted_date_timestamp(soup):
     """
-    Find the accepted date accepted_date_timestamp, in UTC time
+    Find the accepted date timestamp, in UTC time
     """
     return date_timestamp(history_date(soup, date_type = "accepted"))
     
