@@ -24,9 +24,12 @@ def parse_xml(xml):
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
-
 def title(soup):
     return node_text(raw_parser.title(soup))
+    
+def full_title(soup):
+    # The title including italic tags, etc.
+    return node_content(raw_parser.title(soup))
 
 def doi(soup):
     # the first non-nil value returned by the raw parser

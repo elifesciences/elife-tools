@@ -206,3 +206,17 @@ def extract_nodes(soup, nodename, attr = None, value = None):
 #@revert_entities
 def node_text(tag):
     return getattr(tag, 'text', None)
+
+def node_content(tag):
+    """
+    Given a tag, return a string of its children including the tags
+    In other words, do not include the root or parent tag of the tag
+    """
+    content = ""
+    for ch in tag.children:
+        content = content + str(ch)
+        
+    if content == "":
+        return None
+    else:
+        return content

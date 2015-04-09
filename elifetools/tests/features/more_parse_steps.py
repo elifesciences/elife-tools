@@ -68,3 +68,7 @@ def i_count_the_number_of_award_groups(step):
 @step(u'I get the award groups')
 def i_get_the_award_groups(step):
     world.list = pm.award_groups(world.filecontent)
+
+@step('I get the full title') 
+def get_the_full_title(step):
+    world.string = pm.full_title(world.filecontent)
