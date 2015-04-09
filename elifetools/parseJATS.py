@@ -143,19 +143,19 @@ def pub_date_day(soup):
     """
     Find the published date day
     """
-    return int(day_text(pub_date(soup)))
+    return day_text(pub_date(soup))
 
 def pub_date_month(soup):
     """
     Find the published date month
     """
-    return int(month_text(pub_date(soup)))
+    return month_text(pub_date(soup))
     
 def pub_date_year(soup):
     """
     Find the published date year
     """
-    return int(year_text(pub_date(soup)))
+    return year_text(pub_date(soup))
 
 def pub_date_timestamp(soup):
     """
@@ -173,19 +173,19 @@ def received_date_day(soup):
     """
     Find the received date day
     """
-    return int(day_text(history_date(soup, date_type = "received")))
+    return day_text(history_date(soup, date_type = "received"))
 
 def received_date_month(soup):
     """
     Find the received date month
     """
-    return int(month_text(history_date(soup, date_type = "received")))
+    return month_text(history_date(soup, date_type = "received"))
     
 def received_date_year(soup):
     """
     Find the received date year
     """
-    return int(year_text(history_date(soup, date_type = "received")))
+    return year_text(history_date(soup, date_type = "received"))
     
 def received_date_timestamp(soup):
     """
@@ -203,19 +203,19 @@ def accepted_date_day(soup):
     """
     Find the accepted date day
     """
-    return int(day_text(history_date(soup, date_type = "accepted")))
+    return day_text(history_date(soup, date_type = "accepted"))
 
 def accepted_date_month(soup):
     """
     Find the accepted date month
     """
-    return int(month_text(history_date(soup, date_type = "accepted")))
+    return month_text(history_date(soup, date_type = "accepted"))
     
 def accepted_date_year(soup):
     """
     Find the accepted date year
     """
-    return int(year_text(history_date(soup, date_type = "accepted"))) 
+    return year_text(history_date(soup, date_type = "accepted"))
 
 def accepted_date_timestamp(soup):
     """
@@ -223,7 +223,29 @@ def accepted_date_timestamp(soup):
     """
     return date_timestamp(history_date(soup, date_type = "accepted"))
     
+def collection_year(soup):
+    """
+    Pub date of type collection will hold a year element for VOR articles
+    """
+    pub_date = raw_parser.pub_date_collection(soup, pub_type = "collection")
+    if pub_date is None:
+        return None
+    
+    year = raw_parser.year(pub_date)
+    
+    if year:
+        return int(node_text(year))
+    else:
+        return None
 
+def is_poa(soup):
+    """
+    Test for whether is POA XML or not
+    """
+    if collection_year(soup) is None:
+        return True
+    else:
+        return False
 
 
 
@@ -283,6 +305,10 @@ def authors(soup):
         
         # Find and parse affiliations
         affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")
+        if len(affs) <= 0:
+            # No aff found? Look for an aff tag inside the contrib tag
+            affs = extract_nodes(tag, "aff")
+            
         if(len(affs) > 0):
             # One or more affiliations
             if(len(affs) > 1):
@@ -294,9 +320,14 @@ def authors(soup):
                 
             for aff in affs:
                 # Find the matching affiliation detail
-                rid = aff['rid']
-
-                aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid))
+                rid = aff.get('rid')
+                if rid:
+                    # Look for the matching aff tag by rid
+                    aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid)) 
+                else:
+                    # Aff tag inside contrib tag
+                    aff_node = aff
+                    
                 country = node_text(first(extract_nodes(aff_node, "country")))
                 
                 # Institution is the tag with no attribute

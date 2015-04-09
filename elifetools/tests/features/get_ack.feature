@@ -11,4 +11,4 @@ Feature: Get acknowledgements from the article
   Examples:
     | document                    | acknowledgements   
     | elife00013.xml              | AcknowledgementsWe thank Michael Fischbach, Richard Losick, and Russell Vance for critical reading of the manuscript. NK is a Fellow in the Integrated Microbial Biodiversity Program of the Canadian Institute for Advanced Research.
-    
+    | elife_poa_e06828.xml        | None

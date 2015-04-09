@@ -283,6 +283,14 @@ def i_get_the_accepted_date_year(step):
 def i_get_the_accepted_date_timestamp(step):
     world.string = pm.accepted_date_timestamp(world.filecontent)
 
+@step(u'I get the collection year')
+def i_get_the_collection_year(step):
+    world.string = pm.collection_year(world.filecontent)
+
+@step(u'I get the is poa')
+def i_get_the_is_poa(step):
+    world.string = pm.is_poa(world.filecontent)
+
 @step(u'I get the abstract')
 def i_get_the_abstract(step):
     world.string = pm.abstract(world.filecontent)

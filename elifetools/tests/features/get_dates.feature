@@ -11,6 +11,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | pub_date   
     | elife00013.xml            | October 15, 2012
+    | elife_poa_e06828.xml      | None
 
   Scenario Outline: Read the pub date day
     Given I have the document <document>
@@ -20,6 +21,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | pub_day 
     | elife00013.xml            | 15
+    | elife_poa_e06828.xml      | None
 
   Scenario Outline: Read the pub date month
     Given I have the document <document>
@@ -29,6 +31,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | pub_month 
     | elife00013.xml            | 10
+    | elife_poa_e06828.xml      | None
     
   Scenario Outline: Read the pub date year
     Given I have the document <document>
@@ -38,6 +41,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | pub_year 
     | elife00013.xml            | 2012
+    | elife_poa_e06828.xml      | None
     
   Scenario Outline: Read the pub date timestamp
     Given I have the document <document>
@@ -47,7 +51,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | timestamp 
     | elife00013.xml            | 1350259200
-    
+    | elife_poa_e06828.xml      | None
     
     
     
@@ -60,6 +64,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | received_date
     | elife00013.xml            | May 22, 2012
+    | elife_poa_e06828.xml      | February 03, 2015
 
   Scenario Outline: Read the received date day
     Given I have the document <document>
@@ -69,6 +74,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | received_day 
     | elife00013.xml            | 22
+    | elife_poa_e06828.xml      | 3
 
   Scenario Outline: Read the received date month
     Given I have the document <document>
@@ -78,6 +84,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | received_month 
     | elife00013.xml            | 5
+    | elife_poa_e06828.xml      | 2
     
   Scenario Outline: Read the received date year
     Given I have the document <document>
@@ -87,6 +94,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | received_year 
     | elife00013.xml            | 2012
+    | elife_poa_e06828.xml      | 2015
     
   Scenario Outline: Read the received date timestamp
     Given I have the document <document>
@@ -96,6 +104,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | timestamp 
     | elife00013.xml            | 1337644800
+    | elife_poa_e06828.xml      | 1422921600
     
     
     
@@ -110,6 +119,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | accepted_date
     | elife00013.xml            | July 18, 2012
+    | elife_poa_e06828.xml      | April 01, 2015
 
   Scenario Outline: Read the accepted date day
     Given I have the document <document>
@@ -119,6 +129,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | accepted_day 
     | elife00013.xml            | 18
+    | elife_poa_e06828.xml      | 1
 
   Scenario Outline: Read the accepted date month
     Given I have the document <document>
@@ -128,6 +139,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | accepted_month 
     | elife00013.xml            | 7
+    | elife_poa_e06828.xml      | 4
     
   Scenario Outline: Read the received date year
     Given I have the document <document>
@@ -137,6 +149,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | accepted_year 
     | elife00013.xml            | 2012
+    | elife_poa_e06828.xml      | 2015
     
   Scenario Outline: Read the accepted date timestamp
     Given I have the document <document>
@@ -146,6 +159,7 @@ Feature: Parse the dates from the article
   Examples:
     | document                  | timestamp 
     | elife00013.xml            | 1342569600
+    | elife_poa_e06828.xml      | 1427846400
     
 
     

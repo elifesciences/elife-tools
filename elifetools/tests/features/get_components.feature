@@ -12,6 +12,7 @@ Feature: Get components from the document
     | document                    | components
     | elife-kitchen-sink.xml      | 44
     | elife00013.xml              | 30
+    | elife_poa_e06828.xml        | 0
 
   Scenario Outline: Count the number of components by type
     Given I have the document <document>

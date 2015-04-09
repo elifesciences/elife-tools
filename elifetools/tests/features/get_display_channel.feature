@@ -12,7 +12,8 @@ Feature: Get display channels from the document
     | document                    | count
     | elife-kitchen-sink.xml      | 1     
     | elife00013.xml              | 1       
-
+    | elife_poa_e06828.xml        | 1
+    
 
   Scenario Outline: Get display channel
     Given I have the document <document>
@@ -23,3 +24,5 @@ Feature: Get display channels from the document
     | document                    | idx | val
     | elife-kitchen-sink.xml      | 0   | Research article
     | elife00013.xml              | 0   | Research article
+    | elife_poa_e06828.xml        | 0   | Research article
+    

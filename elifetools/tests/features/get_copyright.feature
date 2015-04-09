@@ -11,6 +11,7 @@ Feature: Parse the copyright from the article
   Examples:
     | document                          | copyright_statement   
     | elife00013.xml                    | © 2012, Alegado et al
+    | elife_poa_e06828.xml              | © 2015, Fleming et al
    
    
   Scenario Outline: Read the copyright year
@@ -21,6 +22,7 @@ Feature: Parse the copyright from the article
   Examples:
     | document                          | copyright_year
     | elife00013.xml                    | 2012
+    | elife_poa_e06828.xml              | 2015
     
     
    Scenario Outline: Read the copyright holder
@@ -31,5 +33,6 @@ Feature: Parse the copyright from the article
   Examples:
     | document                          | copyright_holder
     | elife00013.xml                    | Alegado et al
+    | elife_poa_e06828.xml              | Fleming et al
    
         

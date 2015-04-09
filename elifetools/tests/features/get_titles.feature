@@ -12,3 +12,4 @@ Feature: parse the title
     | document                            | title
     | elife-kitchen-sink.xml              | "Bacterial regulation of colony development in the closest living\n                    relatives of animals"
     | elife00013.xml                      | A bacterial sulfonolipid triggers multicellular development in the closest living relatives of animals
+    | elife_poa_e06828.xml                | Cis and trans RET signaling control the survival and central projection growth of rapidly adapting mechanoreceptors

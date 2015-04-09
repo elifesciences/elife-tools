@@ -166,13 +166,22 @@ def date_text(date_struct):
     return date_format("%B %d, %Y", date_struct)
 
 def day_text(date_struct):
-    return date_format("%d", date_struct)
-
+    try:
+        return int(date_format("%d", date_struct))
+    except TypeError:
+        return None
+    
 def month_text(date_struct):
-    return date_format("%m", date_struct)
+    try:
+        return int(date_format("%m", date_struct))
+    except TypeError:
+        return None
 
 def year_text(date_struct):
-    return date_format("%Y", date_struct)
+    try:
+        return int(date_format("%Y", date_struct))
+    except TypeError:
+        return None
 
 def date_timestamp(date_struct):
     timestamp = None
