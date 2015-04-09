@@ -72,3 +72,7 @@ def i_get_the_award_groups(step):
 @step('I get the full title') 
 def get_the_full_title(step):
     world.string = pm.full_title(world.filecontent)
+
+@step('I get the full abstract') 
+def get_the_full_abstract(step):
+    world.string = pm.full_abstract(world.filecontent)

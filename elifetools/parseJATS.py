@@ -25,11 +25,11 @@ def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
 def title(soup):
-    return node_text(raw_parser.title(soup))
+    return node_text(raw_parser.article_title(soup))
     
 def full_title(soup):
     # The title including italic tags, etc.
-    return node_content(raw_parser.title(soup))
+    return node_content(raw_parser.article_title(soup))
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
@@ -251,9 +251,58 @@ def is_poa(soup):
         return False
 
 
+def abstracts(soup):
+    """
+    Find the article abstract and format it
+    """
+
+    abstracts = []
+
+    abstract_tags = raw_parser.abstract(soup)
+
+    for tag in abstract_tags:
+        abstract = {}
+        
+        abstract["abstract_type"] = tag.get("abstract-type")
+        title_tag = raw_parser.title(tag)
+        if title_tag:    
+            abstract["title"] = node_text(title_tag)
+        
+        if len(paragraphs(tag)) > 0:
+            abstract["content"] = ""
+            abstract["full_content"] = ""
+            
+            good_paragraphs = remove_doi_paragraph(paragraphs(tag))
+            
+            for p_tag in good_paragraphs:
+                abstract["content"] += node_text(p_tag)
+                abstract["full_content"] += node_content(p_tag)
+        else:
+            abstract["content"] = None
+    
+        abstracts.append(abstract)
+
+    return abstracts
 
 
+def abstract(soup):
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        return abstract["content"]
+    else:
+        return None
 
+def full_abstract(soup):
+    """
+    Return the abstract including inline tags
+    """
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        return abstract["full_content"]
+    else:
+        return None
 
 
 #
@@ -646,64 +695,6 @@ def components(soup):
             position += 1
     
     return components
-
-@strippen
-def abstract(soup):
-    """
-    Find the article abstract and format it
-    """
-
-    abstract_soup = []
-    # Strip out the object-id so we only have the text
-    try:
-        abstract_soup = soup.find_all("abstract")
-    except(IndexError):
-        # No abstract found
-        pass
-
-    # Find the desired abstract node, <abstract>
-    abstract_node = None
-    for tag in abstract_soup:
-        try:
-            if(tag["abstract-type"] != None):
-                # A tag attribute found, skip it
-                pass
-        except KeyError:
-                # No attribute, use this abstract
-                abstract_node = tag
-                break
-    
-    # Shortcut: if no abstract found, return none
-    if(abstract_node == None):
-        return None
-
-    # Allow the contents of certain markup tags, then
-    #  remove any tags and their contents not on the allowed list
-    allowed_tags = ["italic", "sup", "p"]
-
-    for allowed in allowed_tags:
-        tag = abstract_node.find_all(allowed)
-        for t in tag:
-            t.unwrap()
-    
-    # Done unwrapping allowed tags, now delete tags and enclosed
-    # content of unallowed tags
-    all = abstract_node.find_all()
-
-    extracted_tags = []
-    for a in all:
-        # Extract the tags we do not want text from, and we will insert the tags back later
-        #  using clear() will destroy them for good, and breaks the getting components by DOI
-        extracted_tags.append(a.extract())
-        #a.clear()
-
-    abstract = abstract_node.text
-
-    # Put the extracted tags back in, hacky as the original order is not preserved
-    for et in extracted_tags:
-        abstract_node.insert(0, et)
-    
-    return abstract
 
 @nullify
 @strippen

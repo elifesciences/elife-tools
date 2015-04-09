@@ -6,8 +6,11 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 """
 
-def title(soup):
+def article_title(soup):
     return first(extract_nodes(soup, "article-title"))
+
+def title(soup):
+    return first(extract_nodes(soup, "title"))
 
 def doi(soup):
     doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
@@ -83,3 +86,6 @@ def subject_area(soup, subject_group_type = None):
 
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
+
+def abstract(soup):
+    return extract_nodes(soup, "abstract")

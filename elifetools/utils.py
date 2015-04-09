@@ -214,9 +214,36 @@ def node_content(tag):
     """
     content = ""
     for ch in tag.children:
-        content = content + str(ch)
+        content = content + unicode(ch)
         
     if content == "":
         return None
     else:
         return content
+    
+def paragraphs(tags):
+    """
+    Given a list of tags only return the paragraph tags
+    """
+    
+    paragraphs = []
+    for tag in tags:
+        if tag.name == "p":
+            paragraphs.append(tag)
+            
+    return paragraphs
+
+def remove_doi_paragraph(tags):
+    """
+    Some paragraphs start with the text "DOI:" and we do not always want them
+    and this can filter them out of a list of paragraphs
+    """
+    match_text = "DOI:"
+    start_index = 0
+    end_index = len(match_text)
+    
+    good_tags = []
+    for tag in tags:
+        if node_text(tag).strip()[start_index:end_index] != match_text:
+            good_tags.append(tag)
+    return good_tags
