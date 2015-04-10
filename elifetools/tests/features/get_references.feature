@@ -12,6 +12,7 @@ Feature: get references from the document
     | document                    | references
     | elife-kitchen-sink.xml      | 103
     | elife00013.xml              | 105
+    | elife_poa_e06828.xml        | 0
 
   Scenario Outline: Count the number of references from a particular year
     Given I have the document <document>

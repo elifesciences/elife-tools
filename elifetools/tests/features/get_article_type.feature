@@ -11,4 +11,4 @@ Feature: Parse the article type from the article
   Examples:
     | document                          | article_type   
     | elife00013.xml                    | research-article
-   
+    | elife_poa_e06828.xml              | research-article

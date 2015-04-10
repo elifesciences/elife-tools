@@ -21,8 +21,10 @@ def i_see_the_string(step, string):
         
     if string == "None":
         string = None
-    if string == "True" or string == "False":
-        string = bool(string)
+    if string == "True":
+        string = True
+    if string == "False":
+        string = False
         
     assert world.string == string, \
         "Got %s" % world.string 

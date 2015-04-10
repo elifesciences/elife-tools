@@ -12,6 +12,7 @@ Feature: get authors from the document
     | document                    | authors
     | elife-kitchen-sink.xml      | 10       
     | elife00013.xml              | 8       
+    | elife_poa_e06828.xml        | 7
 
   Scenario Outline: Get authors
     Given I have the document <document>
@@ -48,4 +49,10 @@ Feature: get authors from the document
     | elife00013.xml              | 0   | corresponding          |      | None
     | elife00013.xml              | 1   | corresponding          |      | None
     | elife00013.xml              | 6   | corresponding          |      | True
-    
+    | elife_poa_e06828.xml        | 0   | person_id              |      | 28783
+    | elife_poa_e06828.xml        | 0   | surname                |      | Fleming
+    | elife_poa_e06828.xml        | 0   | given_names            |      | Michael S
+    | elife_poa_e06828.xml        | 0   | country                |      | United States
+    | elife_poa_e06828.xml        | 0   | institution            |      | University of Pennsylvania
+    | elife_poa_e06828.xml        | 0   | department             |      | Department of Neuroscience, Perelman School of Medicine
+    | elife_poa_e06828.xml        | 0   | city                   |      | Philadelphia

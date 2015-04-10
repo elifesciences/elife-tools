@@ -24,9 +24,12 @@ def parse_xml(xml):
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
-
 def title(soup):
-    return node_text(raw_parser.title(soup))
+    return node_text(raw_parser.article_title(soup))
+    
+def full_title(soup):
+    # The title including italic tags, etc.
+    return node_content(raw_parser.article_title(soup))
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
@@ -52,21 +55,281 @@ def article_type(soup):
 def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
     
-def keyword_group(soup):
-    return raw_parser.keyword_group(soup) # doesn't actually do anything?
+def research_organism(soup):
+    """
+    Find the research-organism from the set of kwd-group tags
+    """
+    research_organism = []
+    tags = raw_parser.research_organism_keywords(soup)
+    for tag in tags:
+        research_organism.append(node_text(tag))
+    return research_organism
 
-# DEPRECATED: use `keyword_group` avoid 'getters' and unnecessary abbreviations
-def get_kwd_group(soup):
-    return keyword_group(soup)
+def keywords(soup):
+    """
+    Find the keywords from the set of kwd-group tags
+    which are typically labelled as the author keywords
+    """
+    keywords = []
+    tags = raw_parser.author_keywords(soup)
+    for tag in tags:
+        keywords.append(node_text(tag))
+    return keywords
+
+def subject_area(soup):
+    """
+    Find the subject areas from article-categories subject tags
+    """
+    subject_area = []
+    
+    tags = raw_parser.subject_area(soup)
+    for tag in tags:
+        subject_area.append(node_text(tag))
+        
+    return subject_area
+
+def display_channel(soup):
+    """
+    Find the subject areas of type display-channel
+    """
+    display_channel = []
+    
+    tags = raw_parser.display_channel(soup)
+    for tag in tags:
+        display_channel.append(node_text(tag))
+        
+    return display_channel
+
+def ymd(soup):
+    """
+    Get the year, month and day from child tags
+    """
+    day = node_text(raw_parser.day(soup))
+    month = node_text(raw_parser.month(soup))
+    year = node_text(raw_parser.year(soup))
+    return (day, month, year)
+
+def pub_date(soup):
+    """
+    Return the publishing date in struct format
+    pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
+    Default date_type is pub
+    """
+
+    pub_date = raw_parser.pub_date(soup, date_type = "pub")
+    if pub_date is None:
+        return None
+    (day, month, year) = ymd(pub_date)
+    return date_struct(year, month, day)
+
+def history_date(soup, date_type = None):
+    """
+    Find a date in the history tag for the specific date_type
+    typical date_type values: received, accepted
+    """
+    if(date_type == None):
+        return None
+    
+    history_date = raw_parser.history_date(soup, date_type)
+    if history_date is None:
+        return None
+    (day, month, year) = ymd(history_date)
+    return date_struct(year, month, day)
+
+def pub_date_date(soup):
+    """
+    Find the published date in human readable form
+    """
+    return date_text(pub_date(soup))
+
+def pub_date_day(soup):
+    """
+    Find the published date day
+    """
+    return day_text(pub_date(soup))
+
+def pub_date_month(soup):
+    """
+    Find the published date month
+    """
+    return month_text(pub_date(soup))
+    
+def pub_date_year(soup):
+    """
+    Find the published date year
+    """
+    return year_text(pub_date(soup))
+
+def pub_date_timestamp(soup):
+    """
+    Find the published date timestamp, in UTC time
+    """
+    return date_timestamp(pub_date(soup))
+
+def received_date_date(soup):
+    """
+    Find the received date in human readable form
+    """
+    return date_text(history_date(soup, date_type = "received"))
+    
+def received_date_day(soup):
+    """
+    Find the received date day
+    """
+    return day_text(history_date(soup, date_type = "received"))
+
+def received_date_month(soup):
+    """
+    Find the received date month
+    """
+    return month_text(history_date(soup, date_type = "received"))
+    
+def received_date_year(soup):
+    """
+    Find the received date year
+    """
+    return year_text(history_date(soup, date_type = "received"))
+    
+def received_date_timestamp(soup):
+    """
+    Find the received date timestamp, in UTC time
+    """
+    return date_timestamp(history_date(soup, date_type = "received"))
+    
+def accepted_date_date(soup):
+    """
+    Find the accepted date in human readable form
+    """
+    return date_text(history_date(soup, date_type = "accepted"))
+    
+def accepted_date_day(soup):
+    """
+    Find the accepted date day
+    """
+    return day_text(history_date(soup, date_type = "accepted"))
+
+def accepted_date_month(soup):
+    """
+    Find the accepted date month
+    """
+    return month_text(history_date(soup, date_type = "accepted"))
+    
+def accepted_date_year(soup):
+    """
+    Find the accepted date year
+    """
+    return year_text(history_date(soup, date_type = "accepted"))
+
+def accepted_date_timestamp(soup):
+    """
+    Find the accepted date timestamp, in UTC time
+    """
+    return date_timestamp(history_date(soup, date_type = "accepted"))
+    
+def collection_year(soup):
+    """
+    Pub date of type collection will hold a year element for VOR articles
+    """
+    pub_date = raw_parser.pub_date_collection(soup, pub_type = "collection")
+    if pub_date is None:
+        return None
+    
+    year = raw_parser.year(pub_date)
+    
+    if year:
+        return int(node_text(year))
+    else:
+        return None
+
+def is_poa(soup):
+    """
+    Test for whether is POA XML or not
+    """
+    if collection_year(soup) is None:
+        return True
+    else:
+        return False
 
 
+def abstracts(soup):
+    """
+    Find the article abstract and format it
+    """
+
+    abstracts = []
+
+    abstract_tags = raw_parser.abstract(soup)
+
+    for tag in abstract_tags:
+        abstract = {}
+        
+        abstract["abstract_type"] = tag.get("abstract-type")
+        title_tag = raw_parser.title(tag)
+        if title_tag:    
+            abstract["title"] = node_text(title_tag)
+        
+        if len(paragraphs(tag)) > 0:
+            abstract["content"] = ""
+            abstract["full_content"] = ""
+            
+            good_paragraphs = remove_doi_paragraph(paragraphs(tag))
+            
+            glue = ""
+            for p_tag in good_paragraphs:
+                abstract["content"] += glue + node_text(p_tag)
+                abstract["full_content"] += glue + node_content(p_tag)
+                glue = " "
+        else:
+            abstract["content"] = None
+    
+        abstracts.append(abstract)
+
+    return abstracts
 
 
+def abstract(soup):
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+    if abstract:
+        return abstract["content"]
+    else:
+        return None
 
+def full_abstract(soup):
+    """
+    Return the abstract including inline tags
+    """
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+    if abstract:
+        return abstract["full_content"]
+    else:
+        return None
 
+def digest(soup):
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
+                                abstract_list))
+    if abstract:
+        return abstract["content"]
+    else:
+        return None
 
-
-
+def full_digest(soup):
+    """
+    Return the digest including inline tags
+    """
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
+                                abstract_list))
+    if abstract:
+        return abstract["full_content"]
+    else:
+        return None
 
 #
 # HERE BE MONSTERS
@@ -109,17 +372,21 @@ def authors(soup):
             pass
         
         # Surname
-        surname = extract_node_text(tag, "surname")
+        surname = node_text(first(extract_nodes(tag, "surname")))
         if(surname != None):
             author['surname'] = surname
 
         # Given names
-        given_names = extract_node_text(tag, "given-names")
+        given_names = node_text(first(extract_nodes(tag, "given-names")))
         if(given_names != None):
             author['given_names'] = given_names
         
         # Find and parse affiliations
         affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")
+        if len(affs) <= 0:
+            # No aff found? Look for an aff tag inside the contrib tag
+            affs = extract_nodes(tag, "aff")
+            
         if(len(affs) > 0):
             # One or more affiliations
             if(len(affs) > 1):
@@ -131,13 +398,18 @@ def authors(soup):
                 
             for aff in affs:
                 # Find the matching affiliation detail
-                rid = aff['rid']
-
-                aff_node = extract_nodes(soup, "aff", attr = "id", value = rid)
-                country = extract_node_text(aff_node[0], "country")
+                rid = aff.get('rid')
+                if rid:
+                    # Look for the matching aff tag by rid
+                    aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid)) 
+                else:
+                    # Aff tag inside contrib tag
+                    aff_node = aff
+                    
+                country = node_text(first(extract_nodes(aff_node, "country")))
                 
                 # Institution is the tag with no attribute
-                institutions = extract_nodes(aff_node[0], "institution")
+                institutions = extract_nodes(aff_node, "institution")
                 institution = None
                 for inst in institutions:
                     try:
@@ -145,11 +417,11 @@ def authors(soup):
                             # A tag attribute found, skip it
                             pass
                     except KeyError:
-                        institution = inst.text
+                        institution = node_text(inst)
                        
                 # Department tag does have an attribute
-                department = extract_node_text(aff_node[0], "institution", attr = "content-type", value = "dept")
-                city = extract_node_text(aff_node[0], "named-content", attr = "content-type", value = "city")
+                department = node_text(first(extract_nodes(aff_node, "institution", attr = "content-type", value = "dept")))
+                city = node_text(first(extract_nodes(aff_node, "named-content", attr = "content-type", value = "city")))
                 
                 # Convert None to empty string if there is more than one affiliation
                 if((country == None) and (len(affs) > 1)):
@@ -309,17 +581,17 @@ def refs(soup):
         ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
         
         # article_title
-        article_title = extract_node_text(tag, "article-title")
+        article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
             
         # year
-        year = extract_node_text(tag, "year")
+        year = node_text(first(extract_nodes(tag, "year")))
         if(year != None):
             ref['year'] = year
             
         # source
-        source = extract_node_text(tag, "source")
+        source = node_text(first(extract_nodes(tag, "source")))
         if(source != None):
             ref['source'] = source
             
@@ -337,8 +609,8 @@ def refs(soup):
         try:
             name = extract_nodes(person_group[0], "name")
             for n in name:
-                surname = extract_node_text(n, "surname")
-                given_names = extract_node_text(n, "given-names")
+                surname = node_text(first(extract_nodes(n, "surname")))
+                given_names = node_text(first(extract_nodes(n, "given-names")))
                 # Convert all to strings in case a name component is missing
                 if(surname is None):
                     surname = ""
@@ -352,32 +624,32 @@ def refs(soup):
             pass
             
         # volume
-        volume = extract_node_text(tag, "volume")
+        volume = node_text(first(extract_nodes(tag, "volume")))
         if(volume != None):
             ref['volume'] = volume
             
         # fpage
-        fpage = extract_node_text(tag, "fpage")
+        fpage = node_text(first(extract_nodes(tag, "fpage")))
         if(fpage != None):
             ref['fpage'] = fpage
             
         # lpage
-        lpage = extract_node_text(tag, "lpage")
+        lpage = node_text(first(extract_nodes(tag, "lpage")))
         if(lpage != None):
             ref['lpage'] = lpage
             
         # collab
-        collab = extract_node_text(tag, "collab")
+        collab = node_text(first(extract_nodes(tag, "collab")))
         if(collab != None):
             ref['collab'] = collab
             
         # publisher_loc
-        publisher_loc = extract_node_text(tag, "publisher-loc")
+        publisher_loc = node_text(first(extract_nodes(tag, "publisher-loc")))
         if(publisher_loc != None):
             ref['publisher_loc'] = publisher_loc
         
         # publisher_name
-        publisher_name = extract_node_text(tag, "publisher-name")
+        publisher_name = node_text(first(extract_nodes(tag, "publisher-name")))
         if(publisher_name != None):
             ref['publisher_name'] = publisher_name
             
@@ -420,9 +692,9 @@ def components(soup):
         
         # First find the doi if present
         if(ctype == "sub-article"):
-            object_id = extract_node_text(tag, "article-id", attr = "pub-id-type", value = "doi")
+            object_id = node_text(first(extract_nodes(tag, "article-id", attr = "pub-id-type", value = "doi")))
         else:
-            object_id = extract_node_text(tag, "object-id", attr = "pub-id-type", value = "doi")
+            object_id = node_text(first(extract_nodes(tag, "object-id", attr = "pub-id-type", value = "doi")))
         if(object_id is not None):
             component['doi'] = object_id
             component['doi_url'] = 'http://dx.doi.org/' + object_id
@@ -449,138 +721,6 @@ def components(soup):
             position += 1
     
     return components
-
-@strippen
-def abstract(soup):
-    """
-    Find the article abstract and format it
-    """
-
-    abstract_soup = []
-    # Strip out the object-id so we only have the text
-    try:
-        abstract_soup = soup.find_all("abstract")
-    except(IndexError):
-        # No abstract found
-        pass
-
-    # Find the desired abstract node, <abstract>
-    abstract_node = None
-    for tag in abstract_soup:
-        try:
-            if(tag["abstract-type"] != None):
-                # A tag attribute found, skip it
-                pass
-        except KeyError:
-                # No attribute, use this abstract
-                abstract_node = tag
-                break
-    
-    # Shortcut: if no abstract found, return none
-    if(abstract_node == None):
-        return None
-
-    # Allow the contents of certain markup tags, then
-    #  remove any tags and their contents not on the allowed list
-    allowed_tags = ["italic", "sup", "p"]
-
-    for allowed in allowed_tags:
-        tag = abstract_node.find_all(allowed)
-        for t in tag:
-            t.unwrap()
-    
-    # Done unwrapping allowed tags, now delete tags and enclosed
-    # content of unallowed tags
-    all = abstract_node.find_all()
-
-    extracted_tags = []
-    for a in all:
-        # Extract the tags we do not want text from, and we will insert the tags back later
-        #  using clear() will destroy them for good, and breaks the getting components by DOI
-        extracted_tags.append(a.extract())
-        #a.clear()
-
-    abstract = abstract_node.text
-
-    # Put the extracted tags back in, hacky as the original order is not preserved
-    for et in extracted_tags:
-        abstract_node.insert(0, et)
-    
-    return abstract
-
-
-@strippen
-def subject_area(soup):
-    """
-    Find the subject areas from article-categories subject tags
-    """
-    subject_area = []
-    try:
-        article_meta = extract_nodes(soup, "article-meta")
-        article_categories = extract_nodes(article_meta[0], "article-categories")
-        subj_group = extract_nodes(article_categories[0], "subj-group")
-        for tag in subj_group:
-            tags = extract_nodes(tag, "subject")
-            for t in tags:
-                subject_area.append(t.text)
-                
-    except(IndexError):
-        # Tag not found
-        return None
-    
-    return subject_area
-
-@nullify
-def research_organism(soup):
-    """
-    Find the research-organism from the set of kwd-group tags
-    """
-    research_organism = []
-    kwd_group = get_kwd_group(soup)
-    for tag in kwd_group:
-        try:
-            if(tag["kwd-group-type"] == "research-organism" or tag["kwd-group-type"] == "Research-organism"):
-                tags = extract_nodes(tag, "kwd")
-                for t in tags:
-                    research_organism.append(t.text)
-        except KeyError:
-            continue
-    return research_organism
-
-@nullify
-def keywords(soup):
-    """
-    Find the keywords from the set of kwd-group tags
-    """
-    keywords = []
-    kwd_group = get_kwd_group(soup)
-    for tag in kwd_group:
-        try:
-            if(tag["kwd-group-type"] != None):
-                # A tag attribute found, check it for correct attribute
-                if(tag["kwd-group-type"] == "author-keywords"):
-                    keyword_text_list = get_kwd(tag)
-                    for k in keyword_text_list:
-                        keywords.append(k)
-        except KeyError:
-            # Tag attribute not found, we want this tag value
-            keyword_text_list = get_kwd(tag)
-            for k in keyword_text_list:
-                keywords.append(k)
-
-    return keywords
-
-@nullify
-def get_kwd(tag):
-    """
-    For extracting individual keywords (kwd) from a parent kwd-group
-    refactored to use more than once in def keywords
-    """
-    keywords = []
-    kwd = extract_nodes(tag, "kwd")
-    for k in kwd:
-        keywords.append(k.text)
-    return keywords
 
 @nullify
 @strippen
@@ -625,264 +765,9 @@ def author_notes(soup):
         return None
     return author_notes
 
-def get_ymd(soup):
-    """
-    Get the year, month and day from child tags
-    """
-    day = extract_node_text(soup, "day")
-    month = extract_node_text(soup, "month")
-    year = extract_node_text(soup, "year")
-    return (day, month, year)
 
-def get_pub_date(soup, date_type = "pub"):
-    """
-    Find the publishing date for populating
-    pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
-    Default date_type is pub
-    """
-    tz = "UTC"
-    
-    try:
-        pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
-        if(len(pub_date_section) == 0):
-            pub_date_section = extract_nodes(soup, "pub-date", attr = "date-type", value = date_type)
-        (day, month, year) = get_ymd(pub_date_section[0])
 
-    except(IndexError):
-        # Tag not found, try the other
-        return None
-    
-    date_struct = None
-    try:
-        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
-    except(TypeError):
-        # Date did not convert
-        pass
 
-    return date_struct
-
-def pub_date_date(soup):
-    """
-    Find the publishing date pub_date_date in human readable form
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def pub_date_day(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string =  time.strftime("%d", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def pub_date_month(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%m", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def pub_date_year(soup):
-    """
-    Find the publishing date pub_date_day
-    """
-    pub_date = get_pub_date(soup)
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def pub_date_timestamp(soup):
-    """
-    Find the publishing date pub_date_timestamp, in UTC time
-    """
-    pub_date = get_pub_date(soup)
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(pub_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
-
-def get_history_date(soup, date_type = None):
-    """
-    Find a date in the history tag for the specific date_type
-    typical date_type values: received, accepted
-    """
-    if(date_type == None):
-        return None
-    
-    tz = "UTC"
-    
-    try:
-        history_section = extract_nodes(soup, "history")
-        history_date_section = extract_nodes(soup, "date", attr = "date-type", value = date_type)
-        (day, month, year) = get_ymd(history_date_section[0])
-    except(IndexError):
-        # Tag not found, try the other
-        return None
-    return time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
-
-def received_date_date(soup):
-    """
-    Find the received date received_date_date in human readable form
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def received_date_day(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%d", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def received_date_month(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%m", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def received_date_year(soup):
-    """
-    Find the received date received_date_day
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def received_date_timestamp(soup):
-    """
-    Find the received date received_date_timestamp, in UTC time
-    """
-    received_date = get_history_date(soup, date_type = "received")
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(received_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
-    
-def accepted_date_date(soup):
-    """
-    Find the accepted date accepted_date_date in human readable form
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%B %d, %Y", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def accepted_date_day(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%d", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-@inten
-def accepted_date_month(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%m", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-    
-@inten
-def accepted_date_year(soup):
-    """
-    Find the accepted date accepted_date_day
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    date_string = None
-    try:
-        date_string = time.strftime("%Y", accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return date_string
-
-def accepted_date_timestamp(soup):
-    """
-    Find the accepted date accepted_date_timestamp, in UTC time
-    """
-    accepted_date = get_history_date(soup, date_type = "accepted")
-    timestamp = None
-    try:
-        timestamp = calendar.timegm(accepted_date)
-    except(TypeError):
-        # Date did not convert
-        pass
-    return timestamp
 
 def get_funding_group(soup):
     """
@@ -955,9 +840,9 @@ def award_group_principal_award_recipient(tag):
         principal_award_recipient_text = ""
         
         try:
-            institution = extract_node_text(t, "institution")
-            surname = extract_node_text(t, "surname")
-            given_names = extract_node_text(t, "given-names")
+            institution = node_text(first(extract_nodes(t, "institution")))
+            surname = node_text(first(extract_nodes(t, "surname")))
+            given_names = node_text(first(extract_nodes(t, "given-names")))
             # Concatenate name and institution values if found
             #  while filtering out excess whitespace
             if(given_names):
@@ -980,7 +865,7 @@ def funding_statement(soup):
     Find the funding statement (one expected)
     """
     funding_statement = None
-    funding_statement = extract_node_text(soup, "funding-statement")
+    funding_statement = node_text(first(extract_nodes(soup, "funding-statement")))
     return funding_statement
 
 def get_permissions_section(soup):
@@ -999,7 +884,7 @@ def copyright_statement(soup):
     copyright_statement = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_statement = extract_node_text(permissions_section[0], "copyright-statement")
+        copyright_statement = node_text(first(extract_nodes(permissions_section[0], "copyright-statement")))
     except(IndexError):
         return None
     return copyright_statement
@@ -1011,7 +896,7 @@ def copyright_year(soup):
     copyright_year = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_year = extract_node_text(permissions_section[0], "copyright-year")
+        copyright_year = node_text(first(extract_nodes(permissions_section[0], "copyright-year")))
     except(IndexError):
         return None
     try:
@@ -1026,7 +911,7 @@ def copyright_holder(soup):
     copyright_holder = None
     try:
         permissions_section = get_permissions_section(soup)
-        copyright_holder = extract_node_text(permissions_section[0], "copyright-holder")
+        copyright_holder = node_text(first(extract_nodes(permissions_section[0], "copyright-holder")))
     except(IndexError):
         return None
     return copyright_holder
@@ -1051,7 +936,7 @@ def license(soup):
     license = None
     try:
         license_section = get_license_section(soup)
-        license = extract_node_text(license_section[0], "license-p")
+        license = node_text(first(extract_nodes(license_section[0], "license-p")))
     except(IndexError):
         return None
     return license
@@ -1074,7 +959,7 @@ def ack(soup):
     Find the acknowledgements in the ack tag
     """
     ack = None
-    ack = extract_node_text(soup, "ack")
+    ack = node_text(first(extract_nodes(soup, "ack")))
     return ack
 
 @nullify

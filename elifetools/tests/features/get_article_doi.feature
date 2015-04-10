@@ -11,4 +11,5 @@ Feature: parse the article DOI
   Examples:
     | document                          | identifier   
     | elife-kitchen-sink.xml            | 10.7554/eLife.00013
-    | elife00013.xml                    | 10.7554/eLife.00013 
+    | elife00013.xml                    | 10.7554/eLife.00013
+    | elife_poa_e06828.xml              | 10.7554/eLife.06828

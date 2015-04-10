@@ -12,6 +12,7 @@ Feature: Parse the journal from the article
     | document                          | journal_id   
     | elife00013.xml                    | elife
     | elife-kitchen-sink.xml            | eLife
+    | elife_poa_e06828.xml              | eLife
     
     
   Scenario Outline: Read the journal issn
@@ -23,7 +24,7 @@ Feature: Parse the journal from the article
   Examples:
     | document                          | pub_format  | journal_issn   
     | elife00013.xml                    | electronic  | 2050-084X
-    
+    | elife_poa_e06828.xml              | electronic  | 2050-084X
     
   Scenario Outline: Read the journal title
     Given I have the document <document>
@@ -33,6 +34,7 @@ Feature: Parse the journal from the article
   Examples:
     | document                          | journal_title   
     | elife00013.xml                    | eLife
+    | elife_poa_e06828.xml              | eLife
     
     
   Scenario Outline: Read the publisher name
@@ -43,4 +45,4 @@ Feature: Parse the journal from the article
   Examples:
     | document                          | publisher_name   
     | elife00013.xml                    | eLife Sciences Publications, Ltd
-    
+    | elife_poa_e06828.xml              | eLife Sciences Publications, Ltd
