@@ -274,9 +274,11 @@ def abstracts(soup):
             
             good_paragraphs = remove_doi_paragraph(paragraphs(tag))
             
+            glue = ""
             for p_tag in good_paragraphs:
-                abstract["content"] += node_text(p_tag)
-                abstract["full_content"] += node_content(p_tag)
+                abstract["content"] += glue + node_text(p_tag)
+                abstract["full_content"] += glue + node_content(p_tag)
+                glue = " "
         else:
             abstract["content"] = None
     
@@ -289,6 +291,7 @@ def abstract(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+    if abstract:
         return abstract["content"]
     else:
         return None
@@ -300,10 +303,33 @@ def full_abstract(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+    if abstract:
         return abstract["full_content"]
     else:
         return None
 
+def digest(soup):
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
+                                abstract_list))
+    if abstract:
+        return abstract["content"]
+    else:
+        return None
+
+def full_digest(soup):
+    """
+    Return the digest including inline tags
+    """
+    abstract_list = abstracts(soup)
+    if abstract_list:
+        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
+                                abstract_list))
+    if abstract:
+        return abstract["full_content"]
+    else:
+        return None
 
 #
 # HERE BE MONSTERS

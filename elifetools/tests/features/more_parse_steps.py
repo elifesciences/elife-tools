@@ -76,3 +76,11 @@ def get_the_full_title(step):
 @step('I get the full abstract') 
 def get_the_full_abstract(step):
     world.string = pm.full_abstract(world.filecontent)
+    
+@step(u'I get the digest')
+def i_get_the_digest(step):
+    world.string = pm.digest(world.filecontent)
+    
+@step(u'I get the full digest')
+def i_get_the_full_digest(step):
+    world.string = pm.full_digest(world.filecontent)
