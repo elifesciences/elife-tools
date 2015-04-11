@@ -12,7 +12,8 @@ Feature: Get subject areas from the document
     | document                    | count
     | elife-kitchen-sink.xml      | 3      
     | elife00013.xml              | 2       
-
+    | elife_poa_e06828.xml        | 3
+    
 
   Scenario Outline: Get subject area
     Given I have the document <document>
@@ -26,3 +27,6 @@ Feature: Get subject areas from the document
     | elife-kitchen-sink.xml      | 2   | Computer science
     | elife00013.xml              | 0   | Research article
     | elife00013.xml              | 1   | Cell biology
+    | elife_poa_e06828.xml        | 0   | Research article
+    | elife_poa_e06828.xml        | 1   | Developmental biology and stem cells
+    | elife_poa_e06828.xml        | 2   | Neuroscience

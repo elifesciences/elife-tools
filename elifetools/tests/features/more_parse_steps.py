@@ -68,3 +68,19 @@ def i_count_the_number_of_award_groups(step):
 @step(u'I get the award groups')
 def i_get_the_award_groups(step):
     world.list = pm.award_groups(world.filecontent)
+
+@step('I get the full title') 
+def get_the_full_title(step):
+    world.string = pm.full_title(world.filecontent)
+
+@step('I get the full abstract') 
+def get_the_full_abstract(step):
+    world.string = pm.full_abstract(world.filecontent)
+    
+@step(u'I get the digest')
+def i_get_the_digest(step):
+    world.string = pm.digest(world.filecontent)
+    
+@step(u'I get the full digest')
+def i_get_the_full_digest(step):
+    world.string = pm.full_digest(world.filecontent)

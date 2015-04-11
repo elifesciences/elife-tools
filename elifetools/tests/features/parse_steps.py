@@ -283,6 +283,14 @@ def i_get_the_accepted_date_year(step):
 def i_get_the_accepted_date_timestamp(step):
     world.string = pm.accepted_date_timestamp(world.filecontent)
 
+@step(u'I get the collection year')
+def i_get_the_collection_year(step):
+    world.string = pm.collection_year(world.filecontent)
+
+@step(u'I get the is poa')
+def i_get_the_is_poa(step):
+    world.string = pm.is_poa(world.filecontent)
+
 @step(u'I get the abstract')
 def i_get_the_abstract(step):
     world.string = pm.abstract(world.filecontent)
@@ -302,6 +310,14 @@ def i_count_the_number_of_subject_area(step):
 @step(u'I get the subject area')
 def i_get_the_subject_area(step):
     world.list = pm.subject_area(world.filecontent)
+
+@step(u'I count the number of display channel')
+def i_count_the_number_of_display_channel(step):
+    world.count = len(pm.display_channel(world.filecontent))
+    
+@step(u'I get the display channel')
+def i_get_the_display_channel(step):
+    world.list = pm.display_channel(world.filecontent)
 
 """
 Note: Adding more steps seems to break other tests, so maybe

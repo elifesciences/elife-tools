@@ -1,5 +1,7 @@
 import cgi
 import htmlentitydefs
+import time
+import calendar
 
 def first(x):
     "returns the first element of an iterable, swallowing index errors and returning None"
@@ -129,7 +131,64 @@ def revert_entities(function):
         return formatted_text
     return wrapper
 
+def date_struct(year, month, day, tz = "UTC"):
+    """
+    Given year, month and day numeric values and a timezone
+    convert to structured date object
+    """
+    date_struct = None
+    
+    for item in year, month, day:
+        if item is None:
+            return None
+    
+    try:
+        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
+    except(TypeError, ValueError):
+        # Date did not convert due to None variables, or the date does not exist
+        pass
 
+    return date_struct
+
+def date_format(format, date_struct):
+    """
+    Convert a structured date to the given date format
+    but can return None if it fails to happen
+    """
+    date_string = None
+    if date_struct:
+        date_string = time.strftime(format, date_struct)
+    return date_string
+
+def date_text(date_struct):
+    return date_format("%B %d, %Y", date_struct)
+
+def day_text(date_struct):
+    try:
+        return int(date_format("%d", date_struct))
+    except TypeError:
+        return None
+    
+def month_text(date_struct):
+    try:
+        return int(date_format("%m", date_struct))
+    except TypeError:
+        return None
+
+def year_text(date_struct):
+    try:
+        return int(date_format("%Y", date_struct))
+    except TypeError:
+        return None
+
+def date_timestamp(date_struct):
+    timestamp = None
+    try:
+        timestamp = calendar.timegm(date_struct)
+    except:
+        # Date did not convert
+        pass
+    return timestamp
 
 
 
@@ -140,43 +199,49 @@ def extract_nodes(soup, nodename, attr = None, value = None):
         return filter(lambda tag: tag.get(attr) == value, tags)
     return tags
 
-# deprecate?
-def extract_first_node(soup, nodename):
-    return first(extract_nodes(soup, nodename))
 
 #@strippen
 #@revert_entities
 def node_text(tag):
     return getattr(tag, 'text', None)
 
-
-
-#
-# deprecated
-#
-
-# double handling and mixing responsibilities.
-# use `extract_nodes` and `node_text`
-def extract_node_text(soup, nodename, attr = None, value = None):
+def node_content(tag):
     """
-    Extract node text by nodename, unless attr is supplied
-    If attr and value is specified, find all the nodes and search
-      by attr and value for the first node
+    Given a tag, return a string of its children including the tags
+    In other words, do not include the root or parent tag of the tag
     """
-    tag_text = None
-    if(attr == None):
-        tag = extract_first_node(soup, nodename)
-        try:
-            tag_text = tag.text
-        except(AttributeError):
-            # Tag text not found
-            return None
+    content = ""
+    for ch in tag.children:
+        content = content + unicode(ch)
+        
+    if content == "":
+        return None
     else:
-        tags = extract_nodes(soup, nodename, attr, value)
-        for tag in tags:
-            try:
-                if tag[attr] == value:
-                    tag_text = tag.text
-            except KeyError:
-                continue
-    return tag_text
+        return content
+    
+def paragraphs(tags):
+    """
+    Given a list of tags only return the paragraph tags
+    """
+    
+    paragraphs = []
+    for tag in tags:
+        if tag.name == "p":
+            paragraphs.append(tag)
+            
+    return paragraphs
+
+def remove_doi_paragraph(tags):
+    """
+    Some paragraphs start with the text "DOI:" and we do not always want them
+    and this can filter them out of a list of paragraphs
+    """
+    match_text = "DOI:"
+    start_index = 0
+    end_index = len(match_text)
+    
+    good_tags = []
+    for tag in tags:
+        if node_text(tag).strip()[start_index:end_index] != match_text:
+            good_tags.append(tag)
+    return good_tags

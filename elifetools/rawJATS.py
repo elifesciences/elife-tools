@@ -6,8 +6,14 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 """
 
-def title(soup):
+def article_title(soup):
     return first(extract_nodes(soup, "article-title"))
+
+def title(soup):
+    return first(extract_nodes(soup, "title"))
+
+def abstract(soup):
+    return extract_nodes(soup, "abstract")
 
 def doi(soup):
     doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
@@ -30,6 +36,25 @@ def publisher(soup):
 def article_type(soup):
     # returns raw data, just that the data doesn't contain any BS nodes
     return first(extract_nodes(soup, "article")).get('article-type')
+
+def pub_date(soup, date_type):
+    return first(extract_nodes(soup, "pub-date", attr = "date-type", value = date_type))
+
+def pub_date_collection(soup, pub_type):
+    return first(extract_nodes(soup, "pub-date", attr = "pub-type", value = pub_type))
+
+def history_date(soup, date_type):
+    date_tags = extract_nodes(soup, "date", attr = "date-type", value = date_type)
+    return first(filter(lambda tag: tag.parent.name == "history", date_tags))
+
+def day(soup):
+    return first(extract_nodes(soup, "day"))
+
+def month(soup):
+    return first(extract_nodes(soup, "month"))
+
+def year(soup):
+    return first(extract_nodes(soup, "year"))
 
 def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
@@ -66,6 +91,38 @@ def copyright_holder(soup):
 def funding_statement(soup):
     return first(extract_nodes(soup, "funding-statement"))
 
+def research_organism_keywords(soup):
+    tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
+    return filter(lambda tag: tag.name == "kwd", tags)
+
+def author_keywords(soup):
+    # A few articles have kwd-group with no kwd-group-type, so account for those
+    tags = extract_nodes(soup, "kwd-group")
+    keyword_tags = []
+    for tag in tags:
+        if (tag.get("kwd-group-type") == "author-keywords" 
+            or tag.get("kwd-group-type") is None):
+            keyword_tags += filter(lambda tag: tag.name == "kwd", tag)
+    return keyword_tags
+
+def subject_area(soup, subject_group_type = None):
+    # Supports all subject areas or just particular ones filtered by 
+    subject_area_tags = []
+    tags = extract_nodes(soup, "subject")
+    
+    subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group" \
+                                           and tag.parent.parent.name == "article-categories" \
+                                           and tag.parent.parent.parent.name == "article-meta", tags)
+    if subject_group_type:
+        subject_area_tags = filter(lambda tag:
+                                    tag.parent.get("subj-group-type") == subject_group_type, tags)
+    return subject_area_tags
+
+def display_channel(soup):
+    return (subject_area(soup, subject_group_type = "display-channel"))
+
+
+
 #
 # authors
 #
@@ -95,3 +152,4 @@ def publisher_loc(ref):
 
 def publisher_name(ref):
     return extract_node(ref, "publisher-name")
+

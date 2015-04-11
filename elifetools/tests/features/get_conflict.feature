@@ -12,4 +12,4 @@ Feature: Parse the conflict tags from the article
     | document                  | idx      | conflict   
     | elife00013.xml            | 0        | JC: Reviewing Editor, eLife.
     | elife00013.xml            | 1        | The remaining authors have no competing interests to declare.
-    
+    | elife_poa_e06828.xml      | 0        | The authors declare that no competing interests exist.
