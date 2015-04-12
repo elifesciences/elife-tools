@@ -29,7 +29,7 @@ def title(soup):
     
 def full_title(soup):
     # The title including italic tags, etc.
-    return node_content(raw_parser.article_title(soup))
+    return node_contents_str(raw_parser.article_title(soup))
 
 def title_short(soup):
     "'title' truncated to 20 chars"
@@ -65,25 +65,15 @@ def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
     
 def research_organism(soup):
-    """
-    Find the research-organism from the set of kwd-group tags
-    """
-    research_organism = []
-    tags = raw_parser.research_organism_keywords(soup)
-    for tag in tags:
-        research_organism.append(node_text(tag))
-    return research_organism
+    "Find the research-organism from the set of kwd-group tags"
+    return map(node_text, raw_parser.research_organism_keywords(soup))
 
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
     which are typically labelled as the author keywords
     """
-    keywords = []
-    tags = raw_parser.author_keywords(soup)
-    for tag in tags:
-        keywords.append(node_text(tag))
-    return keywords
+    return map(node_text, raw_parser.author_keywords(soup))
 
 @strippen
 def acknowledgements(soup):
@@ -178,7 +168,6 @@ def pub_date(soup):
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
     Default date_type is pub
     """
-
     pub_date = raw_parser.pub_date(soup, date_type = "pub")
     if pub_date is None:
         return None
@@ -340,7 +329,7 @@ def abstracts(soup):
             glue = ""
             for p_tag in good_paragraphs:
                 abstract["content"] += glue + node_text(p_tag)
-                abstract["full_content"] += glue + node_content(p_tag)
+                abstract["full_content"] += glue + node_contents_str(p_tag)
                 glue = " "
         else:
             abstract["content"] = None
@@ -394,8 +383,10 @@ def full_digest(soup):
     else:
         return None
 
+
+
 #
-# HERE BE MONSTERS
+# HERE BE DRAGONS
 #
 
 
@@ -832,14 +823,6 @@ def author_notes(soup):
 
 
 
-def get_funding_group(soup):
-    """
-    Get the funding-group sections for populating
-    funding_source lists
-    """
-    funding_group_section = extract_nodes(soup, "funding-group")
-    return funding_group_section
-
 @nullify
 def award_groups(soup):
     """
@@ -847,7 +830,7 @@ def award_groups(soup):
     """
     award_groups = []
     
-    funding_group_section = get_funding_group(soup)
+    funding_group_section = extract_nodes(soup, "funding-group")
     for fg in funding_group_section:
         
         award_group_tags = extract_nodes(fg, "award-group")

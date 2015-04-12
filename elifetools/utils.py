@@ -15,30 +15,16 @@ def firstnn(x):
     return first(filter(None, x))
 
 def swap_en_dashes(textHTMLEntities):
-    title = textHTMLEntities.replace("&#8211;", "&#x02013;")#.encode('ascii', 'xmlcharrefreplace')
-    return title
+    return textHTMLEntities.replace("&#8211;", "&#x02013;")#.encode('ascii', 'xmlcharrefreplace')
 
 def unicodeToHTMLEntities(text):
     """Converts unicode to HTML entities.  For example '&' becomes '&amp;'."""
-    returnText = cgi.escape(text).encode('ascii', 'xmlcharrefreplace')
-    return returnText
+    return cgi.escape(text).encode('ascii', 'xmlcharrefreplace')
 
 def format_text(title_text):
     textHTMLEntities = unicodeToHTMLEntities(title_text)
     textHTMLEntitiesReverted = swap_en_dashes(textHTMLEntities)
     return textHTMLEntitiesReverted
-
-def nullify(function):
-    """
-    If list length is zero then return None,
-    otherwise return the list as given
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if(type(value) == list and len(value) == 0):
-            return None
-        return value
-    return wrapper
 
 def flatten(function):
     """
@@ -59,76 +45,67 @@ def flatten(function):
     return wrapper
 
 def strip_strings(value):
-    """
-    Strip excess whitespace, on strings, and simple lists
-    using recursion
-    """
-    if (value == None):
-        return None
-    elif (type(value) == list):
-        # List, so recursively strip elements
-        for i in range(0, len(value)):
-            value[i] = strip_strings(value[i])
+    def strip_string(value):
+        if hasattr(value, 'strip'):
+            return value.strip()
         return value
-    else:
-        try:
-            value = value.strip()
-            return value
-        except(AttributeError):
-            return value
+    if type(value) == list:
+        return map(strip_string, value)
+    return strip_string(value)
 
 def strip_punctuation_space(value):
-    """
-    Strip excess whitespace prior to punctuation
-    using recursion
-    """
-    if (value == None):
+    "Strip excess whitespace prior to punctuation."
+    def strip_punctuation(string):
+        replacement_list = (
+            (' .',  '.'),
+            (' :',  ':'),
+            ('( ',  '('),
+            (' )',  ')'),
+        )
+        for match, replacement in replacement_list:
+            string = string.replace(match, replacement)
+        return string
+    if value == None:
         return None
-    elif (type(value) == list):
-        # List, so recursively strip elements
-        for i in range(0, len(value)):
-            value[i] = strip_punctuation_space(value[i])
-        return value
-    else:
-        try:
-            value = value.replace(" .", ".")
-            value = value.replace(" :", ":")
-            value = value.replace("( ", "(")
-            value = value.replace(" )", ")")
-            return value
-        except(AttributeError):
-            return value
+    if type(value) == list:
+        return map(strip_punctuation, value)
+    return strip_punctuation(value)
 
-def strippen(function):
-    """
-    Strip excess whitespace as a decorator
-    """
+def coerce_to_int(val, default=0xDEADBEEF):
+    """Attempts to cast given value to an integer, return the original value if failed or the default if one provided."""
+    try:
+        return int(val)
+    except (TypeError, ValueError):
+        if default != 0xDEADBEEF:
+            return default
+        return val
+
+
+def nullify(function):
+    "Decorator. If empty list, returns None, else list."
     def wrapper(*args, **kwargs):
         value = function(*args, **kwargs)
-        return strip_strings(value)
+        if(type(value) == list and len(value) == 0):
+            return None
+        return value
+    return wrapper
+
+def strippen(function):
+    "Decorator. Strip excess whitespace from return value."
+    def wrapper(*args, **kwargs):
+        return strip_strings(function(*args, **kwargs))
     return wrapper
 
 def inten(function):
-    """
-    Try to convert to int as a decorator
-    """
+    "Decorator. Attempts to convert return value to int"
     def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if (value == None):
-            return None
-        else:
-            try:
-                return int(value)
-            except(TypeError):
-                return value
+        return coerce_to_int(function(*args, **kwargs))
     return wrapper
 
 def revert_entities(function):
-    "this is the decorator"
     def wrapper(*args, **kwargs):
         text = function(*args, **kwargs)
-        formatted_text = format_text(text)
-        return formatted_text
+        return format_text(text)
     return wrapper
 
 def date_struct(year, month, day, tz = "UTC"):
@@ -136,112 +113,70 @@ def date_struct(year, month, day, tz = "UTC"):
     Given year, month and day numeric values and a timezone
     convert to structured date object
     """
-    date_struct = None
-    
-    for item in year, month, day:
-        if item is None:
-            return None
-    
+    ymdtz = (year, month, day, tz)
+    if None in ymdtz:
+        #logger.debug("a year, month, day or tz value was empty: %s" % str(ymdtz))
+        return None # return early if we have a bad value
     try:
-        date_struct = time.strptime(year + "-" + month + "-" + day + " " + tz, "%Y-%m-%d %Z")
+        return time.strptime("%s-%s-%s %s" % ymdtz,  "%Y-%m-%d %Z")
     except(TypeError, ValueError):
-        # Date did not convert due to None variables, or the date does not exist
+        #logger.debug("date failed to convert: %s" % str(ymdtz))
         pass
-
-    return date_struct
-
-def date_format(format, date_struct):
-    """
-    Convert a structured date to the given date format
-    but can return None if it fails to happen
-    """
-    date_string = None
-    if date_struct:
-        date_string = time.strftime(format, date_struct)
-    return date_string
 
 def date_text(date_struct):
-    return date_format("%B %d, %Y", date_struct)
+    # looks like: January 01, 2015
+    return time.strftime("%B %d, %Y", date_struct) if date_struct else None
 
+
+# TODO: if these are being converted to integers perhaps they shouldn't end with '_text' ?
+
+@inten
 def day_text(date_struct):
-    try:
-        return int(date_format("%d", date_struct))
-    except TypeError:
-        return None
-    
-def month_text(date_struct):
-    try:
-        return int(date_format("%m", date_struct))
-    except TypeError:
-        return None
+    return time.strftime("%d", date_struct) if date_struct else None
 
+@inten
+def month_text(date_struct):
+    return time.strftime("%m", date_struct) if date_struct else None
+
+@inten
 def year_text(date_struct):
-    try:
-        return int(date_format("%Y", date_struct))
-    except TypeError:
-        return None
+    return time.strftime("%Y", date_struct) if date_struct else None
 
 def date_timestamp(date_struct):
-    timestamp = None
     try:
-        timestamp = calendar.timegm(date_struct)
-    except:
-        # Date did not convert
+        return calendar.timegm(date_struct)
+    except (TypeError, ValueError):
         pass
-    return timestamp
 
+def paragraphs(tags):
+    "Given a list of tags, only return the paragraph tags"
+    return filter(lambda tag: tag.name == "p", tags)
 
+def remove_doi_paragraph(tags):
+    "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
+    return filter(lambda tag: not node_text(tag).strip().startswith("DOI:"), tags)
+
+#
+#
+#
 
 def extract_nodes(soup, nodename, attr = None, value = None):
+    """
+    Returns a list of tags (nodes) from the given soup matching the given nodename.
+    If an optional attribute and value are given, these are used to filter the results
+    further."""
     tags = soup.find_all(nodename)
     if attr != None and value != None:
-        # refine nodes further by their attributes
         return filter(lambda tag: tag.get(attr) == value, tags)
     return tags
 
-
-#@strippen
-#@revert_entities
 def node_text(tag):
+    "Returns the text contents of a tag"
     return getattr(tag, 'text', None)
 
-def node_content(tag):
+def node_contents_str(tag):
     """
-    Given a tag, return a string of its children including the tags
-    In other words, do not include the root or parent tag of the tag
+    Return the contents of a tag, including it's children, as a string.
+    Does not include the root/parent of the tag.
     """
-    content = ""
-    for ch in tag.children:
-        content = content + unicode(ch)
-        
-    if content == "":
-        return None
-    else:
-        return content
-    
-def paragraphs(tags):
-    """
-    Given a list of tags only return the paragraph tags
-    """
-    
-    paragraphs = []
-    for tag in tags:
-        if tag.name == "p":
-            paragraphs.append(tag)
-            
-    return paragraphs
-
-def remove_doi_paragraph(tags):
-    """
-    Some paragraphs start with the text "DOI:" and we do not always want them
-    and this can filter them out of a list of paragraphs
-    """
-    match_text = "DOI:"
-    start_index = 0
-    end_index = len(match_text)
-    
-    good_tags = []
-    for tag in tags:
-        if node_text(tag).strip()[start_index:end_index] != match_text:
-            good_tags.append(tag)
-    return good_tags
+    return "".join(map(unicode, tag.children)) or None
