@@ -12,6 +12,9 @@ def article_title(soup):
 def title(soup):
     return first(extract_nodes(soup, "title"))
 
+def abstract(soup):
+    return extract_nodes(soup, "abstract")
+
 def doi(soup):
     doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
     # the first article-id tag whose parent is article-meta
@@ -56,6 +59,38 @@ def year(soup):
 def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
 
+def acknowledgements(soup):
+    return first(extract_nodes(soup, "ack"))
+
+def conflict(soup):
+    return extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+
+def permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    return first(extract_nodes(soup, "permissions"))
+
+def licence(soup):
+    return first(extract_nodes(permissions(soup), "license"))
+
+def licence_p(soup):
+    return first(extract_nodes(licence(soup), "license-p"))
+
+def licence_url(soup):
+    "License url attribute of the license tag"
+    return licence(soup).get("xlink:href")
+
+def copyright_statement(soup):
+    return first(extract_nodes(permissions(soup), "copyright-statement"))
+
+def copyright_year(soup):
+    return first(extract_nodes(permissions(soup), "copyright-year"))
+
+def copyright_holder(soup):
+    return first(extract_nodes(permissions(soup), "copyright-holder"))
+
+def funding_statement(soup):
+    return first(extract_nodes(soup, "funding-statement"))
+
 def research_organism_keywords(soup):
     tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
     return filter(lambda tag: tag.name == "kwd", tags)
@@ -75,11 +110,10 @@ def subject_area(soup, subject_group_type = None):
     subject_area_tags = []
     tags = extract_nodes(soup, "subject")
     
-    subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group"
-                                            and tag.parent.parent.name == "article-categories"
-                                            and tag.parent.parent.parent.name == "article-meta"
-                                            , tags)
-    if subject_group_type is not None:
+    subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group" \
+                                           and tag.parent.parent.name == "article-categories" \
+                                           and tag.parent.parent.parent.name == "article-meta", tags)
+    if subject_group_type:
         subject_area_tags = filter(lambda tag:
                                     tag.parent.get("subj-group-type") == subject_group_type, tags)
     return subject_area_tags
@@ -87,5 +121,35 @@ def subject_area(soup, subject_group_type = None):
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
 
-def abstract(soup):
-    return extract_nodes(soup, "abstract")
+
+
+#
+# authors
+#
+
+
+#
+# references
+#
+
+def ref_list(soup):
+    return extract_nodes(soup, "ref")
+
+def volume(ref):
+    return extract_nodes(ref, "volume")
+
+def fpage(ref):
+    return extract_node(ref, "fpage")
+            
+def lpage(ref):
+    return extract_node(ref, "lpage")
+
+def collab(ref):
+    return extract_node(ref, "collab")
+
+def publisher_loc(ref):
+    return extract_node(ref, "publisher-loc")
+
+def publisher_name(ref):
+    return extract_node(ref, "publisher-name")
+
