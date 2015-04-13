@@ -4,7 +4,7 @@ import htmlentitydefs
 import os
 import time
 import calendar
-
+from slugify import slugify
 from utils import *
 import rawJATS as raw_parser
 
@@ -29,7 +29,16 @@ def title(soup):
     
 def full_title(soup):
     # The title including italic tags, etc.
-    return node_content(raw_parser.article_title(soup))
+    return node_contents_str(raw_parser.article_title(soup))
+
+def title_short(soup):
+    "'title' truncated to 20 chars"
+    # TODO: 20 is arbitrary, 
+    return title(soup)[:20]
+
+def title_slug(soup):
+    "'title' slugified"
+    return slugify(title(soup))
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
@@ -56,25 +65,68 @@ def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
     
 def research_organism(soup):
-    """
-    Find the research-organism from the set of kwd-group tags
-    """
-    research_organism = []
-    tags = raw_parser.research_organism_keywords(soup)
-    for tag in tags:
-        research_organism.append(node_text(tag))
-    return research_organism
+    "Find the research-organism from the set of kwd-group tags"
+    return map(node_text, raw_parser.research_organism_keywords(soup))
 
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
     which are typically labelled as the author keywords
     """
-    keywords = []
-    tags = raw_parser.author_keywords(soup)
-    for tag in tags:
-        keywords.append(node_text(tag))
-    return keywords
+    return map(node_text, raw_parser.author_keywords(soup))
+
+@strippen
+def acknowledgements(soup):
+    return node_text(raw_parser.acknowledgements(soup))
+
+# DEPRECATED: use `acknowledgements`. avoid unnecessary abbreviations
+def ack(soup):
+    return acknowledgements(soup)
+
+@nullify
+@strippen
+def conflict(soup):
+    return map(node_text, raw_parser.conflict(soup))
+
+def copyright_statement(soup):
+    return node_text(raw_parser.copyright_statement(soup))
+
+@inten
+def copyright_year(soup):
+    return node_text(raw_parser.copyright_year(soup))
+
+def copyright_holder(soup):
+    return node_text(raw_parser.copyright_holder(soup))
+
+def license(soup):
+    return node_text(raw_parser.licence_p(soup))
+
+def license_url(soup):
+    return raw_parser.licence_url(soup)
+
+def funding_statement(soup):
+    return node_text(raw_parser.funding_statement(soup))
+
+
+#
+# authors
+#
+
+#
+# refs
+#
+
+
+def ref_text(ref):
+    # ref - human readable full reference text
+    ref_text = tag.get_text()
+    ref_text = strip_strings(ref_text)
+    # Remove excess space
+    ref_text = ' '.join(ref_text.split())
+    # Fix punctuation spaces and extra space
+    ref_text = strip_punctuation_space(strip_strings(ref_text))
+    return ref_text
+
 
 def subject_area(soup):
     """
@@ -100,6 +152,7 @@ def display_channel(soup):
         
     return display_channel
 
+
 def ymd(soup):
     """
     Get the year, month and day from child tags
@@ -115,7 +168,6 @@ def pub_date(soup):
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
     Default date_type is pub
     """
-
     pub_date = raw_parser.pub_date(soup, date_type = "pub")
     if pub_date is None:
         return None
@@ -277,7 +329,7 @@ def abstracts(soup):
             glue = ""
             for p_tag in good_paragraphs:
                 abstract["content"] += glue + node_text(p_tag)
-                abstract["full_content"] += glue + node_content(p_tag)
+                abstract["full_content"] += glue + node_contents_str(p_tag)
                 glue = " "
         else:
             abstract["content"] = None
@@ -331,8 +383,10 @@ def full_digest(soup):
     else:
         return None
 
+
+
 #
-# HERE BE MONSTERS
+# HERE BE DRAGONS
 #
 
 
@@ -769,14 +823,6 @@ def author_notes(soup):
 
 
 
-def get_funding_group(soup):
-    """
-    Get the funding-group sections for populating
-    funding_source lists
-    """
-    funding_group_section = extract_nodes(soup, "funding-group")
-    return funding_group_section
-
 @nullify
 def award_groups(soup):
     """
@@ -784,7 +830,7 @@ def award_groups(soup):
     """
     award_groups = []
     
-    funding_group_section = get_funding_group(soup)
+    funding_group_section = extract_nodes(soup, "funding-group")
     for fg in funding_group_section:
         
         award_group_tags = extract_nodes(fg, "award-group")
@@ -859,120 +905,3 @@ def award_group_principal_award_recipient(tag):
             continue
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
-
-def funding_statement(soup):
-    """
-    Find the funding statement (one expected)
-    """
-    funding_statement = None
-    funding_statement = node_text(first(extract_nodes(soup, "funding-statement")))
-    return funding_statement
-
-def get_permissions_section(soup):
-    """
-    Get the permissions section for populating
-    copyright and license data
-    """
-    permissions_section = None
-    permissions_section = extract_nodes(soup, "permissions")
-    return permissions_section
-
-def copyright_statement(soup):
-    """
-    Find the copyright statement
-    """
-    copyright_statement = None
-    try:
-        permissions_section = get_permissions_section(soup)
-        copyright_statement = node_text(first(extract_nodes(permissions_section[0], "copyright-statement")))
-    except(IndexError):
-        return None
-    return copyright_statement
-
-def copyright_year(soup):
-    """
-    Find the copyright year
-    """
-    copyright_year = None
-    try:
-        permissions_section = get_permissions_section(soup)
-        copyright_year = node_text(first(extract_nodes(permissions_section[0], "copyright-year")))
-    except(IndexError):
-        return None
-    try:
-        return int(copyright_year)
-    except TypeError:
-        return copyright_year
-
-def copyright_holder(soup):
-    """
-    Find the copyright holder
-    """
-    copyright_holder = None
-    try:
-        permissions_section = get_permissions_section(soup)
-        copyright_holder = node_text(first(extract_nodes(permissions_section[0], "copyright-holder")))
-    except(IndexError):
-        return None
-    return copyright_holder
-
-def get_license_section(soup):
-    """
-    Find the license section, containing the
-    license, license-url and license-type
-    """
-    license_section = None
-    try:
-        permissions_section = get_permissions_section(soup)
-        license_section = extract_nodes(permissions_section[0], "license")
-    except(IndexError):
-        return None
-    return license_section
-
-def license(soup):
-    """
-    Find the license text
-    """
-    license = None
-    try:
-        license_section = get_license_section(soup)
-        license = node_text(first(extract_nodes(license_section[0], "license-p")))
-    except(IndexError):
-        return None
-    return license
-
-def license_url(soup):
-    """
-    Find the license url attribute of the license tag
-    """
-    license_url = None
-    try:
-        license_section = get_license_section(soup)
-        license_url = license_section[0]["xlink:href"]
-    except(IndexError):
-        return None
-    return license_url
-
-@strippen
-def ack(soup):
-    """
-    Find the acknowledgements in the ack tag
-    """
-    ack = None
-    ack = node_text(first(extract_nodes(soup, "ack")))
-    return ack
-
-@nullify
-@strippen
-def conflict(soup):
-    """
-    Find the conflict notes in footnote tag
-    """
-    conflict = []
-    try:
-        tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
-        for tag in tags:
-            conflict.append(tag.text) 
-    except KeyError:
-        return None
-    return conflict
