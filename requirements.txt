@@ -1,4 +1,5 @@
-testtools==0.9.34
-lettuce==0.2.20
 beautifulsoup4==4.3.2
+lettuce==0.2.20
 lxml==3.4.1
+slugify==0.0.1
+testtools==0.9.34
