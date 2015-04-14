@@ -383,7 +383,19 @@ def full_digest(soup):
     else:
         return None
 
+def related_article(soup):
+    related_articles = []
+    
+    related_article_tags = raw_parser.related_article(soup)
 
+    for tag in related_article_tags:
+        related_article = {}
+        related_article["ext_link_type"] = tag.get("ext-link-type")
+        related_article["related_article_type"] =tag.get("related-article-type")
+        related_article["xlink_href"] = tag.get("xlink:href")
+        related_articles.append(related_article)
+    
+    return related_articles
 
 #
 # HERE BE DRAGONS
