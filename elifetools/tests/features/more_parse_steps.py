@@ -84,3 +84,11 @@ def i_get_the_digest(step):
 @step(u'I get the full digest')
 def i_get_the_full_digest(step):
     world.string = pm.full_digest(world.filecontent)
+    
+@step(u'I count the number of related articles')
+def i_count_the_number_of_related_articles(step):
+    world.count = len(pm.related_article(world.filecontent))
+    
+@step(u'I get the related articles')
+def i_get_the_related_articles(step):
+    world.list = pm.related_article(world.filecontent)
