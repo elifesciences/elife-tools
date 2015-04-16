@@ -92,3 +92,7 @@ def i_count_the_number_of_related_articles(step):
 @step(u'I get the related articles')
 def i_get_the_related_articles(step):
     world.list = pm.related_article(world.filecontent)
+    
+@step(u'I get the volume')
+def i_get_the_volume(step):
+    world.string = pm.volume(world.filecontent)

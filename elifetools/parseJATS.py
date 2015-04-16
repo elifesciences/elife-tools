@@ -61,6 +61,9 @@ def article_type(soup):
     # no node text extraction required
     return raw_parser.article_type(soup)
 
+def volume(soup):
+    return node_text(first(raw_parser.volume(soup)))
+
 def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
     
