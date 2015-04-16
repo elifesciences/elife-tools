@@ -133,6 +133,8 @@ def related_article(soup):
 # authors
 #
 
+def contrib_id(soup, contrib_id_type):
+    return extract_nodes(soup, "contrib-id", attr = "contrib-id-type", value = contrib_id_type)
 
 #
 # references

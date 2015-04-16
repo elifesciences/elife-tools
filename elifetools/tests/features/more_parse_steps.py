@@ -104,3 +104,11 @@ def i_count_the_number_of_category(step):
 @step(u'I get the category')
 def i_get_the_category(step):
     world.list = pm.category(world.filecontent)
+    
+@step(u'I count the number of non-byline authors')
+def i_count_the_number_of_non_byline_authors(step):
+    world.count = len(pm.authors_non_byline(world.filecontent))
+    
+@step(u'I get the non-byline authors')
+def i_get_the_non_byline_authors(step):
+    world.list = pm.authors_non_byline(world.filecontent)

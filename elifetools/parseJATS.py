@@ -415,10 +415,15 @@ def related_article(soup):
 # HERE BE DRAGONS
 #
 
+def authors_non_byline(soup):
+    """Non-byline authors for group author members"""
+    authors_list = authors(soup, contrib_type = "author non-byline")
+    return authors_list
 
-def authors(soup):
+
+def authors(soup, contrib_type = "author"):
     """Find and return all the authors"""
-    tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = "author")
+    tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
     authors = []
     position = 1
     
@@ -465,6 +470,12 @@ def authors(soup):
         collab = node_text(first(extract_nodes(tag, "collab")))
         if(collab != None):
             author['collab'] = collab
+        
+        # Group author key
+        author['group_author_key'] = node_text(first(raw_parser.contrib_id(tag, "group-author-key")))
+ 
+        # ORCID
+        author['orcid'] = node_text(first(raw_parser.contrib_id(tag, "orcid")))
         
         # Find and parse affiliations
         affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")

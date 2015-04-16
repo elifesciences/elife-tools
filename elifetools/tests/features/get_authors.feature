@@ -35,9 +35,13 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | 0   | city                   | 1    | Boston
     | elife-kitchen-sink.xml      | 0   | author                 |      | Rosanna A Alegado
     | elife-kitchen-sink.xml      | 0   | notes_correspondence   |      | None
+    | elife-kitchen-sink.xml      | 0   | group_author_key       |      | None
+    
+    | elife-kitchen-sink.xml      | 1   | orcid                  |      | http://orcid.org/0000-0002-7361-560X
     | elife-kitchen-sink.xml      | 6   | notes_correspondence   |      | *For\n                        correspondence: jon_clardy@hms.harvard.edu(JC);
     | elife-kitchen-sink.xml      | 8   | institution            |      | Stanford University School of Medicine
     | elife-kitchen-sink.xml      | 9   | institution            |      | None
+    
     | elife00013.xml              | 6   | notes_correspondence   |      | *For correspondence: jon_clardy@hms.harvard.edu (JC);
     | elife00013.xml              | 0   | notes_footnotes        | 0    | †These authors contributed equally to this work
     | elife00013.xml              | 0   | notes_footnotes        | 1    | RA: Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article
@@ -66,4 +70,35 @@ Feature: get authors from the document
     | elife02935.xml              | 33  | collab                 |      | ICGC Breast Cancer Group
     | elife02935.xml              | 33  | institution            |      | Wellcome Trust Sanger Institute
     | elife02935.xml              | 33  | department             |      | Cancer Genome Project
+    | elife02935.xml              | 33  | position               |      | 34
     
+    
+  Scenario Outline: Count the number of non-byline authors
+    Given I have the document <document>
+    When I count the number of non-byline authors 
+    Then I count the total as <authors>
+  
+  Examples:
+    | document                    | authors
+    | elife-kitchen-sink.xml      | 7   
+    | elife00013.xml              | 0       
+    | elife_poa_e06828.xml        | 0
+    | elife02935.xml              | 127
+    
+    
+  Scenario Outline: Get non-byline authors
+    Given I have the document <document>
+    When I get the non-byline authors
+    Then I see list index <idx> <attribute> <sidx> as <val>
+  
+  Examples:
+    | document                    | idx | attribute              | sidx | val
+    | elife-kitchen-sink.xml      | 0   | surname                |      | Mullikin
+    | elife-kitchen-sink.xml      | 0   | given_names            |      | Jim
+    | elife-kitchen-sink.xml      | 0   | position               |      | 1
+    | elife-kitchen-sink.xml      | 0   | group_author_key       |      | group-author-id1
+
+    | elife02935.xml              | 0   | surname                |      | Provenzano
+    | elife02935.xml              | 0   | given_names            |      | Elena
+    | elife02935.xml              | 0   | position               |      | 1
+    | elife02935.xml              | 0   | group_author_key       |      | group-author-id1
