@@ -461,6 +461,11 @@ def authors(soup):
         if(given_names != None):
             author['given_names'] = given_names
         
+        # Collab for group authors
+        collab = node_text(first(extract_nodes(tag, "collab")))
+        if(collab != None):
+            author['collab'] = collab
+        
         # Find and parse affiliations
         affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")
         if len(affs) <= 0:

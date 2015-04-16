@@ -13,6 +13,7 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | 10       
     | elife00013.xml              | 8       
     | elife_poa_e06828.xml        | 7
+    | elife02935.xml              | 53
 
   Scenario Outline: Get authors
     Given I have the document <document>
@@ -56,3 +57,13 @@ Feature: get authors from the document
     | elife_poa_e06828.xml        | 0   | institution            |      | University of Pennsylvania
     | elife_poa_e06828.xml        | 0   | department             |      | Department of Neuroscience, Perelman School of Medicine
     | elife_poa_e06828.xml        | 0   | city                   |      | Philadelphia
+    
+    
+    | elife02935.xml              | 0   | person_id              |      | 10471
+    | elife02935.xml              | 0   | surname                |      | Ju
+    | elife02935.xml              | 33  | person_id              |      | None
+    | elife02935.xml              | 33  | surname                |      | None
+    | elife02935.xml              | 33  | collab                 |      | ICGC Breast Cancer Group
+    | elife02935.xml              | 33  | institution            |      | Wellcome Trust Sanger Institute
+    | elife02935.xml              | 33  | department             |      | Cancer Genome Project
+    
