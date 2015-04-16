@@ -96,3 +96,11 @@ def i_get_the_related_articles(step):
 @step(u'I get the volume')
 def i_get_the_volume(step):
     world.string = pm.volume(world.filecontent)
+    
+@step(u'I count the number of category')
+def i_count_the_number_of_category(step):
+    world.count = len(pm.category(world.filecontent))
+    
+@step(u'I get the category')
+def i_get_the_category(step):
+    world.list = pm.category(world.filecontent)

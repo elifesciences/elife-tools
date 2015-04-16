@@ -155,6 +155,17 @@ def display_channel(soup):
         
     return display_channel
 
+def category(soup):
+    """
+    Find the category from subject areas
+    """
+    category = []
+    
+    tags = raw_parser.category(soup)
+    for tag in tags:
+        category.append(node_text(tag))
+        
+    return category
 
 def ymd(soup):
     """
