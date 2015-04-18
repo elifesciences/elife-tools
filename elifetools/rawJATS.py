@@ -20,6 +20,11 @@ def doi(soup):
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", doi_tags))
 
+def publisher_id(soup):
+    article_id_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "publisher-id")
+    # the first article-id tag whose parent is article-meta
+    return first(filter(lambda tag: tag.parent.name == "article-meta", article_id_tags))
+
 def journal_id(soup):
     # the first non-nil tag
     return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "hwp"))

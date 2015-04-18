@@ -44,6 +44,10 @@ def doi(soup):
     # the first non-nil value returned by the raw parser
     return node_text(raw_parser.doi(soup))
 
+def publisher_id(soup):
+    # aka the article_id, specified by the publisher
+    return node_text(raw_parser.publisher_id(soup))
+
 def journal_id(soup):
     return node_text(raw_parser.journal_id(soup))
 

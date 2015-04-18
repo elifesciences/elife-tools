@@ -112,3 +112,7 @@ def i_count_the_number_of_non_byline_authors(step):
 @step(u'I get the non-byline authors')
 def i_get_the_non_byline_authors(step):
     world.list = pm.authors_non_byline(world.filecontent)
+    
+@step(u'I get the publisher id')
+def i_get_the_publisher_id(step):
+    world.string = pm.publisher_id(world.filecontent)
