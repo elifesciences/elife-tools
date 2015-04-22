@@ -44,6 +44,10 @@ def doi(soup):
     # the first non-nil value returned by the raw parser
     return node_text(raw_parser.doi(soup))
 
+def publisher_id(soup):
+    # aka the article_id, specified by the publisher
+    return node_text(raw_parser.publisher_id(soup))
+
 def journal_id(soup):
     return node_text(raw_parser.journal_id(soup))
 
@@ -60,6 +64,9 @@ def publisher(soup):
 def article_type(soup):
     # no node text extraction required
     return raw_parser.article_type(soup)
+
+def volume(soup):
+    return node_text(first(raw_parser.volume(soup)))
 
 def article_meta_aff(soup):
     return node_text(raw_parser.article_meta_add(soup))
@@ -152,6 +159,17 @@ def display_channel(soup):
         
     return display_channel
 
+def category(soup):
+    """
+    Find the category from subject areas
+    """
+    category = []
+    
+    tags = raw_parser.category(soup)
+    for tag in tags:
+        category.append(node_text(tag))
+        
+    return category
 
 def ymd(soup):
     """
@@ -401,10 +419,15 @@ def related_article(soup):
 # HERE BE DRAGONS
 #
 
+def authors_non_byline(soup):
+    """Non-byline authors for group author members"""
+    authors_list = authors(soup, contrib_type = "author non-byline")
+    return authors_list
 
-def authors(soup):
+
+def authors(soup, contrib_type = "author"):
     """Find and return all the authors"""
-    tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = "author")
+    tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
     authors = []
     position = 1
     
@@ -446,6 +469,17 @@ def authors(soup):
         given_names = node_text(first(extract_nodes(tag, "given-names")))
         if(given_names != None):
             author['given_names'] = given_names
+        
+        # Collab for group authors
+        collab = node_text(first(extract_nodes(tag, "collab")))
+        if(collab != None):
+            author['collab'] = collab
+        
+        # Group author key
+        author['group_author_key'] = node_text(first(raw_parser.contrib_id(tag, "group-author-key")))
+ 
+        # ORCID
+        author['orcid'] = node_text(first(raw_parser.contrib_id(tag, "orcid")))
         
         # Find and parse affiliations
         affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")

@@ -92,3 +92,27 @@ def i_count_the_number_of_related_articles(step):
 @step(u'I get the related articles')
 def i_get_the_related_articles(step):
     world.list = pm.related_article(world.filecontent)
+    
+@step(u'I get the volume')
+def i_get_the_volume(step):
+    world.string = pm.volume(world.filecontent)
+    
+@step(u'I count the number of category')
+def i_count_the_number_of_category(step):
+    world.count = len(pm.category(world.filecontent))
+    
+@step(u'I get the category')
+def i_get_the_category(step):
+    world.list = pm.category(world.filecontent)
+    
+@step(u'I count the number of non-byline authors')
+def i_count_the_number_of_non_byline_authors(step):
+    world.count = len(pm.authors_non_byline(world.filecontent))
+    
+@step(u'I get the non-byline authors')
+def i_get_the_non_byline_authors(step):
+    world.list = pm.authors_non_byline(world.filecontent)
+    
+@step(u'I get the publisher id')
+def i_get_the_publisher_id(step):
+    world.string = pm.publisher_id(world.filecontent)

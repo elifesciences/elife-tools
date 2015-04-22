@@ -20,6 +20,11 @@ def doi(soup):
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", doi_tags))
 
+def publisher_id(soup):
+    article_id_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "publisher-id")
+    # the first article-id tag whose parent is article-meta
+    return first(filter(lambda tag: tag.parent.name == "article-meta", article_id_tags))
+
 def journal_id(soup):
     # the first non-nil tag
     return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "hwp"))
@@ -121,6 +126,9 @@ def subject_area(soup, subject_group_type = None):
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
 
+def category(soup):
+    return (subject_area(soup, subject_group_type = "heading"))
+
 def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
@@ -130,6 +138,8 @@ def related_article(soup):
 # authors
 #
 
+def contrib_id(soup, contrib_id_type):
+    return extract_nodes(soup, "contrib-id", attr = "contrib-id-type", value = contrib_id_type)
 
 #
 # references
