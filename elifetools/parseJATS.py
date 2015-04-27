@@ -366,7 +366,7 @@ def abstract(soup):
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
     if abstract:
-        return abstract["content"]
+        return abstract.get("content")
     else:
         return None
 
@@ -378,7 +378,7 @@ def full_abstract(soup):
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
     if abstract:
-        return abstract["full_content"]
+        return abstract.get("full_content")
     else:
         return None
 
@@ -388,7 +388,7 @@ def digest(soup):
         abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
                                 abstract_list))
     if abstract:
-        return abstract["content"]
+        return abstract.get("content")
     else:
         return None
 
