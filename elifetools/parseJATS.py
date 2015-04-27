@@ -447,8 +447,9 @@ def authors(soup, contrib_type = "author"):
         # Person id
         try:
             person_id = tag["id"]
-            person_id = person_id.replace("author-", "")
-            author['person_id'] = int(person_id)
+            if person_id.startswith("author"):
+                person_id = person_id.replace("author-", "")
+                author['person_id'] = int(person_id)
         except(KeyError):
             pass
 
