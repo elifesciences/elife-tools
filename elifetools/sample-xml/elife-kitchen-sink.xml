@@ -47,7 +47,7 @@
                     <xref ref-type="other" rid="par-2"/>
                     <xref ref-type="fn" rid="con1"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="fn" rid="pa1">&#xb6;</xref>
+                    <xref ref-type="fn" rid="pa1">&#167;</xref>
                     <xref ref-type="other" rid="dataro1"/>
                     <xref ref-type="other" rid="dataro2"/>
                 </contrib>
@@ -63,7 +63,7 @@
                     <xref ref-type="other" rid="par-3"/>
                     <xref ref-type="fn" rid="con2"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="fn" rid="pa2">&#x2016;</xref>
+                    <xref ref-type="fn" rid="pa2">&#xb6;</xref>
                 </contrib>
                 <contrib contrib-type="author" id="author-3">
                     <name>
@@ -84,7 +84,7 @@
                     <xref ref-type="fn" rid="equal-contrib2">&#x2021;</xref>
                     <xref ref-type="fn" rid="con4"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="other" rid="pa3"/>
+                    <xref ref-type="other" rid="pa3">&#x2a;&#x2a;</xref>
                 </contrib>
                 <contrib contrib-type="author" deceased="yes" id="author-5">
                     <name>
@@ -95,7 +95,7 @@
                     <xref ref-type="fn" rid="con5"/>
                     <xref ref-type="fn" rid="conf2"/>
                     <xref ref-type="other" rid="pa3"/>
-                    <xref ref-type="fn" rid="fn1">&#x2a;&#x2a;</xref>
+                    <xref ref-type="fn" rid="fn1">&#x2020;&#x2020;</xref>
                 </contrib>
                 <contrib contrib-type="author" id="author-6">
                     <name>
@@ -250,11 +250,11 @@
             <author-notes>
                 <corresp id="cor1">
                     <label>&#x2a;</label>For
-                        correspondence: <email>jon_clardy@hms.harvard.edu</email>(JC);</corresp>
+                        correspondence: <email>jon_clardy@hms.harvard.edu</email> (JC);</corresp>
                 <corresp id="cor2">
-                    <email>nking@berkeley.edu</email>(NK)</corresp>
+                    <email>nking@berkeley.edu</email> (NK)</corresp>
                 <corresp id="cor3">
-                    <email>mharrison@elifesciences.org</email>(MH)</corresp>
+                    <email>mharrison@elifesciences.org</email> (MH)</corresp>
                 <fn fn-type="con" id="equal-contrib">
                     <label>&#x2020;</label>
                     <p>These authors contributed equally to this work</p>
@@ -264,20 +264,21 @@
                     <p>These authors contributed equally to this work</p>
                 </fn>
                 <fn fn-type="present-address" id="pa1">
-                    <label>&#xb6;</label>
+                    <label>&#167;</label>
                     <p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>
                 </fn>
                 <fn fn-type="present-address" id="pa2">
-                    <label>&#x2016;</label>
+                    <label>&#xb6;</label>
                     <p>Department of Biological Chemistry and Molecular Pharmacology, Harvard
                         Medical School, Boston, United States</p>
                 </fn>
                 <fn fn-type="present-address" id="pa3">
+                    <label>&#x2a;&#x2a;</label>
                     <p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United
                         Kingdom</p>
                 </fn>
                 <fn fn-type="deceased" id="fn1">
-                    <label>&#x2a;&#x2a;</label>
+                    <label>&#x2020;&#x2020;</label>
                     <p>Deceased</p>
                 </fn>
             </author-notes>
@@ -854,7 +855,7 @@
                                     <italic>Algoriphagus locisalis</italic>MSS-170</td>
                                 <td>AY835922</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib100">Yoon et al. (2005)</xref>
+                                    <xref ref-type="bibr" rid="bib100">Yoon et al. (2005a)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -891,7 +892,7 @@
                                     <italic>Algoriphagus yeomjeoni</italic>MSS-160</td>
                                 <td>AY699794</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib99">Yoon et al. (2005)</xref>
+                                    <xref ref-type="bibr" rid="bib99">Yoon et al. (2005b)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -2049,8 +2050,8 @@
                     1988</xref>; <xref ref-type="bibr" rid="bib38">Godchaux and Leadbetter,
                     1984</xref>; <xref ref-type="bibr" rid="bib37">Godchaux and Leadbetter,
                     1983</xref>; <xref ref-type="bibr" rid="bib36">Godchaux and Leadbetter,
-                    1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al., 1995</xref>;
-                    <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995</xref>; <xref
+                    1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al., 1995a</xref>;
+                    <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995b</xref>; <xref
                     ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>) and no other
                     <italic>A machipongonensis</italic> lipid tested in this study induced rosette
                 colony development. Therefore we favor a model in which <italic>A.
@@ -2104,7 +2105,7 @@
                 receptor antagonists, and flavocristamide A, from a related bacterial species, was
                 reported as a DNA polymerase a inhibitor (<xref ref-type="bibr" rid="bib25">Dayel et
                     al., 2011</xref>; <xref ref-type="bibr" rid="bib47">Kamiyama et al.,
-                1995</xref>; <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>). The
+                1995a</xref>; <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>). The
                 pervasiveness of interactions between Bacteroidetes and animals (<xref
                     ref-type="bibr" rid="bib3">Alegado et al., 2012</xref>; <xref ref-type="bibr"
                     rid="bib95">Wexler, 2007</xref>; <xref ref-type="bibr" rid="bib93">Webster et
@@ -2283,7 +2284,7 @@
                         Leadbetter, 1984</xref>; <xref ref-type="bibr" rid="bib37">Godchaux and
                         Leadbetter, 1983</xref>; <xref ref-type="bibr" rid="bib36">Godchaux and
                         Leadbetter, 1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al.,
-                        1995</xref>; <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995</xref>;
+                        1995a</xref>; <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995b</xref>;
                         <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>; <xref
                         ref-type="bibr" rid="bib13">Bradley et al., 2009</xref>). Poorly aligned
                     regions were removed by Gblocks version 0.91b (<xref ref-type="bibr" rid="bib19"
@@ -4259,7 +4260,7 @@
                             <given-names>K</given-names>
                         </name>
                     </person-group>
-                    <year>1995</year>
+                    <year iso-8601-date="1995">1995a</year>
                     <article-title>Sulfobacins A and B, novel von Willebrand factor receptor
                         antagonists. II. Structural elucidation</article-title>
                     <source>The Journal of antibiotics</source>
@@ -4301,7 +4302,7 @@
                             <given-names>K</given-names>
                         </name>
                     </person-group>
-                    <year>1995</year>
+                    <year iso-8601-date="1995">1995b</year>
                     <article-title>Sulfobacins A and B, novel von Willebrand factor receptor
                         antagonists. I. Production, isolation, characterization and biological
                         activities</article-title>
@@ -5096,13 +5097,38 @@
                 </element-citation>
             </ref>
             <ref id="bib71">
-                <element-citation publication-type="journal"><person-group
-                        person-group-type="author"
-                                ><name><surname>Merrill</surname><given-names>AH</given-names></name><name><surname>Sullards</surname><given-names>MC</given-names></name><name><surname>Wang</surname><given-names>E</given-names></name><name><surname>Voss</surname><given-names>KA</given-names></name><name><surname>Riley</surname><given-names>RT</given-names></name></person-group><year>2001</year><article-title>Sphingolipid
-                        metabolism: roles in signal transduction and disruption by
-                        fumonisins</article-title><source>Environmental health
-                        perspectives</source><volume>109</volume><supplement>Suppl
-                        2</supplement><fpage>283</fpage><lpage>289</lpage></element-citation>
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Merrill</surname>
+                            <given-names>AH</given-names>
+                        </name>
+                        <name>
+                            <surname>Sullards</surname>
+                            <given-names>MC</given-names>
+                        </name>
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>E</given-names>
+                        </name>
+                        <name>
+                            <surname>Voss</surname>
+                            <given-names>KA</given-names>
+                        </name>
+                        <name>
+                            <surname>Riley</surname>
+                            <given-names>RT</given-names>
+                        </name>
+                    </person-group>
+                    <year>2001</year>
+                    <article-title>Sphingolipid metabolism: roles in signal transduction and
+                        disruption by fumonisins</article-title>
+                    <source>Environmental health perspectives</source>
+                    <volume>109</volume>
+                    <supplement>Suppl 2</supplement>
+                    <fpage>283</fpage>
+                    <lpage>289</lpage>
+                </element-citation>
             </ref>
             <ref id="bib72">
                 <element-citation publication-type="journal">
@@ -6114,7 +6140,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005a</year>
                     <article-title>Algoriphagus yeomjeoni sp. nov., isolated from a marine solar
                         saltern in the Yellow Sea, Korea</article-title>
                     <source>International journal of systematic and evolutionary
@@ -6141,7 +6167,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005b</year>
                     <article-title>Algoriphagus locisalis sp. nov., isolated from a marine solar
                         saltern</article-title>
                     <source>International journal of systematic and evolutionary

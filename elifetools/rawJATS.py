@@ -98,7 +98,9 @@ def funding_statement(soup):
 
 def research_organism_keywords(soup):
     tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
-    return filter(lambda tag: tag.name == "kwd", tags)
+    if not tags:
+        return None
+    return filter(lambda tag: tag.name == "kwd", tags) or None   
 
 def author_keywords(soup):
     # A few articles have kwd-group with no kwd-group-type, so account for those

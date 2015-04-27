@@ -73,6 +73,8 @@ def article_meta_aff(soup):
     
 def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
+    if not raw_parser.research_organism_keywords(soup):
+        return []
     return map(node_text, raw_parser.research_organism_keywords(soup))
 
 def keywords(soup):
@@ -80,6 +82,8 @@ def keywords(soup):
     Find the keywords from the set of kwd-group tags
     which are typically labelled as the author keywords
     """
+    if not raw_parser.author_keywords(soup):
+        return []
     return map(node_text, raw_parser.author_keywords(soup))
 
 @strippen
@@ -358,11 +362,12 @@ def abstracts(soup):
 
 
 def abstract(soup):
+    abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
     if abstract:
-        return abstract["content"]
+        return abstract.get("content")
     else:
         return None
 
@@ -370,21 +375,23 @@ def full_abstract(soup):
     """
     Return the abstract including inline tags
     """
+    abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
     if abstract:
-        return abstract["full_content"]
+        return abstract.get("full_content")
     else:
         return None
 
 def digest(soup):
+    abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
                                 abstract_list))
     if abstract:
-        return abstract["content"]
+        return abstract.get("content")
     else:
         return None
 
@@ -392,6 +399,7 @@ def full_digest(soup):
     """
     Return the digest including inline tags
     """
+    abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
@@ -439,8 +447,9 @@ def authors(soup, contrib_type = "author"):
         # Person id
         try:
             person_id = tag["id"]
-            person_id = person_id.replace("author-", "")
-            author['person_id'] = int(person_id)
+            if person_id.startswith("author"):
+                person_id = person_id.replace("author-", "")
+                author['person_id'] = int(person_id)
         except(KeyError):
             pass
 
