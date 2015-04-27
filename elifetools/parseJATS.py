@@ -73,6 +73,8 @@ def article_meta_aff(soup):
     
 def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
+    if not raw_parser.research_organism_keywords(soup):
+        return []
     return map(node_text, raw_parser.research_organism_keywords(soup))
 
 def keywords(soup):
@@ -80,6 +82,8 @@ def keywords(soup):
     Find the keywords from the set of kwd-group tags
     which are typically labelled as the author keywords
     """
+    if not raw_parser.author_keywords(soup):
+        return []
     return map(node_text, raw_parser.author_keywords(soup))
 
 @strippen
