@@ -23,6 +23,6 @@ Feature: Get author notes from the document
     | document                    | idx | val
     | elife-kitchen-sink.xml      | 0   | †These authors contributed equally to this work
     | elife-kitchen-sink.xml      | 1   | ‡These authors contributed equally to this work
-    | elife-kitchen-sink.xml      | 2   | **Deceased
+    | elife-kitchen-sink.xml      | 2   | ††Deceased
     | elife00013.xml              | 0   | †These authors contributed equally to this work
 
