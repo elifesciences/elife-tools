@@ -10,7 +10,13 @@ Tools for using article data in Python
 Install for users
 =================
 
-For now, install directly from git
+Install via `pip <http://www.pip-installer.org/>`_:
+
+.. code-block:: bash
+
+   $ pip install elifetools
+
+To install the latest version directly from git
 
 .. code-block:: bash
 
