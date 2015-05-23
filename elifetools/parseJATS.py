@@ -874,7 +874,34 @@ def author_notes(soup):
         return None
     return author_notes
 
-
+@nullify
+def full_author_notes(soup, fntype_filter=None):
+    """
+    Find the fn tags included in author-notes
+    """
+    author_notes = []
+    try:
+        author_notes_section = extract_nodes(soup, "author-notes")
+        fn = extract_nodes(author_notes_section[0], "fn")
+        for f in fn:
+            try:
+                if fntype_filter is None or f['fn-type'] in fntype_filter:
+                    author_notes.append({
+                        'id': f['id'],
+                        'text': node_contents_str(f),
+                        'fn-type': f['fn-type'],
+                    })
+                else:
+                    # Throw it away if it is a present-address footnote
+                    continue
+            except(KeyError):
+                # Append if the fn-type attribute does not exist
+                # author_notes.append(f.text) TODO : is this required here?
+                pass
+    except(IndexError):
+        # Tag not found
+        return None
+    return author_notes
 
 
 
