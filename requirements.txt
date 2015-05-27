@@ -3,3 +3,4 @@ lettuce==0.2.20
 lxml==3.4.1
 slugify==0.0.1
 testtools==0.9.34
+unittest-xml-reporting==1.12.0

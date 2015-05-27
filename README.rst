@@ -60,6 +60,13 @@ These code examples can be run with:
     $ cd elifetools/
     $ python -m unittest discover -s tests/unittests/ -p *_test.py
 
+and with xml output:
+
+.. code-block:: bash
+
+    $ cd elifetools/
+    $ python -m xmlrunner discover -s tests/unittests/ -p *_test.py
+
 Testing
 =======
 
