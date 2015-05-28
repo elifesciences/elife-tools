@@ -118,12 +118,25 @@ def subject_area(soup, subject_group_type = None):
     tags = extract_nodes(soup, "subject")
     
     subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group" \
-                                           and tag.parent.parent.name == "article-categories" \
+                                           and tag.parent.parent.name == "article-categories"
                                            and tag.parent.parent.parent.name == "article-meta", tags)
     if subject_group_type:
         subject_area_tags = filter(lambda tag:
                                     tag.parent.get("subj-group-type") == subject_group_type, tags)
     return subject_area_tags
+
+def full_subject_area(soup, subject_group_type=None):
+
+    subject_group_tags = extract_nodes(soup, "subj-group")
+    subject_group_tags = filter(lambda tag: tag.parent.name == "article-categories"
+                                              and tag.parent.parent.name == "article-meta", subject_group_tags)
+
+    if subject_group_type:
+        subject_group_tags = filter(lambda tag:
+                                    tag.get("subj-group-type" == subject_group_type))
+
+    return subject_group_tags
+
 
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))

@@ -7,6 +7,7 @@ import calendar
 from slugify import slugify
 from utils import *
 import rawJATS as raw_parser
+import re
 
 
 import logging
@@ -150,6 +151,17 @@ def subject_area(soup):
         subject_area.append(node_text(tag))
         
     return subject_area
+
+def full_subject_area(soup):
+    subject_areas = raw_parser.full_subject_area(soup)
+    areas = {}
+    for tag in subject_areas:
+        subj_type = tag['subj-group-type']
+        if subj_type not in areas:
+            areas[subj_type] = []
+        areas[subj_type].append(tag.get_text().strip())
+    return areas
+
 
 def display_channel(soup):
     """
@@ -848,6 +860,29 @@ def correspondence(soup):
         # Tag not found
         return None
     return correspondence
+
+
+def get_email(text):
+    if text:
+        match = re.search('<email>(.*?)</email>', text, re.DOTALL)
+        if match is not None:
+            return match.group(1)
+
+    return ""
+
+
+@nullify
+def full_correspondence(soup):
+    cor = {}
+    try:
+        author_notes_nodes = extract_nodes(soup,"author-notes")
+        tags = extract_nodes(author_notes_nodes[0], "corresp")
+        for tag in tags:
+            cor[tag['id']] = get_email(node_contents_str(tag))
+    except IndexError:
+        return None
+    return cor
+
 
 @nullify
 @strippen
