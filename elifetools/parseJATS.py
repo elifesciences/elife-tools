@@ -938,7 +938,49 @@ def full_author_notes(soup, fntype_filter=None):
         return None
     return author_notes
 
+@nullify
+def full_author_notes(soup, fntype_filter=None):
+    """
+    Find the fn tags included in author-notes
+    """
 
+    try:
+        author_notes_section = extract_nodes(soup, "author-notes")
+        fn = extract_nodes(author_notes_section[0], "fn")
+        notes = footnotes(fn, fntype_filter)
+    except IndexError:
+        # TODO log - Tag not found
+        return None
+    return notes
+
+@nullify
+def competing_interests(soup, fntype_filter):
+    """
+    Find the fn tags included in the competing interest
+    """
+
+    try:
+        competing_interests_section = extract_nodes(soup, "fn-group", attr="content-type", value="competing-interest")
+        fn = extract_nodes(competing_interests_section[0], "fn")
+        interests = footnotes(fn, fntype_filter)
+    except IndexError:
+        return None
+    return interests
+
+def footnotes(fn, fntype_filter):
+    notes = []
+    for f in fn:
+        try:
+            if fntype_filter is None or f['fn-type'] in fntype_filter:
+                notes.append({
+                    'id': f['id'],
+                    'text': node_contents_str(f),
+                    'fn-type': f['fn-type'],
+                })
+        except KeyError:
+            # TODO log
+            pass
+    return notes
 
 @nullify
 def award_groups(soup):
