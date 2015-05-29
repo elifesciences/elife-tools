@@ -28,6 +28,15 @@ def i_count_the_number_of_author_notes(step):
 def i_get_the_author_notes(step):
     world.list = pm.author_notes(world.filecontent)
 
+@step("I count the number of full author notes")
+def i_count_the_number_of_full_author_notes(step):
+    world.count = len(pm.full_author_notes(world.filecontent))
+    pass
+
+@step(u'I get the full author notes')
+def i_get_the_full_author_notes(step):
+    world.list = pm.full_author_notes(world.filecontent)
+
 @step(u'I get the list item (.*)')
 def i_get_the_item_item(step, list_item):
     # Given a list or dict item, we need to convert
@@ -116,3 +125,4 @@ def i_get_the_non_byline_authors(step):
 @step(u'I get the publisher id')
 def i_get_the_publisher_id(step):
     world.string = pm.publisher_id(world.filecontent)
+
