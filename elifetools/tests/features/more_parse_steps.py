@@ -129,3 +129,7 @@ def i_get_the_publisher_id(step):
 @step(u'I count the number of component DOI')
 def i_count_the_number_of_component_doi(step):
     world.count = len(pm.component_doi(world.filecontent))
+    
+@step(u'I get the component DOI')
+def i_get_the_component_doi(step):
+    world.list = pm.component_doi(world.filecontent)
