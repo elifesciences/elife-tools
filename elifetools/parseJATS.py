@@ -443,10 +443,24 @@ def component_doi(soup):
     
     object_id_tags = raw_parser.object_id(soup, pub_id_type = "doi")
 
+    # Get components too for later
+    component_list = components(soup)
+
+    position = 1
+
     for tag in object_id_tags:
         component_object = {}
         component_object["doi"] = tag.text
-        component_doi.append(component_object)        
+        component_object["position"] = position
+        
+        # Try to find the type of component
+        component_match = first(filter(lambda item: item["doi"] == component_object["doi"], component_list))
+        if component_match:
+            component_object["type"] = component_match["type"]
+
+        component_doi.append(component_object)
+        
+        position = position + 1
     
     return component_doi
     
