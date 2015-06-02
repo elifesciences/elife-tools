@@ -435,6 +435,22 @@ def related_article(soup):
     
     return related_articles
 
+def component_doi(soup):
+    """
+    Look for all object-id of pub-type-id = doi, these are the component DOI tags
+    """
+    component_doi = []
+    
+    object_id_tags = raw_parser.object_id(soup, pub_id_type = "doi")
+
+    for tag in object_id_tags:
+        component_object = {}
+        component_object["doi"] = tag.text
+        component_doi.append(component_object)        
+    
+    return component_doi
+    
+
 #
 # HERE BE DRAGONS
 #

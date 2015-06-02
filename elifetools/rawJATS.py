@@ -148,6 +148,8 @@ def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
 
+def object_id(soup, pub_id_type):
+    return extract_nodes(soup, "object-id", attr = "pub-id-type", value = pub_id_type)
 
 #
 # authors
