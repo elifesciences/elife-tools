@@ -50,3 +50,15 @@ Feature: Get components from the document
     | elife00013.xml              | [4]['type']                | table-wrap
     | elife00013.xml              | [28]['type']               | sub-article
     | elife00013.xml              | [28]['doi']                | 10.7554/eLife.00013.029
+    
+    | elife02304.xml              | [0]['doi']                 | 10.7554/eLife.02304.001
+    | elife02304.xml              | [0]['position']            | 1
+    | elife02304.xml              | [0]['type']                | abstract
+    | elife02304.xml              | [0]['parent_type']         | None
+    | elife02304.xml              | [0]['parent_parent_type']  | None
+    
+    | elife02304.xml              | [7]['doi']                 | 10.7554/eLife.02304.008
+    | elife02304.xml              | [7]['position']            | 8
+    | elife02304.xml              | [7]['type']                | supplementary-material
+    | elife02304.xml              | [7]['parent_type']         | fig
+    | elife02304.xml              | [7]['parent_parent_type']  | fig-group

@@ -853,6 +853,14 @@ def components(soup):
             # If no object-id is found, then skip this component
             continue
 
+        # There are only some parent tags we care about for components
+        parent_tag = first_parent(tag, ["sub-article", "fig-group", "fig"])
+        if parent_tag:
+            component['parent_type'] = parent_tag.name
+            parent_parent_tag = first_parent(parent_tag, ["sub-article", "fig-group", "fig"])
+            if parent_parent_tag:
+                component['parent_parent_type'] = parent_parent_tag.name
+        
         content = ""
         for p_tag in extract_nodes(tag, "p"):
             if content != "":
