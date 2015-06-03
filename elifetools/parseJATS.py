@@ -822,9 +822,9 @@ def components(soup):
     """
     components = []
     
-    component_types = ["abstract", "fig", "table-wrap", "media",
-                       "chem-struct-wrap", "sub-article", "supplementary-material",
-                       "boxed-text"]
+    nodenames = ["abstract", "fig", "table-wrap", "media",
+                 "chem-struct-wrap", "sub-article", "supplementary-material",
+                 "boxed-text"]
     
     position = 1
     
@@ -832,9 +832,9 @@ def components(soup):
     
     # Find all tags for all component_types, allows the order
     #  in which they are found to be preserved
-    tags = soup.find_all(component_types) 
+    component_tags = extract_nodes(soup, nodenames)
     
-    for tag in tags:
+    for tag in component_tags:
         
         component = {}
         
