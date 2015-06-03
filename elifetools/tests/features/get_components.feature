@@ -53,12 +53,21 @@ Feature: Get components from the document
     
     | elife02304.xml              | [0]['doi']                 | 10.7554/eLife.02304.001
     | elife02304.xml              | [0]['position']            | 1
+    | elife02304.xml              | [0]['position_by_type']    | 1
     | elife02304.xml              | [0]['type']                | abstract
     | elife02304.xml              | [0]['parent_type']         | None
     | elife02304.xml              | [0]['parent_parent_type']  | None
-    
+
+    | elife02304.xml              | [6]['doi']                 | 10.7554/eLife.02304.007
+    | elife02304.xml              | [6]['position']            | 7
+    | elife02304.xml              | [6]['position_by_type']    | 5
+    | elife02304.xml              | [6]['type']                | fig
+    | elife02304.xml              | [6]['parent_type']         | fig-group
+    | elife02304.xml              | [6]['parent_parent_type']  | None
+
     | elife02304.xml              | [7]['doi']                 | 10.7554/eLife.02304.008
     | elife02304.xml              | [7]['position']            | 8
+    | elife02304.xml              | [7]['position_by_type']    | 1
     | elife02304.xml              | [7]['type']                | supplementary-material
     | elife02304.xml              | [7]['parent_type']         | fig
     | elife02304.xml              | [7]['parent_parent_type']  | fig-group

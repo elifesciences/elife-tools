@@ -826,8 +826,14 @@ def components(soup):
                  "chem-struct-wrap", "sub-article", "supplementary-material",
                  "boxed-text"]
     
+    # Count node order overall
     position = 1
     
+    # Also count node order by type of node
+    position_by_type = {}
+    for name in nodenames:
+        position_by_type[name] = 1
+        
     article_doi = doi(soup)
     
     # Find all tags for all component_types, allows the order
@@ -854,6 +860,7 @@ def components(soup):
             continue
 
         # There are only some parent tags we care about for components
+        #  and only check two levels of parentage
         parent_tag = first_parent(tag, ["sub-article", "fig-group", "fig"])
         if parent_tag:
             component['parent_type'] = parent_tag.name
@@ -875,9 +882,13 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
+            component['position_by_type'] = position_by_type[ctype]
                         
             components.append(component)
+            
+            # Increment position counters
             position += 1
+            position_by_type[ctype] += 1
     
     return components
 
