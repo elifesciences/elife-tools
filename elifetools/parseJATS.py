@@ -843,12 +843,12 @@ def components(soup):
         
         # First find the doi if present
         if(ctype == "sub-article"):
-            object_id = node_text(first(extract_nodes(tag, "article-id", attr = "pub-id-type", value = "doi")))
+            component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
         else:
-            object_id = node_text(first(extract_nodes(tag, "object-id", attr = "pub-id-type", value = "doi")))
-        if(object_id is not None):
-            component['doi'] = object_id
-            component['doi_url'] = 'http://dx.doi.org/' + object_id
+            component_doi = node_text(first(raw_parser.object_id(tag, pub_id_type= "doi")))
+        if(component_doi is not None):
+            component['doi'] = component_doi
+            component['doi_url'] = 'http://dx.doi.org/' + component_doi
         else:
             # If no object-id is found, then skip this component
             continue

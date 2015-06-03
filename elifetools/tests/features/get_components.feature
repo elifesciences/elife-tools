@@ -49,4 +49,4 @@ Feature: Get components from the document
     | elife00013.xml              | [2]['type']                | fig
     | elife00013.xml              | [4]['type']                | table-wrap
     | elife00013.xml              | [28]['type']               | sub-article
-    
+    | elife00013.xml              | [28]['doi']                | 10.7554/eLife.00013.029
