@@ -819,6 +819,8 @@ def components(soup):
     """
     Find the components, i.e. those parts that would be assigned
     a unique component DOI, such as figures, tables, etc.
+    - position is in what order the tag appears in the entire set of nodes
+    - ordinal is in what order it is for all the tags of its own type
     """
     components = []
     
@@ -828,12 +830,7 @@ def components(soup):
     
     # Count node order overall
     position = 1
-    
-    # Also count node order by type of node
-    position_by_type = {}
-    for name in nodenames:
-        position_by_type[name] = 1
-        
+     
     article_doi = doi(soup)
     
     # Find all tags for all component_types, allows the order
@@ -861,13 +858,24 @@ def components(soup):
 
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
-        parent_tag = first_parent(tag, ["sub-article", "fig-group", "fig"])
+        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]
+        parent_tag = first_parent(tag, parent_nodenames)
         if parent_tag:
-            component['parent_type'] = parent_tag.name
-            parent_parent_tag = first_parent(parent_tag, ["sub-article", "fig-group", "fig"])
+            # For fig-group we actually want the first fig of the fig-group as the parent
+            acting_parent_tag = component_acting_parent_tag(parent_tag)
+
+            component['parent_type'] = acting_parent_tag.name
+            component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
+
+            # Look for parent parent, if available
+            parent_parent_tag = first_parent(parent_tag, parent_nodenames)
+            
             if parent_parent_tag:
-                component['parent_parent_type'] = parent_parent_tag.name
-        
+                acting_parent_tag = component_acting_parent_tag(parent_parent_tag)
+                
+                component['parent_parent_type'] = acting_parent_tag.name
+                component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
+
         content = ""
         for p_tag in extract_nodes(tag, "p"):
             if content != "":
@@ -882,13 +890,12 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            component['position_by_type'] = position_by_type[ctype]
+            component['ordinal'] = tag_ordinal(tag)
                         
             components.append(component)
             
-            # Increment position counters
             position += 1
-            position_by_type[ctype] += 1
+
     
     return components
 

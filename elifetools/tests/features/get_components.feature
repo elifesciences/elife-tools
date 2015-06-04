@@ -50,24 +50,39 @@ Feature: Get components from the document
     | elife00013.xml              | [4]['type']                | table-wrap
     | elife00013.xml              | [28]['type']               | sub-article
     | elife00013.xml              | [28]['doi']                | 10.7554/eLife.00013.029
+
+    | elife02304.xml              | [0]['doi']                    | 10.7554/eLife.02304.001
+    | elife02304.xml              | [0]['position']               | 1
+    | elife02304.xml              | [0]['type']                   | abstract
+    | elife02304.xml              | [0]['parent_type']            | None
+    | elife02304.xml              | [0]['parent_parent_type']     | None
     
-    | elife02304.xml              | [0]['doi']                 | 10.7554/eLife.02304.001
-    | elife02304.xml              | [0]['position']            | 1
-    | elife02304.xml              | [0]['position_by_type']    | 1
-    | elife02304.xml              | [0]['type']                | abstract
-    | elife02304.xml              | [0]['parent_type']         | None
-    | elife02304.xml              | [0]['parent_parent_type']  | None
-
-    | elife02304.xml              | [6]['doi']                 | 10.7554/eLife.02304.007
-    | elife02304.xml              | [6]['position']            | 7
-    | elife02304.xml              | [6]['position_by_type']    | 5
-    | elife02304.xml              | [6]['type']                | fig
-    | elife02304.xml              | [6]['parent_type']         | fig-group
-    | elife02304.xml              | [6]['parent_parent_type']  | None
-
-    | elife02304.xml              | [7]['doi']                 | 10.7554/eLife.02304.008
-    | elife02304.xml              | [7]['position']            | 8
-    | elife02304.xml              | [7]['position_by_type']    | 1
-    | elife02304.xml              | [7]['type']                | supplementary-material
-    | elife02304.xml              | [7]['parent_type']         | fig
-    | elife02304.xml              | [7]['parent_parent_type']  | fig-group
+    | elife02304.xml              | [6]['doi']                    | 10.7554/eLife.02304.007
+    | elife02304.xml              | [6]['position']               | 7
+    | elife02304.xml              | [6]['type']                   | fig
+    | elife02304.xml              | [6]['parent_type']            | fig
+    | elife02304.xml              | [6]['parent_parent_type']     | None
+    
+    | elife02304.xml              | [7]['doi']                    | 10.7554/eLife.02304.008
+    | elife02304.xml              | [7]['position']               | 8
+    | elife02304.xml              | [7]['ordinal']                | 1
+    | elife02304.xml              | [7]['type']                   | supplementary-material
+    | elife02304.xml              | [7]['parent_type']            | fig
+    | elife02304.xml              | [7]['parent_ordinal']         | 5
+    | elife02304.xml              | [7]['parent_parent_type']     | fig
+    | elife02304.xml              | [7]['parent_parent_ordinal']  | 3
+    
+    | elife05502.xml              | [13]['doi']                   | 10.7554/eLife.05502.014
+    | elife05502.xml              | [13]['position']              | 14
+    | elife05502.xml              | [13]['ordinal']               | 1
+    | elife05502.xml              | [13]['type']                  | boxed-text
+    | elife05502.xml              | [13]['parent_type']           | None
+    | elife05502.xml              | [13]['parent_ordinal']        | None
+    
+    | elife05502.xml              | [14]['doi']                   | 10.7554/eLife.05502.015
+    | elife05502.xml              | [14]['position']              | 15
+    | elife05502.xml              | [14]['ordinal']               | 12
+    | elife05502.xml              | [14]['type']                  | fig
+    | elife05502.xml              | [14]['parent_type']           | boxed-text
+    | elife05502.xml              | [14]['parent_ordinal']        | 1
+    
