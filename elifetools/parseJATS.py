@@ -856,6 +856,19 @@ def components(soup):
             # If no object-id is found, then skip this component
             continue
 
+        if(ctype == "sub-article"):
+            title_tag = raw_parser.article_title(tag)
+        else:
+            title_tag = raw_parser.title(tag)
+
+        if title_tag:
+            component['title'] = node_text(title_tag)
+            component['full_title'] = node_contents_str(title_tag)
+
+        if raw_parser.label(tag):
+            component['label'] = node_text(raw_parser.label(tag))
+            component['full_label'] = node_contents_str(raw_parser.label(tag))
+
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]

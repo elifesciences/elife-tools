@@ -154,6 +154,9 @@ def related_article(soup):
 def object_id(soup, pub_id_type):
     return extract_nodes(soup, "object-id", attr = "pub-id-type", value = pub_id_type)
 
+def label(soup):
+    return first(extract_nodes(soup, "label"))
+
 #
 # authors
 #
