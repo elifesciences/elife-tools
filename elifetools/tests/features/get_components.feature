@@ -72,6 +72,13 @@ Feature: Get components from the document
     | elife02304.xml              | [7]['parent_parent_type']     | fig
     | elife02304.xml              | [7]['parent_parent_ordinal']  | 3
     
+    | elife05502.xml              | [3]['doi']                   | 10.7554/eLife.05502.004
+    | elife05502.xml              | [3]['position']              | 4
+    | elife05502.xml              | [3]['ordinal']               | 2
+    | elife05502.xml              | [3]['type']                  | fig
+    | elife05502.xml              | [3]['parent_type']           | None
+    | elife05502.xml              | [3]['parent_ordinal']        | None
+    
     | elife05502.xml              | [13]['doi']                   | 10.7554/eLife.05502.014
     | elife05502.xml              | [13]['position']              | 14
     | elife05502.xml              | [13]['ordinal']               | 1

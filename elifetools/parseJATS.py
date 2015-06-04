@@ -862,19 +862,21 @@ def components(soup):
         parent_tag = first_parent(tag, parent_nodenames)
         if parent_tag:
             # For fig-group we actually want the first fig of the fig-group as the parent
-            acting_parent_tag = component_acting_parent_tag(parent_tag)
-
-            component['parent_type'] = acting_parent_tag.name
-            component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
+            acting_parent_tag = component_acting_parent_tag(parent_tag, tag)
+            
+            if acting_parent_tag:
+                component['parent_type'] = acting_parent_tag.name
+                component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
             
             if parent_parent_tag:
-                acting_parent_tag = component_acting_parent_tag(parent_parent_tag)
+                acting_parent_tag = component_acting_parent_tag(parent_parent_tag, parent_tag)
                 
-                component['parent_parent_type'] = acting_parent_tag.name
-                component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
+                if acting_parent_tag:
+                    component['parent_parent_type'] = acting_parent_tag.name
+                    component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
 
         content = ""
         for p_tag in extract_nodes(tag, "p"):
