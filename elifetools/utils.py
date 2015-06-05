@@ -180,3 +180,8 @@ def node_contents_str(tag):
     Does not include the root/parent of the tag.
     """
     return "".join(map(unicode, tag.children)) or None
+
+def copy_attribute(source, source_key, destination, destination_key):
+    if source is not None:
+        if source is not None and destination is not None and source_key in source:
+            destination[destination_key] = source[source_key]

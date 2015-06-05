@@ -982,6 +982,39 @@ def footnotes(fn, fntype_filter):
             pass
     return notes
 
+
+@nullify
+def full_award_groups(soup):
+    """
+    Find the award-group items and return a list of details
+    """
+    award_groups = {}
+
+    funding_group_section = extract_nodes(soup, "funding-group")
+    for fg in funding_group_section:
+
+        award_group_tags = extract_nodes(fg, "award-group")
+
+        for ag in award_group_tags:
+
+            ref = ag['id']
+
+            award_group = {}
+            award_group_id = award_group_award_id(ag)
+            if award_group_id is not None:
+                award_group['award-id'] = first(award_group_id)
+            funding_sources = full_award_group_funding_source(ag)
+            source = first(funding_sources)
+            if source is not None:
+                copy_attribute(source, 'institution', award_group, 'institution')
+                copy_attribute(source, 'institution-type', award_group, 'institution-type')
+                copy_attribute(source, 'institution-id', award_group, 'id')
+                copy_attribute(source, 'institution-id-type', award_group, 'institution-id-type')
+            award_groups[ref] = award_group
+
+    return award_groups
+
+
 @nullify
 def award_groups(soup):
     """
@@ -997,11 +1030,11 @@ def award_groups(soup):
         for ag in award_group_tags:
         
             award_group = {}
-            
+
             award_group['funding_source'] = award_group_funding_source(ag)
             award_group['recipient'] = award_group_principal_award_recipient(ag)
             award_group['award_id'] = award_group_award_id(ag)
-            
+
             award_groups.append(award_group)
     
     return award_groups
@@ -1019,6 +1052,36 @@ def award_group_funding_source(tag):
     for t in funding_source_tags:
         award_group_funding_source.append(t.text)
     return award_group_funding_source
+
+@nullify
+def full_award_group_funding_source(tag):
+    """
+    Given a funding group element
+    Find the award group funding sources, one for each
+    item found in the get_funding_group section
+    """
+    award_group_funding_sources = []
+    funding_source_nodes = extract_nodes(tag, "funding-source")
+    for funding_source_node in funding_source_nodes:
+
+        award_group_funding_source = {}
+
+        institution_nodes = extract_nodes(funding_source_node, 'institution')
+        if len(institution_nodes) > 0:
+            institution_node = first(institution_nodes)
+            award_group_funding_source['institution'] = node_text(institution_node)
+            award_group_funding_source['institution-type'] = institution_node['content-type']
+
+        institution_id_nodes = extract_nodes(funding_source_node, 'institution-id')
+        if len(institution_id_nodes) > 0:
+            institution_id_node = first(institution_id_nodes)
+            award_group_funding_source['institution-id'] = node_text(institution_id_node)
+            award_group_funding_source['institution-id-type'] = institution_id_node['institution-id-type']
+
+        award_group_funding_sources.append(award_group_funding_source)
+
+    return award_group_funding_sources
+
 
 @nullify
 def award_group_award_id(tag):

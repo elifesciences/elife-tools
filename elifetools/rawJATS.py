@@ -148,6 +148,26 @@ def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
 
+def institution_wrap(soup):
+    institution_wrap_tags = extract_nodes(soup, "institution-wrap")
+    return institution_wrap_tags
+
+def institution_id(soup):
+    institution_id_tags = extract_nodes(soup, "institution-id")
+    return institution_id_tags
+
+def institution_id_type(soup):
+    institution_id_tags = extract_nodes(soup, "institution-id-type")
+    return institution_id_tags
+
+def institution_id(soup):
+    institution_id_tags = extract_nodes(soup, "institution")
+    return institution_id_tags
+
+def award_id(soup):
+    award_id_tags = extract_nodes(soup, "award_id")
+    return award_id_tags
+
 
 #
 # authors
