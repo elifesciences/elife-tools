@@ -435,6 +435,36 @@ def related_article(soup):
     
     return related_articles
 
+def component_doi(soup):
+    """
+    Look for all object-id of pub-type-id = doi, these are the component DOI tags
+    """
+    component_doi = []
+    
+    object_id_tags = raw_parser.object_id(soup, pub_id_type = "doi")
+
+    # Get components too for later
+    component_list = components(soup)
+
+    position = 1
+
+    for tag in object_id_tags:
+        component_object = {}
+        component_object["doi"] = tag.text
+        component_object["position"] = position
+        
+        # Try to find the type of component
+        component_match = first(filter(lambda item: item["doi"] == component_object["doi"], component_list))
+        if component_match:
+            component_object["type"] = component_match["type"]
+
+        component_doi.append(component_object)
+        
+        position = position + 1
+    
+    return component_doi
+    
+
 #
 # HERE BE DRAGONS
 #
@@ -789,22 +819,25 @@ def components(soup):
     """
     Find the components, i.e. those parts that would be assigned
     a unique component DOI, such as figures, tables, etc.
+    - position is in what order the tag appears in the entire set of nodes
+    - ordinal is in what order it is for all the tags of its own type
     """
     components = []
     
-    component_types = ["abstract", "fig", "table-wrap", "media",
-                       "chem-struct-wrap", "sub-article", "supplementary-material",
-                       "boxed-text"]
+    nodenames = ["abstract", "fig", "table-wrap", "media",
+                 "chem-struct-wrap", "sub-article", "supplementary-material",
+                 "boxed-text"]
     
+    # Count node order overall
     position = 1
-    
+     
     article_doi = doi(soup)
     
     # Find all tags for all component_types, allows the order
     #  in which they are found to be preserved
-    tags = soup.find_all(component_types) 
+    component_tags = extract_nodes(soup, nodenames)
     
-    for tag in tags:
+    for tag in component_tags:
         
         component = {}
         
@@ -813,15 +846,50 @@ def components(soup):
         
         # First find the doi if present
         if(ctype == "sub-article"):
-            object_id = node_text(first(extract_nodes(tag, "article-id", attr = "pub-id-type", value = "doi")))
+            component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
         else:
-            object_id = node_text(first(extract_nodes(tag, "object-id", attr = "pub-id-type", value = "doi")))
-        if(object_id is not None):
-            component['doi'] = object_id
-            component['doi_url'] = 'http://dx.doi.org/' + object_id
+            component_doi = node_text(first(raw_parser.object_id(tag, pub_id_type= "doi")))
+        if(component_doi is not None):
+            component['doi'] = component_doi
+            component['doi_url'] = 'http://dx.doi.org/' + component_doi
         else:
             # If no object-id is found, then skip this component
             continue
+
+        if(ctype == "sub-article"):
+            title_tag = raw_parser.article_title(tag)
+        else:
+            title_tag = raw_parser.title(tag)
+
+        if title_tag:
+            component['title'] = node_text(title_tag)
+            component['full_title'] = node_contents_str(title_tag)
+
+        if raw_parser.label(tag):
+            component['label'] = node_text(raw_parser.label(tag))
+            component['full_label'] = node_contents_str(raw_parser.label(tag))
+
+        # There are only some parent tags we care about for components
+        #  and only check two levels of parentage
+        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]
+        parent_tag = first_parent(tag, parent_nodenames)
+        if parent_tag:
+            # For fig-group we actually want the first fig of the fig-group as the parent
+            acting_parent_tag = component_acting_parent_tag(parent_tag, tag)
+            
+            if acting_parent_tag:
+                component['parent_type'] = acting_parent_tag.name
+                component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
+
+            # Look for parent parent, if available
+            parent_parent_tag = first_parent(parent_tag, parent_nodenames)
+            
+            if parent_parent_tag:
+                acting_parent_tag = component_acting_parent_tag(parent_parent_tag, parent_tag)
+                
+                if acting_parent_tag:
+                    component['parent_parent_type'] = acting_parent_tag.name
+                    component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
 
         content = ""
         for p_tag in extract_nodes(tag, "p"):
@@ -837,9 +905,12 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
+            component['ordinal'] = tag_ordinal(tag)
                         
             components.append(component)
+            
             position += 1
+
     
     return components
 
