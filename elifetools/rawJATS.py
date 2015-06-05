@@ -15,13 +15,16 @@ def title(soup):
 def abstract(soup):
     return extract_nodes(soup, "abstract")
 
+def article_id(soup, pub_id_type):
+    return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)
+    
 def doi(soup):
-    doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
+    doi_tags = article_id(soup, pub_id_type = "doi")
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", doi_tags))
 
 def publisher_id(soup):
-    article_id_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "publisher-id")
+    article_id_tags = article_id(soup, pub_id_type = "publisher-id")
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", article_id_tags))
 
@@ -148,6 +151,11 @@ def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
 
+def object_id(soup, pub_id_type):
+    return extract_nodes(soup, "object-id", attr = "pub-id-type", value = pub_id_type)
+
+def label(soup):
+    return first(extract_nodes(soup, "label"))
 
 #
 # authors

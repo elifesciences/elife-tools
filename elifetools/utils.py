@@ -156,6 +156,21 @@ def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     return filter(lambda tag: not node_text(tag).strip().startswith("DOI:"), tags)
 
+def component_acting_parent_tag(parent_tag, tag):
+    """
+    Only intended for use in getting components, look for tag name of fig-group
+    and if so, find the first fig tag inside it as the acting parent tag
+    """
+    if parent_tag.name == "fig-group":
+        if (len(tag.find_previous_siblings("fig")) > 0):
+            acting_parent_tag = first(extract_nodes(parent_tag, "fig"))
+        else:
+            # Do not return the first fig as parent of itself
+            return None
+    else:
+        acting_parent_tag = parent_tag
+    return acting_parent_tag
+
 #
 #
 #
@@ -180,3 +195,21 @@ def node_contents_str(tag):
     Does not include the root/parent of the tag.
     """
     return "".join(map(unicode, tag.children)) or None
+    
+def first_parent(tag, nodename):
+    """
+    Given a beautiful soup tag, look at its parents and return the first
+    tag name that matches nodename or the list nodename
+    """
+    if nodename is not None and type(nodename) == str:
+        nodename = [nodename]
+    return first(filter(lambda tag: tag.name in nodename, tag.parents))
+        
+def tag_ordinal(tag):
+    """
+    Given a beautiful soup tag, look at the tags of the same name that come before it
+    to get the tag ordinal. For example, if it is tag name fig
+    and two fig tags are before it, then it is the third fig (3)
+    """
+    tag_count = 0
+    return len(tag.find_all_previous(tag.name)) + 1
