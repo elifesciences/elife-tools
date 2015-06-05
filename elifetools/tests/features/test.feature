@@ -5,6 +5,6 @@ Feature: Test with lettuce
   And I will get a successful result
 
   Scenario: Uppercased strings
-    Given I have the string "lettuce leaves"
+    Given I have the string lettuce leaves
     When I convert the string to upper case
-    Then I see the string "LETTUCE LEAVES"
+    Then I see the string LETTUCE LEAVES
