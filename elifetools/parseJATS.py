@@ -1141,13 +1141,15 @@ def full_award_group_funding_source(tag):
         if len(institution_nodes) > 0:
             institution_node = first(institution_nodes)
             award_group_funding_source['institution'] = node_text(institution_node)
-            award_group_funding_source['institution-type'] = institution_node['content-type']
+            if 'content-type' in institution_node:
+                award_group_funding_source['institution-type'] = institution_node['content-type']
 
         institution_id_nodes = extract_nodes(funding_source_node, 'institution-id')
         if len(institution_id_nodes) > 0:
             institution_id_node = first(institution_id_nodes)
             award_group_funding_source['institution-id'] = node_text(institution_id_node)
-            award_group_funding_source['institution-id-type'] = institution_id_node['institution-id-type']
+            if 'institution-id-type' in institution_id_node:
+                award_group_funding_source['institution-id-type'] = institution_id_node['institution-id-type']
 
         award_group_funding_sources.append(award_group_funding_source)
 
