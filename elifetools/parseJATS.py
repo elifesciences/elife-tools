@@ -1080,7 +1080,7 @@ def full_award_groups(soup):
                 copy_attribute(source, 'institution', award_group, 'institution')
                 copy_attribute(source, 'institution-type', award_group, 'institution-type')
                 copy_attribute(source, 'institution-id', award_group, 'id')
-                copy_attribute(source, 'institution-id-type', award_group, 'institution-id-type')
+                copy_attribute(source, 'institution-id-type', award_group, 'id-type')
             award_groups[ref] = award_group
 
     return award_groups
@@ -1141,14 +1141,14 @@ def full_award_group_funding_source(tag):
         if len(institution_nodes) > 0:
             institution_node = first(institution_nodes)
             award_group_funding_source['institution'] = node_text(institution_node)
-            if 'content-type' in institution_node:
+            if 'content-type' in institution_node.attrs:
                 award_group_funding_source['institution-type'] = institution_node['content-type']
 
         institution_id_nodes = extract_nodes(funding_source_node, 'institution-id')
         if len(institution_id_nodes) > 0:
             institution_id_node = first(institution_id_nodes)
             award_group_funding_source['institution-id'] = node_text(institution_id_node)
-            if 'institution-id-type' in institution_id_node:
+            if 'institution-id-type' in institution_id_node.attrs:
                 award_group_funding_source['institution-id-type'] = institution_id_node['institution-id-type']
 
         award_group_funding_sources.append(award_group_funding_source)
