@@ -99,6 +99,9 @@ def copyright_holder(soup):
 def funding_statement(soup):
     return first(extract_nodes(soup, "funding-statement"))
 
+def affiliation(soup):
+    return extract_nodes(soup, "aff")
+
 def research_organism_keywords(soup):
     tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
     if not tags:

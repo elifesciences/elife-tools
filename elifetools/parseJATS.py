@@ -87,6 +87,14 @@ def keywords(soup):
         return []
     return map(node_text, raw_parser.author_keywords(soup))
 
+def full_keyword_groups(soup):
+    groups = {}
+    for group_tag in raw_parser.keyword_group(soup):
+        group = map(node_contents_str, extract_nodes(group_tag, "kwd"))
+        group = map(lambda s: s.strip(), group)
+        groups[group_tag['kwd-group-type'].strip()] = group
+    return groups
+
 @strippen
 def acknowledgements(soup):
     return node_text(raw_parser.acknowledgements(soup))
@@ -699,6 +707,24 @@ def authors(soup, contrib_type = "author"):
             position += 1
         
     return authors
+
+
+def format_aff(aff_tag):
+    values = {
+        'dept': node_contents_str(first(extract_nodes(aff_tag, "institution", "content-type", "dept"))),
+        'institution': node_contents_str(first(
+            filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution")))),
+        'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
+        'country': node_contents_str(first(extract_nodes(aff_tag, "country")))
+        }
+    return aff_tag['id'], values
+
+
+def full_affiliation(soup):
+    aff_tags = raw_parser.affiliation(soup)
+    aff_tags = filter(lambda aff: 'id' in aff.attrs, aff_tags)
+    return {key: value for (key, value) in map(format_aff, aff_tags)}
+
 
 def references(soup):
     """Renamed to refs"""
