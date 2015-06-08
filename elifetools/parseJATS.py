@@ -95,6 +95,22 @@ def full_keyword_groups(soup):
         groups[group_tag['kwd-group-type'].strip()] = group
     return groups
 
+def full_custom_meta(soup, meta_name=None):
+    return raw_parser.custom_meta(soup, meta_name)
+
+def impact_statement(soup):
+    tag = first(full_custom_meta(soup, "Author impact statement"))
+    return node_contents_str(first(extract_nodes(tag, "meta-value")))
+
+
+def format_related_object(related_object):
+    return related_object["id"], {}
+
+
+def related_object_ids(soup):
+    tags = raw_parser.related_object(soup)
+    return dict(map(format_related_object, tags))
+
 @strippen
 def acknowledgements(soup):
     return node_text(raw_parser.acknowledgements(soup))

@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from utils import first, firstnn, extract_nodes
+from utils import first, firstnn, extract_nodes, node_contents_str
 
 """
 rawParser.py extracts and returns the nodes from the article xml using BeautifulSoup so that functionality at higher levels may use and combine them as neccessary.
@@ -143,6 +143,11 @@ def full_subject_area(soup, subject_group_type=None):
 
     return subject_group_tags
 
+def custom_meta(soup, meta_name=None):
+    custom_meta_tags = extract_nodes(soup, "custom-meta")
+    if meta_name is not None:
+        custom_meta_tags = filter(lambda tag: node_contents_str(first(extract_nodes(tag, "meta-name"))) == meta_name, custom_meta_tags)
+    return custom_meta_tags
 
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
@@ -153,6 +158,9 @@ def category(soup):
 def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
+
+def related_object(soup):
+    return extract_nodes(soup, "related-object")
 
 def object_id(soup, pub_id_type):
     return extract_nodes(soup, "object-id", attr = "pub-id-type", value = pub_id_type)
