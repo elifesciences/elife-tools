@@ -4,6 +4,8 @@ import time
 import calendar
 
 def first(x):
+    if x is None:
+        return None
     "returns the first element of an iterable, swallowing index errors and returning None"
     try:
         return x[0]
@@ -194,6 +196,8 @@ def node_contents_str(tag):
     Return the contents of a tag, including it's children, as a string.
     Does not include the root/parent of the tag.
     """
+    if tag is None:
+        return None
     return "".join(map(unicode, tag.children)) or None
     
 def first_parent(tag, nodename):
@@ -214,7 +218,16 @@ def tag_ordinal(tag):
     tag_count = 0
     return len(tag.find_all_previous(tag.name)) + 1
 
-def copy_attribute(source, source_key, destination, destination_key):
+def copy_attribute(source, source_key, destination, destination_key=None):
+    if destination_key is None:
+        destination_key = source_key
     if source is not None:
         if source is not None and destination is not None and source_key in source:
             destination[destination_key] = source[source_key]
+
+def first_node_str_contents(soup, nodename, attr = None, value = None):
+    return node_contents_str(first(extract_nodes(soup, nodename, attr=attr, value=value)))
+
+def set_if_value(dictionary, key, value):
+    if value is not None:
+        dictionary[key] = value

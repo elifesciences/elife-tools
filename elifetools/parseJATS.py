@@ -487,7 +487,43 @@ def component_doi(soup):
         position = position + 1
     
     return component_doi
-    
+
+
+
+def format_contributor(contrib_tag):
+    contributor = {}
+    copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
+    copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
+    copy_attribute(contrib_tag.attrs, 'corresp', contributor)
+    copy_attribute(contrib_tag.attrs, 'id', contributor)
+    contrib_id_tag = first(extract_nodes(contrib_tag, "contrib-id"))
+    if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
+        if contrib_id_tag['contrib-id-type'] == 'group-author-key':
+            contributor['group-author-key'] = node_contents_str(contrib_id_tag)
+        elif contrib_id_tag['contrib-id-type'] == 'orcid':
+            contributor['orcid'] = node_contents_str(contrib_id_tag)
+    set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
+    name_tag = first(extract_nodes(contrib_tag, "name"))
+    if name_tag is not None:
+        set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
+        set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
+        set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+
+    contrib_refs = []
+    # TODO : add references values
+    if len(contrib_refs) > 0:
+        contributor['references'] = contrib_refs
+
+    contrib_affs = []
+    # TODO : add affiliation values
+    if len(contrib_affs) > 0:
+        contributor['affiliation'] = contrib_affs
+
+    return contributor
+
+def contributors(soup):
+    contrib_tags = raw_parser.contributors(soup)
+    return map(format_contributor, contrib_tags)
 
 #
 # HERE BE DRAGONS
@@ -1119,10 +1155,10 @@ def full_award_groups(soup):
             funding_sources = full_award_group_funding_source(ag)
             source = first(funding_sources)
             if source is not None:
-                copy_attribute(source, 'institution', award_group, 'institution')
-                copy_attribute(source, 'institution-type', award_group, 'institution-type')
-                copy_attribute(source, 'institution-id', award_group, 'id')
-                copy_attribute(source, 'institution-id-type', award_group, 'id-type')
+                copy_attribute(source, 'institution', award_group)
+                copy_attribute(source, 'institution-type', award_group)
+                copy_attribute(source, 'institution-id', award_group)
+                copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
             award_groups[ref] = award_group
 
     return award_groups
@@ -1180,15 +1216,16 @@ def full_award_group_funding_source(tag):
         award_group_funding_source = {}
 
         institution_nodes = extract_nodes(funding_source_node, 'institution')
-        if len(institution_nodes) > 0:
-            institution_node = first(institution_nodes)
+
+        institution_node = first(institution_nodes)
+        if institution_node:
             award_group_funding_source['institution'] = node_text(institution_node)
             if 'content-type' in institution_node.attrs:
                 award_group_funding_source['institution-type'] = institution_node['content-type']
 
         institution_id_nodes = extract_nodes(funding_source_node, 'institution-id')
-        if len(institution_id_nodes) > 0:
-            institution_id_node = first(institution_id_nodes)
+        institution_id_node = first(institution_id_nodes)
+        if institution_id_node:
             award_group_funding_source['institution-id'] = node_text(institution_id_node)
             if 'institution-id-type' in institution_id_node.attrs:
                 award_group_funding_source['institution-id-type'] = institution_id_node['institution-id-type']

@@ -168,6 +168,10 @@ def object_id(soup, pub_id_type):
 def label(soup):
     return first(extract_nodes(soup, "label"))
 
+def contributors(soup):
+    meta = first(extract_nodes(soup, "article-meta"))
+    return extract_nodes(meta, "contrib")
+
 #
 # authors
 #
