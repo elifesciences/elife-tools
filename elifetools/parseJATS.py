@@ -947,6 +947,12 @@ def components(soup):
             component['label'] = node_text(raw_parser.label(tag))
             component['full_label'] = node_contents_str(raw_parser.label(tag))
 
+        if raw_parser.caption(tag):
+            first_paragraph = first(paragraphs(raw_parser.caption(tag)))
+            if not starts_with_doi(first_paragraph):
+                component['caption'] = node_text(first_paragraph)
+                component['full_caption'] = node_contents_str(first_paragraph)
+
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]

@@ -154,9 +154,15 @@ def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     return filter(lambda tag: tag.name == "p", tags)
 
+def starts_with_doi(tag):
+    if node_text(tag).strip().startswith("DOI:"):
+        return True
+    else:
+        return False
+
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    return filter(lambda tag: not node_text(tag).strip().startswith("DOI:"), tags)
+    return filter(lambda tag: not starts_with_doi(tag), tags)
 
 def component_acting_parent_tag(parent_tag, tag):
     """

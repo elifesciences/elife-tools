@@ -172,6 +172,9 @@ def contributors(soup):
     meta = first(extract_nodes(soup, "article-meta"))
     return extract_nodes(meta, "contrib")
 
+def caption(soup):
+    return first(extract_nodes(soup, "caption"))
+
 #
 # authors
 #
