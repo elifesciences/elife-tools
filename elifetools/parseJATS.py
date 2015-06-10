@@ -1204,8 +1204,7 @@ def full_award_groups(soup):
             source = first(funding_sources)
             if source is not None:
                 copy_attribute(source, 'institution', award_group)
-                copy_attribute(source, 'institution-type', award_group)
-                copy_attribute(source, 'institution-id', award_group)
+                copy_attribute(source, 'institution-id', award_group, 'id')
                 copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
             award_groups[ref] = award_group
 
