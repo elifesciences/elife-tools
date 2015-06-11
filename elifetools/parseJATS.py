@@ -125,20 +125,29 @@ def conflict(soup):
     return map(node_text, raw_parser.conflict(soup))
 
 def copyright_statement(soup):
-    return node_text(raw_parser.copyright_statement(soup))
+    permissions_tag = raw_parser.article_permissions(soup)
+    return node_text(raw_parser.copyright_statement(permissions_tag))
 
 @inten
 def copyright_year(soup):
-    return node_text(raw_parser.copyright_year(soup))
+    permissions_tag = raw_parser.article_permissions(soup)
+    return node_text(raw_parser.copyright_year(permissions_tag))
 
 def copyright_holder(soup):
-    return node_text(raw_parser.copyright_holder(soup))
+    permissions_tag = raw_parser.article_permissions(soup)
+    return node_text(raw_parser.copyright_holder(permissions_tag))
 
 def license(soup):
-    return node_text(raw_parser.licence_p(soup))
+    permissions_tag = raw_parser.article_permissions(soup)
+    return node_text(raw_parser.licence_p(permissions_tag))
+
+def full_license(soup):
+    permissions_tag = raw_parser.article_permissions(soup)
+    return node_contents_str(raw_parser.licence_p(permissions_tag))
 
 def license_url(soup):
-    return raw_parser.licence_url(soup)
+    permissions_tag = raw_parser.article_permissions(soup)
+    return raw_parser.licence_url(permissions_tag)
 
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
@@ -1000,6 +1009,35 @@ def components(soup):
             if not starts_with_doi(first_paragraph):
                 component['caption'] = node_text(first_paragraph)
                 component['full_caption'] = node_contents_str(first_paragraph)
+
+        if raw_parser.permissions(tag):
+            
+            component['permissions'] = []
+            for permissions_tag in raw_parser.permissions(tag):
+                permissions_item = {}
+                if raw_parser.copyright_statement(permissions_tag):
+                    permissions_item['copyright_statement'] = \
+                        node_text(raw_parser.copyright_statement(permissions_tag))
+                    
+                if raw_parser.copyright_year(permissions_tag):
+                    permissions_item['copyright_year'] = \
+                        node_text(raw_parser.copyright_year(permissions_tag))
+                    
+                if raw_parser.copyright_holder(permissions_tag):
+                    permissions_item['copyright_holder'] = \
+                        node_text(raw_parser.copyright_holder(permissions_tag))
+
+                if raw_parser.licence_p(permissions_tag):
+                    permissions_item['license'] = \
+                        node_text(raw_parser.licence_p(permissions_tag))
+                    permissions_item['full_license'] = \
+                        node_contents_str(raw_parser.licence_p(permissions_tag))
+
+                if raw_parser.licence_url(permissions_tag):
+                    permissions_item['license_url'] = \
+                        node_text(raw_parser.licence_url(permissions_tag))
+
+                component['permissions'].append(permissions_item)
 
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage

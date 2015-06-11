@@ -133,3 +133,16 @@ def i_count_the_number_of_component_doi(step):
 @step(u'I get the component DOI')
 def i_get_the_component_doi(step):
     world.list = pm.component_doi(world.filecontent)
+    
+@step(u'I count permissions of components index (\d+)')
+def i_count_permissions_of_components_index(step, index):
+    if not world.list[int(index)].get('permissions'):
+        world.count = 0
+    else:
+        world.count = len(world.list[int(index)]['permissions'])
+        
+@step(u'I get the dict key (.*)')
+def i_get_the_dict_key_key(step, key):
+    print len(world.list)
+    world.string = world.list[key]
+    

@@ -75,10 +75,15 @@ def conflict(soup):
 
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
-    return first(extract_nodes(soup, "permissions"))
+    return extract_nodes(soup, "permissions")
+
+def article_permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    permissions_tags = permissions(soup)
+    return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
 
 def licence(soup):
-    return first(extract_nodes(permissions(soup), "license"))
+    return first(extract_nodes(soup, "license"))
 
 def licence_p(soup):
     return first(extract_nodes(licence(soup), "license-p"))
@@ -88,13 +93,13 @@ def licence_url(soup):
     return licence(soup).get("xlink:href")
 
 def copyright_statement(soup):
-    return first(extract_nodes(permissions(soup), "copyright-statement"))
+    return first(extract_nodes(soup, "copyright-statement"))
 
 def copyright_year(soup):
-    return first(extract_nodes(permissions(soup), "copyright-year"))
+    return first(extract_nodes(soup, "copyright-year"))
 
 def copyright_holder(soup):
-    return first(extract_nodes(permissions(soup), "copyright-holder"))
+    return first(extract_nodes(soup, "copyright-holder"))
 
 def funding_statement(soup):
     return first(extract_nodes(soup, "funding-statement"))
