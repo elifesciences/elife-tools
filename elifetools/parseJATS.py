@@ -505,7 +505,7 @@ def add_to_list_dictionary(list_dict, list_key, val):
         list_dict[list_key].append(val)
 
 
-def format_contributor(contrib_tag):
+def format_contributor(contrib_tag, soup):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
     copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
@@ -525,6 +525,19 @@ def format_contributor(contrib_tag):
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
         set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
         set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+
+    # person_id
+    if 'id' in contributor:
+        if contributor['id'].startswith("author"):
+            person_id = contributor['id'].replace("author-", "")
+            contributor['person_id'] = int(person_id)
+    # Author - given names + surname
+    author_name = ""
+    if 'given-names' in contributor:
+        author_name += contributor['given-names'] + " "
+    if 'surname' in contributor:
+        author_name += contributor['surname']
+    contributor['author'] = author_name
 
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
@@ -555,32 +568,74 @@ def format_contributor(contrib_tag):
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
-    contrib_affs = {}
-    aff_tags = extract_nodes(contrib_tag, "aff")
+    aff_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "aff")
+    if len(aff_tags) <= 0:
+        # No aff found? Look for an aff tag inside the contrib tag
+        aff_tags = extract_nodes(contrib_tag, "aff")
+    if aff_tags:
+        contributor['affiliation'] = []
     for aff_tag in aff_tags:
-        institution_tags = extract_nodes(aff_tag, "institution")
+        contrib_affs = {}
+        rid = aff_tag.get('rid')
+        if rid:
+            # Look for the matching aff tag by rid
+            aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid)) 
+        else:
+            # Aff tag inside contrib tag
+            aff_node = aff_tag
+        
+        institution_tags = extract_nodes(aff_node, "institution")
         if institution_tags is not None:
             for institution_tag in institution_tags:
                 institution = node_contents_str(institution_tag)
-                if institution_tag.attr is not None and 'content-type' in institution_tag.attr and institution_tag['content-type'] == "dept":
+                if institution_tag.attrs is not None and 'content-type' in institution_tag.attrs and institution_tag['content-type'] == "dept":
                     contrib_affs['dept'] = institution
                 else:
                     contrib_affs['institution'] = institution
-        city_tag = first(extract_nodes(aff_tag, "named-content", attr='content-type', value='city'))
+        city_tag = first(extract_nodes(aff_node, "named-content", attr='content-type', value='city'))
         if city_tag is not None:
             contrib_affs['city'] = node_contents_str(city_tag)
-        country_tag = first(extract_nodes(aff_tag, "country"))
+        country_tag = first(extract_nodes(aff_node, "country"))
         if country_tag is not None:
             contrib_affs['country'] = node_contents_str(country_tag)
+        if len(contrib_affs) > 0:
+            contributor['affiliation'].append(contrib_affs)
 
-    if len(contrib_affs) > 0:
-        contributor['affiliation'] = contrib_affs
+    # Add xref linked correspondence author notes if applicable
+    corresp_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "corresp")
+    if(len(corresp_tags) > 0):
+        if 'notes-corresp' not in contributor:
+            contributor['notes-corresp'] = []
+
+        for cor in corresp_tags:
+            # Find the matching tag
+            rid = cor['rid']
+            corresp_node = first(soup.select("#" + rid))
+            author_notes = node_text(corresp_node)
+            if author_notes:
+                contributor['notes-corresp'].append(author_notes)
+
+    # Add xref linked footnotes if applicable
+    fn_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "fn")
+    if(len(fn_tags) > 0):
+        if 'notes-fn' not in contributor:
+            contributor['notes-fn'] = []
+        for fn in fn_tags:
+           # Find the matching tag
+           rid = fn['rid']
+           fn_node = first(soup.select("#" + rid))
+           fn_text = node_text(fn_node)
+           if fn_text:
+               contributor['notes-fn'].append(fn_text)
 
     return contributor
 
 def contributors(soup):
     contrib_tags = raw_parser.contributors(soup)
-    return map(format_contributor, contrib_tags)
+    contributors = []
+    for tag in contrib_tags:
+        contributors.append(format_contributor(tag, soup))
+    return contributors
 
 #
 # HERE BE DRAGONS
@@ -591,220 +646,16 @@ def authors_non_byline(soup):
     authors_list = authors(soup, contrib_type = "author non-byline")
     return authors_list
 
-
 def authors(soup, contrib_type = "author"):
-    """Find and return all the authors"""
-    tags = extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+
+    tags = raw_parser.authors(soup, contrib_type)
     authors = []
     position = 1
     
     article_doi = doi(soup)
     
     for tag in tags:
-        author = {}
-        
-        # Person id
-        try:
-            person_id = tag["id"]
-            if person_id.startswith("author"):
-                person_id = person_id.replace("author-", "")
-                author['person_id'] = int(person_id)
-        except(KeyError):
-            pass
-
-        # Equal contrib
-        try:
-            equal_contrib = tag["equal-contrib"]
-            if(equal_contrib == 'yes'):
-                author['equal_contrib'] = True
-        except(KeyError):
-            pass
-        
-        # Correspondence
-        try:
-            corresponding = tag["corresp"]
-            if(corresponding == 'yes'):
-                author['corresponding'] = True
-        except(KeyError):
-            pass
-        
-        # Surname
-        surname = node_text(first(extract_nodes(tag, "surname")))
-        if(surname != None):
-            author['surname'] = surname
-
-        # Given names
-        given_names = node_text(first(extract_nodes(tag, "given-names")))
-        if(given_names != None):
-            author['given_names'] = given_names
-        
-        # Collab for group authors
-        collab = node_text(first(extract_nodes(tag, "collab")))
-        if(collab != None):
-            author['collab'] = collab
-        
-        # Group author key
-        author['group_author_key'] = node_text(first(raw_parser.contrib_id(tag, "group-author-key")))
- 
-        # ORCID
-        author['orcid'] = node_text(first(raw_parser.contrib_id(tag, "orcid")))
-        
-        # Find and parse affiliations
-        affs = extract_nodes(tag, "xref", attr = "ref-type", value = "aff")
-        if len(affs) <= 0:
-            # No aff found? Look for an aff tag inside the contrib tag
-            affs = extract_nodes(tag, "aff")
-            
-        if(len(affs) > 0):
-            # One or more affiliations
-            if(len(affs) > 1):
-                # Prepare for multiple affiliations if multiples found
-                author['country'] = []
-                author['institution'] = []
-                author['department'] = []
-                author['city'] = []
-                
-            for aff in affs:
-                # Find the matching affiliation detail
-                rid = aff.get('rid')
-                if rid:
-                    # Look for the matching aff tag by rid
-                    aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid)) 
-                else:
-                    # Aff tag inside contrib tag
-                    aff_node = aff
-                    
-                country = node_text(first(extract_nodes(aff_node, "country")))
-                
-                # Institution is the tag with no attribute
-                institutions = extract_nodes(aff_node, "institution")
-                institution = None
-                for inst in institutions:
-                    try:
-                        if(inst["content-type"] != None):
-                            # A tag attribute found, skip it
-                            pass
-                    except KeyError:
-                        institution = node_text(inst)
-                       
-                # Department tag does have an attribute
-                department = node_text(first(extract_nodes(aff_node, "institution", attr = "content-type", value = "dept")))
-                city = node_text(first(extract_nodes(aff_node, "named-content", attr = "content-type", value = "city")))
-                
-                # Convert None to empty string if there is more than one affiliation
-                if((country == None) and (len(affs) > 1)):
-                    country = ''
-                if((institution == None) and (len(affs) > 1)):
-                    institution = ''
-                if((department == None) and (len(affs) > 1)):
-                    department = ''
-                if((city == None) and (len(affs) > 1)):
-                    city = ''
-                    
-                # Append values
-                try:
-                    # Multiple values
-                    author['country'].append(country)
-                except(KeyError):
-                    author['country'] = country
-                try:
-                    # Multiple values
-                    author['institution'].append(institution)
-                except(KeyError):
-                    author['institution'] = institution
-                try:
-                    # Multiple values
-                    author['department'].append(department)
-                except(KeyError):
-                    author['department'] = department
-                try:
-                    # Multiple values
-                    author['city'].append(city)
-                except(KeyError):
-                    author['city'] = city
-
-        # Author - given names + surname
-        author_name = ""
-        if(given_names != None):
-            author_name += given_names + " "
-        if(surname != None):
-            author_name += surname
-        author['author'] = author_name
-        
-        # Add xref linked correspondence author notes if applicable
-        cors = extract_nodes(tag, "xref", attr = "ref-type", value = "corresp")
-        if(len(cors) > 0):
-            # One or more 
-            if(len(cors) > 1):
-                # Prepare for multiple values if multiples found
-                author['notes_correspondence'] = []
-                
-            for cor in cors:
-                # Find the matching affiliation detail
-                rid = cor['rid']
-
-                # Find elements by id
-                try:
-                    corresp_node = soup.select("#" + rid)
-                    author_notes = corresp_node[0].get_text()
-                    author_notes = strip_strings(author_notes)
-                except:
-                    continue
-                try:
-                    # Multiple values
-                    author['notes_correspondence'].append(author_notes)
-                except(KeyError):
-                    author['notes_correspondence'] = author_notes
-                    
-        # Add xref linked footnotes if applicable
-        fns = extract_nodes(tag, "xref", attr = "ref-type", value = "fn")
-        if(len(fns) > 0):
-            # One or more 
-            if(len(fns) > 1):
-                # Prepare for multiple values if multiples found
-                author['notes_footnotes'] = []
-                
-            for fn in fns:
-                # Find the matching affiliation detail
-                rid = fn['rid']
-
-                # Find elements by id
-                try:
-                    fn_node = soup.select("#" + rid)
-                    fn_text = fn_node[0].get_text()
-                    fn_text = strip_strings(fn_text)
-                except:
-                    continue
-                try:
-                    # Multiple values
-                    author['notes_footnotes'].append(fn_text)
-                except(KeyError):
-                    author['notes_footnotes'] = fn_text
-                    
-        # Add xref linked other notes if applicable, such as funding detail
-        others = extract_nodes(tag, "xref", attr = "ref-type", value = "other")
-        if(len(others) > 0):
-            # One or more 
-            if(len(others) > 1):
-                # Prepare for multiple values if multiples found
-                author['notes_other'] = []
-                
-            for other in others:
-                # Find the matching affiliation detail
-                rid = other['rid']
-
-                # Find elements by id
-                try:
-                    other_node = soup.select("#" + rid)
-                    other_text = other_node[0].get_text()
-                    other_text = strip_strings(other_text)
-                except:
-                    continue
-                try:
-                    # Multiple values
-                    author['notes_other'].append(other_text)
-                except(KeyError):
-                    author['notes_other'] = other_text    
+        author = format_contributor(tag, soup)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):

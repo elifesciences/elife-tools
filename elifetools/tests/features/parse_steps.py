@@ -46,6 +46,10 @@ def i_get_the_authors(step):
 def count_the_number_of_authors(step):
     world.count = len(pm.authors(world.filecontent))
 
+@step(u'I count the number of contributors')
+def i_count_the_number_of_contributors(step):
+    world.count = len(pm.contributors(world.filecontent))
+
 @step(u'I count the total as (\d+)')
 def i_count_the_total_as(step, number):
     number = int(number)

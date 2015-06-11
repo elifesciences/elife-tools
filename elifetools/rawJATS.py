@@ -174,8 +174,14 @@ def label(soup):
     return first(extract_nodes(soup, "label"))
 
 def contributors(soup):
-    meta = first(extract_nodes(soup, "article-meta"))
-    return extract_nodes(meta, "contrib")
+    return extract_nodes(soup, "contrib")
+
+def article_contributors(soup):
+    contributor_tags = contributors(soup)
+    return first(filter(lambda tag: tag.parent.name == "article-meta", contributor_tags))
+
+def authors(soup, contrib_type = "author"):
+    return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
 
 def caption(soup):
     return first(extract_nodes(soup, "caption"))
