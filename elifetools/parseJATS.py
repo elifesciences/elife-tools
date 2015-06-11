@@ -489,12 +489,19 @@ def component_doi(soup):
     return component_doi
 
 
+def add_to_list_dictionary(list_dict, list_key, val):
+    if val is not None:
+        if list_key not in list_dict:
+            list_dict[list_key] = []
+        list_dict[list_key].append(val)
+
 
 def format_contributor(contrib_tag):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
     copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
     copy_attribute(contrib_tag.attrs, 'corresp', contributor)
+    copy_attribute(contrib_tag.attrs, 'deceased', contributor)
     copy_attribute(contrib_tag.attrs, 'id', contributor)
     contrib_id_tag = first(extract_nodes(contrib_tag, "contrib-id"))
     if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
@@ -503,19 +510,60 @@ def format_contributor(contrib_tag):
         elif contrib_id_tag['contrib-id-type'] == 'orcid':
             contributor['orcid'] = node_contents_str(contrib_id_tag)
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
+    set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
         set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
         set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
 
-    contrib_refs = []
-    # TODO : add references values
+    contrib_refs = {}
+    ref_tags = extract_nodes(contrib_tag, "xref")
+    for ref_tag in ref_tags:
+        if "ref-type" in ref_tag.attrs and "rid" in ref_tag.attrs:
+            ref_type = ref_tag['ref-type']
+            rid = ref_tag['rid']
+
+            if ref_type == "aff":
+                add_to_list_dictionary(contrib_refs, 'affiliation', rid)
+            if ref_type == "corresp":
+                add_to_list_dictionary(contrib_refs, 'email', rid)
+            if ref_type == "fn":
+                if rid.startswith('equal-contrib'):
+                    add_to_list_dictionary(contrib_refs, 'equal-contrib', rid)
+                elif rid.startswith('conf'):
+                    add_to_list_dictionary(contrib_refs, 'competing-interest', rid)
+                elif rid.startswith('con'):  # not conf though, see above!
+                    add_to_list_dictionary(contrib_refs, 'contribution', rid)
+                elif rid.startswith('pa'):
+                    add_to_list_dictionary(contrib_refs, 'present-address', rid)
+            elif ref_type == "other":
+                if rid.startswith('par-'):
+                    add_to_list_dictionary(contrib_refs, 'funding', rid)
+                elif rid.startswith('dataro'):
+                    add_to_list_dictionary(contrib_refs, 'related-object', rid)
+
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
-    contrib_affs = []
-    # TODO : add affiliation values
+    contrib_affs = {}
+    aff_tags = extract_nodes(contrib_tag, "aff")
+    for aff_tag in aff_tags:
+        institution_tags = extract_nodes(aff_tag, "institution")
+        if institution_tags is not None:
+            for institution_tag in institution_tags:
+                institution = node_contents_str(institution_tag)
+                if institution_tag.attr is not None and 'content-type' in institution_tag.attr and institution_tag['content-type'] == "dept":
+                    contrib_affs['dept'] = institution
+                else:
+                    contrib_affs['institution'] = institution
+        city_tag = first(extract_nodes(aff_tag, "named-content", attr='content-type', value='city'))
+        if city_tag is not None:
+            contrib_affs['city'] = node_contents_str(city_tag)
+        country_tag = first(extract_nodes(aff_tag, "country"))
+        if country_tag is not None:
+            contrib_affs['country'] = node_contents_str(country_tag)
+
     if len(contrib_affs) > 0:
         contributor['affiliation'] = contrib_affs
 
@@ -1162,8 +1210,7 @@ def full_award_groups(soup):
             source = first(funding_sources)
             if source is not None:
                 copy_attribute(source, 'institution', award_group)
-                copy_attribute(source, 'institution-type', award_group)
-                copy_attribute(source, 'institution-id', award_group)
+                copy_attribute(source, 'institution-id', award_group, 'id')
                 copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
             award_groups[ref] = award_group
 
