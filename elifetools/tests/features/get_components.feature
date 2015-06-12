@@ -133,9 +133,14 @@ Feature: Get components from the document
     | elife05502.xml              | [14]['title']                 | Temporal progression of pattern formation.
     | elife05502.xml              | [14]['full_title']            | Temporal progression of pattern formation.
     
-    | elife-kitchen-sink.xml      | [35]['doi']   | 10.7554/eLife.00013.034
+    
+    | elife-kitchen-sink.xml      | [5]['doi']                    | 10.7554/eLife.00013.006
+    | elife-kitchen-sink.xml      | [5]['type']                   | media
+    | elife-kitchen-sink.xml      | [5]['ordinal']                | 1
+    | elife-kitchen-sink.xml      | [5]['parent_type']            | None
+    | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034
     | elife-kitchen-sink.xml      | [35]['parent_type']           | None
-    | elife-kitchen-sink.xml      | [36]['doi']   | 10.7554/eLife.00013.035
+    | elife-kitchen-sink.xml      | [36]['doi']                   | 10.7554/eLife.00013.035
     | elife-kitchen-sink.xml      | [36]['parent_type']           | None
     
   Scenario Outline: Count the number of components permissions
