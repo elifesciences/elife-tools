@@ -683,7 +683,7 @@ def format_aff(aff_tag):
         'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
         'country': node_contents_str(first(extract_nodes(aff_tag, "country")))
         }
-    if 'id' in aff_tag:
+    if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
     else:
         return None, values
