@@ -487,9 +487,9 @@ def component_doi(soup):
         component_object["position"] = position
         
         # Try to find the type of component
-        component_match = first(filter(lambda item: item["doi"] == component_object["doi"], component_list))
-        if component_match:
-            component_object["type"] = component_match["type"]
+        for component in component_list:
+            if "doi" in component and component["doi"] == component_object["doi"]:
+                component_object["type"] = component["type"] 
 
         component_doi.append(component_object)
         
@@ -840,16 +840,19 @@ def components(soup):
         ctype = tag.name
         
         # First find the doi if present
+        component_doi = None
         if(ctype == "sub-article"):
             component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
         else:
-            component_doi = node_text(first(raw_parser.object_id(tag, pub_id_type= "doi")))
+            object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
+            # Check the object id is for this tag and not one of its children
+            #   This happens for example when boxed text has a child figure,
+            #   the boxed text does not have a DOI, the figure does have one
+            if object_id_tag and first_parent(object_id_tag, nodenames).name == ctype:
+                component_doi = node_text(object_id_tag)
         if(component_doi is not None):
             component['doi'] = component_doi
             component['doi_url'] = 'http://dx.doi.org/' + component_doi
-        else:
-            # If no object-id is found, then skip this component
-            continue
 
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)

@@ -10,9 +10,9 @@ Feature: Get components from the document
 
   Examples:
     | document                    | components
-    | elife-kitchen-sink.xml      | 44
-    | elife00013.xml              | 30
-    | elife_poa_e06828.xml        | 0
+    | elife-kitchen-sink.xml      | 47
+    | elife00013.xml              | 31
+    | elife_poa_e06828.xml        | 1
 
   Scenario Outline: Count the number of components by type
     Given I have the document <document>
@@ -28,7 +28,7 @@ Feature: Get components from the document
     | elife00013.xml              | fig           | 23
     | elife00013.xml              | sub-article   | 2
     | elife00013.xml              | table-wrap    | 3
-
+    | elife_poa_e06828.xml        | abstract      | 1
 
   Scenario Outline: Get the components
     Given I have the document <document>
@@ -143,7 +143,7 @@ Feature: Get components from the document
   Examples:
     | document                    | index                  | permissions
     | elife-kitchen-sink.xml      | 10                     | 0
-    | elife-kitchen-sink.xml      | 11                     | 2
+    | elife-kitchen-sink.xml      | 13                     | 2
     
     
   Scenario Outline: Get the components permissions
@@ -154,16 +154,16 @@ Feature: Get components from the document
   
   Examples:
     | document                    | list_item                                       | string
-    | elife-kitchen-sink.xml      | [10]['permissions'][0]['copyright_statement']   | None
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['copyright_statement']   | © 1977 Thieme Medical Publishers. All Rights Reserved.
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['copyright_year']        | 1977
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['copyright_holder']      | Thieme Medical Publishers
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['license']               | Figure 1, lower panel, is reproduced from Hughes and Sperandio, 2008 with permission.
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['full_license']          | Figure 1, lower panel, is reproduced from <xref ref-type="bibr" rid="bib45">Hughes and Sperandio, 2008</xref> with permission.
-    | elife-kitchen-sink.xml      | [11]['permissions'][0]['license_url']           | None
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['copyright_statement']   | © 2007 Elsevier Masson SAS. All rights reserved
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['copyright_year']        | 2007
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['copyright_holder']      | Elsevier Masson SAS
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['license']               | The patient figure in Figure 6, part A is reproduced from \n                                Koropatnick et al., 2004, European Journal of Medical Genetics with permission.
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['full_license']          | The patient figure in Figure 6, part <bold>A</bold> is reproduced from \n                                <xref ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>, <italic>European Journal of Medical Genetics</italic> with permission.
-    | elife-kitchen-sink.xml      | [11]['permissions'][1]['license_url']           | None
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['copyright_statement']   | None
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['copyright_statement']   | © 1977 Thieme Medical Publishers. All Rights Reserved.
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['copyright_year']        | 1977
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['copyright_holder']      | Thieme Medical Publishers
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['license']               | Figure 1, lower panel, is reproduced from Hughes and Sperandio, 2008 with permission.
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['full_license']          | Figure 1, lower panel, is reproduced from <xref ref-type="bibr" rid="bib45">Hughes and Sperandio, 2008</xref> with permission.
+    | elife-kitchen-sink.xml      | [13]['permissions'][0]['license_url']           | None
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['copyright_statement']   | © 2007 Elsevier Masson SAS. All rights reserved
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['copyright_year']        | 2007
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['copyright_holder']      | Elsevier Masson SAS
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['license']               | The patient figure in Figure 6, part A is reproduced from \n                                Koropatnick et al., 2004, European Journal of Medical Genetics with permission.
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['full_license']          | The patient figure in Figure 6, part <bold>A</bold> is reproduced from \n                                <xref ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>, <italic>European Journal of Medical Genetics</italic> with permission.
+    | elife-kitchen-sink.xml      | [13]['permissions'][1]['license_url']           | None
