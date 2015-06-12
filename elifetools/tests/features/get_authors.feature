@@ -118,7 +118,7 @@ Feature: get authors from the document
   
   Examples:
     | document                    | contributors
-    | elife-kitchen-sink.xml      | 21   
-    | elife00013.xml              | 10   
+    | elife-kitchen-sink.xml      | 18  
+    | elife00013.xml              | 9  
     | elife_poa_e06828.xml        | 8
-    | elife02935.xml              | 182
+    | elife02935.xml              | 181

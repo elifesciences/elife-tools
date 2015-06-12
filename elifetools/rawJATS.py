@@ -178,7 +178,8 @@ def contributors(soup):
 
 def article_contributors(soup):
     contributor_tags = contributors(soup)
-    return first(filter(lambda tag: tag.parent.name == "article-meta", contributor_tags))
+    return filter(lambda tag: tag.parent.name == "contrib-group"
+                        and tag.parent.parent.name == "article-meta", contributor_tags)
 
 def authors(soup, contrib_type = "author"):
     return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)

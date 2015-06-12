@@ -637,7 +637,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     return contributor
 
 def contributors(soup):
-    contrib_tags = raw_parser.contributors(soup)
+    contrib_tags = raw_parser.article_contributors(soup)
     contributors = []
     for tag in contrib_tags:
         contributors.append(format_contributor(tag, soup))
