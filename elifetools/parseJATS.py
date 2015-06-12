@@ -899,6 +899,11 @@ def components(soup):
 
                 component['permissions'].append(permissions_item)
 
+        if raw_parser.contributors(tag):
+            component['contributors'] = []
+            for contributor_tag in raw_parser.contributors(tag):
+                component['contributors'].append(format_contributor(contributor_tag, soup))
+
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]
