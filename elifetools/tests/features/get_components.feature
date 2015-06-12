@@ -10,9 +10,9 @@ Feature: Get components from the document
 
   Examples:
     | document                    | components
-    | elife-kitchen-sink.xml      | 45
-    | elife00013.xml              | 31
-    | elife_poa_e06828.xml        | 1
+    | elife-kitchen-sink.xml      | 42
+    | elife00013.xml              | 30
+    | elife_poa_e06828.xml        | 0
 
   Scenario Outline: Count the number of components by type
     Given I have the document <document>
@@ -28,7 +28,7 @@ Feature: Get components from the document
     | elife00013.xml              | fig           | 23
     | elife00013.xml              | sub-article   | 2
     | elife00013.xml              | table-wrap    | 3
-    | elife_poa_e06828.xml        | abstract      | 1
+    | elife_poa_e06828.xml        | abstract      | 0
 
   Scenario Outline: Get the components
     Given I have the document <document>
@@ -133,6 +133,10 @@ Feature: Get components from the document
     | elife05502.xml              | [14]['title']                 | Temporal progression of pattern formation.
     | elife05502.xml              | [14]['full_title']            | Temporal progression of pattern formation.
     
+    | elife-kitchen-sink.xml      | [35]['doi']   | 10.7554/eLife.00013.034
+    | elife-kitchen-sink.xml      | [35]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [36]['doi']   | 10.7554/eLife.00013.035
+    | elife-kitchen-sink.xml      | [36]['parent_type']           | None
     
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>

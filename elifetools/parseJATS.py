@@ -857,6 +857,8 @@ def components(soup):
         if(component_doi is not None):
             component['doi'] = component_doi
             component['doi_url'] = 'http://dx.doi.org/' + component_doi
+        elif component_doi is None:
+            continue
 
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)
@@ -915,7 +917,12 @@ def components(soup):
         #  and only check two levels of parentage
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap"]
         parent_tag = first_parent(tag, parent_nodenames)
-        if parent_tag:
+        
+        # Only counts as a parent tag if the parent tag has its own DOI
+        #   a DOI that is different than its childs DOI
+        if parent_tag \
+            and node_text(first(raw_parser.object_id(parent_tag, pub_id_type= "doi"))) != component['doi']:
+
             # For fig-group we actually want the first fig of the fig-group as the parent
             acting_parent_tag = component_acting_parent_tag(parent_tag, tag)
             
@@ -926,7 +933,9 @@ def components(soup):
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
             
-            if parent_parent_tag:
+            if parent_parent_tag \
+                and node_text(first(raw_parser.object_id(parent_parent_tag, pub_id_type= "doi"))) != component['doi']:
+                
                 acting_parent_tag = component_acting_parent_tag(parent_parent_tag, parent_tag)
                 
                 if acting_parent_tag:
