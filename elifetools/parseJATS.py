@@ -555,7 +555,14 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
-    if detail == "full":
+    if detail == "brief":
+        # Brief format only allows one aff and it must be within the contrib tag
+        aff_tags = extract_nodes(contrib_tag, "aff")
+        if aff_tags:
+            for aff_tag in aff_tags:
+                (none_return, contributor['affiliation']) = format_aff(aff_tag)
+
+    elif detail == "full":
         # person_id
         if 'id' in contributor:
             if contributor['id'].startswith("author"):
@@ -586,20 +593,8 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 # Aff tag inside contrib tag
                 aff_node = aff_tag
             
-            institution_tags = extract_nodes(aff_node, "institution")
-            if institution_tags is not None:
-                for institution_tag in institution_tags:
-                    institution = node_contents_str(institution_tag)
-                    if institution_tag.attrs is not None and 'content-type' in institution_tag.attrs and institution_tag['content-type'] == "dept":
-                        contrib_affs['dept'] = institution
-                    else:
-                        contrib_affs['institution'] = institution
-            city_tag = first(extract_nodes(aff_node, "named-content", attr='content-type', value='city'))
-            if city_tag is not None:
-                contrib_affs['city'] = node_contents_str(city_tag)
-            country_tag = first(extract_nodes(aff_node, "country"))
-            if country_tag is not None:
-                contrib_affs['country'] = node_contents_str(country_tag)
+            (none_return, contrib_affs) = format_aff(aff_node)
+            
             if len(contrib_affs) > 0:
                 contributor['affiliation'].append(contrib_affs)
     
@@ -679,7 +674,10 @@ def format_aff(aff_tag):
         'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
         'country': node_contents_str(first(extract_nodes(aff_tag, "country")))
         }
-    return aff_tag['id'], values
+    if 'id' in aff_tag:
+        return aff_tag['id'], values
+    else:
+        return None, values
 
 
 def full_affiliation(soup):
