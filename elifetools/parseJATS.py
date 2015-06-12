@@ -825,6 +825,10 @@ def components(soup):
     
     # Count node order overall
     position = 1
+    
+    position_by_type = {}
+    for nodename in nodenames:
+        position_by_type[nodename] = 1
      
     article_doi = doi(soup)
     
@@ -956,11 +960,12 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            component['ordinal'] = tag_ordinal(tag)
+            component['ordinal'] = position_by_type[ctype]
                         
             components.append(component)
             
             position += 1
+            position_by_type[ctype] += 1
 
     
     return components
