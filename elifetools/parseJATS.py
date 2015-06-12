@@ -845,6 +845,10 @@ def components(soup):
             component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
         else:
             object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
+            # Tweak: if it is media and has no object_id_tag then it is not a "component"
+            if ctype == "media" and not object_id_tag:
+                continue
+            
             # Check the object id is for this tag and not one of its children
             #   This happens for example when boxed text has a child figure,
             #   the boxed text does not have a DOI, the figure does have one
