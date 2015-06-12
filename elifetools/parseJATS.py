@@ -906,7 +906,7 @@ def components(soup):
 
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
-        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text"]
+        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap"]
         parent_tag = first_parent(tag, parent_nodenames)
         if parent_tag:
             # For fig-group we actually want the first fig of the fig-group as the parent
