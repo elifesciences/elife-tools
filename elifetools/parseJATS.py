@@ -559,13 +559,16 @@ def format_contributor(contrib_tag, soup, detail="brief"):
         # Brief format only allows one aff and it must be within the contrib tag
         aff_tag = first(extract_nodes(contrib_tag, "aff"))
         if aff_tag:
-            contributor['affiliation'] = {}
+            contributor['affiliation'] = []
+            contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
             if len(aff_detail) > 0:
                 aff_attributes = ['dept', 'institution', 'country', 'city']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
-                        copy_attribute(aff_detail, aff_attribute, contributor['affiliation'])
+                        copy_attribute(aff_detail, aff_attribute, contrib_affs)
+                if len(contrib_affs) > 0:
+                    contributor['affiliation'].append(contrib_affs)
 
     elif detail == "full":
         # person_id
