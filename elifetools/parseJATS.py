@@ -810,6 +810,29 @@ def refs(soup):
     
     return refs
 
+def extract_component_doi(tag, nodenames):
+    """
+    Used to get component DOI from a tag and confirm it is actually for that tag
+    and it is not for one of its children in the list of nodenames
+    """
+    component_doi = None
+
+    if(tag.name == "sub-article"):
+        component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
+    else:
+        object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
+        # Tweak: if it is media and has no object_id_tag then it is not a "component"
+        if tag.name == "media" and not object_id_tag:
+            component_doi = None
+        else:
+            # Check the object id is for this tag and not one of its children
+            #   This happens for example when boxed text has a child figure,
+            #   the boxed text does not have a DOI, the figure does have one
+            if object_id_tag and first_parent(object_id_tag, nodenames).name == tag.name:
+                component_doi = node_text(object_id_tag)
+
+    return component_doi
+
 def components(soup):
     """
     Find the components, i.e. those parts that would be assigned
@@ -844,26 +867,14 @@ def components(soup):
         ctype = tag.name
         
         # First find the doi if present
-        component_doi = None
-        if(ctype == "sub-article"):
-            component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
+        component_doi = extract_component_doi(tag, nodenames)
+        if component_doi is None:
+            continue
         else:
-            object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
-            # Tweak: if it is media and has no object_id_tag then it is not a "component"
-            if ctype == "media" and not object_id_tag:
-                continue
-            
-            # Check the object id is for this tag and not one of its children
-            #   This happens for example when boxed text has a child figure,
-            #   the boxed text does not have a DOI, the figure does have one
-            if object_id_tag and first_parent(object_id_tag, nodenames).name == ctype:
-                component_doi = node_text(object_id_tag)
-        if(component_doi is not None):
             component['doi'] = component_doi
             component['doi_url'] = 'http://dx.doi.org/' + component_doi
-        elif component_doi is None:
-            continue
-
+            
+        
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)
         else:
@@ -922,27 +933,27 @@ def components(soup):
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap"]
         parent_tag = first_parent(tag, parent_nodenames)
         
-        # Only counts as a parent tag if the parent tag has its own DOI
-        #   a DOI that is different than its childs DOI
-        if parent_tag \
-            and node_text(first(raw_parser.object_id(parent_tag, pub_id_type= "doi"))) != component['doi']:
+        if parent_tag:
 
             # For fig-group we actually want the first fig of the fig-group as the parent
             acting_parent_tag = component_acting_parent_tag(parent_tag, tag)
             
-            if acting_parent_tag:
+            # Only counts if the acting parent tag has a DOI
+            if (acting_parent_tag and \
+               extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
+                
                 component['parent_type'] = acting_parent_tag.name
                 component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
             
-            if parent_parent_tag \
-                and node_text(first(raw_parser.object_id(parent_parent_tag, pub_id_type= "doi"))) != component['doi']:
+            if parent_parent_tag:
                 
                 acting_parent_tag = component_acting_parent_tag(parent_parent_tag, parent_tag)
                 
-                if acting_parent_tag:
+                if (acting_parent_tag and \
+                   extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
                     component['parent_parent_type'] = acting_parent_tag.name
                     component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
 
