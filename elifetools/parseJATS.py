@@ -559,7 +559,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
         # Brief format only allows one aff and it must be within the contrib tag
         aff_tag = first(extract_nodes(contrib_tag, "aff"))
         if aff_tag:
-            contributor['affiliation'] = []
+            contributor['affiliations'] = []
             contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
             if len(aff_detail) > 0:
@@ -568,7 +568,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
                 if len(contrib_affs) > 0:
-                    contributor['affiliation'].append(contrib_affs)
+                    contributor['affiliations'].append(contrib_affs)
 
     elif detail == "full":
         # person_id
@@ -590,7 +590,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             # No aff found? Look for an aff tag inside the contrib tag
             aff_tags = extract_nodes(contrib_tag, "aff")
         if aff_tags:
-            contributor['affiliation'] = []
+            contributor['affiliations'] = []
         for aff_tag in aff_tags:
             contrib_affs = {}
             rid = aff_tag.get('rid')
@@ -608,7 +608,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
-                contributor['affiliation'].append(contrib_affs)
+                contributor['affiliations'].append(contrib_affs)
     
         # Add xref linked correspondence author notes if applicable
         corresp_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "corresp")

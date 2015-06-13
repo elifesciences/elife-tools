@@ -27,14 +27,14 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | [0]['person_id']                     | 23
     | elife-kitchen-sink.xml      | [0]['surname']                       | Alegado
     | elife-kitchen-sink.xml      | [0]['given-names']                   | Rosanna A
-    | elife-kitchen-sink.xml      | [0]['affiliation'][0]['country']     | United States
-    | elife-kitchen-sink.xml      | [0]['affiliation'][0]['institution'] | University of California, Berkeley
-    | elife-kitchen-sink.xml      | [0]['affiliation'][0]['dept']        | Department of Molecular and Cell Biology
-    | elife-kitchen-sink.xml      | [0]['affiliation'][0]['city']        | Berkeley
-    | elife-kitchen-sink.xml      | [0]['affiliation'][1]['country']     | United States
-    | elife-kitchen-sink.xml      | [0]['affiliation'][1]['institution'] | Harvard Medical School
-    | elife-kitchen-sink.xml      | [0]['affiliation'][1]['dept']        | Department of Biological Chemistry and Molecular Pharmacology
-    | elife-kitchen-sink.xml      | [0]['affiliation'][1]['city']        | Boston
+    | elife-kitchen-sink.xml      | [0]['affiliations'][0]['country']     | United States
+    | elife-kitchen-sink.xml      | [0]['affiliations'][0]['institution'] | University of California, Berkeley
+    | elife-kitchen-sink.xml      | [0]['affiliations'][0]['dept']        | Department of Molecular and Cell Biology
+    | elife-kitchen-sink.xml      | [0]['affiliations'][0]['city']        | Berkeley
+    | elife-kitchen-sink.xml      | [0]['affiliations'][1]['country']     | United States
+    | elife-kitchen-sink.xml      | [0]['affiliations'][1]['institution'] | Harvard Medical School
+    | elife-kitchen-sink.xml      | [0]['affiliations'][1]['dept']        | Department of Biological Chemistry and Molecular Pharmacology
+    | elife-kitchen-sink.xml      | [0]['affiliations'][1]['city']        | Boston
     | elife-kitchen-sink.xml      | [0]['author']                        | Rosanna A Alegado
     | elife-kitchen-sink.xml      | [0]['notes-corresp'][0]              | None
     | elife-kitchen-sink.xml      | [0]['group-author-key']              | None
@@ -43,8 +43,8 @@ Feature: get authors from the document
     
     | elife-kitchen-sink.xml      | [1]['orcid']                         | http://orcid.org/0000-0002-7361-560X
     | elife-kitchen-sink.xml      | [6]['notes-corresp'][0]              | \n*For\n                        correspondence: jon_clardy@hms.harvard.edu (JC);
-    | elife-kitchen-sink.xml      | [8]['affiliation'][0]['institution'] | Stanford University School of Medicine
-    | elife-kitchen-sink.xml      | [9]['affiliation'][0]['institution'] | None
+    | elife-kitchen-sink.xml      | [8]['affiliations'][0]['institution'] | Stanford University School of Medicine
+    | elife-kitchen-sink.xml      | [9]['affiliations'][0]['institution'] | None
     
     | elife00013.xml              | [6]['notes-corresp'][0]              | *For correspondence: jon_clardy@hms.harvard.edu (JC);
     | elife00013.xml              | [0]['notes-fn'][0]                   | †These authors contributed equally to this work
@@ -62,18 +62,18 @@ Feature: get authors from the document
     | elife_poa_e06828.xml        | [0]['person_id']                     | 28783
     | elife_poa_e06828.xml        | [0]['surname']                       | Fleming
     | elife_poa_e06828.xml        | [0]['given-names']                   | Michael S
-    | elife_poa_e06828.xml        | [0]['affiliation'][0]['country']     | United States
-    | elife_poa_e06828.xml        | [0]['affiliation'][0]['institution'] | University of Pennsylvania
-    | elife_poa_e06828.xml        | [0]['affiliation'][0]['dept']        | Department of Neuroscience, Perelman School of Medicine
-    | elife_poa_e06828.xml        | [0]['affiliation'][0]['city']        | Philadelphia
+    | elife_poa_e06828.xml        | [0]['affiliations'][0]['country']     | United States
+    | elife_poa_e06828.xml        | [0]['affiliations'][0]['institution'] | University of Pennsylvania
+    | elife_poa_e06828.xml        | [0]['affiliations'][0]['dept']        | Department of Neuroscience, Perelman School of Medicine
+    | elife_poa_e06828.xml        | [0]['affiliations'][0]['city']        | Philadelphia
     
     | elife02935.xml              | [0]['person_id']                     | 10471
     | elife02935.xml              | [0]['surname']                       | Ju
     | elife02935.xml              | [33]['person_id']                    | None
     | elife02935.xml              | [33]['surname']                      | None
     | elife02935.xml              | [33]['collab']                       | ICGC Breast Cancer Group
-    | elife02935.xml              | [33]['affiliation'][0]['institution']| Wellcome Trust Sanger Institute
-    | elife02935.xml              | [33]['affiliation'][0]['dept']       | Cancer Genome Project
+    | elife02935.xml              | [33]['affiliations'][0]['institution']| Wellcome Trust Sanger Institute
+    | elife02935.xml              | [33]['affiliations'][0]['dept']       | Cancer Genome Project
     | elife02935.xml              | [33]['position']                     | 34
     
     
