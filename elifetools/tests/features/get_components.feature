@@ -145,6 +145,18 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [37]['doi']                   | 10.7554/eLife.00013.036
     | elife-kitchen-sink.xml      | [37]['parent_type']           | None
     
+    | elife-kitchen-sink.xml      | [38]['doi']                   | 10.7554/eLife.00013.037
+    | elife-kitchen-sink.xml      | [38]['type']                  | sub-article
+    | elife-kitchen-sink.xml      | [38]['parent_type']           | None
+    
+    #| elife-kitchen-sink.xml      | [39]['doi']                   | 10.7554/eLife.00013.038
+    #| elife-kitchen-sink.xml      | [39]['type']                  | fig
+    #| elife-kitchen-sink.xml      | [39]['parent_type']           | None
+    #
+    #| elife-kitchen-sink.xml      | [40]['doi']                   | 10.7554/eLife.00013.039
+    #| elife-kitchen-sink.xml      | [40]['type']                  | table-wrap
+    #| elife-kitchen-sink.xml      | [40]['parent_type']           | sub-article
+    
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>
     When I get the components
