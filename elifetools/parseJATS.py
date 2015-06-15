@@ -101,7 +101,9 @@ def full_custom_meta(soup, meta_name=None):
 
 def impact_statement(soup):
     tag = first(full_custom_meta(soup, "Author impact statement"))
-    return node_contents_str(first(extract_nodes(tag, "meta-value")))
+    if tag is not None:
+        return node_contents_str(first(extract_nodes(tag, "meta-value")))
+    return ""
 
 
 def format_related_object(related_object):
