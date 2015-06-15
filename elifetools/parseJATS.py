@@ -731,7 +731,10 @@ def refs(soup):
         ref_text = ' '.join(ref_text.split())
         # Fix punctuation spaces and extra space
         ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
-        
+
+        # ref_id
+        ref['id'] = tag['id']
+
         # article_title
         article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
@@ -758,7 +761,9 @@ def refs(soup):
         # authors
         person_group = extract_nodes(tag, "person-group")
         authors = []
+        author_types = []
         try:
+            author_type = first(person_group)["person-group-type"]
             name = extract_nodes(person_group[0], "name")
             for n in name:
                 surname = node_text(first(extract_nodes(n, "surname")))
@@ -770,8 +775,10 @@ def refs(soup):
                     given_names = ""
                 full_name = strip_strings(surname + ' ' + given_names)
                 authors.append(full_name)
+                author_types.append(author_type)
             if(len(authors) > 0):
                 ref['authors'] = authors
+                ref['author_types'] = author_types
         except(KeyError, IndexError):
             pass
             
