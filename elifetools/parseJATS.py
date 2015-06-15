@@ -507,7 +507,6 @@ def add_to_list_dictionary(list_dict, list_key, val):
             list_dict[list_key] = []
         list_dict[list_key].append(val)
 
-
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
@@ -731,11 +730,18 @@ def refs(soup):
         ref_text = ' '.join(ref_text.split())
         # Fix punctuation spaces and extra space
         ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
-        
+
+        # ref_id
+        ref['id'] = tag['id']
+
         # article_title
         article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
+
+        reference_title_node = first(extract_nodes(tag, "pub-id"))
+        if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
+            ref['reference_id'] = node_contents_str(reference_title_node)
             
         # year
         year = node_text(first(extract_nodes(tag, "year")))
@@ -758,20 +764,29 @@ def refs(soup):
         # authors
         person_group = extract_nodes(tag, "person-group")
         authors = []
+        author_types = []
         try:
-            name = extract_nodes(person_group[0], "name")
-            for n in name:
-                surname = node_text(first(extract_nodes(n, "surname")))
-                given_names = node_text(first(extract_nodes(n, "given-names")))
-                # Convert all to strings in case a name component is missing
-                if(surname is None):
-                    surname = ""
-                if(given_names is None):
-                    given_names = ""
-                full_name = strip_strings(surname + ' ' + given_names)
-                authors.append(full_name)
-            if(len(authors) > 0):
+            for group in person_group:
+                author_type = group["person-group-type"]
+                name = extract_nodes(group, "name")
+                for n in name:
+                    surname = node_text(first(extract_nodes(n, "surname")))
+                    given_names = node_text(first(extract_nodes(n, "given-names")))
+                    suffix = node_text(first(extract_nodes(n, "suffix")))
+                    # Convert all to strings in case a name component is missing
+                    if surname is None:
+                        surname = ""
+                    if given_names is None:
+                        given_names = ""
+                    full_name = strip_strings(given_names + ' ' + surname)
+                    if suffix is not None:
+                        full_name += ", " + suffix
+
+                    authors.append(full_name)
+                    author_types.append(author_type)
+            if len(authors) > 0:
                 ref['authors'] = authors
+                ref['author_types'] = author_types
         except(KeyError, IndexError):
             pass
             
@@ -1110,6 +1125,20 @@ def competing_interests(soup, fntype_filter):
     except IndexError:
         return None
     return interests
+
+@nullify
+def author_contributions(soup, fntype_filter):
+    """
+    Find the fn tags included in the competing interest
+    """
+
+    try:
+        author_contributions_section = extract_nodes(soup, "fn-group", attr="content-type", value="author-contribution")
+        fn = extract_nodes(first(author_contributions_section), "fn")
+        cons = footnotes(fn, fntype_filter)
+    except IndexError:
+        return None
+    return cons
 
 def footnotes(fn, fntype_filter):
     notes = []
