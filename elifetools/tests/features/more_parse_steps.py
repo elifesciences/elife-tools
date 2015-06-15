@@ -146,3 +146,13 @@ def i_get_the_dict_key_key(step, key):
     print len(world.list)
     world.string = world.list[key]
     
+@step(u'I count the number of author contributions')
+def i_count_the_number_of_author_contributions(step):
+    try:
+        world.count = len(pm.author_contributions(world.filecontent, "con"))
+    except TypeError:
+        world.count = None
+    
+@step(u'I get the author contributions')
+def i_get_the_author_contributions(step):
+    world.list = pm.author_contributions(world.filecontent, "con")

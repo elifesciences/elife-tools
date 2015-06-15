@@ -1134,6 +1134,8 @@ def author_contributions(soup, fntype_filter):
 
     try:
         author_contributions_section = extract_nodes(soup, "fn-group", attr="content-type", value="author-contribution")
+        if not author_contributions_section:
+            return None
         fn = extract_nodes(first(author_contributions_section), "fn")
         cons = footnotes(fn, fntype_filter)
     except IndexError:

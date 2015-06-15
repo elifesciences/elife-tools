@@ -44,6 +44,7 @@ Feature: get references from the document
   Examples:
     | document                    | list_item                       | string
     | elife00013.xml              | [0]['etal']                     | None
+    | elife00013.xml              | [0]['id']                       | bib1
     | elife00013.xml              | [9]['etal']                     | True
     | elife00013.xml              | [0]['ref']                      | AgostaWC1992Chemical communicationScientific American PressNew York
     | elife00013.xml              | [0]['publisher_name']           | Scientific American Press

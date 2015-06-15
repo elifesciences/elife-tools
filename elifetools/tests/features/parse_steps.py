@@ -50,11 +50,16 @@ def count_the_number_of_authors(step):
 def i_count_the_number_of_contributors(step):
     world.count = len(pm.contributors(world.filecontent))
 
-@step(u'I count the total as (\d+)')
+@step(u'I count the total as (.*)')
 def i_count_the_total_as(step, number):
-    number = int(number)
-    assert world.count == number, \
-        "Got %d" % world.count
+    # Allow None because sometimes it is not a list returned
+    if number == "None":
+        assert world.count is None, \
+            "Got %s" % world.count
+    else:
+        number = int(number)
+        assert world.count == number, \
+            "Got %d" % world.count
 
 @step(u'I see list index (\d+) as (.*)')
 def i_see_list_index_as_val(step, index, val):
