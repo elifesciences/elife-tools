@@ -739,6 +739,10 @@ def refs(soup):
         article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
+
+        reference_title_node = first(extract_nodes(tag, "pub-id"))
+        if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
+            ref['reference_id'] = node_contents_str(reference_title_node)
             
         # year
         year = node_text(first(extract_nodes(tag, "year")))
@@ -773,7 +777,7 @@ def refs(soup):
                     surname = ""
                 if(given_names is None):
                     given_names = ""
-                full_name = strip_strings(surname + ' ' + given_names)
+                full_name = strip_strings(given_names + ' ' + surname)
                 authors.append(full_name)
                 author_types.append(author_type)
             if(len(authors) > 0):
@@ -1117,6 +1121,20 @@ def competing_interests(soup, fntype_filter):
     except IndexError:
         return None
     return interests
+
+@nullify
+def author_contributions(soup, fntype_filter):
+    """
+    Find the fn tags included in the competing interest
+    """
+
+    try:
+        author_contributions_section = extract_nodes(soup, "fn-group", attr="content-type", value="author-contribution")
+        fn = extract_nodes(first(author_contributions_section), "fn")
+        cons = footnotes(fn, fntype_filter)
+    except IndexError:
+        return None
+    return cons
 
 def footnotes(fn, fntype_filter):
     notes = []
