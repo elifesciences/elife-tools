@@ -92,7 +92,8 @@ def full_keyword_groups(soup):
     for group_tag in raw_parser.keyword_group(soup):
         group = map(node_contents_str, extract_nodes(group_tag, "kwd"))
         group = map(lambda s: s.strip(), group)
-        groups[group_tag['kwd-group-type'].strip()] = group
+        if 'kwd-group-type' in group_tag.attrs:
+            groups[group_tag['kwd-group-type'].strip()] = group
     return groups
 
 def full_custom_meta(soup, meta_name=None):
