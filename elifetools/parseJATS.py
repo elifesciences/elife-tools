@@ -507,7 +507,6 @@ def add_to_list_dictionary(list_dict, list_key, val):
             list_dict[list_key] = []
         list_dict[list_key].append(val)
 
-
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
@@ -767,20 +766,25 @@ def refs(soup):
         authors = []
         author_types = []
         try:
-            author_type = first(person_group)["person-group-type"]
-            name = extract_nodes(person_group[0], "name")
-            for n in name:
-                surname = node_text(first(extract_nodes(n, "surname")))
-                given_names = node_text(first(extract_nodes(n, "given-names")))
-                # Convert all to strings in case a name component is missing
-                if(surname is None):
-                    surname = ""
-                if(given_names is None):
-                    given_names = ""
-                full_name = strip_strings(given_names + ' ' + surname)
-                authors.append(full_name)
-                author_types.append(author_type)
-            if(len(authors) > 0):
+            for group in person_group:
+                author_type = group["person-group-type"]
+                name = extract_nodes(group, "name")
+                for n in name:
+                    surname = node_text(first(extract_nodes(n, "surname")))
+                    given_names = node_text(first(extract_nodes(n, "given-names")))
+                    suffix = node_text(first(extract_nodes(n, "suffix")))
+                    # Convert all to strings in case a name component is missing
+                    if surname is None:
+                        surname = ""
+                    if given_names is None:
+                        given_names = ""
+                    full_name = strip_strings(given_names + ' ' + surname)
+                    if suffix is not None:
+                        full_name += ", " + suffix
+
+                    authors.append(full_name)
+                    author_types.append(author_type)
+            if len(authors) > 0:
                 ref['authors'] = authors
                 ref['author_types'] = author_types
         except(KeyError, IndexError):
