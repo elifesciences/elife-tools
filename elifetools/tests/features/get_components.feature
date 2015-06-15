@@ -133,6 +133,9 @@ Feature: Get components from the document
     | elife05502.xml              | [14]['title']                 | Temporal progression of pattern formation.
     | elife05502.xml              | [14]['full_title']            | Temporal progression of pattern formation.
     
+    | elife00380.xml              | [43]['doi']                    | 10.7554/eLife.00380.044
+    | elife00380.xml              | [45]['caption']                | None
+    | elife00380.xml              | [45]['full_caption']           | None
     
     | elife-kitchen-sink.xml      | [5]['doi']                    | 10.7554/eLife.00013.006
     | elife-kitchen-sink.xml      | [5]['type']                   | media

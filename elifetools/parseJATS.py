@@ -896,7 +896,7 @@ def components(soup):
 
         if raw_parser.caption(tag):
             first_paragraph = first(paragraphs(raw_parser.caption(tag)))
-            if not starts_with_doi(first_paragraph):
+            if first_paragraph and not starts_with_doi(first_paragraph):
                 component['caption'] = node_text(first_paragraph)
                 component['full_caption'] = node_contents_str(first_paragraph)
 
