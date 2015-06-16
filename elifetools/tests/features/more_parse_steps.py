@@ -20,6 +20,10 @@ def i_count_the_number_of_keywords(step):
 def i_get_the_keywords(step):
     world.list = pm.keywords(world.filecontent)
 
+@step(u'I count the number of full keyword groups')
+def i_count_the_number_of_full_keyword_groups(step):
+    world.count = len(pm.full_keyword_groups(world.filecontent))
+
 @step(u'I count the number of author notes')
 def i_count_the_number_of_author_notes(step):
     world.count = len(pm.author_notes(world.filecontent))
@@ -156,3 +160,19 @@ def i_count_the_number_of_author_contributions(step):
 @step(u'I get the author contributions')
 def i_get_the_author_contributions(step):
     world.list = pm.author_contributions(world.filecontent, "con")
+    
+@step(u'I get the impact statement')
+def i_get_the_impact_statement(step):
+    world.string = pm.impact_statement(world.filecontent)
+    
+@step(u'I count the number of related object ids')
+def i_count_the_number_of_related_object_ids(step):
+    world.count = len(pm.related_object_ids(world.filecontent))
+    
+@step(u'I get the related object ids')
+def i_get_the_related_object_ids(step):
+    world.list = pm.related_object_ids(world.filecontent)
+
+@step(u'I get the string of the list')
+def i_get_the_string_of_the_list(step):
+    world.string = str(world.list)

@@ -12,7 +12,8 @@ Feature: Get keywords from the document
     | document                    | count
     | elife-kitchen-sink.xml      | 4     
     | elife00013.xml              | 4       
-    | elife_poa_e06828.xml        | 4   
+    | elife_poa_e06828.xml        | 4
+    | elife07586.xml              | 0
 
   Scenario Outline: Get keywords
     Given I have the document <document>
@@ -34,3 +35,15 @@ Feature: Get keywords from the document
     | elife_poa_e06828.xml        | 2   | DRG neuron development
     | elife_poa_e06828.xml        | 3   | cis and trans activation
 
+
+  Scenario Outline: Count the number of full keyword groups
+    Given I have the document <document>
+    When I count the number of full keyword groups
+    Then I count the total as <count>
+  
+  Examples:
+    | document                    | count
+    | elife-kitchen-sink.xml      | 2     
+    | elife00013.xml              | 2       
+    | elife_poa_e06828.xml        | 2
+    | elife07586.xml              | 0

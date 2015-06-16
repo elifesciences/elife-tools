@@ -13,6 +13,7 @@ Feature: Get research organism from the document
     | elife-kitchen-sink.xml      | 3     
     | elife00013.xml              | 1       
     | elife_poa_e06828.xml        | 1
+    | elife07586.xml              | 0
     
 
   Scenario Outline: Get research organism

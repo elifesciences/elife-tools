@@ -18,6 +18,14 @@ def have_the_document(step, document):
 def get_the_title(step):
     world.string = pm.title(world.filecontent)
 
+@step('I get the short title') 
+def get_the_short_title(step):
+    world.string = pm.title_short(world.filecontent)
+
+@step('I get the slug title') 
+def get_the_slug_title(step):
+    world.string = pm.title_slug(world.filecontent)
+
 @step('I get the doi')
 def get_the_doi(step):
     world.doi = pm.doi(world.filecontent)
