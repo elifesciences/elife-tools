@@ -84,7 +84,7 @@
                     <xref ref-type="fn" rid="equal-contrib2">&#x2021;</xref>
                     <xref ref-type="fn" rid="con4"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="other" rid="pa3">&#x2a;&#x2a;</xref>
+                    <xref ref-type="fn" rid="pa3">&#x2a;&#x2a;</xref>
                 </contrib>
                 <contrib contrib-type="author" deceased="yes" id="author-5">
                     <name>
@@ -94,7 +94,7 @@
                     <xref ref-type="aff" rid="aff3">3</xref>
                     <xref ref-type="fn" rid="con5"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="other" rid="pa3"/>
+                    <xref ref-type="fn" rid="pa3"/>
                     <xref ref-type="fn" rid="fn1">&#x2020;&#x2020;</xref>
                 </contrib>
                 <contrib contrib-type="author" id="author-6">
@@ -318,7 +318,7 @@
                 </license>
             </permissions>
             <self-uri content-type="pdf" xlink:href="elife00013.pdf"/>
-            <related-article ext-link-type="doi" id="ra1" related-article-type="commentary"
+            <related-article ext-link-type="doi" related-article-type="commentary"
                 xlink:href="10.7554/eLife.00013"/>
             <abstract>
                 <object-id pub-id-type="doi">10.7554/eLife.00013.001</object-id>
@@ -405,7 +405,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000011</institution-id>
-                            <institution content-type="university">Howard Hughes Medical Institute</institution>
+                            <institution>Howard Hughes Medical Institute</institution>
                             </institution-wrap>
                     </funding-source>
                     <principal-award-recipient>
@@ -427,7 +427,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                      </funding-source>
                     <award-id>F32 GM086054</award-id>
@@ -446,7 +446,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>F32 GM089018</award-id>
@@ -465,7 +465,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>R01 GM086258</award-id>
@@ -484,7 +484,7 @@
                     <funding-source>
                         <institution-wrap>
                         <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                        <institution content-type="university">National Institutes of Health</institution>
+                        <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>R01 GM099533</award-id>
@@ -502,7 +502,7 @@
                 <award-group id="par-6">
                     <funding-source><institution-wrap>
                         <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                        <institution content-type="university">National Institutes of Health</institution>
+                        <institution>National Institutes of Health</institution>
                     </institution-wrap></funding-source>
                     <award-id>T32 HG00047</award-id>
                     <principal-award-recipient>
@@ -514,7 +514,7 @@
                 </award-group>
                 <award-group id="par-7">
                     <funding-source><institution-wrap>
-                        <institution content-type="university">Laura and John Arnold Foundation</institution>
+                        <institution>Laura and John Arnold Foundation</institution>
                     </institution-wrap></funding-source>
                     <principal-award-recipient>NISC Comparative Sequencing Program</principal-award-recipient>
                 </award-group>
@@ -6308,8 +6308,7 @@
                     target motion. The magnitude of learned eye movements was small and did not
                     affect the chances of reward in either a positive or a negative way.</p><fig id="fig9"
                         position="float"><object-id pub-id-type="doi"
-                            >10.7554/eLife.00013.034</object-id><label>Appendix 1 Figure 1
-                                8.</label><caption><title>Schematic diagrams showing mechanisms of
+                            >10.7554/eLife.00013.034</object-id><label>Appendix 1 Figure 1.</label><caption><title>Schematic diagrams showing mechanisms of
                                     cerebellar learning suggested by our data.</title><p>Each panel shows
                                         the spiking activity of the elements in the proposed cerebellar circuit
                                         during the course of a learning experiment. Trial ‘3’ contains two
