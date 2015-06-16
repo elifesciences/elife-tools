@@ -54,7 +54,7 @@ Feature: Get components from the document
     | elife00013.xml              | [28]['full_label']         | None
     | elife00013.xml              | [28]['title']              | Decision letter
     | elife00013.xml              | [28]['full_title']         | Decision letter
-
+    
     | elife02304.xml              | [0]['doi']                    | 10.7554/eLife.02304.001
     | elife02304.xml              | [0]['position']               | 1
     | elife02304.xml              | [0]['type']                   | abstract
@@ -152,13 +152,17 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [38]['type']                  | sub-article
     | elife-kitchen-sink.xml      | [38]['parent_type']           | None
     
-    #| elife-kitchen-sink.xml      | [39]['doi']                   | 10.7554/eLife.00013.038
-    #| elife-kitchen-sink.xml      | [39]['type']                  | fig
-    #| elife-kitchen-sink.xml      | [39]['parent_type']           | None
-    #
-    #| elife-kitchen-sink.xml      | [40]['doi']                   | 10.7554/eLife.00013.039
-    #| elife-kitchen-sink.xml      | [40]['type']                  | table-wrap
-    #| elife-kitchen-sink.xml      | [40]['parent_type']           | sub-article
+    | elife-kitchen-sink.xml      | [39]['doi']                   | 10.7554/eLife.00013.037
+    | elife-kitchen-sink.xml      | [39]['type']                  | sub-article
+    | elife-kitchen-sink.xml      | [39]['parent_type']           | None
+    
+    | elife-kitchen-sink.xml      | [40]['doi']                   | 10.7554/eLife.00013.038
+    | elife-kitchen-sink.xml      | [40]['type']                  | fig
+    | elife-kitchen-sink.xml      | [40]['parent_type']           | sub-article
+    
+    | elife-kitchen-sink.xml      | [41]['doi']                   | 10.7554/eLife.00013.039
+    | elife-kitchen-sink.xml      | [41]['type']                  | table-wrap
+    | elife-kitchen-sink.xml      | [41]['parent_type']           | sub-article
     
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>
