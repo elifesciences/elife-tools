@@ -989,7 +989,10 @@ def components(soup):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            component['ordinal'] = position_by_type[ctype]
+            
+            # Ordinal is based on all tags of the same type even if they have no DOI
+            component['ordinal'] = tag_ordinal(tag)
+            #component['ordinal'] = position_by_type[ctype]
                         
             components.append(component)
             

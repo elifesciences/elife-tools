@@ -139,7 +139,7 @@ Feature: Get components from the document
     
     | elife-kitchen-sink.xml      | [5]['doi']                    | 10.7554/eLife.00013.006
     | elife-kitchen-sink.xml      | [5]['type']                   | media
-    | elife-kitchen-sink.xml      | [5]['ordinal']                | 1
+    | elife-kitchen-sink.xml      | [5]['ordinal']                | 2
     | elife-kitchen-sink.xml      | [5]['parent_type']            | None
     | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034
     | elife-kitchen-sink.xml      | [35]['parent_type']           | None
