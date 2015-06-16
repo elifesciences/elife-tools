@@ -47,3 +47,4 @@ Feature: Get keywords from the document
     | elife00013.xml              | 2       
     | elife_poa_e06828.xml        | 2
     | elife07586.xml              | 0
+    | elife00051.xml              | 1
