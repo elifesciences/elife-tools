@@ -770,20 +770,20 @@ def refs(soup):
                     surname = node_text(first(extract_nodes(n, "surname")))
                     given_names = node_text(first(extract_nodes(n, "given-names")))
                     suffix = node_text(first(extract_nodes(n, "suffix")))
-                    # Convert all to strings in case a name component is missing
-                    if surname is None:
-                        surname = ""
-                    if given_names is None:
-                        given_names = ""
-                    full_name = strip_strings(given_names + ' ' + surname)
-                    if suffix is not None:
-                        full_name += ", " + suffix
 
-                    authors.append(full_name)
-                    author_types.append(author_type)
+                    author = {'group-type': author_type}
+                    if surname is not None:
+                        author['surname'] = surname
+                    if given_names is not None:
+                        author['given-names'] = given_names
+                    if suffix is not None:
+                        author[suffix] = suffix
+                    if len(author) > 0:
+                        authors.append(author)
+
             if len(authors) > 0:
                 ref['authors'] = authors
-                ref['author_types'] = author_types
+
         except(KeyError, IndexError):
             pass
             
