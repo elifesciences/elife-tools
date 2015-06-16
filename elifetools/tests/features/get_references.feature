@@ -49,12 +49,15 @@ Feature: get references from the document
     | elife00013.xml              | [0]['ref']                      | AgostaWC1992Chemical communicationScientific American PressNew York
     | elife00013.xml              | [0]['publisher_name']           | Scientific American Press
     | elife00013.xml              | [0]['publisher_loc']            | New York
-    | elife00013.xml              | [0]['authors'][0]               | WC Agosta
+    | elife00013.xml              | [0]['authors'][0]['surname']    | Agosta
+    | elife00013.xml              | [0]['authors'][0]['given-names']| WC
     | elife00013.xml              | [0]['article_doi']              | 10.7554/eLife.00013
     | elife00013.xml              | [0]['position']                 | 1
     | elife00013.xml              | [1]['ref']                      | AhmedIYokotaAFujiwaraT2007Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soilInt J Syst Evol Microbiol57986992
-    | elife00013.xml              | [1]['authors'][0]               | I Ahmed
-    | elife00013.xml              | [1]['authors'][1]               | A Yokota
+    | elife00013.xml              | [1]['authors'][0]['surname']    | Ahmed
+    | elife00013.xml              | [1]['authors'][0]['given-names']| I
+    | elife00013.xml              | [1]['authors'][1]['surname']    | Yokota
+    | elife00013.xml              | [1]['authors'][1]['given-names']| A
     | elife00013.xml              | [1]['year']                     | 2007
     | elife00013.xml              | [1]['article_title']            | Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil
     | elife00013.xml              | [1]['source']                   | Int J Syst Evol Microbiol
