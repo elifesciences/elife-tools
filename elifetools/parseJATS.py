@@ -735,6 +735,7 @@ def refs(soup):
         article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
+            ref['full_article_title'] = node_contents_str(first(extract_nodes(tag, "article-title")))
 
         reference_title_node = first(extract_nodes(tag, "pub-id"))
         if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
