@@ -1296,9 +1296,7 @@ def award_group_principal_award_recipient(tag):
                 principal_award_recipient_text += " "
             if(surname):
                 principal_award_recipient_text += surname
-            if(institution and len(institution) > 1):
-                if(principal_award_recipient_text != ""):
-                    principal_award_recipient_text += ", "
+            if(institution):
                 principal_award_recipient_text += institution
         except IndexError:
             continue

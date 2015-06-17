@@ -35,4 +35,37 @@ Feature: Get funding data from the article
     | document                    | list_item                         | string
     | elife00013.xml              | [0]['funding_source'][0]          | Gordon and Betty Moore Foundation Marine Microbiology Initiative
     | elife00013.xml              | [0]['recipient'][0]               | Nicole King
-    | elife00013.xml              | [1]['award_id'][0]                | F32 GM086054    
+    | elife00013.xml              | [1]['award_id'][0]                | F32 GM086054
+    
+    | elife-kitchen-sink.xml      | [0]['funding_source'][0]           | \n\ndx.doi.org/10.13039/100000011\nHoward Hughes Medical Institute\n\n
+    | elife-kitchen-sink.xml      | [0]['recipient'][0]                | Nicole King
+    
+    
+  Scenario Outline: Count the number of full award groups
+    Given I have the document <document>
+    When I count the number of full award groups
+    Then I count the total as <awards_groups>
+
+  Examples:
+    | document                    | awards_groups
+    | elife-kitchen-sink.xml      | 7
+    | elife00013.xml              | 6
+    
+
+  Scenario Outline: Get the full award groups
+    Given I have the document <document>
+    When I get the full award groups
+    And I get the list item <list_item>
+    Then I see the string <string>
+
+  Examples:
+    | document                    | list_item                       | string
+    
+    | elife-kitchen-sink.xml      | ['par-1']['id-type']            | FundRef
+    | elife-kitchen-sink.xml      | ['par-1']['institution']        | Howard Hughes Medical Institute
+    | elife-kitchen-sink.xml      | ['par-1']['id']                 | dx.doi.org/10.13039/100000011
+    | elife-kitchen-sink.xml      | ['par-1']['award-id']           | None
+    
+    | elife-kitchen-sink.xml      | ['par-2']['award-id']           | F32 GM086054
+    | elife-kitchen-sink.xml      | ['par-2']['id']                 | dx.doi.org/10.13039/100000002
+    
