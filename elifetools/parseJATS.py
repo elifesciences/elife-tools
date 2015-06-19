@@ -1062,13 +1062,13 @@ def author_notes(soup):
         for f in fn:
             try:
                 if(f['fn-type'] != 'present-address'):
-                    author_notes.append(f.text)
+                    author_notes.append(node_text(f))
                 else:
                     # Throw it away if it is a present-address footnote
                     continue
             except(KeyError):
                 # Append if the fn-type attribute does not exist
-                author_notes.append(f.text)
+                author_notes.append(node_text(f))
     except(IndexError):
         # Tag not found
         return None
