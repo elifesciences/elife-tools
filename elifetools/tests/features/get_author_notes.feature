@@ -12,7 +12,7 @@ Feature: Get author notes from the document
     | document                    | count
     | elife-kitchen-sink.xml      | 3    
     | elife00013.xml              | 1      
-
+    | elife00240.xml              | None 
 
   Scenario Outline: Get author notes
     Given I have the document <document>
@@ -35,7 +35,7 @@ Feature: Get author notes from the document
     | document                    | count
     | elife-kitchen-sink.xml      | 6
     | elife00013.xml              | 1
-
+    | elife00240.xml              | None 
 
   Scenario Outline: Get full author notes
     Given I have the document <document>

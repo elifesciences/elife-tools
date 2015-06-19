@@ -26,7 +26,10 @@ def i_count_the_number_of_full_keyword_groups(step):
 
 @step(u'I count the number of author notes')
 def i_count_the_number_of_author_notes(step):
-    world.count = len(pm.author_notes(world.filecontent))
+    try:
+        world.count = len(pm.author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
     
 @step(u'I get the author notes')
 def i_get_the_author_notes(step):
@@ -34,8 +37,10 @@ def i_get_the_author_notes(step):
 
 @step("I count the number of full author notes")
 def i_count_the_number_of_full_author_notes(step):
-    world.count = len(pm.full_author_notes(world.filecontent))
-    pass
+    try:
+        world.count = len(pm.full_author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
 
 @step(u'I get the full author notes')
 def i_get_the_full_author_notes(step):

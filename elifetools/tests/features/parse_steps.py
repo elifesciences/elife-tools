@@ -187,6 +187,10 @@ def i_have_the_index(step, index):
 def i_get_the_correspondence(step):
     world.list = pm.correspondence(world.filecontent)
     
+@step(u'I get the full correspondence')
+def i_get_the_full_correspondence(step):
+    world.list = pm.full_correspondence(world.filecontent)
+    
 @step(u'I get the conflict')
 def i_get_the_conflict(step):
     world.list = pm.conflict(world.filecontent)
