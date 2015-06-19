@@ -184,3 +184,14 @@ def i_get_the_related_object_ids(step):
 @step(u'I get the string of the list')
 def i_get_the_string_of_the_list(step):
     world.string = str(world.list)
+
+@step(u'I count the number of competing interests')
+def i_count_the_number_of_competing_interests(step):
+    try:
+        world.count = len(pm.competing_interests(world.filecontent, "conflict"))
+    except TypeError:
+        world.count = None
+        
+@step(u'I get the competing interests')
+def i_get_the_competing_interests(step):
+    world.list = pm.competing_interests(world.filecontent, "conflict")
