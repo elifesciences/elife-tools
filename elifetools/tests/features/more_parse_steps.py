@@ -65,15 +65,8 @@ def i_count_components_of_the_type(step, type):
     world.count = 0
     list = pm.components(world.filecontent)
     for item in list:
-        try:
-            if int(item['type']) == type:
-                world.count += 1
-        except ValueError:
-            # Probably not a number
-            if item['type'] == type:
-                world.count += 1
-        except(KeyError):
-            continue
+        if 'type' in item and item['type'] == type:
+            world.count += 1
     
 @step(u'I get the components')
 def i_get_the_components(step):
@@ -157,12 +150,7 @@ def i_count_permissions_of_components_index(step, index):
         world.count = 0
     else:
         world.count = len(world.list[int(index)]['permissions'])
-        
-@step(u'I get the dict key (.*)')
-def i_get_the_dict_key_key(step, key):
-    print len(world.list)
-    world.string = world.list[key]
-    
+            
 @step(u'I count the number of author contributions')
 def i_count_the_number_of_author_contributions(step):
     try:

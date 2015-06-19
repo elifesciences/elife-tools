@@ -34,7 +34,8 @@ Feature: get references from the document
     | document                    | journal                       | references
     | elife-kitchen-sink.xml      | Anaerobe                      | 1
     | elife00013.xml              | Int J Syst Evol Microbiol     | 17
-
+    | elife00051.xml              | None                          | 6
+    
   Scenario Outline: Get references
     Given I have the document <document>
     When I get the references

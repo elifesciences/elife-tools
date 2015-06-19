@@ -58,36 +58,6 @@ def i_count_the_total_as(step, number):
         assert world.count == number, \
             "Got %d" % world.count
 
-@step(u'I see list index (\d+) as (.*)')
-def i_see_list_index_as_val(step, index, val):
-    # Turn index to int
-    index = int(index)
-    
-    # Allow comparing different types
-    if val == "None":
-        val = None
-    elif val == "True" or val == "False":
-        val = bool(val)
-    else:
-        # Try to compare integers if it is int
-        try:
-            val = int(val)
-        except ValueError:
-            pass
-    
-    # Get the value from the list
-    try:
-        value = world.list[index]
-    except KeyError:
-        value = None
-            
-    # Remove new lines for when comparing against kitchen sink XML
-    if type(value) == unicode or type(value) == str:
-        value = value.replace("\n", "")
-    
-    assert value == val, \
-        "Got %s" % value
-
 @step('I count the number of references')
 def count_the_number_of_references(step):
     world.count = len(pm.references(world.filecontent))
@@ -176,12 +146,6 @@ def i_get_the_copyright_holder(step):
 @step(u'I get the article type')
 def i_get_the_article_type(step):
     world.string = pm.article_type(world.filecontent)
-
-@step(u'I have the index (\d+)')
-def i_have_the_index(step, index):
-    world.index = int(index)
-    assert world.index is not None, \
-        "Got index %d" % world.index
     
 @step(u'I get the correspondence')
 def i_get_the_correspondence(step):
@@ -282,6 +246,14 @@ def i_count_the_number_of_subject_area(step):
 @step(u'I get the subject area')
 def i_get_the_subject_area(step):
     world.list = pm.subject_area(world.filecontent)
+
+@step(u'I count the number of full subject area')
+def i_count_the_number_of_full_subject_area(step):
+    world.count = len(pm.full_subject_area(world.filecontent))
+    
+@step(u'I get the full subject area')
+def i_get_the_full_subject_area(step):
+    world.list = pm.full_subject_area(world.filecontent)
 
 @step(u'I count the number of display channel')
 def i_count_the_number_of_display_channel(step):
