@@ -22,10 +22,10 @@ Feature: Get author notes from the document
   
   Examples:
     | document                    | list_item | string
-    | elife-kitchen-sink.xml      | [0]   | \n†\nThese authors contributed equally to this work\n
-    | elife-kitchen-sink.xml      | [1]   | \n‡\nThese authors contributed equally to this work\n
-    | elife-kitchen-sink.xml      | [2]   | \n††\nDeceased\n
-    | elife00013.xml              | [0]   | †These authors contributed equally to this work
+    | elife-kitchen-sink.xml      | [0]       | \n†\nThese authors contributed equally to this work\n
+    | elife-kitchen-sink.xml      | [1]       | \n‡\nThese authors contributed equally to this work\n
+    | elife-kitchen-sink.xml      | [2]       | \n††\nDeceased\n
+    | elife00013.xml              | [0]       | †These authors contributed equally to this work
 
   Scenario Outline: Count the number of full author notes
     Given I have the document <document>

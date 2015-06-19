@@ -1050,7 +1050,6 @@ def full_correspondence(soup):
 
 
 @nullify
-@strippen
 def author_notes(soup):
     """
     Find the fn tags included in author-notes
