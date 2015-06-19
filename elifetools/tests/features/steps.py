@@ -25,5 +25,4 @@ def i_see_the_string(step, string):
     if string == "False":
         string = False
         
-    assert world.string == string, \
-        "Got %s" % world.string 
+    assert world.string == string, "Got %s" % world.string 
