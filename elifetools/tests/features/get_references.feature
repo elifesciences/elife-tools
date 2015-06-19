@@ -45,6 +45,7 @@ Feature: get references from the document
     | document                    | list_item                       | string
     | elife00013.xml              | [0]['etal']                     | None
     | elife00013.xml              | [0]['id']                       | bib1
+    | elife00013.xml              | [2]['comment']                     | [epub ahead of print]
     | elife00013.xml              | [9]['etal']                     | True
     | elife00013.xml              | [0]['ref']                      | AgostaWC1992Chemical communicationScientific American PressNew York
     | elife00013.xml              | [0]['publisher_name']           | Scientific American Press
@@ -67,5 +68,5 @@ Feature: get references from the document
     | elife00013.xml              | [1]['position']                 | 2
     
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
-    
+    | elife-kitchen-sink.xml      | [53]['comment']                 | pdb.prot5148
     

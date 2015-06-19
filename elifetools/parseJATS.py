@@ -818,6 +818,11 @@ def refs(soup):
         if(publisher_name != None):
             ref['publisher_name'] = publisher_name
             
+        # comment
+        comment = node_text(first(extract_nodes(tag, "comment")))
+        if(comment != None):
+            ref['comment'] = comment
+            
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
             ref['article_doi'] = article_doi
