@@ -162,9 +162,9 @@ def funding_statement(soup):
 #
 
 
-def ref_text(ref):
+def ref_text(tag):
     # ref - human readable full reference text
-    ref_text = tag.get_text()
+    ref_text = node_text(tag)
     ref_text = strip_strings(ref_text)
     # Remove excess space
     ref_text = ' '.join(ref_text.split())
@@ -720,13 +720,7 @@ def refs(soup):
         except(IndexError):
             pass
         
-        # ref - human readable full reference text
-        ref_text = tag.get_text()
-        ref_text = strip_strings(ref_text)
-        # Remove excess space
-        ref_text = ' '.join(ref_text.split())
-        # Fix punctuation spaces and extra space
-        ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
+        ref['ref'] = ref_text(tag)
 
         # ref_id
         ref['id'] = tag['id']
