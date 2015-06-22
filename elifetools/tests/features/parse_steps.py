@@ -109,6 +109,10 @@ def i_get_the_url_of_license(step):
 def i_get_the_license(step):
     world.string = pm.license(world.filecontent)
 
+@step(u'I get the full license')
+def i_get_the_full_license(step):
+    world.string = pm.full_license(world.filecontent)
+
 @step(u'I get the journal id')
 def i_get_the_journal_id(step):
     world.string = pm.journal_id(world.filecontent)
