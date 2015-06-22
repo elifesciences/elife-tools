@@ -387,6 +387,7 @@ def abstracts(soup):
         if title_tag:    
             abstract["title"] = node_text(title_tag)
         
+        abstract["content"] = None
         if len(paragraphs(tag)) > 0:
             abstract["content"] = ""
             abstract["full_content"] = ""
@@ -398,8 +399,7 @@ def abstracts(soup):
                 abstract["content"] += glue + node_text(p_tag)
                 abstract["full_content"] += glue + node_contents_str(p_tag)
                 glue = " "
-        else:
-            abstract["content"] = None
+            
     
         abstracts.append(abstract)
 
