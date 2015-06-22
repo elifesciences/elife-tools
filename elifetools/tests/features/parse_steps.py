@@ -159,6 +159,12 @@ def i_get_the_full_correspondence(step):
 def i_get_the_conflict(step):
     world.list = pm.conflict(world.filecontent)
     
+@step(u'I get the history date (.*)')
+def i_get_the_history_date_date_type(step, date_type):
+    if date_type == "None":
+        date_type = None
+    world.string = pm.history_date(world.filecontent, date_type)
+    
 @step(u'I get the pub date date')
 def i_get_the_pub_date(step):
     world.string = pm.pub_date_date(world.filecontent)

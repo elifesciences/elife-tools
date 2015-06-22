@@ -3,6 +3,18 @@ Feature: Parse the dates from the article
   as a script 
   I will read the pub date and history dates
 
+
+  Scenario Outline: Read the history date by date type
+    Given I have the document <document>
+    When I get the history date <date_type>
+    Then I see the string <date_string>
+
+  Examples:
+    | document                  | date_type          | date_string   
+    | elife00013.xml            | None               | None
+    | elife_poa_e06828.xml      | NotADate           | None
+
+
   Scenario Outline: Read the pub date
     Given I have the document <document>
     When I get the pub date date
