@@ -188,3 +188,7 @@ def i_count_the_number_of_competing_interests(step):
 @step(u'I get the competing interests')
 def i_get_the_competing_interests(step):
     world.list = pm.competing_interests(world.filecontent, "conflict")
+
+@step(u'I get the full affiliation')
+def i_get_the_full_affiliation(step):
+    world.list = pm.full_affiliation(world.filecontent)
