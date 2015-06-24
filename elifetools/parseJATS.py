@@ -353,12 +353,12 @@ def collection_year(soup):
     if pub_date is None:
         return None
     
-    year = raw_parser.year(pub_date)
-    
-    if year:
-        return int(node_text(year))
-    else:
-        return None
+    year = None
+    year_tag = raw_parser.year(pub_date)
+    if year_tag:
+        year = int(node_text(year_tag))
+        
+    return year
 
 def is_poa(soup):
     """
