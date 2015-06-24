@@ -69,5 +69,6 @@ Feature: get references from the document
     | elife00013.xml              | [1]['position']                 | 2
     
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
+    | elife-kitchen-sink.xml      | [9]['authors'][1]['suffix']     | III
     | elife-kitchen-sink.xml      | [53]['comment']                 | pdb.prot5148
     

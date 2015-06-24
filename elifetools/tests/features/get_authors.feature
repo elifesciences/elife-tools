@@ -27,6 +27,7 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | [0]['person_id']                     | 23
     | elife-kitchen-sink.xml      | [0]['surname']                       | Alegado
     | elife-kitchen-sink.xml      | [0]['given-names']                   | Rosanna A
+    | elife-kitchen-sink.xml      | [0]['suffix']                        | Jnr
     | elife-kitchen-sink.xml      | [0]['affiliations'][0]['country']     | United States
     | elife-kitchen-sink.xml      | [0]['affiliations'][0]['institution'] | University of California, Berkeley
     | elife-kitchen-sink.xml      | [0]['affiliations'][0]['dept']        | Department of Molecular and Cell Biology
