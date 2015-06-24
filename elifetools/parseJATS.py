@@ -777,10 +777,15 @@ def refs(soup):
                     if given_names is not None:
                         author['given-names'] = given_names
                     if suffix is not None:
-                        author[suffix] = suffix
+                        author['suffix'] = suffix
                     if len(author) > 0:
                         authors.append(author)
 
+                collab_tags = extract_nodes(group, "collab")
+                for collab_tag in collab_tags:
+                    collab = node_contents_str(collab_tag)
+                    if collab is not None:
+                        authors.append({'group-type': author_type, 'collab': collab})
             if len(authors) > 0:
                 ref['authors'] = authors
 
