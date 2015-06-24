@@ -511,7 +511,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     copy_attribute(contrib_tag.attrs, 'corresp', contributor)
     copy_attribute(contrib_tag.attrs, 'deceased', contributor)
     copy_attribute(contrib_tag.attrs, 'id', contributor)
-    contrib_id_tag = first(extract_nodes(contrib_tag, "contrib-id"))
+    contrib_id_tag = first(raw_parser.contrib_id(contrib_tag))
     if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
         if contrib_id_tag['contrib-id-type'] == 'group-author-key':
             contributor['group-author-key'] = node_contents_str(contrib_id_tag)
@@ -1059,15 +1059,9 @@ def author_notes(soup):
     if author_notes_section:
         fn_nodes = raw_parser.fn(author_notes_section)
         for tag in fn_nodes:
-            if tag.get('fn-type'):
+            if 'fn-type' in tag.attrs:
                 if(tag['fn-type'] != 'present-address'):
                     author_notes.append(node_text(tag))
-                else:
-                    # Throw it away if it is a present-address footnote
-                    continue
-            else:
-                # Append if the fn-type attribute does not exist
-                author_notes.append(node_text(tag))
 
     return author_notes
 

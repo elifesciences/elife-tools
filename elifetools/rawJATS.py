@@ -200,8 +200,8 @@ def fn(soup):
 # authors
 #
 
-def contrib_id(soup, contrib_id_type):
-    return extract_nodes(soup, "contrib-id", attr = "contrib-id-type", value = contrib_id_type)
+def contrib_id(soup):
+    return extract_nodes(soup, "contrib-id")
 
 #
 # references
