@@ -193,6 +193,9 @@ def author_notes(soup):
 def corresp(soup):
     return extract_nodes(soup, "corresp")
 
+def fn(soup):
+    return extract_nodes(soup, "fn")
+
 #
 # authors
 #

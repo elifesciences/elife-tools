@@ -1054,22 +1054,21 @@ def author_notes(soup):
     Find the fn tags included in author-notes
     """
     author_notes = []
-    try:
-        author_notes_section = extract_nodes(soup, "author-notes")
-        fn = extract_nodes(author_notes_section[0], "fn")
-        for f in fn:
-            try:
-                if(f['fn-type'] != 'present-address'):
-                    author_notes.append(node_text(f))
+
+    author_notes_section = raw_parser.author_notes(soup)
+    if author_notes_section:
+        fn_nodes = raw_parser.fn(author_notes_section)
+        for tag in fn_nodes:
+            if tag.get('fn-type'):
+                if(tag['fn-type'] != 'present-address'):
+                    author_notes.append(node_text(tag))
                 else:
                     # Throw it away if it is a present-address footnote
                     continue
-            except(KeyError):
+            else:
                 # Append if the fn-type attribute does not exist
-                author_notes.append(node_text(f))
-    except(IndexError):
-        # Tag not found
-        return None
+                author_notes.append(node_text(tag))
+
     return author_notes
 
 @nullify
@@ -1077,14 +1076,13 @@ def full_author_notes(soup, fntype_filter=None):
     """
     Find the fn tags included in author-notes
     """
+    notes = []
+    
+    author_notes_section = raw_parser.author_notes(soup)
+    if author_notes_section:
+        fn_nodes = raw_parser.fn(author_notes_section)
+        notes = footnotes(fn_nodes, fntype_filter)
 
-    try:
-        author_notes_section = extract_nodes(soup, "author-notes")
-        fn = extract_nodes(author_notes_section[0], "fn")
-        notes = footnotes(fn, fntype_filter)
-    except IndexError:
-        # TODO log - Tag not found
-        return None
     return notes
 
 @nullify
