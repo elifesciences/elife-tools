@@ -1007,22 +1007,22 @@ def components(soup):
     
     return components
 
-@nullify
-@strippen
+
+
 def correspondence(soup):
     """
     Find the corresp tags included in author-notes
     for primary correspondence
     """
     correspondence = []
-    try:
-        author_notes = extract_nodes(soup, "author-notes")
-        tags = extract_nodes(author_notes[0], "corresp")
-        for tag in tags:
+    
+    author_notes_nodes = raw_parser.author_notes(soup)
+    
+    if author_notes_nodes:
+        corresp_nodes = raw_parser.corresp(author_notes_nodes)
+        for tag in corresp_nodes:
             correspondence.append(tag.text)
-    except(IndexError):
-        # Tag not found
-        return None
+
     return correspondence
 
 
@@ -1035,16 +1035,16 @@ def get_email(text):
     return ""
 
 
-@nullify
+
 def full_correspondence(soup):
     cor = {}
-    try:
-        author_notes_nodes = extract_nodes(soup,"author-notes")
-        tags = extract_nodes(author_notes_nodes[0], "corresp")
-        for tag in tags:
+    
+    author_notes_nodes = raw_parser.author_notes(soup)
+    if author_notes_nodes:
+        corresp_nodes = raw_parser.corresp(author_notes_nodes)
+        for tag in corresp_nodes:
             cor[tag['id']] = get_email(node_contents_str(tag))
-    except IndexError:
-        return None
+
     return cor
 
 

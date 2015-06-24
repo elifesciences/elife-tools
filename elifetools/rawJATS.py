@@ -187,6 +187,12 @@ def authors(soup, contrib_type = "author"):
 def caption(soup):
     return first(extract_nodes(soup, "caption"))
 
+def author_notes(soup):
+    return first(extract_nodes(soup, "author-notes"))
+
+def corresp(soup):
+    return extract_nodes(soup, "corresp")
+
 #
 # authors
 #
