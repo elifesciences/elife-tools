@@ -18,11 +18,12 @@ Feature: Get display channels from the document
   Scenario Outline: Get display channel
     Given I have the document <document>
     When I get the display channel
-    Then I see list index <idx> as <val>
+    And I get the list item <list_item>
+    Then I see the string <string>
   
   Examples:
-    | document                    | idx | val
-    | elife-kitchen-sink.xml      | 0   | Research article
-    | elife00013.xml              | 0   | Research article
-    | elife_poa_e06828.xml        | 0   | Research article
+    | document                    | list_item | string
+    | elife-kitchen-sink.xml      | [0]       | Research article
+    | elife00013.xml              | [0]       | Research article
+    | elife_poa_e06828.xml        | [0]       | Research article
     

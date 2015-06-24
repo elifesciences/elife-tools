@@ -35,17 +35,6 @@ def i_see_the_identifier(step, string):
     assert world.doi == string, \
         "Got %s" % world.doi
 
-@step('I get the pmid')
-def get_the_pmid(step):
-    world.pmid = pm.pmid(world.filecontent)
-
-@step(u'I see the number (.*$)')
-def i_see_the_number(step, number):
-    if (number == 'None'):
-      number = None
-    assert world.pmid == number, \
-        "Got %d" % int(world.pmid)
-
 @step('I get the authors')
 def i_get_the_authors(step):
     world.list = pm.authors(world.filecontent)
@@ -68,74 +57,6 @@ def i_count_the_total_as(step, number):
         number = int(number)
         assert world.count == number, \
             "Got %d" % world.count
-
-@step(u'I see list index (\d+) as (.*)')
-def i_see_list_index_as_val(step, index, val):
-    # Turn index to int
-    index = int(index)
-    
-    # Allow comparing different types
-    if val == "None":
-        val = None
-    elif val == "True" or val == "False":
-        val = bool(val)
-    else:
-        # Try to compare integers if it is int
-        try:
-            val = int(val)
-        except ValueError:
-            pass
-    
-    # Get the value from the list
-    try:
-        value = world.list[index]
-    except KeyError:
-        value = None
-            
-    # Remove new lines for when comparing against kitchen sink XML
-    if type(value) == unicode or type(value) == str:
-        value = value.replace("\n", "")
-    
-    assert value == val, \
-        "Got %s" % value
-
-@step(u'I see list index (\d+) (\S+) (\d*) as (.*)')
-def i_see_list_index_attribute_subindex_as_val(step, index, attribute, subindex, val):
-    # Turn index to int
-    index = int(index)
-    if subindex != "":
-        subindex = int(subindex)
-    
-    # Allow comparing different types
-    if val == "None":
-        val = None
-    elif val == "True" or val == "False":
-        val = bool(val)
-    else:
-        # Try to compare integers if it is int
-        try:
-            val = int(val)
-        except ValueError:
-            pass
-    
-    # Get the value from the list
-    if subindex != "":
-        try:
-            value = world.list[index][attribute][subindex]
-        except KeyError:
-            value = None
-    else:
-        try:
-            value = world.list[index][attribute]
-        except KeyError:
-            value = None
-            
-    # Remove new lines for when comparing against kitchen sink XML
-    if type(value) == unicode or type(value) == str:
-        value = value.replace("\n", "\\n")
-    
-    assert value == val, \
-        "Got %s" % value
 
 @step('I count the number of references')
 def count_the_number_of_references(step):
@@ -188,6 +109,10 @@ def i_get_the_url_of_license(step):
 def i_get_the_license(step):
     world.string = pm.license(world.filecontent)
 
+@step(u'I get the full license')
+def i_get_the_full_license(step):
+    world.string = pm.full_license(world.filecontent)
+
 @step(u'I get the journal id')
 def i_get_the_journal_id(step):
     world.string = pm.journal_id(world.filecontent)
@@ -225,20 +150,24 @@ def i_get_the_copyright_holder(step):
 @step(u'I get the article type')
 def i_get_the_article_type(step):
     world.string = pm.article_type(world.filecontent)
-
-@step(u'I have the index (\d+)')
-def i_have_the_index(step, index):
-    world.index = int(index)
-    assert world.index is not None, \
-        "Got index %d" % world.index
     
 @step(u'I get the correspondence')
 def i_get_the_correspondence(step):
     world.list = pm.correspondence(world.filecontent)
     
+@step(u'I get the full correspondence')
+def i_get_the_full_correspondence(step):
+    world.list = pm.full_correspondence(world.filecontent)
+    
 @step(u'I get the conflict')
 def i_get_the_conflict(step):
     world.list = pm.conflict(world.filecontent)
+    
+@step(u'I get the history date (.*)')
+def i_get_the_history_date_date_type(step, date_type):
+    if date_type == "None":
+        date_type = None
+    world.string = pm.history_date(world.filecontent, date_type)
     
 @step(u'I get the pub date date')
 def i_get_the_pub_date(step):
@@ -327,6 +256,14 @@ def i_count_the_number_of_subject_area(step):
 @step(u'I get the subject area')
 def i_get_the_subject_area(step):
     world.list = pm.subject_area(world.filecontent)
+
+@step(u'I count the number of full subject area')
+def i_count_the_number_of_full_subject_area(step):
+    world.count = len(pm.full_subject_area(world.filecontent))
+    
+@step(u'I get the full subject area')
+def i_get_the_full_subject_area(step):
+    world.list = pm.full_subject_area(world.filecontent)
 
 @step(u'I count the number of display channel')
 def i_count_the_number_of_display_channel(step):

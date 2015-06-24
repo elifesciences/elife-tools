@@ -16,36 +16,6 @@ def firstnn(x):
     "returns the first non-nil value within given iterable"
     return first(filter(None, x))
 
-def swap_en_dashes(textHTMLEntities):
-    return textHTMLEntities.replace("&#8211;", "&#x02013;")#.encode('ascii', 'xmlcharrefreplace')
-
-def unicodeToHTMLEntities(text):
-    """Converts unicode to HTML entities.  For example '&' becomes '&amp;'."""
-    return cgi.escape(text).encode('ascii', 'xmlcharrefreplace')
-
-def format_text(title_text):
-    textHTMLEntities = unicodeToHTMLEntities(title_text)
-    textHTMLEntitiesReverted = swap_en_dashes(textHTMLEntities)
-    return textHTMLEntitiesReverted
-
-def flatten(function):
-    """
-    Convert or flatten value; if list length is zero then return None,
-    if length of a list is 1, convert to a string, otherwise return
-    the list as given
-    """
-    def wrapper(*args, **kwargs):
-        value = function(*args, **kwargs)
-        if(type(value) == list and len(value) == 0):
-            return None
-        elif(type(value) == list and len(value) == 1):
-            # If there is only one list element, return a singleton
-            return value[0]
-        else:
-            return value
-        return value
-    return wrapper
-
 def strip_strings(value):
     def strip_string(value):
         if hasattr(value, 'strip'):
@@ -102,12 +72,6 @@ def inten(function):
     "Decorator. Attempts to convert return value to int"
     def wrapper(*args, **kwargs):
         return coerce_to_int(function(*args, **kwargs))
-    return wrapper
-
-def revert_entities(function):
-    def wrapper(*args, **kwargs):
-        text = function(*args, **kwargs)
-        return format_text(text)
     return wrapper
 
 def date_struct(year, month, day, tz = "UTC"):

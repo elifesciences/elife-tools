@@ -162,9 +162,9 @@ def funding_statement(soup):
 #
 
 
-def ref_text(ref):
+def ref_text(tag):
     # ref - human readable full reference text
-    ref_text = tag.get_text()
+    ref_text = node_text(tag)
     ref_text = strip_strings(ref_text)
     # Remove excess space
     ref_text = ' '.join(ref_text.split())
@@ -387,6 +387,7 @@ def abstracts(soup):
         if title_tag:    
             abstract["title"] = node_text(title_tag)
         
+        abstract["content"] = None
         if len(paragraphs(tag)) > 0:
             abstract["content"] = ""
             abstract["full_content"] = ""
@@ -398,8 +399,7 @@ def abstracts(soup):
                 abstract["content"] += glue + node_text(p_tag)
                 abstract["full_content"] += glue + node_contents_str(p_tag)
                 glue = " "
-        else:
-            abstract["content"] = None
+            
     
         abstracts.append(abstract)
 
@@ -720,13 +720,7 @@ def refs(soup):
         except(IndexError):
             pass
         
-        # ref - human readable full reference text
-        ref_text = tag.get_text()
-        ref_text = strip_strings(ref_text)
-        # Remove excess space
-        ref_text = ' '.join(ref_text.split())
-        # Fix punctuation spaces and extra space
-        ref['ref'] = strip_punctuation_space(strip_strings(ref_text))
+        ref['ref'] = ref_text(tag)
 
         # ref_id
         ref['id'] = tag['id']
@@ -735,6 +729,7 @@ def refs(soup):
         article_title = node_text(first(extract_nodes(tag, "article-title")))
         if(article_title != None):
             ref['article_title'] = article_title
+            ref['full_article_title'] = node_contents_str(first(extract_nodes(tag, "article-title")))
 
         reference_title_node = first(extract_nodes(tag, "pub-id"))
         if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
@@ -821,6 +816,11 @@ def refs(soup):
         publisher_name = node_text(first(extract_nodes(tag, "publisher-name")))
         if(publisher_name != None):
             ref['publisher_name'] = publisher_name
+            
+        # comment
+        comment = node_text(first(extract_nodes(tag, "comment")))
+        if(comment != None):
+            ref['comment'] = comment
             
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
@@ -1049,7 +1049,6 @@ def full_correspondence(soup):
 
 
 @nullify
-@strippen
 def author_notes(soup):
     """
     Find the fn tags included in author-notes
@@ -1061,42 +1060,13 @@ def author_notes(soup):
         for f in fn:
             try:
                 if(f['fn-type'] != 'present-address'):
-                    author_notes.append(f.text)
+                    author_notes.append(node_text(f))
                 else:
                     # Throw it away if it is a present-address footnote
                     continue
             except(KeyError):
                 # Append if the fn-type attribute does not exist
-                author_notes.append(f.text)
-    except(IndexError):
-        # Tag not found
-        return None
-    return author_notes
-
-@nullify
-def full_author_notes(soup, fntype_filter=None):
-    """
-    Find the fn tags included in author-notes
-    """
-    author_notes = []
-    try:
-        author_notes_section = extract_nodes(soup, "author-notes")
-        fn = extract_nodes(author_notes_section[0], "fn")
-        for f in fn:
-            try:
-                if fntype_filter is None or f['fn-type'] in fntype_filter:
-                    author_notes.append({
-                        'id': f['id'],
-                        'text': node_contents_str(f),
-                        'fn-type': f['fn-type'],
-                    })
-                else:
-                    # Throw it away if it is a present-address footnote
-                    continue
-            except(KeyError):
-                # Append if the fn-type attribute does not exist
-                # author_notes.append(f.text) TODO : is this required here?
-                pass
+                author_notes.append(node_text(f))
     except(IndexError):
         # Tag not found
         return None
@@ -1301,9 +1271,7 @@ def award_group_principal_award_recipient(tag):
                 principal_award_recipient_text += " "
             if(surname):
                 principal_award_recipient_text += surname
-            if(institution and len(institution) > 1):
-                if(principal_award_recipient_text != ""):
-                    principal_award_recipient_text += ", "
+            if(institution):
                 principal_award_recipient_text += institution
         except IndexError:
             continue

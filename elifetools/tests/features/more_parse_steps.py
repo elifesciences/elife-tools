@@ -26,7 +26,10 @@ def i_count_the_number_of_full_keyword_groups(step):
 
 @step(u'I count the number of author notes')
 def i_count_the_number_of_author_notes(step):
-    world.count = len(pm.author_notes(world.filecontent))
+    try:
+        world.count = len(pm.author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
     
 @step(u'I get the author notes')
 def i_get_the_author_notes(step):
@@ -34,8 +37,10 @@ def i_get_the_author_notes(step):
 
 @step("I count the number of full author notes")
 def i_count_the_number_of_full_author_notes(step):
-    world.count = len(pm.full_author_notes(world.filecontent))
-    pass
+    try:
+        world.count = len(pm.full_author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
 
 @step(u'I get the full author notes')
 def i_get_the_full_author_notes(step):
@@ -60,15 +65,8 @@ def i_count_components_of_the_type(step, type):
     world.count = 0
     list = pm.components(world.filecontent)
     for item in list:
-        try:
-            if int(item['type']) == type:
-                world.count += 1
-        except ValueError:
-            # Probably not a number
-            if item['type'] == type:
-                world.count += 1
-        except(KeyError):
-            continue
+        if 'type' in item and item['type'] == type:
+            world.count += 1
     
 @step(u'I get the components')
 def i_get_the_components(step):
@@ -81,6 +79,14 @@ def i_count_the_number_of_award_groups(step):
 @step(u'I get the award groups')
 def i_get_the_award_groups(step):
     world.list = pm.award_groups(world.filecontent)
+
+@step(u'I count the number of full award groups')
+def i_count_the_number_of_full_award_groups(step):
+    world.count = len(pm.full_award_groups(world.filecontent))
+
+@step(u'I get the full award groups')
+def i_get_the_full_award_groups(step):
+    world.list = pm.full_award_groups(world.filecontent)
 
 @step('I get the full title') 
 def get_the_full_title(step):
@@ -144,12 +150,7 @@ def i_count_permissions_of_components_index(step, index):
         world.count = 0
     else:
         world.count = len(world.list[int(index)]['permissions'])
-        
-@step(u'I get the dict key (.*)')
-def i_get_the_dict_key_key(step, key):
-    print len(world.list)
-    world.string = world.list[key]
-    
+            
 @step(u'I count the number of author contributions')
 def i_count_the_number_of_author_contributions(step):
     try:
@@ -176,3 +177,18 @@ def i_get_the_related_object_ids(step):
 @step(u'I get the string of the list')
 def i_get_the_string_of_the_list(step):
     world.string = str(world.list)
+
+@step(u'I count the number of competing interests')
+def i_count_the_number_of_competing_interests(step):
+    try:
+        world.count = len(pm.competing_interests(world.filecontent, "conflict"))
+    except TypeError:
+        world.count = None
+        
+@step(u'I get the competing interests')
+def i_get_the_competing_interests(step):
+    world.list = pm.competing_interests(world.filecontent, "conflict")
+
+@step(u'I get the full affiliation')
+def i_get_the_full_affiliation(step):
+    world.list = pm.full_affiliation(world.filecontent)
