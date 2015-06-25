@@ -703,7 +703,7 @@ def references(soup):
     
 def refs(soup):
     """Find and return all the references"""
-    tags = extract_nodes(soup, "ref")
+    tags = raw_parser.ref_list(soup)
     refs = []
     position = 1
     
@@ -757,68 +757,68 @@ def refs(soup):
         person_group = extract_nodes(tag, "person-group")
         authors = []
         author_types = []
-        try:
-            for group in person_group:
-                author_type = group["person-group-type"]
-                name = extract_nodes(group, "name")
-                for n in name:
-                    surname = node_text(first(extract_nodes(n, "surname")))
-                    given_names = node_text(first(extract_nodes(n, "given-names")))
-                    suffix = node_text(first(extract_nodes(n, "suffix")))
+        
+        for group in person_group:
+            author_type = group["person-group-type"]
+            name = extract_nodes(group, "name")
+            for n in name:
+                surname = node_text(first(extract_nodes(n, "surname")))
+                given_names = node_text(first(extract_nodes(n, "given-names")))
+                suffix = node_text(first(extract_nodes(n, "suffix")))
 
-                    author = {'group-type': author_type}
-                    if surname is not None:
-                        author['surname'] = surname
-                    if given_names is not None:
-                        author['given-names'] = given_names
-                    if suffix is not None:
-                        author['suffix'] = suffix
-                    if len(author) > 0:
-                        authors.append(author)
+                author = {'group-type': author_type}
+                if surname is not None:
+                    author['surname'] = surname
+                if given_names is not None:
+                    author['given-names'] = given_names
+                if suffix is not None:
+                    author['suffix'] = suffix
+                if len(author) > 0:
+                    authors.append(author)
 
-                collab_tags = extract_nodes(group, "collab")
-                for collab_tag in collab_tags:
-                    collab = node_contents_str(collab_tag)
-                    if collab is not None:
-                        authors.append({'group-type': author_type, 'collab': collab})
-            if len(authors) > 0:
-                ref['authors'] = authors
+            collab_tags = extract_nodes(group, "collab")
+            for collab_tag in collab_tags:
+                collab = node_contents_str(collab_tag)
+                if collab is not None:
+                    authors.append({'group-type': author_type, 'collab': collab})
+        if len(authors) > 0:
+            ref['authors'] = authors
 
-        except(KeyError, IndexError):
-            pass
+        
+        
             
         # volume
-        volume = node_text(first(extract_nodes(tag, "volume")))
-        if(volume != None):
+        volume = node_text(first(raw_parser.volume(tag)))
+        if volume:
             ref['volume'] = volume
             
         # fpage
-        fpage = node_text(first(extract_nodes(tag, "fpage")))
-        if(fpage != None):
+        fpage = node_text(first(raw_parser.fpage(tag)))
+        if fpage:
             ref['fpage'] = fpage
             
         # lpage
-        lpage = node_text(first(extract_nodes(tag, "lpage")))
-        if(lpage != None):
+        lpage = node_text(first(raw_parser.lpage(tag)))
+        if lpage:
             ref['lpage'] = lpage
             
         # collab
-        collab = node_text(first(extract_nodes(tag, "collab")))
-        if(collab != None):
+        collab = node_text(first(raw_parser.collab(tag)))
+        if collab:
             ref['collab'] = collab
             
         # publisher_loc
-        publisher_loc = node_text(first(extract_nodes(tag, "publisher-loc")))
-        if(publisher_loc != None):
+        publisher_loc = node_text(first(raw_parser.publisher_loc(tag)))
+        if publisher_loc:
             ref['publisher_loc'] = publisher_loc
         
         # publisher_name
-        publisher_name = node_text(first(extract_nodes(tag, "publisher-name")))
-        if(publisher_name != None):
+        publisher_name = node_text(first(raw_parser.publisher_name(tag)))
+        if publisher_name:
             ref['publisher_name'] = publisher_name
             
         # comment
-        comment = node_text(first(extract_nodes(tag, "comment")))
+        comment = node_text(first(raw_parser.comment(tag)))
         if(comment != None):
             ref['comment'] = comment
             
@@ -1085,12 +1085,12 @@ def competing_interests(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    try:
-        competing_interests_section = extract_nodes(soup, "fn-group", attr="content-type", value="competing-interest")
-        fn = extract_nodes(competing_interests_section[0], "fn")
-        interests = footnotes(fn, fntype_filter)
-    except IndexError:
+    competing_interests_section = extract_nodes(soup, "fn-group", attr="content-type", value="competing-interest")
+    if not competing_interests_section:
         return None
+    fn = extract_nodes(first(competing_interests_section), "fn")
+    interests = footnotes(fn, fntype_filter)
+
     return interests
 
 @nullify
@@ -1099,14 +1099,12 @@ def author_contributions(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    try:
-        author_contributions_section = extract_nodes(soup, "fn-group", attr="content-type", value="author-contribution")
-        if not author_contributions_section:
-            return None
-        fn = extract_nodes(first(author_contributions_section), "fn")
-        cons = footnotes(fn, fntype_filter)
-    except IndexError:
+    author_contributions_section = extract_nodes(soup, "fn-group", attr="content-type", value="author-contribution")
+    if not author_contributions_section:
         return None
+    fn = extract_nodes(first(author_contributions_section), "fn")
+    cons = footnotes(fn, fntype_filter)
+
     return cons
 
 def footnotes(fn, fntype_filter):

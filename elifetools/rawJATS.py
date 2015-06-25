@@ -210,20 +210,23 @@ def contrib_id(soup):
 def ref_list(soup):
     return extract_nodes(soup, "ref")
 
-def volume(ref):
-    return extract_nodes(ref, "volume")
+def volume(soup):
+    return extract_nodes(soup, "volume")
 
-def fpage(ref):
-    return extract_node(ref, "fpage")
+def fpage(soup):
+    return extract_nodes(soup, "fpage")
             
-def lpage(ref):
-    return extract_node(ref, "lpage")
+def lpage(soup):
+    return extract_nodes(soup, "lpage")
 
-def collab(ref):
-    return extract_node(ref, "collab")
+def collab(soup):
+    return extract_nodes(soup, "collab")
 
-def publisher_loc(ref):
-    return extract_node(ref, "publisher-loc")
+def publisher_loc(soup):
+    return extract_nodes(soup, "publisher-loc")
 
-def publisher_name(ref):
-    return extract_node(ref, "publisher-name")
+def publisher_name(soup):
+    return extract_nodes(soup, "publisher-name")
+
+def comment(soup):
+    return extract_nodes(soup, "comment")
