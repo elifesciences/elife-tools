@@ -954,10 +954,6 @@ def components(soup):
                     permissions_item['full_license'] = \
                         node_contents_str(raw_parser.licence_p(permissions_tag))
 
-                if raw_parser.licence_url(permissions_tag):
-                    permissions_item['license_url'] = \
-                        node_text(raw_parser.licence_url(permissions_tag))
-
                 component['permissions'].append(permissions_item)
 
         if raw_parser.contributors(tag):
