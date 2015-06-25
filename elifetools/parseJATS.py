@@ -759,14 +759,21 @@ def refs(soup):
         author_types = []
         
         for group in person_group:
-            author_type = group["person-group-type"]
+
+            
+            author_type = None
+            if "person-group-type" in group.attrs:
+                author_type = group["person-group-type"]
+                    
             name = extract_nodes(group, "name")
             for n in name:
+                author = {}
                 surname = node_text(first(extract_nodes(n, "surname")))
                 given_names = node_text(first(extract_nodes(n, "given-names")))
                 suffix = node_text(first(extract_nodes(n, "suffix")))
 
-                author = {'group-type': author_type}
+                if author_type is not None:
+                    author['group-type'] = author_type
                 if surname is not None:
                     author['surname'] = surname
                 if given_names is not None:
@@ -778,9 +785,16 @@ def refs(soup):
 
             collab_tags = extract_nodes(group, "collab")
             for collab_tag in collab_tags:
+                author = {}
                 collab = node_contents_str(collab_tag)
+                
+                if author_type is not None:
+                    author['group-type'] = author_type
                 if collab is not None:
-                    authors.append({'group-type': author_type, 'collab': collab})
+                    author['collab'] = collab
+                if len(author) > 0:
+                    authors.append(author)
+                
         if len(authors) > 0:
             ref['authors'] = authors
 

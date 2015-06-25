@@ -13,6 +13,7 @@ Feature: get references from the document
     | elife-kitchen-sink.xml      | 103
     | elife00013.xml              | 105
     | elife_poa_e06828.xml        | 0
+    | elife02935.xml              | 59
 
   Scenario Outline: Count the number of references from a particular year
     Given I have the document <document>
@@ -71,4 +72,6 @@ Feature: get references from the document
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
     | elife-kitchen-sink.xml      | [9]['authors'][1]['suffix']     | III
     | elife-kitchen-sink.xml      | [53]['comment']                 | pdb.prot5148
-    
+  
+    | elife02935.xml              | [6]['authors'][0]['surname']    | Chinnery
+    | elife02935.xml              | [6]['authors'][1]['surname']    | RA
