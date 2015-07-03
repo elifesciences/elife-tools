@@ -196,6 +196,9 @@ def corresp(soup):
 def fn(soup):
     return extract_nodes(soup, "fn")
 
+def media(soup):
+    return extract_nodes(soup, "media")
+
 #
 # authors
 #

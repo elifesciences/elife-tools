@@ -497,6 +497,17 @@ def component_doi(soup):
     
     return component_doi
 
+def media(soup):
+    """
+    All media tags and some associated data about the related component doi
+    and the parent of that doi (not always present)
+    """
+    media = []
+    
+    media = raw_parser.media(soup)
+    
+    return media
+    
 
 def add_to_list_dictionary(list_dict, list_key, val):
     if val is not None:

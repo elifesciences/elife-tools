@@ -192,3 +192,7 @@ def i_get_the_competing_interests(step):
 @step(u'I get the full affiliation')
 def i_get_the_full_affiliation(step):
     world.list = pm.full_affiliation(world.filecontent)
+    
+@step(u'I count the number of media')
+def i_count_the_number_of_media(step):
+    world.count = len(pm.media(world.filecontent))
