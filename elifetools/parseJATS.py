@@ -504,7 +504,56 @@ def media(soup):
     """
     media = []
     
-    media = raw_parser.media(soup)
+    media_tags = raw_parser.media(soup)
+    
+    position = 1
+    
+    for tag in media_tags:
+        media_item = {}
+        
+        copy_attribute(tag.attrs, 'mime-subtype', media_item)
+        copy_attribute(tag.attrs, 'mimetype', media_item)
+        copy_attribute(tag.attrs, 'xlink:href', media_item, 'xlink_href')
+        copy_attribute(tag.attrs, 'content-type', media_item)
+        
+        # Try to get the component DOI
+        object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
+        if object_id_tag:
+            component_doi = node_text(object_id_tag)
+            if component_doi:
+                media_item['component_doi'] = component_doi
+        
+        # Try to get the component DOI of the parent tag
+        nodenames = ["sub-article", "fig-group", "supplementary-material"]
+        first_parent_tag = first_parent(tag, nodenames)
+        if first_parent_tag:
+            media_item['parent_type'] = first_parent_tag.name
+            media_item['parent_ordinal'] = tag_ordinal(first_parent_tag)
+        
+            object_id_tag = first(raw_parser.object_id(first_parent_tag, pub_id_type= "doi"))
+            if object_id_tag:
+                component_doi = node_text(object_id_tag)
+                media_item['parent_component_doi'] = component_doi
+
+            # Try to get the parent parent
+            next_parent_tag = first_parent(first_parent_tag, nodenames)
+            if next_parent_tag:
+                media_item['parent_parent_type'] = next_parent_tag.name
+                media_item['parent_parent_ordinal'] = tag_ordinal(next_parent_tag)
+            
+                object_id_tag = first(raw_parser.object_id(next_parent_tag, pub_id_type= "doi"))
+                if object_id_tag:
+                    component_doi = node_text(object_id_tag)
+                    media_item['parent_parent_component_doi'] = component_doi
+        
+        # Increment the position
+        media_item['position'] = position
+        # Ordinal should be the same as position in this case but set it anyway
+        media_item['ordinal'] = tag_ordinal(tag)
+        
+        media.append(media_item)
+        
+        position += 1
     
     return media
     
