@@ -199,6 +199,9 @@ def fn(soup):
 def media(soup):
     return extract_nodes(soup, "media")
 
+def graphic(soup):
+    return extract_nodes(soup, "graphic")
+
 #
 # authors
 #

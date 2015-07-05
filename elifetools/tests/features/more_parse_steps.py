@@ -200,3 +200,11 @@ def i_count_the_number_of_media(step):
 @step(u'I get the media')
 def i_get_the_media(step):
     world.list = pm.media(world.filecontent)
+    
+@step(u'I count the number of graphics')
+def i_count_the_number_of_graphics(step):
+    world.count = len(pm.graphics(world.filecontent))
+
+@step(u'I get the graphics')
+def i_get_the_graphics(step):
+    world.list = pm.graphics(world.filecontent)

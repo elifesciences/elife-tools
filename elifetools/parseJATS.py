@@ -557,6 +557,57 @@ def media(soup):
     
     return media
     
+    
+def graphics(soup):
+    """
+    All graphic tags and some associated data about the related component doi
+    and the parent of that doi (not always present), and whether it is
+    part of a figure supplement
+    """
+    graphics = []
+    
+    graphic_tags = raw_parser.graphic(soup)
+    
+    position = 1
+    
+    for tag in graphic_tags:
+        graphic_item = {}
+        
+        copy_attribute(tag.attrs, 'xlink:href', graphic_item, 'xlink_href')
+        
+        # Try to get the component DOI of the parent tag
+        nodenames = ["sub-article", "fig-group", "fig"]
+        first_parent_tag = first_parent(tag, nodenames)
+        if first_parent_tag:
+            graphic_item['parent_type'] = first_parent_tag.name
+            graphic_item['parent_ordinal'] = tag_ordinal(first_parent_tag)
+        
+            object_id_tag = first(raw_parser.object_id(first_parent_tag, pub_id_type= "doi"))
+            if object_id_tag:
+                component_doi = node_text(object_id_tag)
+                graphic_item['parent_component_doi'] = component_doi
+
+            # Try to get the parent parent
+            next_parent_tag = first_parent(first_parent_tag, nodenames)
+            if next_parent_tag:
+                graphic_item['parent_parent_type'] = next_parent_tag.name
+                graphic_item['parent_parent_ordinal'] = tag_ordinal(next_parent_tag)
+            
+                object_id_tag = first(raw_parser.object_id(next_parent_tag, pub_id_type= "doi"))
+                if object_id_tag:
+                    component_doi = node_text(object_id_tag)
+                    graphic_item['parent_parent_component_doi'] = component_doi
+        
+        # Increment the position
+        graphic_item['position'] = position
+        # Ordinal should be the same as position in this case but set it anyway
+        graphic_item['ordinal'] = tag_ordinal(tag)
+        
+        graphics.append(graphic_item)
+        
+        position += 1
+    
+    return graphics
 
 def add_to_list_dictionary(list_dict, list_key, val):
     if val is not None:
