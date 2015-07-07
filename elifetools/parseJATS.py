@@ -547,12 +547,20 @@ def media(soup):
             media_item['parent_component_doi'] = component_doi
 
             # Try to get the parent parent
-            next_parent_tag = first_parent(first_parent_tag, nodenames)
-            if next_parent_tag:
-                type, ordinal, component_doi = tag_details(next_parent_tag, nodenames)
-                media_item['parent_parent_type'] = type
-                media_item['parent_parent_ordinal'] = ordinal
-                media_item['parent_parent_component_doi'] = component_doi
+            p_parent_tag = first_parent(first_parent_tag, nodenames)
+            if p_parent_tag:
+                type, ordinal, component_doi = tag_details(p_parent_tag, nodenames)
+                media_item['p_parent_type'] = type
+                media_item['p_parent_ordinal'] = ordinal
+                media_item['p_parent_component_doi'] = component_doi
+                
+                # Try to get the parent parent parent
+                p_p_parent_tag = first_parent(p_parent_tag, nodenames)
+                if p_p_parent_tag:
+                    type, ordinal, component_doi = tag_details(p_p_parent_tag, nodenames)
+                    media_item['p_p_parent_type'] = type
+                    media_item['p_p_parent_ordinal'] = ordinal
+                    media_item['p_p_parent_component_doi'] = component_doi
 
         # Increment the position
         media_item['position'] = position
@@ -585,23 +593,32 @@ def graphics(soup):
         
         # Try to get the component DOI of the parent tag
         nodenames = ["sub-article", "fig-group", "fig"]
-        first_parent_tag = first_parent(tag, nodenames)
-        if first_parent_tag:
-            type, ordinal, component_doi = tag_details(first_parent_tag, nodenames)
+        parent_tag = first_parent(tag, nodenames)
+        if parent_tag:
+            type, ordinal, component_doi = tag_details(parent_tag, nodenames)
             graphic_item['parent_type'] = type
             graphic_item['parent_ordinal'] = ordinal
             graphic_item['parent_component_doi'] = component_doi
 
             # Try to get the parent parent - special for looking at fig tags
             #  use component_acting_parent_tag
-            next_parent_tag = first_parent(first_parent_tag, nodenames)
-            if next_parent_tag:
-                next_acting_parent_tag = component_acting_parent_tag(next_parent_tag, first_parent_tag)
-                if next_acting_parent_tag:
-                    type, ordinal, component_doi = tag_details(next_acting_parent_tag, nodenames)
-                    graphic_item['parent_parent_type'] = type
-                    graphic_item['parent_parent_ordinal'] = ordinal
-                    graphic_item['parent_parent_component_doi'] = component_doi
+            p_parent_tag = first_parent(parent_tag, nodenames)
+            if p_parent_tag:
+                acting_p_parent_tag = component_acting_parent_tag(p_parent_tag, parent_tag)
+                if acting_p_parent_tag:
+                    type, ordinal, component_doi = tag_details(acting_p_parent_tag, nodenames)
+                    graphic_item['p_parent_type'] = type
+                    graphic_item['p_parent_ordinal'] = ordinal
+                    graphic_item['p_parent_component_doi'] = component_doi
+                    
+                p_p_parent_tag = first_parent(p_parent_tag, nodenames)
+                if p_p_parent_tag:
+                    acting_p_p_parent_tag = component_acting_parent_tag(p_p_parent_tag, p_parent_tag)
+                    if acting_p_p_parent_tag:
+                        type, ordinal, component_doi = tag_details(acting_p_p_parent_tag, nodenames)
+                        graphic_item['p_parent_type'] = type
+                        graphic_item['p_parent_ordinal'] = ordinal
+                        graphic_item['p_parent_component_doi'] = component_doi
         
         # Increment the position
         graphic_item['position'] = position

@@ -35,8 +35,10 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [0]['parent_component_doi']   | 10.7554/eLife.00013.004
     | elife-kitchen-sink.xml      | [0]['parent_type']            | supplementary-material
     | elife-kitchen-sink.xml      | [0]['parent_ordinal']         | 1
-    | elife-kitchen-sink.xml      | [0]['parent_parent_type']     | fig-group
-    | elife-kitchen-sink.xml      | [0]['parent_parent_ordinal']  | 1
+    | elife-kitchen-sink.xml      | [0]['p_parent_type']          | fig-group
+    | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']     | None
+    | elife-kitchen-sink.xml      | [0]['p_p_parent_type']        | None
+    | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']     | None
     
     | elife02935.xml              | [5]['mimetype']               | application
     | elife02935.xml              | [5]['mime-subtype']           | xlsx
@@ -47,8 +49,8 @@ Feature: Get media tag data from the document
     | elife02935.xml              | [5]['parent_component_doi']   | 10.7554/eLife.02935.026
     | elife02935.xml              | [5]['parent_type']            | supplementary-material
     | elife02935.xml              | [5]['parent_ordinal']         | 6
-    | elife02935.xml              | [5]['parent_parent_type']     | None
-    | elife02935.xml              | [5]['parent_parent_ordinal']  | None
+    | elife02935.xml              | [5]['p_parent_type']          | None
+    | elife02935.xml              | [5]['p_parent_ordinal']       | None
     
     | elife00007.xml              | [1]['mimetype']               | video
     | elife00007.xml              | [1]['mime-subtype']           | avi
@@ -60,5 +62,5 @@ Feature: Get media tag data from the document
     | elife00007.xml              | [1]['parent_component_doi']   | None
     | elife00007.xml              | [1]['parent_type']            | None
     | elife00007.xml              | [1]['parent_ordinal']         | None
-    | elife00007.xml              | [1]['parent_parent_type']     | None
-    | elife00007.xml              | [1]['parent_parent_ordinal']  | None
+    | elife00007.xml              | [1]['p_parent_type']          | None
+    | elife00007.xml              | [1]['p_parent_ordinal']       | None

@@ -26,14 +26,14 @@ Feature: Get graphic tag data from the document
   Examples:
     | document                    | list_item                           | string
     | elife-kitchen-sink.xml      | [0]['xlink_href']                   | elife00013f001
-    | elife-kitchen-sink.xml       | [0]['position']                    | 1
-    | elife-kitchen-sink.xml       | [0]['ordinal']                     | 1
+    | elife-kitchen-sink.xml      | [0]['position']                     | 1
+    | elife-kitchen-sink.xml      | [0]['ordinal']                      | 1
     | elife-kitchen-sink.xml      | [0]['parent_type']                  | fig
     | elife-kitchen-sink.xml      | [0]['parent_ordinal']               | 1
     | elife-kitchen-sink.xml      | [0]['parent_component_doi']         | 10.7554/eLife.00013.003
     | elife-kitchen-sink.xml      | [0]['parent_parent_type']           | None
-    | elife-kitchen-sink.xml      | [0]['parent_parent_ordinal']        | None
-    | elife-kitchen-sink.xml      | [0]['parent_parent_component_doi']  | None
+    | elife-kitchen-sink.xml      | [0]['p_parent_ordinal']             | None
+    | elife-kitchen-sink.xml      | [0]['p_parent_component_doi']       | None
     
     | elife-kitchen-sink.xml      | [5]['xlink_href']                   | elife00013fs002
     | elife-kitchen-sink.xml      | [5]['position']                     | 6
@@ -41,19 +41,22 @@ Feature: Get graphic tag data from the document
     | elife-kitchen-sink.xml      | [5]['parent_type']                  | fig
     | elife-kitchen-sink.xml      | [5]['parent_ordinal']               | 5
     | elife-kitchen-sink.xml      | [5]['parent_component_doi']         | 10.7554/eLife.00013.013
-    | elife-kitchen-sink.xml      | [5]['parent_parent_type']           | fig
-    | elife-kitchen-sink.xml      | [5]['parent_parent_ordinal']        | 4
-    | elife-kitchen-sink.xml      | [5]['parent_parent_component_doi']  | 10.7554/eLife.00013.012
-
-    | elife00013.xml              | [22]['xlink_href']                   | elife00013fs019
-    | elife00013.xml              | [22]['position']                     | 23
-    | elife00013.xml              | [22]['ordinal']                      | 23
-    | elife00013.xml              | [22]['parent_type']                  | fig
-    | elife00013.xml              | [22]['parent_ordinal']               | 23
-    | elife00013.xml              | [22]['parent_component_doi']         | 10.7554/eLife.00013.028
-    | elife00013.xml              | [22]['parent_parent_type']           | fig
-    | elife00013.xml              | [22]['parent_parent_ordinal']        | 20
-    | elife00013.xml              | [22]['parent_parent_component_doi']  | 10.7554/eLife.00013.025
+    | elife-kitchen-sink.xml      | [5]['p_parent_type']                | fig
+    | elife-kitchen-sink.xml      | [5]['p_parent_ordinal']             | 4
+    | elife-kitchen-sink.xml      | [5]['p_parent_component_doi']       | 10.7554/eLife.00013.012
+    | elife-kitchen-sink.xml      | [5]['p_p_parent_type']              | None
+    | elife-kitchen-sink.xml      | [5]['p_p_parent_ordinal']           | None
+    | elife-kitchen-sink.xml      | [5]['p_p_parent_component_doi']     | None
+    
+    | elife00013.xml              | [22]['xlink_href']                  | elife00013fs019
+    | elife00013.xml              | [22]['position']                    | 23
+    | elife00013.xml              | [22]['ordinal']                     | 23
+    | elife00013.xml              | [22]['parent_type']                 | fig
+    | elife00013.xml              | [22]['parent_ordinal']              | 23
+    | elife00013.xml              | [22]['parent_component_doi']        | 10.7554/eLife.00013.028
+    | elife00013.xml              | [22]['p_parent_type']               | fig
+    | elife00013.xml              | [22]['p_parent_ordinal']            | 20
+    | elife00013.xml              | [22]['p_parent_component_doi']      | 10.7554/eLife.00013.025
 
     | elife00240.xml              | [0]['xlink_href']                   | elife00240f001
     | elife00240.xml              | [0]['position']                     | 1
@@ -61,6 +64,6 @@ Feature: Get graphic tag data from the document
     | elife00240.xml              | [0]['parent_type']                  | fig
     | elife00240.xml              | [0]['parent_ordinal']               | 1
     | elife00240.xml              | [0]['parent_component_doi']         | None
-    | elife00240.xml              | [0]['parent_parent_type']           | None
-    | elife00240.xml              | [0]['parent_parent_ordinal']        | None
-    | elife00240.xml              | [0]['parent_parent_component_doi']  | None
+    | elife00240.xml              | [0]['p_parent_type']                | None
+    | elife00240.xml              | [0]['p_parent_ordinal']             | None
+    | elife00240.xml              | [0]['p_parent_component_doi']       | None
