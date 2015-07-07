@@ -188,6 +188,28 @@ def tag_ordinal(tag):
     tag_count = 0
     return len(tag.find_all_previous(tag.name)) + 1
 
+def tag_fig_ordinal(tag):
+    """
+    Meant for finding the position of fig tags with respect to whether
+    they are for a main figure or a child figure
+    """
+    tag_count = 0
+    if 'specific-use' not in tag.attrs:
+        # Look for tags with no "specific-use" attribute
+        return len(filter(lambda tag: 'specific-use' not in tag.attrs,
+                          tag.find_all_previous(tag.name))) + 1
+
+def tag_sibling_ordinal(tag):
+    """
+    Given a beautiful soup tag, count the same tags in its siblings
+    to get a sibling "local" ordinal value. This is useful in counting
+    child figures within a fig-group, for example
+    """
+    tag_count = 0
+    return len(tag.find_previous_siblings(tag.name)) + 1
+    
+
+
 def copy_attribute(source, source_key, destination, destination_key=None):
     if destination_key is None:
         destination_key = source_key
