@@ -75,3 +75,16 @@ Feature: Get graphic tag data from the document
     | elife00240.xml              | [0]['p_parent_type']                | None
     | elife00240.xml              | [0]['p_parent_ordinal']             | None
     | elife00240.xml              | [0]['p_parent_component_doi']       | None
+    
+    | elife04953.xml              | [25]['position']                  | 26
+    | elife04953.xml              | [25]['ordinal']                   | 26
+    | elife04953.xml              | [25]['xlink_href']                | elife04953f008
+    | elife04953.xml              | [25]['component_doi']             | None
+    | elife04953.xml              | [25]['parent_component_doi']      | 10.7554/eLife.04953.035
+    | elife04953.xml              | [25]['parent_type']               | fig
+    | elife04953.xml              | [25]['parent_ordinal']            | 26
+    | elife04953.xml              | [25]['parent_sibling_ordinal']    | 8
+    | elife04953.xml              | [25]['p_parent_type']             | sub-article
+    | elife04953.xml              | [25]['p_parent_ordinal']          | 2
+    | elife04953.xml              | [25]['p_parent_sibling_ordinal']  | 2
+    | elife04953.xml              | [25]['p_parent_component_doi']    | 10.7554/eLife.04953.034

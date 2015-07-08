@@ -87,3 +87,16 @@ Feature: Get media tag data from the document
     | elife02304.xml              | [0]['p_p_parent_sibling_ordinal']| 2
     | elife02304.xml              | [0]['p_p_parent_component_doi']  | 10.7554/eLife.02304.005
     
+    | elife04953.xml              | [5]['mimetype']                  | video
+    | elife04953.xml              | [5]['mime-subtype']              | avi
+    | elife04953.xml              | [5]['position']                  | 6
+    | elife04953.xml              | [5]['ordinal']                   | 6
+    | elife04953.xml              | [5]['xlink_href']                | elife04953v006.avi
+    | elife04953.xml              | [5]['component_doi']             | 10.7554/eLife.04953.040
+    | elife04953.xml              | [5]['parent_component_doi']      | 10.7554/eLife.04953.034
+    | elife04953.xml              | [5]['parent_type']               | sub-article
+    | elife04953.xml              | [5]['parent_ordinal']            | 2
+    | elife04953.xml              | [5]['p_parent_type']             | None
+    | elife04953.xml              | [5]['p_parent_ordinal']          | None
+    | elife04953.xml              | [5]['p_parent_sibling_ordinal']  | None
+    | elife04953.xml              | [5]['p_parent_component_doi']    | None
