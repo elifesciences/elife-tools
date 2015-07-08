@@ -633,17 +633,7 @@ def graphics(soup):
                     copy_attribute(details, 'asset', graphic_item, 'p_parent_asset')
                     copy_attribute(details, 'sibling_ordinal', graphic_item, 'p_parent_sibling_ordinal')
                     copy_attribute(details, 'component_doi', graphic_item, 'p_parent_component_doi')
-                    
-                p_p_parent_tag = first_parent(p_parent_tag, nodenames)
-                if p_p_parent_tag:
-                    acting_p_p_parent_tag = component_acting_parent_tag(p_p_parent_tag, p_parent_tag)
-                    if acting_p_p_parent_tag:
-                        details = tag_details(acting_p_p_parent_tag, nodenames)
-                        copy_attribute(details, 'type', graphic_item, 'p_p_parent_type')
-                        copy_attribute(details, 'ordinal', graphic_item, 'p_p_parent_ordinal')
-                        copy_attribute(details, 'sibling_ordinal', graphic_item, 'p_p_parent_sibling_ordinal')
-                        copy_attribute(details, 'component_doi', graphic_item, 'p_p_parent_component_doi')
-        
+                            
         # Increment the position
         graphic_item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
