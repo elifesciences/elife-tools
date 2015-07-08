@@ -506,12 +506,12 @@ def tag_details(tag, nodenames):
 
     details['type'] = tag.name
     details['ordinal'] = tag_ordinal(tag)
-    if tag.name == "fig" and 'specific-use' not in tag.attrs:
-        details['sibling_ordinal'] = tag_fig_ordinal(tag) 
-    else:
+    if tag.name == "fig" and 'specific-use' in tag.attrs:
         # Child figure / figure supplement
         details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         details['asset'] = 'figsupp'
+    else:
+        details['sibling_ordinal'] = tag_fig_ordinal(tag) 
 
     object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
     if object_id_tag:

@@ -52,6 +52,7 @@ Feature: Get media tag data from the document
     | elife02935.xml              | [5]['parent_component_doi']      | 10.7554/eLife.02935.026
     | elife02935.xml              | [5]['parent_type']               | supplementary-material
     | elife02935.xml              | [5]['parent_ordinal']            | 6
+    | elife02935.xml              | [5]['parent_asset']              | None
     | elife02935.xml              | [5]['parent_sibling_ordinal']    | 6
     | elife02935.xml              | [5]['p_parent_type']             | None
     | elife02935.xml              | [5]['p_parent_ordinal']          | None
@@ -102,3 +103,4 @@ Feature: Get media tag data from the document
     | elife04953.xml              | [5]['p_parent_ordinal']          | None
     | elife04953.xml              | [5]['p_parent_sibling_ordinal']  | None
     | elife04953.xml              | [5]['p_parent_component_doi']    | None
+    
