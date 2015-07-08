@@ -217,3 +217,11 @@ def i_count_the_number_of_inline_graphics(step):
 def i_get_the_inline_graphics(step):
     world.list = pm.inline_graphics(world.filecontent)
 
+@step(u'I count the number of self uri')
+def i_count_the_number_of_self_uri(step):
+    world.count = len(pm.self_uri(world.filecontent))
+
+@step(u'I get the self uri')
+def i_get_the_self_uri(step):
+    world.list = pm.self_uri(world.filecontent)
+    

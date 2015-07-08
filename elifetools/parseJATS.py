@@ -675,6 +675,27 @@ def inline_graphics(soup):
 
     return inline_graphics
 
+def self_uri(soup):
+    """
+    self-uri tags
+    """
+    
+    self_uri = []
+    self_uri_tags = raw_parser.self_uri(soup)
+    position = 1
+    for tag in self_uri_tags:
+        item = {}
+        
+        copy_attribute(tag.attrs, 'xlink:href', item, 'xlink_href')
+        copy_attribute(tag.attrs, 'content-type', item)
+        # Increment the position
+        item['position'] = position
+        # Ordinal should be the same as position in this case but set it anyway
+        item['ordinal'] = tag_ordinal(tag)
+        
+        self_uri.append(item)
+        
+    return self_uri
 
 def add_to_list_dictionary(list_dict, list_key, val):
     if val is not None:

@@ -205,6 +205,10 @@ def inline_graphic(soup):
 def graphic(soup):
     return extract_nodes(soup, "graphic")
 
+def self_uri(soup):
+    return extract_nodes(soup, "self-uri")
+
+
 #
 # authors
 #
