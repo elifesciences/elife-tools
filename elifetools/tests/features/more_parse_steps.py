@@ -208,3 +208,12 @@ def i_count_the_number_of_graphics(step):
 @step(u'I get the graphics')
 def i_get_the_graphics(step):
     world.list = pm.graphics(world.filecontent)
+    
+@step(u'I count the number of inline graphics')
+def i_count_the_number_of_inline_graphics(step):
+    world.count = len(pm.inline_graphics(world.filecontent))
+    
+@step(u'I get the inline graphics')
+def i_get_the_inline_graphics(step):
+    world.list = pm.inline_graphics(world.filecontent)
+

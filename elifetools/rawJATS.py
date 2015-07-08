@@ -199,6 +199,9 @@ def fn(soup):
 def media(soup):
     return extract_nodes(soup, "media")
 
+def inline_graphic(soup):
+    return extract_nodes(soup, "inline-graphic")
+
 def graphic(soup):
     return extract_nodes(soup, "graphic")
 
