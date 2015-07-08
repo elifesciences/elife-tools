@@ -553,6 +553,7 @@ def media(soup):
                 details = tag_details(acting_parent_tag, nodenames)
                 copy_attribute(details, 'type', media_item, 'parent_type')
                 copy_attribute(details, 'ordinal', media_item, 'parent_ordinal')
+                copy_attribute(details, 'asset', media_item, 'parent_asset')
                 copy_attribute(details, 'sibling_ordinal', media_item, 'parent_sibling_ordinal')
                 copy_attribute(details, 'component_doi', media_item, 'parent_component_doi')
         
@@ -564,6 +565,7 @@ def media(soup):
                     details = tag_details(acting_p_parent_tag, nodenames)
                     copy_attribute(details, 'type', media_item, 'p_parent_type')
                     copy_attribute(details, 'ordinal', media_item, 'p_parent_ordinal')
+                    copy_attribute(details, 'asset', media_item, 'p_parent_asset')
                     copy_attribute(details, 'sibling_ordinal', media_item, 'p_parent_sibling_ordinal')
                     copy_attribute(details, 'component_doi', media_item, 'p_parent_component_doi')
                 
@@ -575,6 +577,7 @@ def media(soup):
                         details = tag_details(acting_p_p_parent_tag, nodenames)
                         copy_attribute(details, 'type', media_item, 'p_p_parent_type')
                         copy_attribute(details, 'ordinal', media_item, 'p_p_parent_ordinal')
+                        copy_attribute(details, 'asset', media_item, 'p_p_parent_asset')
                         copy_attribute(details, 'sibling_ordinal', media_item, 'p_p_parent_sibling_ordinal')
                         copy_attribute(details, 'component_doi', media_item, 'p_p_parent_component_doi')
 
@@ -627,6 +630,7 @@ def graphics(soup):
                     details = tag_details(acting_p_parent_tag, nodenames)
                     copy_attribute(details, 'type', graphic_item, 'p_parent_type')
                     copy_attribute(details, 'ordinal', graphic_item, 'p_parent_ordinal')
+                    copy_attribute(details, 'asset', graphic_item, 'p_parent_asset')
                     copy_attribute(details, 'sibling_ordinal', graphic_item, 'p_parent_sibling_ordinal')
                     copy_attribute(details, 'component_doi', graphic_item, 'p_parent_component_doi')
                     
