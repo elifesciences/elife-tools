@@ -68,3 +68,22 @@ Feature: Get media tag data from the document
     | elife00007.xml              | [1]['parent_ordinal']            | None
     | elife00007.xml              | [1]['p_parent_type']             | None
     | elife00007.xml              | [1]['p_parent_ordinal']          | None
+    
+    | elife02304.xml              | [0]['mimetype']                  | application
+    | elife02304.xml              | [0]['mime-subtype']              | pdf
+    | elife02304.xml              | [0]['position']                  | 1
+    | elife02304.xml              | [0]['ordinal']                   | 1
+    | elife02304.xml              | [0]['xlink_href']                | elife02304s001.pdf
+    | elife02304.xml              | [0]['component_doi']             | None
+    | elife02304.xml              | [0]['parent_component_doi']      | 10.7554/eLife.02304.008
+    | elife02304.xml              | [0]['parent_type']               | supplementary-material
+    | elife02304.xml              | [0]['parent_ordinal']            | 1
+    | elife02304.xml              | [0]['p_parent_type']             | fig
+    | elife02304.xml              | [0]['p_parent_ordinal']          | 5
+    | elife02304.xml              | [0]['p_parent_sibling_ordinal']  | 3
+    | elife02304.xml              | [0]['p_parent_component_doi']    | 10.7554/eLife.02304.007
+    | elife02304.xml              | [0]['p_p_parent_type']           | fig
+    | elife02304.xml              | [0]['p_p_parent_ordinal']        | 3
+    | elife02304.xml              | [0]['p_p_parent_sibling_ordinal']| 2
+    | elife02304.xml              | [0]['p_p_parent_component_doi']  | 10.7554/eLife.02304.005
+    
