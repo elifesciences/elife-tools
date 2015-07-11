@@ -510,6 +510,10 @@ def tag_details(tag, nodenames):
         # Child figure / figure supplement
         details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         details['asset'] = 'figsupp'
+    elif tag.name == "media":
+        # Set media tag asset value, it is useful
+        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+        details['asset'] = 'media'
     else:
         details['sibling_ordinal'] = tag_fig_ordinal(tag) 
 
@@ -560,7 +564,7 @@ def media(soup):
             # Try to get the parent parent
             p_parent_tag = first_parent(parent_tag, nodenames)
             if p_parent_tag:
-                acting_p_parent_tag = component_acting_parent_tag(p_parent_tag, tag)
+                acting_p_parent_tag = component_acting_parent_tag(p_parent_tag, parent_tag)
                 if acting_p_parent_tag:
                     details = tag_details(acting_p_parent_tag, nodenames)
                     copy_attribute(details, 'type', media_item, 'p_parent_type')

@@ -104,3 +104,19 @@ Feature: Get media tag data from the document
     | elife04953.xml              | [5]['p_parent_sibling_ordinal']  | None
     | elife04953.xml              | [5]['p_parent_component_doi']    | None
     
+    | elife00005.xml              | [2]['mimetype']                  | application
+    | elife00005.xml              | [2]['mime-subtype']              | wrl
+    | elife00005.xml              | [2]['position']                  | 3
+    | elife00005.xml              | [2]['ordinal']                   | 3
+    | elife00005.xml              | [2]['xlink_href']                | elife00005s001.wrl
+    | elife00005.xml              | [2]['component_doi']             | None
+    | elife00005.xml              | [2]['parent_component_doi']      | 10.7554/eLife.00005.017
+    | elife00005.xml              | [2]['parent_type']               | supplementary-material
+    | elife00005.xml              | [2]['parent_asset']              | None
+    | elife00005.xml              | [2]['parent_ordinal']            | 1
+    | elife00005.xml              | [2]['p_parent_type']             | media
+    | elife00005.xml              | [2]['p_parent_asset']            | media
+    | elife00005.xml              | [2]['p_parent_ordinal']          | 2
+    | elife00005.xml              | [2]['p_parent_sibling_ordinal']  | 2
+    | elife00005.xml              | [2]['p_parent_component_doi']    | 10.7554/eLife.00005.016
+    
