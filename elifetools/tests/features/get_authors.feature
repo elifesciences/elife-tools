@@ -40,6 +40,7 @@ Feature: get authors from the document
     | elife-kitchen-sink.xml      | [0]['notes-corresp'][0]              | None
     | elife-kitchen-sink.xml      | [0]['group-author-key']              | None
     | elife-kitchen-sink.xml      | [0]['type']                          | author
+    | elife-kitchen-sink.xml      | [4]['references']['foot-note'][0]    | fn1
     
     
     | elife-kitchen-sink.xml      | [1]['orcid']                         | http://orcid.org/0000-0002-7361-560X
