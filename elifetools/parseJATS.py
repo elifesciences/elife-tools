@@ -742,6 +742,8 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                     add_to_list_dictionary(contrib_refs, 'contribution', rid)
                 elif rid.startswith('pa'):
                     add_to_list_dictionary(contrib_refs, 'present-address', rid)
+                elif rid.startswith('fn'):
+                    add_to_list_dictionary(contrib_refs, 'foot-note', rid)
             elif ref_type == "other":
                 if rid.startswith('par-'):
                     add_to_list_dictionary(contrib_refs, 'funding', rid)
