@@ -120,3 +120,26 @@ Feature: Get media tag data from the document
     | elife00005.xml              | [2]['p_parent_sibling_ordinal']  | 2
     | elife00005.xml              | [2]['p_parent_component_doi']    | 10.7554/eLife.00005.016
     
+    | elife05031.xml              | [0]['mimetype']                  | application
+    | elife05031.xml              | [0]['mime-subtype']              | xlsx
+    | elife05031.xml              | [0]['position']                  | 1
+    | elife05031.xml              | [0]['ordinal']                   | 1
+    | elife05031.xml              | [0]['parent_type']               | supplementary-material
+    | elife05031.xml              | [0]['parent_ordinal']            | 1
+    | elife05031.xml              | [0]['parent_sibling_ordinal']    | 1
+    
+    | elife05031.xml              | [1]['mimetype']                  | application
+    | elife05031.xml              | [1]['mime-subtype']              | xlsx
+    | elife05031.xml              | [1]['position']                  | 2
+    | elife05031.xml              | [1]['ordinal']                   | 2
+    | elife05031.xml              | [1]['parent_type']               | supplementary-material
+    | elife05031.xml              | [1]['parent_ordinal']            | 2
+    | elife05031.xml              | [1]['parent_sibling_ordinal']    | 1
+    
+    | elife05031.xml              | [2]['mimetype']                  | application
+    | elife05031.xml              | [2]['mime-subtype']              | xlsx
+    | elife05031.xml              | [2]['position']                  | 3
+    | elife05031.xml              | [2]['ordinal']                   | 3
+    | elife05031.xml              | [2]['parent_type']               | supplementary-material
+    | elife05031.xml              | [2]['parent_ordinal']            | 3
+    | elife05031.xml              | [2]['parent_sibling_ordinal']    | 1

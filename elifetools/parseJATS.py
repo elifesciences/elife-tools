@@ -514,6 +514,8 @@ def tag_details(tag, nodenames):
         # Set media tag asset value, it is useful
         details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         details['asset'] = 'media'
+    elif tag.name == "supplementary-material":
+        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
     else:
         details['sibling_ordinal'] = tag_fig_ordinal(tag) 
 
