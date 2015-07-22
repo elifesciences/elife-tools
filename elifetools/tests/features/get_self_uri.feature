@@ -25,8 +25,10 @@ Feature: Get self uri tag data from the document
   
   Examples:
     | document                    | list_item                        | string
+    | elife-kitchen-sink.xml      | [0]['type']                      | self-uri
     | elife-kitchen-sink.xml      | [0]['xlink_href']                | elife00013.pdf
     | elife-kitchen-sink.xml      | [0]['content-type']              | pdf
     
+    | elife02935.xml              | [0]['type']                      | self-uri
     | elife02935.xml              | [0]['xlink_href']                | elife02935.pdf
     | elife02935.xml              | [0]['content-type']              | pdf

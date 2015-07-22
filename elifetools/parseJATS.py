@@ -696,6 +696,12 @@ def self_uri(soup):
         
         copy_attribute(tag.attrs, 'xlink:href', item, 'xlink_href')
         copy_attribute(tag.attrs, 'content-type', item)
+        
+        # Get the tag type
+        nodenames = ["sub-article"]
+        details = tag_details(tag, nodenames)
+        copy_attribute(details, 'type', item)
+        
         # Increment the position
         item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
