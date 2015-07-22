@@ -618,6 +618,10 @@ def graphics(soup):
         
         # Try to get the component DOI of the parent tag
         nodenames = ["sub-article", "fig-group", "fig"]
+        
+        details = tag_details(tag, nodenames)
+        copy_attribute(details, 'type', graphic_item)
+        
         parent_tag = first_parent(tag, nodenames)
         if parent_tag:
             details = tag_details(parent_tag, nodenames)

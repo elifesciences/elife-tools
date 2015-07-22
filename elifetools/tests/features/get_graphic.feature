@@ -25,6 +25,7 @@ Feature: Get graphic tag data from the document
   
   Examples:
     | document                    | list_item                           | string
+    | elife-kitchen-sink.xml      | [0]['type']                         | graphic
     | elife-kitchen-sink.xml      | [0]['xlink_href']                   | elife00013f001
     | elife-kitchen-sink.xml      | [0]['position']                     | 1
     | elife-kitchen-sink.xml      | [0]['ordinal']                      | 1
@@ -37,6 +38,7 @@ Feature: Get graphic tag data from the document
     | elife-kitchen-sink.xml      | [0]['p_parent_sibling_ordinal']     | None
     | elife-kitchen-sink.xml      | [0]['p_parent_component_doi']       | None
     
+    | elife-kitchen-sink.xml      | [5]['type']                         | graphic
     | elife-kitchen-sink.xml      | [5]['xlink_href']                   | elife00013fs002
     | elife-kitchen-sink.xml      | [5]['position']                     | 6
     | elife-kitchen-sink.xml      | [5]['ordinal']                      | 6
@@ -53,6 +55,7 @@ Feature: Get graphic tag data from the document
     | elife-kitchen-sink.xml      | [5]['p_p_parent_sibling_ordinal']   | None
     | elife-kitchen-sink.xml      | [5]['p_p_parent_component_doi']     | None
     
+    | elife00013.xml              | [22]['type']                        | graphic
     | elife00013.xml              | [22]['xlink_href']                  | elife00013fs019
     | elife00013.xml              | [22]['position']                    | 23
     | elife00013.xml              | [22]['ordinal']                     | 23
@@ -65,7 +68,8 @@ Feature: Get graphic tag data from the document
     | elife00013.xml              | [22]['p_parent_ordinal']            | 20
     | elife00013.xml              | [22]['p_parent_sibling_ordinal']    | 4
     | elife00013.xml              | [22]['p_parent_component_doi']      | 10.7554/eLife.00013.025
-
+    
+    | elife00240.xml              | [0]['type']                         | graphic
     | elife00240.xml              | [0]['xlink_href']                   | elife00240f001
     | elife00240.xml              | [0]['position']                     | 1
     | elife00240.xml              | [0]['ordinal']                      | 1
@@ -76,6 +80,7 @@ Feature: Get graphic tag data from the document
     | elife00240.xml              | [0]['p_parent_ordinal']             | None
     | elife00240.xml              | [0]['p_parent_component_doi']       | None
     
+    | elife04953.xml              | [25]['type']                      | graphic
     | elife04953.xml              | [25]['position']                  | 26
     | elife04953.xml              | [25]['ordinal']                   | 26
     | elife04953.xml              | [25]['xlink_href']                | elife04953f008
