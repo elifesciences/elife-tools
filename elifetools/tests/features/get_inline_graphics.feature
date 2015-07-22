@@ -23,10 +23,12 @@ Feature: Get inline graphic tag data from the document
   
   Examples:
     | document                    | list_item                           | string
+    | elife-kitchen-sink.xml      | [0]['type']                         | inline-graphic
     | elife-kitchen-sink.xml      | [0]['xlink_href']                   | elife00013inf001
     | elife-kitchen-sink.xml      | [0]['position']                     | 1
     | elife-kitchen-sink.xml      | [0]['ordinal']                      | 1
 
+    | elife00240.xml              | [0]['type']                         | inline-graphic
     | elife00240.xml              | [0]['xlink_href']                   | elife00240inf001
     | elife00240.xml              | [0]['position']                     | 1
     | elife00240.xml              | [0]['ordinal']                      | 1
