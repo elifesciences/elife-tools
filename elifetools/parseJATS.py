@@ -616,9 +616,8 @@ def graphics(soup):
         
         copy_attribute(tag.attrs, 'xlink:href', graphic_item, 'xlink_href')
         
-        # Try to get the component DOI of the parent tag
+        # Get the tag type
         nodenames = ["sub-article", "fig-group", "fig"]
-        
         details = tag_details(tag, nodenames)
         copy_attribute(details, 'type', graphic_item)
         
