@@ -547,9 +547,9 @@ def media(soup):
         
         nodenames = ["sub-article", "media", "fig-group", "fig", "supplementary-material"]
 
-        object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
-        if object_id_tag:
-            media_item['component_doi'] = extract_component_doi(tag, nodenames)
+        details = tag_details(tag, nodenames)
+        copy_attribute(details, 'component_doi', media_item)
+        copy_attribute(details, 'type', media_item)
 
         # Try to get the component DOI of the parent tag
         parent_tag = first_parent(tag, nodenames)

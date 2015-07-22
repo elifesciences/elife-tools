@@ -25,6 +25,7 @@ Feature: Get media tag data from the document
   
   Examples:
     | document                    | list_item                        | string
+    | elife-kitchen-sink.xml      | [0]['type']                      | media
     | elife-kitchen-sink.xml      | [0]['mimetype']                  | application
     | elife-kitchen-sink.xml      | [0]['mime-subtype']              | xlsx
     | elife-kitchen-sink.xml      | [0]['content-type']              | None
@@ -43,6 +44,7 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [0]['p_p_parent_type']           | None
     | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']        | None
     
+    | elife02935.xml              | [5]['type']                      | media
     | elife02935.xml              | [5]['mimetype']                  | application
     | elife02935.xml              | [5]['mime-subtype']              | xlsx
     | elife02935.xml              | [5]['content-type']              | None
@@ -57,6 +59,7 @@ Feature: Get media tag data from the document
     | elife02935.xml              | [5]['p_parent_type']             | None
     | elife02935.xml              | [5]['p_parent_ordinal']          | None
     
+    | elife00007.xml              | [1]['type']                      | media
     | elife00007.xml              | [1]['mimetype']                  | video
     | elife00007.xml              | [1]['mime-subtype']              | avi
     | elife00007.xml              | [1]['content-type']              | glencoe play-in-place height-250 width-310
@@ -70,6 +73,7 @@ Feature: Get media tag data from the document
     | elife00007.xml              | [1]['p_parent_type']             | None
     | elife00007.xml              | [1]['p_parent_ordinal']          | None
     
+    | elife02304.xml              | [0]['type']                      | media
     | elife02304.xml              | [0]['mimetype']                  | application
     | elife02304.xml              | [0]['mime-subtype']              | pdf
     | elife02304.xml              | [0]['position']                  | 1
@@ -90,6 +94,7 @@ Feature: Get media tag data from the document
     | elife02304.xml              | [0]['p_p_parent_sibling_ordinal']| 2
     | elife02304.xml              | [0]['p_p_parent_component_doi']  | 10.7554/eLife.02304.005
     
+    | elife04953.xml              | [5]['type']                      | media
     | elife04953.xml              | [5]['mimetype']                  | video
     | elife04953.xml              | [5]['mime-subtype']              | avi
     | elife04953.xml              | [5]['position']                  | 6
@@ -104,6 +109,7 @@ Feature: Get media tag data from the document
     | elife04953.xml              | [5]['p_parent_sibling_ordinal']  | None
     | elife04953.xml              | [5]['p_parent_component_doi']    | None
     
+    | elife00005.xml              | [2]['type']                      | media
     | elife00005.xml              | [2]['mimetype']                  | application
     | elife00005.xml              | [2]['mime-subtype']              | wrl
     | elife00005.xml              | [2]['position']                  | 3
@@ -120,6 +126,7 @@ Feature: Get media tag data from the document
     | elife00005.xml              | [2]['p_parent_sibling_ordinal']  | 2
     | elife00005.xml              | [2]['p_parent_component_doi']    | 10.7554/eLife.00005.016
     
+    | elife05031.xml              | [0]['type']                      | media
     | elife05031.xml              | [0]['mimetype']                  | application
     | elife05031.xml              | [0]['mime-subtype']              | xlsx
     | elife05031.xml              | [0]['position']                  | 1
@@ -128,6 +135,7 @@ Feature: Get media tag data from the document
     | elife05031.xml              | [0]['parent_ordinal']            | 1
     | elife05031.xml              | [0]['parent_sibling_ordinal']    | 1
     
+    | elife05031.xml              | [1]['type']                      | media
     | elife05031.xml              | [1]['mimetype']                  | application
     | elife05031.xml              | [1]['mime-subtype']              | xlsx
     | elife05031.xml              | [1]['position']                  | 2
@@ -136,6 +144,7 @@ Feature: Get media tag data from the document
     | elife05031.xml              | [1]['parent_ordinal']            | 2
     | elife05031.xml              | [1]['parent_sibling_ordinal']    | 1
     
+    | elife05031.xml              | [2]['type']                      | media
     | elife05031.xml              | [2]['mimetype']                  | application
     | elife05031.xml              | [2]['mime-subtype']              | xlsx
     | elife05031.xml              | [2]['position']                  | 3
