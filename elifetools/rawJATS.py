@@ -226,6 +226,9 @@ def ref_list(soup):
 def volume(soup):
     return extract_nodes(soup, "volume")
 
+def elocation_id(soup):
+    return extract_nodes(soup, "elocation-id")
+
 def fpage(soup):
     return extract_nodes(soup, "fpage")
             
