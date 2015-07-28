@@ -519,6 +519,12 @@ def tag_details(tag, nodenames):
         details['asset'] = 'media'
     elif tag.name == "supplementary-material":
         details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+    elif tag.name == "sub-article":
+        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+        if node_text(raw_parser.article_title(tag)) == 'Decision letter':
+            details['asset'] = 'dec'
+        elif node_text(raw_parser.article_title(tag)) == 'Author response':
+            details['asset'] = 'resp'
     else:
         details['sibling_ordinal'] = tag_fig_ordinal(tag) 
 
