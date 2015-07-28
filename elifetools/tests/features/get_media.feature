@@ -65,6 +65,7 @@ Feature: Get media tag data from the document
     | elife00007.xml              | [1]['content-type']              | glencoe play-in-place height-250 width-310
     | elife00007.xml              | [1]['position']                  | 2
     | elife00007.xml              | [1]['ordinal']                   | 2
+    | elife00007.xml              | [1]['sibling_ordinal']           | 2
     | elife00007.xml              | [1]['xlink_href']                | elife00007v002.AVI
     | elife00007.xml              | [1]['component_doi']             | 10.7554/eLife.00007.017
     | elife00007.xml              | [1]['parent_component_doi']      | None
@@ -99,11 +100,13 @@ Feature: Get media tag data from the document
     | elife04953.xml              | [5]['mime-subtype']              | avi
     | elife04953.xml              | [5]['position']                  | 6
     | elife04953.xml              | [5]['ordinal']                   | 6
+    | elife04953.xml              | [5]['sibling_ordinal']           | 1
     | elife04953.xml              | [5]['xlink_href']                | elife04953v006.avi
     | elife04953.xml              | [5]['component_doi']             | 10.7554/eLife.04953.040
     | elife04953.xml              | [5]['parent_component_doi']      | 10.7554/eLife.04953.034
     | elife04953.xml              | [5]['parent_type']               | sub-article
     | elife04953.xml              | [5]['parent_ordinal']            | 2
+    | elife04953.xml              | [5]['parent_sibling_ordinal']    | 2
     | elife04953.xml              | [5]['p_parent_type']             | None
     | elife04953.xml              | [5]['p_parent_ordinal']          | None
     | elife04953.xml              | [5]['p_parent_sibling_ordinal']  | None
@@ -114,12 +117,14 @@ Feature: Get media tag data from the document
     | elife00005.xml              | [2]['mime-subtype']              | wrl
     | elife00005.xml              | [2]['position']                  | 3
     | elife00005.xml              | [2]['ordinal']                   | 3
+    | elife00005.xml              | [2]['sibling_ordinal']           | 1
     | elife00005.xml              | [2]['xlink_href']                | elife00005s001.wrl
     | elife00005.xml              | [2]['component_doi']             | None
     | elife00005.xml              | [2]['parent_component_doi']      | 10.7554/eLife.00005.017
     | elife00005.xml              | [2]['parent_type']               | supplementary-material
     | elife00005.xml              | [2]['parent_asset']              | None
     | elife00005.xml              | [2]['parent_ordinal']            | 1
+    | elife00005.xml              | [2]['parent_sibling_ordinal']    | 1
     | elife00005.xml              | [2]['p_parent_type']             | media
     | elife00005.xml              | [2]['p_parent_asset']            | media
     | elife00005.xml              | [2]['p_parent_ordinal']          | 2
@@ -140,6 +145,7 @@ Feature: Get media tag data from the document
     | elife05031.xml              | [1]['mime-subtype']              | xlsx
     | elife05031.xml              | [1]['position']                  | 2
     | elife05031.xml              | [1]['ordinal']                   | 2
+    | elife05031.xml              | [1]['sibling_ordinal']           | 1
     | elife05031.xml              | [1]['parent_type']               | supplementary-material
     | elife05031.xml              | [1]['parent_ordinal']            | 2
     | elife05031.xml              | [1]['parent_sibling_ordinal']    | 1
@@ -149,6 +155,7 @@ Feature: Get media tag data from the document
     | elife05031.xml              | [2]['mime-subtype']              | xlsx
     | elife05031.xml              | [2]['position']                  | 3
     | elife05031.xml              | [2]['ordinal']                   | 3
+    | elife05031.xml              | [2]['sibling_ordinal']           | 1
     | elife05031.xml              | [2]['parent_type']               | supplementary-material
     | elife05031.xml              | [2]['parent_ordinal']            | 3
     | elife05031.xml              | [2]['parent_sibling_ordinal']    | 1

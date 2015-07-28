@@ -565,6 +565,7 @@ def media(soup):
         details = tag_details(tag, nodenames)
         copy_attribute(details, 'component_doi', media_item)
         copy_attribute(details, 'type', media_item)
+        copy_attribute(details, 'sibling_ordinal', media_item)
 
         # Try to get the component DOI of the parent tag
         parent_tag = first_parent(tag, nodenames)
