@@ -88,7 +88,7 @@ Feature: Get graphic tag data from the document
     | elife04953.xml              | [25]['parent_component_doi']      | 10.7554/eLife.04953.035
     | elife04953.xml              | [25]['parent_type']               | fig
     | elife04953.xml              | [25]['parent_ordinal']            | 26
-    | elife04953.xml              | [25]['parent_sibling_ordinal']    | 8
+    | elife04953.xml              | [25]['parent_sibling_ordinal']    | 1
     | elife04953.xml              | [25]['p_parent_type']             | sub-article
     | elife04953.xml              | [25]['p_parent_ordinal']          | 2
     | elife04953.xml              | [25]['p_parent_asset']            | resp

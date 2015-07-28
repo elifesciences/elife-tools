@@ -509,25 +509,31 @@ def tag_details(tag, nodenames):
 
     details['type'] = tag.name
     details['ordinal'] = tag_ordinal(tag)
+    
+    # Ordinal value
+    if tag.name == "fig" and 'specific-use' not in tag.attrs:
+        # Fig that is not a child figure / figure supplement
+        if first_parent(tag, 'sub-article'):
+            details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+        else:
+            details['sibling_ordinal'] = tag_fig_ordinal(tag)
+    else:
+        # Default
+        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+    
+    # Asset name
     if tag.name == "fig" and 'specific-use' in tag.attrs:
         # Child figure / figure supplement
-        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         details['asset'] = 'figsupp'
     elif tag.name == "media":
         # Set media tag asset value, it is useful
-        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         details['asset'] = 'media'
-    elif tag.name == "supplementary-material":
-        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
     elif tag.name == "sub-article":
-        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
         if node_text(raw_parser.article_title(tag)) == 'Decision letter':
             details['asset'] = 'dec'
         elif node_text(raw_parser.article_title(tag)) == 'Author response':
             details['asset'] = 'resp'
-    else:
-        details['sibling_ordinal'] = tag_fig_ordinal(tag) 
-
+  
     object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
     if object_id_tag:
         details['component_doi'] = extract_component_doi(tag, nodenames)
