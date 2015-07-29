@@ -177,7 +177,7 @@ def contributors(soup):
     return extract_nodes(soup, "contrib")
 
 def article_contributors(soup):
-    contributor_tags = contributors(soup)
+    contributor_tags = extract_nodes(soup, ["contrib","on-behalf-of"])
     return filter(lambda tag: tag.parent.name == "contrib-group"
                         and tag.parent.parent.name == "article-meta", contributor_tags)
 

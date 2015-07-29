@@ -120,7 +120,48 @@ Feature: get authors from the document
   
   Examples:
     | document                    | contributors
-    | elife-kitchen-sink.xml      | 18  
+    | elife-kitchen-sink.xml      | 19 
     | elife00013.xml              | 9  
     | elife_poa_e06828.xml        | 8
     | elife02935.xml              | 181
+    
+    
+  Scenario Outline: Get contributors
+    Given I have the document <document>
+    When I get the contributors
+    And I get the list item <list_item>
+    Then I see the string <string>
+    
+
+  Examples:
+    | document                    | list_item                                    | string
+    | elife-kitchen-sink.xml      | [0]['id']                                    | author-23
+    | elife-kitchen-sink.xml      | [0]['type']                                  | author
+    | elife-kitchen-sink.xml      | [0]['surname']                               | Alegado
+    | elife-kitchen-sink.xml      | [0]['given-names']                           | Rosanna A
+    | elife-kitchen-sink.xml      | [0]['suffix']                                | Jnr
+    | elife-kitchen-sink.xml      | [0]['references']['present-address'][0]      | pa1
+    | elife-kitchen-sink.xml      | [0]['references']['competing-interest'][0]   | conf2
+    | elife-kitchen-sink.xml      | [0]['references']['funding'][0]              | par-1
+    | elife-kitchen-sink.xml      | [0]['references']['funding'][1]              | par-2
+    | elife-kitchen-sink.xml      | [0]['references']['related-object'][0]       | dataro1
+    | elife-kitchen-sink.xml      | [0]['references']['related-object'][1]       | dataro2
+    | elife-kitchen-sink.xml      | [0]['references']['affiliation'][0]          | aff1
+    | elife-kitchen-sink.xml      | [0]['references']['affiliation'][1]          | aff2
+    | elife-kitchen-sink.xml      | [0]['references']['equal-contrib'][0]        | equal-contrib
+    | elife-kitchen-sink.xml      | [0]['references']['contribution'][0]         | con1
+    | elife-kitchen-sink.xml      | [0]['equal-contrib']                         | yes
+    
+    | elife-kitchen-sink.xml      | [8]['type']                                  | on-behalf-of
+    | elife-kitchen-sink.xml      | [8]['on-behalf-of']                          | for the HIV Genome-to-Genome Study and the Swiss HIV Cohort Study
+    
+    | elife-kitchen-sink.xml      | [9]['type']                                  | author
+    | elife-kitchen-sink.xml      | [9]['corresp']                               | yes
+    | elife-kitchen-sink.xml      | [9]['group-author-key']                      | group-author-id1
+    | elife-kitchen-sink.xml      | [9]['references']['affiliation'][0]          | aff3
+    | elife-kitchen-sink.xml      | [9]['references']['contribution'][0]         | con9
+    | elife-kitchen-sink.xml      | [9]['references']['competing-interest'][0]   | conf2
+    | elife-kitchen-sink.xml      | [9]['references']['funding'][0]              | par-7
+    | elife-kitchen-sink.xml      | [9]['references']['email'][0]                | cor3
+    | elife-kitchen-sink.xml      | [9]['collab']                                | NISC Comparative Sequencing Program
+

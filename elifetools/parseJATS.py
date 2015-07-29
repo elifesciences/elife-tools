@@ -755,6 +755,11 @@ def format_contributor(contrib_tag, soup, detail="brief"):
         set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
         set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
 
+    # on-behalf-of
+    if contrib_tag.name == 'on-behalf-of':
+        contributor['type'] = 'on-behalf-of'
+        contributor['on-behalf-of'] = node_contents_str(contrib_tag)
+
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
     for ref_tag in ref_tags:
