@@ -514,7 +514,8 @@ def tag_details(tag, nodenames):
     if tag.name == "fig" and 'specific-use' not in tag.attrs:
         # Fig that is not a child figure / figure supplement
         if first_parent(tag, 'sub-article'):
-            details['sibling_ordinal'] = tag_sibling_ordinal(tag)
+            # Sub-article sibling ordinal numbers work differently
+            details['sibling_ordinal'] = tag_subarticle_sibling_ordinal(tag)
         else:
             details['sibling_ordinal'] = tag_fig_ordinal(tag)
     else:

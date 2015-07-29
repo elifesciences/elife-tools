@@ -208,7 +208,19 @@ def tag_sibling_ordinal(tag):
     tag_count = 0
     return len(tag.find_previous_siblings(tag.name)) + 1
     
+def tag_subarticle_sibling_ordinal(tag):
+    """
+    Count previous tags of the same name until it
+    reaches the tag name sub-article, then stop counting
+    """
+    tag_count = 1
+    for prev_tag in tag.previous_elements:
+        if prev_tag.name == tag.name:
+            tag_count += 1
+        if prev_tag.name == 'sub-article':
+            break
 
+    return tag_count
 
 def copy_attribute(source, source_key, destination, destination_key=None):
     if destination_key is None:

@@ -94,3 +94,34 @@ Feature: Get graphic tag data from the document
     | elife04953.xml              | [25]['p_parent_asset']            | resp
     | elife04953.xml              | [25]['p_parent_sibling_ordinal']  | 2
     | elife04953.xml              | [25]['p_parent_component_doi']    | 10.7554/eLife.04953.034
+    
+    | elife00133.xml              | [12]['type']                      | graphic
+    | elife00133.xml              | [12]['position']                  | 13
+    | elife00133.xml              | [12]['ordinal']                   | 13
+    | elife00133.xml              | [12]['sibling_ordinal']           | None
+    | elife00133.xml              | [12]['xlink_href']                | elife00133f007
+    | elife00133.xml              | [12]['component_doi']             | None
+    | elife00133.xml              | [12]['parent_type']               | fig
+    | elife00133.xml              | [12]['parent_ordinal']            | 13
+    | elife00133.xml              | [12]['parent_sibling_ordinal']    | 1
+    | elife00133.xml              | [12]['parent_asset']              | None
+    | elife00133.xml              | [12]['p_parent_type']             | sub-article
+    | elife00133.xml              | [12]['p_parent_ordinal']          | 2
+    | elife00133.xml              | [12]['p_parent_sibling_ordinal']  | 2
+    | elife00133.xml              | [12]['p_parent_asset']            | resp
+    
+    | elife00133.xml              | [13]['type']                      | graphic
+    | elife00133.xml              | [13]['position']                  | 14
+    | elife00133.xml              | [13]['ordinal']                   | 14
+    | elife00133.xml              | [13]['sibling_ordinal']           | None
+    | elife00133.xml              | [13]['xlink_href']                | elife00133f008
+    | elife00133.xml              | [13]['component_doi']             | None
+    | elife00133.xml              | [13]['parent_type']               | fig
+    | elife00133.xml              | [13]['parent_ordinal']            | 14
+    | elife00133.xml              | [13]['parent_sibling_ordinal']    | 2
+    | elife00133.xml              | [13]['parent_asset']              | None
+    | elife00133.xml              | [13]['p_parent_type']             | sub-article
+    | elife00133.xml              | [13]['p_parent_ordinal']          | 2
+    | elife00133.xml              | [13]['p_parent_sibling_ordinal']  | 2
+    | elife00133.xml              | [13]['p_parent_asset']            | resp
+    
