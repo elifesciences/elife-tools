@@ -530,9 +530,11 @@ def tag_details(tag, nodenames):
         # Set media tag asset value, it is useful
         details['asset'] = 'media'
     elif tag.name == "sub-article":
-        if node_text(raw_parser.article_title(tag)) == 'Decision letter':
+        if (node_text(raw_parser.article_title(tag)) and
+            node_text(raw_parser.article_title(tag)).lower() == 'decision letter'):
             details['asset'] = 'dec'
-        elif node_text(raw_parser.article_title(tag)) == 'Author response':
+        elif (node_text(raw_parser.article_title(tag)) and
+              node_text(raw_parser.article_title(tag)).lower() == 'author response'):
             details['asset'] = 'resp'
   
     object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
