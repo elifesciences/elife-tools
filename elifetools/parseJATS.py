@@ -516,6 +516,8 @@ def tag_details(tag, nodenames):
         if first_parent(tag, 'sub-article'):
             # Sub-article sibling ordinal numbers work differently
             details['sibling_ordinal'] = tag_subarticle_sibling_ordinal(tag)
+        elif first_parent(tag, 'app'):
+            details['sibling_ordinal'] = tag_appendix_sibling_ordinal(tag)
         else:
             details['sibling_ordinal'] = tag_fig_ordinal(tag)
     else:
@@ -529,6 +531,8 @@ def tag_details(tag, nodenames):
     elif tag.name == "media":
         # Set media tag asset value, it is useful
         details['asset'] = 'media'
+    elif tag.name == "app":
+        details['asset'] = 'app'
     elif tag.name == "sub-article":
         if (node_text(raw_parser.article_title(tag)) and
             node_text(raw_parser.article_title(tag)).lower() == 'decision letter'):
@@ -636,7 +640,7 @@ def graphics(soup):
         copy_attribute(tag.attrs, 'xlink:href', graphic_item, 'xlink_href')
         
         # Get the tag type
-        nodenames = ["sub-article", "fig-group", "fig"]
+        nodenames = ["sub-article", "fig-group", "fig", "app"]
         details = tag_details(tag, nodenames)
         copy_attribute(details, 'type', graphic_item)
         

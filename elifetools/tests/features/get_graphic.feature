@@ -55,6 +55,42 @@ Feature: Get graphic tag data from the document
     | elife-kitchen-sink.xml      | [5]['p_p_parent_sibling_ordinal']   | None
     | elife-kitchen-sink.xml      | [5]['p_p_parent_component_doi']     | None
     
+    | elife-kitchen-sink.xml      | [23]['type']                         | graphic
+    | elife-kitchen-sink.xml      | [23]['xlink_href']                   | elife00013f006
+    | elife-kitchen-sink.xml      | [23]['position']                     | 24
+    | elife-kitchen-sink.xml      | [23]['ordinal']                      | 24
+    | elife-kitchen-sink.xml      | [23]['parent_type']                  | fig
+    | elife-kitchen-sink.xml      | [23]['parent_ordinal']               | 23
+    | elife-kitchen-sink.xml      | [23]['parent_sibling_ordinal']       | 1
+    | elife-kitchen-sink.xml      | [23]['parent_component_doi']         | 10.7554/eLife.00013.035
+    | elife-kitchen-sink.xml      | [23]['p_parent_type']                | app
+    | elife-kitchen-sink.xml      | [23]['p_parent_asset']               | app
+    | elife-kitchen-sink.xml      | [23]['p_parent_ordinal']             | 2
+    | elife-kitchen-sink.xml      | [23]['p_parent_sibling_ordinal']     | 2
+    | elife-kitchen-sink.xml      | [23]['p_parent_component_doi']       | None
+    | elife-kitchen-sink.xml      | [23]['p_p_parent_type']              | None
+    | elife-kitchen-sink.xml      | [23]['p_p_parent_ordinal']           | None
+    | elife-kitchen-sink.xml      | [23]['p_p_parent_sibling_ordinal']   | None
+    | elife-kitchen-sink.xml      | [23]['p_p_parent_component_doi']     | None
+    
+    | elife-kitchen-sink.xml      | [24]['type']                         | graphic
+    | elife-kitchen-sink.xml      | [24]['xlink_href']                   | elife00013f007
+    | elife-kitchen-sink.xml      | [24]['position']                     | 25
+    | elife-kitchen-sink.xml      | [24]['ordinal']                      | 25
+    | elife-kitchen-sink.xml      | [24]['parent_type']                  | fig
+    | elife-kitchen-sink.xml      | [24]['parent_ordinal']               | 24
+    | elife-kitchen-sink.xml      | [24]['parent_sibling_ordinal']       | 2
+    | elife-kitchen-sink.xml      | [24]['parent_component_doi']         | 10.7554/eLife.00013.036
+    | elife-kitchen-sink.xml      | [24]['p_parent_type']                | app
+    | elife-kitchen-sink.xml      | [24]['p_parent_asset']               | app
+    | elife-kitchen-sink.xml      | [24]['p_parent_ordinal']             | 2
+    | elife-kitchen-sink.xml      | [24]['p_parent_sibling_ordinal']     | 2
+    | elife-kitchen-sink.xml      | [24]['p_parent_component_doi']       | None
+    | elife-kitchen-sink.xml      | [24]['p_p_parent_type']              | None
+    | elife-kitchen-sink.xml      | [24]['p_p_parent_ordinal']           | None
+    | elife-kitchen-sink.xml      | [24]['p_p_parent_sibling_ordinal']   | None
+    | elife-kitchen-sink.xml      | [24]['p_p_parent_component_doi']     | None
+    
     | elife00013.xml              | [22]['type']                        | graphic
     | elife00013.xml              | [22]['xlink_href']                  | elife00013fs019
     | elife00013.xml              | [22]['position']                    | 23
