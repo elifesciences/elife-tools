@@ -533,6 +533,13 @@ def tag_details(tag, nodenames):
         details['asset'] = 'media'
     elif tag.name == "app":
         details['asset'] = 'app'
+    elif tag.name == "supplementary-material":
+        # Default is data
+        details['asset'] = 'data'
+        if (node_text(raw_parser.label(tag))):
+            # Keyword match the label to look for code files
+            if node_text(raw_parser.label(tag)).find('code') > 0:
+                details['asset'] = 'code'
     elif tag.name == "sub-article":
         if (node_text(raw_parser.article_title(tag)) and
             node_text(raw_parser.article_title(tag)).lower() == 'decision letter'):

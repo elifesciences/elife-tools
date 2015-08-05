@@ -36,6 +36,7 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [0]['parent_component_doi']      | 10.7554/eLife.00013.004
     | elife-kitchen-sink.xml      | [0]['parent_type']               | supplementary-material
     | elife-kitchen-sink.xml      | [0]['parent_ordinal']            | 1
+    | elife-kitchen-sink.xml      | [0]['parent_asset']              | data
     | elife-kitchen-sink.xml      | [0]['parent_sibling_ordinal']    | 1
     | elife-kitchen-sink.xml      | [0]['p_parent_type']             | fig
     | elife-kitchen-sink.xml      | [0]['p_parent_ordinal']          | 1
@@ -43,6 +44,21 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']        | None
     | elife-kitchen-sink.xml      | [0]['p_p_parent_type']           | None
     | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']        | None
+
+    | elife-kitchen-sink.xml      | [5]['type']                      | media
+    | elife-kitchen-sink.xml      | [5]['mimetype']                  | application
+    | elife-kitchen-sink.xml      | [5]['mime-subtype']              | py
+    | elife-kitchen-sink.xml      | [5]['content-type']              | None
+    | elife-kitchen-sink.xml      | [5]['position']                  | 6
+    | elife-kitchen-sink.xml      | [5]['ordinal']                   | 6
+    | elife-kitchen-sink.xml      | [5]['asset']                     | None
+    | elife-kitchen-sink.xml      | [5]['xlink_href']                | elife00013s005.py
+    | elife-kitchen-sink.xml      | [5]['component_doi']             | None
+    | elife-kitchen-sink.xml      | [5]['parent_component_doi']      | 10.7554/eLife.00013.033
+    | elife-kitchen-sink.xml      | [5]['parent_type']               | supplementary-material
+    | elife-kitchen-sink.xml      | [5]['parent_ordinal']            | 5
+    | elife-kitchen-sink.xml      | [5]['parent_asset']              | code
+    #| elife-kitchen-sink.xml      | [5]['parent_ordinal']            | 1
     
     | elife02935.xml              | [5]['type']                      | media
     | elife02935.xml              | [5]['mimetype']                  | application
@@ -54,7 +70,7 @@ Feature: Get media tag data from the document
     | elife02935.xml              | [5]['parent_component_doi']      | 10.7554/eLife.02935.026
     | elife02935.xml              | [5]['parent_type']               | supplementary-material
     | elife02935.xml              | [5]['parent_ordinal']            | 6
-    | elife02935.xml              | [5]['parent_asset']              | None
+    | elife02935.xml              | [5]['parent_asset']              | data
     | elife02935.xml              | [5]['parent_sibling_ordinal']    | 6
     | elife02935.xml              | [5]['p_parent_type']             | None
     | elife02935.xml              | [5]['p_parent_ordinal']          | None
@@ -122,7 +138,7 @@ Feature: Get media tag data from the document
     | elife00005.xml              | [2]['component_doi']             | None
     | elife00005.xml              | [2]['parent_component_doi']      | 10.7554/eLife.00005.017
     | elife00005.xml              | [2]['parent_type']               | supplementary-material
-    | elife00005.xml              | [2]['parent_asset']              | None
+    | elife00005.xml              | [2]['parent_asset']              | code
     | elife00005.xml              | [2]['parent_ordinal']            | 1
     | elife00005.xml              | [2]['parent_sibling_ordinal']    | 1
     | elife00005.xml              | [2]['p_parent_type']             | media
