@@ -500,6 +500,48 @@ def component_doi(soup):
     
     return component_doi
 
+def tag_details_sibling_ordinal(tag):
+    sibling_ordinal = None
+    
+    if tag.name == "fig" and 'specific-use' not in tag.attrs:
+        # Fig that is not a child figure / figure supplement
+        if first_parent(tag, 'sub-article'):
+            # Sub-article sibling ordinal numbers work differently
+            sibling_ordinal = tag_subarticle_sibling_ordinal(tag)
+        elif first_parent(tag, 'app'):
+            sibling_ordinal = tag_appendix_sibling_ordinal(tag)
+        else:
+            sibling_ordinal = tag_fig_ordinal(tag)
+    else:
+        # Default
+        sibling_ordinal = tag_sibling_ordinal(tag)
+        
+    return sibling_ordinal
+
+def tag_details_asset(tag):
+    asset = None
+    
+    if tag.name == "fig" and 'specific-use' in tag.attrs:
+        # Child figure / figure supplement
+        asset = 'figsupp'
+    elif tag.name == "media":
+        # Set media tag asset value, it is useful
+        asset = 'media'
+    elif tag.name == "app":
+        asset = 'app'
+    elif tag.name == "supplementary-material":
+        # Default is supp
+        asset = supp_asset(tag)
+    elif tag.name == "sub-article":
+        if (node_text(raw_parser.article_title(tag)) and
+            node_text(raw_parser.article_title(tag)).lower() == 'decision letter'):
+            asset = 'dec'
+        elif (node_text(raw_parser.article_title(tag)) and
+              node_text(raw_parser.article_title(tag)).lower() == 'author response'):
+            asset = 'resp'
+        
+    return asset
+
 
 def tag_details(tag, nodenames):
     """
@@ -511,43 +553,13 @@ def tag_details(tag, nodenames):
     details['ordinal'] = tag_ordinal(tag)
     
     # Ordinal value
-    if tag.name == "fig" and 'specific-use' not in tag.attrs:
-        # Fig that is not a child figure / figure supplement
-        if first_parent(tag, 'sub-article'):
-            # Sub-article sibling ordinal numbers work differently
-            details['sibling_ordinal'] = tag_subarticle_sibling_ordinal(tag)
-        elif first_parent(tag, 'app'):
-            details['sibling_ordinal'] = tag_appendix_sibling_ordinal(tag)
-        else:
-            details['sibling_ordinal'] = tag_fig_ordinal(tag)
-    else:
-        # Default
-        details['sibling_ordinal'] = tag_sibling_ordinal(tag)
-    
+    if tag_details_sibling_ordinal(tag):
+        details['sibling_ordinal'] = tag_details_sibling_ordinal(tag)
+
     # Asset name
-    if tag.name == "fig" and 'specific-use' in tag.attrs:
-        # Child figure / figure supplement
-        details['asset'] = 'figsupp'
-    elif tag.name == "media":
-        # Set media tag asset value, it is useful
-        details['asset'] = 'media'
-    elif tag.name == "app":
-        details['asset'] = 'app'
-    elif tag.name == "supplementary-material":
-        # Default is data
-        details['asset'] = 'data'
-        if (node_text(raw_parser.label(tag))):
-            # Keyword match the label to look for code files
-            if node_text(raw_parser.label(tag)).find('code') > 0:
-                details['asset'] = 'code'
-    elif tag.name == "sub-article":
-        if (node_text(raw_parser.article_title(tag)) and
-            node_text(raw_parser.article_title(tag)).lower() == 'decision letter'):
-            details['asset'] = 'dec'
-        elif (node_text(raw_parser.article_title(tag)) and
-              node_text(raw_parser.article_title(tag)).lower() == 'author response'):
-            details['asset'] = 'resp'
-  
+    if tag_details_asset(tag):
+        details['asset'] = tag_details_asset(tag)
+    
     object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
     if object_id_tag:
         details['component_doi'] = extract_component_doi(tag, nodenames)
@@ -740,6 +752,43 @@ def self_uri(soup):
         self_uri.append(item)
         
     return self_uri
+
+def supplementary_material(soup):
+    """
+    supplementary-material tags
+    """
+    supplementary_material = []
+    
+    supplementary_material_tags = raw_parser.supplementary_material(soup)
+    
+    position = 1
+    
+    for tag in supplementary_material_tags:
+        item = {}
+        
+        copy_attribute(tag.attrs, 'id', item)
+
+        # Get the tag type
+        nodenames = ["supplementary-material"]
+        details = tag_details(tag, nodenames)
+        copy_attribute(details, 'type', item)
+        copy_attribute(details, 'asset', item)
+        copy_attribute(details, 'component_doi', item)
+        copy_attribute(details, 'sibling_ordinal', item)
+        
+        if raw_parser.label(tag):
+            item['label'] = node_text(raw_parser.label(tag))
+            item['full_label'] = node_contents_str(raw_parser.label(tag))
+
+        # Increment the position
+        item['position'] = position
+        # Ordinal should be the same as position in this case but set it anyway
+        item['ordinal'] = tag_ordinal(tag)
+        
+        supplementary_material.append(item)
+
+    return supplementary_material
+
 
 def add_to_list_dictionary(list_dict, list_key, val):
     if val is not None:

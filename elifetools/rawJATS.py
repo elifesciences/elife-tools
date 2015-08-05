@@ -208,6 +208,8 @@ def graphic(soup):
 def self_uri(soup):
     return extract_nodes(soup, "self-uri")
 
+def supplementary_material(soup):
+    return extract_nodes(soup, "supplementary-material")
 
 #
 # authors

@@ -228,4 +228,11 @@ def i_count_the_number_of_self_uri(step):
 @step(u'I get the self uri')
 def i_get_the_self_uri(step):
     world.list = pm.self_uri(world.filecontent)
+
+@step(u'I count the number of supplementary material')
+def i_count_the_number_of_supplementary_material(step):
+    world.count = len(pm.supplementary_material(world.filecontent))
     
+@step(u'I get the supplementary material')
+def i_get_the_supplementary_material(step):
+    world.list = pm.supplementary_material(world.filecontent)
