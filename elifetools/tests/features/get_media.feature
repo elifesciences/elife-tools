@@ -45,6 +45,15 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [0]['p_p_parent_type']           | None
     | elife-kitchen-sink.xml      | [0]['p_p_parent_ordinal']        | None
 
+    | elife-kitchen-sink.xml      | [1]['parent_asset']              | None
+    | elife-kitchen-sink.xml      | [1]['parent_sibling_ordinal']    | None
+    | elife-kitchen-sink.xml      | [2]['parent_asset']              | data
+    | elife-kitchen-sink.xml      | [2]['parent_sibling_ordinal']    | 1
+    | elife-kitchen-sink.xml      | [3]['parent_asset']              | supp
+    | elife-kitchen-sink.xml      | [3]['parent_sibling_ordinal']    | 1
+    | elife-kitchen-sink.xml      | [4]['parent_asset']              | supp
+    | elife-kitchen-sink.xml      | [4]['parent_sibling_ordinal']    | 2
+
     | elife-kitchen-sink.xml      | [5]['type']                      | media
     | elife-kitchen-sink.xml      | [5]['mimetype']                  | application
     | elife-kitchen-sink.xml      | [5]['mime-subtype']              | py
@@ -58,7 +67,7 @@ Feature: Get media tag data from the document
     | elife-kitchen-sink.xml      | [5]['parent_type']               | supplementary-material
     | elife-kitchen-sink.xml      | [5]['parent_ordinal']            | 5
     | elife-kitchen-sink.xml      | [5]['parent_asset']              | code
-    #| elife-kitchen-sink.xml      | [5]['parent_ordinal']            | 1
+    | elife-kitchen-sink.xml      | [5]['parent_sibling_ordinal']    | 1
     
     | elife02935.xml              | [5]['type']                      | media
     | elife02935.xml              | [5]['mimetype']                  | application
@@ -70,7 +79,7 @@ Feature: Get media tag data from the document
     | elife02935.xml              | [5]['parent_component_doi']      | 10.7554/eLife.02935.026
     | elife02935.xml              | [5]['parent_type']               | supplementary-material
     | elife02935.xml              | [5]['parent_ordinal']            | 6
-    | elife02935.xml              | [5]['parent_asset']              | data
+    | elife02935.xml              | [5]['parent_asset']              | supp
     | elife02935.xml              | [5]['parent_sibling_ordinal']    | 6
     | elife02935.xml              | [5]['p_parent_type']             | None
     | elife02935.xml              | [5]['p_parent_ordinal']          | None

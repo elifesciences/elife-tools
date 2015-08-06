@@ -512,6 +512,8 @@ def tag_details_sibling_ordinal(tag):
             sibling_ordinal = tag_appendix_sibling_ordinal(tag)
         else:
             sibling_ordinal = tag_fig_ordinal(tag)
+    elif tag.name == "supplementary-material":
+        sibling_ordinal = tag_supplementary_material_sibling_ordinal(tag)
     else:
         # Default
         sibling_ordinal = tag_sibling_ordinal(tag)
