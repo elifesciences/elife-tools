@@ -1046,13 +1046,10 @@ def refs(soup):
         if(source != None):
             ref['source'] = source
             
-        # publication_type
-        mixed_citation = extract_nodes(tag, "mixed-citation")
-        try:
-            publication_type = mixed_citation[0]["publication-type"]
-            ref['publication_type'] = publication_type
-        except(KeyError, IndexError):
-            pass
+        # publication-type
+        element_citation = first(raw_parser.element_citation(tag))
+        if element_citation:
+            ref['publication-type'] = element_citation.get("publication-type")
 
         # authors
         person_group = extract_nodes(tag, "person-group")

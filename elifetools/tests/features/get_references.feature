@@ -45,6 +45,7 @@ Feature: get references from the document
   
   Examples:
     | document                    | list_item                       | string
+    | elife00013.xml              | [0]['publication-type']         | book
     | elife00013.xml              | [0]['etal']                     | None
     | elife00013.xml              | [0]['id']                       | bib1
     | elife00013.xml              | [2]['comment']                     | [epub ahead of print]
@@ -56,6 +57,8 @@ Feature: get references from the document
     | elife00013.xml              | [0]['authors'][0]['given-names']| WC
     | elife00013.xml              | [0]['article_doi']              | 10.7554/eLife.00013
     | elife00013.xml              | [0]['position']                 | 1
+    
+    | elife00013.xml              | [1]['publication-type']         | journal
     | elife00013.xml              | [1]['ref']                      | AhmedIYokotaAFujiwaraT2007Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soilInt J Syst Evol Microbiol57986992
     | elife00013.xml              | [1]['authors'][0]['surname']    | Ahmed
     | elife00013.xml              | [1]['authors'][0]['given-names']| I
@@ -69,9 +72,16 @@ Feature: get references from the document
     | elife00013.xml              | [1]['lpage']                    | 992
     | elife00013.xml              | [1]['position']                 | 2
     
+    | elife-kitchen-sink.xml      | [9]['publication-type']         | journal
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
     | elife-kitchen-sink.xml      | [9]['authors'][1]['suffix']     | III
     | elife-kitchen-sink.xml      | [53]['comment']                 | pdb.prot5148
-  
+    
+    | elife-kitchen-sink.xml      | [58]['publication-type']        | other
+    
+    | elife02935.xml              | [6]['publication-type']         | journal
     | elife02935.xml              | [6]['authors'][0]['surname']    | Chinnery
     | elife02935.xml              | [6]['authors'][1]['surname']    | RA
+    
+    | elife02304.xml              | [69]['publication-type']        | other
+    | elife02304.xml              | [69]['comment']                 | PAUP*. Phylogenetic analysis using Parsimony (*and other methods). Version 4 Sinauer Associatesm Sunderland, Massachusetts

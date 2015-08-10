@@ -248,3 +248,6 @@ def publisher_name(soup):
 
 def comment(soup):
     return extract_nodes(soup, "comment")
+
+def element_citation(soup):
+    return extract_nodes(soup, "element-citation")
