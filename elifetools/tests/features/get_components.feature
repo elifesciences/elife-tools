@@ -73,6 +73,7 @@ Feature: Get components from the document
     | elife02304.xml              | [6]['doi']                    | 10.7554/eLife.02304.007
     | elife02304.xml              | [6]['position']               | 7
     | elife02304.xml              | [6]['type']                   | fig
+    | elife02304.xml              | [6]['mimetype']               | None
     | elife02304.xml              | [6]['parent_type']            | fig
     | elife02304.xml              | [6]['parent_parent_type']     | None
     | elife02304.xml              | [6]['label']                  | Figure 2—figure supplement 2.
@@ -86,6 +87,8 @@ Feature: Get components from the document
     | elife02304.xml              | [7]['position']               | 8
     | elife02304.xml              | [7]['ordinal']                | 1
     | elife02304.xml              | [7]['type']                   | supplementary-material
+    | elife02304.xml              | [7]['mimetype']               | application
+    | elife02304.xml              | [7]['mime-subtype']           | pdf
     | elife02304.xml              | [7]['parent_type']            | fig
     | elife02304.xml              | [7]['parent_ordinal']         | 5
     | elife02304.xml              | [7]['parent_parent_type']     | fig
@@ -139,6 +142,8 @@ Feature: Get components from the document
     
     | elife-kitchen-sink.xml      | [5]['doi']                    | 10.7554/eLife.00013.006
     | elife-kitchen-sink.xml      | [5]['type']                   | media
+    | elife-kitchen-sink.xml       | [5]['mimetype']               | video
+    | elife-kitchen-sink.xml       | [5]['mime-subtype']           | wmv
     | elife-kitchen-sink.xml      | [5]['ordinal']                | 2
     | elife-kitchen-sink.xml      | [5]['parent_type']            | None
     | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034

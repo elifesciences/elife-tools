@@ -1298,6 +1298,16 @@ def components(soup):
         if(content != ""):
             component['content'] = content
     
+        # mime type
+        media_tag = None
+        if(ctype == "media"):
+            media_tag = tag
+        elif(ctype == "supplementary-material"):
+            media_tag = first(raw_parser.media(tag))
+        if media_tag:
+            component['mimetype'] = media_tag.get("mimetype")
+            component['mime-subtype'] = media_tag.get("mime-subtype")
+    
         if(len(component) > 0):
             component['article_doi'] = article_doi
             component['type'] = ctype
