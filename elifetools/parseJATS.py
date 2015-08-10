@@ -397,12 +397,22 @@ def abstracts(soup):
             
             good_paragraphs = remove_doi_paragraph(paragraphs(tag))
             
+            # Plain text content
             glue = ""
             for p_tag in good_paragraphs:
                 abstract["content"] += glue + node_text(p_tag)
-                abstract["full_content"] += glue + node_contents_str(p_tag)
                 glue = " "
             
+            # Content including markup tags
+            if len(good_paragraphs) == 1:
+                glue = ""
+                for p_tag in good_paragraphs:
+                    abstract["full_content"] += glue + node_contents_str(p_tag)
+                    glue = " "
+            elif len(good_paragraphs) > 1:
+                # When more than one paragraph, wrap each in a <p> tag
+                for p_tag in good_paragraphs:
+                    abstract["full_content"] += '<p>' + node_contents_str(p_tag) + '</p>'            
     
         abstracts.append(abstract)
 
