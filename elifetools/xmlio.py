@@ -77,7 +77,7 @@ def convert_xlink_href(root, name_map):
 def output(root, type = 'JATS'):
 
     if type == 'JATS':
-        publicId = "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d1 20130915//EN"
+        publicId = "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"
         systemId = 'JATS-archivearticle1.dtd'
     encoding = 'UTF-8'
 
