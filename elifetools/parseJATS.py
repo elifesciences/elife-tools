@@ -1103,6 +1103,18 @@ def refs(soup):
                 if len(author) > 0:
                     authors.append(author)
                 
+        # Check for collab tag not wrapped in a person-group for backwards compatibility
+        if len(person_group) == 0:
+            collab_tags = extract_nodes(tag, "collab")
+            for collab_tag in collab_tags:
+                author = {}
+                collab = node_contents_str(collab_tag)
+                author['group-type'] = "author"
+                if collab is not None:
+                    author['collab'] = collab
+                if len(author) > 0:
+                    authors.append(author)
+        
         if len(authors) > 0:
             ref['authors'] = authors
 

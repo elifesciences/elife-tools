@@ -79,9 +79,14 @@ Feature: get references from the document
     
     | elife-kitchen-sink.xml      | [58]['publication-type']        | other
     
+    | elife-kitchen-sink.xml      | [95]['authors'][0]['collab']    | WHO
+    
     | elife02935.xml              | [6]['publication-type']         | journal
     | elife02935.xml              | [6]['authors'][0]['surname']    | Chinnery
     | elife02935.xml              | [6]['authors'][1]['surname']    | RA
     
     | elife02304.xml              | [69]['publication-type']        | other
     | elife02304.xml              | [69]['comment']                 | PAUP*. Phylogenetic analysis using Parsimony (*and other methods). Version 4 Sinauer Associatesm Sunderland, Massachusetts
+    
+    | elife00051.xml               | [19]['collab']                 | Institute for Health Metrics and Evaluation
+    | elife00051.xml               | [19]['authors'][0]['collab']   | Institute for Health Metrics and Evaluation
