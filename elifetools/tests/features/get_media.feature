@@ -184,3 +184,37 @@ Feature: Get media tag data from the document
     | elife05031.xml              | [2]['parent_type']               | supplementary-material
     | elife05031.xml              | [2]['parent_ordinal']            | 3
     | elife05031.xml              | [2]['parent_sibling_ordinal']    | 1
+    
+    | elife04493.xml              | [2]['type']                      | media
+    | elife04493.xml              | [2]['mimetype']                  | video
+    | elife04493.xml              | [2]['mime-subtype']              | mov
+    | elife04493.xml              | [2]['xlink_href']                | elife04493v003.mov
+    | elife04493.xml              | [2]['position']                  | 3
+    | elife04493.xml              | [2]['ordinal']                   | 3
+    | elife04493.xml              | [2]['sibling_ordinal']           | 3
+    | elife04493.xml              | [2]['parent_type']               | None
+    | elife04493.xml              | [2]['parent_ordinal']            | None
+    | elife04493.xml              | [2]['parent_sibling_ordinal']    | None
+    
+    | elife04493.xml              | [8]['type']                      | media
+    | elife04493.xml              | [8]['mimetype']                  | video
+    | elife04493.xml              | [8]['mime-subtype']              | mov
+    | elife04493.xml              | [8]['xlink_href']                | elife04493v009.mov
+    | elife04493.xml              | [8]['position']                  | 9
+    | elife04493.xml              | [8]['ordinal']                   | 9
+    | elife04493.xml              | [8]['sibling_ordinal']           | 9
+    | elife04493.xml              | [8]['parent_type']               | None
+    | elife04493.xml              | [8]['parent_ordinal']            | None
+    | elife04493.xml              | [8]['parent_sibling_ordinal']    | None
+    
+    | elife04493.xml              | [22]['type']                      | media
+    | elife04493.xml              | [22]['mimetype']                  | application
+    | elife04493.xml              | [22]['mime-subtype']              | docx
+    | elife04493.xml              | [22]['xlink_href']                | elife04493s001.docx
+    | elife04493.xml              | [22]['position']                  | 23
+    | elife04493.xml              | [22]['ordinal']                   | 23
+    | elife04493.xml              | [22]['sibling_ordinal']           | 1
+    | elife04493.xml              | [22]['parent_type']               | supplementary-material
+    | elife04493.xml              | [22]['parent_ordinal']            | 1
+    | elife04493.xml              | [22]['parent_sibling_ordinal']    | 1
+    

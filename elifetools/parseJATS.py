@@ -513,7 +513,8 @@ def component_doi(soup):
 def tag_details_sibling_ordinal(tag):
     sibling_ordinal = None
     
-    if tag.name == "fig" and 'specific-use' not in tag.attrs:
+    if ((tag.name == "fig" and 'specific-use' not in tag.attrs)
+        or tag.name == "media" and 'mimetype' in tag.attrs and tag['mimetype'] == 'video'):
         # Fig that is not a child figure / figure supplement
         if first_parent(tag, 'sub-article'):
             # Sub-article sibling ordinal numbers work differently
