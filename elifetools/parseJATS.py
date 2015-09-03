@@ -950,11 +950,11 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     
     return contributor
 
-def contributors(soup):
+def contributors(soup, detail="brief"):
     contrib_tags = raw_parser.article_contributors(soup)
     contributors = []
     for tag in contrib_tags:
-        contributors.append(format_contributor(tag, soup))
+        contributors.append(format_contributor(tag, soup, detail))
     return contributors
 
 #
@@ -966,7 +966,7 @@ def authors_non_byline(soup):
     authors_list = authors(soup, contrib_type = "author non-byline")
     return authors_list
 
-def authors(soup, contrib_type = "author"):
+def authors(soup, contrib_type = "author", detail = "full"):
 
     tags = raw_parser.authors(soup, contrib_type)
     authors = []
@@ -975,7 +975,7 @@ def authors(soup, contrib_type = "author"):
     article_doi = doi(soup)
     
     for tag in tags:
-        author = format_contributor(tag, soup, detail="full")
+        author = format_contributor(tag, soup, detail)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):
