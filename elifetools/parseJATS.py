@@ -926,11 +926,11 @@ def format_contributor(contrib_tag, soup, detail="brief"):
         if(len(corresp_tags) > 0):
             if 'notes-corresp' not in contributor:
                 contributor['notes-corresp'] = []
-    
+            target_tags = raw_parser.corresp(soup)
             for cor in corresp_tags:
                 # Find the matching tag
                 rid = cor['rid']
-                corresp_node = first(soup.select("#" + rid))
+                corresp_node = first(filter(lambda tag: tag.get("id") == rid, target_tags))
                 author_notes = node_text(corresp_node)
                 if author_notes:
                     contributor['notes-corresp'].append(author_notes)
@@ -940,10 +940,11 @@ def format_contributor(contrib_tag, soup, detail="brief"):
         if(len(fn_tags) > 0):
             if 'notes-fn' not in contributor:
                 contributor['notes-fn'] = []
+            target_tags = raw_parser.fn(soup)
             for fn in fn_tags:
                # Find the matching tag
                rid = fn['rid']
-               fn_node = first(soup.select("#" + rid))
+               fn_node = first(filter(lambda tag: tag.get("id") == rid, target_tags))
                fn_text = node_text(fn_node)
                if fn_text:
                    contributor['notes-fn'].append(fn_text)
