@@ -1026,82 +1026,55 @@ def refs(soup):
         ref = {}
         
         # etal
-        etal = extract_nodes(tag, "etal")
-        try:
-            if(etal[0]):
-                ref['etal'] = True
-        except(IndexError):
-            pass
+        etal = first(extract_nodes(tag, "etal"))
+        if etal:
+            ref['etal'] = True
         
         ref['ref'] = ref_text(tag)
 
         # ref_id
-        ref['id'] = tag['id']
+        copy_attribute(tag.attrs, "id", ref)
 
         # article_title
-        article_title = node_text(first(extract_nodes(tag, "article-title")))
-        if(article_title != None):
-            ref['article_title'] = article_title
+        if first(extract_nodes(tag, "article-title")):
+            ref['article_title'] = node_text(first(extract_nodes(tag, "article-title")))
             ref['full_article_title'] = node_contents_str(first(extract_nodes(tag, "article-title")))
 
         reference_title_node = first(extract_nodes(tag, "pub-id"))
         if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
             ref['reference_id'] = node_contents_str(reference_title_node)
+            ref['doi'] = node_contents_str(reference_title_node)
             
-        # year
-        year = node_text(first(extract_nodes(tag, "year")))
-        if(year != None):
-            ref['year'] = year
-            
-        # source
-        source = node_text(first(extract_nodes(tag, "source")))
-        if(source != None):
-            ref['source'] = source
-            
-        # publication-type
-        element_citation = first(raw_parser.element_citation(tag))
-        if element_citation:
-            ref['publication-type'] = element_citation.get("publication-type")
-
+        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
+        set_if_value(ref, "source", node_text(first(extract_nodes(tag, "source"))))
+        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
+        copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
+        
         # authors
         person_group = extract_nodes(tag, "person-group")
         authors = []
-        author_types = []
         
         for group in person_group:
-
             
             author_type = None
             if "person-group-type" in group.attrs:
                 author_type = group["person-group-type"]
                     
-            name = extract_nodes(group, "name")
-            for n in name:
+            for name_tag in extract_nodes(group, "name"):
                 author = {}
-                surname = node_text(first(extract_nodes(n, "surname")))
-                given_names = node_text(first(extract_nodes(n, "given-names")))
-                suffix = node_text(first(extract_nodes(n, "suffix")))
+                set_if_value(author, "group-type", author_type)
+                set_if_value(author, "surname", node_text(first(extract_nodes(name_tag, "surname"))))
+                set_if_value(author, "given-names", node_text(first(extract_nodes(name_tag, "given-names"))))
+                set_if_value(author, "suffix", node_text(first(extract_nodes(name_tag, "suffix"))))
 
-                if author_type is not None:
-                    author['group-type'] = author_type
-                if surname is not None:
-                    author['surname'] = surname
-                if given_names is not None:
-                    author['given-names'] = given_names
-                if suffix is not None:
-                    author['suffix'] = suffix
                 if len(author) > 0:
                     authors.append(author)
 
-            collab_tags = extract_nodes(group, "collab")
-            for collab_tag in collab_tags:
+            for collab_tag in extract_nodes(group, "collab"):
                 author = {}
-                collab = node_contents_str(collab_tag)
-                
-                if author_type is not None:
-                    author['group-type'] = author_type
-                if collab is not None:
-                    author['collab'] = collab
+                set_if_value(author, "group-type", author_type)
+                set_if_value(author, "collab", node_contents_str(collab_tag))
+
                 if len(author) > 0:
                     authors.append(author)
                 
@@ -1110,54 +1083,23 @@ def refs(soup):
             collab_tags = extract_nodes(tag, "collab")
             for collab_tag in collab_tags:
                 author = {}
-                collab = node_contents_str(collab_tag)
-                author['group-type'] = "author"
-                if collab is not None:
-                    author['collab'] = collab
+                set_if_value(author, "group-type", "author")
+                set_if_value(author, "collab", node_contents_str(collab_tag))
+                
                 if len(author) > 0:
                     authors.append(author)
         
         if len(authors) > 0:
             ref['authors'] = authors
 
-        
-        
-            
-        # volume
-        volume = node_text(first(raw_parser.volume(tag)))
-        if volume:
-            ref['volume'] = volume
-            
-        # fpage
-        fpage = node_text(first(raw_parser.fpage(tag)))
-        if fpage:
-            ref['fpage'] = fpage
-            
-        # lpage
-        lpage = node_text(first(raw_parser.lpage(tag)))
-        if lpage:
-            ref['lpage'] = lpage
-            
-        # collab
-        collab = node_text(first(raw_parser.collab(tag)))
-        if collab:
-            ref['collab'] = collab
-            
-        # publisher_loc
-        publisher_loc = node_text(first(raw_parser.publisher_loc(tag)))
-        if publisher_loc:
-            ref['publisher_loc'] = publisher_loc
-        
-        # publisher_name
-        publisher_name = node_text(first(raw_parser.publisher_name(tag)))
-        if publisher_name:
-            ref['publisher_name'] = publisher_name
-            
-        # comment
-        comment = node_text(first(raw_parser.comment(tag)))
-        if(comment != None):
-            ref['comment'] = comment
-            
+        set_if_value(ref, "volume", node_text(first(raw_parser.volume(tag))))
+        set_if_value(ref, "fpage", node_text(first(raw_parser.fpage(tag))))
+        set_if_value(ref, "lpage", node_text(first(raw_parser.lpage(tag))))
+        set_if_value(ref, "collab", node_text(first(raw_parser.collab(tag))))
+        set_if_value(ref, "publisher_loc", node_text(first(raw_parser.publisher_loc(tag))))
+        set_if_value(ref, "publisher_name", node_text(first(raw_parser.publisher_name(tag))))
+        set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
+
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
             ref['article_doi'] = article_doi

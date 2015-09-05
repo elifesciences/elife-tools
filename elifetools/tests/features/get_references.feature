@@ -54,6 +54,8 @@ Feature: get references from the document
     | elife00013.xml              | [0]['publisher_name']           | Scientific American Press
     | elife00013.xml              | [0]['publisher_loc']            | New York
     | elife00013.xml              | [0]['authors'][0]['surname']    | Agosta
+    | elife00013.xml              | [0]['authors'][0]['group-type'] | author
+    
     | elife00013.xml              | [0]['authors'][0]['given-names']| WC
     | elife00013.xml              | [0]['article_doi']              | 10.7554/eLife.00013
     | elife00013.xml              | [0]['position']                 | 1
@@ -72,6 +74,9 @@ Feature: get references from the document
     | elife00013.xml              | [1]['lpage']                    | 992
     | elife00013.xml              | [1]['position']                 | 2
     
+    | elife-kitchen-sink.xml      | [1]['reference_id']             | 10.1099/ijs.0.64728-0
+    | elife-kitchen-sink.xml      | [1]['doi']                      | 10.1099/ijs.0.64728-0
+    
     | elife-kitchen-sink.xml      | [9]['publication-type']         | journal
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
     | elife-kitchen-sink.xml      | [9]['authors'][1]['suffix']     | III
@@ -80,6 +85,7 @@ Feature: get references from the document
     | elife-kitchen-sink.xml      | [58]['publication-type']        | other
     
     | elife-kitchen-sink.xml      | [95]['authors'][0]['collab']    | WHO
+    | elife-kitchen-sink.xml      | [95]['authors'][0]['group-type']| author
     
     | elife02935.xml              | [6]['publication-type']         | journal
     | elife02935.xml              | [6]['authors'][0]['surname']    | Chinnery
