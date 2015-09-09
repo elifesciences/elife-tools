@@ -996,7 +996,8 @@ def format_aff(aff_tag):
         'institution': node_contents_str(first(
             filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution")))),
         'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
-        'country': node_contents_str(first(extract_nodes(aff_tag, "country")))
+        'country': node_contents_str(first(extract_nodes(aff_tag, "country"))),
+        'email': node_contents_str(first(extract_nodes(aff_tag, "email")))
         }
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
