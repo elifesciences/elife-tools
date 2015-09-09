@@ -18,4 +18,5 @@ Feature: Get affiliations from the article
     | elife00013.xml              | ['aff1']['city']         | Berkeley
     | elife00013.xml              | ['aff2']['dept']         | Department of Biological Chemistry and Molecular Pharmacology
     | elife00013.xml              | ['aff3']['dept']         | Department of Biochemistry
+    | elife09853.xml              | ['aff1']['email']        | labecker@stanford.edu
     
