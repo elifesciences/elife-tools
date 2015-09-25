@@ -44,7 +44,7 @@ Feature: get authors from the document
     
     
     | elife-kitchen-sink.xml      | [1]['orcid']                         | http://orcid.org/0000-0002-7361-560X
-    | elife-kitchen-sink.xml      | [6]['notes-corresp'][0]              | \n*For\n                        correspondence: jon_clardy@hms.harvard.edu (JC);
+    | elife-kitchen-sink.xml      | [6]['notes-corresp'][0]              | \n*For\n                        correspondence: jon_clardy@hms.harvard.edu(JC);
     | elife-kitchen-sink.xml      | [8]['affiliations'][0]['institution'] | Stanford University School of Medicine
     | elife-kitchen-sink.xml      | [9]['affiliations'][0]['institution'] | None
     
