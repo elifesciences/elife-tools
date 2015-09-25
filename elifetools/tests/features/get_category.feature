@@ -25,7 +25,7 @@ Feature: Get categories from the document
   Examples:
     | document                    | list_item | string
     | elife-kitchen-sink.xml      | [0]       | Cell biology
-    | elife-kitchen-sink.xml      | [1]       | Computer science
+    | elife-kitchen-sink.xml      | [1]       | Computational and systems biology
     | elife00013.xml              | [0]       | Cell biology
     | elife_poa_e06828.xml        | [0]       | Developmental biology and stem cells
     | elife_poa_e06828.xml        | [1]       | Neuroscience
