@@ -25,7 +25,7 @@ Feature: Get subject areas from the document
     | document                    | list_item | string
     | elife-kitchen-sink.xml      | [0]       | Research article
     | elife-kitchen-sink.xml      | [1]       | Cell biology
-    | elife-kitchen-sink.xml      | [2]       | Computer science
+    | elife-kitchen-sink.xml      | [2]       | Computational and systems biology
     | elife00013.xml              | [0]       | Research article
     | elife00013.xml              | [1]       | Cell biology
     | elife_poa_e06828.xml        | [0]       | Research article
@@ -52,7 +52,7 @@ Feature: Get subject areas from the document
   Examples:
     | document                    | list_item                   | string
     | elife-kitchen-sink.xml      | ['heading'][0]              | Cell biology
-    | elife-kitchen-sink.xml      | ['heading'][1]              | Computer science
+    | elife-kitchen-sink.xml      | ['heading'][1]              | Computational and systems biology
     | elife-kitchen-sink.xml      | ['display-channel'][0]      | Research article
 
     | elife00240.xml              | ['sub-display-channel'][0]  | Plant biology
