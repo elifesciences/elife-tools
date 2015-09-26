@@ -13,7 +13,7 @@ Feature: Parse the correspondence tag from the article
     | document                  | list_item  | string   
     | elife00013.xml            | [0]        | *For correspondence: jon_clardy@hms.harvard.edu (JC);
     | elife00013.xml            | [1]        | *For correspondence: nking@berkeley.edu (NK)
-    | elife-kitchen-sink.xml    | [0]        | \n*For\n                        correspondence: jon_clardy@hms.harvard.edu (JC);
+    | elife-kitchen-sink.xml    | [0]        | \n*For\n                        correspondence: jon_clardy@hms.harvard.edu(JC);
     | elife_poa_e06828.xml      | [0]        | None
     
   Scenario Outline: Read the full correspondence note
