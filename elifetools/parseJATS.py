@@ -1043,6 +1043,7 @@ def refs(soup):
         set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
         set_if_value(ref, "source", node_text(first(extract_nodes(tag, "source"))))
         set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
+        set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
         
         # authors

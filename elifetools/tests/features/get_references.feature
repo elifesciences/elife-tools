@@ -80,6 +80,11 @@ Feature: get references from the document
     | elife-kitchen-sink.xml      | [9]['publication-type']         | journal
     | elife-kitchen-sink.xml      | [9]['full_article_title']       | The complete genome sequence of <italic>Escherichia coli</italic>\n                        K-12
     | elife-kitchen-sink.xml      | [9]['authors'][1]['suffix']     | III
+    | elife-kitchen-sink.xml      | [9]['elocation-id']             | None
+
+    | elife-kitchen-sink.xml      | [12]['doi']                     | 10.1371/journal.pcbi.1000392
+    | elife-kitchen-sink.xml      | [12]['elocation-id']            | e1000392
+    
     | elife-kitchen-sink.xml      | [53]['comment']                 | pdb.prot5148
     
     | elife-kitchen-sink.xml      | [58]['publication-type']        | other
