@@ -101,3 +101,6 @@ Feature: get references from the document
     
     | elife00051.xml               | [19]['collab']                 | Institute for Health Metrics and Evaluation
     | elife00051.xml               | [19]['authors'][0]['collab']   | Institute for Health Metrics and Evaluation
+    
+    | elife02935.xml               | [17]['authors'][0]['collab']   | 1000 Genomes Project Consortium
+    | elife02935.xml               | [17]['authors'][1]['surname']  | Abecasis

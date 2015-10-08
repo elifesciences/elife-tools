@@ -1056,20 +1056,20 @@ def refs(soup):
             if "person-group-type" in group.attrs:
                 author_type = group["person-group-type"]
                     
-            for name_tag in extract_nodes(group, "name"):
+            # Read name or collab tag in the order they are listed
+            for name_or_collab_tag in extract_nodes(group, ["name","collab"]):
                 author = {}
+                
+                # Shared tag attribute
                 set_if_value(author, "group-type", author_type)
-                set_if_value(author, "surname", node_text(first(extract_nodes(name_tag, "surname"))))
-                set_if_value(author, "given-names", node_text(first(extract_nodes(name_tag, "given-names"))))
-                set_if_value(author, "suffix", node_text(first(extract_nodes(name_tag, "suffix"))))
+                
+                # name tag attributes
+                set_if_value(author, "surname", node_text(first(extract_nodes(name_or_collab_tag, "surname"))))
+                set_if_value(author, "given-names", node_text(first(extract_nodes(name_or_collab_tag, "given-names"))))
+                set_if_value(author, "suffix", node_text(first(extract_nodes(name_or_collab_tag, "suffix"))))
 
-                if len(author) > 0:
-                    authors.append(author)
-
-            for collab_tag in extract_nodes(group, "collab"):
-                author = {}
-                set_if_value(author, "group-type", author_type)
-                set_if_value(author, "collab", node_contents_str(collab_tag))
+                # collab tag attribute
+                set_if_value(author, "collab", node_contents_str(name_or_collab_tag))
 
                 if len(author) > 0:
                     authors.append(author)
