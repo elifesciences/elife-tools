@@ -1064,12 +1064,14 @@ def refs(soup):
                 set_if_value(author, "group-type", author_type)
                 
                 # name tag attributes
-                set_if_value(author, "surname", node_text(first(extract_nodes(name_or_collab_tag, "surname"))))
-                set_if_value(author, "given-names", node_text(first(extract_nodes(name_or_collab_tag, "given-names"))))
-                set_if_value(author, "suffix", node_text(first(extract_nodes(name_or_collab_tag, "suffix"))))
+                if name_or_collab_tag.name == "name":
+                    set_if_value(author, "surname", node_text(first(extract_nodes(name_or_collab_tag, "surname"))))
+                    set_if_value(author, "given-names", node_text(first(extract_nodes(name_or_collab_tag, "given-names"))))
+                    set_if_value(author, "suffix", node_text(first(extract_nodes(name_or_collab_tag, "suffix"))))
 
                 # collab tag attribute
-                set_if_value(author, "collab", node_contents_str(name_or_collab_tag))
+                if name_or_collab_tag.name == "collab":
+                    set_if_value(author, "collab", node_contents_str(name_or_collab_tag))
 
                 if len(author) > 0:
                     authors.append(author)
