@@ -4,3 +4,5 @@ lxml==3.4.1
 slugify==0.0.1
 testtools==0.9.34
 unittest-xml-reporting==1.12.0
+coverage==3.7.1
+python-Levenshtein==0.12.0

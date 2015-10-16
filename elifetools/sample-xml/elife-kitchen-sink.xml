@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d1 20130915//EN" "JATS-archivearticle1.dtd">
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN" "JATS-archivearticle1.dtd">
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"
-    article-type="research-article" dtd-version="1.1d1">
+    article-type="research-article" dtd-version="1.1d3">
     <front>
         <journal-meta>
             <journal-id journal-id-type="nlm-ta">elife</journal-id>
@@ -26,7 +26,7 @@
                     <subject>Cell biology</subject>
                 </subj-group>
                 <subj-group subj-group-type="heading">
-                    <subject>Computer science</subject>
+                    <subject>Computational and systems biology</subject>
                 </subj-group>
             </article-categories>
             <title-group>
@@ -47,7 +47,7 @@
                     <xref ref-type="other" rid="par-2"/>
                     <xref ref-type="fn" rid="con1"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="fn" rid="pa1">&#167;</xref>
+                    <xref ref-type="fn" rid="pa1">&#xb6;</xref>
                     <xref ref-type="other" rid="dataro1"/>
                     <xref ref-type="other" rid="dataro2"/>
                 </contrib>
@@ -63,7 +63,7 @@
                     <xref ref-type="other" rid="par-3"/>
                     <xref ref-type="fn" rid="con2"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="fn" rid="pa2">&#xb6;</xref>
+                    <xref ref-type="fn" rid="pa2">&#x2016;</xref>
                 </contrib>
                 <contrib contrib-type="author" id="author-3">
                     <name>
@@ -84,7 +84,7 @@
                     <xref ref-type="fn" rid="equal-contrib2">&#x2021;</xref>
                     <xref ref-type="fn" rid="con4"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="other" rid="pa3">&#x2a;&#x2a;</xref>
+                    <xref ref-type="fn" rid="pa3"/>
                 </contrib>
                 <contrib contrib-type="author" deceased="yes" id="author-5">
                     <name>
@@ -94,9 +94,9 @@
                     <xref ref-type="aff" rid="aff3">3</xref>
                     <xref ref-type="fn" rid="con5"/>
                     <xref ref-type="fn" rid="conf2"/>
-                    <xref ref-type="other" rid="pa3"/>
-                    <xref ref-type="fn" rid="fn1">&#x2020;&#x2020;</xref>
-                </contrib>
+                    <xref ref-type="fn" rid="pa3"/>
+                    <xref ref-type="fn" rid="fn1">&#x2a;&#x2a;</xref>
+                   </contrib>
                 <contrib contrib-type="author" id="author-6">
                     <name>
                         <surname>Fairclough</surname>
@@ -250,35 +250,34 @@
             <author-notes>
                 <corresp id="cor1">
                     <label>&#x2a;</label>For
-                        correspondence: <email>jon_clardy@hms.harvard.edu</email> (JC);</corresp>
+                        correspondence: <email>jon_clardy@hms.harvard.edu</email>(JC);</corresp>
                 <corresp id="cor2">
-                    <email>nking@berkeley.edu</email> (NK)</corresp>
+                    <email>nking@berkeley.edu</email>(NK);</corresp>
                 <corresp id="cor3">
-                    <email>mharrison@elifesciences.org</email> (MH)</corresp>
+                    <email>mharrison@elifesciences.org</email>(MH)</corresp>
                 <fn fn-type="con" id="equal-contrib">
                     <label>&#x2020;</label>
                     <p>These authors contributed equally to this work</p>
                 </fn>
                 <fn fn-type="con" id="equal-contrib2">
                     <label>&#x2021;</label>
-                    <p>These authors contributed equally to this work</p>
+                    <p>These authors also contributed equally to this work</p>
                 </fn>
                 <fn fn-type="present-address" id="pa1">
-                    <label>&#167;</label>
+                    <label>&#xb6;</label>
                     <p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>
                 </fn>
                 <fn fn-type="present-address" id="pa2">
-                    <label>&#xb6;</label>
+                    <label>&#x2016;</label>
                     <p>Department of Biological Chemistry and Molecular Pharmacology, Harvard
                         Medical School, Boston, United States</p>
                 </fn>
                 <fn fn-type="present-address" id="pa3">
-                    <label>&#x2a;&#x2a;</label>
                     <p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United
                         Kingdom</p>
                 </fn>
                 <fn fn-type="deceased" id="fn1">
-                    <label>&#x2020;&#x2020;</label>
+                    <label>&#x2a;&#x2a;</label>
                     <p>Deceased</p>
                 </fn>
             </author-notes>
@@ -318,7 +317,7 @@
                 </license>
             </permissions>
             <self-uri content-type="pdf" xlink:href="elife00013.pdf"/>
-            <related-article ext-link-type="doi" id="ra1" related-article-type="commentary"
+            <related-article ext-link-type="doi" related-article-type="commentary"
                 xlink:href="10.7554/eLife.00013"/>
             <abstract>
                 <object-id pub-id-type="doi">10.7554/eLife.00013.001</object-id>
@@ -337,6 +336,7 @@
                     sulfonolipids triggering eukaryotic morphogenesis and suggests molecular
                     mechanisms through which bacteria may have contributed to the evolution of
                     animals.</p>
+                <p>Clinical trial registration: ISRCTN76742797 and EudraCT2004-000446-20.</p>
                 <p>
                     <bold>DOI:</bold>
                     <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.001"
@@ -405,7 +405,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000011</institution-id>
-                            <institution content-type="university">Howard Hughes Medical Institute</institution>
+                            <institution>Howard Hughes Medical Institute</institution>
                             </institution-wrap>
                     </funding-source>
                     <principal-award-recipient>
@@ -427,7 +427,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                      </funding-source>
                     <award-id>F32 GM086054</award-id>
@@ -446,7 +446,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>F32 GM089018</award-id>
@@ -465,7 +465,7 @@
                     <funding-source>
                         <institution-wrap>
                             <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                            <institution content-type="university">National Institutes of Health</institution>
+                            <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>R01 GM086258</award-id>
@@ -484,7 +484,7 @@
                     <funding-source>
                         <institution-wrap>
                         <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                        <institution content-type="university">National Institutes of Health</institution>
+                        <institution>National Institutes of Health</institution>
                         </institution-wrap>
                     </funding-source>
                     <award-id>R01 GM099533</award-id>
@@ -502,7 +502,7 @@
                 <award-group id="par-6">
                     <funding-source><institution-wrap>
                         <institution-id institution-id-type="FundRef">dx.doi.org/10.13039/100000002</institution-id>
-                        <institution content-type="university">National Institutes of Health</institution>
+                        <institution>National Institutes of Health</institution>
                     </institution-wrap></funding-source>
                     <award-id>T32 HG00047</award-id>
                     <principal-award-recipient>
@@ -514,7 +514,7 @@
                 </award-group>
                 <award-group id="par-7">
                     <funding-source><institution-wrap>
-                        <institution content-type="university">Laura and John Arnold Foundation</institution>
+                        <institution>Laura and John Arnold Foundation</institution>
                     </institution-wrap></funding-source>
                     <principal-award-recipient>NISC Comparative Sequencing Program</principal-award-recipient>
                 </award-group>
@@ -525,7 +525,7 @@
             <custom-meta-group>
                 <custom-meta>
                     <meta-name>elife-xml-version</meta-name>
-                    <meta-value>2.3</meta-value>
+                    <meta-value>2.5</meta-value>
                 </custom-meta>
                 <custom-meta specific-use="meta-only">
                     <meta-name>Author impact statement</meta-name>
@@ -855,7 +855,7 @@
                                     <italic>Algoriphagus locisalis</italic>MSS-170</td>
                                 <td>AY835922</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib100">Yoon et al. (2005a)</xref>
+                                    <xref ref-type="bibr" rid="bib100">Yoon et al. (2005)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -892,7 +892,7 @@
                                     <italic>Algoriphagus yeomjeoni</italic>MSS-160</td>
                                 <td>AY699794</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib99">Yoon et al. (2005b)</xref>
+                                    <xref ref-type="bibr" rid="bib99">Yoon et al. (2005)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -966,7 +966,7 @@
                                     <italic>Cyclobacterium marinum</italic>LMG 13164</td>
                                 <td>AJ575266</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib82">Raj and Maloy (1990)</xref>
+                                    <xref ref-type="bibr" rid="bib82">R Development Core Team (2015)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -975,7 +975,7 @@
                                     <italic>Cytophaga hutchinsonii</italic>ATCC 33406</td>
                                 <td>M58768</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib63">Lewin (1969)</xref>
+                                    <xref ref-type="bibr" rid="bib63">Ly and Lamond (1969)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -1022,7 +1022,7 @@
                                     <italic>Flectobacillus major</italic>DSM 103</td>
                                 <td>M62787</td>
                                 <td>
-                                    <xref ref-type="bibr" rid="bib82">Raj and Maloy (1990)</xref>
+                                    <xref ref-type="bibr" rid="bib82">R Development Core Team (2015)</xref>
                                 </td>
                                 <td>&#x2b;</td>
                             </tr>
@@ -1133,7 +1133,8 @@
                 independent bacterial isolates from ATCC50818 and monitored for the appearance of
                 rosette colonies. Only one bacterial species from ATCC50818, the previously
                 undescribed <italic>Algoriphagus machipongonensis</italic> (phylum Bacteroidetes)
-                    (<xref ref-type="bibr" rid="bib3">Alegado et al., 2012</xref>), induced rosette
+                    (<xref
+                    ref-type="bibr" rid="bib3">Alegado et al., 2012</xref>), induced rosette
                 colony development in the RCA cell line (<xref ref-type="fig" rid="fig1">Figure
                     1C</xref>). <italic>S. rosetta</italic> cultures fed solely with <italic>A.
                     machipongonensis</italic> yielded high percentages of rosette colonies (<xref
@@ -1413,7 +1414,7 @@
             <p>The bacterial cell envelope components lipopolysaccharide (LPS) and peptidoglycan
                 (PGN) from Gram-negative bacteria have long been known to affect host biology (<xref
                     ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>; <xref
-                    ref-type="bibr" rid="bib44">Hoffmann et al., 1999</xref>; <xref ref-type="bibr"
+                    ref-type="bibr" rid="bib44">Horn, 1991</xref>; <xref ref-type="bibr"
                     rid="bib89">Takeuchi et al., 1999</xref>; <xref ref-type="bibr" rid="bib57">Kopp
                     and Medzhitov, 1999</xref>; <xref ref-type="bibr" rid="bib70">Medzhitov and
                     Janeway, 2000</xref>; <xref ref-type="bibr" rid="bib50">Kimbrell and Beutler,
@@ -2050,8 +2051,8 @@
                     1988</xref>; <xref ref-type="bibr" rid="bib38">Godchaux and Leadbetter,
                     1984</xref>; <xref ref-type="bibr" rid="bib37">Godchaux and Leadbetter,
                     1983</xref>; <xref ref-type="bibr" rid="bib36">Godchaux and Leadbetter,
-                    1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al., 1995a</xref>;
-                    <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995b</xref>; <xref
+                    1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al., 1995</xref>;
+                    <xref ref-type="bibr" rid="bib47">Ising, 2000</xref>; <xref
                     ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>) and no other
                     <italic>A machipongonensis</italic> lipid tested in this study induced rosette
                 colony development. Therefore we favor a model in which <italic>A.
@@ -2104,8 +2105,8 @@
                     <italic>Chryseobacterium</italic> sp. were reported as von Willebrand factor
                 receptor antagonists, and flavocristamide A, from a related bacterial species, was
                 reported as a DNA polymerase a inhibitor (<xref ref-type="bibr" rid="bib25">Dayel et
-                    al., 2011</xref>; <xref ref-type="bibr" rid="bib47">Kamiyama et al.,
-                1995a</xref>; <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>). The
+                    al., 2011</xref>; <xref ref-type="bibr" rid="bib47">Ising,
+                2000</xref>; <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>). The
                 pervasiveness of interactions between Bacteroidetes and animals (<xref
                     ref-type="bibr" rid="bib3">Alegado et al., 2012</xref>; <xref ref-type="bibr"
                     rid="bib95">Wexler, 2007</xref>; <xref ref-type="bibr" rid="bib93">Webster et
@@ -2135,7 +2136,7 @@
                     <title>Discussion</title>
                     <p>The discussion usually does not have subsections.</p>
                 </sec>
-        <sec sec-type="materials|methods"  id="s4">
+        <sec sec-type="materials|methods" id="s4">
             <title>Materials and methods</title>
             <p>First level contents of the materials and methods section</p>
         </sec>
@@ -2143,27 +2144,19 @@
                 <title>Choanoflagellate husbandry and microscopy</title>
                 <p>The environmental isolate of <italic>Salpingoeca rosetta</italic> is deposited at
                     the American Tissue Culture Collection (ATCC) under the designation ATCC50818
-                        (<xref ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>; <xref
-                        ref-type="bibr" rid="bib44">Hoffmann et al., 1999</xref>; <xref
-                        ref-type="bibr" rid="bib89">Takeuchi et al., 1999</xref>; <xref
-                        ref-type="bibr" rid="bib57">Kopp and Medzhitov, 1999</xref>; <xref
-                        ref-type="bibr" rid="bib70">Medzhitov and Janeway, 2000</xref>; <xref
-                        ref-type="bibr" rid="bib50">Kimbrell and Beutler, 2001</xref>; <xref
-                        ref-type="bibr" rid="bib24">Cohn and Morse, 1960</xref>; <xref
-                        ref-type="bibr" rid="bib52">King et al., 2003</xref>). The
+                        (<xref
+                    ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>; <xref
+                    ref-type="bibr" rid="bib44">Horn, 1991</xref>; <xref ref-type="bibr"
+                    rid="bib89">Takeuchi et al., 1999</xref>; <xref ref-type="bibr" rid="bib57">Kopp and Medzhitov, 1999</xref>; <xref ref-type="bibr" rid="bib70">Medzhitov and Janeway, 2000</xref>; <xref ref-type="bibr" rid="bib50">Kimbrell and Beutler, 2001</xref>; <xref ref-type="bibr" rid="bib24">Cohn and Morse, 1960</xref>; <xref ref-type="bibr" rid="bib52">King et al., 2003</xref>). The
                         <underline>R</underline>osette <underline>C</underline>olonies
                         <underline>A</underline>bsent (RCA) culture line was produced from ATCC50818
                     by serial treatment with chloramphenicol (68 &#x3bc;g ml<sup>-1</sup>),
                     ampicillin (50 &#x3bc;g ml<sup>-1</sup>), streptomycin (50 &#x3bc;g
-                        ml<sup>-1</sup>), and erythromycin (50 &#x3bc;g ml<sup>-1</sup>) (<xref
-                        ref-type="bibr" rid="bib58">Koropatnick et al., 2004</xref>; <xref
-                        ref-type="bibr" rid="bib31">Fairclough et al., 2010</xref>; <xref
-                        ref-type="bibr" rid="bib44">Hoffmann et al., 1999</xref>; <xref
-                        ref-type="bibr" rid="bib89">Takeuchi et al., 1999</xref>; <xref
-                        ref-type="bibr" rid="bib57">Kopp and Medzhitov, 1999</xref>; <xref
-                        ref-type="bibr" rid="bib70">Medzhitov and Janeway, 2000</xref>; <xref
-                        ref-type="bibr" rid="bib50">Kimbrell and Beutler, 2001</xref>; <xref
-                        ref-type="bibr" rid="bib24">Cohn and Morse, 1960</xref>). A monoxenic line
+                        ml<sup>-1</sup>), and erythromycin (50 &#x3bc;g ml<sup>-1</sup>) (<xref ref-type="bibr" rid="bib58"
+                    >Koropatnick et al., 2004</xref>; <xref ref-type="bibr" rid="bib31">Fairclough et al., 2010</xref>; <xref ref-type="bibr" rid="bib44">Horn, 1991</xref>; <xref ref-type="bibr" rid="bib89">Takeuchi et al., 1999</xref>; <xref ref-type="bibr" rid="bib57">Kopp and Medzhitov, 1999</xref>; <xref
+                    ref-type="bibr" rid="bib70">Medzhitov and Janeway, 2000</xref>; <xref
+                    ref-type="bibr" rid="bib50">Kimbrell and Beutler, 2001</xref>; <xref
+                    ref-type="bibr" rid="bib24">Cohn and Morse, 1960</xref>). A monoxenic line
                     of <italic>S. rosetta</italic> (Px1) was generated by treating ATCC 50818 with a
                     combination of ofloxacin (10 &#x3bc;g ml<sup>-1</sup>), kanamycin (50 &#x3bc;g
                         ml<sup>-1</sup>), and streptomycin (50 &#x3bc;g ml<sup>-1</sup>) antibiotics
@@ -2171,14 +2164,15 @@
                     dilution, a single cell was isolated by FACS and supplemented with <italic>A.
                         machipongonensis</italic> (<xref ref-type="bibr" rid="bib25">Dayel et al.,
                         2011</xref>; <xref ref-type="bibr" rid="bib41">Hannun et al., 2001</xref>;
-                        <xref ref-type="bibr" rid="bib71">Merrill et al., 2001</xref>; <xref
-                        ref-type="bibr" rid="bib79">Prieschl and Baumruker, 2000</xref>; <xref
-                        ref-type="bibr" rid="bib88">Spiegel and Milstien, 2000</xref>; <xref
-                        ref-type="bibr" rid="bib42">Herr et al., 2003</xref>; <xref ref-type="bibr"
-                        rid="bib81">Pyne and Pyne, 2000</xref>). All three <italic>S.
+                        <xref
+                    ref-type="bibr" rid="bib71">Merrill et al., 2001</xref>; <xref ref-type="bibr"
+                    rid="bib79">Prieschl and Baumruker, 2000</xref>; <xref ref-type="bibr"
+                    rid="bib88">Spiegel and Milstien, 2000</xref>; <xref ref-type="bibr" rid="bib42"
+                    >Herr et al., 2003</xref>; <xref ref-type="bibr" rid="bib81">Pyne and Pyne, 2000</xref>). All three <italic>S.
                         rosetta</italic> cell lines (ATCC 50818, RCA, and Px1) were grown in cereal
                     grass infused seawater at 25 &#xb0;C and maintained by splitting cultures 1:10
-                    into fresh medium every three days (<xref ref-type="bibr" rid="bib40">Hall et
+                    into fresh medium every three days (<xref ref-type="bibr"
+                    rid="bib40">Hall et
                         al., 2012</xref>; <xref ref-type="bibr" rid="bib54">King et al.,
                     2009</xref>). Live cells were imaged with a Leica DMI6000B microscope equipped
                     with a DFC350 FX camera.</p>
@@ -2192,9 +2186,8 @@
                 <p>Under laboratory conditions, <italic>S. rosetta</italic> differentiates into a
                     variety of cell types including attached thecate cells, solitary swimmers,
                     rosette colonies, chain colonies and loose, disorganized associations of cells
-                    attached to one another at the collar or to bacterial biofilms (<xref
-                        ref-type="bibr" rid="bib25">Dayel et al., 2011</xref>; <xref ref-type="bibr"
-                        rid="bib4">An et al., 2011</xref>; <xref ref-type="bibr" rid="bib78">Olsen
+                    attached to one another at the collar or to bacterial biofilms (<xref ref-type="bibr"
+                    rid="bib25">Dayel et al., 2011</xref>; <xref ref-type="bibr" rid="bib4">An et al., 2011</xref>; <xref ref-type="bibr" rid="bib78">Olsen
                         and Jantzen, 2001</xref>). <italic>S. rosetta</italic> rosette colonies can
                     be distinguished from other cell types in that they contain clusters of at least
                     four closely associated cells with organized polarity; each cell oriented with
@@ -2238,8 +2231,8 @@
                 </title>
                 <p>A partial representation of the bacterial flora from ATCC50818 was isolated by
                     standard dilution-plating technique on modified Zobell medium agar (<xref
-                        ref-type="bibr" rid="bib87">Schaefer et al., 1996</xref>; <xref
-                        ref-type="bibr" rid="bib17">Carlucci and Pramer, 1957</xref>) at 25 &#xb0;C.
+                    ref-type="bibr" rid="bib87">Schaefer et al., 1996</xref>; <xref ref-type="bibr"
+                    rid="bib17">Carlucci and Pramer, 1957</xref>) at 25 &#xb0;C.
                     Individual isolates were tested for their morphogenic activity by supplementing
                     RCA cultures with a single colony of each isolate. Of 64 isolates tested, the
                     only one that restored rosette colony development to the RCA cell line was a
@@ -2249,17 +2242,14 @@
                     was isolated using a Bacterial Genomic DNA Mini-prep Kit (Bay Gene, Burlingame,
                     CA) according to the manufacturer&#x2019;s specifications. The 16S rRNA gene was
                     amplified using universal primers 8F (5&#x2019;-AGAGTTTGATCCTGGCTCAG-3&#x2019;)
-                    and 1492R (5&#x2019;-ACCTTGTTACGRCTT-3&#x2019;) (<xref ref-type="bibr"
-                        rid="bib103">Ziegler and Forward, 2007</xref>; <xref ref-type="bibr"
-                        rid="bib94">Weisburg et al., 1991</xref>); comparison of the PR1 16S rRNA
-                    sequence to the Greengenes 16S rRNA database (<xref ref-type="bibr" rid="bib16"
-                        >Butenandt et al., 1961</xref>; <xref ref-type="bibr" rid="bib1">Agosta,
-                        1992</xref>; <xref ref-type="bibr" rid="bib27">DeSantis et al., 2006</xref>)
+                    and 1492R (5&#x2019;-ACCTTGTTACGRCTT-3&#x2019;) (<xref ref-type="bibr" rid="bib103">Ziegler and Forward, 2007</xref>; <xref ref-type="bibr" rid="bib94">Weisburg et al., 1991</xref>); comparison of the PR1 16S rRNA
+                    sequence to the Greengenes 16S rRNA database (<xref ref-type="bibr" rid="bib16">Butenandt et al., 1961</xref>; <xref
+                    ref-type="bibr" rid="bib1">Agosta,
+                        1992</xref>; <xref ref-type="bibr"
+                    rid="bib27">DeSantis et al., 2006</xref>)
                     revealed strain PR1 to be most closely related to members of the
                         <italic>Algoriphagus</italic> genus within the Bacteroidetes phylum. PR1 was
-                    subsequently named <italic>Algoriphagus machipongonensis</italic> (<xref
-                        ref-type="bibr" rid="bib83">Roelofs, 1995</xref>; <xref ref-type="bibr"
-                        rid="bib13">Bradley et al., 2009</xref>)<italic>.</italic>
+                    subsequently named <italic>Algoriphagus machipongonensis</italic> (<xref ref-type="bibr" rid="bib83">Roelofs, 1995</xref>; <xref ref-type="bibr" rid="bib13">Bradley et al., 2009</xref>)<italic>.</italic>
                 </p>
             </sec>
             <sec id="s4-4">
@@ -2278,21 +2268,21 @@
                 <p>To determine the phylogenetic distribution of morphogenic activity in the
                     bacterial species tested (<xref ref-type="table" rid="tbl1">Table 1</xref>), a
                     sequence alignment of 16S rDNA genes from each species was generated by
-                    iterative pairwise comparisons using FSA (<xref ref-type="bibr" rid="bib29"
-                        >Drijber and McGill, 1994</xref>; <xref ref-type="bibr" rid="bib39">Godchaux
+                    iterative pairwise comparisons using FSA (<xref ref-type="bibr" rid="bib29">Drijber and McGill, 1994</xref>; <xref ref-type="bibr" rid="bib39">Godchaux
                         and Leadbetter, 1988</xref>; <xref ref-type="bibr" rid="bib38">Godchaux and
                         Leadbetter, 1984</xref>; <xref ref-type="bibr" rid="bib37">Godchaux and
                         Leadbetter, 1983</xref>; <xref ref-type="bibr" rid="bib36">Godchaux and
                         Leadbetter, 1980</xref>; <xref ref-type="bibr" rid="bib48">Kamiyama et al.,
-                        1995a</xref>; <xref ref-type="bibr" rid="bib47">Kamiyama et al., 1995b</xref>;
-                        <xref ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>; <xref
-                        ref-type="bibr" rid="bib13">Bradley et al., 2009</xref>). Poorly aligned
-                    regions were removed by Gblocks version 0.91b (<xref ref-type="bibr" rid="bib19"
-                        >Castresana, 2000</xref>; <xref ref-type="bibr" rid="bib90">Talavera and
-                        Castresana, 2007</xref>) using default block parameters. A distance matrix
+                        1995</xref>; <xref ref-type="bibr" rid="bib47">Ising, 2000</xref>;
+                        <xref
+                    ref-type="bibr" rid="bib56">Kobayashi et al., 1995</xref>; <xref ref-type="bibr"
+                    rid="bib13">Bradley et al., 2009</xref>). Poorly aligned
+                    regions were removed by Gblocks version 0.91b (<xref ref-type="bibr" rid="bib19">Castresana, 2000</xref>; <xref ref-type="bibr" rid="bib90">The ENCODE
+                        Consortium, 2012</xref>) using default block parameters. A distance matrix
                     (distance options according to the Kimura two-parameter model), including
                     clustering with the maximum likelihood algorithm, was calculated using Phylip
-                    version 3.67 (<xref ref-type="bibr" rid="bib32">Falenstein, 1989</xref>).
+                    version 3.67 (<xref ref-type="bibr"
+                    rid="bib32">Falenstein, 1989</xref>).
                     Support for the resulting tree topology was estimated using bootstrap analysis
                     (1,000 replicates).</p>
             </sec>
@@ -2306,7 +2296,8 @@
                     in <xref ref-type="table" rid="tbl2">Table 2</xref>. Conditioned medium (CM) was
                     generated by pelleting either choanoflagellates grown in cereal grass infused
                     with seawater or <italic>A. machipongonensis</italic> cultures grown in seawater
-                    complete medium (<xref ref-type="bibr" rid="bib7">Atlas, 2004</xref>) and
+                    complete medium (<xref
+                    ref-type="bibr" rid="bib7">Atlas, 2004</xref>) and
                     filtering the culture supernatant through a 0.22 &#x3bc;m pore filter
                     (Millipore) to remove live bacteria. To test whether RIF-1 activity required
                     live bacteria, <italic>A. machipongonensis</italic> was grown overnight at 25
@@ -2329,8 +2320,8 @@
                     with methanol. Each suspension was centrifuged at 8,000 rpm for 5 min and the
                     methanol layer recovered and dried.</p>
                 <p>To test whether RIF-1 was a lipid, <italic>A. machipongonensis</italic> cell
-                    pellet was extracted according to the Bligh-Dyer method (<xref ref-type="bibr"
-                        rid="bib11">Bligh and Dyer, 1959</xref>). Briefly, the cell pellet was
+                    pellet was extracted according to the Bligh-Dyer method (<xref ref-type="bibr" rid="bib11"
+                        >Blouin, 2014</xref>). Briefly, the cell pellet was
                     resuspended in 3 volumes of 1:2 (v/v) CHCl<sub>3</sub>:MeOH and vortexed. One
                     volume of CHCl<sub>3</sub>was added, and the mixture vortexed. 1 volume of
                     distilled water was then added, and the mixture vortexed. The same was then
@@ -2426,7 +2417,8 @@
                     Inova 600 MHz equipped with a cryoprobe, respectively. Chemical shifts are
                     reported in ppm from tetramethylsilane with the solvent resonance resulting from
                     incomplete deuteration as the internal standard (DMSO: d 2.50). Data are
-                    reported in <xref ref-type="table" rid="tbl3">Table 3</xref>as follows: chemical
+                    reported in <xref ref-type="table"
+                    rid="tbl3">Table 3</xref>as follows: chemical
                     shift, multiplicity (s &#x3d; singlet, d &#x3d; doublet, t &#x3d; triplet, q
                     &#x3d; quartet, br &#x3d; broad, m &#x3d; multiplet), coupling constants, and
                     integration. Optical rotation was measured on a Jasco P-2000 digital polarimeter
@@ -2463,18 +2455,20 @@
                     in a linear gradient from solvent A (60% methanol/water with 0.1% ammonium
                     hydroxide) to solvent B (100% methanol with 0.1% ammonium hydroxide). The RIF-1
                     was detected in the conditioned medium at a concentration of 80 ng
-                        L<sup>-1</sup>. The purified RIF-1 was used as the standard (<xref
-                        ref-type="fig" rid="sfig5">Figure 4&#x2014;figure supplement 1</xref>).</p>
+                        L<sup>-1</sup>. The purified RIF-1 was used as the standard (<xref ref-type="fig" rid="sfig5">Figure 4&#x2014;figure supplement 1</xref>).</p>
                 <p>As input, our algorithm requires a genealogical tree, e.g. a tree reconstructed
                     from a sample of genomic sequences. For a given tree <italic>T</italic>, we
                     derived the joint probability distribution 
                     <inline-formula>
-                        <mml:math id="inf1">
+                        <mml:math id="inf1"
+                                >
                             <mml:mrow>
                                 <mml:mi>P</mml:mi>
                                 <mml:mrow>
                                     <mml:mo>(</mml:mo>
-                                    <mml:mrow><mml:mi mathvariant="bold">x</mml:mi>
+                                    <mml:mrow><mml:mi
+                                        mathvariant="bold"
+                                        >x</mml:mi>
                                         <mml:mo>|</mml:mo>
                                         <mml:mi>T</mml:mi>
                                     </mml:mrow>
@@ -2484,59 +2478,62 @@
                         </mml:math>
                     </inline-formula>
                     for the fitnesses <inline-formula><mml:math id="inf2"><mml:mrow><mml:mi
-                        mathvariant="bold"
-                        >x</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mo>…</mml:mo></mml:mrow></mml:math></inline-formula>
+                                mathvariant="bold"
+                                    >x</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mo>…</mml:mo></mml:mrow></mml:math></inline-formula>
                     of all internal nodes (corresponding to reconstructed ancestral sequences) and
                     external nodes (corresponding to the sampled genomes). Fitness
                     <italic>x</italic><sub><italic>i</italic></sub> of each node
                     <italic>i</italic> is measured relative to the population mean fitness at
                     the time when the corresponding individual was sampled.
-                    <inline-formula><mml:math id="inf3"
-                        ><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi
-                            mathvariant="bold"
-                            >x</mml:mi><mml:mo>|</mml:mo><mml:mi>T</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
+                    <inline-formula><mml:math
+                        id="inf3"
+                                        ><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi
+                                        mathvariant="bold"
+                                        >x</mml:mi><mml:mo>|</mml:mo><mml:mi>T</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
                     is given by a product of <italic>propagators</italic>
                     <inline-formula><mml:math id="inf4"
-                        ><mml:mrow><mml:mi>g</mml:mi><mml:mo>(</mml:mo><mml:mo>·</mml:mo><mml:mo>|</mml:mo><mml:mo>·</mml:mo><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>
+                                ><mml:mrow><mml:mi>g</mml:mi><mml:mo>(</mml:mo><mml:mo>·</mml:mo><mml:mo>|</mml:mo><mml:mo>·</mml:mo><mml:mo>)</mml:mo></mml:mrow></mml:math></inline-formula>
                     for each branch
                     <disp-formula id="equ2">
                         <label>(1)</label>
                         <mml:math id="m2">
                             <mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi
-                            mathvariant="bold"
-                            >x</mml:mi><mml:mo>|</mml:mo><mml:mi>T</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>Z</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>T</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac><mml:munderover><mml:mstyle
-                                displaystyle="true"
-                                ><mml:mo>∏</mml:mo></mml:mstyle><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mrow><mml:mtext>int</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:munderover><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mtext> </mml:mtext><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>where
+                                        mathvariant="bold"
+                                        >x</mml:mi><mml:mo>|</mml:mo><mml:mi>T</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mn>0</mml:mn></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow><mml:mrow><mml:mi>Z</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>T</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:mfrac><mml:munderover><mml:mstyle
+                                    displaystyle="true"
+                                        ><mml:mo>∏</mml:mo></mml:mstyle><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mrow><mml:mtext>int</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:munderover><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mtext> </mml:mtext><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>,</mml:mo></mml:mrow></mml:math></disp-formula>where
                     <inline-formula><mml:math id="inf5"
-                        ><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mi>x</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
                     is the fitness distribution in the population (see ‘Materials and methods’ for
                     details) and the index <italic>i</italic> runs from 0 (the root) through all
                     <inline-formula><mml:math id="inf6"
-                        ><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mrow><mml:mtext>int</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula>
+                                        ><mml:mrow><mml:msub><mml:mi>n</mml:mi><mml:mrow><mml:mtext>int</mml:mtext></mml:mrow></mml:msub></mml:mrow></mml:math></inline-formula>
                     internal nodes. The indices <inline-formula><mml:math id="inf7"
-                        ><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>
                     and <inline-formula><mml:math id="inf8"
-                        ><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:math></inline-formula>
                     denote the two children of node <italic>i</italic>, while
-                    <inline-formula><mml:math id="inf9"
-                        ><mml:mrow><mml:mi>Z</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>T</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
+                    <inline-formula><mml:math
+                        id="inf9"
+                                    ><mml:mrow><mml:mi>Z</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mi>T</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
                     ensures normalization of the distribution. 
                     <xref ref-type="disp-formula" rid="equ2">Eq. (1)</xref> has a structure similar to the expression for the
                     likelihood of sampled sequences, given a tree <italic>T</italic>, defined in
                     phylogenetic analysis (<xref ref-type="bibr" rid="bib10">Felsenstein,
                         2003</xref>). The main difference is that instead of defining the
                     probability of mutation from one character state to another, the branch
-                    propagator <inline-formula><mml:math id="inf10"
-                        ><mml:mrow><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
+                    propagator <inline-formula><mml:math
+                        id="inf10"
+                                            ><mml:mrow><mml:mi>g</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>|</mml:mo><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>,</mml:mo><mml:mtext> </mml:mtext><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:math></inline-formula>
                     describes the likelihood of the lineage to connect an ancestor with fitness
                     <inline-formula><mml:math id="inf11"
-                        ><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
                     at time <inline-formula><mml:math id="inf12"
-                        ><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
                     to a child with fitness <inline-formula><mml:math id="inf13"
-                        ><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>x</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
                     at a later time <inline-formula><mml:math id="inf14"
-                        ><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
+                                    ><mml:mrow><mml:msub><mml:mi>t</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:mrow></mml:math></inline-formula>
                     (child in sense of a subclade in the tree, rather than direct offspring). Note
                     that a branch connecting nodes <italic>i</italic> and <italic>j</italic> implies
                     that all sampled descendants of <italic>i</italic> are also descendants of
@@ -2552,8 +2549,7 @@
                     ul DMSO and this 1 g L<sup>-1</sup>stock was stored at -80 &#xb0;C. For each
                     experiment, serial dilutions ranging from 10<sup>-1</sup>g L<sup>-1</sup>down to
                         10<sup>-17</sup>g L<sup>-1</sup>were made in DMSO. 2 &#x3bc;L of each
-                    dilution was premixed with 1 mL of fresh cereal grass infused seawater (<xref
-                        ref-type="bibr" rid="bib52">King et al., 2003</xref>) to avoid precipitation
+                    dilution was premixed with 1 mL of fresh cereal grass infused seawater (<xref ref-type="bibr" rid="bib52">King et al., 2003</xref>) to avoid precipitation
                     of RIF-1 and the premixed RIF-1 dilution was then added to 1 mL RCA cultures to
                     yield final concentrations ranging from 10<sup>-3</sup>g L<sup>-1</sup>to
                         10<sup>-20</sup>g L<sup>-1</sup>, equivalent to 1.6 x 10<sup>9</sup>fM down
@@ -2620,7 +2616,10 @@
             <fn-group content-type="ethics-information">
                 <title>Ethics</title>
                 <fn fn-type="other">
-                    <p>Clinical trial registration CB7778886452342</p>
+                    <p>Clinical trial Registry: NCT.</p>
+                    <p>Registration ID: NCT00912041.</p>
+                    <p>Clinical trial Registry: EudraCT.</p>
+                    <p>Registration ID: EudraCT2004-000446-20.</p>
                 </fn>
                 <fn fn-type="other">
                     <p>Human subjects: Participants were recruited and sampled using methods
@@ -2635,7 +2634,7 @@
                 </fn>
             </fn-group>
         </sec>
-        <sec sec-type="supplementary-material" id="s6">
+        <sec sec-type="supplementary-material" id="s6" >
             <title>Additional files</title>
             <supplementary-material id="SD3-data">
                 <object-id pub-id-type="doi">10.7554/eLife.00013.031</object-id>
@@ -2761,10 +2760,10 @@
                             <given-names>WC</given-names>
                         </name>
                     </person-group>
-                    <year>1992</year>
-                    <source>Chemical Communication</source>
+                    <year iso-8601-date="1992">1992</year>
+                    <source>Chemical Communication: The Language Of Pheromones</source>
                     <publisher-loc>New York</publisher-loc>
-                    <publisher-name>Scientific American Press</publisher-name>
+                    <publisher-name>Scientific American Library</publisher-name>
                 </element-citation>
             </ref>
             <ref id="bib2">
@@ -2783,7 +2782,7 @@
                             <given-names>T</given-names>
                         </name>
                     </person-group>
-                    <year>2007</year>
+                    <year iso-8601-date="2007">2007</year>
                     <article-title>Chimaereicella boritolerans sp nov., a boron-tolerant and
                         alkaliphilic bacterium of the family Flavobacteriaceae isolated from
                         soil</article-title>
@@ -2823,14 +2822,14 @@
                             <given-names>RE</given-names>
                         </name>
                     </person-group>
-                    <year>2012</year>
+                    <year iso-8601-date="2013">2013</year>
                     <article-title>Algoriphagus machipongonensis sp. nov. co-isolated with a
                         colonial choanoflagellate</article-title>
                     <source>International journal of systematic and evolutionary
                         microbiology</source>
-                    <volume>24</volume>
-                    <fpage>3864601</fpage>
-                    <lpage>386460</lpage>
+                    <volume>63</volume>
+                    <fpage>163</fpage>
+                    <lpage>168</lpage>
                     <pub-id pub-id-type="doi">10.1099/ijs.0.038646-0</pub-id>
                 </element-citation>
             </ref>
@@ -2858,7 +2857,7 @@
                             <given-names>DL</given-names>
                         </name>
                     </person-group>
-                    <year>2011</year>
+                    <year iso-8601-date="2011">2011</year>
                     <article-title>Membrane sphingolipids as essential molecular signals for
                         bacteroides survival in the intestine</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
@@ -2897,7 +2896,7 @@
                             <given-names>R</given-names>
                         </name>
                     </person-group>
-                    <year>2002</year>
+                    <year iso-8601-date="2002">2002</year>
                     <article-title>Salinibacter ruber gen. nov., sp nov., a novel, extremely
                         halophilic member of the bacteria from saltern crystallizer
                         ponds</article-title>
@@ -2916,7 +2915,7 @@
                             <given-names>MA</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>Isolation and characterization of
                         lipopolysaccharides</article-title>
                     <source>Methods in molecular biology</source>
@@ -2933,7 +2932,7 @@
                             <given-names>RM</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <source>Handbook of microbiological media</source>
                     <publisher-name>CRC</publisher-name>
                     <fpage>2051</fpage>
@@ -2963,7 +2962,7 @@
                             <given-names>P</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>Zobellia galactanovorans gen. nov., sp. nov., a marine species of
                         Flavobacteriaceae isolated from a red alga, and classification of
                         [Cytophaga] uliginosa (ZoBell and Upham 1944) Reichenbach 1989 as Zobellia
@@ -3004,7 +3003,7 @@
                             <given-names>P</given-names>
                         </name>
                     </person-group>
-                    <year>1996</year>
+                    <year iso-8601-date="1996">1996</year>
                     <article-title>Cutting a gordian knot: Emended classification and description of
                         the genus Flavobacterium, emended description of the family
                         Flavobacteriaceae, and proposal of Flavobacterium hydatis nom nov (basonym,
@@ -3089,7 +3088,7 @@
                             <given-names>Y</given-names>
                         </name>
                     </person-group>
-                    <year>1997</year>
+                    <year iso-8601-date="1997">1997</year>
                     <article-title>The complete genome sequence of <italic>Escherichia coli</italic>
                         K-12</article-title>
                     <source>Science</source>
@@ -3100,25 +3099,17 @@
                 </element-citation>
             </ref>
             <ref id="bib11">
-                <element-citation publication-type="journal">
+                <element-citation publication-type="conference">
                     <person-group person-group-type="author">
                         <name>
-                            <surname>Bligh</surname>
-                            <given-names>EG</given-names>
-                        </name>
-                        <name>
-                            <surname>Dyer</surname>
-                            <given-names>WJ</given-names>
+                            <surname>Blouin</surname>
+                            <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>1959</year>
-                    <article-title>A rapid method of total lipid extraction and
-                        purification</article-title>
-                    <source>Canadian journal of biochemistry and physiology</source>
-                    <volume>37</volume>
-                    <fpage>911</fpage>
-                    <lpage>917</lpage>
-                    <pub-id pub-id-type="doi">10.1139/o59-099</pub-id>
+                    <year iso-8601-date="2014">2014</year>
+                    <article-title>Localization error of underwater multistatic scenarios with uncertain transducers' location</article-title>
+                    <source>IEEE 28th Canadian Conference on Electrical and Computer Engineering</source>
+                    <pub-id pub-id-type="doi">10.1109/CCECE.2015.7129330</pub-id>
                 </element-citation>
             </ref>
             <ref id="bib12">
@@ -3137,7 +3128,7 @@
                             <given-names>JAE</given-names>
                         </name>
                     </person-group>
-                    <year>2003</year>
+                    <year iso-8601-date="2003">2003</year>
                     <article-title>Algoriphagus ratkowskyi gen. nov., sp. nov., Brumimicrobium
                         glaciale gen. nov., sp. nov., Cryomorpha ignava gen. nov., sp. nov. and
                         Crocinitomix catalasitica gen. nov., sp. nov., novel flavobacteria isolated
@@ -3186,12 +3177,12 @@
                             <given-names>L</given-names>
                         </name>
                     </person-group>
-                    <year>2009</year>
+                    <year iso-8601-date="2009">2009</year>
                     <article-title>Fast statistical alignment</article-title>
                     <source>Public Library of Science International Society for Computational
                         Biology</source>
                     <volume>5</volume>
-                    <fpage>e1000392</fpage>
+                    <elocation-id>e1000392</elocation-id> 
                     <pub-id pub-id-type="doi">10.1371/journal.pcbi.1000392</pub-id>
                 </element-citation>
             </ref>
@@ -3266,7 +3257,7 @@
                             <given-names>E</given-names>
                         </name>
                     </person-group>
-                    <year>1961</year>
+                    <year iso-8601-date="1961">1961</year>
                     <article-title>On the sex attractant of silk-moths. I. The biological test and
                         the isolation of the pure sex-attractant bombykol</article-title>
                     <source>Hoppe-Seyler&#x2019;s Zeitschrift f&#xfc;r physiologische
@@ -3289,7 +3280,7 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year>1957</year>
+                    <year iso-8601-date="1957">1957</year>
                     <article-title>Factors influencing the plate method for determining abundance of
                         bacteria in sea water</article-title>
                     <source>Proceedings of the Society for Experimental Biology and
@@ -3324,7 +3315,7 @@
                             <given-names>SL</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>Molecular phylogeny of choanoflagellates, the sister group to
                         Metazoa</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
@@ -3343,7 +3334,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Selection of conserved blocks from multiple alignments for their
                         use in phylogenetic analysis</article-title>
                     <source>Molecular biology and evolution</source>
@@ -3457,7 +3448,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Extensive DNA Inversions in the B. fragilis Genome Control
                         Variable Gene Expression</article-title>
                     <person-group person-group-type="editor">
@@ -3485,7 +3476,7 @@
                             <given-names>E</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Dyadobacter fermentans gen. nov., sp nov., a novel Gram-negative
                         bacterium isolated from surface-sterilized Zea mays stems</article-title>
                     <source>International journal of systematic and evolutionary
@@ -3508,7 +3499,7 @@
                             <given-names>SJ</given-names>
                         </name>
                     </person-group>
-                    <year>2003</year>
+                    <year iso-8601-date="2003">2003</year>
                     <article-title>Croceibacter atlanticus gen. nov., sp. nov., a novel marine
                         bacterium in the family Flavobacteriaceae</article-title>
                     <source>Systematic and applied microbiology</source>
@@ -3530,7 +3521,7 @@
                             <given-names>SJ</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Robiginitalea biformata gen. nov., sp. nov., a novel marine
                         bacterium in the family Flavobacteriaceae with a higher G&#x2b;C
                         content</article-title>
@@ -3554,7 +3545,7 @@
                             <given-names>SI</given-names>
                         </name>
                     </person-group>
-                    <year>1960</year>
+                    <year iso-8601-date="1960">1960</year>
                     <article-title>Functional and metabolic properties of polymorphonuclear
                         leucocytes. II. The influence of a lipopolysaccharide
                         endotoxin</article-title>
@@ -3597,7 +3588,7 @@
                             <given-names>N</given-names>
                         </name>
                     </person-group>
-                    <year>2011</year>
+                    <year iso-8601-date="2011">2011</year>
                     <article-title>Cell differentiation and morphogenesis in the colony-forming
                         choanoflagellate Salpingoeca rosetta</article-title>
                     <source>Developmental biology</source>
@@ -3627,7 +3618,7 @@
                             <given-names>A</given-names>
                         </name>
                     </person-group>
-                    <year>1992</year>
+                    <year iso-8601-date="1992">1992</year>
                     <article-title>Peptidoglycan composition in heterogeneous Tn551 mutants of a
                         methicillin-resistant Staphylococcus aureus strain</article-title>
                     <source>The Journal of biological chemistry</source>
@@ -3680,7 +3671,7 @@
                             <given-names>GL</given-names>
                         </name>
                     </person-group>
-                    <year>2006</year>
+                    <year iso-8601-date="2006">2006</year>
                     <article-title>Greengenes, a chimera-checked 16S rRNA gene database and
                         workbench compatible with ARB</article-title>
                     <source>Applied and environmental microbiology</source>
@@ -3702,7 +3693,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2011</year>
+                    <year iso-8601-date="2011">2011</year>
                     <article-title>Root nodulation: a paradigm for how plant-microbe symbiosis
                         influences host developmental pathways</article-title>
                     <source>Cell host and microbe</source>
@@ -3724,7 +3715,7 @@
                             <given-names>W</given-names>
                         </name>
                     </person-group>
-                    <year>1994</year>
+                    <year iso-8601-date="1994">1994</year>
                     <article-title>Sulfonolipid content of Cytophaga and Flexibacter species
                         isolated from soil and cultured under different Nutrient andtemperature
                         regimes</article-title>
@@ -3751,7 +3742,7 @@
                             <given-names>ER</given-names>
                         </name>
                     </person-group>
-                    <year>1968</year>
+                    <year iso-8601-date="1968">1968</year>
                     <article-title>Listeria monocytogenes L forms. I. Induction maintenance, and
                         biological characteristics</article-title>
                     <source>Journal of bacteriology</source>
@@ -3776,7 +3767,7 @@
                             <given-names>N</given-names>
                         </name>
                     </person-group>
-                    <year>2010</year>
+                    <year iso-8601-date="2010">2010</year>
                     <article-title>Multicellular development in a choanoflagellate</article-title>
                     <source>Current biology : CB</source>
                     <volume>20</volume>
@@ -3793,7 +3784,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>1989</year>
+                    <year iso-8601-date="1989">1989</year>
                     <article-title>Phylip- phylogeny inference packages (Version
                         3.2)</article-title>
                     <source>Cladistics</source>
@@ -3826,7 +3817,7 @@
                             <given-names>MA</given-names>
                         </name>
                     </person-group>
-                    <year>1997</year>
+                    <year iso-8601-date="1997">1997</year>
                     <article-title>The two-component signaling pathway of bacterial chemotaxis: a
                         molecular view of signal transduction by receptors, kinases, and adaptation
                         enzymes</article-title>
@@ -3845,7 +3836,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>2006</year>
+                    <year iso-8601-date="2006">2006</year>
                     <article-title>Is persistent bacterial infection good for your
                         health?</article-title>
                     <source>Cell</source>
@@ -3857,13 +3848,13 @@
             </ref>
             <ref id="bib35">
                 <element-citation publication-type="book">
-                    <person-group person-group-type="author">
+                    <person-group person-group-type="editor">
                         <name>
                             <surname>Garrity</surname>
                             <given-names>GM</given-names>
                         </name>
                     </person-group>
-                    <year>2010</year>
+                    <year iso-8601-date="2010">2010</year>
                     <source>Bergey&#x2019;s manual of systematic bacteriology: Bacteroidetes,
                         spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres,
                         fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia,
@@ -3884,7 +3875,7 @@
                             <given-names>ER</given-names>
                         </name>
                     </person-group>
-                    <year>1980</year>
+                    <year iso-8601-date="1980">1980</year>
                     <article-title>Capnocytophaga spp. contain sulfonolipids that are novel in
                         procaryotes</article-title>
                     <source>Journal of bacteriology</source>
@@ -3905,7 +3896,7 @@
                             <given-names>ER</given-names>
                         </name>
                     </person-group>
-                    <year>1983</year>
+                    <year iso-8601-date="1983">1983</year>
                     <article-title>Unusual sulfonolipids are characteristic of the
                         Cytophaga-Flexibacter group</article-title>
                     <source>Journal of bacteriology</source>
@@ -3926,7 +3917,7 @@
                             <given-names>ER</given-names>
                         </name>
                     </person-group>
-                    <year>1984</year>
+                    <year iso-8601-date="1984">1984</year>
                     <article-title>Sulfonolipids of gliding bacteria. Structure of the
                         N-acylaminosulfonates</article-title>
                     <source>The Journal of biological chemistry</source>
@@ -3947,7 +3938,7 @@
                             <given-names>E</given-names>
                         </name>
                     </person-group>
-                    <year>1988</year>
+                    <year iso-8601-date="1988">1988</year>
                     <article-title>Sulfonolipids are localized in the outer membrane of the gliding
                         bacterium Cytophaga johnsonae</article-title>
                     <source>Archives of microbiology</source>
@@ -4069,7 +4060,7 @@
                             <given-names>CT</given-names>
                         </name>
                     </person-group>
-                    <year>2012</year>
+                    <year iso-8601-date="2012">2012</year>
                     <article-title>A GAL4-driver line resource for Drosophila
                         neurobiology</article-title>
                     <source>Cell reports</source>
@@ -4095,7 +4086,7 @@
                             <given-names>KM</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>Enzymes of sphingolipid metabolism: from modular to integrative
                         signaling</article-title>
                     <source>Biochemistry</source>
@@ -4137,7 +4128,7 @@
                             <given-names>JD</given-names>
                         </name>
                     </person-group>
-                    <year>2003</year>
+                    <year iso-8601-date="2003">2003</year>
                     <article-title>Sply regulation of sphingolipid signaling molecules is essential
                         for Drosophila development</article-title>
                     <source>Development</source>
@@ -4155,7 +4146,7 @@
                             <given-names>DJ</given-names>
                         </name>
                     </person-group>
-                    <year>1975</year>
+                    <year iso-8601-date="1975">1975</year>
                     <article-title>Observations on the ultrastructure of the choanoflagellate
                         Codosiga botrytis (Ehr.) Saville-Kent with special reference to the
                         flagellar apparatus</article-title>
@@ -4166,32 +4157,26 @@
                 </element-citation>
             </ref>
             <ref id="bib44">
-                <element-citation publication-type="journal">
+                <element-citation publication-type="book">
                     <person-group person-group-type="author">
                         <name>
-                            <surname>Hoffmann</surname>
-                            <given-names>JA</given-names>
-                        </name>
-                        <name>
-                            <surname>Kafatos</surname>
-                            <given-names>FC</given-names>
-                        </name>
-                        <name>
-                            <surname>Janeway</surname>
-                            <given-names>CA</given-names>
-                        </name>
-                        <name>
-                            <surname>Ezekowitz</surname>
-                            <given-names>RA</given-names>
+                            <surname>Horn</surname>
+                            <given-names>G</given-names>
                         </name>
                     </person-group>
-                    <year>1999</year>
-                    <article-title>Phylogenetic perspectives in innate immunity</article-title>
-                    <source>Science</source>
-                    <volume>284</volume>
-                    <fpage>1313</fpage>
-                    <lpage>1318</lpage>
-                    <pub-id pub-id-type="doi">10.1126/science.284.5418.1313</pub-id>
+                        <year iso-8601-date="1991">1991</year>
+                        <chapter-title>Cerebral function and behaviour investigated through a study of filial imprinting</chapter-title>
+                        <person-group person-group-type="editor">
+                            <name>
+                                <surname>Bateson</surname>
+                                <given-names>P</given-names>
+                            </name>
+                        </person-group>
+                        <source>The development and integration of behaviour: essays in honour of Robert Hinde</source>
+                        <publisher-loc>Cambridge, United Kingdom</publisher-loc>
+                            <publisher-name>Cambridge University Press</publisher-name>
+                            <fpage>121</fpage>
+                            <lpage>148</lpage>
                 </element-citation>
             </ref>
             <ref id="bib45">
@@ -4206,7 +4191,7 @@
                             <given-names>V</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>Inter-kingdom signalling: communication between bacteria and
                         their hosts</article-title>
                     <source>Nature reviews. Microbiology</source>
@@ -4224,7 +4209,7 @@
                             <given-names>H</given-names>
                         </name>
                     </person-group>
-                    <year>1868</year>
+                    <year iso-8601-date="1868">1868</year>
                     <source>On the spongiae ciliatae as infusoria flagellata; or observations on the
                         structure, animality, and relationship of Leucosolenia botryoides</source>
                     <volume>1</volume>
@@ -4236,38 +4221,17 @@
                 <element-citation publication-type="journal">
                     <person-group person-group-type="author">
                         <name>
-                            <surname>Kamiyama</surname>
-                            <given-names>T</given-names>
-                        </name>
-                        <name>
-                            <surname>Umino</surname>
-                            <given-names>T</given-names>
-                        </name>
-                        <name>
-                            <surname>Itezono</surname>
-                            <given-names>Y</given-names>
-                        </name>
-                        <name>
-                            <surname>Nakamura</surname>
-                            <given-names>Y</given-names>
-                        </name>
-                        <name>
-                            <surname>Satoh</surname>
-                            <given-names>T</given-names>
-                        </name>
-                        <name>
-                            <surname>Yokose</surname>
-                            <given-names>K</given-names>
+                            <surname>Ising</surname>
+                            <given-names>M</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="1995">1995a</year>
-                    <article-title>Sulfobacins A and B, novel von Willebrand factor receptor
-                        antagonists. II. Structural elucidation</article-title>
-                    <source>The Journal of antibiotics</source>
-                    <volume>48</volume>
-                    <fpage>929</fpage>
-                    <lpage>936</lpage>
-                    <pub-id pub-id-type="doi">10.7164/antibiotics.48.929</pub-id>
+                    <year iso-8601-date="2000">2000</year>
+                    <trans-title xml:lang="en">Intensity dependence in event-related EEG potentials: Are impulsive 
+                        individuals augmenters or reducers?</trans-title>
+                    <source>Zeitschrift fur Differentielle und Diagnostische Psychologie</source>
+                    <volume>21</volume>
+                    <fpage>208</fpage>
+                    <lpage>217</lpage>
                 </element-citation>
             </ref>
             <ref id="bib48">
@@ -4302,7 +4266,7 @@
                             <given-names>K</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="1995">1995b</year>
+                    <year iso-8601-date="1995">1995</year>
                     <article-title>Sulfobacins A and B, novel von Willebrand factor receptor
                         antagonists. I. Production, isolation, characterization and biological
                         activities</article-title>
@@ -4325,7 +4289,7 @@
                             <given-names>SJ</given-names>
                         </name>
                     </person-group>
-                    <year>1998</year>
+                    <year iso-8601-date="1998">1998</year>
                     <article-title>A revision of choanoflagellate genera Kentrosiga, Schiller, 1953
                         and Desmarella, Kent, 1880</article-title>
                     <source>Acta protozoologica</source>
@@ -4346,7 +4310,7 @@
                             <given-names>B</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>The evolution and genetics of innate immunity</article-title>
                     <source>Nature reviews. Genetics</source>
                     <volume>2</volume>
@@ -4367,7 +4331,7 @@
                             <given-names>SB</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>A receptor tyrosine kinase from choanoflagellates: molecular
                         insights into early animal evolution</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
@@ -4394,7 +4358,7 @@
                             <given-names>SB</given-names>
                         </name>
                     </person-group>
-                    <year>2003</year>
+                    <year iso-8601-date="2003">2003</year>
                     <article-title>Evolution of key cell signaling and adhesion protein families
                         predates animal origins</article-title>
                     <source>Science</source>
@@ -4551,7 +4515,7 @@
                             <given-names>D</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>The genome of the choanoflagellate Monosiga brevicollis and the
                         origin of metazoans</article-title>
                     <source>Nature</source>
@@ -4585,7 +4549,7 @@
                             <given-names>BSC</given-names>
                         </name>
                     </person-group>
-                    <year>2009</year>
+                    <year iso-8601-date="2009">2009</year>
                     <article-title>Starting and maintaining Monosiga brevicollis
                         cultures</article-title>
                     <source>Cold Spring Harbor protocols</source>
@@ -4601,7 +4565,7 @@
                             <given-names>N</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>The unicellular ancestry of animal development</article-title>
                     <source>Developmental cell</source>
                     <volume>7</volume>
@@ -4634,7 +4598,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>1995</year>
+                    <year iso-8601-date="1995">1995</year>
                     <article-title>Flavocristamides A and B, new DNA polymerase a inhibitors from a
                         marine bacterium sp</article-title>
                     <source>Tetrahedron</source>
@@ -4656,7 +4620,7 @@
                             <given-names>R</given-names>
                         </name>
                     </person-group>
-                    <year>1999</year>
+                    <year iso-8601-date="1999">1999</year>
                     <article-title>The Toll-receptor family and control of innate
                         immunity</article-title>
                     <source>Current opinion in immunology</source>
@@ -4694,7 +4658,7 @@
                             <given-names>MJ</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Microbial factor-mediated development in a host-bacterial
                         mutualism</article-title>
                     <source>Science</source>
@@ -4830,7 +4794,7 @@
                             <given-names>A</given-names>
                         </name>
                     </person-group>
-                    <year>1997</year>
+                    <year iso-8601-date="1997">1997</year>
                     <article-title>The complete genome sequence of the Gram-positive bacterium
                         Bacillus subtilis</article-title>
                     <source>Nature</source>
@@ -4848,7 +4812,7 @@
                             <given-names>BSC</given-names>
                         </name>
                     </person-group>
-                    <year>1983</year>
+                    <year iso-8601-date="1983">1983</year>
                     <article-title>Life-history and ultratructure of a new marine species of
                         Proterospongia (Choanoflagellida)</article-title>
                     <source>Journal of the Marine Biological Association of the United
@@ -4871,7 +4835,7 @@
                             <given-names>SK</given-names>
                         </name>
                     </person-group>
-                    <year>2010</year>
+                    <year iso-8601-date="2010">2010</year>
                     <article-title>Has the microbiota played a critical role in the evolution of the
                         adaptive immune system?</article-title>
                     <source>Science</source>
@@ -4882,19 +4846,18 @@
                 </element-citation>
             </ref>
             <ref id="bib63">
-                <element-citation publication-type="journal">
+                <element-citation publication-type="data">
                     <person-group person-group-type="author">
-                        <name>
-                            <surname>Lewin</surname>
-                            <given-names>R</given-names>
-                        </name>
+                        <name><surname>Ly</surname>
+                            <given-names>T</given-names></name>, <name><surname>Endo</surname>
+                                <given-names>A</given-names></name>, <name>
+                                    <surname>Lamond</surname><given-names>Angus I</given-names></name>
                     </person-group>
-                    <year>1969</year>
-                    <article-title>A classification of Flexibacteria</article-title>
-                    <source>Journal of general microbiology</source>
-                    <volume>58</volume>
-                    <fpage>189</fpage>
-                    <lpage>206</lpage>
+                    <year iso-8601-date="2014">2014</year>
+                    <data-title>Crystal structure of yeast Bub3-Bub1 bound to phosopho-Spc105</data-title>
+                    <source>RCSB Protein Data Bank</source>
+                    <object-id pub-id-type="art-access-id"> 4bl0 </object-id>
+                    <ext-link ext-link-type="uri" xlink:href="http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0">http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0</ext-link>
                 </element-citation>
             </ref>
             <ref id="bib64">
@@ -4925,7 +4888,7 @@
                             <given-names>H</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Complete genome sequence of the facultative anaerobic
                         magnetotactic bacterium Magnetospirillum sp. strain AMB-1</article-title>
                     <source>DNA research: an international journal for rapid publication of reports
@@ -4960,7 +4923,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>2003</year>
+                    <year iso-8601-date="2003">2003</year>
                     <article-title>Isolation and phylogenetic characterization of bacteria capable
                         of inducing differentiation in the green alga Monostroma
                         oxyspermum</article-title>
@@ -4991,7 +4954,7 @@
                             <given-names>Y</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Isolation of an algal morphogenesis inducer from a marine
                         bacterium</article-title>
                     <source>Science</source>
@@ -5020,7 +4983,7 @@
                             <given-names>DL</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>An immunomodulatory molecule of symbiotic bacteria directs
                         maturation of the host immune system</article-title>
                     <source>Cell</source>
@@ -5046,7 +5009,7 @@
                             <given-names>DL</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>A microbial symbiosis factor prevents intestinal inflammatory
                         disease</article-title>
                     <source>Nature</source>
@@ -5064,7 +5027,7 @@
                             <given-names>M</given-names>
                         </name>
                     </person-group>
-                    <year>1999</year>
+                    <year iso-8601-date="1999">1999</year>
                     <article-title>Consequences of evolving with bacterial symbionts: Insights from
                         the squid-vibrio associations</article-title>
                     <source>Annual review of ecology and systematics</source>
@@ -5086,7 +5049,7 @@
                             <given-names>C</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Innate immune recognition: mechanisms and
                         pathways</article-title>
                     <source>Immunological reviews</source>
@@ -5120,7 +5083,7 @@
                             <given-names>RT</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>Sphingolipid metabolism: roles in signal transduction and
                         disruption by fumonisins</article-title>
                     <source>Environmental health perspectives</source>
@@ -5158,7 +5121,7 @@
                             <given-names>RU</given-names>
                         </name>
                     </person-group>
-                    <year>2010</year>
+                    <year iso-8601-date="2010">2010</year>
                     <article-title>Genome Sequence of the Dioxin-Mineralizing Bacterium Sphingomonas
                         wittichii RW1</article-title>
                     <source>Journal of bacteriology</source>
@@ -5188,7 +5151,7 @@
                             <given-names>AE</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Characterisation of surface blebbing and membrane vesicles
                         produced by Flavobacterium psychrophilum</article-title>
                     <source>Diseases of aquatic organisms</source>
@@ -5242,7 +5205,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Description of Algoriphagus aquimarinus sp. nov., Algoriphagus
                         chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and
                         algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus
@@ -5309,7 +5272,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2006</year>
+                    <year iso-8601-date="2006">2006</year>
                     <article-title>Echinicola pacifica gen. nov., sp nov., a novel flexibacterium
                         isolated from the sea urchin Strongylocentrotus intermedius</article-title>
                     <source>International journal of systematic and evolutionary
@@ -5472,7 +5435,7 @@
                             <given-names>CM</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>Complete genome sequence of Caulobacter
                         crescentus</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
@@ -5515,7 +5478,7 @@
                             <given-names>JC</given-names>
                         </name>
                     </person-group>
-                    <year>2011</year>
+                    <year iso-8601-date="2011">2011</year>
                     <article-title>Complete Genome Sequence of Strain HTCC2170, a Novel Member of
                         the Genus Maribacter in the Family Flavobacteriaceae</article-title>
                     <source>Journal of bacteriology</source>
@@ -5537,7 +5500,7 @@
                             <given-names>E</given-names>
                         </name>
                     </person-group>
-                    <year>2001</year>
+                    <year iso-8601-date="2001">2001</year>
                     <article-title>Sphingolipids in bacteria and fungi</article-title>
                     <source>Anaerobe</source>
                     <volume>7</volume>
@@ -5558,7 +5521,7 @@
                             <given-names>T</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Sphingolipids: second messengers, mediators and raft constituents
                         in signaling</article-title>
                     <source>Immunology today</source>
@@ -5580,7 +5543,7 @@
                             <given-names>I</given-names>
                         </name>
                     </person-group>
-                    <year>1980</year>
+                    <year iso-8601-date="1980">1980</year>
                     <article-title>Bacteria induced polymorphism in an axenic laboratory strain of
                         Ulva lactuca (Chlorophyceae)</article-title>
                     <source>Journal of Phycology</source>
@@ -5602,7 +5565,7 @@
                             <given-names>NJ</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Sphingosine 1-phosphate signalling in mammalian
                         cells</article-title>
                     <source>The Biochemical journal</source>
@@ -5613,25 +5576,17 @@
                 </element-citation>
             </ref>
             <ref id="bib82">
-                <element-citation publication-type="journal">
+                <element-citation publication-type="program">
                     <person-group person-group-type="author">
-                        <name>
-                            <surname>Raj</surname>
-                            <given-names>H</given-names>
-                        </name>
-                        <name>
-                            <surname>Maloy</surname>
-                            <given-names>S</given-names>
-                        </name>
+                        <collab>R Development Core Team</collab>
                     </person-group>
-                    <year>1990</year>
-                    <article-title>Proposal of Cyclobacterium-Marinus Gen-Nov, Comb-Nov for a Marine
-                        Bacterium Previously Assigned to the Genus Flectobacillus</article-title>
-                    <source>International journal of systematic bacteriology</source>
-                    <volume>40</volume>
-                    <fpage>337</fpage>
-                    <lpage>347</lpage>
-                    <pub-id pub-id-type="doi">10.1099/00207713-40-4-337</pub-id>
+                    <year iso-8601-date="2015">2015</year>
+                    <source>R: a language and environment for statistical computing</source>
+                    <version>3.2.2</version>
+                    <publisher-loc>Vienna, Austria</publisher-loc>
+                        <publisher-name>R Foundation for Statistical Computing</publisher-name>
+                        <ext-link ext-link-type="uri"
+                            xlink:href="http://www.r-project.org/">http://www.r-project.org/</ext-link>
                 </element-citation>
             </ref>
             <ref id="bib83">
@@ -5642,7 +5597,7 @@
                             <given-names>WL</given-names>
                         </name>
                     </person-group>
-                    <year>1995</year>
+                    <year iso-8601-date="1995">1995</year>
                     <article-title>Chemistry of sex attraction</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
                         America</source>
@@ -5720,7 +5675,7 @@
                             <given-names>EP</given-names>
                         </name>
                     </person-group>
-                    <year>2005</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Complete genome sequence of Vibrio fischeri: a symbiotic
                         bacterium with pathogenic congeners</article-title>
                     <source>Proceedings of the National Academy of Sciences of the United States of
@@ -5755,7 +5710,7 @@
                             <given-names>BF</given-names>
                         </name>
                     </person-group>
-                    <year>2008</year>
+                    <year iso-8601-date="2008">2008</year>
                     <article-title>A phylogenomic investigation into the origin of
                         metazoa</article-title>
                     <source>Molecular biology and evolution</source>
@@ -5773,7 +5728,7 @@
                             <given-names>W</given-names>
                         </name>
                     </person-group>
-                    <year>1880</year>
+                    <year iso-8601-date="1880">1880</year>
                     <source>A manual of the infusoria</source>
                     <publisher-loc>London</publisher-loc>
                     <publisher-name>David Bogue</publisher-name>
@@ -5799,7 +5754,7 @@
                             <given-names>EP</given-names>
                         </name>
                     </person-group>
-                    <year>1996</year>
+                    <year iso-8601-date="1996">1996</year>
                     <article-title>Quorum sensing in Vibrio fischeri: probing autoinducer-LuxR
                         interactions with autoinducer analogs</article-title>
                     <source>Journal of bacteriology</source>
@@ -5820,7 +5775,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>2000</year>
+                    <year iso-8601-date="2000">2000</year>
                     <article-title>Sphingosine-1-phosphate: signaling inside and out</article-title>
                     <source>FEBS Lett</source>
                     <volume>476</volume>
@@ -5865,7 +5820,7 @@
                             <given-names>S</given-names>
                         </name>
                     </person-group>
-                    <year>1999</year>
+                    <year iso-8601-date="1999">1999</year>
                     <article-title>Differential roles of TLR2 and TLR4 in recognition of
                         gram-negative and gram-positive bacterial cell wall
                         components</article-title>
@@ -5879,23 +5834,15 @@
             <ref id="bib90">
                 <element-citation publication-type="journal">
                     <person-group person-group-type="author">
-                        <name>
-                            <surname>Talavera</surname>
-                            <given-names>G</given-names>
-                        </name>
-                        <name>
-                            <surname>Castresana</surname>
-                            <given-names>J</given-names>
-                        </name>
+                        <collab>The ENCODE Consortium</collab>
                     </person-group>
-                    <year>2007</year>
-                    <article-title>Improvement of phylogenies after removing divergent and
-                        ambiguously aligned blocks from protein sequence alignments</article-title>
-                    <source>Systematic biology</source>
-                    <volume>56</volume>
-                    <fpage>564</fpage>
-                    <lpage>577</lpage>
-                    <pub-id pub-id-type="doi">10.1080/10635150701472164</pub-id>
+                    <year iso-8601-date="2012">2012</year>
+                    <article-title>An integrated encyclopedia of DNA elements in the human genome</article-title>
+                    <source>Nature</source>
+                    <volume>489</volume>
+                    <fpage>57</fpage>
+                    <lpage>74</lpage>
+                    <pub-id pub-id-type="doi">10.1038/nature11247</pub-id>
                 </element-citation>
             </ref>
             <ref id="bib91">
@@ -5922,7 +5869,7 @@
                             <given-names>A</given-names>
                         </name>
                     </person-group>
-                    <year>2006</year>
+                    <year iso-8601-date="2006">2006</year>
                     <article-title>Chimaereicella alkaliphila gen. nov., sp. nov., a Gram-negative
                         alkaliphilic bacterium isolated from a nonsaline alkaline
                         groundwater</article-title>
@@ -5953,7 +5900,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Algoriphagus antarcticus sp. nov., a novel psychrophile from
                         microbial mats in Antarctic lakes</article-title>
                     <source>Systematic and applied microbiology</source>
@@ -5995,7 +5942,7 @@
                             <given-names>AP</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Metamorphosis of a scleractinian coral in response to microbial
                         biofilms</article-title>
                     <source>Applied and environmental microbiology</source>
@@ -6025,7 +5972,7 @@
                             <given-names>DJ</given-names>
                         </name>
                     </person-group>
-                    <year>1991</year>
+                    <year iso-8601-date="1991">1991</year>
                     <article-title>16S ribosomal DNA amplification for phylogenetic
                         study</article-title>
                     <source>Journal of Bacteriology</source>
@@ -6042,7 +5989,7 @@
                             <given-names>HM</given-names>
                         </name>
                     </person-group>
-                    <year>2007</year>
+                    <year iso-8601-date="2007">2007</year>
                     <article-title>Bacteroides: the good, the bad, and the
                         nitty-gritty</article-title>
                     <source>Clinical microbiology reviews</source>
@@ -6057,7 +6004,7 @@
                     <person-group person-group-type="author">
                         <collab>WHO</collab>
                     </person-group>
-                    <year>2011</year>
+                    <year iso-8601-date="2011">2011</year>
                     <article-title>FlyBase 101-the basics of navigating FlyBase</article-title>
                     <source>Nucleic acids research</source>
                     <volume>39</volume>
@@ -6077,7 +6024,7 @@
                             <given-names>J</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Hongiella mannitolivorans gen. nov., sp. nov., Hongiella
                         halophila sp. nov. and Hongiella ornithinivorans sp. nov., isolated from
                         tidal flat sediment</article-title>
@@ -6105,7 +6052,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year>2004</year>
+                    <year iso-8601-date="2004">2004</year>
                     <article-title>Hongiella marincola sp. nov., isolated from sea water of the East
                         Sea in Korea</article-title>
                     <source>International journal of systematic and evolutionary
@@ -6140,7 +6087,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2005">2005a</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Algoriphagus yeomjeoni sp. nov., isolated from a marine solar
                         saltern in the Yellow Sea, Korea</article-title>
                     <source>International journal of systematic and evolutionary
@@ -6149,6 +6096,7 @@
                     <fpage>865</fpage>
                     <lpage>870</lpage>
                     <pub-id pub-id-type="doi">10.1099/ijs.0.63479-0</pub-id>
+                    <pub-id pub-id-type="pmid">1234566</pub-id>
                 </element-citation>
             </ref>
             <ref id="bib100">
@@ -6167,7 +6115,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year iso-8601-date="2005">2005b</year>
+                    <year iso-8601-date="2005">2005</year>
                     <article-title>Algoriphagus locisalis sp. nov., isolated from a marine solar
                         saltern</article-title>
                     <source>International journal of systematic and evolutionary
@@ -6198,7 +6146,7 @@
                             <given-names>TK</given-names>
                         </name>
                     </person-group>
-                    <year>2006</year>
+                    <year iso-8601-date="2006">2006</year>
                     <article-title>Algoriphagus terrigena sp. nov., isolated from
                         soil</article-title>
                     <source>International journal of systematic and evolutionary
@@ -6229,7 +6177,7 @@
                             <given-names>RJ</given-names>
                         </name>
                     </person-group>
-                    <year>1998</year>
+                    <year iso-8601-date="1998">1998</year>
                     <article-title>On the origin of membrane vesicles in gram-negative
                         bacteria</article-title>
                     <source>FEMS microbiology letters</source>
@@ -6251,7 +6199,7 @@
                             <given-names>RB</given-names>
                         </name>
                     </person-group>
-                    <year>2007</year>
+                    <year iso-8601-date="2007">2007</year>
                     <article-title>Larval release behaviors in the Caribbean spiny lobster,
                         Panulirus argus: role of peptide pheromones</article-title>
                     <source>Journal of chemical ecology</source>
@@ -6308,8 +6256,7 @@
                     target motion. The magnitude of learned eye movements was small and did not
                     affect the chances of reward in either a positive or a negative way.</p><fig id="fig9"
                         position="float"><object-id pub-id-type="doi"
-                            >10.7554/eLife.00013.034</object-id><label>Appendix 1 Figure 1
-                                8.</label><caption><title>Schematic diagrams showing mechanisms of
+                            >10.7554/eLife.00013.034</object-id><label>Appendix 1 Figure 1.</label><caption><title>Schematic diagrams showing mechanisms of
                                     cerebellar learning suggested by our data.</title><p>Each panel shows
                                         the spiking activity of the elements in the proposed cerebellar circuit
                                         during the course of a learning experiment. Trial ‘3’ contains two
@@ -6692,7 +6639,7 @@
     </sub-article>
     <sub-article article-type="reply" id="SA2">
         <front-stub>
-            <article-id pub-id-type="doi">10.7554/eLife.00013.037</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00013.038</article-id>
             <title-group>
                 <article-title>Author response</article-title>
             </title-group>
@@ -6724,7 +6671,7 @@
                     Gram-negative bacteria and Bacteroidetes (50,51) and that additional membrane
                     constituents might be required for the full potency of RIF-1.</italic>&#x201d;
                     <fig id="fig5" position="float">
-                        <object-id pub-id-type="doi">10.7554/eLife.00013.038</object-id>     
+                        <object-id pub-id-type="doi">10.7554/eLife.00013.039</object-id>     
                     <label>Author response image 1</label>
                     <caption>
                         <title>Correlation between mean Voxel Number and resulting mean Decoding
@@ -6739,7 +6686,7 @@
                             triangle symbols): r<sup>2</sup>&#x3d;0.026, p&#x3d;0.598.</p>
                         <p>
                             <bold>DOI:</bold>
-                            <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.038"
+                            <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.039"
                                 >http://dx.doi.org/10.7554/eLife.00013.038</ext-link>
                         </p>
                     </caption>
@@ -6757,7 +6704,7 @@
                     sulfonolipids in the literature (<xref ref-type="table" rid="tbl4">Author
                         response table 1</xref>)</italic>.
                 <table-wrap id="tbl4" position="float">
-                            <object-id pub-id-type="doi">10.7554/eLife.00013.039</object-id>
+                            <object-id pub-id-type="doi">10.7554/eLife.00013.040</object-id>
                     <label>Author response table 1.</label>
                     <caption>
                         <p>GC-MS analysis of cuticular hydrocarbon extracts from control,
@@ -6765,7 +6712,7 @@
                                 <italic>miR-124&#x3e;tra-RNAi</italic> males</p>
                         <p>
                             <bold>DOI:</bold>
-                            <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.039"
+                            <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.040"
                                 >http://dx.doi.org/10.7554/eLife.00013.039</ext-link>
                         </p>
                     </caption>

@@ -20,13 +20,31 @@ def i_count_the_number_of_keywords(step):
 def i_get_the_keywords(step):
     world.list = pm.keywords(world.filecontent)
 
+@step(u'I count the number of full keyword groups')
+def i_count_the_number_of_full_keyword_groups(step):
+    world.count = len(pm.full_keyword_groups(world.filecontent))
+
 @step(u'I count the number of author notes')
 def i_count_the_number_of_author_notes(step):
-    world.count = len(pm.author_notes(world.filecontent))
+    try:
+        world.count = len(pm.author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
     
 @step(u'I get the author notes')
 def i_get_the_author_notes(step):
     world.list = pm.author_notes(world.filecontent)
+
+@step("I count the number of full author notes")
+def i_count_the_number_of_full_author_notes(step):
+    try:
+        world.count = len(pm.full_author_notes(world.filecontent))
+    except TypeError:
+        world.count = None
+
+@step(u'I get the full author notes')
+def i_get_the_full_author_notes(step):
+    world.list = pm.full_author_notes(world.filecontent)
 
 @step(u'I get the list item (.*)')
 def i_get_the_item_item(step, list_item):
@@ -47,15 +65,8 @@ def i_count_components_of_the_type(step, type):
     world.count = 0
     list = pm.components(world.filecontent)
     for item in list:
-        try:
-            if int(item['type']) == type:
-                world.count += 1
-        except ValueError:
-            # Probably not a number
-            if item['type'] == type:
-                world.count += 1
-        except(KeyError):
-            continue
+        if 'type' in item and item['type'] == type:
+            world.count += 1
     
 @step(u'I get the components')
 def i_get_the_components(step):
@@ -68,6 +79,14 @@ def i_count_the_number_of_award_groups(step):
 @step(u'I get the award groups')
 def i_get_the_award_groups(step):
     world.list = pm.award_groups(world.filecontent)
+
+@step(u'I count the number of full award groups')
+def i_count_the_number_of_full_award_groups(step):
+    world.count = len(pm.full_award_groups(world.filecontent))
+
+@step(u'I get the full award groups')
+def i_get_the_full_award_groups(step):
+    world.list = pm.full_award_groups(world.filecontent)
 
 @step('I get the full title') 
 def get_the_full_title(step):
@@ -96,6 +115,10 @@ def i_get_the_related_articles(step):
 @step(u'I get the volume')
 def i_get_the_volume(step):
     world.string = pm.volume(world.filecontent)
+
+@step(u'I get the elocation-id')
+def i_get_the_elocation_id(step):
+    world.string = pm.elocation_id(world.filecontent)
     
 @step(u'I count the number of category')
 def i_count_the_number_of_category(step):
@@ -116,3 +139,100 @@ def i_get_the_non_byline_authors(step):
 @step(u'I get the publisher id')
 def i_get_the_publisher_id(step):
     world.string = pm.publisher_id(world.filecontent)
+
+@step(u'I count the number of component DOI')
+def i_count_the_number_of_component_doi(step):
+    world.count = len(pm.component_doi(world.filecontent))
+    
+@step(u'I get the component DOI')
+def i_get_the_component_doi(step):
+    world.list = pm.component_doi(world.filecontent)
+    
+@step(u'I count permissions of components index (\d+)')
+def i_count_permissions_of_components_index(step, index):
+    if not world.list[int(index)].get('permissions'):
+        world.count = 0
+    else:
+        world.count = len(world.list[int(index)]['permissions'])
+            
+@step(u'I count the number of author contributions')
+def i_count_the_number_of_author_contributions(step):
+    try:
+        world.count = len(pm.author_contributions(world.filecontent, "con"))
+    except TypeError:
+        world.count = None
+    
+@step(u'I get the author contributions')
+def i_get_the_author_contributions(step):
+    world.list = pm.author_contributions(world.filecontent, "con")
+    
+@step(u'I get the impact statement')
+def i_get_the_impact_statement(step):
+    world.string = pm.impact_statement(world.filecontent)
+    
+@step(u'I count the number of related object ids')
+def i_count_the_number_of_related_object_ids(step):
+    world.count = len(pm.related_object_ids(world.filecontent))
+    
+@step(u'I get the related object ids')
+def i_get_the_related_object_ids(step):
+    world.list = pm.related_object_ids(world.filecontent)
+
+@step(u'I get the string of the list')
+def i_get_the_string_of_the_list(step):
+    world.string = str(world.list)
+
+@step(u'I count the number of competing interests')
+def i_count_the_number_of_competing_interests(step):
+    try:
+        world.count = len(pm.competing_interests(world.filecontent, "conflict"))
+    except TypeError:
+        world.count = None
+        
+@step(u'I get the competing interests')
+def i_get_the_competing_interests(step):
+    world.list = pm.competing_interests(world.filecontent, "conflict")
+
+@step(u'I get the full affiliation')
+def i_get_the_full_affiliation(step):
+    world.list = pm.full_affiliation(world.filecontent)
+    
+@step(u'I count the number of media')
+def i_count_the_number_of_media(step):
+    world.count = len(pm.media(world.filecontent))
+    
+@step(u'I get the media')
+def i_get_the_media(step):
+    world.list = pm.media(world.filecontent)
+    
+@step(u'I count the number of graphics')
+def i_count_the_number_of_graphics(step):
+    world.count = len(pm.graphics(world.filecontent))
+
+@step(u'I get the graphics')
+def i_get_the_graphics(step):
+    world.list = pm.graphics(world.filecontent)
+    
+@step(u'I count the number of inline graphics')
+def i_count_the_number_of_inline_graphics(step):
+    world.count = len(pm.inline_graphics(world.filecontent))
+    
+@step(u'I get the inline graphics')
+def i_get_the_inline_graphics(step):
+    world.list = pm.inline_graphics(world.filecontent)
+
+@step(u'I count the number of self uri')
+def i_count_the_number_of_self_uri(step):
+    world.count = len(pm.self_uri(world.filecontent))
+
+@step(u'I get the self uri')
+def i_get_the_self_uri(step):
+    world.list = pm.self_uri(world.filecontent)
+
+@step(u'I count the number of supplementary material')
+def i_count_the_number_of_supplementary_material(step):
+    world.count = len(pm.supplementary_material(world.filecontent))
+    
+@step(u'I get the supplementary material')
+def i_get_the_supplementary_material(step):
+    world.list = pm.supplementary_material(world.filecontent)

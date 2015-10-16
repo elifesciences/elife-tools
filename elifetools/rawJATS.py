@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from utils import first, firstnn, extract_nodes
+from utils import first, firstnn, extract_nodes, node_contents_str
 
 """
 rawParser.py extracts and returns the nodes from the article xml using BeautifulSoup so that functionality at higher levels may use and combine them as neccessary.
@@ -15,13 +15,16 @@ def title(soup):
 def abstract(soup):
     return extract_nodes(soup, "abstract")
 
+def article_id(soup, pub_id_type):
+    return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)
+    
 def doi(soup):
-    doi_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "doi")
+    doi_tags = article_id(soup, pub_id_type = "doi")
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", doi_tags))
 
 def publisher_id(soup):
-    article_id_tags = extract_nodes(soup, "article-id", attr = "pub-id-type", value = "publisher-id")
+    article_id_tags = article_id(soup, pub_id_type = "publisher-id")
     # the first article-id tag whose parent is article-meta
     return first(filter(lambda tag: tag.parent.name == "article-meta", article_id_tags))
 
@@ -72,10 +75,15 @@ def conflict(soup):
 
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
-    return first(extract_nodes(soup, "permissions"))
+    return extract_nodes(soup, "permissions")
+
+def article_permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    permissions_tags = permissions(soup)
+    return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
 
 def licence(soup):
-    return first(extract_nodes(permissions(soup), "license"))
+    return first(extract_nodes(soup, "license"))
 
 def licence_p(soup):
     return first(extract_nodes(licence(soup), "license-p"))
@@ -85,16 +93,19 @@ def licence_url(soup):
     return licence(soup).get("xlink:href")
 
 def copyright_statement(soup):
-    return first(extract_nodes(permissions(soup), "copyright-statement"))
+    return first(extract_nodes(soup, "copyright-statement"))
 
 def copyright_year(soup):
-    return first(extract_nodes(permissions(soup), "copyright-year"))
+    return first(extract_nodes(soup, "copyright-year"))
 
 def copyright_holder(soup):
-    return first(extract_nodes(permissions(soup), "copyright-holder"))
+    return first(extract_nodes(soup, "copyright-holder"))
 
 def funding_statement(soup):
     return first(extract_nodes(soup, "funding-statement"))
+
+def affiliation(soup):
+    return extract_nodes(soup, "aff")
 
 def research_organism_keywords(soup):
     tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
@@ -118,12 +129,30 @@ def subject_area(soup, subject_group_type = None):
     tags = extract_nodes(soup, "subject")
     
     subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group" \
-                                           and tag.parent.parent.name == "article-categories" \
+                                           and tag.parent.parent.name == "article-categories"
                                            and tag.parent.parent.parent.name == "article-meta", tags)
     if subject_group_type:
         subject_area_tags = filter(lambda tag:
                                     tag.parent.get("subj-group-type") == subject_group_type, tags)
     return subject_area_tags
+
+def full_subject_area(soup, subject_group_type=None):
+
+    subject_group_tags = extract_nodes(soup, "subj-group")
+    subject_group_tags = filter(lambda tag: tag.parent.name == "article-categories"
+                                              and tag.parent.parent.name == "article-meta", subject_group_tags)
+
+    if subject_group_type:
+        subject_group_tags = filter(lambda tag:
+                                    tag.get("subj-group-type" == subject_group_type))
+
+    return subject_group_tags
+
+def custom_meta(soup, meta_name=None):
+    custom_meta_tags = extract_nodes(soup, "custom-meta")
+    if meta_name is not None:
+        custom_meta_tags = filter(lambda tag: node_contents_str(first(extract_nodes(tag, "meta-name"))) == meta_name, custom_meta_tags)
+    return custom_meta_tags
 
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
@@ -135,13 +164,59 @@ def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
 
+def related_object(soup):
+    return extract_nodes(soup, "related-object")
+
+def object_id(soup, pub_id_type):
+    return extract_nodes(soup, "object-id", attr = "pub-id-type", value = pub_id_type)
+
+def label(soup):
+    return first(extract_nodes(soup, "label"))
+
+def contributors(soup):
+    return extract_nodes(soup, "contrib")
+
+def article_contributors(soup):
+    contributor_tags = extract_nodes(soup, ["contrib","on-behalf-of"])
+    return filter(lambda tag: tag.parent.name == "contrib-group"
+                        and tag.parent.parent.name == "article-meta", contributor_tags)
+
+def authors(soup, contrib_type = "author"):
+    return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+
+def caption(soup):
+    return first(extract_nodes(soup, "caption"))
+
+def author_notes(soup):
+    return first(extract_nodes(soup, "author-notes"))
+
+def corresp(soup):
+    return extract_nodes(soup, "corresp")
+
+def fn(soup):
+    return extract_nodes(soup, "fn")
+
+def media(soup):
+    return extract_nodes(soup, "media")
+
+def inline_graphic(soup):
+    return extract_nodes(soup, "inline-graphic")
+
+def graphic(soup):
+    return extract_nodes(soup, "graphic")
+
+def self_uri(soup):
+    return extract_nodes(soup, "self-uri")
+
+def supplementary_material(soup):
+    return extract_nodes(soup, "supplementary-material")
 
 #
 # authors
 #
 
-def contrib_id(soup, contrib_id_type):
-    return extract_nodes(soup, "contrib-id", attr = "contrib-id-type", value = contrib_id_type)
+def contrib_id(soup):
+    return extract_nodes(soup, "contrib-id")
 
 #
 # references
@@ -150,20 +225,29 @@ def contrib_id(soup, contrib_id_type):
 def ref_list(soup):
     return extract_nodes(soup, "ref")
 
-def volume(ref):
-    return extract_nodes(ref, "volume")
+def volume(soup):
+    return extract_nodes(soup, "volume")
 
-def fpage(ref):
-    return extract_node(ref, "fpage")
+def elocation_id(soup):
+    return extract_nodes(soup, "elocation-id")
+
+def fpage(soup):
+    return extract_nodes(soup, "fpage")
             
-def lpage(ref):
-    return extract_node(ref, "lpage")
+def lpage(soup):
+    return extract_nodes(soup, "lpage")
 
-def collab(ref):
-    return extract_node(ref, "collab")
+def collab(soup):
+    return extract_nodes(soup, "collab")
 
-def publisher_loc(ref):
-    return extract_node(ref, "publisher-loc")
+def publisher_loc(soup):
+    return extract_nodes(soup, "publisher-loc")
 
-def publisher_name(ref):
-    return extract_node(ref, "publisher-name")
+def publisher_name(soup):
+    return extract_nodes(soup, "publisher-name")
+
+def comment(soup):
+    return extract_nodes(soup, "comment")
+
+def element_citation(soup):
+    return extract_nodes(soup, "element-citation")
