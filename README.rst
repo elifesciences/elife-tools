@@ -5,8 +5,8 @@ elife-tools
    :target: https://travis-ci.org/elifesciences/elife-tools
    :alt: Latest Version
    
-.. image:: https://coveralls.io/repos/elifesciences/elife-tools/badge.svg?branch=coveralls&service=github
-   :target: https://coveralls.io/github/elifesciences/elife-tools?branch=coveralls
+.. image:: https://coveralls.io/repos/elifesciences/elife-tools/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/elifesciences/elife-tools?branch=master
 
 Tools for using article data in Python
 
