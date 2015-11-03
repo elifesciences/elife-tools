@@ -86,13 +86,19 @@ Feature: Get components from the document
     | elife02304.xml              | [7]['doi']                    | 10.7554/eLife.02304.008
     | elife02304.xml              | [7]['position']               | 8
     | elife02304.xml              | [7]['ordinal']                | 1
+    | elife02304.xml              | [7]['sibling_ordinal']        | 1
+    | elife02304.xml              | [7]['asset']                  | data
     | elife02304.xml              | [7]['type']                   | supplementary-material
     | elife02304.xml              | [7]['mimetype']               | application
     | elife02304.xml              | [7]['mime-subtype']           | pdf
     | elife02304.xml              | [7]['parent_type']            | fig
     | elife02304.xml              | [7]['parent_ordinal']         | 5
+    | elife02304.xml              | [7]['parent_sibling_ordinal'] | 3
+    | elife02304.xml              | [7]['parent_asset']           | figsupp
     | elife02304.xml              | [7]['parent_parent_type']     | fig
     | elife02304.xml              | [7]['parent_parent_ordinal']  | 3
+    | elife02304.xml              | [7]['parent_parent_sibling_ordinal']  | 2
+    | elife02304.xml              | [7]['parent_parent_asset']    | None
     | elife02304.xml              | [7]['label']                  | Figure 2—figure supplement 2—source data 1.
     | elife02304.xml              | [7]['full_label']             | Figure 2—figure supplement 2—source data 1.
     | elife02304.xml              | [7]['title']                  | Kinetic parameters for PfLDH alanine-scan.

@@ -1239,6 +1239,8 @@ def components(soup):
                 
                 component['parent_type'] = acting_parent_tag.name
                 component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
+                component['parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
+                component['parent_asset'] = tag_details_asset(acting_parent_tag)
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
@@ -1251,6 +1253,8 @@ def components(soup):
                    extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
                     component['parent_parent_type'] = acting_parent_tag.name
                     component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
+                    component['parent_parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
+                    component['parent_parent_asset'] = tag_details_asset(acting_parent_tag)
 
         content = ""
         for p_tag in extract_nodes(tag, "p"):
@@ -1279,6 +1283,8 @@ def components(soup):
             
             # Ordinal is based on all tags of the same type even if they have no DOI
             component['ordinal'] = tag_ordinal(tag)
+            component['sibling_ordinal'] = tag_details_sibling_ordinal(tag)
+            component['asset'] = tag_details_asset(tag)
             #component['ordinal'] = position_by_type[ctype]
                         
             components.append(component)
