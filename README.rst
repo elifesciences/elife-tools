@@ -18,6 +18,12 @@ Install via `pip <http://www.pip-installer.org/>`_:
 .. code-block:: bash
 
    $ pip install elifetools
+   
+You might need to install libxml manually first
+
+.. code-block:: bash
+
+   $ sudo STATIC_DEPS=true pip install lxml==3.4.1
 
 To install the latest version directly from git
 
