@@ -61,7 +61,7 @@ Example usage
 
 .. code-block:: python
 
-    >>> import parseJATS as parser
+    >>> from elifetools import parseJATS as parser
     >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
     >>> print parser.doi(soup)
 
