@@ -1241,6 +1241,19 @@ def components(soup):
                 component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
                 component['parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
                 component['parent_asset'] = tag_details_asset(acting_parent_tag)
+                
+            elif acting_parent_tag:
+                # Here is extra support to find app appendix parent tags
+                #  These will have no component DOI on them
+                app_nodenames = ["app"]
+                app_parent_tag = first_parent(acting_parent_tag, app_nodenames)
+                if app_parent_tag:
+                    component['parent_type'] = app_parent_tag.name
+                    component['parent_ordinal'] = tag_ordinal(app_parent_tag)
+                    component['parent_sibling_ordinal'] = tag_details_sibling_ordinal(app_parent_tag)
+                    component['parent_asset'] = tag_details_asset(app_parent_tag)
+                    # Rest the parent for further traversing
+                    parent_tag = app_parent_tag
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)

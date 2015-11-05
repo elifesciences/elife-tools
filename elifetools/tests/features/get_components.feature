@@ -153,11 +153,17 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [5]['ordinal']                | 2
     | elife-kitchen-sink.xml      | [5]['parent_type']            | None
     | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034
-    | elife-kitchen-sink.xml      | [35]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [35]['parent_type']           | app
+    
     | elife-kitchen-sink.xml      | [36]['doi']                   | 10.7554/eLife.00013.035
-    | elife-kitchen-sink.xml      | [36]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [36]['parent_type']           | app
+    | elife-kitchen-sink.xml      | [36]['parent_ordinal']        | 2
+    | elife-kitchen-sink.xml      | [36]['parent_sibling_ordinal']| 2
+    | elife-kitchen-sink.xml      | [36]['parent_asset']          | app
+    | elife-kitchen-sink.xml      | [36]['parent_parent_type']    | None
+    
     | elife-kitchen-sink.xml      | [37]['doi']                   | 10.7554/eLife.00013.036
-    | elife-kitchen-sink.xml      | [37]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [37]['parent_type']           | app
     
     | elife-kitchen-sink.xml      | [38]['doi']                   | 10.7554/eLife.00013.037
     | elife-kitchen-sink.xml      | [38]['type']                  | sub-article
@@ -174,6 +180,11 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [41]['doi']                   | 10.7554/eLife.00013.040
     | elife-kitchen-sink.xml      | [41]['type']                  | table-wrap
     | elife-kitchen-sink.xml      | [41]['parent_type']           | sub-article
+    
+    | elife04490.xml              | [26]['doi']                    | 10.7554/eLife.04490.027
+    | elife04490.xml              | [26]['type']                   | fig
+    | elife04490.xml              | [26]['parent_type']            | app
+    
     
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>
