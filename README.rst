@@ -10,6 +10,11 @@ elife-tools
 
 Tools for using article data in Python
 
+Non-Python dependencies
+=======================
+
+* libxml2 (Ubuntu, Arch)
+
 Install for users
 =================
 
