@@ -1143,7 +1143,7 @@ def components(soup):
     
     nodenames = ["abstract", "fig", "table-wrap", "media",
                  "chem-struct-wrap", "sub-article", "supplementary-material",
-                 "boxed-text"]
+                 "boxed-text", "app"]
     
     # Count node order overall
     position = 1
@@ -1168,7 +1168,8 @@ def components(soup):
         # First find the doi if present
         component_doi = extract_component_doi(tag, nodenames)
         if component_doi is None:
-            continue
+            if ctype != 'app':
+                continue
         else:
             component['doi'] = component_doi
             component['doi_url'] = 'http://dx.doi.org/' + component_doi

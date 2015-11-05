@@ -10,7 +10,7 @@ Feature: Get components from the document
 
   Examples:
     | document                    | components
-    | elife-kitchen-sink.xml      | 42
+    | elife-kitchen-sink.xml      | 44
     | elife00013.xml              | 30
     | elife_poa_e06828.xml        | 0
 
@@ -24,6 +24,7 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | abstract      | 2
     | elife-kitchen-sink.xml      | fig           | 25
     | elife-kitchen-sink.xml      | sub-article   | 2
+    | elife-kitchen-sink.xml      | app           | 2
     | elife00013.xml              | abstract      | 2
     | elife00013.xml              | fig           | 23
     | elife00013.xml              | sub-article   | 2
@@ -152,38 +153,38 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml       | [5]['mime-subtype']           | wmv
     | elife-kitchen-sink.xml      | [5]['ordinal']                | 2
     | elife-kitchen-sink.xml      | [5]['parent_type']            | None
-    | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034
-    | elife-kitchen-sink.xml      | [35]['parent_type']           | app
-    
-    | elife-kitchen-sink.xml      | [36]['doi']                   | 10.7554/eLife.00013.035
+    | elife-kitchen-sink.xml      | [36]['doi']                   | 10.7554/eLife.00013.034
     | elife-kitchen-sink.xml      | [36]['parent_type']           | app
-    | elife-kitchen-sink.xml      | [36]['parent_ordinal']        | 2
-    | elife-kitchen-sink.xml      | [36]['parent_sibling_ordinal']| 2
-    | elife-kitchen-sink.xml      | [36]['parent_asset']          | app
-    | elife-kitchen-sink.xml      | [36]['parent_parent_type']    | None
     
-    | elife-kitchen-sink.xml      | [37]['doi']                   | 10.7554/eLife.00013.036
-    | elife-kitchen-sink.xml      | [37]['parent_type']           | app
+    | elife-kitchen-sink.xml      | [38]['doi']                   | 10.7554/eLife.00013.035
+    | elife-kitchen-sink.xml      | [38]['parent_type']           | app
+    | elife-kitchen-sink.xml      | [38]['parent_ordinal']        | 2
+    | elife-kitchen-sink.xml      | [38]['parent_sibling_ordinal']| 2
+    | elife-kitchen-sink.xml      | [38]['parent_asset']          | app
+    | elife-kitchen-sink.xml      | [38]['parent_parent_type']    | None
     
-    | elife-kitchen-sink.xml      | [38]['doi']                   | 10.7554/eLife.00013.037
-    | elife-kitchen-sink.xml      | [38]['type']                  | sub-article
-    | elife-kitchen-sink.xml      | [38]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [39]['doi']                   | 10.7554/eLife.00013.036
+    | elife-kitchen-sink.xml      | [39]['parent_type']           | app
     
-    | elife-kitchen-sink.xml      | [39]['doi']                   | 10.7554/eLife.00013.038
-    | elife-kitchen-sink.xml      | [39]['type']                  | sub-article
-    | elife-kitchen-sink.xml      | [39]['parent_type']           | None
+    | elife-kitchen-sink.xml      | [40]['doi']                   | 10.7554/eLife.00013.037
+    | elife-kitchen-sink.xml      | [40]['type']                  | sub-article
+    | elife-kitchen-sink.xml      | [40]['parent_type']           | None
     
-    | elife-kitchen-sink.xml      | [40]['doi']                   | 10.7554/eLife.00013.039
-    | elife-kitchen-sink.xml      | [40]['type']                  | fig
-    | elife-kitchen-sink.xml      | [40]['parent_type']           | sub-article
+    | elife-kitchen-sink.xml      | [41]['doi']                   | 10.7554/eLife.00013.038
+    | elife-kitchen-sink.xml      | [41]['type']                  | sub-article
+    | elife-kitchen-sink.xml      | [41]['parent_type']           | None
     
-    | elife-kitchen-sink.xml      | [41]['doi']                   | 10.7554/eLife.00013.040
-    | elife-kitchen-sink.xml      | [41]['type']                  | table-wrap
-    | elife-kitchen-sink.xml      | [41]['parent_type']           | sub-article
+    | elife-kitchen-sink.xml      | [42]['doi']                   | 10.7554/eLife.00013.039
+    | elife-kitchen-sink.xml      | [42]['type']                  | fig
+    | elife-kitchen-sink.xml      | [42]['parent_type']           | sub-article
     
-    | elife04490.xml              | [26]['doi']                    | 10.7554/eLife.04490.027
-    | elife04490.xml              | [26]['type']                   | fig
-    | elife04490.xml              | [26]['parent_type']            | app
+    | elife-kitchen-sink.xml      | [43]['doi']                   | 10.7554/eLife.00013.040
+    | elife-kitchen-sink.xml      | [43]['type']                  | table-wrap
+    | elife-kitchen-sink.xml      | [43]['parent_type']           | sub-article
+    
+    | elife04490.xml              | [27]['doi']                    | 10.7554/eLife.04490.027
+    | elife04490.xml              | [27]['type']                   | fig
+    | elife04490.xml              | [27]['parent_type']            | app
     
     
   Scenario Outline: Count the number of components permissions
