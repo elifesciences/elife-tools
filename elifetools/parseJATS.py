@@ -1416,7 +1416,7 @@ def full_award_groups(soup):
     """
     Find the award-group items and return a list of details
     """
-    award_groups = {}
+    award_groups = []
 
     funding_group_section = extract_nodes(soup, "funding-group")
     for fg in funding_group_section:
@@ -1437,7 +1437,9 @@ def full_award_groups(soup):
                 copy_attribute(source, 'institution', award_group)
                 copy_attribute(source, 'institution-id', award_group, 'id')
                 copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
-            award_groups[ref] = award_group
+            award_group_by_ref = {}
+            award_group_by_ref[ref] = award_group
+            award_groups.append(award_group_by_ref)
 
     return award_groups
 
