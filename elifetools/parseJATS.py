@@ -993,6 +993,9 @@ def format_aff(aff_tag):
         'country': node_contents_str(first(extract_nodes(aff_tag, "country"))),
         'email': node_contents_str(first(extract_nodes(aff_tag, "email")))
         }
+    # Remove keys with None value
+    prune_dict_of_none_values(values)
+
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
     else:

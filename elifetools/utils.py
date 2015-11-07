@@ -295,3 +295,9 @@ def first_node_str_contents(soup, nodename, attr = None, value = None):
 def set_if_value(dictionary, key, value):
     if value is not None:
         dictionary[key] = value
+
+def prune_dict_of_none_values(dictionary):
+    # If a dict key value is none, then remove the key
+    for key,value in dictionary.items():
+        if value is None:
+            del(dictionary[key])
