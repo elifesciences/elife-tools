@@ -1002,7 +1002,13 @@ def format_aff(aff_tag):
 def full_affiliation(soup):
     aff_tags = raw_parser.affiliation(soup)
     aff_tags = filter(lambda aff: 'id' in aff.attrs, aff_tags)
-    return {key: value for (key, value) in map(format_aff, aff_tags)}
+    affs = []
+    for tag in aff_tags:
+        aff = {}
+        (id, aff_details) = format_aff(tag)
+        aff[id] = aff_details
+        affs.append(aff)
+    return affs
 
 
 def references(soup):
