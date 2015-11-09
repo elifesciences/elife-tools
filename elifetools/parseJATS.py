@@ -818,6 +818,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             contributor['orcid'] = node_contents_str(contrib_id_tag)
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
+    set_if_value(contributor, "email", first_node_str_contents(contrib_tag, "email"))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
@@ -831,12 +832,14 @@ def format_contributor(contrib_tag, soup, detail="brief"):
 
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
+    ref_type_aff_count = 0
     for ref_tag in ref_tags:
         if "ref-type" in ref_tag.attrs and "rid" in ref_tag.attrs:
             ref_type = ref_tag['ref-type']
             rid = ref_tag['rid']
 
             if ref_type == "aff":
+                ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, 'affiliation', rid)
             if ref_type == "corresp":
                 add_to_list_dictionary(contrib_refs, 'email', rid)
@@ -860,7 +863,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
-    if detail == "brief":
+    if detail == "brief" or ref_type_aff_count == 0:
         # Brief format only allows one aff and it must be within the contrib tag
         aff_tag = first(extract_nodes(contrib_tag, "aff"))
         if aff_tag:
@@ -868,14 +871,14 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
                 if len(contrib_affs) > 0:
                     contributor['affiliations'].append(contrib_affs)
 
-    elif detail == "full":
+    if detail == "full":
         # person_id
         if 'id' in contributor:
             if contributor['id'].startswith("author"):
@@ -909,7 +912,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             (none_return, aff_detail) = format_aff(aff_node)
             
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
