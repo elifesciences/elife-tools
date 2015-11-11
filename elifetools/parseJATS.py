@@ -803,6 +803,18 @@ def add_to_list_dictionary(list_dict, list_key, val):
             list_dict[list_key] = []
         list_dict[list_key].append(val)
 
+def contrib_email(contrib_tag):
+    """
+    Given a contrib tag, look for an email tag, and
+    only return the value if it is not inside an aff tag
+    """
+    email = None
+    for email_tag in extract_nodes(contrib_tag, "email"):
+        if email_tag.parent.name != "aff":
+            email = email_tag.text
+    return email
+    
+
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
@@ -818,7 +830,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             contributor['orcid'] = node_contents_str(contrib_id_tag)
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
-    set_if_value(contributor, "email", first_node_str_contents(contrib_tag, "email"))
+    set_if_value(contributor, "email", contrib_email(contrib_tag))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))

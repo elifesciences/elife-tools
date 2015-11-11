@@ -80,8 +80,10 @@ Feature: get authors from the document
     
     | elife00270.xml              | [0]['surname']                        | Schekman
     | elife00270.xml              | [0]['email']                          | editorial@elifesciences.org
+    | elife00270.xml              | [0]['affiliations'][0]['email']       | None
     
     | elife00351.xml              | [0]['surname']                        | Smith
+    | elife00351.xml              | [0]['email']                          | None
     | elife00351.xml              | [0]['affiliations'][0]['email']       | richardswsmith@yahoo.co.uk
     
   Scenario Outline: Count the number of non-byline authors
