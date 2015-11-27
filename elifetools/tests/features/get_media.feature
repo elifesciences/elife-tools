@@ -218,3 +218,23 @@ Feature: Get media tag data from the document
     | elife04493.xml              | [22]['parent_ordinal']            | 1
     | elife04493.xml              | [22]['parent_sibling_ordinal']    | 1
     
+    | elife06726.xml               | [0]['type']                      | media
+    | elife06726.xml               | [0]['mimetype']                  | video
+    | elife06726.xml               | [0]['ordinal']                   | 1
+    | elife06726.xml               | [0]['sibling_ordinal']           | 1
+    | elife06726.xml               | [1]['type']                      | media
+    | elife06726.xml               | [1]['mimetype']                  | video
+    | elife06726.xml               | [1]['ordinal']                   | 2
+    | elife06726.xml               | [1]['sibling_ordinal']           | 1
+    | elife06726.xml               | [2]['type']                      | media
+    | elife06726.xml               | [2]['mimetype']                  | application
+    | elife06726.xml               | [2]['ordinal']                   | 3
+    | elife06726.xml               | [2]['sibling_ordinal']           | 1
+    | elife06726.xml               | [3]['type']                      | media
+    | elife06726.xml               | [3]['mimetype']                  | video
+    | elife06726.xml               | [3]['ordinal']                   | 4
+    | elife06726.xml               | [3]['sibling_ordinal']           | 2
+    | elife06726.xml               | [4]['type']                      | media
+    | elife06726.xml               | [4]['mimetype']                  | application
+    | elife06726.xml               | [4]['ordinal']                   | 5
+    | elife06726.xml               | [4]['sibling_ordinal']           | 1
