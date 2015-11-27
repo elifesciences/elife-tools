@@ -515,6 +515,9 @@ def tag_details_sibling_ordinal(tag):
             sibling_ordinal = tag_subarticle_sibling_ordinal(tag)
         elif first_parent(tag, 'app'):
             sibling_ordinal = tag_appendix_sibling_ordinal(tag)
+        elif tag.name == "media":
+            # Media video or non-video are different numbering
+            sibling_ordinal = tag_media_sibling_ordinal(tag)
         else:
             sibling_ordinal = tag_fig_ordinal(tag)
     elif tag.name == "supplementary-material":

@@ -229,6 +229,48 @@ def tag_subarticle_sibling_ordinal(tag):
 def tag_appendix_sibling_ordinal(tag):
     return tag_limit_sibling_ordinal(tag, 'app')
 
+def tag_media_sibling_ordinal(tag):
+    """
+    Count sibling ordinal differently depending on if the
+    mimetype is video or not
+    """
+    if tag.name != 'media':
+        return None
+    
+    nodenames = ['fig','supplementary-material','sub-article']
+    first_parent_tag = first_parent(tag, nodenames)
+    
+    sibling_ordinal = 1
+    
+    if first_parent_tag:
+        for media_tag in first_parent_tag.find_all(tag.name):
+            if 'mimetype' in tag.attrs and tag['mimetype'] == 'video':
+                # Count all video type media tags
+                if media_tag == tag:
+                    break
+                if 'mimetype' in media_tag.attrs and tag['mimetype'] == 'video':
+                    sibling_ordinal += 1
+            else:
+                # Count all non-video type media tags
+                if media_tag == tag:
+                    break
+                if 'mimetype' in media_tag.attrs and tag['mimetype'] != 'video':
+                    sibling_ordinal += 1
+                elif 'mimetype' not in media_tag.attrs:
+                    sibling_ordinal += 1
+    else:
+        for prev_tag in tag.find_all_previous(tag.name):
+            if not first_parent(prev_tag, nodenames):
+                if 'mimetype' in tag.attrs and tag['mimetype'] == 'video':
+                    # Count all video type media tags
+                    if supp_asset(prev_tag) == supp_asset(tag) and 'mimetype' in prev_tag.attrs:
+                        sibling_ordinal += 1
+                else:
+                    if supp_asset(prev_tag) == supp_asset(tag) and 'mimetype' not in prev_tag.attrs:
+                        sibling_ordinal += 1
+    
+    return sibling_ordinal
+
 def tag_supplementary_material_sibling_ordinal(tag):
     """
     Strategy is to count the previous supplementary-material tags
