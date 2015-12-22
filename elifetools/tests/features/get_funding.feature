@@ -22,7 +22,7 @@ Feature: Get funding data from the article
     | document                    | awards_groups
     | elife-kitchen-sink.xml      | 7
     | elife00013.xml              | 6
-    
+    | elife-09215-v1.xml          | 11
     
 
   Scenario Outline: Get the award groups
@@ -50,7 +50,7 @@ Feature: Get funding data from the article
     | document                    | awards_groups
     | elife-kitchen-sink.xml      | 7
     | elife00013.xml              | 6
-    
+    | elife-09215-v1.xml          | 11
 
   Scenario Outline: Get the full award groups
     Given I have the document <document>
