@@ -53,7 +53,7 @@ def get_first_element_index(root, tag_name):
 
 def convert_xlink_href(root, name_map):
     
-    xpath_list = ['.//graphic', './/media', './/inline-graphic', './/self-uri']
+    xpath_list = ['.//graphic', './/media', './/inline-graphic', './/self-uri', './/ext-link']
     count = 0
     for xpath in xpath_list:
         for tag in root.findall(xpath):
