@@ -234,31 +234,35 @@ def tag_media_sibling_ordinal(tag):
     Count sibling ordinal differently depending on if the
     mimetype is video or not
     """
-    if tag.name != 'media':
+    if hasattr(tag, 'name') and tag.name != 'media':
         return None
     
     nodenames = ['fig','supplementary-material','sub-article']
     first_parent_tag = first_parent(tag, nodenames)
     
-    sibling_ordinal = 1
+    sibling_ordinal = None
     
     if first_parent_tag:
+        # Start counting at 0
+        sibling_ordinal = 0
         for media_tag in first_parent_tag.find_all(tag.name):
             if 'mimetype' in tag.attrs and tag['mimetype'] == 'video':
                 # Count all video type media tags
-                if media_tag == tag:
-                    break
                 if 'mimetype' in media_tag.attrs and tag['mimetype'] == 'video':
                     sibling_ordinal += 1
-            else:
-                # Count all non-video type media tags
                 if media_tag == tag:
                     break
-                if 'mimetype' in media_tag.attrs and tag['mimetype'] != 'video':
+
+            else:
+                # Count all non-video type media tags
+                if (('mimetype' not in media_tag.attrs)
+                    or ('mimetype' in media_tag.attrs and tag['mimetype'] != 'video')):
                     sibling_ordinal += 1
-                elif 'mimetype' not in media_tag.attrs:
-                    sibling_ordinal += 1
+                if media_tag == tag:
+                    break
     else:
+        # Start counting at 1
+        sibling_ordinal = 1
         for prev_tag in tag.find_all_previous(tag.name):
             if not first_parent(prev_tag, nodenames):
                 if 'mimetype' in tag.attrs and tag['mimetype'] == 'video':
@@ -278,7 +282,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
     The result is its position inside any parent tag that
     are the same asset type
     """
-    if tag.name != 'supplementary-material':
+    if hasattr(tag, 'name') and tag.name != 'supplementary-material':
         return None
 
     nodenames = ['fig','media','sub-article']
