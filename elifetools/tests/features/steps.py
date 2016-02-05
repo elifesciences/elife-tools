@@ -92,3 +92,15 @@ def i_see_the_date_struct_from_date_string(step, date_string):
         date_struct = time.strptime(date_string, world.date_format)
         
     assert world.date_struct == date_struct, "Got %s" % world.date_struct
+
+@step(u'I have the mock tag')
+def i_have_the_mock_tag(step):
+    # Simple mock tag for testing
+    mock_tag = type('', (object,), {})
+    world.tag = mock_tag()
+    setattr(world.tag, 'name', 'foo')
+
+@step(u'I get the sibling ordinal (.*)')
+def i_get_the_sibling_ordinal_function(step, func):
+    world.string = globals()[func](world.tag)
+    

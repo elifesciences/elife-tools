@@ -65,3 +65,13 @@ Feature: Get utils function responses from unusual input
     | 2015   | 02      | 31    | UTC      | %Y-%m-%d %Z     | None
     | 2015   | 06      | 0     | UTC      | %Y-%m-%d %Z     | None
     | None   | 06      | 22    | UTC      | %Y-%m-%d %Z     | None
+    
+  Scenario Outline: Send sibling ordinal function bad input
+    Given I have the mock tag
+    When I get the sibling ordinal <function>
+    Then I see the string <string>
+  
+  Examples:
+    | function                                   | string   
+    | tag_media_sibling_ordinal                  | None     
+    | tag_supplementary_material_sibling_ordinal | None    

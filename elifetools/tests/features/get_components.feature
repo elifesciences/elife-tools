@@ -86,13 +86,19 @@ Feature: Get components from the document
     | elife02304.xml              | [7]['doi']                    | 10.7554/eLife.02304.008
     | elife02304.xml              | [7]['position']               | 8
     | elife02304.xml              | [7]['ordinal']                | 1
+    | elife02304.xml              | [7]['sibling_ordinal']        | 1
+    | elife02304.xml              | [7]['asset']                  | data
     | elife02304.xml              | [7]['type']                   | supplementary-material
     | elife02304.xml              | [7]['mimetype']               | application
     | elife02304.xml              | [7]['mime-subtype']           | pdf
     | elife02304.xml              | [7]['parent_type']            | fig
     | elife02304.xml              | [7]['parent_ordinal']         | 5
+    | elife02304.xml              | [7]['parent_sibling_ordinal'] | 3
+    | elife02304.xml              | [7]['parent_asset']           | figsupp
     | elife02304.xml              | [7]['parent_parent_type']     | fig
     | elife02304.xml              | [7]['parent_parent_ordinal']  | 3
+    | elife02304.xml              | [7]['parent_parent_sibling_ordinal']  | 2
+    | elife02304.xml              | [7]['parent_parent_asset']    | None
     | elife02304.xml              | [7]['label']                  | Figure 2—figure supplement 2—source data 1.
     | elife02304.xml              | [7]['full_label']             | Figure 2—figure supplement 2—source data 1.
     | elife02304.xml              | [7]['title']                  | Kinetic parameters for PfLDH alanine-scan.
@@ -148,8 +154,11 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [5]['parent_type']            | None
     | elife-kitchen-sink.xml      | [35]['doi']                   | 10.7554/eLife.00013.034
     | elife-kitchen-sink.xml      | [35]['parent_type']           | None
+    
     | elife-kitchen-sink.xml      | [36]['doi']                   | 10.7554/eLife.00013.035
     | elife-kitchen-sink.xml      | [36]['parent_type']           | None
+
+    
     | elife-kitchen-sink.xml      | [37]['doi']                   | 10.7554/eLife.00013.036
     | elife-kitchen-sink.xml      | [37]['parent_type']           | None
     
@@ -168,6 +177,11 @@ Feature: Get components from the document
     | elife-kitchen-sink.xml      | [41]['doi']                   | 10.7554/eLife.00013.040
     | elife-kitchen-sink.xml      | [41]['type']                  | table-wrap
     | elife-kitchen-sink.xml      | [41]['parent_type']           | sub-article
+    
+    | elife04490.xml              | [26]['doi']                    | 10.7554/eLife.04490.027
+    | elife04490.xml              | [26]['type']                   | fig
+    | elife04490.xml              | [26]['parent_type']            | None
+    
     
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>

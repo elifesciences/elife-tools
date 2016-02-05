@@ -78,6 +78,13 @@ Feature: get authors from the document
     | elife02935.xml              | [33]['affiliations'][0]['dept']       | Cancer Genome Project
     | elife02935.xml              | [33]['position']                     | 34
     
+    | elife00270.xml              | [0]['surname']                        | Schekman
+    | elife00270.xml              | [0]['email']                          | editorial@elifesciences.org
+    | elife00270.xml              | [0]['affiliations'][0]['email']       | None
+    
+    | elife00351.xml              | [0]['surname']                        | Smith
+    | elife00351.xml              | [0]['email']                          | None
+    | elife00351.xml              | [0]['affiliations'][0]['email']       | richardswsmith@yahoo.co.uk
     
   Scenario Outline: Count the number of non-byline authors
     Given I have the document <document>

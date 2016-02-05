@@ -508,13 +508,16 @@ def tag_details_sibling_ordinal(tag):
     sibling_ordinal = None
     
     if ((tag.name == "fig" and 'specific-use' not in tag.attrs)
-        or tag.name == "media" and 'mimetype' in tag.attrs and tag['mimetype'] == 'video'):
+         or tag.name == "media"):
         # Fig that is not a child figure / figure supplement
         if first_parent(tag, 'sub-article'):
             # Sub-article sibling ordinal numbers work differently
             sibling_ordinal = tag_subarticle_sibling_ordinal(tag)
         elif first_parent(tag, 'app'):
             sibling_ordinal = tag_appendix_sibling_ordinal(tag)
+        elif tag.name == "media":
+            # Media video or non-video are different numbering
+            sibling_ordinal = tag_media_sibling_ordinal(tag)
         else:
             sibling_ordinal = tag_fig_ordinal(tag)
     elif tag.name == "supplementary-material":
@@ -803,6 +806,18 @@ def add_to_list_dictionary(list_dict, list_key, val):
             list_dict[list_key] = []
         list_dict[list_key].append(val)
 
+def contrib_email(contrib_tag):
+    """
+    Given a contrib tag, look for an email tag, and
+    only return the value if it is not inside an aff tag
+    """
+    email = None
+    for email_tag in extract_nodes(contrib_tag, "email"):
+        if email_tag.parent.name != "aff":
+            email = email_tag.text
+    return email
+    
+
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
@@ -818,6 +833,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             contributor['orcid'] = node_contents_str(contrib_id_tag)
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
+    set_if_value(contributor, "email", contrib_email(contrib_tag))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
@@ -831,12 +847,14 @@ def format_contributor(contrib_tag, soup, detail="brief"):
 
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
+    ref_type_aff_count = 0
     for ref_tag in ref_tags:
         if "ref-type" in ref_tag.attrs and "rid" in ref_tag.attrs:
             ref_type = ref_tag['ref-type']
             rid = ref_tag['rid']
 
             if ref_type == "aff":
+                ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, 'affiliation', rid)
             if ref_type == "corresp":
                 add_to_list_dictionary(contrib_refs, 'email', rid)
@@ -860,7 +878,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
-    if detail == "brief":
+    if detail == "brief" or ref_type_aff_count == 0:
         # Brief format only allows one aff and it must be within the contrib tag
         aff_tag = first(extract_nodes(contrib_tag, "aff"))
         if aff_tag:
@@ -868,14 +886,14 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
                 if len(contrib_affs) > 0:
                     contributor['affiliations'].append(contrib_affs)
 
-    elif detail == "full":
+    if detail == "full":
         # person_id
         if 'id' in contributor:
             if contributor['id'].startswith("author"):
@@ -909,7 +927,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             (none_return, aff_detail) = format_aff(aff_node)
             
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
@@ -993,6 +1011,9 @@ def format_aff(aff_tag):
         'country': node_contents_str(first(extract_nodes(aff_tag, "country"))),
         'email': node_contents_str(first(extract_nodes(aff_tag, "email")))
         }
+    # Remove keys with None value
+    prune_dict_of_none_values(values)
+
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
     else:
@@ -1002,7 +1023,13 @@ def format_aff(aff_tag):
 def full_affiliation(soup):
     aff_tags = raw_parser.affiliation(soup)
     aff_tags = filter(lambda aff: 'id' in aff.attrs, aff_tags)
-    return {key: value for (key, value) in map(format_aff, aff_tags)}
+    affs = []
+    for tag in aff_tags:
+        aff = {}
+        (id, aff_details) = format_aff(tag)
+        aff[id] = aff_details
+        affs.append(aff)
+    return affs
 
 
 def references(soup):
@@ -1143,7 +1170,7 @@ def components(soup):
     
     nodenames = ["abstract", "fig", "table-wrap", "media",
                  "chem-struct-wrap", "sub-article", "supplementary-material",
-                 "boxed-text"]
+                 "boxed-text", "app"]
     
     # Count node order overall
     position = 1
@@ -1225,7 +1252,7 @@ def components(soup):
 
         # There are only some parent tags we care about for components
         #  and only check two levels of parentage
-        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap"]
+        parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap", "app"]
         parent_tag = first_parent(tag, parent_nodenames)
         
         if parent_tag:
@@ -1239,6 +1266,8 @@ def components(soup):
                 
                 component['parent_type'] = acting_parent_tag.name
                 component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
+                component['parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
+                component['parent_asset'] = tag_details_asset(acting_parent_tag)
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
@@ -1251,6 +1280,8 @@ def components(soup):
                    extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
                     component['parent_parent_type'] = acting_parent_tag.name
                     component['parent_parent_ordinal'] = tag_ordinal(acting_parent_tag)
+                    component['parent_parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
+                    component['parent_parent_asset'] = tag_details_asset(acting_parent_tag)
 
         content = ""
         for p_tag in extract_nodes(tag, "p"):
@@ -1279,6 +1310,8 @@ def components(soup):
             
             # Ordinal is based on all tags of the same type even if they have no DOI
             component['ordinal'] = tag_ordinal(tag)
+            component['sibling_ordinal'] = tag_details_sibling_ordinal(tag)
+            component['asset'] = tag_details_asset(tag)
             #component['ordinal'] = position_by_type[ctype]
                         
             components.append(component)
@@ -1410,7 +1443,7 @@ def full_award_groups(soup):
     """
     Find the award-group items and return a list of details
     """
-    award_groups = {}
+    award_groups = []
 
     funding_group_section = extract_nodes(soup, "funding-group")
     for fg in funding_group_section:
@@ -1431,7 +1464,9 @@ def full_award_groups(soup):
                 copy_attribute(source, 'institution', award_group)
                 copy_attribute(source, 'institution-id', award_group, 'id')
                 copy_attribute(source, 'institution-id-type', award_group, destination_key='id-type')
-            award_groups[ref] = award_group
+            award_group_by_ref = {}
+            award_group_by_ref[ref] = award_group
+            award_groups.append(award_group_by_ref)
 
     return award_groups
 

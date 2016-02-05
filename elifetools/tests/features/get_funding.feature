@@ -22,7 +22,7 @@ Feature: Get funding data from the article
     | document                    | awards_groups
     | elife-kitchen-sink.xml      | 7
     | elife00013.xml              | 6
-    
+    | elife-09215-v1.xml          | 11
     
 
   Scenario Outline: Get the award groups
@@ -50,7 +50,7 @@ Feature: Get funding data from the article
     | document                    | awards_groups
     | elife-kitchen-sink.xml      | 7
     | elife00013.xml              | 6
-    
+    | elife-09215-v1.xml          | 11
 
   Scenario Outline: Get the full award groups
     Given I have the document <document>
@@ -61,11 +61,11 @@ Feature: Get funding data from the article
   Examples:
     | document                    | list_item                       | string
     
-    | elife-kitchen-sink.xml      | ['par-1']['id-type']            | FundRef
-    | elife-kitchen-sink.xml      | ['par-1']['institution']        | Howard Hughes Medical Institute
-    | elife-kitchen-sink.xml      | ['par-1']['id']                 | dx.doi.org/10.13039/100000011
-    | elife-kitchen-sink.xml      | ['par-1']['award-id']           | None
+    | elife-kitchen-sink.xml      | [0]['par-1']['id-type']         | FundRef
+    | elife-kitchen-sink.xml      | [0]['par-1']['institution']        | Howard Hughes Medical Institute
+    | elife-kitchen-sink.xml      | [0]['par-1']['id']                 | dx.doi.org/10.13039/100000011
+    | elife-kitchen-sink.xml      | [0]['par-1']['award-id']           | None
     
-    | elife-kitchen-sink.xml      | ['par-2']['award-id']           | F32 GM086054
-    | elife-kitchen-sink.xml      | ['par-2']['id']                 | dx.doi.org/10.13039/100000002
+    | elife-kitchen-sink.xml      | [1]['par-2']['award-id']           | F32 GM086054
+    | elife-kitchen-sink.xml      | [1]['par-2']['id']                 | dx.doi.org/10.13039/100000002
     
