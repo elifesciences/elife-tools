@@ -10,6 +10,11 @@ elife-tools
 
 Tools for using article data in Python
 
+Non-Python dependencies
+=======================
+
+* libxml2 (Ubuntu, Arch)
+
 Install for users
 =================
 
@@ -18,6 +23,12 @@ Install via `pip <http://www.pip-installer.org/>`_:
 .. code-block:: bash
 
    $ pip install elifetools
+   
+You might need to install libxml manually first
+
+.. code-block:: bash
+
+   $ sudo STATIC_DEPS=true pip install lxml==3.4.1
 
 To install the latest version directly from git
 
@@ -50,7 +61,7 @@ Example usage
 
 .. code-block:: python
 
-    >>> import parseJATS as parser
+    >>> from elifetools import parseJATS as parser
     >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
     >>> print parser.doi(soup)
 
