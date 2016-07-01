@@ -182,6 +182,9 @@ Feature: Get components from the document
     | elife04490.xml              | [26]['type']                   | fig
     | elife04490.xml              | [26]['parent_type']            | None
     
+    | elife-14093-v1.xml          | [34]['doi']                    | 10.7554/eLife.14093.035
+    | elife-14093-v1.xml          | [34]['type']                   | media
+    | elife-14093-v1.xml          | [34]['parent_type']            | None
     
   Scenario Outline: Count the number of components permissions
     Given I have the document <document>
