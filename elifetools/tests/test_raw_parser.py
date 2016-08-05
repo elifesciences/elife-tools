@@ -1,13 +1,16 @@
 import os, unittest
-from bs4 import BeautifulStoneSoup as bss
+
+os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import parseJATS as parser
 import rawJATS as raw_parser
 
-class JatsParser(unittest.TestCase):
+from file_utils import sample_xml
+
+class TestJatsParser(unittest.TestCase):
     def setUp(self):
-        self.kitchen_sink_xml = os.path.join(os.getcwd(), 'sample-xml/elife-kitchen-sink.xml')
-        self.xml = os.path.join(os.getcwd(), 'sample-xml/elife00013.xml')
+        self.kitchen_sink_xml = sample_xml('elife-kitchen-sink.xml')
+        self.xml = sample_xml('elife00013.xml')
         self.soup = parser.parse_document(self.kitchen_sink_xml)
 
     def tearDown(self):
@@ -28,9 +31,9 @@ class JatsParser(unittest.TestCase):
 
                 self.assertEqual(got, expected)
             except AssertionError:
-                print 'failed on',func,'expected',expected,'got',got
+                print 'failed on', func, 'expected', expected, 'got', got
                 raise
-        soup = parser.parse_document(self.kitchen_sink_xml)        
+        soup = parser.parse_document(self.kitchen_sink_xml)
         self.assertEqual(parser.journal_issn(soup, pub_format="electronic"), u"2050-084X")
 
     def test_quickly2(self):
