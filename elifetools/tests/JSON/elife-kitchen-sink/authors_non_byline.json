@@ -1,0 +1,71 @@
+[
+    {
+        "surname": "Mullikin", 
+        "group-author-key": "group-author-id1", 
+        "author": "Jim Mullikin", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "city": "California", 
+                "institution": "Science Exchange, Palo Alto"
+            }
+        ], 
+        "given-names": "Jim", 
+        "position": 1, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Mulvany", 
+        "group-author-key": "group-author-id1", 
+        "author": "Ian Mulvany", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "Ian", 
+        "position": 2, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Bloggs", 
+        "group-author-key": "group-author-id1", 
+        "author": "J Bloggs", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "J", 
+        "position": 3, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Dodd", 
+        "group-author-key": "group-author-id2", 
+        "author": "Melissa Dodd", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "Melissa", 
+        "position": 4, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Rogers", 
+        "group-author-key": "group-author-id2", 
+        "author": "Fran Rogers", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "Fran", 
+        "position": 5, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Patterson", 
+        "group-author-key": "group-author-id2", 
+        "author": "Mark Patterson", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "Mark", 
+        "position": 6, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Harrison", 
+        "group-author-key": "group-author-id2", 
+        "author": "Melissa Harrison", 
+        "article_doi": "10.7554/eLife.00013", 
+        "given-names": "Melissa", 
+        "position": 7, 
+        "type": "author non-byline"
+    }
+]

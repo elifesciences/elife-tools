@@ -1,0 +1,298 @@
+[
+    {
+        "surname": "Alegado", 
+        "suffix": "Jnr", 
+        "given-names": "Rosanna A", 
+        "references": {
+            "present-address": [
+                "pa1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2"
+            ], 
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ], 
+            "contribution": [
+                "con1"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-23"
+    }, 
+    {
+        "surname": "Brown", 
+        "given-names": "Laura W", 
+        "references": {
+            "present-address": [
+                "pa2"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-3"
+            ], 
+            "affiliation": [
+                "aff2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ], 
+            "contribution": [
+                "con2"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0002-7361-560X", 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-17"
+    }, 
+    {
+        "surname": "Cao", 
+        "given-names": "Shugeng", 
+        "type": "author", 
+        "id": "author-3", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Dermenjian", 
+        "given-names": "Renee Kathryn", 
+        "type": "author", 
+        "id": "author-4", 
+        "references": {
+            "present-address": [
+                "pa3"
+            ], 
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Zuzow", 
+        "given-names": "Richard", 
+        "references": {
+            "foot-note": [
+                "fn1"
+            ], 
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "present-address": [
+                "pa3"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-5", 
+        "deceased": "yes"
+    }, 
+    {
+        "surname": "Fairclough", 
+        "given-names": "Stephen R", 
+        "type": "author", 
+        "id": "author-6", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-6"
+            ]
+        }
+    }, 
+    {
+        "surname": "Clardy", 
+        "corresp": "yes", 
+        "given-names": "Jon", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-7"
+    }, 
+    {
+        "surname": "King", 
+        "corresp": "yes", 
+        "given-names": "Nicole", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2", 
+                "par-3", 
+                "par-4", 
+                "par-5"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-8"
+    }, 
+    {
+        "type": "on-behalf-of", 
+        "on-behalf-of": "for the HIV Genome-to-Genome Study and the Swiss HIV Cohort Study"
+    }, 
+    {
+        "corresp": "yes", 
+        "type": "author", 
+        "group-author-key": "group-author-id1", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con9"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-7"
+            ], 
+            "email": [
+                "cor3"
+            ]
+        }, 
+        "collab": "NISC Comparative Sequencing Program"
+    }, 
+    {
+        "type": "author", 
+        "group-author-key": "group-author-id2", 
+        "collab": "eLife staff group"
+    }, 
+    {
+        "surname": "Sneden", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Pediatric Dengue Vaccine Initiative"
+            }
+        ], 
+        "given-names": "Christopher", 
+        "role": "Reviewing editor", 
+        "type": "editor", 
+        "id": "author-10"
+    }, 
+    {
+        "surname": "Mullikin", 
+        "given-names": "Jim", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "city": "California", 
+                "institution": "Science Exchange, Palo Alto"
+            }
+        ]
+    }, 
+    {
+        "surname": "Mulvany", 
+        "given-names": "Ian", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id1"
+    }, 
+    {
+        "surname": "Bloggs", 
+        "given-names": "J", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id1"
+    }, 
+    {
+        "surname": "Dodd", 
+        "given-names": "Melissa", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2"
+    }, 
+    {
+        "surname": "Rogers", 
+        "given-names": "Fran", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2"
+    }, 
+    {
+        "surname": "Patterson", 
+        "given-names": "Mark", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2"
+    }, 
+    {
+        "surname": "Harrison", 
+        "given-names": "Melissa", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2"
+    }
+]

@@ -1,0 +1,325 @@
+[
+    {
+        "surname": "Hladik", 
+        "author": "Florian Hladik", 
+        "article_doi": "10.7554/eLife.07586", 
+        "corresp": "yes", 
+        "given-names": "Florian", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 1, 
+        "orcid": "http://orcid.org/0000-0002-0375-2764", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author"
+    }, 
+    {
+        "surname": "Burgener", 
+        "author": "Adam Burgener", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Adam", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 2, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Ballweber", 
+        "author": "Lamar Ballweber", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Lamar", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 3, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Gottardo", 
+        "author": "Raphael Gottardo", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Raphael", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 4, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Vojtech", 
+        "author": "Lucia Vojtech", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Lucia", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 5, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Fourati", 
+        "author": "Slim Fourati", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Slim", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 6, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Dai", 
+        "author": "James Y Dai", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "James Y", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 7, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Cameron", 
+        "author": "Mark J Cameron", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Mark J", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 8, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Strobl", 
+        "author": "Johanna Strobl", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Johanna", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 9, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Hughes", 
+        "author": "Sean M Hughes", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Sean M", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 10, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Hoesley", 
+        "author": "Craig Hoesley", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Craig", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 11, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Andrew", 
+        "author": "Philip Andrew", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Philip", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 12, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Johnson", 
+        "author": "Sherri Johnson", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Sherri", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 13, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Piper", 
+        "author": "Jeanna Piper", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Jeanna", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 14, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Friend", 
+        "author": "David R Friend", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "David R", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 15, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Ball", 
+        "author": "T Blake Ball", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "T Blake", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 16, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Cranston", 
+        "author": "Ross D Cranston", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Ross D", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 17, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Mayer", 
+        "author": "Kenneth H Mayer", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "Kenneth H", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 18, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "McElrath", 
+        "author": "M Juliana McElrath", 
+        "article_doi": "10.7554/eLife.07586", 
+        "given-names": "M Juliana", 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "position": 19, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author"
+    }, 
+    {
+        "surname": "McGowan", 
+        "author": "Ian McGowan", 
+        "article_doi": "10.7554/eLife.07586", 
+        "corresp": "yes", 
+        "given-names": "Ian", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 20, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author"
+    }
+]

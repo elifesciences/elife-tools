@@ -1,0 +1,47 @@
+[
+    {
+        "surname": "Schekman", 
+        "corresp": "yes", 
+        "email": "editorial@elifesciences.org", 
+        "given-names": "Randy", 
+        "role": "Editor-in-Chief", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1032"
+    }, 
+    {
+        "role": "Managing Executive Editor", 
+        "surname": "Patterson", 
+        "given-names": "Mark", 
+        "type": "author", 
+        "id": "author-1002"
+    }, 
+    {
+        "surname": "Watt", 
+        "given-names": "Fiona", 
+        "role": "Deputy Editor", 
+        "references": {
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1031"
+    }, 
+    {
+        "surname": "Weigel", 
+        "given-names": "Detlef", 
+        "role": "Deputy Editor", 
+        "references": {
+            "competing-interest": [
+                "conf3"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1030"
+    }
+]
