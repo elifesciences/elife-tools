@@ -1,4 +1,6 @@
 language: python
+sudo: required
+
 python:
   - "2.7"
 # command to install dependencies
