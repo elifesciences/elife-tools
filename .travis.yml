@@ -2,10 +2,6 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-install:
-  - pip install -r requirements.txt
-  - pip install coveralls
-# command to run tests
-before_script: cd elifetools/tests
-script: lettuce
+install: ./travis-install.sh
+script: ./travis-test.sh
 after_success: coveralls
