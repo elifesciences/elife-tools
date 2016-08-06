@@ -1,9 +1,7 @@
 import unittest
 import os
-import json
 import time
 from ddt import ddt, data, unpack
-from bs4 import BeautifulSoup
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
