@@ -1,0 +1,18 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Molecular Ecology", 
+            "country": "Germany", 
+            "institution": "Max Planck Institute for Chemical Ecology", 
+            "city": "Jena"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Department of Plant Physiology, Swammerdam Institute of Life Sciences", 
+            "country": "Netherlands", 
+            "institution": "University of Amsterdam", 
+            "city": "Amsterdam"
+        }
+    }
+]

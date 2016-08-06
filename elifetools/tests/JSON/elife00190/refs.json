@@ -1,0 +1,2301 @@
+[
+    {
+        "article_title": "The neuronal form of adaptor protein-3 is required for synaptic vesicle formation from endosomes", 
+        "lpage": "42", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Blumstein", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Faundez", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakatsu", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saito", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ohno", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kelly", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The neuronal form of adaptor protein-3 is required for synaptic vesicle formation from endosomes", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "J Neurosci", 
+        "fpage": "8034", 
+        "year": "2001", 
+        "position": 1, 
+        "ref": "BlumsteinJFaundezVNakatsuFSaitoTOhnoHKellyRB2001The neuronal form of adaptor protein-3 is required for synaptic vesicle formation from endosomesJ Neurosci21803442", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "TrakEM2 software for neural circuit reconstruction", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Cardona", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saalfeld", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schindelin", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arganda-Carreras", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Preibisch", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Longair", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "TrakEM2 software for neural circuit reconstruction", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "PLoS One", 
+        "fpage": "e38011", 
+        "year": "2012", 
+        "etal": true, 
+        "position": 2, 
+        "ref": "CardonaASaalfeldSSchindelinJArganda-CarrerasIPreibischSLongairM2012TrakEM2 software for neural circuit reconstructionPLoS One7e38011", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Molecular architecture and functional model of the endocytic AP2 complex", 
+        "lpage": "35", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Collins", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCoy", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kent", 
+                "given-names": "HM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Owen", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular architecture and functional model of the endocytic AP2 complex", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Cell", 
+        "fpage": "523", 
+        "year": "2002", 
+        "position": 3, 
+        "ref": "CollinsBMMcCoyAJKentHMEvansPROwenDJ2002Molecular architecture and functional model of the endocytic AP2 complexCell10952335", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Association of the AP-3 adaptor complex with clathrin", 
+        "lpage": "4", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Dell'Angelica", 
+                "given-names": "EC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Klumperman", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stoorvogel", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonifacino", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Association of the AP-3 adaptor complex with clathrin", 
+        "publication-type": "journal", 
+        "volume": "280", 
+        "source": "Science", 
+        "fpage": "431", 
+        "year": "1998", 
+        "position": 4, 
+        "ref": "Dell'AngelicaECKlumpermanJStoorvogelWBonifacinoJS1998Association of the AP-3 adaptor complex with clathrinScience2804314", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Molecular circuitry of endocytosis at nerve terminals", 
+        "lpage": "60", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Dittman", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ryan", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular circuitry of endocytosis at nerve terminals", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Annu Rev Cell Dev Biol", 
+        "fpage": "133", 
+        "year": "2009", 
+        "position": 5, 
+        "ref": "DittmanJRyanTA2009Molecular circuitry of endocytosis at nerve terminalsAnnu Rev Cell Dev Biol2513360", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "The gamma/sigma1 and alpha/sigma2 hemicomplexes of clathrin adaptors AP-1 and AP-2 harbor the dileucine recognition site", 
+        "lpage": "96", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Doray", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knisely", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kornfeld", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The gamma/sigma1 and alpha/sigma2 hemicomplexes of clathrin adaptors AP-1 and AP-2 harbor the dileucine recognition site", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Mol Biol Cell", 
+        "fpage": "1887", 
+        "year": "2007", 
+        "position": 6, 
+        "ref": "DorayBLeeIKniselyJBuGKornfeldS2007The gamma/sigma1 and alpha/sigma2 hemicomplexes of clathrin adaptors AP-1 and AP-2 harbor the dileucine recognition siteMol Biol Cell18188796", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "GFP Reconstitution across Synaptic Partners (GRASP) defines cell contacts and synapses in living nervous systems", 
+        "lpage": "63", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Feinberg", 
+                "given-names": "EH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vanhoven", 
+                "given-names": "MK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bendesky", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fetter", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shen", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "GFP Reconstitution across Synaptic Partners (GRASP) defines cell contacts and synapses in living nervous systems", 
+        "publication-type": "journal", 
+        "volume": "57", 
+        "source": "Neuron", 
+        "fpage": "353", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 7, 
+        "ref": "FeinbergEHVanhovenMKBendeskyAWangGFetterRDShenK2008GFP Reconstitution across Synaptic Partners (GRASP) defines cell contacts and synapses in living nervous systemsNeuron5735363", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "The stoned proteins regulate synaptic vesicle recycling in the presynaptic terminal", 
+        "lpage": "60", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Fergestad", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "WS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Broadie", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The stoned proteins regulate synaptic vesicle recycling in the presynaptic terminal", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "J Neurosci", 
+        "fpage": "5847", 
+        "year": "1999", 
+        "position": 8, 
+        "ref": "FergestadTDavisWSBroadieK1999The stoned proteins regulate synaptic vesicle recycling in the presynaptic terminalJ Neurosci19584760", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Simultaneous binding of PtdIns(4,5)P2 and clathrin by AP180 in the nucleation of clathrin lattices on membranes", 
+        "lpage": "5", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Ford", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pearse", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Higgins", 
+                "given-names": "MK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vallis", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Owen", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gibson", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Simultaneous binding of PtdIns(4,5)P2 and clathrin by AP180 in the nucleation of clathrin lattices on membranes", 
+        "publication-type": "journal", 
+        "volume": "291", 
+        "source": "Science", 
+        "fpage": "1051", 
+        "year": "2001", 
+        "etal": true, 
+        "position": 9, 
+        "ref": "FordMGPearseBMHigginsMKVallisYOwenDJGibsonA2001Simultaneous binding of PtdIns(4,5)P2 and clathrin by AP180 in the nucleation of clathrin lattices on membranesScience29110515", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Single-copy insertion of transgenes in Caenorhabditis elegans", 
+        "lpage": "83", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Frokjaer-Jensen", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "MW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hopkins", 
+                "given-names": "CE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Newman", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thummel", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Olesen", 
+                "given-names": "SP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Single-copy insertion of transgenes in Caenorhabditis elegans", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Nat Genet", 
+        "fpage": "1375", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 10, 
+        "ref": "Frokjaer-JensenCDavisMWHopkinsCENewmanBJThummelJMOlesenSP2008Single-copy insertion of transgenes in Caenorhabditis elegansNat Genet40137583", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Functional repurposing revealed by comparing S. pombe and S. cerevisiae genetic interactions", 
+        "lpage": "52", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Frost", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Elgort", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brandman", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ives", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Collins", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller-Vedam", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Functional repurposing revealed by comparing S. pombe and S. cerevisiae genetic interactions", 
+        "publication-type": "journal", 
+        "volume": "149", 
+        "source": "Cell", 
+        "fpage": "1339", 
+        "year": "2012", 
+        "etal": true, 
+        "position": 11, 
+        "ref": "FrostAElgortMGBrandmanOIvesCCollinsSRMiller-VedamL2012Functional repurposing revealed by comparing S. pombe and S. cerevisiae genetic interactionsCell149133952", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "AP-1/sigma1B-adaptin mediates endosomal synaptic vesicle recycling, learning and memory", 
+        "lpage": "30", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Glyvuk", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tsytsyura", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Geumann", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "D'Hooge", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huve", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kratzke", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "AP-1/sigma1B-adaptin mediates endosomal synaptic vesicle recycling, learning and memory", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "EMBO J", 
+        "fpage": "1318", 
+        "year": "2010", 
+        "etal": true, 
+        "position": 12, 
+        "ref": "GlyvukNTsytsyuraYGeumannCD'HoogeRHuveJKratzkeM2010AP-1/sigma1B-adaptin mediates endosomal synaptic vesicle recycling, learning and memoryEMBO J29131830", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Role of Drosophila alpha-adaptin in presynaptic vesicle recycling", 
+        "lpage": "76", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Gonzalez-Gaitan", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jackle", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Role of Drosophila alpha-adaptin in presynaptic vesicle recycling", 
+        "publication-type": "journal", 
+        "volume": "88", 
+        "source": "Cell", 
+        "fpage": "767", 
+        "year": "1997", 
+        "position": 13, 
+        "ref": "Gonzalez-GaitanMJackleH1997Role of Drosophila alpha-adaptin in presynaptic vesicle recyclingCell8876776", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Receptor-mediated endocytosis in the Caenorhabditis elegans oocyte", 
+        "lpage": "26", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Grant", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hirsh", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Receptor-mediated endocytosis in the Caenorhabditis elegans oocyte", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Mol Biol Cell", 
+        "fpage": "4311", 
+        "year": "1999", 
+        "position": 14, 
+        "ref": "GrantBHirshD1999Receptor-mediated endocytosis in the Caenorhabditis elegans oocyteMol Biol Cell10431126", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Mu2 adaptin facilitates but is not essential for synaptic vesicle recycling in Caenorhabditis elegans", 
+        "lpage": "92", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Gu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuske", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watanabe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baum", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garriga", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mu2 adaptin facilitates but is not essential for synaptic vesicle recycling in Caenorhabditis elegans", 
+        "publication-type": "journal", 
+        "volume": "183", 
+        "source": "J Cell Biol", 
+        "fpage": "881", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 15, 
+        "ref": "GuMSchuskeKWatanabeSLiuQBaumPGarrigaG2008Mu2 adaptin facilitates but is not essential for synaptic vesicle recycling in Caenorhabditis elegansJ Cell Biol18388192", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Open syntaxin docks synaptic vesicles", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Hammarlund", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Palfreyman", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watanabe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Olsen", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jorgensen", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Open syntaxin docks synaptic vesicles", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "PLoS Biol.", 
+        "fpage": "e198", 
+        "year": "2007", 
+        "position": 16, 
+        "ref": "HammarlundMPalfreymanMTWatanabeSOlsenSJorgensenEM2007Open syntaxin docks synaptic vesiclesPLoS Biol.5e198", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "AP180 and AP-2 interact directly in a complex that cooperatively assembles clathrin", 
+        "lpage": "94", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Hao", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luo", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zheng", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Prasad", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lafer", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "AP180 and AP-2 interact directly in a complex that cooperatively assembles clathrin", 
+        "publication-type": "journal", 
+        "volume": "274", 
+        "source": "J Biol Chem", 
+        "fpage": "22785", 
+        "year": "1999", 
+        "position": 17, 
+        "ref": "HaoWLuoZZhengLPrasadKLaferEM1999AP180 and AP-2 interact directly in a complex that cooperatively assembles clathrinJ Biol Chem2742278594", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "Dual interaction of synaptotagmin with mu2- and alpha-adaptin facilitates clathrin-coated pit nucleation", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Haucke", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wenk", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapman", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Farsad", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "De Camilli", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dual interaction of synaptotagmin with mu2- and alpha-adaptin facilitates clathrin-coated pit nucleation", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "EMBO J", 
+        "fpage": "6011", 
+        "year": "2000", 
+        "position": 18, 
+        "ref": "HauckeVWenkMRChapmanERFarsadKDe CamilliP2000Dual interaction of synaptotagmin with mu2- and alpha-adaptin facilitates clathrin-coated pit nucleationEMBO J1960119", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Evidence for recycling of synaptic vesicle membrane during transmitter release at the frog neuromuscular junction", 
+        "lpage": "44", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Heuser", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reese", 
+                "given-names": "TS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evidence for recycling of synaptic vesicle membrane during transmitter release at the frog neuromuscular junction", 
+        "publication-type": "journal", 
+        "volume": "57", 
+        "source": "J Cell Biol", 
+        "fpage": "315", 
+        "year": "1973", 
+        "position": 19, 
+        "ref": "HeuserJEReeseTS1973Evidence for recycling of synaptic vesicle membrane during transmitter release at the frog neuromuscular junctionJ Cell Biol5731544", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "C. elegans disabled is required for cell-type specific endocytosis and is essential in animals lacking the AP-3 adaptor complex", 
+        "lpage": "51", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Holmes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Flett", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Coudreuse", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Korswagen", 
+                "given-names": "HC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pettitt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "C. elegans disabled is required for cell-type specific endocytosis and is essential in animals lacking the AP-3 adaptor complex", 
+        "publication-type": "journal", 
+        "volume": "120", 
+        "source": "J Cell Sci", 
+        "fpage": "2741", 
+        "year": "2007", 
+        "position": 20, 
+        "ref": "HolmesAFlettACoudreuseDKorswagenHCPettittJ2007C. elegans disabled is required for cell-type specific endocytosis and is essential in animals lacking the AP-3 adaptor complexJ Cell Sci120274151", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "A large-scale conformational change couples membrane recruitment to cargo binding in the AP2 clathrin adaptor complex", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Jackson", 
+                "given-names": "LP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kelly", 
+                "given-names": "BT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCoy", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gaffry", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "James", 
+                "given-names": "LC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Collins", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A large-scale conformational change couples membrane recruitment to cargo binding in the AP2 clathrin adaptor complex", 
+        "publication-type": "journal", 
+        "volume": "141", 
+        "source": "Cell", 
+        "fpage": "1220", 
+        "year": "2010", 
+        "etal": true, 
+        "position": 21, 
+        "ref": "JacksonLPKellyBTMcCoyAJGaffryTJamesLCCollinsBM2010A large-scale conformational change couples membrane recruitment to cargo binding in the AP2 clathrin adaptor complexCell14112209", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Lethality and centrality in protein networks", 
+        "lpage": "2", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Jeong", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mason", 
+                "given-names": "SP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barabasi", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oltvai", 
+                "given-names": "ZN", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Lethality and centrality in protein networks", 
+        "publication-type": "journal", 
+        "volume": "411", 
+        "source": "Nature", 
+        "fpage": "41", 
+        "year": "2001", 
+        "position": 22, 
+        "ref": "JeongHMasonSPBarabasiALOltvaiZN2001Lethality and centrality in protein networksNature411412", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Temporal reiteration of a precise gene expression pattern during nematode development", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Johnstone", 
+                "given-names": "IL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barry", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Temporal reiteration of a precise gene expression pattern during nematode development", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "EMBO J", 
+        "fpage": "3633", 
+        "year": "1996", 
+        "position": 23, 
+        "ref": "JohnstoneILBarryJD1996Temporal reiteration of a precise gene expression pattern during nematode developmentEMBO J1536339", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Defective recycling of synaptic vesicles in synaptotagmin mutants of Caenorhabditis elegans", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Jorgensen", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hartwieg", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuske", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nonet", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jin", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Horvitz", 
+                "given-names": "HR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Defective recycling of synaptic vesicles in synaptotagmin mutants of Caenorhabditis elegans", 
+        "publication-type": "journal", 
+        "volume": "378", 
+        "source": "Nature", 
+        "fpage": "196", 
+        "year": "1995", 
+        "position": 24, 
+        "ref": "JorgensenEMHartwiegESchuskeKNonetMLJinYHorvitzHR1995Defective recycling of synaptic vesicles in synaptotagmin mutants of Caenorhabditis elegansNature3781969", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Molecular basis of synaptic vesicle cargo recognition by the endocytic sorting adaptor stonin 2", 
+        "lpage": "510", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Jung", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wienisch", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rand", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Muller", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Krause", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular basis of synaptic vesicle cargo recognition by the endocytic sorting adaptor stonin 2", 
+        "publication-type": "journal", 
+        "volume": "179", 
+        "source": "J Cell Biol", 
+        "fpage": "1497", 
+        "year": "2007", 
+        "etal": true, 
+        "position": 25, 
+        "ref": "JungNWienischMGuMRandJBMullerSLKrauseG2007Molecular basis of synaptic vesicle cargo recognition by the endocytic sorting adaptor stonin 2J Cell Biol1791497510", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Mutation in AP-3 delta in the mocha mouse links endosomal transport to storage deficiency in platelets, melanosomes, and synaptic vesicles", 
+        "lpage": "22", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Kantheti", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Qiao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diaz", 
+                "given-names": "ME", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peden", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meyer", 
+                "given-names": "GE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carskadon", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mutation in AP-3 delta in the mocha mouse links endosomal transport to storage deficiency in platelets, melanosomes, and synaptic vesicles", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Neuron", 
+        "fpage": "111", 
+        "year": "1998", 
+        "etal": true, 
+        "position": 26, 
+        "ref": "KanthetiPQiaoXDiazMEPedenAAMeyerGECarskadonSL1998Mutation in AP-3 delta in the mocha mouse links endosomal transport to storage deficiency in platelets, melanosomes, and synaptic vesiclesNeuron2111122", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Molecular determinants for the interaction between AMPA receptors and the clathrin adaptor complex AP-2", 
+        "lpage": "6", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Kastning", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kukhtina", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kittler", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pechstein", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Enders", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular determinants for the interaction between AMPA receptors and the clathrin adaptor complex AP-2", 
+        "publication-type": "journal", 
+        "volume": "104", 
+        "source": "Proc Natl Acad Sci USA", 
+        "fpage": "2991", 
+        "year": "2007", 
+        "etal": true, 
+        "position": 27, 
+        "ref": "KastningKKukhtinaVKittlerJTChenGPechsteinAEndersS2007Molecular determinants for the interaction between AMPA receptors and the clathrin adaptor complex AP-2Proc Natl Acad Sci USA10429916", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "A structural explanation for the binding of endocytic dileucine motifs by the AP2 complex", 
+        "lpage": "79", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Kelly", 
+                "given-names": "BT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCoy", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spate", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Honing", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A structural explanation for the binding of endocytic dileucine motifs by the AP2 complex", 
+        "publication-type": "journal", 
+        "volume": "456", 
+        "source": "Nature", 
+        "fpage": "976", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 28, 
+        "ref": "KellyBTMcCoyAJSpateKMillerSEEvansPRHoningS2008A structural explanation for the binding of endocytic dileucine motifs by the AP2 complexNature45697679", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Synaptic vesicle recycling at CNS snapses without AP-2", 
+        "lpage": "74", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Kim", 
+                "given-names": "SH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ryan", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Synaptic vesicle recycling at CNS snapses without AP-2", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "J Neurosci", 
+        "fpage": "3865", 
+        "year": "2009", 
+        "position": 29, 
+        "ref": "KimSHRyanTA2009Synaptic vesicle recycling at CNS snapses without AP-2J Neurosci29386574", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Phospho-dependent binding of the clathrin AP2 adaptor complex to GABAA receptors regulates the efficacy of inhibitory synaptic transmission", 
+        "lpage": "6", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Kittler", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Honing", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bogdanov", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McAinsh", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arancibia-Carcamo", 
+                "given-names": "IL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Phospho-dependent binding of the clathrin AP2 adaptor complex to GABAA receptors regulates the efficacy of inhibitory synaptic transmission", 
+        "publication-type": "journal", 
+        "volume": "102", 
+        "source": "Proc Natl Acad Sci USA", 
+        "fpage": "14871", 
+        "year": "2005", 
+        "etal": true, 
+        "position": 30, 
+        "ref": "KittlerJTChenGHoningSBogdanovYMcAinshKArancibia-CarcamoIL2005Phospho-dependent binding of the clathrin AP2 adaptor complex to GABAA receptors regulates the efficacy of inhibitory synaptic transmissionProc Natl Acad Sci USA102148716", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Presynaptic Ca2+/calmodulin-dependent protein kinase II modulates neurotransmitter release by activating BK channels at Caenorhabditis elegans neuromuscular junction", 
+        "lpage": "13", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Liu", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ge", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "ZW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Presynaptic Ca2+/calmodulin-dependent protein kinase II modulates neurotransmitter release by activating BK channels at Caenorhabditis elegans neuromuscular junction", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "J Neurosci", 
+        "fpage": "10404", 
+        "year": "2007", 
+        "position": 31, 
+        "ref": "LiuQChenBGeQWangZW2007Presynaptic Ca2+/calmodulin-dependent protein kinase II modulates neurotransmitter release by activating BK channels at Caenorhabditis elegans neuromuscular junctionJ Neurosci271040413", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Clathrin-coated pits contain an integral membrane protein that binds the AP-2 subunit with high affinity", 
+        "lpage": "20", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Mahaffey", 
+                "given-names": "DT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peeler", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brodsky", 
+                "given-names": "FM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Anderson", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Clathrin-coated pits contain an integral membrane protein that binds the AP-2 subunit with high affinity", 
+        "publication-type": "journal", 
+        "volume": "265", 
+        "source": "J Biol Chem", 
+        "fpage": "16514", 
+        "year": "1990", 
+        "position": 32, 
+        "ref": "MahaffeyDTPeelerJSBrodskyFMAndersonRG1990Clathrin-coated pits contain an integral membrane protein that binds the AP-2 subunit with high affinityJ Biol Chem2651651420", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Stonins\u2013specialized adaptors for synaptic vesicle recycling and beyond?", 
+        "lpage": "15", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Maritzen", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Podufall", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Haucke", 
+                "given-names": "V", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Stonins\u2013specialized adaptors for synaptic vesicle recycling and beyond?", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Traffic", 
+        "fpage": "8", 
+        "year": "2010", 
+        "position": 33, 
+        "ref": "MaritzenTPodufallJHauckeV2010Stonins\u2013specialized adaptors for synaptic vesicle recycling and beyond?Traffic11815", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Spontaneous-curvature theory of clathrin-coated membranes", 
+        "lpage": "75", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Mashl", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bruinsma", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Spontaneous-curvature theory of clathrin-coated membranes", 
+        "publication-type": "journal", 
+        "volume": "74", 
+        "source": "Biophys J", 
+        "fpage": "2862", 
+        "year": "1998", 
+        "position": 34, 
+        "ref": "MashlRJBruinsmaRF1998Spontaneous-curvature theory of clathrin-coated membranesBiophys J74286275", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Stabilization of clathrin coats by the core of the clathrin-associated protein complex AP-2", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Matsui", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kirchhausen", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Stabilization of clathrin coats by the core of the clathrin-associated protein complex AP-2", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "Biochemistry", 
+        "fpage": "10791", 
+        "year": "1990", 
+        "position": 35, 
+        "ref": "MatsuiWKirchhausenT1990Stabilization of clathrin coats by the core of the clathrin-associated protein complex AP-2Biochemistry29107918", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "The molecular basis for the endocytosis of small R-SNAREs by the clathrin adaptor CALM", 
+        "lpage": "31", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Miller", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sahlender", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Graham", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Honing", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Robinson", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peden", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The molecular basis for the endocytosis of small R-SNAREs by the clathrin adaptor CALM", 
+        "publication-type": "journal", 
+        "volume": "147", 
+        "source": "Cell", 
+        "fpage": "1118", 
+        "year": "2011", 
+        "etal": true, 
+        "position": 36, 
+        "ref": "MillerSESahlenderDAGrahamSCHoningSRobinsonMSPedenAA2011The molecular basis for the endocytosis of small R-SNAREs by the clathrin adaptor CALMCell147111831", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Dual engagement regulation of protein interactions with the AP-2 adaptor alpha appendage", 
+        "lpage": "203", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Mishra", 
+                "given-names": "SK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hawryluk", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brett", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keyel", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dupin", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jha", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dual engagement regulation of protein interactions with the AP-2 adaptor alpha appendage", 
+        "publication-type": "journal", 
+        "volume": "279", 
+        "source": "J Biol Chem", 
+        "fpage": "46191", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 37, 
+        "ref": "MishraSKHawrylukMJBrettTJKeyelPADupinALJhaA2004Dual engagement regulation of protein interactions with the AP-2 adaptor alpha appendageJ Biol Chem27946191203", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Clathrin adaptor AP-2 is essential for early embryonal development", 
+        "lpage": "23", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Mitsunari", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakatsu", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shioda", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Love", 
+                "given-names": "PE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grinberg", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonifacino", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Clathrin adaptor AP-2 is essential for early embryonal development", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Mol Cell Biol", 
+        "fpage": "9318", 
+        "year": "2005", 
+        "etal": true, 
+        "position": 38, 
+        "ref": "MitsunariTNakatsuFShiodaNLovePEGrinbergABonifacinoJS2005Clathrin adaptor AP-2 is essential for early embryonal developmentMol Cell Biol25931823", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Clathrin-mediated endocytosis in AP-2-depleted cells", 
+        "lpage": "18", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Motley", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bright", 
+                "given-names": "NA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seaman", 
+                "given-names": "MN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Robinson", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Clathrin-mediated endocytosis in AP-2-depleted cells", 
+        "publication-type": "journal", 
+        "volume": "162", 
+        "source": "J Cell Biol", 
+        "fpage": "909", 
+        "year": "2003", 
+        "position": 39, 
+        "ref": "MotleyABrightNASeamanMNRobinsonMS2003Clathrin-mediated endocytosis in AP-2-depleted cellsJ Cell Biol16290918", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "UNC-41/stonin functions with AP2 to recycle synaptic vesicles in Caenorhabditis elegans", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Mullen", 
+                "given-names": "GP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grundahl", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watanabe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hobson", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Crowell", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UNC-41/stonin functions with AP2 to recycle synaptic vesicles in Caenorhabditis elegans", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "PLoS One", 
+        "fpage": "e40095", 
+        "year": "2012", 
+        "etal": true, 
+        "position": 40, 
+        "ref": "MullenGPGrundahlKMGuMWatanabeSHobsonRJCrowellJA2012UNC-41/stonin functions with AP2 to recycle synaptic vesicles in Caenorhabditis elegansPLoS One7e40095", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Defective function of GABA-containing synaptic vesicles in mice lacking the AP-3B clathrin adaptor", 
+        "lpage": "302", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Nakatsu", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Okada", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mori", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kumazawa", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iwasa", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Defective function of GABA-containing synaptic vesicles in mice lacking the AP-3B clathrin adaptor", 
+        "publication-type": "journal", 
+        "volume": "167", 
+        "source": "J Cell Biol", 
+        "fpage": "293", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 41, 
+        "ref": "NakatsuFOkadaMMoriFKumazawaNIwasaHZhuG2004Defective function of GABA-containing synaptic vesicles in mice lacking the AP-3B clathrin adaptorJ Cell Biol167293302", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "UNC-11, a Caenorhabditis elegans AP180 homologue, regulates the size and protein composition of synaptic vesicles", 
+        "lpage": "60", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Nonet", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holgado", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brewer", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Serpe", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Norbeck", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holleran", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UNC-11, a Caenorhabditis elegans AP180 homologue, regulates the size and protein composition of synaptic vesicles", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Mol Biol Cell", 
+        "fpage": "2343", 
+        "year": "1999", 
+        "etal": true, 
+        "position": 42, 
+        "ref": "NonetMLHolgadoAMBrewerFSerpeCJNorbeckBAHolleranJ1999UNC-11, a Caenorhabditis elegans AP180 homologue, regulates the size and protein composition of synaptic vesiclesMol Biol Cell10234360", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "The structure and function of the beta 2-adaptin appendage domain", 
+        "lpage": "27", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Owen", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vallis", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pearse", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McMahon", 
+                "given-names": "HT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The structure and function of the beta 2-adaptin appendage domain", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "EMBO J", 
+        "fpage": "4216", 
+        "year": "2000", 
+        "position": 43, 
+        "ref": "OwenDJVallisYPearseBMMcMahonHTEvansPR2000The structure and function of the beta 2-adaptin appendage domainEMBO J19421627", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "C. elegans AP-2 and retromer control Wnt signaling by regulating mig-14/Wntless", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Pan", 
+                "given-names": "CL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baum", 
+                "given-names": "PD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jorgensen", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clark", 
+                "given-names": "SG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garriga", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "C. elegans AP-2 and retromer control Wnt signaling by regulating mig-14/Wntless", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Dev Cell", 
+        "fpage": "132", 
+        "year": "2008", 
+        "position": 44, 
+        "ref": "PanCLBaumPDGuMJorgensenEMClarkSGGarrigaG2008C. elegans AP-2 and retromer control Wnt signaling by regulating mig-14/WntlessDev Cell141329", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Discrete residues in the c(2)b domain of synaptotagmin I independently specify endocytic rate and synaptic vesicle size", 
+        "lpage": "62", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Poskanzer", 
+                "given-names": "KE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fetter", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "GW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Discrete residues in the c(2)b domain of synaptotagmin I independently specify endocytic rate and synaptic vesicle size", 
+        "publication-type": "journal", 
+        "volume": "50", 
+        "source": "Neuron", 
+        "fpage": "49", 
+        "year": "2006", 
+        "position": 45, 
+        "ref": "PoskanzerKEFetterRDDavisGW2006Discrete residues in the c(2)b domain of synaptotagmin I independently specify endocytic rate and synaptic vesicle sizeNeuron504962", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Evolving nature of the AP2 alpha-appendage hub during clathrin-coated vesicle endocytosis", 
+        "lpage": "83", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Praefcke", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ford", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmid", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Olesen", 
+                "given-names": "LE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gallop", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peak-Chew", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolving nature of the AP2 alpha-appendage hub during clathrin-coated vesicle endocytosis", 
+        "publication-type": "journal", 
+        "volume": "23", 
+        "source": "EMBO J", 
+        "fpage": "4371", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 46, 
+        "ref": "PraefckeGJFordMGSchmidEMOlesenLEGallopJLPeak-ChewSY2004Evolving nature of the AP2 alpha-appendage hub during clathrin-coated vesicle endocytosisEMBO J23437183", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "UNC-13 is required for synaptic vesicle fusion in C. elegans", 
+        "lpage": "64", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Richmond", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "WS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jorgensen", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UNC-13 is required for synaptic vesicle fusion in C. elegans", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Nat Neurosci", 
+        "fpage": "959", 
+        "year": "1999", 
+        "position": 47, 
+        "ref": "RichmondJEDavisWSJorgensenEM1999UNC-13 is required for synaptic vesicle fusion in C. elegansNat Neurosci295964", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Adaptable adaptors for coated vesicles", 
+        "lpage": "74", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Robinson", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Adaptable adaptors for coated vesicles", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Trends Cell Biol", 
+        "fpage": "167", 
+        "year": "2004", 
+        "position": 48, 
+        "ref": "RobinsonMS2004Adaptable adaptors for coated vesiclesTrends Cell Biol1416774", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "The cellular functions of clathrin", 
+        "lpage": "32", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Royle", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The cellular functions of clathrin", 
+        "publication-type": "journal", 
+        "volume": "63", 
+        "source": "Cell Mol Life Sci", 
+        "fpage": "1823", 
+        "year": "2006", 
+        "position": 49, 
+        "ref": "RoyleSJ2006The cellular functions of clathrinCell Mol Life Sci63182332", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Numb is an endocytic protein", 
+        "lpage": "52", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Santolini", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Puri", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salcini", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gagliani", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pelicci", 
+                "given-names": "PG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tacchetti", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Numb is an endocytic protein", 
+        "publication-type": "journal", 
+        "volume": "151", 
+        "source": "J Cell Biol", 
+        "fpage": "1345", 
+        "year": "2000", 
+        "etal": true, 
+        "position": 50, 
+        "ref": "SantoliniEPuriCSalciniAEGaglianiMCPelicciPGTacchettiC2000Numb is an endocytic proteinJ Cell Biol151134552", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "Differential requirements for clathrin in receptor-mediated endocytosis and maintenance of synaptic vesicle pools", 
+        "lpage": "44", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Sato", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ernstrom", 
+                "given-names": "GG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watanabe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weimer", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "CH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sato", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Differential requirements for clathrin in receptor-mediated endocytosis and maintenance of synaptic vesicle pools", 
+        "publication-type": "journal", 
+        "volume": "106", 
+        "source": "Proc Natl Acad Sci USA", 
+        "fpage": "1139", 
+        "year": "2009", 
+        "etal": true, 
+        "position": 51, 
+        "ref": "SatoKErnstromGGWatanabeSWeimerRMChenCHSatoM2009Differential requirements for clathrin in receptor-mediated endocytosis and maintenance of synaptic vesicle poolsProc Natl Acad Sci USA106113944", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "Caenorhabditis elegans RME-6 is a novel regulator of RAB-5 at the clathrin-coated pit", 
+        "lpage": "69", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Sato", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sato", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fonarev", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liou", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grant", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Caenorhabditis elegans RME-6 is a novel regulator of RAB-5 at the clathrin-coated pit", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Nat Cell Biol", 
+        "fpage": "559", 
+        "year": "2005", 
+        "position": 52, 
+        "ref": "SatoMSatoKFonarevPHuangCJLiouWGrantBD2005Caenorhabditis elegans RME-6 is a novel regulator of RAB-5 at the clathrin-coated pitNat Cell Biol755969", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Role of the AP2 beta-appendage hub in recruiting partners for clathrin-coated vesicle assembly", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Schmid", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ford", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burtey", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Praefcke", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peak-Chew", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mills", 
+                "given-names": "IG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Role of the AP2 beta-appendage hub in recruiting partners for clathrin-coated vesicle assembly", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "PLoS Biol", 
+        "fpage": "e262", 
+        "year": "2006", 
+        "etal": true, 
+        "position": 53, 
+        "ref": "SchmidEMFordMGBurteyAPraefckeGJPeak-ChewSYMillsIG2006Role of the AP2 beta-appendage hub in recruiting partners for clathrin-coated vesicle assemblyPLoS Biol4e262", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "UNC-46 is required for trafficking of the vesicular GABA transporter", 
+        "lpage": "53", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Schuske", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Palfreyman", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watanabe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jorgensen", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UNC-46 is required for trafficking of the vesicular GABA transporter", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Nat Neurosci", 
+        "fpage": "846", 
+        "year": "2007", 
+        "position": 54, 
+        "ref": "SchuskeKPalfreymanMTWatanabeSJorgensenEM2007UNC-46 is required for trafficking of the vesicular GABA transporterNat Neurosci1084653", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "A clathrin-binding site in the hinge of the beta 2 chain of mammalian AP-2 complexes", 
+        "lpage": "90", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Shih", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gallusser", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kirchhausen", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A clathrin-binding site in the hinge of the beta 2 chain of mammalian AP-2 complexes", 
+        "publication-type": "journal", 
+        "volume": "270", 
+        "source": "J Biol Chem", 
+        "fpage": "31083", 
+        "year": "1995", 
+        "position": 55, 
+        "ref": "ShihWGallusserAKirchhausenT1995A clathrin-binding site in the hinge of the beta 2 chain of mammalian AP-2 complexesJ Biol Chem2703108390", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "Sorting it out: AP-2 and alternate clathrin adaptors in endocytic cargo selection", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Traub", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sorting it out: AP-2 and alternate clathrin adaptors in endocytic cargo selection", 
+        "publication-type": "journal", 
+        "volume": "163", 
+        "source": "J Cell Biol", 
+        "fpage": "203", 
+        "year": "2003", 
+        "position": 56, 
+        "ref": "TraubLM2003Sorting it out: AP-2 and alternate clathrin adaptors in endocytic cargo selectionJ Cell Biol1632038", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "The role of GABAAR phosphorylation in the construction of inhibitory synapses and the efficacy of neuronal inhibition", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Vithlani", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moss", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The role of GABAAR phosphorylation in the construction of inhibitory synapses and the efficacy of neuronal inhibition", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Biochem Soc Trans", 
+        "fpage": "1355", 
+        "year": "2009", 
+        "position": 57, 
+        "ref": "VithlaniMMossSJ2009The role of GABAAR phosphorylation in the construction of inhibitory synapses and the efficacy of neuronal inhibitionBiochem Soc Trans3713558", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Distinct endocytic pathways control the rate and extent of synaptic vesicle protein recycling", 
+        "lpage": "84", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Voglmaier", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kam", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fortin", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hua", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nicoll", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Distinct endocytic pathways control the rate and extent of synaptic vesicle protein recycling", 
+        "publication-type": "journal", 
+        "volume": "51", 
+        "source": "Neuron", 
+        "fpage": "71", 
+        "year": "2006", 
+        "etal": true, 
+        "position": 58, 
+        "ref": "VoglmaierSMKamKYangHFortinDLHuaZNicollRA2006Distinct endocytic pathways control the rate and extent of synaptic vesicle protein recyclingNeuron517184", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Synaptotagmin I is a high affinity receptor for clathrin AP-2: implications for membrane recycling", 
+        "lpage": "60", 
+        "article_doi": "10.7554/eLife.00190", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "JZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davletov", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sudhof", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Anderson", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Synaptotagmin I is a high affinity receptor for clathrin AP-2: implications for membrane recycling", 
+        "publication-type": "journal", 
+        "volume": "78", 
+        "source": "Cell", 
+        "fpage": "751", 
+        "year": "1994", 
+        "position": 59, 
+        "ref": "ZhangJZDavletovBASudhofBAAndersonRG1994Synaptotagmin I is a high affinity receptor for clathrin AP-2: implications for membrane recyclingCell7875160", 
+        "id": "bib59"
+    }
+]

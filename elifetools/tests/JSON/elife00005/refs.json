@@ -1,0 +1,1790 @@
+[
+    {
+        "article_title": "The Transform Class in SPARX and EMAN2", 
+        "lpage": "61", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Baldwin", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Penczek", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The Transform Class in SPARX and EMAN2", 
+        "publication-type": "journal", 
+        "volume": "157", 
+        "source": "J Struct Biol", 
+        "fpage": "250", 
+        "year": "2007", 
+        "position": 1, 
+        "ref": "BaldwinPRPenczekPA2007The Transform Class in SPARX and EMAN2J Struct Biol15725061", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "The SANT domain: a unique histone-tail-binding module?", 
+        "lpage": "63", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Boyer", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Latek", 
+                "given-names": "RR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peterson", 
+                "given-names": "CL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The SANT domain: a unique histone-tail-binding module?", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Nat Rev Mol Cell Biol", 
+        "fpage": "158", 
+        "year": "2004", 
+        "position": 2, 
+        "ref": "BoyerLALatekRRPetersonCL2004The SANT domain: a unique histone-tail-binding module?Nat Rev Mol Cell Biol515863", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "The functions of E(Z)/EZH2-mediated methylation of lysine 27 in histone H3", 
+        "lpage": "64", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Cao", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The functions of E(Z)/EZH2-mediated methylation of lysine 27 in histone H3", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Curr Opin Genet Dev", 
+        "fpage": "155", 
+        "year": "2004a", 
+        "position": 3, 
+        "ref": "CaoRZhangY2004aThe functions of E(Z)/EZH2-mediated methylation of lysine 27 in histone H3Curr Opin Genet Dev1415564", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "SUZ12 is required for both the histone methyltransferase activity and the silencing function of the EED-EZH2 complex", 
+        "lpage": "67", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Cao", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "SUZ12 is required for both the histone methyltransferase activity and the silencing function of the EED-EZH2 complex", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Mol Cell", 
+        "fpage": "57", 
+        "year": "2004b", 
+        "position": 4, 
+        "ref": "CaoRZhangY2004bSUZ12 is required for both the histone methyltransferase activity and the silencing function of the EED-EZH2 complexMol Cell155767", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Role of histone H3 lysine 27 methylation in Polycomb-group silencing", 
+        "lpage": "43", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Cao", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xia", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Erdjument-Bromage", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tempst", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Role of histone H3 lysine 27 methylation in Polycomb-group silencing", 
+        "publication-type": "journal", 
+        "volume": "298", 
+        "source": "Science", 
+        "fpage": "1039", 
+        "year": "2002", 
+        "etal": true, 
+        "position": 5, 
+        "ref": "CaoRWangLWangHXiaLErdjument-BromageHTempstP2002Role of histone H3 lysine 27 methylation in Polycomb-group silencingScience298103943", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Implications for kinetochore-microtubule attachment from the structure of an engineered Ndc80 complex", 
+        "lpage": "39", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Ciferri", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pasqualato", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Screpanti", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varetti", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Santaguida", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dos Reis", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Implications for kinetochore-microtubule attachment from the structure of an engineered Ndc80 complex", 
+        "publication-type": "journal", 
+        "volume": "133", 
+        "source": "Cell", 
+        "fpage": "427", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 6, 
+        "ref": "CiferriCPasqualatoSScrepantiEVarettiGSantaguidaSDos ReisG2008Implications for kinetochore-microtubule attachment from the structure of an engineered Ndc80 complexCell13342739", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Drosophila enhancer of Zeste/ESC complexes have a histone H3 methyltransferase activity that marks chromosomal Polycomb sites", 
+        "lpage": "96", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Czermin", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Melfi", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCabe", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seitz", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Imhof", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pirrotta", 
+                "given-names": "V", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> enhancer of Zeste/ESC complexes have a histone H3 methyltransferase activity that marks chromosomal Polycomb sites", 
+        "publication-type": "journal", 
+        "volume": "111", 
+        "source": "Cell", 
+        "fpage": "185", 
+        "year": "2002", 
+        "position": 7, 
+        "ref": "CzerminBMelfiRMcCabeDSeitzVImhofAPirrottaV2002Drosophila enhancer of Zeste/ESC complexes have a histone H3 methyltransferase activity that marks chromosomal Polycomb sitesCell11118596", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Analysis of protein complexes using mass spectrometry", 
+        "lpage": "54", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Gingras", 
+                "given-names": "AC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gstaiger", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raught", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aebersold", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Analysis of protein complexes using mass spectrometry", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "Nat Rev Mol Cell Biol", 
+        "fpage": "645", 
+        "year": "2007", 
+        "position": 8, 
+        "ref": "GingrasACGstaigerMRaughtBAebersoldR2007Analysis of protein complexes using mass spectrometryNat Rev Mol Cell Biol864554", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Structural basis of EZH2 recognition by EED", 
+        "lpage": "15", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Han", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xing", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chai", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Structural basis of EZH2 recognition by EED", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Structure", 
+        "fpage": "1306", 
+        "year": "2007", 
+        "position": 9, 
+        "ref": "HanZXingXHuMZhangYLiuPChaiJ2007Structural basis of EZH2 recognition by EEDStructure15130615", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Cloning and characterization of a novel zinc finger transcriptional repressor. A direct role of the zinc finger motif in repression", 
+        "lpage": "84", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "He", 
+                "given-names": "GP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ro", 
+                "given-names": "HS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cloning and characterization of a novel zinc finger transcriptional repressor. A direct role of the zinc finger motif in repression", 
+        "publication-type": "journal", 
+        "volume": "274", 
+        "source": "J Biol Chem", 
+        "fpage": "14678", 
+        "year": "1999", 
+        "position": 10, 
+        "ref": "HeGPKimSRoHS1999Cloning and characterization of a novel zinc finger transcriptional repressor. A direct role of the zinc finger motif in repressionJ Biol Chem2741467884", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "A model for transmission of the H3K27me3 epigenetic mark", 
+        "lpage": "300", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Hansen", 
+                "given-names": "KH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bracken", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pasini", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dietrich", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gehani", 
+                "given-names": "SS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Monrad", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A model for transmission of the H3K27me3 epigenetic mark", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Nat Cell Biol", 
+        "fpage": "1291", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 11, 
+        "ref": "HansenKHBrackenAPPasiniDDietrichNGehaniSSMonradA2008A model for transmission of the H3K27me3 epigenetic markNat Cell Biol101291300", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Subunit contributions to histone methyltransferase activities of fly and worm polycomb group complexes", 
+        "lpage": "68", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Ketel", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Andersen", 
+                "given-names": "EF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vargas", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Suh", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Strome", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Simon", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Subunit contributions to histone methyltransferase activities of fly and worm polycomb group complexes", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Mol Cell Biol", 
+        "fpage": "6857", 
+        "year": "2005", 
+        "position": 12, 
+        "ref": "KetelCSAndersenEFVargasMLSuhJStromeSSimonJA2005Subunit contributions to histone methyltransferase activities of fly and worm polycomb group complexesMol Cell Biol25685768", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "AEBP2 as a potential targeting protein for Polycomb Repression Complex PRC2", 
+        "lpage": "50", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Kim", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "AEBP2 as a potential targeting protein for Polycomb Repression Complex PRC2", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Nucleic Acids Res", 
+        "fpage": "2940", 
+        "year": "2009", 
+        "position": 13, 
+        "ref": "KimHKangKKimJ2009AEBP2 as a potential targeting protein for Polycomb Repression Complex PRC2Nucleic Acids Res37294050", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Silencing of human polycomb target genes is associated with methylation of histone H3 Lys 27", 
+        "lpage": "605", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Kirmizis", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bartley", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kuzmichev", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Margueron", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinberg", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Green", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Silencing of human polycomb target genes is associated with methylation of histone H3 Lys 27", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Genes Dev", 
+        "fpage": "1592", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 14, 
+        "ref": "KirmizisABartleySMKuzmichevAMargueronRReinbergDGreenR2004Silencing of human polycomb target genes is associated with methylation of histone H3 Lys 27Genes Dev181592605", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Different EZH2-containing complexes target methylation of histone H1 or nucleosomal histone H3", 
+        "lpage": "93", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Kuzmichev", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenuwein", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tempst", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinberg", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Different EZH2-containing complexes target methylation of histone H1 or nucleosomal histone H3", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Mol Cell", 
+        "fpage": "183", 
+        "year": "2004", 
+        "position": 15, 
+        "ref": "KuzmichevAJenuweinTTempstPReinbergD2004Different EZH2-containing complexes target methylation of histone H1 or nucleosomal histone H3Mol Cell1418393", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Appion: an integrated, database-driven pipeline to facilitate EM image processing", 
+        "lpage": "102", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Lander", 
+                "given-names": "GC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stagg", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Voss", 
+                "given-names": "NR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cheng", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fellmann", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pulokas", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Appion: an integrated, database-driven pipeline to facilitate EM image processing", 
+        "publication-type": "journal", 
+        "volume": "166", 
+        "source": "J Struct Biol", 
+        "fpage": "95", 
+        "year": "2009", 
+        "etal": true, 
+        "position": 16, 
+        "ref": "LanderGCStaggSMVossNRChengAFellmannDPulokasJ2009Appion: an integrated, database-driven pipeline to facilitate EM image processingJ Struct Biol16695102", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Structural analysis of multiprotein complexes by cross-linking, mass spectrometry, and database searching", 
+        "lpage": "11", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Maiolica", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cittaro", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borsotti", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sennels", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ciferri", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tarricone", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Structural analysis of multiprotein complexes by cross-linking, mass spectrometry, and database searching", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "Mol Cell Proteomics", 
+        "fpage": "2200", 
+        "year": "2007", 
+        "etal": true, 
+        "position": 17, 
+        "ref": "MaiolicaACittaroDBorsottiDSennelsLCiferriCTarriconeC2007Structural analysis of multiprotein complexes by cross-linking, mass spectrometry, and database searchingMol Cell Proteomics6220011", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "ACE: automated CTF estimation", 
+        "lpage": "29", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Mallick", 
+                "given-names": "SP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carragher", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potter", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kriegman", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "ACE: automated CTF estimation", 
+        "publication-type": "journal", 
+        "volume": "104", 
+        "source": "Ultramicroscopy", 
+        "fpage": "8", 
+        "year": "2005", 
+        "position": 18, 
+        "ref": "MallickSPCarragherBPotterCSKriegmanDJ2005ACE: automated CTF estimationUltramicroscopy104829", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Chromatin structure and the inheritance of epigenetic information", 
+        "lpage": "96", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Margueron", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinberg", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chromatin structure and the inheritance of epigenetic information", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nat Rev Genet", 
+        "fpage": "285", 
+        "year": "2010", 
+        "position": 19, 
+        "ref": "MargueronRReinbergD2010Chromatin structure and the inheritance of epigenetic informationNat Rev Genet1128596", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "The Polycomb complex PRC2 and its mark in life", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Margueron", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinberg", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The Polycomb complex PRC2 and its mark in life", 
+        "publication-type": "journal", 
+        "volume": "469", 
+        "source": "Nature", 
+        "fpage": "343", 
+        "year": "2011", 
+        "position": 20, 
+        "ref": "MargueronRReinbergD2011The Polycomb complex PRC2 and its mark in lifeNature4693439", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "Role of the polycomb protein EED in the propagation of repressive histone marks", 
+        "lpage": "7", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Margueron", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Justin", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ohno", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sharpe", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Son", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Drury", 
+                "given-names": "WJ", 
+                "group-type": "author", 
+                "suffix": "III"
+            }
+        ], 
+        "full_article_title": "Role of the polycomb protein EED in the propagation of repressive histone marks", 
+        "publication-type": "journal", 
+        "volume": "461", 
+        "source": "Nature", 
+        "fpage": "762", 
+        "year": "2009", 
+        "etal": true, 
+        "position": 21, 
+        "ref": "MargueronRJustinNOhnoKSharpeMLSonJDruryWJIII2009Role of the polycomb protein EED in the propagation of repressive histone marksNature4617627", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Ezh1 and Ezh2 maintain repressive chromatin through different mechanisms", 
+        "lpage": "18", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Margueron", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sarma", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blais", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zavadil", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Woodcock", 
+                "given-names": "CL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ezh1 and Ezh2 maintain repressive chromatin through different mechanisms", 
+        "publication-type": "journal", 
+        "volume": "32", 
+        "source": "Mol Cell", 
+        "fpage": "503", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 22, 
+        "ref": "MargueronRLiGSarmaKBlaisAZavadilJWoodcockCL2008Ezh1 and Ezh2 maintain repressive chromatin through different mechanismsMol Cell3250318", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Substrate preferences of the EZH2 histone methyltransferase complex", 
+        "lpage": "70", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Martin", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cao", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Substrate preferences of the EZH2 histone methyltransferase complex", 
+        "publication-type": "journal", 
+        "volume": "281", 
+        "source": "J Biol Chem", 
+        "fpage": "8365", 
+        "year": "2006", 
+        "position": 23, 
+        "ref": "MartinCCaoRZhangY2006Substrate preferences of the EZH2 histone methyltransferase complexJ Biol Chem281836570", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Accurate determination of local defocus and specimen tilt in electron microscopy", 
+        "lpage": "47", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Mindell", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grigorieff", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Accurate determination of local defocus and specimen tilt in electron microscopy", 
+        "publication-type": "journal", 
+        "volume": "142", 
+        "source": "J Struct Biol", 
+        "fpage": "334", 
+        "year": "2003", 
+        "position": 24, 
+        "ref": "MindellJAGrigorieffN2003Accurate determination of local defocus and specimen tilt in electron microscopyJ Struct Biol14233447", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Histone methyltransferase activity of a Drosophila Polycomb group repressor complex", 
+        "lpage": "208", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Muller", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hart", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Francis", 
+                "given-names": "NJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vargas", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sengupta", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wild", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Histone methyltransferase activity of a <italic>Drosophila</italic> Polycomb group repressor complex", 
+        "publication-type": "journal", 
+        "volume": "111", 
+        "source": "Cell", 
+        "fpage": "197", 
+        "year": "2002", 
+        "etal": true, 
+        "position": 25, 
+        "ref": "MullerJHartCMFrancisNJVargasMLSenguptaAWildB2002Histone methyltransferase activity of a Drosophila Polycomb group repressor complexCell111197208", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Chromatin-modifying complex component Nurf55/p55 associates with histones H3 and H4 and polycomb repressive complex 2 subunit Su(z)12 through partially overlapping binding sites", 
+        "lpage": "96", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Nowak", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alfieri", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stirnimann", 
+                "given-names": "CU", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rybin", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baudin", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ly-Hartig", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chromatin-modifying complex component Nurf55/p55 associates with histones H3 and H4 and polycomb repressive complex 2 subunit Su(z)12 through partially overlapping binding sites", 
+        "publication-type": "journal", 
+        "volume": "286", 
+        "source": "J Biol Chem", 
+        "fpage": "23388", 
+        "year": "2011", 
+        "etal": true, 
+        "position": 26, 
+        "ref": "NowakAJAlfieriCStirnimannCURybinVBaudinFLy-HartigN2011Chromatin-modifying complex component Nurf55/p55 associates with histones H3 and H4 and polycomb repressive complex 2 subunit Su(z)12 through partially overlapping binding sitesJ Biol Chem2862338896", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "The polycomb-group gene Ezh2 is required for early mouse development", 
+        "lpage": "6", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "O'Carroll", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Erhardt", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pagani", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barton", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Surani", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenuwein", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The polycomb-group gene Ezh2 is required for early mouse development", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Mol Cell Biol", 
+        "fpage": "4330", 
+        "year": "2001", 
+        "position": 27, 
+        "ref": "O'CarrollDErhardtSPaganiMBartonSCSuraniMAJenuweinT2001The polycomb-group gene Ezh2 is required for early mouse developmentMol Cell Biol2143306", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Topology representing network enables highly accurate classification of protein images taken by cryo electron-microscope without masking", 
+        "lpage": "200", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Ogura", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iwasaki", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sato", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Topology representing network enables highly accurate classification of protein images taken by cryo electron-microscope without masking", 
+        "publication-type": "journal", 
+        "volume": "143", 
+        "source": "J Struct Biol", 
+        "fpage": "185", 
+        "year": "2003", 
+        "position": 28, 
+        "ref": "OguraTIwasakiKSatoC2003Topology representing network enables highly accurate classification of protein images taken by cryo electron-microscope without maskingJ Struct Biol143185200", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Polycomb group proteins in cell cycle progression and cancer", 
+        "lpage": "400", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Pasini", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bracken", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Helin", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Polycomb group proteins in cell cycle progression and cancer", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Cell Cycle", 
+        "fpage": "396", 
+        "year": "2004", 
+        "position": 29, 
+        "ref": "PasiniDBrackenAPHelinK2004Polycomb group proteins in cell cycle progression and cancerCell Cycle3396400", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "The ribosome at improved resolution: new techniques for merging and orientation refinement in 3D cryo-electron microscopy of biological particles", 
+        "lpage": "70", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Penczek", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grassucci", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frank", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The ribosome at improved resolution: new techniques for merging and orientation refinement in 3D cryo-electron microscopy of biological particles", 
+        "publication-type": "journal", 
+        "volume": "53", 
+        "source": "Ultramicroscopy", 
+        "fpage": "251", 
+        "year": "1994", 
+        "position": 30, 
+        "ref": "PenczekPAGrassucciRAFrankJ1994The ribosome at improved resolution: new techniques for merging and orientation refinement in 3D cryo-electron microscopy of biological particlesUltramicroscopy5325170", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "UCSF Chimera\u2014a visualization system for exploratory research and analysis", 
+        "lpage": "12", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Pettersen", 
+                "given-names": "EF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goddard", 
+                "given-names": "TD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Couch", 
+                "given-names": "GS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenblatt", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meng", 
+                "given-names": "EC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UCSF Chimera\u2014a visualization system for exploratory research and analysis", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "J Comput Chem", 
+        "fpage": "1605", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 31, 
+        "ref": "PettersenEFGoddardTDHuangCCCouchGSGreenblattDMMengEC2004UCSF Chimera\u2014a visualization system for exploratory research and analysisJ Comput Chem25160512", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Three-dimensional reconstruction from a single-exposure, random conical tilt series applied to the 50S ribosomal subunit of Escherichia coli", 
+        "lpage": "36", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Radermacher", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wagenknecht", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Verschoor", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frank", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Three-dimensional reconstruction from a single-exposure, random conical tilt series applied to the 50S ribosomal subunit of <italic>Escherichia coli</italic>", 
+        "publication-type": "journal", 
+        "volume": "146", 
+        "source": "J Microsc", 
+        "fpage": "113", 
+        "year": "1987", 
+        "position": 32, 
+        "ref": "RadermacherMWagenknechtTVerschoorAFrankJ1987Three-dimensional reconstruction from a single-exposure, random conical tilt series applied to the 50S ribosomal subunit of Escherichia coliJ Microsc14611336", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "The beginning of a beautiful friendship: cross-linking/mass spectrometry and modelling of proteins and multi-protein complexes", 
+        "lpage": "40", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Rappsilber", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The beginning of a beautiful friendship: cross-linking/mass spectrometry and modelling of proteins and multi-protein complexes", 
+        "publication-type": "journal", 
+        "volume": "173", 
+        "source": "J Struct Biol", 
+        "fpage": "530", 
+        "year": "2011", 
+        "position": 33, 
+        "ref": "RappsilberJ2011The beginning of a beautiful friendship: cross-linking/mass spectrometry and modelling of proteins and multi-protein complexesJ Struct Biol17353040", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Identification of cross-linked peptides from large sequence databases", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Rinner", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seebacher", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walzthoeni", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mueller", 
+                "given-names": "LN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beck", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Identification of cross-linked peptides from large sequence databases", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Nat Methods", 
+        "fpage": "315", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 34, 
+        "ref": "RinnerOSeebacherJWalzthoeniTMuellerLNBeckMSchmidtA2008Identification of cross-linked peptides from large sequence databasesNat Methods53158", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Image processing for electron microscopy single-particle analysis using XMIPP", 
+        "lpage": "90", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Scheres", 
+                "given-names": "SH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nunez-Ramirez", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sorzano", 
+                "given-names": "CO", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carazo", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marabini", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Image processing for electron microscopy single-particle analysis using XMIPP", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Nat Protoc", 
+        "fpage": "977", 
+        "year": "2008", 
+        "position": 35, 
+        "ref": "ScheresSHNunez-RamirezRSorzanoCOCarazoJMMarabiniR2008Image processing for electron microscopy single-particle analysis using XMIPPNat Protoc397790", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Histone methylation by PRC2 is inhibited by active chromatin marks", 
+        "lpage": "41", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Schmitges", 
+                "given-names": "FW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Prusty", 
+                "given-names": "AB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Faty", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stutzer", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lingaraju", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aiwazian", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Histone methylation by PRC2 is inhibited by active chromatin marks", 
+        "publication-type": "journal", 
+        "volume": "42", 
+        "source": "Mol Cell", 
+        "fpage": "330", 
+        "year": "2011", 
+        "etal": true, 
+        "position": 36, 
+        "ref": "SchmitgesFWPrustyABFatyMStutzerALingarajuGMAiwazianJ2011Histone methylation by PRC2 is inhibited by active chromatin marksMol Cell4233041", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Genome regulation by polycomb and trithorax proteins", 
+        "lpage": "45", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Schuettengruber", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chourrout", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vervoort", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leblanc", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cavalli", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genome regulation by polycomb and trithorax proteins", 
+        "publication-type": "journal", 
+        "volume": "128", 
+        "source": "Cell", 
+        "fpage": "735", 
+        "year": "2007", 
+        "position": 37, 
+        "ref": "SchuettengruberBChourroutDVervoortMLeblancBCavalliG2007Genome regulation by polycomb and trithorax proteinsCell12873545", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Automated molecular microscopy: the new Leginon system", 
+        "lpage": "60", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Suloway", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pulokas", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fellmann", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cheng", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Guerra", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Quispe", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Automated molecular microscopy: the new Leginon system", 
+        "publication-type": "journal", 
+        "volume": "151", 
+        "source": "J Struct Biol", 
+        "fpage": "41", 
+        "year": "2005", 
+        "etal": true, 
+        "position": 38, 
+        "ref": "SulowayCPulokasJFellmannDChengAGuerraFQuispeJ2005Automated molecular microscopy: the new Leginon systemJ Struct Biol1514160", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "EMAN2: an extensible image processing suite for electron microscopy", 
+        "lpage": "46", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Tang", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peng", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mann", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jiang", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rees", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "EMAN2: an extensible image processing suite for electron microscopy", 
+        "publication-type": "journal", 
+        "volume": "157", 
+        "source": "J Struct Biol", 
+        "fpage": "38", 
+        "year": "2007", 
+        "etal": true, 
+        "position": 39, 
+        "ref": "TangGPengLBaldwinPRMannDSJiangWReesI2007EMAN2: an extensible image processing suite for electron microscopyJ Struct Biol1573846", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "The N terminus of Drosophila ESC binds directly to histone H3 and is required for E(Z)-dependent trimethylation of H3 lysine 27", 
+        "lpage": "26", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Tie", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kurzhals", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harte", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The N terminus of <italic>Drosophila</italic> ESC binds directly to histone H3 and is required for E(Z)-dependent trimethylation of H3 lysine 27", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Mol Cell Biol", 
+        "fpage": "2014", 
+        "year": "2007", 
+        "position": 40, 
+        "ref": "TieFStrattonCAKurzhalsRLHartePJ2007The N terminus of Drosophila ESC binds directly to histone H3 and is required for E(Z)-dependent trimethylation of H3 lysine 27Mol Cell Biol27201426", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Fourier shell correlation threshold criteria", 
+        "lpage": "62", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "van Heel", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schatz", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Fourier shell correlation threshold criteria", 
+        "publication-type": "journal", 
+        "volume": "151", 
+        "source": "J Struct Biol", 
+        "fpage": "250", 
+        "year": "2005", 
+        "position": 41, 
+        "ref": "van HeelMSchatzM2005Fourier shell correlation threshold criteriaJ Struct Biol15125062", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "A new generation of the IMAGIC image processing system", 
+        "lpage": "24", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "van Heel", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harauz", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Orlova", 
+                "given-names": "EV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schatz", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A new generation of the IMAGIC image processing system", 
+        "publication-type": "journal", 
+        "volume": "116", 
+        "source": "J Struct Biol", 
+        "fpage": "17", 
+        "year": "1996", 
+        "position": 42, 
+        "ref": "van HeelMHarauzGOrlovaEVSchmidtRSchatzM1996A new generation of the IMAGIC image processing systemJ Struct Biol1161724", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "DoG Picker and TiltPicker: software tools to facilitate particle selection in single particle electron microscopy", 
+        "lpage": "13", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Voss", 
+                "given-names": "NR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yoshioka", 
+                "given-names": "CK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Radermacher", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potter", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carragher", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "DoG Picker and TiltPicker: software tools to facilitate particle selection in single particle electron microscopy", 
+        "publication-type": "journal", 
+        "volume": "166", 
+        "source": "J Struct Biol", 
+        "fpage": "205", 
+        "year": "2009", 
+        "position": 43, 
+        "ref": "VossNRYoshiokaCKRadermacherMPotterCSCarragherB2009DoG Picker and TiltPicker: software tools to facilitate particle selection in single particle electron microscopyJ Struct Biol16620513", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Binding of different histone marks differentially regulates the activity and specificity of polycomb repressive complex 2 (PRC2)", 
+        "lpage": "71", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Xu", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bian", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Galka", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ouyang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Binding of different histone marks differentially regulates the activity and specificity of polycomb repressive complex 2 (PRC2)", 
+        "publication-type": "journal", 
+        "volume": "107", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "19266", 
+        "year": "2010", 
+        "etal": true, 
+        "position": 44, 
+        "ref": "XuCBianCYangWGalkaMOuyangHChenC2010Binding of different histone marks differentially regulates the activity and specificity of polycomb repressive complex 2 (PRC2)Proc Natl Acad Sci U S A1071926671", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Polycomb group suppressor of zeste 12 links heterochromatin protein 1alpha and enhancer of zeste 2", 
+        "lpage": "6", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Yamamoto", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sonoda", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Inokuchi", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shirasawa", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sasazuki", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Polycomb group suppressor of zeste 12 links heterochromatin protein 1alpha and enhancer of zeste 2", 
+        "publication-type": "journal", 
+        "volume": "279", 
+        "source": "J Biol Chem", 
+        "fpage": "401", 
+        "year": "2004", 
+        "position": 45, 
+        "ref": "YamamotoKSonodaMInokuchiJShirasawaSSasazukiT2004Polycomb group suppressor of zeste 12 links heterochromatin protein 1alpha and enhancer of zeste 2J Biol Chem2794016", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Automation of random conical tilt and orthogonal tilt data collection using feature-based correlation", 
+        "lpage": "46", 
+        "article_doi": "10.7554/eLife.00005", 
+        "authors": [
+            {
+                "surname": "Yoshioka", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pulokas", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fellmann", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potter", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Milligan", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carragher", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Automation of random conical tilt and orthogonal tilt data collection using feature-based correlation", 
+        "publication-type": "journal", 
+        "volume": "159", 
+        "source": "J Struct Biol", 
+        "fpage": "335", 
+        "year": "2007", 
+        "position": 46, 
+        "ref": "YoshiokaCPulokasJFellmannDPotterCSMilliganRACarragherB2007Automation of random conical tilt and orthogonal tilt data collection using feature-based correlationJ Struct Biol15933546", 
+        "id": "bib46"
+    }
+]

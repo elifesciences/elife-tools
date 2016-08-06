@@ -1,0 +1,26 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Biology", 
+            "country": "United States", 
+            "institution": "Howard Hughes Medical Institute, University of Utah", 
+            "city": "Salt Lake City"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Department of Molecular Biology and Biochemistry", 
+            "country": "United States", 
+            "institution": "Rutgers University", 
+            "city": "Piscataway"
+        }
+    }, 
+    {
+        "aff3": {
+            "dept": "Department of Biology", 
+            "country": "United States", 
+            "institution": "University of Utah", 
+            "city": "Salt Lake City"
+        }
+    }
+]

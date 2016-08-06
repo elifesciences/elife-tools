@@ -1,0 +1,94 @@
+[
+    {
+        "surname": "Harris", 
+        "given-names": "Robin M", 
+        "references": {
+            "foot-note": [
+                "fn1"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-18144", 
+        "deceased": "yes"
+    }, 
+    {
+        "surname": "Pfeiffer", 
+        "given-names": "Barret D", 
+        "type": "author", 
+        "id": "author-2956", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Rubin", 
+        "given-names": "Gerald M", 
+        "type": "author", 
+        "id": "author-10190", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Truman", 
+        "corresp": "yes", 
+        "given-names": "James W", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-17912"
+    }, 
+    {
+        "surname": "Griffith", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Brandeis University"
+            }
+        ], 
+        "given-names": "Leslie C", 
+        "role": "Reviewing editor", 
+        "type": "editor", 
+        "id": "author-1097"
+    }
+]

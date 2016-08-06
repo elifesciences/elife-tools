@@ -1,0 +1,41 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Molecular and Cell Biology", 
+            "country": "United States", 
+            "institution": "University of California", 
+            "city": "Berkeley"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Life Sciences Division", 
+            "country": "United States", 
+            "institution": "Lawrence Berkeley National Laboratory", 
+            "city": "Berkeley"
+        }
+    }, 
+    {
+        "aff3": {
+            "dept": "Department of Biology, Institute of Molecular Systems Biology", 
+            "country": "Switzerland", 
+            "institution": "ETH Zurich", 
+            "city": "Zurich"
+        }
+    }, 
+    {
+        "aff4": {
+            "dept": "Faculty of Science", 
+            "country": "Switzerland", 
+            "institution": "University of Zurich", 
+            "city": "Zurich"
+        }
+    }, 
+    {
+        "aff5": {
+            "country": "United States", 
+            "institution": "Howard Hughes Medical Institute, UC Berkeley", 
+            "city": "Berkeley"
+        }
+    }
+]

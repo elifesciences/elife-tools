@@ -46,8 +46,8 @@ class TestParseJats(unittest.TestCase):
     Unit test small or special cases
     """
     @unpack
-    @data(("",""),
-        ("<email>test@example.org</email>","test@example.org"))
+    @data(("", ""),
+        ("<email>test@example.org</email>", "test@example.org"))
     def test_get_email(self, text, expected):
         self.assertEqual(expected, parser.get_email(text))
 
@@ -55,7 +55,7 @@ class TestParseJats(unittest.TestCase):
     @data(("elife-kitchen-sink.xml", "pub", ('28', '02', '2014')))
     def test_ymd(self, filename, test_date_type, expected):
         soup = self.soup(filename)
-        date_tag = raw_parser.pub_date(soup, date_type = test_date_type)
+        date_tag = raw_parser.pub_date(soup, date_type=test_date_type)
         self.assertEqual(expected, parser.ymd(date_tag))
 
     @unpack
@@ -75,12 +75,12 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "journal_issn"),
                          parser.journal_issn(self.soup(filename), "electronic"))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00240.xml")
     def test_author_contributions(self, filename):
         self.assertEqual(self.json_expected(filename, "author_contributions"),
                          parser.author_contributions(self.soup(filename), "con"))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00190.xml")
     def test_competing_interests(self, filename):
         self.assertEqual(self.json_expected(filename, "competing_interests"),
                          parser.competing_interests(self.soup(filename), "conflict"))
@@ -99,7 +99,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "abstract"),
                          parser.abstract(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife_poa_e06828.xml")
     def test_abstracts(self, filename):
         self.assertEqual(self.json_expected(filename, "abstracts"),
                          parser.abstracts(self.soup(filename)))
@@ -130,12 +130,12 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "accepted_date_year"),
                          parser.accepted_date_year(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_ack(self, filename):
         self.assertEqual(self.json_expected(filename, "ack"),
                          parser.ack(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_acknowledgements(self, filename):
         self.assertEqual(self.json_expected(filename, "acknowledgements"),
                          parser.acknowledgements(self.soup(filename)))
@@ -145,12 +145,13 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "article_type"),
                          parser.article_type(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife00240.xml")
     def test_author_notes(self, filename):
         self.assertEqual(self.json_expected(filename, "author_notes"),
                          parser.author_notes(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml","elife00270.xml")
+    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife_poa_e06828.xml",
+          "elife02935.xml", "elife00270.xml", "elife00351.xml")
     def test_authors(self, filename):
         self.assertEqual(self.json_expected(filename, "authors"),
                          parser.authors(self.soup(filename)))
@@ -175,17 +176,18 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "collection_year"),
                          parser.collection_year(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_component_doi(self, filename):
         self.assertEqual(self.json_expected(filename, "component_doi"),
                          parser.component_doi(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife02304.xml", "elife05502.xml", "elife04490.xml",
+          "elife-14093-v1.xml")
     def test_components(self, filename):
         self.assertEqual(self.json_expected(filename, "components"),
                          parser.components(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_conflict(self, filename):
         self.assertEqual(self.json_expected(filename, "conflict"),
                          parser.conflict(self.soup(filename)))
@@ -210,7 +212,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "copyright_year"),
                          parser.copyright_year(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_correspondence(self, filename):
         self.assertEqual(self.json_expected(filename, "correspondence"),
                          parser.correspondence(self.soup(filename)))
@@ -235,7 +237,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "elocation_id"),
                          parser.elocation_id(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
+    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml", "elife00013.xml")
     def test_full_abstract(self, filename):
         self.assertEqual(self.json_expected(filename, "full_abstract"),
                          parser.full_abstract(self.soup(filename)))
@@ -255,7 +257,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "full_award_groups"),
                          parser.full_award_groups(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_full_correspondence(self, filename):
         self.assertEqual(self.json_expected(filename, "full_correspondence"),
                          parser.full_correspondence(self.soup(filename)))
@@ -270,7 +272,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "full_keyword_groups"),
                          parser.full_keyword_groups(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_full_license(self, filename):
         self.assertEqual(self.json_expected(filename, "full_license"),
                          parser.full_license(self.soup(filename)))
@@ -280,7 +282,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "full_subject_area"),
                          parser.full_subject_area(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_full_title(self, filename):
         self.assertEqual(self.json_expected(filename, "full_title"),
                          parser.full_title(self.soup(filename)))
@@ -290,7 +292,8 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "funding_statement"),
                          parser.funding_statement(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife00240.xml",
+          "elife04953.xml", "elife00133.xml")
     def test_graphics(self, filename):
         self.assertEqual(self.json_expected(filename, "graphics"),
                          parser.graphics(self.soup(filename)))
@@ -300,7 +303,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "impact_statement"),
                          parser.impact_statement(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00240.xml")
     def test_inline_graphics(self, filename):
         self.assertEqual(self.json_expected(filename, "inline_graphics"),
                          parser.inline_graphics(self.soup(filename)))
@@ -327,7 +330,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "keywords"),
                          parser.keywords(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_license(self, filename):
         self.assertEqual(self.json_expected(filename, "license"),
                          parser.license(self.soup(filename)))
@@ -337,7 +340,8 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "license_url"),
                          parser.license_url(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife02304.xml", "elife00007.xml", "elife04953.xml",
+          "elife00005.xml", "elife05031.xml", "elife04493.xml", "elife06726.xml")
     def test_media(self, filename):
         self.assertEqual(self.json_expected(filename, "media"),
                          parser.media(self.soup(filename)))
@@ -408,7 +412,8 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "refs"),
                          parser.references(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife02935.xml", "elife00051.xml",
+          "elife_poa_e06828.xml")
     def test_refs(self, filename):
         self.assertEqual(self.json_expected(filename, "refs"),
                          parser.refs(self.soup(filename)))
@@ -418,7 +423,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "related_article"),
                          parser.related_article(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_related_object_ids(self, filename):
         self.assertEqual(self.json_expected(filename, "related_object_ids"),
                          parser.related_object_ids(self.soup(filename)))
@@ -428,7 +433,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "research_organism"),
                          parser.research_organism(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_self_uri(self, filename):
         self.assertEqual(self.json_expected(filename, "self_uri"),
                          parser.self_uri(self.soup(filename)))
@@ -438,7 +443,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "subject_area"),
                          parser.subject_area(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife02304.xml")
     def test_supplementary_material(self, filename):
         self.assertEqual(self.json_expected(filename, "supplementary_material"),
                          parser.supplementary_material(self.soup(filename)))
@@ -458,7 +463,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "title_slug"),
                          parser.title_slug(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_volume(self, filename):
         self.assertEqual(self.json_expected(filename, "volume"),
                          parser.volume(self.soup(filename)))

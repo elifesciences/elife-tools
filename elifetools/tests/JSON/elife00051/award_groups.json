@@ -1,0 +1,58 @@
+[
+    {
+        "funding_source": [
+            "Canadian Institute for Health Research"
+        ], 
+        "recipient": [
+            "Ryan J Hum"
+        ], 
+        "award_id": null
+    }, 
+    {
+        "funding_source": [
+            "Lupina Foundation"
+        ], 
+        "recipient": [
+            "Ryan J Hum"
+        ], 
+        "award_id": null
+    }, 
+    {
+        "funding_source": [
+            "National Sciences and Engineering Research Council"
+        ], 
+        "recipient": [
+            "Yu-Ling Cheng"
+        ], 
+        "award_id": null
+    }, 
+    {
+        "funding_source": [
+            "Social Sciences and Humanities Research Council"
+        ], 
+        "recipient": [
+            "Anita M McGahan"
+        ], 
+        "award_id": null
+    }, 
+    {
+        "funding_source": [
+            "Disease Control Priorities 3"
+        ], 
+        "recipient": [
+            "Prabhat Jha"
+        ], 
+        "award_id": [
+            "637968"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "Metcalfe Fellowship"
+        ], 
+        "recipient": [
+            "Ryan J Hum"
+        ], 
+        "award_id": null
+    }
+]

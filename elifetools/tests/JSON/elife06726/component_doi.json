@@ -1,0 +1,82 @@
+[
+    {
+        "position": 1, 
+        "doi": "10.7554/eLife.06726.001", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 2, 
+        "doi": "10.7554/eLife.06726.002", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 3, 
+        "doi": "10.7554/eLife.06726.003", 
+        "type": "fig"
+    }, 
+    {
+        "position": 4, 
+        "doi": "10.7554/eLife.06726.004", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 5, 
+        "doi": "10.7554/eLife.06726.005", 
+        "type": "fig"
+    }, 
+    {
+        "position": 6, 
+        "doi": "10.7554/eLife.06726.006", 
+        "type": "fig"
+    }, 
+    {
+        "position": 7, 
+        "doi": "10.7554/eLife.06726.007", 
+        "type": "media"
+    }, 
+    {
+        "position": 8, 
+        "doi": "10.7554/eLife.06726.008", 
+        "type": "fig"
+    }, 
+    {
+        "position": 9, 
+        "doi": "10.7554/eLife.06726.009", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 10, 
+        "doi": "10.7554/eLife.06726.010", 
+        "type": "fig"
+    }, 
+    {
+        "position": 11, 
+        "doi": "10.7554/eLife.06726.011", 
+        "type": "fig"
+    }, 
+    {
+        "position": 12, 
+        "doi": "10.7554/eLife.06726.012", 
+        "type": "media"
+    }, 
+    {
+        "position": 13, 
+        "doi": "10.7554/eLife.06726.013", 
+        "type": "fig"
+    }, 
+    {
+        "position": 14, 
+        "doi": "10.7554/eLife.06726.014", 
+        "type": "fig"
+    }, 
+    {
+        "position": 15, 
+        "doi": "10.7554/eLife.06726.015", 
+        "type": "fig"
+    }, 
+    {
+        "position": 16, 
+        "doi": "10.7554/eLife.06726.016", 
+        "type": "supplementary-material"
+    }
+]

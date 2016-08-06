@@ -1,0 +1,212 @@
+[
+    {
+        "position": 1, 
+        "doi": "10.7554/eLife.00380.001", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 2, 
+        "doi": "10.7554/eLife.00380.002", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 3, 
+        "doi": "10.7554/eLife.00380.003", 
+        "type": "fig"
+    }, 
+    {
+        "position": 4, 
+        "doi": "10.7554/eLife.00380.004", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 5, 
+        "doi": "10.7554/eLife.00380.005", 
+        "type": "fig"
+    }, 
+    {
+        "position": 6, 
+        "doi": "10.7554/eLife.00380.006", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 7, 
+        "doi": "10.7554/eLife.00380.007", 
+        "type": "fig"
+    }, 
+    {
+        "position": 8, 
+        "doi": "10.7554/eLife.00380.008", 
+        "type": "fig"
+    }, 
+    {
+        "position": 9, 
+        "doi": "10.7554/eLife.00380.009", 
+        "type": "fig"
+    }, 
+    {
+        "position": 10, 
+        "doi": "10.7554/eLife.00380.010", 
+        "type": "fig"
+    }, 
+    {
+        "position": 11, 
+        "doi": "10.7554/eLife.00380.011", 
+        "type": "fig"
+    }, 
+    {
+        "position": 12, 
+        "doi": "10.7554/eLife.00380.012", 
+        "type": "fig"
+    }, 
+    {
+        "position": 13, 
+        "doi": "10.7554/eLife.00380.013", 
+        "type": "fig"
+    }, 
+    {
+        "position": 14, 
+        "doi": "10.7554/eLife.00380.014", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 15, 
+        "doi": "10.7554/eLife.00380.015", 
+        "type": "fig"
+    }, 
+    {
+        "position": 16, 
+        "doi": "10.7554/eLife.00380.016", 
+        "type": "fig"
+    }, 
+    {
+        "position": 17, 
+        "doi": "10.7554/eLife.00380.017", 
+        "type": "fig"
+    }, 
+    {
+        "position": 18, 
+        "doi": "10.7554/eLife.00380.018", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 19, 
+        "doi": "10.7554/eLife.00380.019", 
+        "type": "fig"
+    }, 
+    {
+        "position": 20, 
+        "doi": "10.7554/eLife.00380.020", 
+        "type": "fig"
+    }, 
+    {
+        "position": 21, 
+        "doi": "10.7554/eLife.00380.021", 
+        "type": "fig"
+    }, 
+    {
+        "position": 22, 
+        "doi": "10.7554/eLife.00380.022", 
+        "type": "fig"
+    }, 
+    {
+        "position": 23, 
+        "doi": "10.7554/eLife.00380.023", 
+        "type": "fig"
+    }, 
+    {
+        "position": 24, 
+        "doi": "10.7554/eLife.00380.024", 
+        "type": "fig"
+    }, 
+    {
+        "position": 25, 
+        "doi": "10.7554/eLife.00380.025", 
+        "type": "fig"
+    }, 
+    {
+        "position": 26, 
+        "doi": "10.7554/eLife.00380.026", 
+        "type": "fig"
+    }, 
+    {
+        "position": 27, 
+        "doi": "10.7554/eLife.00380.027", 
+        "type": "fig"
+    }, 
+    {
+        "position": 28, 
+        "doi": "10.7554/eLife.00380.028", 
+        "type": "fig"
+    }, 
+    {
+        "position": 29, 
+        "doi": "10.7554/eLife.00380.029", 
+        "type": "fig"
+    }, 
+    {
+        "position": 30, 
+        "doi": "10.7554/eLife.00380.030", 
+        "type": "fig"
+    }, 
+    {
+        "position": 31, 
+        "doi": "10.7554/eLife.00380.031", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 32, 
+        "doi": "10.7554/eLife.00380.032", 
+        "type": "fig"
+    }, 
+    {
+        "position": 33, 
+        "doi": "10.7554/eLife.00380.033", 
+        "type": "fig"
+    }, 
+    {
+        "position": 34, 
+        "doi": "10.7554/eLife.00380.034", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 35, 
+        "doi": "10.7554/eLife.00380.035", 
+        "type": "fig"
+    }, 
+    {
+        "position": 36, 
+        "doi": "10.7554/eLife.00380.036", 
+        "type": "fig"
+    }, 
+    {
+        "position": 37, 
+        "doi": "10.7554/eLife.00380.037", 
+        "type": "fig"
+    }, 
+    {
+        "position": 38, 
+        "doi": "10.7554/eLife.00380.038", 
+        "type": "fig"
+    }, 
+    {
+        "position": 39, 
+        "doi": "10.7554/eLife.00380.039", 
+        "type": "fig"
+    }, 
+    {
+        "position": 40, 
+        "doi": "10.7554/eLife.00380.040", 
+        "type": "fig"
+    }, 
+    {
+        "position": 41, 
+        "doi": "10.7554/eLife.00380.041", 
+        "type": "fig"
+    }, 
+    {
+        "position": 42, 
+        "doi": "10.7554/eLife.00380.042", 
+        "type": "supplementary-material"
+    }
+]
