@@ -65,32 +65,44 @@ Example usage
     >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
     >>> print parser.doi(soup)
 
-More code examples can be found in `tests/unittests/basic_usage_test.py`
+More code examples can be found in `tests/basic_usage_test.py`
 
 These code examples can be run with:
 
 .. code-block:: bash
 
     $ cd elifetools/
-    $ python -m unittest discover -s tests/unittests/ -p *_test.py
+    $ python -m unittest discover -s tests  -p *_test.py
 
 and with xml output:
 
 .. code-block:: bash
 
     $ cd elifetools/
-    $ python -m xmlrunner discover -s tests/unittests/ -p *_test.py
+    $ python -m xmlrunner discover -s tests -p *_test.py
 
 Testing
 =======
 
-`Lettuce <http://packages.python.org/lettuce/>`_ for testing.
+You can run the full automated test suite from the base folder with:
 
 .. code-block:: bash
 
-   $ cd elifetools/tests
-   $ lettuce
-   
+    $ python -m unittest discover elifetools/tests
+
+or you can run tests with coverage:
+
+.. code-block:: bash
+
+    $ coverage run -m unittest discover elifetools/tests
+
+and then view the coverage report:
+
+.. code-block:: bash
+
+    $ coverage report -m
+
+
 License
 =========
 
