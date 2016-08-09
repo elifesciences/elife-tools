@@ -1,0 +1,72 @@
+[
+    {
+        "surname": "Schekman", 
+        "notes-fn": [
+            "Competing interests:RS receives funding from the Howard Hughes Medical Institute"
+        ], 
+        "author": "Randy Schekman", 
+        "article_doi": "10.7554/eLife.00270", 
+        "corresp": "yes", 
+        "email": "editorial@elifesciences.org", 
+        "given-names": "Randy", 
+        "role": "Editor-in-Chief", 
+        "position": 1, 
+        "person_id": 1032, 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1032"
+    }, 
+    {
+        "surname": "Patterson", 
+        "author": "Mark Patterson", 
+        "article_doi": "10.7554/eLife.00270", 
+        "given-names": "Mark", 
+        "role": "Managing Executive Editor", 
+        "person_id": 1002, 
+        "position": 2, 
+        "type": "author", 
+        "id": "author-1002"
+    }, 
+    {
+        "surname": "Watt", 
+        "notes-fn": [
+            "FW receives funding from the Wellcome Trust"
+        ], 
+        "author": "Fiona Watt", 
+        "article_doi": "10.7554/eLife.00270", 
+        "given-names": "Fiona", 
+        "role": "Deputy Editor", 
+        "position": 3, 
+        "person_id": 1031, 
+        "references": {
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1031"
+    }, 
+    {
+        "surname": "Weigel", 
+        "notes-fn": [
+            "DW is employed by the Max Planck Society"
+        ], 
+        "author": "Detlef Weigel", 
+        "article_doi": "10.7554/eLife.00270", 
+        "given-names": "Detlef", 
+        "role": "Deputy Editor", 
+        "position": 4, 
+        "person_id": 1030, 
+        "references": {
+            "competing-interest": [
+                "conf3"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1030"
+    }
+]

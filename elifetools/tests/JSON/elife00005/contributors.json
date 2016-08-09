@@ -1,0 +1,147 @@
+[
+    {
+        "surname": "Ciferri", 
+        "corresp": "yes", 
+        "given-names": "Claudio", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "email": [
+                "cor2"
+            ], 
+            "present-address": [
+                "pa1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1313"
+    }, 
+    {
+        "surname": "Lander", 
+        "given-names": "Gabriel C", 
+        "type": "author", 
+        "id": "author-1314", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4"
+            ]
+        }
+    }, 
+    {
+        "surname": "Maiolica", 
+        "given-names": "Alessio", 
+        "type": "author", 
+        "id": "author-1315", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-6"
+            ]
+        }
+    }, 
+    {
+        "surname": "Herzog", 
+        "given-names": "Franz", 
+        "type": "author", 
+        "id": "author-1316", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-2", 
+                "par-5"
+            ]
+        }
+    }, 
+    {
+        "surname": "Aebersold", 
+        "given-names": "Ruedi", 
+        "type": "author", 
+        "id": "author-1317", 
+        "references": {
+            "affiliation": [
+                "aff3", 
+                "aff4"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ]
+        }
+    }, 
+    {
+        "surname": "Nogales", 
+        "corresp": "yes", 
+        "given-names": "Eva", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff5"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-7"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1218"
+    }, 
+    {
+        "role": "Reviewing editor", 
+        "surname": "Struhl", 
+        "given-names": "Kevin", 
+        "type": "editor", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Harvard Medical School"
+            }
+        ]
+    }
+]

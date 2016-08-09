@@ -1,0 +1,1880 @@
+[
+    {
+        "surname": "Ju", 
+        "author": "Young Seok Ju", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Young Seok", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-6"
+            ], 
+            "related-object": [
+                "dataro1"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 10471, 
+        "notes-fn": [
+            "YSJ, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10471"
+    }, 
+    {
+        "surname": "Alexandrov", 
+        "author": "Ludmil B Alexandrov", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Ludmil B", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 12818, 
+        "notes-fn": [
+            "LBA, Analyzed mutational signature", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12818"
+    }, 
+    {
+        "surname": "Gerstung", 
+        "author": "Moritz Gerstung", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Moritz", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 12819, 
+        "notes-fn": [
+            "MG, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12819"
+    }, 
+    {
+        "surname": "Martincorena", 
+        "author": "Inigo Martincorena", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Inigo", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-15"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 12820, 
+        "notes-fn": [
+            "IM, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12820"
+    }, 
+    {
+        "surname": "Nik-Zainal", 
+        "author": "Serena Nik-Zainal", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Serena", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 3746, 
+        "notes-fn": [
+            "SN-Z, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-3746"
+    }, 
+    {
+        "surname": "Ramakrishna", 
+        "author": "Manasa Ramakrishna", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Manasa", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 12821, 
+        "notes-fn": [
+            "MR, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12821"
+    }, 
+    {
+        "surname": "Davies", 
+        "author": "Helen R Davies", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Helen R", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 12822, 
+        "notes-fn": [
+            "HRD, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12822"
+    }, 
+    {
+        "surname": "Papaemmanuil", 
+        "author": "Elli Papaemmanuil", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Elli", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 8, 
+        "person_id": 12823, 
+        "notes-fn": [
+            "EP, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12823"
+    }, 
+    {
+        "surname": "Gundem", 
+        "author": "Gunes Gundem", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Gunes", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con9"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 9, 
+        "person_id": 12824, 
+        "notes-fn": [
+            "GG, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12824"
+    }, 
+    {
+        "surname": "Shlien", 
+        "author": "Adam Shlien", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Adam", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con10"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 10, 
+        "person_id": 8324, 
+        "notes-fn": [
+            "AS, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-8324"
+    }, 
+    {
+        "surname": "Bolli", 
+        "author": "Niccolo Bolli", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Niccolo", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con11"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 11, 
+        "person_id": 12825, 
+        "notes-fn": [
+            "NB, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12825"
+    }, 
+    {
+        "surname": "Behjati", 
+        "author": "Sam Behjati", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Sam", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con12"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 12, 
+        "person_id": 12826, 
+        "notes-fn": [
+            "SB, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12826"
+    }, 
+    {
+        "surname": "Tarpey", 
+        "author": "Patrick S Tarpey", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Patrick S", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con13"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 13, 
+        "person_id": 12827, 
+        "notes-fn": [
+            "PST, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12827"
+    }, 
+    {
+        "surname": "Nangalia", 
+        "author": "Jyoti Nangalia", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Jyoti", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con14"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 14, 
+        "person_id": 12828, 
+        "notes-fn": [
+            "JN, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12828"
+    }, 
+    {
+        "surname": "Massie", 
+        "author": "Charles E Massie", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Charles E", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con15"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 15, 
+        "person_id": 12829, 
+        "notes-fn": [
+            "CEM, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12829"
+    }, 
+    {
+        "surname": "Butler", 
+        "author": "Adam P Butler", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Adam P", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con47"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 16, 
+        "person_id": 12830, 
+        "notes-fn": [
+            "APB, Provided bioinformatics support for sequencing data acquisition", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12830"
+    }, 
+    {
+        "surname": "Teague", 
+        "author": "Jon W Teague", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Jon W", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con48"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 17, 
+        "person_id": 12831, 
+        "notes-fn": [
+            "JWT, Provided bioinformatics support for sequencing data acquisition", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12831"
+    }, 
+    {
+        "surname": "Vassiliou", 
+        "author": "George S Vassiliou", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "George S", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con16"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 18, 
+        "person_id": 12832, 
+        "notes-fn": [
+            "GSV, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12832"
+    }, 
+    {
+        "surname": "Green", 
+        "author": "Anthony R Green", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Anthony R", 
+        "references": {
+            "affiliation": [
+                "aff2", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con17"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3", 
+                "par-8", 
+                "par-9", 
+                "par-10", 
+                "par-14"
+            ]
+        }, 
+        "position": 19, 
+        "person_id": 12833, 
+        "notes-fn": [
+            "ARG, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12833"
+    }, 
+    {
+        "surname": "Du", 
+        "author": "Ming-Qing Du", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Ming-Qing", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con18"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 20, 
+        "person_id": 12834, 
+        "notes-fn": [
+            "M-QD, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12834"
+    }, 
+    {
+        "surname": "Unnikrishnan", 
+        "author": "Ashwin Unnikrishnan", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Lowy Cancer Research Centre", 
+                "city": "Sydney", 
+                "institution": "University of New South Wales", 
+                "country": "Australia"
+            }
+        ], 
+        "given-names": "Ashwin", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con19"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 21, 
+        "person_id": 12835, 
+        "notes-fn": [
+            "AU, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12835"
+    }, 
+    {
+        "surname": "Pimanda", 
+        "author": "John E Pimanda", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Lowy Cancer Research Centre", 
+                "city": "Sydney", 
+                "institution": "University of New South Wales", 
+                "country": "Australia"
+            }
+        ], 
+        "given-names": "John E", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con20"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 22, 
+        "person_id": 12836, 
+        "notes-fn": [
+            "JEP, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12836"
+    }, 
+    {
+        "surname": "Teh", 
+        "author": "Bin Tean Teh", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Laboratory of Cancer Epigenome", 
+                "city": "Singapore", 
+                "institution": "National Cancer Centre", 
+                "country": "Singapore"
+            }, 
+            {
+                "country": "Singapore", 
+                "institution": "Duke-NUS Graduate Medical School", 
+                "city": "Singapore"
+            }
+        ], 
+        "given-names": "Bin Tean", 
+        "references": {
+            "affiliation": [
+                "aff5", 
+                "aff6"
+            ], 
+            "contribution": [
+                "con21"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 23, 
+        "person_id": 12837, 
+        "notes-fn": [
+            "BTT, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12837"
+    }, 
+    {
+        "surname": "Munshi", 
+        "author": "Nikhil Munshi", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Hematologic Oncology", 
+                "city": "Boston", 
+                "institution": "Dana-Farber Cancer Institute", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Nikhil", 
+        "references": {
+            "affiliation": [
+                "aff7"
+            ], 
+            "contribution": [
+                "con22"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 24, 
+        "person_id": 12838, 
+        "notes-fn": [
+            "NM, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12838"
+    }, 
+    {
+        "surname": "Greaves", 
+        "author": "Mel Greaves", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Institute of Cancer Research, Sutton", 
+                "city": "London"
+            }
+        ], 
+        "given-names": "Mel", 
+        "references": {
+            "affiliation": [
+                "aff8"
+            ], 
+            "contribution": [
+                "con23"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ]
+        }, 
+        "position": 25, 
+        "person_id": 12839, 
+        "notes-fn": [
+            "MG, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12839"
+    }, 
+    {
+        "surname": "Vyas", 
+        "author": "Paresh Vyas", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Weatherall Institute for Molecular Medicine", 
+                "city": "Oxford", 
+                "institution": "University of Oxford", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Paresh", 
+        "references": {
+            "affiliation": [
+                "aff9"
+            ], 
+            "contribution": [
+                "con24"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 26, 
+        "person_id": 12840, 
+        "notes-fn": [
+            "PV, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12840"
+    }, 
+    {
+        "surname": "El-Naggar", 
+        "author": "Adel K El-Naggar", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Houston", 
+                "institution": "MD Anderson Cancer Center", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Adel K", 
+        "references": {
+            "affiliation": [
+                "aff10"
+            ], 
+            "contribution": [
+                "con25"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 27, 
+        "person_id": 12841, 
+        "notes-fn": [
+            "AKE-N, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12841"
+    }, 
+    {
+        "surname": "Santarius", 
+        "author": "Tom Santarius", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Tom", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con26"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 28, 
+        "person_id": 12842, 
+        "notes-fn": [
+            "TS, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12842"
+    }, 
+    {
+        "surname": "Collins", 
+        "author": "V Peter Collins", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "V Peter", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con27"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 29, 
+        "person_id": 12843, 
+        "notes-fn": [
+            "VPC, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12843"
+    }, 
+    {
+        "surname": "Grundy", 
+        "author": "Richard Grundy", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Children's Brain Tumour Research Centre", 
+                "city": "Nottingham", 
+                "institution": "University of Nottingham", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Richard", 
+        "references": {
+            "affiliation": [
+                "aff11"
+            ], 
+            "contribution": [
+                "con28"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 30, 
+        "person_id": 12844, 
+        "notes-fn": [
+            "RG, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12844"
+    }, 
+    {
+        "surname": "Taylor", 
+        "author": "Jack A Taylor", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "National Institute of Environmental Health Sciences", 
+                "city": "Triangle, North Carolina", 
+                "institution": "National Institute of Health", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jack A", 
+        "references": {
+            "affiliation": [
+                "aff12"
+            ], 
+            "contribution": [
+                "con29"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-13"
+            ]
+        }, 
+        "position": 31, 
+        "person_id": 12845, 
+        "notes-fn": [
+            "JAT, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12845"
+    }, 
+    {
+        "surname": "Hayes", 
+        "author": "D Neil Hayes", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Internal Medicine", 
+                "city": "Chapel Hill", 
+                "institution": "University of North Carolina", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "D Neil", 
+        "references": {
+            "affiliation": [
+                "aff13"
+            ], 
+            "contribution": [
+                "con30"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 32, 
+        "person_id": 12846, 
+        "notes-fn": [
+            "DNH, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12846"
+    }, 
+    {
+        "surname": "Malkin", 
+        "author": "David Malkin", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Hospital for Sick Children", 
+                "city": "Toronto", 
+                "institution": "University of Toronto", 
+                "country": "Canada"
+            }
+        ], 
+        "given-names": "David", 
+        "references": {
+            "affiliation": [
+                "aff14"
+            ], 
+            "contribution": [
+                "con31"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 33, 
+        "person_id": 12847, 
+        "notes-fn": [
+            "DM, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12847"
+    }, 
+    {
+        "group-author-key": "group-author-id1", 
+        "article_doi": "10.7554/eLife.02935", 
+        "collab": "ICGC Breast Cancer Group", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ]
+        }, 
+        "position": 34, 
+        "type": "author"
+    }, 
+    {
+        "group-author-key": "group-author-id2", 
+        "article_doi": "10.7554/eLife.02935", 
+        "collab": "ICGC Chronic Myeloid Disorders Group", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ]
+        }, 
+        "position": 35, 
+        "type": "author"
+    }, 
+    {
+        "group-author-key": "group-author-id3", 
+        "article_doi": "10.7554/eLife.02935", 
+        "collab": "ICGC Prostate Cancer Group", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Institute of Cancer Research, Sutton", 
+                "city": "London"
+            }, 
+            {
+                "dept": "Cancer Research UK Cambridge Institute", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff8", 
+                "aff15"
+            ]
+        }, 
+        "position": 36, 
+        "type": "author"
+    }, 
+    {
+        "surname": "Foster", 
+        "author": "Christopher S Foster", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular and Clinical Cancer Medicine", 
+                "city": "London", 
+                "institution": "University of Liverpool", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "HCA Pathology Laboratories", 
+                "city": "London"
+            }
+        ], 
+        "given-names": "Christopher S", 
+        "references": {
+            "affiliation": [
+                "aff16", 
+                "aff17"
+            ], 
+            "contribution": [
+                "con32"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 37, 
+        "person_id": 12848, 
+        "notes-fn": [
+            "CSF, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12848"
+    }, 
+    {
+        "surname": "Warren", 
+        "author": "Anne Y Warren", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Anne Y", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con33"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 38, 
+        "person_id": 12849, 
+        "notes-fn": [
+            "AYW, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12849"
+    }, 
+    {
+        "surname": "Whitaker", 
+        "author": "Hayley C Whitaker", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Research UK Cambridge Institute", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Hayley C", 
+        "references": {
+            "affiliation": [
+                "aff15"
+            ], 
+            "contribution": [
+                "con34"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 39, 
+        "person_id": 12850, 
+        "notes-fn": [
+            "HCW, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12850"
+    }, 
+    {
+        "surname": "Brewer", 
+        "author": "Daniel Brewer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Institute of Cancer Research, Sutton", 
+                "city": "London"
+            }, 
+            {
+                "dept": "School of Biological Sciences", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Daniel", 
+        "references": {
+            "affiliation": [
+                "aff8", 
+                "aff18"
+            ], 
+            "contribution": [
+                "con35"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 40, 
+        "person_id": 12851, 
+        "notes-fn": [
+            "DB, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12851"
+    }, 
+    {
+        "surname": "Eeles", 
+        "author": "Rosalind Eeles", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Institute of Cancer Research, Sutton", 
+                "city": "London"
+            }
+        ], 
+        "given-names": "Rosalind", 
+        "references": {
+            "affiliation": [
+                "aff8"
+            ], 
+            "contribution": [
+                "con36"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-12"
+            ]
+        }, 
+        "position": 41, 
+        "person_id": 12852, 
+        "notes-fn": [
+            "RE, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12852"
+    }, 
+    {
+        "surname": "Cooper", 
+        "author": "Colin Cooper", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "Institute of Cancer Research, Sutton", 
+                "city": "London"
+            }, 
+            {
+                "dept": "School of Biological Sciences", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Colin", 
+        "references": {
+            "affiliation": [
+                "aff8", 
+                "aff18"
+            ], 
+            "contribution": [
+                "con37"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-12"
+            ]
+        }, 
+        "position": 42, 
+        "person_id": 12853, 
+        "notes-fn": [
+            "CC, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12853"
+    }, 
+    {
+        "surname": "Neal", 
+        "author": "David Neal", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Research UK Cambridge Institute", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "David", 
+        "references": {
+            "affiliation": [
+                "aff15"
+            ], 
+            "contribution": [
+                "con38"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-12", 
+                "par-14"
+            ]
+        }, 
+        "position": 43, 
+        "person_id": 12854, 
+        "notes-fn": [
+            "DN, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12854"
+    }, 
+    {
+        "surname": "Visakorpi", 
+        "author": "Tapio Visakorpi", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Institute of Biosciences and Medical Technology - BioMediTech and Fimlab Laboratories", 
+                "city": "Tampere", 
+                "institution": "University of Tampere and Tampere University Hospital", 
+                "country": "Finland"
+            }
+        ], 
+        "given-names": "Tapio", 
+        "references": {
+            "affiliation": [
+                "aff19"
+            ], 
+            "contribution": [
+                "con39"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 44, 
+        "person_id": 12855, 
+        "notes-fn": [
+            "TV, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12855"
+    }, 
+    {
+        "surname": "Isaacs", 
+        "author": "William B Isaacs", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Oncology", 
+                "city": "Baltimore", 
+                "institution": "Johns Hopkins University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "William B", 
+        "references": {
+            "affiliation": [
+                "aff20"
+            ], 
+            "contribution": [
+                "con40"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 45, 
+        "person_id": 12856, 
+        "notes-fn": [
+            "WBI, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12856"
+    }, 
+    {
+        "surname": "Bova", 
+        "author": "G Steven Bova", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Institute of Biosciences and Medical Technology - BioMediTech and Fimlab Laboratories", 
+                "city": "Tampere", 
+                "institution": "University of Tampere and Tampere University Hospital", 
+                "country": "Finland"
+            }
+        ], 
+        "given-names": "G Steven", 
+        "references": {
+            "affiliation": [
+                "aff19"
+            ], 
+            "contribution": [
+                "con41"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 46, 
+        "person_id": 12857, 
+        "notes-fn": [
+            "GSB, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12857"
+    }, 
+    {
+        "surname": "Flanagan", 
+        "author": "Adrienne M Flanagan", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Histopathology", 
+                "city": "Middlesex", 
+                "institution": "Royal National Orthopaedic Hospital", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "dept": "University College London Cancer Institute", 
+                "city": "London", 
+                "institution": "University College London", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Adrienne M", 
+        "references": {
+            "affiliation": [
+                "aff21", 
+                "aff22"
+            ], 
+            "contribution": [
+                "con42"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-7"
+            ]
+        }, 
+        "position": 47, 
+        "person_id": 12858, 
+        "notes-fn": [
+            "AMF, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12858"
+    }, 
+    {
+        "surname": "Futreal", 
+        "author": "P Andrew Futreal", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "dept": "Department of Genomic Medicine", 
+                "city": "Texas", 
+                "institution": "The University of Texas, MD Anderson Cancer Center, Houston", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "P Andrew", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff23"
+            ], 
+            "contribution": [
+                "con43"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ]
+        }, 
+        "position": 48, 
+        "person_id": 12859, 
+        "notes-fn": [
+            "PAF, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12859"
+    }, 
+    {
+        "surname": "Lynch", 
+        "author": "Andy G Lynch", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Research UK Cambridge Institute", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Andy G", 
+        "references": {
+            "affiliation": [
+                "aff15"
+            ], 
+            "contribution": [
+                "con44"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 49, 
+        "person_id": 12860, 
+        "notes-fn": [
+            "AGL, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12860"
+    }, 
+    {
+        "surname": "Chinnery", 
+        "author": "Patrick F Chinnery", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Wellcome Trust Centre for Mitochondrial Research, Institute of Genetic Medicine", 
+                "city": "Newcastle-upon-tyne", 
+                "institution": "Newcastle University", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Patrick F", 
+        "references": {
+            "affiliation": [
+                "aff24"
+            ], 
+            "contribution": [
+                "con45"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 50, 
+        "person_id": 12861, 
+        "notes-fn": [
+            "PFC, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12861"
+    }, 
+    {
+        "surname": "McDermott", 
+        "author": "Ultan McDermott", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Ultan", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con46"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1"
+            ]
+        }, 
+        "position": 51, 
+        "person_id": 12862, 
+        "notes-fn": [
+            "UMD, Contributed samples and scientific advice", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12862"
+    }, 
+    {
+        "surname": "Stratton", 
+        "author": "Michael R Stratton", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Michael R", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con49"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-11"
+            ]
+        }, 
+        "position": 52, 
+        "person_id": 3750, 
+        "notes-fn": [
+            "MRS, Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-3750"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: pc8@sanger.ac.uk"
+        ], 
+        "surname": "Campbell", 
+        "author": "Peter J Campbell", 
+        "article_doi": "10.7554/eLife.02935", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "city": "Cambridge"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Peter J", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con50"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2", 
+                "par-3", 
+                "par-16"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 53, 
+        "person_id": 3749, 
+        "notes-fn": [
+            "PJC, Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-3749"
+    }
+]

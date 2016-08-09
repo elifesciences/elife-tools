@@ -1,0 +1,82 @@
+[
+    {
+        "par-1": {
+            "award-id": "CAREER Award, 1056008", 
+            "institution": "National Science Foundation", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000001"
+        }
+    }, 
+    {
+        "par-2": {
+            "award-id": "Research Grant Award", 
+            "institution": "Okawa Foundation for Information and Telecommunications", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100004399"
+        }
+    }, 
+    {
+        "par-3": {
+            "award-id": "Sloan Research Fellowship", 
+            "institution": "Alfred P. Sloan Foundation", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000879"
+        }
+    }, 
+    {
+        "par-4": {
+            "award-id": "NIH Director's New Innovator Award", 
+            "institution": "National Institutes of Health", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }, 
+    {
+        "par-5": {
+            "award-id": "R01NS087159", 
+            "institution": "National Institute of Neurological Disorders and Stroke", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000065"
+        }
+    }, 
+    {
+        "par-6": {
+            "award-id": "R00EB008738", 
+            "institution": "National Institute of Biomedical Imaging and Bioengineering", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000070"
+        }
+    }, 
+    {
+        "par-7": {
+            "award-id": "Transformative R01, R01MH087988", 
+            "institution": "National Institutes of Health", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }, 
+    {
+        "par-8": {
+            "award-id": "", 
+            "institution": "Mathers Charitable Foundation"
+        }
+    }, 
+    {
+        "par-9": {
+            "award-id": "Bioengineering Graduate Fellowship", 
+            "institution": "Stanford Bio-X"
+        }
+    }, 
+    {
+        "par-10": {
+            "award-id": "", 
+            "institution": "James and Carrie Anderson Fund for Epilepsy Research"
+        }
+    }, 
+    {
+        "par-11": {
+            "award-id": "", 
+            "institution": "Susan Horngren and Littlefield Funds"
+        }
+    }
+]

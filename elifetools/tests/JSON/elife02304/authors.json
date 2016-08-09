@@ -1,0 +1,236 @@
+[
+    {
+        "surname": "Boucher", 
+        "author": "Jeffrey I Boucher", 
+        "article_doi": "10.7554/eLife.02304", 
+        "affiliations": [
+            {
+                "dept": "Department of Biochemistry", 
+                "city": "Waltham", 
+                "institution": "Brandeis University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jeffrey I", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2", 
+                "dataro3", 
+                "dataro4", 
+                "dataro5", 
+                "dataro6", 
+                "dataro7", 
+                "dataro8", 
+                "dataro9"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 10856, 
+        "notes-fn": [
+            "JIB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10856"
+    }, 
+    {
+        "surname": "Jacobowitz", 
+        "author": "Joseph R Jacobowitz", 
+        "article_doi": "10.7554/eLife.02304", 
+        "affiliations": [
+            {
+                "dept": "Department of Biochemistry", 
+                "city": "Waltham", 
+                "institution": "Brandeis University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Joseph R", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2", 
+                "dataro3", 
+                "dataro4", 
+                "dataro5", 
+                "dataro6", 
+                "dataro7", 
+                "dataro8", 
+                "dataro9"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 10857, 
+        "notes-fn": [
+            "JRJ, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10857"
+    }, 
+    {
+        "surname": "Beckett", 
+        "author": "Brian C Beckett", 
+        "article_doi": "10.7554/eLife.02304", 
+        "affiliations": [
+            {
+                "dept": "Department of Biochemistry", 
+                "city": "Waltham", 
+                "institution": "Brandeis University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Brian C", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2", 
+                "dataro3", 
+                "dataro4", 
+                "dataro5", 
+                "dataro6", 
+                "dataro7", 
+                "dataro8", 
+                "dataro9"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 10858, 
+        "notes-fn": [
+            "BCB, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10858"
+    }, 
+    {
+        "surname": "Classen", 
+        "author": "Scott Classen", 
+        "article_doi": "10.7554/eLife.02304", 
+        "affiliations": [
+            {
+                "dept": "Physical Biosciences Division", 
+                "city": "Berkeley", 
+                "institution": "Lawrence Berkeley National Laboratory", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Scott", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2", 
+                "dataro3", 
+                "dataro4", 
+                "dataro5", 
+                "dataro6", 
+                "dataro7", 
+                "dataro8", 
+                "dataro9"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 10859, 
+        "notes-fn": [
+            "SC, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10859"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: dtheobald@brandeis.edu"
+        ], 
+        "surname": "Theobald", 
+        "author": "Douglas L Theobald", 
+        "article_doi": "10.7554/eLife.02304", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Biochemistry", 
+                "city": "Waltham", 
+                "institution": "Brandeis University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Douglas L", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ], 
+            "related-object": [
+                "dataro1", 
+                "dataro2", 
+                "dataro3", 
+                "dataro4", 
+                "dataro5", 
+                "dataro6", 
+                "dataro7", 
+                "dataro8", 
+                "dataro9"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 3158, 
+        "notes-fn": [
+            "DLT, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-3158"
+    }
+]

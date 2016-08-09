@@ -1,0 +1,149 @@
+[
+    {
+        "surname": "Fleming", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Michael S", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28783"
+    }, 
+    {
+        "surname": "Vysochan", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Anna", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28784"
+    }, 
+    {
+        "surname": "Paix\u00e3o", 
+        "affiliations": [
+            {
+                "dept": "Molecules - Signals - Development", 
+                "city": "Martinsried", 
+                "institution": "Max Planck Institute of Neurobiology", 
+                "country": "Germany"
+            }
+        ], 
+        "given-names": "S\u03ccnia", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28785"
+    }, 
+    {
+        "surname": "Niu", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jingwen", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28786"
+    }, 
+    {
+        "surname": "Klein", 
+        "affiliations": [
+            {
+                "dept": "Molecules - Signals - Development", 
+                "city": "Martinsried", 
+                "institution": "Max Planck Institute of Neurobiology", 
+                "country": "Germany"
+            }
+        ], 
+        "given-names": "R\u00fcdiger", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-6426"
+    }, 
+    {
+        "surname": "Savitt", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Parkinson's Disease and Movement Disorder Center of Maryland", 
+                "city": "Elkridge"
+            }
+        ], 
+        "given-names": "Joseph M", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28787"
+    }, 
+    {
+        "surname": "Luo", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "email": "luow@mail.med.upenn.edu", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Wenqin", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-18016"
+    }, 
+    {
+        "surname": "Shen", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Howard Hughes Medical Institute, Stanford University"
+            }
+        ], 
+        "given-names": "Kang", 
+        "role": "Reviewing editor", 
+        "type": "editor", 
+        "id": "author-1880"
+    }
+]

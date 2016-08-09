@@ -1,0 +1,17 @@
+[
+    {
+        "text": "<p>MCS: Conception and design, acquisition of data, analysis and interpretation of data, and drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>KB: Conception and design, acquisition of data, analysis and interpretation of data, and drafting or revising the article</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>ITB: Conception and design, acquisition of data, analysis and interpretation of data, and drafting or revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }
+]

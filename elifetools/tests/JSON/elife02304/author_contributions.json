@@ -1,0 +1,27 @@
+[
+    {
+        "text": "<p>JIB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DLT, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JRJ, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>BCB, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SC, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }
+]

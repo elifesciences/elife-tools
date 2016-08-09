@@ -1,0 +1,2337 @@
+[
+    {
+        "article_title": "p38 mitogen-activated protein kinase can be involved in transforming growth factor beta superfamily signal transduction in Drosophila wing morphogenesis", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Adachi-Yamada", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakamura", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Irie", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tomoyasu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sano", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mori", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "p38 mitogen-activated protein kinase can be involved in transforming growth factor beta superfamily signal transduction in <italic>Drosophila</italic> wing morphogenesis", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "Mol Cell Biol", 
+        "fpage": "2322", 
+        "year": "1999", 
+        "etal": true, 
+        "position": 1, 
+        "ref": "Adachi-YamadaTNakamuraMIrieKTomoyasuYSanoYMoriE1999p38 mitogen-activated protein kinase can be involved in transforming growth factor beta superfamily signal transduction in Drosophila wing morphogenesisMol Cell Biol1923229", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Perturbations of the AKT signaling pathway in human cancer", 
+        "lpage": "64", 
+        "doi": "10.1038/sj.onc.1209085", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Altomare", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Testa", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Perturbations of the AKT signaling pathway in human cancer", 
+        "publication-type": "journal", 
+        "volume": "24", 
+        "source": "Oncogene", 
+        "reference_id": "10.1038/sj.onc.1209085", 
+        "fpage": "7455", 
+        "year": "2005", 
+        "position": 2, 
+        "ref": "AltomareDATestaJR2005Perturbations of the AKT signaling pathway in human cancerOncogene2474556410.1038/sj.onc.1209085", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Control of photoreceptor cell fate by the sevenless protein requires a functional tyrosine kinase domain", 
+        "lpage": "311", 
+        "doi": "10.1016/0092-8674(88)90193-6", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Basler", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Control of photoreceptor cell fate by the sevenless protein requires a functional tyrosine kinase domain", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Cell", 
+        "reference_id": "10.1016/0092-8674(88)90193-6", 
+        "fpage": "299", 
+        "year": "1988", 
+        "position": 3, 
+        "ref": "BaslerKHafenE1988Control of photoreceptor cell fate by the sevenless protein requires a functional tyrosine kinase domainCell5429931110.1016/0092-8674(88)90193-6", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Drosophila\u2019s insulin/PI3-kinase pathway coordinates cellular metabolism with nutritional conditions", 
+        "lpage": "49", 
+        "doi": "10.1016/S1534-5807(02)00117-X", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Britton", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lockwood", 
+                "given-names": "WK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cohen", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edgar", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic>\u2019s insulin/PI3-kinase pathway coordinates cellular metabolism with nutritional conditions", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Dev Cell", 
+        "reference_id": "10.1016/S1534-5807(02)00117-X", 
+        "fpage": "239", 
+        "year": "2002", 
+        "position": 4, 
+        "ref": "BrittonJSLockwoodWKLiLCohenSMEdgarBA2002Drosophila\u2019s insulin/PI3-kinase pathway coordinates cellular metabolism with nutritional conditionsDev Cell22394910.1016/S1534-5807(02)00117-X", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "An evolutionarily conserved function of the Drosophila insulin receptor and insulin-like peptides in growth control", 
+        "lpage": "21", 
+        "doi": "10.1016/S0960-9822(01)00068-9", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Brogiolo", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ikeya", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rintelen", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fernandez", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An evolutionarily conserved function of the <italic>Drosophila</italic> insulin receptor and insulin-like peptides in growth control", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Curr Biol", 
+        "reference_id": "10.1016/S0960-9822(01)00068-9", 
+        "fpage": "213", 
+        "year": "2001", 
+        "position": 5, 
+        "ref": "BrogioloWStockerHIkeyaTRintelenFFernandezRHafenE2001An evolutionarily conserved function of the Drosophila insulin receptor and insulin-like peptides in growth controlCurr Biol112132110.1016/S0960-9822(01)00068-9", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "A new branch on the tree: next-generation sequencing in the study of cancer evolution", 
+        "lpage": "42", 
+        "doi": "10.1016/j.semcdb.2011.12.008", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Brosnan", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iacobuzio-Donahue", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A new branch on the tree: next-generation sequencing in the study of cancer evolution", 
+        "publication-type": "journal", 
+        "volume": "23", 
+        "source": "Semin Cell Dev Biol", 
+        "reference_id": "10.1016/j.semcdb.2011.12.008", 
+        "fpage": "237", 
+        "year": "2012", 
+        "position": 6, 
+        "ref": "BrosnanJAIacobuzio-DonahueCA2012A new branch on the tree: next-generation sequencing in the study of cancer evolutionSemin Cell Dev Biol232374210.1016/j.semcdb.2011.12.008", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Akt promotes cell survival by phosphorylating and inhibiting a Forkhead transcription factor", 
+        "lpage": "68", 
+        "doi": "10.1016/S0092-8674(00)80595-4", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Brunet", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonni", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zigmond", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "MZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Juo", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hu", 
+                "given-names": "LS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Akt promotes cell survival by phosphorylating and inhibiting a Forkhead transcription factor", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(00)80595-4", 
+        "fpage": "857", 
+        "year": "1999", 
+        "etal": true, 
+        "position": 7, 
+        "ref": "BrunetABonniAZigmondMJLinMZJuoPHuLS1999Akt promotes cell survival by phosphorylating and inhibiting a Forkhead transcription factorCell968576810.1016/S0092-8674(00)80595-4", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Cell cycle and death control: long live Forkheads", 
+        "lpage": "60", 
+        "doi": "10.1016/S0968-0004(02)02113-8", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Burgering", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kops", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cell cycle and death control: long live Forkheads", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Trends Biochem Sci", 
+        "reference_id": "10.1016/S0968-0004(02)02113-8", 
+        "fpage": "352", 
+        "year": "2002", 
+        "position": 8, 
+        "ref": "BurgeringBMKopsGJ2002Cell cycle and death control: long live ForkheadsTrends Biochem Sci273526010.1016/S0968-0004(02)02113-8", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Anaplastic lymphoma kinase spares organ growth during nutrient restriction in Drosophila", 
+        "lpage": "47", 
+        "doi": "10.1016/j.cell.2011.06.040", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Cheng", 
+                "given-names": "LY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bailey", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leevers", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ragan", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Driscoll", 
+                "given-names": "PC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gould", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Anaplastic lymphoma kinase spares organ growth during nutrient restriction in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "146", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2011.06.040", 
+        "fpage": "435", 
+        "year": "2011", 
+        "position": 9, 
+        "ref": "ChengLYBaileyAPLeeversSJRaganTJDriscollPCGouldAP2011Anaplastic lymphoma kinase spares organ growth during nutrient restriction in DrosophilaCell1464354710.1016/j.cell.2011.06.040", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "A nutrient sensor mechanism controls Drosophila growth", 
+        "lpage": "49", 
+        "doi": "10.1016/S0092-8674(03)00713-X", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Colombani", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raisin", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pantalacci", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Radimerski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Montagne", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leopold", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A nutrient sensor mechanism controls <italic>Drosophila</italic> growth", 
+        "publication-type": "journal", 
+        "volume": "114", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(03)00713-X", 
+        "fpage": "739", 
+        "year": "2003", 
+        "position": 10, 
+        "ref": "ColombaniJRaisinSPantalacciSRadimerskiTMontagneJLeopoldP2003A nutrient sensor mechanism controls Drosophila growthCell1147394910.1016/S0092-8674(03)00713-X", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Drosophila myc regulates organ size by inducing cell competition", 
+        "lpage": "16", 
+        "doi": "10.1016/S0092-8674(04)00214-4", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "de la Cova", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abril", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bellosta", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gallant", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnston", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> myc regulates organ size by inducing cell competition", 
+        "publication-type": "journal", 
+        "volume": "117", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(04)00214-4", 
+        "fpage": "107", 
+        "year": "2004", 
+        "position": 11, 
+        "ref": "de la CovaCAbrilMBellostaPGallantPJohnstonLA2004Drosophila myc regulates organ size by inducing cell competitionCell1171071610.1016/S0092-8674(04)00214-4", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "The Drosophila insulin receptor homolog: a gene essential for embryonic development encodes two receptor isoforms with different signaling potential", 
+        "lpage": "84", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Fernandez", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tabarini", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Azpiazu", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frasch", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schlessinger", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> insulin receptor homolog: a gene essential for embryonic development encodes two receptor isoforms with different signaling potential", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "EMBO J", 
+        "fpage": "3373", 
+        "year": "1995", 
+        "position": 12, 
+        "ref": "FernandezRTabariniDAzpiazuNFraschMSchlessingerJ1995The Drosophila insulin receptor homolog: a gene essential for embryonic development encodes two receptor isoforms with different signaling potentialEMBO J14337384", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Drosophila PTEN regulates cell growth and proliferation through PI3K-dependent and -independent pathways", 
+        "lpage": "18", 
+        "doi": "10.1006/dbio.2000.9680", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Gao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neufeld", 
+                "given-names": "TP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pan", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> PTEN regulates cell growth and proliferation through PI3K-dependent and -independent pathways", 
+        "publication-type": "journal", 
+        "volume": "221", 
+        "source": "Dev Biol", 
+        "reference_id": "10.1006/dbio.2000.9680", 
+        "fpage": "404", 
+        "year": "2000", 
+        "position": 13, 
+        "ref": "GaoXNeufeldTPPanD2000Drosophila PTEN regulates cell growth and proliferation through PI3K-dependent and -independent pathwaysDev Biol2214041810.1006/dbio.2000.9680", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Insulin activation of Rheb, a mediator of mTOR/S6K/4E-BP signaling, is inhibited by TSC1 and 2", 
+        "lpage": "66", 
+        "doi": "10.1016/S1097-2765(03)00220-X", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Garami", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zwartkruis", 
+                "given-names": "FJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nobukuni", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Joaquin", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roccio", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Insulin activation of Rheb, a mediator of mTOR/S6K/4E-BP signaling, is inhibited by TSC1 and 2", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Mol Cell", 
+        "reference_id": "10.1016/S1097-2765(03)00220-X", 
+        "fpage": "1457", 
+        "year": "2003", 
+        "etal": true, 
+        "position": 14, 
+        "ref": "GaramiAZwartkruisFJNobukuniTJoaquinMRoccioMStockerH2003Insulin activation of Rheb, a mediator of mTOR/S6K/4E-BP signaling, is inhibited by TSC1 and 2Mol Cell1114576610.1016/S1097-2765(03)00220-X", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Remote control of insulin secretion by fat cells in Drosophila", 
+        "lpage": "207", 
+        "doi": "10.1016/j.cmet.2009.08.002", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Geminard", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rulifson", 
+                "given-names": "EJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leopold", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Remote control of insulin secretion by fat cells in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Cell Metab", 
+        "reference_id": "10.1016/j.cmet.2009.08.002", 
+        "fpage": "199", 
+        "year": "2009", 
+        "position": 15, 
+        "ref": "GeminardCRulifsonEJLeopoldP2009Remote control of insulin secretion by fat cells in DrosophilaCell Metab1019920710.1016/j.cmet.2009.08.002", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "PTEN tumor suppressor network in PI3K-Akt pathway control", 
+        "lpage": "7", 
+        "doi": "10.1177/1947601911407325", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Georgescu", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PTEN tumor suppressor network in PI3K-Akt pathway control", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "Genes Cancer", 
+        "reference_id": "10.1177/1947601911407325", 
+        "fpage": "1170", 
+        "year": "2010", 
+        "position": 16, 
+        "ref": "GeorgescuMM2010PTEN tumor suppressor network in PI3K-Akt pathway controlGenes Cancer11170710.1177/1947601911407325", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Drosophila tumor suppressor PTEN controls cell size and number by antagonizing the Chico/PI3-kinase signaling pathway", 
+        "lpage": "58", 
+        "doi": "10.1101/gad.13.24.3244", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Goberdhan", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paricio", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goodman", 
+                "given-names": "EC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mlodzik", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> tumor suppressor PTEN controls cell size and number by antagonizing the Chico/PI3-kinase signaling pathway", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Genes Dev", 
+        "reference_id": "10.1101/gad.13.24.3244", 
+        "fpage": "3244", 
+        "year": "1999", 
+        "position": 17, 
+        "ref": "GoberdhanDCParicioNGoodmanECMlodzikMWilsonC1999Drosophila tumor suppressor PTEN controls cell size and number by antagonizing the Chico/PI3-kinase signaling pathwayGenes Dev1332445810.1101/gad.13.24.3244", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "PTEN: tumour suppressor, multifunctional growth regulator and more", 
+        "lpage": "48", 
+        "doi": "10.1093/hmg/ddg288", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Goberdhan", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PTEN: tumour suppressor, multifunctional growth regulator and more", 
+        "comment": "12 Spec No", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Hum Mol Genet", 
+        "reference_id": "10.1093/hmg/ddg288", 
+        "fpage": "R239", 
+        "year": "2003", 
+        "position": 18, 
+        "ref": "GoberdhanDCWilsonC2003PTEN: tumour suppressor, multifunctional growth regulator and moreHum Mol Genet12 Spec No2R2394810.1093/hmg/ddg288", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "The FLP recombinase of yeast catalyzes site-specific recombination in the Drosophila genome", 
+        "lpage": "509", 
+        "doi": "10.1016/0092-8674(89)90033-0", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Golic", 
+                "given-names": "KG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lindquist", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The FLP recombinase of yeast catalyzes site-specific recombination in the <italic>Drosophila</italic> genome", 
+        "publication-type": "journal", 
+        "volume": "59", 
+        "source": "Cell", 
+        "reference_id": "10.1016/0092-8674(89)90033-0", 
+        "fpage": "499", 
+        "year": "1989", 
+        "position": 19, 
+        "ref": "GolicKGLindquistS1989The FLP recombinase of yeast catalyzes site-specific recombination in the Drosophila genomeCell5949950910.1016/0092-8674(89)90033-0", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Ras controls growth, survival and differentiation in the Drosophila eye by different thresholds of MAP kinase activity", 
+        "lpage": "96", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Halfar", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rommel", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ras controls growth, survival and differentiation in the <italic>Drosophila</italic> eye by different thresholds of MAP kinase activity", 
+        "publication-type": "journal", 
+        "volume": "128", 
+        "source": "Development", 
+        "fpage": "1687", 
+        "year": "2001", 
+        "position": 20, 
+        "ref": "HalfarKRommelCStockerHHafenE2001Ras controls growth, survival and differentiation in the Drosophila eye by different thresholds of MAP kinase activityDevelopment128168796", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "Drosophila homologs of baculovirus inhibitor of apoptosis proteins function to block cell death", 
+        "lpage": "62", 
+        "doi": "10.1016/0092-8674(95)90150-7", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Hay", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wassarman", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> homologs of baculovirus inhibitor of apoptosis proteins function to block cell death", 
+        "publication-type": "journal", 
+        "volume": "83", 
+        "source": "Cell", 
+        "reference_id": "10.1016/0092-8674(95)90150-7", 
+        "fpage": "1253", 
+        "year": "1995", 
+        "position": 21, 
+        "ref": "HayBAWassarmanDARubinGM1995Drosophila homologs of baculovirus inhibitor of apoptosis proteins function to block cell deathCell8312536210.1016/0092-8674(95)90150-7", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Regulation of tissue growth through nutrient sensing", 
+        "lpage": "410", 
+        "doi": "10.1146/annurev-genet-102108-134815", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Hietakangas", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cohen", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regulation of tissue growth through nutrient sensing", 
+        "publication-type": "journal", 
+        "volume": "43", 
+        "source": "Annu Rev Genet", 
+        "reference_id": "10.1146/annurev-genet-102108-134815", 
+        "fpage": "389", 
+        "year": "2009", 
+        "position": 22, 
+        "ref": "HietakangasVCohenSM2009Regulation of tissue growth through nutrient sensingAnnu Rev Genet4338941010.1146/annurev-genet-102108-134815", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "PTEN loss in the continuum of common cancers, rare syndromes and mouse models", 
+        "lpage": "301", 
+        "doi": "10.1038/nrc3037", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Hollander", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blumenthal", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dennis", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PTEN loss in the continuum of common cancers, rare syndromes and mouse models", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nat Rev Cancer", 
+        "reference_id": "10.1038/nrc3037", 
+        "fpage": "289", 
+        "year": "2011", 
+        "position": 23, 
+        "ref": "HollanderMCBlumenthalGMDennisPA2011PTEN loss in the continuum of common cancers, rare syndromes and mouse modelsNat Rev Cancer1128930110.1038/nrc3037", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Imp-L2, a putative homolog of vertebrate IGF-binding protein 7, counteracts insulin signaling in Drosophila and is essential for starvation resistance", 
+        "doi": "10.1186/jbiol72", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Honegger", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Galic", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kohler", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wittwer", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brogiolo", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Imp-L2, a putative homolog of vertebrate IGF-binding protein 7, counteracts insulin signaling in <italic>Drosophila</italic> and is essential for starvation resistance", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "J Biol", 
+        "reference_id": "10.1186/jbiol72", 
+        "fpage": "10", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 24, 
+        "ref": "HoneggerBGalicMKohlerKWittwerFBrogioloWHafenE2008Imp-L2, a putative homolog of vertebrate IGF-binding protein 7, counteracts insulin signaling in Drosophila and is essential for starvation resistanceJ Biol71010.1186/jbiol72", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "PTEN affects cell size, cell proliferation and apoptosis during Drosophila eye development", 
+        "lpage": "72", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Huang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potter", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tao", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brogiolo", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PTEN affects cell size, cell proliferation and apoptosis during <italic>Drosophila</italic> eye development", 
+        "publication-type": "journal", 
+        "volume": "126", 
+        "source": "Development", 
+        "fpage": "5365", 
+        "year": "1999", 
+        "etal": true, 
+        "position": 25, 
+        "ref": "HuangHPotterCJTaoWLiDMBrogioloWHafenE1999PTEN affects cell size, cell proliferation and apoptosis during Drosophila eye developmentDevelopment126536572", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Nutrient-dependent expression of insulin-like peptides from neuroendocrine cells in the CNS contributes to growth regulation in Drosophila", 
+        "lpage": "300", 
+        "doi": "10.1016/S0960-9822(02)01043-6", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Ikeya", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Galic", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Belawat", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nairz", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Nutrient-dependent expression of insulin-like peptides from neuroendocrine cells in the CNS contributes to growth regulation in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Curr Biol", 
+        "reference_id": "10.1016/S0960-9822(02)01043-6", 
+        "fpage": "1293", 
+        "year": "2002", 
+        "position": 26, 
+        "ref": "IkeyaTGalicMBelawatPNairzKHafenE2002Nutrient-dependent expression of insulin-like peptides from neuroendocrine cells in the CNS contributes to growth regulation in DrosophilaCurr Biol12129330010.1016/S0960-9822(02)01043-6", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "The Drosophila forkhead transcription factor FOXO mediates the reduction in cell number associated with reduced insulin signaling", 
+        "doi": "10.1186/1475-4924-2-20", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Junger", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rintelen", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wasserman", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vegh", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Radimerski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> forkhead transcription factor FOXO mediates the reduction in cell number associated with reduced insulin signaling", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "J Biol", 
+        "reference_id": "10.1186/1475-4924-2-20", 
+        "fpage": "20", 
+        "year": "2003", 
+        "etal": true, 
+        "position": 27, 
+        "ref": "JungerMARintelenFStockerHWassermanJDVeghMRadimerskiT2003The Drosophila forkhead transcription factor FOXO mediates the reduction in cell number associated with reduced insulin signalingJ Biol22010.1186/1475-4924-2-20", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Tumours with PI3K activation are resistant to dietary restriction", 
+        "lpage": "31", 
+        "doi": "10.1038/nature07782", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Kalaany", 
+                "given-names": "NY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sabatini", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Tumours with PI3K activation are resistant to dietary restriction", 
+        "publication-type": "journal", 
+        "volume": "458", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature07782", 
+        "fpage": "725", 
+        "year": "2009", 
+        "position": 28, 
+        "ref": "KalaanyNYSabatiniDM2009Tumours with PI3K activation are resistant to dietary restrictionNature4587253110.1038/nature07782", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Dynamic switch of negative feedback regulation in Drosophila Akt-TOR signaling", 
+        "doi": "10.1371/journal.pgen.1000990", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Kockel", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kerr", 
+                "given-names": "KS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Melnick", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bruckner", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hebrok", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Perrimon", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dynamic switch of negative feedback regulation in <italic>Drosophila</italic> Akt-TOR signaling", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "PLOS Genet", 
+        "reference_id": "10.1371/journal.pgen.1000990", 
+        "fpage": "e1000990", 
+        "year": "2010", 
+        "position": 29, 
+        "ref": "KockelLKerrKSMelnickMBrucknerKHebrokMPerrimonN2010Dynamic switch of negative feedback regulation in Drosophila Akt-TOR signalingPLOS Genet6e100099010.1371/journal.pgen.1000990", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Direct control of the Forkhead transcription factor AFX by protein kinase B", 
+        "lpage": "4", 
+        "doi": "10.1038/19328", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Kops", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "de Ruiter", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "De Vries-Smits", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Powell", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bos", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burgering", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Direct control of the Forkhead transcription factor AFX by protein kinase B", 
+        "publication-type": "journal", 
+        "volume": "398", 
+        "source": "Nature", 
+        "reference_id": "10.1038/19328", 
+        "fpage": "630", 
+        "year": "1999", 
+        "position": 30, 
+        "ref": "KopsGJde RuiterNDDe Vries-SmitsAMPowellDRBosJLBurgeringBM1999Direct control of the Forkhead transcription factor AFX by protein kinase BNature398630410.1038/19328", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Expression of Drosophila FOXO regulates growth and can phenocopy starvation", 
+        "doi": "10.1186/1471-213X-3-5", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Kramer", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davidge", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lockyer", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Staveley", 
+                "given-names": "BE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Expression of <italic>Drosophila</italic> FOXO regulates growth and can phenocopy starvation", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "BMC Dev Biol", 
+        "reference_id": "10.1186/1471-213X-3-5", 
+        "fpage": "5", 
+        "year": "2003", 
+        "position": 31, 
+        "ref": "KramerJMDavidgeJTLockyerJMStaveleyBE2003Expression of Drosophila FOXO regulates growth and can phenocopy starvationBMC Dev Biol3510.1186/1471-213X-3-5", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Mosaic analysis with a repressible cell marker (MARCM) for Drosophila neural development", 
+        "lpage": "4", 
+        "doi": "10.1016/S0166-2236(00)01791-4", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Lee", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luo", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mosaic analysis with a repressible cell marker (MARCM) for <italic>Drosophila</italic> neural development", 
+        "publication-type": "journal", 
+        "volume": "24", 
+        "source": "Trends Neurosci", 
+        "reference_id": "10.1016/S0166-2236(00)01791-4", 
+        "fpage": "251", 
+        "year": "2001", 
+        "position": 32, 
+        "ref": "LeeTLuoL2001Mosaic analysis with a repressible cell marker (MARCM) for Drosophila neural developmentTrends Neurosci24251410.1016/S0166-2236(00)01791-4", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "The Drosophila phosphoinositide 3-kinase Dp110 promotes cell growth", 
+        "lpage": "94", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Leevers", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weinkove", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "MacDougall", 
+                "given-names": "LK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waterfield", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> phosphoinositide 3-kinase Dp110 promotes cell growth", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "EMBO J", 
+        "fpage": "6584", 
+        "year": "1996", 
+        "position": 33, 
+        "ref": "LeeversSJWeinkoveDMacDougallLKHafenEWaterfieldMD1996The Drosophila phosphoinositide 3-kinase Dp110 promotes cell growthEMBO J15658494", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Intra-tumour heterogeneity: a looking glass for cancer?", 
+        "lpage": "34", 
+        "doi": "10.1038/nrc3261", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Marusyk", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Almendro", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Polyak", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Intra-tumour heterogeneity: a looking glass for cancer?", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Nat Rev Cancer", 
+        "reference_id": "10.1038/nrc3261", 
+        "fpage": "323", 
+        "year": "2012", 
+        "position": 34, 
+        "ref": "MarusykAAlmendroVPolyakK2012Intra-tumour heterogeneity: a looking glass for cancer?Nat Rev Cancer123233410.1038/nrc3261", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Minutes: mutants of Drosophila autonomously affecting cell division rate", 
+        "lpage": "21", 
+        "doi": "10.1016/0012-1606(75)90330-9", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Morata", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ripoll", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Minutes: mutants of <italic>Drosophila</italic> autonomously affecting cell division rate", 
+        "publication-type": "journal", 
+        "volume": "42", 
+        "source": "Dev Biol", 
+        "reference_id": "10.1016/0012-1606(75)90330-9", 
+        "fpage": "211", 
+        "year": "1975", 
+        "position": 35, 
+        "ref": "MorataGRipollP1975Minutes: mutants of Drosophila autonomously affecting cell division rateDev Biol422112110.1016/0012-1606(75)90330-9", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Is cell competition relevant to cancer?", 
+        "lpage": "7", 
+        "doi": "10.1038/nrc2252", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Moreno", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Is cell competition relevant to cancer?", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "Nat Rev Cancer", 
+        "reference_id": "10.1038/nrc2252", 
+        "fpage": "141", 
+        "year": "2008", 
+        "position": 36, 
+        "ref": "MorenoE2008Is cell competition relevant to cancer?Nat Rev Cancer8141710.1038/nrc2252", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "dMyc transforms cells into super-competitors", 
+        "lpage": "29", 
+        "doi": "10.1016/S0092-8674(04)00262-4", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Moreno", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Basler", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "dMyc transforms cells into super-competitors", 
+        "publication-type": "journal", 
+        "volume": "117", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(04)00262-4", 
+        "fpage": "117", 
+        "year": "2004", 
+        "position": 37, 
+        "ref": "MorenoEBaslerK2004dMyc transforms cells into super-competitorsCell1171172910.1016/S0092-8674(04)00262-4", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Cells compete for decapentaplegic survival factor to prevent apoptosis in Drosophila wing development", 
+        "lpage": "9", 
+        "doi": "10.1038/416755a", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Moreno", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Basler", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morata", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cells compete for decapentaplegic survival factor to prevent apoptosis in <italic>Drosophila</italic> wing development", 
+        "publication-type": "journal", 
+        "volume": "416", 
+        "source": "Nature", 
+        "reference_id": "10.1038/416755a", 
+        "fpage": "755", 
+        "year": "2002", 
+        "position": 38, 
+        "ref": "MorenoEBaslerKMorataG2002Cells compete for decapentaplegic survival factor to prevent apoptosis in Drosophila wing developmentNature416755910.1038/416755a", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Characterization of a dorsal-eye Gal4 Line in Drosophila", 
+        "lpage": "7", 
+        "doi": "10.1002/dvg.20571", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Morrison", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halder", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Characterization of a dorsal-eye Gal4 Line in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "48", 
+        "source": "Genesis", 
+        "reference_id": "10.1002/dvg.20571", 
+        "fpage": "3", 
+        "year": "2010", 
+        "position": 39, 
+        "ref": "MorrisonCMHalderG2010Characterization of a dorsal-eye Gal4 Line in DrosophilaGenesis483710.1002/dvg.20571", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Coordination of growth and cell division in the Drosophila wing", 
+        "lpage": "93", 
+        "doi": "10.1016/S0092-8674(00)81462-2", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Neufeld", 
+                "given-names": "TP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "de la Cruz", 
+                "given-names": "AF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnston", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edgar", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Coordination of growth and cell division in the <italic>Drosophila</italic> wing", 
+        "publication-type": "journal", 
+        "volume": "93", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(00)81462-2", 
+        "fpage": "1183", 
+        "year": "1998", 
+        "position": 40, 
+        "ref": "NeufeldTPde la CruzAFJohnstonLAEdgarBA1998Coordination of growth and cell division in the Drosophila wingCell9311839310.1016/S0092-8674(00)81462-2", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Genetic and biochemical characterization of dTOR, the Drosophila homolog of the target of rapamycin", 
+        "lpage": "94", 
+        "doi": "10.1101/gad.845700", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Oldham", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Montagne", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Radimerski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thomas", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genetic and biochemical characterization of dTOR, the <italic>Drosophila</italic> homolog of the target of rapamycin", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Genes Dev", 
+        "reference_id": "10.1101/gad.845700", 
+        "fpage": "2689", 
+        "year": "2000", 
+        "position": 41, 
+        "ref": "OldhamSMontagneJRadimerskiTThomasGHafenE2000Genetic and biochemical characterization of dTOR, the Drosophila homolog of the target of rapamycinGenes Dev1426899410.1101/gad.845700", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "The Drosophila insulin/IGF receptor controls growth and size by modulating PtdInsP(3) levels", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Oldham", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laffargue", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wittwer", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wymann", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> insulin/IGF receptor controls growth and size by modulating PtdInsP(3) levels", 
+        "publication-type": "journal", 
+        "volume": "129", 
+        "source": "Development", 
+        "fpage": "4103", 
+        "year": "2002", 
+        "position": 42, 
+        "ref": "OldhamSStockerHLaffargueMWittwerFWymannMHafenE2002The Drosophila insulin/IGF receptor controls growth and size by modulating PtdInsP(3) levelsDevelopment12941039", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "dS6K-regulated cell growth is dPKB/dPI(3)K-independent, but requires dPDK1", 
+        "lpage": "5", 
+        "doi": "10.1038/ncb763", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Radimerski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Montagne", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rintelen", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "van der Kaay", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Downes", 
+                "given-names": "CP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "dS6K-regulated cell growth is dPKB/dPI(3)K-independent, but requires dPDK1", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Nat Cell Biol", 
+        "reference_id": "10.1038/ncb763", 
+        "fpage": "251", 
+        "year": "2002", 
+        "etal": true, 
+        "position": 43, 
+        "ref": "RadimerskiTMontagneJRintelenFStockerHvan der KaayJDownesCP2002dS6K-regulated cell growth is dPKB/dPI(3)K-independent, but requires dPDK1Nat Cell Biol4251510.1038/ncb763", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "The Drosophila Jun-N-terminal kinase is required for cell morphogenesis but not for DJun-dependent cell fate specification in the eye", 
+        "lpage": "68", 
+        "doi": "10.1101/gad.10.21.2759", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Riesgo-Escovar", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenni", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fritz", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hafen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> Jun-N-terminal kinase is required for cell morphogenesis but not for DJun-dependent cell fate specification in the eye", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Genes Dev", 
+        "reference_id": "10.1101/gad.10.21.2759", 
+        "fpage": "2759", 
+        "year": "1996", 
+        "position": 44, 
+        "ref": "Riesgo-EscovarJRJenniMFritzAHafenE1996The Drosophila Jun-N-terminal kinase is required for cell morphogenesis but not for DJun-dependent cell fate specification in the eyeGenes Dev1027596810.1101/gad.10.21.2759", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Mutational heterogeneity in human cancers: origin and consequences", 
+        "lpage": "75", 
+        "doi": "10.1146/annurev-pathol-121808-102113", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Salk", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fox", 
+                "given-names": "EJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loeb", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mutational heterogeneity in human cancers: origin and consequences", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Annu Rev Pathol", 
+        "reference_id": "10.1146/annurev-pathol-121808-102113", 
+        "fpage": "51", 
+        "year": "2010", 
+        "position": 45, 
+        "ref": "SalkJJFoxEJLoebLA2010Mutational heterogeneity in human cancers: origin and consequencesAnnu Rev Pathol5517510.1146/annurev-pathol-121808-102113", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Tenets of PTEN tumor suppression", 
+        "lpage": "14", 
+        "doi": "10.1016/j.cell.2008.04.013", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Salmena", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carracedo", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pandolfi", 
+                "given-names": "PP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Tenets of PTEN tumor suppression", 
+        "publication-type": "journal", 
+        "volume": "133", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2008.04.013", 
+        "fpage": "403", 
+        "year": "2008", 
+        "position": 46, 
+        "ref": "SalmenaLCarracedoAPandolfiPP2008Tenets of PTEN tumor suppressionCell1334031410.1016/j.cell.2008.04.013", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "The conserved PI3\u2019K/PTEN/Akt signaling pathway regulates both cell size and survival in Drosophila", 
+        "lpage": "7", 
+        "doi": "10.1038/sj.onc.1203739", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Scanga", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ruel", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Binari", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Snow", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stambolic", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bouchard", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The conserved PI3\u2019K/PTEN/Akt signaling pathway regulates both cell size and survival in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "Oncogene", 
+        "reference_id": "10.1038/sj.onc.1203739", 
+        "fpage": "3971", 
+        "year": "2000", 
+        "etal": true, 
+        "position": 47, 
+        "ref": "ScangaSERuelLBinariRCSnowBStambolicVBouchardD2000The conserved PI3\u2019K/PTEN/Akt signaling pathway regulates both cell size and survival in DrosophilaOncogene193971710.1038/sj.onc.1203739", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Role and regulation of starvation-induced autophagy in the Drosophila fat body", 
+        "lpage": "78", 
+        "doi": "10.1016/j.devcel.2004.07.009", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Scott", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuldiner", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neufeld", 
+                "given-names": "TP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Role and regulation of starvation-induced autophagy in the <italic>Drosophila</italic> fat body", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Dev Cell", 
+        "reference_id": "10.1016/j.devcel.2004.07.009", 
+        "fpage": "167", 
+        "year": "2004", 
+        "position": 48, 
+        "ref": "ScottRCSchuldinerONeufeldTP2004Role and regulation of starvation-induced autophagy in the Drosophila fat bodyDev Cell71677810.1016/j.devcel.2004.07.009", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Parameters of cell competition in the compartments of the wing disc of Drosophila", 
+        "lpage": "93", 
+        "doi": "10.1016/0012-1606(79)90284-7", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Simpson", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Parameters of cell competition in the compartments of the wing disc of <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "69", 
+        "source": "Dev Biol", 
+        "reference_id": "10.1016/0012-1606(79)90284-7", 
+        "fpage": "182", 
+        "year": "1979", 
+        "position": 49, 
+        "ref": "SimpsonP1979Parameters of cell competition in the compartments of the wing disc of DrosophilaDev Biol691829310.1016/0012-1606(79)90284-7", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Differential mitotic rates and patterns of growth in compartments in the Drosophila wing", 
+        "lpage": "308", 
+        "doi": "10.1016/0012-1606(81)90261-X", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Simpson", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morata", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Differential mitotic rates and patterns of growth in compartments in the <italic>Drosophila</italic> wing", 
+        "publication-type": "journal", 
+        "volume": "85", 
+        "source": "Dev Biol", 
+        "reference_id": "10.1016/0012-1606(81)90261-X", 
+        "fpage": "299", 
+        "year": "1981", 
+        "position": 50, 
+        "ref": "SimpsonPMorataG1981Differential mitotic rates and patterns of growth in compartments in the Drosophila wingDev Biol8529930810.1016/0012-1606(81)90261-X", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "dFOXO-independent effects of reduced insulin-like signaling in Drosophila", 
+        "lpage": "48", 
+        "doi": "10.1111/j.1474-9726.2011.00707.x", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Slack", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giannakou", 
+                "given-names": "ME", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Foley", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goss", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Partridge", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "dFOXO-independent effects of reduced insulin-like signaling in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Aging Cell", 
+        "reference_id": "10.1111/j.1474-9726.2011.00707.x", 
+        "fpage": "735", 
+        "year": "2011", 
+        "position": 51, 
+        "ref": "SlackCGiannakouMEFoleyAGossMPartridgeL2011dFOXO-independent effects of reduced insulin-like signaling in DrosophilaAging Cell107354810.1111/j.1474-9726.2011.00707.x", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "The functions and regulation of the PTEN tumour suppressor", 
+        "lpage": "96", 
+        "doi": "10.1038/nrm3330", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Song", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salmena", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pandolfi", 
+                "given-names": "PP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The functions and regulation of the PTEN tumour suppressor", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Nat Rev Mol Cell Biol", 
+        "reference_id": "10.1038/nrm3330", 
+        "fpage": "283", 
+        "year": "2012", 
+        "position": 52, 
+        "ref": "SongMSSalmenaLPandolfiPP2012The functions and regulation of the PTEN tumour suppressorNat Rev Mol Cell Biol132839610.1038/nrm3330", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Genetic analysis of protein kinase B (AKT) in Drosophila", 
+        "lpage": "602", 
+        "doi": "10.1016/S0960-9822(98)70231-3", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Staveley", 
+                "given-names": "BE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ruel", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jin", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stambolic", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mastronardi", 
+                "given-names": "FG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heitzler", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genetic analysis of protein kinase B (AKT) in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "Curr Biol", 
+        "reference_id": "10.1016/S0960-9822(98)70231-3", 
+        "fpage": "599", 
+        "year": "1998", 
+        "etal": true, 
+        "position": 53, 
+        "ref": "StaveleyBERuelLJinJStambolicVMastronardiFGHeitzlerP1998Genetic analysis of protein kinase B (AKT) in DrosophilaCurr Biol859960210.1016/S0960-9822(98)70231-3", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Living with lethal PIP3 levels: viability of flies lacking PTEN restored by a PH domain mutation in Akt/PKB", 
+        "lpage": "91", 
+        "doi": "10.1126/science. 1068094", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Andjelkovic", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oldham", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laffargue", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wymann", 
+                "given-names": "MP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hemmings", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Living with lethal PIP3 levels: viability of flies lacking PTEN restored by a PH domain mutation in Akt/PKB", 
+        "publication-type": "journal", 
+        "volume": "295", 
+        "source": "Science", 
+        "reference_id": "10.1126/science. 1068094", 
+        "fpage": "2088", 
+        "year": "2002", 
+        "etal": true, 
+        "position": 54, 
+        "ref": "StockerHAndjelkovicMOldhamSLaffargueMWymannMPHemmingsBA2002Living with lethal PIP3 levels: viability of flies lacking PTEN restored by a PH domain mutation in Akt/PKBScience29520889110.1126/science. 1068094", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "Rheb is an essential regulator of S6K in controlling cell growth in Drosophila", 
+        "lpage": "65", 
+        "doi": "10.1038/ncb995", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Stocker", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Radimerski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schindelholz", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wittwer", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Belawat", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Daram", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Rheb is an essential regulator of S6K in controlling cell growth in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Nat Cell Biol", 
+        "reference_id": "10.1038/ncb995", 
+        "fpage": "559", 
+        "year": "2003", 
+        "etal": true, 
+        "position": 55, 
+        "ref": "StockerHRadimerskiTSchindelholzBWittwerFBelawatPDaramP2003Rheb is an essential regulator of S6K in controlling cell growth in DrosophilaNat Cell Biol55596510.1038/ncb995", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "The Drosophila tuberous sclerosis complex gene homologs restrict cell growth and cell proliferation", 
+        "lpage": "55", 
+        "doi": "10.1016/S0092-8674(01)00332-4", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Tapon", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ito", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dickson", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Treisman", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hariharan", 
+                "given-names": "IK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila</italic> tuberous sclerosis complex gene homologs restrict cell growth and cell proliferation", 
+        "publication-type": "journal", 
+        "volume": "105", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(01)00332-4", 
+        "fpage": "345", 
+        "year": "2001", 
+        "position": 56, 
+        "ref": "TaponNItoNDicksonBJTreismanJEHariharanIK2001The Drosophila tuberous sclerosis complex gene homologs restrict cell growth and cell proliferationCell1053455510.1016/S0092-8674(01)00332-4", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "Genetic heterogeneity and cancer drug resistance", 
+        "lpage": "85", 
+        "doi": "10.1016/S1470-2045(11)70335-7", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Turner", 
+                "given-names": "NC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reis-Filho", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genetic heterogeneity and cancer drug resistance", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Lancet Oncol", 
+        "reference_id": "10.1016/S1470-2045(11)70335-7", 
+        "fpage": "e178", 
+        "year": "2012", 
+        "position": 57, 
+        "ref": "TurnerNCReis-FilhoJS2012Genetic heterogeneity and cancer drug resistanceLancet Oncol13e1788510.1016/S1470-2045(11)70335-7", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Regulation of imaginal disc cell size, cell number and organ size by Drosophila class I(A) phosphoinositide 3-kinase and its adaptor", 
+        "lpage": "29", 
+        "doi": "10.1016/S0960-9822(99)80450-3", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Weinkove", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neufeld", 
+                "given-names": "TP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Twardzik", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waterfield", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leevers", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regulation of imaginal disc cell size, cell number and organ size by <italic>Drosophila</italic> class I(A) phosphoinositide 3-kinase and its adaptor", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Curr Biol", 
+        "reference_id": "10.1016/S0960-9822(99)80450-3", 
+        "fpage": "1019", 
+        "year": "1999", 
+        "position": 58, 
+        "ref": "WeinkoveDNeufeldTPTwardzikTWaterfieldMDLeeversSJ1999Regulation of imaginal disc cell size, cell number and organ size by Drosophila class I(A) phosphoinositide 3-kinase and its adaptorCurr Biol910192910.1016/S0960-9822(99)80450-3", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Unraveling the genetics of cancer: genome sequencing and beyond", 
+        "lpage": "30", 
+        "doi": "10.1146/annurev-genom-082509-141532", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Wong", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hudson", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McPherson", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Unraveling the genetics of cancer: genome sequencing and beyond", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Annu Rev Genomics Human Genet", 
+        "reference_id": "10.1146/annurev-genom-082509-141532", 
+        "fpage": "407", 
+        "year": "2011", 
+        "position": 59, 
+        "ref": "WongKMHudsonTJMcPhersonJD2011Unraveling the genetics of cancer: genome sequencing and beyondAnnu Rev Genomics Human Genet124073010.1146/annurev-genom-082509-141532", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "Analysis of genetic mosaics in developing and adult Drosophila tissues", 
+        "lpage": "37", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Xu", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Analysis of genetic mosaics in developing and adult <italic>Drosophila</italic> tissues", 
+        "publication-type": "journal", 
+        "volume": "117", 
+        "source": "Development", 
+        "fpage": "1223", 
+        "year": "1993", 
+        "position": 60, 
+        "ref": "XuTRubinGM1993Analysis of genetic mosaics in developing and adult Drosophila tissuesDevelopment117122337", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "Regulation of cellular growth by the Drosophila target of rapamycin dTOR", 
+        "lpage": "24", 
+        "doi": "10.1101/gad.835000", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stallock", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ng", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinhard", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neufeld", 
+                "given-names": "TP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regulation of cellular growth by the <italic>Drosophila</italic> target of rapamycin dTOR", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Genes Dev", 
+        "reference_id": "10.1101/gad.835000", 
+        "fpage": "2712", 
+        "year": "2000", 
+        "position": 61, 
+        "ref": "ZhangHStallockJPNgJCReinhardCNeufeldTP2000Regulation of cellular growth by the Drosophila target of rapamycin dTORGenes Dev1427122410.1101/gad.835000", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "Rheb is a direct target of the tuberous sclerosis tumour suppressor proteins", 
+        "lpage": "81", 
+        "doi": "10.1038/ncb999", 
+        "article_doi": "10.7554/eLife.00380", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saucedo", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ru", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edgar", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pan", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Rheb is a direct target of the tuberous sclerosis tumour suppressor proteins", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Nat Cell Biol", 
+        "reference_id": "10.1038/ncb999", 
+        "fpage": "578", 
+        "year": "2003", 
+        "position": 62, 
+        "ref": "ZhangYGaoXSaucedoLJRuBEdgarBAPanD2003Rheb is a direct target of the tuberous sclerosis tumour suppressor proteinsNat Cell Biol55788110.1038/ncb999", 
+        "id": "bib62"
+    }
+]

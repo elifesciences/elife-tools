@@ -1,0 +1,3941 @@
+[
+    {
+        "article_title": "The genome sequence of Drosophila melanogaster", 
+        "lpage": "2195", 
+        "doi": "10.1126/science.287.5461.2185", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Adams", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Celniker", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holt", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gocayne", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Amanatides", 
+                "given-names": "PG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scherer", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "PW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hoskins", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Galle", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "George", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lewis", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richards", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ashburner", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Henderson", 
+                "given-names": "SN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sutton", 
+                "given-names": "GG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wortman", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yandell", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "LX", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brandon", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rogers", 
+                "given-names": "YH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blazej", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Champe", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wan", 
+                "given-names": "KH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doyle", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baxter", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Helt", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabor", 
+                "given-names": "GL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abril", 
+                "given-names": "JF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Agbayani", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "An", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Andrews-Pfannkoch", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ballew", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Basu", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baxendale", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bayraktaroglu", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beasley", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beeson", 
+                "given-names": "KY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Benos", 
+                "given-names": "PV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berman", 
+                "given-names": "BP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bhandari", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolshakov", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borkova", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Botchan", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bouck", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brokstein", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brottier", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burtis", 
+                "given-names": "KC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Busam", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cadieu", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Center", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chandra", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cherry", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cawley", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dahlke", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davenport", 
+                "given-names": "LB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "de Pablos", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Delcher", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deng", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mays", 
+                "given-names": "AD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dew", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dietz", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dodson", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doup", 
+                "given-names": "LE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Downes", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dugan-Rocha", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dunkov", 
+                "given-names": "BC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dunn", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Durbin", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evangelista", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ferraz", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ferriera", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fleischmann", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fosler", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabrielian", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garg", 
+                "given-names": "NS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gelbart", 
+                "given-names": "WM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glasser", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glodek", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gong", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gorrell", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gu", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Guan", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "NL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harvey", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heiman", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hernandez", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Houck", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hostin", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Houston", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Howland", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wei", 
+                "given-names": "MH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ibegwam", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jalali", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kalush", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Karpen", 
+                "given-names": "GH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ke", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kennison", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ketchum", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kimmel", 
+                "given-names": "BE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kodira", 
+                "given-names": "CD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kraft", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kravitz", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kulp", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lai", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lasko", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lei", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Levitsky", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mattei", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McIntosh", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McLeod", 
+                "given-names": "MP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McPherson", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Merkulov", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Milshina", 
+                "given-names": "NV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mobarry", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morris", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moshrefi", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mount", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moy", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Muzny", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nixon", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nusskern", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pacleb", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Palazzolo", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pittman", 
+                "given-names": "GS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pan", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pollard", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Puri", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reese", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinert", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Remington", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saunders", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scheeler", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shen", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shue", 
+                "given-names": "BC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sid\u00e9n-Kiamos", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Simpson", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Skupski", 
+                "given-names": "MP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spier", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spradling", 
+                "given-names": "AC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stapleton", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Strong", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sun", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Svirskas", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tector", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turner", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Venter", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "AH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "ZY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wassarman", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weinstock", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weissenbach", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williams", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Woodage", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Worley", 
+                "given-names": "KC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yao", 
+                "given-names": "QA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ye", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yeh", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zaveri", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhan", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhao", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zheng", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zheng", 
+                "given-names": "XH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhong", 
+                "given-names": "FN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhong", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhou", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "HO", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gibbs", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Myers", 
+                "given-names": "EW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Venter", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The genome sequence of <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "287", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.287.5461.2185", 
+        "fpage": "2185", 
+        "year": "2000", 
+        "position": 1, 
+        "ref": "AdamsMDCelnikerSEHoltRAEvansCAGocayneJDAmanatidesPGSchererSELiPWHoskinsRAGalleRFGeorgeRALewisSERichardsSAshburnerMHendersonSNSuttonGGWortmanJRYandellMDZhangQChenLXBrandonRCRogersYHBlazejRGChampeMPfeifferBDWanKHDoyleCBaxterEGHeltGNelsonCRGaborGLAbrilJFAgbayaniAAnHJAndrews-PfannkochCBaldwinDBallewRMBasuABaxendaleJBayraktarogluLBeasleyEMBeesonKYBenosPVBermanBPBhandariDBolshakovSBorkovaDBotchanMRBouckJBroksteinPBrottierPBurtisKCBusamDAButlerHCadieuECenterAChandraICherryJMCawleySDahlkeCDavenportLBDaviesPde PablosBDelcherADengZMaysADDewIDietzSMDodsonKDoupLEDownesMDugan-RochaSDunkovBCDunnPDurbinKJEvangelistaCCFerrazCFerrieraSFleischmannWFoslerCGabrielianAEGargNSGelbartWMGlasserKGlodekAGongFGorrellJHGuZGuanPHarrisMHarrisNLHarveyDHeimanTJHernandezJRHouckJHostinDHoustonKAHowlandTJWeiMHIbegwamCJalaliMKalushFKarpenGHKeZKennisonJAKetchumKAKimmelBEKodiraCDKraftCKravitzSKulpDLaiZLaskoPLeiYLevitskyAALiJLiZLiangYLinXLiuXMatteiBMcIntoshTCMcLeodMPMcPhersonDMerkulovGMilshinaNVMobarryCMorrisJMoshrefiAMountSMMoyMMurphyBMurphyLMuznyDMNelsonDLNelsonDRNelsonKANixonKNusskernDRPaclebJMPalazzoloMPittmanGSPanSPollardJPuriVReeseMGReinertKRemingtonKSaundersRDScheelerFShenHShueBCSid\u00e9n-KiamosISimpsonMSkupskiMPSmithTSpierESpradlingACStapletonMStrongRSunESvirskasRTectorCTurnerRVenterEWangAHWangXWangZYWassarmanDAWeinstockGMWeissenbachJWilliamsSMWoodageTWorleyKCWuDYangSYaoQAYeJYehRFZaveriJSZhanMZhangGZhaoQZhengLZhengXHZhongFNZhongWZhouXZhuSZhuXSmithHOGibbsRAMyersEWRubinGMVenterJC2000The genome sequence of Drosophila melanogasterScience2872185219510.1126/science.287.5461.2185", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Regulation of post-embryonic neuroblasts by Drosophila Grainyhead", 
+        "lpage": "1293", 
+        "doi": "10.1016/j.mod.2005.08.004", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Almeida", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bray", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regulation of post-embryonic neuroblasts by <italic>Drosophila</italic> Grainyhead", 
+        "publication-type": "journal", 
+        "volume": "122", 
+        "source": "Mechanisms of Development", 
+        "reference_id": "10.1016/j.mod.2005.08.004", 
+        "fpage": "1282", 
+        "year": "2005", 
+        "position": 2, 
+        "ref": "AlmeidaMSBraySJ2005Regulation of post-embryonic neuroblasts by Drosophila GrainyheadMechanisms of Development1221282129310.1016/j.mod.2005.08.004", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Lineage and birth date specify motor neuron targeting and dendritic architecture in adult Drosophila", 
+        "lpage": "6916", 
+        "doi": "10.1523/JNEUROSCI.1585-09.2009", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Baek", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mann", 
+                "given-names": "RS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Lineage and birth date specify motor neuron targeting and dendritic architecture in adult <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "The Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.1585-09.2009", 
+        "fpage": "6904", 
+        "year": "2009", 
+        "position": 3, 
+        "ref": "BaekMMannRS2009Lineage and birth date specify motor neuron targeting and dendritic architecture in adult DrosophilaThe Journal of Neuroscience296904691610.1523/JNEUROSCI.1585-09.2009", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Bridging the gap between postembryonic cell lineages and identified embryonic neuroblasts in the ventral nerve cord of Drosophila malanogaster", 
+        "lpage": "434", 
+        "doi": "10.1242/bio.201411072", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Birkholz", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rickert", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nowak", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Coban", 
+                "given-names": "IC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Technau", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Bridging the gap between postembryonic cell lineages and identified embryonic neuroblasts in the ventral nerve cord of <italic>Drosophila malanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Biology Open", 
+        "reference_id": "10.1242/bio.201411072", 
+        "fpage": "420", 
+        "year": "2015", 
+        "position": 4, 
+        "ref": "BirkholzORickertCNowakJCobanICTechnauGM2015Bridging the gap between postembryonic cell lineages and identified embryonic neuroblasts in the ventral nerve cord of Drosophila malanogasterBiology Open442043410.1242/bio.201411072", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "The Drosophila melanogaster actin 5C gene uses two transcription initiation sites and three polyadenylation sites to express multiple mRNA species", 
+        "lpage": "2088", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Bond", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davidson", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila melanogaster</italic> actin 5C gene uses two transcription initiation sites and three polyadenylation sites to express multiple mRNA species", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "Molecular and Cellular Biology", 
+        "fpage": "2080", 
+        "year": "1986", 
+        "position": 5, 
+        "ref": "BondBJDavidsonN1986The Drosophila melanogaster actin 5C gene uses two transcription initiation sites and three polyadenylation sites to express multiple mRNA speciesMolecular and Cellular Biology620802088", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "The embryonic central nervous system lineages of Drosophila melanogaster. I. Neuroblast lineages derived from the ventral half of the neuroectoderm", 
+        "lpage": "64", 
+        "doi": "10.1006/dbio.1996.0240", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Bossing", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Udolph", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doe", 
+                "given-names": "CQ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Technau", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The embryonic central nervous system lineages of <italic>Drosophila melanogaster</italic>. I. Neuroblast lineages derived from the ventral half of the neuroectoderm", 
+        "publication-type": "journal", 
+        "volume": "179", 
+        "source": "Developmental Biology", 
+        "reference_id": "10.1006/dbio.1996.0240", 
+        "fpage": "41", 
+        "year": "1996", 
+        "position": 6, 
+        "ref": "BossingTUdolphGDoeCQTechnauGM1996The embryonic central nervous system lineages of Drosophila melanogaster. I. Neuroblast lineages derived from the ventral half of the neuroectodermDevelopmental Biology179416410.1006/dbio.1996.0240", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Developmental origins and architecture of Drosophila leg motoneurons", 
+        "lpage": "1649", 
+        "doi": "10.1002/cne.23003", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Brierley", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rathore", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "VijayRaghavan", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williams", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Developmental origins and architecture of <italic>Drosophila</italic> leg motoneurons", 
+        "publication-type": "journal", 
+        "volume": "520", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.23003", 
+        "fpage": "1629", 
+        "year": "2012", 
+        "position": 7, 
+        "ref": "BrierleyDJRathoreKVijayRaghavanKWilliamsDW2012Developmental origins and architecture of Drosophila leg motoneuronsThe Journal of Comparative Neurology5201629164910.1002/cne.23003", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Evolution of neuroblast identity: seven-up and prospero expression reveal homologous and divergent neuroblast fates in Drosophila and Schistocerca", 
+        "lpage": "3996", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Broadus", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doe", 
+                "given-names": "CQ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of neuroblast identity: seven-up and prospero expression reveal homologous and divergent neuroblast fates in <italic>Drosophila</italic> and Schistocerca", 
+        "publication-type": "journal", 
+        "volume": "121", 
+        "source": "Development", 
+        "fpage": "3989", 
+        "year": "1995", 
+        "position": 8, 
+        "ref": "BroadusJDoeCQ1995Evolution of neuroblast identity: seven-up and prospero expression reveal homologous and divergent neuroblast fates in Drosophila and SchistocercaDevelopment12139893996", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Fine-tuning of secondary arbor development: the effects of the ecdysone receptor on the adult neuronal lineages of the Drosophila thoracic CNS", 
+        "lpage": "3256", 
+        "doi": "10.1242/dev.039859", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Brown", 
+                "given-names": "HL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Fine-tuning of secondary arbor development: the effects of the ecdysone receptor on the adult neuronal lineages of the <italic>Drosophila</italic> thoracic CNS", 
+        "publication-type": "journal", 
+        "volume": "136", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.039859", 
+        "fpage": "3247", 
+        "year": "2009", 
+        "position": 9, 
+        "ref": "BrownHLTrumanJW2009Fine-tuning of secondary arbor development: the effects of the ecdysone receptor on the adult neuronal lineages of the Drosophila thoracic CNSDevelopment1363247325610.1242/dev.039859", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "A regulatory system for target gene expression", 
+        "lpage": "C7", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Burcin", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Malley", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tsai", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A regulatory system for target gene expression", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Frontiers in Bioscience", 
+        "fpage": "C1", 
+        "year": "1998", 
+        "position": 10, 
+        "ref": "BurcinMMO'MalleyBWTsaiSY1998A regulatory system for target gene expressionFrontiers in Bioscience3C1C7", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Adenovirus-mediated regulable target gene expression in vivo", 
+        "lpage": "360", 
+        "doi": "10.1073/pnas.96.2.355", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Burcin", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiedner", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kochanek", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tsai", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Malley", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Adenovirus-mediated regulable target gene expression in vivo", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.96.2.355", 
+        "fpage": "355", 
+        "year": "1999", 
+        "position": 11, 
+        "ref": "BurcinMMSchiednerGKochanekSTsaiSYO'MalleyBW1999Adenovirus-mediated regulable target gene expression in vivoProceedings of the National Academy of Sciences of USA9635536010.1073/pnas.96.2.355", 
+        "id": "bib11"
+    }, 
+    {
+        "publisher_loc": "Oxford", 
+        "article_doi": "10.7554/eLife.04493", 
+        "publisher_name": "Oxford University Press", 
+        "year": "1996", 
+        "publication-type": "book", 
+        "source": "The Neurobiology of an insect brain", 
+        "authors": [
+            {
+                "surname": "Burrows", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 12, 
+        "ref": "BurrowsM1996The Neurobiology of an insect brainOxfordOxford University Press", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Correlation between the receptive fields of locust interneurons, their dendritic morphology, and the central projections of mechanosensory neurons", 
+        "lpage": "426", 
+        "doi": "10.1002/cne.903290311", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Burrows", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Newland", 
+                "given-names": "PL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Correlation between the receptive fields of locust interneurons, their dendritic morphology, and the central projections of mechanosensory neurons", 
+        "publication-type": "journal", 
+        "volume": "329", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.903290311", 
+        "fpage": "412", 
+        "year": "1993", 
+        "position": 13, 
+        "ref": "BurrowsMNewlandPL1993Correlation between the receptive fields of locust interneurons, their dendritic morphology, and the central projections of mechanosensory neuronsThe Journal of Comparative Neurology32941242610.1002/cne.903290311", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Organizing network action for locomotion: Insights from studying insect walking", 
+        "lpage": "171", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Buschges", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Akay", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabriel", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Organizing network action for locomotion: Insights from studying insect walking", 
+        "publication-type": "journal", 
+        "volume": "57", 
+        "source": "Brain Research Reviews", 
+        "fpage": "162", 
+        "year": "2008", 
+        "position": 14, 
+        "ref": "BuschgesAAkayTGabrielJPSchmidtJ2008Organizing network action for locomotion: Insights from studying insect walkingBrain Research Reviews57162171", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Performance trade-offs in the flight initiation of Drosophila", 
+        "lpage": "353", 
+        "doi": "10.1242/jeb.012682", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Card", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dickinson", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Performance trade-offs in the flight initiation of <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "211", 
+        "source": "The Journal of Experimental Biology", 
+        "reference_id": "10.1242/jeb.012682", 
+        "fpage": "341", 
+        "year": "2008", 
+        "position": 15, 
+        "ref": "CardGDickinsonM2008Performance trade-offs in the flight initiation of DrosophilaThe Journal of Experimental Biology21134135310.1242/jeb.012682", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Three- dimensional reconstruction of brain-wide wiring networks in Drosophila at single- cell resolution", 
+        "lpage": "11", 
+        "doi": "10.1016/j.cub.2010.11.056", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Chiang", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "CY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chuang", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chang", 
+                "given-names": "HM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hsieh", 
+                "given-names": "CH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yeh", 
+                "given-names": "CW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shih", 
+                "given-names": "CT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "GT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "YC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "GY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ching", 
+                "given-names": "YT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "PC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "CY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hsu", 
+                "given-names": "HW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "YA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "JY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chiang", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lu", 
+                "given-names": "CF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ni", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yeh", 
+                "given-names": "CY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hwang", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Three- dimensional reconstruction of brain-wide wiring networks in <italic>Drosophila</italic> at single- cell resolution", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Current Biology", 
+        "reference_id": "10.1016/j.cub.2010.11.056", 
+        "fpage": "1", 
+        "year": "2011", 
+        "position": 16, 
+        "ref": "ChiangASLinCYChuangCCChangHMHsiehCHYehCWShihCTWuJJWangGTChenYCWuCCChenGYChingYTLeePCLinCYLinHHWuCCHsuHWHuangYAChenJYChiangHJLuCFNiRFYehCYHwangJK2011Three- dimensional reconstruction of brain-wide wiring networks in Drosophila at single- cell resolutionCurrent Biology2111110.1016/j.cub.2010.11.056", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Positive and negative regulatory elements mediating transcription from the Drosophila melanogaster actin 5C distal promoter", 
+        "lpage": "6180", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Chung", 
+                "given-names": "YT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keller", 
+                "given-names": "EB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Positive and negative regulatory elements mediating transcription from the <italic>Drosophila melanogaster</italic> actin 5C distal promoter", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Molecular and Cellular Biology", 
+        "fpage": "6172", 
+        "year": "1990", 
+        "position": 17, 
+        "ref": "ChungYTKellerEB1990Positive and negative regulatory elements mediating transcription from the Drosophila melanogaster actin 5C distal promoterMolecular and Cellular Biology1061726180", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "Sex-specific control and tuning of the pattern generator for courtship song in Drosophila", 
+        "lpage": "363", 
+        "doi": "10.1016/j.cell.2008.01.050", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Clyne", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miesenb\u00f6ck", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sex-specific control and tuning of the pattern generator for courtship song in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "133", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2008.01.050", 
+        "fpage": "354", 
+        "year": "2008", 
+        "position": 18, 
+        "ref": "ClyneJDMiesenb\u00f6ckG2008Sex-specific control and tuning of the pattern generator for courtship song in DrosophilaCell13335436310.1016/j.cell.2008.01.050", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Measured motion: searching for simplicity in spinal locomotor networks", 
+        "lpage": "586", 
+        "doi": "10.1016/j.conb.2009.10.011", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Grillner", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jessell", 
+                "given-names": "TM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Measured motion: searching for simplicity in spinal locomotor networks", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "Current Opinion in Neurobiology", 
+        "reference_id": "10.1016/j.conb.2009.10.011", 
+        "fpage": "572", 
+        "year": "2009", 
+        "position": 19, 
+        "ref": "GrillnerSJessellTM2009Measured motion: searching for simplicity in spinal locomotor networksCurrent Opinion in Neurobiology1957258610.1016/j.conb.2009.10.011", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "An internal thermal sensor controlling temperature preference in Drosophila", 
+        "lpage": "220", 
+        "doi": "10.1038/nature07001", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Hamada", 
+                "given-names": "FN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rosenzweig", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pulver", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ghezzi", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jegla", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garrity", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An internal thermal sensor controlling temperature preference in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "454", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature07001", 
+        "fpage": "217", 
+        "year": "2008", 
+        "position": 20, 
+        "ref": "HamadaFNRosenzweigMKangKPulverSRGhezziAJeglaTJGarrityPA2008An internal thermal sensor controlling temperature preference in DrosophilaNature45421722010.1038/nature07001", 
+        "id": "bib20"
+    }, 
+    {
+        "publisher_loc": "Seattle", 
+        "article_doi": "10.7554/eLife.04493", 
+        "publisher_name": "University of Washington", 
+        "year": "2012", 
+        "publication-type": "book", 
+        "source": "Form and function of the secondary hemilineages in the adult Drosophila thoracic nervous system. Ph.D. Dissertation", 
+        "authors": [
+            {
+                "surname": "Harris", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 21, 
+        "ref": "HarrisRM2012Form and function of the secondary hemilineages in the adult Drosophila thoracic nervous system. Ph.D. DissertationSeattleUniversity of Washington", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Drosophila neuroblasts sequentially express transcription factors which specify the temporal identity of their neuronal progeny", 
+        "lpage": "521", 
+        "doi": "10.1016/S0092-8674(01)00465-2", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Isshiki", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pearson", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doe", 
+                "given-names": "CQ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Drosophila</italic> neuroblasts sequentially express transcription factors which specify the temporal identity of their neuronal progeny", 
+        "publication-type": "journal", 
+        "volume": "106", 
+        "source": "Cell", 
+        "reference_id": "10.1016/S0092-8674(01)00465-2", 
+        "fpage": "511", 
+        "year": "2001", 
+        "position": 22, 
+        "ref": "IsshikiTPearsonBHolbrookSDoeCQ2001Drosophila neuroblasts sequentially express transcription factors which specify the temporal identity of their neuronal progenyCell10651152110.1016/S0092-8674(01)00465-2", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Systematic analysis of neural projections reveals clonal composition of the Drosophila brain", 
+        "lpage": "655", 
+        "doi": "10.1016/j.cub.2013.03.015", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Ito", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Masuda", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shinomiya", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Endo", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ito", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Systematic analysis of neural projections reveals clonal composition of the <italic>Drosophila</italic> brain", 
+        "publication-type": "journal", 
+        "volume": "23", 
+        "source": "Current Biology", 
+        "reference_id": "10.1016/j.cub.2013.03.015", 
+        "fpage": "644", 
+        "year": "2013", 
+        "position": 23, 
+        "ref": "ItoMMasudaNShinomiyaKEndoKItoK2013Systematic analysis of neural projections reveals clonal composition of the Drosophila brainCurrent Biology2364465510.1016/j.cub.2013.03.015", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "A GAL4-driver line resource for Drosophila neurobiology", 
+        "lpage": "1001", 
+        "doi": "10.1016/j.celrep.2012.09.011", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Jenett", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ngo", 
+                "given-names": "TT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shepherd", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dionne", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cavallaro", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hall", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jeter", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iyer", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fetter", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hausenfluck", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peng", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Trautman", 
+                "given-names": "ET", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Svirskas", 
+                "given-names": "RR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Myers", 
+                "given-names": "EW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iwinski", 
+                "given-names": "ZR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aso", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DePasquale", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Enos", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hulamm", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lam", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laverty", 
+                "given-names": "TR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Long", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Qu", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "SD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rokicki", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Safford", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shaw", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Simpson", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sowell", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tae", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zugates", 
+                "given-names": "CT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A GAL4-driver line resource for <italic>Drosophila</italic> neurobiology", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Cell Reports", 
+        "reference_id": "10.1016/j.celrep.2012.09.011", 
+        "fpage": "991", 
+        "year": "2012", 
+        "position": 24, 
+        "ref": "JenettARubinGMNgoTTShepherdDMurphyCDionneHPfeifferBDCavallaroAHallDJeterJIyerNFetterDHausenfluckJHPengHTrautmanETSvirskasRRMyersEWIwinskiZRAsoYDePasqualeGMEnosAHulammPLamSCLiHHLavertyTRLongFQuLMurphySDRokickiKSaffordTShawKSimpsonJHSowellATaeSYuYZugatesCT2012A GAL4-driver line resource for Drosophila neurobiologyCell Reports2991100110.1016/j.celrep.2012.09.011", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Midline lineages in grasshopper produce neuronal siblings with asymmetric expression of Engrailed", 
+        "lpage": "5193", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Jia", 
+                "given-names": "XX", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Siegler", 
+                "given-names": "MV", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Midline lineages in grasshopper produce neuronal siblings with asymmetric expression of Engrailed", 
+        "publication-type": "journal", 
+        "volume": "129", 
+        "source": "Development", 
+        "fpage": "5181", 
+        "year": "2002", 
+        "position": 25, 
+        "ref": "JiaXXSieglerMV2002Midline lineages in grasshopper produce neuronal siblings with asymmetric expression of EngrailedDevelopment12951815193", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Mapping a sensory-motor network onto a structural and functional ground plan in the hindbrain", 
+        "lpage": "1175", 
+        "doi": "10.1073/pnas.1012189108", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Koyama", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kinkhabwala", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Satou", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Higashijima", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fetcho", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mapping a sensory-motor network onto a structural and functional ground plan in the hindbrain", 
+        "publication-type": "journal", 
+        "volume": "108", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1012189108", 
+        "fpage": "1170", 
+        "year": "2011", 
+        "position": 26, 
+        "ref": "KoyamaMKinkhabwalaASatouCHigashijimaSFetchoJ2011Mapping a sensory-motor network onto a structural and functional ground plan in the hindbrainProceedings of the National Academy of Sciences of USA1081170117510.1073/pnas.1012189108", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "dbx mediates neuronal specification and differentiation through cross-repressive, lineage-specific interactions with eve and hb9", 
+        "lpage": "3266", 
+        "doi": "10.1242/dev.037242", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Lacin", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Skeath", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "dbx mediates neuronal specification and differentiation through cross-repressive, lineage-specific interactions with <italic>eve</italic> and hb9", 
+        "publication-type": "journal", 
+        "volume": "136", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.037242", 
+        "fpage": "3257", 
+        "year": "2009", 
+        "position": 27, 
+        "ref": "LacinHZhuYWilsonBASkeathJB2009dbx mediates neuronal specification and differentiation through cross-repressive, lineage-specific interactions with eve and hb9Development1363257326610.1242/dev.037242", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Transcription factor expression uniquely identifies most postembryonic neuronal lineages in the Drosophila thoracic central nervous system", 
+        "lpage": "1021", 
+        "doi": "10.1242/dev.102178", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Lacin", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Skeath", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Transcription factor expression uniquely identifies most postembryonic neuronal lineages in the <italic>Drosophila</italic> thoracic central nervous system", 
+        "publication-type": "journal", 
+        "volume": "141", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.102178", 
+        "fpage": "1011", 
+        "year": "2014", 
+        "position": 28, 
+        "ref": "LacinHZhuYWilsonBASkeathJB2014Transcription factor expression uniquely identifies most postembryonic neuronal lineages in the Drosophila thoracic central nervous systemDevelopment1411011102110.1242/dev.102178", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Mosaic analysis with a repressible cell marker for studies of gene function in neuronal morphogenesis", 
+        "lpage": "461", 
+        "doi": "10.1016/S0896-6273(00)80701-1", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Lee", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luo", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mosaic analysis with a repressible cell marker for studies of gene function in neuronal morphogenesis", 
+        "publication-type": "journal", 
+        "volume": "22", 
+        "source": "Neuron", 
+        "reference_id": "10.1016/S0896-6273(00)80701-1", 
+        "fpage": "451", 
+        "year": "1999", 
+        "position": 29, 
+        "ref": "LeeTLuoL1999Mosaic analysis with a repressible cell marker for studies of gene function in neuronal morphogenesisNeuron2245146110.1016/S0896-6273(00)80701-1", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "A GAL4 driver resource for developmental and behavioral studies on the larval CNS of Drosophila", 
+        "lpage": "908", 
+        "doi": "10.1016/j.celrep.2014.06.065", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Li", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kroll", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lennox", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ogundeyi", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jeter", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Depasquale", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A GAL4 driver resource for developmental and behavioral studies on the larval CNS of <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "Cell Reports", 
+        "reference_id": "10.1016/j.celrep.2014.06.065", 
+        "fpage": "897", 
+        "year": "2014", 
+        "position": 30, 
+        "ref": "LiHHKrollJRLennoxSOgundeyiOJeterJDepasqualeGTrumanJW2014A GAL4 driver resource for developmental and behavioral studies on the larval CNS of DrosophilaCell Reports889790810.1016/j.celrep.2014.06.065", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Lineage analysis of Drosophila lateral antennal lobe neurons reveals notch-dependent binary temporal fate decisions", 
+        "doi": "10.1371/journal.pbio. 1001425", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Lin", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kao", 
+                "given-names": "CF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yu", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Lineage analysis of Drosophila lateral antennal lobe neurons reveals notch-dependent binary temporal fate decisions", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "PLoS Biology", 
+        "reference_id": "10.1371/journal.pbio. 1001425", 
+        "fpage": "e1001425", 
+        "year": "2012", 
+        "position": 31, 
+        "ref": "LinSKaoCFYuHHHuangYLeeT2012Lineage analysis of Drosophila lateral antennal lobe neurons reveals notch-dependent binary temporal fate decisionsPLoS Biology10e100142510.1371/journal.pbio. 1001425", 
+        "id": "bib74"
+    }, 
+    {
+        "article_title": "A subset of dopamine neurons signals reward for odor memory in Drosophila", 
+        "lpage": "516", 
+        "doi": "10.1038/nature11304", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Liu", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pla\u00e7ais", 
+                "given-names": "PY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yamagata", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aso", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Friedrich", 
+                "given-names": "AB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Siwanowicz", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Preat", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tanimoto", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A subset of dopamine neurons signals reward for odor memory in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "488", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature11304", 
+        "fpage": "512", 
+        "year": "2012", 
+        "position": 32, 
+        "ref": "LiuCPla\u00e7aisPYYamagataNPfeifferBDAsoYFriedrichABSiwanowiczIRubinGMPreatTTanimotoH2012A subset of dopamine neurons signals reward for odor memory in DrosophilaNature48851251610.1038/nature11304", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Mechanisms of ventral patterning in the vertebrate nervous system", 
+        "lpage": "114", 
+        "doi": "10.1038/nrn1843", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Lupo", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "WA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lewis", 
+                "given-names": "KE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mechanisms of ventral patterning in the vertebrate nervous system", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Nature Reviews. Neuroscience", 
+        "reference_id": "10.1038/nrn1843", 
+        "fpage": "103", 
+        "year": "2006", 
+        "position": 33, 
+        "ref": "LupoGHarrisWALewisKE2006Mechanisms of ventral patterning in the vertebrate nervous systemNature Reviews. Neuroscience710311410.1038/nrn1843", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Median bundle neurons coordinate behaviours during Drosophila male courtship", 
+        "lpage": "569", 
+        "doi": "10.1038/nature02713", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Manoli", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baker", 
+                "given-names": "BS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Median bundle neurons coordinate behaviours during <italic>Drosophila</italic> male courtship", 
+        "publication-type": "journal", 
+        "volume": "430", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature02713", 
+        "fpage": "564", 
+        "year": "2004", 
+        "position": 34, 
+        "ref": "ManoliDSBakerBS2004Median bundle neurons coordinate behaviours during Drosophila male courtshipNature43056456910.1038/nature02713", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Continuous shifts in the active set of spinal interneurons during changes in locomotor speed", 
+        "lpage": "1429", 
+        "doi": "10.1038/nn.2225", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "McLean", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Masino", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Koh", 
+                "given-names": "IY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lindquist", 
+                "given-names": "WB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fetcho", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Continuous shifts in the active set of spinal interneurons during changes in locomotor speed", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn.2225", 
+        "fpage": "1419", 
+        "year": "2008", 
+        "position": 35, 
+        "ref": "McLeanDLMasinoMAKohIYLindquistWBFetchoJR2008Continuous shifts in the active set of spinal interneurons during changes in locomotor speedNature Neuroscience111419142910.1038/nn.2225", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Functional dissection of the neural substrates for sexual behaviors in Drosophila melanogaster", 
+        "lpage": "211", 
+        "doi": "10.1534/genetics.111.129940", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Meissner", 
+                "given-names": "GW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Manoli", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chavez", 
+                "given-names": "JF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knapp", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "TL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stevens", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mellert", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tran", 
+                "given-names": "DH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baker", 
+                "given-names": "BS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Functional dissection of the neural substrates for sexual behaviors in <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "189", 
+        "source": "Genetics", 
+        "reference_id": "10.1534/genetics.111.129940", 
+        "fpage": "195", 
+        "year": "2011", 
+        "position": 36, 
+        "ref": "MeissnerGWManoliDSChavezJFKnappJMLinTLStevensRJMellertDJTranDHBakerBS2011Functional dissection of the neural substrates for sexual behaviors in Drosophila melanogasterGenetics18919521110.1534/genetics.111.129940", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Midline crossing by gustatory receptor neuron axons is regulated by fruitless, doublesex and the Roundabout receptors", 
+        "lpage": "332", 
+        "doi": "10.1242/dev.045047", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Mellert", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knapp", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Manoli", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meissner", 
+                "given-names": "GW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baker", 
+                "given-names": "BS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Midline crossing by gustatory receptor neuron axons is regulated by fruitless, doublesex and the Roundabout receptors", 
+        "publication-type": "journal", 
+        "volume": "137", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.045047", 
+        "fpage": "323", 
+        "year": "2010", 
+        "position": 37, 
+        "ref": "MellertDJKnappJMManoliDSMeissnerGWBakerBS2010Midline crossing by gustatory receptor neuron axons is regulated by fruitless, doublesex and the Roundabout receptorsDevelopment13732333210.1242/dev.045047", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Compartments and the topography of leg afferent projections in Drosophila", 
+        "lpage": "3217", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Murphey", 
+                "given-names": "RK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Possidente", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vandervorst", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ghysen", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Compartments and the topography of leg afferent projections in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "The Journal of Neuroscience", 
+        "fpage": "3209", 
+        "year": "1989", 
+        "position": 38, 
+        "ref": "MurpheyRKPossidenteDRVandervorstPGhysenA1989Compartments and the topography of leg afferent projections in DrosophilaThe Journal of Neuroscience932093217", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Multiple new site-specific recombinases for use in manipulating animal genomes", 
+        "lpage": "14203", 
+        "doi": "10.1073/pnas.1111704108", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Nern", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Svoboda", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Multiple new site-specific recombinases for use in manipulating animal genomes", 
+        "publication-type": "journal", 
+        "volume": "108", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1111704108", 
+        "fpage": "14198", 
+        "year": "2011", 
+        "position": 39, 
+        "ref": "NernAPfeifferBDSvobodaKRubinGM2011Multiple new site-specific recombinases for use in manipulating animal genomesProceedings of the National Academy of Sciences of USA108141981420310.1073/pnas.1111704108", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "A conditional tissue-specific transgene expression system using inducible GAL4", 
+        "lpage": "12601", 
+        "doi": "10.1073/pnas.221303298", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Osterwalder", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yoon", 
+                "given-names": "KS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "White", 
+                "given-names": "BH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keshishian", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A conditional tissue-specific transgene expression system using inducible GAL4", 
+        "publication-type": "journal", 
+        "volume": "98", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.221303298", 
+        "fpage": "12596", 
+        "year": "2001", 
+        "position": 40, 
+        "ref": "OsterwalderTYoonKSWhiteBHKeshishianH2001A conditional tissue-specific transgene expression system using inducible GAL4Proceedings of the National Academy of Sciences of USA98125961260110.1073/pnas.221303298", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Tools for neuroanatomy and neurogenetics in Drosophila", 
+        "lpage": "9720", 
+        "doi": "10.1073/pnas.0803697105", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenett", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hammonds", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ngo", 
+                "given-names": "TT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Misra", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scully", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carlson", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wan", 
+                "given-names": "KH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laverty", 
+                "given-names": "TR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mungall", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Svirskas", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kadonaga", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doe", 
+                "given-names": "CQ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eisen", 
+                "given-names": "MB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Celniker", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Tools for neuroanatomy and neurogenetics in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "105", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.0803697105", 
+        "fpage": "9715", 
+        "year": "2008", 
+        "position": 41, 
+        "ref": "PfeifferBDJenettAHammondsASNgoTTMisraSMurphyCScullyACarlsonJWWanKHLavertyTRMungallCSvirskasRKadonagaJTDoeCQEisenMBCelnikerSERubinGM2008Tools for neuroanatomy and neurogenetics in DrosophilaProceedings of the National Academy of Sciences of USA1059715972010.1073/pnas.0803697105", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "Refinement of tools for targeted gene expression in Drosophila", 
+        "lpage": "755", 
+        "doi": "10.1534/genetics.110.119917", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ngo", 
+                "given-names": "TT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hibbard", 
+                "given-names": "KL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murphy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenett", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Refinement of tools for targeted gene expression in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "186", 
+        "source": "Genetics", 
+        "reference_id": "10.1534/genetics.110.119917", 
+        "fpage": "735", 
+        "year": "2010", 
+        "position": 42, 
+        "ref": "PfeifferBDNgoTTHibbardKLMurphyCJenettATrumanJWRubinGM2010Refinement of tools for targeted gene expression in DrosophilaGenetics18673575510.1534/genetics.110.119917", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "Using translational enhancers to increase transgene expression in Drosophila", 
+        "lpage": "6631", 
+        "doi": "10.1073/pnas.1204520109", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Pfeiffer", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Using translational enhancers to increase transgene expression in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1204520109", 
+        "fpage": "6626", 
+        "year": "2012", 
+        "position": 43, 
+        "ref": "PfeifferBDTrumanJWRubinGM2012Using translational enhancers to increase transgene expression in DrosophilaProceedings of the National Academy of Sciences of USA1096626663110.1073/pnas.1204520109", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Control of interneuron fate in the developing spinal cord by the progenitor homeodomain protein Dbx1", 
+        "lpage": "384", 
+        "doi": "10.1016/S0896-6273(01)00212-4", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Pierani", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moran-Rivard", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sunshine", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Littman", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jessell", 
+                "given-names": "TM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Control of interneuron fate in the developing spinal cord by the progenitor homeodomain protein Dbx1", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "Neuron", 
+        "reference_id": "10.1016/S0896-6273(01)00212-4", 
+        "fpage": "367", 
+        "year": "2001", 
+        "position": 44, 
+        "ref": "PieraniAMoran-RivardLSunshineMJLittmanDRJessellTM2001Control of interneuron fate in the developing spinal cord by the progenitor homeodomain protein Dbx1Neuron2936738410.1016/S0896-6273(01)00212-4", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "The brain of Drosophila melanogaster", 
+        "lpage": "559", 
+        "doi": "10.1002/jmor.1050720306", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Power", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The brain of <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "72", 
+        "source": "Journal of Morphology", 
+        "reference_id": "10.1002/jmor.1050720306", 
+        "fpage": "517", 
+        "year": "1943", 
+        "position": 45, 
+        "ref": "PowerM1943The brain of Drosophila melanogasterJournal of Morphology7251755910.1002/jmor.1050720306", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Flight interneurons in the locust and the origin of insect wings", 
+        "lpage": "179", 
+        "doi": "10.1126/science.217.4555.177", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Robertson", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pearson", 
+                "given-names": "KG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reichert", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Flight interneurons in the locust and the origin of insect wings", 
+        "publication-type": "journal", 
+        "volume": "217", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.217.4555.177", 
+        "fpage": "177", 
+        "year": "1982", 
+        "position": 46, 
+        "ref": "RobertsonRMPearsonKGReichertH1982Flight interneurons in the locust and the origin of insect wingsScience21717717910.1126/science.217.4555.177", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "P[Switch], a system for spatial and temporal control of gene expression in Drosophila melanogaster", 
+        "lpage": "12607", 
+        "doi": "10.1073/pnas.221303998", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Roman", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Endo", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zong", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "P[Switch], a system for spatial and temporal control of gene expression in <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "98", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.221303998", 
+        "fpage": "12602", 
+        "year": "2001", 
+        "position": 47, 
+        "ref": "RomanGEndoKZongLDavisRL2001P[Switch], a system for spatial and temporal control of gene expression in Drosophila melanogasterProceedings of the National Academy of Sciences of USA98126021260710.1073/pnas.221303998", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Clonal analysis of Drosophila embryonic neuroblasts: neural cell types, axon projections and muscle targets", 
+        "lpage": "4689", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Schmid", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chiba", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doe", 
+                "given-names": "CQ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Clonal analysis of <italic>Drosophila</italic> embryonic neuroblasts: neural cell types, axon projections and muscle targets", 
+        "publication-type": "journal", 
+        "volume": "126", 
+        "source": "Development", 
+        "fpage": "4653", 
+        "year": "1999", 
+        "position": 48, 
+        "ref": "SchmidAChibaADoeCQ1999Clonal analysis of Drosophila embryonic neuroblasts: neural cell types, axon projections and muscle targetsDevelopment12646534689", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Feature detection and orientation tuning in the Drosophila central complex", 
+        "lpage": "266", 
+        "doi": "10.1038/nature12601", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Seelig", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jayaraman", 
+                "given-names": "V", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Feature detection and orientation tuning in the <italic>Drosophila</italic> central complex", 
+        "publication-type": "journal", 
+        "volume": "503", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature12601", 
+        "fpage": "262", 
+        "year": "2013", 
+        "position": 49, 
+        "ref": "SeeligJDJayaramanV2013Feature detection and orientation tuning in the Drosophila central complexNature50326226610.1038/nature12601", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Embryonic development of a population of spiking local interneurones in the locust (Schistocerca gregaria)", 
+        "lpage": "453", 
+        "doi": "10.1002/cne.903190309", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Shepherd", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laurent", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Embryonic development of a population of spiking local interneurones in the locust (Schistocerca gregaria)", 
+        "publication-type": "journal", 
+        "volume": "319", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.903190309", 
+        "fpage": "438", 
+        "year": "1992", 
+        "position": 50, 
+        "ref": "ShepherdDLaurentG1992Embryonic development of a population of spiking local interneurones in the locust (Schistocerca gregaria)The Journal of Comparative Neurology31943845310.1002/cne.903190309", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "Convergence of visual, haltere, and prosternal inputs at neck motor neurons of Calliphora erythrocephala", 
+        "lpage": "615", 
+        "doi": "10.1007/BF00216350", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Strausfeld", 
+                "given-names": "NJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seyan", 
+                "given-names": "HS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Convergence of visual, haltere, and prosternal inputs at neck motor neurons of <italic>Calliphora erythrocephala</italic>", 
+        "publication-type": "journal", 
+        "volume": "240", 
+        "source": "Cell and Tissue Research", 
+        "reference_id": "10.1007/BF00216350", 
+        "fpage": "601", 
+        "year": "1985", 
+        "position": 51, 
+        "ref": "StrausfeldNJSeyanHS1985Convergence of visual, haltere, and prosternal inputs at neck motor neurons of Calliphora erythrocephalaCell and Tissue Research24060161510.1007/BF00216350", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Coordination of legs during straight walking and turning in Drosophila melanogaster", 
+        "lpage": "412", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Strauss", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heisenberg", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Coordination of legs during straight walking and turning in <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "167", 
+        "source": "Journal of Comparative Physiology. A, Sensory, Neural, and Behavioral Physiology", 
+        "fpage": "403", 
+        "year": "1990", 
+        "position": 52, 
+        "ref": "StraussRHeisenbergM1990Coordination of legs during straight walking and turning in Drosophila melanogasterJournal of Comparative Physiology. A, Sensory, Neural, and Behavioral Physiology167403412", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "From grasshopper to Drosophila: a common plan for neuronal development", 
+        "lpage": "207", 
+        "doi": "10.1038/310203a0", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Thomas", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bastiani", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bate", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goodman", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "From grasshopper to <italic>Drosophila</italic>: a common plan for neuronal development", 
+        "publication-type": "journal", 
+        "volume": "310", 
+        "source": "Nature", 
+        "reference_id": "10.1038/310203a0", 
+        "fpage": "203", 
+        "year": "1984", 
+        "position": 53, 
+        "ref": "ThomasJBBastianiMJBateMJGoodmanCS1984From grasshopper to Drosophila: a common plan for neuronal developmentNature31020320710.1038/310203a0", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "Anatomy and physiology of spiking local and intersegmental interneurons in the median neuroblast lineage of the grasshopper", 
+        "lpage": "675", 
+        "doi": "10.1002/cne.903050409", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Thompson", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Siegler", 
+                "given-names": "MV", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Anatomy and physiology of spiking local and intersegmental interneurons in the median neuroblast lineage of the grasshopper", 
+        "publication-type": "journal", 
+        "volume": "305", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.903050409", 
+        "fpage": "659", 
+        "year": "1991", 
+        "position": 54, 
+        "ref": "ThompsonKJSieglerMV1991Anatomy and physiology of spiking local and intersegmental interneurons in the median neuroblast lineage of the grasshopperThe Journal of Comparative Neurology30565967510.1002/cne.903050409", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "The Drosophila islet gene governs axon pathfinding and neurotransmitter identity", 
+        "lpage": "409", 
+        "doi": "10.1016/S0896-6273(00)81241-6", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Thor", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thomas", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The <italic>Drosophila islet</italic> gene governs axon pathfinding and neurotransmitter identity", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Neuron", 
+        "reference_id": "10.1016/S0896-6273(00)81241-6", 
+        "fpage": "397", 
+        "year": "1997", 
+        "position": 55, 
+        "ref": "ThorSThomasJB1997The Drosophila islet gene governs axon pathfinding and neurotransmitter identityNeuron1839740910.1016/S0896-6273(00)81241-6", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "Yeast Gal4: a transcriptional paradigm revisited", 
+        "lpage": "499", 
+        "doi": "10.1038/sj.embor.7400679", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Traven", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jelicic", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sopta", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Yeast Gal4: a transcriptional paradigm revisited", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "EMBO Reports", 
+        "reference_id": "10.1038/sj.embor.7400679", 
+        "fpage": "496", 
+        "year": "2006", 
+        "position": 56, 
+        "ref": "TravenAJelicicBSoptaM2006Yeast Gal4: a transcriptional paradigm revisitedEMBO Reports749649910.1038/sj.embor.7400679", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Patterns of embryonic neurogenesis in a primitive wingless insect, the silverfish, Ctenolepisma longicaudata: comparison with those seen in flying insects", 
+        "lpage": "368", 
+        "doi": "10.1007/s004270050192", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ball", 
+                "given-names": "EE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Patterns of embryonic neurogenesis in a primitive wingless insect, the silverfish, <italic>Ctenolepisma</italic> longicaudata: comparison with those seen in flying insects", 
+        "publication-type": "journal", 
+        "volume": "208", 
+        "source": "Development Genes and Evolution", 
+        "reference_id": "10.1007/s004270050192", 
+        "fpage": "357", 
+        "year": "1998", 
+        "position": 57, 
+        "ref": "TrumanJWBallEE1998Patterns of embryonic neurogenesis in a primitive wingless insect, the silverfish, Ctenolepisma longicaudata: comparison with those seen in flying insectsDevelopment Genes and Evolution20835736810.1007/s004270050192", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Role of Notch signaling in establishing hemilineages of secondary neurons in Drosophila melanogaster", 
+        "lpage": "61", 
+        "doi": "10.1242/dev.041749", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moats", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Altman", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marin", 
+                "given-names": "EC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williams", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Role of Notch signaling in establishing hemilineages of secondary neurons in <italic>Drosophila melanogaster</italic>", 
+        "publication-type": "journal", 
+        "volume": "137", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.041749", 
+        "fpage": "53", 
+        "year": "2010", 
+        "position": 58, 
+        "ref": "TrumanJWMoatsWAltmanJMarinECWilliamsDW2010Role of Notch signaling in establishing hemilineages of secondary neurons in Drosophila melanogasterDevelopment137536110.1242/dev.041749", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "Developmental architecture of adult-specific lineages in the ventral CNS of Drosophila", 
+        "lpage": "5184", 
+        "doi": "10.1242/dev.01371", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuppe", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shepherd", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williams", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Developmental architecture of adult-specific lineages in the ventral CNS of <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "131", 
+        "source": "Development", 
+        "reference_id": "10.1242/dev.01371", 
+        "fpage": "5167", 
+        "year": "2004", 
+        "position": 59, 
+        "ref": "TrumanJWSchuppeHShepherdDWilliamsDW2004Developmental architecture of adult-specific lineages in the ventral CNS of DrosophilaDevelopment1315167518410.1242/dev.01371", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "Discovery of brainwide neural-behavioral maps vis multiscale unsupervised structure learning", 
+        "lpage": "392", 
+        "doi": "10.1126/science.1250298", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Vogelstein", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pary", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ohyama", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kerr", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Priebe", 
+                "given-names": "CE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zlatic", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Discovery of brainwide neural-behavioral maps vis multiscale unsupervised structure learning", 
+        "publication-type": "journal", 
+        "volume": "344", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1250298", 
+        "fpage": "386", 
+        "year": "2014", 
+        "position": 60, 
+        "ref": "VogelsteinJTParyYOhyamaTKerrRATrumanJWPriebeCEZlaticM2014Discovery of brainwide neural-behavioral maps vis multiscale unsupervised structure learningScience34438639210.1126/science.1250298", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "Neuronal control of Drosophila courtship song", 
+        "lpage": "522", 
+        "doi": "10.1016/j.neuron.2011.01.011", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "von Philipsborn", 
+                "given-names": "AC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yu", 
+                "given-names": "JY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Masser", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bidaye", 
+                "given-names": "SS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dickson", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Neuronal control of <italic>Drosophila</italic> courtship song", 
+        "publication-type": "journal", 
+        "volume": "69", 
+        "source": "Neuron", 
+        "reference_id": "10.1016/j.neuron.2011.01.011", 
+        "fpage": "509", 
+        "year": "2011", 
+        "position": 61, 
+        "ref": "von PhilipsbornACLiuTYuJYMasserCBidayeSSDicksonBJ2011Neuronal control of Drosophila courtship songNeuron6950952210.1016/j.neuron.2011.01.011", 
+        "id": "bib62"
+    }, 
+    {
+        "article_title": "A regulatory system for use in gene transfer", 
+        "lpage": "8184", 
+        "doi": "10.1073/pnas.91.17.8180", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Wang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Malley", 
+                "given-names": "BW", 
+                "group-type": "author", 
+                "suffix": "Jr"
+            }, 
+            {
+                "surname": "Tsai", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Malley", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A regulatory system for use in gene transfer", 
+        "publication-type": "journal", 
+        "volume": "91", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.91.17.8180", 
+        "fpage": "8180", 
+        "year": "1994", 
+        "position": 62, 
+        "ref": "WangYO'MalleyBWJrTsaiSYO'MalleyBW1994A regulatory system for use in gene transferProceedings of the National Academy of Sciences of USA918180818410.1073/pnas.91.17.8180", 
+        "id": "bib63"
+    }, 
+    {
+        "article_title": "Positive and negative regulation of gene expression in eukaryotic cells with an inducible transcriptional regulator", 
+        "lpage": "441", 
+        "doi": "10.1038/sj.gt.3300402", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Wang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pierson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Malley", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tsai", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Positive and negative regulation of gene expression in eukaryotic cells with an inducible transcriptional regulator", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Gene Therapy", 
+        "reference_id": "10.1038/sj.gt.3300402", 
+        "fpage": "432", 
+        "year": "1997", 
+        "position": 63, 
+        "ref": "WangYXuJPiersonTO'MalleyBWTsaiSY1997Positive and negative regulation of gene expression in eukaryotic cells with an inducible transcriptional regulatorGene Therapy443244110.1038/sj.gt.3300402", 
+        "id": "bib64"
+    }, 
+    {
+        "article_title": "The morphology, ultrastructure, and distribution of synapses on an intersegmental interneurone of the locust", 
+        "lpage": "169", 
+        "doi": "10.1002/cne.902140205", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Watson", 
+                "given-names": "AH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burrows", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The morphology, ultrastructure, and distribution of synapses on an intersegmental interneurone of the locust", 
+        "publication-type": "journal", 
+        "volume": "214", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.902140205", 
+        "fpage": "154", 
+        "year": "1983", 
+        "position": 64, 
+        "ref": "WatsonAHBurrowsM1983The morphology, ultrastructure, and distribution of synapses on an intersegmental interneurone of the locustThe Journal of Comparative Neurology21415416910.1002/cne.902140205", 
+        "id": "bib65"
+    }, 
+    {
+        "article_title": "Distribution of GABA-like immunoreactive neurons in insects suggests lineage homology", 
+        "lpage": "528", 
+        "doi": "10.1002/(SICI)1096-9861(19980907)398:4<515::AID-CNE4>3.0.CO;2-5", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Witten", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Distribution of GABA-like immunoreactive neurons in insects suggests lineage homology", 
+        "publication-type": "journal", 
+        "volume": "398", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/(SICI)1096-9861(19980907)398:4<515::AID-CNE4>3.0.CO;2-5", 
+        "fpage": "515", 
+        "year": "1998", 
+        "position": 65, 
+        "ref": "WittenJLTrumanJW1998Distribution of GABA-like immunoreactive neurons in insects suggests lineage homologyThe Journal of Comparative Neurology39851552810.1002/(SICI)1096-9861(19980907)398:4<515::AID-CNE4>3.0.CO;2-5", 
+        "id": "bib66"
+    }, 
+    {
+        "article_title": "Conserved and sexually dimorphic behavioral responses to biogenic amines in decapitated Drosophila", 
+        "lpage": "4136", 
+        "doi": "10.1073/pnas.94.8.4131", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Yellman", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tao", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "He", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hirsh", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Conserved and sexually dimorphic behavioral responses to biogenic amines in decapitated <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "94", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.94.8.4131", 
+        "fpage": "4131", 
+        "year": "1997", 
+        "position": 66, 
+        "ref": "YellmanCTaoHHeBHirshJ1997Conserved and sexually dimorphic behavioral responses to biogenic amines in decapitated DrosophilaProceedings of the National Academy of Sciences of USA944131413610.1073/pnas.94.8.4131", 
+        "id": "bib67"
+    }, 
+    {
+        "article_title": "Clonal development and organization of the adult Drosophila central brain", 
+        "lpage": "643", 
+        "doi": "10.1016/j.cub.2013.02.057", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Yu", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Awasaki", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schroeder", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Long", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "He", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ding", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kao", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "GY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peng", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Myers", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Clonal development and organization of the adult <italic>Drosophila</italic> central brain", 
+        "publication-type": "journal", 
+        "volume": "23", 
+        "source": "Current Biology", 
+        "reference_id": "10.1016/j.cub.2013.02.057", 
+        "fpage": "633", 
+        "year": "2013", 
+        "position": 67, 
+        "ref": "YuHHAwasakiTSchroederMDLongFYangJSHeYDingPKaoJCWuGYPengHMyersGLeeT2013Clonal development and organization of the adult Drosophila central brainCurrent Biology2363364310.1016/j.cub.2013.02.057", 
+        "id": "bib68"
+    }, 
+    {
+        "article_title": "A complete developmental sequence of a Drosophila neuronal lineage as revealed by twin-spot MARCM", 
+        "doi": "10.1371/journal.pbio.1000461", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Yu", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kao", 
+                "given-names": "CF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "He", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ding", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kao", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A complete developmental sequence of a <italic>Drosophila</italic> neuronal lineage as revealed by twin-spot MARCM", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "PLOS Biology", 
+        "reference_id": "10.1371/journal.pbio.1000461", 
+        "fpage": "e1000461", 
+        "year": "2010a", 
+        "position": 68, 
+        "ref": "YuHHKaoCFHeYDingPKaoJCLeeT2010aA complete developmental sequence of a Drosophila neuronal lineage as revealed by twin-spot MARCMPLOS Biology8e100046110.1371/journal.pbio.1000461", 
+        "id": "bib69"
+    }, 
+    {
+        "article_title": "Cellular organization of the neural circuit that drives Drosophila courtship behavior", 
+        "lpage": "1614", 
+        "doi": "10.1016/j.cub.2010.08.025", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Yu", 
+                "given-names": "JY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kanai", 
+                "given-names": "MI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Demir", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jefferis", 
+                "given-names": "GS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dickson", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cellular organization of the neural circuit that drives <italic>Drosophila</italic> courtship behavior", 
+        "publication-type": "journal", 
+        "volume": "20", 
+        "source": "Current Biology", 
+        "reference_id": "10.1016/j.cub.2010.08.025", 
+        "fpage": "1602", 
+        "year": "2010b", 
+        "position": 69, 
+        "ref": "YuJYKanaiMIDemirEJefferisGSDicksonBJ2010bCellular organization of the neural circuit that drives Drosophila courtship behaviorCurrent Biology201602161410.1016/j.cub.2010.08.025", 
+        "id": "bib70"
+    }, 
+    {
+        "article_title": "Purification and characterization of the yeast negative regulatory protein GAL80", 
+        "lpage": "697", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Yun", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hiraoka", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nishizawa", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takio", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Titani", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nogi", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fukasawa", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Purification and characterization of the yeast negative regulatory protein GAL80", 
+        "publication-type": "journal", 
+        "volume": "266", 
+        "source": "The Journal of Biological Chemistry", 
+        "fpage": "693", 
+        "year": "1991", 
+        "position": 70, 
+        "ref": "YunSJHiraokaYNishizawaMTakioKTitaniKNogiYFukasawaT1991Purification and characterization of the yeast negative regulatory protein GAL80The Journal of Biological Chemistry266693697", 
+        "id": "bib71"
+    }, 
+    {
+        "article_title": "Living synaptic vesicle marker: synaptotagmin-GFP", 
+        "lpage": "145", 
+        "doi": "10.1002/gene.10144", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "YQ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rodesch", 
+                "given-names": "CK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Broadie", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Living synaptic vesicle marker: synaptotagmin-GFP", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Genesis: the Journal of Genetics and Development", 
+        "reference_id": "10.1002/gene.10144", 
+        "fpage": "142", 
+        "year": "2002", 
+        "position": 71, 
+        "ref": "ZhangYQRodeschCKBroadieK2002Living synaptic vesicle marker: synaptotagmin-GFPGenesis: the Journal of Genetics and Development3414214510.1002/gene.10144", 
+        "id": "bib72"
+    }, 
+    {
+        "article_title": "Temporal patterns of broad isoform expression during the development of neuronal lineages in Drosophila", 
+        "doi": "10.1186/1749-8104-4-39", 
+        "article_doi": "10.7554/eLife.04493", 
+        "authors": [
+            {
+                "surname": "Zhou", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williams", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Altman", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Riddiford", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Temporal patterns of broad isoform expression during the development of neuronal lineages in <italic>Drosophila</italic>", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Neural Development", 
+        "reference_id": "10.1186/1749-8104-4-39", 
+        "fpage": "39", 
+        "year": "2009", 
+        "position": 72, 
+        "ref": "ZhouBWilliamsDWAltmanJRiddifordLMTrumanJW2009Temporal patterns of broad isoform expression during the development of neuronal lineages in DrosophilaNeural Development43910.1186/1749-8104-4-39", 
+        "id": "bib73"
+    }
+]

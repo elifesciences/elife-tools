@@ -1,0 +1,69 @@
+[
+    {
+        "aff1": {
+            "country": "France", 
+            "institution": "Laboratoire de Reproduction de d\u00e9veloppement des plantes", 
+            "city": "Lyon"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Sainsbury Laboratory", 
+            "country": "United Kingdom", 
+            "institution": "University of Cambridge", 
+            "city": "Cambridge"
+        }
+    }, 
+    {
+        "aff3": {
+            "dept": "School of Mathematical Sciences", 
+            "country": "United Kingdom", 
+            "institution": "The University of Nottingham", 
+            "city": "Nottingham"
+        }
+    }, 
+    {
+        "aff4": {
+            "dept": "Center for Integrative Plant Biology", 
+            "country": "United Kingdom", 
+            "institution": "The University of Nottingham", 
+            "city": "Notthingam"
+        }
+    }, 
+    {
+        "aff5": {
+            "dept": "INRIA Project-Team Maestro", 
+            "country": "France", 
+            "institution": "INRIA Sophia-Antipolis M\u00e9diterran\u00e9e Research Center", 
+            "city": "Montpellier"
+        }
+    }, 
+    {
+        "aff6": {
+            "dept": "UMR Lerfob", 
+            "country": "France", 
+            "institution": "AgroParisTech", 
+            "city": "Nancy"
+        }
+    }, 
+    {
+        "aff7": {
+            "dept": "INRIA Project-Team Virtual Plants", 
+            "country": "France", 
+            "institution": "CIRAD, INRA and INRIA Sophia-Antipolis M\u00e9diterran\u00e9e Research Center", 
+            "city": "Montpellier"
+        }
+    }, 
+    {
+        "aff8": {
+            "country": "Switzerland", 
+            "institution": "University of Lausanne"
+        }
+    }, 
+    {
+        "aff9": {
+            "country": "Switzerland", 
+            "institution": "University of Lausanne"
+        }
+    }
+]

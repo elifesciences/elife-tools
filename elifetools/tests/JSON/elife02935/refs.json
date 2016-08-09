@@ -1,0 +1,4079 @@
+[
+    {
+        "article_title": "Signatures of mutational processes in human cancer", 
+        "lpage": "421", 
+        "doi": "10.1038/nature12477", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Alexandrov", 
+                "given-names": "LB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nik-Zainal", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wedge", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aparicio", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Behjati", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Biankin", 
+                "given-names": "AV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bignell", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolli", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borg", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borresen-Dale", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boyault", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burkhardt", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Caldas", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "HR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Desmedt", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eils", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eyfj\u00f6rd", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Foekens", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greaves", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hosoda", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hutter", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ilicic", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Imbeaud", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Imielinski", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "J\u00e4ger", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "DT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knappskog", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kool", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lakhani", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "L\u00f3pez-Ot\u00edn", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martin", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Munshi", 
+                "given-names": "NC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakamura", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Northcott", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pajic", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Papaemmanuil", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paradiso", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pearson", 
+                "given-names": "JV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Puente", 
+                "given-names": "XS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raine", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishna", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richter", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rosenstiel", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schlesner", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schumacher", 
+                "given-names": "TN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Span", 
+                "given-names": "PN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Totoki", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tutt", 
+                "given-names": "AN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vald\u00e9s-Mas", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "van Buuren", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "van 't Veer", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vincent-Salomon", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waddell", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yates", 
+                "given-names": "LR", 
+                "group-type": "author"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Australian Pancreatic Cancer Genome Initiative"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "ICGC Breast Cancer Consortium"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "ICGC MMML-Seq Consortium"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "ICGC PedBrain"
+            }, 
+            {
+                "surname": "Zucman-Rossi", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McDermott", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lichter", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meyerson", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grimmond", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Siebert", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campo", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shibata", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfister", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Signatures of mutational processes in human cancer", 
+        "publication-type": "journal", 
+        "volume": "500", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature12477", 
+        "fpage": "415", 
+        "year": "2013", 
+        "position": 1, 
+        "collab": "Australian Pancreatic Cancer Genome Initiative", 
+        "ref": "AlexandrovLBNik-ZainalSWedgeDCAparicioSABehjatiSBiankinAVBignellGRBolliNBorgABorresen-DaleALBoyaultSBurkhardtBButlerAPCaldasCDaviesHRDesmedtCEilsREyfj\u00f6rdJEFoekensJAGreavesMHosodaFHutterBIlicicTImbeaudSImielinskiMJ\u00e4gerNJonesDTJonesDKnappskogSKoolMLakhaniSRL\u00f3pez-Ot\u00ednCMartinSMunshiNCNakamuraHNorthcottPAPajicMPapaemmanuilEParadisoAPearsonJVPuenteXSRaineKRamakrishnaMRichardsonALRichterJRosenstielPSchlesnerMSchumacherTNSpanPNTeagueJWTotokiYTuttANVald\u00e9s-MasRvan BuurenMMvan 't VeerLVincent-SalomonAWaddellNYatesLR, Australian Pancreatic Cancer Genome Initiative, ICGC Breast Cancer Consortium, ICGC MMML-Seq Consortium, ICGC PedBrainZucman-RossiJFutrealPAMcDermottULichterPMeyersonMGrimmondSMSiebertRCampoEShibataTPfisterSMCampbellPJStrattonMR2013Signatures of mutational processes in human cancerNature50041542110.1038/nature12477", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Reanalysis and revision of the Cambridge reference sequence for human mitochondrial DNA", 
+        "doi": "10.1038/13779", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Andrews", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kubacka", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lightowlers", 
+                "given-names": "RN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turnbull", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Howell", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Reanalysis and revision of the Cambridge reference sequence for human mitochondrial DNA", 
+        "publication-type": "journal", 
+        "volume": "23", 
+        "source": "Nature Genetics", 
+        "reference_id": "10.1038/13779", 
+        "fpage": "147", 
+        "year": "1999", 
+        "position": 2, 
+        "ref": "AndrewsRMKubackaIChinneryPFLightowlersRNTurnbullDMHowellN1999Reanalysis and revision of the Cambridge reference sequence for human mitochondrial DNANature Genetics2314710.1038/13779", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Mitochondrial DNA heteroplasmy in diabetes and normal adults: role of acquired and inherited mutational patterns in twins", 
+        "lpage": "4224", 
+        "doi": "10.1093/hmg/dds245", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Avital", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buchshtav", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhidkov", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tuval Feder", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dadon", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rubin", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glass", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spector", 
+                "given-names": "TD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mishmar", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial DNA heteroplasmy in diabetes and normal adults: role of acquired and inherited mutational patterns in twins", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Human Molecular Genetics", 
+        "reference_id": "10.1093/hmg/dds245", 
+        "fpage": "4214", 
+        "year": "2012", 
+        "position": 3, 
+        "ref": "AvitalGBuchshtavMZhidkovITuval FederJDadonSRubinEGlassDSpectorTDMishmarD2012Mitochondrial DNA heteroplasmy in diabetes and normal adults: role of acquired and inherited mutational patterns in twinsHuman Molecular Genetics214214422410.1093/hmg/dds245", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Mitochondrial mutations in cancer", 
+        "lpage": "4662", 
+        "doi": "10.1038/sj.onc.1209607", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Brandon", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldi", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wallace", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial mutations in cancer", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Oncogene", 
+        "reference_id": "10.1038/sj.onc.1209607", 
+        "fpage": "4647", 
+        "year": "2006", 
+        "position": 4, 
+        "ref": "BrandonMBaldiPWallaceDC2006Mitochondrial mutations in cancerOncogene254647466210.1038/sj.onc.1209607", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "The mitochondrial proteome and human disease", 
+        "lpage": "44", 
+        "doi": "10.1146/annurev-genom-082509-141720", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Calvo", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mootha", 
+                "given-names": "VK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The mitochondrial proteome and human disease", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Annual Review of Genomics and Human Genetics", 
+        "reference_id": "10.1146/annurev-genom-082509-141720", 
+        "fpage": "25", 
+        "year": "2010", 
+        "position": 5, 
+        "ref": "CalvoSEMoothaVK2010The mitochondrial proteome and human diseaseAnnual Review of Genomics and Human Genetics11254410.1146/annurev-genom-082509-141720", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Mitochondrial DNA mutations in human cancer", 
+        "lpage": "4674", 
+        "doi": "10.1038/sj.onc.1209604", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Chatterjee", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mambo", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sidransky", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial DNA mutations in human cancer", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Oncogene", 
+        "reference_id": "10.1038/sj.onc.1209604", 
+        "fpage": "4663", 
+        "year": "2006", 
+        "position": 6, 
+        "ref": "ChatterjeeAMamboESidranskyD2006Mitochondrial DNA mutations in human cancerOncogene254663467410.1038/sj.onc.1209604", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Mitochondrial Disorders Overview", 
+        "publisher_loc": "Seattle, Washington", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }, 
+            {
+                "given-names": "Pagon", 
+                "surname": "RA"
+            }, 
+            {
+                "given-names": "Adam", 
+                "surname": "MP"
+            }, 
+            {
+                "given-names": "Bird", 
+                "surname": "TD"
+            }, 
+            {
+                "given-names": "Dolan", 
+                "surname": "CR"
+            }, 
+            {
+                "given-names": "Fong", 
+                "surname": "CT"
+            }, 
+            {
+                "given-names": "Smith", 
+                "surname": "RJH"
+            }, 
+            {
+                "given-names": "Stephens", 
+                "surname": "K"
+            }
+        ], 
+        "full_article_title": "Mitochondrial Disorders Overview", 
+        "publication-type": "journal", 
+        "source": "GeneReviews", 
+        "year": "1993", 
+        "position": 7, 
+        "ref": "ChinneryPF1993Mitochondrial Disorders OverviewRAPagonMPAdamTDBirdCRDolanCTFongRJHSmithKStephensGeneReviewsSeattle, Washington", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Replication of animal mitochondrial DNA", 
+        "lpage": "705", 
+        "doi": "10.1016/0092-8674(82)90049-6", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Clayton", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Replication of animal mitochondrial DNA", 
+        "publication-type": "journal", 
+        "volume": "28", 
+        "source": "Cell", 
+        "reference_id": "10.1016/0092-8674(82)90049-6", 
+        "fpage": "693", 
+        "year": "1982", 
+        "position": 8, 
+        "ref": "ClaytonDA1982Replication of animal mitochondrial DNACell2869370510.1016/0092-8674(82)90049-6", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "High frequency of homoplasmic mitochondrial DNA mutations in human tumors can be explained without selection", 
+        "lpage": "150", 
+        "doi": "10.1038/88859", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Coller", 
+                "given-names": "HA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Khrapko", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bodyak", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nekhaeva", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Herrero-Jimenez", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thilly", 
+                "given-names": "WG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "High frequency of homoplasmic mitochondrial DNA mutations in human tumors can be explained without selection", 
+        "publication-type": "journal", 
+        "volume": "28", 
+        "source": "Nature Genetics", 
+        "reference_id": "10.1038/88859", 
+        "fpage": "147", 
+        "year": "2001", 
+        "position": 9, 
+        "ref": "CollerHAKhrapkoKBodyakNDNekhaevaEHerrero-JimenezPThillyWG2001High frequency of homoplasmic mitochondrial DNA mutations in human tumors can be explained without selectionNature Genetics2814715010.1038/88859", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Human liver stem cells originate from the canals of Hering", 
+        "lpage": "993", 
+        "doi": "10.1002/hep.23160", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "De Alwis", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hudson", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burt", 
+                "given-names": "AD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Day", 
+                "given-names": "CP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Human liver stem cells originate from the canals of Hering", 
+        "publication-type": "journal", 
+        "volume": "50", 
+        "source": "Hepatology", 
+        "reference_id": "10.1002/hep.23160", 
+        "fpage": "992", 
+        "year": "2009", 
+        "position": 10, 
+        "ref": "De AlwisNHudsonGBurtADDayCPChinneryPF2009Human liver stem cells originate from the canals of HeringHepatology5099299310.1002/hep.23160", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Chemical and biological consequences of oxidatively damaged guanine in DNA", 
+        "lpage": "441", 
+        "doi": "10.3109/10715762.2011.653968", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Delaney", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jarem", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Volle", 
+                "given-names": "CB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yennie", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chemical and biological consequences of oxidatively damaged guanine in DNA", 
+        "publication-type": "journal", 
+        "volume": "46", 
+        "source": "Free Radical Research", 
+        "reference_id": "10.3109/10715762.2011.653968", 
+        "fpage": "420", 
+        "year": "2012", 
+        "position": 11, 
+        "ref": "DelaneySJaremDAVolleCBYennieCJ2012Chemical and biological consequences of oxidatively damaged guanine in DNAFree Radical Research4642044110.3109/10715762.2011.653968", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Decreased mitochondrial DNA mutagenesis in human colorectal cancer", 
+        "doi": "10.1371/journal.pgen.1002689", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Ericson", 
+                "given-names": "NG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kulawiec", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vermulst", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sheahan", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Sullivan", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salk", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bielas", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Decreased mitochondrial DNA mutagenesis in human colorectal cancer", 
+        "publication-type": "journal", 
+        "volume": "8", 
+        "source": "PLOS genetics", 
+        "reference_id": "10.1371/journal.pgen.1002689", 
+        "fpage": "e1002689", 
+        "year": "2012", 
+        "position": 12, 
+        "ref": "EricsonNGKulawiecMVermulstMSheahanKO'SullivanJSalkJJBielasJH2012Decreased mitochondrial DNA mutagenesis in human colorectal cancerPLOS genetics8e100268910.1371/journal.pgen.1002689", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Likelihood analysis of asymmetrical mutation bias gradients in vertebrate mitochondrial genomes", 
+        "lpage": "745", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Faith", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pollock", 
+                "given-names": "DD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Likelihood analysis of asymmetrical mutation bias gradients in vertebrate mitochondrial genomes", 
+        "publication-type": "journal", 
+        "volume": "165", 
+        "source": "Genetics", 
+        "fpage": "735", 
+        "year": "2003", 
+        "position": 13, 
+        "ref": "FaithJJPollockDD2003Likelihood analysis of asymmetrical mutation bias gradients in vertebrate mitochondrial genomesGenetics165735745", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Mitochondrial disease genetic diagnostics: optimized whole-exome analysis for all MitoCarta nuclear genes and the mitochondrial genome", 
+        "lpage": "399", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Falk", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pierce", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Consugar", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xie", 
+                "given-names": "MH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Guadalupe", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hardy", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rappaport", 
+                "given-names": "EF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wallace", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "LeProust", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gai", 
+                "given-names": "X", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial disease genetic diagnostics: optimized whole-exome analysis for all MitoCarta nuclear genes and the mitochondrial genome", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Discovery Medicine", 
+        "fpage": "389", 
+        "year": "2012", 
+        "position": 14, 
+        "ref": "FalkMJPierceEAConsugarMXieMHGuadalupeMHardyORappaportEFWallaceDCLeProustEGaiX2012Mitochondrial disease genetic diagnostics: optimized whole-exome analysis for all MitoCarta nuclear genes and the mitochondrial genomeDiscovery Medicine14389399", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "DNA replication and transcription in mammalian mitochondria", 
+        "lpage": "699", 
+        "doi": "10.1146/annurev.biochem.76.060305.152028", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Falkenberg", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larsson", 
+                "given-names": "NG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gustafsson", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "DNA replication and transcription in mammalian mitochondria", 
+        "publication-type": "journal", 
+        "volume": "76", 
+        "source": "Annual Review of Biochemistry", 
+        "reference_id": "10.1146/annurev.biochem.76.060305.152028", 
+        "fpage": "679", 
+        "year": "2007", 
+        "position": 15, 
+        "ref": "FalkenbergMLarssonNGGustafssonCM2007DNA replication and transcription in mammalian mitochondriaAnnual Review of Biochemistry7667969910.1146/annurev.biochem.76.060305.152028", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "A scalable, fully automated process for construction of sequence-ready human exome targeted capture libraries", 
+        "doi": "10.1186/gb-2011-12-1-r1", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Fisher", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barry", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abreu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Minie", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nolan", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Delorey", 
+                "given-names": "TM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Young", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fennell", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Allen", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ambrogio", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berlin", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blumenstiel", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cibulskis", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Friedrich", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnson", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Juhn", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reilly", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shammas", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stalker", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sykes", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thompson", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walsh", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zimmer", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zwirko", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabriel", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nicol", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nusbaum", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A scalable, fully automated process for construction of sequence-ready human exome targeted capture libraries", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Genome biology", 
+        "reference_id": "10.1186/gb-2011-12-1-r1", 
+        "fpage": "R1", 
+        "year": "2011", 
+        "position": 16, 
+        "ref": "FisherSBarryAAbreuJMinieBNolanJDeloreyTMYoungGFennellTJAllenAAmbrogioLBerlinAMBlumenstielBCibulskisKFriedrichDJohnsonRJuhnFReillyBShammasRStalkerJSykesSMThompsonJWalshJZimmerAZwirkoZGabrielSNicolRNusbaumC2011A scalable, fully automated process for construction of sequence-ready human exome targeted capture librariesGenome biology12R110.1186/gb-2011-12-1-r1", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Variation in germline mtDNA heteroplasmy is determined prenatally but modified during subsequent transmission", 
+        "lpage": "1285", 
+        "doi": "10.1038/ng.2427", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Freyer", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cree", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mourier", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stewart", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Koolmeister", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Milenkovic", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wai", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Floros", 
+                "given-names": "VI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hagstrom", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chatzidaki", 
+                "given-names": "EE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wiesner", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Samuels", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larsson", 
+                "given-names": "NG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Variation in germline mtDNA heteroplasmy is determined prenatally but modified during subsequent transmission", 
+        "publication-type": "journal", 
+        "volume": "44", 
+        "source": "Nature Genetics", 
+        "reference_id": "10.1038/ng.2427", 
+        "fpage": "1282", 
+        "year": "2012", 
+        "position": 17, 
+        "ref": "FreyerCCreeLMMourierAStewartJBKoolmeisterCMilenkovicDWaiTFlorosVIHagstromEChatzidakiEEWiesnerRJSamuelsDCLarssonNGChinneryPF2012Variation in germline mtDNA heteroplasmy is determined prenatally but modified during subsequent transmissionNature Genetics441282128510.1038/ng.2427", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "A map of human genome variation from population-scale sequencing", 
+        "lpage": "1073", 
+        "doi": "10.1038/nature09534", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "1000 Genomes Project Consortium"
+            }, 
+            {
+                "surname": "Abecasis", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Altshuler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Auton", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brooks", 
+                "given-names": "LD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Durbin", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gibbs", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hurles", 
+                "given-names": "ME", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McVean", 
+                "given-names": "GA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A map of human genome variation from population-scale sequencing", 
+        "publication-type": "journal", 
+        "volume": "467", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature09534", 
+        "fpage": "1061", 
+        "year": "2010", 
+        "position": 18, 
+        "collab": "1000 Genomes Project Consortium", 
+        "ref": "1000 Genomes Project ConsortiumAbecasisGRAltshulerDAutonABrooksLDDurbinRMGibbsRAHurlesMEMcVeanGA2010A map of human genome variation from population-scale sequencingNature4671061107310.1038/nature09534", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Dynamics of mitochondrial heteroplasmy in three families investigated via a repeatable re-sequencing study", 
+        "doi": "10.1186/gb-2011-12-6-r59", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Goto", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dickins", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Afgan", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paul", 
+                "given-names": "IM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Taylor", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Makova", 
+                "given-names": "KD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nekrutenko", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dynamics of mitochondrial heteroplasmy in three families investigated via a repeatable re-sequencing study", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Genome Biology", 
+        "reference_id": "10.1186/gb-2011-12-6-r59", 
+        "fpage": "R59", 
+        "year": "2011", 
+        "position": 19, 
+        "ref": "GotoHDickinsBAfganEPaulIMTaylorJMakovaKDNekrutenkoA2011Dynamics of mitochondrial heteroplasmy in three families investigated via a repeatable re-sequencing studyGenome Biology12R5910.1186/gb-2011-12-6-r59", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Mitochondrial evolution", 
+        "lpage": "1481", 
+        "doi": "10.1126/science.283.5407.1476", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Gray", 
+                "given-names": "MW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burger", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lang", 
+                "given-names": "BF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial evolution", 
+        "publication-type": "journal", 
+        "volume": "283", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.283.5407.1476", 
+        "fpage": "1476", 
+        "year": "1999", 
+        "position": 20, 
+        "ref": "GrayMWBurgerGLangBF1999Mitochondrial evolutionScience2831476148110.1126/science.283.5407.1476", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "Patterns of somatic mutation in human cancer genomes", 
+        "lpage": "158", 
+        "doi": "10.1038/nature05610", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Greenman", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephens", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dalgliesh", 
+                "given-names": "GL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hunter", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bignell", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stevens", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edkins", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Meara", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vastrik", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "EE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Avis", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barthorpe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bhamra", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buck", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Choudhury", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clements", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cole", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dicks", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Forbes", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gray", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halliday", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harrison", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hills", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hinton", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jenkinson", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menzies", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mironenko", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Perry", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raine", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shepherd", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Small", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tofts", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varian", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Webb", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "West", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Widaa", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yates", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cahill", 
+                "given-names": "DP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Louis", 
+                "given-names": "DN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goldstraw", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nicholson", 
+                "given-names": "AG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brasseur", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Looijenga", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weber", 
+                "given-names": "BL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chiew", 
+                "given-names": "YE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DeFazio", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greaves", 
+                "given-names": "MF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Green", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Birney", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Easton", 
+                "given-names": "DF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chenevix-Trench", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tan", 
+                "given-names": "MH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Khoo", 
+                "given-names": "SK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teh", 
+                "given-names": "BT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yuen", 
+                "given-names": "ST", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leung", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wooster", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Patterns of somatic mutation in human cancer genomes", 
+        "publication-type": "journal", 
+        "volume": "446", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature05610", 
+        "fpage": "153", 
+        "year": "2007", 
+        "position": 21, 
+        "ref": "GreenmanCStephensPSmithRDalglieshGLHunterCBignellGDaviesHTeagueJButlerAStevensCEdkinsSO'MearaSVastrikISchmidtEEAvisTBarthorpeSBhamraGBuckGChoudhuryBClementsJColeJDicksEForbesSGrayKHallidayKHarrisonRHillsKHintonJJenkinsonAJonesDMenziesAMironenkoTPerryJRaineKRichardsonDShepherdRSmallAToftsCVarianJWebbTWestSWidaaSYatesACahillDPLouisDNGoldstrawPNicholsonAGBrasseurFLooijengaLWeberBLChiewYEDeFazioAGreavesMFGreenARCampbellPBirneyEEastonDFChenevix-TrenchGTanMHKhooSKTehBTYuenSTLeungSYWoosterRFutrealPAStrattonMR2007Patterns of somatic mutation in human cancer genomesNature44615315810.1038/nature05610", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Statistical analysis of pathogenicity of somatic mutations in cancer", 
+        "lpage": "2198", 
+        "doi": "10.1534/genetics.105.044677", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Greenman", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wooster", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Easton", 
+                "given-names": "DF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Statistical analysis of pathogenicity of somatic mutations in cancer", 
+        "publication-type": "journal", 
+        "volume": "173", 
+        "source": "Genetics", 
+        "reference_id": "10.1534/genetics.105.044677", 
+        "fpage": "2187", 
+        "year": "2006", 
+        "position": 22, 
+        "ref": "GreenmanCWoosterRFutrealPAStrattonMREastonDF2006Statistical analysis of pathogenicity of somatic mutations in cancerGenetics1732187219810.1534/genetics.105.044677", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Hallmarks of cancer: the next generation", 
+        "lpage": "674", 
+        "doi": "10.1016/j.cell.2011.02.013", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Hanahan", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weinberg", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hallmarks of cancer: the next generation", 
+        "publication-type": "journal", 
+        "volume": "144", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2011.02.013", 
+        "fpage": "646", 
+        "year": "2011", 
+        "position": 23, 
+        "ref": "HanahanDWeinbergRA2011Hallmarks of cancer: the next generationCell14464667410.1016/j.cell.2011.02.013", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Heteroplasmic mitochondrial DNA mutations in normal and tumour cells", 
+        "lpage": "614", 
+        "doi": "10.1038/nature08802", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "He", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dressman", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iacobuzio-Donahue", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Markowitz", 
+                "given-names": "SD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Velculescu", 
+                "given-names": "VE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diaz", 
+                "given-names": "LA", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Kinzler", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vogelstein", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Papadopoulos", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Heteroplasmic mitochondrial DNA mutations in normal and tumour cells", 
+        "publication-type": "journal", 
+        "volume": "464", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature08802", 
+        "fpage": "610", 
+        "year": "2010", 
+        "position": 24, 
+        "ref": "HeYWuJDressmanDCIacobuzio-DonahueCMarkowitzSDVelculescuVEDiazLAJnrKinzlerKWVogelsteinBPapadopoulosN2010Heteroplasmic mitochondrial DNA mutations in normal and tumour cellsNature46461061410.1038/nature08802", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Human mitochondrial DNA replication", 
+        "doi": "10.1101/cshperspect.a012971", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Holt", 
+                "given-names": "IJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reyes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Human mitochondrial DNA replication", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Cold Spring Harbor perspectives in biology", 
+        "reference_id": "10.1101/cshperspect.a012971", 
+        "fpage": "a012971", 
+        "year": "2012", 
+        "position": 25, 
+        "ref": "HoltIJReyesA2012Human mitochondrial DNA replicationCold Spring Harbor perspectives in biology4a01297110.1101/cshperspect.a012971", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Mitochondrial DNA polymerase-gamma and human disease", 
+        "lpage": "R252", 
+        "doi": "10.1093/hmg/ddl233", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Hudson", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial DNA polymerase-gamma and human disease", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Human molecular genetics", 
+        "reference_id": "10.1093/hmg/ddl233", 
+        "fpage": "R244", 
+        "year": "2006", 
+        "position": 26, 
+        "ref": "HudsonGChinneryPF2006Mitochondrial DNA polymerase-gamma and human diseaseHuman molecular genetics15R244R25210.1093/hmg/ddl233", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "mtDB: human Mitochondrial Genome Database, a resource for population genetics and medical sciences", 
+        "lpage": "D751", 
+        "doi": "10.1093/nar/gkj010", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Ingman", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gyllensten", 
+                "given-names": "U", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "mtDB: human Mitochondrial Genome Database, a resource for population genetics and medical sciences", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkj010", 
+        "fpage": "D749", 
+        "year": "2006", 
+        "position": 27, 
+        "ref": "IngmanMGyllenstenU2006mtDB: human Mitochondrial Genome Database, a resource for population genetics and medical sciencesNucleic Acids Research34D749D75110.1093/nar/gkj010", 
+        "id": "bib27"
+    }, 
+    {
+        "article_doi": "10.7554/eLife.02935", 
+        "publisher_name": "Cambridge University Press", 
+        "year": "1984", 
+        "publication-type": "book", 
+        "source": "The neutral theory of molecular evolution", 
+        "authors": [
+            {
+                "surname": "Kimura", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 28, 
+        "ref": "KimuraM1984The neutral theory of molecular evolutionCambridge University Press", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "VarScan 2: somatic mutation and copy number alteration discovery in cancer by exome sequencing", 
+        "lpage": "576", 
+        "doi": "10.1101/gr.129684.111", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Koboldt", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "QY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larson", 
+                "given-names": "DE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shen", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McLellan", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mardis", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ding", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "RK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "VarScan 2: somatic mutation and copy number alteration discovery in cancer by exome sequencing", 
+        "publication-type": "journal", 
+        "volume": "22", 
+        "source": "Genome Research", 
+        "reference_id": "10.1101/gr.129684.111", 
+        "fpage": "568", 
+        "year": "2012", 
+        "position": 29, 
+        "ref": "KoboldtDCZhangQYLarsonDEShenDMcLellanMDLinLMillerCAMardisERDingLWilsonRK2012VarScan 2: somatic mutation and copy number alteration discovery in cancer by exome sequencingGenome Research2256857610.1101/gr.129684.111", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Otto Warburg's contributions to current concepts of cancer metabolism", 
+        "lpage": "337", 
+        "doi": "10.1038/nrc3038", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Koppenol", 
+                "given-names": "WH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bounds", 
+                "given-names": "PL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dang", 
+                "given-names": "CV", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Otto Warburg's contributions to current concepts of cancer metabolism", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nature Reviews Cancer", 
+        "reference_id": "10.1038/nrc3038", 
+        "fpage": "325", 
+        "year": "2011", 
+        "position": 30, 
+        "ref": "KoppenolWHBoundsPLDangCV2011Otto Warburg's contributions to current concepts of cancer metabolismNature Reviews Cancer1132533710.1038/nrc3038", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Spectrum of somatic mitochondrial mutations in five cancers", 
+        "lpage": "14091", 
+        "doi": "10.1073/pnas.1211502109", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Larman", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DePalma", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hadjipanayis", 
+                "given-names": "AG", 
+                "group-type": "author"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Cancer Genome Atlas Research Network"
+            }, 
+            {
+                "surname": "Protopopov", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabriel", 
+                "given-names": "SB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chin", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seidman", 
+                "given-names": "CE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kucherlapati", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seidman", 
+                "given-names": "JG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Spectrum of somatic mitochondrial mutations in five cancers", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1211502109", 
+        "fpage": "14087", 
+        "year": "2012", 
+        "position": 31, 
+        "collab": "Cancer Genome Atlas Research Network", 
+        "ref": "LarmanTCDePalmaSRHadjipanayisAG, Cancer Genome Atlas Research NetworkProtopopovAZhangJGabrielSBChinLSeidmanCEKucherlapatiRSeidmanJG2012Spectrum of somatic mitochondrial mutations in five cancersProceedings of the National Academy of Sciences of USA109140871409110.1073/pnas.1211502109", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Organization and dynamics of human mitochondrial DNA", 
+        "lpage": "2662", 
+        "doi": "10.1242/jcs.01134", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Legros", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Malka", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frachon", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lombes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rojo", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Organization and dynamics of human mitochondrial DNA", 
+        "publication-type": "journal", 
+        "volume": "117", 
+        "source": "Journal of Cell Science", 
+        "reference_id": "10.1242/jcs.01134", 
+        "fpage": "2653", 
+        "year": "2004", 
+        "position": 32, 
+        "ref": "LegrosFMalkaFFrachonPLombesARojoM2004Organization and dynamics of human mitochondrial DNAJournal of Cell Science1172653266210.1242/jcs.01134", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Functional recurrent mutations in the human mitochondrial phylogeny: dual roles in evolution and disease", 
+        "lpage": "890", 
+        "doi": "10.1093/gbe/evt058", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Levin", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhidkov", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gurman", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hawlena", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mishmar", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Functional recurrent mutations in the human mitochondrial phylogeny: dual roles in evolution and disease", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Genome Biology and Evolution", 
+        "reference_id": "10.1093/gbe/evt058", 
+        "fpage": "876", 
+        "year": "2013", 
+        "position": 33, 
+        "ref": "LevinLZhidkovIGurmanYHawlenaHMishmarD2013Functional recurrent mutations in the human mitochondrial phylogeny: dual roles in evolution and diseaseGenome Biology and Evolution587689010.1093/gbe/evt058", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Fast and accurate short read alignment with Burrows-Wheeler transform", 
+        "lpage": "1760", 
+        "doi": "10.1093/bioinformatics/btp324", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Li", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Durbin", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Fast and accurate short read alignment with Burrows-Wheeler transform", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Bioinformatics", 
+        "reference_id": "10.1093/bioinformatics/btp324", 
+        "fpage": "1754", 
+        "year": "2009", 
+        "position": 34, 
+        "ref": "LiHDurbinR2009Fast and accurate short read alignment with Burrows-Wheeler transformBioinformatics251754176010.1093/bioinformatics/btp324", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Detecting heteroplasmy from high-throughput sequencing of complete human mitochondrial DNA genomes", 
+        "lpage": "249", 
+        "doi": "10.1016/j.ajhg.2010.07.014", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Li", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schonberg", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schaefer", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schroeder", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nasidze", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stoneking", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Detecting heteroplasmy from high-throughput sequencing of complete human mitochondrial DNA genomes", 
+        "publication-type": "journal", 
+        "volume": "87", 
+        "source": "American Journal of Human Genetics", 
+        "reference_id": "10.1016/j.ajhg.2010.07.014", 
+        "fpage": "237", 
+        "year": "2010", 
+        "position": 35, 
+        "ref": "LiMSchonbergASchaeferMSchroederRNasidzeIStonekingM2010Detecting heteroplasmy from high-throughput sequencing of complete human mitochondrial DNA genomesAmerican Journal of Human Genetics8723724910.1016/j.ajhg.2010.07.014", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Instability and decay of the primary structure of DNA", 
+        "lpage": "715", 
+        "doi": "10.1038/362709a0", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Lindahl", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Instability and decay of the primary structure of DNA", 
+        "publication-type": "journal", 
+        "volume": "362", 
+        "source": "Nature", 
+        "reference_id": "10.1038/362709a0", 
+        "fpage": "709", 
+        "year": "1993", 
+        "position": 36, 
+        "ref": "LindahlT1993Instability and decay of the primary structure of DNANature36270971510.1038/362709a0", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Mutational processes molding the genomes of 21 breast cancers", 
+        "lpage": "993", 
+        "doi": "10.1016/j.cell.2012.04.024", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Nik-Zainal", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alexandrov", 
+                "given-names": "LB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wedge", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Loo", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenman", 
+                "given-names": "CD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raine", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hinton", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marshall", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stebbings", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menzies", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martin", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leung", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leroy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishna", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rance", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lau", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mudie", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varela", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McBride", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bignell", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cooke", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shlien", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gamble", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Whitmore", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maddison", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tarpey", 
+                "given-names": "PS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "HR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Papaemmanuil", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephens", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McLaren", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "J\u00f6nsson", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garber", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Silver", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miron", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fatima", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boyault", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Langer\u00f8d", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tutt", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martens", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aparicio", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borg \u00c5", 
+                "given-names": "Salomon AV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thomas", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "B\u00f8rresen-Dale", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neuberger", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Breast Cancer Working Group of the International Cancer Genome Consortium"
+            }
+        ], 
+        "full_article_title": "Mutational processes molding the genomes of 21 breast cancers", 
+        "publication-type": "journal", 
+        "volume": "149", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2012.04.024", 
+        "fpage": "979", 
+        "year": "2012a", 
+        "position": 37, 
+        "collab": "Breast Cancer Working Group of the International Cancer Genome Consortium", 
+        "ref": "Nik-ZainalSAlexandrovLBWedgeDCVan LooPGreenmanCDRaineKJonesDHintonJMarshallJStebbingsLAMenziesAMartinSLeungKChenLLeroyCRamakrishnaMRanceRLauKWMudieLJVarelaIMcBrideDJBignellGRCookeSLShlienAGambleJWhitmoreIMaddisonMTarpeyPSDaviesHRPapaemmanuilEStephensPJMcLarenSButlerAPTeagueJWJ\u00f6nssonGGarberJESilverDMironPFatimaABoyaultSLanger\u00f8dATuttAMartensJWAparicioSABorg \u00c5Salomon AVThomasGB\u00f8rresen-DaleALRichardsonALNeubergerMSFutrealPACampbellPJStrattonMR, Breast Cancer Working Group of the International Cancer Genome Consortium2012aMutational processes molding the genomes of 21 breast cancersCell14997999310.1016/j.cell.2012.04.024", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "The life history of 21 breast cancers", 
+        "lpage": "1007", 
+        "doi": "10.1016/j.cell.2012.04.023", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Nik-Zainal", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Loo", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wedge", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alexandrov", 
+                "given-names": "LB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenman", 
+                "given-names": "CD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lau", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raine", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marshall", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishna", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shlien", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cooke", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hinton", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menzies", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stebbings", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leroy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jia", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rance", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mudie", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gamble", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephens", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McLaren", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tarpey", 
+                "given-names": "PS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Papaemmanuil", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "HR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varela", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McBride", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bignell", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leung", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martin", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "J\u00f6nsson", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mariani", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boyault", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miron", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fatima", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Langer\u00f8d", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aparicio", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tutt", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sieuwerts", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borg \u00c5", 
+                "given-names": "Thomas G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salomon", 
+                "given-names": "AV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "B\u00f8rresen-Dale", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Breast Cancer Working Group of the International Cancer Genome Consortium"
+            }
+        ], 
+        "full_article_title": "The life history of 21 breast cancers", 
+        "publication-type": "journal", 
+        "volume": "149", 
+        "source": "Cell", 
+        "reference_id": "10.1016/j.cell.2012.04.023", 
+        "fpage": "994", 
+        "year": "2012b", 
+        "position": 38, 
+        "collab": "Breast Cancer Working Group of the International Cancer Genome Consortium", 
+        "ref": "Nik-ZainalSVan LooPWedgeDCAlexandrovLBGreenmanCDLauKWRaineKJonesDMarshallJRamakrishnaMShlienACookeSLHintonJMenziesAStebbingsLALeroyCJiaMRanceRMudieLJGambleSJStephensPJMcLarenSTarpeyPSPapaemmanuilEDaviesHRVarelaIMcBrideDJBignellGRLeungKButlerAPTeagueJWMartinSJ\u00f6nssonGMarianiOBoyaultSMironPFatimaALanger\u00f8dAAparicioSATuttASieuwertsAMBorg \u00c5Thomas GSalomonAVRichardsonALB\u00f8rresen-DaleALFutrealPAStrattonMRCampbellPJ, Breast Cancer Working Group of the International Cancer Genome Consortium2012bThe life history of 21 breast cancersCell149994100710.1016/j.cell.2012.04.023", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Deviations from Chargaff's second parity rule in organellar DNA Insights into the evolution of organellar genomes", 
+        "lpage": "41", 
+        "doi": "10.1016/j.gene.2006.06.010", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Nikolaou", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Almirantis", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Deviations from Chargaff's second parity rule in organellar DNA Insights into the evolution of organellar genomes", 
+        "publication-type": "journal", 
+        "volume": "381", 
+        "source": "Gene", 
+        "reference_id": "10.1016/j.gene.2006.06.010", 
+        "fpage": "34", 
+        "year": "2006", 
+        "position": 39, 
+        "ref": "NikolaouCAlmirantisY2006Deviations from Chargaff's second parity rule in organellar DNA Insights into the evolution of organellar genomesGene381344110.1016/j.gene.2006.06.010", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Evidence for preferential mismatch repair of lagging strand DNA replication errors in yeast", 
+        "lpage": "748", 
+        "doi": "10.1016/S0960-9822(03)00284-7", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Pavlov", 
+                "given-names": "YI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mian", 
+                "given-names": "IM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kunkel", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evidence for preferential mismatch repair of lagging strand DNA replication errors in yeast", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Current Biology", 
+        "reference_id": "10.1016/S0960-9822(03)00284-7", 
+        "fpage": "744", 
+        "year": "2003", 
+        "position": 40, 
+        "ref": "PavlovYIMianIMKunkelTA2003Evidence for preferential mismatch repair of lagging strand DNA replication errors in yeastCurrent Biology1374474810.1016/S0960-9822(03)00284-7", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Yeast origins establish a strand bias for replicational mutagenesis", 
+        "lpage": "213", 
+        "doi": "10.1016/S1097-2765(02)00567-1", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Pavlov", 
+                "given-names": "YI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Newlon", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kunkel", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Yeast origins establish a strand bias for replicational mutagenesis", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Molecular Cell", 
+        "reference_id": "10.1016/S1097-2765(02)00567-1", 
+        "fpage": "207", 
+        "year": "2002", 
+        "position": 41, 
+        "ref": "PavlovYINewlonCSKunkelTA2002Yeast origins establish a strand bias for replicational mutagenesisMolecular Cell1020721310.1016/S1097-2765(02)00567-1", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "Universal heteroplasmy of human mitochondrial DNA", 
+        "lpage": "390", 
+        "doi": "10.1093/hmg/dds435", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Payne", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "IJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yu-Wai-Man", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Coxhead", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deehan", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Horvath", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Taylor", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Samuels", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Santibanez-Koref", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Universal heteroplasmy of human mitochondrial DNA", 
+        "publication-type": "journal", 
+        "volume": "22", 
+        "source": "Human Molecular Genetics", 
+        "reference_id": "10.1093/hmg/dds435", 
+        "fpage": "384", 
+        "year": "2013", 
+        "position": 42, 
+        "ref": "PayneBAWilsonIJYu-Wai-ManPCoxheadJDeehanDHorvathRTaylorRWSamuelsDCSantibanez-KorefMChinneryPF2013Universal heteroplasmy of human mitochondrial DNAHuman Molecular Genetics2238439010.1093/hmg/dds435", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "A comprehensive catalogue of somatic mutations from a human cancer genome", 
+        "lpage": "196", 
+        "doi": "10.1038/nature08658", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Pleasance", 
+                "given-names": "ED", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cheetham", 
+                "given-names": "RK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephens", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McBride", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Humphray", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenman", 
+                "given-names": "CD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varela", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ordonez", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bignell", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ye", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alipaz", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bauer", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beare", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carter", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cox", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edkins", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kokko-Gonzales", 
+                "given-names": "PI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gormley", 
+                "given-names": "NA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grocock", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Haudenschild", 
+                "given-names": "CD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hims", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "James", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jia", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kingsbury", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leroy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marshall", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menzies", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mudie", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ning", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Royce", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schulz-Trieglaff", 
+                "given-names": "OB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spiridou", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stebbings", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Szajkowski", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Williamson", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chin", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ross", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bentley", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A comprehensive catalogue of somatic mutations from a human cancer genome", 
+        "publication-type": "journal", 
+        "volume": "463", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature08658", 
+        "fpage": "191", 
+        "year": "2010a", 
+        "position": 43, 
+        "ref": "PleasanceEDCheethamRKStephensPJMcBrideDJHumphraySJGreenmanCDVarelaILinMLOrdonezGRBignellGRYeKAlipazJBauerMJBeareDButlerACarterRJChenLCoxAJEdkinsSKokko-GonzalesPIGormleyNAGrocockRJHaudenschildCDHimsMMJamesTJiaMKingsburyZLeroyCMarshallJMenziesAMudieLJNingZRoyceTSchulz-TrieglaffOBSpiridouAStebbingsLASzajkowskiLTeagueJWilliamsonDChinLRossMTCampbellPJBentleyDRFutrealPAStrattonMR2010aA comprehensive catalogue of somatic mutations from a human cancer genomeNature46319119610.1038/nature08658", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "A small-cell lung cancer genome with complex signatures of tobacco exposure", 
+        "lpage": "190", 
+        "doi": "10.1038/nature08629", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Pleasance", 
+                "given-names": "ED", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephens", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Meara", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McBride", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meynert", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beare", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lau", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenman", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Varela", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nik-Zainal", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davies", 
+                "given-names": "HR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ordo\u00f1ez", 
+                "given-names": "GR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mudie", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Latimer", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edkins", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stebbings", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jia", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leroy", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marshall", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menzies", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teague", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mangion", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sun", 
+                "given-names": "YA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McLaughlin", 
+                "given-names": "SF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peckham", 
+                "given-names": "HE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tsung", 
+                "given-names": "EF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Costa", 
+                "given-names": "GL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Minna", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gazdar", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Birney", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rhodes", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McKernan", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A small-cell lung cancer genome with complex signatures of tobacco exposure", 
+        "publication-type": "journal", 
+        "volume": "463", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature08629", 
+        "fpage": "184", 
+        "year": "2010b", 
+        "position": 44, 
+        "ref": "PleasanceEDStephensPJO'MearaSMcBrideDJMeynertAJonesDLinMLBeareDLauKWGreenmanCVarelaINik-ZainalSDaviesHROrdo\u00f1ezGRMudieLJLatimerCEdkinsSStebbingsLChenLJiaMLeroyCMarshallJMenziesAButlerATeagueJWMangionJSunYAMcLaughlinSFPeckhamHETsungEFCostaGLLeeCCMinnaJDGazdarABirneyERhodesMDMcKernanKJStrattonMRFutrealPACampbellPJ2010bA small-cell lung cancer genome with complex signatures of tobacco exposureNature46318419010.1038/nature08629", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Somatic mutations of the mitochondrial genome in human colorectal tumours", 
+        "lpage": "293", 
+        "doi": "10.1038/3108", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Polyak", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lengauer", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Willson", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Markowitz", 
+                "given-names": "SD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Trush", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kinzler", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vogelstein", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Somatic mutations of the mitochondrial genome in human colorectal tumours", 
+        "publication-type": "journal", 
+        "volume": "20", 
+        "source": "Nature Genetics", 
+        "reference_id": "10.1038/3108", 
+        "fpage": "291", 
+        "year": "1998", 
+        "position": 45, 
+        "ref": "PolyakKLiYZhuHLengauerCWillsonJKMarkowitzSDTrushMAKinzlerKWVogelsteinB1998Somatic mutations of the mitochondrial genome in human colorectal tumoursNature Genetics2029129310.1038/3108", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Population genetics of the cytoplasm and the units of selection on mitochondrial DNA in Drosophila melanogaster", 
+        "lpage": "697", 
+        "doi": "10.1007/s10709-011-9576-y", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Rand", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Population genetics of the cytoplasm and the units of selection on mitochondrial DNA in Drosophila melanogaster", 
+        "publication-type": "journal", 
+        "volume": "139", 
+        "source": "Genetica", 
+        "reference_id": "10.1007/s10709-011-9576-y", 
+        "fpage": "685", 
+        "year": "2011", 
+        "position": 46, 
+        "ref": "RandDM2011Population genetics of the cytoplasm and the units of selection on mitochondrial DNA in Drosophila melanogasterGenetica13968569710.1007/s10709-011-9576-y", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "An enhanced MITOMAP with a global mtDNA mutational phylogeny", 
+        "lpage": "D828", 
+        "doi": "10.1093/nar/gkl927", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Ruiz-Pesini", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lott", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Procaccio", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Poole", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brandon", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mishmar", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yi", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kreuziger", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldi", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wallace", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An enhanced MITOMAP with a global mtDNA mutational phylogeny", 
+        "publication-type": "journal", 
+        "volume": "35", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkl927", 
+        "fpage": "D823", 
+        "year": "2007", 
+        "position": 47, 
+        "ref": "Ruiz-PesiniELottMTProcaccioVPooleJCBrandonMCMishmarDYiCKreuzigerJBaldiPWallaceDC2007An enhanced MITOMAP with a global mtDNA mutational phylogenyNucleic Acids Research35D823D82810.1093/nar/gkl927", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Evolutionary genomics in Metazoa: the mitochondrial DNA as a model system", 
+        "lpage": "209", 
+        "doi": "10.1016/S0378-1119(99)00270-X", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Saccone", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "De Giorgi", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gissi", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pesole", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reyes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolutionary genomics in Metazoa: the mitochondrial DNA as a model system", 
+        "publication-type": "journal", 
+        "volume": "238", 
+        "source": "Gene", 
+        "reference_id": "10.1016/S0378-1119(99)00270-X", 
+        "fpage": "195", 
+        "year": "1999", 
+        "position": 48, 
+        "ref": "SacconeCDe GiorgiCGissiCPesoleGReyesA1999Evolutionary genomics in Metazoa: the mitochondrial DNA as a model systemGene23819520910.1016/S0378-1119(99)00270-X", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Human mitochondrial DNA: roles of inherited and somatic mutations", 
+        "lpage": "890", 
+        "doi": "10.1038/nrg3275", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Schon", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DiMauro", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hirano", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Human mitochondrial DNA: roles of inherited and somatic mutations", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Nature Reviews Genetics", 
+        "reference_id": "10.1038/nrg3275", 
+        "fpage": "878", 
+        "year": "2012", 
+        "position": 49, 
+        "ref": "SchonEADiMauroSHiranoM2012Human mitochondrial DNA: roles of inherited and somatic mutationsNature Reviews Genetics1387889010.1038/nrg3275", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "The genetics and pathology of oxidative phosphorylation", 
+        "lpage": "352", 
+        "doi": "10.1038/35072063", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Smeitink", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "van den Heuvel", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DiMauro", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The genetics and pathology of oxidative phosphorylation", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Nature Reviews Genetics", 
+        "reference_id": "10.1038/35072063", 
+        "fpage": "342", 
+        "year": "2001", 
+        "position": 50, 
+        "ref": "SmeitinkJvan den HeuvelLDiMauroS2001The genetics and pathology of oxidative phosphorylationNature Reviews Genetics234235210.1038/35072063", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "The cancer genome", 
+        "lpage": "724", 
+        "doi": "10.1038/nature07943", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Stratton", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Futreal", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The cancer genome", 
+        "publication-type": "journal", 
+        "volume": "458", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature07943", 
+        "fpage": "719", 
+        "year": "2009", 
+        "position": 51, 
+        "ref": "StrattonMRCampbellPJFutrealPA2009The cancer genomeNature45871972410.1038/nature07943", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "Mitochondrial DNA mutations in human colonic crypt stem cells", 
+        "lpage": "1360", 
+        "doi": "10.1172/JCI19435", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Taylor", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barron", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borthwick", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gospel", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chinnery", 
+                "given-names": "PF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Samuels", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Taylor", 
+                "given-names": "GA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plusa", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Needham", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greaves", 
+                "given-names": "LC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kirkwood", 
+                "given-names": "TB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turnbull", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondrial DNA mutations in human colonic crypt stem cells", 
+        "publication-type": "journal", 
+        "volume": "112", 
+        "source": "The Journal of Clinical Investigation", 
+        "reference_id": "10.1172/JCI19435", 
+        "fpage": "1351", 
+        "year": "2003", 
+        "position": 52, 
+        "ref": "TaylorRWBarronMJBorthwickGMGospelAChinneryPFSamuelsDCTaylorGAPlusaSMNeedhamSJGreavesLCKirkwoodTBTurnbullDM2003Mitochondrial DNA mutations in human colonic crypt stem cellsThe Journal of Clinical Investigation1121351136010.1172/JCI19435", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Have environmental mutagens caused oncomutations in people?", 
+        "lpage": "259", 
+        "doi": "10.1038/ng1205", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Thilly", 
+                "given-names": "WG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Have environmental mutagens caused oncomutations in people?", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Nature Genetics", 
+        "reference_id": "10.1038/ng1205", 
+        "fpage": "255", 
+        "year": "2003", 
+        "position": 53, 
+        "ref": "ThillyWG2003Have environmental mutagens caused oncomutations in people?Nature Genetics3425525910.1038/ng1205", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration", 
+        "lpage": "192", 
+        "doi": "10.1093/bib/bbs017", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Thorvaldsdottir", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Robinson", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mesirov", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Integrative Genomics Viewer (IGV): high-performance genomics data visualization and exploration", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Brief Bioinform", 
+        "reference_id": "10.1093/bib/bbs017", 
+        "fpage": "178", 
+        "year": "2013", 
+        "position": 54, 
+        "ref": "ThorvaldsdottirHRobinsonJTMesirovJP2013Integrative Genomics Viewer (IGV): high-performance genomics data visualization and explorationBrief Bioinform1417819210.1093/bib/bbs017", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "Mitochondria and cancer", 
+        "lpage": "698", 
+        "doi": "10.1038/nrc3365", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Wallace", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mitochondria and cancer", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Nature Reviews Cancer", 
+        "reference_id": "10.1038/nrc3365", 
+        "fpage": "685", 
+        "year": "2012", 
+        "position": 55, 
+        "ref": "WallaceDC2012Mitochondria and cancerNature Reviews Cancer1268569810.1038/nrc3365", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "Evolution in Mendelian populations", 
+        "lpage": "159", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Wright", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution in Mendelian populations", 
+        "publication-type": "journal", 
+        "volume": "16", 
+        "source": "Genetics", 
+        "fpage": "97", 
+        "year": "1931", 
+        "position": 56, 
+        "ref": "WrightS1931Evolution in Mendelian populationsGenetics1697159", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "Replication of vertebrate mitochondrial DNA entails transient ribonucleotide incorporation throughout the lagging strand", 
+        "lpage": "5371", 
+        "doi": "10.1038/sj.emboj.7601392", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Yasukawa", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reyes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cluett", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "MY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bowmaker", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jacobs", 
+                "given-names": "HT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holt", 
+                "given-names": "IJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Replication of vertebrate mitochondrial DNA entails transient ribonucleotide incorporation throughout the lagging strand", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "The EMBO Journal", 
+        "reference_id": "10.1038/sj.emboj.7601392", 
+        "fpage": "5358", 
+        "year": "2006", 
+        "position": 57, 
+        "ref": "YasukawaTReyesACluettTJYangMYBowmakerMJacobsHTHoltIJ2006Replication of vertebrate mitochondrial DNA entails transient ribonucleotide incorporation throughout the lagging strandThe EMBO Journal255358537110.1038/sj.emboj.7601392", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "A bidirectional origin of replication maps to the major noncoding region of human mitochondrial DNA", 
+        "lpage": "662", 
+        "doi": "10.1016/j.molcel.2005.05.002", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Yasukawa", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "MY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jacobs", 
+                "given-names": "HT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holt", 
+                "given-names": "IJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A bidirectional origin of replication maps to the major noncoding region of human mitochondrial DNA", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Molecular Cell", 
+        "reference_id": "10.1016/j.molcel.2005.05.002", 
+        "fpage": "651", 
+        "year": "2005", 
+        "position": 58, 
+        "ref": "YasukawaTYangMYJacobsHTHoltIJ2005A bidirectional origin of replication maps to the major noncoding region of human mitochondrial DNAMolecular Cell1865166210.1016/j.molcel.2005.05.002", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Origins of human mitochondrial point mutations as DNA polymerase gamma-mediated errors", 
+        "lpage": "20", 
+        "doi": "10.1016/j.mrfmmm.2005.12.012", 
+        "article_doi": "10.7554/eLife.02935", 
+        "authors": [
+            {
+                "surname": "Zheng", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Khrapko", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Coller", 
+                "given-names": "HA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thilly", 
+                "given-names": "WG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Copeland", 
+                "given-names": "WC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Origins of human mitochondrial point mutations as DNA polymerase gamma-mediated errors", 
+        "publication-type": "journal", 
+        "volume": "599", 
+        "source": "Mutation Research", 
+        "reference_id": "10.1016/j.mrfmmm.2005.12.012", 
+        "fpage": "11", 
+        "year": "2006", 
+        "position": 59, 
+        "ref": "ZhengWKhrapkoKCollerHAThillyWGCopelandWC2006Origins of human mitochondrial point mutations as DNA polymerase gamma-mediated errorsMutation Research599112010.1016/j.mrfmmm.2005.12.012", 
+        "id": "bib59"
+    }
+]

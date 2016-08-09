@@ -1,0 +1,37 @@
+[
+    {
+        "text": "<p>CSMH, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AS, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>CP, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>FK, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SCC, Contributed preliminary data, Drafting or revising the article, Contributed unpublished essential data or reagents</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>BR, Drafting or revising the article, Contributed unpublished essential data or reagents</p>", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>WH, Conception and design, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con7", 
+        "fn-type": "con"
+    }
+]

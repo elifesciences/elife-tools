@@ -1,0 +1,145 @@
+[
+    {
+        "surname": "Harris", 
+        "author": "Robin M Harris", 
+        "article_doi": "10.7554/eLife.04493", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Janelia Research Campus, Howard Hughes Medical Institute", 
+                "city": "Ashburn"
+            }
+        ], 
+        "given-names": "Robin M", 
+        "references": {
+            "foot-note": [
+                "fn1"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 18144, 
+        "notes-fn": [
+            "\u2020Deceased", 
+            "RMH, Conception and design, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-18144", 
+        "deceased": "yes"
+    }, 
+    {
+        "surname": "Pfeiffer", 
+        "author": "Barret D Pfeiffer", 
+        "article_doi": "10.7554/eLife.04493", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Janelia Research Campus, Howard Hughes Medical Institute", 
+                "city": "Ashburn"
+            }
+        ], 
+        "given-names": "Barret D", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 2956, 
+        "notes-fn": [
+            "BDP, Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-2956"
+    }, 
+    {
+        "surname": "Rubin", 
+        "author": "Gerald M Rubin", 
+        "article_doi": "10.7554/eLife.04493", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Janelia Research Campus, Howard Hughes Medical Institute", 
+                "city": "Ashburn"
+            }
+        ], 
+        "given-names": "Gerald M", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 10190, 
+        "notes-fn": [
+            "GMR, Conception and design, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-10190"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: trumanj@janelia.hhmi.org"
+        ], 
+        "surname": "Truman", 
+        "author": "James W Truman", 
+        "article_doi": "10.7554/eLife.04493", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Janelia Research Campus, Howard Hughes Medical Institute", 
+                "city": "Ashburn"
+            }
+        ], 
+        "given-names": "James W", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 17912, 
+        "notes-fn": [
+            "JWT, Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-17912"
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {
+        "funding_source": [
+            "http://dx.doi.org/10.13039/501100003484State of Northrhine Westphalia"
+        ], 
+        "recipient": [
+            "Wiebke Herzog"
+        ], 
+        "award_id": [
+            "Northrhine Westphalia Return Fellowship"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "http://dx.doi.org/10.13039/501100004869Westf\u00e4lische Wilhelms-Universit\u00e4t M\u00fcnster"
+        ], 
+        "recipient": [
+            "Wiebke Herzog"
+        ], 
+        "award_id": [
+            "Cells in Motion cluster of Excellence, CiM - EXC 1003 / FF-2013-14"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "http://dx.doi.org/10.13039/501100001348Agency for Science, Technology and Research (A*STAR)"
+        ], 
+        "recipient": [
+            "Bruno Reversade"
+        ], 
+        "award_id": [
+            "Strategic Positioning Fund on Genetic Orphan Diseases"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "http://dx.doi.org/10.13039/501100004189Max-Planck-Gesellschaft"
+        ], 
+        "recipient": [
+            "Friedemann Kiefer"
+        ], 
+        "award_id": null
+    }
+]

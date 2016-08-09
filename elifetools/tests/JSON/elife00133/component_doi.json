@@ -1,0 +1,97 @@
+[
+    {
+        "position": 1, 
+        "doi": "10.7554/eLife.00133.001", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 2, 
+        "doi": "10.7554/eLife.00133.002", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 3, 
+        "doi": "10.7554/eLife.00133.003", 
+        "type": "fig"
+    }, 
+    {
+        "position": 4, 
+        "doi": "10.7554/eLife.00133.004", 
+        "type": "fig"
+    }, 
+    {
+        "position": 5, 
+        "doi": "10.7554/eLife.00133.005", 
+        "type": "fig"
+    }, 
+    {
+        "position": 6, 
+        "doi": "10.7554/eLife.00133.006", 
+        "type": "fig"
+    }, 
+    {
+        "position": 7, 
+        "doi": "10.7554/eLife.00133.007", 
+        "type": "fig"
+    }, 
+    {
+        "position": 8, 
+        "doi": "10.7554/eLife.00133.008", 
+        "type": "media"
+    }, 
+    {
+        "position": 9, 
+        "doi": "10.7554/eLife.00133.009", 
+        "type": "media"
+    }, 
+    {
+        "position": 10, 
+        "doi": "10.7554/eLife.00133.010", 
+        "type": "media"
+    }, 
+    {
+        "position": 11, 
+        "doi": "10.7554/eLife.00133.011", 
+        "type": "media"
+    }, 
+    {
+        "position": 12, 
+        "doi": "10.7554/eLife.00133.012", 
+        "type": "media"
+    }, 
+    {
+        "position": 13, 
+        "doi": "10.7554/eLife.00133.013", 
+        "type": "fig"
+    }, 
+    {
+        "position": 14, 
+        "doi": "10.7554/eLife.00133.014", 
+        "type": "fig"
+    }, 
+    {
+        "position": 15, 
+        "doi": "10.7554/eLife.00133.015", 
+        "type": "fig"
+    }, 
+    {
+        "position": 16, 
+        "doi": "10.7554/eLife.00133.016", 
+        "type": "fig"
+    }, 
+    {
+        "position": 17, 
+        "doi": "10.7554/eLife.00133.017", 
+        "type": "fig"
+    }, 
+    {
+        "position": 18, 
+        "doi": "10.7554/eLife.00133.018", 
+        "type": "fig"
+    }, 
+    {
+        "position": 19, 
+        "doi": "10.7554/eLife.00133.019", 
+        "type": "fig"
+    }
+]

@@ -1,0 +1,33 @@
+[
+    {
+        "par-1": {
+            "award-id": "Northrhine Westphalia Return Fellowship", 
+            "institution": "State of Northrhine Westphalia", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100003484"
+        }
+    }, 
+    {
+        "par-2": {
+            "award-id": "Cells in Motion cluster of Excellence, CiM - EXC 1003 / FF-2013-14", 
+            "institution": "Westf\u00e4lische Wilhelms-Universit\u00e4t M\u00fcnster", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100004869"
+        }
+    }, 
+    {
+        "par-3": {
+            "award-id": "Strategic Positioning Fund on Genetic Orphan Diseases", 
+            "institution": "Agency for Science, Technology and Research (A*STAR)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100001348"
+        }
+    }, 
+    {
+        "par-4": {
+            "id-type": "FundRef", 
+            "institution": "Max-Planck-Gesellschaft", 
+            "id": "http://dx.doi.org/10.13039/501100004189"
+        }
+    }
+]

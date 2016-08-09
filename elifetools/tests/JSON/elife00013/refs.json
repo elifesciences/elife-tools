@@ -1,0 +1,3704 @@
+[
+    {
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00013", 
+        "publisher_name": "Scientific American Press", 
+        "year": "1992", 
+        "publication-type": "book", 
+        "source": "Chemical communication", 
+        "authors": [
+            {
+                "surname": "Agosta", 
+                "given-names": "WC", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 1, 
+        "ref": "AgostaWC1992Chemical communicationScientific American PressNew York", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil", 
+        "lpage": "992", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Ahmed", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yokota", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fujiwara", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil", 
+        "publication-type": "journal", 
+        "volume": "57", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "986", 
+        "year": "2007", 
+        "position": 2, 
+        "ref": "AhmedIYokotaAFujiwaraT2007Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soilInt J Syst Evol Microbiol57986992", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Algoriphagus machipongonensis sp. nov. co-isolated with a colonial choanoflagellate", 
+        "comment": "[epub ahead of print]", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Alegado", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grabenstatter", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zuzow", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morris", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Summons", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus machipongonensis sp. nov. co-isolated with a colonial choanoflagellate", 
+        "publication-type": "journal", 
+        "source": "Int J Syst Evol Microbiol", 
+        "year": "2012", 
+        "position": 3, 
+        "ref": "AlegadoRAGrabenstatterJDZuzowRMorrisAHuangSYSummonsREKingN2012Algoriphagus machipongonensis sp. nov. co-isolated with a colonial choanoflagellateInt J Syst Evol Microbiol[epub ahead of print]", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Membrane sphingolipids as essential molecular signals for Bacteroides survival in the intestine", 
+        "lpage": "4671", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "An", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Na", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bielawski", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hannun", 
+                "given-names": "YA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasper", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Membrane sphingolipids as essential molecular signals for Bacteroides survival in the intestine", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "4666", 
+        "year": "2011", 
+        "position": 4, 
+        "ref": "AnDNaCBielawskiJHannunYAKasperDL2011Membrane sphingolipids as essential molecular signals for Bacteroides survival in the intestineProc Natl Acad Sci U S A108 Suppl146664671", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Salinibacter ruber gen. nov., sp nov., a novel, extremely halophilic member of the bacteria from saltern crystallizer ponds", 
+        "lpage": "491", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Anton", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oren", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Benlloch", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rodriguez-Valera", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Amann", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rossello-Mora", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Salinibacter ruber gen. nov., sp nov., a novel, extremely halophilic member of the bacteria from saltern crystallizer ponds", 
+        "publication-type": "journal", 
+        "volume": "52", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "485", 
+        "year": "2002", 
+        "position": 5, 
+        "ref": "AntonJOrenABenllochSRodriguez-ValeraFAmannRRossello-MoraR2002Salinibacter ruber gen. nov., sp nov., a novel, extremely halophilic member of the bacteria from saltern crystallizer pondsInt J Syst Evol Microbiol52485491", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Isolation and characterization of lipopolysaccharides", 
+        "lpage": "13", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Apicella", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Isolation and characterization of lipopolysaccharides", 
+        "publication-type": "journal", 
+        "volume": "431", 
+        "source": "Methods Mol Biol", 
+        "fpage": "3", 
+        "year": "2008", 
+        "position": 6, 
+        "ref": "ApicellaMA2008Isolation and characterization of lipopolysaccharidesMethods Mol Biol431313", 
+        "id": "bib6"
+    }, 
+    {
+        "comment": "p.", 
+        "publisher_loc": "Boca Raton", 
+        "article_doi": "10.7554/eLife.00013", 
+        "publisher_name": "CRC", 
+        "year": "2004", 
+        "publication-type": "book", 
+        "source": "Handbook of microbiological media", 
+        "fpage": "2051", 
+        "authors": [
+            {
+                "surname": "Atlas", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 7, 
+        "ref": "AtlasRM2004Handbook of microbiological mediap.2051Boca RatonCRC", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Zobellia galactanovorans gen. nov., sp. nov., a marine species of Flavobacteriaceae isolated from a red alga, and classification of [Cytophaga] uliginosa (ZoBell and Upham 1944) Reichenbach 1989 as Zobellia uliginosa gen. nov., comb. nov", 
+        "lpage": "997", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Barbeyron", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "L\u2019Haridon", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Corre", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kloareg", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potin", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Zobellia galactanovorans gen. nov., sp. nov., a marine species of Flavobacteriaceae isolated from a red alga, and classification of [Cytophaga] uliginosa (ZoBell and Upham 1944) Reichenbach 1989 as Zobellia uliginosa gen. nov., comb. nov", 
+        "publication-type": "journal", 
+        "volume": "51", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "985", 
+        "year": "2001", 
+        "position": 8, 
+        "ref": "BarbeyronTL\u2019HaridonSCorreEKloaregBPotinP2001Zobellia galactanovorans gen. nov., sp. nov., a marine species of Flavobacteriaceae isolated from a red alga, and classification of [Cytophaga] uliginosa (ZoBell and Upham 1944) Reichenbach 1989 as Zobellia uliginosa gen. nov., comb. novInt J Syst Evol Microbiol51Pt 3985997", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Cutting a Gordian knot: Emended classification and description of the genus Flavobacterium, emended description of the family Flavobacteriaceae, and proposal of Flavobacterium hydatis nom nov (basonym, Cytophaga aquatilis Strohl and Tait 1978)", 
+        "lpage": "148", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Bernardet", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Segers", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vancanneyt", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berthe", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kersters", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vandamme", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cutting a Gordian knot: Emended classification and description of the genus Flavobacterium, emended description of the family Flavobacteriaceae, and proposal of Flavobacterium hydatis nom nov (basonym, Cytophaga aquatilis Strohl and Tait 1978)", 
+        "publication-type": "journal", 
+        "volume": "46", 
+        "source": "Int J Syst Bacteriol", 
+        "fpage": "128", 
+        "year": "1996", 
+        "position": 9, 
+        "ref": "BernardetJSegersPVancanneytMBertheFKerstersKVandammeP1996Cutting a Gordian knot: Emended classification and description of the genus Flavobacterium, emended description of the family Flavobacteriaceae, and proposal of Flavobacterium hydatis nom nov (basonym, Cytophaga aquatilis Strohl and Tait 1978)Int J Syst Bacteriol46128148", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "The complete genome sequence of Escherichia coli K-12", 
+        "lpage": "1462", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Blattner", 
+                "given-names": "FR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plankett", 
+                "given-names": "G", 
+                "group-type": "author", 
+                "suffix": "III"
+            }, 
+            {
+                "surname": "Bloch", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Perna", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burland", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Riley", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Collado-Vides", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glasner", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rode", 
+                "given-names": "CK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mayhew", 
+                "given-names": "GF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The complete genome sequence of Escherichia coli K-12", 
+        "publication-type": "journal", 
+        "volume": "277", 
+        "source": "Science", 
+        "fpage": "1453", 
+        "year": "1997", 
+        "etal": true, 
+        "position": 10, 
+        "ref": "BlattnerFRPlankettGIIIBlochCAPernaNBurlandVRileyMCollado-VidesJGlasnerJDRodeCKMayhewGF1997The complete genome sequence of Escherichia coli K-12Science27714531462", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "A rapid method of total lipid extraction and purification", 
+        "lpage": "917", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Bligh", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dyer", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A rapid method of total lipid extraction and purification", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Can J Biochem Physiol", 
+        "fpage": "911", 
+        "year": "1959", 
+        "position": 11, 
+        "ref": "BlighEGDyerWJ1959A rapid method of total lipid extraction and purificationCan J Biochem Physiol37911917", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Algoriphagus ratkowskyi gen. nov., sp. nov., Brumimicrobium glaciale gen. nov., sp. nov., Cryomorpha ignava gen. nov., sp. nov. and Crocinitomix catalasitica gen. nov., sp. nov., novel flavobacteria isolated from various polar habitats", 
+        "lpage": "1355", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Bowman", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nichols", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gibson", 
+                "given-names": "JAE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus ratkowskyi gen. nov., sp. nov., Brumimicrobium glaciale gen. nov., sp. nov., Cryomorpha ignava gen. nov., sp. nov. and Crocinitomix catalasitica gen. nov., sp. nov., novel flavobacteria isolated from various polar habitats", 
+        "publication-type": "journal", 
+        "volume": "53", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1343", 
+        "year": "2003", 
+        "position": 12, 
+        "ref": "BowmanJPNicholsCMGibsonJAE2003Algoriphagus ratkowskyi gen. nov., sp. nov., Brumimicrobium glaciale gen. nov., sp. nov., Cryomorpha ignava gen. nov., sp. nov. and Crocinitomix catalasitica gen. nov., sp. nov., novel flavobacteria isolated from various polar habitatsInt J Syst Evol Microbiol53Pt 513431355", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Fast statistical alignment", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Bradley", 
+                "given-names": "RK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roberts", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smoot", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Juvekar", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Do", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dewey", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holmes", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pachter", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Fast statistical alignment", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "PLoS Comput Biol", 
+        "fpage": "e1000392", 
+        "year": "2009", 
+        "position": 13, 
+        "ref": "BradleyRKRobertsASmootMJuvekarSDoJDeweyCHolmesIPachterL2009Fast statistical alignmentPLoS Comput Biol5e1000392", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea", 
+        "lpage": "2341", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Brettar", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Christen", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hofle", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "2335", 
+        "year": "2004a", 
+        "position": 14, 
+        "ref": "BrettarIChristenRHofleM2004aAquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic SeaInt J Syst Evol Microbiol5423352341", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea", 
+        "lpage": "70", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Brettar", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Christen", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hofle", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "65", 
+        "year": "2004b", 
+        "position": 15, 
+        "ref": "BrettarIChristenRHofleMG2004bBelliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic SeaInt J Syst Evol Microbiol54Pt 16570", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Induced biochemical mutations in Bacillus subtilis", 
+        "lpage": "348", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Burkholder", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giles", 
+                "given-names": "NH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Induced biochemical mutations in Bacillus subtilis", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Am J Bot", 
+        "fpage": "345", 
+        "year": "1947", 
+        "position": 16, 
+        "ref": "BurkholderPRGilesNH1947Induced biochemical mutations in Bacillus subtilisAm J Bot34345348", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "On the sex attractant of silk-moths. I. The biological test and the isolation of the pure sex-attractant bombykol", 
+        "lpage": "83", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Butenandt", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beckmann", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hecker", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "On the sex attractant of silk-moths. I. The biological test and the isolation of the pure sex-attractant bombykol", 
+        "publication-type": "journal", 
+        "volume": "324", 
+        "source": "Hoppe-Seylers Z Physiol Chem", 
+        "fpage": "71", 
+        "year": "1961", 
+        "position": 17, 
+        "ref": "ButenandtABeckmannRHeckerE1961On the sex attractant of silk-moths. I. The biological test and the isolation of the pure sex-attractant bombykolHoppe-Seylers Z Physiol Chem3247183", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "Factors influencing the plate method for determining abundance of bacteria in sea water", 
+        "lpage": "394", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Carlucci", 
+                "given-names": "AF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pramer", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Factors influencing the plate method for determining abundance of bacteria in sea water", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "Proc Soc Exp Biol Med", 
+        "fpage": "392", 
+        "year": "1957", 
+        "position": 18, 
+        "ref": "CarlucciAFPramerD1957Factors influencing the plate method for determining abundance of bacteria in sea waterProc Soc Exp Biol Med96392394", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Molecular phylogeny of choanoflagellates, the sister group to Metazoa", 
+        "lpage": "16646", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Carr", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbeater", 
+                "given-names": "BSC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hassan", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldauf", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular phylogeny of choanoflagellates, the sister group to Metazoa", 
+        "publication-type": "journal", 
+        "volume": "105", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "16641", 
+        "year": "2008", 
+        "position": 19, 
+        "ref": "CarrMLeadbeaterBSCHassanRNelsonMBaldaufSL2008Molecular phylogeny of choanoflagellates, the sister group to MetazoaProc Natl Acad Sci U S A1051664116646", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis", 
+        "lpage": "552", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Castresana", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Mol Biol Evol", 
+        "fpage": "540", 
+        "year": "2000", 
+        "position": 20, 
+        "ref": "CastresanaJ2000Selection of conserved blocks from multiple alignments for their use in phylogenetic analysisMol Biol Evol17540552", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "Extensive DNA inversions in the B. fragilis genome control variable gene expression.", 
+        "lpage": "1465", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Cerdeno-Tarraga", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Patrick", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Crossman", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blakely", 
+                "given-names": "GW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abratt", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lennard", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Poxton", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Duerden", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Quail", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blakely", 
+                "given-names": "GW", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Extensive DNA inversions in the B. fragilis genome control variable gene expression.", 
+        "publication-type": "journal", 
+        "volume": "307", 
+        "source": "Science", 
+        "fpage": "1463", 
+        "year": "2005", 
+        "etal": true, 
+        "position": 21, 
+        "ref": "Cerdeno-TarragaAMPatrickSCrossmanLBlakelyGWAbrattVLennardNPoxtonIDuerdenBHarrisBQuailMA2005Extensive DNA inversions in the B. fragilis genome control variable gene expression.BlakelyGWScience30714631465", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Dyadobacter fermentans gen. nov., sp nov., a novel gram-negative bacterium isolated from surface-sterilized Zea mays stems", 
+        "lpage": "758", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Chelius", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Triplett", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dyadobacter fermentans gen. nov., sp nov., a novel gram-negative bacterium isolated from surface-sterilized Zea mays stems", 
+        "publication-type": "journal", 
+        "volume": "50", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "751", 
+        "year": "2000", 
+        "position": 22, 
+        "ref": "CheliusMTriplettE2000Dyadobacter fermentans gen. nov., sp nov., a novel gram-negative bacterium isolated from surface-sterilized Zea mays stemsInt J Syst Evol Microbiol50751758", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Croceibacter atlanticus gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae", 
+        "lpage": "83", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Cho", 
+                "given-names": "J-C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giovannoni", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Croceibacter atlanticus gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae", 
+        "publication-type": "journal", 
+        "volume": "26", 
+        "source": "Syst Appl Microbiol", 
+        "fpage": "76", 
+        "year": "2003", 
+        "position": 23, 
+        "ref": "ChoJ-CGiovannoniSJ2003Croceibacter atlanticus gen. nov., sp. nov., a novel marine bacterium in the family FlavobacteriaceaeSyst Appl Microbiol267683", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Robiginitalea biformata gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae with a higher G+C content", 
+        "lpage": "1106", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Cho", 
+                "given-names": "J-C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giovannoni", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Robiginitalea biformata gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae with a higher G+C content", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1101", 
+        "year": "2004", 
+        "position": 24, 
+        "ref": "ChoJ-CGiovannoniSJ2004Robiginitalea biformata gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae with a higher G+C contentInt J Syst Evol Microbiol54Pt 411011106", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Functional and metabolic properties of polymorphonuclear leucocytes. II. The influence of a lipopolysaccharide endotoxin", 
+        "lpage": "704", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Cohn", 
+                "given-names": "ZA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morse", 
+                "given-names": "SI", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Functional and metabolic properties of polymorphonuclear leucocytes. II. The influence of a lipopolysaccharide endotoxin", 
+        "publication-type": "journal", 
+        "volume": "111", 
+        "source": "J Exp Med", 
+        "fpage": "689", 
+        "year": "1960", 
+        "position": 25, 
+        "ref": "CohnZAMorseSI1960Functional and metabolic properties of polymorphonuclear leucocytes. II. The influence of a lipopolysaccharide endotoxinJ Exp Med111689704", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Cell differentiation and morphogenesis in the colony-forming choanoflagellate Salpingoeca rosetta", 
+        "lpage": "82", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Dayel", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alegado", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fairclough", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Levin", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nichols", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McDonald", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cell differentiation and morphogenesis in the colony-forming choanoflagellate Salpingoeca rosetta", 
+        "publication-type": "journal", 
+        "volume": "357", 
+        "source": "Dev Biol", 
+        "fpage": "73", 
+        "year": "2011", 
+        "position": 26, 
+        "ref": "DayelMJAlegadoRAFaircloughSRLevinTCNicholsSAMcDonaldKKingN2011Cell differentiation and morphogenesis in the colony-forming choanoflagellate Salpingoeca rosettaDev Biol3577382", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Greengenes, a chimera-checked 16S rRNA gene database and workbench compatible with ARB", 
+        "lpage": "5072", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "DeSantis", 
+                "given-names": "TZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hugenholtz", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larsen", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rojas", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brodie", 
+                "given-names": "EL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keller", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huber", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dalevi", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hu", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Andersen", 
+                "given-names": "GL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Greengenes, a chimera-checked 16S rRNA gene database and workbench compatible with ARB", 
+        "publication-type": "journal", 
+        "volume": "72", 
+        "source": "Appl Environ Microbiol", 
+        "fpage": "5069", 
+        "year": "2006", 
+        "position": 27, 
+        "ref": "DeSantisTZHugenholtzPLarsenNRojasMBrodieELKellerKHuberTDaleviDHuPAndersenGL2006Greengenes, a chimera-checked 16S rRNA gene database and workbench compatible with ARBAppl Environ Microbiol7250695072", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Root nodulation: A paradigm for how plant-microbe symbiosis influences host developmental pathways", 
+        "lpage": "358", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Desbrosses", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stougaard", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Root nodulation: A paradigm for how plant-microbe symbiosis influences host developmental pathways", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Cell Host Microbe", 
+        "fpage": "348", 
+        "year": "2011", 
+        "position": 28, 
+        "ref": "DesbrossesGJStougaardJ2011Root nodulation: A paradigm for how plant-microbe symbiosis influences host developmental pathwaysCell Host Microbe10348358", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Sulfonolipid content of Cytophaga and Flexibacter species isolated from soil and cultured under different nutrient and temperature regimes", 
+        "lpage": "139", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Drijber", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McGill", 
+                "given-names": "W", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sulfonolipid content of Cytophaga and Flexibacter species isolated from soil and cultured under different nutrient and temperature regimes", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Can J Microbiol", 
+        "fpage": "132", 
+        "year": "1994", 
+        "position": 29, 
+        "ref": "DrijberRMcGillW1994Sulfonolipid content of Cytophaga and Flexibacter species isolated from soil and cultured under different nutrient and temperature regimesCan J Microbiol40132139", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Listeria monocytogenes L forms. I. Induction maintenance, and biological characteristics", 
+        "lpage": "357", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Edman", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pollock", 
+                "given-names": "MB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hall", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Listeria monocytogenes L forms. I. Induction maintenance, and biological characteristics", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "J Bacteriol", 
+        "fpage": "352", 
+        "year": "1968", 
+        "position": 30, 
+        "ref": "EdmanDCPollockMBHallER1968Listeria monocytogenes L forms. I. Induction maintenance, and biological characteristicsJ Bacteriol96352357", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Multicellular development in a choanoflagellate", 
+        "lpage": "R876", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Fairclough", 
+                "given-names": "SR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dayel", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Multicellular development in a choanoflagellate", 
+        "publication-type": "journal", 
+        "volume": "20", 
+        "source": "Curr Biol", 
+        "fpage": "R875", 
+        "year": "2010", 
+        "position": 31, 
+        "ref": "FaircloughSRDayelMJKingN2010Multicellular development in a choanoflagellateCurr Biol20R875R876", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "PHYLIP\u2014Phylogeny inference packages (version 3.2)", 
+        "lpage": "166", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Falenstein", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PHYLIP\u2014Phylogeny inference packages (version 3.2)", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Cladistics", 
+        "fpage": "164", 
+        "year": "1989", 
+        "position": 32, 
+        "ref": "FalensteinJ1989PHYLIP\u2014Phylogeny inference packages (version 3.2)Cladistics5164166", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "The two-component signaling pathway of bacterial chemotaxis: A molecular view of signal transduction by receptors, kinases, and adaptation enzymes", 
+        "lpage": "512", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Falke", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bass", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butler", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chervitz", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Danielson", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The two-component signaling pathway of bacterial chemotaxis: A molecular view of signal transduction by receptors, kinases, and adaptation enzymes", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Annu Rev Cell Dev Biol", 
+        "fpage": "457", 
+        "year": "1997", 
+        "position": 33, 
+        "ref": "FalkeJJBassRBButlerSLChervitzSADanielsonMA1997The two-component signaling pathway of bacterial chemotaxis: A molecular view of signal transduction by receptors, kinases, and adaptation enzymesAnnu Rev Cell Dev Biol13457512", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Is persistent bacterial infection good for your health?", 
+        "lpage": "702", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Falkow", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Is persistent bacterial infection good for your health?", 
+        "publication-type": "journal", 
+        "volume": "124", 
+        "source": "Cell", 
+        "fpage": "699", 
+        "year": "2006", 
+        "position": 34, 
+        "ref": "FalkowS2006Is persistent bacterial infection good for your health?Cell124699702", 
+        "id": "bib34"
+    }, 
+    {
+        "comment": "p.", 
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00013", 
+        "publisher_name": "Springer Verlag", 
+        "year": "2010", 
+        "publication-type": "book", 
+        "source": "Bergey\u2019s manual of systematic bacteriology: Bacteroidetes, spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres, fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia, chlamydiae, and planctomycetes", 
+        "fpage": "949", 
+        "authors": [
+            {
+                "surname": "Garrity", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 35, 
+        "ref": "GarrityGM2010Bergey\u2019s manual of systematic bacteriology: Bacteroidetes, spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres, fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia, chlamydiae, and planctomycetesp.949New YorkSpringer Verlag", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Capnocytophaga spp. contain sulfonolipids that are novel in procaryotes", 
+        "lpage": "602", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Godchaux", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbetter", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Capnocytophaga spp. contain sulfonolipids that are novel in procaryotes", 
+        "publication-type": "journal", 
+        "volume": "144", 
+        "source": "J Bacteriol", 
+        "fpage": "592", 
+        "year": "1980", 
+        "position": 36, 
+        "ref": "GodchauxWLeadbetterER1980Capnocytophaga spp. contain sulfonolipids that are novel in procaryotesJ Bacteriol144592602", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Unusual sulfonolipids are characteristic of the Cytophaga-Flexibacter group", 
+        "lpage": "1246", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Godchaux", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbetter", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Unusual sulfonolipids are characteristic of the Cytophaga-Flexibacter group", 
+        "publication-type": "journal", 
+        "volume": "153", 
+        "source": "J Bacteriol", 
+        "fpage": "1238", 
+        "year": "1983", 
+        "position": 37, 
+        "ref": "GodchauxWLeadbetterER1983Unusual sulfonolipids are characteristic of the Cytophaga-Flexibacter groupJ Bacteriol15312381246", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Sulfonolipids of gliding bacteria. Structure of the N-acylaminosulfonates", 
+        "lpage": "2990", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Godchaux", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbetter", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sulfonolipids of gliding bacteria. Structure of the N-acylaminosulfonates", 
+        "publication-type": "journal", 
+        "volume": "259", 
+        "source": "J Biol Chem", 
+        "fpage": "2982", 
+        "year": "1984", 
+        "position": 38, 
+        "ref": "GodchauxWLeadbetterER1984Sulfonolipids of gliding bacteria. Structure of the N-acylaminosulfonatesJ Biol Chem25929822990", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Sulfonolipids are localized in the outer membrane of the gliding bacterium Cytophaga johnsonae", 
+        "lpage": "47", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Godchaux", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbetter", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sulfonolipids are localized in the outer membrane of the gliding bacterium Cytophaga johnsonae", 
+        "publication-type": "journal", 
+        "volume": "150", 
+        "source": "Arch Microbiol", 
+        "fpage": "42", 
+        "year": "1988", 
+        "position": 39, 
+        "ref": "GodchauxWLeadbetterE1988Sulfonolipids are localized in the outer membrane of the gliding bacterium Cytophaga johnsonaeArch Microbiol1504247", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Distribution and functions of sterols and sphingolipids", 
+        "comment": "pii: a004762", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Hannich", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Umebayashi", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Riezman", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Distribution and functions of sterols and sphingolipids", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Cold Spring Harb Perspect Biol", 
+        "year": "2011", 
+        "position": 40, 
+        "ref": "HannichJTUmebayashiKRiezmanH2011Distribution and functions of sterols and sphingolipidsCold Spring Harb Perspect Biol3pii: a00476210.1101/cshperspect.a004762", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Enzymes of sphingolipid metabolism: From modular to integrative signaling", 
+        "lpage": "4903", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Hannun", 
+                "given-names": "YA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luberto", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Argraves", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Enzymes of sphingolipid metabolism: From modular to integrative signaling", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Biochemistry", 
+        "fpage": "4893", 
+        "year": "2001", 
+        "position": 41, 
+        "ref": "HannunYALubertoCArgravesKM2001Enzymes of sphingolipid metabolism: From modular to integrative signalingBiochemistry4048934903", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "Sply regulation of sphingolipid signaling molecules is essential for Drosophila development", 
+        "lpage": "2453", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Herr", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fyrst", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Phan", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heinecke", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Georges", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "GL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saba", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sply regulation of sphingolipid signaling molecules is essential for Drosophila development", 
+        "publication-type": "journal", 
+        "volume": "130", 
+        "source": "Development", 
+        "fpage": "2443", 
+        "year": "2003", 
+        "position": 42, 
+        "ref": "HerrDRFyrstHPhanVHeineckeKGeorgesRHarrisGLSabaJD2003Sply regulation of sphingolipid signaling molecules is essential for Drosophila developmentDevelopment13024432453", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "Observations on the ultrastructure of the choanoflagellate Codosiga botrytis (Ehr.) Saville-Kent with special reference to the flagellar apparatus", 
+        "lpage": "219", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Hibberd", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Observations on the ultrastructure of the choanoflagellate Codosiga botrytis (Ehr.) Saville-Kent with special reference to the flagellar apparatus", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "J Cell Sci", 
+        "fpage": "191", 
+        "year": "1975", 
+        "position": 43, 
+        "ref": "HibberdDJ1975Observations on the ultrastructure of the choanoflagellate Codosiga botrytis (Ehr.) Saville-Kent with special reference to the flagellar apparatusJ Cell Sci17191219", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Phylogenetic perspectives in innate immunity", 
+        "lpage": "1318", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Hoffmann", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kafatos", 
+                "given-names": "FC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Janeway", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ezekowitz", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Phylogenetic perspectives in innate immunity", 
+        "publication-type": "journal", 
+        "volume": "284", 
+        "source": "Science", 
+        "fpage": "1313", 
+        "year": "1999", 
+        "position": 44, 
+        "ref": "HoffmannJAKafatosFCJanewayCAEzekowitzRA1999Phylogenetic perspectives in innate immunityScience28413131318", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Inter-kingdom signalling: Communication between bacteria and their hosts", 
+        "lpage": "120", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Hughes", 
+                "given-names": "DT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sperandio", 
+                "given-names": "V", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Inter-kingdom signalling: Communication between bacteria and their hosts", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "Nat Rev Microbiol", 
+        "fpage": "111", 
+        "year": "2008", 
+        "position": 45, 
+        "ref": "HughesDTSperandioV2008Inter-kingdom signalling: Communication between bacteria and their hostsNat Rev Microbiol6111120", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "On the spongiae ciliatae as infusoria flagellata; or observations on the structure, animality, and relationship of Leucosolenia botryoides, Bowerbank.", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "James-Clark", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "On the spongiae ciliatae as infusoria flagellata; or observations on the structure, animality, and relationship of Leucosolenia botryoides, Bowerbank.", 
+        "publication-type": "journal", 
+        "source": "Memoirs Boston Soc. Of Nat. Hist", 
+        "year": "1867", 
+        "position": 46, 
+        "ref": "James-ClarkH1867On the spongiae ciliatae as infusoria flagellata; or observations on the structure, animality, and relationship of Leucosolenia botryoides, Bowerbank.Memoirs Boston Soc. Of Nat. Hist. I, two plates", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "Peptidoglycan composition in heterogeneous Tn551 mutants of a methicillin-resistant Staphylococcus aureus strain", 
+        "lpage": "11259", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "de Jonge", 
+                "given-names": "BL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chang", 
+                "given-names": "YS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gage", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tomasz", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Peptidoglycan composition in heterogeneous Tn551 mutants of a methicillin-resistant Staphylococcus aureus strain", 
+        "publication-type": "journal", 
+        "volume": "267", 
+        "source": "J Biol Chem", 
+        "fpage": "11255", 
+        "year": "1992", 
+        "position": 47, 
+        "ref": "de JongeBLChangYSGageDTomaszA1992Peptidoglycan composition in heterogeneous Tn551 mutants of a methicillin-resistant Staphylococcus aureus strainJ Biol Chem2671125511259", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Sulfobacins A and B, novel von Willebrand factor receptor antagonists. II. Structural elucidation", 
+        "lpage": "936", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kamiyama", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Umino", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Itezono", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakamura", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Satoh", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yokose", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sulfobacins A and B, novel von Willebrand factor receptor antagonists. II. Structural elucidation", 
+        "publication-type": "journal", 
+        "volume": "48", 
+        "source": "J Antibiot", 
+        "fpage": "929", 
+        "year": "1995a", 
+        "position": 48, 
+        "ref": "KamiyamaTUminoTItezonoYNakamuraYSatohTYokoseK1995aSulfobacins A and B, novel von Willebrand factor receptor antagonists. II. Structural elucidationJ Antibiot48929936", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Sulfobacins A and B, novel von Willebrand factor receptor antagonists. I. Production, isolation, characterization and biological activities", 
+        "lpage": "928", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kamiyama", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Umino", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Satoh", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sawairi", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shirane", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ohshima", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yokose", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sulfobacins A and B, novel von Willebrand factor receptor antagonists. I. Production, isolation, characterization and biological activities", 
+        "publication-type": "journal", 
+        "volume": "48", 
+        "source": "J. Antibiot", 
+        "fpage": "924", 
+        "year": "1995b", 
+        "position": 49, 
+        "ref": "KamiyamaTUminoTSatohTSawairiSShiraneMOhshimaSYokoseK1995bSulfobacins A and B, novel von Willebrand factor receptor antagonists. I. Production, isolation, characterization and biological activitiesJ. Antibiot48924928", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "A revision of choanoflagellate genera Kentrosiga, Schiller, 1953 and Desmarella, Kent, 1880", 
+        "lpage": "27", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Karpov", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Coupe", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A revision of choanoflagellate genera Kentrosiga, Schiller, 1953 and Desmarella, Kent, 1880", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Acta Protozoologica", 
+        "fpage": "23", 
+        "year": "1998", 
+        "position": 50, 
+        "ref": "KarpovSACoupeSJ1998A revision of choanoflagellate genera Kentrosiga, Schiller, 1953 and Desmarella, Kent, 1880Acta Protozoologica372327", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "The evolution and genetics of innate immunity", 
+        "lpage": "267", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kimbrell", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beutler", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The evolution and genetics of innate immunity", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Nat Rev Genet", 
+        "fpage": "256", 
+        "year": "2001", 
+        "position": 51, 
+        "ref": "KimbrellDABeutlerB2001The evolution and genetics of innate immunityNat Rev Genet2256267", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "The unicellular ancestry of animal development", 
+        "lpage": "325", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The unicellular ancestry of animal development", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Dev Cell", 
+        "fpage": "313", 
+        "year": "2004", 
+        "position": 52, 
+        "ref": "KingN2004The unicellular ancestry of animal developmentDev Cell7313325", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "A receptor tyrosine kinase from choanoflagellates: Molecular insights into early animal evolution", 
+        "lpage": "15037", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carroll", 
+                "given-names": "SB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A receptor tyrosine kinase from choanoflagellates: Molecular insights into early animal evolution", 
+        "publication-type": "journal", 
+        "volume": "98", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "15032", 
+        "year": "2001", 
+        "position": 53, 
+        "ref": "KingNCarrollSB2001A receptor tyrosine kinase from choanoflagellates: Molecular insights into early animal evolutionProc Natl Acad Sci U S A981503215037", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Evolution of key cell signaling and adhesion protein families predates animal origins", 
+        "lpage": "363", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hittinger", 
+                "given-names": "CT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carroll", 
+                "given-names": "SB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of key cell signaling and adhesion protein families predates animal origins", 
+        "publication-type": "journal", 
+        "volume": "301", 
+        "source": "Science", 
+        "fpage": "361", 
+        "year": "2003", 
+        "position": 54, 
+        "ref": "KingNHittingerCTCarrollSB2003Evolution of key cell signaling and adhesion protein families predates animal originsScience301361363", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoans", 
+        "lpage": "788", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Westbrook", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Young", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kuo", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abedin", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapman", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fairclough", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hellsten", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Isogai", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoans", 
+        "publication-type": "journal", 
+        "volume": "451", 
+        "source": "Nature", 
+        "fpage": "783", 
+        "year": "2008", 
+        "etal": true, 
+        "position": 55, 
+        "ref": "KingNWestbrookMJYoungSLKuoAAbedinMChapmanJFaircloughSHellstenUIsogaiY2008The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoansNature451783788", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "Starting and maintaining Monosiga brevicollis cultures", 
+        "comment": "2009: pdb.prot5148", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "King", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Young", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abedin", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carr", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leadbeater", 
+                "given-names": "BSC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Starting and maintaining Monosiga brevicollis cultures", 
+        "publication-type": "journal", 
+        "source": "Cold Spring Harb Protoc", 
+        "year": "2009", 
+        "position": 56, 
+        "ref": "KingNYoungSLAbedinMCarrMLeadbeaterBSC2009Starting and maintaining Monosiga brevicollis culturesCold Spring Harb Protoc2009: pdb.prot5148", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "Flavocristamides A and B, new DNA polymerase \u03b1 inhibitors from a marine bacterium sp", 
+        "lpage": "10490", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kobayashi", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mikami", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shigemori", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takao", 
+                "given-names": "TYS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Izuta", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yoshida", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Flavocristamides A and B, new DNA polymerase \u03b1 inhibitors from a marine bacterium sp", 
+        "publication-type": "journal", 
+        "volume": "51", 
+        "source": "Tetrahedron", 
+        "fpage": "10487", 
+        "year": "1995", 
+        "position": 57, 
+        "ref": "KobayashiJMikamiSShigemoriHTakaoTYSIzutaSYoshidaS1995Flavocristamides A and B, new DNA polymerase \u03b1 inhibitors from a marine bacterium spTetrahedron511048710490", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "The Toll-receptor family and control of innate immunity", 
+        "lpage": "18", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kopp", 
+                "given-names": "EB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Medzhitov", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The Toll-receptor family and control of innate immunity", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Curr Opin Immunol", 
+        "fpage": "13", 
+        "year": "1999", 
+        "position": 58, 
+        "ref": "KoppEBMedzhitovR1999The Toll-receptor family and control of innate immunityCurr Opin Immunol111318", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Microbial factor-mediated development in a host-bacterial mutualism", 
+        "lpage": "1188", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Koropatnick", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Engle", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Apicella", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stabb", 
+                "given-names": "EV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goldman", 
+                "given-names": "WE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mcfall-Ngai", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Microbial factor-mediated development in a host-bacterial mutualism", 
+        "publication-type": "journal", 
+        "volume": "306", 
+        "source": "Science", 
+        "fpage": "1186", 
+        "year": "2004", 
+        "position": 59, 
+        "ref": "KoropatnickTAEngleJTApicellaMAStabbEVGoldmanWEMcfall-NgaiMJ2004Microbial factor-mediated development in a host-bacterial mutualismScience30611861188", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "Effects of forming multicellular colonies or attaching to surfaces on feeding rates of the choanoflagellate Salpingoeca rosetta", 
+        "publisher_loc": "Berkeley", 
+        "article_doi": "10.7554/eLife.00013", 
+        "publisher_name": "University of California", 
+        "authors": [
+            {
+                "surname": "Kreft", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Koehl", 
+                "given-names": "M", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Effects of forming multicellular colonies or attaching to surfaces on feeding rates of the choanoflagellate Salpingoeca rosetta", 
+        "publication-type": "book", 
+        "source": "Thesis (M.A. in Integrative Biology)", 
+        "year": "2010", 
+        "position": 60, 
+        "ref": "KreftJM2010Effects of forming multicellular colonies or attaching to surfaces on feeding rates of the choanoflagellate Salpingoeca rosettaKoehlMThesis (M.A. in Integrative Biology)University of CaliforniaBerkeley", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "The complete genome sequence of the gram-positive bacterium Bacillus subtilis", 
+        "lpage": "256", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Kunst", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ogasawara", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moszer", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Albertini", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alloni", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Azevedo", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bertero", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bessi\u00e8res", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolotin", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Borchert", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The complete genome sequence of the gram-positive bacterium Bacillus subtilis", 
+        "publication-type": "journal", 
+        "volume": "390", 
+        "source": "Nature", 
+        "fpage": "249", 
+        "year": "1997", 
+        "etal": true, 
+        "position": 61, 
+        "ref": "KunstFOgasawaraNMoszerIAlbertiniAMAlloniGAzevedoVBerteroMGBessi\u00e8resPBolotinABorchertS1997The complete genome sequence of the gram-positive bacterium Bacillus subtilisNature390249256", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "Life-history and ultrastructure of a new marine species of Proterospongia (Choanoflagellida)", 
+        "lpage": "160", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Leadbeater", 
+                "given-names": "BSC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Life-history and ultrastructure of a new marine species of Proterospongia (Choanoflagellida)", 
+        "publication-type": "journal", 
+        "volume": "63", 
+        "source": "J Mar Biol Assoc UK", 
+        "fpage": "135", 
+        "year": "1983", 
+        "position": 62, 
+        "ref": "LeadbeaterBSC1983Life-history and ultrastructure of a new marine species of Proterospongia (Choanoflagellida)J Mar Biol Assoc UK63135160", 
+        "id": "bib62"
+    }, 
+    {
+        "article_title": "Has the microbiota played a critical role in the evolution of the adaptive immune system?", 
+        "lpage": "1773", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Lee", 
+                "given-names": "YK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mazmanian", 
+                "given-names": "SK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Has the microbiota played a critical role in the evolution of the adaptive immune system?", 
+        "publication-type": "journal", 
+        "volume": "330", 
+        "source": "Science", 
+        "fpage": "1768", 
+        "year": "2010", 
+        "position": 63, 
+        "ref": "LeeYKMazmanianSK2010Has the microbiota played a critical role in the evolution of the adaptive immune system?Science33017681773", 
+        "id": "bib63"
+    }, 
+    {
+        "article_title": "A classification of flexibacteria", 
+        "lpage": "206", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Lewin", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A classification of flexibacteria", 
+        "publication-type": "journal", 
+        "volume": "58", 
+        "source": "J Gen Microbiol", 
+        "fpage": "189", 
+        "year": "1969", 
+        "position": 64, 
+        "ref": "LewinR1969A classification of flexibacteriaJ Gen Microbiol58189206", 
+        "id": "bib64"
+    }, 
+    {
+        "article_title": "Complete genome sequence of the facultative anaerobic magnetotactic bacterium Magnetospirillum sp. strain AMB-1", 
+        "lpage": "166", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Matsunaga", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Okamura", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fukuda", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wahyudi", 
+                "given-names": "AT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murase", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takeyama", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Complete genome sequence of the facultative anaerobic magnetotactic bacterium Magnetospirillum sp. strain AMB-1", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "DNA Res", 
+        "fpage": "157", 
+        "year": "2005", 
+        "position": 65, 
+        "ref": "MatsunagaTOkamuraYFukudaYWahyudiATMuraseYTakeyamaH2005Complete genome sequence of the facultative anaerobic magnetotactic bacterium Magnetospirillum sp. strain AMB-1DNA Res12157166", 
+        "id": "bib65"
+    }, 
+    {
+        "article_title": "Isolation and phylogenetic characterization of bacteria capable of inducing differentiation in the green alga Monostroma oxyspermum", 
+        "lpage": "35", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Matsuo", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Suzuki", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasai", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shizuri", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harayama", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Isolation and phylogenetic characterization of bacteria capable of inducing differentiation in the green alga Monostroma oxyspermum", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "Environ Microbiol", 
+        "fpage": "25", 
+        "year": "2003", 
+        "position": 66, 
+        "ref": "MatsuoYSuzukiMKasaiHShizuriYHarayamaS2003Isolation and phylogenetic characterization of bacteria capable of inducing differentiation in the green alga Monostroma oxyspermumEnviron Microbiol52535", 
+        "id": "bib66"
+    }, 
+    {
+        "article_title": "Isolation of an algal morphogenesis inducer from a marine bacterium", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Matsuo", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Imagawa", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nishizawa", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shizuri", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Isolation of an algal morphogenesis inducer from a marine bacterium", 
+        "publication-type": "journal", 
+        "volume": "307", 
+        "source": "Science", 
+        "fpage": "1598", 
+        "year": "2005", 
+        "position": 67, 
+        "ref": "MatsuoYImagawaHNishizawaMShizuriY2005Isolation of an algal morphogenesis inducer from a marine bacteriumScience3071598", 
+        "id": "bib67"
+    }, 
+    {
+        "article_title": "An immunomodulatory molecule of symbiotic bacteria directs maturation of the host immune system", 
+        "lpage": "118", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Mazmanian", 
+                "given-names": "SK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "CH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tzianabos", 
+                "given-names": "AO", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasper", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An immunomodulatory molecule of symbiotic bacteria directs maturation of the host immune system", 
+        "publication-type": "journal", 
+        "volume": "122", 
+        "source": "Cell", 
+        "fpage": "107", 
+        "year": "2005", 
+        "position": 68, 
+        "ref": "MazmanianSKLiuCHTzianabosAOKasperDL2005An immunomodulatory molecule of symbiotic bacteria directs maturation of the host immune systemCell122107118", 
+        "id": "bib68"
+    }, 
+    {
+        "article_title": "A microbial symbiosis factor prevents intestinal inflammatory disease", 
+        "lpage": "625", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Mazmanian", 
+                "given-names": "SK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Round", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasper", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A microbial symbiosis factor prevents intestinal inflammatory disease", 
+        "publication-type": "journal", 
+        "volume": "453", 
+        "source": "Nature", 
+        "fpage": "620", 
+        "year": "2008", 
+        "position": 69, 
+        "ref": "MazmanianSKRoundJLKasperDL2008A microbial symbiosis factor prevents intestinal inflammatory diseaseNature453620625", 
+        "id": "bib69"
+    }, 
+    {
+        "article_title": "Consequences of evolving with bacterial symbionts: Insights from the squid-vibrio associations", 
+        "lpage": "256", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "McFall-Ngai", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Consequences of evolving with bacterial symbionts: Insights from the squid-vibrio associations", 
+        "publication-type": "journal", 
+        "volume": "30", 
+        "source": "Ann Rev Ecol Syst", 
+        "fpage": "235", 
+        "year": "1999", 
+        "position": 70, 
+        "ref": "McFall-NgaiM1999Consequences of evolving with bacterial symbionts: Insights from the squid-vibrio associationsAnn Rev Ecol Syst30235256", 
+        "id": "bib70"
+    }, 
+    {
+        "article_title": "Innate immune recognition: Mechanisms and pathways", 
+        "lpage": "97", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Medzhitov", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Janeway", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Innate immune recognition: Mechanisms and pathways", 
+        "publication-type": "journal", 
+        "volume": "173", 
+        "source": "Immunol Rev", 
+        "fpage": "89", 
+        "year": "2000", 
+        "position": 71, 
+        "ref": "MedzhitovRJanewayC2000Innate immune recognition: Mechanisms and pathwaysImmunol Rev1738997", 
+        "id": "bib71"
+    }, 
+    {
+        "article_title": "Sphingolipid metabolism: Roles in signal transduction and disruption by fumonisins", 
+        "lpage": "289", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Merrill", 
+                "given-names": "AH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sullards", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Voss", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Riley", 
+                "given-names": "RT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sphingolipid metabolism: Roles in signal transduction and disruption by fumonisins", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Environ Health Perspect", 
+        "fpage": "283", 
+        "year": "2001", 
+        "position": 72, 
+        "ref": "MerrillAHSullardsMCWangEVossKARileyRT2001Sphingolipid metabolism: Roles in signal transduction and disruption by fumonisinsEnviron Health Perspect109 Suppl2283289", 
+        "id": "bib72"
+    }, 
+    {
+        "article_title": "Genome sequence of the dioxin-mineralizing bacterium Sphingomonas wittichii RW1", 
+        "lpage": "6102", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Miller", 
+                "given-names": "TR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Delcher", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salzberg", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saunders", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Detter", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halden", 
+                "given-names": "RU", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genome sequence of the dioxin-mineralizing bacterium Sphingomonas wittichii RW1", 
+        "publication-type": "journal", 
+        "volume": "192", 
+        "source": "J Bacteriol", 
+        "fpage": "6101", 
+        "year": "2010", 
+        "position": 73, 
+        "ref": "MillerTRDelcherALSalzbergSLSaundersEDetterJCHaldenRU2010Genome sequence of the dioxin-mineralizing bacterium Sphingomonas wittichii RW1J Bacteriol19261016102", 
+        "id": "bib73"
+    }, 
+    {
+        "article_title": "Characterisation of surface blebbing and membrane vesicles produced by Flavobacterium psychrophilum", 
+        "lpage": "209", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "M\u00f8ller", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barnes", 
+                "given-names": "AC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dalsgaard", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ellis", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Characterisation of surface blebbing and membrane vesicles produced by Flavobacterium psychrophilum", 
+        "publication-type": "journal", 
+        "volume": "64", 
+        "source": "Dis Aquat Organ", 
+        "fpage": "201", 
+        "year": "2005", 
+        "position": 74, 
+        "ref": "M\u00f8llerJDBarnesACDalsgaardIEllisAE2005Characterisation of surface blebbing and membrane vesicles produced by Flavobacterium psychrophilumDis Aquat Organ64201209", 
+        "id": "bib74"
+    }, 
+    {
+        "article_title": "Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman,", 
+        "lpage": "1764", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Nedashkovskaya", 
+                "given-names": "OI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vancanneyt", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Trappen", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vandemeulebroecke", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lysenko", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rohde", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Falsen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frolova", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mikhailov", 
+                "given-names": "VV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Swings", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman,", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1757", 
+        "year": "2004", 
+        "etal": true, 
+        "position": 75, 
+        "ref": "NedashkovskayaOIVancanneytMVan TrappenSVandemeulebroeckeKLysenkoAMRohdeMFalsenEFrolovaGMMikhailovVVSwingsJ2004Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman,. 2003 and Hongiella Yi and Chun 2004Int J Syst Evol Microbiol54Pt 517571764", 
+        "id": "bib75"
+    }, 
+    {
+        "article_title": "Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermedius", 
+        "lpage": "958", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Nedashkovskaya", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vancanneyt", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lysenko", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shin", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Park", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "KH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jung", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kalinovskaya", 
+                "given-names": "NI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mikhailov", 
+                "given-names": "VV", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermedius", 
+        "publication-type": "journal", 
+        "volume": "56", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "953", 
+        "year": "2006", 
+        "etal": true, 
+        "position": 76, 
+        "ref": "NedashkovskayaOKimSVancanneytMLysenkoAShinDParkMLeeKHJungWJKalinovskayaNIMikhailovVV2006Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermediusInt J Syst Evol Microbiol56953958", 
+        "id": "bib76"
+    }, 
+    {
+        "article_title": "Complete genome sequence of Caulobacter crescentus", 
+        "lpage": "4141", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Nierman", 
+                "given-names": "WC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Feldblyum", 
+                "given-names": "TV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laub", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paulsen", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nelson", 
+                "given-names": "KE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eisen", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heidelberg", 
+                "given-names": "JF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alley", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ohta", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maddock", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Complete genome sequence of Caulobacter crescentus", 
+        "publication-type": "journal", 
+        "volume": "98", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "4136", 
+        "year": "2001", 
+        "etal": true, 
+        "position": 77, 
+        "ref": "NiermanWCFeldblyumTVLaubMTPaulsenITNelsonKEEisenJAHeidelbergJFAlleyMROhtaNMaddockJR2001Complete genome sequence of Caulobacter crescentusProc Natl Acad Sci U S A9841364141", 
+        "id": "bib77"
+    }, 
+    {
+        "article_title": "Complete genome sequence of strain HTCC2170, a novel member of the genus Maribacter in the family Flavobacteriaceae", 
+        "lpage": "304", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Oh", 
+                "given-names": "H-M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "S-J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jang", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vergin", 
+                "given-names": "KL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giovannoni", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cho", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Complete genome sequence of strain HTCC2170, a novel member of the genus Maribacter in the family Flavobacteriaceae", 
+        "publication-type": "journal", 
+        "volume": "193", 
+        "source": "J Bacteriol", 
+        "fpage": "303", 
+        "year": "2011", 
+        "position": 78, 
+        "ref": "OhH-MKangIYangS-JJangYVerginKLGiovannoniSJChoJC2011Complete genome sequence of strain HTCC2170, a novel member of the genus Maribacter in the family FlavobacteriaceaeJ Bacteriol193303304", 
+        "id": "bib78"
+    }, 
+    {
+        "article_title": "Sphingolipids in bacteria and fungi", 
+        "lpage": "112", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Olsen", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jantzen", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sphingolipids in bacteria and fungi", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Anaerobe", 
+        "fpage": "103", 
+        "year": "2001", 
+        "position": 79, 
+        "ref": "OlsenIJantzenE2001Sphingolipids in bacteria and fungiAnaerobe7103112", 
+        "id": "bib79"
+    }, 
+    {
+        "article_title": "Sphingolipids: Second messengers, mediators and raft constituents in signaling", 
+        "lpage": "560", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Prieschl", 
+                "given-names": "EE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baumruker", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sphingolipids: Second messengers, mediators and raft constituents in signaling", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Immunol Today", 
+        "fpage": "555", 
+        "year": "2000", 
+        "position": 80, 
+        "ref": "PrieschlEEBaumrukerT2000Sphingolipids: Second messengers, mediators and raft constituents in signalingImmunol Today21555560", 
+        "id": "bib80"
+    }, 
+    {
+        "article_title": "Bacteria induced polymorphism in an axenic laboratory strain of Ulva lactuca (Chlorophyceae)", 
+        "lpage": "201", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Provasoli", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pintner", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Bacteria induced polymorphism in an axenic laboratory strain of Ulva lactuca (Chlorophyceae)", 
+        "publication-type": "journal", 
+        "volume": "16", 
+        "source": "J Phycol", 
+        "fpage": "196", 
+        "year": "1980", 
+        "position": 81, 
+        "ref": "ProvasoliLPintnerI1980Bacteria induced polymorphism in an axenic laboratory strain of Ulva lactuca (Chlorophyceae)J Phycol16196201", 
+        "id": "bib81"
+    }, 
+    {
+        "article_title": "Sphingosine 1-phosphate signalling in mammalian cells", 
+        "lpage": "402", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Pyne", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pyne", 
+                "given-names": "NJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sphingosine 1-phosphate signalling in mammalian cells", 
+        "publication-type": "journal", 
+        "volume": "349", 
+        "source": "Biochem J", 
+        "fpage": "385", 
+        "year": "2000", 
+        "position": 82, 
+        "ref": "PyneSPyneNJ2000Sphingosine 1-phosphate signalling in mammalian cellsBiochem J349Pt 2385402", 
+        "id": "bib82"
+    }, 
+    {
+        "article_title": "Proposal of Cyclobacterium-Marinus gen-nov, comb-nov for a marine bacterium previously assigned to the genus Flectobacillus", 
+        "lpage": "347", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Raj", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maloy", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Proposal of Cyclobacterium-Marinus gen-nov, comb-nov for a marine bacterium previously assigned to the genus Flectobacillus", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Int J Syst Bacteriol", 
+        "fpage": "337", 
+        "year": "1990", 
+        "position": 83, 
+        "ref": "RajHMaloyS1990Proposal of Cyclobacterium-Marinus gen-nov, comb-nov for a marine bacterium previously assigned to the genus FlectobacillusInt J Syst Bacteriol40337347", 
+        "id": "bib83"
+    }, 
+    {
+        "article_title": "Chemistry of sex attraction", 
+        "lpage": "49", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Roelofs", 
+                "given-names": "WL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chemistry of sex attraction", 
+        "publication-type": "journal", 
+        "volume": "92", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "44", 
+        "year": "1995", 
+        "position": 84, 
+        "ref": "RoelofsWL1995Chemistry of sex attractionProc Natl Acad Sci U S A924449", 
+        "id": "bib84"
+    }, 
+    {
+        "article_title": "Complete genome sequence of Vibrio fischeri: A symbiotic bacterium with pathogenic congeners", 
+        "lpage": "3009", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Ruby", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Urbanowski", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campbell", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dunn", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Faini", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gunsalus", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lostroh", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lupp", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCann", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Millikan", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Complete genome sequence of Vibrio fischeri: A symbiotic bacterium with pathogenic congeners", 
+        "publication-type": "journal", 
+        "volume": "102", 
+        "source": "Proc Natl Acad Sci U S A", 
+        "fpage": "3004", 
+        "year": "2005", 
+        "etal": true, 
+        "position": 85, 
+        "ref": "RubyEGUrbanowskiMCampbellJDunnAFainiMGunsalusRLostrohPLuppCMcCannJMillikanD2005Complete genome sequence of Vibrio fischeri: A symbiotic bacterium with pathogenic congenersProc Natl Acad Sci U S A10230043009", 
+        "id": "bib85"
+    }, 
+    {
+        "article_title": "A phylogenomic investigation into the origin of metazoa", 
+        "lpage": "672", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Ruiz-Trillo", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roger", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burger", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gray", 
+                "given-names": "MW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lang", 
+                "given-names": "BF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A phylogenomic investigation into the origin of metazoa", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Mol Biol Evol", 
+        "fpage": "664", 
+        "year": "2008", 
+        "position": 86, 
+        "ref": "Ruiz-TrilloIRogerAJBurgerGGrayMWLangBF2008A phylogenomic investigation into the origin of metazoaMol Biol Evol25664672", 
+        "id": "bib86"
+    }, 
+    {
+        "publisher_loc": "London", 
+        "article_doi": "10.7554/eLife.00013", 
+        "publisher_name": "David Bogue", 
+        "year": "1880", 
+        "publication-type": "book", 
+        "source": "A manual of the infusoria", 
+        "authors": [
+            {
+                "surname": "Saville Kent", 
+                "given-names": "W", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 87, 
+        "ref": "Saville KentW1880A manual of the infusoriaDavid BogueLondon", 
+        "id": "bib87"
+    }, 
+    {
+        "article_title": "Quorum sensing in Vibrio fischeri: Probing autoinducer-LuxR interactions with autoinducer analogs", 
+        "lpage": "2901", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Schaefer", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hanzelka", 
+                "given-names": "BL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eberhard", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greenberg", 
+                "given-names": "EP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Quorum sensing in Vibrio fischeri: Probing autoinducer-LuxR interactions with autoinducer analogs", 
+        "publication-type": "journal", 
+        "volume": "178", 
+        "source": "J Bacteriol", 
+        "fpage": "2897", 
+        "year": "1996", 
+        "position": 88, 
+        "ref": "SchaeferALHanzelkaBLEberhardAGreenbergEP1996Quorum sensing in Vibrio fischeri: Probing autoinducer-LuxR interactions with autoinducer analogsJ Bacteriol17828972901", 
+        "id": "bib88"
+    }, 
+    {
+        "article_title": "Sphingosine-1-phosphate: Signaling inside and out", 
+        "lpage": "57", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Spiegel", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Milstien", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Sphingosine-1-phosphate: Signaling inside and out", 
+        "publication-type": "journal", 
+        "volume": "476", 
+        "source": "FEBS Lett", 
+        "fpage": "55", 
+        "year": "2000", 
+        "position": 89, 
+        "ref": "SpiegelSMilstienS2000Sphingosine-1-phosphate: Signaling inside and outFEBS Lett4765557", 
+        "id": "bib89"
+    }, 
+    {
+        "article_title": "Transformation of biochemically deficient strains of Bacillus subtilis by deoxyribonucleate", 
+        "lpage": "1078", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Spizizen", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Transformation of biochemically deficient strains of Bacillus subtilis by deoxyribonucleate", 
+        "publication-type": "journal", 
+        "volume": "44", 
+        "source": "Proc Natl Acad Sci USA", 
+        "fpage": "1072", 
+        "year": "1958", 
+        "position": 90, 
+        "ref": "SpizizenJ1958Transformation of biochemically deficient strains of Bacillus subtilis by deoxyribonucleateProc Natl Acad Sci USA4410721078", 
+        "id": "bib90"
+    }, 
+    {
+        "article_title": "Differential roles of TLR2 and TLR4 in recognition of gram-negative and gram-positive bacterial cell wall components", 
+        "lpage": "451", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Takeuchi", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hoshino", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kawai", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sanjo", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takada", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ogawa", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takeda", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Akira", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Differential roles of TLR2 and TLR4 in recognition of gram-negative and gram-positive bacterial cell wall components", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Immunity", 
+        "fpage": "443", 
+        "year": "1999", 
+        "position": 91, 
+        "ref": "TakeuchiOHoshinoKKawaiTSanjoHTakadaHOgawaTTakedaKAkiraS1999Differential roles of TLR2 and TLR4 in recognition of gram-negative and gram-positive bacterial cell wall componentsImmunity11443451", 
+        "id": "bib91"
+    }, 
+    {
+        "article_title": "Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments", 
+        "lpage": "577", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Talavera", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Castresana", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignments", 
+        "publication-type": "journal", 
+        "volume": "56", 
+        "source": "Syst Biol", 
+        "fpage": "564", 
+        "year": "2007", 
+        "position": 92, 
+        "ref": "TalaveraGCastresanaJ2007Improvement of phylogenies after removing divergent and ambiguously aligned blocks from protein sequence alignmentsSyst Biol56564577", 
+        "id": "bib92"
+    }, 
+    {
+        "article_title": "Chimaereicella alkaliphila gen. nov., sp. nov., a Gram-negative alkaliphilic bacterium isolated from a nonsaline alkaline groundwater", 
+        "lpage": "108", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Tiago", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mendes", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pires", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morais", 
+                "given-names": "PV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ver\u00edssimo", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chimaereicella alkaliphila gen. nov., sp. nov., a Gram-negative alkaliphilic bacterium isolated from a nonsaline alkaline groundwater", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "Syst Appl Microbiol", 
+        "fpage": "100", 
+        "year": "2006", 
+        "position": 93, 
+        "ref": "TiagoIMendesVPiresCMoraisPVVer\u00edssimoA2006Chimaereicella alkaliphila gen. nov., sp. nov., a Gram-negative alkaliphilic bacterium isolated from a nonsaline alkaline groundwaterSyst Appl Microbiol29100108", 
+        "id": "bib93"
+    }, 
+    {
+        "article_title": "Algoriphagus antarcticus sp. nov., a novel psychrophile from microbial mats in Antarctic lakes", 
+        "lpage": "1973", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Van Trappen", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vandecandelaere", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mergaert", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Swings", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus antarcticus sp. nov., a novel psychrophile from microbial mats in Antarctic lakes", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1969", 
+        "year": "2004", 
+        "position": 94, 
+        "ref": "Van TrappenSVandecandelaereIMergaertJSwingsJ2004Algoriphagus antarcticus sp. nov., a novel psychrophile from microbial mats in Antarctic lakesInt J Syst Evol Microbiol54Pt 619691973", 
+        "id": "bib94"
+    }, 
+    {
+        "article_title": "Metamorphosis of a scleractinian coral in response to microbial biofilms", 
+        "lpage": "1221", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Webster", 
+                "given-names": "NS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "LD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heyward", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watts", 
+                "given-names": "JEM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Webb", 
+                "given-names": "RI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blackall", 
+                "given-names": "LL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Negri", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Metamorphosis of a scleractinian coral in response to microbial biofilms", 
+        "publication-type": "journal", 
+        "volume": "70", 
+        "source": "Appl Environ Microbiol", 
+        "fpage": "1213", 
+        "year": "2004", 
+        "position": 95, 
+        "ref": "WebsterNSSmithLDHeywardAJWattsJEMWebbRIBlackallLLNegriAP2004Metamorphosis of a scleractinian coral in response to microbial biofilmsAppl Environ Microbiol7012131221", 
+        "id": "bib95"
+    }, 
+    {
+        "article_title": "16S ribosomal DNA amplification for phylogenetic study", 
+        "lpage": "703", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Weisburg", 
+                "given-names": "WG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barns", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pelletier", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lane", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "16S ribosomal DNA amplification for phylogenetic study", 
+        "publication-type": "journal", 
+        "volume": "173", 
+        "source": "J Bacteriol", 
+        "fpage": "697", 
+        "year": "1991", 
+        "position": 96, 
+        "ref": "WeisburgWGBarnsSMPelletierDALaneDJ199116S ribosomal DNA amplification for phylogenetic studyJ Bacteriol173697703", 
+        "id": "bib96"
+    }, 
+    {
+        "article_title": "Bacteroides: The good, the bad, and the nitty-gritty", 
+        "lpage": "621", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Wexler", 
+                "given-names": "HM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Bacteroides: The good, the bad, and the nitty-gritty", 
+        "publication-type": "journal", 
+        "volume": "20", 
+        "source": "Clin Microbiol Rev", 
+        "fpage": "593", 
+        "year": "2007", 
+        "position": 97, 
+        "ref": "WexlerHM2007Bacteroides: The good, the bad, and the nitty-grittyClin Microbiol Rev20593621", 
+        "id": "bib97"
+    }, 
+    {
+        "article_title": "The genome of the natural genetic engineer Agrobacterium tumefaciens C58", 
+        "lpage": "2323", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Wood", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Setubal", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kaul", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Monks", 
+                "given-names": "DE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kitajima", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Okura", 
+                "given-names": "VK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhou", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wood", 
+                "given-names": "GE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Almeida", 
+                "given-names": "NF", 
+                "group-type": "author", 
+                "suffix": "Jr"
+            }
+        ], 
+        "full_article_title": "The genome of the natural genetic engineer Agrobacterium tumefaciens C58", 
+        "publication-type": "journal", 
+        "volume": "294", 
+        "source": "Science", 
+        "fpage": "2317", 
+        "year": "2001", 
+        "etal": true, 
+        "position": 98, 
+        "ref": "WoodDWSetubalJCKaulRMonksDEKitajimaJPOkuraVKZhouYChenLWoodGEAlmeidaNFJr2001The genome of the natural genetic engineer Agrobacterium tumefaciens C58Science29423172323", 
+        "id": "bib98"
+    }, 
+    {
+        "article_title": "Hongiella mannitolivorans gen. nov., sp. nov., Hongiella halophila sp. nov. and Hongiella ornithinivorans sp. nov., isolated from tidal flat sediment", 
+        "lpage": "162", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Yi", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chun", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hongiella mannitolivorans gen. nov., sp. nov., Hongiella halophila sp. nov. and Hongiella ornithinivorans sp. nov., isolated from tidal flat sediment", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "157", 
+        "year": "2004", 
+        "position": 99, 
+        "ref": "YiHChunJ2004Hongiella mannitolivorans gen. nov., sp. nov., Hongiella halophila sp. nov. and Hongiella ornithinivorans sp. nov., isolated from tidal flat sedimentInt J Syst Evol Microbiol54Pt 1157162", 
+        "id": "bib99"
+    }, 
+    {
+        "article_title": "Hongiella marincola sp. nov., isolated from sea water of the East Sea in Korea", 
+        "lpage": "1848", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Yoon", 
+                "given-names": "J-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yeo", 
+                "given-names": "S-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oh", 
+                "given-names": "TK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hongiella marincola sp. nov., isolated from sea water of the East Sea in Korea", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1845", 
+        "year": "2004", 
+        "position": 100, 
+        "ref": "YoonJ-HYeoS-HOhTK2004Hongiella marincola sp. nov., isolated from sea water of the East Sea in KoreaInt J Syst Evol Microbiol54Pt 518451848", 
+        "id": "bib100"
+    }, 
+    {
+        "article_title": "Algoriphagus locisalis sp. nov., isolated from a marine solar saltern", 
+        "lpage": "1639", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Yoon", 
+                "given-names": "J-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "S-J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oh", 
+                "given-names": "TK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus locisalis sp. nov., isolated from a marine solar saltern", 
+        "publication-type": "journal", 
+        "volume": "55", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "1635", 
+        "year": "2005a", 
+        "position": 101, 
+        "ref": "YoonJ-HKangS-JOhTK2005aAlgoriphagus locisalis sp. nov., isolated from a marine solar salternInt J Syst Evol Microbiol55Pt 416351639", 
+        "id": "bib101"
+    }, 
+    {
+        "article_title": "Algoriphagus yeomjeoni sp. nov., isolated from a marine solar saltern in the Yellow Sea, Korea", 
+        "lpage": "870", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Yoon", 
+                "given-names": "J-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "S-J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jung", 
+                "given-names": "S-Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "C-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oh", 
+                "given-names": "TK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus yeomjeoni sp. nov., isolated from a marine solar saltern in the Yellow Sea, Korea", 
+        "publication-type": "journal", 
+        "volume": "55", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "865", 
+        "year": "2005b", 
+        "position": 102, 
+        "ref": "YoonJ-HKangS-JJungS-YLeeC-HOhTK2005bAlgoriphagus yeomjeoni sp. nov., isolated from a marine solar saltern in the Yellow Sea, KoreaInt J Syst Evol Microbiol55Pt 2865870", 
+        "id": "bib102"
+    }, 
+    {
+        "article_title": "Algoriphagus terrigena sp. nov., isolated from soil", 
+        "lpage": "780", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Yoon", 
+                "given-names": "J-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "M-H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kang", 
+                "given-names": "S-J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oh", 
+                "given-names": "TK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Algoriphagus terrigena sp. nov., isolated from soil", 
+        "publication-type": "journal", 
+        "volume": "56", 
+        "source": "Int J Syst Evol Microbiol", 
+        "fpage": "777", 
+        "year": "2006", 
+        "position": 103, 
+        "ref": "YoonJ-HLeeM-HKangS-JOhTK2006Algoriphagus terrigena sp. nov., isolated from soilInt J Syst Evol Microbiol56Pt 4777780", 
+        "id": "bib103"
+    }, 
+    {
+        "article_title": "On the origin of membrane vesicles in gram-negative bacteria", 
+        "lpage": "228", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Zhou", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Srisatjaluk", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Justus", 
+                "given-names": "DE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doyle", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "On the origin of membrane vesicles in gram-negative bacteria", 
+        "publication-type": "journal", 
+        "volume": "163", 
+        "source": "FEMS Microbiol Lett", 
+        "fpage": "223", 
+        "year": "1998", 
+        "position": 104, 
+        "ref": "ZhouLSrisatjalukRJustusDEDoyleRJ1998On the origin of membrane vesicles in gram-negative bacteriaFEMS Microbiol Lett163223228", 
+        "id": "bib104"
+    }, 
+    {
+        "article_title": "Larval release behaviors in the Caribbean spiny lobster, Panulirus argus: Role of peptide pheromones", 
+        "lpage": "1805", 
+        "article_doi": "10.7554/eLife.00013", 
+        "authors": [
+            {
+                "surname": "Ziegler", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Forward", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Larval release behaviors in the Caribbean spiny lobster, Panulirus argus: Role of peptide pheromones", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "J Chem Ecol", 
+        "fpage": "1795", 
+        "year": "2007", 
+        "position": 105, 
+        "ref": "ZieglerTAForwardRB2007Larval release behaviors in the Caribbean spiny lobster, Panulirus argus: Role of peptide pheromonesJ Chem Ecol3317951805", 
+        "id": "bib105"
+    }
+]

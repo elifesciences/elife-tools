@@ -1,0 +1,235 @@
+[
+    {
+        "article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
+        "lpage": "1078", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Allmann", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
+        "publication-type": "journal", 
+        "volume": "329", 
+        "source": "Science", 
+        "fpage": "1075", 
+        "year": "2010", 
+        "position": 1, 
+        "ref": "AllmannSBaldwinIT2010Insects betray themselves in nature to predators by rapid isomerization of green leaf volatilesScience3291075107810.1126/science.1191634", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemies", 
+        "lpage": "65", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Price", 
+                "given-names": "PW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bouton", 
+                "given-names": "CE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gross", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McPheron", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thompson", 
+                "given-names": "JN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weiss", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemies", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Annu Rev Ecol Syst", 
+        "fpage": "41", 
+        "year": "1980", 
+        "position": 2, 
+        "ref": "PricePWBoutonCEGrossPMcPheronBAThompsonJNWeissAE1980Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemiesAnnu Rev Ecol Syst11416510.1146/annurev.es.11.110180.000353", 
+        "id": "bib2"
+    }, 
+    {
+        "publisher_loc": "London", 
+        "article_doi": "10.7554/eLife.00240", 
+        "publisher_name": "Royal Society", 
+        "year": "2009", 
+        "collab": "Royal Society", 
+        "publication-type": "book", 
+        "source": "Reaping the benefits: Science and the sustainable intensification of global agriculture", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "Royal Society"
+            }
+        ], 
+        "position": 3, 
+        "ref": "Royal Society2009Reaping the benefits: Science and the sustainable intensification of global agricultureRoyal SocietyLondonhttp://royalsociety.org/Reapingthebenefits/", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Herbivory-induced volatiles function as defences increasing fitness of the native plant Nicotiana attenuata in nature", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barthel", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Herbivory-induced volatiles function as defences increasing fitness of the native plant <italic>Nicotiana attenuata</italic> in nature", 
+        "publication-type": "journal", 
+        "source": "eLife", 
+        "fpage": "e00007", 
+        "year": "2012", 
+        "position": 4, 
+        "ref": "SchumanMBarthelKBaldwinI2012Herbivory-induced volatiles function as defences increasing fitness of the native plant Nicotiana attenuata in natureeLifee0000710.7554/eLife.00007", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Maize landraces recruit egg and larval parasitoids in response to egg deposition by a herbivore", 
+        "lpage": "1083", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Tamiru", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bruce", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Woodcock", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Caulfield", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Midega", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ogol", 
+                "given-names": "CK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Maize landraces recruit egg and larval parasitoids in response to egg deposition by a herbivore", 
+        "publication-type": "journal", 
+        "volume": "14", 
+        "source": "Ecol Lett", 
+        "fpage": "1075", 
+        "year": "2011", 
+        "etal": true, 
+        "position": 5, 
+        "ref": "TamiruABruceTJWoodcockCMCaulfieldJCMidegaCAOgolCK2011Maize landraces recruit egg and larval parasitoids in response to egg deposition by a herbivoreEcol Lett141075108310.1111/j.1461-0248.2011.01674.x", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Exploitation of herbivore-induced plant odors by host-seeking parasitic wasps", 
+        "lpage": "1253", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Turlings", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tumlinson", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lewis", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Exploitation of herbivore-induced plant odors by host-seeking parasitic wasps", 
+        "publication-type": "journal", 
+        "volume": "250", 
+        "source": "Science", 
+        "fpage": "1251", 
+        "year": "1990", 
+        "position": 6, 
+        "ref": "TurlingsTCTumlinsonJHLewisWJ1990Exploitation of herbivore-induced plant odors by host-seeking parasitic waspsScience2501251125310.1126/science.250.4985.1251", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Volicitin, an elicitor of maize volatiles in oral secretion of Spodoptera exigua: isolation and bioactivity", 
+        "lpage": "202", 
+        "article_doi": "10.7554/eLife.00240", 
+        "authors": [
+            {
+                "surname": "Turlings", 
+                "given-names": "TCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alborn", 
+                "given-names": "HT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loughrin", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tumlinson", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Volicitin, an elicitor of maize volatiles in oral secretion of <italic>Spodoptera exigua</italic>: isolation and bioactivity", 
+        "publication-type": "journal", 
+        "volume": "26", 
+        "source": "J Chem Ecol", 
+        "fpage": "189", 
+        "year": "2000", 
+        "position": 7, 
+        "ref": "TurlingsTCJAlbornHTLoughrinJHTumlinsonJH2000Volicitin, an elicitor of maize volatiles in oral secretion of Spodoptera exigua: isolation and bioactivityJ Chem Ecol2618920210.1023/A:1005449730052", 
+        "id": "bib7"
+    }
+]

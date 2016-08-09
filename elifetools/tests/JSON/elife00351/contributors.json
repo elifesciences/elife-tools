@@ -1,0 +1,20 @@
+[
+    {
+        "surname": "Smith", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "email": "richardswsmith@yahoo.co.uk"
+            }
+        ], 
+        "given-names": "Richard", 
+        "role": "Chair of Patients Know Best", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-2919"
+    }
+]

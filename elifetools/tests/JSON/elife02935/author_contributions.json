@@ -1,0 +1,252 @@
+[
+    {
+        "text": "<p>YSJ, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>LBA, Analyzed mutational signature</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>MG, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>IM, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SN-Z, Contributed samples and scientific advice</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>MR, Contributed samples and scientific advice</p>", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>HRD, Contributed samples and scientific advice</p>", 
+        "id": "con7", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>EP, Contributed samples and scientific advice</p>", 
+        "id": "con8", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>GG, Contributed samples and scientific advice</p>", 
+        "id": "con9", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AS, Contributed samples and scientific advice</p>", 
+        "id": "con10", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>NB, Contributed samples and scientific advice</p>", 
+        "id": "con11", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SB, Contributed samples and scientific advice</p>", 
+        "id": "con12", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PST, Contributed samples and scientific advice</p>", 
+        "id": "con13", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JN, Contributed samples and scientific advice</p>", 
+        "id": "con14", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>CEM, Contributed samples and scientific advice</p>", 
+        "id": "con15", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>GSV, Contributed samples and scientific advice</p>", 
+        "id": "con16", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>ARG, Contributed samples and scientific advice</p>", 
+        "id": "con17", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>M-QD, Contributed samples and scientific advice</p>", 
+        "id": "con18", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AU, Contributed samples and scientific advice</p>", 
+        "id": "con19", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JEP, Contributed samples and scientific advice</p>", 
+        "id": "con20", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>BTT, Contributed samples and scientific advice</p>", 
+        "id": "con21", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>NM, Contributed samples and scientific advice</p>", 
+        "id": "con22", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>MG, Contributed samples and scientific advice</p>", 
+        "id": "con23", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PV, Contributed samples and scientific advice</p>", 
+        "id": "con24", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AKE-N, Contributed samples and scientific advice</p>", 
+        "id": "con25", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>TS, Contributed samples and scientific advice</p>", 
+        "id": "con26", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>VPC, Contributed samples and scientific advice</p>", 
+        "id": "con27", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>RG, Contributed samples and scientific advice</p>", 
+        "id": "con28", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JAT, Contributed samples and scientific advice</p>", 
+        "id": "con29", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DNH, Contributed samples and scientific advice</p>", 
+        "id": "con30", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DM, Contributed samples and scientific advice</p>", 
+        "id": "con31", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>CSF, Contributed samples and scientific advice</p>", 
+        "id": "con32", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AYW, Contributed samples and scientific advice</p>", 
+        "id": "con33", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>HCW, Contributed samples and scientific advice</p>", 
+        "id": "con34", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DB, Contributed samples and scientific advice</p>", 
+        "id": "con35", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>RE, Contributed samples and scientific advice</p>", 
+        "id": "con36", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>CC, Contributed samples and scientific advice</p>", 
+        "id": "con37", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DN, Contributed samples and scientific advice</p>", 
+        "id": "con38", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>TV, Contributed samples and scientific advice</p>", 
+        "id": "con39", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>WBI, Contributed samples and scientific advice</p>", 
+        "id": "con40", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>GSB, Contributed samples and scientific advice</p>", 
+        "id": "con41", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AMF, Contributed samples and scientific advice</p>", 
+        "id": "con42", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PAF, Contributed samples and scientific advice</p>", 
+        "id": "con43", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AGL, Contributed samples and scientific advice</p>", 
+        "id": "con44", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PFC, Contributed samples and scientific advice</p>", 
+        "id": "con45", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>UMD, Contributed samples and scientific advice</p>", 
+        "id": "con46", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>APB, Provided bioinformatics support for sequencing data acquisition</p>", 
+        "id": "con47", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JWT, Provided bioinformatics support for sequencing data acquisition</p>", 
+        "id": "con48", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>MRS, Conception and design, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con49", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PJC, Conception and design, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con50", 
+        "fn-type": "con"
+    }
+]

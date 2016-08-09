@@ -1,0 +1,12 @@
+[
+    {
+        "text": "<p>ITB: Senior editor, <italic>eLife.</italic></p>", 
+        "id": "conf1", 
+        "fn-type": "conflict"
+    }, 
+    {
+        "text": "<p>The other authors declare that no competing interests exist.</p>", 
+        "id": "conf2", 
+        "fn-type": "conflict"
+    }
+]
