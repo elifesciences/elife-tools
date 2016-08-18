@@ -253,6 +253,13 @@ def element_citation(soup):
     return extract_nodes(soup, "element-citation")
 
 #
+# back
+#
+
+def back(soup):
+    return first(extract_nodes(soup, "back"))
+
+#
 # body
 #
 
@@ -270,3 +277,9 @@ def decision_letter(soup):
 
 def author_response(soup):
     return first(sub_article(soup, "reply"))
+
+def section(soup):
+    return extract_nodes(soup, "sec")
+
+def paragraph(soup):
+    return extract_nodes(soup, "p")

@@ -44,6 +44,16 @@ class TestJatsParser(unittest.TestCase):
         self.assertEqual(raw_parser.article_type(soup), "research-article")
 
 
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", bs4.element.Tag),
+        ("elife_poa_e06828.xml", bs4.element.Tag),
+        ("elife07586.xml", bs4.element.Tag)
+    )
+    def test_back(self, filename, expected_type):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(type(raw_parser.back(soup)), expected_type)
+
 
     @unpack
     @data(
@@ -110,6 +120,27 @@ class TestJatsParser(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(type(raw_parser.author_response(soup)), expected_type)
 
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 25),
+        ("elife_poa_e06828.xml", 0),
+        ("elife07586.xml", 0)
+    )
+    def test_section(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.section(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 176),
+        ("elife_poa_e06828.xml", 3),
+        ("elife07586.xml", 5)
+    )
+    def test_paragraph(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.paragraph(soup)), expected_len)
 
 
 
