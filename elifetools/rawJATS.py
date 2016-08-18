@@ -251,3 +251,22 @@ def comment(soup):
 
 def element_citation(soup):
     return extract_nodes(soup, "element-citation")
+
+#
+# body
+#
+
+def body(soup):
+    return extract_nodes(soup, "body")
+
+def article_body(soup):
+    return first(extract_nodes(soup, "body"))
+
+def sub_article(soup, article_type=None):
+    return extract_nodes(soup, "sub-article", attr = "article-type", value = article_type)
+
+def decision_letter(soup):
+    return first(sub_article(soup, "article-commentary"))
+
+def author_response(soup):
+    return first(sub_article(soup, "reply"))

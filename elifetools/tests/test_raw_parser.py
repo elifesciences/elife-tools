@@ -1,4 +1,6 @@
 import os, unittest
+from ddt import ddt, data, unpack
+import bs4
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -7,6 +9,7 @@ import rawJATS as raw_parser
 
 from file_utils import sample_xml
 
+@ddt
 class TestJatsParser(unittest.TestCase):
     def setUp(self):
         self.kitchen_sink_xml = sample_xml('elife-kitchen-sink.xml')
@@ -39,6 +42,76 @@ class TestJatsParser(unittest.TestCase):
     def test_quickly2(self):
         soup = parser.parse_document(self.xml)
         self.assertEqual(raw_parser.article_type(soup), "research-article")
+
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 2),
+        ("elife_poa_e06828.xml", 1),
+        ("elife07586.xml", 0)
+    )
+    def test_abstract(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.abstract(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 3),
+        ("elife_poa_e06828.xml", 0),
+        ("elife07586.xml", 1)
+    )
+    def test_body(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.body(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", bs4.element.Tag),
+        ("elife_poa_e06828.xml", type(None)),
+        ("elife07586.xml", bs4.element.Tag)
+    )
+    def test_article_body(self, filename, expected_type):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(type(raw_parser.article_body(soup)), expected_type)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 2),
+        ("elife_poa_e06828.xml", 0),
+        ("elife07586.xml", 0)
+    )
+    def test_sub_article(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.sub_article(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", bs4.element.Tag),
+        ("elife_poa_e06828.xml", type(None)),
+        ("elife07586.xml", type(None))
+    )
+    def test_decision_letter(self, filename, expected_type):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(type(raw_parser.decision_letter(soup)), expected_type)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", bs4.element.Tag),
+        ("elife_poa_e06828.xml", type(None)),
+        ("elife07586.xml", type(None))
+    )
+    def test_author_response(self, filename, expected_type):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(type(raw_parser.author_response(soup)), expected_type)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()
