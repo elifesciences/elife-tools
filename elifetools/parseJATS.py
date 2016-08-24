@@ -8,6 +8,7 @@ from slugify import slugify
 from utils import *
 import rawJATS as raw_parser
 import re
+from collections import OrderedDict
 
 
 import logging
@@ -1584,3 +1585,111 @@ def award_group_principal_award_recipient(tag):
             continue
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
+
+
+def body(soup):
+
+    body_content = []
+
+    raw_body = raw_parser.article_body(soup)
+
+    if raw_body:
+        tags = body_blocks(raw_body)
+
+        for tag in tags:
+            tag_content = body_block_content_render(tag)
+            body_content.append(tag_content)
+
+    return body_content
+
+
+def body_block_content_render(tag):
+    """
+    Render the tag as body content and call recursively if
+    the tag has child tags
+    """
+    tag_content = {}
+
+    tag_content = body_block_content(tag)
+
+    for child_tag in tag:
+        if body_block_content(child_tag) != {}:
+            if "content" not in tag_content:
+                tag_content["content"] = []
+            tag_content["content"].append(body_block_content_render(child_tag))
+
+    return tag_content
+
+def body_block_content(tag):
+
+    if type(tag) == unicode:
+        # For debugging
+        #print "found unicode", tag.encode('utf8')
+        return {}
+
+    tag_content = OrderedDict()
+
+    if tag.name == "sec" or tag.name == "boxed-text":
+        tag_content["type"] = "section"
+        title_tag = raw_parser.title(tag)
+        tag_content["title"] = node_contents_str(title_tag)
+
+    elif tag.name == "p":
+        tag_content["type"] = "paragraph"
+        tag_content["text"] = node_contents_str(tag)
+
+    elif tag.name == "table-wrap":
+        tag_content["type"] = "table"
+        tag_content["id"] = tag.get("id")
+        object_id = first(raw_parser.object_id(tag, "doi"))
+        tag_content["doi"] = node_contents_str(object_id)
+        label = raw_parser.label(tag)
+
+        if label:
+            tag_content["label"] = node_contents_str(label)
+
+        caption = raw_parser.caption(tag)
+        title = first(raw_parser.paragraph(caption))
+        if title:
+            tag_content["title"] = node_contents_str(title)
+        tables = raw_parser.table(tag)
+        tag_content["tables"] = []
+        for table in tables:
+            # Add the table tag back for now
+            table_content = '<table>' + node_contents_str(table) + '</table>'
+            tag_content["tables"].append(table_content)
+
+        table_wrap_foot = raw_parser.table_wrap_foot(tag)
+        for foot_tag in table_wrap_foot:
+            # TODO ? We are ignoring label tags
+            for fn_tag in raw_parser.fn(foot_tag):
+                for p_tag in raw_parser.paragraph(fn_tag):
+                    if "footer" not in tag_content:
+                        tag_content["footer"] = []
+                    tag_content["footer"].append(body_block_content(p_tag))
+
+    return tag_content
+
+def body_blocks(soup):
+    """
+    Note: for some reason this works and few other attempted methods work
+    Search for certain node types, find the first nodes siblings of the same type
+    Add the first sibling and the other siblings to a list and return them
+    """
+    nodenames = ["sec", "p", "table-wrap", "boxed-text"]
+
+    first_sibling_node = firstnn(soup.find_all())
+
+    body_block_tags = []
+
+    sibling_tags = first_sibling_node.find_next_siblings(nodenames)
+
+    # Add the first component tag and the ResultSet tags together
+    body_block_tags.append(first_sibling_node)
+
+    for tag in sibling_tags:
+        body_block_tags.append(tag)
+
+    return body_block_tags
+
+

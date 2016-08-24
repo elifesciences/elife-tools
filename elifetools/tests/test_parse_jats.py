@@ -41,6 +41,19 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertTrue(isinstance(soup, BeautifulSoup))
 
+    """
+    Quick test cases during development checking syntax errors and coverage
+    """
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", None, []),
+        ("elife_poa_e06828.xml", [], None))
+    def test_body(self, filename, expected, not_expected):
+        body = parser.body(self.soup(filename))
+        if expected is not None:
+            self.assertEqual(expected, body)
+        if not_expected is not None:
+            self.assertNotEqual(not_expected, body)
 
     """
     Unit test small or special cases
