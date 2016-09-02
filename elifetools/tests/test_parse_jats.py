@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import unittest
 import os
 import json
@@ -9,6 +11,7 @@ os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 import parseJATS as parser
 import rawJATS as raw_parser
 from utils import date_struct
+from collections import OrderedDict
 
 from file_utils import sample_xml, json_expected_folder, json_expected_file
 
@@ -54,6 +57,31 @@ class TestParseJats(unittest.TestCase):
             self.assertEqual(expected, body)
         if not_expected is not None:
             self.assertNotEqual(not_expected, body)
+
+    @unpack
+    @data(
+        ('<sec sec-type="intro" id="s1"><title>Introduction</title><p>content</p></sec>',
+         OrderedDict([('type', 'section'), ('title', u'Introduction')])
+         ),
+
+        ('<boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text>',
+         OrderedDict([('type', 'section'), ('title', u'Box title')])
+         ),
+
+        ('<p>content</p>',
+         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         ),
+
+        ('<table-wrap id="tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00013.011</object-id><label>Table 2.</label><caption><p>Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><label>*</label><p>Footnote 1</p></fn><fn id="tblfn3"><label>§</label><p>CM = conditioned medium;</p></fn></table-wrap-foot></table-wrap>',
+         OrderedDict([('type', 'table'), ('id', u'tbl2'), ('doi', u'10.7554/eLife.00013.011'), ('label', u'Table 2.'), ('title', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content'), ('tables', [u'<table><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table>']), ('footer', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote 1')]), OrderedDict([('type', 'paragraph'), ('text', u'CM = conditioned medium;')])])])
+            ),
+
+    )
+    def test_body_block_content(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.body_block_content(body_tag)
+        self.assertEqual(expected, tag_content)
 
     """
     Unit test small or special cases

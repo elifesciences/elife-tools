@@ -1622,11 +1622,6 @@ def body_block_content_render(tag):
 
 def body_block_content(tag):
 
-    if type(tag) == unicode:
-        # For debugging
-        #print "found unicode", tag.encode('utf8')
-        return {}
-
     tag_content = OrderedDict()
 
     if tag.name == "sec" or tag.name == "boxed-text":
