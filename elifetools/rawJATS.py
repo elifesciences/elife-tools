@@ -289,3 +289,9 @@ def table(soup):
 
 def table_wrap_foot(soup):
     return extract_nodes(soup, "table-wrap-foot")
+
+def disp_formula(soup):
+    return extract_nodes(soup, "disp-formula")
+
+def math(soup):
+    return extract_nodes(soup, "math")

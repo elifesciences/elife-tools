@@ -1663,6 +1663,16 @@ def body_block_content(tag):
                         tag_content["footer"] = []
                     tag_content["footer"].append(body_block_content(p_tag))
 
+    elif tag.name == "disp-formula":
+        tag_content["type"] = "mathml"
+        tag_content["id"] = tag.get("id")
+
+        label = raw_parser.label(tag)
+        if label:
+            tag_content["label"] = node_contents_str(label)
+        math_tag = first(raw_parser.math(tag))
+        tag_content["mathml"] = node_contents_str(math_tag)
+
     return tag_content
 
 def body_blocks(soup):
@@ -1671,7 +1681,7 @@ def body_blocks(soup):
     Search for certain node types, find the first nodes siblings of the same type
     Add the first sibling and the other siblings to a list and return them
     """
-    nodenames = ["sec", "p", "table-wrap", "boxed-text"]
+    nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula"]
 
     first_sibling_node = firstnn(soup.find_all())
 
