@@ -1631,6 +1631,12 @@ def body_block_content(tag):
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
+
+        # Remove unwanted nested tags
+        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group"]
+        for unwanted_tag in extract_nodes(tag, unwanted_tag_names):
+            unwanted_tag.decompose()
+
         tag_content["text"] = node_contents_str(tag)
 
     elif tag.name == "table-wrap":
