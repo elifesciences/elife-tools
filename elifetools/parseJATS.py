@@ -1633,7 +1633,7 @@ def body_block_content(tag):
         tag_content["type"] = "paragraph"
 
         # Remove unwanted nested tags
-        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group"]
+        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group", "fig"]
         for unwanted_tag in extract_nodes(tag, unwanted_tag_names):
             unwanted_tag.decompose()
 

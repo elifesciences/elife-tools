@@ -84,6 +84,10 @@ class TestParseJats(unittest.TestCase):
          OrderedDict([('type', 'paragraph'), ('text', u'content')])
          ),
 
+        ('<p>content<fig></fig></p>',
+         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         ),
+
         ('<table-wrap id="tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00013.011</object-id><label>Table 2.</label><caption><p>Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><label>*</label><p>Footnote 1</p></fn><fn id="tblfn3"><label>§</label><p>CM = conditioned medium;</p></fn></table-wrap-foot></table-wrap>',
          OrderedDict([('type', 'table'), ('id', u'tbl2'), ('doi', u'10.7554/eLife.00013.011'), ('label', u'Table 2.'), ('title', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content'), ('tables', [u'<table><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table>']), ('footer', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote 1')]), OrderedDict([('type', 'paragraph'), ('text', u'CM = conditioned medium;')])])])
             ),
