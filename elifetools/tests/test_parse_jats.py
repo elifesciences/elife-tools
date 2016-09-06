@@ -10,7 +10,7 @@ os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 
 import parseJATS as parser
 import rawJATS as raw_parser
-from utils import date_struct
+from utils import date_struct, node_contents_str
 from collections import OrderedDict
 
 from file_utils import sample_xml, json_expected_folder, json_expected_file
@@ -126,6 +126,15 @@ class TestParseJats(unittest.TestCase):
     def test_history_date(self, filename, date_type, expected):
         self.assertEqual(expected, parser.history_date(self.soup(filename), date_type))
 
+    @unpack
+    @data(("<p></p>", "paragraph", "<p/>"),
+        ("<p>§ <italic>*</italic></p>", "paragraph", u"<p>§ <italic>*</italic></p>"),)
+    def test_duplicate_tag(self, xml, parser_function, expected_xml):
+        # To test, first parse the XML into a tag, then duplicate it, then check the contents
+        soup = parser.parse_xml(xml)
+        tags = getattr(raw_parser, parser_function)(soup)
+        tag_copy = parser.duplicate_tag(tags[0])
+        self.assertEqual(expected_xml, unicode(tag_copy))
 
     """
     Functions that require more than one argument to test against json output

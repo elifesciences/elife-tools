@@ -26,6 +26,12 @@ def parse_xml(xml):
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
+def duplicate_tag(tag):
+    # Make a completely new copy of a tag by parsing its contents again
+    soup_copy = parse_xml(unicode(tag))
+    tag_copy = first(extract_nodes(soup_copy, tag.name))
+    return tag_copy
+
 def title(soup):
     return node_text(raw_parser.article_title(soup))
     
