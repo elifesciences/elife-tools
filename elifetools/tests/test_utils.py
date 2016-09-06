@@ -6,6 +6,7 @@ from ddt import ddt, data, unpack
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import utils
+import parseJATS as parser
 
 
 
@@ -58,6 +59,18 @@ class TestUtils(unittest.TestCase):
     def test_tag_supplementary_material_sibling_ordinal_bad_input(self):
         self.assertEqual(utils.tag_supplementary_material_sibling_ordinal(self.mock_tag), None)
 
+    @unpack
+    @data(
+        ("<p><bold>A</bold> c</p>", None, "<p><bold>A</bold> c</p>"),
+        ("<p><bold>A</bold> c</p>", "bold", "<p> c</p>"),
+        ("<p>A <bold>c</bold> <italic>d</italic> <fig>e</fig></p>", ["bold", "fig"],
+            "<p>A  <italic>d</italic> </p>"),
+        )
+    def test_remove_tag_from_tag(self, xml, unwanted_tag_names, expected_xml):
+        soup = parser.parse_xml(xml)
+        tag = soup.find_all()[0]
+        modified_tag = utils.remove_tag_from_tag(tag, unwanted_tag_names)
+        self.assertEqual(unicode(modified_tag), expected_xml)
 
 if __name__ == '__main__':
     unittest.main()
