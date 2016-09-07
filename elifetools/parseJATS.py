@@ -1635,10 +1635,17 @@ def body_block_content(tag):
 
     tag_content = OrderedDict()
 
-    if tag.name == "sec" or tag.name == "boxed-text":
+    if tag.name == "sec":
         tag_content["type"] = "section"
         title_tag = raw_parser.title(tag)
         tag_content["title"] = node_contents_str(title_tag)
+
+    elif tag.name == "boxed-text":
+        tag_content["type"] = "box"
+        title_tag = raw_parser.title(tag)
+        tag_content["title"] = node_contents_str(title_tag)
+        object_id = first(raw_parser.object_id(tag, "doi"))
+        tag_content["doi"] = node_contents_str(object_id)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
