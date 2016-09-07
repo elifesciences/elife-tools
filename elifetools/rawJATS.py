@@ -295,3 +295,6 @@ def disp_formula(soup):
 
 def math(soup):
     return extract_nodes(soup, "math")
+    
+def boxed_text(soup):
+    return extract_nodes(soup, "boxed-text")

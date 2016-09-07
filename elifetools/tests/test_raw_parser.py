@@ -186,5 +186,16 @@ class TestJatsParser(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(len(raw_parser.math(soup)), expected_len)
 
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 4),
+        ("elife_poa_e06828.xml", 0),
+        ("elife07586.xml", 1)
+    )
+    def test_boxed_text(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.boxed_text(soup)), expected_len)
+
 if __name__ == '__main__':
     unittest.main()
