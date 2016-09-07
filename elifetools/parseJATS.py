@@ -1600,12 +1600,17 @@ def body(soup):
     raw_body = raw_parser.article_body(soup)
 
     if raw_body:
-        tags = body_blocks(raw_body)
+        body_content = render_raw_body(raw_body)
 
-        for tag in tags:
-            tag_content = body_block_content_render(tag)
-            body_content.append(tag_content)
+    return body_content
 
+
+def render_raw_body(tag):
+    body_content = []
+    body_tags = body_blocks(tag)
+    for tag in body_tags:
+        tag_content = body_block_content_render(tag)
+        body_content.append(tag_content)
     return body_content
 
 
@@ -1709,20 +1714,21 @@ def body_blocks(soup):
 
     return body_block_tags
 
+def sub_article_doi(tag):
+    doi = None
+    article_id_tag = first(raw_parser.article_id(tag, "doi"))
+    if article_id_tag:
+        doi = article_id_tag.text
+    return doi
 
 def decision_letter(soup):
 
     sub_article_content = OrderedDict()
     sub_article = raw_parser.decision_letter(soup)
 
-    body_content = []
-
     if sub_article:
-
-        article_id_tag = first(raw_parser.article_id(sub_article, "doi"))
-        if article_id_tag:
-            sub_article_content["doi"] = article_id_tag.text
-
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
         raw_body = raw_parser.article_body(sub_article)
     else:
         raw_body = None
@@ -1743,13 +1749,11 @@ def decision_letter(soup):
 
     # content
     if raw_body:
-        tags = body_blocks(raw_body)
-
-        for tag in tags:
-            tag_content = body_block_content_render(tag)
-            body_content.append(tag_content)
-
-    if len(body_content) > 0:
-        sub_article_content["content"] = body_content
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
 
     return sub_article_content
+
+
+
