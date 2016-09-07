@@ -1710,3 +1710,46 @@ def body_blocks(soup):
     return body_block_tags
 
 
+def decision_letter(soup):
+
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.decision_letter(soup)
+
+    body_content = []
+
+    if sub_article:
+
+        article_id_tag = first(raw_parser.article_id(sub_article, "doi"))
+        if article_id_tag:
+            sub_article_content["doi"] = article_id_tag.text
+
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # description
+    if raw_body:
+        # Description will be the first boxed-text tag
+        if raw_parser.boxed_text(raw_body):
+            sub_article_content["description"] = []
+            boxed_text_description = first(raw_parser.boxed_text(raw_body))
+            tags = body_blocks(boxed_text_description)
+            for tag in tags:
+                tag_content = body_block_content_render(tag)
+                sub_article_content["description"].append(tag_content)
+
+            # Remove the tag before content is compiled
+            boxed_text_description.decompose()
+
+    # content
+    if raw_body:
+        tags = body_blocks(raw_body)
+
+        for tag in tags:
+            tag_content = body_block_content_render(tag)
+            body_content.append(tag_content)
+
+    if len(body_content) > 0:
+        sub_article_content["content"] = body_content
+
+    return sub_article_content

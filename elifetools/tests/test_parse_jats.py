@@ -49,6 +49,17 @@ class TestParseJats(unittest.TestCase):
     """
     @unpack
     @data(
+        ("elife-kitchen-sink.xml", None, OrderedDict()),
+        ("elife_poa_e06828.xml", OrderedDict(), None))
+    def test_decision_letter(self, filename, expected, not_expected):
+        sub_article_content = parser.decision_letter(self.soup(filename))
+        if expected is not None:
+            self.assertEqual(expected, sub_article_content)
+        if not_expected is not None:
+            self.assertNotEqual(not_expected, sub_article_content)
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", None, []),
         ("elife_poa_e06828.xml", [], None))
     def test_body(self, filename, expected, not_expected):
