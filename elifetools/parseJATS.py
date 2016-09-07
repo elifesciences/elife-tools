@@ -1756,4 +1756,22 @@ def decision_letter(soup):
     return sub_article_content
 
 
+def author_response(soup):
 
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.author_response(soup)
+
+    if sub_article:
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # content
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
+
+    return sub_article_content
