@@ -88,7 +88,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text>',
-         OrderedDict([('type', 'box'), ('title', u'Box title'), ('doi', u'10.7554/eLife.00013.009')])
+         OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1.'), ('title', u'Box title')])
          ),
 
         ('<p>content</p>',

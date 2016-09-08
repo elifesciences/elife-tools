@@ -1592,6 +1592,43 @@ def award_group_principal_award_recipient(tag):
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
 
+def object_id_doi(tag):
+    """DOI in an object-id tag found inside the tag"""
+    doi = None
+    object_ids = raw_parser.object_id(tag, "doi")
+    if object_ids:
+        object_id = first(object_ids)
+        doi = node_contents_str(object_id)
+    return doi
+
+def title_text(tag):
+    """Extract the text of a title tag"""
+    title = None
+    title_tag = raw_parser.title(tag)
+    if title_tag:
+        title = node_contents_str(title_tag)
+    return title
+
+def caption_title(tag):
+    """Extract the text of a title or p tag inside the first caption tag"""
+    title = None
+    caption = raw_parser.caption(tag)
+    if caption:
+        title_tag = raw_parser.title(caption)
+        if title_tag:
+            title = node_contents_str(title_tag)
+        if not title:
+            p_tags = raw_parser.paragraph(caption)
+            if p_tags:
+                title = node_contents_str(first(p_tags))
+    return title
+
+def label(tag):
+    label = None
+    label_tag = raw_parser.label(tag)
+    if label_tag:
+        label = node_contents_str(label_tag)
+    return label
 
 def body(soup):
 
@@ -1637,15 +1674,14 @@ def body_block_content(tag):
 
     if tag.name == "sec":
         tag_content["type"] = "section"
-        title_tag = raw_parser.title(tag)
-        tag_content["title"] = node_contents_str(title_tag)
+        set_if_value(tag_content, "title", title_text(tag))
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
-        title_tag = raw_parser.title(tag)
-        tag_content["title"] = node_contents_str(title_tag)
-        object_id = first(raw_parser.object_id(tag, "doi"))
-        tag_content["doi"] = node_contents_str(object_id)
+        set_if_value(tag_content, "doi", object_id_doi(tag))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag))
+        set_if_value(tag_content, "title", title_text(tag))
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -1659,18 +1695,11 @@ def body_block_content(tag):
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
-        tag_content["id"] = tag.get("id")
-        object_id = first(raw_parser.object_id(tag, "doi"))
-        tag_content["doi"] = node_contents_str(object_id)
-        label = raw_parser.label(tag)
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "doi", object_id_doi(tag))
+        set_if_value(tag_content, "label", label(tag))
+        set_if_value(tag_content, "title", caption_title(tag))
 
-        if label:
-            tag_content["label"] = node_contents_str(label)
-
-        caption = raw_parser.caption(tag)
-        title = first(raw_parser.paragraph(caption))
-        if title:
-            tag_content["title"] = node_contents_str(title)
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
         for table in tables:
@@ -1689,11 +1718,10 @@ def body_block_content(tag):
 
     elif tag.name == "disp-formula":
         tag_content["type"] = "mathml"
-        tag_content["id"] = tag.get("id")
 
-        label = raw_parser.label(tag)
-        if label:
-            tag_content["label"] = node_contents_str(label)
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag))
+
         math_tag = first(raw_parser.math(tag))
         tag_content["mathml"] = node_contents_str(math_tag)
 
