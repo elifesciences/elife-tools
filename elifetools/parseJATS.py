@@ -1695,8 +1695,8 @@ def body_block_content(tag):
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
-        set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "doi", object_id_doi(tag))
+        set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag))
         set_if_value(tag_content, "title", caption_title(tag))
 
@@ -1724,6 +1724,7 @@ def body_block_content(tag):
 
         math_tag = first(raw_parser.math(tag))
         tag_content["mathml"] = node_contents_str(math_tag)
+
 
     return tag_content
 
