@@ -130,6 +130,26 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.body_block_content(body_tag)
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        ('<root><p>content <italic>test</italic></p></root>',
+OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content <italic>test</italic>')])])])
+         ),
+        
+        ('<root><p>content<table-wrap><table><thead><tr><th/><th></tr><tbody><tr><td></td></tr></tbody></table></table-wrap></p></root>',
+OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')]), OrderedDict([('type', 'table'), ('tables', [u'<table><thead><tr><th/><th/><tbody><tr><td/></tr></tbody></tr></thead></table>'])])])])
+         ),
+
+        ('<root><p>content</p><table-wrap><table><thead><tr><th/><th></tr><tbody><tr><td></td></tr></tbody></table></table-wrap></root>',
+OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')]), OrderedDict([('type', 'table'), ('tables', [u'<table><thead><tr><th/><th/><tbody><tr><td/></tr></tbody></tr></thead></table>'])])])])
+         ),
+
+        )
+    def test_body_block_content_render(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.body_block_content_render(soup.contents[0])
+        self.assertEqual(expected, tag_content)
+
     """
     Unit test small or special cases
     """

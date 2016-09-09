@@ -1664,7 +1664,15 @@ def body_block_content_render(tag):
         if body_block_content(child_tag) != {}:
             if "content" not in tag_content:
                 tag_content["content"] = []
-            tag_content["content"].append(body_block_content_render(child_tag))
+
+            if child_tag.name == "p":
+                # If block tags are found inside a p, then make them a sibling of that p
+                tag_content["content"].append(body_block_content(child_tag))
+                for p_child_tag in child_tag:
+                    if body_block_content(p_child_tag) != {}:
+                        tag_content["content"].append(body_block_content(p_child_tag))
+            else:
+                tag_content["content"].append(body_block_content_render(child_tag))
 
     return tag_content
 
