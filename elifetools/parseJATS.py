@@ -1725,6 +1725,25 @@ def body_block_content(tag):
         math_tag = first(raw_parser.math(tag))
         tag_content["mathml"] = node_contents_str(math_tag)
 
+    elif tag.name == "fig":
+        tag_content["type"] = "image"
+        set_if_value(tag_content, "doi", object_id_doi(tag))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag))
+        set_if_value(tag_content, "title", caption_title(tag))
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            for block_tag in caption_tags:
+                if "caption" not in tag_content:
+                    tag_content["caption"] = []
+                tag_content["caption"] = body_block_content_render(block_tag)
+        # todo!! alt
+        set_if_value(tag_content, "alt", "")
+        # todo!! set base URL for images
+        graphic_tags = raw_parser.graphic(tag)
+        if graphic_tags:
+            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
+        # todo!! support for custom permissions of use or license
 
     return tag_content
 

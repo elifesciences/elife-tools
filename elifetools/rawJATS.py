@@ -298,3 +298,9 @@ def math(soup):
     
 def boxed_text(soup):
     return extract_nodes(soup, "boxed-text")
+
+def fig(soup):
+    return extract_nodes(soup, "fig")
+
+def fig_group(soup):
+    return extract_nodes(soup, "fig-group")
