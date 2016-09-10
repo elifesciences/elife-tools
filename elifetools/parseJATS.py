@@ -1744,7 +1744,8 @@ def body_block_content(tag):
             for block_tag in caption_tags:
                 if "caption" not in tag_content:
                     tag_content["caption"] = []
-                tag_content["caption"] = body_block_content_render(block_tag)
+                if body_block_content_render(block_tag) != {}:
+                    tag_content["caption"].append(body_block_content_render(block_tag))
         # todo!! alt
         set_if_value(tag_content, "alt", "")
         # todo!! set base URL for images
