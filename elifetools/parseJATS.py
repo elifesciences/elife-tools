@@ -1671,6 +1671,9 @@ def body_block_content_render(tag):
                 for p_child_tag in child_tag:
                     if body_block_content(p_child_tag) != {}:
                         tag_content["content"].append(body_block_content(p_child_tag))
+            elif child_tag.name == "fig" and tag.name == "fig-group":
+                # Do not fig inside fig-group a second time
+                del tag_content["content"]
             else:
                 tag_content["content"].append(body_block_content_render(child_tag))
 
@@ -1754,6 +1757,15 @@ def body_block_content(tag):
             copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
         # todo!! support for custom permissions of use or license
 
+    elif tag.name == "fig-group":
+        for i, fig_tag in enumerate(raw_parser.fig(tag)):
+            if i == 0:
+                tag_content = body_block_content(fig_tag)
+            elif i > 0:
+                if "supplements" not in tag_content:
+                    tag_content["supplements"] = []
+                tag_content["supplements"].append(body_block_content(fig_tag))
+
     return tag_content
 
 def body_blocks(soup):
@@ -1762,7 +1774,7 @@ def body_blocks(soup):
     Search for certain node types, find the first nodes siblings of the same type
     Add the first sibling and the other siblings to a list and return them
     """
-    nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula"]
+    nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula", "fig", "fig-group"]
 
     first_sibling_node = firstnn(soup.find_all())
 
