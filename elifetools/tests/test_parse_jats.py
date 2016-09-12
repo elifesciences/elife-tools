@@ -111,7 +111,7 @@ class TestParseJats(unittest.TestCase):
          OrderedDict([('type', 'paragraph'), ('text', u'content')])
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1" ><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></root>',
          OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig1-v1.tif')])
          ),
 
@@ -142,6 +142,14 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
 
         ('<root><p>content</p><table-wrap><table><thead><tr><th/><th></tr><tbody><tr><td></td></tr></tbody></table></table-wrap></root>',
 OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')]), OrderedDict([('type', 'table'), ('tables', [u'<table><thead><tr><th/><th/><tbody><tr><td/></tr></tbody></tr></thead></table>'])])])])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></p><p>More content</p></root>',
+         OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig1-v1.tif')]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.</p><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig><p>More content</p></root>',
+         OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig1-v1.tif')]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])
          ),
 
         )
