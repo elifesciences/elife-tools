@@ -1750,11 +1750,17 @@ def body_block_content(tag):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
+        supplementary_material_tags = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             for block_tag in caption_tags:
                 if "caption" not in tag_content:
                     tag_content["caption"] = []
+                # Note then skip p tags with supplementary-material inside
+                if raw_parser.supplementary_material(block_tag):
+                    for supp_tag in raw_parser.supplementary_material(block_tag):
+                        supplementary_material_tags.append(supp_tag)
+                    continue
                 if body_block_content_render(block_tag) != {}:
                     tag_content["caption"].append(body_block_content_render(block_tag))
         # todo!! alt
@@ -1764,6 +1770,13 @@ def body_block_content(tag):
         if graphic_tags:
             copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
         # todo!! support for custom permissions of use or license
+        # sourceData
+        if len(supplementary_material_tags) > 0:
+            for supp_tag in supplementary_material_tags:
+                if "sourceData" not in tag_content:
+                    tag_content["sourceData"] = []
+                if body_block_content_render(supp_tag) != {}:
+                    tag_content["sourceData"].append(body_block_content_render(supp_tag))
 
     elif tag.name == "fig-group":
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
@@ -1773,6 +1786,18 @@ def body_block_content(tag):
                 if "supplements" not in tag_content:
                     tag_content["supplements"] = []
                 tag_content["supplements"].append(body_block_content(fig_tag))
+
+    elif tag.name == "supplementary-material":
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        if raw_parser.media(tag):
+            media_tag = first(raw_parser.media(tag))
+            if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
+                # Quick concatenation for now
+                tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
 
     return tag_content
 
