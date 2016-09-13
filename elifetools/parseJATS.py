@@ -1809,9 +1809,12 @@ def body_blocks(soup):
     """
     nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula", "fig", "fig-group"]
 
+    body_block_tags = []
+
     first_sibling_node = firstnn(soup.find_all())
 
-    body_block_tags = []
+    if first_sibling_node is None:
+        return body_block_tags
 
     sibling_tags = first_sibling_node.find_next_siblings(nodenames)
 

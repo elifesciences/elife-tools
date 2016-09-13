@@ -81,6 +81,19 @@ class TestParseJats(unittest.TestCase):
         if not_expected is not None:
             self.assertNotEqual(not_expected, body)
 
+
+    @unpack
+    @data(
+        ("<root><italic></italic></root>", 0),
+        ("<root><sec><p>Content</p></sec></root>", 1),
+    )
+    def test_body_blocks(self, xml_content, expected_len):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        body_block_tags = parser.body_blocks(body_tag)
+        self.assertEqual(len(body_block_tags), expected_len)
+
+
     @unpack
     @data(
         ('<root><sec sec-type="intro" id="s1"><title>Introduction</title><p>content</p></sec></root>',
