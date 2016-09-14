@@ -1654,8 +1654,14 @@ def render_raw_body(tag):
     body_content = []
     body_tags = body_blocks(tag)
     for tag in body_tags:
-        tag_content = body_block_content_render(tag)
-        body_content.append(tag_content)
+        if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
+            # Collapse boxed-text here if it has no title or label
+            for boxed_tag in tag:
+                tag_content = body_block_content_render(boxed_tag)
+                body_content.append(tag_content)
+        else:
+            tag_content = body_block_content_render(tag)
+            body_content.append(tag_content)
     return body_content
 
 
