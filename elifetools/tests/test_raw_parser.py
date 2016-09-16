@@ -218,5 +218,17 @@ class TestJatsParser(unittest.TestCase):
         self.assertEqual(len(raw_parser.fig_group(soup)), expected_len)
 
 
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", None, 2),
+        ("elife-kitchen-sink.xml", "executive-summary", 1),
+        ("elife_poa_e06828.xml", None, 1),
+        ("elife_poa_e06828.xml", "executive-summary", 0)
+    )
+    def test_abstract_with_abstract_type(self, filename, abstract_type, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.abstract(soup, abstract_type)), expected_len)
+
+
 if __name__ == '__main__':
     unittest.main()
