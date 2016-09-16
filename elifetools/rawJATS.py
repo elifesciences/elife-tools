@@ -251,3 +251,56 @@ def comment(soup):
 
 def element_citation(soup):
     return extract_nodes(soup, "element-citation")
+
+#
+# back
+#
+
+def back(soup):
+    return first(extract_nodes(soup, "back"))
+
+#
+# body
+#
+
+def body(soup):
+    return extract_nodes(soup, "body")
+
+def article_body(soup):
+    return first(extract_nodes(soup, "body"))
+
+def sub_article(soup, article_type=None):
+    return extract_nodes(soup, "sub-article", attr = "article-type", value = article_type)
+
+def decision_letter(soup):
+    return first(sub_article(soup, "article-commentary"))
+
+def author_response(soup):
+    return first(sub_article(soup, "reply"))
+
+def section(soup):
+    return extract_nodes(soup, "sec")
+
+def paragraph(soup):
+    return extract_nodes(soup, "p")
+
+def table(soup):
+    return extract_nodes(soup, "table")
+
+def table_wrap_foot(soup):
+    return extract_nodes(soup, "table-wrap-foot")
+
+def disp_formula(soup):
+    return extract_nodes(soup, "disp-formula")
+
+def math(soup):
+    return extract_nodes(soup, "math")
+    
+def boxed_text(soup):
+    return extract_nodes(soup, "boxed-text")
+
+def fig(soup):
+    return extract_nodes(soup, "fig")
+
+def fig_group(soup):
+    return extract_nodes(soup, "fig-group")

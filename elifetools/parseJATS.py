@@ -8,6 +8,7 @@ from slugify import slugify
 from utils import *
 import rawJATS as raw_parser
 import re
+from collections import OrderedDict
 
 
 import logging
@@ -24,6 +25,12 @@ def parse_xml(xml):
 
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
+
+def duplicate_tag(tag):
+    # Make a completely new copy of a tag by parsing its contents again
+    soup_copy = parse_xml(unicode(tag))
+    tag_copy = first(extract_nodes(soup_copy, tag.name))
+    return tag_copy
 
 def title(soup):
     return node_text(raw_parser.article_title(soup))
@@ -1584,3 +1591,307 @@ def award_group_principal_award_recipient(tag):
             continue
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
+
+def object_id_doi(tag, parent_tag_name=None):
+    """DOI in an object-id tag found inside the tag"""
+    doi = None
+    object_id = None
+    object_ids = raw_parser.object_id(tag, "doi")
+    if object_ids:
+        object_id = first(object_ids)
+    if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
+        object_id = None
+    if object_id:
+        doi = node_contents_str(object_id)
+    return doi
+
+def title_text(tag, parent_tag_name=None):
+    """Extract the text of a title tag"""
+    title = None
+    title_tag = raw_parser.title(tag)
+    if parent_tag_name and title_tag and title_tag.parent.name != parent_tag_name:
+        title_tag = None
+    if title_tag:
+        title = node_contents_str(title_tag)
+    return title
+
+def caption_title(tag):
+    """Extract the text of a title or p tag inside the first caption tag"""
+    title = None
+    caption = raw_parser.caption(tag)
+    if caption:
+        title_tag = raw_parser.title(caption)
+        if title_tag:
+            title = node_contents_str(title_tag)
+        if not title:
+            p_tags = raw_parser.paragraph(caption)
+            if p_tags:
+                title = node_contents_str(first(p_tags))
+    return title
+
+def label(tag, parent_tag_name=None):
+    label = None
+    label_tag = raw_parser.label(tag)
+    if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
+        label_tag = None
+    if label_tag:
+        label = node_contents_str(label_tag)
+    return label
+
+def body(soup):
+
+    body_content = []
+
+    raw_body = raw_parser.article_body(soup)
+
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+
+    return body_content
+
+
+def render_raw_body(tag):
+    body_content = []
+    body_tags = body_blocks(tag)
+    for tag in body_tags:
+        if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
+            # Collapse boxed-text here if it has no title or label
+            for boxed_tag in tag:
+                tag_content = body_block_content_render(boxed_tag)
+                body_content.append(tag_content)
+        else:
+            tag_content = body_block_content_render(tag)
+            body_content.append(tag_content)
+    return body_content
+
+
+def body_block_content_render(tag):
+    """
+    Render the tag as body content and call recursively if
+    the tag has child tags
+    """
+    tag_content = {}
+
+    tag_content = body_block_content(tag)
+
+    for child_tag in tag:
+        if body_block_content(child_tag) != {}:
+            if "content" not in tag_content:
+                tag_content["content"] = []
+
+            if child_tag.name == "p":
+                # If block tags are found inside a p, then make them a sibling of that p
+                tag_content["content"].append(body_block_content(child_tag))
+                for p_child_tag in child_tag:
+                    if body_block_content(p_child_tag) != {}:
+                        tag_content["content"].append(body_block_content_render(p_child_tag))
+            elif child_tag.name == "fig" and tag.name == "fig-group":
+                # Do not fig inside fig-group a second time
+                del tag_content["content"]
+            else:
+                tag_content["content"].append(body_block_content_render(child_tag))
+
+    return tag_content
+
+def body_block_content(tag):
+
+    tag_content = OrderedDict()
+
+    if tag.name == "sec":
+        tag_content["type"] = "section"
+        set_if_value(tag_content, "title", title_text(tag, tag.name))
+
+    elif tag.name == "boxed-text":
+        tag_content["type"] = "box"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", title_text(tag))
+
+    elif tag.name == "p":
+        tag_content["type"] = "paragraph"
+
+        # Remove unwanted nested tags
+        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group", "fig", "boxed-text"]
+        tag_copy = duplicate_tag(tag)
+        tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
+
+        tag_content["text"] = node_contents_str(tag_copy)
+
+    elif tag.name == "table-wrap":
+        tag_content["type"] = "table"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+
+        tables = raw_parser.table(tag)
+        tag_content["tables"] = []
+        for table in tables:
+            # Add the table tag back for now
+            table_content = '<table>' + node_contents_str(table) + '</table>'
+            tag_content["tables"].append(table_content)
+
+        table_wrap_foot = raw_parser.table_wrap_foot(tag)
+        for foot_tag in table_wrap_foot:
+            # TODO ? We are ignoring label tags
+            for fn_tag in raw_parser.fn(foot_tag):
+                for p_tag in raw_parser.paragraph(fn_tag):
+                    if "footer" not in tag_content:
+                        tag_content["footer"] = []
+                    tag_content["footer"].append(body_block_content(p_tag))
+
+    elif tag.name == "disp-formula":
+        tag_content["type"] = "mathml"
+
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+
+        math_tag = first(raw_parser.math(tag))
+        tag_content["mathml"] = node_contents_str(math_tag)
+
+    elif tag.name == "fig":
+        tag_content["type"] = "image"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        supplementary_material_tags = []
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            for block_tag in caption_tags:
+                if "caption" not in tag_content:
+                    tag_content["caption"] = []
+                # Note then skip p tags with supplementary-material inside
+                if raw_parser.supplementary_material(block_tag):
+                    for supp_tag in raw_parser.supplementary_material(block_tag):
+                        supplementary_material_tags.append(supp_tag)
+                    continue
+                if body_block_content_render(block_tag) != {}:
+                    tag_content["caption"].append(body_block_content_render(block_tag))
+            if "caption" in tag_content and tag_content["caption"] == []:
+                del tag_content["caption"]
+        # todo!! alt
+        set_if_value(tag_content, "alt", "")
+        # todo!! set base URL for images
+        graphic_tags = raw_parser.graphic(tag)
+        if graphic_tags:
+            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
+        # todo!! support for custom permissions of use or license
+        # sourceData
+        if len(supplementary_material_tags) > 0:
+            for supp_tag in supplementary_material_tags:
+                if "sourceData" not in tag_content:
+                    tag_content["sourceData"] = []
+                if body_block_content_render(supp_tag) != {}:
+                    tag_content["sourceData"].append(body_block_content_render(supp_tag))
+
+    elif tag.name == "fig-group":
+        for i, fig_tag in enumerate(raw_parser.fig(tag)):
+            if i == 0:
+                tag_content = body_block_content(fig_tag)
+            elif i > 0:
+                if "supplements" not in tag_content:
+                    tag_content["supplements"] = []
+                tag_content["supplements"].append(body_block_content(fig_tag))
+
+    elif tag.name == "supplementary-material":
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        if raw_parser.media(tag):
+            media_tag = first(raw_parser.media(tag))
+            if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
+                # Quick concatenation for now
+                tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
+
+    return tag_content
+
+def body_blocks(soup):
+    """
+    Note: for some reason this works and few other attempted methods work
+    Search for certain node types, find the first nodes siblings of the same type
+    Add the first sibling and the other siblings to a list and return them
+    """
+    nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula", "fig", "fig-group"]
+
+    body_block_tags = []
+
+    first_sibling_node = firstnn(soup.find_all())
+
+    if first_sibling_node is None:
+        return body_block_tags
+
+    sibling_tags = first_sibling_node.find_next_siblings(nodenames)
+
+    # Add the first component tag and the ResultSet tags together
+    body_block_tags.append(first_sibling_node)
+
+    for tag in sibling_tags:
+        body_block_tags.append(tag)
+
+    return body_block_tags
+
+def sub_article_doi(tag):
+    doi = None
+    article_id_tag = first(raw_parser.article_id(tag, "doi"))
+    if article_id_tag:
+        doi = article_id_tag.text
+    return doi
+
+def decision_letter(soup):
+
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.decision_letter(soup)
+
+    if sub_article:
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # description
+    if raw_body:
+        # Description will be the first boxed-text tag
+        if raw_parser.boxed_text(raw_body):
+            sub_article_content["description"] = []
+            boxed_text_description = first(raw_parser.boxed_text(raw_body))
+            tags = body_blocks(boxed_text_description)
+            for tag in tags:
+                tag_content = body_block_content_render(tag)
+                sub_article_content["description"].append(tag_content)
+
+            # Remove the tag before content is compiled
+            boxed_text_description.decompose()
+
+    # content
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
+
+    return sub_article_content
+
+
+def author_response(soup):
+
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.author_response(soup)
+
+    if sub_article:
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # content
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
+
+    return sub_article_content

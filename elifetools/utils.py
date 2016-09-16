@@ -128,6 +128,14 @@ def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     return filter(lambda tag: not starts_with_doi(tag), tags)
 
+def remove_tag_from_tag(tag, nodename):
+    if not nodename:
+        return tag
+    unwanted_tags = extract_nodes(tag, nodename)
+    for unwanted_tag in unwanted_tags:
+        unwanted_tag.decompose()
+    return tag
+
 def component_acting_parent_tag(parent_tag, tag):
     """
     Only intended for use in getting components, look for tag name of fig-group
