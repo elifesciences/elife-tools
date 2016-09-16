@@ -1712,7 +1712,7 @@ def body_block_content(tag):
         tag_content["type"] = "paragraph"
 
         # Remove unwanted nested tags
-        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group", "fig"]
+        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group", "fig", "boxed-text"]
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
