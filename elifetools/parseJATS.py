@@ -1769,7 +1769,7 @@ def body_block_content(tag):
                     continue
                 if body_block_content_render(block_tag) != {}:
                     tag_content["caption"].append(body_block_content_render(block_tag))
-            if tag_content["caption"] == []:
+            if "caption" in tag_content and tag_content["caption"] == []:
                 del tag_content["caption"]
         # todo!! alt
         set_if_value(tag_content, "alt", "")
