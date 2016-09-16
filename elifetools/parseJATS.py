@@ -1898,12 +1898,13 @@ def author_response(soup):
 
 
 def render_abstract_json(abstract_tag):
-    abstract_json = {}
+    abstract_json = OrderedDict()
     set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
     for child_tag in body_blocks(abstract_tag):
-        if "content" not in abstract_json:
-             abstract_json["content"] = []
-        abstract_json["content"].append(body_block_content(child_tag))
+        if body_block_content(child_tag) != {}:
+            if "content" not in abstract_json:
+                 abstract_json["content"] = []
+            abstract_json["content"].append(body_block_content(child_tag))
     return abstract_json
 
 

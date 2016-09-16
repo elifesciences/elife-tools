@@ -221,7 +221,7 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
     @unpack
     @data(
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract><object-id pub-id-type="doi">10.7554/eLife.00070.001</object-id><p>Paragraph 1</p><p>Paragraph 2</p></root>',
-        OrderedDict([('doi', u'10.7554/eLife.00070.001'), ('content', [OrderedDict(), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])
+        OrderedDict([('doi', u'10.7554/eLife.00070.001'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract abstract-type="executive-summary"><object-id pub-id-type="doi">10.7554/eLife.00070.002</object-id><title>eLife digest</title><p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p></root>',
@@ -238,7 +238,7 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
     @unpack
     @data(
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract abstract-type="executive-summary"><object-id pub-id-type="doi">10.7554/eLife.00070.002</object-id><title>eLife digest</title><p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p></root>',
-        OrderedDict([('doi', u'10.7554/eLife.00070.002'), ('content', [OrderedDict(), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 3')])])])
+        OrderedDict([('doi', u'10.7554/eLife.00070.002'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 3')])])])
          ),
         )
     def test_digest_json(self, xml_content, expected):
