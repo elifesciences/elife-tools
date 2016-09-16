@@ -1684,7 +1684,7 @@ def body_block_content_render(tag):
                 tag_content["content"].append(body_block_content(child_tag))
                 for p_child_tag in child_tag:
                     if body_block_content(p_child_tag) != {}:
-                        tag_content["content"].append(body_block_content(p_child_tag))
+                        tag_content["content"].append(body_block_content_render(p_child_tag))
             elif child_tag.name == "fig" and tag.name == "fig-group":
                 # Do not fig inside fig-group a second time
                 del tag_content["content"]
