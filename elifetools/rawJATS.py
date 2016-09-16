@@ -12,8 +12,11 @@ def article_title(soup):
 def title(soup):
     return first(extract_nodes(soup, "title"))
 
-def abstract(soup):
-    return extract_nodes(soup, "abstract")
+def abstract(soup, abstract_type=None):
+    if abstract_type:
+        return extract_nodes(soup, "abstract", attr="abstract-type", value=abstract_type)
+    else:
+        return extract_nodes(soup, "abstract")
 
 def article_id(soup, pub_id_type):
     return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)

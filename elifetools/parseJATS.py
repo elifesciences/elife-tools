@@ -1895,3 +1895,33 @@ def author_response(soup):
             sub_article_content["content"] = body_content
 
     return sub_article_content
+
+
+def render_abstract_json(abstract_tag):
+    abstract_json = OrderedDict()
+    set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
+    for child_tag in body_blocks(abstract_tag):
+        if body_block_content(child_tag) != {}:
+            if "content" not in abstract_json:
+                 abstract_json["content"] = []
+            abstract_json["content"].append(body_block_content(child_tag))
+    return abstract_json
+
+
+def abstract_json(soup):
+    """abstract in article json format"""
+    abstract_tags = raw_parser.abstract(soup)
+    abstract_json = None
+    for tag in abstract_tags:
+        if tag.get("abstract-type") is None:
+            abstract_json = render_abstract_json(tag)
+    return abstract_json
+
+
+def digest_json(soup):
+    """digest in article json format"""
+    abstract_tags = raw_parser.abstract(soup, abstract_type="executive-summary")
+    abstract_json = None
+    for tag in abstract_tags:
+        abstract_json = render_abstract_json(tag)
+    return abstract_json
