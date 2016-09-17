@@ -1985,7 +1985,9 @@ def author_person(author, contributions, correspondence):
         if "email" in author.get("references"):
             for ref_id in author["references"]["email"]:
                 if correspondence and ref_id in correspondence:
-                    author_json["emailAddresses"] = correspondence[ref_id]
+                    if "emailAddresses" not in author_json:
+                        author_json["emailAddresses"] = []
+                    author_json["emailAddresses"].append(correspondence[ref_id])
 
         # contributions
         if "contribution" in author.get("references"):
