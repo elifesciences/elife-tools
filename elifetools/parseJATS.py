@@ -1965,17 +1965,18 @@ def author_person(author, contributions, correspondence):
             if affiliation.get("institution"):
                 affiliation_json["name"].append(affiliation.get("institution"))
 
-            affiliation_address = OrderedDict()
-            affiliation_address["formatted"] = []
-            affiliation_address["components"] = OrderedDict()
-            if affiliation.get("city"):
-                affiliation_address["formatted"].append(affiliation.get("city"))
-                affiliation_address["components"]["locality"] = []
-                affiliation_address["components"]["locality"].append(affiliation.get("city"))
-            if affiliation.get("country"):
-                affiliation_address["formatted"].append(affiliation.get("country"))
-                affiliation_address["components"]["country"] = affiliation.get("country")
-            affiliation_json["address"] = affiliation_address
+            if affiliation.get("city") or affiliation.get("country"):
+                affiliation_address = OrderedDict()
+                affiliation_address["formatted"] = []
+                affiliation_address["components"] = OrderedDict()
+                if affiliation.get("city"):
+                    affiliation_address["formatted"].append(affiliation.get("city"))
+                    affiliation_address["components"]["locality"] = []
+                    affiliation_address["components"]["locality"].append(affiliation.get("city"))
+                if affiliation.get("country"):
+                    affiliation_address["formatted"].append(affiliation.get("country"))
+                    affiliation_address["components"]["country"] = affiliation.get("country")
+                affiliation_json["address"] = affiliation_address
 
             author_json["affiliations"].append(affiliation_json)
 
