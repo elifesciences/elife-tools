@@ -2042,7 +2042,7 @@ def authors_json(soup):
             author_json["people"] = []
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
-        else:
+        elif contributor["type"] == "author":
             author_json = author_person(contributor, author_contributions_data, author_correspondence_data)
         authors_json_data.append(author_json)
 
