@@ -1925,3 +1925,136 @@ def digest_json(soup):
     for tag in abstract_tags:
         abstract_json = render_abstract_json(tag)
     return abstract_json
+
+
+def author_preferred_name(surname, given_names, suffix):
+    preferred_name = None
+    if surname and given_names:
+        preferred_name = " ".join([given_names, surname])
+    if preferred_name and suffix:
+        preferred_name = preferred_name + ", " + suffix
+    return preferred_name
+
+
+def author_index_name(surname, given_names, suffix):
+    index_name = None
+    if surname and given_names:
+        index_name = ", ".join([surname, given_names])
+    if index_name and suffix:
+        index_name = index_name + ", " + suffix
+    return index_name
+
+
+def author_person(author, contributions, correspondence):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_name["index"] = author_index_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_json["name"] = author_name
+    
+    if author.get("affiliations"):
+        author_json["affiliations"] = []
+        for affiliation in author.get("affiliations"):
+            affiliation_json = OrderedDict()
+            affiliation_json["name"] = []
+            if affiliation.get("dept"):
+                affiliation_json["name"].append(affiliation.get("dept"))
+            if affiliation.get("institution"):
+                affiliation_json["name"].append(affiliation.get("institution"))
+
+            affiliation_address = OrderedDict()
+            affiliation_address["formatted"] = []
+            affiliation_address["components"] = OrderedDict()
+            if affiliation.get("city"):
+                affiliation_address["formatted"].append(affiliation.get("city"))
+                affiliation_address["components"]["locality"] = []
+                affiliation_address["components"]["locality"].append(affiliation.get("city"))
+            if affiliation.get("country"):
+                affiliation_address["formatted"].append(affiliation.get("country"))
+                affiliation_address["components"]["country"] = affiliation.get("country")
+            affiliation_json["address"] = affiliation_address
+
+            author_json["affiliations"].append(affiliation_json)
+
+
+    if author.get("references"):
+        # email
+        if "email" in author.get("references"):
+            for ref_id in author["references"]["email"]:
+                if correspondence and ref_id in correspondence:
+                    author_json["emailAddresses"] = correspondence[ref_id]
+
+        # contributions
+        if "contribution" in author.get("references"):
+            for ref_id in author["references"]["contribution"]:
+                if contributions:
+                    for contribution in contributions:
+                        if contribution.get("text") and contribution.get("id") == ref_id:
+                            author_json["contribution"] = (
+                                contribution.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return author_json
+
+
+def author_group(author):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = author.get("collab")
+    return author_json
+
+
+def author_on_behalf_of(author):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = author.get("on-behalf-of")
+    author_json["onBehalfOf"] = OrderedDict()
+    author_json["onBehalfOf"]["name"] = []
+    author_json["onBehalfOf"]["name"].append(author.get("on-behalf-of"))
+    return author_json
+
+
+def collab_to_group_author_key_map(authors):
+    """compile a map of author collab to group-author-key"""
+    collab_map = {}
+    for author in authors:
+        if author.get("collab"):
+            collab_map[author.get("collab")] = author.get("group-author-key")
+    return collab_map
+
+def authors_json(soup):
+    """authors list in article json format"""
+    authors_json_data = []
+    contributors_data = contributors(soup, "full")
+    author_contributions_data = author_contributions(soup, None)
+    author_correspondence_data = full_correspondence(soup)
+    authors_non_byline_data = authors_non_byline(soup)
+
+    # First line authors builds basic structure
+    for contributor in contributors_data:
+        if contributor["type"] == "author" and contributor.get("collab"):
+            author_json = author_group(contributor)
+            author_json["people"] = []
+        elif contributor.get("on-behalf-of"):
+            author_json = author_on_behalf_of(contributor)
+        else:
+            author_json = author_person(contributor, author_contributions_data, author_correspondence_data)
+        authors_json_data.append(author_json)
+
+    # Second, add byline author data
+    collab_map = collab_to_group_author_key_map(contributors_data)
+    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+        for group_author in filter(
+            lambda json_element: json_element["type"] == "group", authors_json_data):
+            group_author_key = None
+            if group_author["name"] in collab_map:
+                group_author_key = collab_map[group_author["name"]]
+            if contributor.get("group-author-key") == group_author_key:
+                author_json = author_person(contributor, author_contributions_data, author_correspondence_data)
+                group_author["people"].append(author_json)
+
+
+    return authors_json_data
+

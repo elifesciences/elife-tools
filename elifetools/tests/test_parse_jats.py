@@ -82,6 +82,12 @@ class TestParseJats(unittest.TestCase):
             self.assertNotEqual(not_expected, body)
 
 
+    @data("elife-kitchen-sink.xml")
+    def test_authors_json(self, filename):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertNotEqual(parser.authors_json(soup), None)
+
+
     @unpack
     @data(
         ("<root><italic></italic></root>", 0),
