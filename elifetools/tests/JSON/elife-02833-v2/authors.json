@@ -1,0 +1,323 @@
+[
+    {
+        "surname": "Bowman", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "SKB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Sarah K Bowman", 
+        "article_doi": "10.7554/eLife.02833", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology", 
+                "city": "Boston", 
+                "institution": "Massachusetts General Hospital", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Genetics", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Sarah K", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ], 
+            "contribution": [
+                "con1"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 12260, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-12260"
+    }, 
+    {
+        "surname": "Deaton", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "AMD, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Aimee M Deaton", 
+        "article_doi": "10.7554/eLife.02833", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology", 
+                "city": "Boston", 
+                "institution": "Massachusetts General Hospital", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Genetics", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Aimee M", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 12492, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-12492"
+    }, 
+    {
+        "surname": "Domingues", 
+        "author": "Heber Domingues", 
+        "article_doi": "10.7554/eLife.02833", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Heber", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 12493, 
+        "notes-fn": [
+            "HD, Conception and design, Acquisition of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12493"
+    }, 
+    {
+        "surname": "Wang", 
+        "author": "Peggy I Wang", 
+        "article_doi": "10.7554/eLife.02833", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology", 
+                "city": "Boston", 
+                "institution": "Massachusetts General Hospital", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Genetics", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Peggy I", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 12494, 
+        "notes-fn": [
+            "PIW, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12494"
+    }, 
+    {
+        "surname": "Sadreyev", 
+        "author": "Ruslan I Sadreyev", 
+        "article_doi": "10.7554/eLife.02833", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology", 
+                "city": "Boston", 
+                "institution": "Massachusetts General Hospital", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Pathology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Ruslan I", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff4"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 12495, 
+        "notes-fn": [
+            "RIS, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12495"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: kingston@molbio.mgh.harvard.edu (REK);"
+        ], 
+        "surname": "Kingston", 
+        "author": "Robert E Kingston", 
+        "article_doi": "10.7554/eLife.02833", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology", 
+                "city": "Boston", 
+                "institution": "Massachusetts General Hospital", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Genetics", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Robert E", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-3"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 1379, 
+        "notes-fn": [
+            "REK, Conception and design, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-1379"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: (+1) 617-432-1906 (WB)"
+        ], 
+        "surname": "Bender", 
+        "author": "Welcome Bender", 
+        "article_doi": "10.7554/eLife.02833", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Welcome", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-2"
+            ], 
+            "phone": [
+                "cor2"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con3"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 12496, 
+        "notes-fn": [
+            "WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-12496"
+    }
+]

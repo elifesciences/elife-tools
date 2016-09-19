@@ -1,0 +1,92 @@
+[
+    {
+        "parent_ordinal": 1, 
+        "ordinal": 1, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-02833-fig1-v2.tif", 
+        "position": 1, 
+        "parent_component_doi": "10.7554/eLife.02833.003", 
+        "parent_sibling_ordinal": 1, 
+        "type": "graphic"
+    }, 
+    {
+        "parent_ordinal": 2, 
+        "ordinal": 2, 
+        "p_parent_type": "fig", 
+        "parent_type": "fig", 
+        "p_parent_sibling_ordinal": 1, 
+        "p_parent_ordinal": 1, 
+        "xlink_href": "elife-02833-fig1-figsupp1-v2.tif", 
+        "p_parent_component_doi": "10.7554/eLife.02833.003", 
+        "position": 2, 
+        "parent_component_doi": "10.7554/eLife.02833.004", 
+        "parent_sibling_ordinal": 2, 
+        "type": "graphic", 
+        "parent_asset": "figsupp"
+    }, 
+    {
+        "parent_ordinal": 3, 
+        "ordinal": 3, 
+        "p_parent_type": "fig", 
+        "parent_type": "fig", 
+        "p_parent_sibling_ordinal": 1, 
+        "p_parent_ordinal": 1, 
+        "xlink_href": "elife-02833-fig1-figsupp2-v2.tif", 
+        "p_parent_component_doi": "10.7554/eLife.02833.003", 
+        "position": 3, 
+        "parent_component_doi": "10.7554/eLife.02833.005", 
+        "parent_sibling_ordinal": 3, 
+        "type": "graphic", 
+        "parent_asset": "figsupp"
+    }, 
+    {
+        "parent_ordinal": 4, 
+        "ordinal": 4, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-02833-fig2-v2.tif", 
+        "position": 4, 
+        "parent_component_doi": "10.7554/eLife.02833.006", 
+        "parent_sibling_ordinal": 2, 
+        "type": "graphic"
+    }, 
+    {
+        "parent_ordinal": 5, 
+        "ordinal": 5, 
+        "p_parent_type": "fig", 
+        "parent_type": "fig", 
+        "p_parent_sibling_ordinal": 2, 
+        "p_parent_ordinal": 4, 
+        "xlink_href": "elife-02833-fig2-figsupp1-v2.tif", 
+        "p_parent_component_doi": "10.7554/eLife.02833.006", 
+        "position": 5, 
+        "parent_component_doi": "10.7554/eLife.02833.007", 
+        "parent_sibling_ordinal": 2, 
+        "type": "graphic", 
+        "parent_asset": "figsupp"
+    }, 
+    {
+        "parent_ordinal": 6, 
+        "ordinal": 6, 
+        "p_parent_type": "fig", 
+        "parent_type": "fig", 
+        "p_parent_sibling_ordinal": 2, 
+        "p_parent_ordinal": 4, 
+        "xlink_href": "elife-02833-fig2-figsupp2-v2.tif", 
+        "p_parent_component_doi": "10.7554/eLife.02833.006", 
+        "position": 6, 
+        "parent_component_doi": "10.7554/eLife.02833.008", 
+        "parent_sibling_ordinal": 3, 
+        "type": "graphic", 
+        "parent_asset": "figsupp"
+    }, 
+    {
+        "parent_ordinal": 7, 
+        "ordinal": 7, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-02833-fig3-v2.tif", 
+        "position": 7, 
+        "parent_component_doi": "10.7554/eLife.02833.009", 
+        "parent_sibling_ordinal": 3, 
+        "type": "graphic"
+    }
+]
