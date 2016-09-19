@@ -1929,19 +1929,15 @@ def digest_json(soup):
 
 def author_preferred_name(surname, given_names, suffix):
     preferred_name = None
-    if surname and given_names:
-        preferred_name = " ".join([given_names, surname])
-    if preferred_name and suffix:
-        preferred_name = preferred_name + ", " + suffix
+    preferred_name = " ".join(filter(lambda element: element is not None,
+                                     [given_names, surname, suffix]))
     return preferred_name
 
 
 def author_index_name(surname, given_names, suffix):
     index_name = None
-    if surname and given_names:
-        index_name = ", ".join([surname, given_names])
-    if index_name and suffix:
-        index_name = index_name + ", " + suffix
+    index_name = ", ".join(filter(lambda element: element is not None,
+                                  [surname, given_names, suffix]))
     return index_name
 
 
