@@ -2033,6 +2033,7 @@ def authors_json(soup):
 
     # First line authors builds basic structure
     for contributor in contributors_data:
+        author_json = None
         if contributor["type"] == "author" and contributor.get("collab"):
             author_json = author_group(contributor)
             author_json["people"] = []
@@ -2040,7 +2041,9 @@ def authors_json(soup):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
             author_json = author_person(contributor, author_contributions_data, author_correspondence_data)
-        authors_json_data.append(author_json)
+
+        if author_json:
+            authors_json_data.append(author_json)
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
