@@ -1941,18 +1941,11 @@ def author_index_name(surname, given_names, suffix):
     return index_name
 
 
-def author_person(author, contributions, correspondence):
-    author_json = OrderedDict()
-    author_json["type"] = "person"
-    author_name = OrderedDict()
-    author_name["preferred"] = author_preferred_name(
-        author.get("surname"), author.get("given-names"), author.get("suffix"))
-    author_name["index"] = author_index_name(
-        author.get("surname"), author.get("given-names"), author.get("suffix"))
-    author_json["name"] = author_name
-    
+def author_affiliations(author):
+    """compile author affiliations for json output"""
+    affilations = []
+
     if author.get("affiliations"):
-        author_json["affiliations"] = []
         for affiliation in author.get("affiliations"):
             affiliation_json = OrderedDict()
             affiliation_json["name"] = []
@@ -1974,34 +1967,78 @@ def author_person(author, contributions, correspondence):
                     affiliation_address["components"]["country"] = affiliation.get("country")
                 affiliation_json["address"] = affiliation_address
 
-            author_json["affiliations"].append(affiliation_json)
+            affilations.append(affiliation_json)
 
+    if affilations != []:
+        return affilations
+    else:
+        return None
+
+
+def author_email_addresses(author, correspondence):
+    email_addresses = []
+
+    if "email" in author.get("references"):
+        for ref_id in author["references"]["email"]:
+            if correspondence and ref_id in correspondence:
+                email_addresses.append(correspondence[ref_id])
+
+    if email_addresses != []:
+        return email_addresses
+    else:
+        return None
+
+def author_contribution(author, contributions):
+    contribution_text = None
+
+    if "contribution" in author.get("references"):
+        for ref_id in author["references"]["contribution"]:
+            if contributions:
+                for contribution in contributions:
+                    if contribution.get("text") and contribution.get("id") == ref_id:
+                        contribution_text = (
+                            contribution.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return contribution_text
+
+def author_json_details(author, author_json, contributions, correspondence):
+    """add more author json"""
+    if author_affiliations(author):
+        author_json["affiliations"] = author_affiliations(author)
 
     if author.get("references"):
         # email
-        if "email" in author.get("references"):
-            for ref_id in author["references"]["email"]:
-                if correspondence and ref_id in correspondence:
-                    if "emailAddresses" not in author_json:
-                        author_json["emailAddresses"] = []
-                    author_json["emailAddresses"].append(correspondence[ref_id])
+        if author_email_addresses(author, correspondence):
+            author_json["emailAddresses"] = author_email_addresses(author, correspondence)
 
         # contributions
-        if "contribution" in author.get("references"):
-            for ref_id in author["references"]["contribution"]:
-                if contributions:
-                    for contribution in contributions:
-                        if contribution.get("text") and contribution.get("id") == ref_id:
-                            author_json["contribution"] = (
-                                contribution.get("text").replace('<p>', '').replace('</p>', ''))
+        if author_contribution(author, contributions):
+            author_json["contribution"] = author_contribution(author, contributions)
+
+    return author_json
+
+def author_person(author, contributions, correspondence):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_name["index"] = author_index_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_json["name"] = author_name
+
+    author_json = author_json_details(author, author_json, contributions, correspondence)
 
     return author_json
 
 
-def author_group(author):
+def author_group(author, contributions, correspondence):
     author_json = OrderedDict()
     author_json["type"] = "group"
     author_json["name"] = author.get("collab")
+
+    author_json = author_json_details(author, author_json, contributions, correspondence)
+
     return author_json
 
 
@@ -2035,7 +2072,7 @@ def authors_json(soup):
     for contributor in contributors_data:
         author_json = None
         if contributor["type"] == "author" and contributor.get("collab"):
-            author_json = author_group(contributor)
+            author_json = author_group(contributor, author_contributions_data, author_correspondence_data)
             author_json["people"] = []
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
