@@ -67,6 +67,7 @@ xml_filenames.append("elife-14093-v1.xml")
 xml_filenames.append("elife04490.xml")
 xml_filenames.append("elife05502.xml")
 xml_filenames.append("elife00351.xml")
+xml_filenames.append("elife-02833-v2.xml")
 
 
 for filename in xml_filenames:

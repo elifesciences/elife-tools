@@ -823,7 +823,16 @@ def contrib_email(contrib_tag):
         if email_tag.parent.name != "aff":
             email = email_tag.text
     return email
-    
+
+def contrib_phone(contrib_tag):
+    """
+    Given a contrib tag, look for an phone tag
+    """
+    phone = None
+    if raw_parser.phone(contrib_tag):
+        phone = first(raw_parser.phone(contrib_tag)).text
+    return phone
+
 
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
@@ -841,6 +850,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
     set_if_value(contributor, "email", contrib_email(contrib_tag))
+    set_if_value(contributor, "phone", contrib_phone(contrib_tag))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
@@ -864,7 +874,12 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, 'affiliation', rid)
             if ref_type == "corresp":
-                add_to_list_dictionary(contrib_refs, 'email', rid)
+                # Check for email or phone type
+                corresp_tag = firstnn(soup.find_all(id=rid))
+                if contrib_phone(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'phone', rid)
+                elif contrib_email(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'email', rid)
             if ref_type == "fn":
                 if rid.startswith('equal-contrib'):
                     add_to_list_dictionary(contrib_refs, 'equal-contrib', rid)
@@ -1348,24 +1363,18 @@ def correspondence(soup):
     return correspondence
 
 
-def get_email(text):
-    if text:
-        match = re.search('<email>(.*?)</email>', text, re.DOTALL)
-        if match is not None:
-            return match.group(1)
-
-    return ""
-
-
-
 def full_correspondence(soup):
     cor = {}
-    
+
     author_notes_nodes = raw_parser.author_notes(soup)
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
-            cor[tag['id']] = get_email(node_contents_str(tag))
+            if raw_parser.email(tag):
+                cor[tag['id']] = node_contents_str(first(raw_parser.email(tag)))
+            elif raw_parser.phone(tag):
+                # Look for a phone number
+                cor[tag['id']] = node_contents_str(first(raw_parser.phone(tag)))
 
     return cor
 
@@ -1974,6 +1983,17 @@ def author_affiliations(author):
     else:
         return None
 
+def author_phone_numbers(author, correspondence):
+    phone_numbers = []
+    if "phone" in author.get("references"):
+        for ref_id in author["references"]["phone"]:
+            if correspondence and ref_id in correspondence:
+                phone_numbers.append(correspondence[ref_id])
+    if phone_numbers != []:
+        return phone_numbers
+    else:
+        return None
+
 
 def author_email_addresses(author, correspondence):
     email_addresses = []
@@ -2011,9 +2031,14 @@ def author_json_details(author, author_json, contributions, correspondence):
         if author_email_addresses(author, correspondence):
             author_json["emailAddresses"] = author_email_addresses(author, correspondence)
 
+        # phone
+        if author_phone_numbers(author, correspondence):
+            author_json["phoneNumbers"] = author_phone_numbers(author, correspondence)
+
         # contributions
         if author_contribution(author, contributions):
             author_json["contribution"] = author_contribution(author, contributions)
+
 
     return author_json
 

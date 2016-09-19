@@ -82,7 +82,7 @@ class TestParseJats(unittest.TestCase):
             self.assertNotEqual(not_expected, body)
 
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml")
     def test_authors_json(self, filename):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.authors_json(soup), None)
@@ -256,12 +256,6 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
     Unit test small or special cases
     """
     @unpack
-    @data(("", ""),
-        ("<email>test@example.org</email>", "test@example.org"))
-    def test_get_email(self, text, expected):
-        self.assertEqual(expected, parser.get_email(text))
-
-    @unpack
     @data(("elife-kitchen-sink.xml", "pub", ('28', '02', '2014')))
     def test_ymd(self, filename, test_date_type, expected):
         soup = self.soup(filename)
@@ -411,7 +405,7 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         self.assertEqual(self.json_expected(filename, "conflict"),
                          parser.conflict(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml")
     def test_contributors(self, filename):
         self.assertEqual(self.json_expected(filename, "contributors"),
                          parser.contributors(self.soup(filename)))
@@ -476,7 +470,7 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         self.assertEqual(self.json_expected(filename, "full_award_groups"),
                          parser.full_award_groups(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
+    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife-02833-v2.xml")
     def test_full_correspondence(self, filename):
         self.assertEqual(self.json_expected(filename, "full_correspondence"),
                          parser.full_correspondence(self.soup(filename)))
