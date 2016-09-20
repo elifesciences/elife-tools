@@ -2021,6 +2021,19 @@ def author_contribution(author, contributions):
 
     return contribution_text
 
+def author_competing_interests(author, competing_interests):
+    competing_interests_text = None
+
+    if "competing-interest" in author.get("references"):
+        for ref_id in author["references"]["competing-interest"]:
+            if competing_interests:
+                for competing_interest in competing_interests:
+                    if competing_interest.get("text") and competing_interest.get("id") == ref_id:
+                        competing_interests_text = (
+                            competing_interest.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return competing_interests_text
+
 def author_equal_contribution(author, equal_contributions_map):
     equal_contributions = []
 
@@ -2036,7 +2049,7 @@ def author_equal_contribution(author, equal_contributions_map):
 
 
 
-def author_json_details(author, author_json, contributions, correspondence, equal_contributions_map):
+def author_json_details(author, author_json, contributions, correspondence, competing_interests, equal_contributions_map):
     """add more author json"""
     if author_affiliations(author):
         author_json["affiliations"] = author_affiliations(author)
@@ -2054,13 +2067,17 @@ def author_json_details(author, author_json, contributions, correspondence, equa
         if author_contribution(author, contributions):
             author_json["contribution"] = author_contribution(author, contributions)
 
+        # competing interests
+        if author_competing_interests(author, competing_interests):
+            author_json["competingInterests"] = author_competing_interests(author, competing_interests)
+
         # equal-contributions
         if author_equal_contribution(author, equal_contributions_map):
             author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
 
     return author_json
 
-def author_person(author, contributions, correspondence, equal_contributions_map):
+def author_person(author, contributions, correspondence, competing_interests, equal_contributions_map):
     author_json = OrderedDict()
     author_json["type"] = "person"
     author_name = OrderedDict()
@@ -2071,17 +2088,19 @@ def author_person(author, contributions, correspondence, equal_contributions_map
     author_json["name"] = author_name
     if author.get("orcid"):
         author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
-    author_json = author_json_details(author, author_json, contributions, correspondence, equal_contributions_map)
+    author_json = author_json_details(author, author_json, contributions, correspondence,
+                                      competing_interests, equal_contributions_map)
 
     return author_json
 
 
-def author_group(author, contributions, correspondence, equal_contributions_map):
+def author_group(author, contributions, correspondence, competing_interests, equal_contributions_map):
     author_json = OrderedDict()
     author_json["type"] = "group"
     author_json["name"] = author.get("collab")
 
-    author_json = author_json_details(author, author_json, contributions, correspondence, equal_contributions_map)
+    author_json = author_json_details(author, author_json, contributions, correspondence,
+                                      competing_interests, equal_contributions_map)
 
     return author_json
 
@@ -2125,6 +2144,7 @@ def authors_json(soup):
     authors_json_data = []
     contributors_data = contributors(soup, "full")
     author_contributions_data = author_contributions(soup, None)
+    author_competing_interests_data = competing_interests(soup, None)
     author_correspondence_data = full_correspondence(soup)
     authors_non_byline_data = authors_non_byline(soup)
     equal_contributions_map = map_equal_contributions(contributors_data)
@@ -2133,12 +2153,14 @@ def authors_json(soup):
     for contributor in contributors_data:
         author_json = None
         if contributor["type"] == "author" and contributor.get("collab"):
-            author_json = author_group(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+            author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
+                                       author_competing_interests_data, equal_contributions_map)
             author_json["people"] = []
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
-            author_json = author_person(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+            author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
+                                        author_competing_interests_data, equal_contributions_map)
 
         if author_json:
             authors_json_data.append(author_json)
@@ -2152,7 +2174,8 @@ def authors_json(soup):
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
             if contributor.get("group-author-key") == group_author_key:
-                author_json = author_person(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+                author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
+                                            author_competing_interests_data, equal_contributions_map)
                 group_author["people"].append(author_json)
 
 
