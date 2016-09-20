@@ -221,6 +221,13 @@ def supplementary_material(soup):
 def contrib_id(soup):
     return extract_nodes(soup, "contrib-id")
 
+def email(soup):
+    return extract_nodes(soup, "email")
+
+def phone(soup):
+    return extract_nodes(soup, "phone")
+
+
 #
 # references
 #

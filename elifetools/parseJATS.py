@@ -823,7 +823,16 @@ def contrib_email(contrib_tag):
         if email_tag.parent.name != "aff":
             email = email_tag.text
     return email
-    
+
+def contrib_phone(contrib_tag):
+    """
+    Given a contrib tag, look for an phone tag
+    """
+    phone = None
+    if raw_parser.phone(contrib_tag):
+        phone = first(raw_parser.phone(contrib_tag)).text
+    return phone
+
 
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
@@ -841,6 +850,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
     set_if_value(contributor, "email", contrib_email(contrib_tag))
+    set_if_value(contributor, "phone", contrib_phone(contrib_tag))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
@@ -864,7 +874,12 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, 'affiliation', rid)
             if ref_type == "corresp":
-                add_to_list_dictionary(contrib_refs, 'email', rid)
+                # Check for email or phone type
+                corresp_tag = firstnn(soup.find_all(id=rid))
+                if contrib_phone(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'phone', rid)
+                elif contrib_email(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'email', rid)
             if ref_type == "fn":
                 if rid.startswith('equal-contrib'):
                     add_to_list_dictionary(contrib_refs, 'equal-contrib', rid)
@@ -1348,24 +1363,18 @@ def correspondence(soup):
     return correspondence
 
 
-def get_email(text):
-    if text:
-        match = re.search('<email>(.*?)</email>', text, re.DOTALL)
-        if match is not None:
-            return match.group(1)
-
-    return ""
-
-
-
 def full_correspondence(soup):
     cor = {}
-    
+
     author_notes_nodes = raw_parser.author_notes(soup)
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
-            cor[tag['id']] = get_email(node_contents_str(tag))
+            if raw_parser.email(tag):
+                cor[tag['id']] = node_contents_str(first(raw_parser.email(tag)))
+            elif raw_parser.phone(tag):
+                # Look for a phone number
+                cor[tag['id']] = node_contents_str(first(raw_parser.phone(tag)))
 
     return cor
 
@@ -1925,3 +1934,227 @@ def digest_json(soup):
     for tag in abstract_tags:
         abstract_json = render_abstract_json(tag)
     return abstract_json
+
+
+def author_preferred_name(surname, given_names, suffix):
+    preferred_name = None
+    preferred_name = " ".join(filter(lambda element: element is not None,
+                                     [given_names, surname, suffix]))
+    return preferred_name
+
+
+def author_index_name(surname, given_names, suffix):
+    index_name = None
+    index_name = ", ".join(filter(lambda element: element is not None,
+                                  [surname, given_names, suffix]))
+    return index_name
+
+
+def author_affiliations(author):
+    """compile author affiliations for json output"""
+    affilations = []
+
+    if author.get("affiliations"):
+        for affiliation in author.get("affiliations"):
+            affiliation_json = OrderedDict()
+            affiliation_json["name"] = []
+            if affiliation.get("dept"):
+                affiliation_json["name"].append(affiliation.get("dept"))
+            if affiliation.get("institution"):
+                affiliation_json["name"].append(affiliation.get("institution"))
+
+            if affiliation.get("city") or affiliation.get("country"):
+                affiliation_address = OrderedDict()
+                affiliation_address["formatted"] = []
+                affiliation_address["components"] = OrderedDict()
+                if affiliation.get("city"):
+                    affiliation_address["formatted"].append(affiliation.get("city"))
+                    affiliation_address["components"]["locality"] = []
+                    affiliation_address["components"]["locality"].append(affiliation.get("city"))
+                if affiliation.get("country"):
+                    affiliation_address["formatted"].append(affiliation.get("country"))
+                    affiliation_address["components"]["country"] = affiliation.get("country")
+                affiliation_json["address"] = affiliation_address
+
+            affilations.append(affiliation_json)
+
+    if affilations != []:
+        return affilations
+    else:
+        return None
+
+def author_phone_numbers(author, correspondence):
+    phone_numbers = []
+    if "phone" in author.get("references"):
+        for ref_id in author["references"]["phone"]:
+            if correspondence and ref_id in correspondence:
+                phone_numbers.append(correspondence[ref_id])
+    if phone_numbers != []:
+        return phone_numbers
+    else:
+        return None
+
+
+def author_email_addresses(author, correspondence):
+    email_addresses = []
+
+    if "email" in author.get("references"):
+        for ref_id in author["references"]["email"]:
+            if correspondence and ref_id in correspondence:
+                email_addresses.append(correspondence[ref_id])
+
+    if email_addresses != []:
+        return email_addresses
+    else:
+        return None
+
+def author_contribution(author, contributions):
+    contribution_text = None
+
+    if "contribution" in author.get("references"):
+        for ref_id in author["references"]["contribution"]:
+            if contributions:
+                for contribution in contributions:
+                    if contribution.get("text") and contribution.get("id") == ref_id:
+                        contribution_text = (
+                            contribution.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return contribution_text
+
+def author_equal_contribution(author, equal_contributions_map):
+    equal_contributions = []
+
+    if "contribution" in author.get("references"):
+        if "equal-contrib" in author["references"]:
+            for ref_id in author["references"]["equal-contrib"]:
+                if ref_id in equal_contributions_map:
+                    equal_contributions.append(equal_contributions_map[ref_id])
+    if equal_contributions != []:
+        return equal_contributions
+    else:
+        return None
+
+
+
+def author_json_details(author, author_json, contributions, correspondence, equal_contributions_map):
+    """add more author json"""
+    if author_affiliations(author):
+        author_json["affiliations"] = author_affiliations(author)
+
+    if author.get("references"):
+        # email
+        if author_email_addresses(author, correspondence):
+            author_json["emailAddresses"] = author_email_addresses(author, correspondence)
+
+        # phone
+        if author_phone_numbers(author, correspondence):
+            author_json["phoneNumbers"] = author_phone_numbers(author, correspondence)
+
+        # contributions
+        if author_contribution(author, contributions):
+            author_json["contribution"] = author_contribution(author, contributions)
+
+        # equal-contributions
+        if author_equal_contribution(author, equal_contributions_map):
+            author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
+
+    return author_json
+
+def author_person(author, contributions, correspondence, equal_contributions_map):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_name["index"] = author_index_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_json["name"] = author_name
+    if author.get("orcid"):
+        author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+    author_json = author_json_details(author, author_json, contributions, correspondence, equal_contributions_map)
+
+    return author_json
+
+
+def author_group(author, contributions, correspondence, equal_contributions_map):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = author.get("collab")
+
+    author_json = author_json_details(author, author_json, contributions, correspondence, equal_contributions_map)
+
+    return author_json
+
+
+def author_on_behalf_of(author):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = author.get("on-behalf-of")
+    author_json["onBehalfOf"] = OrderedDict()
+    author_json["onBehalfOf"]["name"] = []
+    author_json["onBehalfOf"]["name"].append(author.get("on-behalf-of"))
+    return author_json
+
+
+def collab_to_group_author_key_map(authors):
+    """compile a map of author collab to group-author-key"""
+    collab_map = {}
+    for author in authors:
+        if author.get("collab"):
+            collab_map[author.get("collab")] = author.get("group-author-key")
+    return collab_map
+
+def map_equal_contributions(contributors):
+    """assign numeric values to each unique equal-contrib id"""
+    equal_contribution_map = {}
+    equal_contribution_keys = []
+    for contributor in contributors:
+        if contributor.get("references") and "equal-contrib" in contributor.get("references"):
+            for key in contributor["references"]["equal-contrib"]:
+                if key not in equal_contribution_keys:
+                    equal_contribution_keys.append(key)
+    # Do a basic sort
+    equal_contribution_keys = sorted(equal_contribution_keys)
+    # Assign keys based on sorted values
+    for i, equal_contribution_key in enumerate(equal_contribution_keys):
+        equal_contribution_map[equal_contribution_key] = i+1
+    return equal_contribution_map
+
+def authors_json(soup):
+    """authors list in article json format"""
+    authors_json_data = []
+    contributors_data = contributors(soup, "full")
+    author_contributions_data = author_contributions(soup, None)
+    author_correspondence_data = full_correspondence(soup)
+    authors_non_byline_data = authors_non_byline(soup)
+    equal_contributions_map = map_equal_contributions(contributors_data)
+
+    # First line authors builds basic structure
+    for contributor in contributors_data:
+        author_json = None
+        if contributor["type"] == "author" and contributor.get("collab"):
+            author_json = author_group(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+            author_json["people"] = []
+        elif contributor.get("on-behalf-of"):
+            author_json = author_on_behalf_of(contributor)
+        elif contributor["type"] == "author":
+            author_json = author_person(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+
+        if author_json:
+            authors_json_data.append(author_json)
+
+    # Second, add byline author data
+    collab_map = collab_to_group_author_key_map(contributors_data)
+    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+        for group_author in filter(
+            lambda json_element: json_element["type"] == "group", authors_json_data):
+            group_author_key = None
+            if group_author["name"] in collab_map:
+                group_author_key = collab_map[group_author["name"]]
+            if contributor.get("group-author-key") == group_author_key:
+                author_json = author_person(contributor, author_contributions_data, author_correspondence_data, equal_contributions_map)
+                group_author["people"].append(author_json)
+
+
+    return authors_json_data
+
