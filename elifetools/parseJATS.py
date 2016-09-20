@@ -2052,6 +2052,9 @@ def author_person(author, contributions, correspondence):
         author.get("surname"), author.get("given-names"), author.get("suffix"))
     author_json["name"] = author_name
 
+    if author.get("orcid"):
+        author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+
     author_json = author_json_details(author, author_json, contributions, correspondence)
 
     return author_json
