@@ -162,6 +162,10 @@ class TestParseJats(unittest.TestCase):
          OrderedDict([('type', 'paragraph'), ('text', u'content')])
          ),
 
+        ('<root><p><fig id="fig7" position="float"><graphic xlink:href="elife-00498-fig7-v1.tif"/></fig></p></root>',
+         OrderedDict()
+         ),
+
         ('<root><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
          OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fig title not in a paragraph'), ('alt', '')])
          ),
