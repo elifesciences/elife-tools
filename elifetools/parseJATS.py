@@ -1738,11 +1738,8 @@ def body_block_content(tag):
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
-        tag_content["text"] = node_contents_str(tag_copy)
-
-        # After all that, if the text is empty then return an empty dict
-        if not node_contents_str(tag_copy):
-            return OrderedDict()
+        if node_contents_str(tag_copy):
+            tag_content["text"] = node_contents_str(tag_copy)
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
