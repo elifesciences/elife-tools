@@ -1721,7 +1721,8 @@ def body_block_content(tag):
         tag_content["type"] = "paragraph"
 
         # Remove unwanted nested tags
-        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group", "fig", "boxed-text"]
+        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group",
+                              "fig", "boxed-text", "list"]
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
@@ -1816,6 +1817,27 @@ def body_block_content(tag):
                 tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
 
+    elif tag.name == "list":
+        tag_content["type"] = "list"
+
+        if not tag.get("list-type"):
+            # Default order is False if not specified
+            tag_content["ordered"] = False
+        else:
+            if tag.get("list-type") in ["bullet", "simple"]:
+                tag_content["ordered"] = False
+            else:
+                tag_content["ordered"] = True
+
+        for list_item_tag in raw_parser.list_item(tag):
+            if "items" not in tag_content:
+                tag_content["items"] = []
+            if body_block_content_render(list_item_tag) != {}:
+                for list_item in body_block_content_render(list_item_tag)["content"]:
+                    tag_content["items"].append(list_item)
+            else:
+                tag_content["items"].append(node_contents_str(list_item_tag))
+
     return tag_content
 
 def body_blocks(soup):
@@ -1824,7 +1846,8 @@ def body_blocks(soup):
     Search for certain node types, find the first nodes siblings of the same type
     Add the first sibling and the other siblings to a list and return them
     """
-    nodenames = ["sec", "p", "table-wrap", "boxed-text", "disp-formula", "fig", "fig-group"]
+    nodenames = ["sec", "p", "table-wrap", "boxed-text",
+                 "disp-formula", "fig", "fig-group", "list"]
 
     body_block_tags = []
 
