@@ -516,10 +516,20 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         self.assertEqual(self.json_expected(filename, "full_keyword_groups"),
                          parser.full_keyword_groups(self.soup(filename)))
 
+    @data("elife-kitchen-sink.xml", "elife07586.xml")
+    def test_full_keywords(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_keywords"),
+                         parser.full_keywords(self.soup(filename)))
+
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_full_license(self, filename):
         self.assertEqual(self.json_expected(filename, "full_license"),
                          parser.full_license(self.soup(filename)))
+
+    @data("elife-kitchen-sink.xml", "elife00240.xml")
+    def test_full_research_organism(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_research_organism"),
+                         parser.full_research_organism(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
     def test_full_subject_area(self, filename):

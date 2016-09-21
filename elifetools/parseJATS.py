@@ -85,6 +85,12 @@ def research_organism(soup):
         return []
     return map(node_text, raw_parser.research_organism_keywords(soup))
 
+def full_research_organism(soup):
+    "research-organism list including inline tags, such as italic"
+    if not raw_parser.research_organism_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.research_organism_keywords(soup))
+
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
@@ -93,6 +99,12 @@ def keywords(soup):
     if not raw_parser.author_keywords(soup):
         return []
     return map(node_text, raw_parser.author_keywords(soup))
+
+def full_keywords(soup):
+    "author keywords list including inline tags, such as italic"
+    if not raw_parser.author_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.author_keywords(soup))
 
 def full_keyword_groups(soup):
     groups = {}
