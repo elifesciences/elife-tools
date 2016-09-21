@@ -163,7 +163,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root><p><fig id="fig7" position="float"><graphic xlink:href="elife-00498-fig7-v1.tif"/></fig></p></root>',
-         OrderedDict()
+         OrderedDict([('type', 'paragraph')])
          ),
 
         ('<root><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
