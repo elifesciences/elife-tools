@@ -1975,6 +1975,9 @@ def author_affiliations(author):
                 affiliation_json["name"].append(affiliation.get("dept"))
             if affiliation.get("institution"):
                 affiliation_json["name"].append(affiliation.get("institution"))
+            # Remove if empty
+            if affiliation_json["name"] == []:
+                del affiliation_json["name"]
 
             if affiliation.get("city") or affiliation.get("country"):
                 affiliation_address = OrderedDict()
@@ -1987,9 +1990,13 @@ def author_affiliations(author):
                 if affiliation.get("country"):
                     affiliation_address["formatted"].append(affiliation.get("country"))
                     affiliation_address["components"]["country"] = affiliation.get("country")
-                affiliation_json["address"] = affiliation_address
+                # Add if not empty
+                if affiliation_address != {}:
+                    affiliation_json["address"] = affiliation_address
 
-            affilations.append(affiliation_json)
+            # Add if not empty
+            if affiliation_json != {}:
+                affilations.append(affiliation_json)
 
     if affilations != []:
         return affilations
@@ -2015,6 +2022,12 @@ def author_email_addresses(author, correspondence):
         for ref_id in author["references"]["email"]:
             if correspondence and ref_id in correspondence:
                 email_addresses.append(correspondence[ref_id])
+
+    # Also look in affiliations for inline email tags
+    if author.get("affiliations"):
+        for affiliation in author.get("affiliations"):
+            if "email" in affiliation and affiliation["email"] not in email_addresses:
+                email_addresses.append(affiliation["email"])
 
     if email_addresses != []:
         return email_addresses

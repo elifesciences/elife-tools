@@ -82,8 +82,9 @@ class TestParseJats(unittest.TestCase):
             self.assertNotEqual(not_expected, body)
 
 
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml")
     def test_authors_json(self, filename):
+        """note elife00351.xml has email inside an inline aff tag, very irregular"""
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.authors_json(soup), None)
 
