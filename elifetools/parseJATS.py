@@ -1740,6 +1740,10 @@ def body_block_content(tag):
 
         tag_content["text"] = node_contents_str(tag_copy)
 
+        # After all that, if the text is empty then return an empty dict
+        if not node_contents_str(tag_copy):
+            return OrderedDict()
+
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
