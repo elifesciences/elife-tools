@@ -1708,6 +1708,7 @@ def body_block_content(tag):
 
     if tag.name == "sec":
         tag_content["type"] = "section"
+        set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "title", title_text(tag, tag.name))
 
     elif tag.name == "boxed-text":
