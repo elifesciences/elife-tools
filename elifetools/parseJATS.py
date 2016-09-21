@@ -2204,3 +2204,35 @@ def authors_json(soup):
 
     return authors_json_data
 
+def author_line(soup):
+    """take preferred names from authors json and format them into an author line"""
+    author_line = None
+    authors_json_data = authors_json(soup)
+    author_names = extract_author_line_names(authors_json_data)
+    if len(author_names) > 0:
+        author_line = format_author_line(author_names)
+    return author_line
+
+def extract_author_line_names(authors_json_data):
+    author_names = []
+    if not authors_json_data:
+        return author_names
+    for author in authors_json_data:
+        if "name" in author and type(author["name"]) == str:
+            # collab
+            author_names.append(author["name"])
+        elif "name" in author and "preferred" in author["name"]:
+            # person
+            author_names.append(author["name"]["preferred"])
+    return author_names
+
+def format_author_line(author_names):
+    """authorLine format depends on if there is 1, 2 or more than 2 authors"""
+    author_line = None
+    if not author_names:
+        return author_line
+    if len(author_names) <= 2:
+        author_line = ", ".join(author_names)
+    elif len(author_names) > 2:
+        author_line = author_names[0] + " et al"
+    return author_line

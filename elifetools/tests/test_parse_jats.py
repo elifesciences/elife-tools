@@ -90,6 +90,37 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        (None, None),
+        (["Randy Schekman"], "Randy Schekman"),
+        (["Randy Schekman", "Mark Patterson"], "Randy Schekman, Mark Patterson"),
+        (["Randy Schekman", "Mark Patterson", "eLife"], "Randy Schekman et al"),
+        )
+    def test_format_author_line(self, author_names, expected):
+        self.assertEqual(parser.format_author_line(author_names), expected)
+
+
+    @unpack
+    @data(
+        (None, []),
+        ([{"name": {"preferred": "Randy Schekman"}}, {"name": {"preferred": "Mark Patterson"}}, {"name": "eLife"}],
+            ["Randy Schekman", "Mark Patterson", "eLife"])
+        )
+    def test_extract_author_line_names(self, authors_json, expected):
+        self.assertEqual(parser.extract_author_line_names(authors_json), expected)
+
+
+    @unpack
+    @data(
+        ("elife_poa_e06828.xml", "Michael S Fleming et al"),
+        ("elife00351.xml", "Richard Smith"),
+        )
+    def test_author_line(self, filename, expected):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(parser.author_line(soup), expected)
+
+
+    @unpack
+    @data(
         ("<root><italic></italic></root>", 0),
         ("<root><sec><p>Content</p></sec></root>", 1),
     )
