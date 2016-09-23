@@ -82,8 +82,9 @@ class TestParseJats(unittest.TestCase):
             self.assertNotEqual(not_expected, body)
 
 
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml")
     def test_authors_json(self, filename):
+        """note elife00351.xml has email inside an inline aff tag, very irregular"""
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.authors_json(soup), None)
 
@@ -134,7 +135,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         ('<root><sec sec-type="intro" id="s1"><title>Introduction</title><p>content</p></sec></root>',
-         OrderedDict([('type', 'section'), ('title', u'Introduction')])
+         OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Introduction')])
          ),
 
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',
@@ -159,6 +160,10 @@ class TestParseJats(unittest.TestCase):
 
         ('<root><p>content<fig></fig></p></root>',
          OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         ),
+
+        ('<root><p><fig id="fig7" position="float"><graphic xlink:href="elife-00498-fig7-v1.tif"/></fig></p></root>',
+         OrderedDict([('type', 'paragraph')])
          ),
 
         ('<root><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
@@ -248,11 +253,11 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
     @unpack
     @data(
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><sec id="s1"><title>Section title</title><p>Content.<fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group></p><p>More content</p></sec></root>',
-        [OrderedDict([('type', 'section'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
+        [OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><sec id="s1"><title>Section title</title><p>Content.</p><fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group><p>More content</p></sec></root>',
-        [OrderedDict([('type', 'section'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
+        [OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p><p>Content 2</p></boxed-text></root>',
@@ -528,10 +533,20 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         self.assertEqual(self.json_expected(filename, "full_keyword_groups"),
                          parser.full_keyword_groups(self.soup(filename)))
 
+    @data("elife-kitchen-sink.xml", "elife07586.xml")
+    def test_full_keywords(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_keywords"),
+                         parser.full_keywords(self.soup(filename)))
+
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_full_license(self, filename):
         self.assertEqual(self.json_expected(filename, "full_license"),
                          parser.full_license(self.soup(filename)))
+
+    @data("elife-kitchen-sink.xml", "elife00240.xml")
+    def test_full_research_organism(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_research_organism"),
+                         parser.full_research_organism(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
     def test_full_subject_area(self, filename):

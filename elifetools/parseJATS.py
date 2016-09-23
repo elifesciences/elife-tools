@@ -85,6 +85,12 @@ def research_organism(soup):
         return []
     return map(node_text, raw_parser.research_organism_keywords(soup))
 
+def full_research_organism(soup):
+    "research-organism list including inline tags, such as italic"
+    if not raw_parser.research_organism_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.research_organism_keywords(soup))
+
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
@@ -93,6 +99,12 @@ def keywords(soup):
     if not raw_parser.author_keywords(soup):
         return []
     return map(node_text, raw_parser.author_keywords(soup))
+
+def full_keywords(soup):
+    "author keywords list including inline tags, such as italic"
+    if not raw_parser.author_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.author_keywords(soup))
 
 def full_keyword_groups(soup):
     groups = {}
@@ -1708,6 +1720,7 @@ def body_block_content(tag):
 
     if tag.name == "sec":
         tag_content["type"] = "section"
+        set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "title", title_text(tag, tag.name))
 
     elif tag.name == "boxed-text":
@@ -1726,7 +1739,8 @@ def body_block_content(tag):
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
-        tag_content["text"] = node_contents_str(tag_copy)
+        if node_contents_str(tag_copy):
+            tag_content["text"] = node_contents_str(tag_copy)
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
@@ -1985,6 +1999,9 @@ def author_affiliations(author):
                 affiliation_json["name"].append(affiliation.get("dept"))
             if affiliation.get("institution"):
                 affiliation_json["name"].append(affiliation.get("institution"))
+            # Remove if empty
+            if affiliation_json["name"] == []:
+                del affiliation_json["name"]
 
             if affiliation.get("city") or affiliation.get("country"):
                 affiliation_address = OrderedDict()
@@ -1997,9 +2014,13 @@ def author_affiliations(author):
                 if affiliation.get("country"):
                     affiliation_address["formatted"].append(affiliation.get("country"))
                     affiliation_address["components"]["country"] = affiliation.get("country")
-                affiliation_json["address"] = affiliation_address
+                # Add if not empty
+                if affiliation_address != {}:
+                    affiliation_json["address"] = affiliation_address
 
-            affilations.append(affiliation_json)
+            # Add if not empty
+            if affiliation_json != {}:
+                affilations.append(affiliation_json)
 
     if affilations != []:
         return affilations
@@ -2025,6 +2046,12 @@ def author_email_addresses(author, correspondence):
         for ref_id in author["references"]["email"]:
             if correspondence and ref_id in correspondence:
                 email_addresses.append(correspondence[ref_id])
+
+    # Also look in affiliations for inline email tags
+    if author.get("affiliations"):
+        for affiliation in author.get("affiliations"):
+            if "email" in affiliation and affiliation["email"] not in email_addresses:
+                email_addresses.append(affiliation["email"])
 
     if email_addresses != []:
         return email_addresses
