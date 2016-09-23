@@ -191,15 +191,15 @@ class TestParseJats(unittest.TestCase):
         ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list><list-item>List item one</list-item><list-item>List item two</list-item></root>',
-         OrderedDict([('type', 'list'), ('ordered', False), ('items', [u'List item one', u'List item two'])])
+         OrderedDict([('type', 'list'), ('prefix', 'none'), ('items', [u'List item one', u'List item two'])])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="alpha-upper"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
-         OrderedDict([('type', 'list'), ('ordered', True), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
+         OrderedDict([('type', 'list'), ('prefix', 'alpha-upper'), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="bullet"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
-         OrderedDict([('type', 'list'), ('ordered', False), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
+         OrderedDict([('type', 'list'), ('prefix', 'bullet'), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
          ),
 
     )

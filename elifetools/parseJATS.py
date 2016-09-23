@@ -1833,15 +1833,10 @@ def body_block_content(tag):
 
     elif tag.name == "list":
         tag_content["type"] = "list"
-
-        if not tag.get("list-type"):
-            # Default order is False if not specified
-            tag_content["ordered"] = False
+        if tag.get("list-type"):
+            tag_content["prefix"] = tag.get("list-type")
         else:
-            if tag.get("list-type") in ["bullet", "simple"]:
-                tag_content["ordered"] = False
-            else:
-                tag_content["ordered"] = True
+            tag_content["prefix"] = "none"
 
         for list_item_tag in raw_parser.list_item(tag):
             if "items" not in tag_content:
