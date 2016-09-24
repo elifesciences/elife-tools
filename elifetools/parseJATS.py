@@ -1846,7 +1846,8 @@ def body_block_content(tag):
                 tag_content["items"] = []
             if body_block_content_render(list_item_tag) != {}:
                 for list_item in body_block_content_render(list_item_tag)["content"]:
-                    tag_content["items"].append(list_item)
+                    # Note: wrapped inside another list to pass the current article json schema
+                    tag_content["items"].append([list_item])
             else:
                 tag_content["items"].append(node_contents_str(list_item_tag))
 
