@@ -1834,7 +1834,10 @@ def body_block_content(tag):
     elif tag.name == "list":
         tag_content["type"] = "list"
         if tag.get("list-type"):
-            tag_content["prefix"] = tag.get("list-type")
+            if tag.get("list-type") == "simple":
+                tag_content["prefix"] = "bullet"
+            else:
+                tag_content["prefix"] = tag.get("list-type")
         else:
             tag_content["prefix"] = "none"
 

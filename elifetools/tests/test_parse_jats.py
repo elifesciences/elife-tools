@@ -198,7 +198,7 @@ class TestParseJats(unittest.TestCase):
          OrderedDict([('type', 'list'), ('prefix', 'alpha-upper'), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="bullet"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="simple"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
          OrderedDict([('type', 'list'), ('prefix', 'bullet'), ('items', [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')]), OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])])])
          ),
 
