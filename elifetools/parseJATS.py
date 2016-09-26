@@ -2158,11 +2158,8 @@ def author_group(author, contributions, correspondence, competing_interests, equ
 
 def author_on_behalf_of(author):
     author_json = OrderedDict()
-    author_json["type"] = "group"
-    author_json["name"] = author.get("on-behalf-of")
-    author_json["onBehalfOf"] = OrderedDict()
-    author_json["onBehalfOf"]["name"] = []
-    author_json["onBehalfOf"]["name"].append(author.get("on-behalf-of"))
+    author_json["type"] = "on-behalf-of"
+    author_json["onBehalfOf"] = author.get("on-behalf-of")
     return author_json
 
 
