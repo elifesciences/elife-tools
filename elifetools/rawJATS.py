@@ -314,3 +314,9 @@ def fig(soup):
 
 def fig_group(soup):
     return extract_nodes(soup, "fig-group")
+
+def list(soup):
+    return extract_nodes(soup, "list")
+
+def list_item(soup):
+    return extract_nodes(soup, "list-item")
