@@ -1836,6 +1836,8 @@ def body_block_content(tag):
         if tag.get("list-type"):
             if tag.get("list-type") == "simple":
                 tag_content["prefix"] = "bullet"
+            elif tag.get("list-type") == "order":
+                tag_content["prefix"] = "number"
             else:
                 tag_content["prefix"] = tag.get("list-type")
         else:
