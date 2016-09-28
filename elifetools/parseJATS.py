@@ -1735,7 +1735,7 @@ def body_block_content(tag):
 
         # Remove unwanted nested tags
         unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group",
-                              "fig", "boxed-text", "list"]
+                              "fig", "boxed-text", "list", "media"]
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
@@ -1810,6 +1810,41 @@ def body_block_content(tag):
                 if body_block_content_render(supp_tag) != {}:
                     tag_content["sourceData"].append(body_block_content_render(supp_tag))
 
+    elif tag.name == "media":
+        # For video media only
+        if tag.get("mimetype") != "video":
+            return OrderedDict()
+
+        tag_content["type"] = "video"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        supplementary_material_tags = []
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            for block_tag in caption_tags:
+                if "caption" not in tag_content:
+                    tag_content["caption"] = []
+                # Note then skip p tags with supplementary-material inside
+                if raw_parser.supplementary_material(block_tag):
+                    for supp_tag in raw_parser.supplementary_material(block_tag):
+                        supplementary_material_tags.append(supp_tag)
+                    continue
+                if body_block_content_render(block_tag) != {}:
+                    tag_content["caption"].append(body_block_content_render(block_tag))
+            if "caption" in tag_content and tag_content["caption"] == []:
+                del tag_content["caption"]
+        set_if_value(tag_content, "uri", tag.get('xlink:href'))
+
+        # sourceData
+        if len(supplementary_material_tags) > 0:
+            for supp_tag in supplementary_material_tags:
+                if "sourceData" not in tag_content:
+                    tag_content["sourceData"] = []
+                if body_block_content_render(supp_tag) != {}:
+                    tag_content["sourceData"].append(body_block_content_render(supp_tag))
+
     elif tag.name == "fig-group":
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
             if i == 0:
@@ -1862,7 +1897,7 @@ def body_blocks(soup):
     Add the first sibling and the other siblings to a list and return them
     """
     nodenames = ["sec", "p", "table-wrap", "boxed-text",
-                 "disp-formula", "fig", "fig-group", "list"]
+                 "disp-formula", "fig", "fig-group", "list", "media"]
 
     body_block_tags = []
 
