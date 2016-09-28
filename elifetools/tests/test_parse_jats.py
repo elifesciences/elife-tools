@@ -268,6 +268,11 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
          ),
 
+        # Below when there is a space between paragraph tags, it renders as an empty OrderedDict() for now
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p> <p>Content 2</p></boxed-text></root>',
+        [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict(), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
+         ),
+
         )
     def test_render_raw_body(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
