@@ -1718,6 +1718,9 @@ def body_block_content(tag):
 
     tag_content = OrderedDict()
 
+    if not(hasattr(tag, 'name')):
+        return tag_content
+
     if tag.name == "sec":
         tag_content["type"] = "section"
         set_if_value(tag_content, "id", tag.get("id"))
