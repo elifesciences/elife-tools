@@ -1685,32 +1685,47 @@ def render_raw_body(tag):
             body_content.append(tag_content)
     return body_content
 
+def body_block_nodenames():
+    return ["sec", "p", "table-wrap", "boxed-text",
+            "disp-formula", "fig", "fig-group", "list", "media"]
 
 def body_block_content_render(tag):
     """
     Render the tag as body content and call recursively if
     the tag has child tags
     """
-    tag_content = {}
+    tag_content = OrderedDict()
 
     tag_content = body_block_content(tag)
 
-    for child_tag in tag:
-        if body_block_content(child_tag) != {}:
-            if "content" not in tag_content:
-                tag_content["content"] = []
+    nodenames = body_block_nodenames()
 
-            if child_tag.name == "p":
-                # If block tags are found inside a p, then make them a sibling of that p
-                tag_content["content"].append(body_block_content(child_tag))
+    tag_content_content = []
+    for child_tag in tag:
+        if not(hasattr(child_tag, 'name')):
+            continue
+
+        if child_tag.name == "p":
+
+            if len(child_tag.find_all(nodenames)) > 0:
                 for p_child_tag in child_tag:
-                    if body_block_content(p_child_tag) != {}:
-                        tag_content["content"].append(body_block_content_render(p_child_tag))
-            elif child_tag.name == "fig" and tag.name == "fig-group":
-                # Do not fig inside fig-group a second time
-                del tag_content["content"]
+
+                    if p_child_tag.name is None:
+                        if body_block_paragraph_content(p_child_tag) != {}:
+                            tag_content_content.append(body_block_paragraph_content(p_child_tag))
+                    elif body_block_content(p_child_tag) != {}:
+                        tag_content_content.append(body_block_content_render(p_child_tag))
             else:
-                tag_content["content"].append(body_block_content_render(child_tag))
+                tag_content_content.append(body_block_content_render(child_tag))
+        elif child_tag.name == "fig" and tag.name == "fig-group":
+            # Do not fig inside fig-group a second time
+            pass
+        else:
+            if body_block_content(child_tag) != {}:
+                tag_content_content.append(body_block_content_render(child_tag))
+
+    if len(tag_content_content) > 0:
+        tag_content["content"] = tag_content_content
 
     return tag_content
 
@@ -1725,8 +1740,23 @@ def body_block_caption_render(caption_tags):
             for supp_tag in raw_parser.supplementary_material(block_tag):
                 supplementary_material_tags.append(supp_tag)
             continue
-        if body_block_content_render(block_tag) != {}:
-            caption_content.append(body_block_content_render(block_tag))
+
+        block_content = body_block_content_render(block_tag)
+
+        if block_content != {}:
+
+            # Resolve yet another situation of tags inside p tags that should be
+            #  at the same level as its parent
+            # First remove it and save it for later
+            content_cache = []
+            if block_content["type"] == "paragraph" and "content" in block_content:
+                content_cache = block_content["content"]
+                del block_content["content"]
+            # Add the original content
+            caption_content.append(block_content)
+            # If there was content inside the paragraph, add each item
+            for content_item in content_cache:
+                caption_content.append(content_item)
 
     return caption_content, supplementary_material_tags
 
@@ -1738,12 +1768,20 @@ def body_block_supplementary_material_render(supp_tags):
             source_data.append(body_block_content_render(supp_tag))
     return source_data
 
+def body_block_paragraph_content(tag):
+    "for formatting of simple paragraphs of text only, and check if it is all whitespace"
+    tag_content = OrderedDict()
+    if tag.strip() != '':
+        tag_content["type"] = "paragraph"
+        tag_content["text"] = unicode(tag)
+    return tag_content
+
 def body_block_content(tag):
 
     tag_content = OrderedDict()
 
     if not(hasattr(tag, 'name')):
-        return tag_content
+        return OrderedDict()
 
     if tag.name == "sec":
         tag_content["type"] = "section"
@@ -1761,8 +1799,7 @@ def body_block_content(tag):
         tag_content["type"] = "paragraph"
 
         # Remove unwanted nested tags
-        unwanted_tag_names = ["table-wrap", "disp-formula", "fig-group",
-                              "fig", "boxed-text", "list", "media"]
+        unwanted_tag_names = body_block_nodenames()
         tag_copy = duplicate_tag(tag)
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
@@ -1903,8 +1940,7 @@ def body_blocks(soup):
     Search for certain node types, find the first nodes siblings of the same type
     Add the first sibling and the other siblings to a list and return them
     """
-    nodenames = ["sec", "p", "table-wrap", "boxed-text",
-                 "disp-formula", "fig", "fig-group", "list", "media"]
+    nodenames = body_block_nodenames()
 
     body_block_tags = []
 
