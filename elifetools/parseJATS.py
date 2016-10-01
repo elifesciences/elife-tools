@@ -1708,13 +1708,26 @@ def body_block_content_render(tag):
         if child_tag.name == "p":
 
             if len(child_tag.find_all(nodenames)) > 0:
+                paragraph_content = u''
                 for p_child_tag in child_tag:
 
-                    if p_child_tag.name is None:
-                        if body_block_paragraph_content(p_child_tag) != {}:
-                            tag_content_content.append(body_block_paragraph_content(p_child_tag))
-                    elif body_block_content(p_child_tag) != {}:
+                    if p_child_tag.name is None or body_block_content(p_child_tag) == {}:
+                        if p_child_tag.name is None and p_child_tag.strip() == '':
+                            continue
+                        paragraph_content = paragraph_content + unicode(p_child_tag)
+
+                    else:
+                        # Add previous paragraph content first
+                        if paragraph_content != '':
+                            tag_content_content.append(body_block_paragraph_content(paragraph_content))
+                            paragraph_content = u''
+
+                    if p_child_tag.name is not None and body_block_content(p_child_tag) != {}:
                         tag_content_content.append(body_block_content_render(p_child_tag))
+                # finish up
+                if paragraph_content != '':
+                    tag_content_content.append(body_block_paragraph_content(paragraph_content))
+
             else:
                 tag_content_content.append(body_block_content_render(child_tag))
         elif child_tag.name == "fig" and tag.name == "fig-group":
@@ -1768,12 +1781,12 @@ def body_block_supplementary_material_render(supp_tags):
             source_data.append(body_block_content_render(supp_tag))
     return source_data
 
-def body_block_paragraph_content(tag):
+def body_block_paragraph_content(text):
     "for formatting of simple paragraphs of text only, and check if it is all whitespace"
     tag_content = OrderedDict()
-    if tag.strip() != '':
+    if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = unicode(tag)
+        tag_content["text"] = unicode(text)
     return tag_content
 
 def body_block_content(tag):
