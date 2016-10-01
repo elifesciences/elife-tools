@@ -1679,7 +1679,8 @@ def render_raw_body(tag):
             # Collapse boxed-text here if it has no title or label
             for boxed_tag in tag:
                 tag_content = body_block_content_render(boxed_tag)
-                body_content.append(tag_content)
+                if tag_content != {}:
+                    body_content.append(tag_content)
         else:
             tag_content = body_block_content_render(tag)
             body_content.append(tag_content)
