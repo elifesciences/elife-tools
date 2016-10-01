@@ -263,7 +263,7 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])
          ),
 
-        # Below when there is a space between paragraph tags, it renders as an empty OrderedDict() for now
+        # Below when there is a space between paragraph tags, it should not render as a paragraph
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p> <p>Content 2</p></boxed-text></root>',
         OrderedDict([('content', [OrderedDict([('type', 'box'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])])])])])
          ),
@@ -305,9 +305,9 @@ OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content
         [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
          ),
 
-        # Below when there is a space between paragraph tags, it renders as an empty OrderedDict() for now
+        # Below when there is a space between paragraph tags, it should not render as a paragraph
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p> <p>Content 2</p></boxed-text></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict(), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
+        [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
          ),
 
         )
