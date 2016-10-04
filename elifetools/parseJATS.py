@@ -2031,7 +2031,8 @@ def decision_letter(soup):
             for tag in tags:
                 block_content = body_block_content_render(tag)
                 for tag_content in block_content:
-                    sub_article_content["description"].append(tag_content)
+                    if tag_content != {}:
+                        sub_article_content["description"].append(tag_content)
 
             # Remove the tag before content is compiled
             boxed_text_description.decompose()
