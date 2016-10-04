@@ -1716,12 +1716,15 @@ def body_block_content_render(tag):
     tag_content_content = []
 
     # Collect the content of the tag but only for some tags
-    if tag.name not in ["p", "fig"]:
+    if tag.name not in ["p", "fig", "table-wrap"]:
         for child_tag in tag:
             if not(hasattr(child_tag, 'name')):
                 continue
 
             if child_tag.name == "p":
+                if (child_tag.parent.name == "caption"
+                    and child_tag.parent.parent.name == "boxed-text"):
+                    continue
                 for block_content in body_block_paragraph_render(child_tag):
                     if block_content != {}:
                         tag_content_content.append(block_content)
