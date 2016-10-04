@@ -1856,6 +1856,12 @@ def body_block_content(tag):
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
 
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
         for table in tables:
