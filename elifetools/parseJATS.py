@@ -1678,12 +1678,18 @@ def render_raw_body(tag):
         if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
             # Collapse boxed-text here if it has no title or label
             for boxed_tag in tag:
-                tag_content = body_block_content_render(boxed_tag)
-                if tag_content != {}:
-                    body_content.append(tag_content)
+                tag_blocks = body_block_content_render(boxed_tag)
+                for tag_block in tag_blocks:
+                    if tag_block != {}:
+                        body_content.append(tag_block)
         else:
-            tag_content = body_block_content_render(tag)
-            body_content.append(tag_content)
+
+            tag_blocks = body_block_content_render(tag)
+            #tag_content = body_block_content_render(tag)
+            for tag_block in tag_blocks:
+                if tag_block != {}:
+                    body_content.append(tag_block)
+
     return body_content
 
 def body_block_nodenames():
@@ -1695,53 +1701,85 @@ def body_block_content_render(tag):
     Render the tag as body content and call recursively if
     the tag has child tags
     """
+    block_content_list = []
     tag_content = OrderedDict()
 
-    tag_content = body_block_content(tag)
+    if tag.name == "p":
+        for block_content in body_block_paragraph_render(tag):
+            if block_content != {}:
+                block_content_list.append(block_content)
+    else:
+        tag_content = body_block_content(tag)
 
     nodenames = body_block_nodenames()
 
     tag_content_content = []
-    for child_tag in tag:
-        if not(hasattr(child_tag, 'name')):
-            continue
 
-        if child_tag.name == "p":
+    # Collect the content of the tag but only for some tags
+    if tag.name not in ["p", "fig", "table-wrap"]:
+        for child_tag in tag:
+            if not(hasattr(child_tag, 'name')):
+                continue
 
-            if len(child_tag.find_all(nodenames)) > 0:
-                paragraph_content = u''
-                for p_child_tag in child_tag:
+            if child_tag.name == "p":
+                if (child_tag.parent.name == "caption"
+                    and child_tag.parent.parent.name == "boxed-text"):
+                    continue
+                for block_content in body_block_paragraph_render(child_tag):
+                    if block_content != {}:
+                        tag_content_content.append(block_content)
 
-                    if p_child_tag.name is None or body_block_content(p_child_tag) == {}:
-                        if p_child_tag.name is None and p_child_tag.strip() == '':
-                            continue
-                        paragraph_content = paragraph_content + unicode(p_child_tag)
-
-                    else:
-                        # Add previous paragraph content first
-                        if paragraph_content != '':
-                            tag_content_content.append(body_block_paragraph_content(paragraph_content))
-                            paragraph_content = u''
-
-                    if p_child_tag.name is not None and body_block_content(p_child_tag) != {}:
-                        tag_content_content.append(body_block_content_render(p_child_tag))
-                # finish up
-                if paragraph_content != '':
-                    tag_content_content.append(body_block_paragraph_content(paragraph_content))
-
+            elif child_tag.name == "fig" and tag.name == "fig-group":
+                # Do not fig inside fig-group a second time
+                pass
             else:
-                tag_content_content.append(body_block_content_render(child_tag))
-        elif child_tag.name == "fig" and tag.name == "fig-group":
-            # Do not fig inside fig-group a second time
-            pass
-        else:
-            if body_block_content(child_tag) != {}:
-                tag_content_content.append(body_block_content_render(child_tag))
+                for block_content in body_block_content_render(child_tag):
+                    if block_content != {}:
+                        tag_content_content.append(block_content)
 
     if len(tag_content_content) > 0:
-        tag_content["content"] = tag_content_content
+        tag_content["content"] = []
+        for block_content in tag_content_content:
+            tag_content["content"].append(block_content)
 
-    return tag_content
+    block_content_list.append(tag_content)
+    return block_content_list
+
+def body_block_paragraph_render(p_tag):
+    """
+    paragraphs may wrap some other body block content
+    this is separated out so it can be called from more than one place
+    """
+    block_content_list = []
+
+    tag_content_content = []
+    nodenames = body_block_nodenames()
+
+    paragraph_content = u''
+    for child_tag in p_tag:
+
+        if child_tag.name is None or body_block_content(child_tag) == {}:
+            paragraph_content = paragraph_content + unicode(child_tag)
+
+        else:
+            # Add previous paragraph content first
+            if paragraph_content.strip() != '':
+                tag_content_content.append(body_block_paragraph_content(paragraph_content))
+                paragraph_content = u''
+
+        if child_tag.name is not None and body_block_content(child_tag) != {}:
+            for block_content in body_block_content_render(child_tag):
+                if block_content != {}:
+                    tag_content_content.append(block_content)
+    # finish up
+    if paragraph_content.strip() != '':
+        tag_content_content.append(body_block_paragraph_content(paragraph_content))
+
+    if len(tag_content_content) > 0:
+        for block_content in tag_content_content:
+            block_content_list.append(block_content)
+
+    return block_content_list
 
 def body_block_caption_render(caption_tags):
     """fig and media tag captions are similar so use this common function"""
@@ -1755,22 +1793,10 @@ def body_block_caption_render(caption_tags):
                 supplementary_material_tags.append(supp_tag)
             continue
 
-        block_content = body_block_content_render(block_tag)
+        for block_content in body_block_content_render(block_tag):
 
-        if block_content != {}:
-
-            # Resolve yet another situation of tags inside p tags that should be
-            #  at the same level as its parent
-            # First remove it and save it for later
-            content_cache = []
-            if block_content["type"] == "paragraph" and "content" in block_content:
-                content_cache = block_content["content"]
-                del block_content["content"]
-            # Add the original content
-            caption_content.append(block_content)
-            # If there was content inside the paragraph, add each item
-            for content_item in content_cache:
-                caption_content.append(content_item)
+            if block_content != {}:
+                caption_content.append(block_content)
 
     return caption_content, supplementary_material_tags
 
@@ -1778,8 +1804,11 @@ def body_block_supplementary_material_render(supp_tags):
     """fig and media tag caption may have supplementary material"""
     source_data = []
     for supp_tag in supp_tags:
-        if body_block_content_render(supp_tag) != {}:
-            source_data.append(body_block_content_render(supp_tag))
+        for block_content in body_block_content_render(supp_tag):
+            if block_content != {}:
+                if "content" in block_content:
+                    del block_content["content"]
+                source_data.append(block_content)
     return source_data
 
 def body_block_paragraph_content(text):
@@ -1826,6 +1855,12 @@ def body_block_content(tag):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
+
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
 
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
@@ -1939,12 +1974,15 @@ def body_block_content(tag):
         for list_item_tag in raw_parser.list_item(tag):
             if "items" not in tag_content:
                 tag_content["items"] = []
-            if body_block_content_render(list_item_tag) != {}:
-                for list_item in body_block_content_render(list_item_tag)["content"]:
+
+            if len(body_block_content_render(list_item_tag)) > 0:
+                for list_item in body_block_content_render(list_item_tag):
                     # Note: wrapped inside another list to pass the current article json schema
-                    tag_content["items"].append([list_item])
-            else:
-                tag_content["items"].append(node_contents_str(list_item_tag))
+                    if list_item != {}:
+                        list_item_content = list_item["content"]
+                        tag_content["items"].append(list_item_content)
+                    else:
+                        tag_content["items"].append(node_contents_str(list_item_tag))
 
     return tag_content
 
@@ -2000,8 +2038,10 @@ def decision_letter(soup):
             boxed_text_description = first(raw_parser.boxed_text(raw_body))
             tags = body_blocks(boxed_text_description)
             for tag in tags:
-                tag_content = body_block_content_render(tag)
-                sub_article_content["description"].append(tag_content)
+                block_content = body_block_content_render(tag)
+                for tag_content in block_content:
+                    if tag_content != {}:
+                        sub_article_content["description"].append(tag_content)
 
             # Remove the tag before content is compiled
             boxed_text_description.decompose()
