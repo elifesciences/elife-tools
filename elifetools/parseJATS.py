@@ -1075,60 +1075,57 @@ def refs(soup):
     tags = raw_parser.ref_list(soup)
     refs = []
     position = 1
-    
+
     article_doi = doi(soup)
-    
+
     for tag in tags:
         ref = {}
-        
+
         # etal
-        etal = first(extract_nodes(tag, "etal"))
-        if etal:
+        if first(raw_parser.etal(tag)):
             ref['etal'] = True
-        
+
         ref['ref'] = ref_text(tag)
 
         # ref_id
         copy_attribute(tag.attrs, "id", ref)
 
         # article_title
-        if first(extract_nodes(tag, "article-title")):
-            ref['article_title'] = node_text(first(extract_nodes(tag, "article-title")))
-            ref['full_article_title'] = node_contents_str(first(extract_nodes(tag, "article-title")))
+        if raw_parser.article_title(tag):
+            ref['article_title'] = node_text(raw_parser.article_title(tag))
+            ref['full_article_title'] = node_contents_str(raw_parser.article_title(tag))
 
-        reference_title_node = first(extract_nodes(tag, "pub-id"))
-        if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
-            ref['reference_id'] = node_contents_str(reference_title_node)
-            ref['doi'] = node_contents_str(reference_title_node)
-            
-        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
-        set_if_value(ref, "source", node_text(first(extract_nodes(tag, "source"))))
-        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
+        if raw_parser.pub_id(tag, "doi"):
+            ref['reference_id'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
+            ref['doi'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
+
+        set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+        set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
-        
+
         # authors
-        person_group = extract_nodes(tag, "person-group")
+        person_group = raw_parser.person_group(tag)
         authors = []
-        
+
         for group in person_group:
-            
+
             author_type = None
             if "person-group-type" in group.attrs:
                 author_type = group["person-group-type"]
-                    
+
             # Read name or collab tag in the order they are listed
             for name_or_collab_tag in extract_nodes(group, ["name","collab"]):
                 author = {}
-                
+
                 # Shared tag attribute
                 set_if_value(author, "group-type", author_type)
-                
+
                 # name tag attributes
                 if name_or_collab_tag.name == "name":
-                    set_if_value(author, "surname", node_text(first(extract_nodes(name_or_collab_tag, "surname"))))
-                    set_if_value(author, "given-names", node_text(first(extract_nodes(name_or_collab_tag, "given-names"))))
-                    set_if_value(author, "suffix", node_text(first(extract_nodes(name_or_collab_tag, "suffix"))))
+                    set_if_value(author, "surname", node_text(first(raw_parser.surname(name_or_collab_tag))))
+                    set_if_value(author, "given-names", node_text(first(raw_parser.given_names(name_or_collab_tag))))
+                    set_if_value(author, "suffix", node_text(first(raw_parser.suffix(name_or_collab_tag))))
 
                 # collab tag attribute
                 if name_or_collab_tag.name == "collab":
@@ -1136,18 +1133,18 @@ def refs(soup):
 
                 if len(author) > 0:
                     authors.append(author)
-                
+
         # Check for collab tag not wrapped in a person-group for backwards compatibility
         if len(person_group) == 0:
-            collab_tags = extract_nodes(tag, "collab")
+            collab_tags = raw_parser.collab(tag)
             for collab_tag in collab_tags:
                 author = {}
                 set_if_value(author, "group-type", "author")
                 set_if_value(author, "collab", node_contents_str(collab_tag))
-                
+
                 if len(author) > 0:
                     authors.append(author)
-        
+
         if len(authors) > 0:
             ref['authors'] = authors
 
@@ -1162,12 +1159,12 @@ def refs(soup):
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
             ref['article_doi'] = article_doi
-            
+
             ref['position'] = position
-                        
+
             refs.append(ref)
             position += 1
-    
+
     return refs
 
 def extract_component_doi(tag, nodenames):
