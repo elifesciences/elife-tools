@@ -2393,3 +2393,73 @@ def format_author_line(author_names):
     elif len(author_names) > 2:
         author_line = author_names[0] + " et al"
     return author_line
+
+def references_json(soup):
+    references_json = []
+    for ref in refs(soup):
+        ref_content = OrderedDict()
+        set_if_value(ref_content, "type", ref.get("publication-type"))
+        set_if_value(ref_content, "id", ref.get("id"))
+        set_if_value(ref_content, "date", ref.get("year"))
+
+        # authors and etal - TODO!!
+
+        # titles
+        if ref.get("publication-type") in ["journal"]:
+            set_if_value(ref, "articleTitle", ref.get("full_article_title"))
+        if ref.get("publication-type") in ["book"]:
+            set_if_value(ref_content, "source", ref.get("bookTitle"))
+        elif ref.get("publication-type") in ["journal"]:
+            if ref.get("source"):
+                journal = OrderedDict()
+                journal["name"] = []
+                journal["name"].append(ref.get("source"))
+                ref_content["journal"] = journal
+        else:
+            set_if_value(ref_content, "source", ref.get("source"))
+
+        # volume
+        set_if_value(ref_content, "volume", ref.get("volume"))
+
+        # edition - TODO!!
+
+        # todo - publisher - TODO!!
+
+        # pages
+        if ref.get("elocation-id"):
+            ref_content["pages"] = ref.get("elocation-id")
+        elif ref.get("fpage"):
+            ref_content["first"] = ref.get("fpage")
+
+            if ref.get("lpage"):
+                ref_content["last"] = ref.get("lpage")
+                ref_content["range"] = ref.get("fpage") + "-" + ref.get("lpage")
+            else:
+                ref_content["last"] = ref.get("fpage")
+                ref_content["range"] = ref.get("fpage")
+
+        elif ref.get("comment"):
+            if ref.get("comment").lower().strip() == "in press":
+                ref_content["pages"] = "in-press"
+
+        # doi
+        set_if_value(ref_content, "doi", ref.get("doi"))
+
+        # publisher
+        if ref.get("publisher_name"):
+            publisher = OrderedDict()
+            publisher["name"] = []
+            publisher["name"].append(ref.get("publisher_name"))
+            if ref.get("publisher_loc"):
+                address = OrderedDict()
+                address["formatted"] = []
+                address["formatted"].append(ref.get("publisher_loc"))
+                address["components"] = OrderedDict()
+                address["components"]["locality"] = []
+                address["components"]["locality"].append(ref.get("publisher_loc"))
+                publisher["address"] = address
+            ref_content["publisher"] = publisher
+
+        references_json.append(ref_content)
+
+    return references_json
