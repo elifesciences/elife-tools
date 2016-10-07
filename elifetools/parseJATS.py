@@ -2429,14 +2429,15 @@ def references_json(soup):
         if ref.get("elocation-id"):
             ref_content["pages"] = ref.get("elocation-id")
         elif ref.get("fpage"):
-            ref_content["first"] = ref.get("fpage")
+            ref_content["pages"] = OrderedDict()
+            ref_content["pages"]["first"] = ref.get("fpage")
 
             if ref.get("lpage"):
-                ref_content["last"] = ref.get("lpage")
-                ref_content["range"] = ref.get("fpage") + "-" + ref.get("lpage")
+                ref_content["pages"]["last"] = ref.get("lpage")
+                ref_content["pages"]["range"] = ref.get("fpage") + "-" + ref.get("lpage")
             else:
-                ref_content["last"] = ref.get("fpage")
-                ref_content["range"] = ref.get("fpage")
+                ref_content["pages"]["last"] = ref.get("fpage")
+                ref_content["pages"]["range"] = ref.get("fpage")
 
         elif ref.get("comment"):
             if ref.get("comment").lower().strip() == "in press":
