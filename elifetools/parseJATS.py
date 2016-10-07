@@ -2434,7 +2434,8 @@ def references_json(soup):
 
             if ref.get("lpage"):
                 ref_content["pages"]["last"] = ref.get("lpage")
-                ref_content["pages"]["range"] = ref.get("fpage") + "-" + ref.get("lpage")
+                # use unichr(8211) for the hyphen because the schema is requiring it
+                ref_content["pages"]["range"] = ref.get("fpage") + unichr(8211) + ref.get("lpage")
             else:
                 ref_content["pages"]["last"] = ref.get("fpage")
                 ref_content["pages"]["range"] = ref.get("fpage")
