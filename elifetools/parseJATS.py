@@ -2427,15 +2427,15 @@ def references_json(soup):
             ref_content["pages"] = ref.get("elocation-id")
         elif ref.get("fpage"):
             ref_content["pages"] = OrderedDict()
-            ref_content["pages"]["first"] = ref.get("fpage")
+            ref_content["pages"]["first"] = ref.get("fpage").strip()
 
             if ref.get("lpage"):
-                ref_content["pages"]["last"] = ref.get("lpage")
+                ref_content["pages"]["last"] = ref.get("lpage").strip()
                 # use unichr(8211) for the hyphen because the schema is requiring it
-                ref_content["pages"]["range"] = ref.get("fpage") + unichr(8211) + ref.get("lpage")
+                ref_content["pages"]["range"] = ref.get("fpage").strip() + unichr(8211) + ref.get("lpage").strip()
             else:
-                ref_content["pages"]["last"] = ref.get("fpage")
-                ref_content["pages"]["range"] = ref.get("fpage")
+                ref_content["pages"]["last"] = ref.get("fpage").strip()
+                ref_content["pages"]["range"] = ref.get("fpage").strip()
 
         elif ref.get("comment"):
             if ref.get("comment").lower().strip() == "in press":
