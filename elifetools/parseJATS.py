@@ -2406,7 +2406,7 @@ def references_json(soup):
 
         # titles
         if ref.get("publication-type") in ["journal"]:
-            set_if_value(ref, "articleTitle", ref.get("full_article_title"))
+            set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         if ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "source", ref.get("bookTitle"))
         elif ref.get("publication-type") in ["journal"]:
