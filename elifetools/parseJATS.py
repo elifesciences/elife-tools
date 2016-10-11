@@ -130,7 +130,7 @@ def format_related_object(related_object):
 
 
 def related_object_ids(soup):
-    tags = raw_parser.related_object(soup)
+    tags = filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup))
     return dict(map(format_related_object, tags))
 
 @strippen
