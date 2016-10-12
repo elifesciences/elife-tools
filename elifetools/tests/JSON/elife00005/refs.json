@@ -142,6 +142,10 @@
                 "surname": "Tempst", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Role of histone H3 lysine 27 methylation in Polycomb-group silencing", 
@@ -150,7 +154,6 @@
         "source": "Science", 
         "fpage": "1039", 
         "year": "2002", 
-        "etal": true, 
         "position": 5, 
         "ref": "CaoRWangLWangHXiaLErdjument-BromageHTempstP2002Role of histone H3 lysine 27 methylation in Polycomb-group silencingScience298103943", 
         "id": "bib5"
@@ -189,6 +192,10 @@
                 "surname": "Dos Reis", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Implications for kinetochore-microtubule attachment from the structure of an engineered Ndc80 complex", 
@@ -197,7 +204,6 @@
         "source": "Cell", 
         "fpage": "427", 
         "year": "2008", 
-        "etal": true, 
         "position": 6, 
         "ref": "CiferriCPasqualatoSScrepantiEVarettiGSantaguidaSDos ReisG2008Implications for kinetochore-microtubule attachment from the structure of an engineered Ndc80 complexCell13342739", 
         "id": "bib6"
@@ -395,6 +401,10 @@
                 "surname": "Monrad", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "A model for transmission of the H3K27me3 epigenetic mark", 
@@ -403,7 +413,6 @@
         "source": "Nat Cell Biol", 
         "fpage": "1291", 
         "year": "2008", 
-        "etal": true, 
         "position": 11, 
         "ref": "HansenKHBrackenAPPasiniDDietrichNGehaniSSMonradA2008A model for transmission of the H3K27me3 epigenetic markNat Cell Biol101291300", 
         "id": "bib11"
@@ -519,6 +528,10 @@
                 "surname": "Green", 
                 "given-names": "R", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Silencing of human polycomb target genes is associated with methylation of histone H3 Lys 27", 
@@ -527,7 +540,6 @@
         "source": "Genes Dev", 
         "fpage": "1592", 
         "year": "2004", 
-        "etal": true, 
         "position": 14, 
         "ref": "KirmizisABartleySMKuzmichevAMargueronRReinbergDGreenR2004Silencing of human polycomb target genes is associated with methylation of histone H3 Lys 27Genes Dev181592605", 
         "id": "bib14"
@@ -602,6 +614,10 @@
                 "surname": "Pulokas", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Appion: an integrated, database-driven pipeline to facilitate EM image processing", 
@@ -610,7 +626,6 @@
         "source": "J Struct Biol", 
         "fpage": "95", 
         "year": "2009", 
-        "etal": true, 
         "position": 16, 
         "ref": "LanderGCStaggSMVossNRChengAFellmannDPulokasJ2009Appion: an integrated, database-driven pipeline to facilitate EM image processingJ Struct Biol16695102", 
         "id": "bib16"
@@ -649,6 +664,10 @@
                 "surname": "Tarricone", 
                 "given-names": "C", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Structural analysis of multiprotein complexes by cross-linking, mass spectrometry, and database searching", 
@@ -657,7 +676,6 @@
         "source": "Mol Cell Proteomics", 
         "fpage": "2200", 
         "year": "2007", 
-        "etal": true, 
         "position": 17, 
         "ref": "MaiolicaACittaroDBorsottiDSennelsLCiferriCTarriconeC2007Structural analysis of multiprotein complexes by cross-linking, mass spectrometry, and database searchingMol Cell Proteomics6220011", 
         "id": "bib17"
@@ -785,6 +803,10 @@
                 "given-names": "WJ", 
                 "group-type": "author", 
                 "suffix": "III"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Role of the polycomb protein EED in the propagation of repressive histone marks", 
@@ -793,7 +815,6 @@
         "source": "Nature", 
         "fpage": "762", 
         "year": "2009", 
-        "etal": true, 
         "position": 21, 
         "ref": "MargueronRJustinNOhnoKSharpeMLSonJDruryWJIII2009Role of the polycomb protein EED in the propagation of repressive histone marksNature4617627", 
         "id": "bib21"
@@ -832,6 +853,10 @@
                 "surname": "Woodcock", 
                 "given-names": "CL", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Ezh1 and Ezh2 maintain repressive chromatin through different mechanisms", 
@@ -840,7 +865,6 @@
         "source": "Mol Cell", 
         "fpage": "503", 
         "year": "2008", 
-        "etal": true, 
         "position": 22, 
         "ref": "MargueronRLiGSarmaKBlaisAZavadilJWoodcockCL2008Ezh1 and Ezh2 maintain repressive chromatin through different mechanismsMol Cell3250318", 
         "id": "bib22"
@@ -936,6 +960,10 @@
                 "surname": "Wild", 
                 "given-names": "B", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Histone methyltransferase activity of a <italic>Drosophila</italic> Polycomb group repressor complex", 
@@ -944,7 +972,6 @@
         "source": "Cell", 
         "fpage": "197", 
         "year": "2002", 
-        "etal": true, 
         "position": 25, 
         "ref": "MullerJHartCMFrancisNJVargasMLSenguptaAWildB2002Histone methyltransferase activity of a Drosophila Polycomb group repressor complexCell111197208", 
         "id": "bib25"
@@ -983,6 +1010,10 @@
                 "surname": "Ly-Hartig", 
                 "given-names": "N", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Chromatin-modifying complex component Nurf55/p55 associates with histones H3 and H4 and polycomb repressive complex 2 subunit Su(z)12 through partially overlapping binding sites", 
@@ -991,7 +1022,6 @@
         "source": "J Biol Chem", 
         "fpage": "23388", 
         "year": "2011", 
-        "etal": true, 
         "position": 26, 
         "ref": "NowakAJAlfieriCStirnimannCURybinVBaudinFLy-HartigN2011Chromatin-modifying complex component Nurf55/p55 associates with histones H3 and H4 and polycomb repressive complex 2 subunit Su(z)12 through partially overlapping binding sitesJ Biol Chem2862338896", 
         "id": "bib26"
@@ -1169,6 +1199,10 @@
                 "surname": "Meng", 
                 "given-names": "EC", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "UCSF Chimera\u2014a visualization system for exploratory research and analysis", 
@@ -1177,7 +1211,6 @@
         "source": "J Comput Chem", 
         "fpage": "1605", 
         "year": "2004", 
-        "etal": true, 
         "position": 31, 
         "ref": "PettersenEFGoddardTDHuangCCCouchGSGreenblattDMMengEC2004UCSF Chimera\u2014a visualization system for exploratory research and analysisJ Comput Chem25160512", 
         "id": "bib31"
@@ -1273,6 +1306,10 @@
                 "surname": "Schmidt", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Identification of cross-linked peptides from large sequence databases", 
@@ -1281,7 +1318,6 @@
         "source": "Nat Methods", 
         "fpage": "315", 
         "year": "2008", 
-        "etal": true, 
         "position": 34, 
         "ref": "RinnerOSeebacherJWalzthoeniTMuellerLNBeckMSchmidtA2008Identification of cross-linked peptides from large sequence databasesNat Methods53158", 
         "id": "bib34"
@@ -1361,6 +1397,10 @@
                 "surname": "Aiwazian", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Histone methylation by PRC2 is inhibited by active chromatin marks", 
@@ -1369,7 +1409,6 @@
         "source": "Mol Cell", 
         "fpage": "330", 
         "year": "2011", 
-        "etal": true, 
         "position": 36, 
         "ref": "SchmitgesFWPrustyABFatyMStutzerALingarajuGMAiwazianJ2011Histone methylation by PRC2 is inhibited by active chromatin marksMol Cell4233041", 
         "id": "bib36"
@@ -1449,6 +1488,10 @@
                 "surname": "Quispe", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Automated molecular microscopy: the new Leginon system", 
@@ -1457,7 +1500,6 @@
         "source": "J Struct Biol", 
         "fpage": "41", 
         "year": "2005", 
-        "etal": true, 
         "position": 38, 
         "ref": "SulowayCPulokasJFellmannDChengAGuerraFQuispeJ2005Automated molecular microscopy: the new Leginon systemJ Struct Biol1514160", 
         "id": "bib38"
@@ -1496,6 +1538,10 @@
                 "surname": "Rees", 
                 "given-names": "I", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "EMAN2: an extensible image processing suite for electron microscopy", 
@@ -1504,7 +1550,6 @@
         "source": "J Struct Biol", 
         "fpage": "38", 
         "year": "2007", 
-        "etal": true, 
         "position": 39, 
         "ref": "TangGPengLBaldwinPRMannDSJiangWReesI2007EMAN2: an extensible image processing suite for electron microscopyJ Struct Biol1573846", 
         "id": "bib39"
@@ -1687,6 +1732,10 @@
                 "surname": "Chen", 
                 "given-names": "C", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Binding of different histone marks differentially regulates the activity and specificity of polycomb repressive complex 2 (PRC2)", 
@@ -1695,7 +1744,6 @@
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "19266", 
         "year": "2010", 
-        "etal": true, 
         "position": 44, 
         "ref": "XuCBianCYangWGalkaMOuyangHChenC2010Binding of different histone marks differentially regulates the activity and specificity of polycomb repressive complex 2 (PRC2)Proc Natl Acad Sci U S A1071926671", 
         "id": "bib44"

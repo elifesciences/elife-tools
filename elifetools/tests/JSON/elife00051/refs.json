@@ -51,6 +51,10 @@
                 "surname": "Lincoln", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "UN High-Level Meeting on Non-Communicable Diseases: addressing four questions", 
@@ -59,7 +63,6 @@
         "source": "Lancet", 
         "fpage": "449", 
         "year": "2011a", 
-        "etal": true, 
         "position": 2, 
         "ref": "BeagleholeRBonitaRAlleyneGHortonRLiLLincolnP2011aUN High-Level Meeting on Non-Communicable Diseases: addressing four questionsLancet37844955", 
         "id": "bib2"
@@ -98,6 +101,10 @@
                 "surname": "Asaria", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Priority actions for the non-communicable disease crisis", 
@@ -106,7 +113,6 @@
         "source": "Lancet", 
         "fpage": "1438", 
         "year": "2011b", 
-        "etal": true, 
         "position": 3, 
         "ref": "BeagleholeRBonitaRHortonRAdamsCAlleyneGAsariaP2011bPriority actions for the non-communicable disease crisisLancet377143847", 
         "id": "bib3"
@@ -349,6 +355,10 @@
                 "surname": "Beaglehole", 
                 "given-names": "R", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Grand challenges in chronic non-communicable diseases", 
@@ -357,7 +367,6 @@
         "source": "Nature", 
         "fpage": "494", 
         "year": "2007", 
-        "etal": true, 
         "position": 12, 
         "ref": "DaarASingerPPersadDPrammingSMatthewsDBeagleholeR2007Grand challenges in chronic non-communicable diseasesNature4504946", 
         "id": "bib12"
@@ -396,6 +405,10 @@
                 "surname": "Sun", 
                 "given-names": "H", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisited", 
@@ -404,7 +417,6 @@
         "source": "Nat Chem Biol", 
         "fpage": "87", 
         "year": "2005", 
-        "etal": true, 
         "position": 13, 
         "ref": "EnglishBPMinWVan OijenAMLeeKTLuoGSunH2005Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisitedNat Chem Biol28794", 
         "id": "bib13"
@@ -617,6 +629,9 @@
         "publisher_loc": "New York", 
         "article_doi": "10.7554/eLife.00051", 
         "publisher_name": "Oxford University Press", 
+        "year": "2006", 
+        "publication-type": "book", 
+        "source": "Disease control priorities in developing countries", 
         "authors": [
             {
                 "surname": "Jamison", 
@@ -642,12 +657,12 @@
                 "surname": "Claeson", 
                 "given-names": "M", 
                 "group-type": "editor"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "editor"
             }
         ], 
-        "publication-type": "book", 
-        "source": "Disease control priorities in developing countries", 
-        "year": "2006", 
-        "etal": true, 
         "position": 21, 
         "ref": "JamisonDTBremanJGMeashamARAlleyneGClaesonM2006Disease control priorities in developing countriesNew YorkOxford University Press", 
         "id": "bib21"
@@ -725,6 +740,10 @@
                 "surname": "Kurowski", 
                 "given-names": "C", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Improving the health of the global poor", 
@@ -733,7 +752,6 @@
         "source": "Science", 
         "fpage": "2036", 
         "year": "2002", 
-        "etal": true, 
         "position": 24, 
         "ref": "JhaPMillsAHansonKKumaranayakeLContehLKurowskiC2002Improving the health of the global poorScience29520369", 
         "id": "bib24"
@@ -1050,6 +1068,10 @@
                 "surname": "Dwyer", 
                 "given-names": "L", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysis", 
@@ -1058,7 +1080,6 @@
         "source": "Lancet", 
         "fpage": "1704", 
         "year": "2010", 
-        "etal": true, 
         "position": 34, 
         "ref": "RajaratnamJKMarcusJRLevin-RectorAChalupkaANWangHDwyerL2010Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysisLancet375170420", 
         "id": "bib34"
@@ -1178,6 +1199,10 @@
                 "surname": "ka-Gina", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "HIV-associated adult mortality in a rural Tanzanian population", 
@@ -1186,7 +1211,6 @@
         "source": "AIDS", 
         "fpage": "801", 
         "year": "1997", 
-        "etal": true, 
         "position": 38, 
         "ref": "ToddJBaliraRGrosskurthHMayaudPMoshaFka-GinaG1997HIV-associated adult mortality in a rural Tanzanian populationAIDS118017", 
         "id": "bib38"
@@ -1384,6 +1408,10 @@
                 "surname": "Lazarev", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Alcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deaths", 
@@ -1392,7 +1420,6 @@
         "source": "Lancet", 
         "fpage": "2201", 
         "year": "2009", 
-        "etal": true, 
         "position": 46, 
         "ref": "ZaridzeDBrennanPBorehamJBorodaAKarpovRLazarevAAlcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deathsLancet2009373220114", 
         "id": "bib46"

@@ -33,6 +33,10 @@
                 "surname": "Mori", 
                 "given-names": "E", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "p38 mitogen-activated protein kinase can be involved in transforming growth factor beta superfamily signal transduction in <italic>Drosophila</italic> wing morphogenesis", 
@@ -41,7 +45,6 @@
         "source": "Mol Cell Biol", 
         "fpage": "2322", 
         "year": "1999", 
-        "etal": true, 
         "position": 1, 
         "ref": "Adachi-YamadaTNakamuraMIrieKTomoyasuYSanoYMoriE1999p38 mitogen-activated protein kinase can be involved in transforming growth factor beta superfamily signal transduction in Drosophila wing morphogenesisMol Cell Biol1923229", 
         "id": "bib1"
@@ -256,6 +259,10 @@
                 "surname": "Hu", 
                 "given-names": "LS", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Akt promotes cell survival by phosphorylating and inhibiting a Forkhead transcription factor", 
@@ -265,7 +272,6 @@
         "reference_id": "10.1016/S0092-8674(00)80595-4", 
         "fpage": "857", 
         "year": "1999", 
-        "etal": true, 
         "position": 7, 
         "ref": "BrunetABonniAZigmondMJLinMZJuoPHuLS1999Akt promotes cell survival by phosphorylating and inhibiting a Forkhead transcription factorCell968576810.1016/S0092-8674(00)80595-4", 
         "id": "bib7"
@@ -546,6 +552,10 @@
                 "surname": "Stocker", 
                 "given-names": "H", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Insulin activation of Rheb, a mediator of mTOR/S6K/4E-BP signaling, is inhibited by TSC1 and 2", 
@@ -555,7 +565,6 @@
         "reference_id": "10.1016/S1097-2765(03)00220-X", 
         "fpage": "1457", 
         "year": "2003", 
-        "etal": true, 
         "position": 14, 
         "ref": "GaramiAZwartkruisFJNobukuniTJoaquinMRoccioMStockerH2003Insulin activation of Rheb, a mediator of mTOR/S6K/4E-BP signaling, is inhibited by TSC1 and 2Mol Cell1114576610.1016/S1097-2765(03)00220-X", 
         "id": "bib14"
@@ -880,6 +889,10 @@
                 "surname": "Hafen", 
                 "given-names": "E", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Imp-L2, a putative homolog of vertebrate IGF-binding protein 7, counteracts insulin signaling in <italic>Drosophila</italic> and is essential for starvation resistance", 
@@ -889,7 +902,6 @@
         "reference_id": "10.1186/jbiol72", 
         "fpage": "10", 
         "year": "2008", 
-        "etal": true, 
         "position": 24, 
         "ref": "HoneggerBGalicMKohlerKWittwerFBrogioloWHafenE2008Imp-L2, a putative homolog of vertebrate IGF-binding protein 7, counteracts insulin signaling in Drosophila and is essential for starvation resistanceJ Biol71010.1186/jbiol72", 
         "id": "bib24"
@@ -928,6 +940,10 @@
                 "surname": "Hafen", 
                 "given-names": "E", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "PTEN affects cell size, cell proliferation and apoptosis during <italic>Drosophila</italic> eye development", 
@@ -936,7 +952,6 @@
         "source": "Development", 
         "fpage": "5365", 
         "year": "1999", 
-        "etal": true, 
         "position": 25, 
         "ref": "HuangHPotterCJTaoWLiDMBrogioloWHafenE1999PTEN affects cell size, cell proliferation and apoptosis during Drosophila eye developmentDevelopment126536572", 
         "id": "bib25"
@@ -1018,6 +1033,10 @@
                 "surname": "Radimerski", 
                 "given-names": "T", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The <italic>Drosophila</italic> forkhead transcription factor FOXO mediates the reduction in cell number associated with reduced insulin signaling", 
@@ -1027,7 +1046,6 @@
         "reference_id": "10.1186/1475-4924-2-20", 
         "fpage": "20", 
         "year": "2003", 
-        "etal": true, 
         "position": 27, 
         "ref": "JungerMARintelenFStockerHWassermanJDVeghMRadimerskiT2003The Drosophila forkhead transcription factor FOXO mediates the reduction in cell number associated with reduced insulin signalingJ Biol22010.1186/1475-4924-2-20", 
         "id": "bib27"
@@ -1596,6 +1614,10 @@
                 "surname": "Downes", 
                 "given-names": "CP", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "dS6K-regulated cell growth is dPKB/dPI(3)K-independent, but requires dPDK1", 
@@ -1605,7 +1627,6 @@
         "reference_id": "10.1038/ncb763", 
         "fpage": "251", 
         "year": "2002", 
-        "etal": true, 
         "position": 43, 
         "ref": "RadimerskiTMontagneJRintelenFStockerHvan der KaayJDownesCP2002dS6K-regulated cell growth is dPKB/dPI(3)K-independent, but requires dPDK1Nat Cell Biol4251510.1038/ncb763", 
         "id": "bib43"
@@ -1749,6 +1770,10 @@
                 "surname": "Bouchard", 
                 "given-names": "D", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The conserved PI3\u2019K/PTEN/Akt signaling pathway regulates both cell size and survival in <italic>Drosophila</italic>", 
@@ -1758,7 +1783,6 @@
         "reference_id": "10.1038/sj.onc.1203739", 
         "fpage": "3971", 
         "year": "2000", 
-        "etal": true, 
         "position": 47, 
         "ref": "ScangaSERuelLBinariRCSnowBStambolicVBouchardD2000The conserved PI3\u2019K/PTEN/Akt signaling pathway regulates both cell size and survival in DrosophilaOncogene193971710.1038/sj.onc.1203739", 
         "id": "bib47"
@@ -1958,6 +1982,10 @@
                 "surname": "Heitzler", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Genetic analysis of protein kinase B (AKT) in <italic>Drosophila</italic>", 
@@ -1967,7 +1995,6 @@
         "reference_id": "10.1016/S0960-9822(98)70231-3", 
         "fpage": "599", 
         "year": "1998", 
-        "etal": true, 
         "position": 53, 
         "ref": "StaveleyBERuelLJinJStambolicVMastronardiFGHeitzlerP1998Genetic analysis of protein kinase B (AKT) in DrosophilaCurr Biol859960210.1016/S0960-9822(98)70231-3", 
         "id": "bib53"
@@ -2007,6 +2034,10 @@
                 "surname": "Hemmings", 
                 "given-names": "BA", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Living with lethal PIP3 levels: viability of flies lacking PTEN restored by a PH domain mutation in Akt/PKB", 
@@ -2016,7 +2047,6 @@
         "reference_id": "10.1126/science. 1068094", 
         "fpage": "2088", 
         "year": "2002", 
-        "etal": true, 
         "position": 54, 
         "ref": "StockerHAndjelkovicMOldhamSLaffargueMWymannMPHemmingsBA2002Living with lethal PIP3 levels: viability of flies lacking PTEN restored by a PH domain mutation in Akt/PKBScience29520889110.1126/science. 1068094", 
         "id": "bib54"
@@ -2056,6 +2086,10 @@
                 "surname": "Daram", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Rheb is an essential regulator of S6K in controlling cell growth in <italic>Drosophila</italic>", 
@@ -2065,7 +2099,6 @@
         "reference_id": "10.1038/ncb995", 
         "fpage": "559", 
         "year": "2003", 
-        "etal": true, 
         "position": 55, 
         "ref": "StockerHRadimerskiTSchindelholzBWittwerFBelawatPDaramP2003Rheb is an essential regulator of S6K in controlling cell growth in DrosophilaNat Cell Biol55596510.1038/ncb995", 
         "id": "bib55"

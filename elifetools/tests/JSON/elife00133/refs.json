@@ -791,6 +791,10 @@
                 "surname": "MacKintosh", 
                 "given-names": "FC", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Mixed microtubules steer dynein-driven cargo transport into dendrites", 
@@ -800,7 +804,6 @@
         "reference_id": "10.1016/j.cub.2009.12.052", 
         "fpage": "290", 
         "year": "2010", 
-        "etal": true, 
         "position": 23, 
         "ref": "KapiteinLCSchlagerMAKuijpersMWulfPSvan SpronsenMMacKintoshFC2010Mixed microtubules steer dynein-driven cargo transport into dendritesCurr Biol20290910.1016/j.cub.2009.12.052", 
         "id": "bib23"
@@ -1080,6 +1083,10 @@
                 "surname": "McCaffrey", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Cloning and expression of a human kinesin heavy chain gene: interaction of the COOH-terminal domain with cytoplasmic microtubules in transfected CV-1 cells", 
@@ -1089,7 +1096,6 @@
         "reference_id": "10.1083/jcb.117.6.1263", 
         "fpage": "1263", 
         "year": "1992", 
-        "etal": true, 
         "position": 30, 
         "ref": "NavoneFNiclasJHom-BooherNSparksLBernsteinHDMcCaffreyG1992Cloning and expression of a human kinesin heavy chain gene: interaction of the COOH-terminal domain with cytoplasmic microtubules in transfected CV-1 cellsJ Cell Biol11712637510.1083/jcb.117.6.1263", 
         "id": "bib30"
@@ -1129,6 +1135,10 @@
                 "surname": "Fu", 
                 "given-names": "AK", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Two cyclin-dependent kinase pathways are essential for polarized trafficking of presynaptic components", 
@@ -1138,7 +1148,6 @@
         "reference_id": "10.1016/j.cell.2010.04.011", 
         "fpage": "846", 
         "year": "2010", 
-        "etal": true, 
         "position": 31, 
         "ref": "OuCYPoonVYMaederCIWatanabeSLehrmanEKFuAK2010Two cyclin-dependent kinase pathways are essential for polarized trafficking of presynaptic componentsCell1418465810.1016/j.cell.2010.04.011", 
         "id": "bib31"
@@ -1385,6 +1394,10 @@
                 "surname": "Wang", 
                 "given-names": "D", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Systematic analysis of genes required for synapse structure and function", 
@@ -1394,7 +1407,6 @@
         "reference_id": "10.1038/nature03809", 
         "fpage": "510", 
         "year": "2005", 
-        "etal": true, 
         "position": 38, 
         "ref": "SieburthDCh'ngQDybbsMTavazoieMKennedySWangD2005Systematic analysis of genes required for synapse structure and functionNature436510710.1038/nature03809", 
         "id": "bib38"
@@ -1460,6 +1472,10 @@
                 "surname": "Deller", 
                 "given-names": "T", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "AnkyrinG is required to maintain axo-dendritic polarity in vivo", 
@@ -1469,7 +1485,6 @@
         "reference_id": "10.1073/pnas.0909267106", 
         "fpage": "17564", 
         "year": "2009", 
-        "etal": true, 
         "position": 40, 
         "ref": "SobotzikJMSieJMPolitiCDel TurcoDBennettVDellerT2009AnkyrinG is required to maintain axo-dendritic polarity in vivoProc Natl Acad Sci USA10617564910.1073/pnas.0909267106", 
         "id": "bib40"
@@ -1508,6 +1523,10 @@
                 "surname": "De Zeeuw", 
                 "given-names": "CI", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Visualization of microtubule growth in cultured neurons via the use of EB3-GFP (end-binding protein 3-green fluorescent protein)", 
@@ -1516,7 +1535,6 @@
         "source": "J Neurosci", 
         "fpage": "2655", 
         "year": "2003", 
-        "etal": true, 
         "position": 41, 
         "ref": "StepanovaTSlemmerJHoogenraadCCLansbergenGDortlandBDe ZeeuwCI2003Visualization of microtubule growth in cultured neurons via the use of EB3-GFP (end-binding protein 3-green fluorescent protein)J Neurosci23265564", 
         "id": "bib41"
@@ -1787,6 +1805,10 @@
                 "surname": "Nakamura", 
                 "given-names": "T", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "mNUDC is required for plus-end-directed transport of cytoplasmic dynein and dynactins by kinesin-1", 
@@ -1796,7 +1818,6 @@
         "reference_id": "10.1038/emboj.2009.378", 
         "fpage": "517", 
         "year": "2010", 
-        "etal": true, 
         "position": 49, 
         "ref": "YamadaMTobaSTakitohTYoshidaYMoriDNakamuraT2010mNUDC is required for plus-end-directed transport of cytoplasmic dynein and dynactins by kinesin-1EMBO J295173110.1038/emboj.2009.378", 
         "id": "bib48"
@@ -1925,6 +1946,10 @@
                 "surname": "Younger", 
                 "given-names": "SH", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Dynein is required for polarized dendritic transport and uniform microtubule orientation in axons", 
@@ -1934,7 +1959,6 @@
         "reference_id": "10.1038/ncb1777", 
         "fpage": "1172", 
         "year": "2008", 
-        "etal": true, 
         "position": 53, 
         "ref": "ZhengYWildongerJYeBZhangYKitaAYoungerSH2008Dynein is required for polarized dendritic transport and uniform microtubule orientation in axonsNat Cell Biol1011728010.1038/ncb1777", 
         "id": "bib52"

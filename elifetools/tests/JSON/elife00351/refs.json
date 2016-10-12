@@ -79,6 +79,10 @@
                 "surname": "Kaiser", 
                 "given-names": "T", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "uri": "http://dx.doi.org/10.1136/bmj.c4737", 
@@ -87,7 +91,6 @@
         "source": "BMJ", 
         "fpage": "c4737", 
         "year": "2010", 
-        "etal": true, 
         "position": 3, 
         "publication-type": "journal", 
         "ref": "EydingDLelgemannMGrouvenUH\u00e4rterMKrompMKaiserT2010Reboxetine for acute treatment of major depression: systematic review and meta-analysis of published and unpublished placebo and selective serotonin reuptake inhibitor controlled trialsBMJ341c473710.1136/bmj.c4737", 

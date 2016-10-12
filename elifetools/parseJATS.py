@@ -1081,10 +1081,6 @@ def refs(soup):
     for tag in tags:
         ref = {}
 
-        # etal
-        if first(raw_parser.etal(tag)):
-            ref['etal'] = True
-
         ref['ref'] = ref_text(tag)
 
         # ref_id
@@ -1138,6 +1134,13 @@ def refs(soup):
 
                 if len(author) > 0:
                     authors.append(author)
+
+            # etal for the person group
+            if first(raw_parser.etal(group)):
+                author = {}
+                author['etal'] = True
+                set_if_value(author, "group-type", author_type)
+                authors.append(author)
 
         # Check for collab tag not wrapped in a person-group for backwards compatibility
         if len(person_group) == 0:

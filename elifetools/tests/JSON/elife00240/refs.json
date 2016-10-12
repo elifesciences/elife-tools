@@ -161,6 +161,10 @@
                 "surname": "Ogol", 
                 "given-names": "CK", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "uri": "http://dx.doi.org/10.1111/j.1461-0248.2011.01674.x", 
@@ -169,7 +173,6 @@
         "source": "Ecol Lett", 
         "fpage": "1075", 
         "year": "2011", 
-        "etal": true, 
         "position": 5, 
         "publication-type": "journal", 
         "ref": "TamiruABruceTJWoodcockCMCaulfieldJCMidegaCAOgolCK2011Maize landraces recruit egg and larval parasitoids in response to egg deposition by a herbivoreEcol Lett141075108310.1111/j.1461-0248.2011.01674.x", 

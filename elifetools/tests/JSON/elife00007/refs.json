@@ -253,6 +253,10 @@
                 "surname": "Gershenzon", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "uri": "http://dx.doi.org/10.1073/pnas.0906365106", 
@@ -261,7 +265,6 @@
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "13213", 
         "year": "2009", 
-        "etal": true, 
         "position": 8, 
         "publication-type": "journal", 
         "ref": "DegenhardtJHiltpoldIK\u00f6llnerTGFreyMGierlAGershenzonJ2009Restoring a maize root signal that attracts insect-killing nematodes to control a major pestProc Natl Acad Sci U S A106132131321810.1073/pnas.0906365106", 
@@ -1218,6 +1221,10 @@
                 "surname": "Li", 
                 "given-names": "H", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "uri": "http://dx.doi.org/10.1002/ps.1849", 
@@ -1226,7 +1233,6 @@
         "source": "Pest Manag Sci", 
         "fpage": "155", 
         "year": "2010", 
-        "etal": true, 
         "position": 37, 
         "publication-type": "journal", 
         "ref": "LiuFXuZZhuYCHuangFWangYLiH2010Evidence of field-evolved resistance to Cry1Ac-expressing Bt cotton in Helicoverpa armigera (Lepidoptera: Noctuidae) in northern ChinaPest Manag Sci6615516110.1002/ps.1849", 
@@ -1381,6 +1387,10 @@
                 "surname": "Kuhlmann", 
                 "given-names": "U", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "uri": "http://dx.doi.org/10.1038/nature03451", 
@@ -1389,7 +1399,6 @@
         "source": "Nature", 
         "fpage": "732", 
         "year": "2005", 
-        "etal": true, 
         "position": 41, 
         "publication-type": "journal", 
         "ref": "RasmannSK\u00f6llnerTGDegenhardtJHiltpoldIToepferSKuhlmannU2005Recruitment of entomopathogenic nematodes by insect-damaged maize rootsNature43473273710.1038/nature03451", 

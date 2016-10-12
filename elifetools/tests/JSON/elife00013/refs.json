@@ -367,6 +367,10 @@
                 "surname": "Mayhew", 
                 "given-names": "GF", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The complete genome sequence of Escherichia coli K-12", 
@@ -375,7 +379,6 @@
         "source": "Science", 
         "fpage": "1453", 
         "year": "1997", 
-        "etal": true, 
         "position": 10, 
         "ref": "BlattnerFRPlankettGIIIBlochCAPernaNBurlandVRileyMCollado-VidesJGlasnerJDRodeCKMayhewGF1997The complete genome sequence of Escherichia coli K-12Science27714531462", 
         "id": "bib10"
@@ -755,6 +758,10 @@
                 "group-type": "author"
             }, 
             {
+                "etal": true, 
+                "group-type": "author"
+            }, 
+            {
                 "surname": "Blakely", 
                 "given-names": "GW", 
                 "group-type": "editor"
@@ -766,7 +773,6 @@
         "source": "Science", 
         "fpage": "1463", 
         "year": "2005", 
-        "etal": true, 
         "position": 21, 
         "ref": "Cerdeno-TarragaAMPatrickSCrossmanLBlakelyGWAbrattVLennardNPoxtonIDuerdenBHarrisBQuailMA2005Extensive DNA inversions in the B. fragilis genome control variable gene expression.BlakelyGWScience30714631465", 
         "id": "bib21"
@@ -1840,6 +1846,10 @@
                 "surname": "Isogai", 
                 "given-names": "Y", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoans", 
@@ -1848,7 +1858,6 @@
         "source": "Nature", 
         "fpage": "783", 
         "year": "2008", 
-        "etal": true, 
         "position": 55, 
         "ref": "KingNWestbrookMJYoungSLKuoAAbedinMChapmanJFaircloughSHellstenUIsogaiY2008The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoansNature451783788", 
         "id": "bib55"
@@ -2089,6 +2098,10 @@
                 "surname": "Borchert", 
                 "given-names": "S", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The complete genome sequence of the gram-positive bacterium Bacillus subtilis", 
@@ -2097,7 +2110,6 @@
         "source": "Nature", 
         "fpage": "249", 
         "year": "1997", 
-        "etal": true, 
         "position": 61, 
         "ref": "KunstFOgasawaraNMoszerIAlbertiniAMAlloniGAzevedoVBerteroMGBessi\u00e8resPBolotinABorchertS1997The complete genome sequence of the gram-positive bacterium Bacillus subtilisNature390249256", 
         "id": "bib61"
@@ -2583,6 +2595,10 @@
                 "surname": "Swings", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman,", 
@@ -2591,7 +2607,6 @@
         "source": "Int J Syst Evol Microbiol", 
         "fpage": "1757", 
         "year": "2004", 
-        "etal": true, 
         "position": 75, 
         "ref": "NedashkovskayaOIVancanneytMVan TrappenSVandemeulebroeckeKLysenkoAMRohdeMFalsenEFrolovaGMMikhailovVVSwingsJ2004Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman,. 2003 and Hongiella Yi and Chun 2004Int J Syst Evol Microbiol54Pt 517571764", 
         "id": "bib75"
@@ -2650,6 +2665,10 @@
                 "surname": "Mikhailov", 
                 "given-names": "VV", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermedius", 
@@ -2658,7 +2677,6 @@
         "source": "Int J Syst Evol Microbiol", 
         "fpage": "953", 
         "year": "2006", 
-        "etal": true, 
         "position": 76, 
         "ref": "NedashkovskayaOKimSVancanneytMLysenkoAShinDParkMLeeKHJungWJKalinovskayaNIMikhailovVV2006Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermediusInt J Syst Evol Microbiol56953958", 
         "id": "bib76"
@@ -2717,6 +2735,10 @@
                 "surname": "Maddock", 
                 "given-names": "JR", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Complete genome sequence of Caulobacter crescentus", 
@@ -2725,7 +2747,6 @@
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "4136", 
         "year": "2001", 
-        "etal": true, 
         "position": 77, 
         "ref": "NiermanWCFeldblyumTVLaubMTPaulsenITNelsonKEEisenJAHeidelbergJFAlleyMROhtaNMaddockJR2001Complete genome sequence of Caulobacter crescentusProc Natl Acad Sci U S A9841364141", 
         "id": "bib77"
@@ -2986,6 +3007,10 @@
                 "surname": "Millikan", 
                 "given-names": "D", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Complete genome sequence of Vibrio fischeri: A symbiotic bacterium with pathogenic congeners", 
@@ -2994,7 +3019,6 @@
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "3004", 
         "year": "2005", 
-        "etal": true, 
         "position": 85, 
         "ref": "RubyEGUrbanowskiMCampbellJDunnAFainiMGunsalusRLostrohPLuppCMcCannJMillikanD2005Complete genome sequence of Vibrio fischeri: A symbiotic bacterium with pathogenic congenersProc Natl Acad Sci U S A10230043009", 
         "id": "bib85"
@@ -3463,6 +3487,10 @@
                 "given-names": "NF", 
                 "group-type": "author", 
                 "suffix": "Jr"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The genome of the natural genetic engineer Agrobacterium tumefaciens C58", 
@@ -3471,7 +3499,6 @@
         "source": "Science", 
         "fpage": "2317", 
         "year": "2001", 
-        "etal": true, 
         "position": 98, 
         "ref": "WoodDWSetubalJCKaulRMonksDEKitajimaJPOkuraVKZhouYChenLWoodGEAlmeidaNFJr2001The genome of the natural genetic engineer Agrobacterium tumefaciens C58Science29423172323", 
         "id": "bib98"
