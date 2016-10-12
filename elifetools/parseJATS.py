@@ -1099,6 +1099,11 @@ def refs(soup):
             ref['reference_id'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
             ref['doi'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
 
+        if raw_parser.ext_link(tag, "uri"):
+            uri_tag = first(raw_parser.ext_link(tag, "uri"))
+            set_if_value(ref, "uri", uri_tag.get('xlink:href'))
+            set_if_value(ref, "uri_text", node_contents_str(uri_tag))
+
         set_if_value(ref, "year", node_text(raw_parser.year(tag)))
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))

@@ -1315,7 +1315,7 @@
     }, 
     {
         "article_title": "Distribution and functions of sterols and sphingolipids", 
-        "comment": "pii: a004762", 
+        "uri_text": "10.1101/cshperspect.a004762", 
         "article_doi": "10.7554/eLife.00013", 
         "authors": [
             {
@@ -1334,12 +1334,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1101/cshperspect.a004762", 
+        "comment": "pii: a004762", 
         "full_article_title": "Distribution and functions of sterols and sphingolipids", 
-        "publication-type": "journal", 
         "volume": "3", 
         "source": "Cold Spring Harb Perspect Biol", 
         "year": "2011", 
         "position": 40, 
+        "publication-type": "journal", 
         "ref": "HannichJTUmebayashiKRiezmanH2011Distribution and functions of sterols and sphingolipidsCold Spring Harb Perspect Biol3pii: a00476210.1101/cshperspect.a004762", 
         "id": "bib40"
     }, 

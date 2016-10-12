@@ -1,6 +1,7 @@
 [
     {
         "article_title": "Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signals", 
+        "uri_text": "10.1111/j.1469-8137.2009.03046.x", 
         "lpage": "782", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -15,18 +16,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1469-8137.2009.03046.x", 
         "full_article_title": "Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signals", 
-        "publication-type": "journal", 
         "volume": "184", 
         "source": "New Phytol", 
         "fpage": "768", 
         "year": "2009", 
         "position": 1, 
+        "publication-type": "journal", 
         "ref": "AllisonJDHareJD2009Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signalsNew Phytol18476878210.1111/j.1469-8137.2009.03046.x", 
         "id": "bib1"
     }, 
     {
         "article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
+        "uri_text": "10.1126/science.1191634", 
         "lpage": "1078", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -41,18 +44,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1126/science.1191634", 
         "full_article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
-        "publication-type": "journal", 
         "volume": "329", 
         "source": "Science", 
         "fpage": "1075", 
         "year": "2010", 
         "position": 2, 
+        "publication-type": "journal", 
         "ref": "AllmannSBaldwinIT2010Insects betray themselves in nature to predators by rapid isomerization of green leaf volatilesScience3291075107810.1126/science.1191634", 
         "id": "bib2"
     }, 
     {
         "article_title": "Oxylipin channelling in Nicotiana attenuata: Lipoxygenase 2 supplies substrates for green leaf volatile production", 
+        "uri_text": "10.1111/j.1365-3040.2010.02203.x", 
         "lpage": "2040", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -77,13 +82,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1126/science.1191634", 
         "full_article_title": "Oxylipin channelling in <italic>Nicotiana attenuata</italic>: Lipoxygenase 2 supplies substrates for green leaf volatile production", 
-        "publication-type": "journal", 
         "volume": "33", 
         "source": "Plant Cell Environ", 
         "fpage": "2028", 
         "year": "2010", 
         "position": 3, 
+        "publication-type": "journal", 
         "ref": "AllmannSHalitschkeRSchuurinkRCBaldwinIT2010Oxylipin channelling in Nicotiana attenuata: Lipoxygenase 2 supplies substrates for green leaf volatile productionPlant Cell Environ332028204010.1111/j.1365-3040.2010.02203.x", 
         "id": "bib3"
     }, 
@@ -110,6 +116,7 @@
     }, 
     {
         "article_title": "The slow-growth-high mortality hypothesis: A test using the cabbage butterfly", 
+        "uri_text": "10.2307/2265852", 
         "lpage": "999", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -124,18 +131,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.2307/2265852", 
         "full_article_title": "The slow-growth-high mortality hypothesis: A test using the cabbage butterfly", 
-        "publication-type": "journal", 
         "volume": "78", 
         "source": "Ecology", 
         "fpage": "987", 
         "year": "1997", 
         "position": 5, 
+        "publication-type": "journal", 
         "ref": "BenreyBDennoRF1997The slow-growth-high mortality hypothesis: A test using the cabbage butterflyEcology7898799910.2307/2265852", 
         "id": "bib5"
     }, 
     {
         "article_title": "Occurrence of tetraploidy in Nicotiana attenuata plants after Agrobacterium-mediated transformation is genotype specific but independent of polysomaty of explant tissue", 
+        "uri_text": "10.1007/s00299-005-0111-4", 
         "lpage": "675", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -165,18 +174,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/s00299-005-0111-4", 
         "full_article_title": "Occurrence of tetraploidy in <italic>Nicotiana attenuata</italic> plants after <italic>Agrobacterium</italic>-mediated transformation is genotype specific but independent of polysomaty of explant tissue", 
-        "publication-type": "journal", 
         "volume": "25", 
         "source": "Plant Cell Rep", 
         "fpage": "668", 
         "year": "2006", 
         "position": 6, 
+        "publication-type": "journal", 
         "ref": "BubnerBGaseKBergerBLinkDBaldwinIT2006Occurrence of tetraploidy in Nicotiana attenuata plants after Agrobacterium-mediated transformation is genotype specific but independent of polysomaty of explant tissuePlant Cell Rep2566867510.1007/s00299-005-0111-4", 
         "id": "bib6"
     }, 
     {
         "article_title": "Caterpillar-induced nocturnal plant volatiles repel conspecific females", 
+        "uri_text": "10.1038/35069058", 
         "lpage": "580", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -196,18 +207,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1038/35069058", 
         "full_article_title": "Caterpillar-induced nocturnal plant volatiles repel conspecific females", 
-        "publication-type": "journal", 
         "volume": "410", 
         "source": "Nature", 
         "fpage": "577", 
         "year": "2001", 
         "position": 7, 
+        "publication-type": "journal", 
         "ref": "De MoraesCMMescherMCTumlinsonJH2001Caterpillar-induced nocturnal plant volatiles repel conspecific femalesNature41057758010.1038/35069058", 
         "id": "bib7"
     }, 
     {
         "article_title": "Restoring a maize root signal that attracts insect-killing nematodes to control a major pest", 
+        "uri_text": "10.1073/pnas.0906365106", 
         "lpage": "13218", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -242,19 +255,21 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1073/pnas.0906365106", 
         "full_article_title": "Restoring a maize root signal that attracts insect-killing nematodes to control a major pest", 
-        "publication-type": "journal", 
         "volume": "106", 
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "13213", 
         "year": "2009", 
         "etal": true, 
         "position": 8, 
+        "publication-type": "journal", 
         "ref": "DegenhardtJHiltpoldIK\u00f6llnerTGFreyMGierlAGershenzonJ2009Restoring a maize root signal that attracts insect-killing nematodes to control a major pestProc Natl Acad Sci U S A106132131321810.1073/pnas.0906365106", 
         "id": "bib8"
     }, 
     {
         "article_title": "The evolutionary context for herbivore-induced plant volatiles: Beyond the \u2018cry for help\u2019", 
+        "uri_text": "10.1016/j.tplants.2009.12.002", 
         "lpage": "175", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -269,18 +284,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1016/j.tplants.2009.12.002", 
         "full_article_title": "The evolutionary context for herbivore-induced plant volatiles: Beyond the \u2018cry for help\u2019", 
-        "publication-type": "journal", 
         "volume": "15", 
         "source": "Trends Plant Sci", 
         "fpage": "167", 
         "year": "2010", 
         "position": 9, 
+        "publication-type": "journal", 
         "ref": "DickeMBaldwinIT2010The evolutionary context for herbivore-induced plant volatiles: Beyond the \u2018cry for help\u2019Trends Plant Sci1516717510.1016/j.tplants.2009.12.002", 
         "id": "bib9"
     }, 
     {
         "article_title": "The ecological consequences of variation in plants and prey for an omnivorous insect", 
+        "uri_text": "10.2307/177072", 
         "lpage": "1266", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -295,18 +312,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.2307/177072", 
         "full_article_title": "The ecological consequences of variation in plants and prey for an omnivorous insect", 
-        "publication-type": "journal", 
         "volume": "80", 
         "source": "Ecology", 
         "fpage": "1253", 
         "year": "1999", 
         "position": 10, 
+        "publication-type": "journal", 
         "ref": "EubanksMDDennoRF1999The ecological consequences of variation in plants and prey for an omnivorous insectEcology801253126610.2307/177072", 
         "id": "bib10"
     }, 
     {
         "article_title": "Host plants mediate omnivore-herbivore interactions and influence prey suppression", 
+        "uri_text": "10.2307/177168", 
         "lpage": "947", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -321,18 +340,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.2307/177168", 
         "full_article_title": "Host plants mediate omnivore-herbivore interactions and influence prey suppression", 
-        "publication-type": "journal", 
         "volume": "81", 
         "source": "Ecology", 
         "fpage": "936", 
         "year": "2000", 
         "position": 11, 
+        "publication-type": "journal", 
         "ref": "EubanksMDDennoRF2000Host plants mediate omnivore-herbivore interactions and influence prey suppressionEcology8193694710.2307/177168", 
         "id": "bib11"
     }, 
     {
         "article_title": "A simple and efficient micrografting method for stably transformed Nicotiana attenuata plants to examine shoot-root signaling", 
+        "uri_text": "10.1186/1746-4811-7-34", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
             {
@@ -356,18 +377,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1186/1746-4811-7-34", 
         "full_article_title": "A simple and efficient micrografting method for stably transformed <italic>Nicotiana attenuata</italic> plants to examine shoot-root signaling", 
-        "publication-type": "journal", 
         "volume": "7", 
         "source": "Plant Methods", 
         "fpage": "34", 
         "year": "2011", 
         "position": 12, 
+        "publication-type": "journal", 
         "ref": "FragosoVGoddardHBaldwinITKimS-G2011A simple and efficient micrografting method for stably transformed Nicotiana attenuata plants to examine shoot-root signalingPlant Methods73410.1186/1746-4811-7-34", 
         "id": "bib12"
     }, 
     {
         "article_title": "Electroantennographic and behavioral responses of the sphinx moth Manduca sexta to host plant headspace volatiles", 
+        "uri_text": "10.1023/A:1024898127549", 
         "lpage": "1833", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -387,18 +410,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1023/A:1024898127549", 
         "full_article_title": "Electroantennographic and behavioral responses of the sphinx moth <italic>Manduca sexta</italic> to host plant headspace volatiles", 
-        "publication-type": "journal", 
         "volume": "29", 
         "source": "J Chem Ecol", 
         "fpage": "1813", 
         "year": "2003", 
         "position": 13, 
+        "publication-type": "journal", 
         "ref": "FraserAMMechaberWLHildebrandJG2003Electroantennographic and behavioral responses of the sphinx moth Manduca sexta to host plant headspace volatilesJ Chem Ecol291813183310.1023/A:1024898127549", 
         "id": "bib13"
     }, 
     {
         "article_title": "Spreading of post-transcriptional gene silencing along the target gene promotes systemic silencing", 
+        "uri_text": "10.1111/j.1365-313X.2004.02067.x", 
         "lpage": "602", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -418,18 +443,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-313X.2004.02067.x", 
         "full_article_title": "Spreading of post-transcriptional gene silencing along the target gene promotes systemic silencing", 
-        "publication-type": "journal", 
         "volume": "38", 
         "source": "Plant J", 
         "fpage": "594", 
         "year": "2004", 
         "position": 14, 
+        "publication-type": "journal", 
         "ref": "Garc\u00eda-P\u00e9rezRDHoudtHVDepickerA2004Spreading of post-transcriptional gene silencing along the target gene promotes systemic silencingPlant J3859460210.1111/j.1365-313X.2004.02067.x", 
         "id": "bib14"
     }, 
     {
         "article_title": "Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in Nicotiana attenuata", 
+        "uri_text": "10.1046/j.1365-313X.2003.01921.x", 
         "lpage": "807", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -444,18 +471,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1046/j.1365-313X.2003.01921.x", 
         "full_article_title": "Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "36", 
         "source": "Plant J", 
         "fpage": "794", 
         "year": "2003", 
         "position": 15, 
+        "publication-type": "journal", 
         "ref": "HalitschkeRBaldwinIT2003Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in Nicotiana attenuataPlant J3679480710.1046/j.1365-313X.2003.01921.x", 
         "id": "bib15"
     }, 
     {
         "article_title": "Ecophysiological comparison of direct and indirect defenses in Nicotiana attenuata", 
+        "uri_text": "10.1007/s004420000389", 
         "lpage": "417", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -485,18 +514,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/s004420000389", 
         "full_article_title": "Ecophysiological comparison of direct and indirect defenses in <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "124", 
         "source": "Oecologia", 
         "fpage": "408", 
         "year": "2000", 
         "position": 16, 
+        "publication-type": "journal", 
         "ref": "HalitschkeRKesslerA.KahlJLorenzABaldwinIT2000Ecophysiological comparison of direct and indirect defenses in Nicotiana attenuataOecologia12440841710.1007/s004420000389", 
         "id": "bib16"
     }, 
     {
         "article_title": "Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphingidae) and its natural host Nicotiana attenuata. III. Fatty acid-amino acid conjugates in herbivore oral secretions are necessary and sufficient for herbivore-specific plant responses", 
+        "uri_text": "10.1104/pp.125.2.711", 
         "lpage": "717", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -526,18 +557,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1104/pp.125.2.711", 
         "full_article_title": "Molecular interactions between the specialist herbivore <italic>Manduca sexta</italic> (Lepidoptera, Sphingidae) and its natural host <italic>Nicotiana attenuata</italic>. III. Fatty acid-amino acid conjugates in herbivore oral secretions are necessary and sufficient for herbivore-specific plant responses", 
-        "publication-type": "journal", 
         "volume": "125", 
         "source": "Plant Physiol", 
         "fpage": "711", 
         "year": "2001", 
         "position": 17, 
+        "publication-type": "journal", 
         "ref": "HalitschkeRSchittkoUPohnertGBolandWBaldwinIT2001Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphingidae) and its natural host Nicotiana attenuata. III. Fatty acid-amino acid conjugates in herbivore oral secretions are necessary and sufficient for herbivore-specific plant responsesPlant Physiol12571171710.1104/pp.125.2.711", 
         "id": "bib17"
     }, 
     {
         "article_title": "Silencing of hydroperoxide lyase and allene oxide synthase reveals substrate and defense signaling crosstalk in Nicotiana attenuata", 
+        "uri_text": "10.1111/j.1365-313X.2004.02185.x", 
         "lpage": "46", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -562,18 +595,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-313X.2004.02185.x", 
         "full_article_title": "Silencing of hydroperoxide lyase and allene oxide synthase reveals substrate and defense signaling crosstalk in <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "40", 
         "source": "Plant J", 
         "fpage": "35", 
         "year": "2004", 
         "position": 18, 
+        "publication-type": "journal", 
         "ref": "HalitschkeRZieglerJKein\u00e4nenMBaldwinIT2004Silencing of hydroperoxide lyase and allene oxide synthase reveals substrate and defense signaling crosstalk in Nicotiana attenuataPlant J40354610.1111/j.1365-313X.2004.02185.x", 
         "id": "bib18"
     }, 
     {
         "article_title": "Shared signals\u2014\u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in nature", 
+        "uri_text": "10.1111/j.1461-0248.2007.01123.x", 
         "lpage": "34", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -603,18 +638,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1461-0248.2007.01123.x", 
         "full_article_title": "Shared signals\u2014\u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in nature", 
-        "publication-type": "journal", 
         "volume": "11", 
         "source": "Ecol Lett", 
         "fpage": "24", 
         "year": "2008", 
         "position": 19, 
+        "publication-type": "journal", 
         "ref": "HalitschkeRStenbergJAKesslerDKesslerABaldwinIT2008Shared signals\u2014\u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in natureEcol Lett11243410.1111/j.1461-0248.2007.01123.x", 
         "id": "bib19"
     }, 
     {
         "article_title": "The multiple functions of plant serine protease inhibitors: Defense against herbivores and beyond", 
+        "uri_text": "10.4161/psb.6.7.15504", 
         "lpage": "1011", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -639,18 +676,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.4161/psb.6.7.15504", 
         "full_article_title": "The multiple functions of plant serine protease inhibitors: Defense against herbivores and beyond", 
-        "publication-type": "journal", 
         "volume": "6", 
         "source": "Plant Signal Behav", 
         "fpage": "1009", 
         "year": "2011", 
         "position": 20, 
+        "publication-type": "journal", 
         "ref": "HartlMGiriAPKaurHBaldwinIT2011The multiple functions of plant serine protease inhibitors: Defense against herbivores and beyondPlant Signal Behav61009101110.4161/psb.6.7.15504", 
         "id": "bib20"
     }, 
     {
         "article_title": "Indirect defence via tritrophic interactions", 
+        "uri_text": "10.1111/j.1469-8137.2007.02330.x", 
         "lpage": "61", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -660,13 +699,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1469-8137.2007.02330.x", 
         "full_article_title": "Indirect defence via tritrophic interactions", 
-        "publication-type": "journal", 
         "volume": "178", 
         "source": "New Phytol", 
         "fpage": "41", 
         "year": "2008", 
         "position": 21, 
+        "publication-type": "journal", 
         "ref": "HeilM2008Indirect defence via tritrophic interactionsNew Phytol178416110.1111/j.1469-8137.2007.02330.x", 
         "id": "bib21"
     }, 
@@ -721,6 +761,7 @@
     }, 
     {
         "article_title": "Nicotiana attenuata SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathway", 
+        "uri_text": "10.1104/pp.109.149013", 
         "lpage": "106", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -745,18 +786,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1104/pp.109.149013", 
         "full_article_title": "<italic>Nicotiana attenuata</italic> SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathway", 
-        "publication-type": "journal", 
         "volume": "152", 
         "source": "Plant Physiol", 
         "fpage": "96", 
         "year": "2010", 
         "position": 24, 
+        "publication-type": "journal", 
         "ref": "KallenbachMAlagnaFBaldwinITBonaventureG2010Nicotiana attenuata SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathwayPlant Physiol1529610610.1104/pp.109.149013", 
         "id": "bib24"
     }, 
     {
         "article_title": "Attracting carnivorous arthropods with plant volatiles: The future of biocontrol or playing with fire?", 
+        "uri_text": "10.1016/j.biocontrol.2011.10.017", 
         "lpage": "89", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -766,18 +809,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1016/j.biocontrol.2011.10.017", 
         "full_article_title": "Attracting carnivorous arthropods with plant volatiles: The future of biocontrol or playing with fire?", 
-        "publication-type": "journal", 
         "volume": "60", 
         "source": "Biol Control", 
         "fpage": "77", 
         "year": "2012", 
         "position": 25, 
+        "publication-type": "journal", 
         "ref": "KaplanI2012Attracting carnivorous arthropods with plant volatiles: The future of biocontrol or playing with fire?Biol Control60778910.1016/j.biocontrol.2011.10.017", 
         "id": "bib25"
     }, 
     {
         "article_title": "Do plant defenses enhance or diminish prey suppression by omnivorous Heteroptera?", 
+        "uri_text": "10.1016/j.biocontrol.2010.12.005", 
         "lpage": "60", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -792,18 +837,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1016/j.biocontrol.2010.12.005", 
         "full_article_title": "Do plant defenses enhance or diminish prey suppression by omnivorous Heteroptera?", 
-        "publication-type": "journal", 
         "volume": "59", 
         "source": "Biol Control", 
         "fpage": "53", 
         "year": "2011", 
         "position": 26, 
+        "publication-type": "journal", 
         "ref": "KaplanIThalerJS2011Do plant defenses enhance or diminish prey suppression by omnivorous Heteroptera?Biol Control59536010.1016/j.biocontrol.2010.12.005", 
         "id": "bib26"
     }, 
     {
         "article_title": "Genetic engineering of terpenoid metabolism attracts bodyguards to Arabidopsis", 
+        "uri_text": "10.1126/science.1116232", 
         "lpage": "2072", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -838,13 +885,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1126/science.1116232", 
         "full_article_title": "Genetic engineering of terpenoid metabolism attracts bodyguards to Arabidopsis", 
-        "publication-type": "journal", 
         "volume": "309", 
         "source": "Science", 
         "fpage": "2070", 
         "year": "2005", 
         "position": 27, 
+        "publication-type": "journal", 
         "ref": "KappersIFAharoniAvan HerpenTWJMLuckerhoffLLPDickeMBouwmeesterHJ2005Genetic engineering of terpenoid metabolism attracts bodyguards to ArabidopsisScience3092070207210.1126/science.1116232", 
         "id": "bib27"
     }, 
@@ -873,6 +921,7 @@
     }, 
     {
         "article_title": "Defensive function of herbivore-induced plant volatile emissions in nature", 
+        "uri_text": "10.1126/science.291.5511.2141", 
         "lpage": "2144", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -887,18 +936,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1126/science.291.5511.2141", 
         "full_article_title": "Defensive function of herbivore-induced plant volatile emissions in nature", 
-        "publication-type": "journal", 
         "volume": "291", 
         "source": "Science", 
         "fpage": "2141", 
         "year": "2001", 
         "position": 29, 
+        "publication-type": "journal", 
         "ref": "KesslerABaldwinIT2001Defensive function of herbivore-induced plant volatile emissions in natureScience2912141214410.1126/science.291.5511.2141", 
         "id": "bib29"
     }, 
     {
         "article_title": "Herbivore-induced plant vaccination. Part I. The orchestration of plant defenses in nature and their fitness consequences in the wild tobacco Nicotiana attenuata", 
+        "uri_text": "10.1111/j.1365-313X.2004.02076.x", 
         "lpage": "649", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -913,18 +964,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-313X.2004.02076.x", 
         "full_article_title": "Herbivore-induced plant vaccination. Part I. The orchestration of plant defenses in nature and their fitness consequences in the wild tobacco <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "38", 
         "source": "Plant J", 
         "fpage": "639", 
         "year": "2004", 
         "position": 30, 
+        "publication-type": "journal", 
         "ref": "KesslerABaldwinIT2004Herbivore-induced plant vaccination. Part I. The orchestration of plant defenses in nature and their fitness consequences in the wild tobacco Nicotiana attenuataPlant J3863964910.1111/j.1365-313X.2004.02076.x", 
         "id": "bib30"
     }, 
     {
         "article_title": "Making sense of nectar scents: The effects of nectar secondary metabolites on floral visitors of Nicotiana attenuata", 
+        "uri_text": "10.1111/j.1365-313X.2006.02995.x", 
         "lpage": "854", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -939,18 +992,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-313X.2006.02995.x", 
         "full_article_title": "Making sense of nectar scents: The effects of nectar secondary metabolites on floral visitors of <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "49", 
         "source": "Plant J", 
         "fpage": "840", 
         "year": "2006", 
         "position": 31, 
+        "publication-type": "journal", 
         "ref": "KesslerDBaldwinIT2006Making sense of nectar scents: The effects of nectar secondary metabolites on floral visitors of Nicotiana attenuataPlant J4984085410.1111/j.1365-313X.2006.02995.x", 
         "id": "bib31"
     }, 
     {
         "article_title": "The multiple faces of indirect defences and their agents of natural selection", 
+        "uri_text": "10.1111/j.1365-2435.2010.01818.x", 
         "lpage": "357", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -965,18 +1020,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-2435.2010.01818.x", 
         "full_article_title": "The multiple faces of indirect defences and their agents of natural selection", 
-        "publication-type": "journal", 
         "volume": "25", 
         "source": "Funct Ecol", 
         "fpage": "348", 
         "year": "2011", 
         "position": 32, 
+        "publication-type": "journal", 
         "ref": "KesslerAHeilM2011The multiple faces of indirect defences and their agents of natural selectionFunct Ecol2534835710.1111/j.1365-2435.2010.01818.x", 
         "id": "bib32"
     }, 
     {
         "article_title": "Silencing the jasmonate cascade: Induced plant defenses and insect populations", 
+        "uri_text": "10.1126/science.291.5511.2141", 
         "lpage": "668", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -996,18 +1053,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1126/science.291.5511.2141", 
         "full_article_title": "Silencing the jasmonate cascade: Induced plant defenses and insect populations", 
-        "publication-type": "journal", 
         "volume": "305", 
         "source": "Science", 
         "fpage": "665", 
         "year": "2004", 
         "position": 33, 
+        "publication-type": "journal", 
         "ref": "KesslerAHalitschkeRBaldwinIT2004Silencing the jasmonate cascade: Induced plant defenses and insect populationsScience30566566810.1126/science.291.5511.2141", 
         "id": "bib33"
     }, 
     {
         "article_title": "Priming of plant defense responses in nature by airborne signaling between Artemisia tridentata and Nicotiana attenuata", 
+        "uri_text": "10.1007/s00442-006-0365-8", 
         "lpage": "292", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1032,18 +1091,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/s00442-006-0365-8", 
         "full_article_title": "Priming of plant defense responses in nature by airborne signaling between <italic>Artemisia tridentata</italic> and <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "148", 
         "source": "Oecologia", 
         "fpage": "280", 
         "year": "2006", 
         "position": 34, 
+        "publication-type": "journal", 
         "ref": "KesslerAHalitschkeRDiezelCBaldwinIT2006Priming of plant defense responses in nature by airborne signaling between Artemisia tridentata and Nicotiana attenuataOecologia14828029210.1007/s00442-006-0365-8", 
         "id": "bib34"
     }, 
     {
         "article_title": "Transgenic plants as vital components of integrated pest management", 
+        "uri_text": "10.1016/j.tibtech.2009.08.002", 
         "lpage": "627", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1068,18 +1129,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1016/j.tibtech.2009.08.002", 
         "full_article_title": "Transgenic plants as vital components of integrated pest management", 
-        "publication-type": "journal", 
         "volume": "27", 
         "source": "Trends Biotechnol", 
         "fpage": "621", 
         "year": "2009", 
         "position": 35, 
+        "publication-type": "journal", 
         "ref": "KosMvan LoonJJADickeMVetLEM2009Transgenic plants as vital components of integrated pest managementTrends Biotechnol2762162710.1016/j.tibtech.2009.08.002", 
         "id": "bib35"
     }, 
     {
         "article_title": "Agrobacterium-mediated transformation of Nicotiana attenuata, a model ecological expression system", 
+        "uri_text": "10.1007/PL00012666", 
         "lpage": "183", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1109,18 +1172,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/PL00012666", 
         "full_article_title": "<italic>Agrobacterium</italic>-mediated transformation of <italic>Nicotiana attenuata</italic>, a model ecological expression system", 
-        "publication-type": "journal", 
         "volume": "12", 
         "source": "Chemoecology", 
         "fpage": "177", 
         "year": "2002", 
         "position": 36, 
+        "publication-type": "journal", 
         "ref": "Kr\u00fcgelTLimMGaseKHalitschkeRBaldwinIT2002Agrobacterium-mediated transformation of Nicotiana attenuata, a model ecological expression systemChemoecology1217718310.1007/PL00012666", 
         "id": "bib36"
     }, 
     {
         "article_title": "Evidence of field-evolved resistance to Cry1Ac-expressing Bt cotton in Helicoverpa armigera (Lepidoptera: Noctuidae) in northern China", 
+        "uri_text": "10.1002/ps.1849", 
         "lpage": "161", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1155,19 +1220,21 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1002/ps.1849", 
         "full_article_title": "Evidence of field-evolved resistance to Cry1Ac-expressing Bt cotton in <italic>Helicoverpa armigera</italic> (Lepidoptera: Noctuidae) in northern China", 
-        "publication-type": "journal", 
         "volume": "66", 
         "source": "Pest Manag Sci", 
         "fpage": "155", 
         "year": "2010", 
         "etal": true, 
         "position": 37, 
+        "publication-type": "journal", 
         "ref": "LiuFXuZZhuYCHuangFWangYLiH2010Evidence of field-evolved resistance to Cry1Ac-expressing Bt cotton in Helicoverpa armigera (Lepidoptera: Noctuidae) in northern ChinaPest Manag Sci6615516110.1002/ps.1849", 
         "id": "bib37"
     }, 
     {
         "article_title": "Silencing two herbivory-activated MAP kinases, SIPK and WIPK, does not increase Nicotiana attenuata's susceptibility to herbivores in the glasshouse and in nature", 
+        "uri_text": "10.1111/j.1469-8137.2008.02645.x", 
         "lpage": "173", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1187,18 +1254,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1469-8137.2008.02645.x", 
         "full_article_title": "Silencing two herbivory-activated MAP kinases, SIPK and WIPK, does not increase <italic>Nicotiana attenuata</italic>'s susceptibility to herbivores in the glasshouse and in nature", 
-        "publication-type": "journal", 
         "volume": "181", 
         "source": "New Phytol", 
         "fpage": "161", 
         "year": "2009", 
         "position": 38, 
+        "publication-type": "journal", 
         "ref": "MeldauSWuJBaldwinIT2009Silencing two herbivory-activated MAP kinases, SIPK and WIPK, does not increase Nicotiana attenuata's susceptibility to herbivores in the glasshouse and in natureNew Phytol18116117310.1111/j.1469-8137.2008.02645.x", 
         "id": "bib38"
     }, 
     {
         "article_title": "Using \u2018mute\u2019 plants to translate volatile signals", 
+        "uri_text": "10.1111/j.1365-313X.2005.02623.x", 
         "lpage": "291", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1218,18 +1287,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1365-313X.2005.02623.x", 
         "full_article_title": "Using \u2018mute\u2019 plants to translate volatile signals", 
-        "publication-type": "journal", 
         "volume": "45", 
         "source": "Plant J", 
         "fpage": "275", 
         "year": "2006", 
         "position": 39, 
+        "publication-type": "journal", 
         "ref": "PascholdAHalitschkeRBaldwinIT2006Using \u2018mute\u2019 plants to translate volatile signalsPlant J4527529110.1111/j.1365-313X.2005.02623.x", 
         "id": "bib39"
     }, 
     {
         "article_title": "Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemies", 
+        "uri_text": "10.1146/annurev.es.11.110180.000353", 
         "lpage": "65", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1264,18 +1335,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1146/annurev.es.11.110180.000353", 
         "full_article_title": "Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemies", 
-        "publication-type": "journal", 
         "volume": "11", 
         "source": "Ann Rev Ecol Syst", 
         "fpage": "41", 
         "year": "1980", 
         "position": 40, 
+        "publication-type": "journal", 
         "ref": "PricePWBoutonCEGrossPMcPheronBAThompsonJNWeisAE1980Interactions among three trophic levels: Influence of plants on interactions between insect herbivores and natural enemiesAnn Rev Ecol Syst11416510.1146/annurev.es.11.110180.000353", 
         "id": "bib40"
     }, 
     {
         "article_title": "Recruitment of entomopathogenic nematodes by insect-damaged maize roots", 
+        "uri_text": "10.1038/nature03451", 
         "lpage": "737", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1310,19 +1383,21 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1038/nature03451", 
         "full_article_title": "Recruitment of entomopathogenic nematodes by insect-damaged maize roots", 
-        "publication-type": "journal", 
         "volume": "434", 
         "source": "Nature", 
         "fpage": "732", 
         "year": "2005", 
         "etal": true, 
         "position": 41, 
+        "publication-type": "journal", 
         "ref": "RasmannSK\u00f6llnerTGDegenhardtJHiltpoldIToepferSKuhlmannU2005Recruitment of entomopathogenic nematodes by insect-damaged maize rootsNature43473273710.1038/nature03451", 
         "id": "bib41"
     }, 
     {
         "article_title": "Eating the evidence? Manduca sexta larvae can not disrupt specific jasmonate induction in Nicotiana attenuata by rapid consumption", 
+        "uri_text": "10.1007/PL00008143", 
         "lpage": "346", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1342,18 +1417,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/PL00008143", 
         "full_article_title": "Eating the evidence? <italic>Manduca sexta</italic> larvae can not disrupt specific jasmonate induction in <italic>Nicotiana attenuata</italic> by rapid consumption", 
-        "publication-type": "journal", 
         "volume": "210", 
         "source": "Planta", 
         "fpage": "343", 
         "year": "2000", 
         "position": 42, 
+        "publication-type": "journal", 
         "ref": "SchittkoUPrestonCABaldwinIT2000Eating the evidence? Manduca sexta larvae can not disrupt specific jasmonate induction in Nicotiana attenuata by rapid consumptionPlanta21034334610.1007/PL00008143", 
         "id": "bib42"
     }, 
     {
         "article_title": "Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphingidae) and its natural host Nicotiana attenuata. II. Accumulation of plant mRNAs in response to insect-derived cues", 
+        "uri_text": "10.1104/pp.125.2.701", 
         "lpage": "710", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1373,18 +1450,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1104/pp.125.2.701", 
         "full_article_title": "Molecular interactions between the specialist herbivore <italic>Manduca sexta</italic> (Lepidoptera, Sphingidae) and its natural host <italic>Nicotiana attenuata</italic>. II. Accumulation of plant mRNAs in response to insect-derived cues", 
-        "publication-type": "journal", 
         "volume": "125", 
         "source": "Plant Physiol", 
         "fpage": "701", 
         "year": "2001", 
         "position": 43, 
+        "publication-type": "journal", 
         "ref": "SchittkoUHermsmeierDBaldwinIT2001Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphingidae) and its natural host Nicotiana attenuata. II. Accumulation of plant mRNAs in response to insect-derived cuesPlant Physiol12570171010.1104/pp.125.2.701", 
         "id": "bib43"
     }, 
     {
         "article_title": "The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivores", 
+        "uri_text": "10.1073/pnas.0508027103", 
         "lpage": "1134", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1419,18 +1498,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1073/pnas.0508027103", 
         "full_article_title": "The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivores", 
-        "publication-type": "journal", 
         "volume": "103", 
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "1129", 
         "year": "2006", 
         "position": 44, 
+        "publication-type": "journal", 
         "ref": "SchneeCK\u00f6llnerTGHeldMTurlingsTCJGershenzonJDegenhardtJ2006The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivoresProc Natl Acad Sci U S A1031129113410.1073/pnas.0508027103", 
         "id": "bib44"
     }, 
     {
         "article_title": "Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by Nicotiana attenuata plants in a native population", 
+        "uri_text": "10.1111/j.1469-8137.2009.02894.x", 
         "lpage": "1148", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1460,21 +1541,21 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1469-8137.2009.02894.x", 
         "full_article_title": "Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by <italic>Nicotiana attenuata</italic> plants in a native population", 
-        "publication-type": "journal", 
         "volume": "183", 
         "source": "New Phytol", 
         "fpage": "1134", 
         "year": "2009", 
         "position": 45, 
+        "publication-type": "journal", 
         "ref": "SchumanMHeinzelNGaquerelESvatosABaldwinIT2009Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by Nicotiana attenuata plants in a native populationNew Phytol1831134114810.1111/j.1469-8137.2009.02894.x", 
         "id": "bib45"
     }, 
     {
+        "uri_text": "http://dx.doi.org/10.5061/dryad.gs45f", 
         "comment": "Data from: Herbivory-induced volatiles function as defenses increasing fitness of the native plant Nicotiana attenuata in nature. Dryad Digital Repository.", 
         "article_doi": "10.7554/eLife.00007", 
-        "year": "2012", 
-        "publication-type": "web", 
         "authors": [
             {
                 "surname": "Schuman", 
@@ -1492,12 +1573,16 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.5061/dryad.gs45f", 
+        "publication-type": "web", 
+        "year": "2012", 
         "position": 46, 
         "ref": "SchumanMBarthelKBaldwinIT2012Data from: Herbivory-induced volatiles function as defenses increasing fitness of the native plant Nicotiana attenuata in nature. Dryad Digital Repository.http://dx.doi.org/10.5061/dryad.gs45f", 
         "id": "bib46"
     }, 
     {
         "article_title": "Reverse genetics in ecological research", 
+        "uri_text": "10.1371/journal.pone.0001543", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
             {
@@ -1516,18 +1601,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1371/journal.pone.0001543", 
         "full_article_title": "Reverse genetics in ecological research", 
-        "publication-type": "journal", 
         "volume": "3", 
         "source": "PLoS One", 
         "fpage": "e1543", 
         "year": "2008", 
         "position": 47, 
+        "publication-type": "journal", 
         "ref": "SchwachtjeJKutschbachSBaldwinIT2008Reverse genetics in ecological researchPLoS One3e154310.1371/journal.pone.0001543", 
         "id": "bib47"
     }, 
     {
         "article_title": "Opportunistic out-crossing in Nicotiana attenuata (Solanaceae), a predominantly self-fertilizing native tobacco", 
+        "uri_text": "10.1186/1472-6785-3-6", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
             {
@@ -1541,18 +1628,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1186/1472-6785-3-6", 
         "full_article_title": "Opportunistic out-crossing in <italic>Nicotiana attenuata</italic> (Solanaceae), a predominantly self-fertilizing native tobacco", 
-        "publication-type": "journal", 
         "volume": "3", 
         "source": "BMC Ecol", 
         "fpage": "6", 
         "year": "2003", 
         "position": 48, 
+        "publication-type": "journal", 
         "ref": "SimeKRBaldwinIT2003Opportunistic out-crossing in Nicotiana attenuata (Solanaceae), a predominantly self-fertilizing native tobaccoBMC Ecol3610.1186/1472-6785-3-6", 
         "id": "bib48"
     }, 
     {
         "article_title": "Induced plant defenses in the natural environment: Nicotiana attenuata WRKY3 and WRKY6 coordinate responses to herbivory", 
+        "uri_text": "10.1105/tpc.108.058594", 
         "lpage": "2000", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1577,18 +1666,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1105/tpc.108.058594", 
         "full_article_title": "Induced plant defenses in the natural environment: <italic>Nicotiana attenuata</italic> WRKY3 and WRKY6 coordinate responses to herbivory", 
-        "publication-type": "journal", 
         "volume": "20", 
         "source": "Plant Cell", 
         "fpage": "1984", 
         "year": "2008", 
         "position": 49, 
+        "publication-type": "journal", 
         "ref": "SkibbeMQuNGalisIBaldwinIT2008Induced plant defenses in the natural environment: Nicotiana attenuata WRKY3 and WRKY6 coordinate responses to herbivoryPlant Cell201984200010.1105/tpc.108.058594", 
         "id": "bib49"
     }, 
     {
         "article_title": "Resistance management in a native plant: Nicotine prevents herbivores from compensating for plant protease inhibitors", 
+        "uri_text": "10.1111/j.1461-0248.2007.01045.x", 
         "lpage": "511", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1603,18 +1694,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1111/j.1461-0248.2007.01045.x", 
         "full_article_title": "Resistance management in a native plant: Nicotine prevents herbivores from compensating for plant protease inhibitors", 
-        "publication-type": "journal", 
         "volume": "10", 
         "source": "Ecol Lett", 
         "fpage": "499", 
         "year": "2007", 
         "position": 50, 
+        "publication-type": "journal", 
         "ref": "SteppuhnABaldwinIT2007Resistance management in a native plant: Nicotine prevents herbivores from compensating for plant protease inhibitorsEcol Lett1049951110.1111/j.1461-0248.2007.01045.x", 
         "id": "bib50"
     }, 
     {
         "article_title": "Trichomes as dangerous lollipops: Do lizards also use caterpillar body and frass odor to optimize their foraging?", 
+        "uri_text": "10.4161/psb.6.12.18028", 
         "lpage": "1896", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1634,18 +1727,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.4161/psb.6.12.18028", 
         "full_article_title": "Trichomes as dangerous lollipops: Do lizards also use caterpillar body and frass odor to optimize their foraging?", 
-        "publication-type": "journal", 
         "volume": "6", 
         "source": "Plant Signal Behav", 
         "fpage": "1893", 
         "year": "2011", 
         "position": 51, 
+        "publication-type": "journal", 
         "ref": "StorkWFJWeinholdABaldwinIT2011Trichomes as dangerous lollipops: Do lizards also use caterpillar body and frass odor to optimize their foraging?Plant Signal Behav61893189610.4161/psb.6.12.18028", 
         "id": "bib51"
     }, 
     {
         "article_title": "RNA interference-based gene silencing as an efficient tool for functional genomics in hexaploid bread wheat", 
+        "uri_text": "10.1104/pp.106.084517", 
         "lpage": "20", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1665,13 +1760,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1104/pp.106.084517", 
         "full_article_title": "RNA interference-based gene silencing as an efficient tool for functional genomics in hexaploid bread wheat", 
-        "publication-type": "journal", 
         "volume": "142", 
         "source": "Plant Physiol", 
         "fpage": "6", 
         "year": "2006", 
         "position": 52, 
+        "publication-type": "journal", 
         "ref": "TravellaSKlimmTE.KellerB2006RNA interference-based gene silencing as an efficient tool for functional genomics in hexaploid bread wheatPlant Physiol14262010.1104/pp.106.084517", 
         "id": "bib52"
     }, 
@@ -1714,6 +1810,7 @@
     }, 
     {
         "article_title": "Ontogeny constrains systemic protease inhibitor response in Nicotiana attenuata", 
+        "uri_text": "10.1023/A:1010341022761", 
         "lpage": "568", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1738,18 +1835,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1023/A:1010341022761", 
         "full_article_title": "Ontogeny constrains systemic protease inhibitor response in <italic>Nicotiana attenuata</italic>", 
-        "publication-type": "journal", 
         "volume": "27", 
         "source": "J Chem Ecol", 
         "fpage": "547", 
         "year": "2001", 
         "position": 54, 
+        "publication-type": "journal", 
         "ref": "van DamNMHornMMaresMBaldwinIT2001Ontogeny constrains systemic protease inhibitor response in Nicotiana attenuataJ Chem Ecol2754756810.1023/A:1010341022761", 
         "id": "bib54"
     }, 
     {
         "article_title": "Parasitoid-plant mutualism: Parasitoid attack of herbivore increases plant reproduction", 
+        "uri_text": "10.1046/j.1570-7458.2000.00733.x", 
         "lpage": "227", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1769,18 +1868,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1046/j.1570-7458.2000.00733.x", 
         "full_article_title": "Parasitoid-plant mutualism: Parasitoid attack of herbivore increases plant reproduction", 
-        "publication-type": "journal", 
         "volume": "97", 
         "source": "Entomologia Experimentalis et Applicata", 
         "fpage": "219", 
         "year": "2000", 
         "position": 55, 
+        "publication-type": "journal", 
         "ref": "van LoonJJAde BoerJGDickeM2000Parasitoid-plant mutualism: Parasitoid attack of herbivore increases plant reproductionEntomologia Experimentalis et Applicata9721922710.1046/j.1570-7458.2000.00733.x", 
         "id": "bib55"
     }, 
     {
         "article_title": "Trichome-derived O-acyl sugars are a first meal for caterpillars that tags them for predation", 
+        "uri_text": "10.1073/pnas.1101306108", 
         "lpage": "7859", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1795,18 +1896,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1073/pnas.1101306108", 
         "full_article_title": "Trichome-derived O-acyl sugars are a first meal for caterpillars that tags them for predation", 
-        "publication-type": "journal", 
         "volume": "108", 
         "source": "Proc Natl Acad Sci U S A", 
         "fpage": "7855", 
         "year": "2011", 
         "position": 56, 
+        "publication-type": "journal", 
         "ref": "WeinholdABaldwinIT2011Trichome-derived O-acyl sugars are a first meal for caterpillars that tags them for predationProc Natl Acad Sci U S A1087855785910.1073/pnas.1101306108", 
         "id": "bib56"
     }, 
     {
         "article_title": "Slow-growth, high-mortality\u2014a general hypothesis, or is it?", 
+        "uri_text": "10.1046/j.1365-2311.1999.00217.x", 
         "lpage": "495", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1816,18 +1919,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1046/j.1365-2311.1999.00217.x", 
         "full_article_title": "Slow-growth, high-mortality\u2014a general hypothesis, or is it?", 
-        "publication-type": "journal", 
         "volume": "24", 
         "source": "Ecol Entomol", 
         "fpage": "490", 
         "year": "1999", 
         "position": 57, 
+        "publication-type": "journal", 
         "ref": "WilliamsIS1999Slow-growth, high-mortality\u2014a general hypothesis, or is it?Ecol Entomol2449049510.1046/j.1365-2311.1999.00217.x", 
         "id": "bib57"
     }, 
     {
         "article_title": "Alkaloid tolerance in Manduca sexta and phylogenetically related sphingids (Lepidoptera: Sphingidae)", 
+        "uri_text": "10.1007/s00049-002-8324-2", 
         "lpage": "46", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1842,18 +1947,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/s00049-002-8324-2", 
         "full_article_title": "Alkaloid tolerance in <italic>Manduca sexta</italic> and phylogenetically related sphingids (Lepidoptera: Sphingidae)", 
-        "publication-type": "journal", 
         "volume": "46", 
         "source": "Chemoecology", 
         "fpage": "29", 
         "year": "2002", 
         "position": 58, 
+        "publication-type": "journal", 
         "ref": "WinkMTheileV2002Alkaloid tolerance in Manduca sexta and phylogenetically related sphingids (Lepidoptera: Sphingidae)Chemoecology46294610.1007/s00049-002-8324-2", 
         "id": "bib58"
     }, 
     {
         "article_title": "Diamondback moth compensatory consumption of protease inhibitor-transformed plants", 
+        "uri_text": "10.1046/j.1365-294X.2001.01239.x", 
         "lpage": "1074", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1868,18 +1975,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1046/j.1365-294X.2001.01239.x", 
         "full_article_title": "Diamondback moth compensatory consumption of protease inhibitor-transformed plants", 
-        "publication-type": "journal", 
         "volume": "10", 
         "source": "Mol Ecol", 
         "fpage": "1069", 
         "year": "2001", 
         "position": 59, 
+        "publication-type": "journal", 
         "ref": "WintererJ.BergelsonJ2001Diamondback moth compensatory consumption of protease inhibitor-transformed plantsMol Ecol101069107410.1046/j.1365-294X.2001.01239.x", 
         "id": "bib59"
     }, 
     {
         "article_title": "Evolution of proteinase inhibitor defenses in North American allopolyploid species of Nicotiana", 
+        "uri_text": "10.1007/s00425-006-0256-6", 
         "lpage": "760", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1899,18 +2008,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1007/s00425-006-0256-6", 
         "full_article_title": "Evolution of proteinase inhibitor defenses in North American allopolyploid species of <italic>Nicotiana</italic>", 
-        "publication-type": "journal", 
         "volume": "224", 
         "source": "Planta", 
         "fpage": "750", 
         "year": "2006", 
         "position": 60, 
+        "publication-type": "journal", 
         "ref": "WuJHettenhausenCBaldwinIT2006Evolution of proteinase inhibitor defenses in North American allopolyploid species of NicotianaPlanta22475076010.1007/s00425-006-0256-6", 
         "id": "bib60"
     }, 
     {
         "article_title": "Fitness benefits of trypsin proteinase inhibitor expression in Nicotiana attenuata are greater than their costs when plants are attacked", 
+        "uri_text": "10.1186/1472-6785-4-11", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
             {
@@ -1924,18 +2035,20 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1186/1472-6785-4-11", 
         "full_article_title": "Fitness benefits of trypsin proteinase inhibitor expression in <italic>Nicotiana attenuata</italic> are greater than their costs when plants are attacked", 
-        "publication-type": "journal", 
         "volume": "4", 
         "source": "BMC Ecol", 
         "fpage": "11", 
         "year": "2004", 
         "position": 61, 
+        "publication-type": "journal", 
         "ref": "ZavalaJABaldwinIT2004Fitness benefits of trypsin proteinase inhibitor expression in Nicotiana attenuata are greater than their costs when plants are attackedBMC Ecol41110.1186/1472-6785-4-11", 
         "id": "bib61"
     }, 
     {
         "article_title": "Digestive duet: Midgut digestive proteinases of Manduca sexta ingesting Nicotiana attenuata with manipulated trypsin proteinase inhibitor expression", 
+        "uri_text": "10.1371/journal.pone.0002008", 
         "lpage": "31", 
         "article_doi": "10.7554/eLife.00007", 
         "authors": [
@@ -1960,13 +2073,14 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.1371/journal.pone.0002008", 
         "full_article_title": "Digestive duet: Midgut digestive proteinases of <italic>Manduca sexta</italic> ingesting <italic>Nicotiana attenuata</italic> with manipulated trypsin proteinase inhibitor expression", 
-        "publication-type": "journal", 
         "volume": "3", 
         "source": "PLoS One", 
         "fpage": "29", 
         "year": "2008", 
         "position": 62, 
+        "publication-type": "journal", 
         "ref": "ZavalaJAGiriAPJongsmaMABaldwinIT2008Digestive duet: Midgut digestive proteinases of Manduca sexta ingesting Nicotiana attenuata with manipulated trypsin proteinase inhibitor expressionPLoS One3293110.1371/journal.pone.0002008", 
         "id": "bib62"
     }

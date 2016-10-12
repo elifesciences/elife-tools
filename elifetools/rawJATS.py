@@ -286,6 +286,12 @@ def given_names(soup):
 def suffix(soup):
     return extract_nodes(soup, "suffix")
 
+def ext_link(soup, ext_link_type=None):
+    if ext_link_type:
+        return extract_nodes(soup, "ext-link", attr="ext-link-type", value=ext_link_type)
+    else:
+        return extract_nodes(soup, "ext-link")
+
 
 #
 # back

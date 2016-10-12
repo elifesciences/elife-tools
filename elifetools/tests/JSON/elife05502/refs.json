@@ -2372,11 +2372,8 @@
         "id": "bib65"
     }, 
     {
+        "uri_text": "http://dx.doi.org/10.15482/USDA.ADC/1173142", 
         "article_doi": "10.7554/eLife.05502", 
-        "year": "2015", 
-        "collab": "The O. fasciatus curation community", 
-        "publication-type": "book", 
-        "source": "Oncopeltus fasciatus official gene set v1.1", 
         "authors": [
             {
                 "surname": "Vargas Jentzsch", 
@@ -2408,7 +2405,12 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://dx.doi.org/10.15482/USDA.ADC/1173142", 
+        "publication-type": "book", 
+        "source": "Oncopeltus fasciatus official gene set v1.1", 
+        "year": "2015", 
         "position": 66, 
+        "collab": "The O. fasciatus curation community", 
         "ref": "Vargas JentzschIMHughesDSTPoelchauMFTThe O. fasciatus curation communityRichardsSPanfilioKA2015Oncopeltus fasciatus official gene set v1.1http://dx.doi.org/10.15482/USDA.ADC/1173142", 
         "id": "bib66"
     }, 

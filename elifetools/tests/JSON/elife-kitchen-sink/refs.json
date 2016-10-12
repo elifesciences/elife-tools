@@ -2588,10 +2588,8 @@
         "id": "bib62"
     }, 
     {
+        "uri_text": "http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
         "article_doi": "10.7554/eLife.00013", 
-        "year": "2014", 
-        "publication-type": "data", 
-        "source": "RCSB Protein Data Bank", 
         "authors": [
             {
                 "surname": "Ly", 
@@ -2609,6 +2607,10 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
+        "publication-type": "data", 
+        "source": "RCSB Protein Data Bank", 
+        "year": "2014", 
         "position": 63, 
         "ref": "Ly T, Endo A, LamondAngus I 2014 Crystal structure of yeast Bub3-Bub1 bound to phosopho-Spc105 RCSB Protein Data Bank 4bl0 http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
         "id": "bib63"
@@ -3505,20 +3507,22 @@
         "id": "bib81"
     }, 
     {
+        "uri_text": "http://www.r-project.org/", 
         "publisher_loc": "Vienna, Austria", 
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "R Foundation for Statistical Computing", 
-        "year": "2015", 
-        "collab": "R Development Core Team", 
-        "publication-type": "program", 
-        "source": "R: a language and environment for statistical computing", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "R Development Core Team"
             }
         ], 
+        "uri": "http://www.r-project.org/", 
+        "publication-type": "program", 
+        "source": "R: a language and environment for statistical computing", 
+        "year": "2015", 
         "position": 82, 
+        "collab": "R Development Core Team", 
         "ref": "R Development Core Team 2015 R: a language and environment for statistical computing 3.2.2 Vienna, Austria R Foundation for Statistical Computing http://www.r-project.org/", 
         "id": "bib82"
     }, 
