@@ -741,7 +741,7 @@ class TestParseJats(unittest.TestCase):
                          parser.references(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife00013.xml", "elife02935.xml", "elife00051.xml",
-          "elife_poa_e06828.xml")
+          "elife_poa_e06828.xml", "elife02304.xml", "elife-14093-v1.xml")
     def test_refs(self, filename):
         self.assertEqual(self.json_expected(filename, "refs"),
                          parser.refs(self.soup(filename)))

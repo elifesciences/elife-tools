@@ -2098,6 +2098,7 @@
         "uri_text": "http://udel.edu/\u223cmcdonald/statintro.html", 
         "comment": "USA. URL: http://udel.edu/\u223cmcdonald/statintro.html", 
         "publisher_loc": "Baltimore, Maryland", 
+        "edition": "2nd edition", 
         "article_doi": "10.7554/eLife.04490", 
         "publisher_name": "Sparky House Publishing", 
         "authors": [
@@ -2656,6 +2657,7 @@
     {
         "article_title": "Asking the ecosystem if herbivory-inducible plant volatiles (HIPVs) have defensive functions", 
         "publisher_loc": "Cambridge, UK", 
+        "edition": "1st edition", 
         "article_doi": "10.7554/eLife.04490", 
         "publisher_name": "Cambridge University Press", 
         "authors": [

@@ -1091,6 +1091,12 @@ def refs(soup):
             ref['article_title'] = node_text(raw_parser.article_title(tag))
             ref['full_article_title'] = node_contents_str(raw_parser.article_title(tag))
 
+        if raw_parser.pub_id(tag, "pmid"):
+            ref['pmid'] = node_contents_str(first(raw_parser.pub_id(tag, "pmid")))
+
+        if raw_parser.pub_id(tag, "isbn"):
+            ref['isbn'] = node_contents_str(first(raw_parser.pub_id(tag, "isbn")))
+
         if raw_parser.pub_id(tag, "doi"):
             ref['reference_id'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
             ref['doi'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
@@ -1162,6 +1168,8 @@ def refs(soup):
         set_if_value(ref, "collab", node_text(first(raw_parser.collab(tag))))
         set_if_value(ref, "publisher_loc", node_text(first(raw_parser.publisher_loc(tag))))
         set_if_value(ref, "publisher_name", node_text(first(raw_parser.publisher_name(tag))))
+        set_if_value(ref, "edition", node_contents_str(first(raw_parser.edition(tag))))
+        set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
 
         # If not empty, add position value, append, then increment the position counter
