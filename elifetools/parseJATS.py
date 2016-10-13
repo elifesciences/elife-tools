@@ -2413,9 +2413,7 @@ def references_json(soup):
         ref_content = OrderedDict()
         set_if_value(ref_content, "type", ref.get("publication-type"))
         set_if_value(ref_content, "id", ref.get("id"))
-
-        if ref.get("publication-type") not in ["web"]:
-            set_if_value(ref_content, "date", ref.get("year"))
+        set_if_value(ref_content, "date", ref.get("year"))
 
         # authors and etal - TODO!!
 
@@ -2440,9 +2438,6 @@ def references_json(soup):
             set_if_value(ref_content, "website", ref.get("source"))
         else:
             set_if_value(ref_content, "source", ref.get("source"))
-
-        if ref.get("publication-type") in ["web"]:
-            set_if_value(ref_content, "accessed", ref.get("year"))
 
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))
