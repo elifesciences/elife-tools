@@ -1171,6 +1171,7 @@ def refs(soup):
         set_if_value(ref, "edition", node_contents_str(first(raw_parser.edition(tag))))
         set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
+        set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
 
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
@@ -2422,6 +2423,10 @@ def references_json(soup):
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
+        elif ref.get("publication-type") in ["software","data"]:
+            set_if_value(ref_content, "title", ref.get("data-title"))
+            if "title" not in ref_content:
+                set_if_value(ref_content, "title", ref.get("source"))
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
@@ -2443,8 +2448,6 @@ def references_json(soup):
         set_if_value(ref_content, "volume", ref.get("volume"))
 
         # edition - TODO!!
-
-        # todo - publisher - TODO!!
 
         # pages
         if ref.get("elocation-id"):

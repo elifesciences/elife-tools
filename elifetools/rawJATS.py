@@ -298,6 +298,8 @@ def edition(soup):
 def chapter_title(soup):
     return extract_nodes(soup, "chapter-title")
 
+def data_title(soup):
+    return extract_nodes(soup, "data-title")
 
 #
 # back

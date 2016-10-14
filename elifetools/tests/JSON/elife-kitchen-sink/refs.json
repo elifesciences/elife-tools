@@ -2590,6 +2590,7 @@
     }, 
     {
         "uri_text": "http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
+        "data-title": "Crystal structure of yeast Bub3-Bub1 bound to phosopho-Spc105", 
         "article_doi": "10.7554/eLife.00013", 
         "authors": [
             {
