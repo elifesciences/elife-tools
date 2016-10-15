@@ -2452,7 +2452,8 @@ def references_json(soup):
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))
 
-        # edition - TODO!!
+        # edition
+        set_if_value(ref_content, "edition", ref.get("edition"))
 
         # pages
         if ref.get("elocation-id"):
