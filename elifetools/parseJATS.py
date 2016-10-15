@@ -2417,7 +2417,13 @@ def references_json(soup):
     references_json = []
     for ref in refs(soup):
         ref_content = OrderedDict()
-        set_if_value(ref_content, "type", ref.get("publication-type"))
+
+        # type
+        if ref.get("publication-type") == "book" and "chapter-title" in ref:
+            set_if_value(ref_content, "type", "book-chapter")
+        else:
+            set_if_value(ref_content, "type", ref.get("publication-type"))
+
         set_if_value(ref_content, "id", ref.get("id"))
         set_if_value(ref_content, "date", ref.get("year"))
 
@@ -2454,6 +2460,9 @@ def references_json(soup):
 
         # edition
         set_if_value(ref_content, "edition", ref.get("edition"))
+
+        # chapter-title
+        set_if_value(ref_content, "chapterTitle", ref.get("chapter-title"))
 
         # pages
         if ref.get("elocation-id"):
