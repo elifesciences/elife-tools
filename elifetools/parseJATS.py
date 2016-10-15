@@ -1855,7 +1855,7 @@ def body_block_content(tag):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
-
+        supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
@@ -1877,6 +1877,11 @@ def body_block_content(tag):
                     if "footer" not in tag_content:
                         tag_content["footer"] = []
                     tag_content["footer"].append(body_block_content(p_tag))
+        # sourceData
+        if supplementary_material_tags and len(supplementary_material_tags) > 0:
+            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            if len(source_data) > 0:
+                tag_content["sourceData"] = source_data
 
     elif tag.name == "disp-formula":
         tag_content["type"] = "mathml"
