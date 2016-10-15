@@ -2441,7 +2441,7 @@ def references_json(soup):
                 ref_content["journal"] = journal
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
-        else:
+        elif ref.get("publication-type") not in ["book"]:
             set_if_value(ref_content, "source", ref.get("source"))
 
         # volume
