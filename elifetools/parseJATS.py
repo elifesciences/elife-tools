@@ -1730,7 +1730,7 @@ def body_block_content_render(tag):
     tag_content_content = []
 
     # Collect the content of the tag but only for some tags
-    if tag.name not in ["p", "fig", "table-wrap", "list"]:
+    if tag.name not in ["p", "fig", "table-wrap", "list", "video"]:
         for child_tag in tag:
             if not(hasattr(child_tag, 'name')):
                 continue
