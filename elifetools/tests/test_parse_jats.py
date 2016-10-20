@@ -775,6 +775,11 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "title"),
                          parser.title(self.soup(filename)))
 
+    @data("elife-kitchen-sink.xml", "elife00240.xml", "elife00270.xml", "elife00351.xml")
+    def test_title_prefix(self, filename):
+        self.assertEqual(self.json_expected(filename, "title_prefix"),
+                         parser.title_prefix(self.soup(filename)))
+
     @data("elife-kitchen-sink.xml")
     def test_title_short(self, filename):
         self.assertEqual(self.json_expected(filename, "title_short"),
