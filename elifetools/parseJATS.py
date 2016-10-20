@@ -1871,12 +1871,20 @@ def body_block_content(tag):
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
-            # TODO ? We are ignoring label tags
+            footnotes = []
             for fn_tag in raw_parser.fn(foot_tag):
+                footnote_content = OrderedDict()
+                set_if_value(footnote_content, "id", fn_tag.get("id"))
+                set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
                 for p_tag in raw_parser.paragraph(fn_tag):
-                    if "footer" not in tag_content:
-                        tag_content["footer"] = []
-                    tag_content["footer"].append(body_block_content(p_tag))
+                    if "text" not in footnote_content:
+                        footnote_content["text"] = []
+                    footnote_content["text"].append(body_block_content(p_tag))
+
+                if "footnotes" not in tag_content:
+                    tag_content["footnotes"] = []
+                tag_content["footnotes"].append(footnote_content)
+
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags)
