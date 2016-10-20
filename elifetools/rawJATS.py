@@ -160,6 +160,9 @@ def custom_meta(soup, meta_name=None):
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
 
+def sub_display_channel(soup):
+    return (subject_area(soup, subject_group_type = "sub-display-channel"))
+
 def category(soup):
     return (subject_area(soup, subject_group_type = "heading"))
 
