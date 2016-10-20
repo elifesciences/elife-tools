@@ -1884,8 +1884,10 @@ def body_block_content(tag):
             footnotes = []
             for fn_tag in raw_parser.fn(foot_tag):
                 footnote_content = OrderedDict()
-                set_if_value(footnote_content, "id", fn_tag.get("id"))
-                set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
+                # Only set id if a label is present
+                if label(fn_tag, fn_tag.name):
+                    set_if_value(footnote_content, "id", fn_tag.get("id"))
+                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
