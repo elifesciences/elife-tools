@@ -48,6 +48,16 @@ def title_slug(soup):
     "'title' slugified"
     return slugify(title(soup))
 
+def title_prefix(soup):
+    "titlePrefix for article JSON is only articles with certain display_channel values"
+    prefix = None
+    display_channel_match_list = ['feature article', 'insight', 'editorial']
+    for d_channel in display_channel(soup):
+        if d_channel.lower() in display_channel_match_list:
+            if raw_parser.sub_display_channel(soup):
+                prefix = node_text(first(raw_parser.sub_display_channel(soup)))
+    return prefix
+
 def doi(soup):
     # the first non-nil value returned by the raw parser
     return node_text(raw_parser.doi(soup))
@@ -161,11 +171,11 @@ def copyright_holder(soup):
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.licence_p(permissions_tag))
+    return node_text(first(raw_parser.licence_p(permissions_tag)))
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(raw_parser.licence_p(permissions_tag))
+    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
@@ -1287,9 +1297,9 @@ def components(soup):
 
                 if raw_parser.licence_p(permissions_tag):
                     permissions_item['license'] = \
-                        node_text(raw_parser.licence_p(permissions_tag))
+                        node_text(first(raw_parser.licence_p(permissions_tag)))
                     permissions_item['full_license'] = \
-                        node_contents_str(raw_parser.licence_p(permissions_tag))
+                        node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
                 component['permissions'].append(permissions_item)
 
@@ -1885,12 +1895,22 @@ def body_block_content(tag):
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
-            # TODO ? We are ignoring label tags
+            footnotes = []
             for fn_tag in raw_parser.fn(foot_tag):
+                footnote_content = OrderedDict()
+                # Only set id if a label is present
+                if label(fn_tag, fn_tag.name):
+                    set_if_value(footnote_content, "id", fn_tag.get("id"))
+                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
                 for p_tag in raw_parser.paragraph(fn_tag):
-                    if "footer" not in tag_content:
-                        tag_content["footer"] = []
-                    tag_content["footer"].append(body_block_content(p_tag))
+                    if "text" not in footnote_content:
+                        footnote_content["text"] = []
+                    footnote_content["text"].append(body_block_content(p_tag))
+
+                if "footnotes" not in tag_content:
+                    tag_content["footnotes"] = []
+                tag_content["footnotes"].append(footnote_content)
+
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags)
@@ -1911,13 +1931,23 @@ def body_block_content(tag):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", title_text(tag))
+
         supplementary_material_tags = None
+        caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+        # Special, if there is no title then use a fragment of the caption as the title
+        if "title" not in tag_content and len(caption_content) > 0:
+            # Attempt to extra the first sentence of the first paragraph of the caption
+            first_paragraph_text = caption_content[0]["text"]
+            sentences = first_paragraph_text.split(". ")
+            if len(sentences) > 0:
+                tag_content["title"] = sentences[0]
+        # Now can add the caption after all possible title values are added
+        if len(caption_content) > 0:
+            tag_content["caption"] = caption_content
 
         # todo!! alt
         set_if_value(tag_content, "alt", "")
@@ -1925,7 +1955,20 @@ def body_block_content(tag):
         graphic_tags = raw_parser.graphic(tag)
         if graphic_tags:
             copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
-        # todo!! support for custom permissions of use or license
+
+        # license or attribution
+        attributions = []
+        if raw_parser.attrib(tag):
+            for attrib_tag in raw_parser.attrib(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if raw_parser.licence(tag) and raw_parser.licence_p(tag):
+            for attrib_tag in raw_parser.licence_p(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if len(attributions) > 0:
+            tag_content["attribution"] = []
+            for attrib_string in attributions:
+                tag_content["attribution"].append(attrib_string)
+
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags)
