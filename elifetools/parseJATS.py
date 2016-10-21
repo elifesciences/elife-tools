@@ -1917,13 +1917,23 @@ def body_block_content(tag):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", title_text(tag))
+
         supplementary_material_tags = None
+        caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+        # Special, if there is no title then use a fragment of the caption as the title
+        if "title" not in tag_content and len(caption_content) > 0:
+            # Attempt to extra the first sentence of the first paragraph of the caption
+            first_paragraph_text = caption_content[0]["text"]
+            sentences = first_paragraph_text.split(". ")
+            if len(sentences) > 0:
+                tag_content["title"] = sentences[0]
+        # Now can add the caption after all possible title values are added
+        if len(caption_content) > 0:
+            tag_content["caption"] = caption_content
 
         # todo!! alt
         set_if_value(tag_content, "alt", "")
