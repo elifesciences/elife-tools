@@ -299,6 +299,9 @@ def ext_link(soup, ext_link_type=None):
     else:
         return extract_nodes(soup, "ext-link")
 
+def uri(soup):
+    return extract_nodes(soup, "uri")
+
 def edition(soup):
     return extract_nodes(soup, "edition")
 
