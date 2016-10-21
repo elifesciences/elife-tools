@@ -2460,6 +2460,25 @@ def format_author_line(author_names):
         author_line = author_names[0] + " et al"
     return author_line
 
+def references_publisher(publisher_name=None, publisher_loc=None):
+    publisher = OrderedDict()
+    if publisher_name:
+        publisher["name"] = []
+        publisher["name"].append(publisher_name)
+    if publisher_loc:
+        address = OrderedDict()
+        address["formatted"] = []
+        address["formatted"].append(publisher_loc)
+        address["components"] = OrderedDict()
+        address["components"]["locality"] = []
+        address["components"]["locality"].append(publisher_loc)
+        publisher["address"] = address
+    if len(publisher) > 0:
+        return publisher
+    else:
+        return None
+
+
 def references_json(soup):
     references_json = []
     for ref in refs(soup):
@@ -2506,7 +2525,10 @@ def references_json(soup):
         set_if_value(ref_content, "volume", ref.get("volume"))
 
         # edition
-        set_if_value(ref_content, "edition", ref.get("edition"))
+        if ref.get("publication-type") in ["software"]:
+            set_if_value(ref_content, "version", ref.get("edition"))
+        else:
+            set_if_value(ref_content, "edition", ref.get("edition"))
 
         # chapter-title
         set_if_value(ref_content, "chapterTitle", ref.get("chapter-title"))
@@ -2539,18 +2561,11 @@ def references_json(soup):
 
         # publisher
         if ref.get("publisher_name"):
-            publisher = OrderedDict()
-            publisher["name"] = []
-            publisher["name"].append(ref.get("publisher_name"))
-            if ref.get("publisher_loc"):
-                address = OrderedDict()
-                address["formatted"] = []
-                address["formatted"].append(ref.get("publisher_loc"))
-                address["components"] = OrderedDict()
-                address["components"]["locality"] = []
-                address["components"]["locality"].append(ref.get("publisher_loc"))
-                publisher["address"] = address
-            ref_content["publisher"] = publisher
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("publisher_name"), ref.get("publisher_loc")))
+        elif ref.get("publication-type") in ["software"] and ref.get("source"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("source"), ref.get("publisher_loc")))
 
         references_json.append(ref_content)
 

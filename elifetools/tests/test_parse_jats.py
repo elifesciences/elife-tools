@@ -120,7 +120,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(parser.author_line(soup), expected)
 
 
-    @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00051.xml")
+    @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00051.xml", "elife-10421-v1.xml")
     def test_references_json(self, filename):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.references_json(soup), None)
