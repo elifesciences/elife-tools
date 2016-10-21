@@ -86,14 +86,18 @@ def article_permissions(soup):
     return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
 
 def licence(soup):
-    return first(extract_nodes(soup, "license"))
+    return extract_nodes(soup, "license")
 
 def licence_p(soup):
-    return first(extract_nodes(licence(soup), "license-p"))
+    return extract_nodes(soup, "license-p")
 
 def licence_url(soup):
     "License url attribute of the license tag"
-    return licence(soup).get("xlink:href")
+    if licence(soup):
+        return first(licence(soup)).get("xlink:href")
+
+def attrib(soup):
+    return extract_nodes(soup, "attrib")
 
 def copyright_statement(soup):
     return first(extract_nodes(soup, "copyright-statement"))

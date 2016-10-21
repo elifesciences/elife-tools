@@ -171,11 +171,11 @@ def copyright_holder(soup):
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.licence_p(permissions_tag))
+    return node_text(first(raw_parser.licence_p(permissions_tag)))
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(raw_parser.licence_p(permissions_tag))
+    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
@@ -1283,9 +1283,9 @@ def components(soup):
 
                 if raw_parser.licence_p(permissions_tag):
                     permissions_item['license'] = \
-                        node_text(raw_parser.licence_p(permissions_tag))
+                        node_text(first(raw_parser.licence_p(permissions_tag)))
                     permissions_item['full_license'] = \
-                        node_contents_str(raw_parser.licence_p(permissions_tag))
+                        node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
                 component['permissions'].append(permissions_item)
 
@@ -1941,7 +1941,20 @@ def body_block_content(tag):
         graphic_tags = raw_parser.graphic(tag)
         if graphic_tags:
             copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
-        # todo!! support for custom permissions of use or license
+
+        # license or attribution
+        attributions = []
+        if raw_parser.attrib(tag):
+            for attrib_tag in raw_parser.attrib(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if raw_parser.licence(tag) and raw_parser.licence_p(tag):
+            for attrib_tag in raw_parser.licence_p(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if len(attributions) > 0:
+            tag_content["attribution"] = []
+            for attrib_string in attributions:
+                tag_content["attribution"].append(attrib_string)
+
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags)
