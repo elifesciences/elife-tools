@@ -2485,7 +2485,8 @@ def references_json(soup):
         ref_content = OrderedDict()
 
         # type
-        if ref.get("publication-type") == "book" and "chapter-title" in ref:
+        if ref.get("publication-type") == "book" and (
+            "chapter-title" in ref or "article-title" in ref):
             set_if_value(ref_content, "type", "book-chapter")
         else:
             set_if_value(ref_content, "type", ref.get("publication-type"))
@@ -2500,6 +2501,8 @@ def references_json(soup):
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
+            if "bookTitle" not in ref_content:
+                set_if_value(ref_content, "bookTitle", ref.get("article-title"))
         elif ref.get("publication-type") in ["software","data"]:
             set_if_value(ref_content, "title", ref.get("data-title"))
             if "title" not in ref_content:
@@ -2532,6 +2535,8 @@ def references_json(soup):
 
         # chapter-title
         set_if_value(ref_content, "chapterTitle", ref.get("chapter-title"))
+        if ref_content["type"] == "book-chapter" and "chapterTitle" not in ref_content:
+            set_if_value(ref_content, "chapterTitle", ref.get("article-title"))
 
         # pages
         if ref.get("elocation-id"):
