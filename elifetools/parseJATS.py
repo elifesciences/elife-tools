@@ -2557,8 +2557,8 @@ def references_json(soup):
                 ref_content["pages"]["range"] = ref.get("fpage").strip()
 
         elif ref.get("comment"):
-            if ref.get("comment").lower().strip() == "in press":
-                ref_content["pages"] = "in-press"
+            if "in press" in ref.get("comment").lower().strip():
+                ref_content["pages"] = "in press"
 
         # doi
         set_if_value(ref_content, "doi", ref.get("doi"))
