@@ -2536,6 +2536,9 @@ def references_json(soup):
         # pages
         if ref.get("elocation-id"):
             ref_content["pages"] = ref.get("elocation-id")
+        elif ref.get("fpage") and " " in ref.get("fpage"):
+            # Use as string value
+            ref_content["pages"] = ref.get("fpage")
         elif ref.get("fpage"):
             ref_content["pages"] = OrderedDict()
             ref_content["pages"]["first"] = ref.get("fpage").strip()
