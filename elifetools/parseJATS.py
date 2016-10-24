@@ -2600,11 +2600,15 @@ def references_json(soup):
             ref_content["pages"] = "in press"
 
         # doi
-        set_if_value(ref_content, "doi", ref.get("doi"))
+        if ref.get("publication-type") not in ["web"]:
+            set_if_value(ref_content, "doi", ref.get("doi"))
 
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-
+        if "uri" not in ref_content and ref.get("publication-type") in ["web"]:
+            if ref.get("doi"):
+                # Convert doi to uri
+                ref_content["uri"] = "https://doi.org/" + ref.get("doi")
 
         # publisher
         if ref.get("publisher_name"):
