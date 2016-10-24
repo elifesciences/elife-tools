@@ -2520,7 +2520,7 @@ def references_json(soup):
         # authors and etal - TODO!!
 
         # titles
-        if ref.get("publication-type") in ["journal", "conference-proceeding"]:
+        if ref.get("publication-type") in ["journal", "confproc"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["thesis"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
