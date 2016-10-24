@@ -125,6 +125,43 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.references_json(soup), None)
 
+    @unpack
+    @data(
+        # Web reference with no title, use the uri from 01892
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'web'), ('id', u'bib1'), ('date', u'2014'), ('title', u'http://www.who.int/topics/dengue/en/'), ('uri', u'http://www.who.int/topics/dengue/en/')])]
+         ),
+
+        # Thesis title from 00626
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib36"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Schneider</surname><given-names>P</given-names></name></person-group><year>2006</year><comment>PhD Thesis</comment><article-title>Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission</article-title><publisher-name>Radboud University Nijmegen Medical Centre</publisher-name><publisher-loc>Nijmegen, The Netherlands</publisher-loc></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'thesis'), ('id', u'bib36'), ('date', u'2006'), ('title', u'Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission'), ('publisher', OrderedDict([('name', [u'Radboud University Nijmegen Medical Centre']), ('address', OrderedDict([('formatted', [u'Nijmegen, The Netherlands']), ('components', OrderedDict([('locality', [u'Nijmegen, The Netherlands'])]))]))]))])]
+         ),
+
+        # fpage value with usual characters from 00170
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib14"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Feng</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>T</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name></person-group><year>2011</year><article-title>Using MACS to identify peaks from ChIP-Seq data</article-title><source>Curr Protoc Bioinformatics</source><volume>Chapter 2</volume><fpage>Unit 2.14</fpage></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib14'), ('date', u'2011'), ('articleTitle', u'Using MACS to identify peaks from ChIP-Seq data'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'Chapter 2'), ('pages', u'Unit 2.14')])]
+         ),
+
+        # pages value of in press, 00109
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kyoung</surname><given-names>M</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name><name><surname>Diao</surname><given-names>J</given-names></name><name><surname>Chu</surname><given-names>S</given-names></name><name><surname>Brunger</surname><given-names>AT</given-names></name></person-group><year>2012</year><article-title>Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system</article-title><source>Nature Protocols</source><volume>7</volume><ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nprot.2012.134">10.1038/nprot.2012.134</ext-link><comment>, in press</comment></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', OrderedDict([('name', [u'Nature Protocols'])])), ('volume', u'7'), ('pages', 'in press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
+         ),
+
+        )
+    def test_references_json_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.references_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
+
+    @unpack
+    @data(
+        (None, None, None)
+         )
+    def test_references_publisher(self, publisher_name, publisher_loc, expected):
+        self.assertEqual(parser.references_publisher(publisher_name, publisher_loc), expected)
+
 
     @unpack
     @data(

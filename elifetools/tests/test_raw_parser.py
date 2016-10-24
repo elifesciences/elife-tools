@@ -255,7 +255,7 @@ class TestJatsParser(unittest.TestCase):
         ("elife-kitchen-sink.xml", "doi", 77),
         ("elife-kitchen-sink.xml", None, 78)
     )
-    def test_pub_id(self, filename, pub_id_type, expected_len):
+    def test_pub_id_doi(self, filename, pub_id_type, expected_len):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(len(raw_parser.pub_id(soup, pub_id_type)), expected_len)
 
@@ -265,7 +265,7 @@ class TestJatsParser(unittest.TestCase):
         ("elife-kitchen-sink.xml", "uri", 7),
         ("elife-kitchen-sink.xml", None, 47)
     )
-    def test_pub_id(self, filename, ext_link_type, expected_len):
+    def test_pub_id_uri(self, filename, ext_link_type, expected_len):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(len(raw_parser.ext_link(soup, ext_link_type)), expected_len)
 
