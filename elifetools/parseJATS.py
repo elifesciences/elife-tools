@@ -2507,6 +2507,8 @@ def references_json(soup):
         # titles
         if ref.get("publication-type") in ["journal"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
+        elif ref.get("publication-type") in ["thesis"]:
+            set_if_value(ref_content, "title", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
             if "bookTitle" not in ref_content:
@@ -2519,6 +2521,8 @@ def references_json(soup):
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("comment"))
+            if "title" not in ref_content:
+                set_if_value(ref_content, "title", ref.get("uri"))
 
         # source
         if ref.get("publication-type") in ["journal"]:
