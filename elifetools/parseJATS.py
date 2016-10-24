@@ -2487,6 +2487,16 @@ def references_pages_range(fpage=None, lpage=None):
         range = fpage.strip()
     return range
 
+def references_date(year=None):
+    "Handle year value parsing for some edge cases"
+    date = None
+    in_press = None
+    if year and "in press" in year.lower().strip():
+        in_press = True
+    elif year:
+        date = year
+    return (date, in_press)
+
 def references_json(soup):
     references_json = []
     for ref in refs(soup):
@@ -2500,7 +2510,9 @@ def references_json(soup):
             set_if_value(ref_content, "type", ref.get("publication-type"))
 
         set_if_value(ref_content, "id", ref.get("id"))
-        set_if_value(ref_content, "date", ref.get("year"))
+
+        (year_date, year_in_press) = references_date(ref.get("year"))
+        set_if_value(ref_content, "date", year_date)
 
         # authors and etal - TODO!!
 
@@ -2575,6 +2587,9 @@ def references_json(soup):
         elif ref.get("comment"):
             if "in press" in ref.get("comment").lower().strip():
                 ref_content["pages"] = "in press"
+        elif year_in_press:
+            # in press may have been taken from the year field
+            ref_content["pages"] = "in press"
 
         # doi
         set_if_value(ref_content, "doi", ref.get("doi"))

@@ -147,6 +147,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', OrderedDict([('name', [u'Nature Protocols'])])), ('volume', u'7'), ('pages', 'in press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
          ),
 
+        # year value of in press, 02535
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Culumber</surname><given-names>ZW</given-names></name><name><surname>Ochoa</surname><given-names>OM</given-names></name><name><surname>Rosenthal</surname><given-names>GG</given-names></name></person-group><year>in press</year><article-title>Assortative mating and the maintenance of population structure in a natural hybrid zone</article-title><source>American Naturalist</source></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', OrderedDict([('name', [u'American Naturalist'])])), ('pages', 'in press')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
