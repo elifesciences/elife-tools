@@ -311,6 +311,9 @@ def chapter_title(soup):
 def data_title(soup):
     return extract_nodes(soup, "data-title")
 
+def conf_name(soup):
+    return extract_nodes(soup, "conf-name")
+
 #
 # back
 #

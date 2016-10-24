@@ -1186,6 +1186,7 @@ def refs(soup):
         set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
         set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
+        set_if_value(ref, "conf-name", node_text(first(raw_parser.conf_name(tag))))
 
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
@@ -2506,6 +2507,8 @@ def references_json(soup):
         if ref.get("publication-type") == "book" and (
             "chapter-title" in ref or "full_article_title" in ref):
             set_if_value(ref_content, "type", "book-chapter")
+        elif ref.get("publication-type") == "confproc":
+            set_if_value(ref_content, "type", "conference-proceeding")
         else:
             set_if_value(ref_content, "type", ref.get("publication-type"))
 
@@ -2517,7 +2520,7 @@ def references_json(soup):
         # authors and etal - TODO!!
 
         # titles
-        if ref.get("publication-type") in ["journal"]:
+        if ref.get("publication-type") in ["journal", "conference-proceeding"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["thesis"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
@@ -2535,6 +2538,11 @@ def references_json(soup):
                 set_if_value(ref_content, "title", ref.get("comment"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("uri"))
+
+        # conference
+        if ref.get("conf-name"):
+            set_if_value(ref_content, "conference", references_publisher(
+                ref.get("conf-name"), None))
 
         # source
         if ref.get("publication-type") in ["journal"]:

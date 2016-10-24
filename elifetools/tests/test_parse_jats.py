@@ -152,6 +152,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', OrderedDict([('name', [u'American Naturalist'])])), ('pages', 'in press')])]
          ),
 
+        # conference, 03532 v3
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib21"><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Haiyan</surname><given-names>L</given-names></name><name><surname>Jihua</surname><given-names>W</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Network properties of protein structures at three different length scales</article-title><conf-name>Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society</conf-name></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib21'), ('date', u'2009'), ('conference', OrderedDict([('name', [u'Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society'])]))])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
