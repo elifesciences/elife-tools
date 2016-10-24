@@ -2478,6 +2478,14 @@ def references_publisher(publisher_name=None, publisher_loc=None):
     else:
         return None
 
+def references_pages_range(fpage=None, lpage=None):
+    range = None
+    if fpage and lpage:
+        # use unichr(8211) for the hyphen because the schema is requiring it
+        range = fpage.strip() + unichr(8211) + lpage.strip()
+    elif fpage:
+        range = fpage.strip()
+    return range
 
 def references_json(soup):
     references_json = []
@@ -2542,19 +2550,23 @@ def references_json(soup):
         if ref.get("elocation-id"):
             ref_content["pages"] = ref.get("elocation-id")
         elif ref.get("fpage") and not re.match("^[A-Za-z0-9]+$", ref.get("fpage")):
-            # Use as string value
-            ref_content["pages"] = ref.get("fpage")
-        elif ref.get("fpage"):
+            # Use range as string value
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("lpage") and not re.match("^[A-Za-z0-9]+$", ref.get("lpage")):
+            # Use range as string value
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("fpage") and not ref.get("lpage"):
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("fpage") and ref.get("lpage"):
             ref_content["pages"] = OrderedDict()
             ref_content["pages"]["first"] = ref.get("fpage").strip()
-
             if ref.get("lpage"):
                 ref_content["pages"]["last"] = ref.get("lpage").strip()
-                # use unichr(8211) for the hyphen because the schema is requiring it
-                ref_content["pages"]["range"] = ref.get("fpage").strip() + unichr(8211) + ref.get("lpage").strip()
-            else:
-                ref_content["pages"]["last"] = ref.get("fpage").strip()
-                ref_content["pages"]["range"] = ref.get("fpage").strip()
+            ref_content["pages"]["range"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
 
         elif ref.get("comment"):
             if "in press" in ref.get("comment").lower().strip():
