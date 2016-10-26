@@ -1723,7 +1723,7 @@ def render_raw_body(tag):
 
 def body_block_nodenames():
     return ["sec", "p", "table-wrap", "boxed-text",
-            "disp-formula", "fig", "fig-group", "list", "media"]
+            "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
 
 def body_block_content_render(tag):
     """
@@ -1745,7 +1745,7 @@ def body_block_content_render(tag):
     tag_content_content = []
 
     # Collect the content of the tag but only for some tags
-    if tag.name not in ["p", "fig", "table-wrap", "list", "media"]:
+    if tag.name not in ["p", "fig", "table-wrap", "list", "media", "disp-quote"]:
         for child_tag in tag:
             if not(hasattr(child_tag, 'name')):
                 continue
@@ -1877,6 +1877,14 @@ def body_block_content(tag):
 
         if node_contents_str(tag_copy):
             tag_content["text"] = node_contents_str(tag_copy)
+
+    elif tag.name == "disp-quote":
+        tag_content["type"] = "quote"
+        for child_tag in tag:
+            if body_block_content(child_tag) != {}:
+                if "text" not in tag_content:
+                    tag_content["text"] = []
+                tag_content["text"].append(body_block_content(child_tag))
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
