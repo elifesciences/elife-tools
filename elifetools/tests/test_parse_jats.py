@@ -297,6 +297,10 @@ class TestParseJats(unittest.TestCase):
         OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00005.016'), ('id', u'media2'), ('label', u'Movie 2.'), ('title', u'3D reconstruction of the human PRC2-AEBP2 complex.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.')]), OrderedDict([('type', 'paragraph'), ('text', u'<bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link>')])]), ('uri', u'elife-00005-media2.mov'), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00005.017'), ('id', u'SD1-data'), ('label', u'Movie 2\u2014source code 1.'), ('title', u'Overall architecture of the PRC2 complex.'), ('mediaType', u'application/wrl'), ('uri', u'elife-00005-media2-code1-v1.wrl')])])])
          ),
 
+        ('<root><disp-quote><p>content</p></disp-quote></root>',
+         OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])
+         ),
+
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -351,6 +355,10 @@ class TestParseJats(unittest.TestCase):
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
         [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<bold>This</bold> ')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])])])]
         ),
+
+        ('<root><disp-quote><p>content</p></disp-quote></root>',
+         [OrderedDict([('content', [OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
+         ),
 
         )
     def test_body_block_content_render(self, xml_content, expected):
