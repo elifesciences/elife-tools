@@ -2512,6 +2512,85 @@ def references_date(year=None):
         date = year
     return (date, in_press)
 
+def references_author_collab(ref_author):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = str(ref_author.get("collab"))
+    return author_json
+
+def references_author_person(ref_author):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(ref_author.get("surname"),
+                                                     ref_author.get("given-names"),
+                                                     ref_author.get("suffix"))
+    author_name["index"] = author_index_name(ref_author.get("surname"),
+                                             ref_author.get("given-names"),
+                                             ref_author.get("suffix"))
+    author_json["name"] = author_name
+    return author_json
+
+def references_authors(ref_authors):
+    all_authors = OrderedDict()
+    if ref_authors:
+        for ref_author in ref_authors:
+            author_json = OrderedDict()
+            etal_json = None
+            # Switch for type of record
+            if "etal" in ref_author:
+                author_group_type = ref_author.get("group-type") + 's' + 'EtAl'
+                etal_json = True
+            elif "collab" in ref_author:
+                author_group_type = ref_author.get("group-type") + 's'
+                author_json = references_author_collab(ref_author)
+            else:
+                author_group_type = ref_author.get("group-type") + 's'
+                author_json = references_author_person(ref_author)
+
+            if author_group_type:
+                if author_group_type not in all_authors:
+                    if not etal_json:
+                        all_authors[author_group_type] = []
+                if etal_json:
+                    all_authors[author_group_type] = etal_json
+                else:
+                    all_authors[author_group_type].append(author_json)
+
+    return all_authors
+
+def references_json_authors(ref_authors, ref_content):
+    "build the authors for references json here for testability"
+    all_authors = references_authors(ref_authors)
+    if all_authors != {}:
+        if ref_content.get("type") in ["book", "conference-proceeding", "journal",
+                                           "periodical", "preprint", "report", "software",
+                                           "web"]:
+            for author_type in ["authors", "authorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["book-chapter"]:
+            for author_type in ["authors", "authorsEtAl", "editors", "editorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["clinical-trial"]:
+            # Always set as authors, once,  then add the authorsType
+            for author_type in ["authors", "collaborators", "sponsors"]:
+                if "authorsType" not in ref_content and all_authors.get(author_type):
+                    set_if_value(ref_content, "authors", all_authors.get(author_type))
+                    set_if_value(ref_content, "authorsEtAl", all_authors.get(author_type + "EtAl"))
+                    ref_content["authorsType"] = author_type
+        elif ref_content.get("type") in ["data"]:
+            for author_type in ["authors", "authorsEtAl",
+                                "compilers", "compilersEtAl", "curators", "curatorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["patent"]:
+            for author_type in ["inventors", "inventorsEtAl", "assignees", "assigneesEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["thesis"]:
+            # Convert list to a non-list
+            if all_authors.get("authors") and len(all_authors.get("authors")) > 0:
+                ref_content["author"] = all_authors.get("authors")[0]
+    return ref_content
+
 def references_json(soup):
     references_json = []
     for ref in refs(soup):
@@ -2523,6 +2602,8 @@ def references_json(soup):
             set_if_value(ref_content, "type", "book-chapter")
         elif ref.get("publication-type") == "confproc":
             set_if_value(ref_content, "type", "conference-proceeding")
+        elif ref.get("publication-type") == "clinicaltrial":
+            set_if_value(ref_content, "type", "clinical-trial")
         else:
             set_if_value(ref_content, "type", ref.get("publication-type"))
 
@@ -2532,6 +2613,8 @@ def references_json(soup):
         set_if_value(ref_content, "date", year_date)
 
         # authors and etal - TODO!!
+        if ref.get("authors"):
+            ref_content = references_json_authors(ref.get("authors"), ref_content)
 
         # titles
         if ref.get("publication-type") in ["journal", "confproc"]:
