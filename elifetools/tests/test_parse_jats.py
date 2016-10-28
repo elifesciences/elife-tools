@@ -47,6 +47,42 @@ class TestParseJats(unittest.TestCase):
     """
     Quick test cases during development checking syntax errors and coverage
     """
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", list),
+        ("elife_poa_e06828.xml", None))
+    def test_acknowledgements_json_by_file(self, filename, expected):
+        acknowledgements_json = parser.acknowledgements_json(self.soup(filename))
+        if expected is None:
+            self.assertEqual(expected, acknowledgements_json)
+        else:
+            self.assertEqual(expected, type(acknowledgements_json))
+
+    @unpack
+    @data(
+        ('<root></root>',
+         None
+         ),
+
+        ('<root><ack></ack></root>',
+         None
+         ),
+
+        ('<root><ack><title>Acknowledgements</title><p>Paragraph</p></ack></root>',
+         [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')])]
+         ),
+
+        ('<root><ack><title>Acknowledgements</title><p>Paragraph</p><p><italic>italic</italic></p></ack></root>',
+         [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'paragraph'), ('text', u'<italic>italic</italic>')])]
+         ),
+    )
+    def test_acknowledgements_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.acknowledgements_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @unpack
     @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
