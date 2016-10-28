@@ -2619,7 +2619,7 @@ def references_json(soup):
         # titles
         if ref.get("publication-type") in ["journal", "confproc"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
-        elif ref.get("publication-type") in ["thesis"]:
+        elif ref.get("publication-type") in ["thesis", "clinicaltrial"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
