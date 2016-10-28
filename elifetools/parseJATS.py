@@ -2612,7 +2612,7 @@ def references_json(soup):
         (year_date, year_in_press) = references_date(ref.get("year"))
         set_if_value(ref_content, "date", year_date)
 
-        # authors and etal - TODO!!
+        # authors and etal
         if ref.get("authors"):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
 
