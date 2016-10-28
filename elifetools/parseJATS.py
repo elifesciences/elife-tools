@@ -1688,6 +1688,12 @@ def label(tag, parent_tag_name=None):
         label = node_contents_str(label_tag)
     return label
 
+def acknowledgements_json(soup):
+    if raw_parser.acknowledgements(soup):
+        return body_block_content_render(raw_parser.acknowledgements(soup))[0].get("content")
+    else:
+        return None
+
 def body(soup):
 
     body_content = []
