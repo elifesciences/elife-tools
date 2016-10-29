@@ -155,6 +155,32 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(parser.author_line(soup), expected)
 
+    @unpack
+    @data(
+        (None,
+         OrderedDict(),
+         OrderedDict()
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "sponsor"}, {"etal": True, "group-type": "sponsor"}],
+         OrderedDict([('type', u'clinical-trial')]),
+         OrderedDict([('type', u'clinical-trial'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('authorsEtAl', True), ('authorsType', 'sponsors')])
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "inventor"}, {"etal": True, "group-type": "inventor"}],
+         OrderedDict([('type', u'patent')]),
+         OrderedDict([('type', u'patent'), ('inventors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('inventorsEtAl', True)])
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "author"}],
+         OrderedDict([('type', u'thesis')]),
+         OrderedDict([('type', u'thesis'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))]))])
+         ),
+
+        )
+    def test_references_json_authors(self, ref_authors, ref_content, expected):
+        references_json = parser.references_json_authors(ref_authors, ref_content)
+        self.assertEqual(expected, references_json)
 
     @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00051.xml", "elife-10421-v1.xml")
     def test_references_json(self, filename):
@@ -165,42 +191,47 @@ class TestParseJats(unittest.TestCase):
     @data(
         # Web reference with no title, use the uri from 01892
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib1'), ('date', u'2014'), ('title', u'http://www.who.int/topics/dengue/en/'), ('uri', u'http://www.who.int/topics/dengue/en/')])]
+         [OrderedDict([('type', u'web'), ('id', u'bib1'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', 'The World Health Organization')])]), ('title', u'http://www.who.int/topics/dengue/en/'), ('uri', u'http://www.who.int/topics/dengue/en/')])]
          ),
 
         # Thesis title from 00626
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib36"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Schneider</surname><given-names>P</given-names></name></person-group><year>2006</year><comment>PhD Thesis</comment><article-title>Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission</article-title><publisher-name>Radboud University Nijmegen Medical Centre</publisher-name><publisher-loc>Nijmegen, The Netherlands</publisher-loc></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'thesis'), ('id', u'bib36'), ('date', u'2006'), ('title', u'Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission'), ('publisher', OrderedDict([('name', [u'Radboud University Nijmegen Medical Centre']), ('address', OrderedDict([('formatted', [u'Nijmegen, The Netherlands']), ('components', OrderedDict([('locality', [u'Nijmegen, The Netherlands'])]))]))]))])]
+         [OrderedDict([('type', u'thesis'), ('id', u'bib36'), ('date', u'2006'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Schneider'), ('index', u'Schneider, P')]))])), ('title', u'Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission'), ('publisher', OrderedDict([('name', [u'Radboud University Nijmegen Medical Centre']), ('address', OrderedDict([('formatted', [u'Nijmegen, The Netherlands']), ('components', OrderedDict([('locality', [u'Nijmegen, The Netherlands'])]))]))]))])]
          ),
 
         # fpage value with usual characters from 00170
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib14"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Feng</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>T</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name></person-group><year>2011</year><article-title>Using MACS to identify peaks from ChIP-Seq data</article-title><source>Curr Protoc Bioinformatics</source><volume>Chapter 2</volume><fpage>Unit 2.14</fpage></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib14'), ('date', u'2011'), ('articleTitle', u'Using MACS to identify peaks from ChIP-Seq data'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'Chapter 2'), ('pages', u'Unit 2.14')])]
+         [OrderedDict([('type', u'journal'), ('id', u'bib14'), ('date', u'2011'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Feng'), ('index', u'Feng, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'T Liu'), ('index', u'Liu, T')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))])]), ('articleTitle', u'Using MACS to identify peaks from ChIP-Seq data'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'Chapter 2'), ('pages', u'Unit 2.14')])]
          ),
 
         # fpage contains dots, 00569
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib96"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Zerbino</surname><given-names>DR</given-names></name></person-group><year>2010</year><article-title>Using the Velvet de novo assembler for short-read sequencing technologies</article-title><source>Curr Protoc Bioinformatics</source><volume>11</volume><fpage>11.5.1</fpage><lpage>11.5.12</lpage><pub-id pub-id-type="doi">10.1002/0471250953.bi1105s31</pub-id></element-citation></ref></ref-list></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib96'), ('date', u'2010'), ('articleTitle', u'Using the Velvet de novo assembler for short-read sequencing technologies'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'11'), ('pages', OrderedDict([('first', u'11.5.1'), ('last', u'11.5.12'), ('range', u'11.5.1\u201311.5.12')])), ('doi', u'10.1002/0471250953.bi1105s31')])]
+         [OrderedDict([('type', u'journal'), ('id', u'bib96'), ('date', u'2010'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DR Zerbino'), ('index', u'Zerbino, DR')]))])]), ('articleTitle', u'Using the Velvet de novo assembler for short-read sequencing technologies'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'11'), ('pages', OrderedDict([('first', u'11.5.1'), ('last', u'11.5.12'), ('range', u'11.5.1\u201311.5.12')])), ('doi', u'10.1002/0471250953.bi1105s31')])]
          ),
 
         # pages value of in press, 00109
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kyoung</surname><given-names>M</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name><name><surname>Diao</surname><given-names>J</given-names></name><name><surname>Chu</surname><given-names>S</given-names></name><name><surname>Brunger</surname><given-names>AT</given-names></name></person-group><year>2012</year><article-title>Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system</article-title><source>Nature Protocols</source><volume>7</volume><ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nprot.2012.134">10.1038/nprot.2012.134</ext-link><comment>, in press</comment></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', OrderedDict([('name', [u'Nature Protocols'])])), ('volume', u'7'), ('pages', 'in press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
+         [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Kyoung'), ('index', u'Kyoung, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Diao'), ('index', u'Diao, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Chu'), ('index', u'Chu, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AT Brunger'), ('index', u'Brunger, AT')]))])]), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', OrderedDict([('name', [u'Nature Protocols'])])), ('volume', u'7'), ('pages', 'in press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
          ),
 
         # year value of in press, 02535
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Culumber</surname><given-names>ZW</given-names></name><name><surname>Ochoa</surname><given-names>OM</given-names></name><name><surname>Rosenthal</surname><given-names>GG</given-names></name></person-group><year>in press</year><article-title>Assortative mating and the maintenance of population structure in a natural hybrid zone</article-title><source>American Naturalist</source></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', OrderedDict([('name', [u'American Naturalist'])])), ('pages', 'in press')])]
+         [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'ZW Culumber'), ('index', u'Culumber, ZW')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'OM Ochoa'), ('index', u'Ochoa, OM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'GG Rosenthal'), ('index', u'Rosenthal, GG')]))])]), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', OrderedDict([('name', [u'American Naturalist'])])), ('pages', 'in press')])]
          ),
 
         # conference, 03532 v3
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib21"><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Haiyan</surname><given-names>L</given-names></name><name><surname>Jihua</surname><given-names>W</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Network properties of protein structures at three different length scales</article-title><conf-name>Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society</conf-name></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib21'), ('date', u'2009'), ('articleTitle', u'Network properties of protein structures at three different length scales'), ('conference', OrderedDict([('name', [u'Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society'])]))])]
+         [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib21'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Haiyan'), ('index', u'Haiyan, L')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Jihua'), ('index', u'Jihua, W')]))])]), ('articleTitle', u'Network properties of protein structures at three different length scales'), ('conference', OrderedDict([('name', [u'Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society'])]))])]
          ),
 
         # web with doi but no uri, 04775 v2
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib45"><element-citation publication-type="web"><person-group person-group-type="author"><name><surname>Mikheyev</surname><given-names>AS</given-names></name><name><surname>Linksvayer</surname><given-names>TA</given-names></name></person-group><year>2014</year><article-title>Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns</article-title><source>Dryad Digital Repository.</source><pub-id pub-id-type="doi">10.5061/dryad.cv0q3</pub-id></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib45'), ('date', u'2014'), ('title', u'Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns'), ('website', u'Dryad Digital Repository.'), ('uri', u'https://doi.org/10.5061/dryad.cv0q3')])]
+         [OrderedDict([('type', u'web'), ('id', u'bib45'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AS Mikheyev'), ('index', u'Mikheyev, AS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TA Linksvayer'), ('index', u'Linksvayer, TA')]))])]), ('title', u'Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns'), ('website', u'Dryad Digital Repository.'), ('uri', u'https://doi.org/10.5061/dryad.cv0q3')])]
+         ),
+
+        # Clinical trial example, from new kitchen sink 00666
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib41"><element-citation publication-type="clinicaltrial"><person-group person-group-type="sponsor"><collab>Scripps Translational Science Institute</collab></person-group><year iso-8601-date="2006">2015</year><article-title>Scripps Wired for Health Study</article-title><ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', 'clinical-trial'), ('id', u'bib41'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'group'), ('name', 'Scripps Translational Science Institute')])]), ('authorsType', 'sponsors'), ('title', u'Scripps Wired for Health Study'), ('uri', u'https://clinicaltrials.gov/ct2/show/NCT01975428')])]
          ),
 
         )
