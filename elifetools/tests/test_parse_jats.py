@@ -305,7 +305,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption/><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
+         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('title', u'Reviewers\u2019 figure 1'),('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',

@@ -1964,6 +1964,9 @@ def body_block_content(tag):
             sentences = first_paragraph_text.split(". ")
             if len(sentences) > 0:
                 tag_content["title"] = sentences[0]
+        # If there is still not title, then use the label
+        if "title" not in tag_content and "label" in tag_content:
+            tag_content["title"] = tag_content["label"]
         # Now can add the caption after all possible title values are added
         if len(caption_content) > 0:
             tag_content["caption"] = caption_content
