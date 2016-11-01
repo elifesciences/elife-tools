@@ -2718,6 +2718,72 @@ def references_json(soup):
             set_if_value(ref_content, "publisher", references_publisher(
                 ref.get("source"), ref.get("publisher_loc")))
 
+        ref_content = convert_references_json(ref_content, soup)
         references_json.append(ref_content)
 
     return references_json
+
+def convert_references_json(ref_content, soup=None):
+    "Check for references that will not pass schema validation, fix or convert them to unknown"
+    # fix data for specific article references
+    # TODO!!!
+    
+    # Convert reference to unkonwn if still missing important values
+    if ref_content.get("type") == "book-chapter" and "editors" not in ref_content:
+        ref_content = references_json_to_unknown(ref_content, soup)
+    if ref_content.get("type") == "journal" and "articleTitle" not in ref_content:
+        ref_content = references_json_to_unknown(ref_content, soup)
+
+    return ref_content
+
+def references_json_to_unknown(ref_content, soup=None):
+    unknown_ref_content = OrderedDict()
+    unknown_ref_content["type"] = "unknown"
+    set_if_value(unknown_ref_content, "id", ref_content.get("id"))
+    set_if_value(unknown_ref_content, "date", ref_content.get("date"))
+    set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
+    set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
+
+    # title
+    set_if_value(unknown_ref_content, "title", ref_content.get("title"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("bookTitle"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("articleTitle"))
+
+    # details
+    set_if_value(unknown_ref_content, "details",
+                 references_json_unknown_details(ref_content, soup))
+
+    set_if_value(unknown_ref_content, "uri", ref_content.get("uri"))
+
+    return unknown_ref_content
+
+def references_json_unknown_details(ref_content, soup=None):
+    "Extract detail value for references of type unknown"
+    details = ""
+
+    # Try adding pages values first
+    if "pages" in ref_content:
+        if "range" in ref_content["pages"]:
+            details += ref_content["pages"]["range"]
+        else:
+            details += ref_content["pages"]
+
+    if soup:
+        # Attempt to find the XML element by id, and convert it to details
+        if "id" in ref_content:
+            ref_tag = first(soup.select("ref#" + ref_content["id"]))
+            if ref_tag:
+                # Now remove tags that would be already part of the unknown reference by now
+                for remove_tag in ["person-group", "year", "article-title",
+                                   "elocation-id", "fpage", "lpage"]:
+                    ref_tag = remove_tag_from_tag(ref_tag, remove_tag)
+                # Add the remaining tag content comma separated
+                for tag in first(raw_parser.element_citation(ref_tag)):
+                    if node_text(tag) is not None:
+                        if details != "":
+                            details += ", "
+                        details += node_text(tag)
+
+    return details
