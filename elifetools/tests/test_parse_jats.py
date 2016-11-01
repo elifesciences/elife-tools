@@ -47,6 +47,42 @@ class TestParseJats(unittest.TestCase):
     """
     Quick test cases during development checking syntax errors and coverage
     """
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", list),
+        ("elife_poa_e06828.xml", None))
+    def test_acknowledgements_json_by_file(self, filename, expected):
+        acknowledgements_json = parser.acknowledgements_json(self.soup(filename))
+        if expected is None:
+            self.assertEqual(expected, acknowledgements_json)
+        else:
+            self.assertEqual(expected, type(acknowledgements_json))
+
+    @unpack
+    @data(
+        ('<root></root>',
+         None
+         ),
+
+        ('<root><ack></ack></root>',
+         None
+         ),
+
+        ('<root><ack><title>Acknowledgements</title><p>Paragraph</p></ack></root>',
+         [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')])]
+         ),
+
+        ('<root><ack><title>Acknowledgements</title><p>Paragraph</p><p><italic>italic</italic></p></ack></root>',
+         [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'paragraph'), ('text', u'<italic>italic</italic>')])]
+         ),
+    )
+    def test_acknowledgements_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.acknowledgements_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @unpack
     @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
@@ -119,6 +155,100 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(parser.author_line(soup), expected)
 
+    @unpack
+    @data(
+        (None,
+         OrderedDict(),
+         OrderedDict()
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "sponsor"}, {"etal": True, "group-type": "sponsor"}],
+         OrderedDict([('type', u'clinical-trial')]),
+         OrderedDict([('type', u'clinical-trial'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('authorsEtAl', True), ('authorsType', 'sponsors')])
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "inventor"}, {"etal": True, "group-type": "inventor"}],
+         OrderedDict([('type', u'patent')]),
+         OrderedDict([('type', u'patent'), ('inventors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('inventorsEtAl', True)])
+         ),
+
+        ([{"surname": "One", "given-names": "Person", "group-type": "author"}],
+         OrderedDict([('type', u'thesis')]),
+         OrderedDict([('type', u'thesis'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))]))])
+         ),
+
+        )
+    def test_references_json_authors(self, ref_authors, ref_content, expected):
+        references_json = parser.references_json_authors(ref_authors, ref_content)
+        self.assertEqual(expected, references_json)
+
+    @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00051.xml", "elife-10421-v1.xml")
+    def test_references_json(self, filename):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertNotEqual(parser.references_json(soup), None)
+
+    @unpack
+    @data(
+        # Web reference with no title, use the uri from 01892
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'web'), ('id', u'bib1'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', 'The World Health Organization')])]), ('title', u'http://www.who.int/topics/dengue/en/'), ('uri', u'http://www.who.int/topics/dengue/en/')])]
+         ),
+
+        # Thesis title from 00626
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib36"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Schneider</surname><given-names>P</given-names></name></person-group><year>2006</year><comment>PhD Thesis</comment><article-title>Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission</article-title><publisher-name>Radboud University Nijmegen Medical Centre</publisher-name><publisher-loc>Nijmegen, The Netherlands</publisher-loc></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'thesis'), ('id', u'bib36'), ('date', u'2006'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Schneider'), ('index', u'Schneider, P')]))])), ('title', u'Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission'), ('publisher', OrderedDict([('name', [u'Radboud University Nijmegen Medical Centre']), ('address', OrderedDict([('formatted', [u'Nijmegen, The Netherlands']), ('components', OrderedDict([('locality', [u'Nijmegen, The Netherlands'])]))]))]))])]
+         ),
+
+        # fpage value with usual characters from 00170
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib14"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Feng</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>T</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name></person-group><year>2011</year><article-title>Using MACS to identify peaks from ChIP-Seq data</article-title><source>Curr Protoc Bioinformatics</source><volume>Chapter 2</volume><fpage>Unit 2.14</fpage></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib14'), ('date', u'2011'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Feng'), ('index', u'Feng, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'T Liu'), ('index', u'Liu, T')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))])]), ('articleTitle', u'Using MACS to identify peaks from ChIP-Seq data'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'Chapter 2'), ('pages', u'Unit 2.14')])]
+         ),
+
+        # fpage contains dots, 00569
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib96"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Zerbino</surname><given-names>DR</given-names></name></person-group><year>2010</year><article-title>Using the Velvet de novo assembler for short-read sequencing technologies</article-title><source>Curr Protoc Bioinformatics</source><volume>11</volume><fpage>11.5.1</fpage><lpage>11.5.12</lpage><pub-id pub-id-type="doi">10.1002/0471250953.bi1105s31</pub-id></element-citation></ref></ref-list></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib96'), ('date', u'2010'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DR Zerbino'), ('index', u'Zerbino, DR')]))])]), ('articleTitle', u'Using the Velvet de novo assembler for short-read sequencing technologies'), ('journal', OrderedDict([('name', [u'Curr Protoc Bioinformatics'])])), ('volume', u'11'), ('pages', OrderedDict([('first', u'11.5.1'), ('last', u'11.5.12'), ('range', u'11.5.1\u201311.5.12')])), ('doi', u'10.1002/0471250953.bi1105s31')])]
+         ),
+
+        # pages value of in press, 00109
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kyoung</surname><given-names>M</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name><name><surname>Diao</surname><given-names>J</given-names></name><name><surname>Chu</surname><given-names>S</given-names></name><name><surname>Brunger</surname><given-names>AT</given-names></name></person-group><year>2012</year><article-title>Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system</article-title><source>Nature Protocols</source><volume>7</volume><ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nprot.2012.134">10.1038/nprot.2012.134</ext-link><comment>, in press</comment></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Kyoung'), ('index', u'Kyoung, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Diao'), ('index', u'Diao, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Chu'), ('index', u'Chu, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AT Brunger'), ('index', u'Brunger, AT')]))])]), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', OrderedDict([('name', [u'Nature Protocols'])])), ('volume', u'7'), ('pages', 'in press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
+         ),
+
+        # year value of in press, 02535
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Culumber</surname><given-names>ZW</given-names></name><name><surname>Ochoa</surname><given-names>OM</given-names></name><name><surname>Rosenthal</surname><given-names>GG</given-names></name></person-group><year>in press</year><article-title>Assortative mating and the maintenance of population structure in a natural hybrid zone</article-title><source>American Naturalist</source></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'ZW Culumber'), ('index', u'Culumber, ZW')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'OM Ochoa'), ('index', u'Ochoa, OM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'GG Rosenthal'), ('index', u'Rosenthal, GG')]))])]), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', OrderedDict([('name', [u'American Naturalist'])])), ('pages', 'in press')])]
+         ),
+
+        # conference, 03532 v3
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib21"><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Haiyan</surname><given-names>L</given-names></name><name><surname>Jihua</surname><given-names>W</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Network properties of protein structures at three different length scales</article-title><conf-name>Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society</conf-name></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib21'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Haiyan'), ('index', u'Haiyan, L')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Jihua'), ('index', u'Jihua, W')]))])]), ('articleTitle', u'Network properties of protein structures at three different length scales'), ('conference', OrderedDict([('name', [u'Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society'])]))])]
+         ),
+
+        # web with doi but no uri, 04775 v2
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib45"><element-citation publication-type="web"><person-group person-group-type="author"><name><surname>Mikheyev</surname><given-names>AS</given-names></name><name><surname>Linksvayer</surname><given-names>TA</given-names></name></person-group><year>2014</year><article-title>Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns</article-title><source>Dryad Digital Repository.</source><pub-id pub-id-type="doi">10.5061/dryad.cv0q3</pub-id></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'web'), ('id', u'bib45'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AS Mikheyev'), ('index', u'Mikheyev, AS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TA Linksvayer'), ('index', u'Linksvayer, TA')]))])]), ('title', u'Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns'), ('website', u'Dryad Digital Repository.'), ('uri', u'https://doi.org/10.5061/dryad.cv0q3')])]
+         ),
+
+        # Clinical trial example, from new kitchen sink 00666
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib41"><element-citation publication-type="clinicaltrial"><person-group person-group-type="sponsor"><collab>Scripps Translational Science Institute</collab></person-group><year iso-8601-date="2006">2015</year><article-title>Scripps Wired for Health Study</article-title><ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', 'clinical-trial'), ('id', u'bib41'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'group'), ('name', 'Scripps Translational Science Institute')])]), ('authorsType', 'sponsors'), ('title', u'Scripps Wired for Health Study'), ('uri', u'https://clinicaltrials.gov/ct2/show/NCT01975428')])]
+         ),
+
+        )
+    def test_references_json_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.references_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
+
+    @unpack
+    @data(
+        (None, None, None)
+         )
+    def test_references_publisher(self, publisher_name, publisher_loc, expected):
+        self.assertEqual(parser.references_publisher(publisher_name, publisher_loc), expected)
+
 
     @unpack
     @data(
@@ -175,15 +305,31 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption/><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
+         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('title', u'Reviewers\u2019 figure 1'),('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
+         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('title', u'First sentence'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'First sentence')])]), ('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence. Second sentence.</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
+         OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('title', u'First sentence'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'First sentence. Second sentence.')])]), ('alt', ''), ('uri', u'elife-00723-resp-fig1-v1.tif')])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><attrib>PHOTO CREDIT</attrib></fig></root>',
+         OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig1-v1.tif'), ('attribution', [u'PHOTO CREDIT'])])
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><permissions><copyright-statement>© 1991, Publisher 1, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 1</copyright-holder><license><license-p>The in situ image in panel 3 is reprinted with permission from Figure 2D, <xref ref-type="bibr" rid="bib72">Small et al. (1991)</xref>, <italic>Test &amp; Automated</italic>.</license-p></license></permissions><permissions><copyright-statement>© 1991, Publisher 2, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 2</copyright-holder><license><license-p>In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <xref ref-type="bibr" rid="bib74">Stanojevic et al. (1991)</xref>, <italic>Journal</italic>.</license-p></license></permissions></fig></root>',
+         OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig1-v1.tif'), ('attribution', [u'The in situ image in panel 3 is reprinted with permission from Figure 2D, <xref ref-type="bibr" rid="bib72">Small et al. (1991)</xref>, <italic>Test &amp; Automated</italic>.', u'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <xref ref-type="bibr" rid="bib74">Stanojevic et al. (1991)</xref>, <italic>Journal</italic>.'])])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/></supplementary-material></p></caption><graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/></fig></root>',
         OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.012'), ('id', u'fig3s1'), ('label', u'Figure 3\u2014figure supplement 1.'), ('title', u'Title of the figure supplement'), ('alt', ''), ('uri', u'elife-00666-fig3-figsupp1-v1.tiff'), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00666.013'), ('id', u'SD1-data'), ('label', u'Figure 3\u2014figure supplement 1\u2014Source data 1.'), ('title', u'Title of the figure supplement source data.'), ('mediaType', u'application/xlsx'), ('uri', u'elife-00666-fig3-figsupp1-data1-v1.xlsx')])])])
          ),
 
-        ('<root><table-wrap id="tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00013.011</object-id><label>Table 2.</label><caption><p>Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><label>*</label><p>Footnote 1</p></fn><fn id="tblfn3"><label>§</label><p>CM = conditioned medium;</p></fn></table-wrap-foot></table-wrap></root>',
-         OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.00013.011'), ('id', u'tbl2'), ('label', u'Table 2.'), ('title', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content')]), OrderedDict([('type', 'paragraph'), ('text', u'<bold>DOI:</bold><ext-link ext-link-type="doi" href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link>')])]), ('tables', [u'<table><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table>']), ('footer', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote 1')]), OrderedDict([('type', 'paragraph'), ('text', u'CM = conditioned medium;')])])])
+        ('<root><table-wrap id="tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00013.011</object-id><label>Table 2.</label><caption><p>Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><label>*</label><p>Footnote 1</p></fn><fn id="tblfn3"><label>§</label><p>CM = conditioned medium;</p></fn><fn><p>MP, Middle Pleistocene.</p></fn><fn id="id_not_used"><p>Footnote parsed with no id</p></fn></table-wrap-foot></table-wrap></root>',
+         OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.00013.011'), ('id', u'tbl2'), ('label', u'Table 2.'), ('title', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content')]), OrderedDict([('type', 'paragraph'), ('text', u'<bold>DOI:</bold><ext-link ext-link-type="doi" href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link>')])]), ('tables', [u'<table><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table>']), ('footnotes', [OrderedDict([('id', u'tblfn1'), ('label', u'*'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote 1')])])]), OrderedDict([('id', u'tblfn3'), ('label', u'\xa7'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'CM = conditioned medium;')])])]), OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'MP, Middle Pleistocene.')])])]), OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote parsed with no id')])])])])])
             ),
 
         ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><disp-formula id="equ7"><label>(3)</label><mml:math id="m7"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:mn>0.5</mml:mn></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>0.3</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mi>I</mml:mi><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mn>100</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></root>',
@@ -216,6 +362,10 @@ class TestParseJats(unittest.TestCase):
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="media2" mime-subtype="mov" mimetype="video" xlink:href="elife-00005-media2.mov"><object-id pub-id-type="doi">10.7554/eLife.00005.016</object-id><label>Movie 2.</label><caption><title>3D reconstruction of the human PRC2-AEBP2 complex.</title><p>Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00005.017</object-id><label>Movie 2—source code 1.</label><caption><p>Overall architecture of the PRC2 complex.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.017">http://dx.doi.org/10.7554/eLife.00005.017</ext-link></p></caption><media mime-subtype="wrl" mimetype="application" xlink:href="elife-00005-media2-code1-v1.wrl"/></supplementary-material></p></caption></media>',
         OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00005.016'), ('id', u'media2'), ('label', u'Movie 2.'), ('title', u'3D reconstruction of the human PRC2-AEBP2 complex.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.')]), OrderedDict([('type', 'paragraph'), ('text', u'<bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link>')])]), ('uri', u'elife-00005-media2.mov'), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00005.017'), ('id', u'SD1-data'), ('label', u'Movie 2\u2014source code 1.'), ('title', u'Overall architecture of the PRC2 complex.'), ('mediaType', u'application/wrl'), ('uri', u'elife-00005-media2-code1-v1.wrl')])])])
+         ),
+
+        ('<root><disp-quote><p>content</p></disp-quote></root>',
+         OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])
          ),
 
     )
@@ -272,6 +422,10 @@ class TestParseJats(unittest.TestCase):
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
         [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<bold>This</bold> ')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])])])]
         ),
+
+        ('<root><disp-quote><p>content</p></disp-quote></root>',
+         [OrderedDict([('content', [OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
+         ),
 
         )
     def test_body_block_content_render(self, xml_content, expected):
@@ -735,7 +889,7 @@ class TestParseJats(unittest.TestCase):
                          parser.references(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife00013.xml", "elife02935.xml", "elife00051.xml",
-          "elife_poa_e06828.xml")
+          "elife_poa_e06828.xml", "elife02304.xml", "elife-14093-v1.xml")
     def test_refs(self, filename):
         self.assertEqual(self.json_expected(filename, "refs"),
                          parser.refs(self.soup(filename)))
@@ -774,6 +928,11 @@ class TestParseJats(unittest.TestCase):
     def test_title(self, filename):
         self.assertEqual(self.json_expected(filename, "title"),
                          parser.title(self.soup(filename)))
+
+    @data("elife-kitchen-sink.xml", "elife00240.xml", "elife00270.xml", "elife00351.xml")
+    def test_title_prefix(self, filename):
+        self.assertEqual(self.json_expected(filename, "title_prefix"),
+                         parser.title_prefix(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
     def test_title_short(self, filename):

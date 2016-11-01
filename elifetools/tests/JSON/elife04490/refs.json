@@ -33,6 +33,7 @@
     }, 
     {
         "article_title": "Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheat", 
+        "uri_text": "http://www.jstor.org/stable/2459037", 
         "lpage": "645", 
         "doi": "10.1086/282630", 
         "article_doi": "10.7554/eLife.04490", 
@@ -50,13 +51,14 @@
         ], 
         "full_article_title": "Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheat", 
         "comment": "http://www.jstor.org/stable/2459037", 
-        "publication-type": "journal", 
+        "uri": "http://www.jstor.org/stable/2459037", 
         "volume": "103", 
         "source": "The American Naturalist", 
         "reference_id": "10.1086/282630", 
         "fpage": "621", 
         "year": "1969", 
         "position": 2, 
+        "publication-type": "journal", 
         "ref": "AllardARWAdamsJ1969Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheatThe American Naturalist103621645http://www.jstor.org/stable/245903710.1086/282630", 
         "id": "bib2"
     }, 
@@ -364,11 +366,9 @@
         "id": "bib10"
     }, 
     {
+        "uri_text": "http://CRAN.R-project.org/package=lme4", 
         "comment": "http://CRAN.R-project.org/package=lme4", 
         "article_doi": "10.7554/eLife.04490", 
-        "year": "2014a", 
-        "publication-type": "book", 
-        "source": "lme4: linear mixed-effects models using Eigen and S4. R package version 1.1-7", 
         "authors": [
             {
                 "surname": "Bates", 
@@ -391,13 +391,17 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://CRAN.R-project.org/package=lme4", 
+        "publication-type": "book", 
+        "source": "lme4: linear mixed-effects models using Eigen and S4. R package version 1.1-7", 
+        "year": "2014a", 
         "position": 11, 
         "ref": "BatesDMaechlerMBolkerBMWalkerS2014alme4: linear mixed-effects models using Eigen and S4. R package version 1.1-7http://CRAN.R-project.org/package=lme4", 
         "id": "bib11"
     }, 
     {
         "article_title": "lme4: linear mixed-effects models using Eigen and S4", 
-        "comment": "http://arxiv.org/abs/1406.5823", 
+        "uri_text": "http://arxiv.org/abs/1406.5823", 
         "article_doi": "10.7554/eLife.04490", 
         "authors": [
             {
@@ -421,11 +425,13 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://arxiv.org/abs/1406.5823", 
+        "comment": "http://arxiv.org/abs/1406.5823", 
         "full_article_title": "lme4: linear mixed-effects models using Eigen and S4", 
-        "publication-type": "other", 
         "source": "ArXiv", 
         "year": "2014b", 
         "position": 12, 
+        "publication-type": "other", 
         "ref": "BatesDMaechlerMBolkerBMWalkerS2014blme4: linear mixed-effects models using Eigen and S4ArXivhttp://arxiv.org/abs/1406.5823", 
         "id": "bib12"
     }, 
@@ -683,14 +689,11 @@
         "id": "bib18"
     }, 
     {
+        "uri_text": "http://darwin-online.org.uk/contents.html#origin", 
         "comment": "URL: http://darwin-online.org.uk/contents.html#origin", 
         "publisher_loc": "London", 
         "article_doi": "10.7554/eLife.04490", 
         "publisher_name": "John Murray", 
-        "year": "1876", 
-        "publication-type": "book", 
-        "source": "The origin of species by means of natural selection; or, the preservation of favoured races in the struggle for life 6th, corr", 
-        "fpage": "86", 
         "authors": [
             {
                 "surname": "Darwin", 
@@ -698,6 +701,11 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://darwin-online.org.uk/contents.html#origin", 
+        "publication-type": "book", 
+        "source": "The origin of species by means of natural selection; or, the preservation of favoured races in the struggle for life 6th, corr", 
+        "fpage": "86", 
+        "year": "1876", 
         "position": 19, 
         "ref": "DarwinC1876The origin of species by means of natural selection; or, the preservation of favoured races in the struggle for life 6th, corrLondonJohn Murray86URL: http://darwin-online.org.uk/contents.html#origin", 
         "id": "bib19"
@@ -2087,13 +2095,12 @@
         "id": "bib56"
     }, 
     {
+        "uri_text": "http://udel.edu/\u223cmcdonald/statintro.html", 
         "comment": "USA. URL: http://udel.edu/\u223cmcdonald/statintro.html", 
         "publisher_loc": "Baltimore, Maryland", 
+        "edition": "2nd edition", 
         "article_doi": "10.7554/eLife.04490", 
         "publisher_name": "Sparky House Publishing", 
-        "year": "2009", 
-        "publication-type": "book", 
-        "source": "Handbook of biological statistics", 
         "authors": [
             {
                 "surname": "Macdonald", 
@@ -2101,6 +2108,10 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://udel.edu/%7Emcdonald/statintro.html", 
+        "publication-type": "book", 
+        "source": "Handbook of biological statistics", 
+        "year": "2009", 
         "position": 58, 
         "ref": "MacdonaldJH2009Handbook of biological statistics2nd editionBaltimore, MarylandSparky House PublishingUSA. URL: http://udel.edu/\u223cmcdonald/statintro.html", 
         "id": "bib57"
@@ -2274,11 +2285,9 @@
         "id": "bib62"
     }, 
     {
+        "uri_text": "http://CRAN.R-project.org/package=nlme", 
         "comment": "http://CRAN.R-project.org/package=nlme", 
         "article_doi": "10.7554/eLife.04490", 
-        "year": "2014", 
-        "publication-type": "book", 
-        "source": "Nlme: linear and nonlinear mixed effects models. R package version 3.1-118", 
         "authors": [
             {
                 "surname": "Pinheiro", 
@@ -2306,6 +2315,10 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://CRAN.R-project.org/package=nlme", 
+        "publication-type": "book", 
+        "source": "Nlme: linear and nonlinear mixed effects models. R package version 3.1-118", 
+        "year": "2014", 
         "position": 64, 
         "ref": "PinheiroJBatesDDebRoySSarkarDCore TeamR2014Nlme: linear and nonlinear mixed effects models. R package version 3.1-118http://CRAN.R-project.org/package=nlme", 
         "id": "bib63"
@@ -2339,19 +2352,21 @@
         "id": "bib64"
     }, 
     {
+        "uri_text": "http://www.r-project.org", 
         "comment": "Available at: http://www.r-project.org", 
         "article_doi": "10.7554/eLife.04490", 
-        "year": "2012", 
-        "collab": "R Core Team", 
-        "publication-type": "book", 
-        "source": "R: a Language and environment for statistical computing", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "R Core Team"
             }
         ], 
+        "uri": "http://www.r-project.org", 
+        "publication-type": "book", 
+        "source": "R: a Language and environment for statistical computing", 
+        "year": "2012", 
         "position": 66, 
+        "collab": "R Core Team", 
         "ref": "R Core Team2012R: a Language and environment for statistical computingAvailable at: http://www.r-project.org", 
         "id": "bib65"
     }, 
@@ -2642,6 +2657,7 @@
     {
         "article_title": "Asking the ecosystem if herbivory-inducible plant volatiles (HIPVs) have defensive functions", 
         "publisher_loc": "Cambridge, UK", 
+        "edition": "1st edition", 
         "article_doi": "10.7554/eLife.04490", 
         "publisher_name": "Cambridge University Press", 
         "authors": [
@@ -2995,19 +3011,21 @@
         "id": "bib80"
     }, 
     {
+        "uri_text": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
         "comment": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
         "article_doi": "10.7554/eLife.04490", 
-        "year": "2013", 
-        "collab": "United Nations, Department of Economic and Social Affairs, Population Division", 
-        "publication-type": "book", 
-        "source": "World population prospects: the 2012 revision, key findings and advance tables. Working paper no. ESA/P/WP.227", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "United Nations, Department of Economic and Social Affairs, Population Division"
             }
         ], 
+        "uri": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
+        "publication-type": "book", 
+        "source": "World population prospects: the 2012 revision, key findings and advance tables. Working paper no. ESA/P/WP.227", 
+        "year": "2013", 
         "position": 82, 
+        "collab": "United Nations, Department of Economic and Social Affairs, Population Division", 
         "ref": "United Nations, Department of Economic and Social Affairs, Population Division2013World population prospects: the 2012 revision, key findings and advance tables. Working paper no. ESA/P/WP.227http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
         "id": "bib81a"
     }, 

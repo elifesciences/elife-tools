@@ -51,6 +51,10 @@
                 "surname": "Lincoln", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "UN High-Level Meeting on Non-Communicable Diseases: addressing four questions", 
@@ -59,7 +63,6 @@
         "source": "Lancet", 
         "fpage": "449", 
         "year": "2011a", 
-        "etal": true, 
         "position": 2, 
         "ref": "BeagleholeRBonitaRAlleyneGHortonRLiLLincolnP2011aUN High-Level Meeting on Non-Communicable Diseases: addressing four questionsLancet37844955", 
         "id": "bib2"
@@ -98,6 +101,10 @@
                 "surname": "Asaria", 
                 "given-names": "P", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Priority actions for the non-communicable disease crisis", 
@@ -106,7 +113,6 @@
         "source": "Lancet", 
         "fpage": "1438", 
         "year": "2011b", 
-        "etal": true, 
         "position": 3, 
         "ref": "BeagleholeRBonitaRHortonRAdamsCAlleyneGAsariaP2011bPriority actions for the non-communicable disease crisisLancet377143847", 
         "id": "bib3"
@@ -349,6 +355,10 @@
                 "surname": "Beaglehole", 
                 "given-names": "R", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Grand challenges in chronic non-communicable diseases", 
@@ -357,7 +367,6 @@
         "source": "Nature", 
         "fpage": "494", 
         "year": "2007", 
-        "etal": true, 
         "position": 12, 
         "ref": "DaarASingerPPersadDPrammingSMatthewsDBeagleholeR2007Grand challenges in chronic non-communicable diseasesNature4504946", 
         "id": "bib12"
@@ -396,6 +405,10 @@
                 "surname": "Sun", 
                 "given-names": "H", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisited", 
@@ -404,7 +417,6 @@
         "source": "Nat Chem Biol", 
         "fpage": "87", 
         "year": "2005", 
-        "etal": true, 
         "position": 13, 
         "ref": "EnglishBPMinWVan OijenAMLeeKTLuoGSunH2005Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisitedNat Chem Biol28794", 
         "id": "bib13"
@@ -541,12 +553,10 @@
         "id": "bib17"
     }, 
     {
+        "uri_text": "http://escholarship.org/uc/item/4q57d5vp", 
         "publisher_loc": "San Francisco", 
         "article_doi": "10.7554/eLife.00051", 
         "publisher_name": "Center for Tobacco Control Research and Education", 
-        "year": "2003", 
-        "publication-type": "book", 
-        "source": "Past, Current and Future Trends in Tobacco Use", 
         "authors": [
             {
                 "surname": "Guindon", 
@@ -559,12 +569,17 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://escholarship.org/uc/item/4q57d5vp", 
+        "publication-type": "book", 
+        "source": "Past, Current and Future Trends in Tobacco Use", 
+        "year": "2003", 
         "position": 18, 
         "ref": "GuindonGEBoisclairD2003Past, Current and Future Trends in Tobacco UseSan FranciscoCenter for Tobacco Control Research and Educationhttp://escholarship.org/uc/item/4q57d5vp", 
         "id": "bib18"
     }, 
     {
         "article_title": "Penn World Table", 
+        "uri_text": "http://pwt.econ.upenn.edu/php_site/pwt_index.php", 
         "article_doi": "10.7554/eLife.00051", 
         "authors": [
             {
@@ -583,15 +598,17 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "http://pwt.econ.upenn.edu/php_site/pwt_index.php", 
         "full_article_title": "Penn World Table", 
-        "publication-type": "web", 
         "year": "2009", 
         "position": 19, 
+        "publication-type": "web", 
         "ref": "HestonASummersRAtenB2009Penn World Tablehttp://pwt.econ.upenn.edu/php_site/pwt_index.php", 
         "id": "bib19"
     }, 
     {
         "article_title": "Adult mortality estimates by country 1970\u20132010", 
+        "uri_text": "http://www.healthmetricsandevaluation.org/", 
         "article_doi": "10.7554/eLife.00051", 
         "authors": [
             {
@@ -599,11 +616,12 @@
                 "collab": "Institute for Health Metrics and Evaluation"
             }
         ], 
+        "uri": "http://www.healthmetricsandevaluation.org/", 
         "full_article_title": "Adult mortality estimates by country 1970\u20132010", 
-        "publication-type": "web", 
         "year": "2012", 
         "position": 20, 
         "collab": "Institute for Health Metrics and Evaluation", 
+        "publication-type": "web", 
         "ref": "Institute for Health Metrics and Evaluation2012Adult mortality estimates by country 1970\u20132010http://www.healthmetricsandevaluation.org/", 
         "id": "bib20"
     }, 
@@ -611,6 +629,9 @@
         "publisher_loc": "New York", 
         "article_doi": "10.7554/eLife.00051", 
         "publisher_name": "Oxford University Press", 
+        "year": "2006", 
+        "publication-type": "book", 
+        "source": "Disease control priorities in developing countries", 
         "authors": [
             {
                 "surname": "Jamison", 
@@ -636,12 +657,12 @@
                 "surname": "Claeson", 
                 "given-names": "M", 
                 "group-type": "editor"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "editor"
             }
         ], 
-        "publication-type": "book", 
-        "source": "Disease control priorities in developing countries", 
-        "year": "2006", 
-        "etal": true, 
         "position": 21, 
         "ref": "JamisonDTBremanJGMeashamARAlleyneGClaesonM2006Disease control priorities in developing countriesNew YorkOxford University Press", 
         "id": "bib21"
@@ -719,6 +740,10 @@
                 "surname": "Kurowski", 
                 "given-names": "C", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Improving the health of the global poor", 
@@ -727,16 +752,16 @@
         "source": "Science", 
         "fpage": "2036", 
         "year": "2002", 
-        "etal": true, 
         "position": 24, 
         "ref": "JhaPMillsAHansonKKumaranayakeLContehLKurowskiC2002Improving the health of the global poorScience29520369", 
         "id": "bib24"
     }, 
     {
         "article_title": "Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper", 
+        "uri_text": "http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
         "article_doi": "10.7554/eLife.00051", 
+        "uri": "http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
         "full_article_title": "Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper", 
-        "publication-type": "web", 
         "authors": [
             {
                 "surname": "Jha", 
@@ -765,6 +790,7 @@
             }
         ], 
         "position": 25, 
+        "publication-type": "web", 
         "ref": "JhaPNugentRVerguetSBloomDHumRChronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paperhttp://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
         "id": "bib25"
     }, 
@@ -1042,6 +1068,10 @@
                 "surname": "Dwyer", 
                 "given-names": "L", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysis", 
@@ -1050,7 +1080,6 @@
         "source": "Lancet", 
         "fpage": "1704", 
         "year": "2010", 
-        "etal": true, 
         "position": 34, 
         "ref": "RajaratnamJKMarcusJRLevin-RectorAChalupkaANWangHDwyerL2010Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysisLancet375170420", 
         "id": "bib34"
@@ -1170,6 +1199,10 @@
                 "surname": "ka-Gina", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "HIV-associated adult mortality in a rural Tanzanian population", 
@@ -1178,13 +1211,13 @@
         "source": "AIDS", 
         "fpage": "801", 
         "year": "1997", 
-        "etal": true, 
         "position": 38, 
         "ref": "ToddJBaliraRGrosskurthHMayaudPMoshaFka-GinaG1997HIV-associated adult mortality in a rural Tanzanian populationAIDS118017", 
         "id": "bib38"
     }, 
     {
         "article_title": "AIDSInfo 1.0-AIDSInfoOnline", 
+        "uri_text": "http://www.aidsinfoonline.org/", 
         "article_doi": "10.7554/eLife.00051", 
         "authors": [
             {
@@ -1192,22 +1225,20 @@
                 "collab": "UNAIDS."
             }
         ], 
+        "uri": "http://www.aidsinfoonline.org/", 
         "full_article_title": "AIDSInfo 1.0-AIDSInfoOnline", 
-        "publication-type": "web", 
         "year": "2010", 
         "position": 39, 
         "collab": "UNAIDS.", 
+        "publication-type": "web", 
         "ref": "UNAIDS.2010AIDSInfo 1.0-AIDSInfoOnlinehttp://www.aidsinfoonline.org/", 
         "id": "bib39"
     }, 
     {
+        "uri_text": "http://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
         "publisher_loc": "New York", 
         "article_doi": "10.7554/eLife.00051", 
         "publisher_name": "United Nations", 
-        "year": "2012", 
-        "collab": "United Nations", 
-        "publication-type": "book", 
-        "source": "World Mortality Report 2011", 
         "authors": [
             {
                 "group-type": "author", 
@@ -1218,18 +1249,20 @@
                 "collab": "Department of Economic and Social Affairs, Population Division"
             }
         ], 
+        "uri": "http://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
+        "publication-type": "book", 
+        "source": "World Mortality Report 2011", 
+        "year": "2012", 
         "position": 40, 
+        "collab": "United Nations", 
         "ref": "United NationsDepartment of Economic and Social Affairs, Population Division2012World Mortality Report 2011New YorkUnited Nationshttp://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
         "id": "bib40"
     }, 
     {
+        "uri_text": "http://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
         "publisher_loc": "New York", 
         "article_doi": "10.7554/eLife.00051", 
         "publisher_name": "United Nations", 
-        "year": "2011", 
-        "collab": "United Nations", 
-        "publication-type": "book", 
-        "source": "World Population Prospects: The 2010 Revision, Highlights and Advance Tables", 
         "authors": [
             {
                 "group-type": "author", 
@@ -1240,12 +1273,18 @@
                 "collab": "Department of Economic and Social Affairs, Population Division"
             }
         ], 
+        "uri": "http://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
+        "publication-type": "book", 
+        "source": "World Population Prospects: The 2010 Revision, Highlights and Advance Tables", 
+        "year": "2011", 
         "position": 41, 
+        "collab": "United Nations", 
         "ref": "United NationsDepartment of Economic and Social Affairs, Population Division2011World Population Prospects: The 2010 Revision, Highlights and Advance TablesNew YorkUnited Nationshttp://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
         "id": "bib41"
     }, 
     {
         "article_title": "CME Info - Child Mortality Estimates", 
+        "uri_text": "http://www.childmortality.org/", 
         "article_doi": "10.7554/eLife.00051", 
         "authors": [
             {
@@ -1253,11 +1292,12 @@
                 "collab": "UN Inter-agency for Child Mortality Estimates"
             }
         ], 
+        "uri": "http://www.childmortality.org/", 
         "full_article_title": "CME Info - Child Mortality Estimates", 
-        "publication-type": "web", 
         "year": "2012", 
         "position": 42, 
         "collab": "UN Inter-agency for Child Mortality Estimates", 
+        "publication-type": "web", 
         "ref": "UN Inter-agency for Child Mortality Estimates2012CME Info - Child Mortality Estimateshttp://www.childmortality.org/", 
         "id": "bib42"
     }, 
@@ -1368,6 +1408,10 @@
                 "surname": "Lazarev", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Alcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deaths", 
@@ -1376,7 +1420,6 @@
         "source": "Lancet", 
         "fpage": "2201", 
         "year": "2009", 
-        "etal": true, 
         "position": 46, 
         "ref": "ZaridzeDBrennanPBorehamJBorodaAKarpovRLazarevAAlcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deathsLancet2009373220114", 
         "id": "bib46"

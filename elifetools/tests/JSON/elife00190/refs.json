@@ -78,6 +78,10 @@
                 "surname": "Longair", 
                 "given-names": "M", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "TrakEM2 software for neural circuit reconstruction", 
@@ -86,7 +90,6 @@
         "source": "PLoS One", 
         "fpage": "e38011", 
         "year": "2012", 
-        "etal": true, 
         "position": 2, 
         "ref": "CardonaASaalfeldSSchindelinJArganda-CarrerasIPreibischSLongairM2012TrakEM2 software for neural circuit reconstructionPLoS One7e38011", 
         "id": "bib2"
@@ -269,6 +272,10 @@
                 "surname": "Shen", 
                 "given-names": "K", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "GFP Reconstitution across Synaptic Partners (GRASP) defines cell contacts and synapses in living nervous systems", 
@@ -277,7 +284,6 @@
         "source": "Neuron", 
         "fpage": "353", 
         "year": "2008", 
-        "etal": true, 
         "position": 7, 
         "ref": "FeinbergEHVanhovenMKBendeskyAWangGFetterRDShenK2008GFP Reconstitution across Synaptic Partners (GRASP) defines cell contacts and synapses in living nervous systemsNeuron5735363", 
         "id": "bib7"
@@ -347,6 +353,10 @@
                 "surname": "Gibson", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Simultaneous binding of PtdIns(4,5)P2 and clathrin by AP180 in the nucleation of clathrin lattices on membranes", 
@@ -355,7 +365,6 @@
         "source": "Science", 
         "fpage": "1051", 
         "year": "2001", 
-        "etal": true, 
         "position": 9, 
         "ref": "FordMGPearseBMHigginsMKVallisYOwenDJGibsonA2001Simultaneous binding of PtdIns(4,5)P2 and clathrin by AP180 in the nucleation of clathrin lattices on membranesScience29110515", 
         "id": "bib9"
@@ -394,6 +403,10 @@
                 "surname": "Olesen", 
                 "given-names": "SP", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Single-copy insertion of transgenes in Caenorhabditis elegans", 
@@ -402,7 +415,6 @@
         "source": "Nat Genet", 
         "fpage": "1375", 
         "year": "2008", 
-        "etal": true, 
         "position": 10, 
         "ref": "Frokjaer-JensenCDavisMWHopkinsCENewmanBJThummelJMOlesenSP2008Single-copy insertion of transgenes in Caenorhabditis elegansNat Genet40137583", 
         "id": "bib10"
@@ -441,6 +453,10 @@
                 "surname": "Miller-Vedam", 
                 "given-names": "L", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Functional repurposing revealed by comparing S. pombe and S. cerevisiae genetic interactions", 
@@ -449,7 +465,6 @@
         "source": "Cell", 
         "fpage": "1339", 
         "year": "2012", 
-        "etal": true, 
         "position": 11, 
         "ref": "FrostAElgortMGBrandmanOIvesCCollinsSRMiller-VedamL2012Functional repurposing revealed by comparing S. pombe and S. cerevisiae genetic interactionsCell149133952", 
         "id": "bib11"
@@ -488,6 +503,10 @@
                 "surname": "Kratzke", 
                 "given-names": "M", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "AP-1/sigma1B-adaptin mediates endosomal synaptic vesicle recycling, learning and memory", 
@@ -496,7 +515,6 @@
         "source": "EMBO J", 
         "fpage": "1318", 
         "year": "2010", 
-        "etal": true, 
         "position": 12, 
         "ref": "GlyvukNTsytsyuraYGeumannCD'HoogeRHuveJKratzkeM2010AP-1/sigma1B-adaptin mediates endosomal synaptic vesicle recycling, learning and memoryEMBO J29131830", 
         "id": "bib12"
@@ -587,6 +605,10 @@
                 "surname": "Garriga", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Mu2 adaptin facilitates but is not essential for synaptic vesicle recycling in Caenorhabditis elegans", 
@@ -595,7 +617,6 @@
         "source": "J Cell Biol", 
         "fpage": "881", 
         "year": "2008", 
-        "etal": true, 
         "position": 15, 
         "ref": "GuMSchuskeKWatanabeSLiuQBaumPGarrigaG2008Mu2 adaptin facilitates but is not essential for synaptic vesicle recycling in Caenorhabditis elegansJ Cell Biol18388192", 
         "id": "bib15"
@@ -823,6 +844,10 @@
                 "surname": "Collins", 
                 "given-names": "BM", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "A large-scale conformational change couples membrane recruitment to cargo binding in the AP2 clathrin adaptor complex", 
@@ -831,7 +856,6 @@
         "source": "Cell", 
         "fpage": "1220", 
         "year": "2010", 
-        "etal": true, 
         "position": 21, 
         "ref": "JacksonLPKellyBTMcCoyAJGaffryTJamesLCCollinsBM2010A large-scale conformational change couples membrane recruitment to cargo binding in the AP2 clathrin adaptor complexCell14112209", 
         "id": "bib21"
@@ -978,6 +1002,10 @@
                 "surname": "Krause", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Molecular basis of synaptic vesicle cargo recognition by the endocytic sorting adaptor stonin 2", 
@@ -986,7 +1014,6 @@
         "source": "J Cell Biol", 
         "fpage": "1497", 
         "year": "2007", 
-        "etal": true, 
         "position": 25, 
         "ref": "JungNWienischMGuMRandJBMullerSLKrauseG2007Molecular basis of synaptic vesicle cargo recognition by the endocytic sorting adaptor stonin 2J Cell Biol1791497510", 
         "id": "bib25"
@@ -1025,6 +1052,10 @@
                 "surname": "Carskadon", 
                 "given-names": "SL", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Mutation in AP-3 delta in the mocha mouse links endosomal transport to storage deficiency in platelets, melanosomes, and synaptic vesicles", 
@@ -1033,7 +1064,6 @@
         "source": "Neuron", 
         "fpage": "111", 
         "year": "1998", 
-        "etal": true, 
         "position": 26, 
         "ref": "KanthetiPQiaoXDiazMEPedenAAMeyerGECarskadonSL1998Mutation in AP-3 delta in the mocha mouse links endosomal transport to storage deficiency in platelets, melanosomes, and synaptic vesiclesNeuron2111122", 
         "id": "bib26"
@@ -1072,6 +1102,10 @@
                 "surname": "Enders", 
                 "given-names": "S", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Molecular determinants for the interaction between AMPA receptors and the clathrin adaptor complex AP-2", 
@@ -1080,7 +1114,6 @@
         "source": "Proc Natl Acad Sci USA", 
         "fpage": "2991", 
         "year": "2007", 
-        "etal": true, 
         "position": 27, 
         "ref": "KastningKKukhtinaVKittlerJTChenGPechsteinAEndersS2007Molecular determinants for the interaction between AMPA receptors and the clathrin adaptor complex AP-2Proc Natl Acad Sci USA10429916", 
         "id": "bib27"
@@ -1119,6 +1152,10 @@
                 "surname": "Honing", 
                 "given-names": "S", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "A structural explanation for the binding of endocytic dileucine motifs by the AP2 complex", 
@@ -1127,7 +1164,6 @@
         "source": "Nature", 
         "fpage": "976", 
         "year": "2008", 
-        "etal": true, 
         "position": 28, 
         "ref": "KellyBTMcCoyAJSpateKMillerSEEvansPRHoningS2008A structural explanation for the binding of endocytic dileucine motifs by the AP2 complexNature45697679", 
         "id": "bib28"
@@ -1192,6 +1228,10 @@
                 "surname": "Arancibia-Carcamo", 
                 "given-names": "IL", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Phospho-dependent binding of the clathrin AP2 adaptor complex to GABAA receptors regulates the efficacy of inhibitory synaptic transmission", 
@@ -1200,7 +1240,6 @@
         "source": "Proc Natl Acad Sci USA", 
         "fpage": "14871", 
         "year": "2005", 
-        "etal": true, 
         "position": 30, 
         "ref": "KittlerJTChenGHoningSBogdanovYMcAinshKArancibia-CarcamoIL2005Phospho-dependent binding of the clathrin AP2 adaptor complex to GABAA receptors regulates the efficacy of inhibitory synaptic transmissionProc Natl Acad Sci USA102148716", 
         "id": "bib30"
@@ -1394,6 +1433,10 @@
                 "surname": "Peden", 
                 "given-names": "AA", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "The molecular basis for the endocytosis of small R-SNAREs by the clathrin adaptor CALM", 
@@ -1402,7 +1445,6 @@
         "source": "Cell", 
         "fpage": "1118", 
         "year": "2011", 
-        "etal": true, 
         "position": 36, 
         "ref": "MillerSESahlenderDAGrahamSCHoningSRobinsonMSPedenAA2011The molecular basis for the endocytosis of small R-SNAREs by the clathrin adaptor CALMCell147111831", 
         "id": "bib36"
@@ -1441,6 +1483,10 @@
                 "surname": "Jha", 
                 "given-names": "A", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Dual engagement regulation of protein interactions with the AP-2 adaptor alpha appendage", 
@@ -1449,7 +1495,6 @@
         "source": "J Biol Chem", 
         "fpage": "46191", 
         "year": "2004", 
-        "etal": true, 
         "position": 37, 
         "ref": "MishraSKHawrylukMJBrettTJKeyelPADupinALJhaA2004Dual engagement regulation of protein interactions with the AP-2 adaptor alpha appendageJ Biol Chem27946191203", 
         "id": "bib37"
@@ -1488,6 +1533,10 @@
                 "surname": "Bonifacino", 
                 "given-names": "JS", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Clathrin adaptor AP-2 is essential for early embryonal development", 
@@ -1496,7 +1545,6 @@
         "source": "Mol Cell Biol", 
         "fpage": "9318", 
         "year": "2005", 
-        "etal": true, 
         "position": 38, 
         "ref": "MitsunariTNakatsuFShiodaNLovePEGrinbergABonifacinoJS2005Clathrin adaptor AP-2 is essential for early embryonal developmentMol Cell Biol25931823", 
         "id": "bib38"
@@ -1570,6 +1618,10 @@
                 "surname": "Crowell", 
                 "given-names": "JA", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "UNC-41/stonin functions with AP2 to recycle synaptic vesicles in Caenorhabditis elegans", 
@@ -1578,7 +1630,6 @@
         "source": "PLoS One", 
         "fpage": "e40095", 
         "year": "2012", 
-        "etal": true, 
         "position": 40, 
         "ref": "MullenGPGrundahlKMGuMWatanabeSHobsonRJCrowellJA2012UNC-41/stonin functions with AP2 to recycle synaptic vesicles in Caenorhabditis elegansPLoS One7e40095", 
         "id": "bib40"
@@ -1617,6 +1668,10 @@
                 "surname": "Zhu", 
                 "given-names": "G", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Defective function of GABA-containing synaptic vesicles in mice lacking the AP-3B clathrin adaptor", 
@@ -1625,7 +1680,6 @@
         "source": "J Cell Biol", 
         "fpage": "293", 
         "year": "2004", 
-        "etal": true, 
         "position": 41, 
         "ref": "NakatsuFOkadaMMoriFKumazawaNIwasaHZhuG2004Defective function of GABA-containing synaptic vesicles in mice lacking the AP-3B clathrin adaptorJ Cell Biol167293302", 
         "id": "bib41"
@@ -1664,6 +1718,10 @@
                 "surname": "Holleran", 
                 "given-names": "J", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "UNC-11, a Caenorhabditis elegans AP180 homologue, regulates the size and protein composition of synaptic vesicles", 
@@ -1672,7 +1730,6 @@
         "source": "Mol Biol Cell", 
         "fpage": "2343", 
         "year": "1999", 
-        "etal": true, 
         "position": 42, 
         "ref": "NonetMLHolgadoAMBrewerFSerpeCJNorbeckBAHolleranJ1999UNC-11, a Caenorhabditis elegans AP180 homologue, regulates the size and protein composition of synaptic vesiclesMol Biol Cell10234360", 
         "id": "bib42"
@@ -1829,6 +1886,10 @@
                 "surname": "Peak-Chew", 
                 "given-names": "SY", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Evolving nature of the AP2 alpha-appendage hub during clathrin-coated vesicle endocytosis", 
@@ -1837,7 +1898,6 @@
         "source": "EMBO J", 
         "fpage": "4371", 
         "year": "2004", 
-        "etal": true, 
         "position": 46, 
         "ref": "PraefckeGJFordMGSchmidEMOlesenLEGallopJLPeak-ChewSY2004Evolving nature of the AP2 alpha-appendage hub during clathrin-coated vesicle endocytosisEMBO J23437183", 
         "id": "bib46"
@@ -1949,6 +2009,10 @@
                 "surname": "Tacchetti", 
                 "given-names": "C", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Numb is an endocytic protein", 
@@ -1957,7 +2021,6 @@
         "source": "J Cell Biol", 
         "fpage": "1345", 
         "year": "2000", 
-        "etal": true, 
         "position": 50, 
         "ref": "SantoliniEPuriCSalciniAEGaglianiMCPelicciPGTacchettiC2000Numb is an endocytic proteinJ Cell Biol151134552", 
         "id": "bib50"
@@ -1996,6 +2059,10 @@
                 "surname": "Sato", 
                 "given-names": "M", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Differential requirements for clathrin in receptor-mediated endocytosis and maintenance of synaptic vesicle pools", 
@@ -2004,7 +2071,6 @@
         "source": "Proc Natl Acad Sci USA", 
         "fpage": "1139", 
         "year": "2009", 
-        "etal": true, 
         "position": 51, 
         "ref": "SatoKErnstromGGWatanabeSWeimerRMChenCHSatoM2009Differential requirements for clathrin in receptor-mediated endocytosis and maintenance of synaptic vesicle poolsProc Natl Acad Sci USA106113944", 
         "id": "bib51"
@@ -2088,6 +2154,10 @@
                 "surname": "Mills", 
                 "given-names": "IG", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Role of the AP2 beta-appendage hub in recruiting partners for clathrin-coated vesicle assembly", 
@@ -2096,7 +2166,6 @@
         "source": "PLoS Biol", 
         "fpage": "e262", 
         "year": "2006", 
-        "etal": true, 
         "position": 53, 
         "ref": "SchmidEMFordMGBurteyAPraefckeGJPeak-ChewSYMillsIG2006Role of the AP2 beta-appendage hub in recruiting partners for clathrin-coated vesicle assemblyPLoS Biol4e262", 
         "id": "bib53"
@@ -2249,6 +2318,10 @@
                 "surname": "Nicoll", 
                 "given-names": "RA", 
                 "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
             }
         ], 
         "full_article_title": "Distinct endocytic pathways control the rate and extent of synaptic vesicle protein recycling", 
@@ -2257,7 +2330,6 @@
         "source": "Neuron", 
         "fpage": "71", 
         "year": "2006", 
-        "etal": true, 
         "position": 58, 
         "ref": "VoglmaierSMKamKYangHFortinDLHuaZNicollRA2006Distinct endocytic pathways control the rate and extent of synaptic vesicle protein recyclingNeuron517184", 
         "id": "bib58"

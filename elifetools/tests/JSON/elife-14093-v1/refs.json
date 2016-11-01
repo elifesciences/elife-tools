@@ -306,6 +306,7 @@
         "id": "bib7"
     }, 
     {
+        "chapter-title": "Vergleichende Untersuchung \u00fcber die Ordung der Schupper an den Tannenzapfen, als Einleitung zur Untersuchung der Blattstellung \u00fcberhaupt", 
         "article_doi": "10.7554/eLife.14093", 
         "year": "1831", 
         "publication-type": "book", 
@@ -1656,6 +1657,7 @@
     {
         "publisher_loc": "Berlin, Heidelberg", 
         "doi": "10.1007/978-3-642-21458-5_28", 
+        "chapter-title": "A Combinatorial Model of Phyllotaxis Perturbations in Arabidopsis thaliana", 
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Springer Berlin Heidelberg", 
         "authors": [
@@ -2067,6 +2069,7 @@
     }, 
     {
         "publisher_loc": "North-Holland, Amsterdam, 1992", 
+        "chapter-title": "Morphogen theory of phyllotaxis", 
         "article_doi": "10.7554/eLife.14093", 
         "year": "1952", 
         "publication-type": "book", 

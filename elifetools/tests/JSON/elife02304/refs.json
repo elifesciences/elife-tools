@@ -1847,6 +1847,7 @@
     }, 
     {
         "publisher_loc": "Belmont, CA", 
+        "edition": "3rd edition", 
         "article_doi": "10.7554/eLife.02304", 
         "publisher_name": "Thomson Brooks/Cole", 
         "year": "2005", 
@@ -2861,6 +2862,7 @@
     }, 
     {
         "article_title": "Evolutionary and structural relationships among dehydrogenases", 
+        "edition": "3rd edition", 
         "article_doi": "10.7554/eLife.02304", 
         "publisher_name": "Academic Press", 
         "authors": [

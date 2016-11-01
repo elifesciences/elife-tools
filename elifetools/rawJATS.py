@@ -86,14 +86,18 @@ def article_permissions(soup):
     return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
 
 def licence(soup):
-    return first(extract_nodes(soup, "license"))
+    return extract_nodes(soup, "license")
 
 def licence_p(soup):
-    return first(extract_nodes(licence(soup), "license-p"))
+    return extract_nodes(soup, "license-p")
 
 def licence_url(soup):
     "License url attribute of the license tag"
-    return licence(soup).get("xlink:href")
+    if licence(soup):
+        return first(licence(soup)).get("xlink:href")
+
+def attrib(soup):
+    return extract_nodes(soup, "attrib")
 
 def copyright_statement(soup):
     return first(extract_nodes(soup, "copyright-statement"))
@@ -159,6 +163,9 @@ def custom_meta(soup, meta_name=None):
 
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
+
+def sub_display_channel(soup):
+    return (subject_area(soup, subject_group_type = "sub-display-channel"))
 
 def category(soup):
     return (subject_area(soup, subject_group_type = "heading"))
@@ -261,6 +268,51 @@ def comment(soup):
 
 def element_citation(soup):
     return extract_nodes(soup, "element-citation")
+
+def etal(soup):
+    return extract_nodes(soup, "etal")
+
+def pub_id(soup, pub_id_type=None):
+    if pub_id_type:
+        return extract_nodes(soup, "pub-id", attr="pub-id-type", value=pub_id_type)
+    else:
+        return extract_nodes(soup, "pub-id")
+
+def source(soup):
+    return extract_nodes(soup, "source")
+
+def person_group(soup):
+    return extract_nodes(soup, "person-group")
+
+def surname(soup):
+    return extract_nodes(soup, "surname")
+
+def given_names(soup):
+    return extract_nodes(soup, "given-names")
+
+def suffix(soup):
+    return extract_nodes(soup, "suffix")
+
+def ext_link(soup, ext_link_type=None):
+    if ext_link_type:
+        return extract_nodes(soup, "ext-link", attr="ext-link-type", value=ext_link_type)
+    else:
+        return extract_nodes(soup, "ext-link")
+
+def uri(soup):
+    return extract_nodes(soup, "uri")
+
+def edition(soup):
+    return extract_nodes(soup, "edition")
+
+def chapter_title(soup):
+    return extract_nodes(soup, "chapter-title")
+
+def data_title(soup):
+    return extract_nodes(soup, "data-title")
+
+def conf_name(soup):
+    return extract_nodes(soup, "conf-name")
 
 #
 # back
