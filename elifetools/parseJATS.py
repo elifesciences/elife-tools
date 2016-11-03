@@ -2800,5 +2800,7 @@ def references_json_unknown_details(ref_content, soup=None):
                         if details != "":
                             details += ", "
                         details += node_text(tag)
-
-    return details
+    if details == "":
+        return None
+    else:
+        return details

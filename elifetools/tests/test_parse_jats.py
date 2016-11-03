@@ -254,6 +254,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'unknown'), ('id', u'bib9'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'G Bricogne'), ('index', u'Bricogne, G')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'E Blanc'), ('index', u'Blanc, E')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Brandi'), ('index', u'Brandi, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'C Flensburg'), ('index', u'Flensburg, C')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Keller'), ('index', u'Keller, P')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Paciorek'), ('index', u'Paciorek, W')]))])]), ('authorsEtAl', True), ('title', u'BUSTER, version 2.8.0. Retrieved from about:home'), ('details', u'BUSTER, version 2.8.0. Retrieved from about:home')])]
          ),
 
+        # reference of type other with no details, 15266 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="other"><person-group person-group-type="author"><name><surname>Blench</surname><given-names>R</given-names></name></person-group><year iso-8601-date="2006">2006</year><article-title>Archaeology-Language-and-the-African-Past</article-title></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib12'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Blench'), ('index', u'Blench, R')]))])]), ('title', u'Archaeology-Language-and-the-African-Past')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
