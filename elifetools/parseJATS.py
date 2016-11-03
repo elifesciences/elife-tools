@@ -2638,6 +2638,11 @@ def references_json(soup):
                 set_if_value(ref_content, "title", ref.get("comment"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("uri"))
+        # Finally try to extract from source if a title is not found
+        if ("title" not in ref_content
+            and "articleTitle" not in ref_content
+            and "bookTitle" not in ref_content):
+            set_if_value(ref_content, "title", ref.get("source"))
 
         # conference
         if ref.get("conf-name"):
@@ -2749,16 +2754,21 @@ def references_json_to_unknown(ref_content, soup=None):
     set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
     set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
 
+    # compile details first for use later in title as a default
+    details = references_json_unknown_details(ref_content, soup)
+
     # title
     set_if_value(unknown_ref_content, "title", ref_content.get("title"))
     if "title" not in unknown_ref_content:
         set_if_value(unknown_ref_content, "title", ref_content.get("bookTitle"))
     if "title" not in unknown_ref_content:
         set_if_value(unknown_ref_content, "title", ref_content.get("articleTitle"))
+    if "title" not in unknown_ref_content:
+        # Still not title, try to use the details as the title
+        set_if_value(unknown_ref_content, "title", details)
 
-    # details
-    set_if_value(unknown_ref_content, "details",
-                 references_json_unknown_details(ref_content, soup))
+    # add details
+    set_if_value(unknown_ref_content, "details", details)
 
     set_if_value(unknown_ref_content, "uri", ref_content.get("uri"))
 
