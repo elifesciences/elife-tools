@@ -2566,7 +2566,7 @@ def references_json_authors(ref_authors, ref_content):
     "build the authors for references json here for testability"
     all_authors = references_authors(ref_authors)
     if all_authors != {}:
-        if ref_content.get("type") in ["book", "conference-proceeding", "journal",
+        if ref_content.get("type") in ["book", "conference-proceeding", "journal", "other",
                                            "periodical", "preprint", "report", "software",
                                            "web"]:
             for author_type in ["authors", "authorsEtAl"]:
@@ -2622,7 +2622,7 @@ def references_json(soup):
         # titles
         if ref.get("publication-type") in ["journal", "confproc"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
-        elif ref.get("publication-type") in ["thesis", "clinicaltrial"]:
+        elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
@@ -2729,6 +2729,8 @@ def convert_references_json(ref_content, soup=None):
     # TODO!!!
     
     # Convert reference to unkonwn if still missing important values
+    if ref_content.get("type") == "other":
+        ref_content = references_json_to_unknown(ref_content, soup)
     if ref_content.get("type") == "book-chapter" and "editors" not in ref_content:
         ref_content = references_json_to_unknown(ref_content, soup)
     if ref_content.get("type") == "journal" and "articleTitle" not in ref_content:
