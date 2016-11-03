@@ -2518,7 +2518,7 @@ def references_date(year=None):
 def references_author_collab(ref_author):
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = str(ref_author.get("collab"))
+    author_json["name"] = unicode(ref_author.get("collab"))
     return author_json
 
 def references_author_person(ref_author):

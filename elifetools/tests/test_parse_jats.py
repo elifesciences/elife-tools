@@ -279,6 +279,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'unknown'), ('id', u'bib24'), ('date', u'1992'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TM Laue'), ('index', u'Laue, TM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BD Shah'), ('index', u'Shah, BD')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'RM Ridgeway'), ('index', u'Ridgeway, RM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'SL Pelletier'), ('index', u'Pelletier, SL')]))])]), ('title', u'90\u2013125, Cambridge, The Royal Society of Chemistry'), ('details', u'90\u2013125, Cambridge, The Royal Society of Chemistry')])]
          ),
 
+        # reference with unicode in collab tag, also gets turned into unknown type, 18023 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib55"><element-citation publication-type="software"><person-group person-group-type="author"><collab>Schrödinger, LLC</collab></person-group><year iso-8601-date="2014">2014</year><source>The PyMOL Molecular Graphics System</source><edition>Version 1.7.2</edition><publisher-name>Schrodinger, LLC</publisher-name></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib55'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Schr\xf6dinger, LLC')])]), ('title', u'The PyMOL Molecular Graphics System'), ('details', u'The PyMOL Molecular Graphics System, Version 1.7.2, Schrodinger, LLC')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
