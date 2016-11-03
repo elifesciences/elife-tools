@@ -2735,6 +2735,9 @@ def convert_references_json(ref_content, soup=None):
         ref_content = references_json_to_unknown(ref_content, soup)
     if ref_content.get("type") == "journal" and "articleTitle" not in ref_content:
         ref_content = references_json_to_unknown(ref_content, soup)
+    if (ref_content.get("type") in ["journal", "book-chapter", "software"]
+        and not "pages" in ref_content):
+        ref_content = references_json_to_unknown(ref_content, soup)
 
     return ref_content
 
