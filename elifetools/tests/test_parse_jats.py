@@ -259,6 +259,26 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'unknown'), ('id', u'bib12'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Blench'), ('index', u'Blench, R')]))])]), ('title', u'Archaeology-Language-and-the-African-Past')])]
          ),
 
+        # reference of type journal with no journal name, 00340 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib10"><element-citation publication-type="journal"><person-group person-group-type="author"><collab>WHO</collab></person-group><year>2012</year><article-title>Press release: 65th World Health Assembly closes with new global health measures</article-title><ext-link ext-link-type="uri" xlink:href="http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html">http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html</ext-link></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib10'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'group'), ('name', 'WHO')])]), ('title', u'Press release: 65th World Health Assembly closes with new global health measures'), ('details', u'http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html'), ('uri', u'http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html')])]
+         ),
+
+        # reference of type book with no source, 00051 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib11"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Cutler</surname><given-names>DM</given-names></name><name><surname>Deaton</surname><given-names>AS</given-names></name><name><surname>Lleras-Muney</surname><given-names>A</given-names></name></person-group><year>2006</year><article-title>The determinants of mortality (No. w11963)</article-title><publisher-loc>Cambridge</publisher-loc><publisher-name>National Bureau of Economic Research</publisher-name></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib11'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DM Cutler'), ('index', u'Cutler, DM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AS Deaton'), ('index', u'Deaton, AS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Lleras-Muney'), ('index', u'Lleras-Muney, A')]))])]), ('title', u'The determinants of mortality (No. w11963)'), ('details', u'Cambridge, National Bureau of Economic Research')])]
+         ),
+
+        # reference of type book with no publisher, 00031 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib4"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Engel</surname><given-names>W</given-names></name></person-group><year>2005</year><source>SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media</source><publisher-loc>Hingham, MA, USA</publisher-loc></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib4'), ('date', u'2005'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Engel'), ('index', u'Engel, W')]))])]), ('title', u'SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media'), ('details', 'SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media, Hingham, MA, USA')])]
+         ),
+
+        # reference of type book with no bookTitle, 03069 v2
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib24"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Laue</surname><given-names>TM</given-names></name><name><surname>Shah</surname><given-names>BD</given-names></name><name><surname>Ridgeway</surname><given-names>RM</given-names></name><name><surname>Pelletier</surname><given-names>SL</given-names></name></person-group><year>1992</year><publisher-loc>Cambridge</publisher-loc><publisher-name>The Royal Society of Chemistry</publisher-name><fpage>90</fpage><lpage>125</lpage></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib24'), ('date', u'1992'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TM Laue'), ('index', u'Laue, TM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BD Shah'), ('index', u'Shah, BD')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'RM Ridgeway'), ('index', u'Ridgeway, RM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'SL Pelletier'), ('index', u'Pelletier, SL')]))])]), ('title', u'90\u2013125, Cambridge, The Royal Society of Chemistry'), ('details', u'90\u2013125, Cambridge, The Royal Society of Chemistry')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
