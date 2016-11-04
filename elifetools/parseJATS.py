@@ -1898,6 +1898,8 @@ def body_block_content(tag):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
+        if "title" not in tag_content and "label" in tag_content:
+            set_if_value(tag_content, "title", tag_content.get("label"))
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
@@ -2503,6 +2505,8 @@ def references_pages_range(fpage=None, lpage=None):
         range = fpage.strip() + unichr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
+    elif lpage:
+        range = lpage.strip()
     return range
 
 def references_date(year=None):
@@ -2518,7 +2522,7 @@ def references_date(year=None):
 def references_author_collab(ref_author):
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = str(ref_author.get("collab"))
+    author_json["name"] = unicode(ref_author.get("collab"))
     return author_json
 
 def references_author_person(ref_author):
@@ -2566,7 +2570,7 @@ def references_json_authors(ref_authors, ref_content):
     "build the authors for references json here for testability"
     all_authors = references_authors(ref_authors)
     if all_authors != {}:
-        if ref_content.get("type") in ["book", "conference-proceeding", "journal",
+        if ref_content.get("type") in ["book", "conference-proceeding", "journal", "other",
                                            "periodical", "preprint", "report", "software",
                                            "web"]:
             for author_type in ["authors", "authorsEtAl"]:
@@ -2622,7 +2626,7 @@ def references_json(soup):
         # titles
         if ref.get("publication-type") in ["journal", "confproc"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
-        elif ref.get("publication-type") in ["thesis", "clinicaltrial"]:
+        elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
@@ -2638,6 +2642,11 @@ def references_json(soup):
                 set_if_value(ref_content, "title", ref.get("comment"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("uri"))
+        # Finally try to extract from source if a title is not found
+        if ("title" not in ref_content
+            and "articleTitle" not in ref_content
+            and "bookTitle" not in ref_content):
+            set_if_value(ref_content, "title", ref.get("source"))
 
         # conference
         if ref.get("conf-name"):
@@ -2705,7 +2714,7 @@ def references_json(soup):
 
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-        if "uri" not in ref_content and ref.get("publication-type") in ["data", "web"]:
+        if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
@@ -2718,6 +2727,94 @@ def references_json(soup):
             set_if_value(ref_content, "publisher", references_publisher(
                 ref.get("source"), ref.get("publisher_loc")))
 
+        ref_content = convert_references_json(ref_content, soup)
         references_json.append(ref_content)
 
     return references_json
+
+def convert_references_json(ref_content, soup=None):
+    "Check for references that will not pass schema validation, fix or convert them to unknown"
+    # fix data for specific article references
+    # TODO!!!
+
+    # Convert reference to unkonwn if still missing important values
+    if (
+        (ref_content.get("type") == "other")
+        or
+        (ref_content.get("type") == "book-chapter" and "editors" not in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "articleTitle" not in ref_content)
+        or
+        (ref_content.get("type") in ["journal", "book-chapter", "software"]
+         and not "pages" in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "journal" not in ref_content)
+        or
+        (ref_content.get("type") in ["book", "book-chapter"] and "publisher" not in ref_content)
+        or
+        (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
+        or
+        (ref_content.get("type") == "data" and "source" not in ref_content)
+       ):
+        ref_content = references_json_to_unknown(ref_content, soup)
+
+    return ref_content
+
+def references_json_to_unknown(ref_content, soup=None):
+    unknown_ref_content = OrderedDict()
+    unknown_ref_content["type"] = "unknown"
+    set_if_value(unknown_ref_content, "id", ref_content.get("id"))
+    set_if_value(unknown_ref_content, "date", ref_content.get("date"))
+    set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
+    set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
+
+    # compile details first for use later in title as a default
+    details = references_json_unknown_details(ref_content, soup)
+
+    # title
+    set_if_value(unknown_ref_content, "title", ref_content.get("title"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("bookTitle"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("articleTitle"))
+    if "title" not in unknown_ref_content:
+        # Still not title, try to use the details as the title
+        set_if_value(unknown_ref_content, "title", details)
+
+    # add details
+    set_if_value(unknown_ref_content, "details", details)
+
+    set_if_value(unknown_ref_content, "uri", ref_content.get("uri"))
+
+    return unknown_ref_content
+
+def references_json_unknown_details(ref_content, soup=None):
+    "Extract detail value for references of type unknown"
+    details = ""
+
+    # Try adding pages values first
+    if "pages" in ref_content:
+        if "range" in ref_content["pages"]:
+            details += ref_content["pages"]["range"]
+        else:
+            details += ref_content["pages"]
+
+    if soup:
+        # Attempt to find the XML element by id, and convert it to details
+        if "id" in ref_content:
+            ref_tag = first(soup.select("ref#" + ref_content["id"]))
+            if ref_tag:
+                # Now remove tags that would be already part of the unknown reference by now
+                for remove_tag in ["person-group", "year", "article-title",
+                                   "elocation-id", "fpage", "lpage"]:
+                    ref_tag = remove_tag_from_tag(ref_tag, remove_tag)
+                # Add the remaining tag content comma separated
+                for tag in first(raw_parser.element_citation(ref_tag)):
+                    if node_text(tag) is not None:
+                        if details != "":
+                            details += ", "
+                        details += node_text(tag)
+    if details == "":
+        return None
+    else:
+        return details
