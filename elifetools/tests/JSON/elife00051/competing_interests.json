@@ -1,0 +1,12 @@
+[
+    {
+        "text": "<p>PJ: Senior Editor, <italic>eLife</italic>.</p>", 
+        "id": "conf1", 
+        "fn-type": "conflict"
+    }, 
+    {
+        "text": "<p>The remaining authors have no competing interests to declare.</p>", 
+        "id": "conf2", 
+        "fn-type": "conflict"
+    }
+]

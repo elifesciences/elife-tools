@@ -1,0 +1,4102 @@
+[
+    {
+        "article_title": "Thalamocortical responses of mouse somatosensory (barrel) cortex in vitro", 
+        "lpage": "379", 
+        "doi": "10.1016/0306-4522(91)90333-J", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Agmon", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamocortical responses of mouse somatosensory (barrel) cortex in vitro", 
+        "publication-type": "journal", 
+        "volume": "41", 
+        "source": "Neuroscience", 
+        "reference_id": "10.1016/0306-4522(91)90333-J", 
+        "fpage": "365", 
+        "year": "1991", 
+        "position": 1, 
+        "ref": "AgmonAConnorsBW1991Thalamocortical responses of mouse somatosensory (barrel) cortex in vitroNeuroscience4136537910.1016/0306-4522(91)90333-J", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Disruption of thalamic functional connectivity is a neural correlate of dexmedetomidine-induced unconsciousness", 
+        "doi": "10.7554/eLife.04499", 
+        "article_doi": "10.7554/eLife.09215", 
+        "elocation-id": "e04499", 
+        "authors": [
+            {
+                "surname": "Akeju", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loggia", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Catana", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pavone", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vazquez", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rhee", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Contreras Ramirez", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chonde", 
+                "given-names": "DB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Izquierdo-Garcia", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arabasz", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hsu", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Habeeb", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hooker", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Napadow", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brown", 
+                "given-names": "EN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Purdon", 
+                "given-names": "PL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Disruption of thalamic functional connectivity is a neural correlate of dexmedetomidine-induced unconsciousness", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "eLife", 
+        "reference_id": "10.7554/eLife.04499", 
+        "year": "2014", 
+        "position": 2, 
+        "ref": "AkejuOLoggiaMLCatanaCPavoneKJVazquezRRheeJContreras RamirezVChondeDBIzquierdo-GarciaDArabaszGHsuSHabeebKHookerJMNapadowVBrownENPurdonPL2014Disruption of thalamic functional connectivity is a neural correlate of dexmedetomidine-induced unconsciousnesseLife3e0449910.7554/eLife.04499", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Transcranial magnetic stimulation elicits coupled neural and hemodynamic consequences", 
+        "lpage": "1921", 
+        "doi": "10.1126/science.1146426", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Allen", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pasley", 
+                "given-names": "BN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Duong", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Freeman", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Transcranial magnetic stimulation elicits coupled neural and hemodynamic consequences", 
+        "publication-type": "journal", 
+        "volume": "317", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1146426", 
+        "fpage": "1918", 
+        "year": "2007", 
+        "position": 3, 
+        "ref": "AllenEAPasleyBNDuongTFreemanRD2007Transcranial magnetic stimulation elicits coupled neural and hemodynamic consequencesScience3171918192110.1126/science.1146426", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "An optical neural interface: in vivo control of rodent motor cortex with integrated fiberoptic and optogenetic technology", 
+        "lpage": "156", 
+        "doi": "10.1088/1741-2560/4/3/S02", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Aravanis", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "LP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meltzer", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mogri", 
+                "given-names": "MZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schneider", 
+                "given-names": "MB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deisseroth", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An optical neural interface: in vivo control of rodent motor cortex with integrated fiberoptic and optogenetic technology", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Journal of Neural Engineering", 
+        "reference_id": "10.1088/1741-2560/4/3/S02", 
+        "fpage": "S143", 
+        "year": "2007", 
+        "position": 4, 
+        "ref": "AravanisAMWangLPZhangFMeltzerLAMogriMZSchneiderMBDeisserothK2007An optical neural interface: in vivo control of rodent motor cortex with integrated fiberoptic and optogenetic technologyJournal of Neural Engineering4S14315610.1088/1741-2560/4/3/S02", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Modulation of behavior and global brain oscillations with central thalamic deep brain stimulation in the non-human primate", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Baker", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wei", 
+                "given-names": "XF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ryou", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Butson", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Purpura", 
+                "given-names": "KP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Modulation of behavior and global brain oscillations with central thalamic deep brain stimulation in the non-human primate", 
+        "publication-type": "journal", 
+        "volume": "Abstract 597.14", 
+        "source": "Society for Neuroscience", 
+        "year": "October 2012", 
+        "position": 5, 
+        "ref": "BakerJLWeiXFRyouJWButsonCRSchiffNDPurpuraKPOctober 2012Modulation of behavior and global brain oscillations with central thalamic deep brain stimulation in the non-human primateSociety for NeuroscienceAbstract 597.14", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Processing strategies for time-course data sets in functional mri of the human brain", 
+        "lpage": "173", 
+        "doi": "10.1002/mrm.1910300204", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Bandettini", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jesmanowicz", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wong", 
+                "given-names": "EC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hyde", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Processing strategies for time-course data sets in functional mri of the human brain", 
+        "publication-type": "journal", 
+        "volume": "30", 
+        "source": "Magnetic Resonance in Medicine", 
+        "reference_id": "10.1002/mrm.1910300204", 
+        "fpage": "161", 
+        "year": "1993", 
+        "position": 6, 
+        "ref": "BandettiniPAJesmanowiczAWongECHydeJS1993Processing strategies for time-course data sets in functional mri of the human brainMagnetic Resonance in Medicine3016117310.1002/mrm.1910300204", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Selective GABAergic innervation of thalamic nuclei from zona incerta", 
+        "lpage": "1014", 
+        "doi": "10.1046/j.1460-9568.2002.02157.x", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Barth\u00f3", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Freund", 
+                "given-names": "TF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Acs\u00e1dy", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Selective GABAergic innervation of thalamic nuclei from zona incerta", 
+        "publication-type": "journal", 
+        "volume": "16", 
+        "source": "The European Journal of Neuroscience", 
+        "reference_id": "10.1046/j.1460-9568.2002.02157.x", 
+        "fpage": "999", 
+        "year": "2002", 
+        "position": 7, 
+        "ref": "Barth\u00f3PFreundTFAcs\u00e1dyL2002Selective GABAergic innervation of thalamic nuclei from zona incertaThe European Journal of Neuroscience16999101410.1046/j.1460-9568.2002.02157.x", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Hypersomnia following paramedian thalamic stroke: a report of 12 patients", 
+        "lpage": "480", 
+        "doi": "10.1002/ana.410390409", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Bassetti", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mathis", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gugger", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lovblad", 
+                "given-names": "KO", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hess", 
+                "given-names": "CW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hypersomnia following paramedian thalamic stroke: a report of 12 patients", 
+        "publication-type": "journal", 
+        "volume": "39", 
+        "source": "Annals of Neurology", 
+        "reference_id": "10.1002/ana.410390409", 
+        "fpage": "471", 
+        "year": "1996", 
+        "position": 8, 
+        "ref": "BassettiCMathisJGuggerMLovbladKOHessCW1996Hypersomnia following paramedian thalamic stroke: a report of 12 patientsAnnals of Neurology3947148010.1002/ana.410390409", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Contrasting patterns in the localization of glutamic acid decarboxylase and Ca2+/calmodulin protein kinase gene expression in the rat central nervous system", 
+        "lpage": "849", 
+        "doi": "10.1016/0306-4522(92)90188-8", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Benson", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Isackson", 
+                "given-names": "PJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gall", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Contrasting patterns in the localization of glutamic acid decarboxylase and Ca2+/calmodulin protein kinase gene expression in the rat central nervous system", 
+        "publication-type": "journal", 
+        "volume": "46", 
+        "source": "Neuroscience", 
+        "reference_id": "10.1016/0306-4522(92)90188-8", 
+        "fpage": "825", 
+        "year": "1992", 
+        "position": 9, 
+        "ref": "BensonDLIsacksonPJGallCMJonesEG1992Contrasting patterns in the localization of glutamic acid decarboxylase and Ca2+/calmodulin protein kinase gene expression in the rat central nervous systemNeuroscience4682584910.1016/0306-4522(92)90188-8", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Organization of the thalamostriatal projections in the rat, with special emphasis on the ventral striatum", 
+        "lpage": "228", 
+        "doi": "10.1002/cne.902990206", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Berendse", 
+                "given-names": "HW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Groenewegen", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Organization of the thalamostriatal projections in the rat, with special emphasis on the ventral striatum", 
+        "publication-type": "journal", 
+        "volume": "299", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.902990206", 
+        "fpage": "187", 
+        "year": "1990", 
+        "position": 10, 
+        "ref": "BerendseHWGroenewegenHJ1990Organization of the thalamostriatal projections in the rat, with special emphasis on the ventral striatumThe Journal of Comparative Neurology29918722810.1002/cne.902990206", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Direct in vivo assessment of human stem cell graft-host neural circuits", 
+        "lpage": "337", 
+        "doi": "10.1016/j.neuroimage.2015.03.079", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Byers", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weitz", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shcheglovitov", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dolmetsch", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pera", 
+                "given-names": "RR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Direct in vivo assessment of human stem cell graft-host neural circuits", 
+        "publication-type": "journal", 
+        "volume": "114", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2015.03.079", 
+        "fpage": "328", 
+        "year": "2015", 
+        "position": 11, 
+        "ref": "ByersBLeeHJLiuJWeitzAJLinPZhangPShcheglovitovADolmetschRPeraRRLeeJH2015Direct in vivo assessment of human stem cell graft-host neural circuitsNeuroImage11432833710.1016/j.neuroimage.2015.03.079", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Paramedian thalamic and midbrain infarct: clinical and neuropathological study", 
+        "lpage": "148", 
+        "doi": "10.1002/ana.410100204", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Castaigne", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lhermitte", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buge", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Escourolle", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hauw", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lyon-Caen", 
+                "given-names": "O", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Paramedian thalamic and midbrain infarct: clinical and neuropathological study", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Annals of Neurology", 
+        "reference_id": "10.1002/ana.410100204", 
+        "fpage": "127", 
+        "year": "1981", 
+        "position": 12, 
+        "ref": "CastaignePLhermitteFBugeAEscourolleRHauwJJLyon-CaenO1981Paramedian thalamic and midbrain infarct: clinical and neuropathological studyAnnals of Neurology1012714810.1002/ana.410100204", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway", 
+        "lpage": "7756", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Castro-Alamancos", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway", 
+        "publication-type": "journal", 
+        "volume": "16", 
+        "source": "Journal of Neuroscience", 
+        "fpage": "7742", 
+        "year": "1996a", 
+        "position": 13, 
+        "ref": "Castro-AlamancosMAConnorsBW1996aCellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathwayJournal of Neuroscience1677427756", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Spatiotemporal properties of short-term plasticity sensorimotor thalamocortical pathways of the rat", 
+        "lpage": "2779", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Castro-Alamancos", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Spatiotemporal properties of short-term plasticity sensorimotor thalamocortical pathways of the rat", 
+        "publication-type": "journal", 
+        "volume": "16", 
+        "source": "Journal of Neuroscience", 
+        "fpage": "2767", 
+        "year": "1996b", 
+        "position": 14, 
+        "ref": "Castro-AlamancosMAConnorsBW1996bSpatiotemporal properties of short-term plasticity sensorimotor thalamocortical pathways of the ratJournal of Neuroscience1627672779", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Short-term plasticity of a thalamocortical pathway dynamically modulated by behavioral state", 
+        "lpage": "277", 
+        "doi": "10.1126/science.272.5259.274", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Castro-Alamancos", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Short-term plasticity of a thalamocortical pathway dynamically modulated by behavioral state", 
+        "publication-type": "journal", 
+        "volume": "272", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.272.5259.274", 
+        "fpage": "274", 
+        "year": "1996c", 
+        "position": 15, 
+        "ref": "Castro-AlamancosMAConnorsBW1996cShort-term plasticity of a thalamocortical pathway dynamically modulated by behavioral stateScience27227427710.1126/science.272.5259.274", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Thalamocortical synapses", 
+        "lpage": "606", 
+        "doi": "10.1016/S0301-0082(97)00002-6", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Castro-Alamancos\u00a0", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamocortical synapses", 
+        "publication-type": "journal", 
+        "volume": "51", 
+        "source": "Progress in Neurobiology", 
+        "reference_id": "10.1016/S0301-0082(97)00002-6", 
+        "fpage": "581", 
+        "year": "1997", 
+        "position": 16, 
+        "ref": "Castro-Alamancos MAConnorsBW1997Thalamocortical synapsesProgress in Neurobiology5158160610.1016/S0301-0082(97)00002-6", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "FMRI response to blue light delivery in the nave brain: implications for combined optogenetic fMRI studiess", 
+        "lpage": "641", 
+        "doi": "10.1016/j.neuroimage.2012.10.074", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Christie", 
+                "given-names": "IN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wells", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Southern", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marina", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasparov", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gourine", 
+                "given-names": "AV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lythgoe", 
+                "given-names": "MF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "FMRI response to blue light delivery in the nave brain: implications for combined optogenetic fMRI studiess", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2012.10.074", 
+        "fpage": "634", 
+        "year": "2013", 
+        "position": 17, 
+        "ref": "ChristieINWellsJASouthernPMarinaNKasparovSGourineAVLythgoeMF2013FMRI response to blue light delivery in the nave brain: implications for combined optogenetic fMRI studiessNeuroImage6663464110.1016/j.neuroimage.2012.10.074", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "Spatiotemporal patterns of spindle oscillations in cortex and thalamus", 
+        "lpage": "1196", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Contreras", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Destexhe", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sejnowski", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Steriade", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Spatiotemporal patterns of spindle oscillations in cortex and thalamus", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Journal of Neuroscience", 
+        "fpage": "1179", 
+        "year": "1997", 
+        "position": 18, 
+        "ref": "ContrerasDDestexheASejnowskiTJSteriadeM1997Spatiotemporal patterns of spindle oscillations in cortex and thalamusJournal of Neuroscience1711791196", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Thalamic control of layer 1 circuits in prefrontal cortex", 
+        "lpage": "17823", 
+        "doi": "10.1523/JNEUROSCI.3231-12.2012", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Cruikshank", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ahmed", 
+                "given-names": "OJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stevens", 
+                "given-names": "TR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Patrick", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gonzalez", 
+                "given-names": "AN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Elmaleh", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamic control of layer 1 circuits in prefrontal cortex", 
+        "publication-type": "journal", 
+        "volume": "32", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.3231-12.2012", 
+        "fpage": "17813", 
+        "year": "2012", 
+        "position": 19, 
+        "ref": "CruikshankSJAhmedOJStevensTRPatrickSLGonzalezANElmalehMConnorsBW2012Thalamic control of layer 1 circuits in prefrontal cortexJournal of Neuroscience32178131782310.1523/JNEUROSCI.3231-12.2012", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Synaptic basis for intense thalamocortical activation of feedforward inhibitory cells in neocortex", 
+        "lpage": "468", 
+        "doi": "10.1038/nn1861", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Cruikshank", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lewis", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Connors", 
+                "given-names": "BW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Synaptic basis for intense thalamocortical activation of feedforward inhibitory cells in neocortex", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn1861", 
+        "fpage": "462", 
+        "year": "2007", 
+        "position": 20, 
+        "ref": "CruikshankSJLewisTJConnorsBW2007Synaptic basis for intense thalamocortical activation of feedforward inhibitory cells in neocortexNature Neuroscience1046246810.1038/nn1861", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "The electrical activity of a thalamocortical relay system", 
+        "lpage": "0296", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Dempsey", 
+                "given-names": "EW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Morison", 
+                "given-names": "RS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The electrical activity of a thalamocortical relay system", 
+        "publication-type": "journal", 
+        "volume": "138", 
+        "source": "Am J Physiol", 
+        "fpage": "0283", 
+        "year": "1943", 
+        "position": 21, 
+        "ref": "DempseyEWMorisonRS1943The electrical activity of a thalamocortical relay systemAm J Physiol13802830296", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Mapping brain networks in awake mice using combined optical neural control and fMRI", 
+        "lpage": "1405", 
+        "doi": "10.1152/jn.00828.2010", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Desai", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kahn", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knoblich", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bernstein", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atallah", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kopell", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buckner", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Graybiel", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moore", 
+                "given-names": "CI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boyden", 
+                "given-names": "ES", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mapping brain networks in awake mice using combined optical neural control and fMRI", 
+        "publication-type": "journal", 
+        "volume": "105", 
+        "source": "Journal of Neurophysiology", 
+        "reference_id": "10.1152/jn.00828.2010", 
+        "fpage": "1393", 
+        "year": "2011", 
+        "position": 22, 
+        "ref": "DesaiMKahnIKnoblichUBernsteinJAtallahHYangAKopellNBucknerRLGraybielAMMooreCIBoydenES2011Mapping brain networks in awake mice using combined optical neural control and fMRIJournal of Neurophysiology1051393140510.1152/jn.00828.2010", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Striatal and cortical projections of single neurons from the central lateral thalamic nucleus in the rat", 
+        "lpage": "687", 
+        "doi": "10.1016/0306-4522(96)00001-2", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Desch\u00eanes", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bourassa", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Parent", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Striatal and cortical projections of single neurons from the central lateral thalamic nucleus in the rat", 
+        "publication-type": "journal", 
+        "volume": "72", 
+        "source": "Neuroscience", 
+        "reference_id": "10.1016/0306-4522(96)00001-2", 
+        "fpage": "679", 
+        "year": "1996", 
+        "position": 23, 
+        "ref": "Desch\u00eanesMBourassaJParentA1996Striatal and cortical projections of single neurons from the central lateral thalamic nucleus in the ratNeuroscience7267968710.1016/0306-4522(96)00001-2", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Suppressed neuronal activity and concurrent arteriolar vasoconstriction may explain negative blood oxygenation level-dependent signal", 
+        "lpage": "4459", 
+        "doi": "10.1523/JNEUROSCI.0134-07.2007", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Devor", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tian", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nishimura", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Teng", 
+                "given-names": "IC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hillman", 
+                "given-names": "EM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Narayanan", 
+                "given-names": "SN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ulbert", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boas", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kleinfeld", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dale", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Suppressed neuronal activity and concurrent arteriolar vasoconstriction may explain negative blood oxygenation level-dependent signal", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.0134-07.2007", 
+        "fpage": "4452", 
+        "year": "2007", 
+        "position": 24, 
+        "ref": "DevorATianPNishimuraNTengICHillmanEMNarayananSNUlbertIBoasDAKleinfeldDDaleAM2007Suppressed neuronal activity and concurrent arteriolar vasoconstriction may explain negative blood oxygenation level-dependent signalJournal of Neuroscience274452445910.1523/JNEUROSCI.0134-07.2007", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "MRI compatible optrodes for simultaneous LFP and optogenetic fMRI investigation of seizure-like afterdischarges", 
+        "lpage": "184", 
+        "doi": "10.1016/j.neuroimage.2015.07.038", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Duffy", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Choy", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chuapoco", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Madsen", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "MRI compatible optrodes for simultaneous LFP and optogenetic fMRI investigation of seizure-like afterdischarges", 
+        "publication-type": "journal", 
+        "volume": "123", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2015.07.038", 
+        "fpage": "173", 
+        "year": "2015", 
+        "position": 25, 
+        "ref": "DuffyBAChoyMChuapocoMRMadsenMLeeJH2015MRI compatible optrodes for simultaneous LFP and optogenetic fMRI investigation of seizure-like afterdischargesNeuroImage12317318410.1016/j.neuroimage.2015.07.038", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "How and when the fMRI BOLD signal relates to underlying neural activity: the danger in dissociation", 
+        "lpage": "244", 
+        "doi": "10.1016/j.brainresrev.2009.12.004", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Ekstrom", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "How and when the fMRI BOLD signal relates to underlying neural activity: the danger in dissociation", 
+        "publication-type": "journal", 
+        "volume": "62", 
+        "source": "Brain Research Reviews", 
+        "reference_id": "10.1016/j.brainresrev.2009.12.004", 
+        "fpage": "233", 
+        "year": "2010", 
+        "position": 26, 
+        "ref": "EkstromA2010How and when the fMRI BOLD signal relates to underlying neural activity: the danger in dissociationBrain Research Reviews6223324410.1016/j.brainresrev.2009.12.004", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Heterogeneous properties of central lateral and parafascicular thalamic synapses in the striatum", 
+        "lpage": "272", 
+        "doi": "10.1113/jphysiol.2012.245233", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Ellender", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harwood", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kosillo", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Capogna", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolam", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Heterogeneous properties of central lateral and parafascicular thalamic synapses in the striatum", 
+        "publication-type": "journal", 
+        "volume": "591", 
+        "source": "The Journal of Physiology", 
+        "reference_id": "10.1113/jphysiol.2012.245233", 
+        "fpage": "257", 
+        "year": "2013", 
+        "position": 27, 
+        "ref": "EllenderTJHarwoodJKosilloPCapognaMBolamJP2013Heterogeneous properties of central lateral and parafascicular thalamic synapses in the striatumThe Journal of Physiology59125727210.1113/jphysiol.2012.245233", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Retinotopic organization in human visual cortex and the spatial precision of functional MRI", 
+        "lpage": "192", 
+        "doi": "10.1093/cercor/7.2.181", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Engel", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glover", 
+                "given-names": "GH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wandell", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Retinotopic organization in human visual cortex and the spatial precision of functional MRI", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Cerebral Cortex", 
+        "reference_id": "10.1093/cercor/7.2.181", 
+        "fpage": "181", 
+        "year": "1997", 
+        "position": 28, 
+        "ref": "EngelSAGloverGHWandellBA1997Retinotopic organization in human visual cortex and the spatial precision of functional MRICerebral Cortex718119210.1093/cercor/7.2.181", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "High-throughput optogenetic functional magnetic resonance imaging with parallel computations", 
+        "lpage": "195", 
+        "doi": "10.1016/j.jneumeth.2013.04.015", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Fang", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "High-throughput optogenetic functional magnetic resonance imaging with parallel computations", 
+        "publication-type": "journal", 
+        "volume": "218", 
+        "source": "Journal of Neuroscience Methods", 
+        "reference_id": "10.1016/j.jneumeth.2013.04.015", 
+        "fpage": "184", 
+        "year": "2013", 
+        "position": 29, 
+        "ref": "FangZLeeJH2013High-throughput optogenetic functional magnetic resonance imaging with parallel computationsJournal of Neuroscience Methods21818419510.1016/j.jneumeth.2013.04.015", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Regional cerebral metabolic patterns demonstrate the role of anterior forebrain mesocircuit dysfunction in the severely injured brain", 
+        "lpage": "6478", 
+        "doi": "10.1073/pnas.1320969111", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Fridman", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beattie", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Broft", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Laureys", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regional cerebral metabolic patterns demonstrate the role of anterior forebrain mesocircuit dysfunction in the severely injured brain", 
+        "publication-type": "journal", 
+        "volume": "111", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.1320969111", 
+        "fpage": "6473", 
+        "year": "2014", 
+        "position": 30, 
+        "ref": "FridmanEABeattieBJBroftALaureysSSchiffND2014Regional cerebral metabolic patterns demonstrate the role of anterior forebrain mesocircuit dysfunction in the severely injured brainProceedings of the National Academy of Sciences of the United States of America1116473647810.1073/pnas.1320969111", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Effects of stimulation of brain stem on tachistoscopic perception", 
+        "doi": "10.1126/science.127.3290.150", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Fuster", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Effects of stimulation of brain stem on tachistoscopic perception", 
+        "publication-type": "journal", 
+        "volume": "127", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.127.3290.150", 
+        "fpage": "150", 
+        "year": "1958", 
+        "position": 31, 
+        "ref": "FusterJM1958Effects of stimulation of brain stem on tachistoscopic perceptionScience12715010.1126/science.127.3290.150", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "A subcortical inhibitory signal for behavioral arrest in the thalamus", 
+        "lpage": "568", 
+        "doi": "10.1038/nn.3951", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Giber", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diana", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plattner", 
+                "given-names": "VM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dugu\u00e9", 
+                "given-names": "GP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bokor", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rousseau", 
+                "given-names": "CV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Magl\u00f3czky", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Havas", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hangya", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wildner", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zeilhofer", 
+                "given-names": "HU", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dieudonn\u00e9", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Acs\u00e1dy", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A subcortical inhibitory signal for behavioral arrest in the thalamus", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn.3951", 
+        "fpage": "562", 
+        "year": "2015", 
+        "position": 32, 
+        "ref": "GiberKDianaMAPlattnerVMDugu\u00e9GPBokorHRousseauCVMagl\u00f3czkyZHavasLHangyaBWildnerHZeilhoferHUDieudonn\u00e9SAcs\u00e1dyL2015A subcortical inhibitory signal for behavioral arrest in the thalamusNature Neuroscience1856256810.1038/nn.3951", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Motion artifacts in fMRI: comparison of 2DFT with PR and spiral scan methods", 
+        "lpage": "635", 
+        "doi": "10.1002/mrm.1910330507", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Glover", 
+                "given-names": "GH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "AT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Motion artifacts in fMRI: comparison of 2DFT with PR and spiral scan methods", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "Magnetic Resonance in Medicine", 
+        "reference_id": "10.1002/mrm.1910330507", 
+        "fpage": "624", 
+        "year": "1995", 
+        "position": 33, 
+        "ref": "GloverGHLeeAT1995Motion artifacts in fMRI: comparison of 2DFT with PR and spiral scan methodsMagnetic Resonance in Medicine3362463510.1002/mrm.1910330507", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Mechanisms for selection of basic motor programs--roles for the striatum and pallidum", 
+        "lpage": "370", 
+        "doi": "10.1016/j.tins.2005.05.004", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Grillner", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hellgren", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "M\u00e9nard", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Saitoh", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wikstr\u00f6m", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mechanisms for selection of basic motor programs--roles for the striatum and pallidum", 
+        "publication-type": "journal", 
+        "volume": "28", 
+        "source": "Trends in Neurosciences", 
+        "reference_id": "10.1016/j.tins.2005.05.004", 
+        "fpage": "364", 
+        "year": "2005", 
+        "position": 34, 
+        "ref": "GrillnerSHellgrenJM\u00e9nardASaitohKWikstr\u00f6mMA2005Mechanisms for selection of basic motor programs--roles for the striatum and pallidumTrends in Neurosciences2836437010.1016/j.tins.2005.05.004", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "The specificity of the \u2018nonspecific\u2019 midline and intralaminar thalamic nuclei", 
+        "lpage": "57", 
+        "doi": "10.1016/0166-2236(94)90074-4", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Groenewegen", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berendse", 
+                "given-names": "HW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The specificity of the \u2018nonspecific\u2019 midline and intralaminar thalamic nuclei", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Trends in Neurosciences", 
+        "reference_id": "10.1016/0166-2236(94)90074-4", 
+        "fpage": "52", 
+        "year": "1994", 
+        "position": 35, 
+        "ref": "GroenewegenHJBerendseHW1994The specificity of the \u2018nonspecific\u2019 midline and intralaminar thalamic nucleiTrends in Neurosciences17525710.1016/0166-2236(94)90074-4", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "The syndrome of bilateral paramedian thalamic infarction", 
+        "doi": "10.1212/WNL.33.5.540", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Guberman", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stuss", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The syndrome of bilateral paramedian thalamic infarction", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "Neurology", 
+        "reference_id": "10.1212/WNL.33.5.540", 
+        "fpage": "540", 
+        "year": "1983", 
+        "position": 36, 
+        "ref": "GubermanAStussD1983The syndrome of bilateral paramedian thalamic infarctionNeurology3354010.1212/WNL.33.5.540", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Thalamic stimulation to improve level of consciousness after seizures: evaluation of electrophysiology and behavior", 
+        "lpage": "124", 
+        "doi": "10.1111/epi.12872", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Gummadavelli", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Motelow", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhan", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blumenfeld", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamic stimulation to improve level of consciousness after seizures: evaluation of electrophysiology and behavior", 
+        "publication-type": "journal", 
+        "volume": "56", 
+        "source": "Epilepsia", 
+        "reference_id": "10.1111/epi.12872", 
+        "fpage": "114", 
+        "year": "2015", 
+        "position": 37, 
+        "ref": "GummadavelliAMotelowJESmithNZhanQSchiffNDBlumenfeldH2015Thalamic stimulation to improve level of consciousness after seizures: evaluation of electrophysiology and behaviorEpilepsia5611412410.1111/epi.12872", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Cholinergic innervation of the human thalamus: dual origin and differential nuclear distribution", 
+        "lpage": "82", 
+        "doi": "10.1002/cne.903250107", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Heckers", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Geula", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mesulam", 
+                "given-names": "MM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cholinergic innervation of the human thalamus: dual origin and differential nuclear distribution", 
+        "publication-type": "journal", 
+        "volume": "325", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.903250107", 
+        "fpage": "68", 
+        "year": "1992", 
+        "position": 38, 
+        "ref": "HeckersSGeulaCMesulamMM1992Cholinergic innervation of the human thalamus: dual origin and differential nuclear distributionThe Journal of Comparative Neurology325688210.1002/cne.903250107", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Neocortex network activation and deactivation states controlled by the thalamus", 
+        "lpage": "1157", 
+        "doi": "10.1152/jn.00955.2009", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Hirata", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Castro-Alamancos", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Neocortex network activation and deactivation states controlled by the thalamus", 
+        "publication-type": "journal", 
+        "volume": "103", 
+        "source": "Journal of Neurophysiology", 
+        "reference_id": "10.1152/jn.00955.2009", 
+        "fpage": "1147", 
+        "year": "2010", 
+        "position": 39, 
+        "ref": "HirataACastro-AlamancosMA2010Neocortex network activation and deactivation states controlled by the thalamusJournal of Neurophysiology1031147115710.1152/jn.00955.2009", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Anatomical analysis of afferent projections to the medial prefrontal cortex in the rat", 
+        "lpage": "179", 
+        "doi": "10.1007/s00429-007-0150-4", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Hoover", 
+                "given-names": "WB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vertes", 
+                "given-names": "RP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Anatomical analysis of afferent projections to the medial prefrontal cortex in the rat", 
+        "publication-type": "journal", 
+        "volume": "212", 
+        "source": "Brain Structure & Function", 
+        "reference_id": "10.1007/s00429-007-0150-4", 
+        "fpage": "149", 
+        "year": "2007", 
+        "position": 40, 
+        "ref": "HooverWBVertesRP2007Anatomical analysis of afferent projections to the medial prefrontal cortex in the ratBrain Structure & Function21214917910.1007/s00429-007-0150-4", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Instrumentation and methods for chronic studies of sleep and breathing in rodents", 
+        "lpage": "55", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Horner", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stephenson", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Donnell", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Instrumentation and methods for chronic studies of sleep and breathing in rodents", 
+        "publication-type": "journal", 
+        "volume": "171", 
+        "source": "Sleep Related Breathing Disorders: Experimental Models and Therapeutic Potential, (Marcel Dekker, Inc)", 
+        "fpage": "19", 
+        "year": "2003", 
+        "position": 41, 
+        "ref": "HornerRLStephensonRO'DonnellC2003Instrumentation and methods for chronic studies of sleep and breathing in rodentsSleep Related Breathing Disorders: Experimental Models and Therapeutic Potential, (Marcel Dekker, Inc)1711955", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "A comprehensive thalamocortical projection map at the mesoscopic level", 
+        "lpage": "1285", 
+        "doi": "10.1038/nn.3780", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Hunnicutt", 
+                "given-names": "BJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Long", 
+                "given-names": "BR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kusefoglu", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gertz", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhong", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mao", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A comprehensive thalamocortical projection map at the mesoscopic level", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn.3780", 
+        "fpage": "1276", 
+        "year": "2014", 
+        "position": 42, 
+        "ref": "HunnicuttBJLongBRKusefogluDGertzKJZhongHMaoT2014A comprehensive thalamocortical projection map at the mesoscopic levelNature Neuroscience171276128510.1038/nn.3780", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "Effects of thalamic stimulation in unanaesthetised animals; the arrest reaction and petit mal-like seizures, activation patterns and generalized convulsions", 
+        "lpage": "324", 
+        "doi": "10.1016/0013-4694(49)90043-7", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Hunter", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jasper", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Effects of thalamic stimulation in unanaesthetised animals; the arrest reaction and petit mal-like seizures, activation patterns and generalized convulsions", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "Electroencephalography and Clinical Neurophysiology", 
+        "reference_id": "10.1016/0013-4694(49)90043-7", 
+        "fpage": "305", 
+        "year": "1949", 
+        "position": 43, 
+        "ref": "HunterJJasperHH1949Effects of thalamic stimulation in unanaesthetised animals; the arrest reaction and petit mal-like seizures, activation patterns and generalized convulsionsElectroencephalography and Clinical Neurophysiology130532410.1016/0013-4694(49)90043-7", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Coupling between simultaneously recorded BOLD response and neuronal activity in the rat somatosensory cortex", 
+        "lpage": "785", 
+        "doi": "10.1016/j.neuroimage.2007.06.042", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Huttunen", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gr\u00f6hn", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Penttonen", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Coupling between simultaneously recorded BOLD response and neuronal activity in the rat somatosensory cortex", 
+        "publication-type": "journal", 
+        "volume": "39", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2007.06.042", 
+        "fpage": "775", 
+        "year": "2008", 
+        "position": 44, 
+        "ref": "HuttunenJKGr\u00f6hnOPenttonenM2008Coupling between simultaneously recorded BOLD response and neuronal activity in the rat somatosensory cortexNeuroImage3977578510.1016/j.neuroimage.2007.06.042", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Selection of a convolution function for fourier inversion using gridding [computerised tomography application]", 
+        "lpage": "478", 
+        "doi": "10.1109/42.97598", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Jackson", 
+                "given-names": "JI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meyer", 
+                "given-names": "CH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nishimura", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Macovski", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Selection of a convolution function for fourier inversion using gridding [computerised tomography application]", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "IEEE Transactions on Medical Imaging", 
+        "reference_id": "10.1109/42.97598", 
+        "fpage": "473", 
+        "year": "1991", 
+        "position": 45, 
+        "ref": "JacksonJIMeyerCHNishimuraDGMacovskiA1991Selection of a convolution function for fourier inversion using gridding [computerised tomography application]IEEE Transactions on Medical Imaging1047347810.1109/42.97598", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Diffuse projection systems: the integrative action of the thalamic reticular system", 
+        "lpage": "420", 
+        "doi": "10.1016/0013-4694(49)90213-8", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Jasper", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Diffuse projection systems: the integrative action of the thalamic reticular system", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "Electroencephalography and Clinical Neurophysiology", 
+        "reference_id": "10.1016/0013-4694(49)90213-8", 
+        "fpage": "405", 
+        "year": "1949", 
+        "position": 46, 
+        "ref": "JasperH1949Diffuse projection systems: the integrative action of the thalamic reticular systemElectroencephalography and Clinical Neurophysiology140542010.1016/0013-4694(49)90213-8", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "Retrograde axonal transport and the demonstration of non-specific projections to the cerebral cortex and striatum from thalamic intralaminar nuclei in the rat, cat and monkey", 
+        "lpage": "377", 
+        "doi": "10.1002/cne.901540402", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Jones", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leavitt", 
+                "given-names": "RY", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Retrograde axonal transport and the demonstration of non-specific projections to the cerebral cortex and striatum from thalamic intralaminar nuclei in the rat, cat and monkey", 
+        "publication-type": "journal", 
+        "volume": "154", 
+        "source": "The Journal of Comparative Neurology", 
+        "reference_id": "10.1002/cne.901540402", 
+        "fpage": "349", 
+        "year": "1974", 
+        "position": 47, 
+        "ref": "JonesEGLeavittRY1974Retrograde axonal transport and the demonstration of non-specific projections to the cerebral cortex and striatum from thalamic intralaminar nuclei in the rat, cat and monkeyThe Journal of Comparative Neurology15434937710.1002/cne.901540402", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "The thalamic matrix and thalamocortical synchrony", 
+        "lpage": "601", 
+        "doi": "10.1016/S0166-2236(00)01922-6", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Jones", 
+                "given-names": "EG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The thalamic matrix and thalamocortical synchrony", 
+        "publication-type": "journal", 
+        "volume": "24", 
+        "source": "Trends in Neurosciences", 
+        "reference_id": "10.1016/S0166-2236(00)01922-6", 
+        "fpage": "595", 
+        "year": "2001", 
+        "position": 48, 
+        "ref": "JonesEG2001The thalamic matrix and thalamocortical synchronyTrends in Neurosciences2459560110.1016/S0166-2236(00)01922-6", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Simple analytic variable density spiral design", 
+        "lpage": "219", 
+        "doi": "10.1002/mrm.10493", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Kim", 
+                "given-names": "DH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Adalsteinsson", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Spielman", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Simple analytic variable density spiral design", 
+        "publication-type": "journal", 
+        "volume": "50", 
+        "source": "Magnetic Resonance in Medicine", 
+        "reference_id": "10.1002/mrm.10493", 
+        "fpage": "214", 
+        "year": "2003", 
+        "position": 49, 
+        "ref": "KimDHAdalsteinssonESpielmanDM2003Simple analytic variable density spiral designMagnetic Resonance in Medicine5021421910.1002/mrm.10493", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Activation by attention of the human reticular formation and thalamic intralaminar nuclei", 
+        "lpage": "515", 
+        "doi": "10.1126/science.271.5248.512", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Kinomura", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larsson", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Guly\u00a0s", 
+                "given-names": "B.\u00a0z.", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roland", 
+                "given-names": "PE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Activation by attention of the human reticular formation and thalamic intralaminar nuclei", 
+        "publication-type": "journal", 
+        "volume": "271", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.271.5248.512", 
+        "fpage": "512", 
+        "year": "1996", 
+        "position": 50, 
+        "ref": "KinomuraSLarssonJGuly sB. z.RolandPE1996Activation by attention of the human reticular formation and thalamic intralaminar nucleiScience27151251510.1126/science.271.5248.512", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "Distribution of various neurochemicals within the zona incerta: an immunocytochemical and histochemical study", 
+        "lpage": "280", 
+        "doi": "10.1007/s004290050227", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Kolmac", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mitrofanis", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Distribution of various neurochemicals within the zona incerta: an immunocytochemical and histochemical study", 
+        "publication-type": "journal", 
+        "volume": "199", 
+        "source": "Anatomy and Embryology", 
+        "reference_id": "10.1007/s004290050227", 
+        "fpage": "265", 
+        "year": "1999", 
+        "position": 51, 
+        "ref": "KolmacCMitrofanisJ1999Distribution of various neurochemicals within the zona incerta: an immunocytochemical and histochemical studyAnatomy and Embryology19926528010.1007/s004290050227", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "Feedforward inhibitory control of sensory information in higher-order thalamic nuclei", 
+        "lpage": "7498", 
+        "doi": "10.1523/JNEUROSCI.2301-05.2005", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Lavall\u00e9e", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Urbain", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dufresne", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bokor", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Acs\u00e1dy", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Desch\u00eanes", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Feedforward inhibitory control of sensory information in higher-order thalamic nuclei", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.2301-05.2005", 
+        "fpage": "7489", 
+        "year": "2005", 
+        "position": 52, 
+        "ref": "Lavall\u00e9ePUrbainNDufresneCBokorHAcs\u00e1dyLDesch\u00eanesM2005Feedforward inhibitory control of sensory information in higher-order thalamic nucleiJournal of Neuroscience257489749810.1523/JNEUROSCI.2301-05.2005", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Global and local fMRI signals driven by neurons defined optogenetically by type and wiring", 
+        "lpage": "792", 
+        "doi": "10.1038/nature09108", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Lee", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Durand", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gradinaru", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goshen", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fenno", 
+                "given-names": "LE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishnan", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deisseroth", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Global and local fMRI signals driven by neurons defined optogenetically by type and wiring", 
+        "publication-type": "journal", 
+        "volume": "465", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature09108", 
+        "fpage": "788", 
+        "year": "2010", 
+        "position": 53, 
+        "ref": "LeeJHDurandRGradinaruVZhangFGoshenIKimDSFennoLERamakrishnanCDeisserothK2010Global and local fMRI signals driven by neurons defined optogenetically by type and wiringNature46578879210.1038/nature09108", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Mapping the functional network of medial prefrontal cortex by combining optogenetics and fMRI in awake rats", 
+        "lpage": "123", 
+        "doi": "10.1016/j.neuroimage.2015.05.036", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Liang", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watson", 
+                "given-names": "GD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alloway", 
+                "given-names": "KD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Neuberger", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mapping the functional network of medial prefrontal cortex by combining optogenetics and fMRI in awake rats", 
+        "publication-type": "journal", 
+        "volume": "117", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2015.05.036", 
+        "fpage": "114", 
+        "year": "2015", 
+        "position": 54, 
+        "ref": "LiangZWatsonGDAllowayKDLeeGNeubergerTZhangN2015Mapping the functional network of medial prefrontal cortex by combining optogenetics and fMRI in awake ratsNeuroImage11711412310.1016/j.neuroimage.2015.05.036", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "A major direct GABAergic pathway from zona incerta to neocortex", 
+        "lpage": "1556", 
+        "doi": "10.1126/science.2360049", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Lin", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nicolelis", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schneider", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapin", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A major direct GABAergic pathway from zona incerta to neocortex", 
+        "publication-type": "journal", 
+        "volume": "248", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.2360049", 
+        "fpage": "1553", 
+        "year": "1990", 
+        "position": 55, 
+        "ref": "LinCNicolelisMSchneiderJChapinJ1990A major direct GABAergic pathway from zona incerta to neocortexScience2481553155610.1126/science.2360049", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "The neuronal basis for consciousness", 
+        "lpage": "1849", 
+        "doi": "10.1098/rstb.1998.0336", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Llin\u00e1s", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ribary", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Contreras", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pedroarena", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The neuronal basis for consciousness", 
+        "publication-type": "journal", 
+        "volume": "353", 
+        "source": "Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences", 
+        "reference_id": "10.1098/rstb.1998.0336", 
+        "fpage": "1841", 
+        "year": "1998", 
+        "position": 56, 
+        "ref": "Llin\u00e1sRRibaryUContrerasDPedroarenaC1998The neuronal basis for consciousnessPhilosophical Transactions of the Royal Society of London. Series B, Biological Sciences3531841184910.1098/rstb.1998.0336", 
+        "id": "bib56"
+    }, 
+    {
+        "article_title": "The effects of electrical microstimulation on cortical signal propagation", 
+        "lpage": "1291", 
+        "doi": "10.1038/nn.2631", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Logothetis", 
+                "given-names": "NK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Augath", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murayama", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rauch", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sultan", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goense", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oeltermann", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Merkle", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The effects of electrical microstimulation on cortical signal propagation", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn.2631", 
+        "fpage": "1283", 
+        "year": "2010", 
+        "position": 57, 
+        "ref": "LogothetisNKAugathMMurayamaYRauchASultanFGoenseJOeltermannAMerkleH2010The effects of electrical microstimulation on cortical signal propagationNature Neuroscience131283129110.1038/nn.2631", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Lesions of the frontal cortex, hippocampus, and intralaminar thalamic nuclei have distinct effects on remembering in rats", 
+        "lpage": "792", 
+        "doi": "10.1037/0735-7044.112.4.772", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mair", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burk", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Porter", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Lesions of the frontal cortex, hippocampus, and intralaminar thalamic nuclei have distinct effects on remembering in rats", 
+        "publication-type": "journal", 
+        "volume": "112", 
+        "source": "Behavioral Neuroscience", 
+        "reference_id": "10.1037/0735-7044.112.4.772", 
+        "fpage": "772", 
+        "year": "1998", 
+        "position": 58, 
+        "ref": "MairRGBurkJAPorterMC1998Lesions of the frontal cortex, hippocampus, and intralaminar thalamic nuclei have distinct effects on remembering in ratsBehavioral Neuroscience11277279210.1037/0735-7044.112.4.772", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "Memory enhancement with event-related stimulation of the rostral intralaminar thalamic nuclei", 
+        "lpage": "14300", 
+        "doi": "10.1523/JNEUROSCI.3301-08.2008", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mair", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hembrook", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Memory enhancement with event-related stimulation of the rostral intralaminar thalamic nuclei", 
+        "publication-type": "journal", 
+        "volume": "28", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.3301-08.2008", 
+        "fpage": "14293", 
+        "year": "2008", 
+        "position": 59, 
+        "ref": "MairRGHembrookJR2008Memory enhancement with event-related stimulation of the rostral intralaminar thalamic nucleiJournal of Neuroscience28142931430010.1523/JNEUROSCI.3301-08.2008", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "Cognitive activation by central thalamic stimulation: the yerkes-dodson law revisited", 
+        "lpage": "331", 
+        "doi": "10.2203/dose-response.10-017.Mair", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mair", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Onos", 
+                "given-names": "KD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hembrook", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cognitive activation by central thalamic stimulation: the yerkes-dodson law revisited", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Dose-Response", 
+        "reference_id": "10.2203/dose-response.10-017.Mair", 
+        "fpage": "313", 
+        "year": "2011", 
+        "position": 60, 
+        "ref": "MairRGOnosKDHembrookJR2011Cognitive activation by central thalamic stimulation: the yerkes-dodson law revisitedDose-Response931333110.2203/dose-response.10-017.Mair", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "Frequency-dependent, cell type-divergent signaling in the hippocamposeptal projection", 
+        "lpage": "11780", 
+        "doi": "10.1523/JNEUROSCI.5188-13.2014", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mattis", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brill", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lerner", 
+                "given-names": "TN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davidson", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hyun", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishnan", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deisseroth", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huguenard", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Frequency-dependent, cell type-divergent signaling in the hippocamposeptal projection", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.5188-13.2014", 
+        "fpage": "11769", 
+        "year": "2014", 
+        "position": 61, 
+        "ref": "MattisJBrillJEvansSLernerTNDavidsonTJHyunMRamakrishnanCDeisserothKHuguenardJR2014Frequency-dependent, cell type-divergent signaling in the hippocamposeptal projectionJournal of Neuroscience34117691178010.1523/JNEUROSCI.5188-13.2014", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "Principles for applying optogenetic tools derived from direct comparative analysis of microbial opsins", 
+        "lpage": "172", 
+        "doi": "10.1038/nmeth.1808", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mattis", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tye", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ferenczi", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramakrishnan", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Shea", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Prakash", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gunaydin", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hyun", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fenno", 
+                "given-names": "LE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gradinaru", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yizhar", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deisseroth", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Principles for applying optogenetic tools derived from direct comparative analysis of microbial opsins", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Nature Methods", 
+        "reference_id": "10.1038/nmeth.1808", 
+        "fpage": "159", 
+        "year": "2012", 
+        "position": 62, 
+        "ref": "MattisJTyeKMFerencziEARamakrishnanCO'SheaDJPrakashRGunaydinLAHyunMFennoLEGradinaruVYizharODeisserothK2012Principles for applying optogenetic tools derived from direct comparative analysis of microbial opsinsNature Methods915917210.1038/nmeth.1808", 
+        "id": "bib62"
+    }, 
+    {
+        "article_title": "Thalamic nuclei after human blunt head injury", 
+        "lpage": "488", 
+        "doi": "10.1097/01.jnen.0000229241.28619.75", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Maxwell", 
+                "given-names": "WL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "MacKinnon", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "DH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McIntosh", 
+                "given-names": "TK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Graham", 
+                "given-names": "DI", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamic nuclei after human blunt head injury", 
+        "publication-type": "journal", 
+        "volume": "65", 
+        "source": "Journal of Neuropathology and Experimental Neurology", 
+        "reference_id": "10.1097/01.jnen.0000229241.28619.75", 
+        "fpage": "478", 
+        "year": "2006", 
+        "position": 63, 
+        "ref": "MaxwellWLMacKinnonMASmithDHMcIntoshTKGrahamDI2006Thalamic nuclei after human blunt head injuryJournal of Neuropathology and Experimental Neurology6547848810.1097/01.jnen.0000229241.28619.75", 
+        "id": "bib63"
+    }, 
+    {
+        "article_title": "Extracellular stimulation of central neurons: influence of stimulus waveform and frequency on neuronal output", 
+        "lpage": "1604", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "McIntyre", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grill", 
+                "given-names": "WM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Extracellular stimulation of central neurons: influence of stimulus waveform and frequency on neuronal output", 
+        "publication-type": "journal", 
+        "volume": "88", 
+        "source": "Journal of Neurophysiology", 
+        "fpage": "1592", 
+        "year": "2002", 
+        "position": 64, 
+        "ref": "McIntyreCCGrillWM2002Extracellular stimulation of central neurons: influence of stimulus waveform and frequency on neuronal outputJournal of Neurophysiology8815921604", 
+        "id": "bib64"
+    }, 
+    {
+        "article_title": "On the nature of the \u201cabsence\u201d in centrencephalic epilepsy: a study of some behavioral, electroencephalographic and autonomic factors", 
+        "lpage": "348", 
+        "doi": "10.1016/0013-4694(65)90053-2", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mirsky", 
+                "given-names": "AF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Buren", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "On the nature of the \u201cabsence\u201d in centrencephalic epilepsy: a study of some behavioral, electroencephalographic and autonomic factors", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Electroencephalography and Clinical Neurophysiology", 
+        "reference_id": "10.1016/0013-4694(65)90053-2", 
+        "fpage": "334", 
+        "year": "1965", 
+        "position": 65, 
+        "ref": "MirskyAFVan BurenJM1965On the nature of the \u201cabsence\u201d in centrencephalic epilepsy: a study of some behavioral, electroencephalographic and autonomic factorsElectroencephalography and Clinical Neurophysiology1833434810.1016/0013-4694(65)90053-2", 
+        "id": "bib65"
+    }, 
+    {
+        "article_title": "Advances in understanding mechanisms of thalamic relays in cognition and behavior", 
+        "lpage": "15346", 
+        "doi": "10.1523/JNEUROSCI.3289-14.2014", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Mitchell", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sherman", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sommer", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mair", 
+                "given-names": "RG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vertes", 
+                "given-names": "RP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chudasama", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Advances in understanding mechanisms of thalamic relays in cognition and behavior", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.3289-14.2014", 
+        "fpage": "15340", 
+        "year": "2014", 
+        "position": 66, 
+        "ref": "MitchellASShermanSMSommerMAMairRGVertesRPChudasamaY2014Advances in understanding mechanisms of thalamic relays in cognition and behaviorJournal of Neuroscience34153401534610.1523/JNEUROSCI.3289-14.2014", 
+        "id": "bib66"
+    }, 
+    {
+        "article_title": "A study of thalamo-cortical relations", 
+        "lpage": "0292", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Morison", 
+                "given-names": "RS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dempsey", 
+                "given-names": "EW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A study of thalamo-cortical relations", 
+        "publication-type": "journal", 
+        "volume": "135", 
+        "source": "Am J Physiol", 
+        "fpage": "0281", 
+        "year": "1942", 
+        "position": 67, 
+        "ref": "MorisonRSDempseyEW1942A study of thalamo-cortical relationsAm J Physiol13502810292", 
+        "id": "bib67"
+    }, 
+    {
+        "article_title": "Brain stem reticular formation and activation of the EEG", 
+        "lpage": "473", 
+        "doi": "10.1016/0013-4694(49)90219-9", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Moruzzi", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Magoun", 
+                "given-names": "HW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Brain stem reticular formation and activation of the EEG", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "Electroencephalography and Clinical Neurophysiology", 
+        "reference_id": "10.1016/0013-4694(49)90219-9", 
+        "fpage": "455", 
+        "year": "1949", 
+        "position": 68, 
+        "ref": "MoruzziGMagounHW1949Brain stem reticular formation and activation of the EEGElectroencephalography and Clinical Neurophysiology145547310.1016/0013-4694(49)90219-9", 
+        "id": "bib68"
+    }, 
+    {
+        "article_title": "Effects of excitotoxic thalamic intralaminar nuclei lesions on attention and working memory", 
+        "lpage": "271", 
+        "doi": "10.1016/j.bbr.2005.03.018", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Newman", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burk", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Effects of excitotoxic thalamic intralaminar nuclei lesions on attention and working memory", 
+        "publication-type": "journal", 
+        "volume": "162", 
+        "source": "Behavioural Brain Research", 
+        "reference_id": "10.1016/j.bbr.2005.03.018", 
+        "fpage": "264", 
+        "year": "2005", 
+        "position": 69, 
+        "ref": "NewmanLABurkJA2005Effects of excitotoxic thalamic intralaminar nuclei lesions on attention and working memoryBehavioural Brain Research16226427110.1016/j.bbr.2005.03.018", 
+        "id": "bib69"
+    }, 
+    {
+        "article_title": "Somatotopic maps within the zona incerta relay parallel GABAergic somatosensory pathways to the neocortex, superior colliculus, and brainstem", 
+        "lpage": "141", 
+        "doi": "10.1016/0006-8993(92)90546-L", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Nicolelis", 
+                "given-names": "MAL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapin", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "RCS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Somatotopic maps within the zona incerta relay parallel GABAergic somatosensory pathways to the neocortex, superior colliculus, and brainstem", 
+        "publication-type": "journal", 
+        "volume": "577", 
+        "source": "Brain Research", 
+        "reference_id": "10.1016/0006-8993(92)90546-L", 
+        "fpage": "134", 
+        "year": "1992", 
+        "position": 70, 
+        "ref": "NicolelisMALChapinJKLinRCS1992Somatotopic maps within the zona incerta relay parallel GABAergic somatosensory pathways to the neocortex, superior colliculus, and brainstemBrain Research57713414110.1016/0006-8993(92)90546-L", 
+        "id": "bib70"
+    }, 
+    {
+        "article_title": "Development of direct GABAergic projections from the zona incerta to the somatosensory cortex of the rat", 
+        "lpage": "631", 
+        "doi": "10.1016/0306-4522(94)00493-O", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Nicolelis", 
+                "given-names": "MAL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapin", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "RCS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Development of direct GABAergic projections from the zona incerta to the somatosensory cortex of the rat", 
+        "publication-type": "journal", 
+        "volume": "65", 
+        "source": "Neuroscience", 
+        "reference_id": "10.1016/0306-4522(94)00493-O", 
+        "fpage": "609", 
+        "year": "1995", 
+        "position": 71, 
+        "ref": "NicolelisMALChapinJKLinRCS1995Development of direct GABAergic projections from the zona incerta to the somatosensory cortex of the ratNeuroscience6560963110.1016/0306-4522(94)00493-O", 
+        "id": "bib71"
+    }, 
+    {
+        "article_title": "Analysis of oxygen metabolism implies a neural origin for the negative BOLD response in human visual cortex", 
+        "lpage": "276", 
+        "doi": "10.1016/j.neuroimage.2006.09.015", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Pasley", 
+                "given-names": "BN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Inglis", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Freeman", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Analysis of oxygen metabolism implies a neural origin for the negative BOLD response in human visual cortex", 
+        "publication-type": "journal", 
+        "volume": "36", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2006.09.015", 
+        "fpage": "269", 
+        "year": "2007", 
+        "position": 72, 
+        "ref": "PasleyBNInglisBAFreemanRD2007Analysis of oxygen metabolism implies a neural origin for the negative BOLD response in human visual cortexNeuroImage3626927610.1016/j.neuroimage.2006.09.015", 
+        "id": "bib72"
+    }, 
+    {
+        "publisher_loc": "Burlington", 
+        "article_doi": "10.7554/eLife.09215", 
+        "publisher_name": "Elsevier Academic Press", 
+        "year": "2005", 
+        "publication-type": "book", 
+        "source": "The Rat Brain in Stereotaxic Coordinates", 
+        "authors": [
+            {
+                "surname": "Paxinos", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Watson", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 73, 
+        "ref": "PaxinosGWatsonC2005The Rat Brain in Stereotaxic CoordinatesBurlingtonElsevier Academic Press", 
+        "id": "bib73"
+    }, 
+    {
+        "article_title": "A low-cost technique to cryo-protect and freeze rodent brains, precisely aligned to stereotaxic coordinates for whole-brain cryosectioning", 
+        "lpage": "213", 
+        "doi": "10.1016/j.jneumeth.2013.03.004", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Pinskiy", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tolpygo", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weber", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Franciotti", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mitra", 
+                "given-names": "PP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A low-cost technique to cryo-protect and freeze rodent brains, precisely aligned to stereotaxic coordinates for whole-brain cryosectioning", 
+        "publication-type": "journal", 
+        "volume": "218", 
+        "source": "Journal of Neuroscience Methods", 
+        "reference_id": "10.1016/j.jneumeth.2013.03.004", 
+        "fpage": "206", 
+        "year": "2013", 
+        "position": 74, 
+        "ref": "PinskiyVTolpygoASJonesJWeberKFranciottiNMitraPP2013A low-cost technique to cryo-protect and freeze rodent brains, precisely aligned to stereotaxic coordinates for whole-brain cryosectioningJournal of Neuroscience Methods21820621310.1016/j.jneumeth.2013.03.004", 
+        "id": "bib74"
+    }, 
+    {
+        "article_title": "Coma and related global disturbances of the human conscious state", 
+        "lpage": "425", 
+        "doi": "10.1007/978-1-4615-6622-9_9", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Plum", 
+                "given-names": "F", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Coma and related global disturbances of the human conscious state", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Normal and Altered States of Function", 
+        "reference_id": "10.1007/978-1-4615-6622-9_9", 
+        "fpage": "359", 
+        "year": "1991", 
+        "position": 75, 
+        "ref": "PlumF1991Coma and related global disturbances of the human conscious stateNormal and Altered States of Function935942510.1007/978-1-4615-6622-9_9", 
+        "id": "bib75"
+    }, 
+    {
+        "article_title": "Diverse types of interneurons generate thalamus-evoked feedforward inhibition in the mouse barrel cortex", 
+        "lpage": "2710", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Porter", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnson", 
+                "given-names": "CK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Agmon", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Diverse types of interneurons generate thalamus-evoked feedforward inhibition in the mouse barrel cortex", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Journal of Neuroscience", 
+        "fpage": "2699", 
+        "year": "2001", 
+        "position": 76, 
+        "ref": "PorterJTJohnsonCKAgmonA2001Diverse types of interneurons generate thalamus-evoked feedforward inhibition in the mouse barrel cortexJournal of Neuroscience2126992710", 
+        "id": "bib76"
+    }, 
+    {
+        "article_title": "Behavioural improvements with thalamic stimulation after severe traumatic brain injury", 
+        "lpage": "603", 
+        "doi": "10.1038/nature06041", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Giacino", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kalmar", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Victor", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baker", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gerber", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fritz", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eisenberg", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Biondi", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Connor", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kobylarz", 
+                "given-names": "EJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Farris", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Machado", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCagg", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plum", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fins", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rezai", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Behavioural improvements with thalamic stimulation after severe traumatic brain injury", 
+        "publication-type": "journal", 
+        "volume": "448", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature06041", 
+        "fpage": "600", 
+        "year": "2007", 
+        "position": 77, 
+        "ref": "SchiffNDGiacinoJTKalmarKVictorJDBakerKGerberMFritzBEisenbergBBiondiTO'ConnorJKobylarzEJFarrisSMachadoAMcCaggCPlumFFinsJJRezaiAR2007Behavioural improvements with thalamic stimulation after severe traumatic brain injuryNature44860060310.1038/nature06041", 
+        "id": "bib77"
+    }, 
+    {
+        "publisher_loc": "Hoboken, NJ, USA", 
+        "doi": "10.1002/9780470478509.neubb001024", 
+        "chapter-title": "Neural Perspectives on Activation and Arousal", 
+        "article_doi": "10.7554/eLife.09215", 
+        "publisher_name": "John Wiley & Sons, Inc", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfaff", 
+                "given-names": "DW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "Nicholas D.", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Pfaff", 
+                "given-names": "Donald W.", 
+                "group-type": "editor"
+            }
+        ], 
+        "publication-type": "book", 
+        "lpage": "460", 
+        "source": "Handbook of neuroscience for the behavioral sciences", 
+        "reference_id": "10.1002/9780470478509.neubb001024", 
+        "fpage": "454", 
+        "year": "2009", 
+        "position": 78, 
+        "ref": "SchiffNDPfaffDW2009Neural Perspectives on Activation and ArousalSchiff Nicholas D.Pfaff Donald W.Handbook of neuroscience for the behavioral sciencesHoboken, NJ, USAJohn Wiley & Sons, Inc45446010.1002/9780470478509.neubb001024", 
+        "id": "bib78"
+    }, 
+    {
+        "article_title": "Gating of attentional effort through the central thalamus", 
+        "lpage": "1163", 
+        "doi": "10.1152/jn.00317.2011", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shah", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hudson", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nauvel", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kalik", 
+                "given-names": "SF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Purpura", 
+                "given-names": "KP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Gating of attentional effort through the central thalamus", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Journal of Neurophysiology", 
+        "reference_id": "10.1152/jn.00317.2011", 
+        "fpage": "1152", 
+        "year": "2013", 
+        "position": 79, 
+        "ref": "SchiffNDShahSAHudsonAENauvelTKalikSFPurpuraKP2013Gating of attentional effort through the central thalamusJournal of Neurophysiology1091152116310.1152/jn.00317.2011", 
+        "id": "bib79"
+    }, 
+    {
+        "article_title": "Central thalamic contributions to arousal regulation and neurological disorders of consciousness", 
+        "lpage": "118", 
+        "doi": "10.1196/annals.1417.029", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Central thalamic contributions to arousal regulation and neurological disorders of consciousness", 
+        "publication-type": "journal", 
+        "volume": "1129", 
+        "source": "Annals of the New York Academy of Sciences", 
+        "reference_id": "10.1196/annals.1417.029", 
+        "fpage": "105", 
+        "year": "2008", 
+        "position": 80, 
+        "ref": "SchiffND2008Central thalamic contributions to arousal regulation and neurological disorders of consciousnessAnnals of the New York Academy of Sciences112910511810.1196/annals.1417.029", 
+        "id": "bib80"
+    }, 
+    {
+        "article_title": "Recovery of consciousness after brain injury: a mesocircuit hypothesis", 
+        "lpage": "9", 
+        "doi": "10.1016/j.tins.2009.11.002", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Recovery of consciousness after brain injury: a mesocircuit hypothesis", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "Trends in Neurosciences", 
+        "reference_id": "10.1016/j.tins.2009.11.002", 
+        "fpage": "1", 
+        "year": "2010", 
+        "position": 81, 
+        "ref": "SchiffND2010Recovery of consciousness after brain injury: a mesocircuit hypothesisTrends in Neurosciences331910.1016/j.tins.2009.11.002", 
+        "id": "bib81"
+    }, 
+    {
+        "article_title": "Moving toward a generalizable application of central thalamic deep brain stimulation for support of forebrain arousal regulation in the severely injured brain", 
+        "lpage": "68", 
+        "doi": "10.1111/j.1749-6632.2012.06712.x", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Moving toward a generalizable application of central thalamic deep brain stimulation for support of forebrain arousal regulation in the severely injured brain", 
+        "publication-type": "journal", 
+        "volume": "1265", 
+        "source": "Annals of the New York Academy of Sciences", 
+        "reference_id": "10.1111/j.1749-6632.2012.06712.x", 
+        "fpage": "56", 
+        "year": "2012", 
+        "position": 82, 
+        "ref": "SchiffND2012Moving toward a generalizable application of central thalamic deep brain stimulation for support of forebrain arousal regulation in the severely injured brainAnnals of the New York Academy of Sciences1265566810.1111/j.1749-6632.2012.06712.x", 
+        "id": "bib82"
+    }, 
+    {
+        "article_title": "Negative BOLD with large increases in neuronal activity", 
+        "lpage": "1827", 
+        "doi": "10.1093/cercor/bhm208", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Schridde", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Khubchandani", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Motelow", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sanganahalli", 
+                "given-names": "BG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hyder", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blumenfeld", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Negative BOLD with large increases in neuronal activity", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Cerebral Cortex", 
+        "reference_id": "10.1093/cercor/bhm208", 
+        "fpage": "1814", 
+        "year": "2008", 
+        "position": 83, 
+        "ref": "SchriddeUKhubchandaniMMotelowJESanganahalliBGHyderFBlumenfeldH2008Negative BOLD with large increases in neuronal activityCerebral Cortex181814182710.1093/cercor/bhm208", 
+        "id": "bib83"
+    }, 
+    {
+        "article_title": "Contribution of intralaminar thalamic nuclei to spike-and-wave-discharges during spontaneous seizures in a genetic rat model of absence epilepsy", 
+        "lpage": "1546", 
+        "doi": "10.1046/j.0953-816x.2001.01537.x", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Seidenbecher", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pape", 
+                "given-names": "H-C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Contribution of intralaminar thalamic nuclei to spike-and-wave-discharges during spontaneous seizures in a genetic rat model of absence epilepsy", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "European Journal of Neuroscience", 
+        "reference_id": "10.1046/j.0953-816x.2001.01537.x", 
+        "fpage": "1537", 
+        "year": "2001", 
+        "position": 84, 
+        "ref": "SeidenbecherTPapeH-C2001Contribution of intralaminar thalamic nuclei to spike-and-wave-discharges during spontaneous seizures in a genetic rat model of absence epilepsyEuropean Journal of Neuroscience131537154610.1046/j.0953-816x.2001.01537.x", 
+        "id": "bib84"
+    }, 
+    {
+        "article_title": "Afferent connections of the zona incerta: a horseradish peroxidase study in the rat", 
+        "lpage": "134", 
+        "doi": "10.1016/0306-4522(85)90127-7", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Shammah-Lagnado", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Negr\u00e3o", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ricardo", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Afferent connections of the zona incerta: a horseradish peroxidase study in the rat", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Neuroscience", 
+        "reference_id": "10.1016/0306-4522(85)90127-7", 
+        "fpage": "109", 
+        "year": "1985", 
+        "position": 85, 
+        "ref": "Shammah-LagnadoSJNegr\u00e3oNRicardoJA1985Afferent connections of the zona incerta: a horseradish peroxidase study in the ratNeuroscience1510913410.1016/0306-4522(85)90127-7", 
+        "id": "bib85"
+    }, 
+    {
+        "article_title": "The zona incerta modulates spontaneous spike-wave discharges in the rat", 
+        "lpage": "2516", 
+        "doi": "10.1152/jn.00750.2011", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Shaw", 
+                "given-names": "FZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liao", 
+                "given-names": "YF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "YH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The zona incerta modulates spontaneous spike-wave discharges in the rat", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Journal of Neurophysiology", 
+        "reference_id": "10.1152/jn.00750.2011", 
+        "fpage": "2505", 
+        "year": "2013", 
+        "position": 86, 
+        "ref": "ShawFZLiaoYFChenRFHuangYHLinRC2013The zona incerta modulates spontaneous spike-wave discharges in the ratJournal of Neurophysiology1092505251610.1152/jn.00750.2011", 
+        "id": "bib86"
+    }, 
+    {
+        "article_title": "Functional organization of thalamocortical relays", 
+        "lpage": "1395", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Sherman", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Guillery", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Functional organization of thalamocortical relays", 
+        "publication-type": "journal", 
+        "volume": "76", 
+        "source": "Journal of Neurophysiology", 
+        "fpage": "1367", 
+        "year": "1996", 
+        "position": 87, 
+        "ref": "ShermanSMGuilleryRW1996Functional organization of thalamocortical relaysJournal of Neurophysiology7613671395", 
+        "id": "bib87"
+    }, 
+    {
+        "article_title": "Cognitive enhancement with central thalamic electrical stimulation", 
+        "lpage": "17012", 
+        "doi": "10.1073/pnas.0604811103", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Shirvalkar", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seth", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Herrera", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cognitive enhancement with central thalamic electrical stimulation", 
+        "publication-type": "journal", 
+        "volume": "103", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.0604811103", 
+        "fpage": "17007", 
+        "year": "2006", 
+        "position": 88, 
+        "ref": "ShirvalkarPSethMSchiffNDHerreraDG2006Cognitive enhancement with central thalamic electrical stimulationProceedings of the National Academy of Sciences of the United States of America103170071701210.1073/pnas.0604811103", 
+        "id": "bib88"
+    }, 
+    {
+        "article_title": "Negative functional MRI response correlates with decreases in neuronal activity in monkey visual area V1", 
+        "lpage": "577", 
+        "doi": "10.1038/nn1675", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Shmuel", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Augath", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oeltermann", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Logothetis", 
+                "given-names": "NK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Negative functional MRI response correlates with decreases in neuronal activity in monkey visual area V1", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Nature Neuroscience", 
+        "reference_id": "10.1038/nn1675", 
+        "fpage": "569", 
+        "year": "2006", 
+        "position": 89, 
+        "ref": "ShmuelAAugathMOeltermannALogothetisNK2006Negative functional MRI response correlates with decreases in neuronal activity in monkey visual area V1Nature Neuroscience956957710.1038/nn1675", 
+        "id": "bib89"
+    }, 
+    {
+        "article_title": "Disynaptic inhibition between neocortical pyramidal cells mediated by martinotti cells", 
+        "lpage": "746", 
+        "doi": "10.1016/j.neuron.2007.02.012", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Silberberg", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Markram", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Disynaptic inhibition between neocortical pyramidal cells mediated by martinotti cells", 
+        "publication-type": "journal", 
+        "volume": "53", 
+        "source": "Neuron", 
+        "reference_id": "10.1016/j.neuron.2007.02.012", 
+        "fpage": "735", 
+        "year": "2007", 
+        "position": 90, 
+        "ref": "SilberbergGMarkramH2007Disynaptic inhibition between neocortical pyramidal cells mediated by martinotti cellsNeuron5373574610.1016/j.neuron.2007.02.012", 
+        "id": "bib90"
+    }, 
+    {
+        "article_title": "A bayesian statistical analysis of behavioral facilitation associated with deep brain stimulation", 
+        "lpage": "276", 
+        "doi": "10.1016/j.jneumeth.2009.06.028", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Smith", 
+                "given-names": "AC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shah", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hudson", 
+                "given-names": "AE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Purpura", 
+                "given-names": "KP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Victor", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brown", 
+                "given-names": "EN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schiff", 
+                "given-names": "ND", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A bayesian statistical analysis of behavioral facilitation associated with deep brain stimulation", 
+        "publication-type": "journal", 
+        "volume": "183", 
+        "source": "Journal of Neuroscience Methods", 
+        "reference_id": "10.1016/j.jneumeth.2009.06.028", 
+        "fpage": "267", 
+        "year": "2009", 
+        "position": 91, 
+        "ref": "SmithACShahSAHudsonAEPurpuraKPVictorJDBrownENSchiffND2009A bayesian statistical analysis of behavioral facilitation associated with deep brain stimulationJournal of Neuroscience Methods18326727610.1016/j.jneumeth.2009.06.028", 
+        "id": "bib91"
+    }, 
+    {
+        "article_title": "The thalamostriatal system: a highly specific network of the basal ganglia circuitry", 
+        "lpage": "527", 
+        "doi": "10.1016/j.tins.2004.07.004", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Smith", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raju", 
+                "given-names": "DV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pare", 
+                "given-names": "JF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sidibe", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The thalamostriatal system: a highly specific network of the basal ganglia circuitry", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Trends in Neurosciences", 
+        "reference_id": "10.1016/j.tins.2004.07.004", 
+        "fpage": "520", 
+        "year": "2004", 
+        "position": 92, 
+        "ref": "SmithYRajuDVPareJFSidibeM2004The thalamostriatal system: a highly specific network of the basal ganglia circuitryTrends in Neurosciences2752052710.1016/j.tins.2004.07.004", 
+        "id": "bib92"
+    }, 
+    {
+        "article_title": "The thalamus", 
+        "doi": "10.1007/978-1-60327-455-5_26", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Smith", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The thalamus", 
+        "publication-type": "journal", 
+        "lpage": "442", 
+        "source": "Neuroscience in Medicine", 
+        "reference_id": "10.1007/978-1-60327-455-5_26", 
+        "fpage": "419", 
+        "year": "2008", 
+        "position": 93, 
+        "ref": "SmithY2008The thalamusNeuroscience in Medicine41944210.1007/978-1-60327-455-5_26", 
+        "id": "bib93"
+    }, 
+    {
+        "article_title": "Modelling the role of excitatory and inhibitory neuronal activity in the generation of the BOLD signal", 
+        "lpage": "165", 
+        "doi": "10.1016/j.neuroimage.2006.10.027", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Sotero", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Trujillo-Barreto", 
+                "given-names": "NJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Modelling the role of excitatory and inhibitory neuronal activity in the generation of the BOLD signal", 
+        "publication-type": "journal", 
+        "volume": "35", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2006.10.027", 
+        "fpage": "149", 
+        "year": "2007", 
+        "position": 94, 
+        "ref": "SoteroRCTrujillo-BarretoNJ2007Modelling the role of excitatory and inhibitory neuronal activity in the generation of the BOLD signalNeuroImage3514916510.1016/j.neuroimage.2006.10.027", 
+        "id": "bib94"
+    }, 
+    {
+        "article_title": "Neocortical and caudate projections of intralaminar thalamic neurons and their synaptic excitation from midbrain reticular core", 
+        "lpage": "371", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Steriade", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glenn", 
+                "given-names": "LL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Neocortical and caudate projections of intralaminar thalamic neurons and their synaptic excitation from midbrain reticular core", 
+        "publication-type": "journal", 
+        "volume": "48", 
+        "source": "Journal of Neurophysiology", 
+        "fpage": "352", 
+        "year": "1982", 
+        "position": 95, 
+        "ref": "SteriadeMGlennLL1982Neocortical and caudate projections of intralaminar thalamic neurons and their synaptic excitation from midbrain reticular coreJournal of Neurophysiology48352371", 
+        "id": "bib95"
+    }, 
+    {
+        "article_title": "Thalamocortical oscillations in the sleeping and aroused brain", 
+        "lpage": "685", 
+        "doi": "10.1126/science.8235588", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Steriade", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCormick", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sejnowski", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Thalamocortical oscillations in the sleeping and aroused brain", 
+        "publication-type": "journal", 
+        "volume": "262", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.8235588", 
+        "fpage": "679", 
+        "year": "1993", 
+        "position": 96, 
+        "ref": "SteriadeMMcCormickDSejnowskiT1993Thalamocortical oscillations in the sleeping and aroused brainScience26267968510.1126/science.8235588", 
+        "id": "bib96"
+    }, 
+    {
+        "article_title": "Optogenetic activation of CA1 pyramidal neurons at the dorsal and ventral hippocampus evokes distinct brain-wide responses revealed by mouse fMRI", 
+        "doi": "10.1371/journal.pone.0121417", 
+        "article_doi": "10.7554/eLife.09215", 
+        "elocation-id": "e0121417", 
+        "authors": [
+            {
+                "surname": "Takata", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yoshida", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Komaki", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xu", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sakai", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hikishima", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mimura", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Okano", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tanaka", 
+                "given-names": "KF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Optogenetic activation of CA1 pyramidal neurons at the dorsal and ventral hippocampus evokes distinct brain-wide responses revealed by mouse fMRI", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "PloS One", 
+        "reference_id": "10.1371/journal.pone.0121417", 
+        "year": "2015", 
+        "position": 97, 
+        "ref": "TakataNYoshidaKKomakiYXuMSakaiYHikishimaKMimuraMOkanoHTanakaKF2015Optogenetic activation of CA1 pyramidal neurons at the dorsal and ventral hippocampus evokes distinct brain-wide responses revealed by mouse fMRIPloS One10e012141710.1371/journal.pone.0121417", 
+        "id": "bib97"
+    }, 
+    {
+        "article_title": "State-dependent gating of sensory inputs by zona incerta", 
+        "lpage": "1463", 
+        "doi": "10.1152/jn.00423.2006", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Trageser", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Burke", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Masri", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sellers", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keller", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "State-dependent gating of sensory inputs by zona incerta", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "Journal of Neurophysiology", 
+        "reference_id": "10.1152/jn.00423.2006", 
+        "fpage": "1456", 
+        "year": "2006", 
+        "position": 98, 
+        "ref": "TrageserJCBurkeKAMasriRLiYSellersLKellerA2006State-dependent gating of sensory inputs by zona incertaJournal of Neurophysiology961456146310.1152/jn.00423.2006", 
+        "id": "bib98"
+    }, 
+    {
+        "article_title": "Reducing the uncertainty: gating of peripheral inputs by zona incerta", 
+        "lpage": "8915", 
+        "doi": "10.1523/JNEUROSCI.3218-04.2004", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Trageser", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keller", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Reducing the uncertainty: gating of peripheral inputs by zona incerta", 
+        "publication-type": "journal", 
+        "volume": "24", 
+        "source": "Journal of Neuroscience", 
+        "reference_id": "10.1523/JNEUROSCI.3218-04.2004", 
+        "fpage": "8911", 
+        "year": "2004", 
+        "position": 99, 
+        "ref": "TrageserJCKellerA2004Reducing the uncertainty: gating of peripheral inputs by zona incertaJournal of Neuroscience248911891510.1523/JNEUROSCI.3218-04.2004", 
+        "id": "bib99"
+    }, 
+    {
+        "article_title": "Neuropsychological correlates of a right unilateral lacunar thalamic infarction", 
+        "lpage": "42", 
+        "doi": "10.1136/jnnp.66.1.36", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Van der Werf YD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weerts", 
+                "given-names": "JGE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jolles", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Witter", 
+                "given-names": "MP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lindeboom", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scheltens", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Neuropsychological correlates of a right unilateral lacunar thalamic infarction", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "Journal of Neurology, Neurosurgery & Psychiatry", 
+        "reference_id": "10.1136/jnnp.66.1.36", 
+        "fpage": "36", 
+        "year": "1999", 
+        "position": 100, 
+        "ref": "Van der Werf YDWeertsJGEJollesJWitterMPLindeboomJScheltensP1999Neuropsychological correlates of a right unilateral lacunar thalamic infarctionJournal of Neurology, Neurosurgery & Psychiatry66364210.1136/jnnp.66.1.36", 
+        "id": "bib100"
+    }, 
+    {
+        "article_title": "The intralaminar and midline nuclei of the thalamus. anatomical and functional evidence for participation in processes of arousal and awareness", 
+        "lpage": "140", 
+        "doi": "10.1016/S0165-0173(02)00181-9", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Van der Werf", 
+                "given-names": "YD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Witter", 
+                "given-names": "MP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Groenewegen", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The intralaminar and midline nuclei of the thalamus. anatomical and functional evidence for participation in processes of arousal and awareness", 
+        "publication-type": "journal", 
+        "volume": "39", 
+        "source": "Brain Research Reviews", 
+        "reference_id": "10.1016/S0165-0173(02)00181-9", 
+        "fpage": "107", 
+        "year": "2002", 
+        "position": 101, 
+        "ref": "Van der WerfYDWitterMPGroenewegenHJ2002The intralaminar and midline nuclei of the thalamus. anatomical and functional evidence for participation in processes of arousal and awarenessBrain Research Reviews3910714010.1016/S0165-0173(02)00181-9", 
+        "id": "bib101"
+    }, 
+    {
+        "article_title": "Global and focal aspects of absence epilepsy: the contribution of genetic models", 
+        "lpage": "1003", 
+        "doi": "10.1016/j.neubiorev.2006.03.002", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "van Luijtelaar", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sitnikova", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Global and focal aspects of absence epilepsy: the contribution of genetic models", 
+        "publication-type": "journal", 
+        "volume": "30", 
+        "source": "Neuroscience and Biobehavioral Reviews", 
+        "reference_id": "10.1016/j.neubiorev.2006.03.002", 
+        "fpage": "983", 
+        "year": "2006", 
+        "position": 102, 
+        "ref": "van LuijtelaarGSitnikovaE2006Global and focal aspects of absence epilepsy: the contribution of genetic modelsNeuroscience and Biobehavioral Reviews30983100310.1016/j.neubiorev.2006.03.002", 
+        "id": "bib102"
+    }, 
+    {
+        "article_title": "Electrocortical and behavioral responses produced by acute electrical stimulation of the human centromedian thalamic nucleus", 
+        "lpage": "471", 
+        "doi": "10.1016/S0013-4694(96)95203-0", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Velasco", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Velasco", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Velasco", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brito", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jim\u00e9nez", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marquez", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rojas", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Electrocortical and behavioral responses produced by acute electrical stimulation of the human centromedian thalamic nucleus", 
+        "publication-type": "journal", 
+        "volume": "102", 
+        "source": "Electroencephalography and Clinical Neurophysiology", 
+        "reference_id": "10.1016/S0013-4694(96)95203-0", 
+        "fpage": "461", 
+        "year": "1997", 
+        "position": 103, 
+        "ref": "VelascoMVelascoFVelascoALBritoFJim\u00e9nezFMarquezIRojasB1997Electrocortical and behavioral responses produced by acute electrical stimulation of the human centromedian thalamic nucleusElectroencephalography and Clinical Neurophysiology10246147110.1016/S0013-4694(96)95203-0", 
+        "id": "bib103"
+    }, 
+    {
+        "article_title": "Norepinephrinergic afferents and cytology of the macaque monkey midline, mediodorsal, and intralaminar thalamic nuclei", 
+        "lpage": "479", 
+        "doi": "10.1007/s00429-008-0178-0", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Vogt", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hof", 
+                "given-names": "PR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Friedman", 
+                "given-names": "DP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sikes", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vogt", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Norepinephrinergic afferents and cytology of the macaque monkey midline, mediodorsal, and intralaminar thalamic nuclei", 
+        "publication-type": "journal", 
+        "volume": "212", 
+        "source": "Brain Structure & Function", 
+        "reference_id": "10.1007/s00429-008-0178-0", 
+        "fpage": "465", 
+        "year": "2008", 
+        "position": 104, 
+        "ref": "VogtBAHofPRFriedmanDPSikesRWVogtLJ2008Norepinephrinergic afferents and cytology of the macaque monkey midline, mediodorsal, and intralaminar thalamic nucleiBrain Structure & Function21246547910.1007/s00429-008-0178-0", 
+        "id": "bib104"
+    }, 
+    {
+        "article_title": "Optogenetic fMRI reveals distinct, frequency-dependent networks recruited by dorsal and intermediate hippocampus stimulations", 
+        "lpage": "241", 
+        "doi": "10.1016/j.neuroimage.2014.10.039", 
+        "article_doi": "10.7554/eLife.09215", 
+        "authors": [
+            {
+                "surname": "Weitz", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fang", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fisher", 
+                "given-names": "RS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "WC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Choy", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rosenberg", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Optogenetic fMRI reveals distinct, frequency-dependent networks recruited by dorsal and intermediate hippocampus stimulations", 
+        "publication-type": "journal", 
+        "volume": "107", 
+        "source": "NeuroImage", 
+        "reference_id": "10.1016/j.neuroimage.2014.10.039", 
+        "fpage": "229", 
+        "year": "2015", 
+        "position": 105, 
+        "ref": "WeitzAJFangZLeeHJFisherRSSmithWCChoyMLiuJLinPRosenbergMLeeJH2015Optogenetic fMRI reveals distinct, frequency-dependent networks recruited by dorsal and intermediate hippocampus stimulationsNeuroImage10722924110.1016/j.neuroimage.2014.10.039", 
+        "id": "bib105"
+    }
+]

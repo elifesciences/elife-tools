@@ -1,0 +1,57 @@
+[
+    {
+        "mimetype": "video", 
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "mov", 
+        "xlink_href": "elife00005m001.mov", 
+        "position": 1, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00005.013"
+    }, 
+    {
+        "mimetype": "video", 
+        "ordinal": 2, 
+        "sibling_ordinal": 2, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "mov", 
+        "xlink_href": "elife00005m002.mov", 
+        "position": 2, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00005.016"
+    }, 
+    {
+        "mimetype": "application", 
+        "parent_ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "ordinal": 3, 
+        "p_parent_type": "media", 
+        "parent_type": "supplementary-material", 
+        "mime-subtype": "wrl", 
+        "p_parent_asset": "media", 
+        "p_parent_ordinal": 2, 
+        "xlink_href": "elife00005s001.wrl", 
+        "p_parent_component_doi": "10.7554/eLife.00005.016", 
+        "position": 3, 
+        "p_parent_sibling_ordinal": 2, 
+        "parent_component_doi": "10.7554/eLife.00005.017", 
+        "parent_sibling_ordinal": 1, 
+        "type": "media", 
+        "parent_asset": "code"
+    }, 
+    {
+        "mimetype": "application", 
+        "parent_ordinal": 2, 
+        "sibling_ordinal": 1, 
+        "parent_type": "supplementary-material", 
+        "mime-subtype": "xlsx", 
+        "xlink_href": "elife00005s002.xlsx", 
+        "ordinal": 4, 
+        "position": 4, 
+        "parent_component_doi": "10.7554/eLife.00005.020", 
+        "parent_sibling_ordinal": 1, 
+        "type": "media", 
+        "parent_asset": "supp"
+    }
+]

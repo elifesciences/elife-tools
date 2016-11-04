@@ -1,0 +1,12 @@
+[
+    {
+        "text": "<label>\u2020</label><p>Whitehead Institute for Biomedical Research, Cambridge, United States</p>", 
+        "id": "pa1", 
+        "fn-type": "present-address"
+    }, 
+    {
+        "text": "<label>\u2021</label><p>Department of Molecular Biology, Princeton University, Princeton, United States</p>", 
+        "id": "pa2", 
+        "fn-type": "present-address"
+    }
+]

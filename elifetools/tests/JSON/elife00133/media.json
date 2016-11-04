@@ -1,0 +1,57 @@
+[
+    {
+        "mimetype": "video", 
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "avi", 
+        "xlink_href": "elife00133v001.avi", 
+        "position": 1, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00133.008"
+    }, 
+    {
+        "mimetype": "video", 
+        "ordinal": 2, 
+        "sibling_ordinal": 2, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "avi", 
+        "xlink_href": "elife00133v002.avi", 
+        "position": 2, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00133.009"
+    }, 
+    {
+        "mimetype": "video", 
+        "ordinal": 3, 
+        "sibling_ordinal": 3, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "avi", 
+        "xlink_href": "elife00133v003.avi", 
+        "position": 3, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00133.010"
+    }, 
+    {
+        "mimetype": "video", 
+        "ordinal": 4, 
+        "sibling_ordinal": 4, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "avi", 
+        "xlink_href": "elife00133v004.avi", 
+        "position": 4, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00133.011"
+    }, 
+    {
+        "mimetype": "video", 
+        "ordinal": 5, 
+        "sibling_ordinal": 5, 
+        "content-type": "glencoe play-in-place height-250 width-310", 
+        "mime-subtype": "avi", 
+        "xlink_href": "elife00133v005.avi", 
+        "position": 5, 
+        "type": "media", 
+        "component_doi": "10.7554/eLife.00133.012"
+    }
+]

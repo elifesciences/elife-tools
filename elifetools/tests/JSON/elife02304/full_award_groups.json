@@ -1,0 +1,26 @@
+[
+    {
+        "par-1": {
+            "award-id": "R01GM096053", 
+            "institution": "National Institutes of Health", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }, 
+    {
+        "par-2": {
+            "award-id": "R01GM094468", 
+            "institution": "National Institutes of Health", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }, 
+    {
+        "par-3": {
+            "award-id": "R01GM105404", 
+            "institution": "National Institutes of Health", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }
+]

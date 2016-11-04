@@ -1,0 +1,13 @@
+[
+    {
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "label": "Supplementary file 1.", 
+        "asset": "supp", 
+        "full_label": "Supplementary file 1.", 
+        "id": "SD1-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00190.025"
+    }
+]

@@ -1,0 +1,163 @@
+[
+    {
+        "surname": "Helker", 
+        "corresp": "yes", 
+        "given-names": "Christian SM", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "email": [
+                "cor1"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-28584"
+    }, 
+    {
+        "surname": "Schuermann", 
+        "given-names": "Annika", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-28585"
+    }, 
+    {
+        "surname": "Pollmann", 
+        "given-names": "Cathrin", 
+        "type": "author", 
+        "id": "author-28586", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Chng", 
+        "given-names": "Serene C", 
+        "type": "author", 
+        "id": "author-28587", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Kiefer", 
+        "given-names": "Friedemann", 
+        "type": "author", 
+        "id": "author-33806", 
+        "references": {
+            "affiliation": [
+                "aff2", 
+                "aff4"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4"
+            ]
+        }
+    }, 
+    {
+        "surname": "Reversade", 
+        "given-names": "Bruno", 
+        "type": "author", 
+        "id": "author-28355", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ]
+        }
+    }, 
+    {
+        "surname": "Herzog", 
+        "corresp": "yes", 
+        "given-names": "Wiebke", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff4"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-28001"
+    }, 
+    {
+        "surname": "Whitfield", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "University of Sheffield"
+            }
+        ], 
+        "given-names": "Tanya T", 
+        "role": "Reviewing editor", 
+        "type": "editor", 
+        "id": "author-1203"
+    }
+]

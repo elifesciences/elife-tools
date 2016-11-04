@@ -1,0 +1,1427 @@
+[
+    {
+        "publisher_loc": "Geneva", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "World Health Organization", 
+        "year": "1996", 
+        "collab": "Ad Hoc Committee on Health Research Relating to Future Intervention Options", 
+        "publication-type": "book", 
+        "source": "Investing in Health Research and Development: Report of the AD Hoc Committee on Health Research Relating to Future Intervention Options, Convened Under the Auspices of the World Health Organization", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "Ad Hoc Committee on Health Research Relating to Future Intervention Options"
+            }
+        ], 
+        "position": 1, 
+        "ref": "Ad Hoc Committee on Health Research Relating to Future Intervention Options1996Investing in Health Research and Development: Report of the AD Hoc Committee on Health Research Relating to Future Intervention Options, Convened Under the Auspices of the World Health OrganizationGenevaWorld Health Organization", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "UN High-Level Meeting on Non-Communicable Diseases: addressing four questions", 
+        "lpage": "55", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Beaglehole", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonita", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alleyne", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Horton", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lincoln", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "UN High-Level Meeting on Non-Communicable Diseases: addressing four questions", 
+        "publication-type": "journal", 
+        "volume": "378", 
+        "source": "Lancet", 
+        "fpage": "449", 
+        "year": "2011a", 
+        "position": 2, 
+        "ref": "BeagleholeRBonitaRAlleyneGHortonRLiLLincolnP2011aUN High-Level Meeting on Non-Communicable Diseases: addressing four questionsLancet37844955", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Priority actions for the non-communicable disease crisis", 
+        "lpage": "47", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Beaglehole", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonita", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Horton", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Adams", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alleyne", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Asaria", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Priority actions for the non-communicable disease crisis", 
+        "publication-type": "journal", 
+        "volume": "377", 
+        "source": "Lancet", 
+        "fpage": "1438", 
+        "year": "2011b", 
+        "position": 3, 
+        "ref": "BeagleholeRBonitaRHortonRAdamsCAlleyneGAsariaP2011bPriority actions for the non-communicable disease crisisLancet377143847", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Dynamic model of flexible phytoplankton nutrient uptake", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Bonachela", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raghib", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Levin", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Dynamic model of flexible phytoplankton nutrient uptake", 
+        "publication-type": "journal", 
+        "volume": "108", 
+        "source": "Proc Natl Acad Sci USA", 
+        "fpage": "20633", 
+        "year": "2011", 
+        "position": 4, 
+        "ref": "BonachelaJARaghibMLevinSA2011Dynamic model of flexible phytoplankton nutrient uptakeProc Natl Acad Sci USA108206338", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "A further note on the kinetics of enzyme action", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Briggs", 
+                "given-names": "GE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A further note on the kinetics of enzyme action", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "Biochem J", 
+        "fpage": "1037", 
+        "year": "1925", 
+        "position": 5, 
+        "ref": "BriggsGE1925A further note on the kinetics of enzyme actionBiochem J1910378", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Education as a factor in mortality decline an examination of Nigerian data", 
+        "lpage": "413", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Caldwell", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Education as a factor in mortality decline an examination of Nigerian data", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "Population Stud", 
+        "fpage": "395", 
+        "year": "1979", 
+        "position": 6, 
+        "ref": "CaldwellJ1979Education as a factor in mortality decline an examination of Nigerian dataPopulation Stud33395413", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Routes to low mortality in poor countries", 
+        "lpage": "220", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Caldwell", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Routes to low mortality in poor countries", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Population and Development Review", 
+        "fpage": "171", 
+        "year": "1986", 
+        "position": 7, 
+        "ref": "CaldwellJ1986Routes to low mortality in poor countriesPopulation and Development Review12171220", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Health and Well-Being in Udaipur and South Africa", 
+        "comment": "p.", 
+        "publisher_loc": "Chicago", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "University of Chicago Press", 
+        "authors": [
+            {
+                "surname": "Case", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deaton", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Health and Well-Being in Udaipur and South Africa", 
+        "publication-type": "book", 
+        "lpage": "349", 
+        "source": "Developments in the Economics of Aging", 
+        "fpage": "317", 
+        "year": "2009", 
+        "position": 8, 
+        "ref": "CaseADeatonA2009Health and Well-Being in Udaipur and South AfricaDevelopments in the Economics of AgingChicagoUniversity of Chicago Pressp.317349", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "The best things in life are (nearly) free: technology, knowledge, and global health", 
+        "lpage": "35", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Casabonne", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kenny", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The best things in life are (nearly) free: technology, knowledge, and global health", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "World Dev", 
+        "fpage": "21", 
+        "year": "2012", 
+        "position": 9, 
+        "ref": "CasabonneUKennyC2012The best things in life are (nearly) free: technology, knowledge, and global healthWorld Dev402135", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "The role of public health improvements in health advances: the twentieth-century United States", 
+        "lpage": "22", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Cutler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The role of public health improvements in health advances: the twentieth-century United States", 
+        "comment": "NBER Working Paper Series", 
+        "publication-type": "journal", 
+        "volume": "42", 
+        "source": "Demography", 
+        "fpage": "1", 
+        "year": "2004", 
+        "position": 10, 
+        "ref": "CutlerDMillerG2004The role of public health improvements in health advances: the twentieth-century United StatesDemography42122NBER Working Paper Series", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "The determinants of mortality (No. w11963)", 
+        "publisher_loc": "Cambridge", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "National Bureau of Economic Research", 
+        "authors": [
+            {
+                "surname": "Cutler", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deaton", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lleras-Muney", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The determinants of mortality (No. w11963)", 
+        "publication-type": "book", 
+        "year": "2006", 
+        "position": 11, 
+        "ref": "CutlerDMDeatonASLleras-MuneyA2006The determinants of mortality (No. w11963)CambridgeNational Bureau of Economic Research", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Grand challenges in chronic non-communicable diseases", 
+        "lpage": "6", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Daar", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Singer", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Persad", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pramming", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Matthews", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beaglehole", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Grand challenges in chronic non-communicable diseases", 
+        "publication-type": "journal", 
+        "volume": "450", 
+        "source": "Nature", 
+        "fpage": "494", 
+        "year": "2007", 
+        "position": 12, 
+        "ref": "DaarASingerPPersadDPrammingSMatthewsDBeagleholeR2007Grand challenges in chronic non-communicable diseasesNature4504946", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisited", 
+        "lpage": "94", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "English", 
+                "given-names": "BP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Min", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Oijen", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lee", 
+                "given-names": "KT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luo", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sun", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisited", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "Nat Chem Biol", 
+        "fpage": "87", 
+        "year": "2005", 
+        "position": 13, 
+        "ref": "EnglishBPMinWVan OijenAMLeeKTLuoGSunH2005Ever-fluctuating single enzyme molecules: Michaelis-Menten equation revisitedNat Chem Biol28794", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "New findings on secular trends in nutrition and mortality: Some implications for population theory", 
+        "lpage": "481", 
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "Elsevier", 
+        "authors": [
+            {
+                "surname": "Fogel", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rosenzweig", 
+                "given-names": "MR", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Stark", 
+                "given-names": "O", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "New findings on secular trends in nutrition and mortality: Some implications for population theory", 
+        "publication-type": "book", 
+        "volume": "Volume 1", 
+        "source": "Handbook of Population and Family Economics", 
+        "fpage": "433", 
+        "year": "1997", 
+        "position": 14, 
+        "ref": "FogelRW1997New findings on secular trends in nutrition and mortality: Some implications for population theoryRosenzweigMRStarkOHandbook of Population and Family EconomicsVolume 1Part ANew YorkElsevier433481", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Smoking and mortality from tuberculosis and other diseases in India: retrospective study of 43000 adult male deaths and 35000 controls", 
+        "lpage": "15", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Gajalakshmi", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peto", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kanaka", 
+                "given-names": "TS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jha", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Smoking and mortality from tuberculosis and other diseases in India: retrospective study of 43000 adult male deaths and 35000 controls", 
+        "publication-type": "journal", 
+        "volume": "362", 
+        "source": "Lancet", 
+        "fpage": "507", 
+        "year": "2003", 
+        "position": 15, 
+        "ref": "GajalakshmiVPetoRKanakaTSJhaP2003Smoking and mortality from tuberculosis and other diseases in India: retrospective study of 43000 adult male deaths and 35000 controlsLancet36250715", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Increased educational attainment and its effect on child mortality in 175 countries between 1970 and 2009: a systematic analysis", 
+        "lpage": "74", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Gakidou", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cowling", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lozano", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murray", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Increased educational attainment and its effect on child mortality in 175 countries between 1970 and 2009: a systematic analysis", 
+        "publication-type": "journal", 
+        "volume": "376", 
+        "source": "Lancet", 
+        "fpage": "959", 
+        "year": "2010", 
+        "position": 16, 
+        "ref": "GakidouECowlingKLozanoRMurrayCJ2010Increased educational attainment and its effect on child mortality in 175 countries between 1970 and 2009: a systematic analysisLancet37695974", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Evaluation of methods for estimating the dissociation constant of tight binding enzyme inhibitors", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Greco", 
+                "given-names": "WR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hakala", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evaluation of methods for estimating the dissociation constant of tight binding enzyme inhibitors", 
+        "publication-type": "journal", 
+        "volume": "254", 
+        "source": "J Biol Chem", 
+        "fpage": "12104", 
+        "year": "1979", 
+        "position": 17, 
+        "ref": "GrecoWRHakalaMTEvaluation of methods for estimating the dissociation constant of tight binding enzyme inhibitorsJ Biol Chem1979254121049", 
+        "id": "bib17"
+    }, 
+    {
+        "uri_text": "http://escholarship.org/uc/item/4q57d5vp", 
+        "publisher_loc": "San Francisco", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "Center for Tobacco Control Research and Education", 
+        "authors": [
+            {
+                "surname": "Guindon", 
+                "given-names": "GE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boisclair", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://escholarship.org/uc/item/4q57d5vp", 
+        "publication-type": "book", 
+        "source": "Past, Current and Future Trends in Tobacco Use", 
+        "year": "2003", 
+        "position": 18, 
+        "ref": "GuindonGEBoisclairD2003Past, Current and Future Trends in Tobacco UseSan FranciscoCenter for Tobacco Control Research and Educationhttp://escholarship.org/uc/item/4q57d5vp", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Penn World Table", 
+        "uri_text": "http://pwt.econ.upenn.edu/php_site/pwt_index.php", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Heston", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Summers", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aten", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://pwt.econ.upenn.edu/php_site/pwt_index.php", 
+        "full_article_title": "Penn World Table", 
+        "year": "2009", 
+        "position": 19, 
+        "publication-type": "web", 
+        "ref": "HestonASummersRAtenB2009Penn World Tablehttp://pwt.econ.upenn.edu/php_site/pwt_index.php", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Adult mortality estimates by country 1970\u20132010", 
+        "uri_text": "http://www.healthmetricsandevaluation.org/", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "Institute for Health Metrics and Evaluation"
+            }
+        ], 
+        "uri": "http://www.healthmetricsandevaluation.org/", 
+        "full_article_title": "Adult mortality estimates by country 1970\u20132010", 
+        "year": "2012", 
+        "position": 20, 
+        "collab": "Institute for Health Metrics and Evaluation", 
+        "publication-type": "web", 
+        "ref": "Institute for Health Metrics and Evaluation2012Adult mortality estimates by country 1970\u20132010http://www.healthmetricsandevaluation.org/", 
+        "id": "bib20"
+    }, 
+    {
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "Oxford University Press", 
+        "year": "2006", 
+        "publication-type": "book", 
+        "source": "Disease control priorities in developing countries", 
+        "authors": [
+            {
+                "surname": "Jamison", 
+                "given-names": "DT", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Breman", 
+                "given-names": "JG", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Measham", 
+                "given-names": "AR", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Alleyne", 
+                "given-names": "G", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Claeson", 
+                "given-names": "M", 
+                "group-type": "editor"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 21, 
+        "ref": "JamisonDTBremanJGMeashamARAlleyneGClaesonM2006Disease control priorities in developing countriesNew YorkOxford University Press", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Avoidable global cancer deaths and total deaths from smoking", 
+        "lpage": "64", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Jha", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Avoidable global cancer deaths and total deaths from smoking", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Nat Rev Cancer", 
+        "fpage": "655", 
+        "year": "2009", 
+        "position": 22, 
+        "ref": "JhaP2009Avoidable global cancer deaths and total deaths from smokingNat Rev Cancer965564", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Counting the dead is one of the world\u2019s best investments to reduce premature mortality", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Jha", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Counting the dead is one of the world\u2019s best investments to reduce premature mortality", 
+        "publication-type": "journal", 
+        "source": "Hypothesis 10", 
+        "year": "2012", 
+        "position": 23, 
+        "ref": "JhaP2012Counting the dead is one of the world\u2019s best investments to reduce premature mortalityHypothesis 10", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Improving the health of the global poor", 
+        "lpage": "9", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Jha", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mills", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hanson", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kumaranayake", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Conteh", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kurowski", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Improving the health of the global poor", 
+        "publication-type": "journal", 
+        "volume": "295", 
+        "source": "Science", 
+        "fpage": "2036", 
+        "year": "2002", 
+        "position": 24, 
+        "ref": "JhaPMillsAHansonKKumaranayakeLContehLKurowskiC2002Improving the health of the global poorScience29520369", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper", 
+        "uri_text": "http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
+        "article_doi": "10.7554/eLife.00051", 
+        "uri": "http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
+        "full_article_title": "Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper", 
+        "authors": [
+            {
+                "surname": "Jha", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nugent", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Verguet", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bloom", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hum", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 25, 
+        "publication-type": "web", 
+        "ref": "JhaPNugentRVerguetSBloomDHumRChronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paperhttp://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "A thermodynamic interpretation of the Monod equation", 
+        "lpage": "4", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Liu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lin", 
+                "given-names": "YM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yang", 
+                "given-names": "SF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A thermodynamic interpretation of the Monod equation", 
+        "publication-type": "journal", 
+        "volume": "46", 
+        "source": "Curr Microbiol", 
+        "fpage": "233", 
+        "year": "2003", 
+        "position": 26, 
+        "ref": "LiuYLinYMYangSF2003A thermodynamic interpretation of the Monod equationCurr Microbiol462334", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Global, regional, and national causes of child mortality: an updated systematic analysis for 2010 with time trends since 2000", 
+        "lpage": "2161", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Liu", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnson", 
+                "given-names": "HL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cousens", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Perin", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scott", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Global, regional, and national causes of child mortality: an updated systematic analysis for 2010 with time trends since 2000", 
+        "publication-type": "journal", 
+        "volume": "379", 
+        "source": "Lancet", 
+        "fpage": "2151", 
+        "year": "2012", 
+        "position": 27, 
+        "ref": "LiuLJohnsonHLCousensSPerinJScottS2012Global, regional, and national causes of child mortality: an updated systematic analysis for 2010 with time trends since 2000Lancet37921512161", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "A generalized Michaelis-Menten equation for the analysis of growth", 
+        "lpage": "28", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "L\u00f3pez", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "France", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gerrits", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dhanoa", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Humphries", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dijkstra", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A generalized Michaelis-Menten equation for the analysis of growth", 
+        "publication-type": "journal", 
+        "volume": "78", 
+        "source": "J Anim Sci", 
+        "fpage": "1816", 
+        "year": "2000", 
+        "position": 28, 
+        "ref": "L\u00f3pezSFranceJGerritsWJDhanoaMSHumphriesDJDijkstraJ2000A generalized Michaelis-Menten equation for the analysis of growthJ Anim Sci78181628", 
+        "id": "bib28"
+    }, 
+    {
+        "publisher_loc": "Geneva", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "World Health Organization", 
+        "year": "2008", 
+        "publication-type": "book", 
+        "source": "The global burden of disease: 2004 update", 
+        "authors": [
+            {
+                "surname": "Mathers", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fat", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boerma", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 29, 
+        "ref": "MathersCFatDMBoermaJT2008The global burden of disease: 2004 updateGenevaWorld Health Organization", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Die fermente und ihre wirkungen", 
+        "lpage": "69", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Michaelis", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Menten", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Die fermente und ihre wirkungen", 
+        "publication-type": "journal", 
+        "volume": "49", 
+        "source": "Biochem z", 
+        "fpage": "333", 
+        "year": "1913", 
+        "position": 30, 
+        "ref": "MichaelisLMentenM1913Die fermente und ihre wirkungenBiochem z4933369", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "The growth of bacterial cultures", 
+        "lpage": "94", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Monod", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The growth of bacterial cultures", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Annu Rev Microbiol", 
+        "fpage": "371", 
+        "year": "1949", 
+        "position": 31, 
+        "ref": "MonodJ1949The growth of bacterial culturesAnnu Rev Microbiol337194", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Demography. Broken limits to life expectancy", 
+        "lpage": "31", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Oeppen", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vaupel", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Demography. Broken limits to life expectancy", 
+        "publication-type": "journal", 
+        "volume": "296", 
+        "source": "Science", 
+        "fpage": "1029", 
+        "year": "2002", 
+        "position": 32, 
+        "ref": "OeppenJVaupelJW2002Demography. Broken limits to life expectancyScience296102931", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "The changing relation between mortality and level of economic development", 
+        "lpage": "248", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Preston", 
+                "given-names": "SH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The changing relation between mortality and level of economic development", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "Population studies", 
+        "fpage": "231", 
+        "year": "1975", 
+        "position": 33, 
+        "ref": "PrestonSH1975The changing relation between mortality and level of economic developmentPopulation studies29231248", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysis", 
+        "lpage": "20", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Rajaratnam", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marcus", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Levin-Rector", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chalupka", 
+                "given-names": "AN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dwyer", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysis", 
+        "publication-type": "journal", 
+        "volume": "375", 
+        "source": "Lancet", 
+        "fpage": "1704", 
+        "year": "2010", 
+        "position": 34, 
+        "ref": "RajaratnamJKMarcusJRLevin-RectorAChalupkaANWangHDwyerL2010Worldwide mortality in men and women aged 15\u201359 years from 1970 to 2010: a systematic analysisLancet375170420", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Income and inequality as determinants of mortality: an international cross-section analysis", 
+        "lpage": "8", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Rodgers", 
+                "given-names": "GB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Income and inequality as determinants of mortality: an international cross-section analysis", 
+        "publication-type": "journal", 
+        "volume": "31", 
+        "source": "Int J Epidemiol", 
+        "fpage": "533", 
+        "year": "2002", 
+        "position": 35, 
+        "ref": "RodgersGB2002Income and inequality as determinants of mortality: an international cross-section analysisInt J Epidemiol315338", 
+        "id": "bib35"
+    }, 
+    {
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "Springer", 
+        "year": "2011", 
+        "publication-type": "book", 
+        "volume": "Vol. 2", 
+        "source": "International handbook of adult mortality", 
+        "authors": [
+            {
+                "surname": "Rogers", 
+                "given-names": "RG", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Crimmins", 
+                "given-names": "EM", 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 36, 
+        "ref": "RogersRGCrimminsEM2011International handbook of adult mortalityVol. 2New YorkSpringer", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Preventing chronic diseases: how many lives can we save?", 
+        "lpage": "82", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Strong", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mathers", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leeder", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Beaglehole", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Preventing chronic diseases: how many lives can we save?", 
+        "publication-type": "journal", 
+        "volume": "366", 
+        "source": "Lancet", 
+        "fpage": "1578", 
+        "year": "2005", 
+        "position": 37, 
+        "ref": "StrongKMathersCLeederSBeagleholeR2005Preventing chronic diseases: how many lives can we save?Lancet366157882", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "HIV-associated adult mortality in a rural Tanzanian population", 
+        "lpage": "7", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Todd", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Balira", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grosskurth", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mayaud", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mosha", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "ka-Gina", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "HIV-associated adult mortality in a rural Tanzanian population", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "AIDS", 
+        "fpage": "801", 
+        "year": "1997", 
+        "position": 38, 
+        "ref": "ToddJBaliraRGrosskurthHMayaudPMoshaFka-GinaG1997HIV-associated adult mortality in a rural Tanzanian populationAIDS118017", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "AIDSInfo 1.0-AIDSInfoOnline", 
+        "uri_text": "http://www.aidsinfoonline.org/", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "UNAIDS."
+            }
+        ], 
+        "uri": "http://www.aidsinfoonline.org/", 
+        "full_article_title": "AIDSInfo 1.0-AIDSInfoOnline", 
+        "year": "2010", 
+        "position": 39, 
+        "collab": "UNAIDS.", 
+        "publication-type": "web", 
+        "ref": "UNAIDS.2010AIDSInfo 1.0-AIDSInfoOnlinehttp://www.aidsinfoonline.org/", 
+        "id": "bib39"
+    }, 
+    {
+        "uri_text": "http://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "United Nations", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "United Nations"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Department of Economic and Social Affairs, Population Division"
+            }
+        ], 
+        "uri": "http://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
+        "publication-type": "book", 
+        "source": "World Mortality Report 2011", 
+        "year": "2012", 
+        "position": 40, 
+        "collab": "United Nations", 
+        "ref": "United NationsDepartment of Economic and Social Affairs, Population Division2012World Mortality Report 2011New YorkUnited Nationshttp://www.un.org/esa/population/publications/worldmortalityreport2011/World%20Mortality%20Report%202011.pdf", 
+        "id": "bib40"
+    }, 
+    {
+        "uri_text": "http://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.00051", 
+        "publisher_name": "United Nations", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "United Nations"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "Department of Economic and Social Affairs, Population Division"
+            }
+        ], 
+        "uri": "http://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
+        "publication-type": "book", 
+        "source": "World Population Prospects: The 2010 Revision, Highlights and Advance Tables", 
+        "year": "2011", 
+        "position": 41, 
+        "collab": "United Nations", 
+        "ref": "United NationsDepartment of Economic and Social Affairs, Population Division2011World Population Prospects: The 2010 Revision, Highlights and Advance TablesNew YorkUnited Nationshttp://esa.un.org/unpd/wpp/Excel-Data/mortality.htm", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "CME Info - Child Mortality Estimates", 
+        "uri_text": "http://www.childmortality.org/", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "UN Inter-agency for Child Mortality Estimates"
+            }
+        ], 
+        "uri": "http://www.childmortality.org/", 
+        "full_article_title": "CME Info - Child Mortality Estimates", 
+        "year": "2012", 
+        "position": 42, 
+        "collab": "UN Inter-agency for Child Mortality Estimates", 
+        "publication-type": "web", 
+        "ref": "UN Inter-agency for Child Mortality Estimates2012CME Info - Child Mortality Estimateshttp://www.childmortality.org/", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "The segmented trend line of highest life expectancies", 
+        "lpage": "87", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Vallin", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mesl\u00e9", 
+                "given-names": "F", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The segmented trend line of highest life expectancies", 
+        "publication-type": "journal", 
+        "volume": "35", 
+        "source": "Popul Dev Rev", 
+        "fpage": "159", 
+        "year": "2009", 
+        "position": 43, 
+        "ref": "VallinJMesl\u00e9F2009The segmented trend line of highest life expectanciesPopul Dev Rev3515987", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Global health. How do you count the dead?", 
+        "lpage": "4", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Vogel", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Global health. How do you count the dead?", 
+        "publication-type": "journal", 
+        "volume": "336", 
+        "source": "Science", 
+        "fpage": "1372", 
+        "year": "2012", 
+        "position": 44, 
+        "ref": "VogelG2012Global health. How do you count the dead?Science33613724", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Income inequality and health: what does the literature tell us?", 
+        "lpage": "67", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Wagstaff", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Doorslaer", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Income inequality and health: what does the literature tell us?", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Annu Rev Public Health", 
+        "fpage": "543", 
+        "year": "2000", 
+        "position": 45, 
+        "ref": "WagstaffAVan DoorslaerE2000Income inequality and health: what does the literature tell us?Annu Rev Public Health2154367", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Alcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deaths", 
+        "lpage": "14", 
+        "article_doi": "10.7554/eLife.00051", 
+        "authors": [
+            {
+                "surname": "Zaridze", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brennan", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boreham", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boroda", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Karpov", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lazarev", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "etal": true, 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Alcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deaths", 
+        "publication-type": "journal", 
+        "volume": "373", 
+        "source": "Lancet", 
+        "fpage": "2201", 
+        "year": "2009", 
+        "position": 46, 
+        "ref": "ZaridzeDBrennanPBorehamJBorodaAKarpovRLazarevAAlcohol and cause-specific mortality in Russia: a retrospective case-control study of 48,557 adult deathsLancet2009373220114", 
+        "id": "bib46"
+    }
+]

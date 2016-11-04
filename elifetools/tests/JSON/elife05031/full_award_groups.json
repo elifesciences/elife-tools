@@ -1,0 +1,55 @@
+[
+    {
+        "par-1": {
+            "award-id": "Rubicon Postdoctoral Fellowship", 
+            "institution": "Nederlandse Organisatie voor Wetenschappelijk Onderzoek (Netherlands Organisation for Scientific Research)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100003246"
+        }
+    }, 
+    {
+        "par-2": {
+            "award-id": "Career Development Award", 
+            "institution": "Giovanni Armenise-Harvard Foundation", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100006781"
+        }
+    }, 
+    {
+        "par-3": {
+            "id-type": "FundRef", 
+            "institution": "Howard Hughes Medical Institute", 
+            "id": "http://dx.doi.org/10.13039/100000011"
+        }
+    }, 
+    {
+        "par-4": {
+            "award-id": "Graduate Student Fellowship", 
+            "institution": "National Science Foundation", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000001"
+        }
+    }, 
+    {
+        "par-5": {
+            "award-id": "Postdoctoral Fellowship", 
+            "institution": "Deutsche Forschungsgemeinschaft", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/501100001659"
+        }
+    }, 
+    {
+        "par-6": {
+            "id-type": "FundRef", 
+            "institution": "Jane Coffin Childs Memorial Fund for Medical Research", 
+            "id": "http://dx.doi.org/10.13039/100001033"
+        }
+    }, 
+    {
+        "par-7": {
+            "id-type": "FundRef", 
+            "institution": "Ministerio de Econom\u00eda y Competitividad (Ministry of Economy and Competitiveness)", 
+            "id": "http://dx.doi.org/10.13039/501100003329"
+        }
+    }
+]

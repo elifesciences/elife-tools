@@ -1,0 +1,3418 @@
+[
+    {
+        "article_title": "Information theory and an extension of the maximum likelihood principle", 
+        "publisher_loc": "New York, NY, USA", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Springer-Verlag", 
+        "authors": [
+            {
+                "surname": "Akaike", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kotz", 
+                "given-names": "S", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Johnson", 
+                "given-names": "NL", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Information theory and an extension of the maximum likelihood principle", 
+        "publication-type": "book", 
+        "lpage": "624", 
+        "source": "Breakthroughs in statistics volume 1. foundations and basic theory", 
+        "fpage": "610", 
+        "year": "1973", 
+        "position": 1, 
+        "ref": "AkaikeH1973Information theory and an extension of the maximum likelihood principleKotzSJohnsonNLBreakthroughs in statistics volume 1. foundations and basic theoryNew York, NY, USASpringer-Verlag610624", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheat", 
+        "uri_text": "http://www.jstor.org/stable/2459037", 
+        "lpage": "645", 
+        "doi": "10.1086/282630", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Allard", 
+                "given-names": "ARW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Adams", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheat", 
+        "comment": "http://www.jstor.org/stable/2459037", 
+        "uri": "http://www.jstor.org/stable/2459037", 
+        "volume": "103", 
+        "source": "The American Naturalist", 
+        "reference_id": "10.1086/282630", 
+        "fpage": "621", 
+        "year": "1969", 
+        "position": 2, 
+        "publication-type": "journal", 
+        "ref": "AllardARWAdamsJ1969Population studies in predominantly self-pollinating species. XIII. Intergenotypic competition and population structure in barley and wheatThe American Naturalist103621645http://www.jstor.org/stable/245903710.1086/282630", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signals", 
+        "lpage": "782", 
+        "doi": "10.1111/j.1469-8137.2009.03046.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Allison", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hare", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signals", 
+        "publication-type": "journal", 
+        "volume": "184", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2009.03046.x", 
+        "fpage": "768", 
+        "year": "2009", 
+        "position": 3, 
+        "ref": "AllisonJDHareDJ2009Learned and na\u00efve natural enemy responses and the interpretation of volatile organic compounds as cues or signalsThe New Phytologist18476878210.1111/j.1469-8137.2009.03046.x", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
+        "lpage": "1078", 
+        "doi": "10.1126/science.1191634", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Allmann", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Insects betray themselves in nature to predators by rapid isomerization of green leaf volatiles", 
+        "publication-type": "journal", 
+        "volume": "329", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1191634", 
+        "fpage": "1075", 
+        "year": "2010", 
+        "position": 4, 
+        "ref": "AllmannSBaldwinIT2010Insects betray themselves in nature to predators by rapid isomerization of green leaf volatilesScience3291075107810.1126/science.1191634", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Oxylipin channelling in Nicotiana attenuata: lipoxygenase 2 supplies substrates for green leaf volatile production", 
+        "lpage": "2040", 
+        "doi": "10.1111/j.1365-3040.2010.02203.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Allmann", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuurink", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Oxylipin channelling in <italic>Nicotiana attenuata</italic>: lipoxygenase 2 supplies substrates for green leaf volatile production", 
+        "publication-type": "journal", 
+        "volume": "33", 
+        "source": "Plant, Cell & Environment", 
+        "reference_id": "10.1111/j.1365-3040.2010.02203.x", 
+        "fpage": "2028", 
+        "year": "2010", 
+        "position": 5, 
+        "ref": "AllmannSHalitschkeRSchuurinkRCBaldwinIT2010Oxylipin channelling in Nicotiana attenuata: lipoxygenase 2 supplies substrates for green leaf volatile productionPlant, Cell & Environment332028204010.1111/j.1365-3040.2010.02203.x", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Toward community genetics", 
+        "publisher_loc": "Chicago, IL, USA", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "University of Chicago Press", 
+        "authors": [
+            {
+                "surname": "Antonovics", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fritz", 
+                "given-names": "RS", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Simms", 
+                "given-names": "EL", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Toward community genetics", 
+        "publication-type": "book", 
+        "lpage": "449", 
+        "source": "Plant resistance to herbivores and pathogens", 
+        "fpage": "426", 
+        "year": "1992", 
+        "position": 6, 
+        "ref": "AntonovicsJ1992Toward community geneticsFritzRSSimmsELPlant resistance to herbivores and pathogensChicago, IL, USAUniversity of Chicago Press426449", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Acquired immunity to herbivory and allelopathy caused by airborne plant emissions", 
+        "lpage": "1649", 
+        "doi": "10.1016/j.phytochem.2010.06.021", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Arimura", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shiojiri", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Karban", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Acquired immunity to herbivory and allelopathy caused by airborne plant emissions", 
+        "publication-type": "journal", 
+        "volume": "71", 
+        "source": "Phytochemistry", 
+        "reference_id": "10.1016/j.phytochem.2010.06.021", 
+        "fpage": "1642", 
+        "year": "2010", 
+        "position": 7, 
+        "ref": "ArimuraGShiojiriKKarbanR2010Acquired immunity to herbivory and allelopathy caused by airborne plant emissionsPhytochemistry711642164910.1016/j.phytochem.2010.06.021", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Volatile signaling in plant-plant interactions: \u2018talking trees\u2019 in the genomics era", 
+        "lpage": "815", 
+        "doi": "10.1126/science.1118446", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paschold", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "von Dahl", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Preston", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Volatile signaling in plant-plant interactions: \u2018talking trees\u2019 in the genomics era", 
+        "publication-type": "journal", 
+        "volume": "311", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1118446", 
+        "fpage": "812", 
+        "year": "2006", 
+        "position": 8, 
+        "ref": "BaldwinITHalitschkeRPascholdAvon DahlCCPrestonKA2006Volatile signaling in plant-plant interactions: \u2018talking trees\u2019 in the genomics eraScience31181281510.1126/science.1118446", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Quantifying the evidence for biodiversity effects on ecosystem functioning and services", 
+        "lpage": "1156", 
+        "doi": "10.1111/j.1461-0248.2006.00963.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Balvanera", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfisterer", 
+                "given-names": "AB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buchmann", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "He", 
+                "given-names": "J-S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nakashizuka", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raffaelli", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmid", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Quantifying the evidence for biodiversity effects on ecosystem functioning and services", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Ecology Letters", 
+        "reference_id": "10.1111/j.1461-0248.2006.00963.x", 
+        "fpage": "1146", 
+        "year": "2006", 
+        "position": 9, 
+        "ref": "BalvaneraPPfistererABBuchmannNHeJ-SNakashizukaTRaffaelliDSchmidB2006Quantifying the evidence for biodiversity effects on ecosystem functioning and servicesEcology Letters91146115610.1111/j.1461-0248.2006.00963.x", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Associational resistance and associational susceptibility: having right or wrong neighbors", 
+        "lpage": "20", 
+        "doi": "10.1146/annurev.ecolsys.110308.120242", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Barbosa", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hines", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kaplan", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martinson", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Szczepaniec", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Szendrei", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Associational resistance and associational susceptibility: having right or wrong neighbors", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Annual Review of Ecology, Evolution, and Systematics", 
+        "reference_id": "10.1146/annurev.ecolsys.110308.120242", 
+        "fpage": "1", 
+        "year": "2009", 
+        "position": 10, 
+        "ref": "BarbosaPHinesJKaplanIMartinsonHSzczepaniecASzendreiZ2009Associational resistance and associational susceptibility: having right or wrong neighborsAnnual Review of Ecology, Evolution, and Systematics4012010.1146/annurev.ecolsys.110308.120242", 
+        "id": "bib10"
+    }, 
+    {
+        "uri_text": "http://CRAN.R-project.org/package=lme4", 
+        "comment": "http://CRAN.R-project.org/package=lme4", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Bates", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maechler", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolker", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walker", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://CRAN.R-project.org/package=lme4", 
+        "publication-type": "book", 
+        "source": "lme4: linear mixed-effects models using Eigen and S4. R package version 1.1-7", 
+        "year": "2014a", 
+        "position": 11, 
+        "ref": "BatesDMaechlerMBolkerBMWalkerS2014alme4: linear mixed-effects models using Eigen and S4. R package version 1.1-7http://CRAN.R-project.org/package=lme4", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "lme4: linear mixed-effects models using Eigen and S4", 
+        "uri_text": "http://arxiv.org/abs/1406.5823", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Bates", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maechler", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolker", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walker", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://arxiv.org/abs/1406.5823", 
+        "comment": "http://arxiv.org/abs/1406.5823", 
+        "full_article_title": "lme4: linear mixed-effects models using Eigen and S4", 
+        "source": "ArXiv", 
+        "year": "2014b", 
+        "position": 12, 
+        "publication-type": "other", 
+        "ref": "BatesDMaechlerMBolkerBMWalkerS2014blme4: linear mixed-effects models using Eigen and S4ArXivhttp://arxiv.org/abs/1406.5823", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Insect host location: a volatile situation", 
+        "lpage": "274", 
+        "doi": "10.1016/j.tplants.2005.04.003", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Bruce", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wadhams", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Woodcock", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Insect host location: a volatile situation", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "Trends in Plant Science", 
+        "reference_id": "10.1016/j.tplants.2005.04.003", 
+        "fpage": "269", 
+        "year": "2005", 
+        "position": 13, 
+        "ref": "BruceTJWadhamsLJWoodcockCM2005Insect host location: a volatile situationTrends in Plant Science1026927410.1016/j.tplants.2005.04.003", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Occurrence of tetraploidy in Nicotiana attenuata plants after Agrobacterium-mediated transformation is genotype specific but independent of polysomaty of explant tissue", 
+        "lpage": "675", 
+        "doi": "10.1007/s00299-005-0111-4", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Bubner", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gase", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berger", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Link", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Occurrence of tetraploidy in <italic>Nicotiana attenuata</italic> plants after <italic>Agrobacterium</italic>-mediated transformation is genotype specific but independent of polysomaty of explant tissue", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Plant Cell Reports", 
+        "reference_id": "10.1007/s00299-005-0111-4", 
+        "fpage": "668", 
+        "year": "2006", 
+        "position": 14, 
+        "ref": "BubnerBGaseKBergerBLinkDBaldwinIT2006Occurrence of tetraploidy in Nicotiana attenuata plants after Agrobacterium-mediated transformation is genotype specific but independent of polysomaty of explant tissuePlant Cell Reports2566867510.1007/s00299-005-0111-4", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "Decomposition of terpenes by ozone during sampling on Tenax", 
+        "lpage": "1506", 
+        "doi": "10.1021/ac950803i", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Calogirou", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Larsen", 
+                "given-names": "BR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brussol", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Duane", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kotzias", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Decomposition of terpenes by ozone during sampling on Tenax", 
+        "publication-type": "journal", 
+        "volume": "68", 
+        "source": "Analytical Chemistry", 
+        "reference_id": "10.1021/ac950803i", 
+        "fpage": "1499", 
+        "year": "1996", 
+        "position": 15, 
+        "ref": "CalogirouALarsenBRBrussolCDuaneMKotziasD1996Decomposition of terpenes by ozone during sampling on TenaxAnalytical Chemistry681499150610.1021/ac950803i", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Exposure of lima bean leaves to volatiles from herbivore-induced conspecific plants results in emission of carnivore attractants: active or passive process?", 
+        "lpage": "1317", 
+        "doi": "10.1023/B:JOEC.0000037741.13402.19", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Choh", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shimoda", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ozawa", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dicke", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takabayashi", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Exposure of lima bean leaves to volatiles from herbivore-induced conspecific plants results in emission of carnivore attractants: active or passive process?", 
+        "publication-type": "journal", 
+        "volume": "30", 
+        "source": "Journal of Chemical Ecology", 
+        "reference_id": "10.1023/B:JOEC.0000037741.13402.19", 
+        "fpage": "1305", 
+        "year": "2004", 
+        "position": 16, 
+        "ref": "ChohYShimodaTOzawaRDickeMTakabayashiJ2004Exposure of lima bean leaves to volatiles from herbivore-induced conspecific plants results in emission of carnivore attractants: active or passive process?Journal of Chemical Ecology301305131710.1023/B:JOEC.0000037741.13402.19", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "A direct comparison of the consequences of plant genotypic and species diversity on communities and ecosystem function", 
+        "lpage": "923", 
+        "doi": "10.1890/10-0999.1", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Cook-Patton", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McArt", 
+                "given-names": "SH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Parachnowitsch", 
+                "given-names": "AL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thaler", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Agrawal", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A direct comparison of the consequences of plant genotypic and species diversity on communities and ecosystem function", 
+        "publication-type": "journal", 
+        "volume": "92", 
+        "source": "Ecology", 
+        "reference_id": "10.1890/10-0999.1", 
+        "fpage": "915", 
+        "year": "2011", 
+        "position": 17, 
+        "ref": "Cook-PattonSCMcArtSHParachnowitschALThalerJSAgrawalAA2011A direct comparison of the consequences of plant genotypic and species diversity on communities and ecosystem functionEcology9291592310.1890/10-0999.1", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "Plant genotypic diversity predicts community structure and governs an ecosystem process", 
+        "lpage": "968", 
+        "doi": "10.1126/science.1128326", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Crutsinger", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Collins", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fordyce", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gombert", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nice", 
+                "given-names": "CC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sanders", 
+                "given-names": "NJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Plant genotypic diversity predicts community structure and governs an ecosystem process", 
+        "publication-type": "journal", 
+        "volume": "647", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1128326", 
+        "fpage": "966", 
+        "year": "2006", 
+        "position": 18, 
+        "ref": "CrutsingerGMCollinsMDFordyceJAGombertZNiceCCSandersNJ2006Plant genotypic diversity predicts community structure and governs an ecosystem processScience64796696810.1126/science.1128326", 
+        "id": "bib18"
+    }, 
+    {
+        "uri_text": "http://darwin-online.org.uk/contents.html#origin", 
+        "comment": "URL: http://darwin-online.org.uk/contents.html#origin", 
+        "publisher_loc": "London", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "John Murray", 
+        "authors": [
+            {
+                "surname": "Darwin", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://darwin-online.org.uk/contents.html#origin", 
+        "publication-type": "book", 
+        "source": "The origin of species by means of natural selection; or, the preservation of favoured races in the struggle for life 6th, corr", 
+        "fpage": "86", 
+        "year": "1876", 
+        "position": 19, 
+        "ref": "DarwinC1876The origin of species by means of natural selection; or, the preservation of favoured races in the struggle for life 6th, corrLondonJohn Murray86URL: http://darwin-online.org.uk/contents.html#origin", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "Restoring a maize root signal that attracts insect-killing nematodes to control a major pest", 
+        "lpage": "13218", 
+        "doi": "10.1073/pnas.0906365106", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Degenhardt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hiltpold", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "K\u00f6llner", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Frey", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gierl", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gershenzon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hibbard", 
+                "given-names": "BE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ellersieck", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turlings", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Restoring a maize root signal that attracts insect-killing nematodes to control a major pest", 
+        "publication-type": "journal", 
+        "volume": "106", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.0906365106", 
+        "fpage": "13213", 
+        "year": "2009", 
+        "position": 20, 
+        "ref": "DegenhardtJHiltpoldIK\u00f6llnerTGFreyMGierlAGershenzonJHibbardBEEllersieckMRTurlingsTC2009Restoring a maize root signal that attracts insect-killing nematodes to control a major pestProceedings of the National Academy of Sciences of USA106132131321810.1073/pnas.0906365106", 
+        "id": "bib20"
+    }, 
+    {
+        "publisher_loc": "Wageningen, The Netherlands", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Landbouwdocumentatie", 
+        "year": "1960", 
+        "publication-type": "book", 
+        "source": "On competition. centrum voor Landbaupublikaties", 
+        "fpage": "82", 
+        "authors": [
+            {
+                "surname": "De Wit", 
+                "given-names": "CT", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 21, 
+        "ref": "De WitCT1960On competition. centrum voor LandbaupublikatiesWageningen, The NetherlandsLandbouwdocumentatie82", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Pithy protection: Nicotiana attenuata's jasmonic acid-mediated defenses are required to resist stem-boring weevil larvae", 
+        "lpage": "1946", 
+        "doi": "10.1104/pp.110.170936", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Diezel", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kessler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Pithy protection: <italic>Nicotiana attenuata</italic>'s jasmonic acid-mediated defenses are required to resist stem-boring weevil larvae", 
+        "publication-type": "journal", 
+        "volume": "155", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.1104/pp.110.170936", 
+        "fpage": "1936", 
+        "year": "2011", 
+        "position": 22, 
+        "ref": "DiezelCKesslerDBaldwinIT2011Pithy protection: Nicotiana attenuata's jasmonic acid-mediated defenses are required to resist stem-boring weevil larvaePlant Physiology1551936194610.1104/pp.110.170936", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "Nothing in biology makes sense except in the light of evolution", 
+        "lpage": "129", 
+        "doi": "10.2307/4444260", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Dobzhansky", 
+                "given-names": "T", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Nothing in biology makes sense except in the light of evolution", 
+        "publication-type": "journal", 
+        "volume": "35", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.2307/4444260", 
+        "fpage": "125", 
+        "year": "1973", 
+        "position": 23, 
+        "ref": "DobzhanskyT1973Nothing in biology makes sense except in the light of evolutionPlant Physiology3512512910.2307/4444260", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Biosynthesis, function and metabolic engineering of plant volatile organic compounds", 
+        "lpage": "32", 
+        "doi": "10.1111/nph.12145", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Dudareva", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Klempien", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Muhlemann", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kaplan", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Biosynthesis, function and metabolic engineering of plant volatile organic compounds", 
+        "publication-type": "journal", 
+        "volume": "198", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/nph.12145", 
+        "fpage": "16", 
+        "year": "2013", 
+        "position": 24, 
+        "ref": "DudarevaNKlempienAMuhlemannJKKaplanI2013Biosynthesis, function and metabolic engineering of plant volatile organic compoundsThe New Phytologist198163210.1111/nph.12145", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "Metabolic engineering of plant volatiles", 
+        "lpage": "189", 
+        "doi": "10.1016/j.copbio.2008.02.011", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Dudareva", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pichersky", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Metabolic engineering of plant volatiles", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "Current Opinion in Biotechnology", 
+        "reference_id": "10.1016/j.copbio.2008.02.011", 
+        "fpage": "181", 
+        "year": "2008", 
+        "position": 25, 
+        "ref": "DudarevaNPicherskyE2008Metabolic engineering of plant volatilesCurrent Opinion in Biotechnology1918118910.1016/j.copbio.2008.02.011", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "A trait-based experimental approach to understand the mechanisms underlying biodiversity\u2013ecosystem functioning relationships", 
+        "lpage": "240", 
+        "doi": "10.1016/j.baae.2014.02.003", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Ebeling", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pompe", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baade", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eisenhauer", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hillebrand", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Proulx", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roscher", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmid", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wirth", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weisser", 
+                "given-names": "WW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A trait-based experimental approach to understand the mechanisms underlying biodiversity\u2013ecosystem functioning relationships", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Basic and Applied Ecology", 
+        "reference_id": "10.1016/j.baae.2014.02.003", 
+        "fpage": "229", 
+        "year": "2014", 
+        "position": 26, 
+        "ref": "EbelingAPompeSBaadeJEisenhauerNHillebrandHProulxRRoscherCSchmidBWirthCWeisserWW2014A trait-based experimental approach to understand the mechanisms underlying biodiversity\u2013ecosystem functioning relationshipsBasic and Applied Ecology1522924010.1016/j.baae.2014.02.003", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Airborne signals prime plants against insect herbivore attack", 
+        "lpage": "1785", 
+        "doi": "10.1073/pnas.0308037100", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Engelberth", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alborn", 
+                "given-names": "HT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmelz", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tumlinson", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Airborne signals prime plants against insect herbivore attack", 
+        "publication-type": "journal", 
+        "volume": "101", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.0308037100", 
+        "fpage": "1781", 
+        "year": "2004", 
+        "position": 27, 
+        "ref": "EngelberthJAlbornHTSchmelzEATumlinsonJH2004Airborne signals prime plants against insect herbivore attackProceedings of the National Academy of Sciences of USA1011781178510.1073/pnas.0308037100", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "Plant apparency and chemical defense", 
+        "publisher_loc": "New York, NY, USA", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Plenum Press", 
+        "authors": [
+            {
+                "surname": "Feeny", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wallace", 
+                "given-names": "JW", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Mansell", 
+                "given-names": "RL", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Plant apparency and chemical defense", 
+        "publication-type": "book", 
+        "lpage": "40", 
+        "source": "Recent advances in phytochemistry", 
+        "fpage": "1", 
+        "year": "1976", 
+        "position": 28, 
+        "ref": "FeenyP1976Plant apparency and chemical defenseWallaceJWMansellRLRecent advances in phytochemistryNew York, NY, USAPlenum Press140", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "Priming defense genes and metabolites in hybrid poplar by the green leaf volatile cis-3-hexenyl acetate", 
+        "lpage": "734", 
+        "doi": "10.1111/j.1469-8137.2008.02599.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Frost", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mescher", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dervinis", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carlson", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "De Moraes", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Priming defense genes and metabolites in hybrid poplar by the green leaf volatile <italic>cis</italic>-3-hexenyl acetate", 
+        "publication-type": "journal", 
+        "volume": "180", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2008.02599.x", 
+        "fpage": "722", 
+        "year": "2008", 
+        "position": 29, 
+        "ref": "FrostCJMescherMCDervinisCDavisJMCarlsonJEDe MoraesCM2008Priming defense genes and metabolites in hybrid poplar by the green leaf volatile cis-3-hexenyl acetateThe New Phytologist18072273410.1111/j.1469-8137.2008.02599.x", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "Development and validation of a liquid chromatography-electrospray ionization-time-of-flight mass spectrometry method for induced changes in Nicotiana attenuata leaves during simulated herbivory", 
+        "lpage": "9427", 
+        "doi": "10.1021/jf1017737", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Gaquerel", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heiling", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schoettner", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zurek", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Development and validation of a liquid chromatography-electrospray ionization-time-of-flight mass spectrometry method for induced changes in <italic>Nicotiana attenuata</italic> leaves during simulated herbivory", 
+        "publication-type": "journal", 
+        "volume": "58", 
+        "source": "Journal of Agricultural and Food Chemistry", 
+        "reference_id": "10.1021/jf1017737", 
+        "fpage": "9418", 
+        "year": "2010", 
+        "position": 30, 
+        "ref": "GaquerelEHeilingSSchoettnerMZurekGBaldwinIT2010Development and validation of a liquid chromatography-electrospray ionization-time-of-flight mass spectrometry method for induced changes in Nicotiana attenuata leaves during simulated herbivoryJournal of Agricultural and Food Chemistry589418942710.1021/jf1017737", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphigidae) and its natural host Nicotiana attenuata. VIII. An unbiased GCxGC-ToFMS analysis of the plant's elicited volatile emissions", 
+        "lpage": "1423", 
+        "doi": "10.1104/pp.108.130799", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Gaquerel", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weinhold", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular interactions between the specialist herbivore <italic>Manduca sexta</italic> (Lepidoptera, Sphigidae) and its natural host <italic>Nicotiana attenuata</italic>. VIII. An unbiased GCxGC-ToFMS analysis of the plant's elicited volatile emissions", 
+        "publication-type": "journal", 
+        "volume": "149", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.1104/pp.108.130799", 
+        "fpage": "1408", 
+        "year": "2009", 
+        "position": 31, 
+        "ref": "GaquerelEWeinholdABaldwinIT2009Molecular interactions between the specialist herbivore Manduca sexta (Lepidoptera, Sphigidae) and its natural host Nicotiana attenuata. VIII. An unbiased GCxGC-ToFMS analysis of the plant's elicited volatile emissionsPlant Physiology1491408142310.1104/pp.108.130799", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Efficient screening of transgenic plant lines for ecological research", 
+        "lpage": "902", 
+        "doi": "10.1111/j.1755-0998.2011.03017.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Gase", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Weinhold", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bozorov", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuck", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Efficient screening of transgenic plant lines for ecological research", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Molecular Ecology Resources", 
+        "reference_id": "10.1111/j.1755-0998.2011.03017.x", 
+        "fpage": "890", 
+        "year": "2011", 
+        "position": 32, 
+        "ref": "GaseKWeinholdABozorovTSchuckSBaldwinIT2011Efficient screening of transgenic plant lines for ecological researchMolecular Ecology Resources1189090210.1111/j.1755-0998.2011.03017.x", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Farming and the fate of wild nature", 
+        "lpage": "555", 
+        "doi": "10.1126/science.1106049", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Green", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cornell", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scharlemann", 
+                "given-names": "JPW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Balmford", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Farming and the fate of wild nature", 
+        "publication-type": "journal", 
+        "volume": "307", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1106049", 
+        "fpage": "550", 
+        "year": "2005", 
+        "position": 33, 
+        "ref": "GreenRECornellSJScharlemannJPWBalmfordA2005Farming and the fate of wild natureScience30755055510.1126/science.1106049", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in Nicotiana attenuata", 
+        "lpage": "807", 
+        "doi": "10.1046/j.1365-313X.2003.01921.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in <italic>Nicotiana attenuata</italic>", 
+        "publication-type": "journal", 
+        "volume": "36", 
+        "source": "The Plant Journal", 
+        "reference_id": "10.1046/j.1365-313X.2003.01921.x", 
+        "fpage": "794", 
+        "year": "2003", 
+        "position": 34, 
+        "ref": "HalitschkeRBaldwinIT2003Antisense LOX expression increases herbivore performance by decreasing defense responses and inhibiting growth-related transcriptional reorganization in Nicotiana attenuataThe Plant Journal3679480710.1046/j.1365-313X.2003.01921.x", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Ecophysiological comparison of direct and indirect defenses in Nicotiana attenuata", 
+        "lpage": "417", 
+        "doi": "10.1007/s004420000389", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ke\u00dfler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kahl", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lorenz", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ecophysiological comparison of direct and indirect defenses in <italic>Nicotiana attenuata</italic>", 
+        "publication-type": "journal", 
+        "volume": "124", 
+        "source": "Oecologia", 
+        "reference_id": "10.1007/s004420000389", 
+        "fpage": "408", 
+        "year": "2000", 
+        "position": 35, 
+        "ref": "HalitschkeRKe\u00dflerAKahlJLorenzABaldwinIT2000Ecophysiological comparison of direct and indirect defenses in Nicotiana attenuataOecologia12440841710.1007/s004420000389", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "Shared signals \u2013 \u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in nature", 
+        "lpage": "34", 
+        "doi": "10.1111/j.1461-0248.2007.01123.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stenberg", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ke\u00dfler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ke\u00dfler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Shared signals \u2013 \u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in nature", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Ecology Letters", 
+        "reference_id": "10.1111/j.1461-0248.2007.01123.x", 
+        "fpage": "24", 
+        "year": "2008", 
+        "position": 36, 
+        "ref": "HalitschkeRStenbergJAKe\u00dflerDKe\u00dflerABaldwinIT2008Shared signals \u2013 \u2018alarm calls\u2019 from plants increase apparency to herbivores and their enemies in natureEcology Letters11243410.1111/j.1461-0248.2007.01123.x", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Interplay between ecological communities and evolution: review of feedbacks from microevolutionary to macroevolutionary scales", 
+        "lpage": "125", 
+        "doi": "10.1196/annals.1438.003", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Haloin", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Strauss", 
+                "given-names": "SY", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Interplay between ecological communities and evolution: review of feedbacks from microevolutionary to macroevolutionary scales", 
+        "publication-type": "journal", 
+        "volume": "1133", 
+        "source": "Annals of the New York Academy of Sciences", 
+        "reference_id": "10.1196/annals.1438.003", 
+        "fpage": "87", 
+        "year": "2008", 
+        "position": 37, 
+        "ref": "HaloinJRStraussSY2008Interplay between ecological communities and evolution: review of feedbacks from microevolutionary to macroevolutionary scalesAnnals of the New York Academy of Sciences11338712510.1196/annals.1438.003", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "Priming of indirect defences", 
+        "lpage": "817", 
+        "doi": "10.1111/j.1461-0248.2006.00932.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Heil", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kost", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Priming of indirect defences", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Ecology Letters", 
+        "reference_id": "10.1111/j.1461-0248.2006.00932.x", 
+        "fpage": "813", 
+        "year": "2006", 
+        "position": 38, 
+        "ref": "HeilMKostC2006Priming of indirect defencesEcology Letters981381710.1111/j.1461-0248.2006.00932.x", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Evolution of extortion in iterated prisoner's dilemma games", 
+        "lpage": "6918", 
+        "doi": "10.1073/pnas.1214834110", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Hilbe", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nowak", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sigmund", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of extortion in iterated prisoner's dilemma games", 
+        "publication-type": "journal", 
+        "volume": "110", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1214834110", 
+        "fpage": "6913", 
+        "year": "2013", 
+        "position": 39, 
+        "ref": "HilbeCNowakMASigmundK2013Evolution of extortion in iterated prisoner's dilemma gamesProceedings of the National Academy of Sciences of USA1106913691810.1073/pnas.1214834110", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Birch (Betula spp.) leaves adsorb and re-release volatiles specific to neighbouring plants\u2013a mechanism for associational herbivore resistance?", 
+        "lpage": "732", 
+        "doi": "10.1111/j.1469-8137.2010.03220.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Himanen", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blande", 
+                "given-names": "JD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Klemola", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pulkkinen", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heijari", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holopainen", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Birch (<italic>Betula</italic> spp.) leaves adsorb and re-release volatiles specific to neighbouring plants\u2013a mechanism for associational herbivore resistance?", 
+        "publication-type": "journal", 
+        "volume": "186", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2010.03220.x", 
+        "fpage": "722", 
+        "year": "2010", 
+        "position": 40, 
+        "ref": "HimanenSJBlandeJDKlemolaTPulkkinenJHeijariJHolopainenJK2010Birch (Betula spp.) leaves adsorb and re-release volatiles specific to neighbouring plants\u2013a mechanism for associational herbivore resistance?The New Phytologist18672273210.1111/j.1469-8137.2010.03220.x", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "A simple sequentially rejective multiple test procedure", 
+        "lpage": "70", 
+        "doi": "10.2307/4615733", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Holm", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A simple sequentially rejective multiple test procedure", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "Scandinavian Journal of Statistics", 
+        "reference_id": "10.2307/4615733", 
+        "fpage": "65", 
+        "year": "1979", 
+        "position": 41, 
+        "ref": "HolmS1979A simple sequentially rejective multiple test procedureScandinavian Journal of Statistics6657010.2307/4615733", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "Simultaneous inference in general parametric models", 
+        "lpage": "363", 
+        "doi": "10.1002/bimj.200810425", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Hothorn", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bretz", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Westfall", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Simultaneous inference in general parametric models", 
+        "publication-type": "journal", 
+        "volume": "50", 
+        "source": "Biometrical Journal Biometrische Zeitschrift", 
+        "reference_id": "10.1002/bimj.200810425", 
+        "fpage": "346", 
+        "year": "2008", 
+        "position": 42, 
+        "ref": "HothornTBretzFWestfallP2008Simultaneous inference in general parametric modelsBiometrical Journal Biometrische Zeitschrift5034636310.1002/bimj.200810425", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "Additive and interactive effects of plant genotypic diversity on arthropod communities and plant fitness", 
+        "lpage": "34", 
+        "doi": "10.1111/j.1461-0248.2005.00833.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Johnson", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lajeunesse", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Agrawal", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Additive and interactive effects of plant genotypic diversity on arthropod communities and plant fitness", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Ecology Letters", 
+        "reference_id": "10.1111/j.1461-0248.2005.00833.x", 
+        "fpage": "24", 
+        "year": "2006", 
+        "position": 43, 
+        "ref": "JohnsonMTLajeunesseMJAgrawalAA2006Additive and interactive effects of plant genotypic diversity on arthropod communities and plant fitnessEcology Letters9243410.1111/j.1461-0248.2005.00833.x", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "An emerging synthesis between community ecology and evolutionary biology", 
+        "lpage": "257", 
+        "doi": "10.1016/j.tree.2007.01.014", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Johnson", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stinchcombe", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An emerging synthesis between community ecology and evolutionary biology", 
+        "publication-type": "journal", 
+        "volume": "22", 
+        "source": "Trends in Ecology & Evolution", 
+        "reference_id": "10.1016/j.tree.2007.01.014", 
+        "fpage": "250", 
+        "year": "2007", 
+        "position": 44, 
+        "ref": "JohnsonMTStinchcombeJR2007An emerging synthesis between community ecology and evolutionary biologyTrends in Ecology & Evolution2225025710.1016/j.tree.2007.01.014", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "Quantitative determination of serine proteinase inhibitor activity using a radial diffusion assay", 
+        "lpage": "84", 
+        "doi": "10.1006/abio.1993.1294", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Jongsma", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bakker", 
+                "given-names": "PL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stiekema", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Quantitative determination of serine proteinase inhibitor activity using a radial diffusion assay", 
+        "publication-type": "journal", 
+        "volume": "212", 
+        "source": "Analytical Biochemistry", 
+        "reference_id": "10.1006/abio.1993.1294", 
+        "fpage": "79", 
+        "year": "1993", 
+        "position": 45, 
+        "ref": "JongsmaMABakkerPLStiekemaWJ1993Quantitative determination of serine proteinase inhibitor activity using a radial diffusion assayAnalytical Biochemistry212798410.1006/abio.1993.1294", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Nicotiana attenuata SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathway", 
+        "lpage": "106", 
+        "doi": "10.1104/pp.109.149013", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kallenbach", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alagna", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonaventure", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Nicotiana attenuata</italic> SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathway", 
+        "publication-type": "journal", 
+        "volume": "152", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.1104/pp.109.149013", 
+        "fpage": "96", 
+        "year": "2010", 
+        "position": 46, 
+        "ref": "KallenbachMAlagnaFBaldwinITBonaventureG2010Nicotiana attenuata SIPK, WIPK, NPR1, and fatty acid-amino acid conjugates participate in the induction of jasmonic acid biosynthesis by affecting early enzymatic steps in the pathwayPlant Physiology1529610610.1104/pp.109.149013", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "Empoasca leafhoppers attack wild tobacco plants in a jasmonate-dependent manner and identify jasmonate mutants in natural populations", 
+        "lpage": "E1557", 
+        "doi": "10.1073/pnas.1200363109", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kallenbach", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bonaventure", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gilardoni", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wissgott", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Empoasca</italic> leafhoppers attack wild tobacco plants in a jasmonate-dependent manner and identify jasmonate mutants in natural populations", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1200363109", 
+        "fpage": "E1548", 
+        "year": "2012", 
+        "position": 47, 
+        "ref": "KallenbachMBonaventureGGilardoniPAWissgottABaldwinIT2012Empoasca leafhoppers attack wild tobacco plants in a jasmonate-dependent manner and identify jasmonate mutants in natural populationsProceedings of the National Academy of Sciences of USA109E1548E155710.1073/pnas.1200363109", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Attracting carnivorous arthropods with plant volatiles: the future of biocontrol or playing with fire?", 
+        "lpage": "89", 
+        "doi": "10.1016/j.biocontrol.2011.10.017", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kaplan", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Attracting carnivorous arthropods with plant volatiles: the future of biocontrol or playing with fire?", 
+        "publication-type": "journal", 
+        "volume": "60", 
+        "source": "Biological Control", 
+        "reference_id": "10.1016/j.biocontrol.2011.10.017", 
+        "fpage": "77", 
+        "year": "2012", 
+        "position": 48, 
+        "ref": "KaplanI2012Attracting carnivorous arthropods with plant volatiles: the future of biocontrol or playing with fire?Biological Control60778910.1016/j.biocontrol.2011.10.017", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Genetic engineering of terpenoid metabolism attracts bodyguards to Arabidopsis", 
+        "lpage": "2072", 
+        "doi": "10.1126/science.1116232", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kappers", 
+                "given-names": "IF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aharoni", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Herpen", 
+                "given-names": "TW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Luckerhoff", 
+                "given-names": "LL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dicke", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bouwmeester", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genetic engineering of terpenoid metabolism attracts bodyguards to <italic>Arabidopsis</italic>", 
+        "publication-type": "journal", 
+        "volume": "309", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1116232", 
+        "fpage": "2070", 
+        "year": "2005", 
+        "position": 49, 
+        "ref": "KappersIFAharoniAVan HerpenTWLuckerhoffLLDickeMBouwmeesterHJ2005Genetic engineering of terpenoid metabolism attracts bodyguards to ArabidopsisScience3092070207210.1126/science.1116232", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Defensive function of herbivore-induced plant volatile emissions in nature", 
+        "lpage": "2144", 
+        "doi": "10.1126/science.291.5511.2141", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kessler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Defensive function of herbivore-induced plant volatile emissions in nature", 
+        "publication-type": "journal", 
+        "volume": "291", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.291.5511.2141", 
+        "fpage": "2141", 
+        "year": "2001", 
+        "position": 50, 
+        "ref": "KesslerABaldwinIT2001Defensive function of herbivore-induced plant volatile emissions in natureScience2912141214410.1126/science.291.5511.2141", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "Priming of plant defense responses in nature by airborne signaling between Artemisia tridentata and Nicotiana attenuata", 
+        "lpage": "292", 
+        "doi": "10.1007/s00442-006-0365-8", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kessler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diezel", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Priming of plant defense responses in nature by airborne signaling between <italic>Artemisia tridentata</italic> and <italic>Nicotiana attenuata</italic>", 
+        "publication-type": "journal", 
+        "volume": "148", 
+        "source": "Oecologia", 
+        "reference_id": "10.1007/s00442-006-0365-8", 
+        "fpage": "280", 
+        "year": "2006", 
+        "position": 51, 
+        "ref": "KesslerAHalitschkeRDiezelCBaldwinIT2006Priming of plant defense responses in nature by airborne signaling between Artemisia tridentata and Nicotiana attenuataOecologia14828029210.1007/s00442-006-0365-8", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "Silencing the jasmonate cascade: induced plant defenses and insect populations", 
+        "lpage": "668", 
+        "doi": "10.1126/science.1096931", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kessler", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Silencing the jasmonate cascade: induced plant defenses and insect populations", 
+        "publication-type": "journal", 
+        "volume": "305", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1096931", 
+        "fpage": "665", 
+        "year": "2004", 
+        "position": 52, 
+        "ref": "KesslerAHalitschkeRBaldwinIT2004Silencing the jasmonate cascade: induced plant defenses and insect populationsScience30566566810.1126/science.1096931", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "Field experiments with transformed plants reveal the sense of floral scents", 
+        "lpage": "1202", 
+        "doi": "10.1126/science.1160072", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kessler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gase", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Field experiments with transformed plants reveal the sense of floral scents", 
+        "publication-type": "journal", 
+        "volume": "321", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1160072", 
+        "fpage": "1200", 
+        "year": "2008", 
+        "position": 53, 
+        "ref": "KesslerDGaseKBaldwinIT2008Field experiments with transformed plants reveal the sense of floral scentsScience3211200120210.1126/science.1160072", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Transgenic plants as vital components of integrated pest management", 
+        "lpage": "627", 
+        "doi": "10.1016/j.tibtech.2009.08.002", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kos", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Loon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dicke", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vet", 
+                "given-names": "LE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Transgenic plants as vital components of integrated pest management", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Trends in Biotechnology", 
+        "reference_id": "10.1016/j.tibtech.2009.08.002", 
+        "fpage": "621", 
+        "year": "2009", 
+        "position": 54, 
+        "ref": "KosMVan LoonJDickeMVetLE2009Transgenic plants as vital components of integrated pest managementTrends in Biotechnology2762162710.1016/j.tibtech.2009.08.002", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "Molecular and biochemical evolution of maize terpene synthase 10, an enzyme of indirect defense", 
+        "lpage": "1145", 
+        "doi": "10.1016/j.phytochem.2009.06.011", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "K\u00f6llner", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gershenzon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Degenhardt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular and biochemical evolution of maize terpene synthase 10, an enzyme of indirect defense", 
+        "publication-type": "journal", 
+        "volume": "70", 
+        "source": "Phytochemistry", 
+        "reference_id": "10.1016/j.phytochem.2009.06.011", 
+        "fpage": "1139", 
+        "year": "2009", 
+        "position": 55, 
+        "ref": "K\u00f6llnerTGGershenzonJDegenhardtJ2009Molecular and biochemical evolution of maize terpene synthase 10, an enzyme of indirect defensePhytochemistry701139114510.1016/j.phytochem.2009.06.011", 
+        "id": "bib88"
+    }, 
+    {
+        "article_title": "Agrobacterium-mediated transformation of Nicotiana attenuata, a model ecological expression system", 
+        "lpage": "183", 
+        "doi": "10.1007/PL00012666", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Kr\u00fcgel", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lim", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gase", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "<italic>Agrobacterium</italic>-mediated transformation of <italic>Nicotiana attenuata</italic>, a model ecological expression system", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Chemoecology", 
+        "reference_id": "10.1007/PL00012666", 
+        "fpage": "177", 
+        "year": "2002", 
+        "position": 56, 
+        "ref": "Kr\u00fcgelTLimMGaseKHalitschkeRBaldwinIT2002Agrobacterium-mediated transformation of Nicotiana attenuata, a model ecological expression systemChemoecology1217718310.1007/PL00012666", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "The structure of the culturable root bacterial endophyte community of Nicotiana attenuata is organized by soil composition and host plant ethylene production and perception", 
+        "lpage": "567", 
+        "doi": "10.1111/j.1469-8137.2009.03079.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Long", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sonntag", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "DD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The structure of the culturable root bacterial endophyte community of <italic>Nicotiana attenuata</italic> is organized by soil composition and host plant ethylene production and perception", 
+        "publication-type": "journal", 
+        "volume": "185", 
+        "source": "New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2009.03079.x", 
+        "fpage": "554", 
+        "year": "2010", 
+        "position": 57, 
+        "ref": "LongHHSonntagDGSchmidtDDBaldwinIT2010The structure of the culturable root bacterial endophyte community of Nicotiana attenuata is organized by soil composition and host plant ethylene production and perceptionNew Phytologist18555456710.1111/j.1469-8137.2009.03079.x", 
+        "id": "bib56"
+    }, 
+    {
+        "uri_text": "http://udel.edu/\u223cmcdonald/statintro.html", 
+        "comment": "USA. URL: http://udel.edu/\u223cmcdonald/statintro.html", 
+        "publisher_loc": "Baltimore, Maryland", 
+        "edition": "2nd edition", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Sparky House Publishing", 
+        "authors": [
+            {
+                "surname": "Macdonald", 
+                "given-names": "JH", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://udel.edu/%7Emcdonald/statintro.html", 
+        "publication-type": "book", 
+        "source": "Handbook of biological statistics", 
+        "year": "2009", 
+        "position": 58, 
+        "ref": "MacdonaldJH2009Handbook of biological statistics2nd editionBaltimore, MarylandSparky House PublishingUSA. URL: http://udel.edu/\u223cmcdonald/statintro.html", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Leaf-herbivore attack reduces carbon reserves and regrowth from the roots via jasmonate and auxin signaling", 
+        "lpage": "1246", 
+        "doi": "10.1111/nph.12438", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Machado", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ferrieri", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Robert", 
+                "given-names": "CAM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Glauser", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kallenbach", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Erb", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Leaf-herbivore attack reduces carbon reserves and regrowth from the roots via jasmonate and auxin signaling", 
+        "publication-type": "journal", 
+        "volume": "200", 
+        "source": "New Phytologist", 
+        "reference_id": "10.1111/nph.12438", 
+        "fpage": "1234", 
+        "year": "2013", 
+        "position": 59, 
+        "ref": "MachadoRAFerrieriAPRobertCAMGlauserGKallenbachMBaldwinITErbM2013Leaf-herbivore attack reduces carbon reserves and regrowth from the roots via jasmonate and auxin signalingNew Phytologist2001234124610.1111/nph.12438", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "A native plant growth promoting bacterium, Bacillus sp. B55, rescues growth performance of an ethylene insensitive plant genotype in nature", 
+        "doi": "10.3389/fpls.2012.00112", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Meldau", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Long", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A native plant growth promoting bacterium, <italic>Bacillus</italic> sp. B55, rescues growth performance of an ethylene insensitive plant genotype in nature", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Frontiers in Plant Science", 
+        "reference_id": "10.3389/fpls.2012.00112", 
+        "fpage": "112", 
+        "year": "2012", 
+        "position": 60, 
+        "ref": "MeldauDGLongHHBaldwinIT2012A native plant growth promoting bacterium, Bacillus sp. B55, rescues growth performance of an ethylene insensitive plant genotype in natureFrontiers in Plant Science311210.3389/fpls.2012.00112", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "Ecology. Biodiversity and ecosystem function", 
+        "lpage": "38", 
+        "doi": "10.1126/science.1217245", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Midgley", 
+                "given-names": "GF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ecology. Biodiversity and ecosystem function", 
+        "publication-type": "journal", 
+        "volume": "335", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1217245", 
+        "fpage": "36", 
+        "year": "2012", 
+        "position": 61, 
+        "ref": "MidgleyGF2012Ecology. Biodiversity and ecosystem functionScience335363810.1126/science.1217245", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "Influence of plant genetic diversity on interactions between higher trophic levels", 
+        "doi": "10.1098/rsbl.2013.0133", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Moreira", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mooney", 
+                "given-names": "KA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Influence of plant genetic diversity on interactions between higher trophic levels", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Biology Letters", 
+        "reference_id": "10.1098/rsbl.2013.0133", 
+        "fpage": "21030133", 
+        "year": "2013", 
+        "position": 62, 
+        "ref": "MoreiraXMooneyKA2013Influence of plant genetic diversity on interactions between higher trophic levelsBiology Letters92103013310.1098/rsbl.2013.0133", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "NaJAZh regulates a subset of defense responses against herbivores and spontaneous leaf necrosis in Nicotiana attenuata plants", 
+        "lpage": "788", 
+        "doi": "10.1104/pp.112.193771", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Oh", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "G\u00e1lis", 
+                "given-names": "I", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "NaJAZh regulates a subset of defense responses against herbivores and spontaneous leaf necrosis in <italic>Nicotiana attenuata</italic> plants", 
+        "publication-type": "journal", 
+        "volume": "159", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.1104/pp.112.193771", 
+        "fpage": "769", 
+        "year": "2012", 
+        "position": 63, 
+        "ref": "OhYBaldwinITG\u00e1lisI2012NaJAZh regulates a subset of defense responses against herbivores and spontaneous leaf necrosis in Nicotiana attenuata plantsPlant Physiology15976978810.1104/pp.112.193771", 
+        "id": "bib62"
+    }, 
+    {
+        "uri_text": "http://CRAN.R-project.org/package=nlme", 
+        "comment": "http://CRAN.R-project.org/package=nlme", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Pinheiro", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bates", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DebRoy", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sarkar", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Core Team", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://CRAN.R-project.org/package=nlme", 
+        "publication-type": "book", 
+        "source": "Nlme: linear and nonlinear mixed effects models. R package version 3.1-118", 
+        "year": "2014", 
+        "position": 64, 
+        "ref": "PinheiroJBatesDDebRoySSarkarDCore TeamR2014Nlme: linear and nonlinear mixed effects models. R package version 3.1-118http://CRAN.R-project.org/package=nlme", 
+        "id": "bib63"
+    }, 
+    {
+        "article_title": "Iterated prisoner's dilemma contains strategies that dominate any evolutionary opponent", 
+        "lpage": "10413", 
+        "doi": "10.1073/pnas.1206569109", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Press", 
+                "given-names": "WH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dyson", 
+                "given-names": "FJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Iterated prisoner's dilemma contains strategies that dominate any evolutionary opponent", 
+        "publication-type": "journal", 
+        "volume": "109", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.1206569109", 
+        "fpage": "10409", 
+        "year": "2012", 
+        "position": 65, 
+        "ref": "PressWHDysonFJ2012Iterated prisoner's dilemma contains strategies that dominate any evolutionary opponentProceedings of the National Academy of Sciences of USA109104091041310.1073/pnas.1206569109", 
+        "id": "bib64"
+    }, 
+    {
+        "uri_text": "http://www.r-project.org", 
+        "comment": "Available at: http://www.r-project.org", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "R Core Team"
+            }
+        ], 
+        "uri": "http://www.r-project.org", 
+        "publication-type": "book", 
+        "source": "R: a Language and environment for statistical computing", 
+        "year": "2012", 
+        "position": 66, 
+        "collab": "R Core Team", 
+        "ref": "R Core Team2012R: a Language and environment for statistical computingAvailable at: http://www.r-project.org", 
+        "id": "bib65"
+    }, 
+    {
+        "article_title": "Recruitment of entomopathogenic nematodes by insect-damaged maize roots", 
+        "lpage": "737", 
+        "doi": "10.1038/nature03451", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Rasmann", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "K\u00f6llner", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Degenhardt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hiltpold", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Toepfer", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kuhlmann", 
+                "given-names": "U", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gershenzon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turlings", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Recruitment of entomopathogenic nematodes by insect-damaged maize roots", 
+        "publication-type": "journal", 
+        "volume": "434", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature03451", 
+        "fpage": "732", 
+        "year": "2005", 
+        "position": 67, 
+        "ref": "RasmannSK\u00f6llnerTGDegenhardtJHiltpoldIToepferSKuhlmannUGershenzonJTurlingsTC2005Recruitment of entomopathogenic nematodes by insect-damaged maize rootsNature43473273710.1038/nature03451", 
+        "id": "bib66"
+    }, 
+    {
+        "article_title": "Genetically engineered maize plants reveal distinct costs and benefits of constitutive volatile emissions in the field", 
+        "lpage": "12", 
+        "doi": "10.1111/pbi.12053", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Robert", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Erb", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hiltpold", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hibbard", 
+                "given-names": "BE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gaillard", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bilat", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Degenhardt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cambet-Petit-Jean", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turlings", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zwahlen", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genetically engineered maize plants reveal distinct costs and benefits of constitutive volatile emissions in the field", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Plant Biotechnology Journal", 
+        "reference_id": "10.1111/pbi.12053", 
+        "fpage": "1", 
+        "year": "2013", 
+        "position": 68, 
+        "ref": "RobertCAErbMHiltpoldIHibbardBEGaillardMDBilatJDegenhardtJCambet-Petit-JeanXTurlingsTCZwahlenC2013Genetically engineered maize plants reveal distinct costs and benefits of constitutive volatile emissions in the fieldPlant Biotechnology Journal1111210.1111/pbi.12053", 
+        "id": "bib67"
+    }, 
+    {
+        "article_title": "Analysis of plant-bacteria interactions in their native habitat: bacterial communities associated with wild tobacco are independent of endogenous jasmonic acid levels and developmental stages", 
+        "doi": "10.1371/journal.pone.0094710", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Santhanam", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Groten", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meldau", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Analysis of plant-bacteria interactions in their native habitat: bacterial communities associated with wild tobacco are independent of endogenous jasmonic acid levels and developmental stages", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "PLOS ONE", 
+        "reference_id": "10.1371/journal.pone.0094710", 
+        "fpage": "e94710", 
+        "year": "2014", 
+        "position": 69, 
+        "ref": "SanthanamRGrotenKMeldauDGBaldwinIT2014Analysis of plant-bacteria interactions in their native habitat: bacterial communities associated with wild tobacco are independent of endogenous jasmonic acid levels and developmental stagesPLOS ONE9e9471010.1371/journal.pone.0094710", 
+        "id": "bib68"
+    }, 
+    {
+        "article_title": "The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivores", 
+        "lpage": "1134", 
+        "doi": "10.1073/pnas.0508027103", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schnee", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "K\u00f6llner", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Held", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turlings", 
+                "given-names": "TCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gershenzon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Degenhardt", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivores", 
+        "publication-type": "journal", 
+        "volume": "103", 
+        "source": "Proceedings of the National Academy of Sciences of USA", 
+        "reference_id": "10.1073/pnas.0508027103", 
+        "fpage": "1129", 
+        "year": "2006", 
+        "position": 70, 
+        "ref": "SchneeCK\u00f6llnerTGHeldMTurlingsTCJGershenzonJDegenhardtJ2006The products of a single maize sesquiterpene synthase form a volatile defense signal that attracts natural enemies of maize herbivoresProceedings of the National Academy of Sciences of USA1031129113410.1073/pnas.0508027103", 
+        "id": "bib70"
+    }, 
+    {
+        "article_title": "Ectopic TPS10 expression enhances sesquiterpene emission in Nicotiana attenuata without altering defense or development of transgenic plants or neighbors", 
+        "lpage": "797", 
+        "doi": "10.1104/pp.114.247130", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Palmer-Young", 
+                "given-names": "EP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schmidt", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gershenzon", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ectopic TPS10 expression enhances sesquiterpene emission in <italic>Nicotiana attenuata</italic> without altering defense or development of transgenic plants or neighbors", 
+        "publication-type": "journal", 
+        "volume": "166", 
+        "source": "Plant Physiology", 
+        "reference_id": "10.1104/pp.114.247130", 
+        "fpage": "779", 
+        "year": "2014", 
+        "position": 71, 
+        "ref": "SchumanMCPalmer-YoungEPSchmidtAGershenzonJBaldwinIT2014Ectopic TPS10 expression enhances sesquiterpene emission in Nicotiana attenuata without altering defense or development of transgenic plants or neighborsPlant Physiology16677979710.1104/pp.114.247130", 
+        "id": "bib71"
+    }, 
+    {
+        "article_title": "Data from: Plant defense phenotypes determine the consequences of volatile emission for individuals and neighbors", 
+        "doi": "10.5061/dryad.qj007", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Allmann", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Data from: Plant defense phenotypes determine the consequences of volatile emission for individuals and neighbors", 
+        "publication-type": "journal", 
+        "source": "Dryad Digital Repository.", 
+        "reference_id": "10.5061/dryad.qj007", 
+        "year": "2015", 
+        "position": 72, 
+        "ref": "SchumanMCAllmannSABaldwinIT2015Data from: Plant defense phenotypes determine the consequences of volatile emission for individuals and neighborsDryad Digital Repository.10.5061/dryad.qj007", 
+        "id": "bib90"
+    }, 
+    {
+        "article_title": "Asking the ecosystem if herbivory-inducible plant volatiles (HIPVs) have defensive functions", 
+        "publisher_loc": "Cambridge, UK", 
+        "edition": "1st edition", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Cambridge University Press", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iason", 
+                "given-names": "GR", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Dicke", 
+                "given-names": "M", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Hartley", 
+                "given-names": "SE", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Asking the ecosystem if herbivory-inducible plant volatiles (HIPVs) have defensive functions", 
+        "publication-type": "book", 
+        "lpage": "307", 
+        "source": "The ecology of plant secondary Metaboites", 
+        "fpage": "287", 
+        "year": "2012", 
+        "position": 73, 
+        "ref": "SchumanMCBaldwinIT2012Asking the ecosystem if herbivory-inducible plant volatiles (HIPVs) have defensive functionsIasonGRDickeMHartleySEThe ecology of plant secondary Metaboites1st editionCambridge, UKCambridge University Press287307", 
+        "id": "bib72"
+    }, 
+    {
+        "article_title": "Herbivory-induced volatiles function as defenses increasing fitness of the native plant Nicotiana attenuata in nature", 
+        "doi": "10.7554/eLife.00007", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barthel", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Herbivory-induced volatiles function as defenses increasing fitness of the native plant <italic>Nicotiana attenuata</italic> in nature", 
+        "publication-type": "journal", 
+        "volume": "1", 
+        "source": "eLife", 
+        "reference_id": "10.7554/eLife.00007", 
+        "fpage": "e00007", 
+        "year": "2012", 
+        "position": 74, 
+        "ref": "SchumanMCBarthelKBaldwinIT2012Herbivory-induced volatiles function as defenses increasing fitness of the native plant Nicotiana attenuata in natureeLife1e0000710.7554/eLife.00007", 
+        "id": "bib73"
+    }, 
+    {
+        "article_title": "Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by Nicotiana attenuata plants in a native population", 
+        "lpage": "1148", 
+        "doi": "10.1111/j.1469-8137.2009.02894.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heinzel", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gaquerel", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Svatos", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by <italic>Nicotiana attenuata</italic> plants in a native population", 
+        "publication-type": "journal", 
+        "volume": "183", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2009.02894.x", 
+        "fpage": "1134", 
+        "year": "2009", 
+        "position": 75, 
+        "ref": "SchumanMCHeinzelNGaquerelESvatosABaldwinIT2009Polymorphism in jasmonate signaling partially accounts for the variety of volatiles produced by Nicotiana attenuata plants in a native populationThe New Phytologist1831134114810.1111/j.1469-8137.2009.02894.x", 
+        "id": "bib74"
+    }, 
+    {
+        "article_title": "Ecological observations of native Geocoris pallens and G. punctipes populations in the Great Basin Desert of southwestern Utah", 
+        "doi": "10.1155/2013/465108", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kessler", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ecological observations of native <italic>Geocoris pallens</italic> and <italic>G. punctipes</italic> populations in the Great Basin Desert of southwestern Utah", 
+        "publication-type": "journal", 
+        "volume": "2013", 
+        "source": "Psyche", 
+        "reference_id": "10.1155/2013/465108", 
+        "fpage": "465108", 
+        "year": "2013", 
+        "position": 76, 
+        "ref": "SchumanMCKesslerDBaldwinIT2013Ecological observations of native Geocoris pallens and G. punctipes populations in the Great Basin Desert of southwestern UtahPsyche201346510810.1155/2013/465108", 
+        "id": "bib75"
+    }, 
+    {
+        "article_title": "Herbivore-specific, density-dependent induction of plant volatiles: honest or \u2018cry wolf\u2019 signals?", 
+        "doi": "10.1371/journal.pone.0012161", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Shiojiri", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ozawa", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kugimiya", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Uefune", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Wijk", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sabelis", 
+                "given-names": "MW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Takabayashi", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Herbivore-specific, density-dependent induction of plant volatiles: honest or \u2018cry wolf\u2019 signals?", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "PLOS ONE", 
+        "reference_id": "10.1371/journal.pone.0012161", 
+        "fpage": "e12161", 
+        "year": "2010", 
+        "position": 77, 
+        "ref": "ShiojiriKOzawaRKugimiyaSUefuneMVan WijkMSabelisMWTakabayashiJ2010Herbivore-specific, density-dependent induction of plant volatiles: honest or \u2018cry wolf\u2019 signals?PLOS ONE5e1216110.1371/journal.pone.0012161", 
+        "id": "bib76"
+    }, 
+    {
+        "article_title": "Induced defenses and the cost-benefit paradigm", 
+        "article_doi": "10.7554/eLife.04490", 
+        "publisher_name": "Springer Science+Business Media B. V", 
+        "authors": [
+            {
+                "surname": "Steppuhn", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schaller", 
+                "given-names": "A", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Induced defenses and the cost-benefit paradigm", 
+        "publication-type": "book", 
+        "lpage": "83", 
+        "source": "Induced plant resistance to herbivory", 
+        "fpage": "61", 
+        "year": "2008", 
+        "position": 78, 
+        "ref": "SteppuhnABaldwinIT2008Induced defenses and the cost-benefit paradigmSchallerAInduced plant resistance to herbivorySpringer Science+Business Media B. V6183", 
+        "id": "bib77"
+    }, 
+    {
+        "article_title": "Nicotine's defensive function in nature", 
+        "doi": "10.1371/journal.pbio.0020217", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Steppuhn", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gase", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Krock", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Halitschke", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Nicotine's defensive function in nature", 
+        "publication-type": "journal", 
+        "volume": "2", 
+        "source": "PLOS Biology", 
+        "reference_id": "10.1371/journal.pbio.0020217", 
+        "fpage": "e217", 
+        "year": "2004", 
+        "position": 79, 
+        "ref": "SteppuhnAGaseKKrockBHalitschkeRBaldwinIT2004Nicotine's defensive function in naturePLOS Biology2e21710.1371/journal.pbio.0020217", 
+        "id": "bib78"
+    }, 
+    {
+        "article_title": "Silencing jasmonate signalling and jasmonate-mediated defences reveals different survival strategies between two Nicotiana attenuata accessions", 
+        "lpage": "3732", 
+        "doi": "10.1111/j.1365-294X.2008.03862.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Steppuhn", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schuman", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Silencing jasmonate signalling and jasmonate-mediated defences reveals different survival strategies between two <italic>Nicotiana attenuata</italic> accessions", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Molecular Ecology", 
+        "reference_id": "10.1111/j.1365-294X.2008.03862.x", 
+        "fpage": "3717", 
+        "year": "2008", 
+        "position": 80, 
+        "ref": "SteppuhnASchumanMCBaldwinIT2008Silencing jasmonate signalling and jasmonate-mediated defences reveals different survival strategies between two Nicotiana attenuata accessionsMolecular Ecology173717373210.1111/j.1365-294X.2008.03862.x", 
+        "id": "bib79"
+    }, 
+    {
+        "article_title": "Practical approaches to plant volatile analysis", 
+        "lpage": "560", 
+        "doi": "10.1111/j.1365-313X.2005.02612.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Tholl", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boland", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hansel", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loreto", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "R\u00f6se", 
+                "given-names": "US", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schnitzler", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Practical approaches to plant volatile analysis", 
+        "publication-type": "journal", 
+        "volume": "45", 
+        "source": "The Plant Journal", 
+        "reference_id": "10.1111/j.1365-313X.2005.02612.x", 
+        "fpage": "540", 
+        "year": "2006", 
+        "position": 81, 
+        "ref": "ThollDBolandWHanselALoretoFR\u00f6seUSSchnitzlerJP2006Practical approaches to plant volatile analysisThe Plant Journal4554056010.1111/j.1365-313X.2005.02612.x", 
+        "id": "bib80"
+    }, 
+    {
+        "uri_text": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
+        "comment": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "United Nations, Department of Economic and Social Affairs, Population Division"
+            }
+        ], 
+        "uri": "http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
+        "publication-type": "book", 
+        "source": "World population prospects: the 2012 revision, key findings and advance tables. Working paper no. ESA/P/WP.227", 
+        "year": "2013", 
+        "position": 82, 
+        "collab": "United Nations, Department of Economic and Social Affairs, Population Division", 
+        "ref": "United Nations, Department of Economic and Social Affairs, Population Division2013World population prospects: the 2012 revision, key findings and advance tables. Working paper no. ESA/P/WP.227http://esa.un.org/unpd/wpp/Documentation/publications.htm", 
+        "id": "bib81a"
+    }, 
+    {
+        "article_title": "Ontogeny constrains systemic protease inhibitor response in Nicotiana attenuata", 
+        "lpage": "568", 
+        "doi": "10.1023/A:1010341022761", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "van Dam", 
+                "given-names": "NM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Horn", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mares", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Ontogeny constrains systemic protease inhibitor response in Nicotiana attenuata", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Journal of Chemical Ecology", 
+        "reference_id": "10.1023/A:1010341022761", 
+        "fpage": "547", 
+        "year": "2001", 
+        "position": 83, 
+        "ref": "van DamNMHornMMaresMBaldwinIT2001Ontogeny constrains systemic protease inhibitor response in Nicotiana attenuataJournal of Chemical Ecology2754756810.1023/A:1010341022761", 
+        "id": "bib82"
+    }, 
+    {
+        "article_title": "A framework for community and ecosystem genetics: from genes to ecosystems", 
+        "lpage": "523", 
+        "doi": "10.1038/nrg1877", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Whitham", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bailey", 
+                "given-names": "JK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schweitzer", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shuster", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bangert", 
+                "given-names": "RK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leroy", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lonsdorf", 
+                "given-names": "EV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Allan", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Difazio", 
+                "given-names": "SP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Potts", 
+                "given-names": "BM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fischer", 
+                "given-names": "DG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gehring", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lindroth", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Marks", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hart", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wimp", 
+                "given-names": "GM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wooley", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A framework for community and ecosystem genetics: from genes to ecosystems", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Nature Reviews Genetics", 
+        "reference_id": "10.1038/nrg1877", 
+        "fpage": "510", 
+        "year": "2006", 
+        "position": 84, 
+        "ref": "WhithamTGBaileyJKSchweitzerJAShusterSMBangertRKLeroyCJLonsdorfEVAllanGJDifazioSPPottsBMFischerDGGehringCALindrothRLMarksJCHartSCWimpGMWooleySC2006A framework for community and ecosystem genetics: from genes to ecosystemsNature Reviews Genetics751052310.1038/nrg1877", 
+        "id": "bib83"
+    }, 
+    {
+        "article_title": "Community specificity: life and afterlife effects of genes", 
+        "lpage": "281", 
+        "doi": "10.1016/j.tplants.2012.01.005", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Whitham", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gehring", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lamit", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wojtowicz", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evans", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keith", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smith", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Community specificity: life and afterlife effects of genes", 
+        "publication-type": "journal", 
+        "volume": "17", 
+        "source": "Trends in Plant Science", 
+        "reference_id": "10.1016/j.tplants.2012.01.005", 
+        "fpage": "271", 
+        "year": "2012", 
+        "position": 85, 
+        "ref": "WhithamTGGehringCALamitLJWojtowiczTEvansLMKeithARSmithDS2012Community specificity: life and afterlife effects of genesTrends in Plant Science1727128110.1016/j.tplants.2012.01.005", 
+        "id": "bib84"
+    }, 
+    {
+        "article_title": "Herbivory rapidly activates MAPK signaling in attacked and unattacked leaf regions but not between leaves of Nicotiana attenuata", 
+        "lpage": "1122", 
+        "doi": "10.1105/tpc.106.049353", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Wu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hettenhausen", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meldau", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baldwin", 
+                "given-names": "IT", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Herbivory rapidly activates MAPK signaling in attacked and unattacked leaf regions but not between leaves of Nicotiana attenuata", 
+        "publication-type": "journal", 
+        "volume": "19", 
+        "source": "The Plant Cell ", 
+        "reference_id": "10.1105/tpc.106.049353", 
+        "fpage": "1096", 
+        "year": "2007", 
+        "position": 86, 
+        "ref": "WuJHettenhausenCMeldauSBaldwinIT2007Herbivory rapidly activates MAPK signaling in attacked and unattacked leaf regions but not between leaves of Nicotiana attenuataThe Plant Cell 191096112210.1105/tpc.106.049353", 
+        "id": "bib89"
+    }, 
+    {
+        "article_title": "Genes to ecosystems: exploring the frontiers of ecology with one of the smallest biological units", 
+        "lpage": "36", 
+        "doi": "10.1111/j.1469-8137.2011.03730.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Wymore", 
+                "given-names": "AS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keeley", 
+                "given-names": "AT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yturralde", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schroer", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Propper", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Whitham", 
+                "given-names": "TG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genes to ecosystems: exploring the frontiers of ecology with one of the smallest biological units", 
+        "publication-type": "journal", 
+        "volume": "191", 
+        "source": "The New Phytologist", 
+        "reference_id": "10.1111/j.1469-8137.2011.03730.x", 
+        "fpage": "19", 
+        "year": "2011", 
+        "position": 87, 
+        "ref": "WymoreASKeeleyATYturraldeKMSchroerMLPropperCRWhithamTG2011Genes to ecosystems: exploring the frontiers of ecology with one of the smallest biological unitsThe New Phytologist191193610.1111/j.1469-8137.2011.03730.x", 
+        "id": "bib85"
+    }, 
+    {
+        "article_title": "Specific herbivore-induced volatiles defend plants and determine insect community composition in the field", 
+        "lpage": "1139", 
+        "doi": "10.1111/j.1461-0248.2012.01835.x", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Xiao", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Erb", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turlings", 
+                "given-names": "TCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ge", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hu", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Han", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lu", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lou", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Specific herbivore-induced volatiles defend plants and determine insect community composition in the field", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Ecology Letters", 
+        "reference_id": "10.1111/j.1461-0248.2012.01835.x", 
+        "fpage": "1130", 
+        "year": "2012", 
+        "position": 88, 
+        "ref": "XiaoYWangQErbMTurlingsTCJGeLHuLLiJHanXZhangTLuJZhangGLouY2012Specific herbivore-induced volatiles defend plants and determine insect community composition in the fieldEcology Letters151130113910.1111/j.1461-0248.2012.01835.x", 
+        "id": "bib86"
+    }, 
+    {
+        "article_title": "Wound-induced green leaf volatiles cause the release of acetylated derivatives and a terpenoid in maize", 
+        "lpage": "42", 
+        "doi": "10.1016/j.phytochem.2005.10.005", 
+        "article_doi": "10.7554/eLife.04490", 
+        "authors": [
+            {
+                "surname": "Yan", 
+                "given-names": "ZG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "CZ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Wound-induced green leaf volatiles cause the release of acetylated derivatives and a terpenoid in maize", 
+        "publication-type": "journal", 
+        "volume": "67", 
+        "source": "Phytochemistry", 
+        "reference_id": "10.1016/j.phytochem.2005.10.005", 
+        "fpage": "34", 
+        "year": "2006", 
+        "position": 89, 
+        "ref": "YanZGWangCZ2006Wound-induced green leaf volatiles cause the release of acetylated derivatives and a terpenoid in maizePhytochemistry67344210.1016/j.phytochem.2005.10.005", 
+        "id": "bib87"
+    }
+]

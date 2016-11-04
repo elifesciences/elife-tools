@@ -1,0 +1,90 @@
+[
+    {
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 2\u2014figure supplement 2\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 2\u2014figure supplement 2\u2014source data 1.", 
+        "id": "SD1-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.008"
+    }, 
+    {
+        "ordinal": 2, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 4\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 4\u2014source data 1.", 
+        "id": "SD2-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.015"
+    }, 
+    {
+        "ordinal": 3, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 5\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 5\u2014source data 1.", 
+        "id": "SD3-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.017"
+    }, 
+    {
+        "ordinal": 4, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 6\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 6\u2014source data 1.", 
+        "id": "SD4-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.020"
+    }, 
+    {
+        "ordinal": 5, 
+        "sibling_ordinal": 2, 
+        "label": "Figure 6\u2014source data 2.", 
+        "asset": "data", 
+        "full_label": "Figure 6\u2014source data 2.", 
+        "id": "SD5-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.021"
+    }, 
+    {
+        "ordinal": 6, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 8\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 8\u2014source data 1.", 
+        "id": "SD6-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.032"
+    }, 
+    {
+        "ordinal": 7, 
+        "sibling_ordinal": 1, 
+        "label": "Supplementary file 1.", 
+        "asset": "supp", 
+        "full_label": "Supplementary file 1.", 
+        "id": "SD7-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.033"
+    }, 
+    {
+        "ordinal": 8, 
+        "sibling_ordinal": 2, 
+        "label": "Supplementary file 2.", 
+        "asset": "supp", 
+        "full_label": "Supplementary file 2.", 
+        "id": "SD8-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.02304.034"
+    }
+]

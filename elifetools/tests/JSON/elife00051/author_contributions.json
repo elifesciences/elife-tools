@@ -1,0 +1,22 @@
+[
+    {
+        "text": "<p>RJH: Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PJ: Conception and design, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AMM: Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>Y-LC: Conception and design, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }
+]

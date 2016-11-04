@@ -1,0 +1,185 @@
+[
+    {
+        "surname": "Fleming", 
+        "author": "Michael S Fleming", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Michael S", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 28783, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-28783"
+    }, 
+    {
+        "surname": "Vysochan", 
+        "author": "Anna Vysochan", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Anna", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 28784, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-28784"
+    }, 
+    {
+        "surname": "Paix\u00e3o", 
+        "author": "S\u03ccnia Paix\u00e3o", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "dept": "Molecules - Signals - Development", 
+                "city": "Martinsried", 
+                "institution": "Max Planck Institute of Neurobiology", 
+                "country": "Germany"
+            }
+        ], 
+        "given-names": "S\u03ccnia", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 28785, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-28785"
+    }, 
+    {
+        "surname": "Niu", 
+        "author": "Jingwen Niu", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jingwen", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 28786, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-28786"
+    }, 
+    {
+        "surname": "Klein", 
+        "author": "R\u00fcdiger Klein", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "dept": "Molecules - Signals - Development", 
+                "city": "Martinsried", 
+                "institution": "Max Planck Institute of Neurobiology", 
+                "country": "Germany"
+            }
+        ], 
+        "given-names": "R\u00fcdiger", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 6426, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-6426"
+    }, 
+    {
+        "surname": "Savitt", 
+        "author": "Joseph M Savitt", 
+        "article_doi": "10.7554/eLife.06828", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Parkinson's Disease and Movement Disorder Center of Maryland", 
+                "city": "Elkridge"
+            }
+        ], 
+        "given-names": "Joseph M", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 28787, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-28787"
+    }, 
+    {
+        "surname": "Luo", 
+        "author": "Wenqin Luo", 
+        "article_doi": "10.7554/eLife.06828", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Neuroscience, Perelman School of Medicine", 
+                "email": "luow@mail.med.upenn.edu", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Wenqin", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 18016, 
+        "notes-fn": [
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-18016"
+    }
+]

@@ -1,0 +1,123 @@
+[
+    {
+        "surname": "Gu", 
+        "given-names": "Mingyu", 
+        "type": "author", 
+        "id": "author-1768", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Liu", 
+        "given-names": "Qiang", 
+        "type": "author", 
+        "id": "author-2090", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Watanabe", 
+        "given-names": "Shigeki", 
+        "type": "author", 
+        "id": "author-2091", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ]
+        }
+    }, 
+    {
+        "surname": "Sun", 
+        "given-names": "Lin", 
+        "type": "author", 
+        "id": "author-2092", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ]
+        }
+    }, 
+    {
+        "surname": "Hollopeter", 
+        "given-names": "Gunther", 
+        "type": "author", 
+        "id": "author-2093", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con5"
+            ]
+        }
+    }, 
+    {
+        "surname": "Grant", 
+        "given-names": "Barth D", 
+        "type": "author", 
+        "id": "author-2094", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "funding": [
+                "par-2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Jorgensen", 
+        "corresp": "yes", 
+        "given-names": "Erik M", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1790"
+    }, 
+    {
+        "role": "Reviewing editor", 
+        "surname": "Davis", 
+        "given-names": "Graeme", 
+        "type": "editor", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "University of California, San Francisco"
+            }
+        ]
+    }
+]

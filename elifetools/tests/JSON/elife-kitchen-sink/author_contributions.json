@@ -1,0 +1,47 @@
+[
+    {
+        "text": "\n<p>RAA, Conception and design, Acquisition of data, Analysis and interpretation\n                        of data, Drafting or revising the article</p>\n", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>LWB, Conception and design, Acquisition of data, Analysis and interpretation\n                        of data, Drafting or revising the article</p>\n", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>CS, Acquisition of data, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>RKD, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>RZ, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>SRF, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>JC, Conception and design, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "id": "con7", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>NK, Conception and design, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "id": "con8", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>NISC Comparative Sequencing Program: JM did X, IM did Y and JB did Z and Y</p>\n", 
+        "id": "con9", 
+        "fn-type": "con"
+    }
+]

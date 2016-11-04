@@ -1,0 +1,37 @@
+[
+    {
+        "text": "<p>JY, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DLC, Performed experiments, Contributed unpublished essential data or reagents</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>ST, Performed and analyzed the in vitro kinesin-1-MTs bundling assay, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>KK, Performed and analyzed the in vitro kinesin-1-MTs bundling assay, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>TY, Performed and analyzed the in vitro kinesin-1-MTs bundling assay, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SH, Performed and analyzed the in vitro kinesin-1-MTs bundling assay, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>KS, Conception and design, Drafting or revising the article</p>", 
+        "id": "con7", 
+        "fn-type": "con"
+    }
+]

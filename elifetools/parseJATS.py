@@ -8,6 +8,7 @@ from slugify import slugify
 from utils import *
 import rawJATS as raw_parser
 import re
+from collections import OrderedDict
 
 
 import logging
@@ -25,6 +26,12 @@ def parse_xml(xml):
 def parse_document(filelocation):
     return parse_xml(open(filelocation))
 
+def duplicate_tag(tag):
+    # Make a completely new copy of a tag by parsing its contents again
+    soup_copy = parse_xml(unicode(tag))
+    tag_copy = first(extract_nodes(soup_copy, tag.name))
+    return tag_copy
+
 def title(soup):
     return node_text(raw_parser.article_title(soup))
     
@@ -40,6 +47,16 @@ def title_short(soup):
 def title_slug(soup):
     "'title' slugified"
     return slugify(title(soup))
+
+def title_prefix(soup):
+    "titlePrefix for article JSON is only articles with certain display_channel values"
+    prefix = None
+    display_channel_match_list = ['feature article', 'insight', 'editorial']
+    for d_channel in display_channel(soup):
+        if d_channel.lower() in display_channel_match_list:
+            if raw_parser.sub_display_channel(soup):
+                prefix = node_text(first(raw_parser.sub_display_channel(soup)))
+    return prefix
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
@@ -78,6 +95,12 @@ def research_organism(soup):
         return []
     return map(node_text, raw_parser.research_organism_keywords(soup))
 
+def full_research_organism(soup):
+    "research-organism list including inline tags, such as italic"
+    if not raw_parser.research_organism_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.research_organism_keywords(soup))
+
 def keywords(soup):
     """
     Find the keywords from the set of kwd-group tags
@@ -86,6 +109,12 @@ def keywords(soup):
     if not raw_parser.author_keywords(soup):
         return []
     return map(node_text, raw_parser.author_keywords(soup))
+
+def full_keywords(soup):
+    "author keywords list including inline tags, such as italic"
+    if not raw_parser.author_keywords(soup):
+        return []
+    return map(node_contents_str, raw_parser.author_keywords(soup))
 
 def full_keyword_groups(soup):
     groups = {}
@@ -142,11 +171,11 @@ def copyright_holder(soup):
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.licence_p(permissions_tag))
+    return node_text(first(raw_parser.licence_p(permissions_tag)))
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(raw_parser.licence_p(permissions_tag))
+    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
@@ -816,7 +845,16 @@ def contrib_email(contrib_tag):
         if email_tag.parent.name != "aff":
             email = email_tag.text
     return email
-    
+
+def contrib_phone(contrib_tag):
+    """
+    Given a contrib tag, look for an phone tag
+    """
+    phone = None
+    if raw_parser.phone(contrib_tag):
+        phone = first(raw_parser.phone(contrib_tag)).text
+    return phone
+
 
 def format_contributor(contrib_tag, soup, detail="brief"):
     contributor = {}
@@ -834,6 +872,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
     set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
     set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
     set_if_value(contributor, "email", contrib_email(contrib_tag))
+    set_if_value(contributor, "phone", contrib_phone(contrib_tag))
     name_tag = first(extract_nodes(contrib_tag, "name"))
     if name_tag is not None:
         set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
@@ -857,7 +896,12 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, 'affiliation', rid)
             if ref_type == "corresp":
-                add_to_list_dictionary(contrib_refs, 'email', rid)
+                # Check for email or phone type
+                corresp_tag = firstnn(soup.find_all(id=rid))
+                if contrib_phone(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'phone', rid)
+                elif contrib_email(corresp_tag):
+                    add_to_list_dictionary(contrib_refs, 'email', rid)
             if ref_type == "fn":
                 if rid.startswith('equal-contrib'):
                     add_to_list_dictionary(contrib_refs, 'equal-contrib', rid)
@@ -1041,60 +1085,68 @@ def refs(soup):
     tags = raw_parser.ref_list(soup)
     refs = []
     position = 1
-    
+
     article_doi = doi(soup)
-    
+
     for tag in tags:
         ref = {}
-        
-        # etal
-        etal = first(extract_nodes(tag, "etal"))
-        if etal:
-            ref['etal'] = True
-        
+
         ref['ref'] = ref_text(tag)
 
         # ref_id
         copy_attribute(tag.attrs, "id", ref)
 
         # article_title
-        if first(extract_nodes(tag, "article-title")):
-            ref['article_title'] = node_text(first(extract_nodes(tag, "article-title")))
-            ref['full_article_title'] = node_contents_str(first(extract_nodes(tag, "article-title")))
+        if raw_parser.article_title(tag):
+            ref['article_title'] = node_text(raw_parser.article_title(tag))
+            ref['full_article_title'] = node_contents_str(raw_parser.article_title(tag))
 
-        reference_title_node = first(extract_nodes(tag, "pub-id"))
-        if reference_title_node is not None and 'pub-id-type' in reference_title_node.attrs and reference_title_node['pub-id-type'] == 'doi':
-            ref['reference_id'] = node_contents_str(reference_title_node)
-            ref['doi'] = node_contents_str(reference_title_node)
-            
-        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
-        set_if_value(ref, "source", node_text(first(extract_nodes(tag, "source"))))
-        set_if_value(ref, "year", node_text(first(extract_nodes(tag, "year"))))
+        if raw_parser.pub_id(tag, "pmid"):
+            ref['pmid'] = node_contents_str(first(raw_parser.pub_id(tag, "pmid")))
+
+        if raw_parser.pub_id(tag, "isbn"):
+            ref['isbn'] = node_contents_str(first(raw_parser.pub_id(tag, "isbn")))
+
+        if raw_parser.pub_id(tag, "doi"):
+            ref['reference_id'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
+            ref['doi'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
+
+        uri_tag = None
+        if raw_parser.ext_link(tag, "uri"):
+            uri_tag = first(raw_parser.ext_link(tag, "uri"))
+        elif raw_parser.uri(tag):
+            uri_tag = first(raw_parser.uri(tag))
+        if uri_tag:
+            set_if_value(ref, "uri", uri_tag.get('xlink:href'))
+            set_if_value(ref, "uri_text", node_contents_str(uri_tag))
+
+        set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+        set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
-        
+
         # authors
-        person_group = extract_nodes(tag, "person-group")
+        person_group = raw_parser.person_group(tag)
         authors = []
-        
+
         for group in person_group:
-            
+
             author_type = None
             if "person-group-type" in group.attrs:
                 author_type = group["person-group-type"]
-                    
+
             # Read name or collab tag in the order they are listed
             for name_or_collab_tag in extract_nodes(group, ["name","collab"]):
                 author = {}
-                
+
                 # Shared tag attribute
                 set_if_value(author, "group-type", author_type)
-                
+
                 # name tag attributes
                 if name_or_collab_tag.name == "name":
-                    set_if_value(author, "surname", node_text(first(extract_nodes(name_or_collab_tag, "surname"))))
-                    set_if_value(author, "given-names", node_text(first(extract_nodes(name_or_collab_tag, "given-names"))))
-                    set_if_value(author, "suffix", node_text(first(extract_nodes(name_or_collab_tag, "suffix"))))
+                    set_if_value(author, "surname", node_text(first(raw_parser.surname(name_or_collab_tag))))
+                    set_if_value(author, "given-names", node_text(first(raw_parser.given_names(name_or_collab_tag))))
+                    set_if_value(author, "suffix", node_text(first(raw_parser.suffix(name_or_collab_tag))))
 
                 # collab tag attribute
                 if name_or_collab_tag.name == "collab":
@@ -1102,18 +1154,25 @@ def refs(soup):
 
                 if len(author) > 0:
                     authors.append(author)
-                
+
+            # etal for the person group
+            if first(raw_parser.etal(group)):
+                author = {}
+                author['etal'] = True
+                set_if_value(author, "group-type", author_type)
+                authors.append(author)
+
         # Check for collab tag not wrapped in a person-group for backwards compatibility
         if len(person_group) == 0:
-            collab_tags = extract_nodes(tag, "collab")
+            collab_tags = raw_parser.collab(tag)
             for collab_tag in collab_tags:
                 author = {}
                 set_if_value(author, "group-type", "author")
                 set_if_value(author, "collab", node_contents_str(collab_tag))
-                
+
                 if len(author) > 0:
                     authors.append(author)
-        
+
         if len(authors) > 0:
             ref['authors'] = authors
 
@@ -1123,17 +1182,21 @@ def refs(soup):
         set_if_value(ref, "collab", node_text(first(raw_parser.collab(tag))))
         set_if_value(ref, "publisher_loc", node_text(first(raw_parser.publisher_loc(tag))))
         set_if_value(ref, "publisher_name", node_text(first(raw_parser.publisher_name(tag))))
+        set_if_value(ref, "edition", node_contents_str(first(raw_parser.edition(tag))))
+        set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
+        set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
+        set_if_value(ref, "conf-name", node_text(first(raw_parser.conf_name(tag))))
 
         # If not empty, add position value, append, then increment the position counter
         if(len(ref) > 0):
             ref['article_doi'] = article_doi
-            
+
             ref['position'] = position
-                        
+
             refs.append(ref)
             position += 1
-    
+
     return refs
 
 def extract_component_doi(tag, nodenames):
@@ -1239,9 +1302,9 @@ def components(soup):
 
                 if raw_parser.licence_p(permissions_tag):
                     permissions_item['license'] = \
-                        node_text(raw_parser.licence_p(permissions_tag))
+                        node_text(first(raw_parser.licence_p(permissions_tag)))
                     permissions_item['full_license'] = \
-                        node_contents_str(raw_parser.licence_p(permissions_tag))
+                        node_contents_str(first(raw_parser.licence_p(permissions_tag)))
 
                 component['permissions'].append(permissions_item)
 
@@ -1341,24 +1404,18 @@ def correspondence(soup):
     return correspondence
 
 
-def get_email(text):
-    if text:
-        match = re.search('<email>(.*?)</email>', text, re.DOTALL)
-        if match is not None:
-            return match.group(1)
-
-    return ""
-
-
-
 def full_correspondence(soup):
     cor = {}
-    
+
     author_notes_nodes = raw_parser.author_notes(soup)
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
-            cor[tag['id']] = get_email(node_contents_str(tag))
+            if raw_parser.email(tag):
+                cor[tag['id']] = node_contents_str(first(raw_parser.email(tag)))
+            elif raw_parser.phone(tag):
+                # Look for a phone number
+                cor[tag['id']] = node_contents_str(first(raw_parser.phone(tag)))
 
     return cor
 
@@ -1584,3 +1641,1180 @@ def award_group_principal_award_recipient(tag):
             continue
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
+
+def object_id_doi(tag, parent_tag_name=None):
+    """DOI in an object-id tag found inside the tag"""
+    doi = None
+    object_id = None
+    object_ids = raw_parser.object_id(tag, "doi")
+    if object_ids:
+        object_id = first(object_ids)
+    if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
+        object_id = None
+    if object_id:
+        doi = node_contents_str(object_id)
+    return doi
+
+def title_text(tag, parent_tag_name=None):
+    """Extract the text of a title tag"""
+    title = None
+    title_tag = raw_parser.title(tag)
+    if parent_tag_name and title_tag and title_tag.parent.name != parent_tag_name:
+        title_tag = None
+    if title_tag:
+        title = node_contents_str(title_tag)
+    return title
+
+def caption_title(tag):
+    """Extract the text of a title or p tag inside the first caption tag"""
+    title = None
+    caption = raw_parser.caption(tag)
+    if caption:
+        title_tag = raw_parser.title(caption)
+        if title_tag:
+            title = node_contents_str(title_tag)
+        if not title:
+            p_tags = raw_parser.paragraph(caption)
+            if p_tags:
+                title = node_contents_str(first(p_tags))
+    return title
+
+def label(tag, parent_tag_name=None):
+    label = None
+    label_tag = raw_parser.label(tag)
+    if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
+        label_tag = None
+    if label_tag:
+        label = node_contents_str(label_tag)
+    return label
+
+def acknowledgements_json(soup):
+    if raw_parser.acknowledgements(soup):
+        return body_block_content_render(raw_parser.acknowledgements(soup))[0].get("content")
+    else:
+        return None
+
+def body(soup):
+
+    body_content = []
+
+    raw_body = raw_parser.article_body(soup)
+
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+
+    return body_content
+
+
+def render_raw_body(tag):
+    body_content = []
+    body_tags = body_blocks(tag)
+    for tag in body_tags:
+        if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
+            # Collapse boxed-text here if it has no title or label
+            for boxed_tag in tag:
+                tag_blocks = body_block_content_render(boxed_tag)
+                for tag_block in tag_blocks:
+                    if tag_block != {}:
+                        body_content.append(tag_block)
+        else:
+
+            tag_blocks = body_block_content_render(tag)
+            #tag_content = body_block_content_render(tag)
+            for tag_block in tag_blocks:
+                if tag_block != {}:
+                    body_content.append(tag_block)
+
+    return body_content
+
+def body_block_nodenames():
+    return ["sec", "p", "table-wrap", "boxed-text",
+            "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
+
+def body_block_content_render(tag):
+    """
+    Render the tag as body content and call recursively if
+    the tag has child tags
+    """
+    block_content_list = []
+    tag_content = OrderedDict()
+
+    if tag.name == "p":
+        for block_content in body_block_paragraph_render(tag):
+            if block_content != {}:
+                block_content_list.append(block_content)
+    else:
+        tag_content = body_block_content(tag)
+
+    nodenames = body_block_nodenames()
+
+    tag_content_content = []
+
+    # Collect the content of the tag but only for some tags
+    if tag.name not in ["p", "fig", "table-wrap", "list", "media", "disp-quote"]:
+        for child_tag in tag:
+            if not(hasattr(child_tag, 'name')):
+                continue
+
+            if child_tag.name == "p":
+                if (child_tag.parent.name == "caption"
+                    and child_tag.parent.parent.name == "boxed-text"):
+                    continue
+                for block_content in body_block_paragraph_render(child_tag):
+                    if block_content != {}:
+                        tag_content_content.append(block_content)
+
+            elif child_tag.name == "fig" and tag.name == "fig-group":
+                # Do not fig inside fig-group a second time
+                pass
+            else:
+                for block_content in body_block_content_render(child_tag):
+                    if block_content != {}:
+                        tag_content_content.append(block_content)
+
+    if len(tag_content_content) > 0:
+        tag_content["content"] = []
+        for block_content in tag_content_content:
+            tag_content["content"].append(block_content)
+
+    block_content_list.append(tag_content)
+    return block_content_list
+
+def body_block_paragraph_render(p_tag):
+    """
+    paragraphs may wrap some other body block content
+    this is separated out so it can be called from more than one place
+    """
+    block_content_list = []
+
+    tag_content_content = []
+    nodenames = body_block_nodenames()
+
+    paragraph_content = u''
+    for child_tag in p_tag:
+
+        if child_tag.name is None or body_block_content(child_tag) == {}:
+            paragraph_content = paragraph_content + unicode(child_tag)
+
+        else:
+            # Add previous paragraph content first
+            if paragraph_content.strip() != '':
+                tag_content_content.append(body_block_paragraph_content(paragraph_content))
+                paragraph_content = u''
+
+        if child_tag.name is not None and body_block_content(child_tag) != {}:
+            for block_content in body_block_content_render(child_tag):
+                if block_content != {}:
+                    tag_content_content.append(block_content)
+    # finish up
+    if paragraph_content.strip() != '':
+        tag_content_content.append(body_block_paragraph_content(paragraph_content))
+
+    if len(tag_content_content) > 0:
+        for block_content in tag_content_content:
+            block_content_list.append(block_content)
+
+    return block_content_list
+
+def body_block_caption_render(caption_tags):
+    """fig and media tag captions are similar so use this common function"""
+    caption_content = []
+    supplementary_material_tags = []
+
+    for block_tag in caption_tags:
+        # Note then skip p tags with supplementary-material inside
+        if raw_parser.supplementary_material(block_tag):
+            for supp_tag in raw_parser.supplementary_material(block_tag):
+                supplementary_material_tags.append(supp_tag)
+            continue
+
+        for block_content in body_block_content_render(block_tag):
+
+            if block_content != {}:
+                caption_content.append(block_content)
+
+    return caption_content, supplementary_material_tags
+
+def body_block_supplementary_material_render(supp_tags):
+    """fig and media tag caption may have supplementary material"""
+    source_data = []
+    for supp_tag in supp_tags:
+        for block_content in body_block_content_render(supp_tag):
+            if block_content != {}:
+                if "content" in block_content:
+                    del block_content["content"]
+                source_data.append(block_content)
+    return source_data
+
+def body_block_paragraph_content(text):
+    "for formatting of simple paragraphs of text only, and check if it is all whitespace"
+    tag_content = OrderedDict()
+    if text and text != '':
+        tag_content["type"] = "paragraph"
+        tag_content["text"] = unicode(text)
+    return tag_content
+
+def body_block_content(tag):
+
+    tag_content = OrderedDict()
+
+    if not(hasattr(tag, 'name')):
+        return OrderedDict()
+
+    if tag.name == "sec":
+        tag_content["type"] = "section"
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "title", title_text(tag, tag.name))
+
+    elif tag.name == "boxed-text":
+        tag_content["type"] = "box"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", title_text(tag))
+
+    elif tag.name == "p":
+        tag_content["type"] = "paragraph"
+
+        # Remove unwanted nested tags
+        unwanted_tag_names = body_block_nodenames()
+        tag_copy = duplicate_tag(tag)
+        tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
+
+        if node_contents_str(tag_copy):
+            tag_content["text"] = node_contents_str(tag_copy)
+
+    elif tag.name == "disp-quote":
+        tag_content["type"] = "quote"
+        for child_tag in tag:
+            if body_block_content(child_tag) != {}:
+                if "text" not in tag_content:
+                    tag_content["text"] = []
+                tag_content["text"].append(body_block_content(child_tag))
+
+    elif tag.name == "table-wrap":
+        tag_content["type"] = "table"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        if "title" not in tag_content and "label" in tag_content:
+            set_if_value(tag_content, "title", tag_content.get("label"))
+        supplementary_material_tags = None
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
+        tables = raw_parser.table(tag)
+        tag_content["tables"] = []
+        for table in tables:
+            # Add the table tag back for now
+            table_content = '<table>' + node_contents_str(table) + '</table>'
+            tag_content["tables"].append(table_content)
+
+        table_wrap_foot = raw_parser.table_wrap_foot(tag)
+        for foot_tag in table_wrap_foot:
+            footnotes = []
+            for fn_tag in raw_parser.fn(foot_tag):
+                footnote_content = OrderedDict()
+                # Only set id if a label is present
+                if label(fn_tag, fn_tag.name):
+                    set_if_value(footnote_content, "id", fn_tag.get("id"))
+                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
+                for p_tag in raw_parser.paragraph(fn_tag):
+                    if "text" not in footnote_content:
+                        footnote_content["text"] = []
+                    footnote_content["text"].append(body_block_content(p_tag))
+
+                if "footnotes" not in tag_content:
+                    tag_content["footnotes"] = []
+                tag_content["footnotes"].append(footnote_content)
+
+        # sourceData
+        if supplementary_material_tags and len(supplementary_material_tags) > 0:
+            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            if len(source_data) > 0:
+                tag_content["sourceData"] = source_data
+
+    elif tag.name == "disp-formula":
+        tag_content["type"] = "mathml"
+
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+
+        math_tag = first(raw_parser.math(tag))
+        tag_content["mathml"] = node_contents_str(math_tag)
+
+    elif tag.name == "fig":
+        tag_content["type"] = "image"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", title_text(tag))
+
+        supplementary_material_tags = None
+        caption_content = []
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+        # Special, if there is no title then use a fragment of the caption as the title
+        if "title" not in tag_content and len(caption_content) > 0:
+            # Attempt to extra the first sentence of the first paragraph of the caption
+            first_paragraph_text = caption_content[0]["text"]
+            sentences = first_paragraph_text.split(". ")
+            if len(sentences) > 0:
+                tag_content["title"] = sentences[0]
+        # If there is still not title, then use the label
+        if "title" not in tag_content and "label" in tag_content:
+            tag_content["title"] = tag_content["label"]
+        # Now can add the caption after all possible title values are added
+        if len(caption_content) > 0:
+            tag_content["caption"] = caption_content
+
+        # todo!! alt
+        set_if_value(tag_content, "alt", "")
+        # todo!! set base URL for images
+        graphic_tags = raw_parser.graphic(tag)
+        if graphic_tags:
+            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
+
+        # license or attribution
+        attributions = []
+        if raw_parser.attrib(tag):
+            for attrib_tag in raw_parser.attrib(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if raw_parser.licence(tag) and raw_parser.licence_p(tag):
+            for attrib_tag in raw_parser.licence_p(tag):
+                attributions.append(node_contents_str(attrib_tag))
+        if len(attributions) > 0:
+            tag_content["attribution"] = []
+            for attrib_string in attributions:
+                tag_content["attribution"].append(attrib_string)
+
+        # sourceData
+        if supplementary_material_tags and len(supplementary_material_tags) > 0:
+            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            if len(source_data) > 0:
+                tag_content["sourceData"] = source_data
+
+    elif tag.name == "media":
+        # For video media only
+        if tag.get("mimetype") != "video":
+            return OrderedDict()
+
+        tag_content["type"] = "video"
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        supplementary_material_tags = None
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
+        set_if_value(tag_content, "uri", tag.get('xlink:href'))
+
+        # sourceData
+        if supplementary_material_tags and len(supplementary_material_tags) > 0:
+            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            if len(source_data) > 0:
+                tag_content["sourceData"] = source_data
+
+    elif tag.name == "fig-group":
+        for i, fig_tag in enumerate(raw_parser.fig(tag)):
+            if i == 0:
+                tag_content = body_block_content(fig_tag)
+            elif i > 0:
+                if "supplements" not in tag_content:
+                    tag_content["supplements"] = []
+                tag_content["supplements"].append(body_block_content(fig_tag))
+
+    elif tag.name == "supplementary-material":
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "label", label(tag, tag.name))
+        set_if_value(tag_content, "title", caption_title(tag))
+        if raw_parser.media(tag):
+            media_tag = first(raw_parser.media(tag))
+            if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
+                # Quick concatenation for now
+                tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
+
+    elif tag.name == "list":
+        tag_content["type"] = "list"
+        if tag.get("list-type"):
+            if tag.get("list-type") == "simple":
+                tag_content["prefix"] = "bullet"
+            elif tag.get("list-type") == "order":
+                tag_content["prefix"] = "number"
+            else:
+                tag_content["prefix"] = tag.get("list-type")
+        else:
+            tag_content["prefix"] = "none"
+
+        for list_item_tag in raw_parser.list_item(tag):
+            if "items" not in tag_content:
+                tag_content["items"] = []
+
+            if len(body_block_content_render(list_item_tag)) > 0:
+                for list_item in body_block_content_render(list_item_tag):
+                    # Note: wrapped inside another list to pass the current article json schema
+                    if list_item != {}:
+                        list_item_content = list_item["content"]
+                        tag_content["items"].append(list_item_content)
+                    else:
+                        tag_content["items"].append(node_contents_str(list_item_tag))
+
+    return tag_content
+
+def body_blocks(soup):
+    """
+    Note: for some reason this works and few other attempted methods work
+    Search for certain node types, find the first nodes siblings of the same type
+    Add the first sibling and the other siblings to a list and return them
+    """
+    nodenames = body_block_nodenames()
+
+    body_block_tags = []
+
+    first_sibling_node = firstnn(soup.find_all())
+
+    if first_sibling_node is None:
+        return body_block_tags
+
+    sibling_tags = first_sibling_node.find_next_siblings(nodenames)
+
+    # Add the first component tag and the ResultSet tags together
+    body_block_tags.append(first_sibling_node)
+
+    for tag in sibling_tags:
+        body_block_tags.append(tag)
+
+    return body_block_tags
+
+def sub_article_doi(tag):
+    doi = None
+    article_id_tag = first(raw_parser.article_id(tag, "doi"))
+    if article_id_tag:
+        doi = article_id_tag.text
+    return doi
+
+def decision_letter(soup):
+
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.decision_letter(soup)
+
+    if sub_article:
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # description
+    if raw_body:
+        # Description will be the first boxed-text tag
+        if raw_parser.boxed_text(raw_body):
+            sub_article_content["description"] = []
+            boxed_text_description = first(raw_parser.boxed_text(raw_body))
+            tags = body_blocks(boxed_text_description)
+            for tag in tags:
+                block_content = body_block_content_render(tag)
+                for tag_content in block_content:
+                    if tag_content != {}:
+                        sub_article_content["description"].append(tag_content)
+
+            # Remove the tag before content is compiled
+            boxed_text_description.decompose()
+
+    # content
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
+
+    return sub_article_content
+
+
+def author_response(soup):
+
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.author_response(soup)
+
+    if sub_article:
+        if sub_article_doi(sub_article):
+            sub_article_content["doi"] = sub_article_doi(sub_article)
+        raw_body = raw_parser.article_body(sub_article)
+    else:
+        raw_body = None
+
+    # content
+    if raw_body:
+        body_content = render_raw_body(raw_body)
+        if len(body_content) > 0:
+            sub_article_content["content"] = body_content
+
+    return sub_article_content
+
+
+def render_abstract_json(abstract_tag):
+    abstract_json = OrderedDict()
+    set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
+    for child_tag in body_blocks(abstract_tag):
+        if body_block_content(child_tag) != {}:
+            if "content" not in abstract_json:
+                 abstract_json["content"] = []
+            abstract_json["content"].append(body_block_content(child_tag))
+    return abstract_json
+
+
+def abstract_json(soup):
+    """abstract in article json format"""
+    abstract_tags = raw_parser.abstract(soup)
+    abstract_json = None
+    for tag in abstract_tags:
+        if tag.get("abstract-type") is None:
+            abstract_json = render_abstract_json(tag)
+    return abstract_json
+
+
+def digest_json(soup):
+    """digest in article json format"""
+    abstract_tags = raw_parser.abstract(soup, abstract_type="executive-summary")
+    abstract_json = None
+    for tag in abstract_tags:
+        abstract_json = render_abstract_json(tag)
+    return abstract_json
+
+
+def author_preferred_name(surname, given_names, suffix):
+    preferred_name = None
+    preferred_name = " ".join(filter(lambda element: element is not None,
+                                     [given_names, surname, suffix]))
+    return preferred_name
+
+
+def author_index_name(surname, given_names, suffix):
+    index_name = None
+    index_name = ", ".join(filter(lambda element: element is not None,
+                                  [surname, given_names, suffix]))
+    return index_name
+
+
+def author_affiliations(author):
+    """compile author affiliations for json output"""
+    affilations = []
+
+    if author.get("affiliations"):
+        for affiliation in author.get("affiliations"):
+            affiliation_json = OrderedDict()
+            affiliation_json["name"] = []
+            if affiliation.get("dept"):
+                affiliation_json["name"].append(affiliation.get("dept"))
+            if affiliation.get("institution"):
+                affiliation_json["name"].append(affiliation.get("institution"))
+            # Remove if empty
+            if affiliation_json["name"] == []:
+                del affiliation_json["name"]
+
+            if affiliation.get("city") or affiliation.get("country"):
+                affiliation_address = OrderedDict()
+                affiliation_address["formatted"] = []
+                affiliation_address["components"] = OrderedDict()
+                if affiliation.get("city"):
+                    affiliation_address["formatted"].append(affiliation.get("city"))
+                    affiliation_address["components"]["locality"] = []
+                    affiliation_address["components"]["locality"].append(affiliation.get("city"))
+                if affiliation.get("country"):
+                    affiliation_address["formatted"].append(affiliation.get("country"))
+                    affiliation_address["components"]["country"] = affiliation.get("country")
+                # Add if not empty
+                if affiliation_address != {}:
+                    affiliation_json["address"] = affiliation_address
+
+            # Add if not empty
+            if affiliation_json != {}:
+                affilations.append(affiliation_json)
+
+    if affilations != []:
+        return affilations
+    else:
+        return None
+
+def author_phone_numbers(author, correspondence):
+    phone_numbers = []
+    if "phone" in author.get("references"):
+        for ref_id in author["references"]["phone"]:
+            if correspondence and ref_id in correspondence:
+                phone_numbers.append(correspondence[ref_id])
+    if phone_numbers != []:
+        return phone_numbers
+    else:
+        return None
+
+
+def author_email_addresses(author, correspondence):
+    email_addresses = []
+
+    if "email" in author.get("references"):
+        for ref_id in author["references"]["email"]:
+            if correspondence and ref_id in correspondence:
+                email_addresses.append(correspondence[ref_id])
+
+    # Also look in affiliations for inline email tags
+    if author.get("affiliations"):
+        for affiliation in author.get("affiliations"):
+            if "email" in affiliation and affiliation["email"] not in email_addresses:
+                email_addresses.append(affiliation["email"])
+
+    if email_addresses != []:
+        return email_addresses
+    else:
+        return None
+
+def author_contribution(author, contributions):
+    contribution_text = None
+
+    if "contribution" in author.get("references"):
+        for ref_id in author["references"]["contribution"]:
+            if contributions:
+                for contribution in contributions:
+                    if contribution.get("text") and contribution.get("id") == ref_id:
+                        contribution_text = (
+                            contribution.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return contribution_text
+
+def author_competing_interests(author, competing_interests):
+    competing_interests_text = None
+
+    if "competing-interest" in author.get("references"):
+        for ref_id in author["references"]["competing-interest"]:
+            if competing_interests:
+                for competing_interest in competing_interests:
+                    if competing_interest.get("text") and competing_interest.get("id") == ref_id:
+                        competing_interests_text = (
+                            competing_interest.get("text").replace('<p>', '').replace('</p>', ''))
+
+    return competing_interests_text
+
+def author_equal_contribution(author, equal_contributions_map):
+    equal_contributions = []
+
+    if "contribution" in author.get("references"):
+        if "equal-contrib" in author["references"]:
+            for ref_id in author["references"]["equal-contrib"]:
+                if ref_id in equal_contributions_map:
+                    equal_contributions.append(equal_contributions_map[ref_id])
+    if equal_contributions != []:
+        return equal_contributions
+    else:
+        return None
+
+
+
+def author_json_details(author, author_json, contributions, correspondence, competing_interests, equal_contributions_map):
+    """add more author json"""
+    if author_affiliations(author):
+        author_json["affiliations"] = author_affiliations(author)
+
+    if author.get("references"):
+        # email
+        if author_email_addresses(author, correspondence):
+            author_json["emailAddresses"] = author_email_addresses(author, correspondence)
+
+        # phone
+        if author_phone_numbers(author, correspondence):
+            author_json["phoneNumbers"] = author_phone_numbers(author, correspondence)
+
+        # contributions
+        if author_contribution(author, contributions):
+            author_json["contribution"] = author_contribution(author, contributions)
+
+        # competing interests
+        if author_competing_interests(author, competing_interests):
+            author_json["competingInterests"] = author_competing_interests(author, competing_interests)
+
+        # equal-contributions
+        if author_equal_contribution(author, equal_contributions_map):
+            author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
+
+    return author_json
+
+def author_person(author, contributions, correspondence, competing_interests, equal_contributions_map):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_name["index"] = author_index_name(
+        author.get("surname"), author.get("given-names"), author.get("suffix"))
+    author_json["name"] = author_name
+    if author.get("orcid"):
+        author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+    author_json = author_json_details(author, author_json, contributions, correspondence,
+                                      competing_interests, equal_contributions_map)
+
+    return author_json
+
+
+def author_group(author, contributions, correspondence, competing_interests, equal_contributions_map):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = author.get("collab")
+
+    author_json = author_json_details(author, author_json, contributions, correspondence,
+                                      competing_interests, equal_contributions_map)
+
+    return author_json
+
+
+def author_on_behalf_of(author):
+    author_json = OrderedDict()
+    author_json["type"] = "on-behalf-of"
+    author_json["onBehalfOf"] = author.get("on-behalf-of")
+    return author_json
+
+
+def collab_to_group_author_key_map(authors):
+    """compile a map of author collab to group-author-key"""
+    collab_map = {}
+    for author in authors:
+        if author.get("collab"):
+            collab_map[author.get("collab")] = author.get("group-author-key")
+    return collab_map
+
+def map_equal_contributions(contributors):
+    """assign numeric values to each unique equal-contrib id"""
+    equal_contribution_map = {}
+    equal_contribution_keys = []
+    for contributor in contributors:
+        if contributor.get("references") and "equal-contrib" in contributor.get("references"):
+            for key in contributor["references"]["equal-contrib"]:
+                if key not in equal_contribution_keys:
+                    equal_contribution_keys.append(key)
+    # Do a basic sort
+    equal_contribution_keys = sorted(equal_contribution_keys)
+    # Assign keys based on sorted values
+    for i, equal_contribution_key in enumerate(equal_contribution_keys):
+        equal_contribution_map[equal_contribution_key] = i+1
+    return equal_contribution_map
+
+def authors_json(soup):
+    """authors list in article json format"""
+    authors_json_data = []
+    contributors_data = contributors(soup, "full")
+    author_contributions_data = author_contributions(soup, None)
+    author_competing_interests_data = competing_interests(soup, None)
+    author_correspondence_data = full_correspondence(soup)
+    authors_non_byline_data = authors_non_byline(soup)
+    equal_contributions_map = map_equal_contributions(contributors_data)
+
+    # First line authors builds basic structure
+    for contributor in contributors_data:
+        author_json = None
+        if contributor["type"] == "author" and contributor.get("collab"):
+            author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
+                                       author_competing_interests_data, equal_contributions_map)
+            author_json["people"] = []
+        elif contributor.get("on-behalf-of"):
+            author_json = author_on_behalf_of(contributor)
+        elif contributor["type"] == "author":
+            author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
+                                        author_competing_interests_data, equal_contributions_map)
+
+        if author_json:
+            authors_json_data.append(author_json)
+
+    # Second, add byline author data
+    collab_map = collab_to_group_author_key_map(contributors_data)
+    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+        for group_author in filter(
+            lambda json_element: json_element["type"] == "group", authors_json_data):
+            group_author_key = None
+            if group_author["name"] in collab_map:
+                group_author_key = collab_map[group_author["name"]]
+            if contributor.get("group-author-key") == group_author_key:
+                author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
+                                            author_competing_interests_data, equal_contributions_map)
+                group_author["people"].append(author_json)
+
+
+    return authors_json_data
+
+def author_line(soup):
+    """take preferred names from authors json and format them into an author line"""
+    author_line = None
+    authors_json_data = authors_json(soup)
+    author_names = extract_author_line_names(authors_json_data)
+    if len(author_names) > 0:
+        author_line = format_author_line(author_names)
+    return author_line
+
+def extract_author_line_names(authors_json_data):
+    author_names = []
+    if not authors_json_data:
+        return author_names
+    for author in authors_json_data:
+        if "name" in author and type(author["name"]) == str:
+            # collab
+            author_names.append(author["name"])
+        elif "name" in author and "preferred" in author["name"]:
+            # person
+            author_names.append(author["name"]["preferred"])
+    return author_names
+
+def format_author_line(author_names):
+    """authorLine format depends on if there is 1, 2 or more than 2 authors"""
+    author_line = None
+    if not author_names:
+        return author_line
+    if len(author_names) <= 2:
+        author_line = ", ".join(author_names)
+    elif len(author_names) > 2:
+        author_line = author_names[0] + " et al"
+    return author_line
+
+def references_publisher(publisher_name=None, publisher_loc=None):
+    publisher = OrderedDict()
+    if publisher_name:
+        publisher["name"] = []
+        publisher["name"].append(publisher_name)
+    if publisher_loc:
+        address = OrderedDict()
+        address["formatted"] = []
+        address["formatted"].append(publisher_loc)
+        address["components"] = OrderedDict()
+        address["components"]["locality"] = []
+        address["components"]["locality"].append(publisher_loc)
+        publisher["address"] = address
+    if len(publisher) > 0:
+        return publisher
+    else:
+        return None
+
+def references_pages_range(fpage=None, lpage=None):
+    range = None
+    if fpage and lpage:
+        # use unichr(8211) for the hyphen because the schema is requiring it
+        range = fpage.strip() + unichr(8211) + lpage.strip()
+    elif fpage:
+        range = fpage.strip()
+    elif lpage:
+        range = lpage.strip()
+    return range
+
+def references_date(year=None):
+    "Handle year value parsing for some edge cases"
+    date = None
+    in_press = None
+    if year and "in press" in year.lower().strip():
+        in_press = True
+    elif year:
+        date = year
+    return (date, in_press)
+
+def references_author_collab(ref_author):
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = unicode(ref_author.get("collab"))
+    return author_json
+
+def references_author_person(ref_author):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(ref_author.get("surname"),
+                                                     ref_author.get("given-names"),
+                                                     ref_author.get("suffix"))
+    author_name["index"] = author_index_name(ref_author.get("surname"),
+                                             ref_author.get("given-names"),
+                                             ref_author.get("suffix"))
+    author_json["name"] = author_name
+    return author_json
+
+def references_authors(ref_authors):
+    all_authors = OrderedDict()
+    if ref_authors:
+        for ref_author in ref_authors:
+            author_json = OrderedDict()
+            etal_json = None
+            # Switch for type of record
+            if "etal" in ref_author:
+                author_group_type = ref_author.get("group-type") + 's' + 'EtAl'
+                etal_json = True
+            elif "collab" in ref_author:
+                author_group_type = ref_author.get("group-type") + 's'
+                author_json = references_author_collab(ref_author)
+            else:
+                author_group_type = ref_author.get("group-type") + 's'
+                author_json = references_author_person(ref_author)
+
+            if author_group_type:
+                if author_group_type not in all_authors:
+                    if not etal_json:
+                        all_authors[author_group_type] = []
+                if etal_json:
+                    all_authors[author_group_type] = etal_json
+                else:
+                    all_authors[author_group_type].append(author_json)
+
+    return all_authors
+
+def references_json_authors(ref_authors, ref_content):
+    "build the authors for references json here for testability"
+    all_authors = references_authors(ref_authors)
+    if all_authors != {}:
+        if ref_content.get("type") in ["book", "conference-proceeding", "journal", "other",
+                                           "periodical", "preprint", "report", "software",
+                                           "web"]:
+            for author_type in ["authors", "authorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["book-chapter"]:
+            for author_type in ["authors", "authorsEtAl", "editors", "editorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["clinical-trial"]:
+            # Always set as authors, once,  then add the authorsType
+            for author_type in ["authors", "collaborators", "sponsors"]:
+                if "authorsType" not in ref_content and all_authors.get(author_type):
+                    set_if_value(ref_content, "authors", all_authors.get(author_type))
+                    set_if_value(ref_content, "authorsEtAl", all_authors.get(author_type + "EtAl"))
+                    ref_content["authorsType"] = author_type
+        elif ref_content.get("type") in ["data"]:
+            for author_type in ["authors", "authorsEtAl",
+                                "compilers", "compilersEtAl", "curators", "curatorsEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["patent"]:
+            for author_type in ["inventors", "inventorsEtAl", "assignees", "assigneesEtAl"]:
+                set_if_value(ref_content, author_type, all_authors.get(author_type))
+        elif ref_content.get("type") in ["thesis"]:
+            # Convert list to a non-list
+            if all_authors.get("authors") and len(all_authors.get("authors")) > 0:
+                ref_content["author"] = all_authors.get("authors")[0]
+    return ref_content
+
+def references_json(soup):
+    references_json = []
+    for ref in refs(soup):
+        ref_content = OrderedDict()
+
+        # type
+        if ref.get("publication-type") == "book" and (
+            "chapter-title" in ref or "full_article_title" in ref):
+            set_if_value(ref_content, "type", "book-chapter")
+        elif ref.get("publication-type") == "confproc":
+            set_if_value(ref_content, "type", "conference-proceeding")
+        elif ref.get("publication-type") == "clinicaltrial":
+            set_if_value(ref_content, "type", "clinical-trial")
+        else:
+            set_if_value(ref_content, "type", ref.get("publication-type"))
+
+        set_if_value(ref_content, "id", ref.get("id"))
+
+        (year_date, year_in_press) = references_date(ref.get("year"))
+        set_if_value(ref_content, "date", year_date)
+
+        # authors and etal
+        if ref.get("authors"):
+            ref_content = references_json_authors(ref.get("authors"), ref_content)
+
+        # titles
+        if ref.get("publication-type") in ["journal", "confproc"]:
+            set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
+        elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
+            set_if_value(ref_content, "title", ref.get("full_article_title"))
+        elif ref.get("publication-type") in ["book"]:
+            set_if_value(ref_content, "bookTitle", ref.get("source"))
+            if "bookTitle" not in ref_content:
+                set_if_value(ref_content, "bookTitle", ref.get("full_article_title"))
+        elif ref.get("publication-type") in ["software","data"]:
+            set_if_value(ref_content, "title", ref.get("data-title"))
+            if "title" not in ref_content:
+                set_if_value(ref_content, "title", ref.get("source"))
+        elif ref.get("publication-type") in ["web"]:
+            set_if_value(ref_content, "title", ref.get("full_article_title"))
+            if "title" not in ref_content:
+                set_if_value(ref_content, "title", ref.get("comment"))
+            if "title" not in ref_content:
+                set_if_value(ref_content, "title", ref.get("uri"))
+        # Finally try to extract from source if a title is not found
+        if ("title" not in ref_content
+            and "articleTitle" not in ref_content
+            and "bookTitle" not in ref_content):
+            set_if_value(ref_content, "title", ref.get("source"))
+
+        # conference
+        if ref.get("conf-name"):
+            set_if_value(ref_content, "conference", references_publisher(
+                ref.get("conf-name"), None))
+
+        # source
+        if ref.get("publication-type") in ["journal"]:
+            if ref.get("source"):
+                journal = OrderedDict()
+                journal["name"] = []
+                journal["name"].append(ref.get("source"))
+                ref_content["journal"] = journal
+        elif ref.get("publication-type") in ["web"]:
+            set_if_value(ref_content, "website", ref.get("source"))
+        elif ref.get("publication-type") not in ["book"]:
+            set_if_value(ref_content, "source", ref.get("source"))
+
+        # volume
+        set_if_value(ref_content, "volume", ref.get("volume"))
+
+        # edition
+        if ref.get("publication-type") in ["software"]:
+            set_if_value(ref_content, "version", ref.get("edition"))
+        else:
+            set_if_value(ref_content, "edition", ref.get("edition"))
+
+        # chapter-title
+        set_if_value(ref_content, "chapterTitle", ref.get("chapter-title"))
+        if ref_content["type"] == "book-chapter" and "chapterTitle" not in ref_content:
+            set_if_value(ref_content, "chapterTitle", ref.get("full_article_title"))
+
+        # pages
+        if ref.get("elocation-id"):
+            ref_content["pages"] = ref.get("elocation-id")
+        elif ref.get("fpage") and not re.match("^[A-Za-z0-9\.]+$", ref.get("fpage")):
+            # Use range as string value
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("lpage") and not re.match("^[A-Za-z0-9\.]+$", ref.get("lpage")):
+            # Use range as string value
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("fpage") and not ref.get("lpage"):
+            ref_content["pages"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+        elif ref.get("fpage") and ref.get("lpage"):
+            ref_content["pages"] = OrderedDict()
+            ref_content["pages"]["first"] = ref.get("fpage").strip()
+            if ref.get("lpage"):
+                ref_content["pages"]["last"] = ref.get("lpage").strip()
+            ref_content["pages"]["range"] = references_pages_range(
+                ref.get("fpage"), ref.get("lpage"))
+
+        elif ref.get("comment"):
+            if "in press" in ref.get("comment").lower().strip():
+                ref_content["pages"] = "in press"
+        elif year_in_press:
+            # in press may have been taken from the year field
+            ref_content["pages"] = "in press"
+
+        # doi
+        if ref.get("publication-type") not in ["web"]:
+            set_if_value(ref_content, "doi", ref.get("doi"))
+
+        # uri
+        set_if_value(ref_content, "uri", ref.get("uri"))
+        if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
+            if ref.get("doi"):
+                # Convert doi to uri
+                ref_content["uri"] = "https://doi.org/" + ref.get("doi")
+
+        # publisher
+        if ref.get("publisher_name"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("publisher_name"), ref.get("publisher_loc")))
+        elif ref.get("publication-type") in ["software"] and ref.get("source"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("source"), ref.get("publisher_loc")))
+
+        ref_content = convert_references_json(ref_content, soup)
+        references_json.append(ref_content)
+
+    return references_json
+
+def convert_references_json(ref_content, soup=None):
+    "Check for references that will not pass schema validation, fix or convert them to unknown"
+    # fix data for specific article references
+    # TODO!!!
+
+    # Convert reference to unkonwn if still missing important values
+    if (
+        (ref_content.get("type") == "other")
+        or
+        (ref_content.get("type") == "book-chapter" and "editors" not in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "articleTitle" not in ref_content)
+        or
+        (ref_content.get("type") in ["journal", "book-chapter", "software"]
+         and not "pages" in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "journal" not in ref_content)
+        or
+        (ref_content.get("type") in ["book", "book-chapter"] and "publisher" not in ref_content)
+        or
+        (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
+        or
+        (ref_content.get("type") == "data" and "source" not in ref_content)
+       ):
+        ref_content = references_json_to_unknown(ref_content, soup)
+
+    return ref_content
+
+def references_json_to_unknown(ref_content, soup=None):
+    unknown_ref_content = OrderedDict()
+    unknown_ref_content["type"] = "unknown"
+    set_if_value(unknown_ref_content, "id", ref_content.get("id"))
+    set_if_value(unknown_ref_content, "date", ref_content.get("date"))
+    set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
+    set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
+
+    # compile details first for use later in title as a default
+    details = references_json_unknown_details(ref_content, soup)
+
+    # title
+    set_if_value(unknown_ref_content, "title", ref_content.get("title"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("bookTitle"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("articleTitle"))
+    if "title" not in unknown_ref_content:
+        # Still not title, try to use the details as the title
+        set_if_value(unknown_ref_content, "title", details)
+
+    # add details
+    set_if_value(unknown_ref_content, "details", details)
+
+    set_if_value(unknown_ref_content, "uri", ref_content.get("uri"))
+
+    return unknown_ref_content
+
+def references_json_unknown_details(ref_content, soup=None):
+    "Extract detail value for references of type unknown"
+    details = ""
+
+    # Try adding pages values first
+    if "pages" in ref_content:
+        if "range" in ref_content["pages"]:
+            details += ref_content["pages"]["range"]
+        else:
+            details += ref_content["pages"]
+
+    if soup:
+        # Attempt to find the XML element by id, and convert it to details
+        if "id" in ref_content:
+            ref_tag = first(soup.select("ref#" + ref_content["id"]))
+            if ref_tag:
+                # Now remove tags that would be already part of the unknown reference by now
+                for remove_tag in ["person-group", "year", "article-title",
+                                   "elocation-id", "fpage", "lpage"]:
+                    ref_tag = remove_tag_from_tag(ref_tag, remove_tag)
+                # Add the remaining tag content comma separated
+                for tag in first(raw_parser.element_citation(ref_tag)):
+                    if node_text(tag) is not None:
+                        if details != "":
+                            details += ", "
+                        details += node_text(tag)
+    if details == "":
+        return None
+    else:
+        return details

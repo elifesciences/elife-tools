@@ -1,0 +1,6 @@
+[report]
+omit =
+    */virtualenv/*
+    */venv/*
+exclude_lines =
+    if __name__ == .__main__.:

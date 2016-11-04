@@ -1,0 +1,18 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Biochemistry", 
+            "country": "United States", 
+            "institution": "Brandeis University", 
+            "city": "Waltham"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Physical Biosciences Division", 
+            "country": "United States", 
+            "institution": "Lawrence Berkeley National Laboratory", 
+            "city": "Berkeley"
+        }
+    }
+]

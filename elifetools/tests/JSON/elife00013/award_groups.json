@@ -1,0 +1,66 @@
+[
+    {
+        "funding_source": [
+            "Gordon and Betty Moore Foundation Marine Microbiology Initiative"
+        ], 
+        "recipient": [
+            "Nicole King"
+        ], 
+        "award_id": null
+    }, 
+    {
+        "funding_source": [
+            "National Institutes of Health"
+        ], 
+        "recipient": [
+            "Rosanna A. Alegado"
+        ], 
+        "award_id": [
+            "F32 GM086054"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "National Institutes of Health"
+        ], 
+        "recipient": [
+            "Laura W. Brown"
+        ], 
+        "award_id": [
+            "F32 GM089018"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "National Institutes of Health"
+        ], 
+        "recipient": [
+            "Jon Clardy"
+        ], 
+        "award_id": [
+            "R01 GM086258"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "National Institutes of Health"
+        ], 
+        "recipient": [
+            "Jon Clardy"
+        ], 
+        "award_id": [
+            "R01 GM099533"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "National Institutes of Health"
+        ], 
+        "recipient": [
+            "Stephen R. Fairclough"
+        ], 
+        "award_id": [
+            "T32 HG00047"
+        ]
+    }
+]

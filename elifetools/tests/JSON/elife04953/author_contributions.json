@@ -1,0 +1,57 @@
+[
+    {
+        "text": "<p>MLD, Conception and design, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>JKB, Conception and design, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>SK, Sudha Kumari designed the experiments, acquired and analyzed the data and wrote the manuscript., Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DD, Conception and design, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>RM, EC-T cell conjugate experiments, Conception and design, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>CVC, EC-T cell conjugate experiments, Conception and design, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>EJ, Conception and design, Contributed unpublished essential data or reagents</p>", 
+        "id": "con7", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>LCK, Conception and design, Contributed unpublished essential data or reagents</p>", 
+        "id": "con8", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>GC, Actin barbed end labeling experiments, Conception and design, Acquisition of data, Analysis and interpretation of data</p>", 
+        "id": "con9", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>FBG, Conception and design, Analysis and interpretation of data</p>", 
+        "id": "con10", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>DJI, Analysis and interpretation of data, Contributed unpublished essential data or reagents</p>", 
+        "id": "con11", 
+        "fn-type": "con"
+    }
+]
