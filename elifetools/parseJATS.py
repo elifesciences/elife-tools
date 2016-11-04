@@ -1898,6 +1898,8 @@ def body_block_content(tag):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", caption_title(tag))
+        if "title" not in tag_content and "label" in tag_content:
+            set_if_value(tag_content, "title", tag_content.get("label"))
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
