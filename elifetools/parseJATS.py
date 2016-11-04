@@ -2503,6 +2503,8 @@ def references_pages_range(fpage=None, lpage=None):
         range = fpage.strip() + unichr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
+    elif lpage:
+        range = lpage.strip()
     return range
 
 def references_date(year=None):
