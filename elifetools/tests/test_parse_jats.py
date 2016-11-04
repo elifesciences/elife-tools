@@ -284,6 +284,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'unknown'), ('id', u'bib55'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Schr\xf6dinger, LLC')])]), ('title', u'The PyMOL Molecular Graphics System'), ('details', u'The PyMOL Molecular Graphics System, Version 1.7.2, Schrodinger, LLC')])]
          ),
 
+        # data reference with no source, 16800 v2
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib10"><element-citation publication-type="data"><person-group person-group-type="author"><collab>Biosharing.org</collab></person-group><year iso-8601-date="2016">2016</year><data-title>A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals</data-title><pub-id pub-id-type="accession" xlink:href="https://biosharing.org/policies">biosharing.org/policies</pub-id></element-citation></ref></ref-list>',
+         [OrderedDict([('type', 'unknown'), ('id', u'bib10'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Biosharing.org')])]), ('title', u'A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals'), ('details', u'A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals, biosharing.org/policies')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

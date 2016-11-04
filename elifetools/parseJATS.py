@@ -2710,7 +2710,7 @@ def references_json(soup):
 
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-        if "uri" not in ref_content and ref.get("publication-type") in ["data", "web"]:
+        if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
@@ -2746,9 +2746,11 @@ def convert_references_json(ref_content, soup=None):
         or
         (ref_content.get("type") == "journal" and "journal" not in ref_content)
         or
-        (ref_content.get("type") == "book" and "publisher" not in ref_content)
+        (ref_content.get("type") in ["book", "book-chapter"] and "publisher" not in ref_content)
         or
         (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
+        or
+        (ref_content.get("type") == "data" and "source" not in ref_content)
        ):
         ref_content = references_json_to_unknown(ref_content, soup)
 
