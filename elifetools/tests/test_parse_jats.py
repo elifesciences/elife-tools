@@ -438,7 +438,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         ('<root><sec><boxed-text><title>Strange content for test coverage</title><table-wrap><label>A label</label></table-wrap><fig></fig><fig><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id></fig></boxed-text></sec></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('label', u'A label'), ('tables', [])]), OrderedDict([('type', 'image'), ('alt', '')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('alt', '')])])])])])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('label', u'A label'), ('title', u'A label'), ('tables', [])]), OrderedDict([('type', 'image'), ('alt', '')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('alt', '')])])])])])])])]
          ),
 
         ('<root><p>content <italic>test</italic></p></root>',
