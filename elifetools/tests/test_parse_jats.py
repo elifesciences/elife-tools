@@ -324,8 +324,8 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root><sec sec-type="intro" id="s1"><title>Introduction</title><p>content</p></sec></root>',
-         OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Introduction')])
+        ('<root><sec sec-type="intro" id="s1"><title>Introduction <italic>section</italic></title><p>content</p></sec></root>',
+         OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Introduction <i>section</i>')])
          ),
 
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',

@@ -1871,14 +1871,14 @@ def body_block_content(tag, html_flag=True):
     if tag.name == "sec":
         tag_content["type"] = "section"
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "title", title_text(tag, tag.name))
+        set_if_value(tag_content, "title", convert(title_text(tag, tag.name)))
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", title_text(tag))
+        set_if_value(tag_content, "title", convert(title_text(tag)))
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -1961,7 +1961,7 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", title_text(tag))
+        set_if_value(tag_content, "title", convert(title_text(tag)))
 
         supplementary_material_tags = None
         caption_content = []
@@ -2017,7 +2017,7 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
@@ -2046,7 +2046,7 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
             if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
