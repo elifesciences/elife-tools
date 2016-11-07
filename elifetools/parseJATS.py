@@ -1781,11 +1781,14 @@ def body_block_content_render(tag):
     block_content_list.append(tag_content)
     return block_content_list
 
-def body_block_paragraph_render(p_tag):
+def body_block_paragraph_render(p_tag, html_flag=True):
     """
     paragraphs may wrap some other body block content
     this is separated out so it can be called from more than one place
     """
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     block_content_list = []
 
     tag_content_content = []
@@ -1800,7 +1803,7 @@ def body_block_paragraph_render(p_tag):
         else:
             # Add previous paragraph content first
             if paragraph_content.strip() != '':
-                tag_content_content.append(body_block_paragraph_content(paragraph_content))
+                tag_content_content.append(body_block_paragraph_content(convert(paragraph_content)))
                 paragraph_content = u''
 
         if child_tag.name is not None and body_block_content(child_tag) != {}:
@@ -1809,7 +1812,7 @@ def body_block_paragraph_render(p_tag):
                     tag_content_content.append(block_content)
     # finish up
     if paragraph_content.strip() != '':
-        tag_content_content.append(body_block_paragraph_content(paragraph_content))
+        tag_content_content.append(body_block_paragraph_content(convert(paragraph_content)))
 
     if len(tag_content_content) > 0:
         for block_content in tag_content_content:
@@ -1822,7 +1825,7 @@ def body_block_caption_render(caption_tags):
     caption_content = []
     supplementary_material_tags = []
 
-    for block_tag in caption_tags:
+    for block_tag in remove_doi_paragraph(caption_tags):
         # Note then skip p tags with supplementary-material inside
         if raw_parser.supplementary_material(block_tag):
             for supp_tag in raw_parser.supplementary_material(block_tag):
@@ -1852,7 +1855,7 @@ def body_block_paragraph_content(text):
     tag_content = OrderedDict()
     if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = unicode(text)
+        tag_content["text"] = text
     return tag_content
 
 def body_block_content(tag, html_flag=True):
@@ -1901,7 +1904,7 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
         if "title" not in tag_content and "label" in tag_content:
             set_if_value(tag_content, "title", tag_content.get("label"))
         supplementary_material_tags = None
@@ -1916,7 +1919,7 @@ def body_block_content(tag, html_flag=True):
         for table in tables:
             # Add the table tag back for now
             table_content = '<table>' + node_contents_str(table) + '</table>'
-            tag_content["tables"].append(table_content)
+            tag_content["tables"].append(convert(table_content))
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
@@ -1949,7 +1952,9 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "label", label(tag, tag.name))
 
         math_tag = first(raw_parser.math(tag))
-        tag_content["mathml"] = node_contents_str(math_tag)
+        # Add the math tag back for now
+        math_content = '<math>' + node_contents_str(math_tag) + '</math>'
+        tag_content["mathml"] = convert(math_content)
 
     elif tag.name == "fig":
         tag_content["type"] = "image"

@@ -7,6 +7,7 @@ def xml_to_html(html_flag, xml_string):
         return xml_string
     html_string = xml_string
     html_string = replace_xref_tags(html_string)
+    html_string = replace_mathml_tags(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
     html_string = replace_simple_tags(html_string, 'underline', 'span', '<span class="underline">')
@@ -46,4 +47,11 @@ def replace_xref_tags(s):
             p = re.compile('<' + tag_match.group(1) + '>')
             s = p.sub(new_tag, s)
     s = replace_simple_tags(s, 'xref', 'a')
+    return s
+
+def replace_mathml_tags(s):
+    p = re.compile('<mml:')
+    s = p.sub('<', s)
+    p = re.compile('</mml:')
+    s = p.sub('</', s)
     return s
