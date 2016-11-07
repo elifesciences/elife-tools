@@ -1995,7 +1995,7 @@ def body_block_content(tag, html_flag=True):
         if len(attributions) > 0:
             tag_content["attribution"] = []
             for attrib_string in attributions:
-                tag_content["attribution"].append(attrib_string)
+                tag_content["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
