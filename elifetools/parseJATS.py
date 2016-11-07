@@ -6,6 +6,7 @@ import time
 import calendar
 from slugify import slugify
 from utils import *
+from utils_html import xml_to_html
 import rawJATS as raw_parser
 import re
 from collections import OrderedDict
@@ -1854,7 +1855,10 @@ def body_block_paragraph_content(text):
         tag_content["text"] = unicode(text)
     return tag_content
 
-def body_block_content(tag):
+def body_block_content(tag, html_flag=True):
+
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
     tag_content = OrderedDict()
 
@@ -1882,7 +1886,7 @@ def body_block_content(tag):
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
         if node_contents_str(tag_copy):
-            tag_content["text"] = node_contents_str(tag_copy)
+            tag_content["text"] = convert(node_contents_str(tag_copy))
 
     elif tag.name == "disp-quote":
         tag_content["type"] = "quote"
@@ -2165,7 +2169,7 @@ def author_response(soup):
 def render_abstract_json(abstract_tag):
     abstract_json = OrderedDict()
     set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
-    for child_tag in body_blocks(abstract_tag):
+    for child_tag in remove_doi_paragraph(body_blocks(abstract_tag)):
         if body_block_content(child_tag) != {}:
             if "content" not in abstract_json:
                  abstract_json["content"] = []
