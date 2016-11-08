@@ -1758,6 +1758,9 @@ def body_block_content_render(tag):
                 continue
 
             if child_tag.name == "p":
+                # Ignore paragraphs that start with DOI:
+                if node_text(child_tag) and len(remove_doi_paragraph([child_tag])) <= 0:
+                    continue
                 if (child_tag.parent.name == "caption"
                     and child_tag.parent.parent.name == "boxed-text"):
                     continue
