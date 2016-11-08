@@ -14,9 +14,11 @@ def xml_to_html(html_flag, xml_string):
     html_string = replace_simple_tags(html_string, 'sc', 'span', '<span class="small-caps">')
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
     html_string = replace_simple_tags(html_string)
-    # Run it through BeautifulSoup as HTML, this encodes unmatched angle brackets
-    soup = BeautifulSoup(html_string, 'html.parser')
-    html_string = soup.encode()
+    # Run it through BeautifulSoup as HTML if it contains tags, this
+    #  encodes unmatched angle brackets
+    if '<' in html_string or '>' in html_string:
+        soup = BeautifulSoup(html_string, 'html.parser')
+        html_string = soup.encode()
     return html_string
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):

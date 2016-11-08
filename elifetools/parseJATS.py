@@ -2736,6 +2736,10 @@ def references_json(soup):
             set_if_value(ref_content, "publisher", references_publisher(
                 ref.get("source"), ref.get("publisher_loc")))
 
+        # Convert to HTML
+        for index in ["title", "articleTitle", "chapterTitle", "bookTitle"]:
+            set_if_value(ref_content, index, xml_to_html(True, ref_content.get(index)))
+
         ref_content = convert_references_json(ref_content, soup)
         references_json.append(ref_content)
 
