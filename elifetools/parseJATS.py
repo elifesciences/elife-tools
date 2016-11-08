@@ -1689,6 +1689,9 @@ def label(tag, parent_tag_name=None):
         label = node_contents_str(label_tag)
     return label
 
+def full_title_json(soup):
+    return xml_to_html(True, full_title(soup))
+
 def impact_statement_json(soup):
     return xml_to_html(True, impact_statement(soup))
 

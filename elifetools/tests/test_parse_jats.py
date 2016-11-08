@@ -50,6 +50,14 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        ("elife04493.xml", "Neuron hemilineages provide the functional ground plan for the <i>Drosophila</i> ventral nervous system"))
+    def test_full_title_json(self, filename, expected):
+        full_title_json = parser.full_title_json(self.soup(filename))
+        self.assertEqual(expected, full_title_json)
+
+
+    @unpack
+    @data(
         ("elife04490.xml", "Both the frequency of sesquiterpene-emitting individuals and the defense capacity of individual plants determine the consequences of sesquiterpene volatile emission for individuals and their neighbors in populations of the wild tobacco <i>Nicotiana attenuata</i>."),
         ("elife_poa_e06828.xml", ""))
     def test_impact_statement_json(self, filename, expected):
