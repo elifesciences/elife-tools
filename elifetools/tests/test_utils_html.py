@@ -35,6 +35,8 @@ class TestUtilsHtml(unittest.TestCase):
          'Link 2 <a href="https://doi.org/10.7554/eLife.00001.012">http://dx.doi.org/10.7554/eLife.00001.012</a>'),
         (True, 'Bad link 1 <ext-link xlink:href="10.7554/eLife.00001.012">http://dx.doi.org/10.7554/eLife.00001.012</ext-link>',
          'Bad link 1 <ext-link xlink:href="10.7554/eLife.00001.012">http://dx.doi.org/10.7554/eLife.00001.012</ext-link>'),
+        (True, '<p>The Panda database (<ext-link ext-link-type="uri" xlink:href="http://circadian.salk.edu/about.html)%20does%20not%20indicate%20restoration%20of%20Cyp2b10">http://circadian.salk.edu/about.html) does not indicate restoration of <italic>Cyp2b10</italic></ext-link> cycling by restricted feeding of clockless mice.</p>',
+         '<p>The Panda database (<a href="http://circadian.salk.edu/about.html)%20does%20not%20indicate%20restoration%20of%20Cyp2b10">http://circadian.salk.edu/about.html) does not indicate restoration of <i>Cyp2b10</i></a> cycling by restricted feeding of clockless mice.</p>'),
         )
     def test_xml_to_html(self, html_flag, xml_string, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string), expected)
