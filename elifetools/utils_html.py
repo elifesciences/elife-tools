@@ -7,15 +7,19 @@ def xml_to_html(html_flag, xml_string):
         return xml_string
     html_string = xml_string
     html_string = replace_xref_tags(html_string)
+    html_string = replace_ext_link_tags(html_string)
+    html_string = replace_mathml_tags(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
     html_string = replace_simple_tags(html_string, 'underline', 'span', '<span class="underline">')
     html_string = replace_simple_tags(html_string, 'sc', 'span', '<span class="small-caps">')
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
     html_string = replace_simple_tags(html_string)
-    # Run it through BeautifulSoup as HTML, this encodes unmatched angle brackets
-    soup = BeautifulSoup(html_string, 'html.parser')
-    html_string = soup.encode()
+    # Run it through BeautifulSoup as HTML if it contains tags, this
+    #  encodes unmatched angle brackets
+    if '<' in html_string or '>' in html_string:
+        soup = BeautifulSoup(html_string, 'html.parser')
+        html_string = soup.encode()
     return html_string
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):
@@ -41,9 +45,41 @@ def replace_xref_tags(s):
     for tag_match in re.finditer("<(xref.*?)>", s):
         rid_match = re.finditer('rid="(.*)"', tag_match.group())
         if rid_match:
-            rid = rid_match.next().group(1)
-            new_tag = '<a href="#' + rid + '">'
-            p = re.compile('<' + tag_match.group(1) + '>')
-            s = p.sub(new_tag, s)
-    s = replace_simple_tags(s, 'xref', 'a')
+            try:
+                rid = rid_match.next().group(1)
+                new_tag = '<a href="#' + rid + '">'
+                p = re.compile('<' + tag_match.group(1) + '>')
+                s = p.sub(new_tag, s)
+                # Replace all close tags even if one open tag gets replaced
+                s = replace_simple_tags(s, 'xref', 'a')
+            except StopIteration:
+                pass
+            
+    return s
+
+def replace_mathml_tags(s):
+    p = re.compile('<mml:')
+    s = p.sub('<', s)
+    p = re.compile('</mml:')
+    s = p.sub('</', s)
+    return s
+
+def replace_ext_link_tags(s):
+    for tag_match in re.finditer("<(ext-link.*?)>", s):
+        xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
+        ext_link_type_match = re.finditer('ext-link-type="(.*)"', tag_match.group())
+        if xlink_match and ext_link_type_match:
+            try:
+                xlink = xlink_match.next().group(1)
+                ext_link_type = ext_link_type_match.next().group(1)
+                if ext_link_type.startswith('uri'):
+                    new_tag = '<a href="' + xlink + '">'
+                elif ext_link_type.startswith('doi'):
+                    new_tag = '<a href="https://doi.org/' + xlink + '">'
+                p = re.compile('<' + tag_match.group(1) + '>')
+                s = p.sub(new_tag, s)
+                # Replace all close tags even if one open tag gets replaced
+                s = replace_simple_tags(s, 'ext-link', 'a')
+            except StopIteration:
+                pass
     return s
