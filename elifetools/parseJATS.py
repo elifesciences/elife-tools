@@ -2343,11 +2343,13 @@ def author_json_details(author, author_json, contributions, correspondence, comp
 
         # contributions
         if author_contribution(author, contributions):
-            author_json["contribution"] = author_contribution(author, contributions)
+            author_json["contribution"] = xml_to_html(
+                True, author_contribution(author, contributions))
 
         # competing interests
         if author_competing_interests(author, competing_interests):
-            author_json["competingInterests"] = author_competing_interests(author, competing_interests)
+            author_json["competingInterests"] = xml_to_html(
+                True, author_competing_interests(author, competing_interests))
 
         # equal-contributions
         if author_equal_contribution(author, equal_contributions_map):
@@ -2531,7 +2533,7 @@ def references_date(year=None):
 def references_author_collab(ref_author):
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = unicode(ref_author.get("collab"))
+    author_json["name"] = unicode(xml_to_html(True, ref_author.get("collab")))
     return author_json
 
 def references_author_person(ref_author):
