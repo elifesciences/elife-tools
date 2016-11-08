@@ -50,6 +50,16 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        ("elife04490.xml", "Both the frequency of sesquiterpene-emitting individuals and the defense capacity of individual plants determine the consequences of sesquiterpene volatile emission for individuals and their neighbors in populations of the wild tobacco <i>Nicotiana attenuata</i>."),
+        ("elife_poa_e06828.xml", ""))
+    def test_impact_statement_json(self, filename, expected):
+        impact_statement_json = parser.impact_statement_json(self.soup(filename))
+        self.assertEqual(expected, impact_statement_json)
+
+
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", list),
         ("elife_poa_e06828.xml", None))
     def test_acknowledgements_json_by_file(self, filename, expected):
