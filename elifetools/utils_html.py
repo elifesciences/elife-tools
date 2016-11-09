@@ -48,8 +48,8 @@ def replace_xref_tags(s):
             try:
                 rid = rid_match.next().group(1)
                 new_tag = '<a href="#' + rid + '">'
-                p = re.compile('<' + tag_match.group(1) + '>')
-                s = p.sub(new_tag, s)
+                old_tag = '<' + tag_match.group(1) + '>'
+                s = s.replace(old_tag, new_tag)
                 # Replace all close tags even if one open tag gets replaced
                 s = replace_simple_tags(s, 'xref', 'a')
             except StopIteration:
@@ -76,8 +76,8 @@ def replace_ext_link_tags(s):
                     new_tag = '<a href="' + xlink + '">'
                 elif ext_link_type.startswith('doi'):
                     new_tag = '<a href="https://doi.org/' + xlink + '">'
-                p = re.compile('<' + tag_match.group(1) + '>')
-                s = p.sub(new_tag, s)
+                old_tag = '<' + tag_match.group(1) + '>'
+                s = s.replace(old_tag, new_tag)
                 # Replace all close tags even if one open tag gets replaced
                 s = replace_simple_tags(s, 'ext-link', 'a')
             except StopIteration:
