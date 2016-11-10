@@ -79,6 +79,15 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        ("elife04490.xml", ['<i>Nicotiana attenuata</i>', '<i>Manduca sexta</i>', u'Geocoris spp.', '<i>Trichobaris mucorea</i>', u'direct and indirect defense', u'diversity']),
+        ("elife07586.xml", []),
+        )
+    def test_keywords_json(self, filename, expected):
+        keywords_json = parser.keywords_json(self.soup(filename))
+        self.assertEqual(expected, keywords_json)
+
+    @unpack
+    @data(
         ('<root></root>',
          None
          ),

@@ -1701,6 +1701,11 @@ def acknowledgements_json(soup):
     else:
         return None
 
+def keywords_json(soup, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    return map(convert, full_keywords(soup))
+
 def body(soup):
 
     body_content = []
@@ -2224,8 +2229,12 @@ def author_index_name(surname, given_names, suffix):
     return index_name
 
 
-def author_affiliations(author):
+def author_affiliations(author, html_flag=True):
     """compile author affiliations for json output"""
+
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     affilations = []
 
     if author.get("affiliations"):
@@ -2233,9 +2242,9 @@ def author_affiliations(author):
             affiliation_json = OrderedDict()
             affiliation_json["name"] = []
             if affiliation.get("dept"):
-                affiliation_json["name"].append(affiliation.get("dept"))
+                affiliation_json["name"].append(convert(affiliation.get("dept")))
             if affiliation.get("institution"):
-                affiliation_json["name"].append(affiliation.get("institution"))
+                affiliation_json["name"].append(convert(affiliation.get("institution")))
             # Remove if empty
             if affiliation_json["name"] == []:
                 del affiliation_json["name"]
@@ -2336,7 +2345,11 @@ def author_equal_contribution(author, equal_contributions_map):
 
 
 
-def author_json_details(author, author_json, contributions, correspondence, competing_interests, equal_contributions_map):
+def author_json_details(author, author_json, contributions, correspondence,
+                        competing_interests, equal_contributions_map, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     """add more author json"""
     if author_affiliations(author):
         author_json["affiliations"] = author_affiliations(author)
@@ -2352,13 +2365,12 @@ def author_json_details(author, author_json, contributions, correspondence, comp
 
         # contributions
         if author_contribution(author, contributions):
-            author_json["contribution"] = xml_to_html(
-                True, author_contribution(author, contributions))
+            author_json["contribution"] = convert(author_contribution(author, contributions))
 
         # competing interests
         if author_competing_interests(author, competing_interests):
-            author_json["competingInterests"] = xml_to_html(
-                True, author_competing_interests(author, competing_interests))
+            author_json["competingInterests"] = convert(
+                author_competing_interests(author, competing_interests))
 
         # equal-contributions
         if author_equal_contribution(author, equal_contributions_map):
@@ -2539,10 +2551,13 @@ def references_date(year=None):
         date = year
     return (date, in_press)
 
-def references_author_collab(ref_author):
+def references_author_collab(ref_author, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = unicode(xml_to_html(True, ref_author.get("collab")))
+    author_json["name"] = unicode(convert(ref_author.get("collab")))
     return author_json
 
 def references_author_person(ref_author):
@@ -2618,7 +2633,11 @@ def references_json_authors(ref_authors, ref_content):
                 ref_content["author"] = all_authors.get("authors")[0]
     return ref_content
 
-def references_json(soup):
+def references_json(soup, html_flag=True):
+
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     references_json = []
     for ref in refs(soup):
         ref_content = OrderedDict()
@@ -2748,8 +2767,8 @@ def references_json(soup):
                 ref.get("source"), ref.get("publisher_loc")))
 
         # Convert to HTML
-        for index in ["title", "articleTitle", "chapterTitle", "bookTitle"]:
-            set_if_value(ref_content, index, xml_to_html(True, ref_content.get(index)))
+        for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
+            set_if_value(ref_content, index, convert(ref_content.get(index)))
 
         ref_content = convert_references_json(ref_content, soup)
         references_json.append(ref_content)
