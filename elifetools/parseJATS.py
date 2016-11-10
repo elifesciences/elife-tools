@@ -1701,6 +1701,11 @@ def acknowledgements_json(soup):
     else:
         return None
 
+def keywords_json(soup, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    return map(convert, full_keywords(soup))
+
 def body(soup):
 
     body_content = []
