@@ -2067,6 +2067,7 @@ def body_block_content(tag, html_flag=True):
                 # Quick concatenation for now
                 tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'filename')
 
     elif tag.name == "list":
         tag_content["type"] = "list"
