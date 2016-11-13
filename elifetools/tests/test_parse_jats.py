@@ -326,6 +326,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', u'book'), ('id', u'bib101'), ('date', u'1988'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'WB Wood'), ('index', u'Wood, WB')]))]), OrderedDict([('type', 'group'), ('name', u'The Community of <i>C. elegans</i>Researchers')])]), ('bookTitle', u'The nematode Caenorhabditis elegans'), ('publisher', OrderedDict([('name', [u'Cold Spring Harbor Laboratory Press']), ('address', OrderedDict([('formatted', [u'Cold Spring Harbor, New York']), ('components', OrderedDict([('locality', [u'Cold Spring Harbor, New York'])]))]))]))])]
          ),
 
+        # Reference with a non-numeric year, from 09215 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib13"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Castro-Alamancos</surname><given-names>MA</given-names></name><name><surname>Connors</surname><given-names>BW</given-names></name></person-group><year iso-8601-date="1996">1996a</year><article-title>Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway</article-title><source>Journal of Neuroscience</source><volume>16</volume><fpage>7742</fpage><lpage>7756</lpage></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'journal'), ('id', u'bib13'), ('date', '1996'), ('discriminator', 'a'),('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'MA Castro-Alamancos'), ('index', u'Castro-Alamancos, MA')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BW Connors'), ('index', u'Connors, BW')]))])]), ('articleTitle', u'Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway'), ('journal', OrderedDict([('name', [u'Journal of Neuroscience'])])), ('volume', u'16'), ('pages', OrderedDict([('first', u'7742'), ('last', u'7756'), ('range', u'7742\u20137756')]))])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
