@@ -2067,6 +2067,7 @@ def body_block_content(tag, html_flag=True):
                 # Quick concatenation for now
                 tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'filename')
 
     elif tag.name == "list":
         tag_content["type"] = "list"
@@ -2544,12 +2545,20 @@ def references_pages_range(fpage=None, lpage=None):
 def references_date(year=None):
     "Handle year value parsing for some edge cases"
     date = None
+    discriminator = None
     in_press = None
     if year and "in press" in year.lower().strip():
         in_press = True
-    elif year:
+    elif year and re.match("^[0-9]+$", year):
         date = year
-    return (date, in_press)
+    elif year:
+        discriminator_match = re.match("^([0-9]+?)([a-z]+?)$", year)
+        if discriminator_match:
+            date = discriminator_match.group(1)
+            discriminator = discriminator_match.group(2)
+        else:
+            date = year
+    return (date, discriminator, in_press)
 
 def references_author_collab(ref_author, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2655,8 +2664,9 @@ def references_json(soup, html_flag=True):
 
         set_if_value(ref_content, "id", ref.get("id"))
 
-        (year_date, year_in_press) = references_date(ref.get("year"))
+        (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
         set_if_value(ref_content, "date", year_date)
+        set_if_value(ref_content, "discriminator", discriminator)
 
         # authors and etal
         if ref.get("authors"):
@@ -2742,10 +2752,10 @@ def references_json(soup, html_flag=True):
 
         elif ref.get("comment"):
             if "in press" in ref.get("comment").lower().strip():
-                ref_content["pages"] = "in press"
+                ref_content["pages"] = "In press"
         elif year_in_press:
             # in press may have been taken from the year field
-            ref_content["pages"] = "in press"
+            ref_content["pages"] = "In press"
 
         # doi
         if ref.get("publication-type") not in ["web"]:
