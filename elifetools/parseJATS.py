@@ -2743,10 +2743,10 @@ def references_json(soup, html_flag=True):
 
         elif ref.get("comment"):
             if "in press" in ref.get("comment").lower().strip():
-                ref_content["pages"] = "in press"
+                ref_content["pages"] = "In press"
         elif year_in_press:
             # in press may have been taken from the year field
-            ref_content["pages"] = "in press"
+            ref_content["pages"] = "In press"
 
         # doi
         if ref.get("publication-type") not in ["web"]:
