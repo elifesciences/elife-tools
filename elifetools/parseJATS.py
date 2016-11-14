@@ -2285,6 +2285,17 @@ def author_phone_numbers(author, correspondence):
     else:
         return None
 
+def phone_number_json(phone):
+    if phone:
+        phone = re.sub(r'[\(\) -]', '', phone)
+    return phone
+
+def author_phone_numbers_json(author, correspondence):
+    phone_numbers = author_phone_numbers(author, correspondence)
+    if phone_numbers:
+        phone_numbers = map(phone_number_json, phone_numbers)
+    return phone_numbers
+
 
 def author_email_addresses(author, correspondence):
     email_addresses = []
@@ -2362,7 +2373,7 @@ def author_json_details(author, author_json, contributions, correspondence,
 
         # phone
         if author_phone_numbers(author, correspondence):
-            author_json["phoneNumbers"] = author_phone_numbers(author, correspondence)
+            author_json["phoneNumbers"] = author_phone_numbers_json(author, correspondence)
 
         # contributions
         if author_contribution(author, contributions):

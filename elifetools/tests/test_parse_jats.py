@@ -151,6 +151,19 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.authors_json(soup), None)
 
+    @unpack
+    @data(
+        # Author with phone number, 02833 v2
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-12496"><name><surname>Bender</surname><given-names>Welcome</given-names></name><xref ref-type="aff" rid="aff3"/><xref ref-type="corresp" rid="cor2">*</xref><xref ref-type="other" rid="par-2"/><xref ref-type="fn" rid="con3"/><xref ref-type="fn" rid="conf1"/><xref ref-type="other" rid="dataro1"/></contrib><aff id="aff3"><institution content-type="dept">Department of Biological Chemistry and Molecular Pharmacology</institution>, <institution>Harvard Medical School</institution>, <addr-line><named-content content-type="city">Boston</named-content></addr-line>, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor2"><label>*</label>For correspondence: <phone>(+1) 617-432-1906</phone> (WB)</corresp></author-notes><sec sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group><fn-group content-type="author-contribution"><fn fn-type="con" id="con3"><p>WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article</p></fn></article-meta></front></root>',
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Welcome Bender'), ('index', u'Bender, Welcome')])), ('affiliations', [OrderedDict([('name', [u'Department of Biological Chemistry and Molecular Pharmacology', u'Harvard Medical School']), ('address', OrderedDict([('formatted', [u'Boston', u'United States']), ('components', OrderedDict([('locality', [u'Boston']), ('country', u'United States')]))]))])]), ('phoneNumbers', [u'+16174321906']), ('contribution', u'WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article'), ('competingInterests', u'The authors declare that no competing interests exist.')])]
+         ),
+
+        )
+    def test_authors_json_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.authors_json(body_tag)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -181,6 +194,13 @@ class TestParseJats(unittest.TestCase):
     def test_author_line(self, filename, expected):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(parser.author_line(soup), expected)
+
+    @unpack
+    @data(
+        ('(+1) 800-555-5555', '+18005555555')
+        )
+    def test_phone_number_json(self, phone, expected):
+        self.assertEqual(parser.phone_number_json(phone), expected)
 
     @unpack
     @data(
