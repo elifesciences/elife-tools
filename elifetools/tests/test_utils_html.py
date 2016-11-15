@@ -39,6 +39,10 @@ class TestUtilsHtml(unittest.TestCase):
          '<p>The Panda database (<a href="http://circadian.salk.edu/about.html)%20does%20not%20indicate%20restoration%20of%20Cyp2b10">http://circadian.salk.edu/about.html) does not indicate restoration of <i>Cyp2b10</i></a> cycling by restricted feeding of clockless mice.</p>'),
         (True, '<p>An empty tag <italic/></p>',
          '<p>An empty tag <i></i></p>'),
+        (True, '<p><email>email@example.org</email></p>',
+         '<p><a href="mailto:email@example.org">email@example.org</a></p>'),
+        (True, '<p>A first <email>email@example.org</email> and second <email>another@example.org</email></p>',
+         '<p>A first <a href="mailto:email@example.org">email@example.org</a> and second <a href="mailto:another@example.org">another@example.org</a></p>'),
         )
     def test_xml_to_html(self, html_flag, xml_string, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string), expected)
