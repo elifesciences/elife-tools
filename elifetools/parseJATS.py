@@ -1893,6 +1893,16 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(title_text(tag)))
+        # Special, if there is no title then use a fragment of the caption as the title
+        if "title" not in tag_content:
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            if caption_content:
+                # Attempt to extra the first sentence of the first paragraph of the caption
+                first_paragraph_text = caption_content[0]["text"]
+                sentences = first_paragraph_text.split(". ")
+                if len(sentences) > 0:
+                    tag_content["title"] = sentences[0]
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
