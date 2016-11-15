@@ -8,6 +8,7 @@ def xml_to_html(html_flag, xml_string):
     html_string = xml_string
     html_string = replace_xref_tags(html_string)
     html_string = replace_ext_link_tags(html_string)
+    html_string = replace_email_tags(html_string)
     html_string = replace_mathml_tags(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
@@ -84,4 +85,12 @@ def replace_ext_link_tags(s):
                 s = replace_simple_tags(s, 'ext-link', 'a')
             except StopIteration:
                 pass
+    return s
+
+def replace_email_tags(s):
+    for tag_match in re.finditer("<email>(.*?)</email>", s):
+        email = tag_match.group(1)
+        old_tag = '<email>' + email + '</email>'
+        new_tag = '<a href="mailto:' + email + '">' + email + '</a>'
+        s = s.replace(old_tag, new_tag)
     return s
