@@ -2116,6 +2116,9 @@ def body_blocks(soup):
 
     body_block_tags = []
 
+    if not soup:
+        return body_block_tags
+
     first_sibling_node = firstnn(soup.find_all())
 
     if first_sibling_node is None:

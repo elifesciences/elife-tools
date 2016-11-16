@@ -591,6 +591,10 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-v1.tif'), ('supplements', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2.'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('alt', ''), ('uri', u'elife-00666-fig2-figsupp1-v1.tif')])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])]
          ),
 
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><p><boxed-text id="B1"><p>Boxed text with no title</p></boxed-text></p></body></root>',
+        [OrderedDict([('content', [OrderedDict([('type', 'box'), ('id', u'B1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Boxed text with no title')])])])])])]
+         ),
+
         )
     def test_render_raw_body(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
