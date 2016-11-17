@@ -2895,3 +2895,24 @@ def references_json_unknown_details(ref_content, soup=None):
         return None
     else:
         return details
+
+
+def ethics_json(soup):
+    ethics_json = []
+    ethics_fn_group = first(raw_parser.fn_group(soup, "ethics-information"))
+
+    # Part one, find the fn tags in the ethics section
+    fn_body_blocks = []
+    if ethics_fn_group:
+        fn_tags = raw_parser.fn(ethics_fn_group)
+        if fn_tags:
+            for fn_tag in fn_tags:
+                fn_body_blocks = fn_body_blocks + body_block_content_render(fn_tag)
+
+    # Part two, if we have fn, then build out the json content
+    for fn_content in fn_body_blocks:
+        if fn_content.get("content"):
+            for content_item in fn_content.get("content"):
+                if "type" in content_item and content_item["type"] == "paragraph":
+                    ethics_json.append(content_item)
+    return ethics_json

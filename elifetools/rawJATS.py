@@ -203,6 +203,12 @@ def author_notes(soup):
 def corresp(soup):
     return extract_nodes(soup, "corresp")
 
+def fn_group(soup, content_type=None):
+    if content_type:
+        return extract_nodes(soup, "fn-group", attr="content-type", value=content_type)
+    else:
+        return extract_nodes(soup, "fn-group")
+
 def fn(soup):
     return extract_nodes(soup, "fn")
 
