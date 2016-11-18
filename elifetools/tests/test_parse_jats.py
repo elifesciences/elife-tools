@@ -99,6 +99,17 @@ class TestParseJats(unittest.TestCase):
         else:
             self.assertEqual(expected, type(acknowledgements_json))
 
+
+    @unpack
+    @data(
+        ("elife04490.xml", 3)
+    )
+    def test_appendices_json_by_file(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        tag_content = parser.appendices_json(soup)
+        self.assertEqual(len(tag_content), expected_len)
+
+
     @unpack
     @data(
         ("elife04490.xml", ['<i>Nicotiana attenuata</i>', '<i>Manduca sexta</i>', u'Geocoris spp.', '<i>Trichobaris mucorea</i>', u'direct and indirect defense', u'diversity']),

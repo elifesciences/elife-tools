@@ -327,6 +327,13 @@ def conf_name(soup):
 def back(soup):
     return first(extract_nodes(soup, "back"))
 
+def app_group(soup):
+    return extract_nodes(soup, "app-group")
+
+def app(soup):
+    return extract_nodes(soup, "app")
+
+
 #
 # body
 #
