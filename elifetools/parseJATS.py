@@ -2104,6 +2104,12 @@ def body_block_content(tag, html_flag=True):
                     else:
                         tag_content["items"].append(node_contents_str(list_item_tag))
 
+    elif tag.name == "app":
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "title", convert(title_text(tag, tag.name)))
+
+
     return tag_content
 
 def body_blocks(soup):
@@ -2916,3 +2922,23 @@ def ethics_json(soup):
                 if "type" in content_item and content_item["type"] == "paragraph":
                     ethics_json.append(content_item)
     return ethics_json
+
+
+def appendices_json(soup):
+    appendices_json = []
+    app_group = None
+    app_tags = []
+    back = raw_parser.back(soup)
+    if back:
+        app_group = first(raw_parser.app_group(back))
+    if app_group:
+        app_tags = raw_parser.app(app_group)
+    for app_tag in app_tags:
+        app_content = body_block_content(app_tag)
+        app_sections = raw_parser.section(app_tag)
+        if raw_parser.section(app_tag):
+            for section_tag in raw_parser.section(app_tag):
+                if len(body_block_content_render(section_tag)) > 0:
+                    app_content["content"] = body_block_content_render(section_tag)
+        appendices_json.append(app_content)
+    return appendices_json
