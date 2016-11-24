@@ -72,5 +72,17 @@ class TestUtils(unittest.TestCase):
         modified_tag = utils.remove_tag_from_tag(tag, unwanted_tag_names)
         self.assertEqual(unicode(modified_tag), expected_xml)
 
+    @unpack
+    @data(
+        (None, None),
+        ("http://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
+        ("https://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
+        ("http://doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
+        ("https://doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
+        )
+    def test_doi_uri_to_doi(self, doi_uri, expected_doi):
+        self.assertEqual(utils.doi_uri_to_doi(doi_uri), expected_doi)
+
+
 if __name__ == '__main__':
     unittest.main()
