@@ -2942,3 +2942,103 @@ def appendices_json(soup):
                     app_content["content"] = body_block_content_render(section_tag)
         appendices_json.append(app_content)
     return appendices_json
+
+
+def dataset_related_object_json(tag, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
+    dataset_content = OrderedDict()
+
+    #set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+    set_if_value(dataset_content, "id", tag.get("id"))
+    set_if_value(dataset_content, "date", node_text(raw_parser.year(tag)))
+
+    # authors
+    dataset_authors = []
+    for contrib_tag in extract_nodes(tag, ["name", "collab"]):
+        dataset_author = OrderedDict()
+        if contrib_tag.name == "collab":
+            dataset_author["type"] = "group"
+            set_if_value(dataset_author, "name", node_contents_str(contrib_tag))
+        elif contrib_tag.name == "name":
+            person_details = {}
+            set_if_value(person_details, "surname", first_node_str_contents(contrib_tag, "surname"))
+            set_if_value(person_details, "given-names", first_node_str_contents(contrib_tag, "given-names"))
+            set_if_value(person_details, "suffix", first_node_str_contents(contrib_tag, "suffix"))
+            dataset_author = references_author_person(person_details)
+        if len(dataset_author) > 0:
+            dataset_authors.append(dataset_author)
+    if len(dataset_authors) > 0:
+        dataset_content["authors"] = dataset_authors
+
+    # et al
+    if raw_parser.etal(tag):
+        dataset_content["authorsEtAl"] = True
+
+    # title
+    set_if_value(dataset_content, "title", convert(node_contents_str(first(raw_parser.source(tag)))))
+
+    # dataId
+    set_if_value(dataset_content, "dataId",
+                 convert(node_contents_str(first(raw_parser.object_id(tag, "art-access-id")))))
+
+    # details
+    set_if_value(dataset_content, "details", convert(node_contents_str(first(raw_parser.comment(tag)))))
+
+    # doi
+    if raw_parser.pub_id(tag, "doi"):
+        doi_tag = first(raw_parser.pub_id(tag, "doi"))
+        set_if_value(dataset_content, "doi", doi_uri_to_doi(doi_tag.get('xlink:href')))
+
+    # uri
+    if raw_parser.ext_link(tag, "uri"):
+        uri_tag = first(raw_parser.ext_link(tag, "uri"))
+        set_if_value(dataset_content, "uri", uri_tag.get('xlink:href'))
+
+    return dataset_content
+
+
+def datasets_json(soup, html_flag=True):
+    datasets_json = OrderedDict()
+    generated_datasets = []
+    used_datasets = []
+    generated_datasets_related_object_tags = []
+    used_datasets_related_object_tags = []
+    p_tags = []
+
+    back_tag = raw_parser.back(soup)
+    if back_tag:
+        datasets_section_tag = first(raw_parser.section(back_tag, "datasets"))
+        if datasets_section_tag:
+            p_tags = raw_parser.paragraph(datasets_section_tag)
+
+    if p_tags:
+        dataset_type = None
+        for p_tag in p_tags:
+            # Look for paragraphs with related-object in them and the
+            #  ones with out them are above the generated and used datasets
+            if raw_parser.related_object(p_tag):
+                if dataset_type == "generated":
+                    generated_datasets_related_object_tags += raw_parser.related_object(p_tag)
+                elif dataset_type == "used":
+                    used_datasets_related_object_tags += raw_parser.related_object(p_tag)
+            else:
+                if node_text(p_tag) and "generated" in node_text(p_tag):
+                    dataset_type = "generated"
+                elif node_text(p_tag):
+                    dataset_type = "used"
+
+    for related_object in generated_datasets_related_object_tags:
+        if "generated" not in datasets_json:
+            datasets_json["generated"] = []
+        if dataset_related_object_json(related_object) != {}:
+            datasets_json["generated"].append(dataset_related_object_json(related_object, html_flag))
+
+    for related_object in used_datasets_related_object_tags:
+        if "used" not in datasets_json:
+            datasets_json["used"] = []
+        if dataset_related_object_json(related_object) != {}:
+            datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
+
+    return datasets_json

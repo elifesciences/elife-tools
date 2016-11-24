@@ -353,8 +353,11 @@ def decision_letter(soup):
 def author_response(soup):
     return first(sub_article(soup, "reply"))
 
-def section(soup):
-    return extract_nodes(soup, "sec")
+def section(soup, sec_type=None):
+    if sec_type:
+        return extract_nodes(soup, "sec", attr="sec-type", value=sec_type)
+    else:
+        return extract_nodes(soup, "sec")
 
 def paragraph(soup):
     return extract_nodes(soup, "p")
