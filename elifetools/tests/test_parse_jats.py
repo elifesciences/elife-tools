@@ -986,6 +986,11 @@ class TestParseJats(unittest.TestCase):
                          parser.full_digest(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
+    def test_full_funding_statement(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_funding_statement"),
+                         parser.full_funding_statement(self.soup(filename)))
+
+    @data("elife-kitchen-sink.xml")
     def test_full_keyword_groups(self, filename):
         self.assertEqual(self.json_expected(filename, "full_keyword_groups"),
                          parser.full_keyword_groups(self.soup(filename)))

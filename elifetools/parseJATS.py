@@ -185,6 +185,8 @@ def license_url(soup):
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
 
+def full_funding_statement(soup):
+    return node_contents_str(raw_parser.funding_statement(soup))
 
 #
 # authors
