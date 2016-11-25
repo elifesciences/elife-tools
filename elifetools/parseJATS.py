@@ -3042,3 +3042,51 @@ def datasets_json(soup, html_flag=True):
             datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
 
     return datasets_json
+
+def poa_supplementary_material_block_content(tag):
+    tag_content = OrderedDict()
+
+    # Check its characteristics first
+    if (tag and tag.name == "supplementary-material"
+        and raw_parser.ext_link(tag) and not raw_parser.media(tag)):
+        ext_link_tag = first(raw_parser.ext_link(tag))
+        filename = ext_link_tag.get('xlink:href')
+
+        if filename and filename.endswith(".zip"):
+            tag_content["mediaType"] = "application/zip"
+
+        set_if_value(tag_content, "uri", filename)
+        set_if_value(tag_content, "filename", filename)
+
+    return tag_content
+
+def supplementary_files_json(soup):
+    additional_files_json = []
+
+    supplementary_material_tags = []
+    back = raw_parser.back(soup)
+    if back:
+        supplementary_material_tags = raw_parser.supplementary_material(back)
+
+    for tag in supplementary_material_tags:
+        tag_content = body_block_content(tag)
+        if tag_content == {}:
+            # Check if it is a simple PoA style supplementary-material
+            tag_content = poa_supplementary_material_block_content(tag)
+
+        if tag_content != {}:
+            # Use label as title if no title
+            if tag_content.get("label") and not tag_content.get("title"):
+                set_if_value(tag_content, "title", tag_content.get("label"))
+            additional_files_json.append(tag_content)
+
+    # Support for older PoA article supplementary material tags
+    poa_supp_material_tags = []
+    all_supp_material_tags = raw_parser.supplementary_material(soup)
+    poa_supp_material_tags = filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags)
+    for tag in poa_supp_material_tags:
+        tag_content = poa_supplementary_material_block_content(tag)
+        if tag_content != {}:
+            additional_files_json.append(tag_content)
+
+    return additional_files_json
