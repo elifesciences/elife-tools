@@ -220,6 +220,11 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('doi', u'10.7554/eLife.03405.026'), ('id', u'SD1-data'), ('label', u'Source code 1.'), ('mediaType', u'application/rar'), ('uri', u'elife-03405-code1-v1.rar'), ('filename', u'elife-03405-code1-v1.rar'), ('title', u'Source code 1.')])]
          ),
 
+        # 00333 v1, mimetype contains a slash so ignore sub-mimetype
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00333.023</object-id><label>Source code 1.</label><caption><p>Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00333.023">http://dx.doi.org/10.7554/eLife.00333.023</ext-link></p></caption><media mime-subtype="zip" mimetype="application/zip" xlink:href="elife-00333-code1-v1.zip"/></supplementary-material></sec></back></root>',
+        [OrderedDict([('doi', u'10.7554/eLife.00333.023'), ('id', u'SD1-data'), ('label', u'Source code 1.'), ('title', u'Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.'), ('mediaType', u'application/zip'), ('uri', u'elife-00333-code1-v1.zip'), ('filename', u'elife-00333-code1-v1.zip')])]
+         ),
+
         )
     def test_supplementary_files_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

@@ -2073,9 +2073,12 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "title", convert(caption_title(tag)))
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
-            if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
-                # Quick concatenation for now
+            # If a mimetype contains a slash just use it, otherwise concatenate a value
+            if media_tag.get("mimetype") and "/" in media_tag.get("mimetype"):
+                tag_content["mediaType"] = media_tag.get("mimetype")
+            elif media_tag.get("mimetype") and media_tag.get("mime-subtype"):
                 tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
+
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'filename')
 
