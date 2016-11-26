@@ -234,6 +234,61 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        ("elife02304.xml", 'The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.')
+    )
+    def test_funding_statement_json_by_file(self, filename, expected):
+        soup = parser.parse_document(sample_xml(filename))
+        tag_content = parser.funding_statement_json(soup)
+        self.assertEqual(tag_content, expected)
+
+    @unpack
+    @data(
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"></root>',
+         None),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><funding-statement>Funding statement</funding-statement></root>',
+         'Funding statement'),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><funding-statement><italic>Special</italic> funding statement</funding-statement></root>',
+         '<i>Special</i> funding statement'),
+    )
+    def test_funding_statement_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.funding_statement_json(soup)
+        self.assertEqual(tag_content, expected)
+
+
+    @unpack
+    @data(
+        ("elife02304.xml", 3),
+        ("elife02935.xml", 16),
+    )
+    def test_funding_awards_json_by_file(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        tag_content = parser.funding_awards_json(soup)
+        self.assertEqual(len(tag_content), expected_len)
+
+    @unpack
+    @data(
+        # 07383 v1 has an institution as the recipient
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold Foundation</institution></institution-wrap></funding-source><principal-award-recipient><institution>Reproducibility Project: Cancer Biology</institution></principal-award-recipient></award-group><funding-statement>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement></funding-group></root>',
+         [OrderedDict([('id', u'par-1'), ('source', OrderedDict([('name', [u'Laura and John Arnold Foundation'])])), ('recipients', [OrderedDict([('type', 'group'), ('name', u'Reproducibility Project: Cancer Biology')])])])]
+         ),
+
+        # Funding from new kitchen sink
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="fund1"><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000011</institution-id><institution>Howard Hughes Medical Institute</institution></institution-wrap></funding-source><award-id>F32 GM089018</award-id><principal-award-recipient><name><surname>Harrison</surname><given-names>Melissa</given-names></name></principal-award-recipient></award-group></funding-group>',
+         [OrderedDict([('id', u'fund1'), ('source', OrderedDict([('funderId', u'10.13039/100000011'), ('name', [u'Howard Hughes Medical Institute'])])), ('awardId', u'F32 GM089018'), ('recipients', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Melissa Harrison'), ('index', u'Harrison, Melissa')]))])])])]
+         ),
+
+    )
+    def test_funding_awards_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.funding_awards_json(soup)
+        self.assertEqual(tag_content, expected)
+
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
         ("elife_poa_e06828.xml", OrderedDict(), None))
     def test_decision_letter(self, filename, expected, not_expected):
@@ -984,6 +1039,11 @@ class TestParseJats(unittest.TestCase):
     def test_full_digest(self, filename):
         self.assertEqual(self.json_expected(filename, "full_digest"),
                          parser.full_digest(self.soup(filename)))
+
+    @data("elife-kitchen-sink.xml")
+    def test_full_funding_statement(self, filename):
+        self.assertEqual(self.json_expected(filename, "full_funding_statement"),
+                         parser.full_funding_statement(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
     def test_full_keyword_groups(self, filename):

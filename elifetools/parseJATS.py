@@ -185,6 +185,8 @@ def license_url(soup):
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
 
+def full_funding_statement(soup):
+    return node_contents_str(raw_parser.funding_statement(soup))
 
 #
 # authors
@@ -3093,3 +3095,74 @@ def supplementary_files_json(soup):
             additional_files_json.append(tag_content)
 
     return additional_files_json
+
+def funding_statement_json(soup, html_flag=True):
+    return xml_to_html(html_flag, full_funding_statement(soup))
+
+def funding_awards_json(soup):
+    awards = []
+
+    # Some details can take from existing award groups function
+    award_groups = full_award_groups(soup)
+    if award_groups:
+        for award_group_dict in award_groups:
+            for id, award_group in award_group_dict.iteritems():
+                award_content = OrderedDict()
+                set_if_value(award_content, "id", id)
+
+                if award_group.get("institution") or award_group.get("id"):
+                    # Set the source
+                    source_content = OrderedDict()
+                    set_if_value(source_content, "funderId", doi_uri_to_doi(award_group.get("id")))
+                    if award_group.get("institution"):
+                        source_name_content = OrderedDict()
+                        set_if_value(source_content, "name", [award_group.get("institution")])
+                    award_content["source"] = source_content
+
+                # awardId
+                set_if_value(award_content, "awardId", award_group.get("award-id"))
+
+                if len(award_content) > 0:
+                    awards.append(award_content)
+
+    # recipients to parse fresh
+    award_group_tags = []
+    award_recipients = {}
+    funding_group = first(raw_parser.funding_group(soup))
+    if funding_group:
+        award_group_tags = raw_parser.award_group(funding_group)
+    for a_tag in award_group_tags:
+        id = a_tag.get("id")
+        recipient_tags = raw_parser.principal_award_recipient(a_tag)
+        if recipient_tags:
+            recipients = []
+            for recipient_tag in recipient_tags:
+                for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
+                    recipient_content = OrderedDict()
+                    if contrib_tag.name == "institution":
+                        recipient_content["type"] = "group"
+                        set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
+                    elif contrib_tag.name == "name":
+                        person_details = {}
+                        set_if_value(person_details, "surname",
+                                     first_node_str_contents(contrib_tag, "surname"))
+                        set_if_value(person_details, "given-names",
+                                     first_node_str_contents(contrib_tag, "given-names"))
+                        set_if_value(person_details, "suffix",
+                                     first_node_str_contents(contrib_tag, "suffix"))
+                        recipient_content = references_author_person(person_details)
+                    if len(recipient_content) > 0:
+                        recipients.append(recipient_content)
+
+            # Add to the dict for adding to the award data later
+            if len(recipients) > 0:
+                if id not in award_recipients:
+                    award_recipients[id] = []
+                award_recipients[id] = recipients
+
+    # Add recipient data to the award data
+    for award in awards:
+        if award.get("id") and award.get("id") in award_recipients:
+            award["recipients"] = award_recipients.get(award.get("id"))
+
+    return awards
