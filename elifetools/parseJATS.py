@@ -3113,7 +3113,7 @@ def funding_awards_json(soup):
                 if award_group.get("institution") or award_group.get("id"):
                     # Set the source
                     source_content = OrderedDict()
-                    set_if_value(source_content, "funderId", award_group.get("id"))
+                    set_if_value(source_content, "funderId", doi_uri_to_doi(award_group.get("id")))
                     if award_group.get("institution"):
                         source_name_content = OrderedDict()
                         set_if_value(source_content, "name", [award_group.get("institution")])
