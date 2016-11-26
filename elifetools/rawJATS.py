@@ -388,3 +388,16 @@ def list(soup):
 
 def list_item(soup):
     return extract_nodes(soup, "list-item")
+
+#
+# funding
+#
+
+def funding_group(soup):
+    return extract_nodes(soup, "funding-group")
+
+def award_group(soup):
+    return extract_nodes(soup, "award-group")
+
+def principal_award_recipient(soup):
+    return extract_nodes(soup, "principal-award-recipient")
