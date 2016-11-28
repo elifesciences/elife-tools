@@ -3120,7 +3120,8 @@ def funding_awards_json(soup):
                     award_content["source"] = source_content
 
                 # awardId
-                set_if_value(award_content, "awardId", award_group.get("award-id"))
+                if award_group.get("award-id") and award_group.get("award-id") != "":
+                    set_if_value(award_content, "awardId", award_group.get("award-id"))
 
                 if len(award_content) > 0:
                     awards.append(award_content)
