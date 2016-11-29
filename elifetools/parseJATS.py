@@ -2082,7 +2082,7 @@ def body_block_content(tag, html_flag=True):
             if len(caption_content) > 0:
                 # Delete the first paragraph of the caption if its text is the same as the title
                 if (tag_content.get("title") and caption_content[0].get("text")
-                    and caption_content[0].get("text")== tag_content.get("title")):
+                    and caption_content[0].get("text") == tag_content.get("title")):
                     del caption_content[0]
             # If there are still captioni tags left then add them
             if len(caption_content) > 0:
