@@ -7,6 +7,7 @@ import calendar
 from slugify import slugify
 from utils import *
 from utils_html import xml_to_html
+from json_rewrite import rewrite_json
 import rawJATS as raw_parser
 import re
 from collections import OrderedDict
@@ -2818,7 +2819,7 @@ def references_json(soup, html_flag=True):
         ref_content = convert_references_json(ref_content, soup)
         references_json.append(ref_content)
 
-    return references_json
+    return rewrite_json("references_json", soup, references_json)
 
 def convert_references_json(ref_content, soup=None):
     "Check for references that will not pass schema validation, fix or convert them to unknown"
