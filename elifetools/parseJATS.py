@@ -2073,6 +2073,21 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
+
+        # caption, add if there are paragraph tags in the caption
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            
+            if len(caption_content) > 0:
+                # Delete the first paragraph of the caption if its text is the same as the title
+                if (tag_content.get("title") and caption_content[0].get("text")
+                    and caption_content[0].get("text")== tag_content.get("title")):
+                    del caption_content[0]
+            # If there are still captioni tags left then add them
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
             # If a mimetype contains a slash just use it, otherwise concatenate a value
