@@ -1659,12 +1659,20 @@ def object_id_doi(tag, parent_tag_name=None):
         doi = node_contents_str(object_id)
     return doi
 
-def title_text(tag, parent_tag_name=None):
-    """Extract the text of a title tag"""
+def title_text(tag, parent_tag_name=None, p_parent_tag_name=None):
+    """Extract the text of a title tag and sometimes inspect its parents"""
     title = None
     title_tag = raw_parser.title(tag)
-    if parent_tag_name and title_tag and title_tag.parent.name != parent_tag_name:
-        title_tag = None
+    if parent_tag_name and p_parent_tag_name:
+        if (title_tag and title_tag.parent.name and title_tag.parent.parent.name
+            and title_tag.parent.name == parent_tag_name
+            and title_tag.parent.parent.name == p_parent_tag_name):
+            pass
+        else:
+            title_tag = None
+    elif parent_tag_name and not p_parent_tag_name:
+        if title_tag and title_tag.parent.name and title_tag.parent.name != parent_tag_name:
+            title_tag = None
     if title_tag:
         title = node_contents_str(title_tag)
     return title
@@ -1900,7 +1908,7 @@ def body_block_content(tag, html_flag=True):
         if "title" not in tag_content:
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
-            if caption_content:
+            if len(caption_content) > 0:
                 # Attempt to extra the first sentence of the first paragraph of the caption
                 first_paragraph_text = caption_content[0]["text"]
                 sentences = first_paragraph_text.split(". ")
@@ -1988,7 +1996,7 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(title_text(tag)))
+        set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
 
         supplementary_material_tags = None
         caption_content = []
@@ -2074,6 +2082,21 @@ def body_block_content(tag, html_flag=True):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
+
+        # caption, add if there are paragraph tags in the caption
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            
+            if len(caption_content) > 0:
+                # Delete the first paragraph of the caption if its text is the same as the title
+                if (tag_content.get("title") and caption_content[0].get("text")
+                    and caption_content[0].get("text") == tag_content.get("title")):
+                    del caption_content[0]
+            # If there are still captioni tags left then add them
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
             # If a mimetype contains a slash just use it, otherwise concatenate a value
