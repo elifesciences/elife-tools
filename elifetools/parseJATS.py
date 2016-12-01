@@ -2839,10 +2839,19 @@ def references_json(soup, html_flag=True):
         for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
             set_if_value(ref_content, index, convert(ref_content.get(index)))
 
-        ref_content = convert_references_json(ref_content, soup)
-        references_json.append(ref_content)
+        # Rewrite references data with support to delete a reference too
+        ref_content_rewritten = rewrite_json("references_json", soup, [ref_content])
+        if ref_content_rewritten and len(ref_content_rewritten) > 0:
+            ref_content = ref_content_rewritten[0]
+        elif len(ref_content_rewritten) == 0:
+            ref_content = None
 
-    return rewrite_json("references_json", soup, references_json)
+        # Now can convert to type unknown if applicable
+        if ref_content:
+            ref_content = convert_references_json(ref_content, soup)
+            references_json.append(ref_content)
+
+    return references_json
 
 def convert_references_json(ref_content, soup=None):
     "Check for references that will not pass schema validation, fix or convert them to unknown"

@@ -533,6 +533,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', u'web'), ('id', u'bib25'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Jha'), ('index', u'Jha, P')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Nugent'), ('index', u'Nugent, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Verguet'), ('index', u'Verguet, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Bloom'), ('index', u'Bloom, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Hum'), ('index', u'Hum, R')]))])]), ('title', u'Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper'), ('uri', u'http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf'), ('date', '2012')])]
          ),
 
+        # elife 12125 v3 bib11 will get deleted in the JSON rewriting
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">12125</article-id><article-id pub-id-type="doi">10.7554/eLife.12125</article-id></article-meta><ref-list><ref id="bib11"><element-citation publication-type="other"><person-group person-group-type="author"><name><surname>Elazar</surname> <given-names>Assaf</given-names></name><name><surname>Weinstein</surname><given-names>Jonathan</given-names></name><name><surname>Prilusky</surname><given-names>Jaime</given-names></name><name><surname>Fleishman</surname><given-names>Sarel J.</given-names></name></person-group></element-citation></ref></ref-list></article></root>',
+         []
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
