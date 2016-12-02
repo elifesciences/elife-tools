@@ -7,6 +7,7 @@ import calendar
 from slugify import slugify
 from utils import *
 from utils_html import xml_to_html
+from json_rewrite import rewrite_json
 import rawJATS as raw_parser
 import re
 from collections import OrderedDict
@@ -1124,6 +1125,11 @@ def refs(soup):
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
         set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+
+        if(raw_parser.date_in_citation(tag)):
+            set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
+            set_if_value(ref, "iso-8601-date", first(raw_parser.date_in_citation(tag)).get('iso-8601-date'))
+
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
@@ -2723,8 +2729,10 @@ def references_json(soup, html_flag=True):
         set_if_value(ref_content, "id", ref.get("id"))
 
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
-        set_if_value(ref_content, "date", year_date)
-        set_if_value(ref_content, "discriminator", discriminator)
+        set_if_value(ref_content, "date", ref.get("iso-8601-date"))
+        if "date" not in ref_content:
+            set_if_value(ref_content, "date", year_date)
+            set_if_value(ref_content, "discriminator", discriminator)
 
         # authors and etal
         if ref.get("authors"):
@@ -2838,8 +2846,17 @@ def references_json(soup, html_flag=True):
         for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
             set_if_value(ref_content, index, convert(ref_content.get(index)))
 
-        ref_content = convert_references_json(ref_content, soup)
-        references_json.append(ref_content)
+        # Rewrite references data with support to delete a reference too
+        ref_content_rewritten = rewrite_json("references_json", soup, [ref_content])
+        if ref_content_rewritten and len(ref_content_rewritten) > 0:
+            ref_content = ref_content_rewritten[0]
+        elif len(ref_content_rewritten) == 0:
+            ref_content = None
+
+        # Now can convert to type unknown if applicable
+        if ref_content:
+            ref_content = convert_references_json(ref_content, soup)
+            references_json.append(ref_content)
 
     return references_json
 

@@ -320,6 +320,9 @@ def data_title(soup):
 def conf_name(soup):
     return extract_nodes(soup, "conf-name")
 
+def date_in_citation(soup):
+    return extract_nodes(soup, "date-in-citation")
+
 #
 # back
 #
