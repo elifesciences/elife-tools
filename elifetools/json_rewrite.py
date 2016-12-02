@@ -64,18 +64,21 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.01530"] = {"bib12": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.01681"] = {"bib5": {"date": "2000"}}
     references_rewrite_json["10.7554/eLife.01917"] = {"bib35": {"date": "2014"}}
-    references_rewrite_json["10.7554/eLife.02030"] = {"bib53": {"date": "2013"}}
+    references_rewrite_json["10.7554/eLife.02030"] = {"bib53": {"date": "2013"}, "bib56": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.02076"] = {"bib93a": {"date": "1990"}}
     references_rewrite_json["10.7554/eLife.02217"] = {"bib27": {"date": "2009"}}
-    references_rewrite_json["10.7554/eLife.02535"] = {"bib37": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.02535"] = {"bib12": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.02862"] = {"bib8": {"date": "2010"}}
+    references_rewrite_json["10.7554/eLife.03711"] = {"bib35": {"date": "2012"}}
     references_rewrite_json["10.7554/eLife.03819"] = {"bib37": {"date": " 2008"}}
     references_rewrite_json["10.7554/eLife.04069"] = {"bib8": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.04247"] = {"bib19a": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.04333"] = {"bib3": {"date": "1859"}}
     references_rewrite_json["10.7554/eLife.04478"] = {"bib49": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.04580"] = {"bib139": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.05042"] = {"bib78": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.05323"] = {"bib102": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.05423"] = {"bib102": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.05503"] = {"bib94": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.06072"] = {"bib17": {"date": "2003"}}
     references_rewrite_json["10.7554/eLife.06315"] = {"bib19": {"date": "2014"}}
@@ -92,6 +95,7 @@ def elife_references_rewrite_json():
         "bib54": {"date": "2014"},
         "bib56": {"date": "2014"},
         "bib65": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.09215"] = {"bib5": {"date": "2012"}}
     references_rewrite_json["10.7554/eLife.09579"] = {
         "bib19": {"date": "2007"},
         "bib49": {"date": "2002"}}
@@ -99,21 +103,33 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.09972"] = {"bib61": {"date": "2007", "discriminator": "a"}}
     references_rewrite_json["10.7554/eLife.09977"] = {"bib41": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.10032"] = {"bib45": {"date": "2016"}}
-    references_rewrite_json["10.7554/eLife.10070"] = {"bib38": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.10042"] = {"bib14": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.10070"] = {"bib15": {"date": "2015"}, "bib38": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.10222"] = {"bib30": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.10670"] = {"bib8": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.11305"] = {"bib68": {"date": "2000"}}
     references_rewrite_json["10.7554/eLife.11416"] = {"bib22": {"date": "1997"}}
     references_rewrite_json["10.7554/eLife.12401"] = {"bib25": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.12366"] = {"bib10": {"date": "2008"}}
+    references_rewrite_json["10.7554/eLife.12735"] = {"bib35": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.12830"] = {"bib118": {"date": "1982"}}
     references_rewrite_json["10.7554/eLife.13133"] = {"bib11": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.13152"] = {"bib25": {"date": "2000"}}
-    references_rewrite_json["10.7554/eLife.13195"] = {"bib12": {"date": "2003"}}
+    references_rewrite_json["10.7554/eLife.13195"] = {"bib6": {"date": "2013"}, "bib12": {"date": "2003"}}
     references_rewrite_json["10.7554/eLife.13479"] = {"bib5": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.13463"] = {"bib15": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.14119"] = {"bib40": {"date": "2007"}}
+    references_rewrite_json["10.7554/eLife.14169"] = {"bib6": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.14523"] = {"bib7": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.15272"] = {"bib78": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.16105"] = {"bib2": {"date": "2013"}}
+    references_rewrite_json["10.7554/eLife.16349"] = {"bib68": {"date": "2005"}}
     references_rewrite_json["10.7554/eLife.16443"] = {"bib58": {"date": "1987"}}
+    references_rewrite_json["10.7554/eLife.16764"] = {"bib4": {"date": "2013"}}
+    references_rewrite_json["10.7554/eLife.17092"] = {"bib102": {"date": "1980"}}
+    references_rewrite_json["10.7554/eLife.18370"] = {"bib1": {"date": "2006"}}
     references_rewrite_json["10.7554/eLife.18425"] = {"bib54": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.18683"] = {"bib47": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.21864"] = {"bib2": {"date": "2016-10-24"}}
 
     return references_rewrite_json
