@@ -1125,6 +1125,11 @@ def refs(soup):
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
         set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+
+        if(raw_parser.date_in_citation(tag)):
+            set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
+            set_if_value(ref, "iso-8601-date", first(raw_parser.date_in_citation(tag)).get('iso-8601-date'))
+
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
@@ -2724,8 +2729,10 @@ def references_json(soup, html_flag=True):
         set_if_value(ref_content, "id", ref.get("id"))
 
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
-        set_if_value(ref_content, "date", year_date)
-        set_if_value(ref_content, "discriminator", discriminator)
+        set_if_value(ref_content, "date", ref.get("iso-8601-date"))
+        if "date" not in ref_content:
+            set_if_value(ref_content, "date", year_date)
+            set_if_value(ref_content, "discriminator", discriminator)
 
         # authors and etal
         if ref.get("authors"):

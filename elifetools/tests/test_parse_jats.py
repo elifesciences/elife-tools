@@ -538,6 +538,11 @@ class TestParseJats(unittest.TestCase):
          []
          ),
 
+        # 19532 v2 bib27 has a date-in-citation and no year tag
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib27"><element-citation publication-type="web"><person-group person-group-type="author"><collab>Nature</collab></person-group><article-title>Challenges in irreproducible research</article-title><source>Nature News and Comment</source><ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link><date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation></element-citation></ref></ref-list></root>',
+         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('date', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
