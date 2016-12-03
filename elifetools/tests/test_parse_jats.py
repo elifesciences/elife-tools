@@ -348,6 +348,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Momeni B, Brileya KA, Fields MW, Shou W. 2013. Strong inter-population cooperation leads to partner intermixing in microbial communities. <i>eLife</i> <b>2</b>:e00230. doi: <a href="http://dx.doi.org/10.7554/eLife.00230">http://dx.doi.org/10.7554/eLife.00230</a>. Published 22 January 2013')]), OrderedDict([('type', 'paragraph'), ('text', u'In Equation 3, ...')])])])]
          ),
 
+        # 12844 v1, based on, edge case to rewrite unacceptable sections that have no titles
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">12844</article-id><article-id pub-id-type="doi">10.7554/eLife.12844</article-id></article-meta><body><sec id="s1"><p>Paragraph 1</p></sec><sec id="s2"><title>How failure promotes translation</title><p>Paragraph 2</p></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'section'), ('id', u's2'), ('title', u'How failure promotes translation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])]), ('title', 'Main text')])]
+         ),
+
         )
     def test_body_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

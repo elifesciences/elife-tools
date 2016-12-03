@@ -1750,7 +1750,8 @@ def body_json(soup):
         new_body = []
         new_body.append(new_body_section)
         body_content = new_body
-    return body_content
+    body_content_rewritten = rewrite_json("body_json", soup, body_content)
+    return body_content_rewritten
 
 def render_raw_body(tag, remove_key_info_box=False):
     body_content = []
