@@ -321,6 +321,40 @@ class TestParseJats(unittest.TestCase):
         if not_expected is not None:
             self.assertNotEqual(not_expected, body)
 
+    @unpack
+    @data(
+        # very simple body, wrap in a section
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><p>Paragraph</p></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')])])])]
+         ),
+
+        # normal boxed-text and section, keep these
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><p><bold>Boxed text</bold></p></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'box'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Boxed text</b>')])])])])])]
+         ),
+
+        # 00301 v1 do not keep boxed-text and warp in section
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p><bold>Related research article</bold> Yan H, Zhong G, Xu G, He W, Jing Z, Gao Z, Huang Y, Qi Y, Peng B, Wang H, Fu L, Song M, Chen P, Gao W, Ren B, Sun Y, Cai T, Feng X, Sui J, Li W. 2012. Sodium taurocholate cotransporting polypeptide is a functional receptor for human hepatitis B and D virus. <italic>eLife</italic> <bold>1</bold>:e00049. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00049">10.7554/eLife.00049</ext-link></p><p><bold>Image</bold> HepG2 cells infected with the hepatitis B virus</p><p><inline-graphic xlink:href="elife-00301-inf1-v1"/></p></boxed-text><p>Approximately two billion people ...</p></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Approximately two billion people ...')])])])]
+         ),
+
+        # 00646 v1 boxed text to keep, and wrap in section
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p>This article by Emma Pewsey (pictured) was the winning entry in the <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</ext-link> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.</p><p><inline-graphic xlink:href="elife-00646-inf1-v1"/></p></boxed-text><p>Normal healthy bones can be thought of as nature\'s scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.</p></body></article></root>',
+        [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')]), OrderedDict([('type', 'paragraph'), ('text', '<inline-graphic xlink:href="elife-00646-inf1-v1"></inline-graphic>')]), OrderedDict([('type', 'paragraph'), ('text', u"Normal healthy bones can be thought of as nature's scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.")])])])]
+         ),
+
+        # 02945 v1, correction article keep the boxed-text
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text><p>Momeni B, Brileya KA, Fields MW, Shou W. 2013. Strong inter-population cooperation leads to partner intermixing in microbial communities. <italic>eLife</italic> <bold>2</bold>:e00230. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00230">http://dx.doi.org/10.7554/eLife.00230</ext-link>. Published 22 January 2013</p></boxed-text><p>In Equation 3, ...</p></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Momeni B, Brileya KA, Fields MW, Shou W. 2013. Strong inter-population cooperation leads to partner intermixing in microbial communities. <i>eLife</i> <b>2</b>:e00230. doi: <a href="http://dx.doi.org/10.7554/eLife.00230">http://dx.doi.org/10.7554/eLife.00230</a>. Published 22 January 2013')]), OrderedDict([('type', 'paragraph'), ('text', u'In Equation 3, ...')])])])]
+         ),
+
+        )
+    def test_body_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.body_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
 
     @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml")
     def test_authors_json(self, filename):

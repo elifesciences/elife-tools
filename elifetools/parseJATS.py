@@ -1722,29 +1722,58 @@ def keywords_json(soup, html_flag=True):
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
     return map(convert, full_keywords(soup))
 
-def body(soup):
+def body(soup, remove_key_info_box=False):
 
     body_content = []
 
     raw_body = raw_parser.article_body(soup)
 
     if raw_body:
-        body_content = render_raw_body(raw_body)
+        body_content = render_raw_body(raw_body, remove_key_info_box)
 
     return body_content
 
+def body_json(soup):
+    """ Get body json and then alter it with section wrapping and removing boxed-text """
+    body_content = body(soup, remove_key_info_box=True)
+    # Wrap in a section if the first block is not a section
+    if (body_content and len(body_content) > 0 and "type" in body_content[0]
+        and body_content[0]["type"] != "section"):
+        # Wrap this one
+        new_body_section = OrderedDict()
+        new_body_section["type"] = "section"
+        new_body_section["id"] = "s0"
+        new_body_section["title"] = "Main text"
+        new_body_section["content"] = []
+        for body_block in body_content:
+            new_body_section["content"].append(body_block)
+        new_body = []
+        new_body.append(new_body_section)
+        body_content = new_body
+    return body_content
 
-def render_raw_body(tag):
+def render_raw_body(tag, remove_key_info_box=False):
     body_content = []
     body_tags = body_blocks(tag)
     for tag in body_tags:
-        if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
-            # Collapse boxed-text here if it has no title or label
-            for boxed_tag in tag:
-                tag_blocks = body_block_content_render(boxed_tag)
-                for tag_block in tag_blocks:
-                    if tag_block != {}:
-                        body_content.append(tag_block)
+        if tag.name == "boxed-text":
+            # Extract the text of the first child tag for comparison, if present
+            first_node_text = None
+            if tag.children:
+                first_node_text = node_text(first(list(tag.children)))
+
+            if (remove_key_info_box is True and first_node_text
+                and "related" in first_node_text.lower()):
+                # Skip this tag
+                continue
+
+            elif not raw_parser.title(tag) and not raw_parser.label(tag):
+                # Collapse boxed-text here if it has no title or label
+                for boxed_tag in tag:
+                    tag_blocks = body_block_content_render(boxed_tag)
+                    for tag_block in tag_blocks:
+                        if tag_block != {}:
+                            body_content.append(tag_block)
         else:
 
             tag_blocks = body_block_content_render(tag)
