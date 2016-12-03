@@ -1,4 +1,5 @@
 import parseJATS as parser
+from collections import OrderedDict
 
 def rewrite_json(rewrite_type, soup, json_content):
     """
@@ -133,3 +134,22 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.21864"] = {"bib2": {"date": "2016-10-24"}}
 
     return references_rewrite_json
+
+def rewrite_elife_body_json(json_content, doi):
+    """ rewrite elife body json """
+
+    # Edge case wrap sections differently
+    if doi == "10.7554/eLife.12844":
+        if (json_content and len(json_content) > 0 and json_content[0].get("type")
+            and json_content[0]["type"] == "section"):
+            new_body = OrderedDict()
+            for i, tag_block in enumerate(json_content):
+                if i == 0:
+                    tag_block["title"] = "Main text"
+                    new_body = tag_block
+                elif i > 0:
+                    new_body["content"].append(tag_block)
+            json_content = [new_body]
+
+    return json_content
+
