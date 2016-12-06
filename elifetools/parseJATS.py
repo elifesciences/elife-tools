@@ -2773,7 +2773,7 @@ def references_json(soup, html_flag=True):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
 
         # titles
-        if ref.get("publication-type") in ["journal", "confproc"]:
+        if ref.get("publication-type") in ["journal", "confproc", "preprint"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
@@ -2883,7 +2883,8 @@ def references_json(soup, html_flag=True):
 
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-        if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
+        if ("uri" not in ref_content
+            and ref.get("publication-type") in ["confproc", "data", "web", "preprint"]):
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
