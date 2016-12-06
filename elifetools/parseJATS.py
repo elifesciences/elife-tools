@@ -2820,6 +2820,14 @@ def references_json(soup, html_flag=True):
         set_if_value(ref_content, "number", ref.get("patent"))
         set_if_value(ref_content, "country", ref.get("country"))
 
+        # publisher
+        if ref.get("publisher_name"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("publisher_name"), ref.get("publisher_loc")))
+        elif ref.get("publication-type") in ["software"] and ref.get("source"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("source"), ref.get("publisher_loc")))
+
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))
 
@@ -2867,20 +2875,18 @@ def references_json(soup, html_flag=True):
         if ref.get("publication-type") not in ["web"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
 
+        # pmid
+        set_if_value(ref_content, "pmid", ref.get("pmid"))
+
+        # isbn
+        set_if_value(ref_content, "isbn", ref.get("isbn"))
+
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
         if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
-
-        # publisher
-        if ref.get("publisher_name"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("publisher_name"), ref.get("publisher_loc")))
-        elif ref.get("publication-type") in ["software"] and ref.get("source"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("source"), ref.get("publisher_loc")))
 
         # Convert to HTML
         for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
