@@ -2918,7 +2918,8 @@ def convert_references_json(ref_content, soup=None):
         or
         (ref_content.get("type") == "journal" and "journal" not in ref_content)
         or
-        (ref_content.get("type") in ["book", "book-chapter"] and "publisher" not in ref_content)
+        (ref_content.get("type") in ["book", "book-chapter", "report"]
+         and "publisher" not in ref_content)
         or
         (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
         or
