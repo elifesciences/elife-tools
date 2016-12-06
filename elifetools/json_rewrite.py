@@ -131,6 +131,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.18370"] = {"bib1": {"date": "2006"}}
     references_rewrite_json["10.7554/eLife.18425"] = {"bib54": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.18683"] = {"bib47": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.20352"] = {"bib53": {"country": "United States"}}
     references_rewrite_json["10.7554/eLife.21864"] = {"bib2": {"date": "2016-10-24"}}
 
     return references_rewrite_json
