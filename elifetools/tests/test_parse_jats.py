@@ -612,6 +612,11 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', u'preprint'), ('id', u'bib78'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Ochoa'), ('index', u'Ochoa, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Jonikas'), ('index', u'Jonikas, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'RT Lawrence'), ('index', u'Lawrence, RT')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B El Debs'), ('index', u'El Debs, B')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Selkrig'), ('index', u'Selkrig, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Typas'), ('index', u'Typas, A')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Villen'), ('index', u'Villen, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Santos'), ('index', u'Santos, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Beltrao'), ('index', u'Beltrao, P')]))])]), ('articleTitle', u'An atlas of human kinase regulation'), ('source', u'bioRxiv'), ('doi', u'10.1101/067900'), ('uri', u'https://doi.org/10.1101/067900')])]
          ),
 
+        # 16394 v2, reference of type thesis with no publisher, convert to unknown
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib6"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Berret</surname><given-names>B</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Intégration de la force gravitaire dans la planification motrice et le contrôle des mouvements du bras et du corps</article-title><source>PhD. Thesis</source></element-citation></ref></ref-list></root>',
+        [OrderedDict([('type', 'unknown'), ('id', u'bib6'), ('date', u'2009'), ('title', u'Int\xe9gration de la force gravitaire dans la planification motrice et le contr\xf4le des mouvements du bras et du corps'), ('details', u'PhD. Thesis')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
