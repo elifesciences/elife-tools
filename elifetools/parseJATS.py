@@ -1130,6 +1130,10 @@ def refs(soup):
             set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
             set_if_value(ref, "iso-8601-date", first(raw_parser.date_in_citation(tag)).get('iso-8601-date'))
 
+        if(raw_parser.patent(tag)):
+            set_if_value(ref, "patent", node_text(first(raw_parser.patent(tag))))
+            set_if_value(ref, "country", first(raw_parser.patent(tag)).get('country'))
+
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
@@ -2781,7 +2785,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "title", ref.get("data-title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("source"))
-        elif ref.get("publication-type") in ["web"]:
+        elif ref.get("publication-type") in ["patent", "web"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("comment"))
@@ -2807,8 +2811,14 @@ def references_json(soup, html_flag=True):
                 ref_content["journal"] = journal
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
+        elif ref.get("publication-type") in ["patent"]:
+            set_if_value(ref_content, "patentType", ref.get("source"))
         elif ref.get("publication-type") not in ["book"]:
             set_if_value(ref_content, "source", ref.get("source"))
+
+        # patent details
+        set_if_value(ref_content, "number", ref.get("patent"))
+        set_if_value(ref_content, "country", ref.get("country"))
 
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))

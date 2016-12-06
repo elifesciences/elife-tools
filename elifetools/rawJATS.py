@@ -323,6 +323,9 @@ def conf_name(soup):
 def date_in_citation(soup):
     return extract_nodes(soup, "date-in-citation")
 
+def patent(soup):
+    return extract_nodes(soup, "patent")
+
 #
 # back
 #
