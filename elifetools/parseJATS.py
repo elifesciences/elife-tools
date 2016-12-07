@@ -2876,7 +2876,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "doi", ref.get("doi"))
 
         # pmid
-        set_if_value(ref_content, "pmid", ref.get("pmid"))
+        set_if_value(ref_content, "pmid", coerce_to_int(ref.get("pmid"), None))
 
         # isbn
         set_if_value(ref_content, "isbn", ref.get("isbn"))
