@@ -1130,6 +1130,10 @@ def refs(soup):
             set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
             set_if_value(ref, "iso-8601-date", first(raw_parser.date_in_citation(tag)).get('iso-8601-date'))
 
+        if(raw_parser.patent(tag)):
+            set_if_value(ref, "patent", node_text(first(raw_parser.patent(tag))))
+            set_if_value(ref, "country", first(raw_parser.patent(tag)).get('country'))
+
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
@@ -2769,7 +2773,7 @@ def references_json(soup, html_flag=True):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
 
         # titles
-        if ref.get("publication-type") in ["journal", "confproc"]:
+        if ref.get("publication-type") in ["journal", "confproc", "preprint"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
@@ -2781,7 +2785,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "title", ref.get("data-title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("source"))
-        elif ref.get("publication-type") in ["web"]:
+        elif ref.get("publication-type") in ["patent", "web"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("comment"))
@@ -2807,8 +2811,22 @@ def references_json(soup, html_flag=True):
                 ref_content["journal"] = journal
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
+        elif ref.get("publication-type") in ["patent"]:
+            set_if_value(ref_content, "patentType", ref.get("source"))
         elif ref.get("publication-type") not in ["book"]:
             set_if_value(ref_content, "source", ref.get("source"))
+
+        # patent details
+        set_if_value(ref_content, "number", ref.get("patent"))
+        set_if_value(ref_content, "country", ref.get("country"))
+
+        # publisher
+        if ref.get("publisher_name"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("publisher_name"), ref.get("publisher_loc")))
+        elif ref.get("publication-type") in ["software"] and ref.get("source"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("source"), ref.get("publisher_loc")))
 
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))
@@ -2857,20 +2875,19 @@ def references_json(soup, html_flag=True):
         if ref.get("publication-type") not in ["web"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
 
+        # pmid
+        set_if_value(ref_content, "pmid", ref.get("pmid"))
+
+        # isbn
+        set_if_value(ref_content, "isbn", ref.get("isbn"))
+
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-        if "uri" not in ref_content and ref.get("publication-type") in ["confproc", "data", "web"]:
+        if ("uri" not in ref_content
+            and ref.get("publication-type") in ["confproc", "data", "web", "preprint"]):
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
-
-        # publisher
-        if ref.get("publisher_name"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("publisher_name"), ref.get("publisher_loc")))
-        elif ref.get("publication-type") in ["software"] and ref.get("source"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("source"), ref.get("publisher_loc")))
 
         # Convert to HTML
         for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
@@ -2908,11 +2925,14 @@ def convert_references_json(ref_content, soup=None):
         or
         (ref_content.get("type") == "journal" and "journal" not in ref_content)
         or
-        (ref_content.get("type") in ["book", "book-chapter"] and "publisher" not in ref_content)
+        (ref_content.get("type") in ["book", "book-chapter", "report", "thesis"]
+         and "publisher" not in ref_content)
         or
         (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
         or
         (ref_content.get("type") == "data" and "source" not in ref_content)
+        or
+        (ref_content.get("type") == "conference-proceeding" and "conference" not in ref_content)
        ):
         ref_content = references_json_to_unknown(ref_content, soup)
 
