@@ -617,6 +617,11 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', 'unknown'), ('id', u'bib6'), ('date', u'2009'), ('title', u'Int\xe9gration de la force gravitaire dans la planification motrice et le contr\xf4le des mouvements du bras et du corps'), ('details', u'PhD. Thesis')])]
          ),
 
+        # 09672 v2, reference of type conference-proceeding with no conference
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">20352</article-id><article-id pub-id-type="doi">10.7554/eLife.20352</article-id></article-meta><ref-list><ref id="bib25"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>RBM</collab></person-group><article-title>Changes to guidance for vector vontrol indicators</article-title><article-title>Meeting Report of the 17th MERG Meeting</article-title><conf-date>15–17th June 2011.</conf-date> <year iso-8601-date="2011">2011</year><conf-loc>New York, USA</conf-loc><uri xlink:href="http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf">http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf</uri></element-citation></ref></ref-list></article></root>',
+        [OrderedDict([('type', 'unknown'), ('id', u'bib25'), ('date', u'2011'), ('authors', [OrderedDict([('type', 'group'), ('name', u'RBM')])]), ('title', u'Changes to guidance for vector vontrol indicators'), ('details', u'15\u201317th June 2011., New York, USA, http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf'), ('uri', u'http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf')])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
