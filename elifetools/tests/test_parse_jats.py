@@ -112,6 +112,19 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # example based on 14093 v1 with many sections and content
+        ('<root><back><app-group><app id="app1"><title>Appendix 1</title><boxed-text><sec id="s25" sec-type="appendix"><title>1 Definitions related to phyllotaxis</title><p>Phyllotactic patterns emerge ...</p></sec><sec id="s26" sec-type="appendix"><title>2 The classical model of phyllotaxis: a brief recap</title><sec id="s27"><title>2.1 Model description</title><p>We implemented ...</p></sec></sec></boxed-text></sec></app><app id="app2"><title>Appendix 2</title><boxed-text><sec id="s53" sec-type="appendix"><title>Additional videos and initial conditions for all videos</title><p>For all videos, ...</p></sec></boxed-text></app></app-group></back></root>',
+        [OrderedDict([('id', u'app1'), ('title', u'Appendix 1'), ('content', [OrderedDict([('type', 'section'), ('id', u's25'), ('title', u'1 Definitions related to phyllotaxis'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Phyllotactic patterns emerge ...')])])]), OrderedDict([('type', 'section'), ('id', u's26'), ('title', u'2 The classical model of phyllotaxis: a brief recap'), ('content', [OrderedDict([('type', 'section'), ('id', u's27'), ('title', u'2.1 Model description'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'We implemented ...')])])])])]), OrderedDict([('type', 'section'), ('id', u's27'), ('title', u'2.1 Model description'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'We implemented ...')])])])])])]
+        ),
+        )
+    def test_appendices_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.appendices_json(soup.contents[0])
+        self.assertEqual(expected, tag_content)
+
+
+    @unpack
+    @data(
         ("elife04490.xml", ['<i>Nicotiana attenuata</i>', '<i>Manduca sexta</i>', u'Geocoris spp.', '<i>Trichobaris mucorea</i>', u'direct and indirect defense', u'diversity']),
         ("elife07586.xml", []),
         )

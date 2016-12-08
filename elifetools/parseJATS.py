@@ -3033,9 +3033,10 @@ def appendices_json(soup):
         app_content = body_block_content(app_tag)
         app_sections = raw_parser.section(app_tag)
         if raw_parser.section(app_tag):
+            app_content["content"] = []
             for section_tag in raw_parser.section(app_tag):
                 if len(body_block_content_render(section_tag)) > 0:
-                    app_content["content"] = body_block_content_render(section_tag)
+                    app_content["content"].append(body_block_content_render(section_tag)[0])
         appendices_json.append(app_content)
     return appendices_json
 
