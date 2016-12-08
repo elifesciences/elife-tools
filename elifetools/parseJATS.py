@@ -3032,9 +3032,14 @@ def appendices_json(soup):
     for app_tag in app_tags:
         app_content = body_block_content(app_tag)
         app_sections = raw_parser.section(app_tag)
-        if raw_parser.section(app_tag):
+        if app_sections:
             app_content["content"] = []
-            for section_tag in raw_parser.section(app_tag):
+            for section_tag in app_sections:
+                # Do not add sec inside a sec twice by checking its first parent
+                first_parent_tag = first_parent(section_tag, ["sec", "app"])
+                if first_parent_tag and first_parent_tag.name == "sec":
+                    # Skip it
+                    continue
                 if len(body_block_content_render(section_tag)) > 0:
                     app_content["content"].append(body_block_content_render(section_tag)[0])
         appendices_json.append(app_content)
