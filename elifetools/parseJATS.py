@@ -1793,7 +1793,7 @@ def body_block_nodenames():
     return ["sec", "p", "table-wrap", "boxed-text",
             "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
 
-def body_block_content_render(tag):
+def body_block_content_render(tag, recursive=False):
     """
     Render the tag as body content and call recursively if
     the tag has child tags
@@ -1822,9 +1822,6 @@ def body_block_content_render(tag):
                 # Ignore paragraphs that start with DOI:
                 if node_text(child_tag) and len(remove_doi_paragraph([child_tag])) <= 0:
                     continue
-                if (child_tag.parent.name == "caption"
-                    and child_tag.parent.parent.name == "boxed-text"):
-                    continue
                 for block_content in body_block_paragraph_render(child_tag):
                     if block_content != {}:
                         tag_content_content.append(block_content)
@@ -1833,14 +1830,18 @@ def body_block_content_render(tag):
                 # Do not fig inside fig-group a second time
                 pass
             else:
-                for block_content in body_block_content_render(child_tag):
+                for block_content in body_block_content_render(child_tag, recursive=True):
                     if block_content != {}:
                         tag_content_content.append(block_content)
 
     if len(tag_content_content) > 0:
-        tag_content["content"] = []
-        for block_content in tag_content_content:
-            tag_content["content"].append(block_content)
+        if tag.name in nodenames or recursive is False:
+            tag_content["content"] = []
+            for block_content in tag_content_content:
+                tag_content["content"].append(block_content)
+        else:
+            # Not a block tag, e.g. a caption tag, let the content pass through
+            tag_content = tag_content_content[0]
 
     block_content_list.append(tag_content)
     return block_content_list
