@@ -366,6 +366,16 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'section'), ('id', u's2'), ('title', u'How failure promotes translation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])]), ('title', 'Main text')])]
          ),
 
+        # 09977 v2, based on, edge case to remove a specific section with no content
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09977</article-id><article-id pub-id-type="doi">10.7554/eLife.09977</article-id></article-meta><body><sec id="s4"><title>Keep this section</title><sec id="s4-10"><title>Keep this inner section</title><p>Content</p></sec><sec id="s4-11"><title>Remove this section</title></sec></sec></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Keep this section'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-10'), ('title', u'Keep this inner section'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])])])])])]
+         ),
+
+        # 09977 v3, based on, edge case to keep a specific section that does have content
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09977</article-id><article-id pub-id-type="doi">10.7554/eLife.09977</article-id></article-meta><body><sec id="s4"><title>Keep this section</title><sec id="s4-10"><title>Keep this inner section</title><p>Content</p></sec><sec id="s4-11"><title>Keep this section too</title><p>More content</p></sec></sec></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Keep this section'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-10'), ('title', u'Keep this inner section'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])])]), OrderedDict([('type', 'section'), ('id', u's4-11'), ('title', u'Keep this section too'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])])])]
+         ),
+
         )
     def test_body_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

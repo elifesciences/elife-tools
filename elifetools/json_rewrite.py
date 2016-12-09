@@ -139,6 +139,27 @@ def elife_references_rewrite_json():
 def rewrite_elife_body_json(json_content, doi):
     """ rewrite elife body json """
 
+    # Edge case remove a section with no content
+    if doi == "10.7554/eLife.09977":
+        if (json_content and len(json_content) > 0):
+            i_index = j_index = None
+            for i, outer_block in enumerate(json_content):
+                if (outer_block.get("id") and outer_block.get("id") == "s4"
+                    and outer_block.get("content")):
+                    # We have i
+                    i_index = i
+                    break
+            if i_index is not None:
+                for j, inner_block in enumerate(json_content[i_index].get("content")):
+                    if (inner_block.get("id") and inner_block.get("id") == "s4-11"
+                        and inner_block.get("content") is None):
+                        # Now we have i and j for deletion outside of the loop
+                        j_index = j
+                        break
+            # Do the deletion on the original json
+            if i_index is not None and j_index is not None:
+                del json_content[i_index]["content"][j_index]
+
     # Edge case wrap sections differently
     if doi == "10.7554/eLife.12844":
         if (json_content and len(json_content) > 0 and json_content[0].get("type")
