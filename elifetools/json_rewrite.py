@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import parseJATS as parser
 from collections import OrderedDict
 
@@ -134,10 +136,211 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.20352"] = {"bib53": {"country": "United States"}}
     references_rewrite_json["10.7554/eLife.21864"] = {"bib2": {"date": "2016-10-24"}}
 
+    # Reference authors data to replace, processed further below into json
+    references_authors = []
+    references_authors.append(("10.7554/eLife.00036", "bib8", "authors", [
+        {"surname": "Butler", "given-names": "H"},
+        {"surname": "Juurlink", "given-names": "BHJ"}
+        ]))
+    references_authors.append(("10.7554/eLife.00036", "bib30", "authors", [
+        {"surname": "Joyner", "given-names": "AL"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.00048", "bib15", "authors", [
+        {"surname": "Guthrie", "given-names": "C"},
+        {"surname": "Fink", "given-names": "GR"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.00051", "bib21", "authors", [
+        {"surname": "Jamison", "given-names": "DT"},
+        {"surname": "Breman", "given-names": "JG"},
+        {"surname": "Measham", "given-names": "AR"},
+        {"surname": "Alleyne", "given-names": "G"},
+        {"surname": "Claeson", "given-names": "M"},
+        {"surname": "Evans", "given-names": "DB"},
+        {"surname": "Jha", "given-names": "P"},
+        {"surname": "Mills", "given-names": "A"},
+        {"surname": "Musgrove", "given-names": "P"}
+        ]))
+    references_authors.append(("10.7554/eLife.00051", "bib36", "authors", [
+        {"surname": "Rogers", "given-names": "RG"},
+        {"surname": "Crimmins", "given-names": "EM"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.00668", "bib39", "authors", [
+        {"surname": "Rice", "given-names": "SA"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.03714", "bib64", "authors", [
+        {"surname": "Otwinowski", "given-names": "Z"},
+        {"surname": "Minor", "given-names": "W"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.04220", "bib31", "authors", [
+        {"surname": "Tishby", "given-names": "N"},
+        {"surname": "Polani", "given-names": "D"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.04395", "bib67", "authors", [
+        {"surname": "King", "given-names": "AMQ"},
+        {"surname": "Adams", "given-names": "MJ"},
+        {"surname": "Carstens", "given-names": "EB"},
+        {"surname": "Lefkowitz", "given-names": "E"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.04449", "bib62", "authors", [
+        {"surname": "Shaham", "given-names": "S"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.04659", "bib57", "authors", [
+        {"surname": "Sambrook", "given-names": "J"},
+        {"surname": "Russell", "given-names": "TW"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.05423", "bib4", "authors", [
+        {"surname": "Birkhead", "given-names": "TR"},
+        {"surname": "Møller", "given-names": "AP"}
+        ]))
+    references_authors.append(("10.7554/eLife.05423", "bib5", "authors", [
+        {"surname": "Birkhead", "given-names": "TR"},
+        {"surname": "Møller", "given-names": "AP"}
+        ]))
+    references_authors.append(("10.7554/eLife.05423", "bib90", "authors", [
+        {"surname": "Smith", "given-names": "RL"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.05564", "bib39", "authors", [
+        {"surname": "Pattyn", "given-names": "S"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.05959", "bib76", "authors", [
+        {"surname": "Macholán", "given-names": "M"},
+        {"surname": "Baird", "given-names": "SJE"},
+        {"surname": "Munclinger", "given-names": "P"},
+        {"surname": "Piálek", "given-names": "J"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.06565", "bib1", "authors", [
+        {"surname": "Ahringer", "given-names": "J"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.06576", "bib57", "authors", [
+        {"surname": "Moller", "given-names": "AR"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.06813", "bib54", "authors", [
+        {"surname": "King", "given-names": "JA"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.06813", "bib55", "authors", [
+        {"surname": "Kirkland", "given-names": "Gl"},
+        {"surname": "Layne", "given-names": "JN"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.07460", "bib1", "authors", [
+        {"surname": "Rallapalli", "given-names": "Ghanasyam"}
+        ]))
+    references_authors.append(("10.7554/eLife.07460", "bib2", "authors", [
+        {"surname": "Bazyl", "given-names": "Steven"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.07847", "bib40", "authors", [
+        {"collab": "Nature Immunology"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.09666", "bib9", "authors", [
+        {"surname": "Schüler", "given-names": "D"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.09868", "bib5", "authors", [
+        {"surname": "Barlow", "given-names": "HB"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.10222", "bib30", "authors", [
+        {"collab": "PharmaMar"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.11945", "bib23", "authors", [
+        {"surname": "Glimcher", "given-names": "P"},
+        {"surname": "Fehr", "given-names": "E"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.13135", "bib26", "authors", [
+        {"surname": "Ivanova", "given-names": "S"},
+        {"surname": "Herbreteau", "given-names": "B"},
+        {"surname": "Blasdell", "given-names": "K"},
+        {"surname": "Chaval", "given-names": "Y"},
+        {"surname": "Buchy", "given-names": "P"},
+        {"surname": "Guillard", "given-names": "B"},
+        {"surname": "Morand", "given-names": "S"},
+        ]))
+
+    references_authors.append(("10.7554/eLife.13135", "bib27", "authors", [
+        {"surname": "King", "given-names": "AMQ"},
+        {"surname": "Adams", "given-names": "J"},
+        {"surname": "Carstens", "given-names": "EB"},
+        {"surname": "Lefkowitz", "given-names": "EJ"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.14188", "bib1", "authors", [
+        {"collab": "Avisoft Bioacoustics"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.17956", "bib4", "authors", [
+        {"surname": "Barrett", "given-names": "SCH"}
+        ]))
+
+    # Now turn the authors data into the json
+    for author_row in references_authors:
+        ref_json = OrderedDict()
+        doi, id, author_type, authors = author_row
+        #if id not in ref_json:
+        ref_json[id] = OrderedDict()
+        ref_json[id][author_type] = []
+        for ref_author in authors:
+            if  "collab" in ref_author:
+                author_json = parser.references_author_collab(ref_author)
+            else:
+                author_json = parser.references_author_person(ref_author)
+            if author_json:
+                ref_json[id][author_type].append(author_json)
+        # Add to json array, and do not verwrite existing rule of a specific bib id (if present)
+        if doi not in references_rewrite_json:
+            references_rewrite_json[doi] = ref_json
+        else:
+            for key, value in ref_json.iteritems():
+                if key not in references_rewrite_json[doi]:
+                    references_rewrite_json[doi][key] = value
+                else:
+                    # Append dict items
+                    for k, v in value.iteritems():
+                        references_rewrite_json[doi][key][k] = v
+
     return references_rewrite_json
 
 def rewrite_elife_body_json(json_content, doi):
     """ rewrite elife body json """
+
+    # Edge case remove a section with no content
+    if doi == "10.7554/eLife.09977":
+        if (json_content and len(json_content) > 0):
+            i_index = j_index = None
+            for i, outer_block in enumerate(json_content):
+                if (outer_block.get("id") and outer_block.get("id") == "s4"
+                    and outer_block.get("content")):
+                    # We have i
+                    i_index = i
+                    break
+            if i_index is not None:
+                for j, inner_block in enumerate(json_content[i_index].get("content")):
+                    if (inner_block.get("id") and inner_block.get("id") == "s4-11"
+                        and inner_block.get("content") is None):
+                        # Now we have i and j for deletion outside of the loop
+                        j_index = j
+                        break
+            # Do the deletion on the original json
+            if i_index is not None and j_index is not None:
+                del json_content[i_index]["content"][j_index]
 
     # Edge case wrap sections differently
     if doi == "10.7554/eLife.12844":
