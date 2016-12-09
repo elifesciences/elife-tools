@@ -93,6 +93,9 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.08500"] = {"bib55": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09066"] = {"bib46": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09100"] = {"bib50": {"date": "2011"}}
+    references_rewrite_json["10.7554/eLife.09148"] = {
+        "bib47": {"articleTitle": "97–104"},
+        "bib59": {"articleTitle": "1913–1918"}}
     references_rewrite_json["10.7554/eLife.09186"] = {
         "bib31": {"date": "2015"},
         "bib54": {"date": "2014"},
@@ -112,6 +115,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.10670"] = {"bib8": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.11305"] = {"bib68": {"date": "2000"}}
     references_rewrite_json["10.7554/eLife.11416"] = {"bib22": {"date": "1997"}}
+    references_rewrite_json["10.7554/eLife.11860"] = {"bib48": {"title": "Light-switchable gene expression system"}}
     references_rewrite_json["10.7554/eLife.12401"] = {"bib25": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.12366"] = {"bib10": {"date": "2008"}}
     references_rewrite_json["10.7554/eLife.12735"] = {"bib35": {"date": "2014"}}
@@ -125,6 +129,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.14169"] = {"bib6": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.14523"] = {"bib7": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.15272"] = {"bib78": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.15504"] = {"bib67": {"isbn": "9780198524304"}}
     references_rewrite_json["10.7554/eLife.16105"] = {"bib2": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.16349"] = {"bib68": {"date": "2005"}}
     references_rewrite_json["10.7554/eLife.16443"] = {"bib58": {"date": "1987"}}
@@ -169,6 +174,10 @@ def elife_references_rewrite_json():
 
     references_authors.append(("10.7554/eLife.00668", "bib39", "authors", [
         {"surname": "Rice", "given-names": "SA"}
+        ]))
+
+    references_authors.append(("10.7554/eLife.01730", "bib75", "authors", [
+        {"collab": "Look AHEAD Research Group"}
         ]))
 
     references_authors.append(("10.7554/eLife.03714", "bib64", "authors", [
@@ -260,6 +269,12 @@ def elife_references_rewrite_json():
         {"collab": "PharmaMar"}
         ]))
 
+    references_authors.append(("10.7554/eLife.11860", "bib48", "authors", [
+        {"surname": "Yang", "given-names": "Y"},
+        {"surname": "Wang", "given-names": "X"},
+        {"surname": "Chen", "given-names": "X"},
+        ]))
+
     references_authors.append(("10.7554/eLife.11945", "bib23", "authors", [
         {"surname": "Glimcher", "given-names": "P"},
         {"surname": "Fehr", "given-names": "E"}
@@ -286,9 +301,18 @@ def elife_references_rewrite_json():
         {"collab": "Avisoft Bioacoustics"}
         ]))
 
+    references_authors.append(("10.7554/eLife.17716", "bib7", "authors", [
+        {"collab": "World Health Organization"}
+        ]))
+
     references_authors.append(("10.7554/eLife.17956", "bib4", "authors", [
         {"surname": "Barrett", "given-names": "SCH"}
         ]))
+
+    references_authors.append(("10.7554/eLife.18109", "bib39", "authors", [
+        {"surname": "Weber", "given-names": "EH"}
+        ]))
+
 
     # Now turn the authors data into the json
     for author_row in references_authors:
