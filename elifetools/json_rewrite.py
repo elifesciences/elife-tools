@@ -132,6 +132,10 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.15504"] = {"bib67": {"isbn": "9780198524304"}}
     references_rewrite_json["10.7554/eLife.16105"] = {"bib2": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.16349"] = {"bib68": {"date": "2005"}}
+    references_rewrite_json["10.7554/eLife.16394"] = {
+        "bib6": {"type": "thesis",
+        "author": {"type": "person", "name": {"preferred": "B Berret","index": "Berret, B" }},
+        "publisher": {"name": ["Université de Bourgogne"]}}}
     references_rewrite_json["10.7554/eLife.16443"] = {"bib58": {"date": "1987"}}
     references_rewrite_json["10.7554/eLife.16764"] = {"bib4": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.17092"] = {"bib102": {"date": "1980"}}
