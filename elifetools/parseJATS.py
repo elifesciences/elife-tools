@@ -21,6 +21,7 @@ hdlr.setFormatter(formatter)
 logger.addHandler(hdlr) 
 logger.setLevel(logging.INFO)
 
+base_url = None
 
 def parse_xml(xml):
     return BeautifulSoup(xml, ["lxml", "xml"])
