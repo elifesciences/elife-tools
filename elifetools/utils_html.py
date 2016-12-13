@@ -1,7 +1,7 @@
 import re
 from bs4 import BeautifulSoup
 
-def xml_to_html(html_flag, xml_string):
+def xml_to_html(html_flag, xml_string, base_url=None):
     "For formatting json output into HTML friendly format"
     if not xml_string or not html_flag is True:
         return xml_string
@@ -9,6 +9,7 @@ def xml_to_html(html_flag, xml_string):
     html_string = replace_xref_tags(html_string)
     html_string = replace_ext_link_tags(html_string)
     html_string = replace_email_tags(html_string)
+    html_string = replace_inline_graphic_tags(html_string, base_url)
     html_string = replace_mathml_tags(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
@@ -97,4 +98,27 @@ def replace_email_tags(s):
         old_tag = '<email>' + email + '</email>'
         new_tag = '<a href="mailto:' + email + '">' + email + '</a>'
         s = s.replace(old_tag, new_tag)
+    return s
+
+def replace_inline_graphic_tags(s, base_url=None):
+    from_file_extension = '.tif'
+    to_file_extension = '.jpg'
+    for tag_match in re.finditer("<(inline-graphic.*?)>", s):
+        xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
+        if xlink_match:
+            try:
+                xlink = xlink_match.next().group(1)
+                # Add or change file extension
+                if '.' not in xlink:
+                    xlink = xlink + to_file_extension
+                elif xlink.endswith(from_file_extension):
+                    xlink = xlink.replace(from_file_extension, to_file_extension)
+                # Add base_url if given
+                if base_url:
+                    xlink = base_url + xlink
+                new_tag = '<img src="' + xlink + '"/>'
+                old_tag = '<' + tag_match.group(1) + '>'
+                s = s.replace(old_tag, new_tag)
+            except StopIteration:
+                pass
     return s
