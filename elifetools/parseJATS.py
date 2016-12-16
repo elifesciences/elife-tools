@@ -2872,6 +2872,14 @@ def references_json(soup, html_flag=True):
             # in press may have been taken from the year field
             ref_content["pages"] = "In press"
 
+        # Special, to retain some comment tag values, convert to type other
+        if ref.get("comment"):
+            if ref_content.get("pages") and ref_content.get("pages") == "In press":
+                # Do not convert
+                pass
+            else:
+                ref_content["type"] = "other"
+
         # doi
         if ref.get("publication-type") not in ["web"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
@@ -2945,6 +2953,7 @@ def references_json_to_unknown(ref_content, soup=None):
     set_if_value(unknown_ref_content, "id", ref_content.get("id"))
     set_if_value(unknown_ref_content, "date", ref_content.get("date"))
     set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
+    set_if_value(unknown_ref_content, "author", ref_content.get("author"))
     set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
 
     # compile details first for use later in title as a default
