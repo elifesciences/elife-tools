@@ -2918,8 +2918,6 @@ def references_json(soup, html_flag=True):
 
 def convert_references_json(ref_content, soup=None):
     "Check for references that will not pass schema validation, fix or convert them to unknown"
-    # fix data for specific article references
-    # TODO!!!
 
     # Convert reference to unkonwn if still missing important values
     if (
@@ -2953,7 +2951,9 @@ def references_json_to_unknown(ref_content, soup=None):
     set_if_value(unknown_ref_content, "id", ref_content.get("id"))
     set_if_value(unknown_ref_content, "date", ref_content.get("date"))
     set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
-    set_if_value(unknown_ref_content, "author", ref_content.get("author"))
+    if not unknown_ref_content.get("authors") and ref_content.get("author"):
+        unknown_ref_content["authors"] = []
+        unknown_ref_content["authors"].append(ref_content.get("author"))
     set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
 
     # compile details first for use later in title as a default

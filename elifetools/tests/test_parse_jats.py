@@ -492,7 +492,7 @@ class TestParseJats(unittest.TestCase):
 
         # Thesis title from 00626, also in converted to unknown because of its comment tag
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib36"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Schneider</surname><given-names>P</given-names></name></person-group><year>2006</year><comment>PhD Thesis</comment><article-title>Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission</article-title><publisher-name>Radboud University Nijmegen Medical Centre</publisher-name><publisher-loc>Nijmegen, The Netherlands</publisher-loc></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'unknown'), ('id', u'bib36'), ('date', u'2006'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Schneider'), ('index', u'Schneider, P')]))])), ('title', u'Submicroscopic<i>Plasmodium falciparum</i>gametocytaemia and the contribution to malaria transmission'), ('details', 'PhD Thesis, Radboud University Nijmegen Medical Centre, Nijmegen, The Netherlands')])]
+         [OrderedDict([('type', u'unknown'), ('id', u'bib36'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Schneider'), ('index', u'Schneider, P')]))])]), ('title', u'Submicroscopic<i>Plasmodium falciparum</i>gametocytaemia and the contribution to malaria transmission'), ('details', 'PhD Thesis, Radboud University Nijmegen Medical Centre, Nijmegen, The Netherlands')])]
          ),
 
         # fpage value with usual characters from 00170
@@ -647,7 +647,7 @@ class TestParseJats(unittest.TestCase):
 
         # 16394 v2, reference of type thesis with no publisher, convert to unknown
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib6"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Berret</surname><given-names>B</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Intégration de la force gravitaire dans la planification motrice et le contrôle des mouvements du bras et du corps</article-title><source>PhD. Thesis</source></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', 'unknown'), ('id', u'bib6'), ('date', u'2009'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Berret'), ('index', u'Berret, B')]))])), ('title', u'Int\xe9gration de la force gravitaire dans la planification motrice et le contr\xf4le des mouvements du bras et du corps'), ('details', u'PhD. Thesis')])]
+        [OrderedDict([('type', 'unknown'), ('id', u'bib6'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Berret'), ('index', u'Berret, B')]))])]), ('title', u'Int\xe9gration de la force gravitaire dans la planification motrice et le contr\xf4le des mouvements du bras et du corps'), ('details', u'PhD. Thesis')])]
          ),
 
         # 09672 v2, reference of type conference-proceeding with no conference
