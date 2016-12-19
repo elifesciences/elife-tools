@@ -358,6 +358,26 @@ def elife_references_rewrite_json():
 def rewrite_elife_body_json(json_content, doi):
     """ rewrite elife body json """
 
+    # Edge case add an id to a section
+    if doi == "10.7554/eLife.00013":
+        if (json_content and len(json_content) > 0):
+            if (json_content[0].get("type") and json_content[0].get("type") == "section"
+                and json_content[0].get("title") and json_content[0].get("title") =="Introduction"
+                and not json_content[0].get("id")):
+                json_content[0]["id"] = "s1"
+
+    # Edge case remove an extra section
+    if doi == "10.7554/eLife.05519":
+        if (json_content and len(json_content) > 0):
+            for outer_block in json_content:
+                if outer_block.get("id") and outer_block.get("id") == "s4":
+                    for mid_block in outer_block.get("content"):
+                        if mid_block.get("content") and not mid_block.get("id"):
+                            new_blocks = []
+                            for inner_block in mid_block.get("content"):
+                                 new_blocks.append(inner_block)
+                            outer_block["content"] = new_blocks
+
     # Edge case remove a section with no content
     if doi == "10.7554/eLife.09977":
         if (json_content and len(json_content) > 0):
