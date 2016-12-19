@@ -1668,10 +1668,18 @@ def object_id_doi(tag, parent_tag_name=None):
         doi = node_contents_str(object_id)
     return doi
 
-def title_text(tag, parent_tag_name=None, p_parent_tag_name=None):
+def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling_only=False):
     """Extract the text of a title tag and sometimes inspect its parents"""
     title = None
-    title_tag = raw_parser.title(tag)
+
+    title_tag = None
+    if direct_sibling_only is True:
+        for sibling_tag in tag:
+            if sibling_tag.name and sibling_tag.name == "title":
+                title_tag = sibling_tag
+    else:
+        title_tag = raw_parser.title(tag)
+
     if parent_tag_name and p_parent_tag_name:
         if (title_tag and title_tag.parent.name and title_tag.parent.parent.name
             and title_tag.parent.name == parent_tag_name
@@ -1679,9 +1687,7 @@ def title_text(tag, parent_tag_name=None, p_parent_tag_name=None):
             pass
         else:
             title_tag = None
-    elif parent_tag_name and not p_parent_tag_name:
-        if title_tag and title_tag.parent.name and title_tag.parent.name != parent_tag_name:
-            title_tag = None
+
     if title_tag:
         title = node_contents_str(title_tag)
     return title
@@ -1936,7 +1942,7 @@ def body_block_content(tag, html_flag=True):
     if tag.name == "sec":
         tag_content["type"] = "section"
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "title", convert(title_text(tag, tag.name)))
+        set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
@@ -2176,7 +2182,7 @@ def body_block_content(tag, html_flag=True):
     elif tag.name == "app":
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
-        set_if_value(tag_content, "title", convert(title_text(tag, tag.name)))
+        set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
 
     return tag_content
@@ -3040,17 +3046,41 @@ def appendices_json(soup):
         app_tags = raw_parser.app(app_group)
     for app_tag in app_tags:
         app_content = body_block_content(app_tag)
-        app_sections = raw_parser.section(app_tag)
-        if app_sections:
+        app_blocks = body_blocks(app_tag)
+        if app_blocks:
             app_content["content"] = []
-            for section_tag in app_sections:
-                # Do not add sec inside a sec twice by checking its first parent
-                first_parent_tag = first_parent(section_tag, ["sec", "app"])
-                if first_parent_tag and first_parent_tag.name == "sec":
-                    # Skip it
-                    continue
-                if len(body_block_content_render(section_tag)) > 0:
-                    app_content["content"].append(body_block_content_render(section_tag)[0])
+            for block_tag in app_blocks:
+                if len(body_block_content_render(block_tag)) > 0:
+                    if body_block_content_render(block_tag)[0] != {}:
+                        app_content["content"].append(body_block_content_render(block_tag)[0])
+
+        # If the first element is a box and it has no DOI, then ignore it
+        #  by setting its child content to itself
+        if app_content.get("content") and len(app_content["content"]) > 0:
+            first_block = app_content["content"][0]
+            if (first_block.get("type")
+                and first_block.get("type") == "box"
+                and first_block.get("content")
+                and not first_block.get("doi")):
+                app_content["content"] = first_block["content"]
+
+        # If the first section has not title, set its child content to itself
+        if app_content.get("content") and len(app_content["content"]) > 0:
+            first_block = app_content["content"][0]
+            if (first_block.get("type")
+                and first_block.get("type") == "section"
+                and first_block.get("content")
+                and not first_block.get("title")):
+                app_content["content"] = first_block["content"]
+
+        # Then check all first level sections with no title, and fix them
+        for i, content_block in enumerate(app_content["content"]):
+            if (content_block.get("type")
+                and content_block.get("type") == "section"
+                and content_block.get("content")
+                and not content_block.get("title")):
+                app_content["content"][i] = content_block["content"][0]
+
         appendices_json.append(app_content)
     return appendices_json
 
