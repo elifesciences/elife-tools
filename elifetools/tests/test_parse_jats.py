@@ -397,6 +397,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'section'), ('title', u'Introduction'), ('content', [OrderedDict([('type', 'section')])]), ('id', 's1')])]
          ),
 
+        # 04232 v2, excerpt, remove an unwanted section
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04232</article-id><article-id pub-id-type="doi">10.7554/eLife.04232</article-id></article-meta><body><sec id="s4" sec-type="materials|methods"><title>Materials and methods</title><sec id="s4-6"><title>Cell separation</title><sec id="s4-6-1"><p><bold>Splenic erythroid cells:</bold></p></sec></sec></sec></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Materials and methods'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-6'), ('title', u'Cell separation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Splenic erythroid cells:</b>')])])])])])]
+         ),
+
         )
     def test_body_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
