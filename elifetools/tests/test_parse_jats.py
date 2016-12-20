@@ -324,6 +324,19 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # 04871 v2, excerpt, remove unwanted sections
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04871</article-id><article-id pub-id-type="doi">10.7554/eLife.04871</article-id></article-meta><sub-article article-type="article-commentary" id="SA1"><body><sec id="s7"><sec id="s7-1"><title>Editorial note dated 06 November 2014</title><p>Thank you ...</p></sec></sec></body></sub-article><sub-article article-type="reply" id="SA2"><body><sec id="s8"><sec id="s8-1"><title>Authors response dated 19 December 2014 to editorial note dated 06 November 2014</title><p>Substantive comments:</p></sec></sec></body></sub-article></article></root>',
+         OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's7-1'), ('title', u'Editorial note dated 06 November 2014'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Thank you ...')])])])])])
+         ),
+        )
+    def test_test_decision_letter_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.decision_letter(body_tag)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
         ("elife_poa_e06828.xml", OrderedDict(), None))
     def test_author_response(self, filename, expected, not_expected):
@@ -332,6 +345,19 @@ class TestParseJats(unittest.TestCase):
             self.assertEqual(expected, sub_article_content)
         if not_expected is not None:
             self.assertNotEqual(not_expected, sub_article_content)
+
+    @unpack
+    @data(
+        # 04871 v2, excerpt, remove unwanted sections
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04871</article-id><article-id pub-id-type="doi">10.7554/eLife.04871</article-id></article-meta><sub-article article-type="article-commentary" id="SA1"><body><sec id="s7"><sec id="s7-1"><title>Editorial note dated 06 November 2014</title><p>Thank you ...</p></sec></sec></body></sub-article><sub-article article-type="reply" id="SA2"><body><sec id="s8"><sec id="s8-1"><title>Authors response dated 19 December 2014 to editorial note dated 06 November 2014</title><p>Substantive comments:</p><p>Another paragraph</p></sec></sec></body></sub-article></article></root>',
+         OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's8-1'), ('title', u'Authors response dated 19 December 2014 to editorial note dated 06 November 2014'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Substantive comments:')]), OrderedDict([('type', 'paragraph'), ('text', u'Another paragraph')])])])])])
+         ),
+        )
+    def test_test_author_response_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.author_response(body_tag)
+        self.assertEqual(expected, tag_content)
 
 
     @unpack

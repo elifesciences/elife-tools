@@ -377,6 +377,15 @@ def rewrite_elife_body_json(json_content, doi):
                                 if inner_block.get("content") and not inner_block.get("title"):
                                     mid_block["content"] = inner_block.get("content")
 
+    # Edge case remove unwanted sections
+    if doi == "10.7554/eLife.04871":
+        if (json_content and len(json_content) > 0):
+            for i, outer_block in enumerate(json_content):
+                if (outer_block.get("id") and outer_block.get("id") in ["s7", "s8"]
+                    and not outer_block.get("title")):
+                    if outer_block.get("content"):
+                        json_content[i] = outer_block.get("content")[0]
+
     # Edge case remove an extra section
     if doi == "10.7554/eLife.05519":
         if (json_content and len(json_content) > 0):

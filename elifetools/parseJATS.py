@@ -2253,6 +2253,7 @@ def decision_letter(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
+        body_content_rewritten = rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
@@ -2274,6 +2275,7 @@ def author_response(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
+        body_content_rewritten = rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
