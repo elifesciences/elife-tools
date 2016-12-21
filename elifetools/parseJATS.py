@@ -3277,22 +3277,27 @@ def funding_awards_json(soup):
         if recipient_tags:
             recipients = []
             for recipient_tag in recipient_tags:
-                for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
-                    recipient_content = OrderedDict()
-                    if contrib_tag.name == "institution":
-                        recipient_content["type"] = "group"
-                        set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
-                    elif contrib_tag.name == "name":
-                        person_details = {}
-                        set_if_value(person_details, "surname",
-                                     first_node_str_contents(contrib_tag, "surname"))
-                        set_if_value(person_details, "given-names",
-                                     first_node_str_contents(contrib_tag, "given-names"))
-                        set_if_value(person_details, "suffix",
-                                     first_node_str_contents(contrib_tag, "suffix"))
-                        recipient_content = references_author_person(person_details)
-                    if len(recipient_content) > 0:
-                        recipients.append(recipient_content)
+                recipient_content = OrderedDict()
+                if len(extract_nodes(recipient_tag, ["name", "institution"])) <= 0:
+                    # A loose institution name not surrounded by institution tag
+                    recipient_content["type"] = "group"
+                    set_if_value(recipient_content, "name", node_contents_str(recipient_tag))
+                else:
+                    for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
+                        if contrib_tag.name == "institution":
+                            recipient_content["type"] = "group"
+                            set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
+                        elif contrib_tag.name == "name":
+                            person_details = {}
+                            set_if_value(person_details, "surname",
+                                         first_node_str_contents(contrib_tag, "surname"))
+                            set_if_value(person_details, "given-names",
+                                         first_node_str_contents(contrib_tag, "given-names"))
+                            set_if_value(person_details, "suffix",
+                                         first_node_str_contents(contrib_tag, "suffix"))
+                            recipient_content = references_author_person(person_details)
+                if len(recipient_content) > 0:
+                    recipients.append(recipient_content)
 
             # Add to the dict for adding to the award data later
             if len(recipients) > 0:
