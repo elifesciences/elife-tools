@@ -295,13 +295,18 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 07383 v1 has an institution as the recipient
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold Foundation</institution></institution-wrap></funding-source><principal-award-recipient><institution>Reproducibility Project: Cancer Biology</institution></principal-award-recipient></award-group><funding-statement>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement></funding-group></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold Foundation</institution></institution-wrap></funding-source><principal-award-recipient><institution>Reproducibility Project: Cancer Biology</institution></principal-award-recipient></award-group><funding-statement>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement></funding-group></front></root>',
          [OrderedDict([('id', u'par-1'), ('source', OrderedDict([('name', [u'Laura and John Arnold Foundation'])])), ('recipients', [OrderedDict([('type', 'group'), ('name', u'Reproducibility Project: Cancer Biology')])])])]
          ),
 
         # Funding from new kitchen sink
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="fund1"><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000011</institution-id><institution>Howard Hughes Medical Institute</institution></institution-wrap></funding-source><award-id>F32 GM089018</award-id><principal-award-recipient><name><surname>Harrison</surname><given-names>Melissa</given-names></name></principal-award-recipient></award-group></funding-group>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="fund1"><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000011</institution-id><institution>Howard Hughes Medical Institute</institution></institution-wrap></funding-source><award-id>F32 GM089018</award-id><principal-award-recipient><name><surname>Harrison</surname><given-names>Melissa</given-names></name></principal-award-recipient></award-group></funding-group></front></root>',
          [OrderedDict([('id', u'fund1'), ('source', OrderedDict([('funderId', u'10.13039/100000011'), ('name', [u'Howard Hughes Medical Institute'])])), ('awardId', u'F32 GM089018'), ('recipients', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Melissa Harrison'), ('index', u'Harrison, Melissa')]))])])])]
+         ),
+
+        # 08245 v1 edge case, unusual principal-award-recipient
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold foundation</institution></institution-wrap></funding-source><principal-award-recipient>Reproducibility Project: Cancer Biology</principal-award-recipient></award-group><funding-statement>The Reproducibility Project: Cancer Biology is funded by the Laura and John Arnold Foundation, provided to the Center for Open Science in collaboration with Science Exchange. The funder had no role in study design or the decision to submit the work for publication.</funding-statement></funding-group></front></root>',
+         [OrderedDict([('id', u'par-1'), ('source', OrderedDict([('name', [u'Laura and John Arnold foundation'])])), ('recipients', [OrderedDict([('type', 'group'), ('name', u'Reproducibility Project: Cancer Biology')])])])]
          ),
 
     )
