@@ -451,7 +451,7 @@ class TestParseJats(unittest.TestCase):
 
         # 02935 v1, group authors (collab) but no members of those groups
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author"><collab>ICGC Breast Cancer Group</collab></contrib></contrib-group></article-meta></front></root>',
-        [OrderedDict([('type', 'group'), ('name', u'ICGC Breast Cancer Group'), ('people', [])])]
+        [OrderedDict([('type', 'group'), ('name', u'ICGC Breast Cancer Group')])]
         ),
 
         # 02935 v2, excerpt for group author parsing

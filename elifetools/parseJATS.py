@@ -2561,7 +2561,6 @@ def authors_json(soup):
         if contributor["type"] == "author" and contributor.get("collab"):
             author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
                                        author_competing_interests_data, equal_contributions_map)
-            author_json["people"] = []
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
@@ -2582,6 +2581,8 @@ def authors_json(soup):
             if contributor.get("group-author-key") == group_author_key:
                 author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
                                             author_competing_interests_data, equal_contributions_map)
+                if "people" not in group_author:
+                    group_author["people"] = []
                 group_author["people"].append(author_json)
 
 
