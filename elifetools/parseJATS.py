@@ -3236,7 +3236,8 @@ def supplementary_files_json(soup):
     return additional_files_json
 
 def funding_statement_json(soup, html_flag=True):
-    return xml_to_html(html_flag, full_funding_statement(soup))
+    funding_statement = rewrite_json("funding_statement", soup, full_funding_statement(soup))
+    return xml_to_html(html_flag, funding_statement)
 
 def funding_awards_json(soup):
     awards = []
