@@ -468,6 +468,25 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # 00855 v1, example of just person authors
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-1032"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><xref ref-type="fn" rid="conf1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1002"><name><surname>Patterson</surname><given-names>Mark</given-names></name><role>Executive Director</role><email>editorial@elifesciences.org</email><xref ref-type="fn" rid="conf1"/></contrib></contrib-group></article-meta></front></root>',
+         u'Randy Schekman, Mark Patterson'
+         ),
+
+        # 08714 v1, group authors only
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="group-author-key">group-author-id1</contrib-id><collab>MalariaGEN Plasmodium falciparum Community Project</collab><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="corresp" rid="cor2">*</xref><xref ref-type="corresp" rid="cor3">*</xref><xref ref-type="other" rid="par-1"/><xref ref-type="fn" rid="con1"/><xref ref-type="fn" rid="conf1"/></contrib></contrib-group><author-notes><corresp id="cor1"><email>dominic@sanger.ac.uk</email> (DPK);</corresp><corresp id="cor2"><email>ra4@sanger.ac.uk</email> (RA);</corresp><corresp id="cor3"><email>olivo@tropmedres.ac.uk</email> (OM)</corresp></author-notes></article-meta></front></root>',
+         u'MalariaGEN Plasmodium falciparum Community Project'
+         ),
+
+        )
+    def test_author_line_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        article_tag = soup.contents[0]
+        tag_content = parser.author_line(article_tag)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         (None, None),
         (["Randy Schekman"], "Randy Schekman"),
         (["Randy Schekman", "Mark Patterson"], "Randy Schekman, Mark Patterson"),

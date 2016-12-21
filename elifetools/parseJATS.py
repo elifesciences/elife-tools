@@ -2601,7 +2601,7 @@ def extract_author_line_names(authors_json_data):
     if not authors_json_data:
         return author_names
     for author in authors_json_data:
-        if "name" in author and type(author["name"]) == str:
+        if "name" in author and type(author["name"]) in (str, unicode):
             # collab
             author_names.append(author["name"])
         elif "name" in author and "preferred" in author["name"]:
