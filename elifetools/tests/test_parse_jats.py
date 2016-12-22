@@ -275,6 +275,10 @@ class TestParseJats(unittest.TestCase):
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><funding-statement><italic>Special</italic> funding statement</funding-statement></root>',
          '<i>Special</i> funding statement'),
+
+        # 17290 has no funding statement and is added by rewriting
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">17290</article-id><article-id pub-id-type="doi">10.7554/eLife.17290</article-id></article-meta></article-meta></article></root>',
+         'RD, FM, GM, ZW, PB, SL, EF, JA, JRH, AL, JK, CR, JK, WC, MB, GR, JT, JP, CM, LM, GH and BN are employees of Novartis. RJX and AN are funded by R01DK097485, P30DK043351 and U19AI109725.'),
     )
     def test_funding_statement_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
