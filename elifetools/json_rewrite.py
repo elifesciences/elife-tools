@@ -109,6 +109,8 @@ def elife_references_rewrite_json():
         "bib19": {"date": "2007"},
         "bib49": {"date": "2002"}}
     references_rewrite_json["10.7554/eLife.09600"] = {"bib13": {"date": "2009"}}
+    references_rewrite_json["10.7554/eLife.09672"] = {
+        "bib25": {"conference": {"name": ["Seventeenth Meeting of the RBM Partnership Monitoring and Evaluation Reference Group (MERG)"]}}}
     references_rewrite_json["10.7554/eLife.09771"] = {"bib22": {"date": "2012"}}
     references_rewrite_json["10.7554/eLife.09972"] = {"bib61": {"date": "2007", "discriminator": "a"}}
     references_rewrite_json["10.7554/eLife.09977"] = {"bib41": {"date": "2014"}}
