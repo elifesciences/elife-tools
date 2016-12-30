@@ -3311,4 +3311,6 @@ def funding_awards_json(soup):
         if award.get("id") and award.get("id") in award_recipients:
             award["recipients"] = award_recipients.get(award.get("id"))
 
+    awards = rewrite_json("funding_awards", soup, awards)
+
     return awards
