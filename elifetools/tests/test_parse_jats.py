@@ -136,6 +136,27 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # appendix with inline-graphic, based on 17092 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><app-group><app><title>Appendix 5</title><boxed-text><sec id="s56" sec-type="appendix"><sec id="s61"><title>E. Volatiles</title><p>Paragraph content.</p><table-wrap id="A5-tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.17092.035</object-id><label>Appendix 5—table 2.</label><caption><p>Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17092.035">http://dx.doi.org/10.7554/eLife.17092.035</ext-link></p></caption><table frame="hsides" rules="groups"><tbody><tr><td valign="top"><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf1-v1"/><break/><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf2-v1"/></td></tr></tbody></table></table-wrap></sec></sec></boxed-text></app></app-group></back></root>',
+         None,
+         [OrderedDict([('title', u'Appendix 5'), ('content', [OrderedDict([('type', 'section'), ('id', u's61'), ('title', u'E. Volatiles'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')]), OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.17092.035'), ('id', u'A5-tbl2'), ('label', u'Appendix 5\u2014table 2.'), ('title', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.')])]), ('tables', ['<table><tbody><tr><td valign="top"><img src="elife-17092-inf1-v1.jpg"/><break></break><img src="elife-17092-inf2-v1.jpg"/></td></tr></tbody></table>'])])])])])])]
+        ),
+
+        # appendix with inline-graphic, based on 17092 v1
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><app-group><app><title>Appendix 5</title><boxed-text><sec id="s56" sec-type="appendix"><sec id="s61"><title>E. Volatiles</title><p>Paragraph content.</p><table-wrap id="A5-tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.17092.035</object-id><label>Appendix 5—table 2.</label><caption><p>Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17092.035">http://dx.doi.org/10.7554/eLife.17092.035</ext-link></p></caption><table frame="hsides" rules="groups"><tbody><tr><td valign="top"><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf1-v1"/><break/><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf2-v1"/></td></tr></tbody></table></table-wrap></sec></sec></boxed-text></app></app-group></back></root>',
+         'https://example.org/',
+         [OrderedDict([('title', u'Appendix 5'), ('content', [OrderedDict([('type', 'section'), ('id', u's61'), ('title', u'E. Volatiles'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')]), OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.17092.035'), ('id', u'A5-tbl2'), ('label', u'Appendix 5\u2014table 2.'), ('title', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.')])]), ('tables', ['<table><tbody><tr><td valign="top"><img src="https://example.org/elife-17092-inf1-v1.jpg"/><break></break><img src="https://example.org/elife-17092-inf2-v1.jpg"/></td></tr></tbody></table>'])])])])])])]
+        ),
+
+        )
+    def test_appendices_json_with_base_url(self, xml_content, base_url, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.appendices_json(soup.contents[0], base_url)
+        self.assertEqual(expected, tag_content)
+
+
+    @unpack
+    @data(
         ("elife04490.xml", ['<i>Nicotiana attenuata</i>', '<i>Manduca sexta</i>', u'Geocoris spp.', '<i>Trichobaris mucorea</i>', u'direct and indirect defense', u'diversity']),
         ("elife07586.xml", []),
         )
@@ -457,6 +478,36 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_xml(xml_content)
         body_tag = soup.contents[0].contents[0]
         tag_content = parser.body_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
+
+    @unpack
+    @data(
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p></sec></body></article></root>',
+         None,
+         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<img src="elife-00240-inf1-v1.jpg"/>')])])])]
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p></sec></body></article></root>',
+         'https://example.org/',
+         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<img src="https://example.org/elife-00240-inf1-v1.jpg"/>')])])])]
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s2-6-4"><title>Inline graphics</title><p>Here is an example of pulling in an inline graphic <inline-graphic mimetype="image" mime-subtype="jpeg" xlink:href="elife-00666-inf001.jpeg"/>.</p></sec></body></article></root>',
+         None,
+         [OrderedDict([('type', 'section'), ('id', u's2-6-4'), ('title', u'Inline graphics'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of pulling in an inline graphic <img src="elife-00666-inf001.jpeg"/>.')])])])]
+         ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s2-6-4"><title>Inline graphics</title><p>Here is an example of pulling in an inline graphic <inline-graphic mimetype="image" mime-subtype="jpeg" xlink:href="elife-00666-inf001.jpeg"/>.</p></sec></body></article></root>',
+         'https://example.org/',
+         [OrderedDict([('type', 'section'), ('id', u's2-6-4'), ('title', u'Inline graphics'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of pulling in an inline graphic <img src="https://example.org/elife-00666-inf001.jpeg"/>.')])])])]
+         ),
+
+        )
+    def test_body_json_with_base_url(self, xml_content, base_url, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.body_json(body_tag, base_url=base_url)
         self.assertEqual(expected, tag_content)
 
 
