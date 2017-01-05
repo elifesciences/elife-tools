@@ -1732,20 +1732,22 @@ def keywords_json(soup, html_flag=True):
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
     return map(convert, full_keywords(soup))
 
-def body(soup, remove_key_info_box=False):
+def body(soup, remove_key_info_box=False, base_url=None):
 
     body_content = []
 
     raw_body = raw_parser.article_body(soup)
 
     if raw_body:
-        body_content = render_raw_body(raw_body, remove_key_info_box)
 
+        body_content = render_raw_body(raw_body,
+                                       remove_key_info_box=remove_key_info_box,
+                                       base_url=base_url)
     return body_content
 
-def body_json(soup):
+def body_json(soup, base_url=None):
     """ Get body json and then alter it with section wrapping and removing boxed-text """
-    body_content = body(soup, remove_key_info_box=True)
+    body_content = body(soup, remove_key_info_box=True, base_url=base_url)
     # Wrap in a section if the first block is not a section
     if (body_content and len(body_content) > 0 and "type" in body_content[0]
         and body_content[0]["type"] != "section"):
@@ -1763,7 +1765,7 @@ def body_json(soup):
     body_content_rewritten = rewrite_json("body_json", soup, body_content)
     return body_content_rewritten
 
-def render_raw_body(tag, remove_key_info_box=False):
+def render_raw_body(tag, remove_key_info_box=False, base_url=None):
     body_content = []
     body_tags = body_blocks(tag)
     for tag in body_tags:
@@ -1781,13 +1783,13 @@ def render_raw_body(tag, remove_key_info_box=False):
             elif not raw_parser.title(tag) and not raw_parser.label(tag):
                 # Collapse boxed-text here if it has no title or label
                 for boxed_tag in tag:
-                    tag_blocks = body_block_content_render(boxed_tag)
+                    tag_blocks = body_block_content_render(boxed_tag, base_url=base_url)
                     for tag_block in tag_blocks:
                         if tag_block != {}:
                             body_content.append(tag_block)
         else:
 
-            tag_blocks = body_block_content_render(tag)
+            tag_blocks = body_block_content_render(tag, base_url=base_url)
             #tag_content = body_block_content_render(tag)
             for tag_block in tag_blocks:
                 if tag_block != {}:
@@ -1799,7 +1801,7 @@ def body_block_nodenames():
     return ["sec", "p", "table-wrap", "boxed-text",
             "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
 
-def body_block_content_render(tag, recursive=False):
+def body_block_content_render(tag, recursive=False, base_url=None):
     """
     Render the tag as body content and call recursively if
     the tag has child tags
@@ -1808,11 +1810,11 @@ def body_block_content_render(tag, recursive=False):
     tag_content = OrderedDict()
 
     if tag.name == "p":
-        for block_content in body_block_paragraph_render(tag):
+        for block_content in body_block_paragraph_render(tag, base_url=base_url):
             if block_content != {}:
                 block_content_list.append(block_content)
     else:
-        tag_content = body_block_content(tag)
+        tag_content = body_block_content(tag, base_url=base_url)
 
     nodenames = body_block_nodenames()
 
@@ -1828,7 +1830,7 @@ def body_block_content_render(tag, recursive=False):
                 # Ignore paragraphs that start with DOI:
                 if node_text(child_tag) and len(remove_doi_paragraph([child_tag])) <= 0:
                     continue
-                for block_content in body_block_paragraph_render(child_tag):
+                for block_content in body_block_paragraph_render(child_tag, base_url=base_url):
                     if block_content != {}:
                         tag_content_content.append(block_content)
 
@@ -1836,7 +1838,7 @@ def body_block_content_render(tag, recursive=False):
                 # Do not fig inside fig-group a second time
                 pass
             else:
-                for block_content in body_block_content_render(child_tag, recursive=True):
+                for block_content in body_block_content_render(child_tag, recursive=True, base_url=base_url):
                     if block_content != {}:
                         tag_content_content.append(block_content)
 
@@ -1852,13 +1854,13 @@ def body_block_content_render(tag, recursive=False):
     block_content_list.append(tag_content)
     return block_content_list
 
-def body_block_paragraph_render(p_tag, html_flag=True):
+def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     """
     paragraphs may wrap some other body block content
     this is separated out so it can be called from more than one place
     """
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
 
     block_content_list = []
 
@@ -1878,7 +1880,7 @@ def body_block_paragraph_render(p_tag, html_flag=True):
                 paragraph_content = u''
 
         if child_tag.name is not None and body_block_content(child_tag) != {}:
-            for block_content in body_block_content_render(child_tag):
+            for block_content in body_block_content_render(child_tag, base_url=base_url):
                 if block_content != {}:
                     tag_content_content.append(block_content)
     # finish up
@@ -1891,7 +1893,7 @@ def body_block_paragraph_render(p_tag, html_flag=True):
 
     return block_content_list
 
-def body_block_caption_render(caption_tags):
+def body_block_caption_render(caption_tags, base_url=None):
     """fig and media tag captions are similar so use this common function"""
     caption_content = []
     supplementary_material_tags = []
@@ -1903,18 +1905,18 @@ def body_block_caption_render(caption_tags):
                 supplementary_material_tags.append(supp_tag)
             continue
 
-        for block_content in body_block_content_render(block_tag):
+        for block_content in body_block_content_render(block_tag, base_url=base_url):
 
             if block_content != {}:
                 caption_content.append(block_content)
 
     return caption_content, supplementary_material_tags
 
-def body_block_supplementary_material_render(supp_tags):
+def body_block_supplementary_material_render(supp_tags, base_url=None):
     """fig and media tag caption may have supplementary material"""
     source_data = []
     for supp_tag in supp_tags:
-        for block_content in body_block_content_render(supp_tag):
+        for block_content in body_block_content_render(supp_tag, base_url=base_url):
             if block_content != {}:
                 if "content" in block_content:
                     del block_content["content"]
@@ -1929,10 +1931,9 @@ def body_block_paragraph_content(text):
         tag_content["text"] = text
     return tag_content
 
-def body_block_content(tag, html_flag=True):
-
+def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
 
     tag_content = OrderedDict()
 
@@ -1953,7 +1954,7 @@ def body_block_content(tag, html_flag=True):
         # Special, if there is no title then use a fragment of the caption as the title
         if "title" not in tag_content:
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 # Attempt to extra the first sentence of the first paragraph of the caption
                 first_paragraph_text = caption_content[0]["text"]
@@ -1978,7 +1979,7 @@ def body_block_content(tag, html_flag=True):
             if body_block_content(child_tag) != {}:
                 if "text" not in tag_content:
                     tag_content["text"] = []
-                tag_content["text"].append(body_block_content(child_tag))
+                tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
@@ -1991,7 +1992,7 @@ def body_block_content(tag, html_flag=True):
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
 
@@ -2014,7 +2015,7 @@ def body_block_content(tag, html_flag=True):
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
-                    footnote_content["text"].append(body_block_content(p_tag))
+                    footnote_content["text"].append(body_block_content(p_tag, base_url=base_url))
 
                 if "footnotes" not in tag_content:
                     tag_content["footnotes"] = []
@@ -2022,7 +2023,7 @@ def body_block_content(tag, html_flag=True):
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
@@ -2048,7 +2049,7 @@ def body_block_content(tag, html_flag=True):
         caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
         # Special, if there is no title then use a fragment of the caption as the title
         if "title" not in tag_content and len(caption_content) > 0:
             # Attempt to extra the first sentence of the first paragraph of the caption
@@ -2085,7 +2086,7 @@ def body_block_content(tag, html_flag=True):
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
@@ -2102,7 +2103,7 @@ def body_block_content(tag, html_flag=True):
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
 
@@ -2110,18 +2111,18 @@ def body_block_content(tag, html_flag=True):
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
     elif tag.name == "fig-group":
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
             if i == 0:
-                tag_content = body_block_content(fig_tag)
+                tag_content = body_block_content(fig_tag, base_url=base_url)
             elif i > 0:
                 if "supplements" not in tag_content:
                     tag_content["supplements"] = []
-                tag_content["supplements"].append(body_block_content(fig_tag))
+                tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
@@ -2132,7 +2133,7 @@ def body_block_content(tag, html_flag=True):
         # caption, add if there are paragraph tags in the caption
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             
             if len(caption_content) > 0:
                 # Delete the first paragraph of the caption if its text is the same as the title
@@ -2171,7 +2172,7 @@ def body_block_content(tag, html_flag=True):
                 tag_content["items"] = []
 
             if len(body_block_content_render(list_item_tag)) > 0:
-                for list_item in body_block_content_render(list_item_tag):
+                for list_item in body_block_content_render(list_item_tag, base_url=base_url):
                     # Note: wrapped inside another list to pass the current article json schema
                     if list_item != {}:
                         list_item_content = list_item["content"]
@@ -3038,7 +3039,7 @@ def ethics_json(soup):
     return ethics_json
 
 
-def appendices_json(soup):
+def appendices_json(soup, base_url=None):
     appendices_json = []
     app_group = None
     app_tags = []
@@ -3048,14 +3049,14 @@ def appendices_json(soup):
     if app_group:
         app_tags = raw_parser.app(app_group)
     for app_tag in app_tags:
-        app_content = body_block_content(app_tag)
+        app_content = body_block_content(app_tag, base_url=base_url)
         app_blocks = body_blocks(app_tag)
         if app_blocks:
             app_content["content"] = []
             for block_tag in app_blocks:
                 if len(body_block_content_render(block_tag)) > 0:
                     if body_block_content_render(block_tag)[0] != {}:
-                        app_content["content"].append(body_block_content_render(block_tag)[0])
+                        app_content["content"].append(body_block_content_render(block_tag, base_url=base_url)[0])
 
         # If the first element is a box and it has no DOI, then ignore it
         #  by setting its child content to itself
