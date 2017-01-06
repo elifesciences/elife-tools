@@ -3234,6 +3234,14 @@ def supplementary_files_json(soup):
         if tag_content != {}:
             additional_files_json.append(tag_content)
 
+    # Add id and title for PoA articles, i.e. if there are none with an id value
+    if len(filter(lambda file: file.get('id') is not None, supplementary_material_tags)) == 0:
+        i = 1
+        for file in additional_files_json:
+            file["id"] = "SD" + str(i) + "-data"
+            file["title"] = "Supplementary file " + str(i) + "."
+            i = i + 1
+
     return additional_files_json
 
 def funding_statement_json(soup, html_flag=True):
