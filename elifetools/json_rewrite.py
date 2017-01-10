@@ -440,17 +440,6 @@ def rewrite_elife_body_json(json_content, doi):
     return json_content
 
 
-def rewrite_elife_funding_statement(string_content, doi):
-    """ this does the work of rewriting elife funding statement """
-
-    # Edge case with no funding statement
-    if doi == "10.7554/eLife.17290":
-        if string_content is None:
-            string_content = 'RD, FM, GM, ZW, PB, SL, EF, JA, JRH, AL, JK, CR, JK, WC, MB, GR, JT, JP, CM, LM, GH and BN are employees of Novartis. RJX and AN are funded by R01DK097485, P30DK043351 and U19AI109725.'
-
-    return string_content
-
-
 def rewrite_elife_funding_awards(json_content, doi):
     """ rewrite elife funding awards """
 
