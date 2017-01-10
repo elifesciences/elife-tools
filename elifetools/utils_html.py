@@ -54,7 +54,9 @@ def replace_xref_tags(s):
         rid_match = re.finditer('rid="(.*)"', tag_match.group())
         if rid_match:
             try:
-                rid = rid_match.next().group(1)
+                all_rid = rid_match.next().group(1)
+                # Take only the first rid value if separated by spaces
+                rid = all_rid.split(' ')[0]
                 new_tag = '<a href="#' + rid + '">'
                 old_tag = '<' + tag_match.group(1) + '>'
                 s = s.replace(old_tag, new_tag)
