@@ -270,6 +270,61 @@ class TestJatsParser(unittest.TestCase):
         self.assertEqual(len(raw_parser.ext_link(soup, ext_link_type)), expected_len)
 
 
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", "ethics-information", 1),
+        ("elife-kitchen-sink.xml", None, 3)
+    )
+    def test_fn_group(self, filename, content_type, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.fn_group(soup, content_type)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 1)
+    )
+    def test_app_group(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.app_group(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 2)
+    )
+    def test_app(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.app(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 1)
+    )
+    def test_funding_group(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.funding_group(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 7)
+    )
+    def test_award_group(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.award_group(soup)), expected_len)
+
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 7)
+    )
+    def test_principal_award_recipient(self, filename, expected_len):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(len(raw_parser.principal_award_recipient(soup)), expected_len)
+
+
 
 if __name__ == '__main__':
     unittest.main()

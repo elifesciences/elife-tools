@@ -6,6 +6,8 @@ import time
 import calendar
 from slugify import slugify
 from utils import *
+from utils_html import xml_to_html
+from json_rewrite import rewrite_json
 import rawJATS as raw_parser
 import re
 from collections import OrderedDict
@@ -184,6 +186,8 @@ def license_url(soup):
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
 
+def full_funding_statement(soup):
+    return node_contents_str(raw_parser.funding_statement(soup))
 
 #
 # authors
@@ -1121,6 +1125,15 @@ def refs(soup):
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
         set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+
+        if(raw_parser.date_in_citation(tag)):
+            set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
+            set_if_value(ref, "iso-8601-date", first(raw_parser.date_in_citation(tag)).get('iso-8601-date'))
+
+        if(raw_parser.patent(tag)):
+            set_if_value(ref, "patent", node_text(first(raw_parser.patent(tag))))
+            set_if_value(ref, "country", first(raw_parser.patent(tag)).get('country'))
+
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
@@ -1655,12 +1668,26 @@ def object_id_doi(tag, parent_tag_name=None):
         doi = node_contents_str(object_id)
     return doi
 
-def title_text(tag, parent_tag_name=None):
-    """Extract the text of a title tag"""
+def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling_only=False):
+    """Extract the text of a title tag and sometimes inspect its parents"""
     title = None
-    title_tag = raw_parser.title(tag)
-    if parent_tag_name and title_tag and title_tag.parent.name != parent_tag_name:
-        title_tag = None
+
+    title_tag = None
+    if direct_sibling_only is True:
+        for sibling_tag in tag:
+            if sibling_tag.name and sibling_tag.name == "title":
+                title_tag = sibling_tag
+    else:
+        title_tag = raw_parser.title(tag)
+
+    if parent_tag_name and p_parent_tag_name:
+        if (title_tag and title_tag.parent.name and title_tag.parent.parent.name
+            and title_tag.parent.name == parent_tag_name
+            and title_tag.parent.parent.name == p_parent_tag_name):
+            pass
+        else:
+            title_tag = None
+
     if title_tag:
         title = node_contents_str(title_tag)
     return title
@@ -1688,38 +1715,81 @@ def label(tag, parent_tag_name=None):
         label = node_contents_str(label_tag)
     return label
 
+def full_title_json(soup):
+    return xml_to_html(True, full_title(soup))
+
+def impact_statement_json(soup):
+    return xml_to_html(True, impact_statement(soup))
+
 def acknowledgements_json(soup):
     if raw_parser.acknowledgements(soup):
         return body_block_content_render(raw_parser.acknowledgements(soup))[0].get("content")
     else:
         return None
 
-def body(soup):
+def keywords_json(soup, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    return map(convert, full_keywords(soup))
+
+def body(soup, remove_key_info_box=False, base_url=None):
 
     body_content = []
 
     raw_body = raw_parser.article_body(soup)
 
     if raw_body:
-        body_content = render_raw_body(raw_body)
 
+        body_content = render_raw_body(raw_body,
+                                       remove_key_info_box=remove_key_info_box,
+                                       base_url=base_url)
     return body_content
 
+def body_json(soup, base_url=None):
+    """ Get body json and then alter it with section wrapping and removing boxed-text """
+    body_content = body(soup, remove_key_info_box=True, base_url=base_url)
+    # Wrap in a section if the first block is not a section
+    if (body_content and len(body_content) > 0 and "type" in body_content[0]
+        and body_content[0]["type"] != "section"):
+        # Wrap this one
+        new_body_section = OrderedDict()
+        new_body_section["type"] = "section"
+        new_body_section["id"] = "s0"
+        new_body_section["title"] = "Main text"
+        new_body_section["content"] = []
+        for body_block in body_content:
+            new_body_section["content"].append(body_block)
+        new_body = []
+        new_body.append(new_body_section)
+        body_content = new_body
+    body_content_rewritten = rewrite_json("body_json", soup, body_content)
+    return body_content_rewritten
 
-def render_raw_body(tag):
+def render_raw_body(tag, remove_key_info_box=False, base_url=None):
     body_content = []
     body_tags = body_blocks(tag)
     for tag in body_tags:
-        if tag.name == "boxed-text" and not raw_parser.title(tag) and not raw_parser.label(tag):
-            # Collapse boxed-text here if it has no title or label
-            for boxed_tag in tag:
-                tag_blocks = body_block_content_render(boxed_tag)
-                for tag_block in tag_blocks:
-                    if tag_block != {}:
-                        body_content.append(tag_block)
+        if tag.name == "boxed-text":
+            # Extract the text of the first child tag for comparison, if present
+            first_node_text = None
+            if tag.children:
+                first_node_text = node_text(first(list(tag.children)))
+
+            if (remove_key_info_box is True and first_node_text
+                and "related" in first_node_text.lower()):
+                # Skip this tag
+                continue
+
+            elif not raw_parser.title(tag) and not raw_parser.label(tag):
+                # Collapse boxed-text here if it has no title or label
+                for boxed_tag in tag:
+                    tag_blocks = body_block_content_render(boxed_tag, base_url=base_url)
+                    for tag_block in tag_blocks:
+                        if tag_block != {}:
+                            body_content.append(tag_block)
         else:
 
-            tag_blocks = body_block_content_render(tag)
+            tag_blocks = body_block_content_render(tag, base_url=base_url)
             #tag_content = body_block_content_render(tag)
             for tag_block in tag_blocks:
                 if tag_block != {}:
@@ -1731,7 +1801,7 @@ def body_block_nodenames():
     return ["sec", "p", "table-wrap", "boxed-text",
             "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
 
-def body_block_content_render(tag):
+def body_block_content_render(tag, recursive=False, base_url=None):
     """
     Render the tag as body content and call recursively if
     the tag has child tags
@@ -1740,11 +1810,11 @@ def body_block_content_render(tag):
     tag_content = OrderedDict()
 
     if tag.name == "p":
-        for block_content in body_block_paragraph_render(tag):
+        for block_content in body_block_paragraph_render(tag, base_url=base_url):
             if block_content != {}:
                 block_content_list.append(block_content)
     else:
-        tag_content = body_block_content(tag)
+        tag_content = body_block_content(tag, base_url=base_url)
 
     nodenames = body_block_nodenames()
 
@@ -1757,10 +1827,10 @@ def body_block_content_render(tag):
                 continue
 
             if child_tag.name == "p":
-                if (child_tag.parent.name == "caption"
-                    and child_tag.parent.parent.name == "boxed-text"):
+                # Ignore paragraphs that start with DOI:
+                if node_text(child_tag) and len(remove_doi_paragraph([child_tag])) <= 0:
                     continue
-                for block_content in body_block_paragraph_render(child_tag):
+                for block_content in body_block_paragraph_render(child_tag, base_url=base_url):
                     if block_content != {}:
                         tag_content_content.append(block_content)
 
@@ -1768,23 +1838,30 @@ def body_block_content_render(tag):
                 # Do not fig inside fig-group a second time
                 pass
             else:
-                for block_content in body_block_content_render(child_tag):
+                for block_content in body_block_content_render(child_tag, recursive=True, base_url=base_url):
                     if block_content != {}:
                         tag_content_content.append(block_content)
 
     if len(tag_content_content) > 0:
-        tag_content["content"] = []
-        for block_content in tag_content_content:
-            tag_content["content"].append(block_content)
+        if tag.name in nodenames or recursive is False:
+            tag_content["content"] = []
+            for block_content in tag_content_content:
+                tag_content["content"].append(block_content)
+        else:
+            # Not a block tag, e.g. a caption tag, let the content pass through
+            tag_content = tag_content_content[0]
 
     block_content_list.append(tag_content)
     return block_content_list
 
-def body_block_paragraph_render(p_tag):
+def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     """
     paragraphs may wrap some other body block content
     this is separated out so it can be called from more than one place
     """
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
+
     block_content_list = []
 
     tag_content_content = []
@@ -1799,16 +1876,16 @@ def body_block_paragraph_render(p_tag):
         else:
             # Add previous paragraph content first
             if paragraph_content.strip() != '':
-                tag_content_content.append(body_block_paragraph_content(paragraph_content))
+                tag_content_content.append(body_block_paragraph_content(convert(paragraph_content)))
                 paragraph_content = u''
 
         if child_tag.name is not None and body_block_content(child_tag) != {}:
-            for block_content in body_block_content_render(child_tag):
+            for block_content in body_block_content_render(child_tag, base_url=base_url):
                 if block_content != {}:
                     tag_content_content.append(block_content)
     # finish up
     if paragraph_content.strip() != '':
-        tag_content_content.append(body_block_paragraph_content(paragraph_content))
+        tag_content_content.append(body_block_paragraph_content(convert(paragraph_content)))
 
     if len(tag_content_content) > 0:
         for block_content in tag_content_content:
@@ -1816,30 +1893,30 @@ def body_block_paragraph_render(p_tag):
 
     return block_content_list
 
-def body_block_caption_render(caption_tags):
+def body_block_caption_render(caption_tags, base_url=None):
     """fig and media tag captions are similar so use this common function"""
     caption_content = []
     supplementary_material_tags = []
 
-    for block_tag in caption_tags:
+    for block_tag in remove_doi_paragraph(caption_tags):
         # Note then skip p tags with supplementary-material inside
         if raw_parser.supplementary_material(block_tag):
             for supp_tag in raw_parser.supplementary_material(block_tag):
                 supplementary_material_tags.append(supp_tag)
             continue
 
-        for block_content in body_block_content_render(block_tag):
+        for block_content in body_block_content_render(block_tag, base_url=base_url):
 
             if block_content != {}:
                 caption_content.append(block_content)
 
     return caption_content, supplementary_material_tags
 
-def body_block_supplementary_material_render(supp_tags):
+def body_block_supplementary_material_render(supp_tags, base_url=None):
     """fig and media tag caption may have supplementary material"""
     source_data = []
     for supp_tag in supp_tags:
-        for block_content in body_block_content_render(supp_tag):
+        for block_content in body_block_content_render(supp_tag, base_url=base_url):
             if block_content != {}:
                 if "content" in block_content:
                     del block_content["content"]
@@ -1851,10 +1928,12 @@ def body_block_paragraph_content(text):
     tag_content = OrderedDict()
     if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = unicode(text)
+        tag_content["text"] = text
     return tag_content
 
-def body_block_content(tag):
+def body_block_content(tag, html_flag=True, base_url=None):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
 
     tag_content = OrderedDict()
 
@@ -1864,14 +1943,24 @@ def body_block_content(tag):
     if tag.name == "sec":
         tag_content["type"] = "section"
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "title", title_text(tag, tag.name))
+        set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", title_text(tag))
+        set_if_value(tag_content, "title", convert(title_text(tag)))
+        # Special, if there is no title then use a fragment of the caption as the title
+        if "title" not in tag_content:
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
+            if len(caption_content) > 0:
+                # Attempt to extra the first sentence of the first paragraph of the caption
+                first_paragraph_text = caption_content[0]["text"]
+                sentences = first_paragraph_text.split(". ")
+                if len(sentences) > 0:
+                    tag_content["title"] = sentences[0]
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -1882,7 +1971,7 @@ def body_block_content(tag):
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
         if node_contents_str(tag_copy):
-            tag_content["text"] = node_contents_str(tag_copy)
+            tag_content["text"] = convert(node_contents_str(tag_copy))
 
     elif tag.name == "disp-quote":
         tag_content["type"] = "quote"
@@ -1890,18 +1979,20 @@ def body_block_content(tag):
             if body_block_content(child_tag) != {}:
                 if "text" not in tag_content:
                     tag_content["text"] = []
-                tag_content["text"].append(body_block_content(child_tag))
+                tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
+        if "title" not in tag_content and "label" in tag_content:
+            set_if_value(tag_content, "title", tag_content.get("label"))
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
 
@@ -1910,7 +2001,7 @@ def body_block_content(tag):
         for table in tables:
             # Add the table tag back for now
             table_content = '<table>' + node_contents_str(table) + '</table>'
-            tag_content["tables"].append(table_content)
+            tag_content["tables"].append(convert(table_content))
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
@@ -1924,7 +2015,7 @@ def body_block_content(tag):
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
-                    footnote_content["text"].append(body_block_content(p_tag))
+                    footnote_content["text"].append(body_block_content(p_tag, base_url=base_url))
 
                 if "footnotes" not in tag_content:
                     tag_content["footnotes"] = []
@@ -1932,7 +2023,7 @@ def body_block_content(tag):
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
@@ -1943,20 +2034,22 @@ def body_block_content(tag):
         set_if_value(tag_content, "label", label(tag, tag.name))
 
         math_tag = first(raw_parser.math(tag))
-        tag_content["mathml"] = node_contents_str(math_tag)
+        # Add the math tag back for now
+        math_content = '<math>' + node_contents_str(math_tag) + '</math>'
+        tag_content["mathml"] = convert(math_content)
 
     elif tag.name == "fig":
         tag_content["type"] = "image"
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", title_text(tag))
+        set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
 
         supplementary_material_tags = None
         caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
         # Special, if there is no title then use a fragment of the caption as the title
         if "title" not in tag_content and len(caption_content) > 0:
             # Attempt to extra the first sentence of the first paragraph of the caption
@@ -1989,11 +2082,11 @@ def body_block_content(tag):
         if len(attributions) > 0:
             tag_content["attribution"] = []
             for attrib_string in attributions:
-                tag_content["attribution"].append(attrib_string)
+                tag_content["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
@@ -2006,11 +2099,11 @@ def body_block_content(tag):
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
-            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags)
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
 
@@ -2018,30 +2111,49 @@ def body_block_content(tag):
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
-            source_data = body_block_supplementary_material_render(supplementary_material_tags)
+            source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
                 tag_content["sourceData"] = source_data
 
     elif tag.name == "fig-group":
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
             if i == 0:
-                tag_content = body_block_content(fig_tag)
+                tag_content = body_block_content(fig_tag, base_url=base_url)
             elif i > 0:
                 if "supplements" not in tag_content:
                     tag_content["supplements"] = []
-                tag_content["supplements"].append(body_block_content(fig_tag))
+                tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", caption_title(tag))
+        set_if_value(tag_content, "title", convert(caption_title(tag)))
+
+        # caption, add if there are paragraph tags in the caption
+        if raw_parser.caption(tag):
+            caption_tags = body_blocks(raw_parser.caption(tag))
+            caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
+            
+            if len(caption_content) > 0:
+                # Delete the first paragraph of the caption if its text is the same as the title
+                if (tag_content.get("title") and caption_content[0].get("text")
+                    and caption_content[0].get("text") == tag_content.get("title")):
+                    del caption_content[0]
+            # If there are still captioni tags left then add them
+            if len(caption_content) > 0:
+                tag_content["caption"] = caption_content
+
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
-            if media_tag.get("mimetype") and media_tag.get("mime-subtype"):
-                # Quick concatenation for now
+            # If a mimetype contains a slash just use it, otherwise concatenate a value
+            if media_tag.get("mimetype") and "/" in media_tag.get("mimetype"):
+                tag_content["mediaType"] = media_tag.get("mimetype")
+            elif media_tag.get("mimetype") and media_tag.get("mime-subtype"):
                 tag_content["mediaType"] = media_tag.get("mimetype") + "/" + media_tag.get("mime-subtype")
+
             copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'uri')
+            copy_attribute(media_tag.attrs, 'xlink:href', tag_content, 'filename')
 
     elif tag.name == "list":
         tag_content["type"] = "list"
@@ -2060,13 +2172,19 @@ def body_block_content(tag):
                 tag_content["items"] = []
 
             if len(body_block_content_render(list_item_tag)) > 0:
-                for list_item in body_block_content_render(list_item_tag):
+                for list_item in body_block_content_render(list_item_tag, base_url=base_url):
                     # Note: wrapped inside another list to pass the current article json schema
                     if list_item != {}:
                         list_item_content = list_item["content"]
                         tag_content["items"].append(list_item_content)
                     else:
                         tag_content["items"].append(node_contents_str(list_item_tag))
+
+    elif tag.name == "app":
+        set_if_value(tag_content, "id", tag.get("id"))
+        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
+
 
     return tag_content
 
@@ -2079,6 +2197,9 @@ def body_blocks(soup):
     nodenames = body_block_nodenames()
 
     body_block_tags = []
+
+    if not soup:
+        return body_block_tags
 
     first_sibling_node = firstnn(soup.find_all())
 
@@ -2133,6 +2254,7 @@ def decision_letter(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
+        body_content_rewritten = rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
@@ -2154,6 +2276,7 @@ def author_response(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
+        body_content_rewritten = rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
@@ -2163,7 +2286,7 @@ def author_response(soup):
 def render_abstract_json(abstract_tag):
     abstract_json = OrderedDict()
     set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
-    for child_tag in body_blocks(abstract_tag):
+    for child_tag in remove_doi_paragraph(body_blocks(abstract_tag)):
         if body_block_content(child_tag) != {}:
             if "content" not in abstract_json:
                  abstract_json["content"] = []
@@ -2204,8 +2327,12 @@ def author_index_name(surname, given_names, suffix):
     return index_name
 
 
-def author_affiliations(author):
+def author_affiliations(author, html_flag=True):
     """compile author affiliations for json output"""
+
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     affilations = []
 
     if author.get("affiliations"):
@@ -2213,9 +2340,9 @@ def author_affiliations(author):
             affiliation_json = OrderedDict()
             affiliation_json["name"] = []
             if affiliation.get("dept"):
-                affiliation_json["name"].append(affiliation.get("dept"))
+                affiliation_json["name"].append(convert(affiliation.get("dept")))
             if affiliation.get("institution"):
-                affiliation_json["name"].append(affiliation.get("institution"))
+                affiliation_json["name"].append(convert(affiliation.get("institution")))
             # Remove if empty
             if affiliation_json["name"] == []:
                 del affiliation_json["name"]
@@ -2254,6 +2381,17 @@ def author_phone_numbers(author, correspondence):
         return phone_numbers
     else:
         return None
+
+def phone_number_json(phone):
+    if phone:
+        phone = re.sub(r'[\(\) -]', '', phone)
+    return phone
+
+def author_phone_numbers_json(author, correspondence):
+    phone_numbers = author_phone_numbers(author, correspondence)
+    if phone_numbers:
+        phone_numbers = map(phone_number_json, phone_numbers)
+    return phone_numbers
 
 
 def author_email_addresses(author, correspondence):
@@ -2316,7 +2454,11 @@ def author_equal_contribution(author, equal_contributions_map):
 
 
 
-def author_json_details(author, author_json, contributions, correspondence, competing_interests, equal_contributions_map):
+def author_json_details(author, author_json, contributions, correspondence,
+                        competing_interests, equal_contributions_map, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     """add more author json"""
     if author_affiliations(author):
         author_json["affiliations"] = author_affiliations(author)
@@ -2328,15 +2470,16 @@ def author_json_details(author, author_json, contributions, correspondence, comp
 
         # phone
         if author_phone_numbers(author, correspondence):
-            author_json["phoneNumbers"] = author_phone_numbers(author, correspondence)
+            author_json["phoneNumbers"] = author_phone_numbers_json(author, correspondence)
 
         # contributions
         if author_contribution(author, contributions):
-            author_json["contribution"] = author_contribution(author, contributions)
+            author_json["contribution"] = convert(author_contribution(author, contributions))
 
         # competing interests
         if author_competing_interests(author, competing_interests):
-            author_json["competingInterests"] = author_competing_interests(author, competing_interests)
+            author_json["competingInterests"] = convert(
+                author_competing_interests(author, competing_interests))
 
         # equal-contributions
         if author_equal_contribution(author, equal_contributions_map):
@@ -2419,7 +2562,6 @@ def authors_json(soup):
         if contributor["type"] == "author" and contributor.get("collab"):
             author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
                                        author_competing_interests_data, equal_contributions_map)
-            author_json["people"] = []
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
@@ -2440,6 +2582,8 @@ def authors_json(soup):
             if contributor.get("group-author-key") == group_author_key:
                 author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
                                             author_competing_interests_data, equal_contributions_map)
+                if "people" not in group_author:
+                    group_author["people"] = []
                 group_author["people"].append(author_json)
 
 
@@ -2459,7 +2603,7 @@ def extract_author_line_names(authors_json_data):
     if not authors_json_data:
         return author_names
     for author in authors_json_data:
-        if "name" in author and type(author["name"]) == str:
+        if "name" in author and type(author["name"]) in (str, unicode):
             # collab
             author_names.append(author["name"])
         elif "name" in author and "preferred" in author["name"]:
@@ -2503,22 +2647,35 @@ def references_pages_range(fpage=None, lpage=None):
         range = fpage.strip() + unichr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
+    elif lpage:
+        range = lpage.strip()
     return range
 
 def references_date(year=None):
     "Handle year value parsing for some edge cases"
     date = None
+    discriminator = None
     in_press = None
     if year and "in press" in year.lower().strip():
         in_press = True
-    elif year:
+    elif year and re.match("^[0-9]+$", year):
         date = year
-    return (date, in_press)
+    elif year:
+        discriminator_match = re.match("^([0-9]+?)([a-z]+?)$", year)
+        if discriminator_match:
+            date = discriminator_match.group(1)
+            discriminator = discriminator_match.group(2)
+        else:
+            date = year
+    return (date, discriminator, in_press)
 
-def references_author_collab(ref_author):
+def references_author_collab(ref_author, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = str(ref_author.get("collab"))
+    author_json["name"] = unicode(convert(ref_author.get("collab")))
     return author_json
 
 def references_author_person(ref_author):
@@ -2566,7 +2723,7 @@ def references_json_authors(ref_authors, ref_content):
     "build the authors for references json here for testability"
     all_authors = references_authors(ref_authors)
     if all_authors != {}:
-        if ref_content.get("type") in ["book", "conference-proceeding", "journal",
+        if ref_content.get("type") in ["book", "conference-proceeding", "journal", "other",
                                            "periodical", "preprint", "report", "software",
                                            "web"]:
             for author_type in ["authors", "authorsEtAl"]:
@@ -2594,7 +2751,11 @@ def references_json_authors(ref_authors, ref_content):
                 ref_content["author"] = all_authors.get("authors")[0]
     return ref_content
 
-def references_json(soup):
+def references_json(soup, html_flag=True):
+
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
     references_json = []
     for ref in refs(soup):
         ref_content = OrderedDict()
@@ -2612,17 +2773,20 @@ def references_json(soup):
 
         set_if_value(ref_content, "id", ref.get("id"))
 
-        (year_date, year_in_press) = references_date(ref.get("year"))
-        set_if_value(ref_content, "date", year_date)
+        (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
+        set_if_value(ref_content, "date", ref.get("iso-8601-date"))
+        if "date" not in ref_content:
+            set_if_value(ref_content, "date", year_date)
+            set_if_value(ref_content, "discriminator", discriminator)
 
         # authors and etal
         if ref.get("authors"):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
 
         # titles
-        if ref.get("publication-type") in ["journal", "confproc"]:
+        if ref.get("publication-type") in ["journal", "confproc", "preprint"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
-        elif ref.get("publication-type") in ["thesis", "clinicaltrial"]:
+        elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["book"]:
             set_if_value(ref_content, "bookTitle", ref.get("source"))
@@ -2632,12 +2796,17 @@ def references_json(soup):
             set_if_value(ref_content, "title", ref.get("data-title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("source"))
-        elif ref.get("publication-type") in ["web"]:
+        elif ref.get("publication-type") in ["patent", "web"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("comment"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("uri"))
+        # Finally try to extract from source if a title is not found
+        if ("title" not in ref_content
+            and "articleTitle" not in ref_content
+            and "bookTitle" not in ref_content):
+            set_if_value(ref_content, "title", ref.get("source"))
 
         # conference
         if ref.get("conf-name"):
@@ -2653,8 +2822,22 @@ def references_json(soup):
                 ref_content["journal"] = journal
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
+        elif ref.get("publication-type") in ["patent"]:
+            set_if_value(ref_content, "patentType", ref.get("source"))
         elif ref.get("publication-type") not in ["book"]:
             set_if_value(ref_content, "source", ref.get("source"))
+
+        # patent details
+        set_if_value(ref_content, "number", ref.get("patent"))
+        set_if_value(ref_content, "country", ref.get("country"))
+
+        # publisher
+        if ref.get("publisher_name"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("publisher_name"), ref.get("publisher_loc")))
+        elif ref.get("publication-type") in ["software"] and ref.get("source"):
+            set_if_value(ref_content, "publisher", references_publisher(
+                ref.get("source"), ref.get("publisher_loc")))
 
         # volume
         set_if_value(ref_content, "volume", ref.get("volume"))
@@ -2694,30 +2877,448 @@ def references_json(soup):
 
         elif ref.get("comment"):
             if "in press" in ref.get("comment").lower().strip():
-                ref_content["pages"] = "in press"
+                ref_content["pages"] = "In press"
         elif year_in_press:
             # in press may have been taken from the year field
-            ref_content["pages"] = "in press"
+            ref_content["pages"] = "In press"
+
+        # Special, to retain some comment tag values, convert to type other
+        if ref.get("comment"):
+            if ref_content.get("pages") and ref_content.get("pages") == "In press":
+                # Do not convert
+                pass
+            else:
+                ref_content["type"] = "other"
 
         # doi
         if ref.get("publication-type") not in ["web"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
 
+        # pmid
+        set_if_value(ref_content, "pmid", coerce_to_int(ref.get("pmid"), None))
+
+        # isbn
+        set_if_value(ref_content, "isbn", ref.get("isbn"))
+
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
-        if "uri" not in ref_content and ref.get("publication-type") in ["data", "web"]:
+        if ("uri" not in ref_content
+            and ref.get("publication-type") in ["confproc", "data", "web", "preprint"]):
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")
 
-        # publisher
-        if ref.get("publisher_name"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("publisher_name"), ref.get("publisher_loc")))
-        elif ref.get("publication-type") in ["software"] and ref.get("source"):
-            set_if_value(ref_content, "publisher", references_publisher(
-                ref.get("source"), ref.get("publisher_loc")))
+        # Convert to HTML
+        for index in ["title", "articleTitle", "chapterTitle", "bookTitle", "edition"]:
+            set_if_value(ref_content, index, convert(ref_content.get(index)))
 
-        references_json.append(ref_content)
+        # Rewrite references data with support to delete a reference too
+        ref_content_rewritten = rewrite_json("references_json", soup, [ref_content])
+        if ref_content_rewritten and len(ref_content_rewritten) > 0:
+            ref_content = ref_content_rewritten[0]
+        elif len(ref_content_rewritten) == 0:
+            ref_content = None
+
+        # Now can convert to type unknown if applicable
+        if ref_content:
+            ref_content = convert_references_json(ref_content, soup)
+            references_json.append(ref_content)
 
     return references_json
+
+def convert_references_json(ref_content, soup=None):
+    "Check for references that will not pass schema validation, fix or convert them to unknown"
+
+    # Convert reference to unkonwn if still missing important values
+    if (
+        (ref_content.get("type") == "other")
+        or
+        (ref_content.get("type") == "book-chapter" and "editors" not in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "articleTitle" not in ref_content)
+        or
+        (ref_content.get("type") in ["journal", "book-chapter"]
+         and not "pages" in ref_content)
+        or
+        (ref_content.get("type") == "journal" and "journal" not in ref_content)
+        or
+        (ref_content.get("type") in ["book", "book-chapter", "report", "thesis", "software"]
+         and "publisher" not in ref_content)
+        or
+        (ref_content.get("type") == "book" and "bookTitle" not in ref_content)
+        or
+        (ref_content.get("type") == "data" and "source" not in ref_content)
+        or
+        (ref_content.get("type") == "conference-proceeding" and "conference" not in ref_content)
+       ):
+        ref_content = references_json_to_unknown(ref_content, soup)
+
+    return ref_content
+
+def references_json_to_unknown(ref_content, soup=None):
+    unknown_ref_content = OrderedDict()
+    unknown_ref_content["type"] = "unknown"
+    set_if_value(unknown_ref_content, "id", ref_content.get("id"))
+    set_if_value(unknown_ref_content, "date", ref_content.get("date"))
+    set_if_value(unknown_ref_content, "authors", ref_content.get("authors"))
+    if not unknown_ref_content.get("authors") and ref_content.get("author"):
+        unknown_ref_content["authors"] = []
+        unknown_ref_content["authors"].append(ref_content.get("author"))
+    set_if_value(unknown_ref_content, "authorsEtAl", ref_content.get("authorsEtAl"))
+
+    # compile details first for use later in title as a default
+    details = references_json_unknown_details(ref_content, soup)
+
+    # title
+    set_if_value(unknown_ref_content, "title", ref_content.get("title"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("bookTitle"))
+    if "title" not in unknown_ref_content:
+        set_if_value(unknown_ref_content, "title", ref_content.get("articleTitle"))
+    if "title" not in unknown_ref_content:
+        # Still not title, try to use the details as the title
+        set_if_value(unknown_ref_content, "title", details)
+
+    # add details
+    set_if_value(unknown_ref_content, "details", details)
+
+    set_if_value(unknown_ref_content, "uri", ref_content.get("uri"))
+
+    return unknown_ref_content
+
+def references_json_unknown_details(ref_content, soup=None):
+    "Extract detail value for references of type unknown"
+    details = ""
+
+    # Try adding pages values first
+    if "pages" in ref_content:
+        if "range" in ref_content["pages"]:
+            details += ref_content["pages"]["range"]
+        else:
+            details += ref_content["pages"]
+
+    if soup:
+        # Attempt to find the XML element by id, and convert it to details
+        if "id" in ref_content:
+            ref_tag = first(soup.select("ref#" + ref_content["id"]))
+            if ref_tag:
+                # Now remove tags that would be already part of the unknown reference by now
+                for remove_tag in ["person-group", "year", "article-title",
+                                   "elocation-id", "fpage", "lpage"]:
+                    ref_tag = remove_tag_from_tag(ref_tag, remove_tag)
+                # Add the remaining tag content comma separated
+                for tag in first(raw_parser.element_citation(ref_tag)):
+                    if node_text(tag) is not None:
+                        if details != "":
+                            details += ", "
+                        details += node_text(tag)
+    if details == "":
+        return None
+    else:
+        return details
+
+
+def ethics_json(soup):
+    ethics_json = []
+    ethics_fn_group = first(raw_parser.fn_group(soup, "ethics-information"))
+
+    # Part one, find the fn tags in the ethics section
+    fn_body_blocks = []
+    if ethics_fn_group:
+        fn_tags = raw_parser.fn(ethics_fn_group)
+        if fn_tags:
+            for fn_tag in fn_tags:
+                fn_body_blocks = fn_body_blocks + body_block_content_render(fn_tag)
+
+    # Part two, if we have fn, then build out the json content
+    for fn_content in fn_body_blocks:
+        if fn_content.get("content"):
+            for content_item in fn_content.get("content"):
+                if "type" in content_item and content_item["type"] == "paragraph":
+                    ethics_json.append(content_item)
+    return ethics_json
+
+
+def appendices_json(soup, base_url=None):
+    appendices_json = []
+    app_group = None
+    app_tags = []
+    back = raw_parser.back(soup)
+    if back:
+        app_group = first(raw_parser.app_group(back))
+    if app_group:
+        app_tags = raw_parser.app(app_group)
+    for app_tag in app_tags:
+        app_content = body_block_content(app_tag, base_url=base_url)
+        app_blocks = body_blocks(app_tag)
+        if app_blocks:
+            app_content["content"] = []
+            for block_tag in app_blocks:
+                if len(body_block_content_render(block_tag)) > 0:
+                    if body_block_content_render(block_tag)[0] != {}:
+                        app_content["content"].append(body_block_content_render(block_tag, base_url=base_url)[0])
+
+        # If the first element is a box and it has no DOI, then ignore it
+        #  by setting its child content to itself
+        if app_content.get("content") and len(app_content["content"]) > 0:
+            first_block = app_content["content"][0]
+            if (first_block.get("type")
+                and first_block.get("type") == "box"
+                and first_block.get("content")
+                and not first_block.get("doi")):
+                app_content["content"] = first_block["content"]
+
+        # If the first section has not title, set its child content to itself
+        if app_content.get("content") and len(app_content["content"]) > 0:
+            first_block = app_content["content"][0]
+            if (first_block.get("type")
+                and first_block.get("type") == "section"
+                and first_block.get("content")
+                and not first_block.get("title")):
+                app_content["content"] = first_block["content"]
+
+        # Then check all first level sections with no title, and fix them
+        for i, content_block in enumerate(app_content["content"]):
+            if (content_block.get("type")
+                and content_block.get("type") == "section"
+                and content_block.get("content")
+                and not content_block.get("title")):
+                app_content["content"][i] = content_block["content"][0]
+
+        appendices_json.append(app_content)
+    return appendices_json
+
+
+def dataset_related_object_json(tag, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
+    dataset_content = OrderedDict()
+
+    #set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+    set_if_value(dataset_content, "id", tag.get("id"))
+    set_if_value(dataset_content, "date", node_text(raw_parser.year(tag)))
+
+    # authors
+    dataset_authors = []
+    for contrib_tag in extract_nodes(tag, ["name", "collab"]):
+        dataset_author = OrderedDict()
+        if contrib_tag.name == "collab":
+            dataset_author["type"] = "group"
+            set_if_value(dataset_author, "name", node_contents_str(contrib_tag))
+        elif contrib_tag.name == "name":
+            person_details = {}
+            set_if_value(person_details, "surname", first_node_str_contents(contrib_tag, "surname"))
+            set_if_value(person_details, "given-names", first_node_str_contents(contrib_tag, "given-names"))
+            set_if_value(person_details, "suffix", first_node_str_contents(contrib_tag, "suffix"))
+            dataset_author = references_author_person(person_details)
+        if len(dataset_author) > 0:
+            dataset_authors.append(dataset_author)
+    if len(dataset_authors) > 0:
+        dataset_content["authors"] = dataset_authors
+
+    # et al
+    if raw_parser.etal(tag):
+        dataset_content["authorsEtAl"] = True
+
+    # title
+    set_if_value(dataset_content, "title", convert(node_contents_str(first(raw_parser.source(tag)))))
+
+    # dataId
+    set_if_value(dataset_content, "dataId",
+                 convert(node_contents_str(first(raw_parser.object_id(tag, "art-access-id")))))
+
+    # details
+    set_if_value(dataset_content, "details", convert(node_contents_str(first(raw_parser.comment(tag)))))
+
+    # doi
+    if raw_parser.pub_id(tag, "doi"):
+        doi_tag = first(raw_parser.pub_id(tag, "doi"))
+        set_if_value(dataset_content, "doi", doi_uri_to_doi(doi_tag.get('xlink:href')))
+
+    # uri
+    if raw_parser.ext_link(tag, "uri"):
+        uri_tag = first(raw_parser.ext_link(tag, "uri"))
+        set_if_value(dataset_content, "uri", uri_tag.get('xlink:href'))
+
+    return dataset_content
+
+
+def datasets_json(soup, html_flag=True):
+    datasets_json = OrderedDict()
+    generated_datasets = []
+    used_datasets = []
+    generated_datasets_related_object_tags = []
+    used_datasets_related_object_tags = []
+    p_tags = []
+
+    back_tag = raw_parser.back(soup)
+    if back_tag:
+        datasets_section_tag = first(raw_parser.section(back_tag, "datasets"))
+        if datasets_section_tag:
+            p_tags = raw_parser.paragraph(datasets_section_tag)
+
+    if p_tags:
+        dataset_type = None
+        for p_tag in p_tags:
+            # Look for paragraphs with related-object in them and the
+            #  ones with out them are above the generated and used datasets
+            if raw_parser.related_object(p_tag):
+                if dataset_type == "generated":
+                    generated_datasets_related_object_tags += raw_parser.related_object(p_tag)
+                elif dataset_type == "used":
+                    used_datasets_related_object_tags += raw_parser.related_object(p_tag)
+            else:
+                if node_text(p_tag) and "generated" in node_text(p_tag):
+                    dataset_type = "generated"
+                elif node_text(p_tag):
+                    dataset_type = "used"
+
+    for related_object in generated_datasets_related_object_tags:
+        if "generated" not in datasets_json:
+            datasets_json["generated"] = []
+        if dataset_related_object_json(related_object) != {}:
+            datasets_json["generated"].append(dataset_related_object_json(related_object, html_flag))
+
+    for related_object in used_datasets_related_object_tags:
+        if "used" not in datasets_json:
+            datasets_json["used"] = []
+        if dataset_related_object_json(related_object) != {}:
+            datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
+
+    return datasets_json
+
+def poa_supplementary_material_block_content(tag):
+    tag_content = OrderedDict()
+
+    # Check its characteristics first
+    if (tag and tag.name == "supplementary-material"
+        and raw_parser.ext_link(tag) and not raw_parser.media(tag)):
+        ext_link_tag = first(raw_parser.ext_link(tag))
+        filename = ext_link_tag.get('xlink:href')
+
+        if filename and filename.endswith(".zip"):
+            tag_content["mediaType"] = "application/zip"
+
+        set_if_value(tag_content, "uri", filename)
+        set_if_value(tag_content, "filename", filename)
+
+    return tag_content
+
+def supplementary_files_json(soup):
+    additional_files_json = []
+
+    supplementary_material_tags = []
+    back = raw_parser.back(soup)
+    if back:
+        supplementary_material_tags = raw_parser.supplementary_material(back)
+
+    for tag in supplementary_material_tags:
+        tag_content = body_block_content(tag)
+        if tag_content == {}:
+            # Check if it is a simple PoA style supplementary-material
+            tag_content = poa_supplementary_material_block_content(tag)
+
+        if tag_content != {}:
+            # Use label as title if no title
+            if tag_content.get("label") and not tag_content.get("title"):
+                set_if_value(tag_content, "title", tag_content.get("label"))
+            additional_files_json.append(tag_content)
+
+    # Support for older PoA article supplementary material tags
+    poa_supp_material_tags = []
+    all_supp_material_tags = raw_parser.supplementary_material(soup)
+    poa_supp_material_tags = filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags)
+    for tag in poa_supp_material_tags:
+        tag_content = poa_supplementary_material_block_content(tag)
+        if tag_content != {}:
+            additional_files_json.append(tag_content)
+
+    # Add id and title for PoA articles, i.e. if there are none with an id value
+    if len(filter(lambda file: file.get('id') is not None, supplementary_material_tags)) == 0:
+        i = 1
+        for file in additional_files_json:
+            file["id"] = "SD" + str(i) + "-data"
+            file["title"] = "Supplementary file " + str(i) + "."
+            i = i + 1
+
+    return additional_files_json
+
+def funding_statement_json(soup, html_flag=True):
+    return xml_to_html(html_flag, full_funding_statement(soup))
+
+def funding_awards_json(soup):
+    awards = []
+
+    # Some details can take from existing award groups function
+    award_groups = full_award_groups(soup)
+    if award_groups:
+        for award_group_dict in award_groups:
+            for id, award_group in award_group_dict.iteritems():
+                award_content = OrderedDict()
+                set_if_value(award_content, "id", id)
+
+                if award_group.get("institution") or award_group.get("id"):
+                    # Set the source
+                    source_content = OrderedDict()
+                    set_if_value(source_content, "funderId", doi_uri_to_doi(award_group.get("id")))
+                    if award_group.get("institution"):
+                        source_name_content = OrderedDict()
+                        set_if_value(source_content, "name", [award_group.get("institution")])
+                    award_content["source"] = source_content
+
+                # awardId
+                if award_group.get("award-id") and award_group.get("award-id") != "":
+                    set_if_value(award_content, "awardId", award_group.get("award-id"))
+
+                if len(award_content) > 0:
+                    awards.append(award_content)
+
+    # recipients to parse fresh
+    award_group_tags = []
+    award_recipients = {}
+    funding_group = first(raw_parser.funding_group(soup))
+    if funding_group:
+        award_group_tags = raw_parser.award_group(funding_group)
+    for a_tag in award_group_tags:
+        id = a_tag.get("id")
+        recipient_tags = raw_parser.principal_award_recipient(a_tag)
+        if recipient_tags:
+            recipients = []
+            for recipient_tag in recipient_tags:
+                recipient_content = OrderedDict()
+                if len(extract_nodes(recipient_tag, ["name", "institution"])) <= 0:
+                    # A loose institution name not surrounded by institution tag
+                    recipient_content["type"] = "group"
+                    set_if_value(recipient_content, "name", node_contents_str(recipient_tag))
+                else:
+                    for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
+                        if contrib_tag.name == "institution":
+                            recipient_content["type"] = "group"
+                            set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
+                        elif contrib_tag.name == "name":
+                            person_details = {}
+                            set_if_value(person_details, "surname",
+                                         first_node_str_contents(contrib_tag, "surname"))
+                            set_if_value(person_details, "given-names",
+                                         first_node_str_contents(contrib_tag, "given-names"))
+                            set_if_value(person_details, "suffix",
+                                         first_node_str_contents(contrib_tag, "suffix"))
+                            recipient_content = references_author_person(person_details)
+                if len(recipient_content) > 0:
+                    recipients.append(recipient_content)
+
+            # Add to the dict for adding to the award data later
+            if len(recipients) > 0:
+                if id not in award_recipients:
+                    award_recipients[id] = []
+                award_recipients[id] = recipients
+
+    # Add recipient data to the award data
+    for award in awards:
+        if award.get("id") and award.get("id") in award_recipients:
+            award["recipients"] = award_recipients.get(award.get("id"))
+
+    awards = rewrite_json("funding_awards", soup, awards)
+
+    return awards

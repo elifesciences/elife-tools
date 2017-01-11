@@ -203,6 +203,12 @@ def author_notes(soup):
 def corresp(soup):
     return extract_nodes(soup, "corresp")
 
+def fn_group(soup, content_type=None):
+    if content_type:
+        return extract_nodes(soup, "fn-group", attr="content-type", value=content_type)
+    else:
+        return extract_nodes(soup, "fn-group")
+
 def fn(soup):
     return extract_nodes(soup, "fn")
 
@@ -314,12 +320,25 @@ def data_title(soup):
 def conf_name(soup):
     return extract_nodes(soup, "conf-name")
 
+def date_in_citation(soup):
+    return extract_nodes(soup, "date-in-citation")
+
+def patent(soup):
+    return extract_nodes(soup, "patent")
+
 #
 # back
 #
 
 def back(soup):
     return first(extract_nodes(soup, "back"))
+
+def app_group(soup):
+    return extract_nodes(soup, "app-group")
+
+def app(soup):
+    return extract_nodes(soup, "app")
+
 
 #
 # body
@@ -340,8 +359,11 @@ def decision_letter(soup):
 def author_response(soup):
     return first(sub_article(soup, "reply"))
 
-def section(soup):
-    return extract_nodes(soup, "sec")
+def section(soup, sec_type=None):
+    if sec_type:
+        return extract_nodes(soup, "sec", attr="sec-type", value=sec_type)
+    else:
+        return extract_nodes(soup, "sec")
 
 def paragraph(soup):
     return extract_nodes(soup, "p")
@@ -372,3 +394,16 @@ def list(soup):
 
 def list_item(soup):
     return extract_nodes(soup, "list-item")
+
+#
+# funding
+#
+
+def funding_group(soup):
+    return extract_nodes(soup, "funding-group")
+
+def award_group(soup):
+    return extract_nodes(soup, "award-group")
+
+def principal_award_recipient(soup):
+    return extract_nodes(soup, "principal-award-recipient")

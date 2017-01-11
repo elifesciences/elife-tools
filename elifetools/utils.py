@@ -124,6 +124,16 @@ def starts_with_doi(tag):
     else:
         return False
 
+def doi_uri_to_doi(value):
+    "Strip the uri schema from the start of DOI URL strings"
+    if value is None:
+        return value
+    replace_values = ['http://dx.doi.org/', 'https://dx.doi.org/',
+                      'http://doi.org/', 'https://doi.org/']
+    for replace_value in replace_values:
+        value = value.replace(replace_value, '')
+    return value
+
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     return filter(lambda tag: not starts_with_doi(tag), tags)
