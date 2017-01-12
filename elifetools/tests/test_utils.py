@@ -83,6 +83,13 @@ class TestUtils(unittest.TestCase):
     def test_doi_uri_to_doi(self, doi_uri, expected_doi):
         self.assertEqual(utils.doi_uri_to_doi(doi_uri), expected_doi)
 
+    @unpack
+    @data(
+        (None, None),
+        ("10.7554/eLife.00666", "https://doi.org/10.7554/eLife.00666"),
+        )
+    def test_doi_to_doi_uri(self, doi_uri, expected_doi):
+        self.assertEqual(utils.doi_to_doi_uri(doi_uri), expected_doi)
 
 if __name__ == '__main__':
     unittest.main()

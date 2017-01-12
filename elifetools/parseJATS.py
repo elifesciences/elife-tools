@@ -62,7 +62,7 @@ def title_prefix(soup):
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
-    return node_text(raw_parser.doi(soup))
+    return doi_uri_to_doi(node_text(raw_parser.doi(soup)))
 
 def publisher_id(soup):
     # aka the article_id, specified by the publisher
@@ -142,7 +142,9 @@ def format_related_object(related_object):
 
 
 def related_object_ids(soup):
-    tags = filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup))
+    tags = []
+    if raw_parser.related_object(soup):
+        tags = filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup))
     return dict(map(format_related_object, tags))
 
 @strippen
@@ -523,7 +525,7 @@ def component_doi(soup):
 
     for tag in object_id_tags:
         component_object = {}
-        component_object["doi"] = tag.text
+        component_object["doi"] = doi_uri_to_doi(tag.text)
         component_object["position"] = position
         
         # Try to find the type of component
@@ -1113,7 +1115,7 @@ def refs(soup):
 
         if raw_parser.pub_id(tag, "doi"):
             ref['reference_id'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
-            ref['doi'] = node_contents_str(first(raw_parser.pub_id(tag, "doi")))
+            ref['doi'] = doi_uri_to_doi(node_contents_str(first(raw_parser.pub_id(tag, "doi"))))
 
         uri_tag = None
         if raw_parser.ext_link(tag, "uri"):
@@ -1220,7 +1222,7 @@ def extract_component_doi(tag, nodenames):
     component_doi = None
 
     if(tag.name == "sub-article"):
-        component_doi = node_text(first(raw_parser.article_id(tag, pub_id_type= "doi")))
+        component_doi = doi_uri_to_doi(node_text(first(raw_parser.article_id(tag, pub_id_type= "doi"))))
     else:
         object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
         # Tweak: if it is media and has no object_id_tag then it is not a "component"
@@ -1231,7 +1233,7 @@ def extract_component_doi(tag, nodenames):
             #   This happens for example when boxed text has a child figure,
             #   the boxed text does not have a DOI, the figure does have one
             if object_id_tag and first_parent(object_id_tag, nodenames).name == tag.name:
-                component_doi = node_text(object_id_tag)
+                component_doi = doi_uri_to_doi(node_text(object_id_tag))
 
     return component_doi
 
@@ -1273,8 +1275,8 @@ def components(soup):
         if component_doi is None:
             continue
         else:
-            component['doi'] = component_doi
-            component['doi_url'] = 'http://dx.doi.org/' + component_doi
+            component['doi'] = doi_uri_to_doi(component_doi)
+            component['doi_url'] = doi_to_doi_uri(component['doi'])
             
         
         if(ctype == "sub-article"):

@@ -134,6 +134,13 @@ def doi_uri_to_doi(value):
         value = value.replace(replace_value, '')
     return value
 
+def doi_to_doi_uri(value):
+    "Turn DOI into a valid uri"
+    if value is None:
+        return value
+    value = 'https://doi.org/' + value
+    return value
+
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     return filter(lambda tag: not starts_with_doi(tag), tags)
