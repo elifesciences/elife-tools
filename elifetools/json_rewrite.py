@@ -403,6 +403,13 @@ def rewrite_elife_body_json(json_content, doi):
                                  new_blocks.append(inner_block)
                             outer_block["content"] = new_blocks
 
+    # Edge case add a title to a section
+    if doi == "10.7554/eLife.07157":
+        if (json_content and len(json_content) > 0):
+            if (json_content[0].get("type") and json_content[0].get("type") == "section"
+                and json_content[0].get("id") and json_content[0].get("id") == "s1"):
+                json_content[0]["title"] = "Main text"
+
     # Edge case remove a section with no content
     if doi == "10.7554/eLife.09977":
         if (json_content and len(json_content) > 0):
