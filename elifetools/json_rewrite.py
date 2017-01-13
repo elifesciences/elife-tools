@@ -105,6 +105,10 @@ def elife_references_rewrite_json():
         "bib56": {"date": "2014"},
         "bib65": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09215"] = {"bib5": {"date": "2012"}}
+    references_rewrite_json["10.7554/eLife.09520"] = {
+        "bib35": {"conference": {"name": ["WHO Expert Committee on Malaria"]},
+        "articleTitle": "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report",
+        "publisher": {"name": ["World Health Organization"], "address": {"formatted": ["Geneva"], "components": {"locality": ["Geneva"]}}}}}
     references_rewrite_json["10.7554/eLife.09579"] = {
         "bib19": {"date": "2007"},
         "bib49": {"date": "2002"}}

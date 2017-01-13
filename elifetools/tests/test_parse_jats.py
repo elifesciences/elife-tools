@@ -813,6 +813,11 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', u'journal'), ('id', u'bib42'), ('date', '2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'H Ellegren'), ('index', u'Ellegren, H')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'N Galtier'), ('index', u'Galtier, N')]))])]), ('articleTitle', u'Self fertilization and population variability in the higher plants (vol 91, pg 41, 1957)'), ('journal', OrderedDict([('name', [u'Nature Reviews Genetics'])])), ('volume', u'17'), ('pages', OrderedDict([('first', u'422'), ('last', u'433'), ('range', u'422\u2013433')])), ('doi', u'10.1038/nrg.2016.58')])]
          ),
 
+        # 09520 v2, reference rewriting conference data
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09520</article-id><article-id pub-id-type="doi">10.7554/eLife.09520</article-id></article-meta><ref-list><ref id="bib35"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>World Health Organization</collab></person-group><year iso-8601-date="1971">1971</year><conf-name>WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report</conf-name></element-citation></ref></ref-list></article></root>',
+        [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib35'), ('date', u'1971'), ('authors', [OrderedDict([('type', 'group'), ('name', u'World Health Organization')])]), ('conference', {'name': ['WHO Expert Committee on Malaria']}), ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'), ('publisher', {'name': ['World Health Organization'], 'address': {'formatted': ['Geneva'], 'components': {'locality': ['Geneva']}}})])]
+         ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
