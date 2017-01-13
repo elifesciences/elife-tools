@@ -33,7 +33,7 @@ def publisher_id(soup):
 
 def journal_id(soup):
     # the first non-nil tag
-    return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "hwp"))
+    return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "publisher-id"))
 
 def journal_title(soup):
     return first(extract_nodes(soup, "journal-title"))

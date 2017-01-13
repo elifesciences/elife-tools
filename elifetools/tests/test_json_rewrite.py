@@ -20,10 +20,10 @@ class TestJsonRewrite(unittest.TestCase):
     @data(
         ('', None, None, None),
         
-        ('', '<root><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta></root>', None, None),
+        ('', '<root><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta></root>', None, None),
 
         ('not_a_rewrite_function',
-        '<root><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="doi">10.7554/eLife.00051</article-id></article-meta></root>',
+        '<root><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="doi">10.7554/eLife.00051</article-id></article-meta></root>',
         None,
         None)
 
