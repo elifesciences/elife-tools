@@ -2588,8 +2588,8 @@ def authors_json(soup):
                     group_author["people"] = []
                 group_author["people"].append(author_json)
 
-
-    return authors_json_data
+    authors_json_data_rewritten = rewrite_json("authors_json", soup, authors_json_data)
+    return authors_json_data_rewritten
 
 def author_line(soup):
     """take preferred names from authors json and format them into an author line"""

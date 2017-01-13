@@ -105,6 +105,10 @@ def elife_references_rewrite_json():
         "bib56": {"date": "2014"},
         "bib65": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09215"] = {"bib5": {"date": "2012"}}
+    references_rewrite_json["10.7554/eLife.09520"] = {
+        "bib35": {"conference": {"name": ["WHO Expert Committee on Malaria"]},
+        "articleTitle": "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report",
+        "publisher": {"name": ["World Health Organization"], "address": {"formatted": ["Geneva"], "components": {"locality": ["Geneva"]}}}}}
     references_rewrite_json["10.7554/eLife.09579"] = {
         "bib19": {"date": "2007"},
         "bib49": {"date": "2002"}}
@@ -471,5 +475,16 @@ def rewrite_elife_funding_awards(json_content, doi):
             if "id" in award and award["id"] == "par-1":
                 if "recipients" not in award:
                     json_content[i]["recipients"] = recipients_for_06412
+
+    return json_content
+
+def rewrite_elife_authors_json(json_content, doi):
+    """ this does the work of rewriting elife authors json """
+
+    # Edge case delete one reference
+    if doi == "10.7554/eLife.09376":
+        for i, ref in enumerate(json_content):
+            if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
+                json_content[i]["orcid"] = "0000-0001-7224-925X"
 
     return json_content
