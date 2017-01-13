@@ -477,3 +477,14 @@ def rewrite_elife_funding_awards(json_content, doi):
                     json_content[i]["recipients"] = recipients_for_06412
 
     return json_content
+
+def rewrite_elife_authors_json(json_content, doi):
+    """ this does the work of rewriting elife authors json """
+
+    # Edge case delete one reference
+    if doi == "10.7554/eLife.09376":
+        for i, ref in enumerate(json_content):
+            if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
+                json_content[i]["orcid"] = "0000-0001-7224-925X"
+
+    return json_content

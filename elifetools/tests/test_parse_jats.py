@@ -536,6 +536,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'group'), ('name', u'ICGC Breast Cancer Group'), ('affiliations', [OrderedDict([('name', [u'Cancer Genome Project', u'Wellcome Trust Sanger Institute']), ('address', OrderedDict([('formatted', [u'Hinxton', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Hinxton']), ('country', u'United Kingdom')]))]))])]), ('people', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Elena Provenzano'), ('index', u'Provenzano, Elena')])), ('affiliations', [OrderedDict([('name', [u'Cambridge Breast Unit', u'Addenbrooke\u2019s Hospital, Cambridge University Hospital NHS Foundation Trust and NIHR Cambridge Biomedical Research Centre']), ('address', OrderedDict([('formatted', [u'Cambridge CB2 2QQ', u'UK']), ('components', OrderedDict([('locality', [u'Cambridge CB2 2QQ']), ('country', u'UK')]))]))])])])])])]
          ),
 
+        # 09376 v1, excerpt to rewrite an author ORCID
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="hwp">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09376</article-id><article-id pub-id-type="doi">10.7554/eLife.09376</article-id><contrib-group><contrib contrib-type="author" corresp="yes" id="author-1201"><name><surname>Weis</surname><given-names>Karsten</given-names></name><contrib-id contrib-id-type="orcid">http://orcid.org/000-0001-7224-925X</contrib-id></contrib-group></article-meta></front></article></root>',
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Karsten Weis'), ('index', u'Weis, Karsten')])), ('orcid', '0000-0001-7224-925X')])]
+         ),
+
         )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
