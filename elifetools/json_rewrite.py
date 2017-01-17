@@ -481,7 +481,13 @@ def rewrite_elife_funding_awards(json_content, doi):
 def rewrite_elife_authors_json(json_content, doi):
     """ this does the work of rewriting elife authors json """
 
-    # Edge case delete one reference
+    # Edge case fix an affiliation name
+    if doi == "10.7554/eLife.06956":
+        for i, ref in enumerate(json_content):
+            if ref.get("orcid") and ref.get("orcid") == "0000-0001-6798-0064":
+                json_content[i]["affiliations"][0]["name"] = ["Cambridge"]
+
+    # Edge case fix an ORCID
     if doi == "10.7554/eLife.09376":
         for i, ref in enumerate(json_content):
             if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
