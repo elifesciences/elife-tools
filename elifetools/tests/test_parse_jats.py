@@ -541,6 +541,11 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Karsten Weis'), ('index', u'Weis, Karsten')])), ('orcid', '0000-0001-7224-925X')])]
          ),
 
+        # 06956 v1, excerpt, add an affiliation name to an author
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">06956</article-id><article-id pub-id-type="doi">10.7554/eLife.06956</article-id><contrib-group><contrib contrib-type="author" corresp="yes" id="author-17393"><name><surname>Alfred</surname><given-names>Jane</given-names></name><x> </x><role>Consultant Editor</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6798-0064</contrib-id><xref ref-type="aff" rid="aff1"/></contrib><aff id="aff1"><addr-line><named-content content-type="city">Cambridge</named-content></addr-line>, <country>United Kingdom</country></aff></contrib-group></article-meta></front></article></root>',
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Jane Alfred'), ('index', u'Alfred, Jane')])), ('orcid', u'0000-0001-6798-0064'), ('affiliations', [OrderedDict([('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))])), ('name', ['Cambridge'])])])])]
+         ),
+
         )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
