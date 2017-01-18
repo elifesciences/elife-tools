@@ -2260,7 +2260,7 @@ def decision_letter(soup):
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
-    return sub_article_content
+    return rewrite_json("decision_letter_json", soup, sub_article_content)
 
 
 def author_response(soup):
@@ -3188,7 +3188,7 @@ def datasets_json(soup, html_flag=True):
         if dataset_related_object_json(related_object) != {}:
             datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
 
-    return datasets_json
+    return rewrite_json("datasets_json", soup, datasets_json)
 
 def poa_supplementary_material_block_content(tag):
     tag_content = OrderedDict()

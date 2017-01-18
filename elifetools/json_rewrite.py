@@ -494,3 +494,45 @@ def rewrite_elife_authors_json(json_content, doi):
                 json_content[i]["orcid"] = "0000-0001-7224-925X"
 
     return json_content
+
+def rewrite_elife_datasets_json(json_content, doi):
+    """ this does the work of rewriting elife datasets json """
+
+    # Add dates
+    if doi == "10.7554/eLife.10856":
+        if json_content.get("generated"):
+            datasets_authors_for_10856 = [{"type": "group", "name": "Dagdas YF"}, {"type": "group", "name": "Belhaj K"}, {"type": "group", "name": "Maqbool A"}, {"type": "group", "name": "Chaparro-Garcia A"}, {"type": "group", "name": "Pandey P"}, {"type": "group", "name": "Petre B"}, {"type": "group", "name": "Tabassum N"}, {"type": "group", "name": "Cruz-Mireles N"}, {"type": "group", "name": "Hughes RK"}, {"type": "group", "name": "Sklenar J"}, {"type": "group", "name": "Win J"}, {"type": "group", "name": "Menke F"}, {"type": "group", "name": "Findlay K"}, {"type": "group", "name": "Banfield MJ"}, {"type": "group", "name": "Kamoun S"}, {"type": "group", "name": "Bozkurt TO"}]
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro7":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2016"
+                    if not dataset.get("title"):
+                        dataset["title"] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = datasets_authors_for_10856
+                    if dataset.get("uri") and dataset["uri"] == "http://www.ncbi.nlm.nih.":
+                         dataset["uri"] = "https://www.ncbi.nlm.nih.gov/nuccore/976151098/"
+                if dataset.get("id") and dataset["id"] == "dataro8":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2015"
+                    if not dataset.get("title"):
+                        dataset["title"] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = datasets_authors_for_10856
+                    if dataset.get("uri") and dataset["uri"] == "http://www.ncbi.nlm.nih.":
+                         dataset["uri"] = "https://www.ncbi.nlm.nih.gov/nuccore/976151096/"
+                if dataset.get("id") and dataset["id"] == "dataro9":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = datasets_authors_for_10856
+
+    return json_content
+
+def rewrite_elife_decision_letter_json(json_content, doi):
+    """ this does the work of rewriting elife decision letter json """
+
+    # Add description
+    if doi == "10.7554/eLife.10856":
+        if json_content.get("description") is None:
+            json_content["description"] = [{"type": "paragraph", "text": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included."}]
+
+    return json_content
