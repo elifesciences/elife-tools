@@ -920,9 +920,9 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 elif rid.startswith('fn'):
                     add_to_list_dictionary(contrib_refs, 'foot-note', rid)
             elif ref_type == "other":
-                if rid.startswith('par-'):
+                if rid.startswith('par-') or rid.startswith('fund'):
                     add_to_list_dictionary(contrib_refs, 'funding', rid)
-                elif rid.startswith('dataro'):
+                elif rid.startswith('dataro') or rid.startswith('dataset'):
                     add_to_list_dictionary(contrib_refs, 'related-object', rid)
 
     if len(contrib_refs) > 0:
