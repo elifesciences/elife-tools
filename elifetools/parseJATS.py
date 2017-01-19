@@ -861,35 +861,7 @@ def contrib_phone(contrib_tag):
         phone = first(raw_parser.phone(contrib_tag)).text
     return phone
 
-
-def format_contributor(contrib_tag, soup, detail="brief"):
-    contributor = {}
-    copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
-    copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
-    copy_attribute(contrib_tag.attrs, 'corresp', contributor)
-    copy_attribute(contrib_tag.attrs, 'deceased', contributor)
-    copy_attribute(contrib_tag.attrs, 'id', contributor)
-    contrib_id_tag = first(raw_parser.contrib_id(contrib_tag))
-    if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
-        if contrib_id_tag['contrib-id-type'] == 'group-author-key':
-            contributor['group-author-key'] = node_contents_str(contrib_id_tag)
-        elif contrib_id_tag['contrib-id-type'] == 'orcid':
-            contributor['orcid'] = node_contents_str(contrib_id_tag)
-    set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
-    set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
-    set_if_value(contributor, "email", contrib_email(contrib_tag))
-    set_if_value(contributor, "phone", contrib_phone(contrib_tag))
-    name_tag = first(extract_nodes(contrib_tag, "name"))
-    if name_tag is not None:
-        set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
-        set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
-        set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
-
-    # on-behalf-of
-    if contrib_tag.name == 'on-behalf-of':
-        contributor['type'] = 'on-behalf-of'
-        contributor['on-behalf-of'] = node_contents_str(contrib_tag)
-
+def format_contrib_refs(contrib_tag, soup):
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
     ref_type_aff_count = 0
@@ -924,7 +896,53 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                     add_to_list_dictionary(contrib_refs, 'funding', rid)
                 elif rid.startswith('dataro') or rid.startswith('dataset'):
                     add_to_list_dictionary(contrib_refs, 'related-object', rid)
+    return contrib_refs, ref_type_aff_count
 
+def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
+                       group_author_key=None):
+    contributor = {}
+    copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
+    # Set contrib type if passed via params
+    if not contributor.get('type') and contrib_type:
+        contributor['type'] = contrib_type
+    copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
+    copy_attribute(contrib_tag.attrs, 'corresp', contributor)
+    copy_attribute(contrib_tag.attrs, 'deceased', contributor)
+    copy_attribute(contrib_tag.attrs, 'id', contributor)
+    contrib_id_tag = first(raw_parser.contrib_id(contrib_tag))
+    if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
+        if contrib_id_tag['contrib-id-type'] == 'group-author-key':
+            contributor['group-author-key'] = node_contents_str(contrib_id_tag)
+    # Set group-author-key if passed via params
+    if not contributor.get('group-author-key') and group_author_key:
+        contributor['group-author-key'] = group_author_key
+    if raw_parser.collab(contrib_tag):
+        collab_tag = first(raw_parser.collab(contrib_tag))
+        if collab_tag:
+            # Clean up if there are tags inside the collab tag
+            collab_tag = remove_tag_from_tag(collab_tag, 'contrib-group')
+            contributor['collab'] = node_contents_str(collab_tag).rstrip()
+
+    # Check if it is not a group author
+    if not is_author_group_author(contrib_tag):
+        if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
+            if contrib_id_tag['contrib-id-type'] == 'orcid':
+                contributor['orcid'] = node_contents_str(contrib_id_tag)
+        set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
+        set_if_value(contributor, "email", contrib_email(contrib_tag))
+        set_if_value(contributor, "phone", contrib_phone(contrib_tag))
+        name_tag = first(extract_nodes(contrib_tag, "name"))
+        if name_tag is not None:
+            set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
+            set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
+            set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+
+    # on-behalf-of
+    if contrib_tag.name == 'on-behalf-of':
+        contributor['type'] = 'on-behalf-of'
+        contributor['on-behalf-of'] = node_contents_str(contrib_tag)
+
+    contrib_refs, ref_type_aff_count = format_contrib_refs(contrib_tag, soup)
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
@@ -1025,7 +1043,6 @@ def contributors(soup, detail="brief"):
 #
 
 def is_author_non_byline(tag, contrib_type="author non-byline"):
-    print tag.parent.parent.name
     if tag and tag.get("contrib-type") and tag.get("contrib-type") == contrib_type:
         return True
     elif tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab":
@@ -1036,22 +1053,37 @@ def authors_non_byline(soup):
     """Non-byline authors for group author members"""
     contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type=None)
     tags = filter(lambda tag: is_author_non_byline(tag) is True, contrib_tags)
-    return format_authors(soup, tags)
+    contrib_type="author non-byline"
+    return format_authors(soup, tags, detail="full", contrib_type=contrib_type)
 
 def authors(soup, contrib_type = "author", detail = "full"):
     contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
     tags = filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags)
     return format_authors(soup, tags, detail)
 
+def is_author_group_author(tag):
+    if raw_parser.collab(tag):
+        return True
+    else:
+        return False
 
-def format_authors(soup, contrib_tags, detail = "full"):
+def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     authors = []
     position = 1
     
     article_doi = doi(soup)
     
+    group_author_id = 1
     for tag in contrib_tags:
-        author = format_contributor(tag, soup, detail)
+        
+        # Set the group author key if missing
+        if is_author_group_author(tag):
+            group_author_key = 'group-author-id' + str(group_author_id)
+            group_author_id = group_author_id + 1
+        else:
+            group_author_key = None
+            
+        author = format_contributor(tag, soup, detail, contrib_type, group_author_key)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):
