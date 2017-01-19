@@ -6,6 +6,9 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 """
 
+def article_meta(soup):
+    return first(extract_nodes(soup, "article-meta"))
+
 def article_title(soup):
     return first(extract_nodes(soup, "article-title"))
 
@@ -192,7 +195,10 @@ def article_contributors(soup):
                         and tag.parent.parent.name == "article-meta", contributor_tags)
 
 def authors(soup, contrib_type = "author"):
-    return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    if contrib_type:
+        return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    else:
+        return extract_nodes(soup, "contrib")
 
 def caption(soup):
     return first(extract_nodes(soup, "caption"))

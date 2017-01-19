@@ -1024,20 +1024,33 @@ def contributors(soup, detail="brief"):
 # HERE BE DRAGONS
 #
 
+def is_author_non_byline(tag, contrib_type="author non-byline"):
+    print tag.parent.parent.name
+    if tag and tag.get("contrib-type") and tag.get("contrib-type") == contrib_type:
+        return True
+    elif tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab":
+        return True
+    return False
+
 def authors_non_byline(soup):
     """Non-byline authors for group author members"""
-    authors_list = authors(soup, contrib_type = "author non-byline")
-    return authors_list
+    contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type=None)
+    tags = filter(lambda tag: is_author_non_byline(tag) is True, contrib_tags)
+    return format_authors(soup, tags)
 
 def authors(soup, contrib_type = "author", detail = "full"):
+    contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
+    tags = filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags)
+    return format_authors(soup, tags, detail)
 
-    tags = raw_parser.authors(soup, contrib_type)
+
+def format_authors(soup, contrib_tags, detail = "full"):
     authors = []
     position = 1
     
     article_doi = doi(soup)
     
-    for tag in tags:
+    for tag in contrib_tags:
         author = format_contributor(tag, soup, detail)
 
         # If not empty, add position value, append, then increment the position counter
