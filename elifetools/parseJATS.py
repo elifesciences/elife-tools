@@ -1098,19 +1098,24 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     
     article_doi = doi(soup)
     
-    group_author_id = 1
+    group_author_id = 0
+    prev_group_author_id = 0
     for tag in contrib_tags:
-        
+
         # Set the group author key if missing
         if is_author_group_author(tag):
-            group_author_key = 'group-author-id' + str(group_author_id)
             group_author_id = group_author_id + 1
+            group_author_key = 'group-author-id' + str(group_author_id)
         else:
             group_author_key = None
 
-        # Set the contrib_type for non-byline authors
+        # Set the contrib_type and group author key for non-byline authors
         if is_author_non_byline(tag) is True and contrib_type is None:
             author_contrib_type = 'author non-byline'
+            group_author_key = 'group-author-id' + str(prev_group_author_id)
+        elif is_author_non_byline(tag) is False and is_author_group_author(tag) is not True:
+            author_contrib_type = contrib_type
+            group_author_key = None
         else:
             author_contrib_type = contrib_type
 
@@ -1124,7 +1129,10 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
                         
             authors.append(author)
             position += 1
-        
+
+        prev_group_author_id = group_author_id
+
+
     return authors
 
 
