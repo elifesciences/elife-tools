@@ -962,6 +962,10 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
             and is_author_group_author(contrib_tag.parent.parent.parent)):
             set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
+    elif contributor.get('corresp') and not contributor.get('email'):
+        # For corresponding group authors, look for an email address anywhere in the group
+        if raw_parser.email(contrib_tag):
+            contributor['email'] = node_contents_str(firstnn(raw_parser.email(contrib_tag)))
 
     # on-behalf-of
     if contrib_tag.name == 'on-behalf-of':
