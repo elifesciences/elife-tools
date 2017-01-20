@@ -2672,9 +2672,16 @@ def authors_json(soup):
             if contributor.get("group-author-key") == group_author_key:
                 author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
                                             author_competing_interests_data, equal_contributions_map)
-                if "people" not in group_author:
-                    group_author["people"] = []
-                group_author["people"].append(author_json)
+                if contributor.get("sub-group"):
+                    if "groups" not in group_author:
+                        group_author["groups"] = OrderedDict()
+                    if contributor.get("sub-group") not in group_author["groups"]:
+                        group_author["groups"][contributor.get("sub-group")] = []
+                    group_author["groups"][contributor.get("sub-group")].append(author_json)
+                else:
+                    if "people" not in group_author:
+                        group_author["people"] = []
+                    group_author["people"].append(author_json)
 
     authors_json_data_rewritten = rewrite_json("authors_json", soup, authors_json_data)
     return authors_json_data_rewritten
