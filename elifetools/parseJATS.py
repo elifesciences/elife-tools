@@ -861,6 +861,27 @@ def contrib_phone(contrib_tag):
         phone = first(raw_parser.phone(contrib_tag)).text
     return phone
 
+def contrib_inline_aff(contrib_tag):
+    """
+    Given a contrib tag, look for an aff tag directly inside it
+    """
+    aff_tags = []
+    for child_tag in contrib_tag:
+        if child_tag and child_tag.name and child_tag.name == "aff":
+            aff_tags.append(child_tag)
+    return aff_tags
+
+def contrib_xref(contrib_tag, ref_type):
+    """
+    Given a contrib tag, look for an xref tag of type ref_type directly inside the contrib tag
+    """
+    aff_tags = []
+    for child_tag in contrib_tag:
+        if (child_tag and child_tag.name and child_tag.name == "xref"
+            and child_tag.get('ref-type') and child_tag.get('ref-type') == ref_type):
+            aff_tags.append(child_tag)
+    return aff_tags
+
 def format_contrib_refs(contrib_tag, soup):
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
@@ -920,8 +941,9 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         collab_tag = first(raw_parser.collab(contrib_tag))
         if collab_tag:
             # Clean up if there are tags inside the collab tag
-            collab_tag = remove_tag_from_tag(collab_tag, 'contrib-group')
-            contributor['collab'] = node_contents_str(collab_tag).rstrip()
+            tag_copy = duplicate_tag(collab_tag)
+            tag_copy = remove_tag_from_tag(tag_copy, 'contrib-group')
+            contributor['collab'] = node_contents_str(tag_copy).rstrip()
 
     # Check if it is not a group author
     if not is_author_group_author(contrib_tag):
@@ -948,7 +970,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
 
     if detail == "brief" or ref_type_aff_count == 0:
         # Brief format only allows one aff and it must be within the contrib tag
-        aff_tag = first(extract_nodes(contrib_tag, "aff"))
+        aff_tag = firstnn(contrib_inline_aff(contrib_tag))
         if aff_tag:
             contributor['affiliations'] = []
             contrib_affs = {}
@@ -975,11 +997,10 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             author_name += contributor['surname']
         if author_name != "":
             contributor['author'] = author_name
-    
-        aff_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "aff")
+
+        aff_tags = contrib_xref(contrib_tag, "aff")
         if len(aff_tags) <= 0:
-            # No aff found? Look for an aff tag inside the contrib tag
-            aff_tags = extract_nodes(contrib_tag, "aff")
+            aff_tags = contrib_inline_aff(contrib_tag)
         if aff_tags:
             contributor['affiliations'] = []
         for aff_tag in aff_tags:
@@ -1002,7 +1023,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
                 contributor['affiliations'].append(contrib_affs)
     
         # Add xref linked correspondence author notes if applicable
-        corresp_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "corresp")
+        corresp_tags = contrib_xref(contrib_tag, "corresp")
         if(len(corresp_tags) > 0):
             if 'notes-corresp' not in contributor:
                 contributor['notes-corresp'] = []
@@ -1016,7 +1037,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
                     contributor['notes-corresp'].append(author_notes)
         
         # Add xref linked footnotes if applicable
-        fn_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "fn")
+        fn_tags = contrib_xref(contrib_tag, "fn")
         if(len(fn_tags) > 0):
             if 'notes-fn' not in contributor:
                 contributor['notes-fn'] = []
@@ -1033,9 +1054,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
 
 def contributors(soup, detail="brief"):
     contrib_tags = raw_parser.article_contributors(soup)
-    contributors = []
-    for tag in contrib_tags:
-        contributors.append(format_contributor(tag, soup, detail))
+    contributors = format_authors(soup, contrib_tags, detail)
     return contributors
 
 #
@@ -1082,14 +1101,20 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
             group_author_id = group_author_id + 1
         else:
             group_author_key = None
-            
-        author = format_contributor(tag, soup, detail, contrib_type, group_author_key)
+
+        # Set the contrib_type for non-byline authors
+        if is_author_non_byline(tag) is True and contrib_type is None:
+            author_contrib_type = 'author non-byline'
+        else:
+            author_contrib_type = contrib_type
+
+        author = format_contributor(tag, soup, detail, author_contrib_type, group_author_key)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):
-            author['article_doi'] = article_doi
-            
-            author['position'] = position
+            if detail == "full":
+                author['article_doi'] = article_doi
+                author['position'] = position
                         
             authors.append(author)
             position += 1

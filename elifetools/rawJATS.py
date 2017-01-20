@@ -190,9 +190,12 @@ def contributors(soup):
     return extract_nodes(soup, "contrib")
 
 def article_contributors(soup):
-    contributor_tags = extract_nodes(soup, ["contrib","on-behalf-of"])
-    return filter(lambda tag: tag.parent.name == "contrib-group"
-                        and tag.parent.parent.name == "article-meta", contributor_tags)
+    article_meta_tag = article_meta(soup)
+    if article_meta_tag:
+        contributor_tags = extract_nodes(article_meta_tag, ["contrib","on-behalf-of"])
+        return filter(lambda tag: tag.parent.name == "contrib-group", contributor_tags)
+    else:
+        return None
 
 def authors(soup, contrib_type = "author"):
     if contrib_type:
