@@ -958,6 +958,10 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
             set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
             set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+        # Get the sub-group value from the parent role tag if it is inside a group
+        if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
+            and is_author_group_author(contrib_tag.parent.parent.parent)):
+            set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
 
     # on-behalf-of
     if contrib_tag.name == 'on-behalf-of':
@@ -1081,10 +1085,12 @@ def authors(soup, contrib_type = "author", detail = "full"):
     return format_authors(soup, tags, detail)
 
 def is_author_group_author(tag):
-    if raw_parser.collab(tag):
-        return True
-    else:
-        return False
+    if tag:
+        for child_tag in tag:
+            # look at the child tags for a collab tag
+            if child_tag.name == "collab":
+                return True
+    return False
 
 def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     authors = []
