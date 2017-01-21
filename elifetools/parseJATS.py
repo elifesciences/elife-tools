@@ -1566,7 +1566,14 @@ def competing_interests(soup, fntype_filter):
     if not competing_interests_section:
         return None
     fn = extract_nodes(first(competing_interests_section), "fn")
-    interests = footnotes(fn, fntype_filter)
+    if type(fntype_filter) == list:
+        interests = []
+        for fntype in fntype_filter:
+            fn_interests = footnotes(fn, fntype)
+        if fn_interests:
+            interests = interests + fn_interests
+    else:
+        interests = footnotes(fn, fntype_filter)
 
     return interests
 

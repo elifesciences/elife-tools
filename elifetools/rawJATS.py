@@ -77,7 +77,9 @@ def acknowledgements(soup):
     return first(extract_nodes(soup, "ack"))
 
 def conflict(soup):
-    return extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags += extract_nodes(soup, "fn", attr = "fn-type", value = "COI-statement")
+    return conflict_tags
 
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
