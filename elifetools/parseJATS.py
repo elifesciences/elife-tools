@@ -2039,7 +2039,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(title_text(tag)))
@@ -2075,7 +2075,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2132,7 +2132,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "fig":
         tag_content["type"] = "image"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
@@ -2188,7 +2188,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             return OrderedDict()
 
         tag_content["type"] = "video"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2217,7 +2217,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
 
     elif tag.name == "supplementary-material":
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2274,7 +2274,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "app":
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
 
@@ -2322,7 +2322,7 @@ def decision_letter(soup):
 
     if sub_article:
         if sub_article_doi(sub_article):
-            sub_article_content["doi"] = sub_article_doi(sub_article)
+            sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)
     else:
         raw_body = None
@@ -2360,7 +2360,7 @@ def author_response(soup):
 
     if sub_article:
         if sub_article_doi(sub_article):
-            sub_article_content["doi"] = sub_article_doi(sub_article)
+            sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)
     else:
         raw_body = None
@@ -2377,7 +2377,7 @@ def author_response(soup):
 
 def render_abstract_json(abstract_tag):
     abstract_json = OrderedDict()
-    set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
+    set_if_value(abstract_json, "doi", doi_uri_to_doi(object_id_doi(abstract_tag)))
     for child_tag in remove_doi_paragraph(body_blocks(abstract_tag)):
         if body_block_content(child_tag) != {}:
             if "content" not in abstract_json:
