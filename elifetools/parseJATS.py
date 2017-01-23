@@ -2890,7 +2890,7 @@ def references_json(soup, html_flag=True):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
 
         # titles
-        if ref.get("publication-type") in ["journal", "confproc", "preprint"]:
+        if ref.get("publication-type") in ["journal", "confproc", "preprint", "periodical"]:
             set_if_value(ref_content, "articleTitle", ref.get("full_article_title"))
         elif ref.get("publication-type") in ["thesis", "clinicaltrial", "other"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
@@ -2920,12 +2920,15 @@ def references_json(soup, html_flag=True):
                 ref.get("conf-name"), None))
 
         # source
-        if ref.get("publication-type") in ["journal"]:
+        if ref.get("publication-type") in ["journal", "periodical"]:
             if ref.get("source"):
-                journal = OrderedDict()
-                journal["name"] = []
-                journal["name"].append(ref.get("source"))
-                ref_content["journal"] = journal
+                place = OrderedDict()
+                place["name"] = []
+                place["name"].append(ref.get("source"))
+                if ref.get("publication-type") == "journal":
+                    ref_content["journal"] = place
+                elif ref.get("publication-type") == "periodical":
+                    ref_content["periodical"] = place
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
         elif ref.get("publication-type") in ["patent"]:
