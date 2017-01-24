@@ -16,7 +16,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_simple_tags(html_string, 'underline', 'span', '<span class="underline">')
     html_string = replace_simple_tags(html_string, 'sc', 'span', '<span class="small-caps">')
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
-    html_string = replace_simple_tags(html_string)
+    html_string = replace_simple_tags(html_string, 'break', 'br')
     # Run it through BeautifulSoup as HTML if it contains tags, this
     #  encodes unmatched angle brackets
     if '<' in html_string or '>' in html_string:
