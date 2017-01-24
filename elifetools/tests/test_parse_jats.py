@@ -1076,7 +1076,7 @@ class TestParseJats(unittest.TestCase):
         # Example of boxed-text with content inside its caption tag
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',
          [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1.'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
-         )
+         ),
 
         # code block, based on elife 20352 v2, contains new lines too
         ('''<root><p>A paragraph</p><p><code>&lt;MotifGraft name=&quot;motif_grafting&quot;
