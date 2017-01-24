@@ -988,6 +988,27 @@ class TestParseJats(unittest.TestCase):
         OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00109.004'), ('id', u'fig2'), ('label', u'Figure 2.'), ('title', u'Imaging of donor/acceptor interface morphologies by cryo-EM before and after Ca<sup>2+</sup> addition'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Imaging of donor/acceptor interface morphologies by cryo-EM before and after Ca<sup>2+</sup> addition. (<b>A\u2013F</b>) Cryo-EM images of mixtures of donor (synaptobrevin and synaptotagmin 1) and acceptor (syntaxin and SNAP-25) vesicles before (<b>A\u2013C</b>) and approximately 35 s after (<b>D\u2013F</b>) 500 \u03bcM Ca<sup>2+</sup> addition (panels B, C, E, and F are close-up views). Vesicles were imaged in the holes of the substrate carbon film, visible as the darker areas in the image, in conditions that clearly show the lipid bilayers (\u2018Materials and methods\u2019). The particular images shown in this figure were selected out of total of 16 (before Ca<sup>2+</sup> addition) and 21 (after Ca<sup>2+</sup> addition) EM micrographs, respectively, with emphasis on showing point contacts before Ca<sup>2+</sup> addition and extended interfaces after Ca<sup>2+</sup> addition in order to illustrate the variety of these particular states. Arrows indicate interfaces between vesicles that are approximately perpendicular to the direction of the projection (see \u2018Materials and methods\u2019 for definitions of all contact and interface types). Large black arrow: point contact (representative close-up in B), small black/white arrow: hemifusion diaphragm (representative close-ups in C and E), and large white arrow: extended close contact (representative close-up in F). Scale bars in A and D are 100 nm, and 20 nm in B, C, E, and F. (<b>G</b>) Distribution of vesicle sizes before and after Ca<sup>2+</sup> addition. Vesicle diameters were calculated from all cryo-EM images in both conditions (\u2018Materials and methods\u2019). (<b>H</b>) Bar graph of the percentage of various vesicle interfaces, that is, point contacts, hemifusion diaphragms, and extended close contacts (including a few instances of mixed, i.e., extended/hemifused, interfaces), normalized with respect to the total number of interfaces observed before and after addition of 500 \u03bcM Ca<sup>2+</sup>, respectively (\u2018Materials and methods\u2019). In addition to the changes in the distribution of vesicle interfaces upon Ca<sup>2+</sup> addition, some amount of complete fusion between vesicles occurred as indicated by the shift of the diameter distribution in panel G towards larger values. Source files of all cryo-EM micrographs used for the quantitative analysis are available in the <a href="#SD1-data">Figure 2\u2014source data 1</a>.')])]), ('alt', ''), ('uri', u'elife-00109-fig2-v1.tif'), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00109.005'), ('id', u'SD1-data'), ('label', u'Figure 2\u2014source data 1.'), ('title', u'Source files for cryo-EM data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'This zip archive contains all cryo-EM images used for the quantitative analyses shown in Fig. 2. The folder named \u201cNo_Ca++\u201d contains the images before Ca++ addition (individual files are named P3_1_**. tif or jpg), and folder named \u201cWith_Ca++\u201d contains the images \u223c35s after Ca++ addition (individual files are named P3_3_**.tif or jpg).')]), OrderedDict([('type', 'paragraph'), ('text', u'Images were collected in low dose conditions at 200 kV acceleration voltage on a CM200 FEG electron microscope (FEI) with a 2k \xd7 2k Gatan UltraScan 1000 camera, at 50,000\xd7 magnification and 1.5 mm underfocus.')]), OrderedDict([('type', 'paragraph'), ('text', u'The full resolution data were exported as 16 bit \u201ctif\u201d files (2048 \xd7 2048 pixels, scale 0.2 nm/pixel at specimen (the corresponding files have the extension \u201ctif\u201d). Note that these files cannot not be viewed with a standard picture viewer, but must be viewed with a program, such as \u201cImageJ\u201d. To facilitate easier viewing, the original images were converted to smaller (1024\xd71024, 0.4 nm/pixel), contrast adjusted jpeg images (8 bits) for easy and immediate visualization with commonly used picture viewers (the corresponding files have the extension \u201cjpg\u201d).')])]), ('mediaType', u'application/zip'), ('uri', u'elife-00109-fig2-data1-v1.zip'), ('filename', u'elife-00109-fig2-data1-v1.zip')])])])
          ),
 
+        # code block, based on elife 20352 v2, contains new lines too
+        ('''<root><code>&lt;MotifGraft name=&quot;motif_grafting&quot;
+      context_structure=&quot;%%context%%&quot;
+      motif_structure=&quot;truncatedBH3.pdb&quot;
+      RMSD_tolerance=&quot;3.0&quot;
+      NC_points_RMSD_tolerance=&quot;2.0&quot;
+      clash_score_cutoff=&quot;0&quot;
+      clash_test_residue=&quot;ALA&quot;
+      hotspots=&quot;9:12:13:14:16:17&quot;
+      combinatory_fragment_size_delta=&quot;0:0&quot;
+      max_fragment_replacement_size_delta=&quot;0:0&quot;
+      full_motif_bb_alignment=&quot;1&quot;
+      allow_independent_alignment_per_fragment=&quot;0&quot;
+      graft_only_hotspots_by_replacement=&quot;0&quot;
+      only_allow_if_N_point_match_aa_identity=&quot;0&quot;
+      only_allow_if_C_point_match_aa_identity=&quot;0&quot;
+      revert_graft_to_native_sequence=&quot;1&quot;
+      allow_repeat_same_graft_output=&quot;1&quot;/&gt;</code></root>''',
+        OrderedDict([('type', 'code'), ('code', u'<MotifGraft name="motif_grafting"\n      context_structure="%%context%%"\n      motif_structure="truncatedBH3.pdb"\n      RMSD_tolerance="3.0"\n      NC_points_RMSD_tolerance="2.0"\n      clash_score_cutoff="0"\n      clash_test_residue="ALA"\n      hotspots="9:12:13:14:16:17"\n      combinatory_fragment_size_delta="0:0"\n      max_fragment_replacement_size_delta="0:0"\n      full_motif_bb_alignment="1"\n      allow_independent_alignment_per_fragment="0"\n      graft_only_hotspots_by_replacement="0"\n      only_allow_if_N_point_match_aa_identity="0"\n      only_allow_if_C_point_match_aa_identity="0"\n      revert_graft_to_native_sequence="1"\n      allow_repeat_same_graft_output="1"/>')])
+        ),
+
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -1055,7 +1076,28 @@ class TestParseJats(unittest.TestCase):
         # Example of boxed-text with content inside its caption tag
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',
          [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1.'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
-         )
+         ),
+
+        # code block, based on elife 20352 v2, contains new lines too
+        ('''<root><p>A paragraph</p><p><code>&lt;MotifGraft name=&quot;motif_grafting&quot;
+      context_structure=&quot;%%context%%&quot;
+      motif_structure=&quot;truncatedBH3.pdb&quot;
+      RMSD_tolerance=&quot;3.0&quot;
+      NC_points_RMSD_tolerance=&quot;2.0&quot;
+      clash_score_cutoff=&quot;0&quot;
+      clash_test_residue=&quot;ALA&quot;
+      hotspots=&quot;9:12:13:14:16:17&quot;
+      combinatory_fragment_size_delta=&quot;0:0&quot;
+      max_fragment_replacement_size_delta=&quot;0:0&quot;
+      full_motif_bb_alignment=&quot;1&quot;
+      allow_independent_alignment_per_fragment=&quot;0&quot;
+      graft_only_hotspots_by_replacement=&quot;0&quot;
+      only_allow_if_N_point_match_aa_identity=&quot;0&quot;
+      only_allow_if_C_point_match_aa_identity=&quot;0&quot;
+      revert_graft_to_native_sequence=&quot;1&quot;
+      allow_repeat_same_graft_output=&quot;1&quot;/&gt;</code></p></root>''',
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'A paragraph')]), OrderedDict([('type', 'code'), ('code', u'<MotifGraft name="motif_grafting"\n      context_structure="%%context%%"\n      motif_structure="truncatedBH3.pdb"\n      RMSD_tolerance="3.0"\n      NC_points_RMSD_tolerance="2.0"\n      clash_score_cutoff="0"\n      clash_test_residue="ALA"\n      hotspots="9:12:13:14:16:17"\n      combinatory_fragment_size_delta="0:0"\n      max_fragment_replacement_size_delta="0:0"\n      full_motif_bb_alignment="1"\n      allow_independent_alignment_per_fragment="0"\n      graft_only_hotspots_by_replacement="0"\n      only_allow_if_N_point_match_aa_identity="0"\n      only_allow_if_C_point_match_aa_identity="0"\n      revert_graft_to_native_sequence="1"\n      allow_repeat_same_graft_output="1"/>')])])])]
+        ),
 
         )
     def test_body_block_content_render(self, xml_content, expected):
