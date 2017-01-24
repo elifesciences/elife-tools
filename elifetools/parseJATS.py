@@ -1898,7 +1898,7 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
 
 def body_block_nodenames():
     return ["sec", "p", "table-wrap", "boxed-text",
-            "disp-formula", "disp-quote", "fig", "fig-group", "list", "media"]
+            "disp-formula", "disp-quote", "fig", "fig-group", "list", "media", "code"]
 
 def body_block_content_render(tag, recursive=False, base_url=None):
     """
@@ -1920,7 +1920,7 @@ def body_block_content_render(tag, recursive=False, base_url=None):
     tag_content_content = []
 
     # Collect the content of the tag but only for some tags
-    if tag.name not in ["p", "fig", "table-wrap", "list", "media", "disp-quote"]:
+    if tag.name not in ["p", "fig", "table-wrap", "list", "media", "disp-quote", "code"]:
         for child_tag in tag:
             if not(hasattr(child_tag, 'name')):
                 continue
@@ -2284,6 +2284,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
+    elif tag.name == "code":
+        tag_content["type"] = "code"
+        set_if_value(tag_content, "code", node_contents_str(tag))
 
     return tag_content
 
