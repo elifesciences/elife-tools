@@ -2510,6 +2510,10 @@ def author_email_addresses(author, correspondence):
             if "email" in affiliation and affiliation["email"] not in email_addresses:
                 email_addresses.append(affiliation["email"])
 
+    # Also look at the author attributes
+    if author.get("corresp") and author.get("email"):
+        email_addresses.append(author["email"])
+
     if email_addresses != []:
         return email_addresses
     else:
