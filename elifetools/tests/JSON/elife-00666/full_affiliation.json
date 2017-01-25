@@ -1,0 +1,18 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Production", 
+            "country": "United Kingdom", 
+            "institution": "eLife", 
+            "city": "Cambridge"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Department of Technology", 
+            "country": "United Kingdom", 
+            "institution": "eLife", 
+            "city": "Cambridge"
+        }
+    }
+]

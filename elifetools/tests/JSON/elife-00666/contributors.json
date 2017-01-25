@@ -1,0 +1,247 @@
+[
+    {
+        "surname": "Harrison", 
+        "suffix": "Jnr", 
+        "corresp": "yes", 
+        "email": "m.harrison@elifesciences.org", 
+        "given-names": "Melissa", 
+        "references": {
+            "present-address": [
+                "pa1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "fund1"
+            ], 
+            "related-object": [
+                "dataset1", 
+                "dataset2"
+            ], 
+            "foot-note": [
+                "fn1", 
+                "fn2"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "equal-contrib": [
+                "equal-contrib1"
+            ], 
+            "contribution": [
+                "con1"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0003-3523-4408", 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-00001", 
+        "deceased": "yes"
+    }, 
+    {
+        "surname": "Gilbert", 
+        "given-names": "James F", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "fund1", 
+                "fund2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib1"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-00002"
+    }, 
+    {
+        "references": {
+            "equal-contrib": [
+                "equal-contrib2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "type": "author", 
+        "group-author-key": "group-author-id1", 
+        "collab": "eLife Editorial Production Group"
+    }, 
+    {
+        "surname": "Shearer", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Alistair", 
+        "sub-group": "Writing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Caton", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Hannah", 
+        "sub-group": "Writing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Chan", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Wei Mun", 
+        "sub-group": "Editing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Drury", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Hannah", 
+        "sub-group": "Editing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Guerreiro", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Maria", 
+        "sub-group": "Editing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Richmond", 
+        "group-author-key": "group-author-id1", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Susanna", 
+        "sub-group": "Editing group", 
+        "type": "author non-byline"
+    }, 
+    {
+        "group-author-key": "group-author-id2", 
+        "corresp": "yes", 
+        "collab": "eLife Technology Group", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf3"
+            ], 
+            "equal-contrib": [
+                "equal-contrib2"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "email": "c.wilkinson@elifesciences.org"
+    }, 
+    {
+        "surname": "Nott", 
+        "given-names": "Graham", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2", 
+        "affiliations": [
+            {
+                "country": "Canada", 
+                "institution": "Graham Nott Enterprises", 
+                "city": "Victoria"
+            }
+        ]
+    }, 
+    {
+        "surname": "Wilkinson", 
+        "group-author-key": "group-author-id2", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Chris", 
+        "orcid": "http://orcid.org/0000-0003-4921-6155", 
+        "type": "author non-byline", 
+        "email": "c.wilkinson@elifesciences.org"
+    }, 
+    {
+        "surname": "Skibinski", 
+        "given-names": "Luke", 
+        "type": "author non-byline", 
+        "group-author-key": "group-author-id2", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ]
+    }, 
+    {
+        "type": "on-behalf-of", 
+        "on-behalf-of": "for the eLife Staff Team"
+    }, 
+    {
+        "surname": "Collings", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife Sciences"
+            }
+        ], 
+        "given-names": "Andrew", 
+        "role": "Reviewing Editor", 
+        "type": "editor", 
+        "id": "author-10"
+    }
+]

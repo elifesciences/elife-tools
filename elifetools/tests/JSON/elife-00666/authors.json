@@ -1,0 +1,164 @@
+[
+    {
+        "notes-fn": [
+            "\n\u2020\nThese authors contributed equally to this work\n", 
+            "\n\u00a7\nDepartment of Wellcome Trust, Sanger Institute, London, United Kingdom\n", 
+            "\n#\nDeceased. (not really!!)\n", 
+            "\n\u00b6\nThis footnote text must work in isolation as nothing is processed on the html view to make it \"work\"\n", 
+            "\nChair of JATS4R\n", 
+            "\nCompleted the XML mapping exercise and wrote this XML example\n"
+        ], 
+        "surname": "Harrison", 
+        "suffix": "Jnr", 
+        "author": "Melissa Harrison", 
+        "article_doi": "10.7554/eLife.00666", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Production", 
+                "city": "Cambridge", 
+                "institution": "eLife", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "email": "m.harrison@elifesciences.org", 
+        "person_id": 1, 
+        "given-names": "Melissa", 
+        "references": {
+            "present-address": [
+                "pa1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "fund1"
+            ], 
+            "related-object": [
+                "dataset1", 
+                "dataset2"
+            ], 
+            "foot-note": [
+                "fn1", 
+                "fn2"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "equal-contrib": [
+                "equal-contrib1"
+            ], 
+            "contribution": [
+                "con1"
+            ]
+        }, 
+        "position": 1, 
+        "orcid": "http://orcid.org/0000-0003-3523-4408", 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-00001", 
+        "deceased": "yes"
+    }, 
+    {
+        "surname": "Gilbert", 
+        "notes-fn": [
+            "\n\u2020\nThese authors contributed equally to this work\n", 
+            "\nNo competing interests declared\n", 
+            "\nContributed to the XML mapping exercise and quality checked all the tagging and content\n"
+        ], 
+        "author": "James F Gilbert", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "dept": "Department of Production", 
+                "city": "Cambridge", 
+                "institution": "eLife", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "James F", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "fund1", 
+                "fund2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 2, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-00002"
+    }, 
+    {
+        "group-author-key": "group-author-id1", 
+        "article_doi": "10.7554/eLife.00666", 
+        "collab": "eLife Editorial Production Group", 
+        "references": {
+            "equal-contrib": [
+                "equal-contrib2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "position": 3, 
+        "notes-fn": [
+            "\n\u2021\nThese authors also contributed equally to this work\n", 
+            "\nReviewed the PDF product\n", 
+            "\nNo competing interests declared\n"
+        ], 
+        "type": "author"
+    }, 
+    {
+        "notes-fn": [
+            "\n\u2021\nThese authors also contributed equally to this work\n", 
+            "\nGraham Nott is not an eLife employee\n", 
+            "\nChris Wilkinson, Performed the XML mapping exercise and generated the JSON Schema\nGraham Nott, Wrote the JATSscraper\nLuke Skibinski, Identified missing components from the JATSscraper\n"
+        ], 
+        "group-author-key": "group-author-id2", 
+        "article_doi": "10.7554/eLife.00666", 
+        "corresp": "yes", 
+        "collab": "eLife Technology Group", 
+        "affiliations": [
+            {
+                "dept": "Department of Technology", 
+                "city": "Cambridge", 
+                "institution": "eLife", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf3"
+            ], 
+            "equal-contrib": [
+                "equal-contrib2"
+            ]
+        }, 
+        "position": 4, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "email": "c.wilkinson@elifesciences.org"
+    }
+]

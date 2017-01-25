@@ -524,7 +524,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(expected, tag_content)
 
 
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml", "elife-00666.xml")
     def test_authors_json(self, filename):
         """note elife00351.xml has email inside an inline aff tag, very irregular"""
         soup = parser.parse_document(sample_xml(filename))

@@ -1,0 +1,1958 @@
+[
+    {
+        "article_title": "TIP47 is a key effector for Rab9 localization", 
+        "lpage": "926", 
+        "doi": "10.1083/jcb.200510010", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Aivazian", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Serrano", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfeffer", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "TIP47 is a key effector for Rab9 localization", 
+        "publication-type": "journal", 
+        "volume": "173", 
+        "source": "The Journal of Cell Biology", 
+        "reference_id": "https://doi.org/10.1083/jcb.200510010", 
+        "fpage": "917", 
+        "year": "2006", 
+        "position": 1, 
+        "pmid": "16769818", 
+        "ref": "Aivazian D Serrano RL Pfeffer S 2006 TIP47 is a key effector for Rab9 localization The Journal of Cell Biology 173 917 926 https://doi.org/10.1083/jcb.200510010 16769818", 
+        "id": "bib1"
+    }, 
+    {
+        "uri_text": "\n                https://cran.r-project.org/web/packages/lme4/index.html\n            ", 
+        "data-title": "Lme4: Linear Mixed-Effects Models Using Eigen and S4", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Bates", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maechler", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolker", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walker", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Haubo Bojesen Christensen", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Singmann", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dai", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grothendieck", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Green", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bolker", 
+                "given-names": "B", 
+                "group-type": "curator"
+            }
+        ], 
+        "uri": "https://cran.r-project.org/web/packages/lme4/index.html", 
+        "publication-type": "software", 
+        "source": "CRAN", 
+        "year": "2016", 
+        "position": 2, 
+        "ref": "Bates D Maechler M Bolker B Walker S Haubo Bojesen Christensen R Singmann H Dai B Grothendieck G Green P Bolker B 2016 Lme4: Linear Mixed-Effects Models Using Eigen and S4 CRAN https://cran.r-project.org/web/packages/lme4/index.html 1.1-12", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "A prospective randomized trial examining health care utilization in individuals using multiple \n                smartphone-enabled biosensors", 
+        "doi": "10.1101/029983", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Bloss", 
+                "given-names": "CS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wineinger", 
+                "given-names": "NE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Peters", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boeldt", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ariniello", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Judy Sheard", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Komatireddy", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barrett", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Topol", 
+                "given-names": "EJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A prospective randomized trial examining health care utilization in individuals using multiple \n                smartphone-enabled biosensors", 
+        "publication-type": "preprint", 
+        "source": "bioRxiv", 
+        "reference_id": "https://doi.org/10.1101/029983", 
+        "year": "2016", 
+        "position": 3, 
+        "ref": "Bloss CS Wineinger NE Peters M Boeldt DL Ariniello L Kim JL Judy Sheard J Komatireddy R Barrett P Topol EJ 2016 A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors bioRxiv https://doi.org/10.1101/029983", 
+        "id": "bib3"
+    }, 
+    {
+        "data-title": "NKX2-5 mutations causative for congenital heart disease retain\n                functionality and are directed to hundreds of targets", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015", 
+        "publication-type": "data", 
+        "source": "NCBI Gene Expression Omnibus", 
+        "authors": [
+            {
+                "surname": "Bouveret", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waardenberg", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schonrock", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ramialison", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Doan", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "de Jong", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bondue", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kaur", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mohamed", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fonoudi", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wouters", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bhattacharya", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": " Plachta", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dunwoodie", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chapman", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blanpain", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harvey", 
+                "given-names": "RP", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 4, 
+        "ref": "Bouveret R Waardenberg AJ Schonrock N Ramialison M Doan T de Jong D Bondue A Kaur G Mohamed S Fonoudi H Chen C Wouters M Bhattacharya S Plachta N Dunwoodie SL Chapman G Blanpain C Harvey RP 2015 NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets NCBI Gene Expression Omnibus GSE44902", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
+        "lpage": "2341", 
+        "doi": "10.1099/ijs.0.63255-0", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Brettar", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Christen", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hofle", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "International journal of systematic and evolutionary\n                microbiology", 
+        "reference_id": "https://doi.org/10.1099/ijs.0.63255-0", 
+        "fpage": "2335", 
+        "year": "2004a", 
+        "position": 5, 
+        "pmid": "15545480", 
+        "ref": "Brettar I Christen R Hofle M 2004a Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 2335 2341 https://doi.org/10.1099/ijs.0.63255-0 15545480", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Belliella baltica gen. nov., sp. nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
+        "doi": "10.1099/ijs.0.02752-0", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Brettar", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Christen", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hofle", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Belliella baltica gen. nov., sp. nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "International journal of systematic and evolutionary\n                microbiology", 
+        "reference_id": "https://doi.org/10.1099/ijs.0.02752-0", 
+        "fpage": "65", 
+        "year": "2004b", 
+        "position": 6, 
+        "pmid": "14742460", 
+        "ref": "Brettar I Christen R Hofle MG 2004b Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 65 https://doi.org/10.1099/ijs.0.02752-0 14742460", 
+        "id": "bib6"
+    }, 
+    {
+        "uri_text": "https://www.globalphasing.com/buster/", 
+        "publisher_loc": "Cambridge, UK", 
+        "data-title": "BUSTER", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Global Phasing Ltd", 
+        "authors": [
+            {
+                "surname": "Bricogne", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blanc", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brandl", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Flensburg", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keller", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Paciorek", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roversi", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sharff", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Smart", 
+                "given-names": "OS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vonrhein", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Womack", 
+                "given-names": "TO", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://www.globalphasing.com/buster/", 
+        "publication-type": "software", 
+        "year": "2011", 
+        "position": 7, 
+        "ref": "Bricogne G Blanc E Brandl M Flensburg C Keller P Paciorek W Roversi P Sharff A Smart OS Vonrhein C Womack TO BUSTER 2.10.0 Cambridge, UK Global Phasing Ltd 2011 https://www.globalphasing.com/buster/", 
+        "id": "bib7"
+    }, 
+    {
+        "publisher_loc": "Cambridge", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Cambridge University Press", 
+        "year": "2004", 
+        "publication-type": "book", 
+        "source": "Advances in insect chemical ecology", 
+        "authors": [
+            {
+                "surname": "Card\u00e9", 
+                "given-names": "RT", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Millar", 
+                "given-names": "JG", 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 8, 
+        "ref": "Card\u00e9 RT Millar JG 2004 Advances in insect chemical ecology Cambridge University Press Cambridge", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "The Venus Hypothesis", 
+        "uri_text": "https://arxiv.org/abs/1608.03074", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Cartwright", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://arxiv.org/abs/1608.03074", 
+        "full_article_title": "The Venus Hypothesis", 
+        "source": "arXiv.org", 
+        "year": "2016", 
+        "position": 9, 
+        "publication-type": "preprint", 
+        "ref": "Cartwright A 2016 The Venus Hypothesis arXiv.org https://arxiv.org/abs/1608.03074", 
+        "id": "bib9"
+    }, 
+    {
+        "edition": "2", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Wiley-Blackwell", 
+        "year": "2008", 
+        "publication-type": "book", 
+        "source": "An Introduction to Work and Organizational Psychology: A European\n                Perspective", 
+        "authors": [
+            {
+                "surname": "Chmeil", 
+                "given-names": "N", 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 10, 
+        "ref": "Chmeil N 2008 2 An Introduction to Work and Organizational Psychology: A European Perspective Wiley-Blackwell", 
+        "id": "bib10"
+    }, 
+    {
+        "publisher_loc": "Sunderland, MA", 
+        "chapter-title": "Two rules of speciation", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Sinauer Associates", 
+        "year": "1989", 
+        "publication-type": "book", 
+        "source": "Speciation and its consequences", 
+        "authors": [
+            {
+                "surname": "Coyne", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Orr", 
+                "given-names": "HA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Otte", 
+                "given-names": "D", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Endler", 
+                "given-names": "JA", 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 11, 
+        "ref": "Coyne JA Orr HA Otte D Endler JA 1989 Two rules of speciation Speciation and its consequences Sunderland, MA Sinauer Associates", 
+        "id": "bib11"
+    }, 
+    {
+        "uri_text": "https://www.pymol.org/", 
+        "data-title": "The PyMol Molecular Graphics System", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Schr\u00f6dinger LLC", 
+        "authors": [
+            {
+                "surname": "DeLano", 
+                "given-names": "W", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://www.pymol.org/", 
+        "publication-type": "software", 
+        "source": "PyMol", 
+        "year": "2002", 
+        "position": 12, 
+        "ref": "DeLano W 2002 PyMol The PyMol Molecular Graphics System Version 1.7.4 Schr\u00f6dinger LLC https://www.pymol.org/", 
+        "id": "bib12"
+    }, 
+    {
+        "publisher_loc": "United Kingdom", 
+        "isbn": "9781474130158", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Her Majesty\u2019s Stationery Office", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "Department of Education"
+            }, 
+            {
+                "surname": "Morgan", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "collab": "Department of Education", 
+        "publication-type": "report", 
+        "source": "Educational excellence everywhere", 
+        "year": "2016", 
+        "position": 13, 
+        "ref": "Department of Education Morgan N 2016 Educational excellence everywhere Her Majesty\u2019s Stationery Office United Kingdom 9781474130158", 
+        "id": "bib13"
+    }, 
+    {
+        "doi": "10.2210/pdb4qen/pdb", 
+        "data-title": "Crystal structure of KRYPTONITE in complex with mCHH DNA and\n                SAH", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Du", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Johnson", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Groth", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Feng", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hale", 
+                "given-names": "CJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vashisht", 
+                "given-names": "AA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gallego-Bartolome", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wohlschlegel", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Patel", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jacobsen", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }
+        ], 
+        "publication-type": "data", 
+        "source": "RCSB Protein Data Bank", 
+        "reference_id": "https://doi.org/10.2210/pdb4qen/pdb", 
+        "year": "2014", 
+        "position": 14, 
+        "ref": "Du J Johnson LM Groth M Feng S Hale CJ Li S Vashisht AA Gallego-Bartolome J Wohlschlegel JA Patel DJ Jacobsen SE 2014 Crystal structure of KRYPTONITE in complex with mCHH DNA and SAH RCSB Protein Data Bank https://doi.org/10.2210/pdb4qen/pdb", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "The Imprinter of All Maladies", 
+        "uri_text": "http://www.michaeleisen.org/blog/?p=1894", 
+        "position": 15, 
+        "date-in-citation": "August 19, 2016", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Eisen", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://www.michaeleisen.org/blog/?p=1894", 
+        "full_article_title": "The Imprinter of All Maladies", 
+        "source": "it is NOT junk", 
+        "year": "2016", 
+        "iso-8601-date": "2016-08-19", 
+        "publication-type": "web", 
+        "ref": "EisenM 2016 The Imprinter of All Maladies it is NOT junk http://www.michaeleisen.org/blog/?p=1894 August 19, 2016", 
+        "id": "bib15"
+    }, 
+    {
+        "uri_text": "\n                https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline\n            ", 
+        "data-title": "Diagnostically relevant facial gestalt information from ordinary photos database", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Ferry", 
+                "given-names": "Q", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Steinberg", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Webber", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "FitzPatrick", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ponting", 
+                "given-names": "CP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zisserman", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nell\u00e5ker", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
+        "publication-type": "data", 
+        "source": "Division of Clinical Neurology, University of Oxford", 
+        "year": "2014", 
+        "position": 16, 
+        "ref": "Ferry Q Steinberg J Webber C FitzPatrick DR Ponting CP Zisserman A Nell\u00e5ker C 2014 Diagnostically relevant facial gestalt information from ordinary photos database Division of Clinical Neurology, University of Oxford https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "Autoimmunity initiates in nonhematopoietic cells and progresses\n                via lymphocytes in an interferon-dependent autoimmune\n                disease", 
+        "lpage": "131", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Gall", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Treuting", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Elkon", 
+                "given-names": "KB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loo", 
+                "given-names": "YM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gale", 
+                "given-names": "M", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Barber", 
+                "given-names": "GN", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Autoimmunity initiates in nonhematopoietic cells and progresses\n                via lymphocytes in an interferon-dependent autoimmune\n                disease", 
+        "publication-type": "journal", 
+        "volume": "36", 
+        "source": "Immunity", 
+        "fpage": "120", 
+        "year": "2012", 
+        "position": 17, 
+        "pmid": "22284419", 
+        "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 22284419", 
+        "id": "bib17"
+    }, 
+    {
+        "data-title": "Mus musculus T-box 2 (Tbx2), mRNA", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2014", 
+        "publication-type": "data", 
+        "source": "NCBI Nucleotide", 
+        "authors": [
+            {
+                "surname": "Gavrilov", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harvey", 
+                "given-names": "RP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Papaioannou", 
+                "given-names": "VE", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 18, 
+        "ref": "Gavrilov S Harvey RP Papaioannou VE 2014 Mus musculus T-box 2 (Tbx2), mRNA NCBI Nucleotide NM_009324 NM_009324.2", 
+        "id": "bib18"
+    }, 
+    {
+        "uri_text": "https://www.medicines.org.uk/emc/medicine/19188", 
+        "publisher_loc": "United Kingdom", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "GlaxoSmithKline UK", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "GlaxoSmithKline UK"
+            }
+        ], 
+        "uri": "https://www.medicines.org.uk/emc/medicine/19188", 
+        "publication-type": "report", 
+        "source": "Augmentin 250/62 SF Suspension", 
+        "year": "2016", 
+        "position": 19, 
+        "collab": "GlaxoSmithKline UK", 
+        "ref": "GlaxoSmithKline UK 2016 Augmentin 250/62 SF Suspension GlaxoSmithKline UK United Kingdom https://www.medicines.org.uk/emc/medicine/19188", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "\n                Ruffus: a lightweight Python library for computational pipelines\n            ", 
+        "lpage": "2779", 
+        "doi": "10.1093/bioinformatics/btq524", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Goodstadt", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "\n                Ruffus: a lightweight Python library for computational pipelines\n            ", 
+        "publication-type": "journal", 
+        "volume": "26", 
+        "source": "Bioinformatics", 
+        "reference_id": "https://doi.org/10.1093/bioinformatics/btq524", 
+        "fpage": "2778", 
+        "year": "2010", 
+        "position": 20, 
+        "pmid": "20847218", 
+        "ref": "Goodstadt L 2010 Ruffus: a lightweight Python library for computational pipelines Bioinformatics 26 2778 2779 https://doi.org/10.1093/bioinformatics/btq524 20847218", 
+        "id": "bib20"
+    }, 
+    {
+        "data-title": "Effects on the transcriptome of adult mouse pancreas (principally\n                acinar cells) by the inactivation of the Ptf1a gene in vivo", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015", 
+        "publication-type": "data", 
+        "source": "NCBI Gene Expression Omnibus", 
+        "authors": [
+            {
+                "surname": "Hoang", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Swift", 
+                "given-names": "GH", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Azevedo-Pouly", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "MacDonald", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 21, 
+        "ref": "Hoang C Swift GH Azevedo-Pouly A MacDonald RJ 2015 Effects on the transcriptome of adult mouse pancreas (principally acinar cells) by the inactivation of the Ptf1a gene in vivo NCBI Gene Expression Omnibus GSE70542", 
+        "id": "bib21"
+    }, 
+    {
+        "publisher_loc": "Victoria", 
+        "isbn": "9780643092570", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Landlinks Press", 
+        "authors": [
+            {
+                "surname": "Horne", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Page", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "publication-type": "book", 
+        "source": "Integrated pest management for crops and pastures", 
+        "year": "2008", 
+        "position": 22, 
+        "ref": "Horne P Page J 2008 Integrated pest management for crops and pastures Landlinks Press Victoria 9780643092570", 
+        "id": "bib22"
+    }, 
+    {
+        "uri_text": "http://www.bioinf.manchester.ac.uk/naccess", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Department of Biochemistry Molecular Biology, University College London", 
+        "authors": [
+            {
+                "surname": "Hubbard", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://www.bioinf.manchester.ac.uk/naccess", 
+        "publication-type": "software", 
+        "source": "Naccess", 
+        "year": "1993", 
+        "position": 23, 
+        "ref": "Hubbard S Thornton J 1993 Naccess Department of Biochemistry Molecular Biology, University College London V2.1.1 http://www.bioinf.manchester.ac.uk/naccess", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Boundary learning by optimization with topological\n                constraints", 
+        "conf-name": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Jain", 
+                "given-names": "BV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bollman", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Berger", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Helmstaedter", 
+                "given-names": "MN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Briggman", 
+                "given-names": "KL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Denk", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bowden", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mendenhall", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abraham", 
+                "given-names": "WC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harris", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kasthuri", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hayworth", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schalek", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tapia", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lichtman", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Seung", 
+                "given-names": "HS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Boundary learning by optimization with topological\n                constraints", 
+        "publication-type": "confproc", 
+        "year": "2010", 
+        "position": 24, 
+        "ref": "Jain BV Bollman B Richardson M Berger DR Helmstaedter MN Briggman KL Denk W Bowden JB Mendenhall JM Abraham WC Harris KM Kasthuri N Hayworth KJ Schalek R Tapia JC Lichtman JW Seung HS 2010 Boundary learning by optimization with topological constraints IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010", 
+        "id": "bib24"
+    }, 
+    {
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Mcgraw-Hill Book Company", 
+        "year": "1959", 
+        "publication-type": "book", 
+        "volume": "3: Formulations of the Person and the Social Context", 
+        "source": "Psychology A Study Of A Science", 
+        "authors": [
+            {
+                "surname": "Koch", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 25, 
+        "ref": "Koch S 1959 3: Formulations of the Person and the Social Context Psychology A Study Of A Science Mcgraw-Hill Book Company", 
+        "id": "bib25"
+    }, 
+    {
+        "doi": "10.5061/dryad.cv323", 
+        "data-title": "Data from: Genome-wide errant targeting by Hairy", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Kok", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ay", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arnosti", 
+                "given-names": "DN", 
+                "group-type": "author"
+            }
+        ], 
+        "publication-type": "data", 
+        "source": "Dryad Digital Repository", 
+        "reference_id": "https://doi.org/10.5061/dryad.cv323", 
+        "year": "2015", 
+        "position": 26, 
+        "ref": "Kok K Ay A Li L Arnosti DN 2015 Data from: Genome-wide errant targeting by Hairy Dryad Digital Repository https://doi.org/10.5061/dryad.cv323", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "FlyBase 101\u2014the basics of navigating FlyBase", 
+        "lpage": "D714", 
+        "collab": "FlyBase Consortium", 
+        "doi": "10.1093/nar/gkr1030", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "McQuilton", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "St Pierre", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thurmond", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "group-type": "author", 
+                "collab": "FlyBase Consortium"
+            }
+        ], 
+        "full_article_title": "FlyBase 101\u2014the basics of navigating FlyBase", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Nucleic Acids Res", 
+        "reference_id": "https://doi.org/10.1093/nar/gkr1030", 
+        "fpage": "D706", 
+        "year": "2012", 
+        "position": 27, 
+        "pmid": "22127867", 
+        "ref": "McQuilton P St Pierre SE Thurmond J FlyBase Consortium 2012 FlyBase 101\u2014the basics of navigating FlyBase Nucleic Acids Res 40 D706 D714 https://doi.org/10.1093/nar/gkr1030 22127867", 
+        "id": "bib27"
+    }, 
+    {
+        "publisher_loc": "Washington, DC, United States", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Government Printing Office", 
+        "year": "1990", 
+        "collab": "National Institute of Mental Health", 
+        "publication-type": "report", 
+        "source": "Clinical training in serious mental illness (DHHS Publication No. ADM 90-1679)", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "National Institute of Mental Health"
+            }
+        ], 
+        "position": 28, 
+        "ref": "National Institute of Mental Health 1990 Clinical training in serious mental illness (DHHS Publication No. ADM 90-1679) Government Printing Office Washington, DC, United States", 
+        "id": "bib28"
+    }, 
+    {
+        "uri_text": "\n                https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline\n            ", 
+        "data-title": "Clinical_Face_Phenotype_Space_Pipeline", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Nell\u00e5ker", 
+                "given-names": "C", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
+        "publication-type": "software", 
+        "source": "Github", 
+        "year": "2014", 
+        "position": 29, 
+        "ref": "Nell\u00e5ker C 2014 Clinical_Face_Phenotype_Space_Pipeline Github v1.2 https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
+        "id": "bib29"
+    }, 
+    {
+        "uri_text": "\n                https://bioconductor.org/packages/release/bioc/html/Biostrings.html", 
+        "data-title": "String objects representing biological sequences, and matching algorithms", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Pages", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gentleman", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aboyoun", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Biostrings", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://bioconductor.org/packages/release/bioc/html/Biostrings.html", 
+        "publication-type": "software", 
+        "source": "Bioconductor", 
+        "year": "2014", 
+        "position": 30, 
+        "ref": "Pages H Gentleman R Aboyoun P Biostrings DS 2014 String objects representing biological sequences, and matching algorithms Bioconductor R Package Version 2.30.1 https://bioconductor.org/packages/release/bioc/html/Biostrings.html", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Probabilistic Formulation of Independent Vector Analysis Using Complex Gaussian Scale Mixtures", 
+        "conf-name": " 8th International Conference, ICA 2009, Paraty, Brazil, March 15-18, 2009", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Palmer", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kreutz-Delgado", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rao", 
+                "given-names": "BD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Makeig", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Probabilistic Formulation of Independent Vector Analysis Using Complex Gaussian Scale Mixtures", 
+        "publication-type": "confproc", 
+        "lpage": "97", 
+        "source": "Independent component analysis and signal separation", 
+        "fpage": "90", 
+        "year": "2007", 
+        "position": 31, 
+        "ref": "Palmer JA Kreutz-Delgado K Rao BD Makeig S 2007 Probabilistic Formulation of Independent Vector Analysis Using Complex Gaussian Scale Mixtures Independent component analysis and signal separation 8th International Conference, ICA 2009, Paraty, Brazil, March 15-18, 2009 90 97", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "IRE-1alpha inhibitors", 
+        "uri_text": "http://europepmc.org/patents/PAT/US2011065162", 
+        "patent": "US20100941530", 
+        "country": "United States", 
+        "authors": [
+            {
+                "surname": "Patterson", 
+                "given-names": "JB", 
+                "group-type": "inventor"
+            }, 
+            {
+                "surname": "Lonergan", 
+                "given-names": "DG", 
+                "group-type": "inventor"
+            }, 
+            {
+                "surname": "Flynn", 
+                "given-names": "GA", 
+                "group-type": "inventor"
+            }, 
+            {
+                "surname": "Qingpeng", 
+                "given-names": "Z", 
+                "group-type": "inventor"
+            }, 
+            {
+                "surname": "Pallai", 
+                "given-names": "PV", 
+                "group-type": "inventor"
+            }, 
+            {
+                "group-type": "assignee", 
+                "collab": "Mankind Corp"
+            }
+        ], 
+        "uri": "http://europepmc.org/patents/PAT/US2011065162", 
+        "full_article_title": "IRE-1alpha inhibitors", 
+        "source": "United States patent", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2011", 
+        "position": 32, 
+        "collab": "Mankind Corp", 
+        "publication-type": "patent", 
+        "ref": "PattersonJB LonerganDG FlynnGA QingpengZ PallaiPV Mankind Corp 2011 IRE-1alpha inhibitors United States patent US20100941530 http://europepmc.org/patents/PAT/US2011065162", 
+        "id": "bib32"
+    }, 
+    {
+        "uri_text": "http://www.r-project.org/", 
+        "publisher_loc": "Vienna, Austria", 
+        "data-title": "R: a language and environment for statistical computing", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "R Foundation for Statistical Computing", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "R Development Core Team"
+            }
+        ], 
+        "uri": "http://www.r-project.org/", 
+        "publication-type": "software", 
+        "year": "2015", 
+        "position": 33, 
+        "collab": "R Development Core Team", 
+        "ref": "R Development Core Team R: a language and environment for statistical computing 3.2.2 2015 Vienna, Austria R Foundation for Statistical Computing http://www.r-project.org/", 
+        "id": "bib33"
+    }, 
+    {
+        "data-title": "ISG15 counteracts Listeria monocytogenes\n                infection", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015a", 
+        "publication-type": "data", 
+        "source": "ProteomeXchange", 
+        "authors": [
+            {
+                "surname": "Radoshevich", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Impens", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ribet", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Quereda", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nam Tham", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nahori", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bierne", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dussurget", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pizarro-Cerd\u00e1", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knobeloch", 
+                "given-names": "KP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cossart", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 34, 
+        "ref": "Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015a ISG15 counteracts Listeria monocytogenes infection ProteomeXchange PXD001805", 
+        "id": "bib34"
+    }, 
+    {
+        "data-title": "Transcription profiling by high throughput sequencing of LoVo\n                cells infected with Listeria for 24 hr compared to uninfected\n                cells", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015b", 
+        "publication-type": "data", 
+        "source": "ArrayExpress", 
+        "authors": [
+            {
+                "surname": "Radoshevich", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Impens", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ribet", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Quereda", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nam Tham", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nahori", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bierne", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dussurget", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pizarro-Cerd\u00e1", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knobeloch", 
+                "given-names": "KP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cossart", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 35, 
+        "ref": "Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015b Transcription profiling by high throughput sequencing of LoVo cells infected with Listeria for 24 hr compared to uninfected cells ArrayExpress E-MTAB-3649", 
+        "id": "bib35"
+    }, 
+    {
+        "uri_text": "http://imagej.nih.gov/ij/", 
+        "publisher_loc": "Bethesda, MA", 
+        "data-title": "Image J", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "US National Institutes of Health", 
+        "authors": [
+            {
+                "surname": "Rasband", 
+                "given-names": "WS", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://imagej.nih.gov/ij/", 
+        "publication-type": "software", 
+        "year": "1997", 
+        "position": 36, 
+        "ref": "Rasband WS 1997 Image J Bethesda, MA US National Institutes of Health http://imagej.nih.gov/ij/", 
+        "id": "bib36"
+    }, 
+    {
+        "article_title": "Arboretum: reconstruction and analysis of the evolutionary\n                history of condition-specific transcriptional programs", 
+        "comment": "In press", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Roy", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wapinski", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pfiffner", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "French", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Socha", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Konieczka", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Regev", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Arboretum: reconstruction and analysis of the evolutionary\n                history of condition-specific transcriptional programs", 
+        "publication-type": "journal", 
+        "source": "Genome Res", 
+        "year": "2013", 
+        "position": 37, 
+        "ref": "Roy S Wapinski Pfiffner J French C Socha A Konieczka J Regev A 2013 Arboretum: reconstruction and analysis of the evolutionary history of condition-specific transcriptional programs Genome Res In press", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "PhD thesis: Submicroscopic Plasmodium falciparum gametocytaemia and the contribution to malaria transmission", 
+        "publisher_loc": "Nijmegen, The Netherlands", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Radboud University Nijmegen Medical Centre", 
+        "authors": [
+            {
+                "surname": "Schneider", 
+                "given-names": "P", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PhD thesis: Submicroscopic <italic>Plasmodium falciparum</italic> gametocytaemia and the contribution to malaria transmission", 
+        "publication-type": "thesis", 
+        "year": "2006", 
+        "position": 38, 
+        "ref": "SchneiderP 2006 PhD thesis: Submicroscopic Plasmodium falciparum gametocytaemia and the contribution to malaria transmission Radboud University Nijmegen Medical Centre Nijmegen, The Netherlands", 
+        "id": "bib38"
+    }, 
+    {
+        "uri_text": "https://www.pymol.org/", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Schr\u00f6dinger LLC", 
+        "authors": [
+            {
+                "surname": "Schr\u00f6dinger", 
+                "given-names": "LLC", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "https://www.pymol.org/", 
+        "publication-type": "software", 
+        "source": "The PyMOL Molecular Graphics System", 
+        "year": "2011", 
+        "position": 39, 
+        "ref": "Schr\u00f6dinger LLC 2011 The PyMOL Molecular Graphics System Schr\u00f6dinger LLC 1.2r3pre https://www.pymol.org/", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "Obesity affects economic, social status", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Schwartz", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Obesity affects economic, social status", 
+        "publication-type": "periodical", 
+        "lpage": "A4", 
+        "source": "The Washington Post", 
+        "fpage": "A1", 
+        "year": "1993", 
+        "position": 40, 
+        "ref": "Schwartz J September 9, 1993 Obesity affects economic, social status The Washington Post A1 A4", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Scripps Wired for Health Study", 
+        "uri_text": "https://clinicaltrials.gov/ct2/show/NCT01975428", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "group-type": "sponsor", 
+                "collab": "Scripps Translational Science Institute"
+            }
+        ], 
+        "uri": "https://clinicaltrials.gov/ct2/show/NCT01975428", 
+        "full_article_title": "Scripps Wired for Health Study", 
+        "year": "2015", 
+        "position": 41, 
+        "collab": "Scripps Translational Science Institute", 
+        "publication-type": "clinicaltrial", 
+        "ref": "Scripps Translational Science Institute 2015 Scripps Wired for Health Study https://clinicaltrials.gov/ct2/show/NCT01975428", 
+        "id": "bib41"
+    }, 
+    {
+        "uri_text": "http://www.repeatmasker.org/RepeatModeler.html", 
+        "publisher_loc": "Seattle, USA", 
+        "data-title": "RepeatModeler", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Institute for Systems Biology", 
+        "authors": [
+            {
+                "surname": "Smit", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hubley", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "uri": "http://www.repeatmasker.org/RepeatModeler.html", 
+        "publication-type": "software", 
+        "year": "2010", 
+        "position": 42, 
+        "ref": "Smit A Hubley R 2010 RepeatModeler Institute for Systems Biology Seattle, USA open-1.0 http://www.repeatmasker.org/RepeatModeler.html", 
+        "id": "bib42"
+    }, 
+    {
+        "data-title": "SKN-1 from the JASPAR CORE database", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2013", 
+        "publication-type": "data", 
+        "source": "JASPAR", 
+        "authors": [
+            {
+                "surname": "Staab", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Griffen", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Corcoran", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Evgrafov", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Knowles", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sieburth", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 43, 
+        "ref": "Staab TA Griffen TC Corcoran C Evgrafov O Knowles JA Sieburth D 2013 SKN-1 from the JASPAR CORE database JASPAR MA0547.1", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via \n                Activation of the PI3K/Akt/mTOR/HIF-1a Pathway", 
+        "doi": "10.20944/preprints201608.0124.v1", 
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Tanaka", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hosoyama", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mikamo", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kurazumi", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nishimoto", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ueno", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Shirasawa", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hamano", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via \n                Activation of the PI3K/Akt/mTOR/HIF-1a Pathway", 
+        "publication-type": "preprint", 
+        "source": "preprints", 
+        "reference_id": "https://doi.org/10.20944/preprints201608.0124.v1", 
+        "year": "2016", 
+        "position": 44, 
+        "ref": "Tanaka Y Hosoyama T Mikamo A Kurazumi H Nishimoto A Ueno K Shirasawa B Hamano K 2016 Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via Activation of the PI3K/Akt/mTOR/HIF-1a Pathway preprints https://doi.org/10.20944/preprints201608.0124.v1", 
+        "id": "bib44"
+    }, 
+    {
+        "data-title": "Global Diversity of Shigella Species", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015a", 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
+            }
+        ], 
+        "position": 45, 
+        "ref": "The Shigella Genome Sequencing Consortium 2015a Global Diversity of Shigella Species NCBI BioProject PRJEB2846", 
+        "id": "bib45"
+    }, 
+    {
+        "data-title": "Shigella sonnei and flexneri from around the world", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015b", 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
+            }
+        ], 
+        "position": 46, 
+        "ref": "The Shigella Genome Sequencing Consortium 2015b Shigella sonnei and flexneri from around the world NCBI BioProject PRJEB2460", 
+        "id": "bib46"
+    }, 
+    {
+        "data-title": "Shigella flexneri from around the world", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2015c", 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject ", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
+            }
+        ], 
+        "position": 47, 
+        "ref": "The Shigella Genome Sequencing Consortium 2015c Shigella flexneri from around the world NCBI BioProject PRJEB2542", 
+        "id": "bib47"
+    }, 
+    {
+        "publisher_loc": "Cambridge", 
+        "chapter-title": "Recruitment of predators and parasitoids by herbivore-injured\n                plants", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Cambridge University Press", 
+        "year": "2004", 
+        "publication-type": "book", 
+        "lpage": "75", 
+        "source": "Advances in insect chemical ecology", 
+        "fpage": "21", 
+        "authors": [
+            {
+                "surname": "Turlings", 
+                "given-names": "TCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "W\u00e4ckers", 
+                "given-names": "FL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Card\u00e9", 
+                "given-names": "RT", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Millar", 
+                "given-names": "JG", 
+                "group-type": "editor"
+            }
+        ], 
+        "position": 48, 
+        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004 Advances in insect chemical ecology Recruitment of predators and parasitoids by herbivore-injured plants Cambridge University Press Cambridge 21 75", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Solar System Live", 
+        "uri_text": "https://www.fourmilab.ch/solar/", 
+        "position": 49, 
+        "date-in-citation": "September 10, 1995", 
+        "article_doi": "10.7554/eLife.00666", 
+        "uri": "https://www.fourmilab.ch/solar/", 
+        "full_article_title": "Solar System Live", 
+        "authors": [
+            {
+                "surname": "Walker", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "iso-8601-date": "1995-09-10", 
+        "publication-type": "web", 
+        "ref": "Walker J Solar System Live https://www.fourmilab.ch/solar/ September 10, 1995", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Crystal structure of the FeS cluster-containing nucleotide\n                        excision repair helicase XPD", 
+        "doi": "10.1371/journal.pbio.0060149", 
+        "article_doi": "10.7554/eLife.00666", 
+        "elocation-id": "e149", 
+        "authors": [
+            {
+                "surname": "Wolski", 
+                "given-names": "SC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kuper", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hanzelmann", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Truglio", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Croteau", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Van Houten", 
+                "given-names": "B", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Crystal structure of the FeS cluster-containing nucleotide\n                        excision repair helicase XPD", 
+        "publication-type": "journal", 
+        "volume": "6", 
+        "source": "PLoS Biol", 
+        "reference_id": "https://doi.org/10.1371/journal.pbio.0060149", 
+        "year": "2008", 
+        "position": 50, 
+        "pmid": "18578568", 
+        "ref": "Wolski SC Kuper J Hanzelmann P Truglio JJ Croteau DL Van Houten B 2008 Crystal structure of the FeS cluster-containing nucleotide excision repair helicase XPD PLoS Biol 6 e149 https://doi.org/10.1371/journal.pbio.0060149 18578568", 
+        "id": "bib50"
+    }, 
+    {
+        "edition": "2", 
+        "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "World Health Organization", 
+        "year": "2016", 
+        "collab": "World Health Organization", 
+        "publication-type": "book", 
+        "source": " Growing up unequal: gender and socioeconomic differences in young\n                people's health and well-being. Health Behaviour in School-aged Children\n                (HBSC) study", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "World Health Organization"
+            }
+        ], 
+        "position": 51, 
+        "ref": "World Health Organization 2016 2 Growing up unequal: gender and socioeconomic differences in young people's health and well-being. Health Behaviour in School-aged Children (HBSC) study World Health Organization", 
+        "id": "bib51"
+    }, 
+    {
+        "data-title": "Polymeric immunoglobulin receptor [Oncorhynchus mykiss]", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2010", 
+        "publication-type": "data", 
+        "source": "NCBI", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "YA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Salinas", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Parra", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bjork", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xu", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "LaPatra", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bartholomew", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sunyer", 
+                "given-names": "JO", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 52, 
+        "ref": "Zhang YA Salinas I Li J Parra D Bjork S Xu Z LaPatra SE Bartholomew J Sunyer JO 2010 Polymeric immunoglobulin receptor [Oncorhynchus mykiss] NCBI GenBank: ADB81776.1", 
+        "id": "bib52"
+    }, 
+    {
+        "data-title": "ChIP-Seq Identification of C. elegans TF Binding Sites", 
+        "article_doi": "10.7554/eLife.00666", 
+        "year": "2013", 
+        "publication-type": "data", 
+        "source": "modMine", 
+        "authors": [
+            {
+                "surname": "Zhong", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Snyder", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Slightam", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kim", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murray", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waterston", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gerstein", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Niu", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Janette", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Raha", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Agarwal", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Reinke", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sarov", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hyman", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 53, 
+        "ref": "Zhong M Snyder M Slightam C Kim S Murray J Waterston R Gerstein M Niu W Janette J Raha D Agarwal A Reinke V Sarov M Hyman A 2013 ChIP-Seq Identification of C. elegans TF Binding Sites modMine modENCODE_3369", 
+        "id": "bib53"
+    }
+]

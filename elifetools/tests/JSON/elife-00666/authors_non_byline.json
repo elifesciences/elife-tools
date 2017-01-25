@@ -1,0 +1,150 @@
+[
+    {
+        "surname": "Shearer", 
+        "author": "Alistair Shearer", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Alistair", 
+        "sub-group": "Writing group", 
+        "position": 1, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Caton", 
+        "author": "Hannah Caton", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }, 
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife Institute", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Hannah", 
+        "sub-group": "Writing group", 
+        "position": 2, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Chan", 
+        "author": "Wei Mun Chan", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Wei Mun", 
+        "sub-group": "Editing group", 
+        "position": 3, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Drury", 
+        "author": "Hannah Drury", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Hannah", 
+        "sub-group": "Editing group", 
+        "position": 4, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Guerreiro", 
+        "author": "Maria Guerreiro", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Maria", 
+        "sub-group": "Editing group", 
+        "position": 5, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Richmond", 
+        "author": "Susanna Richmond", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Susanna", 
+        "sub-group": "Editing group", 
+        "position": 6, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Nott", 
+        "author": "Graham Nott", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "Canada", 
+                "institution": "Graham Nott Enterprises", 
+                "city": "Victoria"
+            }
+        ], 
+        "given-names": "Graham", 
+        "position": 7, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Wilkinson", 
+        "author": "Chris Wilkinson", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Chris", 
+        "orcid": "http://orcid.org/0000-0003-4921-6155", 
+        "position": 8, 
+        "type": "author non-byline", 
+        "email": "c.wilkinson@elifesciences.org"
+    }, 
+    {
+        "surname": "Skibinski", 
+        "author": "Luke Skibinski", 
+        "article_doi": "10.7554/eLife.00666", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "eLife", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Luke", 
+        "position": 9, 
+        "type": "author non-byline"
+    }
+]

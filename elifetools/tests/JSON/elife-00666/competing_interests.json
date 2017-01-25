@@ -1,0 +1,17 @@
+[
+    {
+        "text": "\n<p>Chair of JATS4R</p>\n", 
+        "id": "conf1", 
+        "fn-type": "COI-statement"
+    }, 
+    {
+        "text": "\n<p>No competing interests declared</p>\n", 
+        "id": "conf2", 
+        "fn-type": "COI-statement"
+    }, 
+    {
+        "text": "\n<p>Graham Nott is not an eLife employee</p>\n", 
+        "id": "conf3", 
+        "fn-type": "COI-statement"
+    }
+]
