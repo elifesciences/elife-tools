@@ -1588,6 +1588,17 @@ def present_addresses(soup):
     return notes
 
 @nullify
+def foot_notes(soup):
+    notes = []
+    fntype_filter = 'fn'
+    author_notes_section = raw_parser.author_notes(soup)
+    if author_notes_section:
+        fn_nodes = extract_nodes(author_notes_section, "fn")
+        notes = footnotes(fn_nodes, fntype_filter)
+    return notes
+
+
+@nullify
 def author_contributions(soup, fntype_filter):
     """
     Find the fn tags included in the competing interest
@@ -2593,8 +2604,27 @@ def author_present_address(author, present_address_data):
     else:
         return None
 
+def author_foot_notes(author, foot_notes_data):
+    foot_notes = []
+    if not foot_notes_data or not author.get("references"):
+        return foot_notes
+    if "foot-note" in author["references"]:
+        for ref_id in author["references"]["foot-note"]:
+            for foot_note in foot_notes_data:
+                if foot_note.get("text") and foot_note.get("id") == ref_id:
+                    # Clean up the text
+                    text = re.sub(u'<label>.*</label>', '', foot_note.get("text"))
+                    text = (
+                        text.replace('<p>', '').replace('</p>', ''))
+                    foot_notes.append(text)
+    if foot_notes != []:
+        return foot_notes
+    else:
+        return None
+
 def author_json_details(author, author_json, contributions, correspondence,
-                        competing_interests, equal_contributions_map, present_address_data, html_flag=True):
+                        competing_interests, equal_contributions_map, present_address_data,
+                        foot_notes_data, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
@@ -2603,6 +2633,10 @@ def author_json_details(author, author_json, contributions, correspondence,
         author_json["affiliations"] = author_affiliations(author)
 
     if author.get("references"):
+        # foot notes or additionalInformation
+        if author_foot_notes(author, foot_notes_data):
+            author_json["additionalInformation"] = author_foot_notes(author, foot_notes_data)
+
         # email
         if author_email_addresses(author, correspondence):
             author_json["emailAddresses"] = author_email_addresses(author, correspondence)
@@ -2630,7 +2664,8 @@ def author_json_details(author, author_json, contributions, correspondence,
 
     return author_json
 
-def author_person(author, contributions, correspondence, competing_interests, equal_contributions_map, present_address_data):
+def author_person(author, contributions, correspondence, competing_interests,
+                  equal_contributions_map, present_address_data, foot_notes_data):
     author_json = OrderedDict()
     author_json["type"] = "person"
     author_name = OrderedDict()
@@ -2642,18 +2677,21 @@ def author_person(author, contributions, correspondence, competing_interests, eq
     if author.get("orcid"):
         author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
     author_json = author_json_details(author, author_json, contributions, correspondence,
-                                      competing_interests, equal_contributions_map, present_address_data)
+                                      competing_interests, equal_contributions_map,
+                                      present_address_data, foot_notes_data)
 
     return author_json
 
 
-def author_group(author, contributions, correspondence, competing_interests, equal_contributions_map, present_address_data):
+def author_group(author, contributions, correspondence, competing_interests,
+                 equal_contributions_map, present_address_data, foot_notes_data):
     author_json = OrderedDict()
     author_json["type"] = "group"
     author_json["name"] = author.get("collab")
 
     author_json = author_json_details(author, author_json, contributions, correspondence,
-                                      competing_interests, equal_contributions_map, present_address_data)
+                                      competing_interests, equal_contributions_map,
+                                      present_address_data, foot_notes_data)
 
     return author_json
 
@@ -2699,18 +2737,22 @@ def authors_json(soup):
     authors_non_byline_data = authors_non_byline(soup)
     equal_contributions_map = map_equal_contributions(contributors_data)
     present_address_data = present_addresses(soup)
+    foot_notes_data = foot_notes(soup)
 
     # First line authors builds basic structure
     for contributor in contributors_data:
         author_json = None
         if contributor["type"] == "author" and contributor.get("collab"):
-            author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
-                                       author_competing_interests_data, equal_contributions_map, present_address_data)
+            author_json = author_group(contributor, author_contributions_data,
+                                       author_correspondence_data, author_competing_interests_data,
+                                       equal_contributions_map, present_address_data,
+                                       foot_notes_data)
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
-            author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
-                                        author_competing_interests_data, equal_contributions_map, present_address_data)
+            author_json = author_person(contributor, author_contributions_data,
+                                        author_correspondence_data, author_competing_interests_data,
+                                        equal_contributions_map, present_address_data, foot_notes_data)
 
         if author_json:
             authors_json_data.append(author_json)
@@ -2724,8 +2766,9 @@ def authors_json(soup):
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
             if contributor.get("group-author-key") == group_author_key:
-                author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
-                                            author_competing_interests_data, equal_contributions_map, present_address_data)
+                author_json = author_person(contributor, author_contributions_data,
+                                            author_correspondence_data, author_competing_interests_data,
+                                            equal_contributions_map, present_address_data, foot_notes_data)
                 if contributor.get("sub-group"):
                     if "groups" not in group_author:
                         group_author["groups"] = OrderedDict()
