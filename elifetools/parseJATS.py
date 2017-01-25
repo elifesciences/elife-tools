@@ -919,6 +919,8 @@ def format_contrib_refs(contrib_tag, soup):
                     add_to_list_dictionary(contrib_refs, 'funding', rid)
                 elif rid.startswith('dataro') or rid.startswith('dataset'):
                     add_to_list_dictionary(contrib_refs, 'related-object', rid)
+                elif rid.startswith('fn'):
+                    add_to_list_dictionary(contrib_refs, 'foot-note', rid)
     return contrib_refs, ref_type_aff_count
 
 def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
@@ -1590,7 +1592,7 @@ def present_addresses(soup):
 @nullify
 def foot_notes(soup):
     notes = []
-    fntype_filter = 'fn'
+    fntype_filter = ['fn', 'other']
     author_notes_section = raw_parser.author_notes(soup)
     if author_notes_section:
         fn_nodes = extract_nodes(author_notes_section, "fn")
