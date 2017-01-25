@@ -70,7 +70,7 @@ class TestUtilsHtml(unittest.TestCase):
          u'<br/>'),
 
         (True, u'<monospace>m</monospace>', None,
-         u'<span style="monospace">m</span>'),
+         u'<span class="monospace">m</span>'),
 
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
