@@ -6,6 +6,9 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 """
 
+def article_meta(soup):
+    return first(extract_nodes(soup, "article-meta"))
+
 def article_title(soup):
     return first(extract_nodes(soup, "article-title"))
 
@@ -74,7 +77,9 @@ def acknowledgements(soup):
     return first(extract_nodes(soup, "ack"))
 
 def conflict(soup):
-    return extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags += extract_nodes(soup, "fn", attr = "fn-type", value = "COI-statement")
+    return conflict_tags
 
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
@@ -187,12 +192,18 @@ def contributors(soup):
     return extract_nodes(soup, "contrib")
 
 def article_contributors(soup):
-    contributor_tags = extract_nodes(soup, ["contrib","on-behalf-of"])
-    return filter(lambda tag: tag.parent.name == "contrib-group"
-                        and tag.parent.parent.name == "article-meta", contributor_tags)
+    article_meta_tag = article_meta(soup)
+    if article_meta_tag:
+        contributor_tags = extract_nodes(article_meta_tag, ["contrib","on-behalf-of"])
+        return filter(lambda tag: tag.parent.name == "contrib-group", contributor_tags)
+    else:
+        return None
 
 def authors(soup, contrib_type = "author"):
-    return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    if contrib_type:
+        return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    else:
+        return extract_nodes(soup, "contrib")
 
 def caption(soup):
     return first(extract_nodes(soup, "caption"))

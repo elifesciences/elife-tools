@@ -275,6 +275,8 @@ def pub_date(soup):
     """
     pub_date = raw_parser.pub_date(soup, date_type = "pub")
     if pub_date is None:
+        pub_date = raw_parser.pub_date(soup, date_type = "Publication")
+    if pub_date is None:
         return None
     (day, month, year) = ymd(pub_date)
     return date_struct(year, month, day)
@@ -861,35 +863,28 @@ def contrib_phone(contrib_tag):
         phone = first(raw_parser.phone(contrib_tag)).text
     return phone
 
+def contrib_inline_aff(contrib_tag):
+    """
+    Given a contrib tag, look for an aff tag directly inside it
+    """
+    aff_tags = []
+    for child_tag in contrib_tag:
+        if child_tag and child_tag.name and child_tag.name == "aff":
+            aff_tags.append(child_tag)
+    return aff_tags
 
-def format_contributor(contrib_tag, soup, detail="brief"):
-    contributor = {}
-    copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
-    copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
-    copy_attribute(contrib_tag.attrs, 'corresp', contributor)
-    copy_attribute(contrib_tag.attrs, 'deceased', contributor)
-    copy_attribute(contrib_tag.attrs, 'id', contributor)
-    contrib_id_tag = first(raw_parser.contrib_id(contrib_tag))
-    if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
-        if contrib_id_tag['contrib-id-type'] == 'group-author-key':
-            contributor['group-author-key'] = node_contents_str(contrib_id_tag)
-        elif contrib_id_tag['contrib-id-type'] == 'orcid':
-            contributor['orcid'] = node_contents_str(contrib_id_tag)
-    set_if_value(contributor, "collab", first_node_str_contents(contrib_tag, "collab"))
-    set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
-    set_if_value(contributor, "email", contrib_email(contrib_tag))
-    set_if_value(contributor, "phone", contrib_phone(contrib_tag))
-    name_tag = first(extract_nodes(contrib_tag, "name"))
-    if name_tag is not None:
-        set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
-        set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
-        set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+def contrib_xref(contrib_tag, ref_type):
+    """
+    Given a contrib tag, look for an xref tag of type ref_type directly inside the contrib tag
+    """
+    aff_tags = []
+    for child_tag in contrib_tag:
+        if (child_tag and child_tag.name and child_tag.name == "xref"
+            and child_tag.get('ref-type') and child_tag.get('ref-type') == ref_type):
+            aff_tags.append(child_tag)
+    return aff_tags
 
-    # on-behalf-of
-    if contrib_tag.name == 'on-behalf-of':
-        contributor['type'] = 'on-behalf-of'
-        contributor['on-behalf-of'] = node_contents_str(contrib_tag)
-
+def format_contrib_refs(contrib_tag, soup):
     contrib_refs = {}
     ref_tags = extract_nodes(contrib_tag, "xref")
     ref_type_aff_count = 0
@@ -920,17 +915,72 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 elif rid.startswith('fn'):
                     add_to_list_dictionary(contrib_refs, 'foot-note', rid)
             elif ref_type == "other":
-                if rid.startswith('par-'):
+                if rid.startswith('par-') or rid.startswith('fund'):
                     add_to_list_dictionary(contrib_refs, 'funding', rid)
-                elif rid.startswith('dataro'):
+                elif rid.startswith('dataro') or rid.startswith('dataset'):
                     add_to_list_dictionary(contrib_refs, 'related-object', rid)
+    return contrib_refs, ref_type_aff_count
 
+def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
+                       group_author_key=None):
+    contributor = {}
+    copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
+    # Set contrib type if passed via params
+    if not contributor.get('type') and contrib_type:
+        contributor['type'] = contrib_type
+    copy_attribute(contrib_tag.attrs, 'equal-contrib', contributor)
+    copy_attribute(contrib_tag.attrs, 'corresp', contributor)
+    copy_attribute(contrib_tag.attrs, 'deceased', contributor)
+    copy_attribute(contrib_tag.attrs, 'id', contributor)
+    contrib_id_tag = first(raw_parser.contrib_id(contrib_tag))
+    if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
+        if contrib_id_tag['contrib-id-type'] == 'group-author-key':
+            contributor['group-author-key'] = node_contents_str(contrib_id_tag)
+    # Set group-author-key if passed via params
+    if not contributor.get('group-author-key') and group_author_key:
+        contributor['group-author-key'] = group_author_key
+    if raw_parser.collab(contrib_tag):
+        collab_tag = first(raw_parser.collab(contrib_tag))
+        if collab_tag:
+            # Clean up if there are tags inside the collab tag
+            tag_copy = duplicate_tag(collab_tag)
+            tag_copy = remove_tag_from_tag(tag_copy, 'contrib-group')
+            contributor['collab'] = node_contents_str(tag_copy).rstrip()
+
+    # Check if it is not a group author
+    if not is_author_group_author(contrib_tag):
+        if contrib_id_tag and 'contrib-id-type' in contrib_id_tag.attrs:
+            if contrib_id_tag['contrib-id-type'] == 'orcid':
+                contributor['orcid'] = node_contents_str(contrib_id_tag)
+        set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
+        set_if_value(contributor, "email", contrib_email(contrib_tag))
+        set_if_value(contributor, "phone", contrib_phone(contrib_tag))
+        name_tag = first(extract_nodes(contrib_tag, "name"))
+        if name_tag is not None:
+            set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
+            set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
+            set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+        # Get the sub-group value from the parent role tag if it is inside a group
+        if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
+            and is_author_group_author(contrib_tag.parent.parent.parent)):
+            set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
+    elif contributor.get('corresp') and not contributor.get('email'):
+        # For corresponding group authors, look for an email address anywhere in the group
+        if raw_parser.email(contrib_tag):
+            contributor['email'] = node_contents_str(firstnn(raw_parser.email(contrib_tag)))
+
+    # on-behalf-of
+    if contrib_tag.name == 'on-behalf-of':
+        contributor['type'] = 'on-behalf-of'
+        contributor['on-behalf-of'] = node_contents_str(contrib_tag)
+
+    contrib_refs, ref_type_aff_count = format_contrib_refs(contrib_tag, soup)
     if len(contrib_refs) > 0:
         contributor['references'] = contrib_refs
 
     if detail == "brief" or ref_type_aff_count == 0:
         # Brief format only allows one aff and it must be within the contrib tag
-        aff_tag = first(extract_nodes(contrib_tag, "aff"))
+        aff_tag = firstnn(contrib_inline_aff(contrib_tag))
         if aff_tag:
             contributor['affiliations'] = []
             contrib_affs = {}
@@ -957,11 +1007,10 @@ def format_contributor(contrib_tag, soup, detail="brief"):
             author_name += contributor['surname']
         if author_name != "":
             contributor['author'] = author_name
-    
-        aff_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "aff")
+
+        aff_tags = contrib_xref(contrib_tag, "aff")
         if len(aff_tags) <= 0:
-            # No aff found? Look for an aff tag inside the contrib tag
-            aff_tags = extract_nodes(contrib_tag, "aff")
+            aff_tags = contrib_inline_aff(contrib_tag)
         if aff_tags:
             contributor['affiliations'] = []
         for aff_tag in aff_tags:
@@ -984,7 +1033,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                 contributor['affiliations'].append(contrib_affs)
     
         # Add xref linked correspondence author notes if applicable
-        corresp_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "corresp")
+        corresp_tags = contrib_xref(contrib_tag, "corresp")
         if(len(corresp_tags) > 0):
             if 'notes-corresp' not in contributor:
                 contributor['notes-corresp'] = []
@@ -998,7 +1047,7 @@ def format_contributor(contrib_tag, soup, detail="brief"):
                     contributor['notes-corresp'].append(author_notes)
         
         # Add xref linked footnotes if applicable
-        fn_tags = extract_nodes(contrib_tag, "xref", attr = "ref-type", value = "fn")
+        fn_tags = contrib_xref(contrib_tag, "fn")
         if(len(fn_tags) > 0):
             if 'notes-fn' not in contributor:
                 contributor['notes-fn'] = []
@@ -1015,40 +1064,81 @@ def format_contributor(contrib_tag, soup, detail="brief"):
 
 def contributors(soup, detail="brief"):
     contrib_tags = raw_parser.article_contributors(soup)
-    contributors = []
-    for tag in contrib_tags:
-        contributors.append(format_contributor(tag, soup, detail))
+    contributors = format_authors(soup, contrib_tags, detail)
     return contributors
 
 #
 # HERE BE DRAGONS
 #
 
+def is_author_non_byline(tag, contrib_type="author non-byline"):
+    if tag and tag.get("contrib-type") and tag.get("contrib-type") == contrib_type:
+        return True
+    elif tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab":
+        return True
+    return False
+
 def authors_non_byline(soup):
     """Non-byline authors for group author members"""
-    authors_list = authors(soup, contrib_type = "author non-byline")
-    return authors_list
+    contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type=None)
+    tags = filter(lambda tag: is_author_non_byline(tag) is True, contrib_tags)
+    contrib_type="author non-byline"
+    return format_authors(soup, tags, detail="full", contrib_type=contrib_type)
 
 def authors(soup, contrib_type = "author", detail = "full"):
+    contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
+    tags = filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags)
+    return format_authors(soup, tags, detail)
 
-    tags = raw_parser.authors(soup, contrib_type)
+def is_author_group_author(tag):
+    if tag:
+        for child_tag in tag:
+            # look at the child tags for a collab tag
+            if child_tag.name == "collab":
+                return True
+    return False
+
+def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     authors = []
     position = 1
     
     article_doi = doi(soup)
     
-    for tag in tags:
-        author = format_contributor(tag, soup, detail)
+    group_author_id = 0
+    prev_group_author_id = 0
+    for tag in contrib_tags:
+
+        # Set the group author key if missing
+        if is_author_group_author(tag):
+            group_author_id = group_author_id + 1
+            group_author_key = 'group-author-id' + str(group_author_id)
+        else:
+            group_author_key = None
+
+        # Set the contrib_type and group author key for non-byline authors
+        if is_author_non_byline(tag) is True and contrib_type is None:
+            author_contrib_type = 'author non-byline'
+            group_author_key = 'group-author-id' + str(prev_group_author_id)
+        elif is_author_non_byline(tag) is False and is_author_group_author(tag) is not True:
+            author_contrib_type = contrib_type
+            group_author_key = None
+        else:
+            author_contrib_type = contrib_type
+
+        author = format_contributor(tag, soup, detail, author_contrib_type, group_author_key)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):
-            author['article_doi'] = article_doi
-            
-            author['position'] = position
+            if detail == "full":
+                author['article_doi'] = article_doi
+                author['position'] = position
                         
             authors.append(author)
             position += 1
-        
+
+        prev_group_author_id = group_author_id
+
+
     return authors
 
 
@@ -1476,9 +1566,37 @@ def competing_interests(soup, fntype_filter):
     if not competing_interests_section:
         return None
     fn = extract_nodes(first(competing_interests_section), "fn")
-    interests = footnotes(fn, fntype_filter)
+    if type(fntype_filter) == list:
+        interests = []
+        for fntype in fntype_filter:
+            fn_interests = footnotes(fn, fntype)
+        if fn_interests:
+            interests = interests + fn_interests
+    else:
+        interests = footnotes(fn, fntype_filter)
 
     return interests
+
+@nullify
+def present_addresses(soup):
+    notes = []
+    fntype_filter = 'present-address'
+    author_notes_section = raw_parser.author_notes(soup)
+    if author_notes_section:
+        fn_nodes = extract_nodes(author_notes_section, "fn")
+        notes = footnotes(fn_nodes, fntype_filter)
+    return notes
+
+@nullify
+def foot_notes(soup):
+    notes = []
+    fntype_filter = 'fn'
+    author_notes_section = raw_parser.author_notes(soup)
+    if author_notes_section:
+        fn_nodes = extract_nodes(author_notes_section, "fn")
+        notes = footnotes(fn_nodes, fntype_filter)
+    return notes
+
 
 @nullify
 def author_contributions(soup, fntype_filter):
@@ -1949,7 +2067,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(title_text(tag)))
@@ -1985,7 +2103,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "table-wrap":
         tag_content["type"] = "table"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2042,7 +2160,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "fig":
         tag_content["type"] = "image"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
@@ -2098,7 +2216,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             return OrderedDict()
 
         tag_content["type"] = "video"
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2127,7 +2245,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
 
     elif tag.name == "supplementary-material":
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
         set_if_value(tag_content, "title", convert(caption_title(tag)))
@@ -2184,7 +2302,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "app":
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "doi", object_id_doi(tag, tag.name))
+        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
     elif tag.name == "code":
@@ -2235,7 +2353,7 @@ def decision_letter(soup):
 
     if sub_article:
         if sub_article_doi(sub_article):
-            sub_article_content["doi"] = sub_article_doi(sub_article)
+            sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)
     else:
         raw_body = None
@@ -2273,7 +2391,7 @@ def author_response(soup):
 
     if sub_article:
         if sub_article_doi(sub_article):
-            sub_article_content["doi"] = sub_article_doi(sub_article)
+            sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)
     else:
         raw_body = None
@@ -2290,7 +2408,7 @@ def author_response(soup):
 
 def render_abstract_json(abstract_tag):
     abstract_json = OrderedDict()
-    set_if_value(abstract_json, "doi", object_id_doi(abstract_tag))
+    set_if_value(abstract_json, "doi", doi_uri_to_doi(object_id_doi(abstract_tag)))
     for child_tag in remove_doi_paragraph(body_blocks(abstract_tag)):
         if body_block_content(child_tag) != {}:
             if "content" not in abstract_json:
@@ -2413,6 +2531,10 @@ def author_email_addresses(author, correspondence):
             if "email" in affiliation and affiliation["email"] not in email_addresses:
                 email_addresses.append(affiliation["email"])
 
+    # Also look at the author attributes
+    if author.get("corresp") and author.get("email"):
+        email_addresses.append(author["email"])
+
     if email_addresses != []:
         return email_addresses
     else:
@@ -2457,10 +2579,52 @@ def author_equal_contribution(author, equal_contributions_map):
     else:
         return None
 
+def author_present_address(author, present_address_data):
+    postal_addresses = []
+    if not present_address_data or not author.get("references"):
+        return postal_addresses
+    if "present-address" in author["references"]:
+        for ref_id in author["references"]["present-address"]:
+            for present_address in present_address_data:
+                if present_address.get("text") and present_address.get("id") == ref_id:
+                    # Clean up the text
+                    text = re.sub(u'<label>.*</label>', '', present_address.get("text"))
+                    text = (
+                        text.replace('<p>', '').replace('</p>', ''))
+                    # Format as a JSON address
+                    address = OrderedDict()
+                    address['formatted'] = []
+                    address['formatted'].append(text)
+                    address['components'] = OrderedDict()
+                    address['components']['streetAddress'] = []
+                    address['components']['streetAddress'].append(text)
+                    postal_addresses.append(address)
+    if postal_addresses != []:
+        return postal_addresses
+    else:
+        return None
 
+def author_foot_notes(author, foot_notes_data):
+    foot_notes = []
+    if not foot_notes_data or not author.get("references"):
+        return foot_notes
+    if "foot-note" in author["references"]:
+        for ref_id in author["references"]["foot-note"]:
+            for foot_note in foot_notes_data:
+                if foot_note.get("text") and foot_note.get("id") == ref_id:
+                    # Clean up the text
+                    text = re.sub(u'<label>.*</label>', '', foot_note.get("text"))
+                    text = (
+                        text.replace('<p>', '').replace('</p>', ''))
+                    foot_notes.append(text)
+    if foot_notes != []:
+        return foot_notes
+    else:
+        return None
 
 def author_json_details(author, author_json, contributions, correspondence,
-                        competing_interests, equal_contributions_map, html_flag=True):
+                        competing_interests, equal_contributions_map, present_address_data,
+                        foot_notes_data, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
@@ -2469,6 +2633,10 @@ def author_json_details(author, author_json, contributions, correspondence,
         author_json["affiliations"] = author_affiliations(author)
 
     if author.get("references"):
+        # foot notes or additionalInformation
+        if author_foot_notes(author, foot_notes_data):
+            author_json["additionalInformation"] = author_foot_notes(author, foot_notes_data)
+
         # email
         if author_email_addresses(author, correspondence):
             author_json["emailAddresses"] = author_email_addresses(author, correspondence)
@@ -2490,9 +2658,14 @@ def author_json_details(author, author_json, contributions, correspondence,
         if author_equal_contribution(author, equal_contributions_map):
             author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
 
+        # postalAddress
+        if author_present_address(author, present_address_data):
+            author_json["postalAddresses"] = author_present_address(author, present_address_data)
+
     return author_json
 
-def author_person(author, contributions, correspondence, competing_interests, equal_contributions_map):
+def author_person(author, contributions, correspondence, competing_interests,
+                  equal_contributions_map, present_address_data, foot_notes_data):
     author_json = OrderedDict()
     author_json["type"] = "person"
     author_name = OrderedDict()
@@ -2503,19 +2676,24 @@ def author_person(author, contributions, correspondence, competing_interests, eq
     author_json["name"] = author_name
     if author.get("orcid"):
         author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+    if author.get("deceased"):
+        author_json["deceased"] = True
     author_json = author_json_details(author, author_json, contributions, correspondence,
-                                      competing_interests, equal_contributions_map)
+                                      competing_interests, equal_contributions_map,
+                                      present_address_data, foot_notes_data)
 
     return author_json
 
 
-def author_group(author, contributions, correspondence, competing_interests, equal_contributions_map):
+def author_group(author, contributions, correspondence, competing_interests,
+                 equal_contributions_map, present_address_data, foot_notes_data):
     author_json = OrderedDict()
     author_json["type"] = "group"
     author_json["name"] = author.get("collab")
 
     author_json = author_json_details(author, author_json, contributions, correspondence,
-                                      competing_interests, equal_contributions_map)
+                                      competing_interests, equal_contributions_map,
+                                      present_address_data, foot_notes_data)
 
     return author_json
 
@@ -2560,18 +2738,23 @@ def authors_json(soup):
     author_correspondence_data = full_correspondence(soup)
     authors_non_byline_data = authors_non_byline(soup)
     equal_contributions_map = map_equal_contributions(contributors_data)
+    present_address_data = present_addresses(soup)
+    foot_notes_data = foot_notes(soup)
 
     # First line authors builds basic structure
     for contributor in contributors_data:
         author_json = None
         if contributor["type"] == "author" and contributor.get("collab"):
-            author_json = author_group(contributor, author_contributions_data, author_correspondence_data,
-                                       author_competing_interests_data, equal_contributions_map)
+            author_json = author_group(contributor, author_contributions_data,
+                                       author_correspondence_data, author_competing_interests_data,
+                                       equal_contributions_map, present_address_data,
+                                       foot_notes_data)
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
         elif contributor["type"] == "author":
-            author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
-                                        author_competing_interests_data, equal_contributions_map)
+            author_json = author_person(contributor, author_contributions_data,
+                                        author_correspondence_data, author_competing_interests_data,
+                                        equal_contributions_map, present_address_data, foot_notes_data)
 
         if author_json:
             authors_json_data.append(author_json)
@@ -2585,11 +2768,19 @@ def authors_json(soup):
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
             if contributor.get("group-author-key") == group_author_key:
-                author_json = author_person(contributor, author_contributions_data, author_correspondence_data,
-                                            author_competing_interests_data, equal_contributions_map)
-                if "people" not in group_author:
-                    group_author["people"] = []
-                group_author["people"].append(author_json)
+                author_json = author_person(contributor, author_contributions_data,
+                                            author_correspondence_data, author_competing_interests_data,
+                                            equal_contributions_map, present_address_data, foot_notes_data)
+                if contributor.get("sub-group"):
+                    if "groups" not in group_author:
+                        group_author["groups"] = OrderedDict()
+                    if contributor.get("sub-group") not in group_author["groups"]:
+                        group_author["groups"][contributor.get("sub-group")] = []
+                    group_author["groups"][contributor.get("sub-group")].append(author_json)
+                else:
+                    if "people" not in group_author:
+                        group_author["people"] = []
+                    group_author["people"].append(author_json)
 
     authors_json_data_rewritten = rewrite_json("authors_json", soup, authors_json_data)
     return authors_json_data_rewritten
