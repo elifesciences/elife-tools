@@ -66,6 +66,12 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p>Xref tag with multiple rid from 09561 v1 to <xref ref-type="fig" rid="fig3 fig4">Figures 3, 4</xref></p>', None,
          u'<p>Xref tag with multiple rid from 09561 v1 to <a href="#fig3">Figures 3, 4</a></p>'),
 
+        (True, u'<break></break>', None,
+         u'<br/>'),
+
+        (True, u'<monospace>m</monospace>', None,
+         u'<span class="monospace">m</span>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
