@@ -1566,14 +1566,7 @@ def competing_interests(soup, fntype_filter):
     if not competing_interests_section:
         return None
     fn = extract_nodes(first(competing_interests_section), "fn")
-    if type(fntype_filter) == list:
-        interests = []
-        for fntype in fntype_filter:
-            fn_interests = footnotes(fn, fntype)
-        if fn_interests:
-            interests = interests + fn_interests
-    else:
-        interests = footnotes(fn, fntype_filter)
+    interests = footnotes(fn, fntype_filter)
 
     return interests
 
@@ -1588,9 +1581,9 @@ def present_addresses(soup):
     return notes
 
 @nullify
-def foot_notes(soup):
+def other_foot_notes(soup):
     notes = []
-    fntype_filter = 'fn'
+    fntype_filter = ['fn', 'other']
     author_notes_section = raw_parser.author_notes(soup)
     if author_notes_section:
         fn_nodes = extract_nodes(author_notes_section, "fn")
@@ -2739,7 +2732,7 @@ def authors_json(soup):
     authors_non_byline_data = authors_non_byline(soup)
     equal_contributions_map = map_equal_contributions(contributors_data)
     present_address_data = present_addresses(soup)
-    foot_notes_data = foot_notes(soup)
+    foot_notes_data = other_foot_notes(soup)
 
     # First line authors builds basic structure
     for contributor in contributors_data:
