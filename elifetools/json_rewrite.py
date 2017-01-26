@@ -540,6 +540,13 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("authors"):
                         dataset["authors"] = [{"type": "group", "name": "University of California, Berkeley"}]
 
+    if doi == "10.7554/eLife.01440":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "EnsemblMetazoa"}]
+
     if doi == "10.7554/eLife.02304":
         if json_content.get("used"):
             for dataset in json_content["used"]:
@@ -572,6 +579,20 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("authors"):
                         dataset["authors"] = [{"type": "group", "name": "Vanderperre B."}]
 
+    if doi == "10.7554/eLife.04660":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if dataset.get("date") and dataset.get("date") == "2014-2015":
+                        dataset["date"] = u"2014"
+
+    if doi == "10.7554/eLife.06421":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if dataset.get("date") and dataset.get("date") == "NA":
+                        dataset["date"] = u"2006"
+
     if doi == "10.7554/eLife.08445":
         if json_content.get("used"):
             for dataset in json_content["used"]:
@@ -580,6 +601,16 @@ def rewrite_elife_datasets_json(json_content, doi):
                         dataset["date"] = u"2006"
                     if not dataset.get("authors"):
                         dataset["authors"] = [{"type": "group", "name": "BDTNP SELEX"}]
+
+    if doi == "10.7554/eLife.08916":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if dataset.get("date") and dataset.get("date") == "2008, updated 2014":
+                        dataset["date"] = u"2008"
+                if dataset.get("id") and dataset["id"] == "dataro3":
+                    if dataset.get("date") and dataset.get("date") == "2013, updated 2014":
+                        dataset["date"] = u"2013"
 
     if doi == "10.7554/eLife.08955":
         if json_content.get("generated"):
@@ -635,6 +666,13 @@ def rewrite_elife_datasets_json(json_content, doi):
                 if dataset.get("id") and dataset["id"] == "dataro9":
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
+
+    if doi == "10.7554/eLife.10877":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("title"):
+                        dataset["title"] = u"Oct4 ChIP-Seq at G1 and G2/M phase of cell cycle in mouse embryonic stem cells"
 
     if doi == "10.7554/eLife.10921":
         if json_content.get("generated"):
