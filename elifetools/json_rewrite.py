@@ -498,7 +498,118 @@ def rewrite_elife_authors_json(json_content, doi):
 def rewrite_elife_datasets_json(json_content, doi):
     """ this does the work of rewriting elife datasets json """
 
-    # Add dates
+    # Add dates in bulk
+    elife_dataset_dates = []
+    elife_dataset_dates.append(("10.7554/eLife.00348", "used", "dataro17", u"2010"))
+    elife_dataset_dates.append(("10.7554/eLife.01179", "used", "dataro4", u"2016"))
+    elife_dataset_dates.append(("10.7554/eLife.01603", "used", "dataro2", u"2012"))
+    elife_dataset_dates.append(("10.7554/eLife.02304", "used", "dataro15", u"2005"))
+    elife_dataset_dates.append(("10.7554/eLife.02935", "used", "dataro2", u"2014"))
+    elife_dataset_dates.append(("10.7554/eLife.03583", "used", "dataro5", u"2013"))
+    if doi in map(lambda dataset: dataset[0], elife_dataset_dates):
+        for (match_doi, used_or_generated, id, dataset_date) in elife_dataset_dates:
+            if doi == match_doi:
+                if json_content.get(used_or_generated):
+                    for dataset in json_content[used_or_generated]:
+                        if dataset.get("id") and dataset["id"] == id:
+                            if not dataset.get("date"):
+                                dataset["date"] = dataset_date
+
+    # Continue with individual article JSON rewriting
+    if doi == "10.7554/eLife.01311":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] in ["dataro3", "dataro4", "dataro5"]:
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2012"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Duke"}]
+                if dataset.get("id") and dataset["id"] == "dataro6":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2011"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "FlyBase"}]
+                if dataset.get("id") and dataset["id"] == "dataro7":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2011"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Baylor College of Medicine (BCM)"}]
+                if dataset.get("id") and dataset["id"] in ["dataro8", "dataro9"]:
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2012"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "University of California, Berkeley"}]
+
+    if doi == "10.7554/eLife.02304":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro11":
+                    if not dataset.get("title"):
+                        dataset["title"] = u"T.gondii LDH1 ternary complex with APAD+ and oxalate"
+
+    if doi == "10.7554/eLife.03574":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2006"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Riley,M."}, {"type": "group", "name": "Abe,T."}, {"type": "group", "name": "Arnaud,M.B."}, {"type": "group", "name": "Berlyn,M.K."}, {"type": "group", "name": "Blattner,F.R."}, {"type": "group", "name": "Chaudhuri,R.R."}, {"type": "group", "name": "Glasner,J.D."}, {"type": "group", "name": "Horiuchi,T."}, {"type": "group", "name": "Keseler,I.M."}, {"type": "group", "name": "Kosuge,T."}, {"type": "group", "name": "Mori,H."}, {"type": "group", "name": "Perna,N.T."}, {"type": "group", "name": "Plunkett,G. III"}, {"type": "group", "name": "Rudd,K.E."}, {"type": "group", "name": "Serres,M.H."}, {"type": "group", "name": "Thomas,G.H."}, {"type": "group", "name": "Thomson,N.R."}, {"type": "group", "name": "Wishart,D."}, {"type": "group", "name": "Wanner,B.L."}]
+
+    if doi == "10.7554/eLife.03676":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro4":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2013"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Human Gene Sequencing Center"}]
+
+    if doi == "10.7554/eLife.03971":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Vanderperre B."}]
+
+    if doi == "10.7554/eLife.08445":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "data-ro1":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2006"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "BDTNP SELEX"}]
+
+    if doi == "10.7554/eLife.08955":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Kurdistani S"}, {"type": "group", "name": "Marrban C"}, {"type": "group", "name": "Su T"}]
+
+    if doi == "10.7554/eLife.09207":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Prostate Cancer Genome Sequencing Project"}]
+
+    if doi == "10.7554/eLife.10607":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "data-ro4":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Authors"}]
+
+    if doi == "10.7554/eLife.10670":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "data-ro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "HIVdb"}]
+
+    # Add dates, authors, other details
     if doi == "10.7554/eLife.10856":
         if json_content.get("generated"):
             datasets_authors_for_10856 = [{"type": "group", "name": "Dagdas YF"}, {"type": "group", "name": "Belhaj K"}, {"type": "group", "name": "Maqbool A"}, {"type": "group", "name": "Chaparro-Garcia A"}, {"type": "group", "name": "Pandey P"}, {"type": "group", "name": "Petre B"}, {"type": "group", "name": "Tabassum N"}, {"type": "group", "name": "Cruz-Mireles N"}, {"type": "group", "name": "Hughes RK"}, {"type": "group", "name": "Sklenar J"}, {"type": "group", "name": "Win J"}, {"type": "group", "name": "Menke F"}, {"type": "group", "name": "Findlay K"}, {"type": "group", "name": "Banfield MJ"}, {"type": "group", "name": "Kamoun S"}, {"type": "group", "name": "Bozkurt TO"}]
@@ -524,6 +635,119 @@ def rewrite_elife_datasets_json(json_content, doi):
                 if dataset.get("id") and dataset["id"] == "dataro9":
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
+
+    if doi == "10.7554/eLife.10921":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Floor SN"}, {"type": "group", "name": "Doudna JA"}]
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Sidrauski C"}, {"type": "group", "name": "McGeachy A"}, {"type": "group", "name": "Ingolia N"}, {"type": "group", "name": "Walter P"}]
+
+    if doi == "10.7554/eLife.11117":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro14":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Authors"}]
+
+    if doi == "10.7554/eLife.12204":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Rhodes DR"}, {"type": "group", "name": "Kalyana-Sundaram S"}, {"type": "group", "name": "Mahavisno V"}, {"type": "group", "name": "Varambally R"}, {"type": "group", "name": "Yu J"}, {"type": "group", "name": "Briggs BB"}, {"type": "group", "name": "Barrette TR"}, {"type": "group", "name": "Anstet MJ"}, {"type": "group", "name": "Kincead-Beal C"}, {"type": "group", "name": "Kulkarni P"}, {"type": "group", "name": "Varambally S"}, {"type": "group", "name": "Ghosh D"}, {"type": "group", "name": "Chinnaiyan AM."}]
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Gaspar C"}, {"type": "group", "name": "Cardoso J"}, {"type": "group", "name": "Franken P"}, {"type": "group", "name": "Molenaar L"}, {"type": "group", "name": "Morreau H"}, {"type": "group", "name": "Möslein G"}, {"type": "group", "name": "Sampson J"}, {"type": "group", "name": "Boer JM"}, {"type": "group", "name": "de Menezes RX"}, {"type": "group", "name": "Fodde R."}]
+                if dataset.get("id") and dataset["id"] == "dataro3":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Graudens E"}, {"type": "group", "name": "Boulanger V"}, {"type": "group", "name": "Mollard C"}, {"type": "group", "name": "Mariage-Samson R"}, {"type": "group", "name": "Barlet X"}, {"type": "group", "name": "Grémy G"}, {"type": "group", "name": "Couillault C"}, {"type": "group", "name": "Lajémi M"}, {"type": "group", "name": "Piatier-Tonneau D"}, {"type": "group", "name": "Zaborski P"}, {"type": "group", "name": "Eveno E"}, {"type": "group", "name": "Auffray C"}, {"type": "group", "name": "Imbeaud S."}]
+                if dataset.get("id") and dataset["id"] == "dataro4":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Hong Y"}, {"type": "group", "name": "Downey T"}, {"type": "group", "name": "Eu KW"}, {"type": "group", "name": "Koh PK"},{"type": "group", "name": "Cheah PY"}]
+                if dataset.get("id") and dataset["id"] == "dataro5":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Kaiser S"}, {"type": "group", "name": "Park YK"}, {"type": "group", "name": "Franklin JL"}, {"type": "group", "name": "Halberg RB"}, {"type": "group", "name": "Yu M"}, {"type": "group", "name": "Jessen WJ"}, {"type": "group", "name": "Freudenberg J"}, {"type": "group", "name": "Chen X"}, {"type": "group", "name": "Haigis K"}, {"type": "group", "name": "Jegga AG"}, {"type": "group", "name": "Kong S"}, {"type": "group", "name": "Sakthivel B"}, {"type": "group", "name": "Xu H"}, {"type": "group", "name": "Reichling T"}, {"type": "group", "name": "Azhar M"}, {"type": "group", "name": "Boivin GP"}, {"type": "group", "name": "Roberts RB"}, {"type": "group", "name": "Bissahoyo AC"}, {"type": "group", "name": "Gonzales F"}, {"type": "group", "name": "Bloom GC"}, {"type": "group", "name": "Eschrich S"}, {"type": "group", "name": "Carter SL"}, {"type": "group", "name": "Aronow JE"}, {"type": "group", "name": "Kleimeyer J"}, {"type": "group", "name": "Kleimeyer M"}, {"type": "group", "name": "Ramaswamy V"}, {"type": "group", "name": "Settle SH"}, {"type": "group", "name": "Boone B"}, {"type": "group", "name": "Levy S"}, {"type": "group", "name": "Graff JM"}, {"type": "group", "name": "Doetschman T"}, {"type": "group", "name": "Groden J"}, {"type": "group", "name": "Dove WF"}, {"type": "group", "name": "Threadgill DW"}, {"type": "group", "name": "Yeatman TJ"}, {"type": "group", "name": "Coffey RJ Jr"}, {"type": "group", "name": "Aronow BJ."}]
+                if dataset.get("id") and dataset["id"] == "dataro6":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Muzny DM et al"}]
+                if dataset.get("id") and dataset["id"] == "dataro7":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Skrzypczak M"}, {"type": "group", "name": "Goryca K"}, {"type": "group", "name": "Rubel T"}, {"type": "group", "name": "Paziewska A"}, {"type": "group", "name": "Mikula M"}, {"type": "group", "name": "Jarosz D"}, {"type": "group", "name": "Pachlewski J"}, {"type": "group", "name": "Oledzki J"}, {"type": "group", "name": "Ostrowski J."}]
+                if dataset.get("id") and dataset["id"] == "dataro8":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Cancer Genome Atlas Network"}]
+
+    if doi == "10.7554/eLife.12876":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Department of Human Genetics, University of Utah"}]
+
+    if doi == "10.7554/eLife.13195":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Microbial Ecology Group, Colorado State University"}]
+
+    if doi == "10.7554/eLife.14158":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "data-ro1":
+                    if not dataset.get("title"):
+                        dataset["title"] = u"Bacterial initiation protein"
+                if dataset.get("id") and dataset["id"] == "data-ro2":
+                    if not dataset.get("title"):
+                        dataset["title"] = u"Bacterial initiation protein in complex with Phage inhibitor protein"
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro3":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2007"
+
+    if doi == "10.7554/eLife.14243":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro2":
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "Tramantano M"}, {"type": "group", "name": "Sun L"}, {"type": "group", "name": "Au C"}, {"type": "group", "name": "Labuz D"}, {"type": "group", "name": "Liu Z"}, {"type": "group", "name": "Chou M"}, {"type": "group", "name": "Shen C"}, {"type": "group", "name": "Luk E"}]
+
+
+    if doi == "10.7554/eLife.16078":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if dataset.get("date") and dataset.get("date") == "current manuscript":
+                        dataset["date"] = u"2016"
+
+    if doi == "10.7554/eLife.17082":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "data-ro4":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2012"
+                if dataset.get("id") and dataset["id"] == "data-ro5":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2014"
+                if dataset.get("id") and dataset["id"] == "data-ro6":
+                    if not dataset.get("date"):
+                        dataset["date"] = u"2014"
+                    if not dataset.get("authors"):
+                        dataset["authors"] = [{"type": "group", "name": "The Cancer Genome Atlas (TCGA)"}]
+
+    if doi == "10.7554/eLife.17473":
+        if json_content.get("generated"):
+            for dataset in json_content["generated"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if dataset.get("date") and dataset.get("date").startswith("Release date"):
+                        dataset["date"] = u"2016"
 
     return json_content
 
