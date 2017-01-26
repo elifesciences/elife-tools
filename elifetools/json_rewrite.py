@@ -683,13 +683,6 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("authors"):
                         dataset["authors"] = [{"type": "group", "name": "Cancer Genome Atlas Network"}]
 
-    if doi == "10.7554/eLife.11117":
-        if json_content.get("used"):
-            for dataset in json_content["used"]:
-                if dataset.get("id") and dataset["id"] == "dataro14":
-                    if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Authors"}]
-
     if doi == "10.7554/eLife.12876":
         if json_content.get("used"):
             for dataset in json_content["used"]:

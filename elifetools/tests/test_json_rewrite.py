@@ -4,6 +4,7 @@ import unittest
 import os
 import time
 from ddt import ddt, data, unpack
+import copy
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -45,6 +46,53 @@ class TestJsonRewrite(unittest.TestCase):
     def test_rewrite_function_name(self, journal_id, rewrite_type, expected):
         self.assertEqual(json_rewrite.rewrite_function_name(journal_id, rewrite_type), expected)
 
+    @unpack
+    @data(
+        ({'used': [{'id': 'dataro17'}]}, '10.7554/eLife.00348'),
+        ({'used': [{'id': 'dataro3'}]}, '10.7554/eLife.01311'),
+        ({'used': [{'id': 'dataro6'}]}, '10.7554/eLife.01311'),
+        ({'used': [{'id': 'dataro7'}]}, '10.7554/eLife.01311'),
+        ({'used': [{'id': 'dataro8'}]}, '10.7554/eLife.01311'),
+        ({'used': [{'id': 'dataro11'}]}, '10.7554/eLife.02304'),
+        ({'used': [{'id': 'dataro2'}]}, '10.7554/eLife.03574'),
+        ({'used': [{'id': 'dataro4'}]}, '10.7554/eLife.03676'),
+        ({'used': [{'id': 'dataro2'}]}, '10.7554/eLife.03971'),
+        ({'used': [{'id': 'data-ro1'}]}, '10.7554/eLife.08445'),
+        ({'generated': [{'id': 'dataro2'}]}, '10.7554/eLife.08955'),
+        ({'used': [{'id': 'dataro1'}]}, '10.7554/eLife.09207'),
+        ({'generated': [{'id': 'data-ro4'}]}, '10.7554/eLife.10607'),
+        ({'used': [{'id': 'data-ro1'}]}, '10.7554/eLife.10670'),
+        ({'generated': [{'id': 'dataro7'}]}, '10.7554/eLife.10856'),
+        ({'generated': [{'id': 'dataro8'}]}, '10.7554/eLife.10856'),
+        ({'generated': [{'id': 'dataro9'}]}, '10.7554/eLife.10856'),
+        ({'generated': [{'id': 'dataro1'}]}, '10.7554/eLife.10921'),
+        ({'used': [{'id': 'dataro2'}]}, '10.7554/eLife.10921'),
+        ({'used': [{'id': 'dataro14'}]}, '10.7554/eLife.11117'),
+        ({'used': [{'id': 'dataro1'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro2'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro3'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro4'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro5'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro6'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro7'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro8'}]}, '10.7554/eLife.12204'),
+        ({'used': [{'id': 'dataro1'}]}, '10.7554/eLife.12876'),
+        ({'generated': [{'id': 'dataro1'}]}, '10.7554/eLife.13195'),
+        ({'generated': [{'id': 'data-ro1'}]}, '10.7554/eLife.14158'),
+        ({'generated': [{'id': 'data-ro2'}]}, '10.7554/eLife.14158'),
+        ({'used': [{'id': 'dataro3'}]}, '10.7554/eLife.14158'),
+        ({'generated': [{'id': 'dataro2'}]}, '10.7554/eLife.14243'),
+        ({'generated': [{'id': 'dataro1', 'date': 'current manuscript'}]}, '10.7554/eLife.16078'),
+        ({'used': [{'id': 'data-ro4'}]}, '10.7554/eLife.17082'),
+        ({'used': [{'id': 'data-ro5'}]}, '10.7554/eLife.17082'),
+        ({'used': [{'id': 'data-ro6'}]}, '10.7554/eLife.17082'),
+        ({'generated': [{'id': 'dataro1', 'date': 'Release date: '}]}, '10.7554/eLife.17473'),
+
+        )
+    def test_rewrite_elife_datasets_json(self, json_content, doi):
+        """simple tests for coverage assert the result is different"""
+        original_json_content = copy.deepcopy(json_content)
+        self.assertNotEqual(json_rewrite.rewrite_elife_datasets_json(json_content, doi), original_json_content)
 
 
 if __name__ == '__main__':
