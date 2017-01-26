@@ -54,6 +54,7 @@ class TestJsonRewrite(unittest.TestCase):
         ({'used': [{'id': 'dataro7'}]}, '10.7554/eLife.01311'),
         ({'used': [{'id': 'dataro8'}]}, '10.7554/eLife.01311'),
         ({'used': [{'id': 'dataro1'}]}, '10.7554/eLife.01440'),
+        ({'used': [{'id': 'dataro1', 'date': '2000, 2005'}]}, '10.7554/eLife.01535'),
         ({'used': [{'id': 'dataro11'}]}, '10.7554/eLife.02304'),
         ({'used': [{'id': 'dataro2'}]}, '10.7554/eLife.03574'),
         ({'used': [{'id': 'dataro4'}]}, '10.7554/eLife.03676'),

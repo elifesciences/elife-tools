@@ -547,6 +547,13 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("authors"):
                         dataset["authors"] = [{"type": "group", "name": "EnsemblMetazoa"}]
 
+    if doi == "10.7554/eLife.01535":
+        if json_content.get("used"):
+            for dataset in json_content["used"]:
+                if dataset.get("id") and dataset["id"] == "dataro1":
+                    if dataset.get("date") and dataset.get("date") == "2000, 2005":
+                        dataset["date"] = u"2000"
+
     if doi == "10.7554/eLife.02304":
         if json_content.get("used"):
             for dataset in json_content["used"]:
