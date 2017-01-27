@@ -922,7 +922,7 @@ def format_contrib_refs(contrib_tag, soup):
     return contrib_refs, ref_type_aff_count
 
 def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
-                       group_author_key=None):
+                       group_author_key=None, target_tags_corresp=None, target_tags_fn=None):
     contributor = {}
     copy_attribute(contrib_tag.attrs, 'contrib-type', contributor, 'type')
     # Set contrib type if passed via params
@@ -1037,25 +1037,26 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         if(len(corresp_tags) > 0):
             if 'notes-corresp' not in contributor:
                 contributor['notes-corresp'] = []
-            target_tags = raw_parser.corresp(soup)
+            if not target_tags_corresp:
+                target_tags_corresp = raw_parser.corresp(soup)
             for cor in corresp_tags:
                 # Find the matching tag
                 rid = cor['rid']
-                corresp_node = first(filter(lambda tag: tag.get("id") == rid, target_tags))
+                corresp_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_corresp))
                 author_notes = node_text(corresp_node)
                 if author_notes:
                     contributor['notes-corresp'].append(author_notes)
-        
         # Add xref linked footnotes if applicable
         fn_tags = contrib_xref(contrib_tag, "fn")
         if(len(fn_tags) > 0):
             if 'notes-fn' not in contributor:
                 contributor['notes-fn'] = []
-            target_tags = raw_parser.fn(soup)
+            if not target_tags_fn:
+                target_tags_fn = raw_parser.fn(soup)
             for fn in fn_tags:
                # Find the matching tag
                rid = fn['rid']
-               fn_node = first(filter(lambda tag: tag.get("id") == rid, target_tags))
+               fn_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_fn))
                fn_text = node_text(fn_node)
                if fn_text:
                    contributor['notes-fn'].append(fn_text)
@@ -1106,6 +1107,11 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     
     group_author_id = 0
     prev_group_author_id = 0
+    
+    # Pre-parse some values to pass to optimise this procedure
+    target_tags_corresp = raw_parser.corresp(soup)
+    target_tags_fn = raw_parser.fn(soup)
+
     for tag in contrib_tags:
 
         # Set the group author key if missing
@@ -1125,7 +1131,7 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
         else:
             author_contrib_type = contrib_type
 
-        author = format_contributor(tag, soup, detail, author_contrib_type, group_author_key)
+        author = format_contributor(tag, soup, detail, author_contrib_type, group_author_key, target_tags_corresp, target_tags_fn)
 
         # If not empty, add position value, append, then increment the position counter
         if(len(author) > 0):
