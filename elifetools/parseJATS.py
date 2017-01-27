@@ -2609,7 +2609,9 @@ def author_foot_notes(author, foot_notes_data):
                     text = re.sub(u'<label>.*</label>', '', foot_note.get("text"))
                     text = (
                         text.replace('<p>', '').replace('</p>', ''))
-                    foot_notes.append(text)
+                    # For authors json do not include footnotes regarding deceased
+                    if 'deceased' not in text.lower():
+                        foot_notes.append(text)
     if foot_notes != []:
         return foot_notes
     else:
