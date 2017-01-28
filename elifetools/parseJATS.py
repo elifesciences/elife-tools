@@ -275,7 +275,7 @@ def pub_date(soup):
     """
     pub_date = raw_parser.pub_date(soup, date_type = "pub")
     if pub_date is None:
-        pub_date = raw_parser.pub_date(soup, date_type = "Publication")
+        pub_date = raw_parser.pub_date(soup, date_type = "publication")
     if pub_date is None:
         return None
     (day, month, year) = ymd(pub_date)
