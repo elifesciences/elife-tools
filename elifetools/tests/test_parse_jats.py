@@ -164,6 +164,29 @@ class TestParseJats(unittest.TestCase):
         keywords_json = parser.keywords_json(self.soup(filename))
         self.assertEqual(expected, keywords_json)
 
+
+    @unpack
+    @data(
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"/>',
+         []
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><kwd-group kwd-group-type="research-organism"><title>Research organism</title><kwd><italic>A. thaliana</italic></kwd><kwd>Other</kwd></kwd-group></root>',
+         ['<i>A. thaliana</i>']
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><kwd-group kwd-group-type="research-organism"><title>Research organism</title><kwd>None</kwd></kwd-group></root>',
+         []
+        ),
+    )
+
+    def test_research_organism_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.research_organism_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
+
     @unpack
     @data(
         ('<root></root>',

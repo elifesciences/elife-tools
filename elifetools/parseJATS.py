@@ -1851,6 +1851,15 @@ def keywords_json(soup, html_flag=True):
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
     return map(convert, full_keywords(soup))
 
+def research_organism_json(soup, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
+    do_not_include = ['none', 'other']
+    research_organisms = filter(lambda term: term and term.lower() not in do_not_include,
+                                full_research_organism(soup))
+    return map(convert, research_organisms)
+
 def body(soup, remove_key_info_box=False, base_url=None):
 
     body_content = []
