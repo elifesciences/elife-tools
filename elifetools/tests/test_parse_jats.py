@@ -164,6 +164,29 @@ class TestParseJats(unittest.TestCase):
         keywords_json = parser.keywords_json(self.soup(filename))
         self.assertEqual(expected, keywords_json)
 
+
+    @unpack
+    @data(
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"/>',
+         []
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><kwd-group kwd-group-type="research-organism"><title>Research organism</title><kwd><italic>A. thaliana</italic></kwd><kwd>Other</kwd></kwd-group></root>',
+         ['<i>A. thaliana</i>']
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><kwd-group kwd-group-type="research-organism"><title>Research organism</title><kwd>None</kwd></kwd-group></root>',
+         []
+        ),
+    )
+
+    def test_research_organism_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.research_organism_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
+
     @unpack
     @data(
         ('<root></root>',
@@ -554,7 +577,7 @@ class TestParseJats(unittest.TestCase):
 
         # 06956 v1, excerpt, add an affiliation name to an author
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">06956</article-id><article-id pub-id-type="doi">10.7554/eLife.06956</article-id><contrib-group><contrib contrib-type="author" corresp="yes" id="author-17393"><name><surname>Alfred</surname><given-names>Jane</given-names></name><x> </x><role>Consultant Editor</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6798-0064</contrib-id><xref ref-type="aff" rid="aff1"/></contrib><aff id="aff1"><addr-line><named-content content-type="city">Cambridge</named-content></addr-line>, <country>United Kingdom</country></aff></contrib-group></article-meta></front></article></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Jane Alfred'), ('index', u'Alfred, Jane')])), ('orcid', u'0000-0001-6798-0064'), ('affiliations', [OrderedDict([('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))])), ('name', ['Cambridge'])])])])]
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Jane Alfred'), ('index', u'Alfred, Jane')])), ('orcid', u'0000-0001-6798-0064'), ('role', u'Consultant Editor'), ('affiliations', [OrderedDict([('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))])), ('name', ['Cambridge'])])])])]
          ),
 
         # 21337 v1, example to pick up the email of corresponding authors from authors notes
@@ -575,6 +598,21 @@ class TestParseJats(unittest.TestCase):
         # 09594 v2 example of non-standard footnote fn-type other and id starting with 'fn'
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" deceased="yes" id="author-37132"><name><surname>Eguchi</surname><given-names>Yukiko</given-names></name><xref ref-type="aff" rid="aff6">6</xref><xref ref-type="fn" rid="con7"/><xref ref-type="fn" rid="conf1"/><xref ref-type="fn" rid="fn1">†</xref></contrib><aff id="aff6"><label>6</label><institution content-type="dept">National Institute for Basic Biology</institution>, <institution>National Institutes for Natural Sciences</institution>, <addr-line><named-content content-type="city">Okazaki</named-content></addr-line>, <country>Japan</country></aff><author-notes><fn fn-type="other" id="fn1"><label>†</label><p>Deceased</p></fn></author-notes></article-meta></front><back><sec id="s5" sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group><fn-group content-type="author-contribution"><title>Author contributions</title><fn fn-type="con" id="con7"><p>YE, Contributed reagents</p></fn></fn-group></sec></back></root>',
          [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Yukiko Eguchi'), ('index', u'Eguchi, Yukiko')])), ('deceased', True), ('affiliations', [OrderedDict([('name', [u'National Institute for Basic Biology', u'National Institutes for Natural Sciences']), ('address', OrderedDict([('formatted', [u'Okazaki', u'Japan']), ('components', OrderedDict([('locality', [u'Okazaki']), ('country', u'Japan')]))]))])]), ('contribution', u'YE, Contributed reagents'), ('competingInterests', u'The authors declare that no competing interests exist.')])]
+         ),
+
+        # 21230 v1 example of author role to parse
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-68973"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8615-6409</contrib-id><xref ref-type="fn" rid="conf1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1002"><name><surname>Patterson</surname><given-names>Mark</given-names></name><role>Executive Director</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7237-0797</contrib-id><xref ref-type="fn" rid="conf2"/><email>m.patterson@elifesciences.org</email></contrib></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>Receives funding from the Howard Hughes Medical Institute</p></fn><fn fn-type="conflict" id="conf2"><p>The other author declares that no competing interests exist.</p></fn></fn-group></back></root>',
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Randy Schekman'), ('index', u'Schekman, Randy')])), ('orcid', u'0000-0001-8615-6409'), ('role', u'Editor-in-Chief'), ('competingInterests', u'Receives funding from the Howard Hughes Medical Institute')]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Mark Patterson'), ('index', u'Patterson, Mark')])), ('orcid', u'0000-0001-7237-0797'), ('role', u'Executive Director'), ('emailAddresses', [u'm.patterson@elifesciences.org']), ('competingInterests', u'The other author declares that no competing interests exist.')])]
+         ),
+
+        # 00351 v1 example of author role to parse
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-2919"><name><surname>Smith</surname><given-names>Richard</given-names></name><xref ref-type="fn" rid="conf1"/><x> is the </x><role>Chair of Patients Know Best</role><x> and was the </x><role>Editor of the BMJ from 1991 to 2004</role><aff><email>richardswsmith@yahoo.co.uk</email></aff></contrib></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><fn fn-type="conflict" id="conf1"><label>Competing interest:</label><p>The author reviewed Goldacre\'s first book for the BMJ, and is mentioned briefly in Bad Pharma. Over the years he has had some meals paid for by drug companies and spoken at meetings sponsored by drug companies (as has Goldacre), which is hard to avoid if you speak at all as a doctor. 30 years ago he won an award from the Medical Journalists\' Association that was sponsored by Eli Lilly, and discovered that the company thought it had bought him. Since then he has avoided prizes awarded by drug companies.</p></fn></fn-group></back></root>',
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Richard Smith'), ('index', u'Smith, Richard')])), ('role', u'Chair of Patients Know Best'), ('emailAddresses', [u'richardswsmith@yahoo.co.uk']), ('competingInterests', "<label>Competing interest:</label>The author reviewed Goldacre's first book for the BMJ, and is mentioned briefly in Bad Pharma. Over the years he has had some meals paid for by drug companies and spoken at meetings sponsored by drug companies (as has Goldacre), which is hard to avoid if you speak at all as a doctor. 30 years ago he won an award from the Medical Journalists' Association that was sponsored by Eli Lilly, and discovered that the company thought it had bought him. Since then he has avoided prizes awarded by drug companies.")])]
+         ),
+
+        # 21723 v1 another example of author role
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-8100"><name><surname>Raman</surname><given-names>Indira M</given-names></name><x>is an</x><role><italic>eLife</italic> Reviewing Editor</role><xref ref-type="aff" rid="aff1"/><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="fn" rid="conf1"/><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5245-8177</contrib-id><x>and is in the</x><aff id="aff1"><institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country></aff></contrib><aff id="aff1"><institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor1"><email>i-raman@northwestern.edu</email></corresp></author-notes></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The author declares that no competing interests exist.</p></fn></fn-group></back>',
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Indira M Raman'), ('index', u'Raman, Indira M')])), ('orcid', u'0000-0001-5245-8177'), ('role', '<i>eLife</i> Reviewing Editor'), ('affiliations', [OrderedDict([('name', [u'Department of Neurobiology', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('emailAddresses', [u'i-raman@northwestern.edu']), ('competingInterests', u'The author declares that no competing interests exist.')])]
          ),
 
         )
