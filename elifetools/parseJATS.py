@@ -953,6 +953,10 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             if contrib_id_tag['contrib-id-type'] == 'orcid':
                 contributor['orcid'] = node_contents_str(contrib_id_tag)
         set_if_value(contributor, "role", first_node_str_contents(contrib_tag, "role"))
+        if raw_parser.bio(contrib_tag):
+            biography_content = body_block_content_render(firstnn(raw_parser.bio(contrib_tag)))
+            if len(biography_content) > 0:
+                contributor["bio"] = biography_content[0].get("content")
         set_if_value(contributor, "email", contrib_email(contrib_tag))
         set_if_value(contributor, "phone", contrib_phone(contrib_tag))
         name_tag = first(extract_nodes(contrib_tag, "name"))
@@ -2690,6 +2694,8 @@ def author_person(author, contributions, correspondence, competing_interests,
         author_json["deceased"] = True
     if author.get("role"):
         author_json["role"] = xml_to_html(True, author.get("role"))
+    if author.get("bio"):
+        author_json["biography"] = author.get("bio")
     author_json = author_json_details(author, author_json, contributions, correspondence,
                                       competing_interests, equal_contributions_map,
                                       present_address_data, foot_notes_data)

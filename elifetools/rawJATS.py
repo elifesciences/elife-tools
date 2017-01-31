@@ -251,6 +251,8 @@ def email(soup):
 def phone(soup):
     return extract_nodes(soup, "phone")
 
+def bio(soup):
+    return extract_nodes(soup, "bio")
 
 #
 # references
