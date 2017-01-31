@@ -390,14 +390,14 @@ content must work as a discrete item on each author's roll over and on the displ
                 </fn>
             </author-notes>
 <!-- CHANGE: pub-date will still continue to keep the PoA pub date in the XML but it will also include the updated date that the VoR is published. The first time 
-an article is published it will contain one date, which will contain the @date-type attribute of "Publication". This new instance of the XML will also be added
-into pub-date with a @date-type attribute of "Update" -->
-            <pub-date publication-format="electronic" date-type="Update">
+an article is published it will contain one date, which will contain the @date-type attribute of "publication". This new instance of the XML will also be added
+into pub-date with a @date-type attribute of "update" -->
+            <pub-date publication-format="electronic" date-type="update">
                 <day>11</day>
                 <month>08</month>
                 <year>2016</year>
             </pub-date>
-            <pub-date publication-format="electronic" date-type="Publication">
+            <pub-date publication-format="electronic" date-type="publication">
                 <day>25</day>
                 <month>04</month>
                 <year>2016</year>
@@ -4157,7 +4157,8 @@ UPDATE: punctuation between institution and country removed. -->
                 <!-- UPDATE: added to author response assets 
                     DOI prefix added to display--> 
                 <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.033</object-id>
-                <label>Author response video 1.</label><caption>
+                <label>Author response video 1.</label>
+                <caption>
                     <p>Caption and/or a title is required for all author response assets</p>
                 </caption>
             </media>
