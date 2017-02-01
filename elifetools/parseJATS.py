@@ -3256,6 +3256,19 @@ def ethics_json(soup):
     return ethics_json
 
 
+def unwrap_appendix_box(json_content):
+    """for use in removing unwanted boxed-content from appendices json"""
+    if json_content.get("content") and len(json_content["content"]) > 0:
+        first_block = json_content["content"][0]
+        if (first_block.get("type")
+            and first_block.get("type") == "box"
+            and first_block.get("content")):
+            if first_block.get("doi") and not json_content.get("doi"):
+                json_content["doi"] = first_block.get("doi")
+            json_content["content"] = first_block["content"]
+    return json_content
+
+
 def appendices_json(soup, base_url=None):
     appendices_json = []
     app_group = None
@@ -3277,13 +3290,10 @@ def appendices_json(soup, base_url=None):
 
         # If the first element is a box and it has no DOI, then ignore it
         #  by setting its child content to itself
+        #  Also check one level deeper for box elements
+        app_content = unwrap_appendix_box(app_content)
         if app_content.get("content") and len(app_content["content"]) > 0:
-            first_block = app_content["content"][0]
-            if (first_block.get("type")
-                and first_block.get("type") == "box"
-                and first_block.get("content")
-                and not first_block.get("doi")):
-                app_content["content"] = first_block["content"]
+            app_content["content"][0] = unwrap_appendix_box(app_content["content"][0])
 
         # If the first section has not title, set its child content to itself
         if app_content.get("content") and len(app_content["content"]) > 0:

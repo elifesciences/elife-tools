@@ -123,8 +123,13 @@ class TestParseJats(unittest.TestCase):
         ),
 
         # appendix with no sections, based on 00666 kitchen sink
-        ('<root><back><app-group><app><title>Appendix 3</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.00666.034</object-id><p>This is an example of an appendix with no sections.</p></boxed-text></app></app-group></back></root>',
-         [OrderedDict([('title', u'Appendix 3'), ('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00666.034'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'This is an example of an appendix with no sections.')])])])])])]
+        ('<root><back><app-group><app id="appendix-3"><title>Appendix 3</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.00666.034</object-id><p>This is an example of an appendix with no sections.</p></boxed-text></app></app-group></back></root>',
+         [OrderedDict([('id', u'appendix-3'), ('title', u'Appendix 3'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'This is an example of an appendix with no sections.')])]), ('doi', u'10.7554/eLife.00666.034')])]
+        ),
+
+        # appendix with a section and a box, also based on 00666 kitchen sink
+        ('<root><back><app-group><app id="appendix-1"><title>Appendix 1</title><sec sec-type="appendix" id="s8"><title>Preparation</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.00666.023</object-id><p>Paragraph content.</p></boxed-text></sec></app></app-group></back></root>',
+         [OrderedDict([('id', u'appendix-1'), ('title', u'Appendix 1'), ('content', [OrderedDict([('type', 'section'), ('id', u's8'), ('title', u'Preparation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')])]), ('doi', u'10.7554/eLife.00666.023')])])])]
         ),
 
         )
