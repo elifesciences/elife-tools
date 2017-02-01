@@ -124,6 +124,14 @@ def starts_with_doi(tag):
     else:
         return False
 
+def paragraph_is_only_doi(tag):
+    if (node_text(tag).strip().startswith('http://dx.doi.org')
+        and ' ' not in node_text(tag).strip()
+        and node_contents_str(tag).startswith('<ext-link ext-link-type="doi"')):
+        return True
+    else:
+        return False
+
 def doi_uri_to_doi(value):
     "Strip the uri schema from the start of DOI URL strings"
     if value is None:
@@ -143,7 +151,9 @@ def doi_to_doi_uri(value):
 
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    return filter(lambda tag: not starts_with_doi(tag), tags)
+    p_tags = filter(lambda tag: not starts_with_doi(tag), tags)
+    p_tags = filter(lambda tag: not paragraph_is_only_doi(tag), p_tags)
+    return p_tags
 
 def remove_tag_from_tag(tag, nodename):
     if not nodename:

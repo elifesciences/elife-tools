@@ -91,5 +91,25 @@ class TestUtils(unittest.TestCase):
     def test_doi_to_doi_uri(self, doi_uri, expected_doi):
         self.assertEqual(utils.doi_to_doi_uri(doi_uri), expected_doi)
 
+    @unpack
+    @data(
+        ('<root><p><bold>A</bold> c</p></root>', u'[<p><bold>A</bold> c</p>]'),
+        ('<root><p><bold>A</bold> c</p><p>DOI:</p></root>', u'[<p><bold>A</bold> c</p>]'),
+
+        # example based on unwanted tag in elife 00049
+        ('<root><p>First paragraph</p><p><bold>A</bold> c</p><p><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00049.011">http://dx.doi.org/10.7554/eLife.00049.011</ext-link></p></root>',
+         u'[<p>First paragraph</p>, <p><bold>A</bold> c</p>]'),
+
+        # example to keep the DOI looking paragraph because there is more content
+        ('<root><p><bold>A</bold> c</p><p><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00049.011">http://dx.doi.org/10.7554/eLife.00049.011</ext-link><bold>Content to test.</bold></p></root>',
+         u'[<p><bold>A</bold> c</p>, <p><ext-link ext-link-type="doi" href="10.7554/eLife.00049.011">http://dx.doi.org/10.7554/eLife.00049.011</ext-link><bold>Content to test.</bold></p>]'),
+
+        )
+    def test_remove_doi_paragraph(self, xml, expected_xml):
+        soup = parser.parse_xml(xml)
+        modified_tag = utils.remove_doi_paragraph(soup.contents[0])
+        self.assertEqual(unicode(modified_tag), expected_xml)
+
+
 if __name__ == '__main__':
     unittest.main()
