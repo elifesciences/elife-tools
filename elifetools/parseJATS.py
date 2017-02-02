@@ -2581,7 +2581,7 @@ def author_competing_interests(author, competing_interests):
 def author_equal_contribution(author, equal_contributions_map):
     equal_contributions = []
 
-    if "contribution" in author.get("references"):
+    if "equal-contrib" in author.get("references"):
         if "equal-contrib" in author["references"]:
             for ref_id in author["references"]["equal-contrib"]:
                 if ref_id in equal_contributions_map:
