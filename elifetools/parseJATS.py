@@ -1526,11 +1526,15 @@ def full_correspondence(soup):
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
+            if tag['id'] not in cor:
+                cor[tag['id']] = []
             if raw_parser.email(tag):
-                cor[tag['id']] = node_contents_str(first(raw_parser.email(tag)))
+                # Multiple email addresses possible
+                for email_tag in raw_parser.email(tag):
+                    cor[tag['id']].append(node_contents_str(email_tag))
             elif raw_parser.phone(tag):
                 # Look for a phone number
-                cor[tag['id']] = node_contents_str(first(raw_parser.phone(tag)))
+                cor[tag['id']].append(node_contents_str(first(raw_parser.phone(tag))))
 
     return cor
 
@@ -2508,10 +2512,12 @@ def author_affiliations(author, html_flag=True):
 
 def author_phone_numbers(author, correspondence):
     phone_numbers = []
-    if "phone" in author.get("references"):
+    if correspondence and "phone" in author.get("references"):
         for ref_id in author["references"]["phone"]:
-            if correspondence and ref_id in correspondence:
-                phone_numbers.append(correspondence[ref_id])
+            for corr_ref_id, data in correspondence.iteritems():
+                if ref_id == corr_ref_id:
+                    for phone_number in data:
+                        phone_numbers.append(phone_number)
     if phone_numbers != []:
         return phone_numbers
     else:
@@ -2532,10 +2538,12 @@ def author_phone_numbers_json(author, correspondence):
 def author_email_addresses(author, correspondence):
     email_addresses = []
 
-    if "email" in author.get("references"):
+    if correspondence and "email" in author.get("references"):
         for ref_id in author["references"]["email"]:
-            if correspondence and ref_id in correspondence:
-                email_addresses.append(correspondence[ref_id])
+            for corr_ref_id, data in correspondence.iteritems():
+                if ref_id == corr_ref_id:
+                    for email_address in data:
+                        email_addresses.append(email_address)
 
     # Also look in affiliations for inline email tags
     if author.get("affiliations"):
@@ -2581,7 +2589,7 @@ def author_competing_interests(author, competing_interests):
 def author_equal_contribution(author, equal_contributions_map):
     equal_contributions = []
 
-    if "contribution" in author.get("references"):
+    if "equal-contrib" in author.get("references"):
         if "equal-contrib" in author["references"]:
             for ref_id in author["references"]["equal-contrib"]:
                 if ref_id in equal_contributions_map:
