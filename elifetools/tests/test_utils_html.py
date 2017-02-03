@@ -72,6 +72,9 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<monospace>m</monospace>', None,
          u'<span class="monospace">m</span>'),
 
+        (True, u'<table><thead><!--  Header row  --><tr><!-- This header row ... --><th></th></tr></thead><tbody><!--  Table body  --><tr><td>Genotype</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype</td></tr></tbody></table>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
