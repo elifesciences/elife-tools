@@ -57,6 +57,9 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p>', None,
          u'<p><img src="elife-00240-inf1-v1.jpg"/></p>'),
 
+        (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1.tiff"/></p>', None,
+         u'<p><img src="elife-00240-inf1-v1.jpg"/></p>'),
+
         (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1.tif"/>Some text <inline-graphic xlink:href="elife-00240-inf2-v1.jpg"/>><inline-graphic xlink:href="elife-00240-inf3-v1.gif"></inline-graphic></p>', 'https://example.org/',
          u'<p><img src="https://example.org/elife-00240-inf1-v1.jpg"/>Some text <img src="https://example.org/elife-00240-inf2-v1.jpg"/>&gt;<img src="https://example.org/elife-00240-inf3-v1.gif"/></p>'),
 
@@ -71,6 +74,9 @@ class TestUtilsHtml(unittest.TestCase):
 
         (True, u'<monospace>m</monospace>', None,
          u'<span class="monospace">m</span>'),
+
+        (True, u'<table><thead><!--  Header row  --><tr><!-- This header row ... --><th></th></tr></thead><tbody><!--  Table body  --><tr><td>Genotype</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype</td></tr></tbody></table>'),
 
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):

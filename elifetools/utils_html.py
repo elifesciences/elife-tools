@@ -18,6 +18,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_simple_tags(html_string, 'monospace', 'span', '<span class="monospace">')
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
     html_string = replace_simple_tags(html_string, 'break', 'br')
+    html_string = remove_comment_tags(html_string)
     # Run it through BeautifulSoup as HTML if it contains tags, this
     #  encodes unmatched angle brackets
     if '<' in html_string or '>' in html_string:
@@ -104,7 +105,7 @@ def replace_email_tags(s):
     return s
 
 def replace_inline_graphic_tags(s, base_url=None):
-    from_file_extension = '.tif'
+    from_file_extension = ['.tif', '.tiff']
     to_file_extension = '.jpg'
     for tag_match in re.finditer("<(inline-graphic.*?)>", s):
         xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
@@ -114,8 +115,10 @@ def replace_inline_graphic_tags(s, base_url=None):
                 # Add or change file extension
                 if '.' not in xlink:
                     xlink = xlink + to_file_extension
-                elif xlink.endswith(from_file_extension):
-                    xlink = xlink.replace(from_file_extension, to_file_extension)
+                else:
+                    for extension in from_file_extension:
+                        if xlink.endswith(extension):
+                            xlink = xlink.replace(extension, to_file_extension)
                 # Add base_url if given
                 if base_url:
                     xlink = base_url + xlink
@@ -124,4 +127,10 @@ def replace_inline_graphic_tags(s, base_url=None):
                 s = s.replace(old_tag, new_tag)
             except StopIteration:
                 pass
+    return s
+
+def remove_comment_tags(s):
+    for tag_match in re.finditer("<!--(.*?)-->", s):
+        old_tag = '<!--' + tag_match.group(1) + '-->'
+        s = s.replace(old_tag, '')
     return s

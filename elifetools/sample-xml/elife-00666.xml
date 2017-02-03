@@ -35,8 +35,8 @@ UPDATE: <journal-id journal-id-type="hwp">eLife</journal-id> has been removed - 
 Originally the “dx” separated the DOI resolver from the International DOI Foundation (IDF) website but this has changed and the IDF has already updated its recommendations 
 so we are bringing ours in line with theirs. We are also recommending the use of HTTPS because it makes for more secure browsing.
 -->       
- <!-- UPDATE: DOI prefix added to display--> 
-            <article-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666</article-id>
+ <!-- UPDATE: DOI prefix removed from XML but must be added to display in PDF and HTML--> 
+            <article-id pub-id-type="doi">10.7554/eLife.00666</article-id>
             <article-categories>
 <!-- @subj-group-type "display-channel" - eLife-defined article type, controlled list for Research Content (case sensitive):
 Research Article
@@ -433,31 +433,6 @@ NOT IN PMC YET, will need to discuss with them when we want to implement
                     <month>04</month>
                     <year>2016</year>
                 </date>
-                <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v1">
-                    <date date-type="AM" iso-8601-date="2016-04-25">
-                    <day>25</day>
-                    <month>04</month>
-                    <year>2016</year>
-                </date>
-                </related-object>
-                <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v2">
-                    <date date-type="EAM" iso-8601-date="2016-06-12">
-                    <day>12</day>
-                    <month>06</month>
-                    <year>2016</year>
-                </date>
-                    <comment>The first version of this article was enhanced considerably between versions of the XML instance.
-                             These changes can bee seen on <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</ext-link>.</comment>
-                </related-object>
-                <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v3">
-                <date date-type="VoR" iso-8601-date="2016-06-12">
-                    <day>27</day>
-                    <month>07</month>
-                    <year>2016</year>
-                </date>
-                    <comment>The first version of this article was enhanced considerably between versions of the XML instance. 
-                             These changes can bee seen on <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</ext-link>.</comment>
-                </related-object>
                 </history>
 <!-- UPDATE: Permissions: this has changed/been updated to include the free_to_reed tag further to NISO recommendations -->
             <permissions>
@@ -476,6 +451,31 @@ NOT IN PMC YET, will need to discuss with them when we want to implement
                 </license>
             </permissions>
             <self-uri content-type="pdf" xlink:href="elife00666.pdf"/>
+            <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v1">
+                <date date-type="AM" iso-8601-date="2016-04-25">
+                    <day>25</day>
+                    <month>04</month>
+                    <year>2016</year>
+                </date>
+            </related-object>
+            <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v2">
+                <date date-type="EAM" iso-8601-date="2016-06-12">
+                    <day>12</day>
+                    <month>06</month>
+                    <year>2016</year>
+                </date>
+                <comment>The first version of this article was enhanced considerably between versions of the XML instance.
+                    These changes can bee seen on <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</ext-link>.</comment>
+            </related-object>
+            <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v3">
+                <date date-type="VoR" iso-8601-date="2016-06-12">
+                    <day>27</day>
+                    <month>07</month>
+                    <year>2016</year>
+                </date>
+                <comment>The first version of this article was enhanced considerably between versions of the XML instance. 
+                    These changes can bee seen on <ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</ext-link>.</comment>
+            </related-object>
 <!-- Related article linking: Optional.
 Set of accepted @related-article-type values:
 Research to Research (or Feature to Feature): <related-article related-article-type="article-reference" ext-link-type="doi" xlink:href="10.7554/eLife.01295" id="ra1"/>
@@ -486,12 +486,12 @@ NOTE: id="ra1" is required for PMC, not for eLife publication. Multiple related 
 In discussion with PMC re this 
 NOTE: research advance MUST contain <related-article related-article-type="article-reference" link to the original article it is building upon
 -->
-<!-- UPDATE: Abstract: The following is no longer required for the XML file. However, it must be displayed in the PDF and the display must include prefix  https://doi.org/ 
+<!-- UPDATE: Abstract: The following is no longer required for the XML file. However, it must be displayed in the PDF: 
 <bold>DOI:</bold>
 <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00666.001">https://doi.org/10.7554/eLife.00666.001</ext-link> -->
             <abstract>
-<!-- UPDATE: DOI prefix added to display-->                
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.001</object-id>
+<!-- UPDATE: DOI prefix removed from XML but must be added for display-->                
+                <object-id pub-id-type="doi">10.7554/eLife.00666.001</object-id>
                 <p>This is the abstract. This article will describe the eLife article and the process.
                     An abstract can contain any formatting, such as <italic>italics</italic>,
                         <bold>bold</bold>, <sup>superscript</sup>, <sub>subscript</sub> or <sc>small caps</sc>. MathML is
@@ -528,8 +528,8 @@ NOTE: research advance MUST contain <related-article related-article-type="artic
 <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00666.001">https://doi.org/10.7554/eLife.00666.002</ext-link>
 Additionally, digest are no longer a required component of all Research Articles and Short Reports. All research content can now be published with no digest -->
             <abstract abstract-type="executive-summary">
-<!-- UPDATE: DOI prefix added to display-->  
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.002</object-id>
+<!-- UPDATE: DOI prefix removed from XML but must be displayed in outputs-->  
+                <object-id pub-id-type="doi">10.7554/eLife.00666.002</object-id>
                 <title>eLife digest</title>
                 <p>eLife digest are now optional and not every research article will contain one.
                     These are layman abstracts, designed for non-specialists in this field to be
@@ -994,8 +994,8 @@ UPDATE: Example of how to deal with spans in a citation. We cannot add the links
 not add all rids to the xref as it does not work. Only add the first one -->
                     <p>This section is an example of different tables, there are four in total(<xref ref-type="table" rid="table1">Tables 1 to 3</xref> and an unnamed inline table).</p>
                         <table-wrap id="table1" position="float">
-<!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.003</object-id>
+<!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.003</object-id>
                             <label>Table 1.</label>
                             <caption>
                                 <title>This is the title.</title>
@@ -1194,8 +1194,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         being added but should be added going forward.
                     Table 2 also contains coloured cells using the eight permitted colours -->
                     <table-wrap id="table2" position="float">
-<!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.004</object-id>
+<!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.004</object-id>
                         <label>Table 2.</label>
                         <caption>
                             <p>This table contains references and footnotes and is sized to the text column width in the PDF.</p>
@@ -1299,14 +1299,14 @@ not add all rids to the xref as it does not work. Only add the first one -->
                     <p><xref ref-type="table" rid="table3">Table 3</xref> is an example of a narrow table that will appear at half the text column width in the PDF. It also has source data.</p>
                     <!-- Table 3 is a narrow table containing monospace text and including source data -->
                     <table-wrap id="table3" position="float">
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.005</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.005</object-id>
                         <label>Table 3.</label>
                         <caption><p></p>
                             <!-- The following paragraph contains the caption and file call-out for this table's source data file -->
                             <p><supplementary-material id="table3sdata1">
-<!-- UPDATE: DOI prefix added to display--> 
-                                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.006</object-id>
+                                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                <object-id pub-id-type="doi">10.7554/eLife.00666.006</object-id>
                                 <label>Table 3—source data 1.</label>
                                 <caption><title>Representative curves of steady-state kinetic analyses for each IGF1R protein characterized.</title>
                                     <p>Each data point was performed in duplicate and is shown separately.</p>
@@ -1674,8 +1674,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             Change: The following has been removed from the XML as it is not necessary to repeat it, can be derived from the object-id DOI:
                         <p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00666.007">http://dx.doi.org/10.7554/eLife.00666.007</ext-link></p> -->
                         <fig id="fig1" position="float">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.007</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.007</object-id>
                             <label>Figure 1.</label>
                             <caption>
                                 <title>Single figure: The header of an eLife article example on the HTML page. In the PDf this is represented as a single column.</title>
@@ -1700,7 +1700,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                     There is no limit to the number of figure supplements a main figure can have. -->
                     <fig-group>
                         <fig id="fig2" position="float">
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.008</object-id>
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id>
                         <label>Figure 2.</label>
                         <caption>
                             <title>Figure with figure supplements. In the PDF this asset box will take full column width.</title> 
@@ -1711,8 +1711,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2.tiff"/>
                     </fig>
                         <fig id="fig2s1" position="float" specific-use="child-fig">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.009</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id>
                             <label>Figure 2—figure supplement 1.</label>
                             <caption>
                                 <title>The representation of the Major Subject Areas, Research Organisms and author keywords on the eLife HTML page</title>
@@ -1720,8 +1720,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2-figsupp1.tiff"/>
                         </fig>
                         <fig id="fig2s2" position="float" specific-use="child-fig">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.010</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.010</object-id>
                             <label>Figure 2—figure supplement 2.</label>
                             <caption>
                                 <title>Representation of figure with figure supplements on the HTML view.</title>
@@ -1730,16 +1730,15 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         </fig>
                     </fig-group>
                     <p><xref ref-type="fig" rid="fig3">Figure 3</xref> is an example of a figure with a figure supplement (<xref ref-type="fig" rid="fig3s1">Figure 3—figure supplement 1</xref>) 
-                        with two sub-assets, <xref ref-type="supplementary-material" rid="fig3sdata1">Figure 3—figure supplement 1—Source data 1</xref> and <xref ref-type="supplementary-material"
+                        with two sub-assets, <xref ref-type="supplementary-material" rid="fig3sdata1">Figure 3—figure supplement 1—Source data 1</xref> and <xref ref-type="video"
                             rid="fig3video1">Figure 3—figure supplement 1—Video 1</xref> (see <xref ref-type="bibr" rid="bib53">Zhong et al., 
                             2013</xref>; <xref ref-type="bibr" rid="bib51">World Health Organization, 2016</xref>).</p>
                     <!-- UPDATE: new method of modelling supplementary material for a figure
                     A figure or a sub figure can have any assets - e.g. data, code, videos -->
                     <fig-group>
                         <fig id="fig3" position="float">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.011</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.011</object-id>
                             <label>Figure 3.</label>
                             <caption>
                                 <title>Figure with figure supplements and figure supplement with source data and a video (see <xref ref-type="bibr" rid="bib25">Koch, 1959</xref>) .</title>
@@ -1747,15 +1746,15 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tiff"/>
                         </fig>
                         <fig id="fig3s1" position="float" specific-use="child-fig">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.012</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id>
                             <label>Figure 3—figure supplement 1.</label>
                             <caption>
                                 <title>Title of the figure supplement</title>
                                 <p>
                                     <supplementary-material id="fig3sdata1">
-                                        <!-- UPDATE: DOI prefix added to display--> 
-                                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.013</object-id>
+                                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                        <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id>
                                         <label>Figure 3—figure supplement 1—Source data 1.</label>
                                         <caption>
                                             <title>Title of the figure supplement source data.</title>
@@ -1769,8 +1768,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         </fig>
                         <!-- this is an example of an asset asked later on, so the DOI is the last DOI to prevent renumbering the others -->
                         <media mimetype="video" mime-subtype="mp4" id="fig3video1" xlink:href="elife-00666-fig3-video1.mp4">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.035</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id>
                             <label>Figure 3—Video 1.</label>
                             <caption>
                                 <title>
@@ -1782,8 +1781,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                     <p><xref ref-type="fig" rid="fig4">Figure 4</xref> is an example of a figure with source code (<xref ref-type="supplementary-material" rid="fig4scode1">Figure 4—Source code 1</xref>).</p>
                     <!-- UPDATE: this is changed tagging. -->
                     <fig id="fig4" position="float">
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.014</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.014</object-id>
                         <label>Figure 4.</label>
                         <caption>
                             <title>Single figure with source code.</title>
@@ -1791,8 +1790,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig4.tiff"/>
                         <p>
                             <supplementary-material id="fig4scode1">
-                                <!-- UPDATE: DOI prefix added to display--> 
-                                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.015</object-id>
+                                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                <object-id pub-id-type="doi">10.7554/eLife.00666.015</object-id>
                                 <label>Figure 4—Source code 1.</label>
                                 <caption>
                                     <title>Title of the source code.</title>
@@ -1805,20 +1804,20 @@ not add all rids to the xref as it does not work. Only add the first one -->
                 </sec>
                 <sec id="s2-5">
                     <title>Videos</title>
-                    <p><xref ref-type="other" rid="video1">Video 1</xref> shows the editorial process.</p>
+                    <p><xref ref-type="video" rid="video1">Video 1</xref> shows the editorial process.</p>
                     <!-- UPDATE: This no longer required: content-type="glencoe play-in-place height-250 width-310"  mime-subtype="wmv" mimetype="video"
                     UPDATE: changed id to videoX -->
                     <media mimetype="video" mime-subtype="mp4" id="video1" xlink:href="elife-00666-video1.mp4">
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.016</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.016</object-id>
                         <label>Video 1.</label>
                         <caption>
                             <title>
                                 A descirption of the eLife editorial process.
                             </title>
                             <p><supplementary-material id="video1sdata1">
-                                <!-- UPDATE: DOI prefix added to display--> 
-                                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.036</object-id>
+                                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                <object-id pub-id-type="doi">10.7554/eLife.00666.036</object-id>
                                 <label>Video 1—Source data 1.</label>
                                 <caption>
                                     <title>Title of the source code.</title>
@@ -1837,8 +1836,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                     <p>It is rare for eLife research articles to contain boxes; however they are common in Feature content. <xref ref-type="other" rid="box1">Box 1</xref> 
                         is a simple box that contains very little text and <xref ref-type="other" rid="box2">Box 2</xref> is larger.</p>
                     <boxed-text id="box1">
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.017</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.017</object-id>
                         <label>Box 1.</label>
                         <caption>
                             <p>Example of a small box</p>
@@ -1850,8 +1849,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             a ullamcorper dui semper suscipit. Etiam in sem augue.</p>
                     </boxed-text>
                     <boxed-text id="box2">
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.018</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.018</object-id>
                         <label>Box 2.</label>
                         <caption>
                             <p>Example of a large box</p>
@@ -1864,8 +1863,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             ipsum vel euismod mattis, turpis augue mattis nunc, ac aliquam dolor massa non mi. Vestibulum sit amet elit a augue semper facilisis interdum quis nibh. Mauris consectetur 
                             nisi aliquam urna lobortis, eu efficitur nisl lobortis; <xref ref-type="bibr" rid="bib2">Bates et al., 2016</xref> and <xref ref-type="bibr" rid="bib32">Patterson et al., 2011</xref>.</p>
                         <fig id="box2fig1" position="float">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.035</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id>
                             <label>Box 2—Figure 1.</label>
                             <caption>
                                 <title>Box figure</title>
@@ -2008,8 +2007,8 @@ but these should be present in the textual entry (see below)-->
 NOTE: if source data or source code are not attached to an individual figure, they are listed in this section.
 All supplementary files are listed here -->             
             <supplementary-material id="supp1">   
-                <!-- UPDATE: DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.019</object-id>
+                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.019</object-id>
                 <label>Supplementary file 1.</label>
                 <caption>
                     <title>This is the title of the supplementary file 1.</title>
@@ -2018,8 +2017,8 @@ All supplementary files are listed here -->
                 <media mimetype="application" mime-subtype="csv" xlink:href="elife-00666-supp1.csv"/>
             </supplementary-material>
             <supplementary-material id="sdata1">   
-                <!-- UPDATE: DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.020</object-id>
+                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.020</object-id>
                 <label>Source data 1.</label>
                 <caption>
                     <title>This is the title of the source data that is not attached to a specific figure, but to the article as a whole.</title>
@@ -2027,8 +2026,8 @@ All supplementary files are listed here -->
                 <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-data1.xlsx"/>
             </supplementary-material>
             <supplementary-material id="scode1">   
-                <!-- UPDATE: DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.021</object-id>
+                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.021</object-id>
                 <label>Source code 1.</label>
                 <caption>
                     <title>This is the title of the source code that is not attached to a specific figure, but to the article as a whole.</title>
@@ -2036,8 +2035,8 @@ All supplementary files are listed here -->
                 <media mimetype="application" mime-subtype="xml" xlink:href="elife-00666-code1.xml"/>
             </supplementary-material>
             <supplementary-material id="repstand1">
-                <!-- UPDATE: DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.022</object-id>
+                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.022</object-id>
                 <label>Reporting Standard 1.</label>
                 <caption>
                     <title>CONSORT flow diagram.</title>
@@ -2093,7 +2092,7 @@ The tagging of the collaborator name again within this section is required for P
                     <data-title>Data from: Genome-wide errant targeting by Hairy</data-title>
                     <source>Dryad Digital Repository</source>
                     <pub-id pub-id-type="doi" assigning-authority="Dryad Digital Repository"
-                        xlink:href="https://doi.org/10.5061/dryad.cv323">https://doi.org/10.5061/dryad.cv323</pub-id>
+                        xlink:href="https://doi.org/10.5061/dryad.cv323">10.5061/dryad.cv323</pub-id>
                     </related-object>
                 </p>
             </sec>
@@ -2109,8 +2108,8 @@ The tagging of the collaborator name again within this section is required for P
                 </sec>
         </ack>
 <!-- All references shuld be cited in the text -->  
-        <!-- UPDATE: DOI prefix added to display of all DOIs: https://doi.org/-->
-<ref-list>
+        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+        <ref-list>
 <!-- Journal reference: page numbers and DOI -->
     <ref id="bib1">
         <element-citation publication-type="journal">
@@ -2134,7 +2133,7 @@ The tagging of the collaborator name again within this section is required for P
             <volume>173</volume>
             <fpage>917</fpage>
             <lpage>926</lpage>
-            <pub-id pub-id-type="doi">https://doi.org/10.1083/jcb.200510010</pub-id>
+            <pub-id pub-id-type="doi">10.1083/jcb.200510010</pub-id>
             <pub-id pub-id-type="pmid">16769818</pub-id>
         </element-citation>
     </ref>
@@ -2243,7 +2242,7 @@ The tagging of the collaborator name again within this section is required for P
             <article-title>A prospective randomized trial examining health care utilization in individuals using multiple 
                 smartphone-enabled biosensors</article-title>
             <source>bioRxiv</source>
-            <pub-id pub-id-type="doi">https://doi.org/10.1101/029983</pub-id>
+            <pub-id pub-id-type="doi">10.1101/029983</pub-id>
         </element-citation>
     </ref> 
 <!-- Data reference: NCBI Gene Expression Omnibus: pub-id-type="accession" assigning-authority="NCBI" -->
@@ -2358,7 +2357,7 @@ The tagging of the collaborator name again within this section is required for P
             <volume>54</volume>
             <fpage>2335</fpage>
             <lpage>2341</lpage>
-            <pub-id pub-id-type="doi">https://doi.org/10.1099/ijs.0.63255-0</pub-id>
+            <pub-id pub-id-type="doi">10.1099/ijs.0.63255-0</pub-id>
             <pub-id pub-id-type="pmid">15545480</pub-id>
         </element-citation>
     </ref>
@@ -2387,7 +2386,7 @@ The tagging of the collaborator name again within this section is required for P
                 microbiology</source>
             <volume>54</volume>
             <fpage>65</fpage>
-            <pub-id pub-id-type="doi">https://doi.org/10.1099/ijs.0.02752-0</pub-id>
+            <pub-id pub-id-type="doi">10.1099/ijs.0.02752-0</pub-id>
             <pub-id pub-id-type="pmid">14742460</pub-id>
         </element-citation>
     </ref>
@@ -2615,7 +2614,7 @@ The tagging of the collaborator name again within this section is required for P
             <data-title>Crystal structure of KRYPTONITE in complex with mCHH DNA and
                 SAH</data-title>
             <source>RCSB Protein Data Bank</source>
-            <pub-id pub-id-type="doi" assigning-authority="RCSB Protein Data Bank">https://doi.org/10.2210/pdb4qen/pdb</pub-id>
+            <pub-id pub-id-type="doi" assigning-authority="RCSB Protein Data Bank">10.2210/pdb4qen/pdb</pub-id>
         </element-citation>
     </ref>
 <!-- Reference to a post on a blog (page on a Website) -->
@@ -2771,7 +2770,7 @@ The tagging of the collaborator name again within this section is required for P
             <volume>26</volume>
             <fpage>2778</fpage>
             <lpage>2779</lpage>
-            <pub-id pub-id-type="doi">https://doi.org/10.1093/bioinformatics/btq524</pub-id>
+            <pub-id pub-id-type="doi">10.1093/bioinformatics/btq524</pub-id>
             <pub-id pub-id-type="pmid">20847218</pub-id>
         </element-citation>
     </ref>
@@ -2965,7 +2964,7 @@ The tagging of the collaborator name again within this section is required for P
             <source>Dryad Digital Repository</source>
             <pub-id pub-id-type="doi" assigning-authority="Dryad Digital Repository"
                 xlink:href="https://doi.org/10.5061/dryad.cv323"
-                >https://doi.org/10.5061/dryad.cv323</pub-id>
+                >10.5061/dryad.cv323</pub-id>
         </element-citation>
     </ref>
 <!-- Journal reference: collab author -->
@@ -2992,7 +2991,7 @@ The tagging of the collaborator name again within this section is required for P
             <volume>40</volume>
             <fpage>D706</fpage>
             <lpage>D714</lpage>
-            <pub-id pub-id-type="doi">https://doi.org/10.1093/nar/gkr1030</pub-id>
+            <pub-id pub-id-type="doi">10.1093/nar/gkr1030</pub-id>
             <pub-id pub-id-type="pmid">22127867</pub-id>
         </element-citation>
     </ref>
@@ -3455,7 +3454,7 @@ The tagging of the collaborator name again within this section is required for P
             <article-title>Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via 
                 Activation of the PI3K/Akt/mTOR/HIF-1a Pathway</article-title>
             <source>preprints</source>
-            <pub-id pub-id-type="doi">https://doi.org/10.20944/preprints201608.0124.v1</pub-id>
+            <pub-id pub-id-type="doi">10.20944/preprints201608.0124.v1</pub-id>
         </element-citation>
     </ref>
 <!-- Data reference: NCBI BioProject: author is a collab pub-id-type="accession" assigning-authority="NCBI" example of 3 references with same author/year -->
@@ -3581,7 +3580,7 @@ The tagging of the collaborator name again within this section is required for P
                     <source>PLoS Biol</source>
                     <volume>6</volume>
                     <elocation-id>e149</elocation-id>
-                    <pub-id pub-id-type="doi">https://doi.org/10.1371/journal.pbio.0060149</pub-id>
+                    <pub-id pub-id-type="doi">10.1371/journal.pbio.0060149</pub-id>
                     <pub-id pub-id-type="pmid">18578568</pub-id>
                 </element-citation>
             </ref>
@@ -3728,7 +3727,7 @@ Appendices must have DOIs -->
                     <fig-group>
                         <fig id="app1fig1" position="float">
                             <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.024</object-id>
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id>
                     <label>Appendix 1—Figure 1.</label>
                     <caption>
                         <title>Appendix figure title.
@@ -3739,7 +3738,7 @@ Appendices must have DOIs -->
                     </fig>
                         <fig id="app1fig1s1" position="float" specific-use="child-fig">
                             <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.025</object-id>
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.025</object-id>
                             <label>Appendix 1—Figure 1—Figure Supplement 1.</label>
                             <caption>
                                 <title>Appendix figure supplement title.</title>
@@ -3757,8 +3756,8 @@ Appendices must have DOIs -->
                             <title>Sub heading 2</title>
                             <p>This is the text of the content of subheading 2 within appendix 2.</p>
                                 <table-wrap id="app1table1" position="float">
-                                <!-- UPDATE: DOI prefix added to display--> 
-                                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.030</object-id>
+                                    <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                    <object-id pub-id-type="doi">10.7554/eLife.00666.030</object-id>
                                     <label>Apendix 1—Table 1.</label>
                                 <caption>
                                     <title>This is the title.</title>
@@ -3959,13 +3958,13 @@ Appendices must have DOIs -->
                 <sec sec-type="appendix" id="s9">
               <title>Negotaition</title>
                     <boxed-text>
-                        <!-- UPDATE: DOI prefix added to display--> 
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.026</object-id>
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.026</object-id>
                         <p>Generating the new rules involved negotation with varous vendors and downsteam hosts to ensure display would work for all instances. See <xref ref-type="video" rid="app2video1">Appendix 2—Video 1</xref> 
                             and <xref ref-type="table" rid="app2table1">Apendix 2—Table 1</xref>.</p>
                         <media mimetype="video" mime-subtype="mp4" id="app2video1" xlink:href="elife-00666-app2-video1.mp4">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.027</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.027</object-id>
                             <label>Appendix 2—Video 1.</label>
                         <caption>
                             <title>
@@ -3974,8 +3973,8 @@ Appendices must have DOIs -->
                         </caption>
                     </media>
                         <table-wrap id="app2table1" position="float">
-                            <!-- UPDATE: DOI prefix added to display--> 
-                            <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.028</object-id>
+                            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.028</object-id>
                             <label>Apendix 2—Table 1.</label>
                             <caption>
                                 <p>Appendix table.</p>
@@ -4018,7 +4017,7 @@ Appendices must have DOIs -->
             <app id="appendix-3">
                 <title>Appendix 3</title>
                      <boxed-text>
-                        <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.034</object-id>
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.034</object-id>
                         <p>This is an example of an appendix with no sections.</p>
                     </boxed-text>
             </app>
@@ -4028,8 +4027,8 @@ Appendices must have DOIs -->
 UPDATE: article-type has been changed from article-commentary to decision-letter -->    
     <sub-article article-type="decision-letter" id="SA1">
         <front-stub>
-            <!-- UPDATE: DOI prefix added to display--> 
-            <article-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.029</article-id>
+            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+            <article-id pub-id-type="doi">10.7554/eLife.00666.029</article-id>
             <title-group>
                 <article-title>Decision letter</article-title>
             </title-group>
@@ -4070,8 +4069,8 @@ UPDATE: punctuation between institution and country removed. -->
     </sub-article>
     <sub-article article-type="reply" id="SA2">
         <front-stub>
-            <!-- UPDATE: DOI prefix added to display--> 
-            <article-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.030</article-id>
+            <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+            <article-id pub-id-type="doi">10.7554/eLife.00666.030</article-id>
             <title-group>
                 <article-title>Author response</article-title>
             </title-group>
@@ -4085,8 +4084,8 @@ UPDATE: punctuation between institution and country removed. -->
                 PMC validator to check our decisions against display on the PMC site, see <xref ref-type="fig" rid="respfig1">Author response image 1.</xref>, 
                 <xref ref-type="video" rid="respvideo1">Author response video 1</xref> and <xref ref-type="table" rid="resptable1">Author response table 1</xref>.</p>
             <fig id="respfig1" position="float">
-                <!-- UPDATE: DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.031</object-id>
+                <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.031</object-id>
                 <label>Author response image 1.</label>
                     <caption>
                         <p>Single figure: The header of an eLife article example on the HTML page.</p>
@@ -4094,9 +4093,8 @@ UPDATE: punctuation between institution and country removed. -->
                 <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-resp-fig1.png"/>
                 </fig>
             <table-wrap id="resptable1" position="float">
-                <!-- UPDATE: added to author response assets 
-                    DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.032</object-id>
+                <!-- UPDATE: added to author response assets UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.032</object-id>
                 <label>Author response Table 1.</label>
                 <caption>
                     <p>Author response table</p>
@@ -4155,8 +4153,8 @@ UPDATE: punctuation between institution and country removed. -->
             </table-wrap>
             <media mimetype="video" mime-subtype="mp4" id="respvideo1" xlink:href="elife-00666-resp-video1.mp4">
                 <!-- UPDATE: added to author response assets 
-                    DOI prefix added to display--> 
-                <object-id pub-id-type="doi">https://doi.org/10.7554/eLife.00666.033</object-id>
+UPDATE: DOI prefix removed from XML but must be added for display--> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.033</object-id>
                 <label>Author response video 1.</label>
                 <caption>
                     <p>Caption and/or a title is required for all author response assets</p>
