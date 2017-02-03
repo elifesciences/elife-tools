@@ -105,7 +105,7 @@ def replace_email_tags(s):
     return s
 
 def replace_inline_graphic_tags(s, base_url=None):
-    from_file_extension = '.tif'
+    from_file_extension = ['.tif', '.tiff']
     to_file_extension = '.jpg'
     for tag_match in re.finditer("<(inline-graphic.*?)>", s):
         xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
@@ -115,8 +115,10 @@ def replace_inline_graphic_tags(s, base_url=None):
                 # Add or change file extension
                 if '.' not in xlink:
                     xlink = xlink + to_file_extension
-                elif xlink.endswith(from_file_extension):
-                    xlink = xlink.replace(from_file_extension, to_file_extension)
+                else:
+                    for extension in from_file_extension:
+                        if xlink.endswith(extension):
+                            xlink = xlink.replace(extension, to_file_extension)
                 # Add base_url if given
                 if base_url:
                     xlink = base_url + xlink

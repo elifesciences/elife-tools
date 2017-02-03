@@ -57,6 +57,9 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p>', None,
          u'<p><img src="elife-00240-inf1-v1.jpg"/></p>'),
 
+        (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1.tiff"/></p>', None,
+         u'<p><img src="elife-00240-inf1-v1.jpg"/></p>'),
+
         (True, u'<p><inline-graphic xlink:href="elife-00240-inf1-v1.tif"/>Some text <inline-graphic xlink:href="elife-00240-inf2-v1.jpg"/>><inline-graphic xlink:href="elife-00240-inf3-v1.gif"></inline-graphic></p>', 'https://example.org/',
          u'<p><img src="https://example.org/elife-00240-inf1-v1.jpg"/>Some text <img src="https://example.org/elife-00240-inf2-v1.jpg"/>&gt;<img src="https://example.org/elife-00240-inf3-v1.gif"/></p>'),
 
