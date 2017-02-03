@@ -25,12 +25,12 @@
         "publication-type": "journal", 
         "volume": "173", 
         "source": "The Journal of Cell Biology", 
-        "reference_id": "https://doi.org/10.1083/jcb.200510010", 
+        "reference_id": "10.1083/jcb.200510010", 
         "fpage": "917", 
         "year": "2006", 
         "position": 1, 
         "pmid": "16769818", 
-        "ref": "Aivazian D Serrano RL Pfeffer S 2006 TIP47 is a key effector for Rab9 localization The Journal of Cell Biology 173 917 926 https://doi.org/10.1083/jcb.200510010 16769818", 
+        "ref": "Aivazian D Serrano RL Pfeffer S 2006 TIP47 is a key effector for Rab9 localization The Journal of Cell Biology 173 917 926 10.1083/jcb.200510010 16769818", 
         "id": "bib1"
     }, 
     {
@@ -156,10 +156,10 @@
         "full_article_title": "A prospective randomized trial examining health care utilization in individuals using multiple \n                smartphone-enabled biosensors", 
         "publication-type": "preprint", 
         "source": "bioRxiv", 
-        "reference_id": "https://doi.org/10.1101/029983", 
+        "reference_id": "10.1101/029983", 
         "year": "2016", 
         "position": 3, 
-        "ref": "Bloss CS Wineinger NE Peters M Boeldt DL Ariniello L Kim JL Judy Sheard J Komatireddy R Barrett P Topol EJ 2016 A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors bioRxiv https://doi.org/10.1101/029983", 
+        "ref": "Bloss CS Wineinger NE Peters M Boeldt DL Ariniello L Kim JL Judy Sheard J Komatireddy R Barrett P Topol EJ 2016 A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors bioRxiv 10.1101/029983", 
         "id": "bib3"
     }, 
     {
@@ -290,12 +290,12 @@
         "publication-type": "journal", 
         "volume": "54", 
         "source": "International journal of systematic and evolutionary\n                microbiology", 
-        "reference_id": "https://doi.org/10.1099/ijs.0.63255-0", 
+        "reference_id": "10.1099/ijs.0.63255-0", 
         "fpage": "2335", 
         "year": "2004a", 
         "position": 5, 
         "pmid": "15545480", 
-        "ref": "Brettar I Christen R Hofle M 2004a Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 2335 2341 https://doi.org/10.1099/ijs.0.63255-0 15545480", 
+        "ref": "Brettar I Christen R Hofle M 2004a Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 2335 2341 10.1099/ijs.0.63255-0 15545480", 
         "id": "bib5"
     }, 
     {
@@ -323,12 +323,12 @@
         "publication-type": "journal", 
         "volume": "54", 
         "source": "International journal of systematic and evolutionary\n                microbiology", 
-        "reference_id": "https://doi.org/10.1099/ijs.0.02752-0", 
+        "reference_id": "10.1099/ijs.0.02752-0", 
         "fpage": "65", 
         "year": "2004b", 
         "position": 6, 
         "pmid": "14742460", 
-        "ref": "Brettar I Christen R Hofle MG 2004b Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 65 https://doi.org/10.1099/ijs.0.02752-0 14742460", 
+        "ref": "Brettar I Christen R Hofle MG 2004b Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 65 10.1099/ijs.0.02752-0 14742460", 
         "id": "bib6"
     }, 
     {
@@ -603,10 +603,10 @@
         ], 
         "publication-type": "data", 
         "source": "RCSB Protein Data Bank", 
-        "reference_id": "https://doi.org/10.2210/pdb4qen/pdb", 
+        "reference_id": "10.2210/pdb4qen/pdb", 
         "year": "2014", 
         "position": 14, 
-        "ref": "Du J Johnson LM Groth M Feng S Hale CJ Li S Vashisht AA Gallego-Bartolome J Wohlschlegel JA Patel DJ Jacobsen SE 2014 Crystal structure of KRYPTONITE in complex with mCHH DNA and SAH RCSB Protein Data Bank https://doi.org/10.2210/pdb4qen/pdb", 
+        "ref": "Du J Johnson LM Groth M Feng S Hale CJ Li S Vashisht AA Gallego-Bartolome J Wohlschlegel JA Patel DJ Jacobsen SE 2014 Crystal structure of KRYPTONITE in complex with mCHH DNA and SAH RCSB Protein Data Bank 10.2210/pdb4qen/pdb", 
         "id": "bib14"
     }, 
     {
@@ -791,12 +791,12 @@
         "publication-type": "journal", 
         "volume": "26", 
         "source": "Bioinformatics", 
-        "reference_id": "https://doi.org/10.1093/bioinformatics/btq524", 
+        "reference_id": "10.1093/bioinformatics/btq524", 
         "fpage": "2778", 
         "year": "2010", 
         "position": 20, 
         "pmid": "20847218", 
-        "ref": "Goodstadt L 2010 Ruffus: a lightweight Python library for computational pipelines Bioinformatics 26 2778 2779 https://doi.org/10.1093/bioinformatics/btq524 20847218", 
+        "ref": "Goodstadt L 2010 Ruffus: a lightweight Python library for computational pipelines Bioinformatics 26 2778 2779 10.1093/bioinformatics/btq524 20847218", 
         "id": "bib20"
     }, 
     {
@@ -1023,10 +1023,10 @@
         ], 
         "publication-type": "data", 
         "source": "Dryad Digital Repository", 
-        "reference_id": "https://doi.org/10.5061/dryad.cv323", 
+        "reference_id": "10.5061/dryad.cv323", 
         "year": "2015", 
         "position": 26, 
-        "ref": "Kok K Ay A Li L Arnosti DN 2015 Data from: Genome-wide errant targeting by Hairy Dryad Digital Repository https://doi.org/10.5061/dryad.cv323", 
+        "ref": "Kok K Ay A Li L Arnosti DN 2015 Data from: Genome-wide errant targeting by Hairy Dryad Digital Repository 10.5061/dryad.cv323", 
         "id": "bib26"
     }, 
     {
@@ -1060,12 +1060,12 @@
         "publication-type": "journal", 
         "volume": "40", 
         "source": "Nucleic Acids Res", 
-        "reference_id": "https://doi.org/10.1093/nar/gkr1030", 
+        "reference_id": "10.1093/nar/gkr1030", 
         "fpage": "D706", 
         "year": "2012", 
         "position": 27, 
         "pmid": "22127867", 
-        "ref": "McQuilton P St Pierre SE Thurmond J FlyBase Consortium 2012 FlyBase 101\u2014the basics of navigating FlyBase Nucleic Acids Res 40 D706 D714 https://doi.org/10.1093/nar/gkr1030 22127867", 
+        "ref": "McQuilton P St Pierre SE Thurmond J FlyBase Consortium 2012 FlyBase 101\u2014the basics of navigating FlyBase Nucleic Acids Res 40 D706 D714 10.1093/nar/gkr1030 22127867", 
         "id": "bib27"
     }, 
     {
@@ -1637,10 +1637,10 @@
         "full_article_title": "Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via \n                Activation of the PI3K/Akt/mTOR/HIF-1a Pathway", 
         "publication-type": "preprint", 
         "source": "preprints", 
-        "reference_id": "https://doi.org/10.20944/preprints201608.0124.v1", 
+        "reference_id": "10.20944/preprints201608.0124.v1", 
         "year": "2016", 
         "position": 44, 
-        "ref": "Tanaka Y Hosoyama T Mikamo A Kurazumi H Nishimoto A Ueno K Shirasawa B Hamano K 2016 Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via Activation of the PI3K/Akt/mTOR/HIF-1a Pathway preprints https://doi.org/10.20944/preprints201608.0124.v1", 
+        "ref": "Tanaka Y Hosoyama T Mikamo A Kurazumi H Nishimoto A Ueno K Shirasawa B Hamano K 2016 Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via Activation of the PI3K/Akt/mTOR/HIF-1a Pathway preprints 10.20944/preprints201608.0124.v1", 
         "id": "bib44"
     }, 
     {
@@ -1791,11 +1791,11 @@
         "publication-type": "journal", 
         "volume": "6", 
         "source": "PLoS Biol", 
-        "reference_id": "https://doi.org/10.1371/journal.pbio.0060149", 
+        "reference_id": "10.1371/journal.pbio.0060149", 
         "year": "2008", 
         "position": 50, 
         "pmid": "18578568", 
-        "ref": "Wolski SC Kuper J Hanzelmann P Truglio JJ Croteau DL Van Houten B 2008 Crystal structure of the FeS cluster-containing nucleotide excision repair helicase XPD PLoS Biol 6 e149 https://doi.org/10.1371/journal.pbio.0060149 18578568", 
+        "ref": "Wolski SC Kuper J Hanzelmann P Truglio JJ Croteau DL Van Houten B 2008 Crystal structure of the FeS cluster-containing nucleotide excision repair helicase XPD PLoS Biol 6 e149 10.1371/journal.pbio.0060149 18578568", 
         "id": "bib50"
     }, 
     {
