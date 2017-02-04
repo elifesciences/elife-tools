@@ -30,7 +30,8 @@ def parse_document(filelocation):
 
 def duplicate_tag(tag):
     # Make a completely new copy of a tag by parsing its contents again
-    soup_copy = parse_xml(unicode(tag))
+    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode(tag) + u'</article>'
+    soup_copy = parse_xml(tag_xml)
     tag_copy = first(extract_nodes(soup_copy, tag.name))
     return tag_copy
 
@@ -1395,8 +1396,15 @@ def components(soup):
         if raw_parser.caption(tag):
             first_paragraph = first(paragraphs(raw_parser.caption(tag)))
             if first_paragraph and not starts_with_doi(first_paragraph):
-                component['caption'] = node_text(first_paragraph)
-                component['full_caption'] = node_contents_str(first_paragraph)
+                # Remove the supplementary tag from the paragraph if present
+                #  fixes a problem with the new kitchen sink of caption within caption tag
+                paragraph_tag_copy = duplicate_tag(first_paragraph)
+                if raw_parser.supplementary_material(paragraph_tag_copy):
+                    paragraph_tag_copy = remove_tag_from_tag(paragraph_tag_copy, 'supplementary-material')
+                if node_text(paragraph_tag_copy).strip() != '':
+                    component['caption'] = node_text(paragraph_tag_copy)
+                    component['full_caption'] = node_contents_str(paragraph_tag_copy)
+
 
         if raw_parser.permissions(tag):
             

@@ -1416,7 +1416,7 @@ class TestParseJats(unittest.TestCase):
                          parser.component_doi(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife02304.xml", "elife05502.xml", "elife04490.xml",
-          "elife-14093-v1.xml")
+          "elife-14093-v1.xml", "elife-00666.xml")
     def test_components(self, filename):
         self.assertEqual(self.json_expected(filename, "components"),
                          parser.components(self.soup(filename)))
