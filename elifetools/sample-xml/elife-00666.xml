@@ -1751,20 +1751,20 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <label>Figure 3—figure supplement 1.</label>
                             <caption>
                                 <title>Title of the figure supplement</title>
-                                <p>
-                                    <supplementary-material id="fig3sdata1">
-                                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
-                                        <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id>
-                                        <label>Figure 3—figure supplement 1—Source data 1.</label>
-                                        <caption>
-                                            <title>Title of the figure supplement source data.</title>
-                                            <p>Legend of the figure supplement source data.</p>
-                                        </caption>
-                                        <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig3-figsupp1-data1.xlsx"/>
-                                    </supplementary-material>
-                                </p>
                             </caption>
                             <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tiff"/>
+                            <p>
+                                <supplementary-material id="fig3sdata1">
+                                    <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                                    <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id>
+                                    <label>Figure 3—figure supplement 1—Source data 1.</label>
+                                    <caption>
+                                        <title>Title of the figure supplement source data.</title>
+                                        <p>Legend of the figure supplement source data.</p>
+                                    </caption>
+                                    <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig3-figsupp1-data1.xlsx"/>
+                                </supplementary-material>
+                            </p>
                         </fig>
                         <!-- this is an example of an asset asked later on, so the DOI is the last DOI to prevent renumbering the others -->
                         <media mimetype="video" mime-subtype="mp4" id="fig3video1" xlink:href="elife-00666-fig3-video1.mp4">
