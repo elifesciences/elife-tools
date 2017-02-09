@@ -1299,6 +1299,7 @@ def refs(soup):
         set_if_value(ref, "publisher_loc", node_text(first(raw_parser.publisher_loc(tag))))
         set_if_value(ref, "publisher_name", node_text(first(raw_parser.publisher_name(tag))))
         set_if_value(ref, "edition", node_contents_str(first(raw_parser.edition(tag))))
+        set_if_value(ref, "version", node_contents_str(first(raw_parser.version(tag))))
         set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
         set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
@@ -3077,7 +3078,9 @@ def references_json(soup, html_flag=True):
 
         # edition
         if ref.get("publication-type") in ["software"]:
-            set_if_value(ref_content, "version", ref.get("edition"))
+            set_if_value(ref_content, "version", ref.get("version"))
+            if "version" not in ref_content:
+                set_if_value(ref_content, "version", ref.get("edition"))
         else:
             set_if_value(ref_content, "edition", ref.get("edition"))
 

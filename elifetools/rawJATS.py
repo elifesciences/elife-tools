@@ -324,6 +324,9 @@ def uri(soup):
 def edition(soup):
     return extract_nodes(soup, "edition")
 
+def version(soup):
+    return extract_nodes(soup, "version")
+
 def chapter_title(soup):
     return extract_nodes(soup, "chapter-title")
 

@@ -3522,6 +3522,7 @@
         "uri": "http://www.r-project.org/", 
         "publication-type": "program", 
         "source": "R: a language and environment for statistical computing", 
+        "version": "3.2.2", 
         "year": "2015", 
         "position": 82, 
         "collab": "R Development Core Team", 
