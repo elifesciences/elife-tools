@@ -1227,7 +1227,9 @@ def refs(soup):
             set_if_value(ref, "uri", uri_tag.get('xlink:href'))
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
-        set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+        if(raw_parser.year(tag)):
+            set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+            set_if_value(ref, "year-iso-8601-date", raw_parser.year(tag).get('iso-8601-date'))
 
         if(raw_parser.date_in_citation(tag)):
             set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
