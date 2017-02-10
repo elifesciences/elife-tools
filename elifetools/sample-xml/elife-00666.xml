@@ -2441,7 +2441,7 @@ The tagging of the collaborator name again within this section is required for P
                 </name>
             </person-group>
             <data-title>BUSTER</data-title>
-            <!-- designator attribute added for version -- Feb 8 2017 -->
+            <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="2.10.0">2.10.0</version>
             <publisher-loc>Cambridge, UK</publisher-loc>
             <publisher-name>Global Phasing Ltd</publisher-name>
@@ -2541,7 +2541,7 @@ The tagging of the collaborator name again within this section is required for P
             <year iso-8601-date="2002">2002</year>
             <source>PyMol</source>
             <data-title>The PyMol Molecular Graphics System</data-title>
-               <!-- designator attribute added for version -- Feb 8 2017 -->
+               <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="1.7.4">Version 1.7.4</version>
             <publisher-name>Schrödinger LLC</publisher-name>
             <ext-link ext-link-type="uri" xlink:href='https://www.pymol.org/'>https://www.pymol.org/</ext-link>  
@@ -2843,7 +2843,7 @@ The tagging of the collaborator name again within this section is required for P
             <year iso-8601-date="1993">1993</year>
             <source>Naccess</source>
             <publisher-name>Department of Biochemistry Molecular Biology, University College London</publisher-name>
-             <!-- designator attribute added for version -- Feb 8 2017 -->
+             <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="2.1.1">V2.1.1</version>
             <ext-link ext-link-type="uri" xlink:href="http://www.bioinf.manchester.ac.uk/naccess">http://www.bioinf.manchester.ac.uk/naccess</ext-link>
         </element-citation>
@@ -3023,7 +3023,7 @@ The tagging of the collaborator name again within this section is required for P
             <year iso-8601-date="2014">2014</year>
             <data-title>Clinical_Face_Phenotype_Space_Pipeline</data-title>
             <source>Github</source>
-             <!-- designator attribute added for version -- Feb 8 2017 -->
+             <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="1.2">v1.2</version>
             <ext-link ext-link-type="uri" xlink:href="https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline">
                 https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline
@@ -3125,7 +3125,7 @@ The tagging of the collaborator name again within this section is required for P
             <collab>R Development Core Team</collab>
         </person-group>
         <data-title>R: a language and environment for statistical computing</data-title>
-         <!-- designator attribute added for version -- Feb 8 2017 -->
+         <!-- designator attribute added for version - Feb 8 2017 -->
         <version designator="3.2.2">3.2.2</version>
         <year iso-8601-date="2015">2015</year>
         <publisher-loc>Vienna, Austria</publisher-loc>
@@ -3331,7 +3331,7 @@ The tagging of the collaborator name again within this section is required for P
             <year iso-8601-date="2011">2011</year>
             <source>The PyMOL Molecular Graphics System</source>
             <publisher-name>Schrödinger LLC</publisher-name>
-             <!-- designator attribute added for version -- Feb 8 2017 -->
+             <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="1.2.3">1.2r3pre</version>
             <ext-link ext-link-type="uri" xlink:href='https://www.pymol.org/'>https://www.pymol.org/</ext-link>
         </element-citation>
@@ -3380,7 +3380,7 @@ The tagging of the collaborator name again within this section is required for P
             <data-title>RepeatModeler</data-title>
             <publisher-name>Institute for Systems Biology</publisher-name>
             <publisher-loc>Seattle, USA</publisher-loc>
-             <!-- designator attribute added for version -- Feb 8 2017 -->
+             <!-- designator attribute added for version - Feb 8 2017 -->
             <version designator="1.0">open-1.0</version>
             <ext-link ext-link-type="uri" xlink:href="http://www.repeatmasker.org/RepeatModeler.html">http://www.repeatmasker.org/RepeatModeler.html</ext-link>
         </element-citation>
