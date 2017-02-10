@@ -3014,6 +3014,13 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "date", year_date)
             set_if_value(ref_content, "discriminator", discriminator)
 
+        # accessed
+        if ref.get("publication-type") in ["web"] and ref.get("iso-8601-date"):
+            set_if_value(ref_content, "accessed", ref.get("iso-8601-date"))
+            # Set the date to the year tag value if accessed is set and there is a year
+            set_if_value(ref_content, "date", year_date)
+            set_if_value(ref_content, "discriminator", discriminator)
+
         # authors and etal
         if ref.get("authors"):
             ref_content = references_json_authors(ref.get("authors"), ref_content)
