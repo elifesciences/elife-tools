@@ -1227,7 +1227,9 @@ def refs(soup):
             set_if_value(ref, "uri", uri_tag.get('xlink:href'))
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
-        set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+        if(raw_parser.year(tag)):
+            set_if_value(ref, "year", node_text(raw_parser.year(tag)))
+            set_if_value(ref, "year-iso-8601-date", raw_parser.year(tag).get('iso-8601-date'))
 
         if(raw_parser.date_in_citation(tag)):
             set_if_value(ref, "date-in-citation", node_text(first(raw_parser.date_in_citation(tag))))
@@ -1299,9 +1301,10 @@ def refs(soup):
         set_if_value(ref, "publisher_loc", node_text(first(raw_parser.publisher_loc(tag))))
         set_if_value(ref, "publisher_name", node_text(first(raw_parser.publisher_name(tag))))
         set_if_value(ref, "edition", node_contents_str(first(raw_parser.edition(tag))))
+        set_if_value(ref, "version", node_contents_str(first(raw_parser.version(tag))))
         set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
-        set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
+        set_if_value(ref, "data-title", node_contents_str(first(raw_parser.data_title(tag))))
         set_if_value(ref, "conf-name", node_text(first(raw_parser.conf_name(tag))))
 
         # If not empty, add position value, append, then increment the position counter
@@ -2957,8 +2960,7 @@ def references_json_authors(ref_authors, ref_content):
     all_authors = references_authors(ref_authors)
     if all_authors != {}:
         if ref_content.get("type") in ["book", "conference-proceeding", "journal", "other",
-                                           "periodical", "preprint", "report", "software",
-                                           "web"]:
+                                           "periodical", "preprint", "report", "web"]:
             for author_type in ["authors", "authorsEtAl"]:
                 set_if_value(ref_content, author_type, all_authors.get(author_type))
         elif ref_content.get("type") in ["book-chapter"]:
@@ -2971,7 +2973,7 @@ def references_json_authors(ref_authors, ref_content):
                     set_if_value(ref_content, "authors", all_authors.get(author_type))
                     set_if_value(ref_content, "authorsEtAl", all_authors.get(author_type + "EtAl"))
                     ref_content["authorsType"] = author_type
-        elif ref_content.get("type") in ["data"]:
+        elif ref_content.get("type") in ["data", "software"]:
             for author_type in ["authors", "authorsEtAl",
                                 "compilers", "compilersEtAl", "curators", "curatorsEtAl"]:
                 set_if_value(ref_content, author_type, all_authors.get(author_type))
@@ -3009,6 +3011,13 @@ def references_json(soup, html_flag=True):
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
         set_if_value(ref_content, "date", ref.get("iso-8601-date"))
         if "date" not in ref_content:
+            set_if_value(ref_content, "date", year_date)
+            set_if_value(ref_content, "discriminator", discriminator)
+
+        # accessed
+        if ref.get("publication-type") in ["web"] and ref.get("iso-8601-date"):
+            set_if_value(ref_content, "accessed", ref.get("iso-8601-date"))
+            # Set the date to the year tag value if accessed is set and there is a year
             set_if_value(ref_content, "date", year_date)
             set_if_value(ref_content, "discriminator", discriminator)
 
@@ -3080,7 +3089,9 @@ def references_json(soup, html_flag=True):
 
         # edition
         if ref.get("publication-type") in ["software"]:
-            set_if_value(ref_content, "version", ref.get("edition"))
+            set_if_value(ref_content, "version", ref.get("version"))
+            if "version" not in ref_content:
+                set_if_value(ref_content, "version", ref.get("edition"))
         else:
             set_if_value(ref_content, "edition", ref.get("edition"))
 

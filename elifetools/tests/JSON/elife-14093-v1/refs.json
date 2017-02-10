@@ -29,6 +29,7 @@
         "fpage": "231", 
         "year": "1997", 
         "position": 1, 
+        "year-iso-8601-date": "1997", 
         "ref": "AdlerIBarab\u00e9DJeanRV1997A History of the Study of PhyllotaxisAnnals of Botany8023124410.1006/anbo.1997.0422", 
         "id": "bib1"
     }, 
@@ -52,6 +53,7 @@
         "fpage": "435", 
         "year": "1975", 
         "position": 2, 
+        "year-iso-8601-date": "1975", 
         "ref": "AdlerI1975A model of space filling in phyllotaxisJournal of Theoretical Biology5343544410.1016/S0022-5193(75)80014-2", 
         "id": "bib2"
     }, 
@@ -75,6 +77,7 @@
         "fpage": "173", 
         "year": "2011", 
         "position": 3, 
+        "year-iso-8601-date": "2011", 
         "ref": "AtelaP2011The Geometric and Dynamic Essence of PhyllotaxisMathematical Modelling of Natural Phenomena617318610.1051/mmnp/20116207", 
         "id": "bib3"
     }, 
@@ -128,15 +131,13 @@
         "fpage": "1627", 
         "year": "2006", 
         "position": 4, 
+        "year-iso-8601-date": "2006", 
         "ref": "Barbier de ReuillePBohn-CourseauILjungKMorinHCarraroNGodinCTraasJ2006Computer simulations reveal properties of the cell-cell signaling network at the shoot apex in ArabidopsisProceedings of the National Academy of Sciences of the United States of America1031627163210.1073/pnas.0510130103", 
         "id": "bib4"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Wiley-Interscience", 
-        "year": "2007", 
-        "publication-type": "book", 
-        "source": "Nonlinear Regression Analysis and Its Applications", 
         "authors": [
             {
                 "surname": "Bates", 
@@ -149,7 +150,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Nonlinear Regression Analysis and Its Applications", 
+        "year": "2007", 
         "position": 5, 
+        "year-iso-8601-date": "2007", 
         "ref": "BatesDMWattsDG2007Nonlinear Regression Analysis and Its ApplicationsWiley-Interscience", 
         "id": "bib5"
     }, 
@@ -283,6 +288,7 @@
         "fpage": "417", 
         "year": "2014", 
         "position": 6, 
+        "year-iso-8601-date": "2014", 
         "ref": "BesnardFRefahiYMorinVMarteauxBBrunoudGChambrierPRozierFMirabetVLegrandJLain\u00e9STh\u00e9venonEFarcotECellierCDasPBishoppADumasRParcyFHelariuttaYBoudaoudAGodinCTraasJGu\u00e9donYVernouxT2014Cytokinin signalling inhibitory fields provide robustness to phyllotaxisNature50541742110.1038/nature12791", 
         "id": "bib6"
     }, 
@@ -302,17 +308,13 @@
         "reference_id": "10.5962/bhl.title.6939", 
         "year": "1754", 
         "position": 7, 
+        "year-iso-8601-date": "1754", 
         "ref": "BonnetC1754Recherches Sur l\u201cusage Des Feuilles Dans Les Plantes Et Sur Quelques Autres Sujets Relatifs \u00c0 L\u201dHistoire De La V\u00e9g\u00e9tationElie Luzac, fils. imp.-lib10.5962/bhl.title.6939", 
         "id": "bib7"
     }, 
     {
         "chapter-title": "Vergleichende Untersuchung \u00fcber die Ordung der Schupper an den Tannenzapfen, als Einleitung zur Untersuchung der Blattstellung \u00fcberhaupt", 
         "article_doi": "10.7554/eLife.14093", 
-        "year": "1831", 
-        "publication-type": "book", 
-        "lpage": "403", 
-        "source": "Nova Acta Physico-Medica XV", 
-        "fpage": "191", 
         "authors": [
             {
                 "surname": "Braun", 
@@ -320,7 +322,13 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "lpage": "403", 
+        "source": "Nova Acta Physico-Medica XV", 
+        "fpage": "191", 
+        "year": "1831", 
         "position": 8, 
+        "year-iso-8601-date": "1831", 
         "ref": "BraunA1831Vergleichende Untersuchung \u00fcber die Ordung der Schupper an den Tannenzapfen, als Einleitung zur Untersuchung der Blattstellung \u00fcberhauptNova Acta Physico-Medica XV191403", 
         "id": "bib8"
     }, 
@@ -347,6 +355,7 @@
         "fpage": "42", 
         "year": "1837", 
         "position": 9, 
+        "year-iso-8601-date": "1837", 
         "ref": "BravaisLBravaisA1837Essai sur la disposition des feuilles curvis\u00e9ri\u00e9esAnnales Des Sciences Naturelles; Botanique742110", 
         "id": "bib9"
     }, 
@@ -419,6 +428,7 @@
         "fpage": "103", 
         "year": "2012", 
         "position": 10, 
+        "year-iso-8601-date": "2012", 
         "ref": "BrunoudGWellsDMOlivaMLarrieuAMirabet VBurrowAHBeeckmanTKepinskiSTraasJBennettMJVernouxT2012A novel sensor to map auxin response and distribution at high spatio-temporal resolutionNature48210310610.1038/nature10791", 
         "id": "bib10"
     }, 
@@ -445,6 +455,7 @@
         "fpage": "377", 
         "year": "1987", 
         "position": 11, 
+        "year-iso-8601-date": "1987", 
         "ref": "ChapmanJMPerryR1987A diffusion model of phyllotaxisAnnals of Botany60377389", 
         "id": "bib11"
     }, 
@@ -452,9 +463,6 @@
         "publisher_loc": "Prentice-Hall", 
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Englewood Cliffs, NJ", 
-        "year": "1975", 
-        "publication-type": "book", 
-        "source": "Introduction to Stochastic Processes", 
         "authors": [
             {
                 "surname": "Cinlar", 
@@ -462,7 +470,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Introduction to Stochastic Processes", 
+        "year": "1975", 
         "position": 12, 
+        "year-iso-8601-date": "1975", 
         "ref": "CinlarE1975Introduction to Stochastic ProcessesPrentice-HallEnglewood Cliffs, NJ", 
         "id": "bib12"
     }, 
@@ -486,6 +498,7 @@
         "fpage": "129", 
         "year": "1998", 
         "position": 13, 
+        "year-iso-8601-date": "1998", 
         "ref": "CouderY1998Initial transitions, order and disorder in phyllotactic patterns: the ontogeny of Helianthus annuus: a case studyActa Societatis Botanicorum Poloniae6712915010.5586/asbp.1998.016", 
         "id": "bib13"
     }, 
@@ -519,6 +532,7 @@
         "fpage": "428", 
         "year": "2013", 
         "position": 14, 
+        "year-iso-8601-date": "2013", 
         "ref": "DhondtSWuytsNInz\u00e9D2013Cell to whole-plant phenotyping: the best is yet to comeTrends in Plant Science1842843910.1016/j.tplants.2013.04.008", 
         "id": "bib14"
     }, 
@@ -547,6 +561,7 @@
         "fpage": "255", 
         "year": "1996a", 
         "position": 15, 
+        "year-iso-8601-date": "1996", 
         "ref": "DouadySCouderY1996aPhyllotaxis as a dynamical self organizing process Part I: The spiral modes resulting from time-periodic iterationsJournal of Theoretical Biology17825527310.1006/jtbi.1996.0024", 
         "id": "bib15"
     }, 
@@ -575,6 +590,7 @@
         "fpage": "275", 
         "year": "1996b", 
         "position": 16, 
+        "year-iso-8601-date": "1996", 
         "ref": "DouadySCouderY1996bPhyllotaxis as a dynamical self organizing process Part II: The spontaneous formation of a periodicity and the coexistence of spiral and whorled patternsJournal of Theoretical Biology17827529410.1006/jtbi.1996.0025", 
         "id": "bib16"
     }, 
@@ -603,6 +619,7 @@
         "fpage": "295", 
         "year": "1996c", 
         "position": 17, 
+        "year-iso-8601-date": "1996", 
         "ref": "DouadySCouderY1996cPhyllotaxis as a dynamical self organizing process Part III: The simulation of the transient regimes of ontogenyJournal of Theoretical Biology17829531210.1006/jtbi.1996.0026", 
         "id": "bib17"
     }, 
@@ -631,6 +648,7 @@
         "fpage": "167", 
         "year": "2010", 
         "position": 18, 
+        "year-iso-8601-date": "2010", 
         "ref": "EldarAElowitzMB2010Functional roles for noise in genetic circuitsNature46716717310.1038/nature09326", 
         "id": "bib18"
     }, 
@@ -669,6 +687,7 @@
         "fpage": "1183", 
         "year": "2002", 
         "position": 19, 
+        "year-iso-8601-date": "2002", 
         "ref": "ElowitzMBLevineAJSiggiaEDSwainPS2002Stochastic gene expression in a single cellScience2971183118610.1126/science.1070919", 
         "id": "bib19"
     }, 
@@ -692,6 +711,7 @@
         "fpage": "403", 
         "year": "1976", 
         "position": 20, 
+        "year-iso-8601-date": "1976", 
         "ref": "GillespieDT1976A general method for numerically simulating the stochastic time evolution of coupled chemical reactionsJournal of Computational Physics2240343410.1016/0021-9991(76)90041-3", 
         "id": "bib20"
     }, 
@@ -715,6 +735,7 @@
         "fpage": "2340", 
         "year": "1977", 
         "position": 21, 
+        "year-iso-8601-date": "1977", 
         "ref": "GillespieDT1977Exact stochastic simulation of coupled chemical reactionsThe Journal of Physical Chemistry812340236110.1021/j100540a008", 
         "id": "bib21"
     }, 
@@ -743,6 +764,7 @@
         "fpage": "96", 
         "year": "2014", 
         "position": 22, 
+        "year-iso-8601-date": "2014", 
         "ref": "GranierCVileD2014Phenotyping and beyond: modelling the relationships between traitsCurrent Opinion in Plant Biology189610210.1016/j.pbi.2014.02.009", 
         "id": "bib22"
     }, 
@@ -776,6 +798,7 @@
         "fpage": "515", 
         "year": "1996", 
         "position": 23, 
+        "year-iso-8601-date": "1996", 
         "ref": "GreenPSteeleCSRennichSC1996Phyllotactic patterns: A biophysical mechanism for their originAnnals of Botany7751552810.1006/anbo.1996.0062", 
         "id": "bib23"
     }, 
@@ -807,6 +830,7 @@
         "reference_id": "10.3389/fpls.2014.00596", 
         "year": "2014", 
         "position": 24, 
+        "year-iso-8601-date": "2014", 
         "ref": "GreeseBH\u00fclskampMFleckC2014Quantification of variability in trichome patternsFrontiers in Plant Science510.3389/fpls.2014.00596", 
         "id": "bib24"
     }, 
@@ -855,15 +879,13 @@
         "fpage": "94", 
         "year": "2013", 
         "position": 25, 
+        "year-iso-8601-date": "2013", 
         "ref": "Gu\u00e9donYRefahiYBesnardFFarcotEGodinCVernouxT2013Pattern identification and characterization reveal permutations of organs as a key genetically controlled property of post-meristematic phyllotaxisJournal of Theoretical Biology3389411010.1016/j.jtbi.2013.07.026", 
         "id": "bib25"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "LeipzigEngelmann", 
-        "year": "1868", 
-        "publication-type": "book", 
-        "source": "Allgemeine Morphologie Der Gewachse, Handbuch Der Physiologischen Botanik", 
         "authors": [
             {
                 "surname": "Hofmeister", 
@@ -871,7 +893,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Allgemeine Morphologie Der Gewachse, Handbuch Der Physiologischen Botanik", 
+        "year": "1868", 
         "position": 26, 
+        "year-iso-8601-date": "1868", 
         "ref": "HofmeisterW1868Allgemeine Morphologie Der Gewachse, Handbuch Der Physiologischen BotanikLeipzigEngelmann", 
         "id": "bib26"
     }, 
@@ -910,6 +936,7 @@
         "fpage": "2161", 
         "year": "2000", 
         "position": 27, 
+        "year-iso-8601-date": "2000", 
         "ref": "ItohJ-IKitanoHMatsuokaMNagatoY2000Shoot organization genes regulate shoot apical meristem organization and the pattern of leaf primordium initiation in riceThe Plant Cell Online122161217410.1105/tpc.12.11.2161", 
         "id": "bib27"
     }, 
@@ -933,15 +960,13 @@
         "fpage": "181", 
         "year": "1995", 
         "position": 28, 
+        "year-iso-8601-date": "1995", 
         "ref": "JeanRV1995Phyllotaxis: the status of the fieldMathematical Biosciences12718120610.1016/0025-5564(95)00037-E", 
         "id": "bib28"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Cambridge University Press", 
-        "year": "2009", 
-        "publication-type": "book", 
-        "source": "Phyllotaxis", 
         "authors": [
             {
                 "surname": "Jean", 
@@ -949,7 +974,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Phyllotaxis", 
+        "year": "2009", 
         "position": 29, 
+        "year-iso-8601-date": "2009", 
         "ref": "JeanRV2009PhyllotaxisCambridge University Press", 
         "id": "bib29"
     }, 
@@ -978,6 +1007,7 @@
         "fpage": "913", 
         "year": "2004", 
         "position": 30, 
+        "year-iso-8601-date": "2004", 
         "ref": "JeuneBBarab\u00e9D2004Statistical recognition of random and regular phyllotactic patternsAnnals of Botany9491391710.1093/aob/mch213", 
         "id": "bib30"
     }, 
@@ -1006,6 +1036,7 @@
         "fpage": "52", 
         "year": "2006", 
         "position": 31, 
+        "year-iso-8601-date": "2006", 
         "ref": "JeuneBBarab\u00e9D2006A stochastic approach to phyllotactic patterns analysisJournal of Theoretical Biology238525910.1016/j.jtbi.2005.05.036", 
         "id": "bib31"
     }, 
@@ -1049,6 +1080,7 @@
         "fpage": "1633", 
         "year": "2006", 
         "position": 32, 
+        "year-iso-8601-date": "2006", 
         "ref": "J\u00f6nssonHHeislerMGShapiroBEMeyerowitzEMMjolsnessE2006An auxin-driven polarized transport model for phyllotaxisProceedings of the National Academy of Sciences of the United States of America1031633163810.1073/pnas.0509839103", 
         "id": "bib32"
     }, 
@@ -1072,6 +1104,7 @@
         "fpage": "143", 
         "year": "2007", 
         "position": 33, 
+        "year-iso-8601-date": "2007", 
         "ref": "KuhlemeierC2007PhyllotaxisTrends in Plant Science1214315010.1016/j.tplants.2007.03.004", 
         "id": "bib33"
     }, 
@@ -1095,6 +1128,7 @@
         "fpage": "201", 
         "year": "1997", 
         "position": 34, 
+        "year-iso-8601-date": "1997", 
         "ref": "KupiecJJ1997A Darwinian theory for the origin of cellular differentiationMolecular & General Genetics25520120810.1007/s004380050490", 
         "id": "bib34"
     }, 
@@ -1128,6 +1162,7 @@
         "fpage": "315", 
         "year": "2009", 
         "position": 35, 
+        "year-iso-8601-date": "2009", 
         "ref": "KutejovaEBriscoeJKichevaA2009Temporal dynamics of patterning by morphogen gradientsCurrent Opinion in Genetics & Development1931532210.1016/j.gde.2009.05.004", 
         "id": "bib35"
     }, 
@@ -1151,6 +1186,7 @@
         "fpage": "955", 
         "year": "2011", 
         "position": 36, 
+        "year-iso-8601-date": "2011", 
         "ref": "LanderAD2011Pattern, growth, and controlCell14495596910.1016/j.cell.2011.03.009", 
         "id": "bib36"
     }, 
@@ -1209,6 +1245,7 @@
         "fpage": "1317", 
         "year": "2015", 
         "position": 37, 
+        "year-iso-8601-date": "2015", 
         "ref": "LandreinBRefahiYBesnardFHervieuxNMirabetVBoudaoudAVernouxTHamantO2015Meristem size contributes to the robustness of phyllotaxis in ArabidopsisJournal of Experimental Botany661317132410.1093/jxb/eru482", 
         "id": "bib37"
     }, 
@@ -1235,6 +1272,7 @@
         "fpage": "397", 
         "year": "1992", 
         "position": 38, 
+        "year-iso-8601-date": "1992", 
         "ref": "LeyserHMOFurnerIJ1992Characterisation of three shoot apical meristem mutants of Arabidopsis thalianaDevelopment116397403", 
         "id": "bib38"
     }, 
@@ -1258,6 +1296,7 @@
         "fpage": "223", 
         "year": "2003", 
         "position": 39, 
+        "year-iso-8601-date": "2003", 
         "ref": "MeinhardtH2003Complex pattern formation by a self-destabilization of established patterns: chemotactic orientation and phyllotaxis as examplesComptes Rendus Biologies32622323710.1016/S1631-0691(03)00018-0", 
         "id": "bib39"
     }, 
@@ -1295,6 +1334,7 @@
         "reference_id": "10.1371/journal.pcbi.1002389", 
         "year": "2012", 
         "position": 40, 
+        "year-iso-8601-date": "2012", 
         "ref": "MirabetVBesnardFVernouxTBoudaoudA2012Noise and robustness in phyllotaxisPLoS Computational Biology8e100238910.1371/journal.pcbi.1002389", 
         "id": "bib40"
     }, 
@@ -1318,6 +1358,7 @@
         "fpage": "270", 
         "year": "1977", 
         "position": 41, 
+        "year-iso-8601-date": "1977", 
         "ref": "MitchisonGJ1977Phyllotaxis and the Fibonacci SeriesScience19627027510.1126/science.196.4287.270", 
         "id": "bib41"
     }, 
@@ -1351,6 +1392,7 @@
         "fpage": "421", 
         "year": "2008", 
         "position": 42, 
+        "year-iso-8601-date": "2008", 
         "ref": "NewellACShipmanPDSunZ2008Phyllotaxis: cooperation and competition between mechanical and biochemical processesJournal of Theoretical Biology25142143910.1016/j.jtbi.2007.11.036", 
         "id": "bib42"
     }, 
@@ -1372,6 +1414,7 @@
         "fpage": "601", 
         "year": "2011", 
         "position": 43, 
+        "year-iso-8601-date": "2011", 
         "ref": "OatesAC2011What's All the Noise About Developmental Stochasticity?Oxford University Press for The Company of Biologists Limited60160710.1242/dev.059923", 
         "id": "bib43"
     }, 
@@ -1409,6 +1452,7 @@
         "reference_id": "10.1371/journal.pcbi.1000486", 
         "year": "2009", 
         "position": 44, 
+        "year-iso-8601-date": "2009", 
         "ref": "Okabe-OhoYMurakamiHOhoSSasaiM2009Stable, precise, and reproducible patterning of bicoid and hunchback molecules in the early Drosophila embryoPLoS Computational Biology5e100048610.1371/journal.pcbi.1000486", 
         "id": "bib44"
     }, 
@@ -1457,6 +1501,7 @@
         "fpage": "1720", 
         "year": "2011", 
         "position": 45, 
+        "year-iso-8601-date": "2011", 
         "ref": "PeaucelleABraybrookSALe GuillouLBronEKuhlemeierCH\u00f6fteH2011Pectin-induced changes in cell wall mechanics underlie organ initiation in ArabidopsisCurrent Biology211720172610.1016/j.cub.2011.08.057", 
         "id": "bib45"
     }, 
@@ -1510,6 +1555,7 @@
         "fpage": "1943", 
         "year": "2008", 
         "position": 46, 
+        "year-iso-8601-date": "2008", 
         "ref": "PeaucelleALouvetRJohansenJNH\u00f6fteHLaufsPPellouxJMouilleG2008Arabidopsis phyllotaxis is controlled by the methyl-esterification status of cell-wall pectinsCurrent Biology181943194810.1016/j.cub.2008.10.065", 
         "id": "bib46"
     }, 
@@ -1543,6 +1589,7 @@
         "fpage": "48", 
         "year": "2015", 
         "position": 47, 
+        "year-iso-8601-date": "2015", 
         "ref": "PennybackerMFShipmanPDNewellAC2015Phyllotaxis: Some progress, but a story far from overPhysica D: Nonlinear Phenomena306488110.1016/j.physd.2015.05.003", 
         "id": "bib47"
     }, 
@@ -1651,6 +1698,7 @@
         "fpage": "1123", 
         "year": "2011", 
         "position": 48, 
+        "year-iso-8601-date": "2011", 
         "ref": "PrasadKGriggSPBarkoulasMYadavRKSanchez-PerezGFPinonVBlilouIHofhuisHDhonukshePGalinhaCM\u00e4h\u00f6nenAPMullerWHRamanSVerkleijAJSnelBReddyGVTsiantisMScheresB2011Arabidopsis PLETHORA transcription factors control phyllotaxisCurrent Biology211123112810.1016/j.cub.2011.05.009", 
         "id": "bib48"
     }, 
@@ -1699,6 +1747,7 @@
         "fpage": "323", 
         "year": "2011", 
         "position": 49, 
+        "year-iso-8601-date": "2011", 
         "ref": "RefahiYFarcotEGu\u00e9donYBesnardFVernouxTGodinC2011A Combinatorial Model of Phyllotaxis Perturbations in Arabidopsis thalianaCombinatorial Pattern MatchingBerlin, HeidelbergSpringer Berlin Heidelberg32333510.1007/978-3-642-21458-5_28", 
         "id": "bib49"
     }, 
@@ -1762,6 +1811,7 @@
         "fpage": "255", 
         "year": "2003", 
         "position": 50, 
+        "year-iso-8601-date": "2003", 
         "ref": "ReinhardtDPesceERStiegerPMandelTBaltenspergerKBennettMTraasJFrimlJKuhlemeierC2003Regulation of phyllotaxis by polar auxin transportNature42625526010.1038/nature02081", 
         "id": "bib50"
     }, 
@@ -1785,6 +1835,7 @@
         "fpage": "539", 
         "year": "2005", 
         "position": 51, 
+        "year-iso-8601-date": "2005", 
         "ref": "ReinhardtD2005Regulation of phyllotaxisThe International Journal of Developmental Biology4953954610.1387/ijdb.041922dr", 
         "id": "bib51"
     }, 
@@ -1808,15 +1859,13 @@
         "fpage": "509", 
         "year": "1951", 
         "position": 52, 
+        "year-iso-8601-date": "1951", 
         "ref": "RichardsFJ1951Phyllotaxis: Its quantitative expression and relation to growth in the apexPhilosophical Transactions of the Royal Society B: Biological Sciences23550956410.1098/rstb.1951.0007", 
         "id": "bib52"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Academic Press", 
-        "year": "2012", 
-        "publication-type": "book", 
-        "source": "Simulation", 
         "authors": [
             {
                 "surname": "Ross", 
@@ -1824,16 +1873,17 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Simulation", 
+        "year": "2012", 
         "position": 53, 
+        "year-iso-8601-date": "2012", 
         "ref": "RossSM2012SimulationAcademic Press", 
         "id": "bib53"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Academic Press", 
-        "year": "2014", 
-        "publication-type": "book", 
-        "source": "Introduction to Probability Models", 
         "authors": [
             {
                 "surname": "Ross", 
@@ -1841,16 +1891,17 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Introduction to Probability Models", 
+        "year": "2014", 
         "position": 54, 
+        "year-iso-8601-date": "2014", 
         "ref": "RossSM2014Introduction to Probability ModelsAcademic Press", 
         "id": "bib54"
     }, 
     {
         "article_doi": "10.7554/eLife.14093", 
         "publisher_name": "Rec. Trav. Bot. N\u00e9erland", 
-        "year": "1913", 
-        "publication-type": "book", 
-        "source": "Mathematische und microscopisch\u2014anatomische Studien \ufb01ber Blattstellungen", 
         "authors": [
             {
                 "surname": "Schoute", 
@@ -1858,7 +1909,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Mathematische und microscopisch\u2014anatomische Studien \ufb01ber Blattstellungen", 
+        "year": "1913", 
         "position": 55, 
+        "year-iso-8601-date": "1913", 
         "ref": "SchouteJC1913Mathematische und microscopisch\u2014anatomische Studien \ufb01ber BlattstellungenRec. Trav. Bot. N\u00e9erland", 
         "id": "bib55"
     }, 
@@ -1887,6 +1942,7 @@
         "fpage": "595", 
         "year": "1984", 
         "position": 56, 
+        "year-iso-8601-date": "1984", 
         "ref": "SchwabeWWClewerAG1984Phyllotaxis\u2014a simple computer model based on the theory of a polarly-translocated inhibitorJournal of Theoretical Biology10959561910.1016/S0022-5193(84)80161-7", 
         "id": "bib56"
     }, 
@@ -1935,6 +1991,7 @@
         "fpage": "1301", 
         "year": "2006", 
         "position": 57, 
+        "year-iso-8601-date": "2006", 
         "ref": "SmithRSGuyomarc'hSMandelTReinhardtDKuhlemeierCPrusinkiewiczP2006A plausible model of phyllotaxisProceedings of the National Academy of Sciences of the United States of America1031301130610.1073/pnas.0510457103", 
         "id": "bib57"
     }, 
@@ -1968,6 +2025,7 @@
         "fpage": "1635", 
         "year": "2006", 
         "position": 58, 
+        "year-iso-8601-date": "2006", 
         "ref": "SmithRSKuhlemeierCPrusinkiewiczP2006Inhibition fields for phyllotactic pattern formation: a simulation study. This article is one of a selection of papers published on the Special Theme of Shoot Apical MeristemsCanadian Journal of Botany841635164910.1139/b06-133", 
         "id": "bib58"
     }, 
@@ -1996,6 +2054,7 @@
         "fpage": "483", 
         "year": "1962", 
         "position": 59, 
+        "year-iso-8601-date": "1962", 
         "ref": "SnowMSnowR1962A theory of the regulation of phyllotaxis based on lupinus albusPhilosophical Transactions of the Royal Society B: Biological Sciences24448351310.1098/rstb.1962.0003", 
         "id": "bib59"
     }, 
@@ -2043,6 +2102,7 @@
         "reference_id": "10.1371/journal.pcbi.1000207", 
         "year": "2008", 
         "position": 60, 
+        "year-iso-8601-date": "2008", 
         "ref": "StomaSLucasMChopardJSchaedelMTraasJGodinC2008Flux-based transport enhancement as a plausible unifying mechanism for auxin transport in meristem developmentPLoS Computational Biology4e100020710.1371/journal.pcbi.1000207", 
         "id": "bib60"
     }, 
@@ -2064,6 +2124,7 @@
         "fpage": "491", 
         "year": "1975", 
         "position": 61, 
+        "year-iso-8601-date": "1975", 
         "ref": "ThornleyJHM1975Phyllotaxis I. a Mechanistic ModelAnnals of Botany39491507", 
         "id": "bib61"
     }, 
@@ -2071,9 +2132,6 @@
         "publisher_loc": "North-Holland, Amsterdam, 1992", 
         "chapter-title": "Morphogen theory of phyllotaxis", 
         "article_doi": "10.7554/eLife.14093", 
-        "year": "1952", 
-        "publication-type": "book", 
-        "source": "Collected Works of AM Turing: Morphogenesis", 
         "authors": [
             {
                 "surname": "Turing", 
@@ -2086,7 +2144,11 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Collected Works of AM Turing: Morphogenesis", 
+        "year": "1952", 
         "position": 62, 
+        "year-iso-8601-date": "1952", 
         "ref": "TuringAM1952Morphogen theory of phyllotaxisSaunders PTCollected Works of AM Turing: MorphogenesisNorth-Holland, Amsterdam, 1992", 
         "id": "bib62"
     }, 
@@ -2165,6 +2227,7 @@
         "fpage": "439", 
         "year": "2012", 
         "position": 63, 
+        "year-iso-8601-date": "2012", 
         "ref": "UyttewaalMBurianAAlimKLandreinBBorowska-Wykr\u0119tDDedieuAPeaucelleALudyniaMTraasJBoudaoudAKwiatkowskaDHamantO2012Mechanical stress acts via katanin to amplify differences in growth rate between adjacent cells in ArabidopsisCell14943945110.1016/j.cell.2012.02.048", 
         "id": "bib63"
     }, 
@@ -2193,6 +2256,7 @@
         "fpage": "127", 
         "year": "1977", 
         "position": 64, 
+        "year-iso-8601-date": "1977", 
         "ref": "VeenAHLindenmayerA1977Diffusion mechanism for phyllotaxis: theoretical physico-chemical and computer studyPlant Physiology6012713910.1104/pp.60.1.127", 
         "id": "bib64"
     }, 
@@ -2330,6 +2394,7 @@
         "fpage": "508", 
         "year": "2011", 
         "position": 65, 
+        "year-iso-8601-date": "2011", 
         "ref": "VernouxTBrunoudGFarcotEMorin VVan den DaeleHLegrandJOlivaMDasPLarrieuAWellsDGu\u00e9donYArmitageLPicardFGuyomarc'hSCellierCParryGKoumproglouRDoonanJHEstelleMGodinCKepinskiSBennettMDe VeylderLTraasJ2011The auxin signalling network translates dynamic input into robust patterning at the shoot apexMolecular Systems Biology750851510.1038/msb.2011.39", 
         "id": "bib65"
     }, 
@@ -2368,6 +2433,7 @@
         "fpage": "452", 
         "year": "2013", 
         "position": 66, 
+        "year-iso-8601-date": "2013", 
         "ref": "WennekampSMeseckeSN\u00e9d\u00e9lecFHiiragiT2013A self-organization framework for symmetry breaking in the mammalian embryoNature Reviews. Molecular Cell Biology1445245910.1038/nrm3602", 
         "id": "bib66"
     }, 
@@ -2391,6 +2457,7 @@
         "fpage": "122", 
         "year": "2009", 
         "position": 67, 
+        "year-iso-8601-date": "2009", 
         "ref": "WilkinsonDJ2009Stochastic modelling for quantitative description of heterogeneous biological systemsNature Reviews. Genetics1012213310.1038/nrg2509", 
         "id": "bib67"
     }, 
@@ -2414,6 +2481,7 @@
         "fpage": "421", 
         "year": "1978", 
         "position": 68, 
+        "year-iso-8601-date": "1978", 
         "ref": "YoungDA1978On the diffusion theory of phyllotaxisJournal of Theoretical Biology7142143210.1016/0022-5193(78)90169-8", 
         "id": "bib68"
     }

@@ -3,9 +3,6 @@
         "publisher_loc": "New York", 
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "Scientific American Library", 
-        "year": "1992", 
-        "publication-type": "book", 
-        "source": "Chemical Communication: The Language Of Pheromones", 
         "authors": [
             {
                 "surname": "Agosta", 
@@ -13,7 +10,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Chemical Communication: The Language Of Pheromones", 
+        "year": "1992", 
         "position": 1, 
+        "year-iso-8601-date": "1992", 
         "ref": "Agosta WC 1992 Chemical Communication: The Language Of Pheromones New York Scientific American Library", 
         "id": "bib1"
     }, 
@@ -47,6 +48,7 @@
         "fpage": "986", 
         "year": "2007", 
         "position": 2, 
+        "year-iso-8601-date": "2007", 
         "ref": "Ahmed I Yokota A Fujiwara T 2007 Chimaereicella boritolerans sp nov., a boron-tolerant and alkaliphilic bacterium of the family Flavobacteriaceae isolated from soil International journal of systematic and evolutionary microbiology 57 986 92 10.1099/ijs.0.64728-0", 
         "id": "bib2"
     }, 
@@ -95,6 +97,7 @@
         "fpage": "163", 
         "year": "2013", 
         "position": 3, 
+        "year-iso-8601-date": "2013", 
         "ref": "Alegado RA Grabenstatter JD Zuzow R Morris A Huang SY Summons RE 2013 Algoriphagus machipongonensis sp. nov. co-isolated with a colonial choanoflagellate International journal of systematic and evolutionary microbiology 63 163 168 10.1099/ijs.0.038646-0", 
         "id": "bib3"
     }, 
@@ -138,6 +141,7 @@
         "fpage": "4666", 
         "year": "2011", 
         "position": 4, 
+        "year-iso-8601-date": "2011", 
         "ref": "An D Na C Bielawski J Hannun YA Kasper DL 2011 Membrane sphingolipids as essential molecular signals for bacteroides survival in the intestine Proceedings of the National Academy of Sciences of the United States of America 108 4666 4671 10.1073/pnas.1001501107", 
         "id": "bib4"
     }, 
@@ -184,6 +188,7 @@
         "fpage": "485", 
         "year": "2002", 
         "position": 5, 
+        "year-iso-8601-date": "2002", 
         "ref": "Anton J Oren A Benlloch S Rodriguez-Valera F Amann R Rossello-Mora R 2002 Salinibacter ruber gen. nov., sp nov., a novel, extremely halophilic member of the bacteria from saltern crystallizer ponds International journal of systematic and evolutionary microbiology 52 485 491", 
         "id": "bib5"
     }, 
@@ -205,16 +210,13 @@
         "fpage": "3", 
         "year": "2008", 
         "position": 6, 
+        "year-iso-8601-date": "2008", 
         "ref": "Apicella MA 2008 Isolation and characterization of lipopolysaccharides Methods in molecular biology 431 3 13", 
         "id": "bib6"
     }, 
     {
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "CRC", 
-        "year": "2004", 
-        "publication-type": "book", 
-        "source": "Handbook of microbiological media", 
-        "fpage": "2051", 
         "authors": [
             {
                 "surname": "Atlas", 
@@ -222,7 +224,12 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Handbook of microbiological media", 
+        "fpage": "2051", 
+        "year": "2004", 
         "position": 7, 
+        "year-iso-8601-date": "2004", 
         "ref": "Atlas RM 2004 Handbook of microbiological media CRC 2051", 
         "id": "bib7"
     }, 
@@ -266,6 +273,7 @@
         "fpage": "985", 
         "year": "2001", 
         "position": 8, 
+        "year-iso-8601-date": "2001", 
         "ref": "Barbeyron T L\u2019Haridon S Corre E Kloareg B Potin P 2001 Zobellia galactanovorans gen. nov., sp. nov., a marine species of Flavobacteriaceae isolated from a red alga, and classification of [Cytophaga] uliginosa (ZoBell and Upham 1944) Reichenbach 1989 as Zobellia uliginosa gen. nov., comb. nov International journal of systematic and evolutionary microbiology 51 985 997 10.1099/00207713-51-3-985", 
         "id": "bib8"
     }, 
@@ -314,6 +322,7 @@
         "fpage": "128", 
         "year": "1996", 
         "position": 9, 
+        "year-iso-8601-date": "1996", 
         "ref": "Bernardet J Segers P Vancanneyt M Berthe F Kersters K Vandamme P 1996 Cutting a gordian knot: Emended classification and description of the genus Flavobacterium, emended description of the family Flavobacteriaceae, and proposal of Flavobacterium hydatis nom nov (basonym, Cytophaga aquatilis Strohl and Tait 1978) International journal of systematic bacteriology 46 128 148 10.1099/00207713-46-1-128", 
         "id": "bib9"
     }, 
@@ -418,6 +427,7 @@
         "fpage": "1453", 
         "year": "1997", 
         "position": 10, 
+        "year-iso-8601-date": "1997", 
         "ref": "Blattner FR Plankett G III Bloch CA Perna N Burland V Riley M Collado-Vides J Glasner JD Rode CK Mayhew GF Gregor J Davis NW Kirkpatrick HA Goeden MA Rose DJ Mau B Shao Y 1997 The complete genome sequence of Escherichia coli K-12 Science 277 1453 1462 10.1126/science.277.5331.1453", 
         "id": "bib10"
     }, 
@@ -438,6 +448,7 @@
         "reference_id": "10.1109/CCECE.2015.7129330", 
         "year": "2014", 
         "position": 11, 
+        "year-iso-8601-date": "2014", 
         "ref": "Blouin S 2014 Localization error of underwater multistatic scenarios with uncertain transducers' location IEEE 28th Canadian Conference on Electrical and Computer Engineering 10.1109/CCECE.2015.7129330", 
         "id": "bib11"
     }, 
@@ -471,6 +482,7 @@
         "fpage": "1343", 
         "year": "2003", 
         "position": 12, 
+        "year-iso-8601-date": "2003", 
         "ref": "Bowman JP Nichols CM Gibson JAE 2003 Algoriphagus ratkowskyi gen. nov., sp. nov., Brumimicrobium glaciale gen. nov., sp. nov., Cryomorpha ignava gen. nov., sp. nov. and Crocinitomix catalasitica gen. nov., sp. nov., novel flavobacteria isolated from various polar habitats International journal of systematic and evolutionary microbiology 53 1343 1355 10.1099/ijs.0.02553-0", 
         "id": "bib12"
     }, 
@@ -528,6 +540,7 @@
         "reference_id": "10.1371/journal.pcbi.1000392", 
         "year": "2009", 
         "position": 13, 
+        "year-iso-8601-date": "2009", 
         "ref": "Bradley RK Roberts A Smoot M Juvekar S Do J Dewey C Holmes I Pachter L 2009 Fast statistical alignment Public Library of Science International Society for Computational Biology 5 e1000392 10.1371/journal.pcbi.1000392", 
         "id": "bib13"
     }, 
@@ -561,6 +574,7 @@
         "fpage": "2335", 
         "year": "2004a", 
         "position": 14, 
+        "year-iso-8601-date": "2004", 
         "ref": "Brettar I Christen R Hofle M 2004a Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 2335 2341 10.1099/ijs.0.63255-0", 
         "id": "bib14"
     }, 
@@ -593,6 +607,7 @@
         "fpage": "65", 
         "year": "2004b", 
         "position": 15, 
+        "year-iso-8601-date": "2004", 
         "ref": "Brettar I Christen R Hofle MG 2004b Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 65 10.1099/ijs.0.02752-0", 
         "id": "bib15"
     }, 
@@ -626,6 +641,7 @@
         "fpage": "71", 
         "year": "1961", 
         "position": 16, 
+        "year-iso-8601-date": "1961", 
         "ref": "Butenandt A Beckmann R Hecker E 1961 On the sex attractant of silk-moths. I. The biological test and the isolation of the pure sex-attractant bombykol Hoppe-Seyler\u2019s Zeitschrift f\u00fcr physiologische Chemie 324 71 83 10.1515/bchm2.1961.324.1.71", 
         "id": "bib16"
     }, 
@@ -654,6 +670,7 @@
         "fpage": "392", 
         "year": "1957", 
         "position": 17, 
+        "year-iso-8601-date": "1957", 
         "ref": "Carlucci AF Pramer D 1957 Factors influencing the plate method for determining abundance of bacteria in sea water Proceedings of the Society for Experimental Biology and Medicine 96 392 394 10.3181/00379727-96-23487", 
         "id": "bib17"
     }, 
@@ -697,6 +714,7 @@
         "fpage": "16641", 
         "year": "2008", 
         "position": 18, 
+        "year-iso-8601-date": "2008", 
         "ref": "Carr M Leadbeater BSC Hassan R Nelson M Baldauf SL 2008 Molecular phylogeny of choanoflagellates, the sister group to Metazoa Proceedings of the National Academy of Sciences of the United States of America 105 16641 16646 10.1073/pnas.0801667105", 
         "id": "bib18"
     }, 
@@ -720,6 +738,7 @@
         "fpage": "540", 
         "year": "2000", 
         "position": 19, 
+        "year-iso-8601-date": "2000", 
         "ref": "Castresana J 2000 Selection of conserved blocks from multiple alignments for their use in phylogenetic analysis Molecular biology and evolution 17 540 552 10.1093/oxfordjournals.molbev.a026334", 
         "id": "bib19"
     }, 
@@ -868,6 +887,7 @@
         "fpage": "1463", 
         "year": "2005", 
         "position": 20, 
+        "year-iso-8601-date": "2005", 
         "ref": "Cerdeno-Tarraga AM Patrick S Crossman L Blakely GW Abratt V Lennard N Poxton I Duerden B Harris B Quail MA Barron A Clark L Corton C Doggett J Holden MT Larke N Line A Lord A Norbertczak H Ormond D Price C Rabbinowitsch E Woodward J Barrell B Parkhill J 2005 Extensive DNA Inversions in the B. fragilis Genome Control Variable Gene Expression Blakely GW Science 307 1463 1465 10.1126/science.1107008", 
         "id": "bib20"
     }, 
@@ -896,6 +916,7 @@
         "fpage": "751", 
         "year": "2000", 
         "position": 21, 
+        "year-iso-8601-date": "2000", 
         "ref": "Chelius M Triplett E 2000 Dyadobacter fermentans gen. nov., sp nov., a novel Gram-negative bacterium isolated from surface-sterilized Zea mays stems International journal of systematic and evolutionary microbiology 50 751 758 10.1099/00207713-50-2-751", 
         "id": "bib21"
     }, 
@@ -924,6 +945,7 @@
         "fpage": "76", 
         "year": "2003", 
         "position": 22, 
+        "year-iso-8601-date": "2003", 
         "ref": "Cho J-C Giovannoni SJ 2003 Croceibacter atlanticus gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae Systematic and applied microbiology 26 76 83 10.1078/072320203322337344", 
         "id": "bib22"
     }, 
@@ -952,6 +974,7 @@
         "fpage": "1101", 
         "year": "2004", 
         "position": 23, 
+        "year-iso-8601-date": "2004", 
         "ref": "Cho J-C Giovannoni SJ 2004 Robiginitalea biformata gen. nov., sp. nov., a novel marine bacterium in the family Flavobacteriaceae with a higher G+C content International journal of systematic and evolutionary microbiology 54 1101 1106 10.1099/ijs.0.03023-0", 
         "id": "bib23"
     }, 
@@ -980,6 +1003,7 @@
         "fpage": "689", 
         "year": "1960", 
         "position": 24, 
+        "year-iso-8601-date": "1960", 
         "ref": "Cohn ZA Morse SI 1960 Functional and metabolic properties of polymorphonuclear leucocytes. II. The influence of a lipopolysaccharide endotoxin The Journal of experimental medicine 111 689 704 10.1084/jem.111.5.689", 
         "id": "bib24"
     }, 
@@ -1033,6 +1057,7 @@
         "fpage": "73", 
         "year": "2011", 
         "position": 25, 
+        "year-iso-8601-date": "2011", 
         "ref": "Dayel MJ Alegado RA Fairclough SR Levin TC Nichols SA McDonald K King N 2011 Cell differentiation and morphogenesis in the colony-forming choanoflagellate Salpingoeca rosetta Developmental biology 357 73 82 10.1016/j.ydbio.2011.06.003", 
         "id": "bib25"
     }, 
@@ -1069,6 +1094,7 @@
         "fpage": "11255", 
         "year": "1992", 
         "position": 26, 
+        "year-iso-8601-date": "1992", 
         "ref": "de Jonge BL Chang YS Gage D Tomasz A 1992 Peptidoglycan composition in heterogeneous Tn551 mutants of a methicillin-resistant Staphylococcus aureus strain The Journal of biological chemistry 267 11255 11259", 
         "id": "bib26"
     }, 
@@ -1137,6 +1163,7 @@
         "fpage": "5069", 
         "year": "2006", 
         "position": 27, 
+        "year-iso-8601-date": "2006", 
         "ref": "DeSantis TZ Hugenholtz P Larsen N Rojas M Brodie EL Keller K Huber T Dalevi D Hu P Andersen GL 2006 Greengenes, a chimera-checked 16S rRNA gene database and workbench compatible with ARB Applied and environmental microbiology 72 5069 5072 10.1128/AEM.03006-05", 
         "id": "bib27"
     }, 
@@ -1165,6 +1192,7 @@
         "fpage": "348", 
         "year": "2011", 
         "position": 28, 
+        "year-iso-8601-date": "2011", 
         "ref": "Desbrosses GJ Stougaard J 2011 Root nodulation: a paradigm for how plant-microbe symbiosis influences host developmental pathways Cell host and microbe 10 348 358 10.1016/j.chom.2011.09.005", 
         "id": "bib28"
     }, 
@@ -1193,6 +1221,7 @@
         "fpage": "132", 
         "year": "1994", 
         "position": 29, 
+        "year-iso-8601-date": "1994", 
         "ref": "Drijber R McGill W 1994 Sulfonolipid content of Cytophaga and Flexibacter species isolated from soil and cultured under different Nutrient andtemperature regimes Canadian Journal of Microbiology 40 132 139 10.1139/m94-021", 
         "id": "bib29"
     }, 
@@ -1224,6 +1253,7 @@
         "fpage": "352", 
         "year": "1968", 
         "position": 30, 
+        "year-iso-8601-date": "1968", 
         "ref": "Edman DC Pollock MB Hall ER 1968 Listeria monocytogenes L forms. I. Induction maintenance, and biological characteristics Journal of bacteriology 96 352 7", 
         "id": "bib30"
     }, 
@@ -1257,6 +1287,7 @@
         "fpage": "R875", 
         "year": "2010", 
         "position": 31, 
+        "year-iso-8601-date": "2010", 
         "ref": "Fairclough SR Dayel MJ King N 2010 Multicellular development in a choanoflagellate Current biology: CB 20 R875 R876 10.1016/j.cub.2010.09.014", 
         "id": "bib31"
     }, 
@@ -1278,6 +1309,7 @@
         "fpage": "164", 
         "year": "1989", 
         "position": 32, 
+        "year-iso-8601-date": "1989", 
         "ref": "Falenstein J 1989 Phylip- phylogeny inference packages (Version 3.2) Cladistics 5 164 166", 
         "id": "bib32"
     }, 
@@ -1321,6 +1353,7 @@
         "fpage": "457", 
         "year": "1997", 
         "position": 33, 
+        "year-iso-8601-date": "1997", 
         "ref": "Falke JJ Bass RB Butler SL Chervitz SA Danielson MA 1997 The two-component signaling pathway of bacterial chemotaxis: a molecular view of signal transduction by receptors, kinases, and adaptation enzymes Annual review of cell and developmental biology 13 457 512 10.1146/annurev.cellbio.13.1.457", 
         "id": "bib33"
     }, 
@@ -1344,16 +1377,13 @@
         "fpage": "699", 
         "year": "2006", 
         "position": 34, 
+        "year-iso-8601-date": "2006", 
         "ref": "Falkow S 2006 Is persistent bacterial infection good for your health? Cell 124 699 702 10.1016/j.cell.2006.02.004", 
         "id": "bib34"
     }, 
     {
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "Springer Verlag", 
-        "year": "2010", 
-        "publication-type": "book", 
-        "source": "Bergey\u2019s manual of systematic bacteriology: Bacteroidetes,\n                        spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres,\n                        fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia,\n                        chlamydiae, and planctomycetes", 
-        "fpage": "949", 
         "authors": [
             {
                 "surname": "Garrity", 
@@ -1361,7 +1391,12 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Bergey\u2019s manual of systematic bacteriology: Bacteroidetes,\n                        spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres,\n                        fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia,\n                        chlamydiae, and planctomycetes", 
+        "fpage": "949", 
+        "year": "2010", 
         "position": 35, 
+        "year-iso-8601-date": "2010", 
         "ref": "Garrity GM 2010 Bergey\u2019s manual of systematic bacteriology: Bacteroidetes, spirochetes, tenericutes (mollicutes), acidobacteria, fibrobacteres, fusobacteria, dictyoglomi, gemmatimonadetes, lentisphaerae, verrucomicrobia, chlamydiae, and planctomycetes Springer Verlag 949", 
         "id": "bib35"
     }, 
@@ -1388,6 +1423,7 @@
         "fpage": "592", 
         "year": "1980", 
         "position": 36, 
+        "year-iso-8601-date": "1980", 
         "ref": "Godchaux W Leadbetter ER 1980 Capnocytophaga spp. contain sulfonolipids that are novel in procaryotes Journal of bacteriology 144 592 602", 
         "id": "bib36"
     }, 
@@ -1414,6 +1450,7 @@
         "fpage": "1238", 
         "year": "1983", 
         "position": 37, 
+        "year-iso-8601-date": "1983", 
         "ref": "Godchaux W Leadbetter ER 1983 Unusual sulfonolipids are characteristic of the Cytophaga-Flexibacter group Journal of bacteriology 153 1238 1246", 
         "id": "bib37"
     }, 
@@ -1440,6 +1477,7 @@
         "fpage": "2982", 
         "year": "1984", 
         "position": 38, 
+        "year-iso-8601-date": "1984", 
         "ref": "Godchaux W Leadbetter ER 1984 Sulfonolipids of gliding bacteria. Structure of the N-acylaminosulfonates The Journal of biological chemistry 259 2982 2990", 
         "id": "bib38"
     }, 
@@ -1463,6 +1501,7 @@
         "source": "Archives of microbiology", 
         "year": "1988", 
         "position": 39, 
+        "year-iso-8601-date": "1988", 
         "ref": "Godchaux W Leadbetter E 1988 Sulfonolipids are localized in the outer membrane of the gliding bacterium Cytophaga johnsonae Archives of microbiology", 
         "id": "bib39"
     }, 
@@ -1621,6 +1660,7 @@
         "fpage": "991", 
         "year": "2012", 
         "position": 40, 
+        "year-iso-8601-date": "2012", 
         "ref": "Hall D Jeter J Iyer N Fetter D Hausenfluck JH Peng H Trautman ET Svirskas RR Myers EW Iwinski ZR Aso Y DePasquale GM Enos A Hulamm P Lam SC Li HH Laverty TR Long F Qu L Murphy SD Rokicki K Safford T Shaw K Simpson JH Sowell A Tae S Yu Y Zugates CT 2012 A GAL4-driver line resource for Drosophila neurobiology Cell reports 2 991 1001 10.1016/j.celrep.2012.09.011", 
         "id": "bib40"
     }, 
@@ -1654,6 +1694,7 @@
         "fpage": "4893", 
         "year": "2001", 
         "position": 41, 
+        "year-iso-8601-date": "2001", 
         "ref": "Hannun YA Luberto C Argraves KM 2001 Enzymes of sphingolipid metabolism: from modular to integrative signaling Biochemistry 40 4893 4903 10.1021/bi002836k", 
         "id": "bib41"
     }, 
@@ -1707,6 +1748,7 @@
         "fpage": "2443", 
         "year": "2003", 
         "position": 42, 
+        "year-iso-8601-date": "2003", 
         "ref": "Herr DR Fyrst H Phan V Heinecke K Georges R Harris GL Saba JD 2003 Sply regulation of sphingolipid signaling molecules is essential for Drosophila development Development 130 2443 2453 10.1242/dev.00456", 
         "id": "bib42"
     }, 
@@ -1728,6 +1770,7 @@
         "fpage": "191", 
         "year": "1975", 
         "position": 43, 
+        "year-iso-8601-date": "1975", 
         "ref": "Hibberd DJ 1975 Observations on the ultrastructure of the choanoflagellate Codosiga botrytis (Ehr.) Saville-Kent with special reference to the flagellar apparatus Journal of cell science 17 191 219", 
         "id": "bib43"
     }, 
@@ -1736,11 +1779,6 @@
         "chapter-title": "Cerebral function and behaviour investigated through a study of filial imprinting", 
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "Cambridge University Press", 
-        "year": "1991", 
-        "publication-type": "book", 
-        "lpage": "148", 
-        "source": "The development and integration of behaviour: essays in honour of Robert Hinde", 
-        "fpage": "121", 
         "authors": [
             {
                 "surname": "Horn", 
@@ -1753,7 +1791,13 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "lpage": "148", 
+        "source": "The development and integration of behaviour: essays in honour of Robert Hinde", 
+        "fpage": "121", 
+        "year": "1991", 
         "position": 44, 
+        "year-iso-8601-date": "1991", 
         "ref": "Horn G 1991 Cerebral function and behaviour investigated through a study of filial imprinting Bateson P The development and integration of behaviour: essays in honour of Robert Hinde Cambridge, United Kingdom Cambridge University Press 121 148", 
         "id": "bib44"
     }, 
@@ -1782,17 +1826,13 @@
         "fpage": "111", 
         "year": "2008", 
         "position": 45, 
+        "year-iso-8601-date": "2008", 
         "ref": "Hughes DT Sperandio V 2008 Inter-kingdom signalling: communication between bacteria and their hosts Nature reviews. Microbiology 6 111 120 10.1038/nrmicro1836", 
         "id": "bib45"
     }, 
     {
         "lpage": "142", 
         "article_doi": "10.7554/eLife.00013", 
-        "year": "1868", 
-        "publication-type": "book", 
-        "volume": "1", 
-        "source": "On the spongiae ciliatae as infusoria flagellata; or observations on the\n                        structure, animality, and relationship of Leucosolenia botryoides", 
-        "fpage": "133", 
         "authors": [
             {
                 "surname": "James-Clark", 
@@ -1800,18 +1840,19 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "volume": "1", 
+        "source": "On the spongiae ciliatae as infusoria flagellata; or observations on the\n                        structure, animality, and relationship of Leucosolenia botryoides", 
+        "fpage": "133", 
+        "year": "1868", 
         "position": 46, 
+        "year-iso-8601-date": "1868", 
         "ref": "James-Clark H 1868 On the spongiae ciliatae as infusoria flagellata; or observations on the structure, animality, and relationship of Leucosolenia botryoides 1 133 142", 
         "id": "bib46"
     }, 
     {
         "lpage": "217", 
         "article_doi": "10.7554/eLife.00013", 
-        "year": "2000", 
-        "publication-type": "journal", 
-        "volume": "21", 
-        "source": "Zeitschrift fur Differentielle und Diagnostische Psychologie", 
-        "fpage": "208", 
         "authors": [
             {
                 "surname": "Ising", 
@@ -1819,7 +1860,13 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Zeitschrift fur Differentielle und Diagnostische Psychologie", 
+        "fpage": "208", 
+        "year": "2000", 
         "position": 47, 
+        "year-iso-8601-date": "2000", 
         "ref": "Ising M 2000 Intensity dependence in event-related EEG potentials: Are impulsive individuals augmenters or reducers? Zeitschrift fur Differentielle und Diagnostische Psychologie 21 208 217", 
         "id": "bib47"
     }, 
@@ -1873,6 +1920,7 @@
         "fpage": "924", 
         "year": "1995", 
         "position": 48, 
+        "year-iso-8601-date": "1995", 
         "ref": "Kamiyama T Umino T Satoh T Sawairi S Shirane M Ohshima S Yokose K 1995 Sulfobacins A and B, novel von Willebrand factor receptor antagonists. I. Production, isolation, characterization and biological activities The Journal of antibiotics 48 924 928 10.7164/antibiotics.48.924", 
         "id": "bib48"
     }, 
@@ -1899,6 +1947,7 @@
         "fpage": "23", 
         "year": "1998", 
         "position": 49, 
+        "year-iso-8601-date": "1998", 
         "ref": "Karpov SA Coupe SJ 1998 A revision of choanoflagellate genera Kentrosiga, Schiller, 1953 and Desmarella, Kent, 1880 Acta protozoologica 37 23 27", 
         "id": "bib49"
     }, 
@@ -1927,6 +1976,7 @@
         "fpage": "256", 
         "year": "2001", 
         "position": 50, 
+        "year-iso-8601-date": "2001", 
         "ref": "Kimbrell DA Beutler B 2001 The evolution and genetics of innate immunity Nature reviews. Genetics 2 256 267 10.1038/35066006", 
         "id": "bib50"
     }, 
@@ -1955,6 +2005,7 @@
         "fpage": "15032", 
         "year": "2001", 
         "position": 51, 
+        "year-iso-8601-date": "2001", 
         "ref": "King N Carroll SB 2001 A receptor tyrosine kinase from choanoflagellates: molecular insights into early animal evolution Proceedings of the National Academy of Sciences of the United States of America 98 15032 15037 10.1073/pnas.261477698", 
         "id": "bib51"
     }, 
@@ -1988,6 +2039,7 @@
         "fpage": "361", 
         "year": "2003", 
         "position": 52, 
+        "year-iso-8601-date": "2003", 
         "ref": "King N Hittinger CT Carroll SB 2003 Evolution of key cell signaling and adhesion protein families predates animal origins Science 301 361 363 10.1126/science.1083853", 
         "id": "bib52"
     }, 
@@ -2185,6 +2237,7 @@
         "fpage": "783", 
         "year": "2008", 
         "position": 53, 
+        "year-iso-8601-date": "2008", 
         "ref": "King N Westbrook MJ Young SL Kuo A Abedin M Chapman J Fairclough S Hellsten U Isogai Y Letunic I Marr M Pincus D Putnam N Rokas A Wright KJ Zuzow R Dirks W Good M Goodstein D Lemons D Li W Lyons JB Morris A Nichols S Richter DJ Salamov A Sequencing JG Bork P Lim WA Manning G Miller WT McGinnis W Shapiro H Tjian R Grigoriev IV Rokhsar D 2008 The genome of the choanoflagellate Monosiga brevicollis and the origin of metazoans Nature 451 783 788 10.1038/nature06617", 
         "id": "bib53"
     }, 
@@ -2225,6 +2278,7 @@
         "source": "Cold Spring Harbor protocols", 
         "year": "2009", 
         "position": 54, 
+        "year-iso-8601-date": "2009", 
         "ref": "King N Young SL Abedin M Carr M Leadbeater BSC 2009 Starting and maintaining Monosiga brevicollis cultures Cold Spring Harbor protocols 2009 pdb.prot5148", 
         "id": "bib54"
     }, 
@@ -2248,6 +2302,7 @@
         "fpage": "313", 
         "year": "2004", 
         "position": 55, 
+        "year-iso-8601-date": "2004", 
         "ref": "King N 2004 The unicellular ancestry of animal development Developmental cell 7 313 325 10.1016/j.devcel.2004.08.010", 
         "id": "bib55"
     }, 
@@ -2291,6 +2346,7 @@
         "fpage": "10487", 
         "year": "1995", 
         "position": 56, 
+        "year-iso-8601-date": "1995", 
         "ref": "Kobayashi J Mikami S Shigemori H Takao T Izuta S 1995 Flavocristamides A and B, new DNA polymerase a inhibitors from a marine bacterium sp Tetrahedron 51 10487 10490 10.1016/0040-4020(95)00631-H", 
         "id": "bib56"
     }, 
@@ -2319,6 +2375,7 @@
         "fpage": "13", 
         "year": "1999", 
         "position": 57, 
+        "year-iso-8601-date": "1999", 
         "ref": "Kopp EB Medzhitov R 1999 The Toll-receptor family and control of innate immunity Current opinion in immunology 11 13 18 10.1016/S0952-7915(99)80003-X", 
         "id": "bib57"
     }, 
@@ -2367,6 +2424,7 @@
         "fpage": "1186", 
         "year": "2004", 
         "position": 58, 
+        "year-iso-8601-date": "2004", 
         "ref": "Koropatnick TA Engle JT Apicella MA Stabb EV Goldman WE Mcfall-Ngai MJ 2004 Microbial factor-mediated development in a host-bacterial mutualism Science 306 1186 1188 10.1126/science.1102218", 
         "id": "bib58"
     }, 
@@ -2534,6 +2592,7 @@
         "fpage": "249", 
         "year": "1997", 
         "position": 60, 
+        "year-iso-8601-date": "1997", 
         "ref": "Kunst F Ogasawara N Moszer I Albertini AM Alloni G Azevedo V Bertero MG Bessi\u00e8res P Bolotin A Borchert S Borriss R Boursier L Brans A Braun M Brignell SC Bron S Brouillet S Bruschi CV Caldwell B Capuano V Carter NM Choi SK Codani JJ Connerton IF Danchin A 1997 The complete genome sequence of the Gram-positive bacterium Bacillus subtilis Nature 390 249 256 10.1038/36786", 
         "id": "bib60"
     }, 
@@ -2557,6 +2616,7 @@
         "fpage": "135", 
         "year": "1983", 
         "position": 61, 
+        "year-iso-8601-date": "1983", 
         "ref": "Leadbeater BSC 1983 Life-history and ultratructure of a new marine species of Proterospongia (Choanoflagellida) Journal of the Marine Biological Association of the United Kingdom 63 135 160 10.1017/S0025315400049857", 
         "id": "bib61"
     }, 
@@ -2585,6 +2645,7 @@
         "fpage": "1768", 
         "year": "2010", 
         "position": 62, 
+        "year-iso-8601-date": "2010", 
         "ref": "Lee YK Mazmanian SK 2010 Has the microbiota played a critical role in the evolution of the adaptive immune system? Science 330 1768 1773 10.1126/science.1195568", 
         "id": "bib62"
     }, 
@@ -2614,6 +2675,7 @@
         "source": "RCSB Protein Data Bank", 
         "year": "2014", 
         "position": 63, 
+        "year-iso-8601-date": "2014", 
         "ref": "Ly T, Endo A, LamondAngus I 2014 Crystal structure of yeast Bub3-Bub1 bound to phosopho-Spc105 RCSB Protein Data Bank 4bl0 http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
         "id": "bib63"
     }, 
@@ -2662,6 +2724,7 @@
         "fpage": "157", 
         "year": "2005", 
         "position": 64, 
+        "year-iso-8601-date": "2005", 
         "ref": "Matsunaga T Okamura Y Fukuda Y Wahyudi AT Murase Y Takeyama H 2005 Complete genome sequence of the facultative anaerobic magnetotactic bacterium Magnetospirillum sp. strain AMB-1 DNA research: an international journal for rapid publication of reports on genes and genomes 12 157 166 10.1093/dnares/dsi002", 
         "id": "bib64"
     }, 
@@ -2705,6 +2768,7 @@
         "fpage": "25", 
         "year": "2003", 
         "position": 65, 
+        "year-iso-8601-date": "2003", 
         "ref": "Matsuo Y Suzuki M Kasai H Shizuri Y Harayama S 2003 Isolation and phylogenetic characterization of bacteria capable of inducing differentiation in the green alga Monostroma oxyspermum Environmental microbiology 5 25 35 10.1046/j.1462-2920.2003.00382.x", 
         "id": "bib65"
     }, 
@@ -2742,6 +2806,7 @@
         "fpage": "1598", 
         "year": "2005", 
         "position": 66, 
+        "year-iso-8601-date": "2005", 
         "ref": "Matsuo Y Imagawa H Nishizawa M Shizuri Y 2005 Isolation of an algal morphogenesis inducer from a marine bacterium Science 307 1598 10.1126/science.1105486", 
         "id": "bib66"
     }, 
@@ -2780,6 +2845,7 @@
         "fpage": "107", 
         "year": "2005", 
         "position": 67, 
+        "year-iso-8601-date": "2005", 
         "ref": "Mazmanian SK Liu CH Tzianabos AO Kasper DL 2005 An immunomodulatory molecule of symbiotic bacteria directs maturation of the host immune system Cell 122 107 118 10.1016/j.cell.2005.05.007", 
         "id": "bib67"
     }, 
@@ -2813,6 +2879,7 @@
         "fpage": "620", 
         "year": "2008", 
         "position": 68, 
+        "year-iso-8601-date": "2008", 
         "ref": "Mazmanian SK Round JL Kasper DL 2008 A microbial symbiosis factor prevents intestinal inflammatory disease Nature 453 620 625 10.1038/nature07008", 
         "id": "bib68"
     }, 
@@ -2836,6 +2903,7 @@
         "fpage": "235", 
         "year": "1999", 
         "position": 69, 
+        "year-iso-8601-date": "1999", 
         "ref": "McFall-Ngai M 1999 Consequences of evolving with bacterial symbionts: Insights from the squid-vibrio associations Annual review of ecology and systematics 30 235 256 10.1146/annurev.ecolsys.30.1.235", 
         "id": "bib69"
     }, 
@@ -2864,6 +2932,7 @@
         "fpage": "89", 
         "year": "2000", 
         "position": 70, 
+        "year-iso-8601-date": "2000", 
         "ref": "Medzhitov R Janeway C 2000 Innate immune recognition: mechanisms and pathways Immunological reviews 173 89 97 10.1034/j.1600-065X.2000.917309.x", 
         "id": "bib70"
     }, 
@@ -2905,6 +2974,7 @@
         "fpage": "283", 
         "year": "2001", 
         "position": 71, 
+        "year-iso-8601-date": "2001", 
         "ref": "Merrill AH Sullards MC Wang E Voss KA Riley RT 2001 Sphingolipid metabolism: roles in signal transduction and disruption by fumonisins Environmental health perspectives 109 Suppl 2 283 289", 
         "id": "bib71"
     }, 
@@ -2953,6 +3023,7 @@
         "fpage": "6101", 
         "year": "2010", 
         "position": 72, 
+        "year-iso-8601-date": "2010", 
         "ref": "Miller TR Delcher AL Salzberg SL Saunders E Detter JC Halden RU 2010 Genome Sequence of the Dioxin-Mineralizing Bacterium Sphingomonas wittichii RW1 Journal of bacteriology 192 6101 6102 10.1128/JB.01030-10", 
         "id": "bib72"
     }, 
@@ -2991,6 +3062,7 @@
         "fpage": "201", 
         "year": "2005", 
         "position": 73, 
+        "year-iso-8601-date": "2005", 
         "ref": "M\u00fcller JD Barnes AC Dalsgaard I Ellis AE 2005 Characterisation of surface blebbing and membrane vesicles produced by Flavobacterium psychrophilum Diseases of aquatic organisms 64 201 209 10.3354/dao064201", 
         "id": "bib73"
     }, 
@@ -3059,6 +3131,7 @@
         "fpage": "1757", 
         "year": "2004", 
         "position": 74, 
+        "year-iso-8601-date": "2004", 
         "ref": "Nedashkovskaya OI Vancanneyt M Van Trappen S Vandemeulebroecke K Lysenko AM Rohde M Falsen E Frolova GM Mikhailov VV Swings J 2004 Description of Algoriphagus aquimarinus sp. nov., Algoriphagus chordae sp. nov. and Algoriphagus winogradskyi sp. nov., from sea water and algae, transfer of Hongiella halophila Yi and Chun 2004 to the genus Algoriphagus as Algoriphagus halophilus comb. nov. and emended descriptions of the genera Algoriphagus Bowman, et al. 2003 and Hongiella Yi and Chun 2004 International journal of systematic and evolutionary microbiology 54 1757 1764 10.1099/ijs.0.02915-0", 
         "id": "bib74"
     }, 
@@ -3137,6 +3210,7 @@
         "fpage": "953", 
         "year": "2006", 
         "position": 75, 
+        "year-iso-8601-date": "2006", 
         "ref": "Nedashkovskaya O Kim S Vancanneyt M Lysenko A Shin D Park M Lee KH Jung WJ Kalinovskaya NI Mikhailov VV Bae KS Swings J 2006 Echinicola pacifica gen. nov., sp nov., a novel flexibacterium isolated from the sea urchin Strongylocentrotus intermedius International journal of systematic and evolutionary microbiology 56 953 958 10.1099/ijs.0.64156-0", 
         "id": "bib75"
     }, 
@@ -3340,6 +3414,7 @@
         "fpage": "4136", 
         "year": "2001", 
         "position": 76, 
+        "year-iso-8601-date": "2001", 
         "ref": "Nierman WC Feldblyum TV Laub MT Paulsen IT Nelson KE Eisen JA Heidelberg JF Alley MR Ohta N Maddock JR Potocka I Nelson WC Newton A Stephens C Phadke ND Ely B DeBoy RT Dodson RJ Durkin AS Gwinn ML Haft DH Kolonay JF Smit J Craven MB Khouri H Shetty J Berry K Utterback T Tran K Wolf A Vamathevan J Ermolaeva M White O Salzberg SL Venter JC Shapiro L Fraser CM 2001 Complete genome sequence of Caulobacter crescentus Proceedings of the National Academy of Sciences of the United States of America 98 4136 4141 10.1073/pnas.061029298", 
         "id": "bib76"
     }, 
@@ -3393,6 +3468,7 @@
         "fpage": "303", 
         "year": "2011", 
         "position": 77, 
+        "year-iso-8601-date": "2011", 
         "ref": "Oh H-M Kang I Yang S-J Jang Y Vergin KL Giovannoni SJ Cho JC 2011 Complete Genome Sequence of Strain HTCC2170, a Novel Member of the Genus Maribacter in the Family Flavobacteriaceae Journal of bacteriology 193 303 304 10.1128/JB.01207-10", 
         "id": "bib77"
     }, 
@@ -3421,6 +3497,7 @@
         "fpage": "103", 
         "year": "2001", 
         "position": 78, 
+        "year-iso-8601-date": "2001", 
         "ref": "Olsen I Jantzen E 2001 Sphingolipids in bacteria and fungi Anaerobe 7 103 112 10.1006/anae.2001.0376", 
         "id": "bib78"
     }, 
@@ -3449,6 +3526,7 @@
         "fpage": "555", 
         "year": "2000", 
         "position": 79, 
+        "year-iso-8601-date": "2000", 
         "ref": "Prieschl EE Baumruker T 2000 Sphingolipids: second messengers, mediators and raft constituents in signaling Immunology today 21 555 560 10.1016/S0167-5699(00)01725-4", 
         "id": "bib79"
     }, 
@@ -3477,6 +3555,7 @@
         "fpage": "196", 
         "year": "1980", 
         "position": 80, 
+        "year-iso-8601-date": "1980", 
         "ref": "Provasoli L Pintner I 1980 Bacteria induced polymorphism in an axenic laboratory strain of Ulva lactuca (Chlorophyceae) Journal of Phycology 16 196 201 10.1111/j.1529-8817.1980.tb03019.x", 
         "id": "bib80"
     }, 
@@ -3505,12 +3584,13 @@
         "fpage": "385", 
         "year": "2000", 
         "position": 81, 
+        "year-iso-8601-date": "2000", 
         "ref": "Pyne S Pyne NJ 2000 Sphingosine 1-phosphate signalling in mammalian cells The Biochemical journal 349 385 402 10.1042/0264-6021:3490385", 
         "id": "bib81"
     }, 
     {
         "uri_text": "http://www.r-project.org/", 
-        "publisher_loc": "Vienna, Austria", 
+        "collab": "R Development Core Team", 
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "R Foundation for Statistical Computing", 
         "authors": [
@@ -3521,10 +3601,12 @@
         ], 
         "uri": "http://www.r-project.org/", 
         "publication-type": "program", 
+        "publisher_loc": "Vienna, Austria", 
         "source": "R: a language and environment for statistical computing", 
+        "version": "3.2.2", 
         "year": "2015", 
         "position": 82, 
-        "collab": "R Development Core Team", 
+        "year-iso-8601-date": "2015", 
         "ref": "R Development Core Team 2015 R: a language and environment for statistical computing 3.2.2 Vienna, Austria R Foundation for Statistical Computing http://www.r-project.org/", 
         "id": "bib82"
     }, 
@@ -3548,6 +3630,7 @@
         "fpage": "44", 
         "year": "1995", 
         "position": 83, 
+        "year-iso-8601-date": "1995", 
         "ref": "Roelofs WL 1995 Chemistry of sex attraction Proceedings of the National Academy of Sciences of the United States of America 92 44 49 10.1073/pnas.92.1.44", 
         "id": "bib83"
     }, 
@@ -3646,6 +3729,7 @@
         "fpage": "3004", 
         "year": "2005", 
         "position": 84, 
+        "year-iso-8601-date": "2005", 
         "ref": "Ruby EG Urbanowski M Campbell J Dunn A Faini M Gunsalus R Lostroh P Lupp C McCann J Millikan D Schaefer A Stabb E Stevens A Visick K Whistler C Greenberg EP 2005 Complete genome sequence of Vibrio fischeri: a symbiotic bacterium with pathogenic congeners Proceedings of the National Academy of Sciences of the United States of America 102 3004 3009 10.1073/pnas.0409900102", 
         "id": "bib84"
     }, 
@@ -3689,6 +3773,7 @@
         "fpage": "664", 
         "year": "2008", 
         "position": 85, 
+        "year-iso-8601-date": "2008", 
         "ref": "Ruiz-Trillo I Roger AJ Burger G Gray MW Lang BF 2008 A phylogenomic investigation into the origin of metazoa Molecular biology and evolution 25 664 672 10.1093/molbev/msn006", 
         "id": "bib85"
     }, 
@@ -3696,9 +3781,6 @@
         "publisher_loc": "London", 
         "article_doi": "10.7554/eLife.00013", 
         "publisher_name": "David Bogue", 
-        "year": "1880", 
-        "publication-type": "book", 
-        "source": "A manual of the infusoria", 
         "authors": [
             {
                 "surname": "Saville Kent", 
@@ -3706,7 +3788,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "source": "A manual of the infusoria", 
+        "year": "1880", 
         "position": 86, 
+        "year-iso-8601-date": "1880", 
         "ref": "Saville Kent W 1880 A manual of the infusoria London David Bogue", 
         "id": "bib86"
     }, 
@@ -3743,6 +3829,7 @@
         "fpage": "2897", 
         "year": "1996", 
         "position": 87, 
+        "year-iso-8601-date": "1996", 
         "ref": "Schaefer AL Hanzelka BL Eberhard A Greenberg EP 1996 Quorum sensing in Vibrio fischeri: probing autoinducer-LuxR interactions with autoinducer analogs Journal of bacteriology 178 2897 2901", 
         "id": "bib87"
     }, 
@@ -3771,6 +3858,7 @@
         "fpage": "55", 
         "year": "2000", 
         "position": 88, 
+        "year-iso-8601-date": "2000", 
         "ref": "Spiegel S Milstien S 2000 Sphingosine-1-phosphate: signaling inside and out FEBS Lett 476 55 57 10.1016/S0014-5793(00)01670-7", 
         "id": "bib88"
     }, 
@@ -3829,12 +3917,14 @@
         "fpage": "443", 
         "year": "1999", 
         "position": 89, 
+        "year-iso-8601-date": "1999", 
         "ref": "Takeuchi O Hoshino K Kawai T Sanjo H Takada H Ogawa T Takeda K Akira S 1999 Differential roles of TLR2 and TLR4 in recognition of gram-negative and gram-positive bacterial cell wall components Immunity 11 443 451 10.1016/S1074-7613(00)80119-3", 
         "id": "bib89"
     }, 
     {
         "article_title": "An integrated encyclopedia of DNA elements in the human genome", 
         "lpage": "74", 
+        "collab": "The ENCODE Consortium", 
         "doi": "10.1038/nature11247", 
         "article_doi": "10.7554/eLife.00013", 
         "authors": [
@@ -3851,7 +3941,7 @@
         "fpage": "57", 
         "year": "2012", 
         "position": 90, 
-        "collab": "The ENCODE Consortium", 
+        "year-iso-8601-date": "2012", 
         "ref": "The ENCODE Consortium 2012 An integrated encyclopedia of DNA elements in the human genome Nature 489 57 74 10.1038/nature11247", 
         "id": "bib90"
     }, 
@@ -3895,6 +3985,7 @@
         "fpage": "100", 
         "year": "2006", 
         "position": 91, 
+        "year-iso-8601-date": "2006", 
         "ref": "Tiago I Mendes V Pires C Morais PV Ver\u00edssimo A 2006 Chimaereicella alkaliphila gen. nov., sp. nov., a Gram-negative alkaliphilic bacterium isolated from a nonsaline alkaline groundwater Systematic and applied microbiology 29 100 108 10.1016/j.syapm.2005.07.005", 
         "id": "bib91"
     }, 
@@ -3933,6 +4024,7 @@
         "fpage": "1969", 
         "year": "2004", 
         "position": 92, 
+        "year-iso-8601-date": "2004", 
         "ref": "Van Trappen S Vandecandelaere I Mergaert J Swings J 2004 Algoriphagus antarcticus sp. nov., a novel psychrophile from microbial mats in Antarctic lakes Systematic and applied microbiology 54 1969 1973 10.1099/ijs.0.02973-0", 
         "id": "bib92"
     }, 
@@ -3986,6 +4078,7 @@
         "fpage": "1213", 
         "year": "2004", 
         "position": 93, 
+        "year-iso-8601-date": "2004", 
         "ref": "Webster NS Smith LD Heyward AJ Watts JEM Webb RI Blackall LL Negri AP 2004 Metamorphosis of a scleractinian coral in response to microbial biofilms Applied and environmental microbiology 70 1213 1221 10.1128/AEM.70.2.1213-1221.2004", 
         "id": "bib93"
     }, 
@@ -4022,6 +4115,7 @@
         "fpage": "697", 
         "year": "1991", 
         "position": 94, 
+        "year-iso-8601-date": "1991", 
         "ref": "Weisburg WG Barns SM Pelletier DA Lane DJ 1991 16S ribosomal DNA amplification for phylogenetic study Journal of Bacteriology 173 697 703", 
         "id": "bib94"
     }, 
@@ -4045,12 +4139,14 @@
         "fpage": "593", 
         "year": "2007", 
         "position": 95, 
+        "year-iso-8601-date": "2007", 
         "ref": "Wexler HM 2007 Bacteroides: the good, the bad, and the nitty-gritty Clinical microbiology reviews 20 593 621 10.1128/CMR.00008-07", 
         "id": "bib95"
     }, 
     {
         "article_title": "FlyBase 101-the basics of navigating FlyBase", 
         "lpage": "23", 
+        "collab": "WHO", 
         "article_doi": "10.7554/eLife.00013", 
         "authors": [
             {
@@ -4065,7 +4161,7 @@
         "fpage": "21", 
         "year": "2011", 
         "position": 96, 
-        "collab": "WHO", 
+        "year-iso-8601-date": "2011", 
         "ref": "WHO 2011 FlyBase 101-the basics of navigating FlyBase Nucleic acids research 39 21 23", 
         "id": "bib96"
     }, 
@@ -4094,6 +4190,7 @@
         "fpage": "157", 
         "year": "2004", 
         "position": 97, 
+        "year-iso-8601-date": "2004", 
         "ref": "Yi H Chun J 2004 Hongiella mannitolivorans gen. nov., sp. nov., Hongiella halophila sp. nov. and Hongiella ornithinivorans sp. nov., isolated from tidal flat sediment International journal of systematic and evolutionary microbiology 54 157 162 10.1099/ijs.0.02861-0", 
         "id": "bib97"
     }, 
@@ -4127,6 +4224,7 @@
         "fpage": "1845", 
         "year": "2004", 
         "position": 98, 
+        "year-iso-8601-date": "2004", 
         "ref": "Yoon J-H Yeo S-H Oh TK 2004 Hongiella marincola sp. nov., isolated from sea water of the East Sea in Korea International journal of systematic and evolutionary microbiology 54 1845 1848 10.1099/ijs.0.63170-0", 
         "id": "bib98"
     }, 
@@ -4163,7 +4261,7 @@
             }
         ], 
         "full_article_title": "Algoriphagus yeomjeoni sp. nov., isolated from a marine solar\n                        saltern in the Yellow Sea, Korea", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2005", 
         "volume": "55", 
         "source": "International journal of systematic and evolutionary\n                        microbiology", 
         "reference_id": "10.1099/ijs.0.63479-0", 
@@ -4171,6 +4269,7 @@
         "year": "2005", 
         "position": 99, 
         "pmid": "1234566", 
+        "publication-type": "journal", 
         "ref": "Yoon J-H Kang S-J Jung S-Y Lee C-H Oh TK 2005 Algoriphagus yeomjeoni sp. nov., isolated from a marine solar saltern in the Yellow Sea, Korea International journal of systematic and evolutionary microbiology 55 865 870 10.1099/ijs.0.63479-0 1234566", 
         "id": "bib99"
     }, 
@@ -4204,6 +4303,7 @@
         "fpage": "1635", 
         "year": "2005", 
         "position": 100, 
+        "year-iso-8601-date": "2005", 
         "ref": "Yoon J-H Kang S-J Oh TK 2005 Algoriphagus locisalis sp. nov., isolated from a marine solar saltern International journal of systematic and evolutionary microbiology 55 1635 1639 10.1099/ijs.0.63605-0", 
         "id": "bib100"
     }, 
@@ -4242,6 +4342,7 @@
         "fpage": "777", 
         "year": "2006", 
         "position": 101, 
+        "year-iso-8601-date": "2006", 
         "ref": "Yoon J-H Lee M-H Kang S-J Oh TK 2006 Algoriphagus terrigena sp. nov., isolated from soil International journal of systematic and evolutionary microbiology 56 777 780 10.1099/ijs.0.64092-0", 
         "id": "bib101"
     }, 
@@ -4280,6 +4381,7 @@
         "fpage": "223", 
         "year": "1998", 
         "position": 102, 
+        "year-iso-8601-date": "1998", 
         "ref": "Zhou L Srisatjaluk R Justus DE Doyle RJ 1998 On the origin of membrane vesicles in gram-negative bacteria FEMS microbiology letters 163 223 228 10.1111/j.1574-6968.1998.tb13049.x", 
         "id": "bib102"
     }, 
@@ -4308,6 +4410,7 @@
         "fpage": "1795", 
         "year": "2007", 
         "position": 103, 
+        "year-iso-8601-date": "2007", 
         "ref": "Ziegler TA Forward RB 2007 Larval release behaviors in the Caribbean spiny lobster, Panulirus argus: role of peptide pheromones Journal of chemical ecology 33 1795 1805 10.1007/s10886-007-9335-9", 
         "id": "bib103"
     }

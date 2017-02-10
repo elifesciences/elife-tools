@@ -22,7 +22,7 @@
             }
         ], 
         "full_article_title": "TIP47 is a key effector for Rab9 localization", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2006", 
         "volume": "173", 
         "source": "The Journal of Cell Biology", 
         "reference_id": "10.1083/jcb.200510010", 
@@ -30,6 +30,7 @@
         "year": "2006", 
         "position": 1, 
         "pmid": "16769818", 
+        "publication-type": "journal", 
         "ref": "Aivazian D Serrano RL Pfeffer S 2006 TIP47 is a key effector for Rab9 localization The Journal of Cell Biology 173 917 926 10.1083/jcb.200510010 16769818", 
         "id": "bib1"
     }, 
@@ -92,8 +93,10 @@
         "uri": "https://cran.r-project.org/web/packages/lme4/index.html", 
         "publication-type": "software", 
         "source": "CRAN", 
+        "version": "1.1-12", 
         "year": "2016", 
         "position": 2, 
+        "year-iso-8601-date": "2016", 
         "ref": "Bates D Maechler M Bolker B Walker S Haubo Bojesen Christensen R Singmann H Dai B Grothendieck G Green P Bolker B 2016 Lme4: Linear Mixed-Effects Models Using Eigen and S4 CRAN https://cran.r-project.org/web/packages/lme4/index.html 1.1-12", 
         "id": "bib2"
     }, 
@@ -159,15 +162,13 @@
         "reference_id": "10.1101/029983", 
         "year": "2016", 
         "position": 3, 
+        "year-iso-8601-date": "2016", 
         "ref": "Bloss CS Wineinger NE Peters M Boeldt DL Ariniello L Kim JL Judy Sheard J Komatireddy R Barrett P Topol EJ 2016 A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors bioRxiv 10.1101/029983", 
         "id": "bib3"
     }, 
     {
         "data-title": "NKX2-5 mutations causative for congenital heart disease retain\n                functionality and are directed to hundreds of targets", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015", 
-        "publication-type": "data", 
-        "source": "NCBI Gene Expression Omnibus", 
         "authors": [
             {
                 "surname": "Bouveret", 
@@ -260,7 +261,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "NCBI Gene Expression Omnibus", 
+        "year": "2015", 
         "position": 4, 
+        "year-iso-8601-date": "2015", 
         "ref": "Bouveret R Waardenberg AJ Schonrock N Ramialison M Doan T de Jong D Bondue A Kaur G Mohamed S Fonoudi H Chen C Wouters M Bhattacharya S Plachta N Dunwoodie SL Chapman G Blanpain C Harvey RP 2015 NKX2-5 mutations causative for congenital heart disease retain functionality and are directed to hundreds of targets NCBI Gene Expression Omnibus GSE44902", 
         "id": "bib4"
     }, 
@@ -287,7 +292,7 @@
             }
         ], 
         "full_article_title": "Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2004", 
         "volume": "54", 
         "source": "International journal of systematic and evolutionary\n                microbiology", 
         "reference_id": "10.1099/ijs.0.63255-0", 
@@ -295,6 +300,7 @@
         "year": "2004a", 
         "position": 5, 
         "pmid": "15545480", 
+        "publication-type": "journal", 
         "ref": "Brettar I Christen R Hofle M 2004a Aquiflexum balticum gen. nov., sp nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 2335 2341 10.1099/ijs.0.63255-0 15545480", 
         "id": "bib5"
     }, 
@@ -320,7 +326,7 @@
             }
         ], 
         "full_article_title": "Belliella baltica gen. nov., sp. nov., a novel marine bacterium\n                of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface\n                water of the central Baltic Sea", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2004", 
         "volume": "54", 
         "source": "International journal of systematic and evolutionary\n                microbiology", 
         "reference_id": "10.1099/ijs.0.02752-0", 
@@ -328,6 +334,7 @@
         "year": "2004b", 
         "position": 6, 
         "pmid": "14742460", 
+        "publication-type": "journal", 
         "ref": "Brettar I Christen R Hofle MG 2004b Belliella baltica gen. nov., sp. nov., a novel marine bacterium of the Cytophaga-Flavobacterium-Bacteroides group isolated from surface water of the central Baltic Sea International journal of systematic and evolutionary microbiology 54 65 10.1099/ijs.0.02752-0 14742460", 
         "id": "bib6"
     }, 
@@ -396,8 +403,10 @@
         ], 
         "uri": "https://www.globalphasing.com/buster/", 
         "publication-type": "software", 
+        "version": "2.10.0", 
         "year": "2011", 
         "position": 7, 
+        "year-iso-8601-date": "2011", 
         "ref": "Bricogne G Blanc E Brandl M Flensburg C Keller P Paciorek W Roversi P Sharff A Smart OS Vonrhein C Womack TO BUSTER 2.10.0 Cambridge, UK Global Phasing Ltd 2011 https://www.globalphasing.com/buster/", 
         "id": "bib7"
     }, 
@@ -405,9 +414,6 @@
         "publisher_loc": "Cambridge", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Cambridge University Press", 
-        "year": "2004", 
-        "publication-type": "book", 
-        "source": "Advances in insect chemical ecology", 
         "authors": [
             {
                 "surname": "Card\u00e9", 
@@ -420,7 +426,11 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Advances in insect chemical ecology", 
+        "year": "2004", 
         "position": 8, 
+        "year-iso-8601-date": "2004", 
         "ref": "Card\u00e9 RT Millar JG 2004 Advances in insect chemical ecology Cambridge University Press Cambridge", 
         "id": "bib8"
     }, 
@@ -440,6 +450,7 @@
         "source": "arXiv.org", 
         "year": "2016", 
         "position": 9, 
+        "year-iso-8601-date": "2016", 
         "publication-type": "preprint", 
         "ref": "Cartwright A 2016 The Venus Hypothesis arXiv.org https://arxiv.org/abs/1608.03074", 
         "id": "bib9"
@@ -448,9 +459,6 @@
         "edition": "2", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Wiley-Blackwell", 
-        "year": "2008", 
-        "publication-type": "book", 
-        "source": "An Introduction to Work and Organizational Psychology: A European\n                Perspective", 
         "authors": [
             {
                 "surname": "Chmeil", 
@@ -458,7 +466,11 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "source": "An Introduction to Work and Organizational Psychology: A European\n                Perspective", 
+        "year": "2008", 
         "position": 10, 
+        "year-iso-8601-date": "2008", 
         "ref": "Chmeil N 2008 2 An Introduction to Work and Organizational Psychology: A European Perspective Wiley-Blackwell", 
         "id": "bib10"
     }, 
@@ -467,9 +479,6 @@
         "chapter-title": "Two rules of speciation", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Sinauer Associates", 
-        "year": "1989", 
-        "publication-type": "book", 
-        "source": "Speciation and its consequences", 
         "authors": [
             {
                 "surname": "Coyne", 
@@ -492,7 +501,11 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "source": "Speciation and its consequences", 
+        "year": "1989", 
         "position": 11, 
+        "year-iso-8601-date": "1989", 
         "ref": "Coyne JA Orr HA Otte D Endler JA 1989 Two rules of speciation Speciation and its consequences Sunderland, MA Sinauer Associates", 
         "id": "bib11"
     }, 
@@ -511,8 +524,10 @@
         "uri": "https://www.pymol.org/", 
         "publication-type": "software", 
         "source": "PyMol", 
+        "version": "Version 1.7.4", 
         "year": "2002", 
         "position": 12, 
+        "year-iso-8601-date": "2002", 
         "ref": "DeLano W 2002 PyMol The PyMol Molecular Graphics System Version 1.7.4 Schr\u00f6dinger LLC https://www.pymol.org/", 
         "id": "bib12"
     }, 
@@ -537,6 +552,7 @@
         "source": "Educational excellence everywhere", 
         "year": "2016", 
         "position": 13, 
+        "year-iso-8601-date": "2016", 
         "ref": "Department of Education Morgan N 2016 Educational excellence everywhere Her Majesty\u2019s Stationery Office United Kingdom 9781474130158", 
         "id": "bib13"
     }, 
@@ -606,6 +622,7 @@
         "reference_id": "10.2210/pdb4qen/pdb", 
         "year": "2014", 
         "position": 14, 
+        "year-iso-8601-date": "2014", 
         "ref": "Du J Johnson LM Groth M Feng S Hale CJ Li S Vashisht AA Gallego-Bartolome J Wohlschlegel JA Patel DJ Jacobsen SE 2014 Crystal structure of KRYPTONITE in complex with mCHH DNA and SAH RCSB Protein Data Bank 10.2210/pdb4qen/pdb", 
         "id": "bib14"
     }, 
@@ -627,6 +644,7 @@
         "source": "it is NOT junk", 
         "year": "2016", 
         "iso-8601-date": "2016-08-19", 
+        "year-iso-8601-date": "2016", 
         "publication-type": "web", 
         "ref": "EisenM 2016 The Imprinter of All Maladies it is NOT junk http://www.michaeleisen.org/blog/?p=1894 August 19, 2016", 
         "id": "bib15"
@@ -677,6 +695,7 @@
         "source": "Division of Clinical Neurology, University of Oxford", 
         "year": "2014", 
         "position": 16, 
+        "year-iso-8601-date": "2014", 
         "ref": "Ferry Q Steinberg J Webber C FitzPatrick DR Ponting CP Zisserman A Nell\u00e5ker C 2014 Diagnostically relevant facial gestalt information from ordinary photos database Division of Clinical Neurology, University of Oxford https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
         "id": "bib16"
     }, 
@@ -718,22 +737,20 @@
             }
         ], 
         "full_article_title": "Autoimmunity initiates in nonhematopoietic cells and progresses\n                via lymphocytes in an interferon-dependent autoimmune\n                disease", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2012", 
         "volume": "36", 
         "source": "Immunity", 
         "fpage": "120", 
         "year": "2012", 
         "position": 17, 
         "pmid": "22284419", 
+        "publication-type": "journal", 
         "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 22284419", 
         "id": "bib17"
     }, 
     {
         "data-title": "Mus musculus T-box 2 (Tbx2), mRNA", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2014", 
-        "publication-type": "data", 
-        "source": "NCBI Nucleotide", 
         "authors": [
             {
                 "surname": "Gavrilov", 
@@ -751,13 +768,18 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "NCBI Nucleotide", 
+        "version": "NM_009324.2", 
+        "year": "2014", 
         "position": 18, 
+        "year-iso-8601-date": "2014", 
         "ref": "Gavrilov S Harvey RP Papaioannou VE 2014 Mus musculus T-box 2 (Tbx2), mRNA NCBI Nucleotide NM_009324 NM_009324.2", 
         "id": "bib18"
     }, 
     {
         "uri_text": "https://www.medicines.org.uk/emc/medicine/19188", 
-        "publisher_loc": "United Kingdom", 
+        "collab": "GlaxoSmithKline UK", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "GlaxoSmithKline UK", 
         "authors": [
@@ -768,10 +790,11 @@
         ], 
         "uri": "https://www.medicines.org.uk/emc/medicine/19188", 
         "publication-type": "report", 
+        "publisher_loc": "United Kingdom", 
         "source": "Augmentin 250/62 SF Suspension", 
         "year": "2016", 
         "position": 19, 
-        "collab": "GlaxoSmithKline UK", 
+        "year-iso-8601-date": "2016", 
         "ref": "GlaxoSmithKline UK 2016 Augmentin 250/62 SF Suspension GlaxoSmithKline UK United Kingdom https://www.medicines.org.uk/emc/medicine/19188", 
         "id": "bib19"
     }, 
@@ -788,7 +811,7 @@
             }
         ], 
         "full_article_title": "\n                Ruffus: a lightweight Python library for computational pipelines\n            ", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2010", 
         "volume": "26", 
         "source": "Bioinformatics", 
         "reference_id": "10.1093/bioinformatics/btq524", 
@@ -796,15 +819,13 @@
         "year": "2010", 
         "position": 20, 
         "pmid": "20847218", 
+        "publication-type": "journal", 
         "ref": "Goodstadt L 2010 Ruffus: a lightweight Python library for computational pipelines Bioinformatics 26 2778 2779 10.1093/bioinformatics/btq524 20847218", 
         "id": "bib20"
     }, 
     {
         "data-title": "Effects on the transcriptome of adult mouse pancreas (principally\n                acinar cells) by the inactivation of the Ptf1a gene in vivo", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015", 
-        "publication-type": "data", 
-        "source": "NCBI Gene Expression Omnibus", 
         "authors": [
             {
                 "surname": "Hoang", 
@@ -827,7 +848,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "NCBI Gene Expression Omnibus", 
+        "year": "2015", 
         "position": 21, 
+        "year-iso-8601-date": "2015", 
         "ref": "Hoang C Swift GH Azevedo-Pouly A MacDonald RJ 2015 Effects on the transcriptome of adult mouse pancreas (principally acinar cells) by the inactivation of the Ptf1a gene in vivo NCBI Gene Expression Omnibus GSE70542", 
         "id": "bib21"
     }, 
@@ -852,6 +877,7 @@
         "source": "Integrated pest management for crops and pastures", 
         "year": "2008", 
         "position": 22, 
+        "year-iso-8601-date": "2008", 
         "ref": "Horne P Page J 2008 Integrated pest management for crops and pastures Landlinks Press Victoria 9780643092570", 
         "id": "bib22"
     }, 
@@ -874,8 +900,10 @@
         "uri": "http://www.bioinf.manchester.ac.uk/naccess", 
         "publication-type": "software", 
         "source": "Naccess", 
+        "version": "V2.1.1", 
         "year": "1993", 
         "position": 23, 
+        "year-iso-8601-date": "1993", 
         "ref": "Hubbard S Thornton J 1993 Naccess Department of Biochemistry Molecular Biology, University College London V2.1.1 http://www.bioinf.manchester.ac.uk/naccess", 
         "id": "bib23"
     }, 
@@ -974,16 +1002,13 @@
         "publication-type": "confproc", 
         "year": "2010", 
         "position": 24, 
+        "year-iso-8601-date": "2010", 
         "ref": "Jain BV Bollman B Richardson M Berger DR Helmstaedter MN Briggman KL Denk W Bowden JB Mendenhall JM Abraham WC Harris KM Kasthuri N Hayworth KJ Schalek R Tapia JC Lichtman JW Seung HS 2010 Boundary learning by optimization with topological constraints IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2010", 
         "id": "bib24"
     }, 
     {
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Mcgraw-Hill Book Company", 
-        "year": "1959", 
-        "publication-type": "book", 
-        "volume": "3: Formulations of the Person and the Social Context", 
-        "source": "Psychology A Study Of A Science", 
         "authors": [
             {
                 "surname": "Koch", 
@@ -991,7 +1016,12 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "book", 
+        "volume": "3: Formulations of the Person and the Social Context", 
+        "source": "Psychology A Study Of A Science", 
+        "year": "1959", 
         "position": 25, 
+        "year-iso-8601-date": "1959", 
         "ref": "Koch S 1959 3: Formulations of the Person and the Social Context Psychology A Study Of A Science Mcgraw-Hill Book Company", 
         "id": "bib25"
     }, 
@@ -1026,6 +1056,7 @@
         "reference_id": "10.5061/dryad.cv323", 
         "year": "2015", 
         "position": 26, 
+        "year-iso-8601-date": "2015", 
         "ref": "Kok K Ay A Li L Arnosti DN 2015 Data from: Genome-wide errant targeting by Hairy Dryad Digital Repository 10.5061/dryad.cv323", 
         "id": "bib26"
     }, 
@@ -1057,7 +1088,7 @@
             }
         ], 
         "full_article_title": "FlyBase 101\u2014the basics of navigating FlyBase", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2012", 
         "volume": "40", 
         "source": "Nucleic Acids Res", 
         "reference_id": "10.1093/nar/gkr1030", 
@@ -1065,6 +1096,7 @@
         "year": "2012", 
         "position": 27, 
         "pmid": "22127867", 
+        "publication-type": "journal", 
         "ref": "McQuilton P St Pierre SE Thurmond J FlyBase Consortium 2012 FlyBase 101\u2014the basics of navigating FlyBase Nucleic Acids Res 40 D706 D714 10.1093/nar/gkr1030 22127867", 
         "id": "bib27"
     }, 
@@ -1072,17 +1104,18 @@
         "publisher_loc": "Washington, DC, United States", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Government Printing Office", 
-        "year": "1990", 
-        "collab": "National Institute of Mental Health", 
-        "publication-type": "report", 
-        "source": "Clinical training in serious mental illness (DHHS Publication No. ADM 90-1679)", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "National Institute of Mental Health"
             }
         ], 
+        "collab": "National Institute of Mental Health", 
+        "publication-type": "report", 
+        "source": "Clinical training in serious mental illness (DHHS Publication No. ADM 90-1679)", 
+        "year": "1990", 
         "position": 28, 
+        "year-iso-8601-date": "1990", 
         "ref": "National Institute of Mental Health 1990 Clinical training in serious mental illness (DHHS Publication No. ADM 90-1679) Government Printing Office Washington, DC, United States", 
         "id": "bib28"
     }, 
@@ -1100,8 +1133,10 @@
         "uri": "https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
         "publication-type": "software", 
         "source": "Github", 
+        "version": "v1.2", 
         "year": "2014", 
         "position": 29, 
+        "year-iso-8601-date": "2014", 
         "ref": "Nell\u00e5ker C 2014 Clinical_Face_Phenotype_Space_Pipeline Github v1.2 https://github.com/ChristofferNellaker/Clinical_Face_Phenotype_Space_Pipeline", 
         "id": "bib29"
     }, 
@@ -1134,8 +1169,10 @@
         "uri": "https://bioconductor.org/packages/release/bioc/html/Biostrings.html", 
         "publication-type": "software", 
         "source": "Bioconductor", 
+        "version": "R Package Version 2.30.1", 
         "year": "2014", 
         "position": 30, 
+        "year-iso-8601-date": "2014", 
         "ref": "Pages H Gentleman R Aboyoun P Biostrings DS 2014 String objects representing biological sequences, and matching algorithms Bioconductor R Package Version 2.30.1 https://bioconductor.org/packages/release/bioc/html/Biostrings.html", 
         "id": "bib30"
     }, 
@@ -1172,12 +1209,14 @@
         "fpage": "90", 
         "year": "2007", 
         "position": 31, 
+        "year-iso-8601-date": "2007", 
         "ref": "Palmer JA Kreutz-Delgado K Rao BD Makeig S 2007 Probabilistic Formulation of Independent Vector Analysis Using Complex Gaussian Scale Mixtures Independent component analysis and signal separation 8th International Conference, ICA 2009, Paraty, Brazil, March 15-18, 2009 90 97", 
         "id": "bib31"
     }, 
     {
         "article_title": "IRE-1alpha inhibitors", 
         "uri_text": "http://europepmc.org/patents/PAT/US2011065162", 
+        "collab": "Mankind Corp", 
         "patent": "US20100941530", 
         "country": "United States", 
         "authors": [
@@ -1217,14 +1256,14 @@
         "article_doi": "10.7554/eLife.00666", 
         "year": "2011", 
         "position": 32, 
-        "collab": "Mankind Corp", 
+        "year-iso-8601-date": "2011", 
         "publication-type": "patent", 
         "ref": "PattersonJB LonerganDG FlynnGA QingpengZ PallaiPV Mankind Corp 2011 IRE-1alpha inhibitors United States patent US20100941530 http://europepmc.org/patents/PAT/US2011065162", 
         "id": "bib32"
     }, 
     {
         "uri_text": "http://www.r-project.org/", 
-        "publisher_loc": "Vienna, Austria", 
+        "collab": "R Development Core Team", 
         "data-title": "R: a language and environment for statistical computing", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "R Foundation for Statistical Computing", 
@@ -1236,18 +1275,17 @@
         ], 
         "uri": "http://www.r-project.org/", 
         "publication-type": "software", 
+        "publisher_loc": "Vienna, Austria", 
+        "version": "3.2.2", 
         "year": "2015", 
         "position": 33, 
-        "collab": "R Development Core Team", 
+        "year-iso-8601-date": "2015", 
         "ref": "R Development Core Team R: a language and environment for statistical computing 3.2.2 2015 Vienna, Austria R Foundation for Statistical Computing http://www.r-project.org/", 
         "id": "bib33"
     }, 
     {
-        "data-title": "ISG15 counteracts Listeria monocytogenes\n                infection", 
+        "data-title": "ISG15 counteracts <italic>Listeria monocytogenes</italic>\n                infection", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015a", 
-        "publication-type": "data", 
-        "source": "ProteomeXchange", 
         "authors": [
             {
                 "surname": "Radoshevich", 
@@ -1305,16 +1343,17 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "ProteomeXchange", 
+        "year": "2015a", 
         "position": 34, 
+        "year-iso-8601-date": "2015", 
         "ref": "Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015a ISG15 counteracts Listeria monocytogenes infection ProteomeXchange PXD001805", 
         "id": "bib34"
     }, 
     {
         "data-title": "Transcription profiling by high throughput sequencing of LoVo\n                cells infected with Listeria for 24 hr compared to uninfected\n                cells", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015b", 
-        "publication-type": "data", 
-        "source": "ArrayExpress", 
         "authors": [
             {
                 "surname": "Radoshevich", 
@@ -1372,7 +1411,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "ArrayExpress", 
+        "year": "2015b", 
         "position": 35, 
+        "year-iso-8601-date": "2015", 
         "ref": "Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015b Transcription profiling by high throughput sequencing of LoVo cells infected with Listeria for 24 hr compared to uninfected cells ArrayExpress E-MTAB-3649", 
         "id": "bib35"
     }, 
@@ -1393,6 +1436,7 @@
         "publication-type": "software", 
         "year": "1997", 
         "position": 36, 
+        "year-iso-8601-date": "1997", 
         "ref": "Rasband WS 1997 Image J Bethesda, MA US National Institutes of Health http://imagej.nih.gov/ij/", 
         "id": "bib36"
     }, 
@@ -1441,6 +1485,7 @@
         "source": "Genome Res", 
         "year": "2013", 
         "position": 37, 
+        "year-iso-8601-date": "2013", 
         "ref": "Roy S Wapinski Pfiffner J French C Socha A Konieczka J Regev A 2013 Arboretum: reconstruction and analysis of the evolutionary history of condition-specific transcriptional programs Genome Res In press", 
         "id": "bib37"
     }, 
@@ -1460,6 +1505,7 @@
         "publication-type": "thesis", 
         "year": "2006", 
         "position": 38, 
+        "year-iso-8601-date": "2006", 
         "ref": "SchneiderP 2006 PhD thesis: Submicroscopic Plasmodium falciparum gametocytaemia and the contribution to malaria transmission Radboud University Nijmegen Medical Centre Nijmegen, The Netherlands", 
         "id": "bib38"
     }, 
@@ -1477,8 +1523,10 @@
         "uri": "https://www.pymol.org/", 
         "publication-type": "software", 
         "source": "The PyMOL Molecular Graphics System", 
+        "version": "1.2r3pre", 
         "year": "2011", 
         "position": 39, 
+        "year-iso-8601-date": "2011", 
         "ref": "Schr\u00f6dinger LLC 2011 The PyMOL Molecular Graphics System Schr\u00f6dinger LLC 1.2r3pre https://www.pymol.org/", 
         "id": "bib39"
     }, 
@@ -1499,12 +1547,14 @@
         "fpage": "A1", 
         "year": "1993", 
         "position": 40, 
+        "year-iso-8601-date": "1993-09-09", 
         "ref": "Schwartz J September 9, 1993 Obesity affects economic, social status The Washington Post A1 A4", 
         "id": "bib40"
     }, 
     {
         "article_title": "Scripps Wired for Health Study", 
         "uri_text": "https://clinicaltrials.gov/ct2/show/NCT01975428", 
+        "collab": "Scripps Translational Science Institute", 
         "article_doi": "10.7554/eLife.00666", 
         "authors": [
             {
@@ -1516,7 +1566,7 @@
         "full_article_title": "Scripps Wired for Health Study", 
         "year": "2015", 
         "position": 41, 
-        "collab": "Scripps Translational Science Institute", 
+        "year-iso-8601-date": "2015", 
         "publication-type": "clinicaltrial", 
         "ref": "Scripps Translational Science Institute 2015 Scripps Wired for Health Study https://clinicaltrials.gov/ct2/show/NCT01975428", 
         "id": "bib41"
@@ -1541,17 +1591,16 @@
         ], 
         "uri": "http://www.repeatmasker.org/RepeatModeler.html", 
         "publication-type": "software", 
+        "version": "open-1.0", 
         "year": "2010", 
         "position": 42, 
+        "year-iso-8601-date": "2010", 
         "ref": "Smit A Hubley R 2010 RepeatModeler Institute for Systems Biology Seattle, USA open-1.0 http://www.repeatmasker.org/RepeatModeler.html", 
         "id": "bib42"
     }, 
     {
         "data-title": "SKN-1 from the JASPAR CORE database", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2013", 
-        "publication-type": "data", 
-        "source": "JASPAR", 
         "authors": [
             {
                 "surname": "Staab", 
@@ -1584,7 +1633,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "JASPAR", 
+        "year": "2013", 
         "position": 43, 
+        "year-iso-8601-date": "2013", 
         "ref": "Staab TA Griffen TC Corcoran C Evgrafov O Knowles JA Sieburth D 2013 SKN-1 from the JASPAR CORE database JASPAR MA0547.1", 
         "id": "bib43"
     }, 
@@ -1640,57 +1693,61 @@
         "reference_id": "10.20944/preprints201608.0124.v1", 
         "year": "2016", 
         "position": 44, 
+        "year-iso-8601-date": "2016", 
         "ref": "Tanaka Y Hosoyama T Mikamo A Kurazumi H Nishimoto A Ueno K Shirasawa B Hamano K 2016 Hypoxic Preconditioning of Human Cardiosphere-derived Cell Sheets Enhances Cellular Functions via Activation of the PI3K/Akt/mTOR/HIF-1a Pathway preprints 10.20944/preprints201608.0124.v1", 
         "id": "bib44"
     }, 
     {
         "data-title": "Global Diversity of Shigella Species", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015a", 
-        "collab": "The Shigella Genome Sequencing Consortium", 
-        "publication-type": "data", 
-        "source": "NCBI BioProject", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject", 
+        "year": "2015a", 
         "position": 45, 
+        "year-iso-8601-date": "2015", 
         "ref": "The Shigella Genome Sequencing Consortium 2015a Global Diversity of Shigella Species NCBI BioProject PRJEB2846", 
         "id": "bib45"
     }, 
     {
         "data-title": "Shigella sonnei and flexneri from around the world", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015b", 
-        "collab": "The Shigella Genome Sequencing Consortium", 
-        "publication-type": "data", 
-        "source": "NCBI BioProject", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject", 
+        "year": "2015b", 
         "position": 46, 
+        "year-iso-8601-date": "2015", 
         "ref": "The Shigella Genome Sequencing Consortium 2015b Shigella sonnei and flexneri from around the world NCBI BioProject PRJEB2460", 
         "id": "bib46"
     }, 
     {
         "data-title": "Shigella flexneri from around the world", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2015c", 
-        "collab": "The Shigella Genome Sequencing Consortium", 
-        "publication-type": "data", 
-        "source": "NCBI BioProject ", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
+        "collab": "The Shigella Genome Sequencing Consortium", 
+        "publication-type": "data", 
+        "source": "NCBI BioProject ", 
+        "year": "2015c", 
         "position": 47, 
+        "year-iso-8601-date": "2015", 
         "ref": "The Shigella Genome Sequencing Consortium 2015c Shigella flexneri from around the world NCBI BioProject PRJEB2542", 
         "id": "bib47"
     }, 
@@ -1699,11 +1756,6 @@
         "chapter-title": "Recruitment of predators and parasitoids by herbivore-injured\n                plants", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "Cambridge University Press", 
-        "year": "2004", 
-        "publication-type": "book", 
-        "lpage": "75", 
-        "source": "Advances in insect chemical ecology", 
-        "fpage": "21", 
         "authors": [
             {
                 "surname": "Turlings", 
@@ -1726,7 +1778,13 @@
                 "group-type": "editor"
             }
         ], 
+        "publication-type": "book", 
+        "lpage": "75", 
+        "source": "Advances in insect chemical ecology", 
+        "fpage": "21", 
+        "year": "2004", 
         "position": 48, 
+        "year-iso-8601-date": "2004", 
         "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004 Advances in insect chemical ecology Recruitment of predators and parasitoids by herbivore-injured plants Cambridge University Press Cambridge 21 75", 
         "id": "bib48"
     }, 
@@ -1788,13 +1846,14 @@
             }
         ], 
         "full_article_title": "Crystal structure of the FeS cluster-containing nucleotide\n                        excision repair helicase XPD", 
-        "publication-type": "journal", 
+        "year-iso-8601-date": "2008", 
         "volume": "6", 
         "source": "PLoS Biol", 
         "reference_id": "10.1371/journal.pbio.0060149", 
         "year": "2008", 
         "position": 50, 
         "pmid": "18578568", 
+        "publication-type": "journal", 
         "ref": "Wolski SC Kuper J Hanzelmann P Truglio JJ Croteau DL Van Houten B 2008 Crystal structure of the FeS cluster-containing nucleotide excision repair helicase XPD PLoS Biol 6 e149 10.1371/journal.pbio.0060149 18578568", 
         "id": "bib50"
     }, 
@@ -1802,26 +1861,24 @@
         "edition": "2", 
         "article_doi": "10.7554/eLife.00666", 
         "publisher_name": "World Health Organization", 
-        "year": "2016", 
-        "collab": "World Health Organization", 
-        "publication-type": "book", 
-        "source": " Growing up unequal: gender and socioeconomic differences in young\n                people's health and well-being. Health Behaviour in School-aged Children\n                (HBSC) study", 
         "authors": [
             {
                 "group-type": "author", 
                 "collab": "World Health Organization"
             }
         ], 
+        "collab": "World Health Organization", 
+        "publication-type": "book", 
+        "source": " Growing up unequal: gender and socioeconomic differences in young\n                people's health and well-being. Health Behaviour in School-aged Children\n                (HBSC) study", 
+        "year": "2016", 
         "position": 51, 
+        "year-iso-8601-date": "2016", 
         "ref": "World Health Organization 2016 2 Growing up unequal: gender and socioeconomic differences in young people's health and well-being. Health Behaviour in School-aged Children (HBSC) study World Health Organization", 
         "id": "bib51"
     }, 
     {
         "data-title": "Polymeric immunoglobulin receptor [Oncorhynchus mykiss]", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2010", 
-        "publication-type": "data", 
-        "source": "NCBI", 
         "authors": [
             {
                 "surname": "Zhang", 
@@ -1869,16 +1926,17 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "NCBI", 
+        "year": "2010", 
         "position": 52, 
+        "year-iso-8601-date": "2010", 
         "ref": "Zhang YA Salinas I Li J Parra D Bjork S Xu Z LaPatra SE Bartholomew J Sunyer JO 2010 Polymeric immunoglobulin receptor [Oncorhynchus mykiss] NCBI GenBank: ADB81776.1", 
         "id": "bib52"
     }, 
     {
         "data-title": "ChIP-Seq Identification of C. elegans TF Binding Sites", 
         "article_doi": "10.7554/eLife.00666", 
-        "year": "2013", 
-        "publication-type": "data", 
-        "source": "modMine", 
         "authors": [
             {
                 "surname": "Zhong", 
@@ -1951,7 +2009,11 @@
                 "group-type": "author"
             }
         ], 
+        "publication-type": "data", 
+        "source": "modMine", 
+        "year": "2013", 
         "position": 53, 
+        "year-iso-8601-date": "2013", 
         "ref": "Zhong M Snyder M Slightam C Kim S Murray J Waterston R Gerstein M Niu W Janette J Raha D Agarwal A Reinke V Sarov M Hyman A 2013 ChIP-Seq Identification of C. elegans TF Binding Sites modMine modENCODE_3369", 
         "id": "bib53"
     }
