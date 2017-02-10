@@ -2160,7 +2160,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
-                    footnote_content["text"].append(body_block_content(p_tag, base_url=base_url))
+                    footnote_blocks = body_block_content_render(p_tag, base_url=base_url)
+                    for footnote_block in footnote_blocks:
+                        if footnote_block != {}:
+                            footnote_content["text"].append(footnote_block)
 
                 if "footnotes" not in tag_content:
                     tag_content["footnotes"] = []
