@@ -1302,7 +1302,7 @@ def refs(soup):
         set_if_value(ref, "version", node_contents_str(first(raw_parser.version(tag))))
         set_if_value(ref, "chapter-title", node_contents_str(first(raw_parser.chapter_title(tag))))
         set_if_value(ref, "comment", node_text(first(raw_parser.comment(tag))))
-        set_if_value(ref, "data-title", node_text(first(raw_parser.data_title(tag))))
+        set_if_value(ref, "data-title", node_contents_str(first(raw_parser.data_title(tag))))
         set_if_value(ref, "conf-name", node_text(first(raw_parser.conf_name(tag))))
 
         # If not empty, add position value, append, then increment the position counter
