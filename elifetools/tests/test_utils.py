@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import unittest
 import os
 import time
@@ -109,6 +111,20 @@ class TestUtils(unittest.TestCase):
         soup = parser.parse_xml(xml)
         modified_tag = utils.remove_doi_paragraph(soup.contents[0])
         self.assertEqual(unicode(modified_tag), expected_xml)
+
+    @unpack
+    @data(
+        (None, None),
+        ('A simple example ', u'A simple example'),
+        ('Testing one, two, three. Is this thing on?', u'Testing one, two, three'),
+        ('Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp. (<bold>A</bold>) Examples of predated <italic>M. sexta</italic> larva (left panel) and egg (right panel).', 'Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp.'),
+        ('The wild tobacco plant <italic>N. attenuata</italic> relies on both direct and indirect mechanisms to defend it against <italic>M. sexta</italic> caterpillars. Indirect defence involves the release of volatile chemicals that attract <italic>Geocoris</italic> bugs that prey on the caterpillars. This photograph shows a <italic>Geocoris</italic> bug (bottom left) about to attack a caterpillar and two of its larvae.', 'The wild tobacco plant <italic>N. attenuata</italic> relies on both direct and indirect mechanisms to defend it against <italic>M. sexta</italic> caterpillars'),
+        ('The unfolded protein response in <italic>S. pombe</italic> and other species. (<bold>A</bold>) The accumulation unfolded proteins in the endoplasmic reticulum (ER) of <italic>S. pombe</italic> leads to activation of IRE1 (presumably by nucleotide binding (green), auto-phosphorylation (red) and the formation of dimers), which is turn leads to the cleavage of mRNAs in the cytosol. The subsequent degradation of the cleaved mRNAs (known as RIDD) and explusion from the cell (via the exosome) reduced the protein-folding load on the ER. However, as described in the text, the mRNA that encodes for the molecular chaperone <italic>Bip1</italic> escapes this fate:', 'The unfolded protein response in <italic>S. pombe</italic> and other species'),
+        ('Table summarizing the weights (<italic>w</italic><sub><italic>N</italic></sub>) and performance (expressed as Pearson\'s coefficient <italic>R</italic> and RMSE) of the fourfold cross-validation, repeated 10 times, of the following binding affinity regression model: <disp-formula id="equ4"><mml:math id="m4"><mml:mi>Δ</mml:mi><mml:msub><mml:mtext>G</mml:mtext><mml:mrow><mml:mtext>calc</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>1</mml:mn></mml:msub><mml:msub><mml:mtext>ICs</mml:mtext><mml:mrow><mml:mtext>charged</mml:mtext><mml:mo>/</mml:mo><mml:mtext>charged</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>2</mml:mn></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>charged_apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>3</mml:mn></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>polar</mml:mtext><mml:mo>/</mml:mo><mml:mtext>polar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mtext>4</mml:mtext></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>polar</mml:mtext><mml:mo>/</mml:mo><mml:mtext>apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>5</mml:mn></mml:msub><mml:msub><mml:mtext> %NIS</mml:mtext><mml:mrow><mml:mtext>apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>6</mml:mn></mml:msub><mml:msub><mml:mtext> %NIS</mml:mtext><mml:mrow><mml:mtext>charged</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mtext>Q</mml:mtext><mml:mo>.</mml:mo></mml:math></disp-formula>Each coefficient has been reported as average on the four models trained on the respective folds.', 'Table summarizing the weights (<italic>w</italic><sub><italic>N</italic></sub>) and performance (expressed as Pearson\'s coefficient <italic>R</italic> and RMSE) of the fourfold cross-validation, repeated 10 times, of the following binding affinity regression model'),
+
+        )
+    def test_text_to_title(self, value, expected_title):
+        self.assertEqual(utils.text_to_title(value), expected_title)
 
 
 if __name__ == '__main__':
