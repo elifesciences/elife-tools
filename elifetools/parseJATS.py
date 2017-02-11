@@ -2204,9 +2204,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if "title" not in tag_content and len(caption_content) > 0:
             # Attempt to extra the first sentence of the first paragraph of the caption
             first_paragraph_text = caption_content[0]["text"]
-            sentences = first_paragraph_text.split(". ")
-            if len(sentences) > 0:
-                tag_content["title"] = sentences[0]
+            set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
         # If there is still not title, then use the label
         if "title" not in tag_content and "label" in tag_content:
             tag_content["title"] = tag_content["label"]
