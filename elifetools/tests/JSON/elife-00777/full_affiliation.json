@@ -1,0 +1,18 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Biology", 
+            "country": "United States", 
+            "institution": "University of North Carolina", 
+            "city": "Chapel Hill"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Department of Chemistry", 
+            "country": "United States", 
+            "institution": "University of North Carolina", 
+            "city": "Chapel Hill"
+        }
+    }
+]
