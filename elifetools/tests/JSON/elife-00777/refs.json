@@ -1,0 +1,337 @@
+[
+    {
+        "article_title": "Tuning gene expression with synthetic upstream open reading\n                        frames", 
+        "lpage": "11289", 
+        "doi": "10.1073/pnas.1305590110", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Ferreira", 
+                "given-names": "JP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Overton", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "CL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Tuning gene expression with synthetic upstream open reading\n                        frames", 
+        "publication-type": "journal", 
+        "volume": "110", 
+        "source": "PNAS", 
+        "reference_id": "10.1073/pnas.1305590110", 
+        "fpage": "11284", 
+        "year": "2013", 
+        "position": 1, 
+        "year-iso-8601-date": "2013", 
+        "ref": "Ferreira JP Overton KW Wang CL 2013 Tuning gene expression with synthetic upstream open reading frames PNAS 110 11284 11289 10.1073/pnas.1305590110", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Determinants of translation efficiency and\n                        accuracy", 
+        "doi": "10.1038/msb.2011.14", 
+        "article_doi": "10.7554/eLife.00777", 
+        "elocation-id": "481", 
+        "authors": [
+            {
+                "surname": "Gingold", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pilpel", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Determinants of translation efficiency and\n                        accuracy", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "Molecular Systems Biology", 
+        "reference_id": "10.1038/msb.2011.14", 
+        "year": "2011", 
+        "position": 2, 
+        "year-iso-8601-date": "2011", 
+        "ref": "Gingold H Pilpel Y 2011 Determinants of translation efficiency and accuracy Molecular Systems Biology 7 481 10.1038/msb.2011.14", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "How is mRNA expression predictive for protein expression? A\n                        correlation study on human circulating monocytes", 
+        "lpage": "436", 
+        "doi": "10.1111/j.1745-7270.2008.00418.x", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Guo", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xiao", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lei", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deng", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xiao", 
+                "given-names": "GG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wu", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jiang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tan", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Xie", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liang", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deng", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "How is mRNA expression predictive for protein expression? A\n                        correlation study on human circulating monocytes", 
+        "publication-type": "journal", 
+        "volume": "40", 
+        "source": "Acta Biochimica Et Biophysica Sinica", 
+        "reference_id": "10.1111/j.1745-7270.2008.00418.x", 
+        "fpage": "426", 
+        "year": "2008", 
+        "position": 3, 
+        "year-iso-8601-date": "2008", 
+        "ref": "Guo Y Xiao P Lei S Deng F Xiao GG Liu Y Chen X Li L Wu S Chen Y Jiang H Tan L Xie J Zhu X Liang S Deng H 2008 How is mRNA expression predictive for protein expression? A correlation study on human circulating monocytes Acta Biochimica Et Biophysica Sinica 40 426 436 10.1111/j.1745-7270.2008.00418.x", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "Regulation of translation via mRNA structure in prokaryotes and\n                        eukaryotes", 
+        "lpage": "37", 
+        "doi": "10.1016/j.gene.2005.06.037", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Kozak", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Regulation of translation via mRNA structure in prokaryotes and\n                        eukaryotes", 
+        "publication-type": "journal", 
+        "volume": "361", 
+        "source": "Gene", 
+        "reference_id": "10.1016/j.gene.2005.06.037", 
+        "fpage": "13", 
+        "year": "2005", 
+        "position": 4, 
+        "year-iso-8601-date": "2005", 
+        "ref": "Kozak M 2005 Regulation of translation via mRNA structure in prokaryotes and eukaryotes Gene 361 13 37 10.1016/j.gene.2005.06.037", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "Coding-sequence determinants of gene expression in Escherichia\n                        coli", 
+        "lpage": "258", 
+        "doi": "10.1126/science.1170160", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Kudla", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murray", 
+                "given-names": "AW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tollervey", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plotkin", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Coding-sequence determinants of gene expression in Escherichia\n                        coli", 
+        "publication-type": "journal", 
+        "volume": "324", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1170160", 
+        "fpage": "255", 
+        "year": "2009", 
+        "position": 5, 
+        "year-iso-8601-date": "2009", 
+        "ref": "Kudla G Murray AW Tollervey D Plotkin JB 2009 Coding-sequence determinants of gene expression in Escherichia coli Science 324 255 258 10.1126/science.1170160", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "Correlation of mRNA and protein in complex biological\n                        samples", 
+        "lpage": "3973", 
+        "doi": "10.1016/j.febslet.2009.10.036", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Maier", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "G\u00fcell", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Serrano", 
+                "given-names": "L", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Correlation of mRNA and protein in complex biological\n                        samples", 
+        "publication-type": "journal", 
+        "volume": "583", 
+        "source": "FEBS Letters", 
+        "reference_id": "10.1016/j.febslet.2009.10.036", 
+        "fpage": "3966", 
+        "year": "2009", 
+        "position": 6, 
+        "year-iso-8601-date": "2009", 
+        "ref": "Maier T G\u00fcell M Serrano L 2009 Correlation of mRNA and protein in complex biological samples FEBS Letters 583 3966 3973 10.1016/j.febslet.2009.10.036", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Translation efficiency is determined by both codon bias and\n                        folding energy", 
+        "lpage": "3650", 
+        "doi": "10.1073/pnas.0909910107", 
+        "article_doi": "10.7554/eLife.00777", 
+        "authors": [
+            {
+                "surname": "Tuller", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waldman", 
+                "given-names": "YY", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kupiec", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ruppin", 
+                "given-names": "E", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Translation efficiency is determined by both codon bias and\n                        folding energy", 
+        "publication-type": "journal", 
+        "volume": "107", 
+        "source": "PNAS", 
+        "reference_id": "10.1073/pnas.0909910107", 
+        "fpage": "3645", 
+        "year": "2010", 
+        "position": 7, 
+        "year-iso-8601-date": "2010", 
+        "ref": "Tuller T Waldman YY Kupiec M Ruppin E 2010 Translation efficiency is determined by both codon bias and folding energy PNAS 107 3645 3650 10.1073/pnas.0909910107", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Avoidance of stochastic RNA interactions can be harnessed to\n                        control protein expression levels in bacteria and archaea", 
+        "doi": "10.7554/eLife.13479", 
+        "article_doi": "10.7554/eLife.00777", 
+        "elocation-id": "e13479", 
+        "authors": [
+            {
+                "surname": "Umu", 
+                "given-names": "SU", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Poole", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dobson", 
+                "given-names": "RCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gardner", 
+                "given-names": "PP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Avoidance of stochastic RNA interactions can be harnessed to\n                        control protein expression levels in bacteria and archaea", 
+        "publication-type": "journal", 
+        "volume": "5", 
+        "source": "eLife", 
+        "reference_id": "10.7554/eLife.13479", 
+        "year": "2016", 
+        "position": 8, 
+        "year-iso-8601-date": "2016", 
+        "ref": "Umu SU Poole AM Dobson RCJ Gardner PP 2016 Avoidance of stochastic RNA interactions can be harnessed to control protein expression levels in bacteria and archaea eLife 5 e13479 10.7554/eLife.13479", 
+        "id": "bib8"
+    }
+]

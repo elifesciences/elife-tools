@@ -502,11 +502,13 @@
             }
         ], 
         "publication-type": "book", 
+        "lpage": "2", 
         "source": "Speciation and its consequences", 
+        "fpage": "1", 
         "year": "1989", 
         "position": 11, 
         "year-iso-8601-date": "1989", 
-        "ref": "Coyne JA Orr HA Otte D Endler JA 1989 Two rules of speciation Speciation and its consequences Sunderland, MA Sinauer Associates", 
+        "ref": "Coyne JA Orr HA Otte D Endler JA 1989 Two rules of speciation Speciation and its consequences 1 2 Sunderland, MA Sinauer Associates", 
         "id": "bib11"
     }, 
     {

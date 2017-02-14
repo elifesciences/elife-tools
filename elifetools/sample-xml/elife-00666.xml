@@ -1681,7 +1681,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                 <title>Single figure: The header of an eLife article example on the HTML page. In the PDf this is represented as a single column.</title>
                             </caption>
                             <!--  NOTE: file type must be included in the file description. -->
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig1.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig1.tif"/>
                             <!-- Assets within eLife might not always be published under a CC BY license although we endevour to do so. This is an example of how to add a
                                 separate permission statement so it is clear to the human and machine reader that this asset cannot be reused. -->
                             <permissions>
@@ -1708,7 +1708,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             </xref> shows an expanded view (<xref ref-type="bibr" rid="bib26">Kok et al., 2015</xref>; <xref ref-type="bibr" rid="bib28">National Institute of Mental 
                                 Health, 1990</xref>).</p>
                         </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2.tif"/>
                     </fig>
                         <fig id="fig2s1" position="float" specific-use="child-fig">
                             <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
@@ -1717,7 +1717,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <caption>
                                 <title>The representation of the Major Subject Areas, Research Organisms and author keywords on the eLife HTML page</title>
                             </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2-figsupp1.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2-figsupp1.tif"/>
                         </fig>
                         <fig id="fig2s2" position="float" specific-use="child-fig">
                             <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
@@ -1726,7 +1726,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <caption>
                                 <title>Representation of figure with figure supplements on the HTML view.</title>
                             </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2-figsupp2.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig2-figsupp2.tif"/>
                         </fig>
                     </fig-group>
                     <p><xref ref-type="fig" rid="fig3">Figure 3</xref> is an example of a figure with a figure supplement (<xref ref-type="fig" rid="fig3s1">Figure 3—figure supplement 1</xref>) 
@@ -1743,7 +1743,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <caption>
                                 <title>Figure with figure supplements and figure supplement with source data and a video (see <xref ref-type="bibr" rid="bib25">Koch, 1959</xref>) .</title>
                             </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tif"/>
                         </fig>
                         <fig id="fig3s1" position="float" specific-use="child-fig">
                             <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
@@ -1752,7 +1752,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             <caption>
                                 <title>Title of the figure supplement</title>
                             </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tif"/>
                             <p>
                                 <supplementary-material id="fig3sdata1">
                                     <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
@@ -1787,7 +1787,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         <caption>
                             <title>Single figure with source code.</title>
                         </caption>
-                        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig4.tiff"/>
+                        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig4.tif"/>
                         <p>
                             <supplementary-material id="fig4scode1">
                                 <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
@@ -1870,7 +1870,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                 <title>Box figure</title>
                             </caption>
                             <!--  NOTE: file type must be included in the file description. -->
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-box2-fig1.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-box2-fig1.tif"/>
                             </fig>
                         <p>Donec rhoncus in odio non vulputate. Donec vitae enim at erat tincidunt tincidunt in nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac 
                             turpis egestas. Aliquam id nunc id arcu maximus rutrum. Praesent bibendum nisl orci, ac sollicitudin purus aliquam in. Duis eu fermentum arcu. Fusce eget dolor augue. 
@@ -2525,6 +2525,8 @@ The tagging of the collaborator name again within this section is required for P
             <year iso-8601-date="1989">1989</year>
             <chapter-title>Two rules of speciation</chapter-title>
             <source>Speciation and its consequences</source>
+            <fpage>1</fpage>
+            <lpage>2</lpage>
             <publisher-loc>Sunderland, MA</publisher-loc>
             <publisher-name>Sinauer Associates</publisher-name>
         </element-citation>
@@ -3743,7 +3745,7 @@ Appendices must have DOIs -->
                         </title>
                         <p>If there is a caption to accompany the title it would display here (<xref ref-type="bibr" rid="bib25">Koch, 1959</xref>).</p>
                     </caption>
-                           <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-app1-fig1.tiff"/>
+                           <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-app1-fig1.tif"/>
                     </fig>
                         <fig id="app1fig1s1" position="float" specific-use="child-fig">
                             <!-- UPDATE: DOI prefix added to display--> 
@@ -3753,7 +3755,7 @@ Appendices must have DOIs -->
                                 <title>Appendix figure supplement title.</title>
                                 <p>If there is a caption to accompany the title it would display here.</p>
                             </caption>
-                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-app1-fig1-figsupp1.tiff"/>
+                            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-app1-fig1-figsupp1.tif"/>
                         </fig>
                     </fig-group>
 <!-- UPDATE: this is how sub sections in appendices should be tagged. Have been wrong up to now -->

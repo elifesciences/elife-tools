@@ -70,6 +70,7 @@ xml_filenames.append("elife05502.xml")
 xml_filenames.append("elife00351.xml")
 xml_filenames.append("elife-02833-v2.xml")
 xml_filenames.append("elife-00666.xml")
+xml_filenames.append("elife-00777.xml")
 
 
 for filename in xml_filenames:
