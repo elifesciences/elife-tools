@@ -450,7 +450,7 @@ NOT IN PMC YET, will need to discuss with them when we want to implement
                         credited.</license-p>
                 </license>
             </permissions>
-            <self-uri content-type="pdf" xlink:href="elife00666.pdf"/>
+            <self-uri content-type="pdf" xlink:href="elife-00666.pdf"/>
             <related-object ext-link-type="url" xlink:href="https://elifesciences.org/content/5/e00666v1">
                 <date date-type="AM" iso-8601-date="2016-04-25">
                     <day>25</day>
@@ -1797,7 +1797,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                     <title>Title of the source code.</title>
                                     <p>Legend of the source code.</p>
                                 </caption>
-                                <media mimetype="application" mime-subtype="xml" xlink:href="elife-00666-fig4-code1.xlsx"/>
+                                <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig4-code1.xlsx"/>
                             </supplementary-material>
                         </p>
                     </fig>
@@ -1823,7 +1823,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                     <title>Title of the source code.</title>
                                     <p>Legend of the source code.</p>
                                 </caption>
-                                <media mimetype="application" mime-subtype="xml" xlink:href="elife-00666-video1-data1.xlsx"/>
+                                <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-video1-data1.xlsx"/>
                             </supplementary-material>
                             </p>
                         </caption>
@@ -4101,7 +4101,7 @@ UPDATE: punctuation between institution and country removed. -->
                     <caption>
                         <p>Single figure: The header of an eLife article example on the HTML page.</p>
                     </caption>
-                <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-resp-fig1.png"/>
+                <graphic mimetype="image" mime-subtype="png" xlink:href="elife-00666-resp-fig1.png"/>
                 </fig>
             <table-wrap id="resptable1" position="float">
                 <!-- UPDATE: added to author response assets UPDATE: DOI prefix removed from XML but must be added for display--> 
