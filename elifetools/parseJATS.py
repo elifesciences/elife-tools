@@ -1392,7 +1392,7 @@ def components(soup):
             # New kitchen sink has boxed-text inside app tags, tag the sec tag title if so
             #  but do not take it if there is a caption
             if (not title_tag and tag.parent and tag.parent.name in ["sec", "app"]
-                and not caption_title(tag)):
+                and not caption_tag_inspected(tag, tag.name)):
                 title_tag = title_tag_inspected(tag.parent, tag.parent.name, direct_sibling_only=True)
         else:
             title_tag = raw_parser.title(tag)
@@ -1401,9 +1401,14 @@ def components(soup):
             component['title'] = node_text(title_tag)
             component['full_title'] = node_contents_str(title_tag)
 
-        if raw_parser.label(tag):
-            component['label'] = node_text(raw_parser.label(tag))
-            component['full_label'] = node_contents_str(raw_parser.label(tag))
+        if ctype == "boxed-text":
+            label_tag = label_tag_inspected(tag, "boxed-text")
+        else:
+            label_tag = raw_parser.label(tag)
+
+        if label_tag:
+            component['label'] = node_text(label_tag)
+            component['full_label'] = node_contents_str(label_tag)
 
         if raw_parser.caption(tag):
             first_paragraph = first(paragraphs(raw_parser.caption(tag)))
@@ -1846,6 +1851,12 @@ def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling
         title = node_contents_str(title_tag)
     return title
 
+def caption_tag_inspected(tag, parent_tag_name=None):
+    caption_tag = raw_parser.caption(tag)
+    if parent_tag_name and caption_tag and caption_tag.parent.name != parent_tag_name:
+        caption_tag = None
+    return caption_tag
+
 def caption_title(tag):
     """Extract the text of a title or p tag inside the first caption tag"""
     title = None
@@ -1860,11 +1871,15 @@ def caption_title(tag):
                 title = node_contents_str(first(p_tags))
     return title
 
-def label(tag, parent_tag_name=None):
-    label = None
+def label_tag_inspected(tag, parent_tag_name=None):
     label_tag = raw_parser.label(tag)
     if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
         label_tag = None
+    return label_tag
+
+def label(tag, parent_tag_name=None):
+    label = None
+    label_tag = label_tag_inspected(tag, parent_tag_name)
     if label_tag:
         label = node_contents_str(label_tag)
     return label
