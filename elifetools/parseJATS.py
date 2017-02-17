@@ -1385,6 +1385,15 @@ def components(soup):
         
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)
+        elif(ctype == "boxed-text"):
+            title_tag = title_tag_inspected(tag, tag.name, direct_sibling_only=True)
+            if not title_tag:
+                title_tag = title_tag_inspected(tag, "caption", "boxed-text")
+            # New kitchen sink has boxed-text inside app tags, tag the sec tag title if so
+            #  but do not take it if there is a caption
+            if (not title_tag and tag.parent and tag.parent.name in ["sec", "app"]
+                and not caption_tag_inspected(tag, tag.name)):
+                title_tag = title_tag_inspected(tag.parent, tag.parent.name, direct_sibling_only=True)
         else:
             title_tag = raw_parser.title(tag)
 
@@ -1392,9 +1401,14 @@ def components(soup):
             component['title'] = node_text(title_tag)
             component['full_title'] = node_contents_str(title_tag)
 
-        if raw_parser.label(tag):
-            component['label'] = node_text(raw_parser.label(tag))
-            component['full_label'] = node_contents_str(raw_parser.label(tag))
+        if ctype == "boxed-text":
+            label_tag = label_tag_inspected(tag, "boxed-text")
+        else:
+            label_tag = raw_parser.label(tag)
+
+        if label_tag:
+            component['label'] = node_text(label_tag)
+            component['full_label'] = node_contents_str(label_tag)
 
         if raw_parser.caption(tag):
             first_paragraph = first(paragraphs(raw_parser.caption(tag)))
@@ -1806,9 +1820,8 @@ def object_id_doi(tag, parent_tag_name=None):
         doi = node_contents_str(object_id)
     return doi
 
-def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling_only=False):
-    """Extract the text of a title tag and sometimes inspect its parents"""
-    title = None
+def title_tag_inspected(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling_only=False):
+    """Extract the title tag and sometimes inspect its parents"""
 
     title_tag = None
     if direct_sibling_only is True:
@@ -1826,9 +1839,23 @@ def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling
         else:
             title_tag = None
 
+    return title_tag
+
+def title_text(tag, parent_tag_name=None, p_parent_tag_name=None, direct_sibling_only=False):
+    """Extract the text of a title tag and sometimes inspect its parents"""
+    title = None
+
+    title_tag = title_tag_inspected(tag, parent_tag_name, p_parent_tag_name, direct_sibling_only)
+
     if title_tag:
         title = node_contents_str(title_tag)
     return title
+
+def caption_tag_inspected(tag, parent_tag_name=None):
+    caption_tag = raw_parser.caption(tag)
+    if parent_tag_name and caption_tag and caption_tag.parent.name != parent_tag_name:
+        caption_tag = None
+    return caption_tag
 
 def caption_title(tag):
     """Extract the text of a title or p tag inside the first caption tag"""
@@ -1844,11 +1871,15 @@ def caption_title(tag):
                 title = node_contents_str(first(p_tags))
     return title
 
-def label(tag, parent_tag_name=None):
-    label = None
+def label_tag_inspected(tag, parent_tag_name=None):
     label_tag = raw_parser.label(tag)
     if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
         label_tag = None
+    return label_tag
+
+def label(tag, parent_tag_name=None):
+    label = None
+    label_tag = label_tag_inspected(tag, parent_tag_name)
     if label_tag:
         label = node_contents_str(label_tag)
     return label
