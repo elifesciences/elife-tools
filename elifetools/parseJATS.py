@@ -1084,12 +1084,19 @@ def is_author_non_byline(tag, contrib_type="author non-byline"):
         return True
     return False
 
-def authors_non_byline(soup):
+def authors_non_byline(soup, detail="full"):
     """Non-byline authors for group author members"""
-    contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type=None)
-    tags = filter(lambda tag: is_author_non_byline(tag) is True, contrib_tags)
+    # Get a filtered list of contributors, in order to get their group-author-id
     contrib_type="author non-byline"
-    return format_authors(soup, tags, detail="full", contrib_type=contrib_type)
+    non_byline_authors = filter(lambda author:
+        (author.get("type") and author.get("type") == contrib_type),
+        contributors(soup, detail))
+    # Then renumber their position attribute
+    position = 1
+    for author in non_byline_authors:
+        author["position"] = position
+        position = position + 1
+    return non_byline_authors
 
 def authors(soup, contrib_type = "author", detail = "full"):
     contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
