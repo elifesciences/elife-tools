@@ -1,6 +1,7 @@
 [
     {
         "surname": "Shearer", 
+        "group-author-key": "group-author-id1", 
         "author": "Alistair Shearer", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -17,6 +18,7 @@
     }, 
     {
         "surname": "Caton", 
+        "group-author-key": "group-author-id1", 
         "author": "Hannah Caton", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -38,6 +40,7 @@
     }, 
     {
         "surname": "Chan", 
+        "group-author-key": "group-author-id1", 
         "author": "Wei Mun Chan", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -54,6 +57,7 @@
     }, 
     {
         "surname": "Drury", 
+        "group-author-key": "group-author-id1", 
         "author": "Hannah Drury", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -70,6 +74,7 @@
     }, 
     {
         "surname": "Guerreiro", 
+        "group-author-key": "group-author-id1", 
         "author": "Maria Guerreiro", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -86,6 +91,7 @@
     }, 
     {
         "surname": "Richmond", 
+        "group-author-key": "group-author-id1", 
         "author": "Susanna Richmond", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -102,6 +108,7 @@
     }, 
     {
         "surname": "Nott", 
+        "group-author-key": "group-author-id2", 
         "author": "Graham Nott", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -117,6 +124,7 @@
     }, 
     {
         "surname": "Wilkinson", 
+        "group-author-key": "group-author-id2", 
         "author": "Chris Wilkinson", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
@@ -134,6 +142,7 @@
     }, 
     {
         "surname": "Skibinski", 
+        "group-author-key": "group-author-id2", 
         "author": "Luke Skibinski", 
         "article_doi": "10.7554/eLife.00666", 
         "affiliations": [
