@@ -513,6 +513,30 @@ def related_article(soup):
     
     return related_articles
 
+def mixed_citations(soup):
+    mc_tags = raw_parser.mixed_citations(soup)
+    def name(nom):
+        return {
+            'surname': nom.surname.text,
+            'given': nom.find('given-names').text,
+        }
+    def do(mc):
+        return {
+            'journal': {
+                'name': mc.source.text,
+                'volume': mc.volume.text,
+                'fpage':  mc.fpage.text,
+                'lpage': mc.lpage.text,
+            },
+            'article': {
+                'title': mc.find('article-title').text,
+                'doi': mc.find('pub-id', attrs={'pub-id-type': 'doi'}).text,
+                'pub-date': map(int, ymd(soup)[::-1]),
+                'authors': map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents),
+            },
+        }
+    return map(do, mc_tags)
+
 def component_doi(soup):
     """
     Look for all object-id of pub-type-id = doi, these are the component DOI tags
