@@ -1,0 +1,17 @@
+[
+    {
+        "text": "<label>Competing interests:</label><p>RS receives funding from the Howard Hughes Medical Institute</p>", 
+        "id": "conf1", 
+        "fn-type": "conflict"
+    }, 
+    {
+        "text": "<p>FW receives funding from the Wellcome Trust</p>", 
+        "id": "conf2", 
+        "fn-type": "conflict"
+    }, 
+    {
+        "text": "<p>DW is employed by the Max Planck Society</p>", 
+        "id": "conf3", 
+        "fn-type": "conflict"
+    }
+]

@@ -1,0 +1,205 @@
+[
+    {
+        "surname": "Hladik", 
+        "corresp": "yes", 
+        "given-names": "Florian", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0002-0375-2764", 
+        "type": "author"
+    }, 
+    {
+        "surname": "Burgener", 
+        "given-names": "Adam", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Ballweber", 
+        "given-names": "Lamar", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Gottardo", 
+        "given-names": "Raphael", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Vojtech", 
+        "given-names": "Lucia", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Fourati", 
+        "given-names": "Slim", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Dai", 
+        "given-names": "James Y", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Cameron", 
+        "given-names": "Mark J", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Strobl", 
+        "given-names": "Johanna", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Hughes", 
+        "given-names": "Sean M", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Hoesley", 
+        "given-names": "Craig", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Andrew", 
+        "given-names": "Philip", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Johnson", 
+        "given-names": "Sherri", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Piper", 
+        "given-names": "Jeanna", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Friend", 
+        "given-names": "David R", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Ball", 
+        "given-names": "T Blake", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Cranston", 
+        "given-names": "Ross D", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Mayer", 
+        "given-names": "Kenneth H", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "McElrath", 
+        "given-names": "M Juliana", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "corresp": "yes", 
+        "surname": "McGowan", 
+        "given-names": "Ian", 
+        "type": "author", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }
+]

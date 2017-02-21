@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN" "JATS-archivearticle1.dtd">
+<!-- UPDATE: eLife is updating to the most recent version of JATS, 1.1
+UPDATE: this XML will be used to creat 4 templates for Magazine (Feature) content: Ediotiral, Insight, Feature 1a and Feature 1b-->
+<article article-type="article-commentary" dtd-version="1.1"
+    xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- 
+article-commentary - Insight
+UPDATE: xmlns:ali="http://www.niso.org/schemas/ali/1.0/" this name space is added in order to add the new license information (see permissions section)
+-->
+    <front>
+        <journal-meta>
+            <!-- journal-meta is standard for all articles published by eLife. Can be boilerplate text as this will not change from article to article.
+UPDATE: <journal-id journal-id-type="hwp">eLife</journal-id> has been removed - we are no longer hosted by HighWirePress so this is not required -->
+            <journal-id journal-id-type="nlm-ta">elife</journal-id>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            <journal-title-group>
+                <journal-title>eLife</journal-title>
+            </journal-title-group>
+            <issn pub-type="epub" publication-format="electronic">2050-084X</issn>
+            <publisher>
+                <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">00777</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00777</article-id>
+            <article-categories>
+                <subj-group subj-group-type="heading">
+                    <subject>Computational and Systems Biology</subject>
+                </subj-group>
+                <subj-group subj-group-type="heading">
+                    <subject>Genomics and Evolutionary Biology</subject>
+                </subj-group>
+                <!-- @subj-group-type "sub-display-channel" - This is the editorially defined header for this article and it is not from a predefined list. 
+        It is displayed in all caps on the PDF above the title. On the website it prefixes the article title, followed by a colon.-->
+                <subj-group subj-group-type="sub-display-channel">
+                    <subject>Bioinformatics</subject>
+                </subj-group>
+                <!-- @subj-group-type "display-channel" - eLife-defined article type, controlled list: Insight, Editorial, Feature-->
+                <subj-group subj-group-type="display-channel">
+                    <subject>Insight</subject>
+                </subj-group>
+            </article-categories>
+            <title-group>
+                <article-title>Selecting against accidental RNA interactions</article-title>
+            </title-group>
+            <!-- contrib group tagging now to mirror research content exactly, with the exception of new bio section-->
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes" id="author-65580">
+                    <name>
+                        <surname>Corley</surname>
+                        <given-names>Meredith</given-names>
+                    </name>
+                    <contrib-id contrib-id-type="orcid" authenticated="true">http://orcid.org/0000-0002-4485-5663</contrib-id>
+                    <email>mcorley@email.unc.edu</email>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="fn" rid="fn1">&#x2a;</xref>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <!-- bio has been added so the features team have a location to place the textual description of the author, role, affiliation and any thing else. 
+        This will require a new filed in Kriya for them to edit-->
+                    <bio>
+                        <p>Meredith Corley is in the Department of Biology, University of North
+                            Carolina, Chapel Hill, United States. She also likes knitting and has a
+                            dog.</p>
+                    </bio>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" id="author-54862">
+                    <name>
+                        <surname>Laderach</surname>
+                        <given-names>Alain</given-names>
+                    </name>
+                    <contrib-id contrib-id-type="orcid"
+                        authenticated="true">http://orcid.org/0000-0002-5088-9907</contrib-id>
+                    <email>alain@unc.edu</email>
+                    <!-- The <role> tag is used to indicate authors who are eLife Deputy, Senior or Reviewing editors, or members of the eLife staff -->
+                    <role>Reviewing Editor</role>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="aff" rid="aff2"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                    <!-- bio has been added so the features team have a location to place the textual description of the author, role, affiliation and any thing else. 
+        This will require a new filed in Kriya for them to edit. All <x> tags and punctiation outside the tags has been removed-->
+                    <bio>
+                        <p>Alain Laderach is an eLife Reviewing Editor and is in the Departments of Biology and Chemistry, University
+                            of North Carolina, Chapel Hill, United States. He's chair of something
+                            very important.</p>
+                    </bio>
+                </contrib>
+               <!-- 1) equal-contrib="yes" - can only be used if an author contributed equally with another author and this attribute must be present on both their contribs.
+                There is no limit on the number authors who can have equal contributions and there can be separate groups of equal contribution.
+                This is linked to a footnote via an xref.
+                UPDATE: The rid should be equal-contrib1, equal-contrib2 etc to indicate which equal contrib group each author is part of. Even if there is only one
+                group, the number suffix is still required.-->
+                <contrib contrib-type="author" id="author-1032" equal-contrib="yes">
+                    <name>
+                        <surname>Schekman</surname>
+                        <given-names>Randy</given-names>
+                    </name>
+                    <role>Editor-in-Chief</role>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="fn" rid="equal-contrib1">&#x2020;</xref>
+                    <bio>
+                        <p>Randy Schekman is eLife's Editor-In-Chief and a Howard Hughes Medical Institute investigator.</p>
+                    </bio>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" id="author-17333" equal-contrib="yes">
+                    <name>
+                        <surname>Teare</surname>
+                        <given-names>M Dawn</given-names>
+                    </name>
+                    <email>m.d.teare@sheffield.ac.uk</email>
+                    <role>Reviewing Editor</role>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <xref ref-type="fn" rid="equal-contrib1">&#x2020;</xref>
+                    <!-- bio has been added so the features team have a location to place the textual description of the author, role, affiliation and any thing else. 
+        This will require a new filed in Kriya for them to edit. All <x> tags and punctiation outside the tags has been removed-->
+                    <bio>
+                        <p>M Dawn Teare is an eLife Reviewing Editor and is in Sheffield School of
+                            Health and Related Research, University of Sheffield, Sheffield, United
+                            Kingdom.</p>
+                    </bio>
+                </contrib>
+                <aff id="aff1">
+                    <institution content-type="dept">Department of Biology</institution>
+                    <institution>University of North Carolina</institution>
+                    <addr-line>
+                        <named-content content-type="city">Chapel Hill</named-content>
+                    </addr-line>
+                    <country>United States</country>
+                </aff>
+                <aff id="aff2">
+                    <institution content-type="dept">Department of Chemistry</institution>
+                    <institution>University of North Carolina</institution>
+                    <addr-line>
+                        <named-content content-type="city">Chapel Hill</named-content>
+                    </addr-line>
+                    <country>United States</country>
+                </aff>
+            </contrib-group>
+            <author-notes>
+                <fn fn-type="con" id="equal-contrib1">
+                <label>&#x2020;</label>
+                <p>These authors contributed equally to this work</p>
+            </fn>
+                <fn fn-type="fn" id="fn1">
+                    <label>&#x2a;</label>
+                    <p>A free text footnote for this author</p>
+                </fn>
+            </author-notes>
+            <pub-date date-type="pub" publication-format="electronic">
+                <day>20</day>
+                <month>09</month>
+                <year>2016</year>
+            </pub-date>
+            <pub-date pub-type="collection">
+                <year>2016</year>
+            </pub-date>
+            <volume>5</volume>
+            <elocation-id>e00777</elocation-id>
+            <history>
+                <date date-type="received" iso-8601-date="2016-09-07">
+                    <day>07</day>
+                    <month>09</month>
+                    <year>2016</year>
+                </date>
+                <date date-type="accepted" iso-8601-date="2016-09-07">
+                    <day>07</day>
+                    <month>09</month>
+                    <year>2016</year>
+                </date>
+            </history>
+            <permissions>
+                <copyright-statement>&#x00A9; 2016, Corley and Laderach</copyright-statement>
+                <copyright-year>2016</copyright-year>
+                <copyright-holder>Corley Laderach</copyright-holder>
+                <ali:free_to_read/>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                    <ali:license_ref>http://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+                    <license-p>This article is distributed under the terms of the <ext-link
+                        ext-link-type="uri"
+                        xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative
+                        Commons Attribution License</ext-link>, which permits unrestricted use
+                        and redistribution provided that the original author and source are
+                        credited.</license-p>
+                </license>
+            </permissions>
+            <self-uri content-type="pdf" xlink:href="elife-00777.pdf"/>
+            <related-article ext-link-type="doi" id="ra1" related-article-type="commentary-article"
+                xlink:href="10.7554/eLife.00666"/>
+            <!-- Abstracts do not have DOIs -->
+            <abstract>
+                <p>Random base-pairing interactions between messenger RNAs and noncoding RNAs can
+                    reduce translation efficiency.</p>
+            </abstract>
+            <kwd-group kwd-group-type="author-keywords">
+                <title>Author Keywords</title>
+                <kwd>ncRNA</kwd>
+                <kwd>Archaea</kwd>
+                <kwd>Bacteria</kwd>
+                <kwd>gene expression</kwd>
+                <kwd>bioinformatics</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="research-organism">
+                <kwd>
+                    <italic>E. coli</italic>
+                </kwd>
+                <kwd>Other</kwd>
+            </kwd-group>
+        </article-meta>
+    </front>
+    <body>
+        <!-- The key info box only exists for Insights, template 1-->
+        <boxed-text>
+            <p><bold>Related research article</bold> Umu SU, Poole AM, Dobson RCJ, Gardner PP.
+                2016. Avoidance of stochastic RNA interactions can be harnessed to control protein
+                expression levels in bacteria and archaea. <italic>eLife</italic>
+                <bold>5</bold>:e13479. doi:<ext-link ext-link-type="uri"
+                    xlink:href="https://dx.doi.org/10.7554/eLife.13479"
+                    >10.7554/eLife.13479</ext-link></p>
+            <p><bold>Related research article</bold>PM,  Mike Boots.
+                2016. Avoidance of stochastic RNA interactions can be harnessed to control protein
+                expression levels in bacteria and archaea. <italic>eLife</italic>
+                <bold>5</bold>:e13479. doi:<ext-link ext-link-type="uri"
+                    xlink:href="https://dx.doi.org/10.7554/eLife.13479"
+                    >10.7554/eLife.13479</ext-link></p>
+        </boxed-text>
+        <!-- end of key info box. Only present for template 1 -->
+        <p>Feature content is different to the research content because it is "magazine"-style and is commissioned. 
+            There are distinct categories of eLife research content with different requirements.</p>
+            <sec id="s1">
+                <title>Level 1 heading</title>
+            <list list-type="bullet">
+                <list-item>
+                    <p>Editorials</p>
+                </list-item>
+                <list-item>
+                    <p>Insights</p>
+                </list-item>
+                <list-item>
+                    <p>Features</p>
+                </list-item>
+                <list-item>
+                    <p>Research features</p>
+                </list-item>
+            </list>       
+            <p>(<xref ref-type="bibr" rid="bib6">Maier et al., 2009</xref>;
+                <xref ref-type="bibr" rid="bib3">Guo et al., 2008</xref>; <xref ref-type="bibr" rid="bib7">Tuller et al., 2010</xref>; <xref
+                ref-type="bibr" rid="bib1">Ferreira et al., 2013</xref>; <xref ref-type="bibr"
+                rid="bib4">Kozak, 2005</xref>; <xref ref-type="bibr" rid="bib2">Gingold and Pilpel,
+                2011</xref>).</p>
+        <sec id="s1-1">
+            <title>Level 2 heading</title>
+        <list list-type="order">
+            <list-item>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor venenatis
+                    eros ut pharetra. Suspendisse id urna lacus. Aliquam a interdum sem. Nulla at
+                    scelerisque tellus. Maecenas semper ipsum ut tortor interdum lacinia. Nam
+                    commodo nibh rhoncus justo facilisis, nec finibus justo ultrices. Nam
+                    ullamcorper gravida felis, eu consectetur arcu fringilla nec. Morbi et lorem
+                    erat. Nullam suscipit tellus ac nibh accumsan tincidunt. Praesent ullamcorper,
+                    magna vitae ornare viverra, turpis arcu suscipit odio, at commodo nisi felis non
+                    mi. Cras accumsan justo eget urna maximus egestas.</p>
+            </list-item>
+            <list-item>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum in
+                    pulvinar leo. Integer nisi erat, blandit et erat ut, auctor pharetra massa.
+                    Vestibulum enim risus, vehicula at fermentum et, accumsan ut lorem. Ut egestas
+                    pretium aliquet. Vestibulum tortor ex, ultrices id eleifend eu, ullamcorper eu
+                    velit. Quisque in est nisi. Vivamus turpis tellus, placerat ac ex vitae,
+                    ullamcorper tincidunt velit. Curabitur sed eros eget ante feugiat auctor. Duis
+                    nec pharetra eros. Maecenas eget dignissim odio. Curabitur tincidunt et massa ut
+                    dignissim. Mauris euismod dui arcu, vel venenatis augue elementum at. Nam
+                    posuere consectetur dignissim. Aliquam erat volutpat. Here is an example of a url reference:
+                    <ext-link ext-link-type="uri" xlink:href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize"
+                        >Link to website</ext-link>.</p>
+            </list-item>
+            <list-item>
+                <p>Morbi volutpat porttitor purus in convallis. In arcu eros, aliquet vel sodales
+                    quis, pellentesque ut dolor. Vivamus efficitur velit in pellentesque pharetra.
+                    Mauris semper dignissim tellus sit amet tempor. Sed sapien nulla, vehicula a
+                    auctor sed, consectetur non nisi. Vestibulum ullamcorper semper diam, ac
+                    lobortis mauris suscipit nec. Pellentesque sollicitudin bibendum tellus sed
+                    euismod. Mauris aliquam laoreet tortor, non luctus dui convallis eu. Cras
+                    fringilla semper placerat. Aenean imperdiet pretium commodo. Pellentesque et sem
+                    viverra turpis convallis faucibus eu et velit. Quisque sed imperdiet turpis,
+                    eget feugiat leo. Maecenas ut aliquet dui. Mauris quis tellus risus.</p>
+            </list-item>
+            <list-item>
+                <p>Etiam arcu ex, porta eget sem vel, varius lobortis sapien. Integer dapibus sed
+                    elit sit amet blandit. Donec tincidunt ante nec posuere vehicula. In purus
+                    tortor, egestas a nibh eu, sollicitudin tincidunt ex. Praesent sodales tempor
+                    purus a imperdiet. Nunc quis ipsum in tortor tristique faucibus ut vel urna.
+                    Etiam a dui vestibulum, blandit purus sed, molestie tortor. Nam imperdiet eget
+                    sem sit amet rutrum. Nullam laoreet fermentum nunc vitae vulputate. Nulla
+                    placerat ornare tincidunt. Donec enim urna, egestas pretium neque ac, vulputate
+                    gravida lacus. Maecenas semper sit amet libero nec maximus.</p>
+            </list-item>
+        </list>
+            <sec id="s1-1-1">
+                <title>Level 3 heading</title>
+                <p>This section is present to show there is a level 3 heading required.</p>
+            </sec>
+        </sec>
+            </sec>
+                <sec id="s2">
+                    <title>Level 1 heading again</title>
+        <p>Now, in eLife, Paul Gardner of the University of Canterbury and colleagues – including
+            Sinan Umu (as first author), Anthony Poole and Renwick Dobson – report that the
+            translation efficiency in bacteria and archaea is influenced by a phenomenon called
+            "avoidance" (<xref ref-type="bibr" rid="bib8">Umu et al., 2016</xref>). Avoidance is the
+            degree to which an mRNA molecule avoids random interactions with noncoding RNA molecules
+            in the cell. Noncoding RNAs, as their name suggests, do not code for proteins, but they
+            still make up a majority of the RNA in any given cell. Indeed, the researchers show that
+            the levels of noncoding RNAs in bacterial cells are two orders of magnitude greater than
+            the levels of mRNAs.</p>
+                </sec>
+        <!-- Feature 1 content can contain Tables; no assets in Feature 1 content are assigned DOIs -->
+            <sec id="s3">
+                <title>Example of a table</title>
+                <p>This section has a table in it.</p>   
+                <table-wrap id="table1" position="float">
+            <label>Table 1.</label>
+            <caption>
+                    <title>This is the title.</title>
+                <p>This is the caption: A “snapshot” of the biomedical workforce from 2009.</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+                <thead>
+                    <tr>
+                        <th/>
+                        <th>Number</th>
+                        <th/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Biomedical PhD students</td>
+                        <td/>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td> Total number</td>
+                        <td>83,000</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td> Number who started PhDs</td>
+                        <td>16,000</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td> Number awarded PhDs</td>
+                        <td>9,000</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td> Number who started postdoc</td>
+                        <td>5,800</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td> Average time to PhD (years)</td>
+                        <td>6–7</td>
+                        <td/>
+                    </tr>
+                    <tr>
+                        <td>Post-PhD workforce</td>
+                        <td/>
+                        <td>%</td>
+                    </tr>
+                    <tr>
+                        <td> Scientific research</td>
+                        <td>84,500</td>
+                        <td>66</td>
+                    </tr>
+                    <tr>
+                        <td>  <italic>(Government research)</italic></td>
+                        <td>
+                            <italic>(7,000)</italic>
+                        </td>
+                        <td>
+                            <italic>(6)</italic>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>  <italic>(Academic research or teaching)</italic></td>
+                        <td>
+                            <italic>(55,000)</italic>
+                        </td>
+                        <td>
+                            <italic>(43)</italic>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>  <italic>(Industrial research)</italic></td>
+                        <td>
+                            <italic>(22,500)</italic>
+                        </td>
+                        <td>
+                            <italic>(18)</italic>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Related to science (not research)</td>
+                        <td>24,000</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td> Unrelated to science</td>
+                        <td>17,000</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td> Unemployed</td>
+                        <td>2,500</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>128,000</td>
+                        <td>100</td>
+                    </tr>
+                </tbody>
+            </table>
+                    <table-wrap-foot>
+                        <fn>
+                            <p>PhD, doctor of philosophy</p>
+                        </fn>
+                    </table-wrap-foot>
+        </table-wrap>
+        <disp-quote>
+            <p>Ultimately, we ask ourselves: does this manuscript constitute a substantial step
+                towards a clear answer to an important global health question?</p>
+        </disp-quote>
+        <p>To estimate the probability of random base-pairing interactions taking place between
+            mRNAs and noncoding RNAs, consider a five-base region in a single mRNA. This region can
+            have any one of a possible 4 <sup>∧</sup> 5=1024 sequences. If the total number of bases
+            from all the noncoding RNAs in the cell is S, then the number of noncoding RNAs in the
+            cell that have a perfectly complementary five-base region is approximately S/1024. Umu
+            et al. studied 325 noncoding RNAs so, assuming an average length of 200 bases for these,
+            we have S ≈ 325*200 ≈ 65000. Therefore, on average, the number of these noncoding RNAs
+            that have a five-base region that is perfectly complementary to the five-base region in
+            the mRNA will be 65000/1024 ≈ 63. Given the number of mRNAs and noncoding RNAs that are
+            found in cells, random interactions between the two are inevitable. However, if we find
+            that a given mRNA has base-pairing interactions with fewer noncoding RNAs than expected,
+            then this is avoidance (<xref ref-type="fig" rid="fig1">Figure 1</xref>).</p>
+        <boxed-text id="box1">
+            <label>Box 1.</label>
+            <caption>
+                <title>Making PhD programmes better and shorter</title>
+            </caption>
+            <p>To explore how things might be done differently, let us compare two highly
+                regarded PhD programmes—the Watson School of Biological Sciences at Cold Spring
+                Harbor Laboratory (CSHL), and the ‘Tetrad’ program at my own institution, the
+                University of California, San Francisco (UCSF)—with the average for all graduate
+                programmes. Two points stand out. First, significantly more of the students
+                entering the CSHL and UCSF programmes obtained PhDs, and significantly more also
+                opted for a career in research, which suggests that a large majority of
+                ‘average’ programmes recruit less able students and/or train them poorly.
+                Second, the time taken to obtain a PhD was notably shorter at CSHL—just 4.6
+                years, compared with 6.5 years at UCSF and 6–7 years on average.</p>
+        </boxed-text>
+        <!-- Assets are not assigned sub-DOIs. -->
+        <fig id="fig1" position="float">
+            <label>Figure 1.</label>
+            <caption>
+                <title>One column wide. Class A.</title>
+                <p>This figure should be typeset at the width of one text column.</p>
+            </caption>
+            <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00777-fig1.tif"/>
+            <!-- Where a credit is required for an image, this will be added using the <attrib> tag at the end of the figure block. 
+                This may or may not need to be a clickable link -->
+            <attrib>Image credit: <ext-link ext-link-type="uri" xlink:href="http://orcid.org/0000-0002-4485-5663">
+                Meredith Corley</ext-link></attrib>
+        </fig>
+        <p>Realistically, RNA binding interactions are governed by thermodynamics and do not always
+            follow strict pairing rules. Furthermore, RNA molecules can pair with themselves in
+            intra-molecular interactions and must “unfold” a given region in order to pair with
+            another molecule. Thus it is important to quantify mRNA-noncoding RNA interactions with
+            net "binding energy" calculations. The binding energy quantifies the thermodynamics of
+            RNA base-pairing, with low binding energies indicating very stable interactions. To
+            explore the phenomenon of avoidance, Umu et al. used a computational RNA interaction
+            model to estimate the binding energies for interactions between mRNAs and noncoding
+            RNAs. The RNAs include a core set of 114 mRNAs that are well conserved across bacteria
+            (including 40 that are also conserved across archaea) and 325 noncoding RNAs from six
+            families of RNA that are also well conserved across bacterial and archaeal species. </p>
+        <boxed-text id="box2">
+            <label>Box 2.</label>
+            <caption>
+                <title>Further resources</title>
+            </caption>
+            <p>Guidance on how to estimate sample sizes is available from a number of
+                organizations:</p>
+            <list list-type="simple">
+                <list-item>
+                    <p><bold><italic>Equator Network</italic></bold>. <ext-link ext-link-type="uri"
+                        xlink:href="http://www.equator-network.org"
+                        >http://www.equator-network.org</ext-link>
+                    </p>
+                </list-item>
+                <list-item>
+                    <p><bold><italic>Medical Research Council: Cognition and Brain Sciences Unit
+                    </italic></bold>. <ext-link ext-link-type="uri"
+                        xlink:href="http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize"
+                        >http://imaging.mrc-cbu.cam.ac.uk/statswiki/FAQ/effectSize</ext-link>
+                    </p>
+                </list-item>
+                <list-item>
+                    <p><bold><italic>National Centre for the Replacement, Refinement and Reduction
+                        of Animals in Research (NC3Rs)</italic></bold>. <ext-link
+                            ext-link-type="uri"
+                            xlink:href="https://www.nc3rs.org.uk/experimental-design"
+                            >https://www.nc3rs.org.uk/experimental-design</ext-link>
+                    </p>
+                </list-item>
+                <list-item>
+                    <p><bold><italic>National Institutes of Health</italic></bold>. <ext-link
+                        ext-link-type="uri"
+                        xlink:href="https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research"
+                        >
+                        https://www.nih.gov/research-training/rigor-reproducibility/principles-guidelines-reporting-preclinical-research</ext-link>
+                    </p>
+                </list-item>
+            </list>
+            <p>The <italic>eLife</italic> transparent reporting form is available in both <ext-link
+                ext-link-type="uri"
+                xlink:href="http://submit.elifesciences.org/html/transparent_reporting.docx"
+                >Word</ext-link> and <ext-link ext-link-type="uri"
+                    xlink:href="http://submit.elifesciences.org/html/transparent_reporting.pdf"
+                    >pdf</ext-link> formats.</p>
+        </boxed-text>
+        <p>They found that, on average, the interactions between the core noncoding RNAs and mRNAs
+            were weaker than the interactions between the noncoding RNAs and a control set. In other
+            words, they found that the average mRNA "avoids" interactions due to less stable pairing
+            with noncoding RNAs (<xref ref-type="fig" rid="fig1">Figure 1B</xref>; <xref
+                ref-type="other" rid="video1">Video 1</xref>). This trend holds true for over 70% of
+            the bacteria and archaea that they tested. There are, of course, noncoding RNAs whose
+            primary function is to bind to mRNAs, but these were excluded from the study. Instead,
+            the goal was to observe selection against <italic>accidental</italic> interactions
+            between mRNAs and the large and diverse set of noncoding RNAs that are resident in the
+            cell. </p>
+                    <fig id="fig2" position="float">
+                        <label>Figure 2.</label>
+                        <caption>
+                            <title>One column wide and the margin. Class B.</title>
+                            <p>This figure should be typeset at the width of one text column and the margin.</p>
+                        </caption>
+                        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00777-fig2.tif"/>
+                    </fig>
+                    <fig id="fig3" position="float">
+                        <label>Figure 3.</label>
+                        <caption>
+                            <title>Two column wide. Class C.</title>
+                            <p>This figure should be typeset at the width of both text columns.</p>
+                        </caption>
+                        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00777-fig3.tif"/>
+                    </fig>
+                    <fig id="fig4" position="float">
+                        <label>Figure 4.</label>
+                        <caption>
+                            <title>Two column wide and the margin. Class D.</title>
+                            <p>This figure should be typeset at the width of both text columns and the margin.</p>
+                        </caption>
+                        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00777-fig4.tif"/>
+                    </fig>
+        <!-- Videos: Like figures, they do not have DOIs.
+        UPDATE: This no longer required for videos: content-type="glencoe play-in-place height-250 width-310"  mime-subtype="wmv" mimetype="video"
+        UPDATE: changed id to videoX -->
+        <media mimetype="media" mime-subtype="mp4" id="video1" xlink:href="elife-00777-video1.mp4">
+            <label>Video 1.</label>
+            <caption>
+                <title>A descirption of the eLife editorial process.</title>
+            </caption>
+        </media>
+        <p>Umu et al. hypothesize that avoidance is due to the negative effect that the interactions
+            between mRNAs and noncoding RNA could have on translation efficiency: for example, if a
+            noncoding RNA pairs with a start codon in an mRNA, it will prevent translation from
+            taking place because the ribosome will not be able to bind to that mRNA (<xref
+                ref-type="fig" rid="fig1">Figure 1C</xref>). To test this hypothesis, the
+            researchers designed and synthesized a set of mRNAs with sequences that have high levels
+            of avoidance, and a set of mRNAs with low levels of avoidance. When they measured the
+            translation efficiency for both sets of mRNAs, they found that it was much higher for
+            the highly-avoidant set.</p>
+        <p>Umu et al. also synthesized different sets of mRNAs to explore two other factors that are
+            thought to influence translation efficiency: codon bias and the intra-mRNA folding
+            energy (<xref ref-type="bibr" rid="bib5">Kudla et al., 2009</xref>; <xref
+                ref-type="bibr" rid="bib7">Tuller et al., 2010</xref>). Both factors did cause some
+            variation in the production of protein, but avoidance was responsible for the most
+            variation. They also found the same correlation with avoidance when they studied
+            previously published measurements of bacterial translation efficiency. This suggests
+            that the ability of an mRNA to avoid interactions with noncoding RNAs is a hitherto
+            unknown, yet important factor affecting translation efficiency.</p>
+        <p>One notable aspect of this study is that it relied almost entirely on publicly available
+            data sets. This underscores the importance of open data for exploring basic biological
+            questions that apply to many different organisms. Using this data, which no single lab
+            could have collected alone, Umu et al. have shown that mRNA sequences are optimized to
+            minimize interactions with noncoding RNAs and have demonstrated why such avoidance is so
+            desirable. And the need to avoid spurious interactions is not unique to RNA: the
+            emergence of complex life depends on optimizing molecular interactions that lead to
+            reproduction in the midst of molecular chaos. Although networks of highly specific
+            molecular interactions are a hallmark of evolution, in many cases it is just as
+            important to avoid accidental interactions.</p>
+       
+        <p>By thinking more carefully and thoroughly about issues like sample sizes, replicates and
+            statistical analysis, by reporting the results of these considerations more fully, and
+            by making data and code available, researchers will increase the confidence of other
+            researchers and the wider world in the robustness and reliability of their published
+            work.</p>
+                </sec>
+        <sec id="s4">
+            <title>Note</title>
+            <p>Any footnotes for Feature content are treated as plain text and are not crosslinked anywhere with a sympol.</p>
+        </sec>
+    </body>
+    <back>
+        <!-- An Acknowledgements section is only occasionally present for Feature 1 content -->
+        <ack id="ack">
+            <title>Acknowledgements</title>
+            <p>We thank all the members of the EASAC Working Group: Goran Hermeren (Sweden), Ursula
+                Jenal (Switzerland), Hans Klenk (Germany), Andre Knottnerus (The Netherlands), Maria
+                Masucci (Sweden), John McCauley (UK), Thomas Mettenleiter (Germany), Giorgio Palu
+                (Italy), Gyorgy Posfai (Hungary), Bert Rima (Ireland), John Skehel (UK), and Simon
+                Wain-Hobson (France).</p>
+        </ack>
+        <fn-group content-type="competing-interest">
+            <title>Competing interests</title>
+            <fn fn-type="conflict" id="conf1">
+                <p>The other authors declare that no competing interests exist.</p>
+            </fn>
+            <fn fn-type="conflict" id="conf2">
+                <p>Alain Laderach works for a drug company.</p>
+            </fn>
+        </fn-group>
+        <ref-list>
+            <title>References</title>
+            <ref id="bib1">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Ferreira</surname>
+                            <given-names>JP</given-names>
+                        </name>
+                        <name>
+                            <surname>Overton</surname>
+                            <given-names>KW</given-names>
+                        </name>
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>CL</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2013">2013</year>
+                    <article-title>Tuning gene expression with synthetic upstream open reading
+                        frames</article-title>
+                    <source>PNAS</source>
+                    <volume>110</volume>
+                    <fpage>11284</fpage>
+                    <lpage>11289</lpage>
+                    <pub-id pub-id-type="doi">10.1073/pnas.1305590110</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib2">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Gingold</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Pilpel</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2011">2011</year>
+                    <article-title>Determinants of translation efficiency and
+                        accuracy</article-title>
+                    <source>Molecular Systems Biology</source>
+                    <volume>7</volume>
+                    <elocation-id>481</elocation-id>
+                    <pub-id pub-id-type="doi">10.1038/msb.2011.14</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib3">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Guo</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>Xiao</surname>
+                            <given-names>P</given-names>
+                        </name>
+                        <name>
+                            <surname>Lei</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Deng</surname>
+                            <given-names>F</given-names>
+                        </name>
+                        <name>
+                            <surname>Xiao</surname>
+                            <given-names>GG</given-names>
+                        </name>
+                        <name>
+                            <surname>Liu</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>Chen</surname>
+                            <given-names>X</given-names>
+                        </name>
+                        <name>
+                            <surname>Li</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Wu</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Chen</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>Jiang</surname>
+                            <given-names>H</given-names>
+                        </name>
+                        <name>
+                            <surname>Tan</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Xie</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Zhu</surname>
+                            <given-names>X</given-names>
+                        </name>
+                        <name>
+                            <surname>Liang</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Deng</surname>
+                            <given-names>H</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2008">2008</year>
+                    <article-title>How is mRNA expression predictive for protein expression? A
+                        correlation study on human circulating monocytes</article-title>
+                    <source>Acta Biochimica Et Biophysica Sinica</source>
+                    <volume>40</volume>
+                    <fpage>426</fpage>
+                    <lpage>436</lpage>
+                    <pub-id pub-id-type="doi">10.1111/j.1745-7270.2008.00418.x</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib4">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Kozak</surname>
+                            <given-names>M</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2005">2005</year>
+                    <article-title>Regulation of translation via mRNA structure in prokaryotes and
+                        eukaryotes</article-title>
+                    <source>Gene</source>
+                    <volume>361</volume>
+                    <fpage>13</fpage>
+                    <lpage>37</lpage>
+                    <pub-id pub-id-type="doi">10.1016/j.gene.2005.06.037</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib5">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Kudla</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Murray</surname>
+                            <given-names>AW</given-names>
+                        </name>
+                        <name>
+                            <surname>Tollervey</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Plotkin</surname>
+                            <given-names>JB</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2009">2009</year>
+                    <article-title>Coding-sequence determinants of gene expression in Escherichia
+                        coli</article-title>
+                    <source>Science</source>
+                    <volume>324</volume>
+                    <fpage>255</fpage>
+                    <lpage>258</lpage>
+                    <pub-id pub-id-type="doi">10.1126/science.1170160</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib6">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Maier</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Güell</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Serrano</surname>
+                            <given-names>L</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2009">2009</year>
+                    <article-title>Correlation of mRNA and protein in complex biological
+                        samples</article-title>
+                    <source>FEBS Letters</source>
+                    <volume>583</volume>
+                    <fpage>3966</fpage>
+                    <lpage>3973</lpage>
+                    <pub-id pub-id-type="doi">10.1016/j.febslet.2009.10.036</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib7">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Tuller</surname>
+                            <given-names>T</given-names>
+                        </name>
+                        <name>
+                            <surname>Waldman</surname>
+                            <given-names>YY</given-names>
+                        </name>
+                        <name>
+                            <surname>Kupiec</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Ruppin</surname>
+                            <given-names>E</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2010">2010</year>
+                    <article-title>Translation efficiency is determined by both codon bias and
+                        folding energy</article-title>
+                    <source>PNAS</source>
+                    <volume>107</volume>
+                    <fpage>3645</fpage>
+                    <lpage>3650</lpage>
+                    <pub-id pub-id-type="doi">10.1073/pnas.0909910107</pub-id>
+                </element-citation>
+            </ref>
+            <ref id="bib8">
+                <element-citation publication-type="journal">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Umu</surname>
+                            <given-names>SU</given-names>
+                        </name>
+                        <name>
+                            <surname>Poole</surname>
+                            <given-names>AM</given-names>
+                        </name>
+                        <name>
+                            <surname>Dobson</surname>
+                            <given-names>RCJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Gardner</surname>
+                            <given-names>PP</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2016">2016</year>
+                    <article-title>Avoidance of stochastic RNA interactions can be harnessed to
+                        control protein expression levels in bacteria and archaea</article-title>
+                    <source>eLife</source>
+                    <volume>5</volume>
+                    <elocation-id>e13479</elocation-id>
+                    <pub-id pub-id-type="doi">10.7554/eLife.13479</pub-id>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
+</article>
+

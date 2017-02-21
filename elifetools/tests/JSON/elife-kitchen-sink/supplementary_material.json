@@ -1,0 +1,57 @@
+[
+    {
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "label": "Figure 1\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Figure 1\u2014source data 1.", 
+        "id": "SD1-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00013.004"
+    }, 
+    {
+        "ordinal": 2, 
+        "sibling_ordinal": 1, 
+        "label": "Table 1\u2014source data 1.", 
+        "asset": "data", 
+        "full_label": "Table 1\u2014source data 1.", 
+        "id": "SD2-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00013.008"
+    }, 
+    {
+        "ordinal": 3, 
+        "sibling_ordinal": 1, 
+        "label": "Supplementary file 1.", 
+        "asset": "supp", 
+        "full_label": "Supplementary file 1.", 
+        "id": "SD3-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00013.031"
+    }, 
+    {
+        "ordinal": 4, 
+        "sibling_ordinal": 2, 
+        "label": "Reporting Standard", 
+        "asset": "supp", 
+        "full_label": "Reporting Standard", 
+        "id": "SD4-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00013.032"
+    }, 
+    {
+        "ordinal": 5, 
+        "sibling_ordinal": 1, 
+        "label": "Source code 1", 
+        "asset": "code", 
+        "full_label": "Source code 1", 
+        "id": "SD5-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00013.033"
+    }
+]

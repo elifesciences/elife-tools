@@ -6,14 +6,20 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 """
 
+def article_meta(soup):
+    return first(extract_nodes(soup, "article-meta"))
+
 def article_title(soup):
     return first(extract_nodes(soup, "article-title"))
 
 def title(soup):
     return first(extract_nodes(soup, "title"))
 
-def abstract(soup):
-    return extract_nodes(soup, "abstract")
+def abstract(soup, abstract_type=None):
+    if abstract_type:
+        return extract_nodes(soup, "abstract", attr="abstract-type", value=abstract_type)
+    else:
+        return extract_nodes(soup, "abstract")
 
 def article_id(soup, pub_id_type):
     return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)
@@ -30,7 +36,7 @@ def publisher_id(soup):
 
 def journal_id(soup):
     # the first non-nil tag
-    return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "hwp"))
+    return firstnn(extract_nodes(soup, "journal-id", attr = "journal-id-type", value = "publisher-id"))
 
 def journal_title(soup):
     return first(extract_nodes(soup, "journal-title"))
@@ -71,7 +77,9 @@ def acknowledgements(soup):
     return first(extract_nodes(soup, "ack"))
 
 def conflict(soup):
-    return extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags = extract_nodes(soup, "fn", attr = "fn-type", value = "conflict")
+    conflict_tags += extract_nodes(soup, "fn", attr = "fn-type", value = "COI-statement")
+    return conflict_tags
 
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
@@ -83,14 +91,18 @@ def article_permissions(soup):
     return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
 
 def licence(soup):
-    return first(extract_nodes(soup, "license"))
+    return extract_nodes(soup, "license")
 
 def licence_p(soup):
-    return first(extract_nodes(licence(soup), "license-p"))
+    return extract_nodes(soup, "license-p")
 
 def licence_url(soup):
     "License url attribute of the license tag"
-    return licence(soup).get("xlink:href")
+    if licence(soup):
+        return first(licence(soup)).get("xlink:href")
+
+def attrib(soup):
+    return extract_nodes(soup, "attrib")
 
 def copyright_statement(soup):
     return first(extract_nodes(soup, "copyright-statement"))
@@ -157,12 +169,18 @@ def custom_meta(soup, meta_name=None):
 def display_channel(soup):
     return (subject_area(soup, subject_group_type = "display-channel"))
 
+def sub_display_channel(soup):
+    return (subject_area(soup, subject_group_type = "sub-display-channel"))
+
 def category(soup):
     return (subject_area(soup, subject_group_type = "heading"))
 
 def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
+
+def mixed_citations(soup):
+    return extract_nodes(soup, 'mixed-citation')
 
 def related_object(soup):
     return extract_nodes(soup, "related-object")
@@ -177,12 +195,18 @@ def contributors(soup):
     return extract_nodes(soup, "contrib")
 
 def article_contributors(soup):
-    contributor_tags = extract_nodes(soup, ["contrib","on-behalf-of"])
-    return filter(lambda tag: tag.parent.name == "contrib-group"
-                        and tag.parent.parent.name == "article-meta", contributor_tags)
+    article_meta_tag = article_meta(soup)
+    if article_meta_tag:
+        contributor_tags = extract_nodes(article_meta_tag, ["contrib","on-behalf-of"])
+        return filter(lambda tag: tag.parent.name == "contrib-group", contributor_tags)
+    else:
+        return None
 
 def authors(soup, contrib_type = "author"):
-    return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    if contrib_type:
+        return extract_nodes(soup, "contrib", attr = "contrib-type", value = contrib_type)
+    else:
+        return extract_nodes(soup, "contrib")
 
 def caption(soup):
     return first(extract_nodes(soup, "caption"))
@@ -192,6 +216,12 @@ def author_notes(soup):
 
 def corresp(soup):
     return extract_nodes(soup, "corresp")
+
+def fn_group(soup, content_type=None):
+    if content_type:
+        return extract_nodes(soup, "fn-group", attr="content-type", value=content_type)
+    else:
+        return extract_nodes(soup, "fn-group")
 
 def fn(soup):
     return extract_nodes(soup, "fn")
@@ -217,6 +247,15 @@ def supplementary_material(soup):
 
 def contrib_id(soup):
     return extract_nodes(soup, "contrib-id")
+
+def email(soup):
+    return extract_nodes(soup, "email")
+
+def phone(soup):
+    return extract_nodes(soup, "phone")
+
+def bio(soup):
+    return extract_nodes(soup, "bio")
 
 #
 # references
@@ -251,3 +290,142 @@ def comment(soup):
 
 def element_citation(soup):
     return extract_nodes(soup, "element-citation")
+
+def etal(soup):
+    return extract_nodes(soup, "etal")
+
+def pub_id(soup, pub_id_type=None):
+    if pub_id_type:
+        return extract_nodes(soup, "pub-id", attr="pub-id-type", value=pub_id_type)
+    else:
+        return extract_nodes(soup, "pub-id")
+
+def source(soup):
+    return extract_nodes(soup, "source")
+
+def person_group(soup):
+    return extract_nodes(soup, "person-group")
+
+def surname(soup):
+    return extract_nodes(soup, "surname")
+
+def given_names(soup):
+    return extract_nodes(soup, "given-names")
+
+def suffix(soup):
+    return extract_nodes(soup, "suffix")
+
+def ext_link(soup, ext_link_type=None):
+    if ext_link_type:
+        return extract_nodes(soup, "ext-link", attr="ext-link-type", value=ext_link_type)
+    else:
+        return extract_nodes(soup, "ext-link")
+
+def uri(soup):
+    return extract_nodes(soup, "uri")
+
+def edition(soup):
+    return extract_nodes(soup, "edition")
+
+def version(soup):
+    return extract_nodes(soup, "version")
+
+def chapter_title(soup):
+    return extract_nodes(soup, "chapter-title")
+
+def data_title(soup):
+    return extract_nodes(soup, "data-title")
+
+def conf_name(soup):
+    return extract_nodes(soup, "conf-name")
+
+def date_in_citation(soup):
+    return extract_nodes(soup, "date-in-citation")
+
+def patent(soup):
+    return extract_nodes(soup, "patent")
+
+#
+# back
+#
+
+def back(soup):
+    return first(extract_nodes(soup, "back"))
+
+def app_group(soup):
+    return extract_nodes(soup, "app-group")
+
+def app(soup):
+    return extract_nodes(soup, "app")
+
+
+#
+# body
+#
+
+def body(soup):
+    return extract_nodes(soup, "body")
+
+def article_body(soup):
+    return first(extract_nodes(soup, "body"))
+
+def sub_article(soup, article_type=None):
+    return extract_nodes(soup, "sub-article", attr = "article-type", value = article_type)
+
+def decision_letter(soup):
+    return first(sub_article(soup, "article-commentary"))
+
+def author_response(soup):
+    return first(sub_article(soup, "reply"))
+
+def section(soup, sec_type=None):
+    if sec_type:
+        return extract_nodes(soup, "sec", attr="sec-type", value=sec_type)
+    else:
+        return extract_nodes(soup, "sec")
+
+def paragraph(soup):
+    return extract_nodes(soup, "p")
+
+def table(soup):
+    return extract_nodes(soup, "table")
+
+def table_wrap_foot(soup):
+    return extract_nodes(soup, "table-wrap-foot")
+
+def disp_formula(soup):
+    return extract_nodes(soup, "disp-formula")
+
+def math(soup):
+    return extract_nodes(soup, "math")
+    
+def boxed_text(soup):
+    return extract_nodes(soup, "boxed-text")
+
+def fig(soup):
+    return extract_nodes(soup, "fig")
+
+def fig_group(soup):
+    return extract_nodes(soup, "fig-group")
+
+def list(soup):
+    return extract_nodes(soup, "list")
+
+def list_item(soup):
+    return extract_nodes(soup, "list-item")
+
+#
+# funding
+#
+
+def funding_group(soup):
+    return extract_nodes(soup, "funding-group")
+
+def award_group(soup):
+    return extract_nodes(soup, "award-group")
+
+def principal_award_recipient(soup):
+    return extract_nodes(soup, "principal-award-recipient")
+
+def string_name(soup):
+    return extract_nodes(soup, "string-name")

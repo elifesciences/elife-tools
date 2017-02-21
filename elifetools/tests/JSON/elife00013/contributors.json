@@ -1,0 +1,183 @@
+[
+    {
+        "surname": "Alegado", 
+        "given-names": "Rosanna A", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-1668"
+    }, 
+    {
+        "surname": "Brown", 
+        "given-names": "Laura W", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-3"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-1669"
+    }, 
+    {
+        "surname": "Cao", 
+        "given-names": "Shugeng", 
+        "type": "author", 
+        "id": "author-1670", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Dermenjian", 
+        "given-names": "Renee K", 
+        "type": "author", 
+        "id": "author-1671", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Zuzow", 
+        "given-names": "Richard", 
+        "type": "author", 
+        "id": "author-1672", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Fairclough", 
+        "given-names": "Stephen R", 
+        "type": "author", 
+        "id": "author-1673", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-6"
+            ]
+        }
+    }, 
+    {
+        "surname": "Clardy", 
+        "corresp": "yes", 
+        "given-names": "Jon", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1060"
+    }, 
+    {
+        "surname": "King", 
+        "corresp": "yes", 
+        "given-names": "Nicole", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-5"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1274"
+    }, 
+    {
+        "role": "Reviewing editor", 
+        "surname": "Greenberg", 
+        "given-names": "Peter", 
+        "type": "editor", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "University of Washington"
+            }
+        ]
+    }
+]

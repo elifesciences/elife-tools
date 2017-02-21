@@ -1,0 +1,3923 @@
+[
+    {
+        "article_title": "PHENIX: a comprehensive Python-based system for macromolecular structure solution", 
+        "lpage": "221", 
+        "doi": "10.1107/S0907444909052925", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Adams", 
+                "given-names": "PD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Afonine", 
+                "given-names": "PV", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bunk\u00f3czi", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "VB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Davis", 
+                "given-names": "IW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Echols", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Headd", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hung", 
+                "given-names": "LW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kapral", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grosse-Kunstleve", 
+                "given-names": "RW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "McCoy", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moriarty", 
+                "given-names": "NW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Oeffner", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Read", 
+                "given-names": "RJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Terwilliger", 
+                "given-names": "TC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zwart", 
+                "given-names": "PH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PHENIX: a comprehensive Python-based system for macromolecular structure solution", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "Acta Crystallographica Section D Biological Crystallography", 
+        "reference_id": "10.1107/S0907444909052925", 
+        "fpage": "213", 
+        "year": "2010", 
+        "position": 1, 
+        "ref": "AdamsPDAfoninePVBunk\u00f3cziGChenVBDavisIWEcholsNHeaddJJHungLWKapralGJGrosse-KunstleveRWMcCoyAJMoriartyNWOeffnerRReadRJRichardsonDCRichardsonJSTerwilligerTCZwartPH2010PHENIX: a comprehensive Python-based system for macromolecular structure solutionActa Crystallographica Section D Biological Crystallography6621322110.1107/S0907444909052925", 
+        "id": "bib1"
+    }, 
+    {
+        "article_title": "Basic local alignment search tool", 
+        "lpage": "410", 
+        "doi": "10.1016/S0022-2836(05)80360-2", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Altschul", 
+                "given-names": "SF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gish", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Myers", 
+                "given-names": "EW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lipman", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Basic local alignment search tool", 
+        "publication-type": "journal", 
+        "volume": "215", 
+        "source": "Journal of Molecular Biology", 
+        "reference_id": "10.1016/S0022-2836(05)80360-2", 
+        "fpage": "403", 
+        "year": "1990", 
+        "position": 2, 
+        "ref": "AltschulSFGishWMillerWMyersEWLipmanDJ1990Basic local alignment search toolJournal of Molecular Biology21540341010.1016/S0022-2836(05)80360-2", 
+        "id": "bib2"
+    }, 
+    {
+        "article_title": "Approximate likelihood-ratio test for branches: a fast, accurate, and powerful alternative", 
+        "lpage": "552", 
+        "doi": "10.1080/10635150600755453", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Anisimova", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gascuel", 
+                "given-names": "O", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Approximate likelihood-ratio test for branches: a fast, accurate, and powerful alternative", 
+        "publication-type": "journal", 
+        "volume": "55", 
+        "source": "Systematic Biology", 
+        "reference_id": "10.1080/10635150600755453", 
+        "fpage": "539", 
+        "year": "2006", 
+        "position": 3, 
+        "ref": "AnisimovaMGascuelO2006Approximate likelihood-ratio test for branches: a fast, accurate, and powerful alternativeSystematic Biology5553955210.1080/10635150600755453", 
+        "id": "bib3"
+    }, 
+    {
+        "article_title": "PlasmoDB: a functional genomic database for malaria parasites", 
+        "lpage": "D543", 
+        "doi": "10.1093/nar/gkn814", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Aurrecoechea", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brestelli", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brunk", 
+                "given-names": "BP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dommer", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fischer", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gajria", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gingle", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grant", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Harb", 
+                "given-names": "OS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heiges", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Innamorato", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iodice", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kissinger", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kraemer", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Li", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Nayak", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pennington", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pinney", 
+                "given-names": "DF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roos", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ross", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stoeckert", 
+                "given-names": "CJ", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Treatman", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PlasmoDB: a functional genomic database for malaria parasites", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkn814", 
+        "fpage": "D539", 
+        "year": "2009", 
+        "position": 4, 
+        "ref": "AurrecoecheaCBrestelliJBrunkBPDommerJFischerSGajriaBGaoXGingleAGrantGHarbOSHeigesMInnamoratoFIodiceJKissingerJCKraemerELiWMillerJANayakVPenningtonCPinneyDFRoosDSRossCStoeckertCJJnrTreatmanCWangH2009PlasmoDB: a functional genomic database for malaria parasitesNucleic Acids Research37D539D54310.1093/nar/gkn814", 
+        "id": "bib4"
+    }, 
+    {
+        "article_title": "The presence of a histidine-aspartic acid pair in the active site of 2-hydroxyacid dehydrogenases. X-ray refinement of cytoplasmic malate dehydrogenase", 
+        "lpage": "482", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Birktoft", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Banaszak", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The presence of a histidine-aspartic acid pair in the active site of 2-hydroxyacid dehydrogenases. X-ray refinement of cytoplasmic malate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "258", 
+        "source": "The Journal of Biological Chemistry", 
+        "fpage": "472", 
+        "year": "1983", 
+        "position": 5, 
+        "ref": "BirktoftJJBanaszakLJ1983The presence of a histidine-aspartic acid pair in the active site of 2-hydroxyacid dehydrogenases. X-ray refinement of cytoplasmic malate dehydrogenaseThe Journal of Biological Chemistry258472482", 
+        "id": "bib5"
+    }, 
+    {
+        "article_title": "The SWISS-PROT protein knowledgebase and its supplement TrEMBL in 2003", 
+        "lpage": "370", 
+        "doi": "10.1093/nar/gkg095", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Boeckmann", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bairoch", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Apweiler", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Blatter", 
+                "given-names": "MC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Estreicher", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gasteiger", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martin", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Michoud", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "O'Donovan", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Phan", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pilbout", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schneider", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The SWISS-PROT protein knowledgebase and its supplement TrEMBL in 2003", 
+        "publication-type": "journal", 
+        "volume": "31", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkg095", 
+        "fpage": "365", 
+        "year": "2003", 
+        "position": 6, 
+        "ref": "BoeckmannBBairochAApweilerRBlatterMCEstreicherAGasteigerEMartinMJMichoudKO'DonovanCPhanIPilboutSSchneiderM2003The SWISS-PROT protein knowledgebase and its supplement TrEMBL in 2003Nucleic Acids Research3136537010.1093/nar/gkg095", 
+        "id": "bib6"
+    }, 
+    {
+        "article_title": "Evolution of a new function by degenerative mutation in cephalochordate steroid receptors", 
+        "doi": "10.1371/journal.pgen.1000191", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Bridgham", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brown", 
+                "given-names": "JE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rodriguez-Mari", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Catchen", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of a new function by degenerative mutation in cephalochordate steroid receptors", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "PLOS Genetics", 
+        "reference_id": "10.1371/journal.pgen.1000191", 
+        "fpage": "e1000191", 
+        "year": "2008", 
+        "position": 7, 
+        "ref": "BridghamJTBrownJERodriguez-MariACatchenJMThorntonJW2008Evolution of a new function by degenerative mutation in cephalochordate steroid receptorsPLOS Genetics4e100019110.1371/journal.pgen.1000191", 
+        "id": "bib8"
+    }, 
+    {
+        "article_title": "Evolution of hormone-receptor complexity by molecular exploitation", 
+        "lpage": "101", 
+        "doi": "10.1126/science.1123348", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Bridgham", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Carroll", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of hormone-receptor complexity by molecular exploitation", 
+        "publication-type": "journal", 
+        "volume": "312", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1123348", 
+        "fpage": "97", 
+        "year": "2006", 
+        "position": 8, 
+        "ref": "BridghamJTCarrollSMThorntonJW2006Evolution of hormone-receptor complexity by molecular exploitationScience3129710110.1126/science.1123348", 
+        "id": "bib7"
+    }, 
+    {
+        "article_title": "Comparative structural analysis and kinetic properties of lactate dehydrogenases from the four species of human malarial parasites", 
+        "lpage": "6229", 
+        "doi": "10.1021/bi049892w", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Brown", 
+                "given-names": "WM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yowell", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hoard", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vander Jagt", 
+                "given-names": "TA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hunsaker", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deck", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Royer", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Piper", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dame", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Makler", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vander Jagt", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Comparative structural analysis and kinetic properties of lactate dehydrogenases from the four species of human malarial parasites", 
+        "publication-type": "journal", 
+        "volume": "43", 
+        "source": "Biochemistry", 
+        "reference_id": "10.1021/bi049892w", 
+        "fpage": "6219", 
+        "year": "2004", 
+        "position": 9, 
+        "ref": "BrownWMYowellCAHoardAVander JagtTAHunsakerLADeckLMRoyerREPiperRCDameJBMaklerMTVander JagtDL2004Comparative structural analysis and kinetic properties of lactate dehydrogenases from the four species of human malarial parasitesBiochemistry436219622910.1021/bi049892w", 
+        "id": "bib9"
+    }, 
+    {
+        "article_title": "Expression of Plasmodium falciparum lactate-dehydrogenase in Escherichia coli", 
+        "lpage": "166", 
+        "doi": "10.1016/0166-6851(93)90016-Q", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Bzik", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fox", 
+                "given-names": "BA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gonyer", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Expression of <italic>Plasmodium falciparum</italic> lactate-dehydrogenase in <italic>Escherichia coli</italic>", 
+        "publication-type": "journal", 
+        "volume": "59", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/0166-6851(93)90016-Q", 
+        "fpage": "155", 
+        "year": "1993", 
+        "position": 10, 
+        "ref": "BzikDJFoxBAGonyerK1993Expression of Plasmodium falciparum lactate-dehydrogenase in Escherichia coliMolecular and Biochemical Parasitology5915516610.1016/0166-6851(93)90016-Q", 
+        "id": "bib10"
+    }, 
+    {
+        "article_title": "Identification and activity of a series of azole-based compounds with lactate dehydrogenase-directed anti-malarial activity", 
+        "lpage": "31439", 
+        "doi": "10.1074/jbc.M402433200", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Cameron", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Read", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tranter", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Winter", 
+                "given-names": "VJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sessions", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vivas", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Easton", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kendrick", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Croft", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barros", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lavandera", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Martin", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Risco", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Garc\u00eda-Ochoa", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gamo", 
+                "given-names": "FJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sanz", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leon", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ruiz", 
+                "given-names": "JR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gabarr\u00f3", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mallo", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "G\u00f3mez de las Heras", 
+                "given-names": "F", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Identification and activity of a series of azole-based compounds with lactate dehydrogenase-directed anti-malarial activity", 
+        "publication-type": "journal", 
+        "volume": "279", 
+        "source": "Journal of Biological Chemistry", 
+        "reference_id": "10.1074/jbc.M402433200", 
+        "fpage": "31429", 
+        "year": "2004", 
+        "position": 11, 
+        "ref": "CameronAReadJTranterRWinterVJSessionsRBBradyRLVivasLEastonAKendrickHCroftSLBarrosDLavanderaJLMartinJJRiscoFGarc\u00eda-OchoaSGamoFJSanzLLeonLRuizJRGabarr\u00f3RMalloAG\u00f3mez de las HerasF2004Identification and activity of a series of azole-based compounds with lactate dehydrogenase-directed anti-malarial activityJournal of Biological Chemistry279314293143910.1074/jbc.M402433200", 
+        "id": "bib11"
+    }, 
+    {
+        "article_title": "Evolution of hormone signaling in elasmobranchs by exploitation of promiscuous receptors", 
+        "lpage": "2652", 
+        "doi": "10.1093/molbev/msn204", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Carroll", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bridgham", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of hormone signaling in elasmobranchs by exploitation of promiscuous receptors", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/molbev/msn204", 
+        "fpage": "2643", 
+        "year": "2008", 
+        "position": 12, 
+        "ref": "CarrollSMBridghamJTThorntonJW2008Evolution of hormone signaling in elasmobranchs by exploitation of promiscuous receptorsMolecular Biology and Evolution252643265210.1093/molbev/msn204", 
+        "id": "bib12"
+    }, 
+    {
+        "article_title": "Mechanisms for the evolution of a derived function in the ancestral glucocorticoid receptor", 
+        "doi": "10.1371/journal.pgen.1002117", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Carroll", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ortlund", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mechanisms for the evolution of a derived function in the ancestral glucocorticoid receptor", 
+        "publication-type": "journal", 
+        "volume": "7", 
+        "source": "PLOS Genetics", 
+        "reference_id": "10.1371/journal.pgen.1002117", 
+        "fpage": "e1002117", 
+        "year": "2011", 
+        "position": 13, 
+        "ref": "CarrollSMOrtlundEAThorntonJW2011Mechanisms for the evolution of a derived function in the ancestral glucocorticoid receptorPLOS Genetics7e100211710.1371/journal.pgen.1002117", 
+        "id": "bib13"
+    }, 
+    {
+        "article_title": "Cloning, sequencing, and expression in Escherichia coli of the gene coding for malate dehydrogenase of the extremely halophilic archaebacterium Haloarcula marismortui", 
+        "lpage": "4313", 
+        "doi": "10.1021/bi00067a020", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Cendrin", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chroboczek", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zaccai", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Eisenberg", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mevarech", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Cloning, sequencing, and expression in <italic>Escherichia coli</italic> of the gene coding for malate dehydrogenase of the extremely halophilic archaebacterium Haloarcula marismortui", 
+        "publication-type": "journal", 
+        "volume": "32", 
+        "source": "Biochemistry", 
+        "reference_id": "10.1021/bi00067a020", 
+        "fpage": "4308", 
+        "year": "1993", 
+        "position": 14, 
+        "ref": "CendrinFChroboczekJZaccaiGEisenbergHMevarechM1993Cloning, sequencing, and expression in Escherichia coli of the gene coding for malate dehydrogenase of the extremely halophilic archaebacterium Haloarcula marismortuiBiochemistry324308431310.1021/bi00067a020", 
+        "id": "bib14"
+    }, 
+    {
+        "article_title": "The ASTRAL Compendium in 2004", 
+        "lpage": "D192", 
+        "doi": "10.1093/nar/gkh034", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Chandonia", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hon", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walker", 
+                "given-names": "NS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lo Conte", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Koehl", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Levitt", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brenner", 
+                "given-names": "SE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The ASTRAL Compendium in 2004", 
+        "publication-type": "journal", 
+        "volume": "32", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkh034", 
+        "fpage": "D189", 
+        "year": "2004", 
+        "position": 15, 
+        "ref": "ChandoniaJMHonGWalkerNSLo ConteLKoehlPLevittMBrennerSE2004The ASTRAL Compendium in 2004Nucleic Acids Research32D189D19210.1093/nar/gkh034", 
+        "id": "bib15"
+    }, 
+    {
+        "article_title": "Structural basis of substrate specificity in malate dehydrogenases: crystal structure of a ternary complex of porcine cytoplasmic malate dehydrogenase, alpha-ketomalonate and tetrahydoNAD", 
+        "lpage": "712", 
+        "doi": "10.1006/jmbi.1998.2357", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Chapman", 
+                "given-names": "AD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cortes", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dafforn", 
+                "given-names": "TR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Structural basis of substrate specificity in malate dehydrogenases: crystal structure of a ternary complex of porcine cytoplasmic malate dehydrogenase, alpha-ketomalonate and tetrahydoNAD", 
+        "publication-type": "journal", 
+        "volume": "285", 
+        "source": "Journal of Molecular Biology", 
+        "reference_id": "10.1006/jmbi.1998.2357", 
+        "fpage": "703", 
+        "year": "1999", 
+        "position": 16, 
+        "ref": "ChapmanADCortesADaffornTRClarkeARBradyRL1999Structural basis of substrate specificity in malate dehydrogenases: crystal structure of a ternary complex of porcine cytoplasmic malate dehydrogenase, alpha-ketomalonate and tetrahydoNADJournal of Molecular Biology28570371210.1006/jmbi.1998.2357", 
+        "id": "bib16"
+    }, 
+    {
+        "article_title": "A highly-active decarboxylating dehydrogenase with rationally inverted coenzyme specificity", 
+        "lpage": "11670", 
+        "doi": "10.1073/pnas.92.25.11666", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Chen", 
+                "given-names": "RD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Greer", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dean", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A highly-active decarboxylating dehydrogenase with rationally inverted coenzyme specificity", 
+        "publication-type": "journal", 
+        "volume": "92", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.92.25.11666", 
+        "fpage": "11666", 
+        "year": "1995", 
+        "position": 17, 
+        "ref": "ChenRDGreerADeanAM1995A highly-active decarboxylating dehydrogenase with rationally inverted coenzyme specificityProceedings of the National Academy of Sciences of the United States of America92116661167010.1073/pnas.92.25.11666", 
+        "id": "bib17"
+    }, 
+    {
+        "article_title": "MolProbity: all-atom structure validation for macromolecular crystallography", 
+        "lpage": "21", 
+        "doi": "10.1107/S0907444909042073", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Chen", 
+                "given-names": "VB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arendall", 
+                "given-names": "WB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Headd", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keedy", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Immormino", 
+                "given-names": "RM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kapral", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murray", 
+                "given-names": "LW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "MolProbity: all-atom structure validation for macromolecular crystallography", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "Acta Crystallographica Section D Biological Crystallography", 
+        "reference_id": "10.1107/S0907444909042073", 
+        "fpage": "12", 
+        "year": "2010", 
+        "position": 18, 
+        "ref": "ChenVBArendallWBHeaddJJKeedyDAImmorminoRMKapralGJMurrayLWRichardsonJSRichardsonDC2010MolProbity: all-atom structure validation for macromolecular crystallographyActa Crystallographica Section D Biological Crystallography66122110.1107/S0907444909042073", 
+        "id": "bib18"
+    }, 
+    {
+        "article_title": "Site-directed mutagenesis reveals role of mobile arginine residue in lactate dehydrogenase catalysis", 
+        "lpage": "702", 
+        "doi": "10.1038/324699a0", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wigley", 
+                "given-names": "DB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Site-directed mutagenesis reveals role of mobile arginine residue in lactate dehydrogenase catalysis", 
+        "publication-type": "journal", 
+        "volume": "324", 
+        "source": "Nature", 
+        "reference_id": "10.1038/324699a0", 
+        "fpage": "699", 
+        "year": "1986", 
+        "position": 19, 
+        "ref": "ClarkeARWigleyDBChiaWNBarstowDAtkinsonTHolbrookJJ1986Site-directed mutagenesis reveals role of mobile arginine residue in lactate dehydrogenase catalysisNature32469970210.1038/324699a0", 
+        "id": "bib19"
+    }, 
+    {
+        "article_title": "An investigation of the contribution made by the carboxylate group of an active site histidine-aspartate couple to binding and catalysis in lactate dehydrogenase", 
+        "lpage": "1622", 
+        "doi": "10.1021/bi00405a034", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilks", 
+                "given-names": "HM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An investigation of the contribution made by the carboxylate group of an active site histidine-aspartate couple to binding and catalysis in lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Biochemistry", 
+        "reference_id": "10.1021/bi00405a034", 
+        "fpage": "1617", 
+        "year": "1988", 
+        "position": 20, 
+        "ref": "ClarkeARWilksHMBarstowDAAtkinsonTChiaWNHolbrookJJ1988An investigation of the contribution made by the carboxylate group of an active site histidine-aspartate couple to binding and catalysis in lactate dehydrogenaseBiochemistry271617162210.1021/bi00405a034", 
+        "id": "bib20"
+    }, 
+    {
+        "article_title": "Turning a hobby into a job: how duplicated genes find new functions", 
+        "lpage": "950", 
+        "doi": "10.1038/nrg2482", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Conant", 
+                "given-names": "GC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wolfe", 
+                "given-names": "KH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Turning a hobby into a job: how duplicated genes find new functions", 
+        "publication-type": "journal", 
+        "volume": "9", 
+        "source": "Nature Reviews, Genetics", 
+        "reference_id": "10.1038/nrg2482", 
+        "fpage": "938", 
+        "year": "2008", 
+        "position": 21, 
+        "ref": "ConantGCWolfeKH2008Turning a hobby into a job: how duplicated genes find new functionsNature Reviews, Genetics993895010.1038/nrg2482", 
+        "id": "bib21"
+    }, 
+    {
+        "article_title": "Mapping the binding site for gossypol-like inhibitors of Plasmodium falciparum lactate dehydrogenase", 
+        "lpage": "148", 
+        "doi": "10.1016/j.molbiopara.2005.03.015", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Conners", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schambach", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Read", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cameron", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sessions", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vivas", 
+                "given-names": "L", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Easton", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Croft", 
+                "given-names": "SL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mapping the binding site for gossypol-like inhibitors of <italic>Plasmodium falciparum</italic> lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "142", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/j.molbiopara.2005.03.015", 
+        "fpage": "137", 
+        "year": "2005", 
+        "position": 22, 
+        "ref": "ConnersRSchambachFReadJCameronASessionsRBVivasLEastonACroftSLBradyRL2005Mapping the binding site for gossypol-like inhibitors of Plasmodium falciparum lactate dehydrogenaseMolecular and Biochemical Parasitology14213714810.1016/j.molbiopara.2005.03.015", 
+        "id": "bib22"
+    }, 
+    {
+        "article_title": "The kinetic properties and sensitivities to inhibitors of lactate dehydrogenases (LDH1 and LDH2) from Toxoplasma gondii: comparisons with pLDH from Plasmodium falciparum", 
+        "lpage": "32", 
+        "doi": "10.1016/S0166-6851(01)00360-7", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Dando", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schroeder", 
+                "given-names": "ER", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hunsaker", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deck", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Royer", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhou", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Parmley", 
+                "given-names": "SF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vander Jagt", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The kinetic properties and sensitivities to inhibitors of lactate dehydrogenases (LDH1 and LDH2) from Toxoplasma gondii: comparisons with pLDH from Plasmodium falciparum", 
+        "publication-type": "journal", 
+        "volume": "118", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/S0166-6851(01)00360-7", 
+        "fpage": "23", 
+        "year": "2001", 
+        "position": 23, 
+        "ref": "DandoCSchroederERHunsakerLADeckLMRoyerREZhouXParmleySFVander JagtDL2001The kinetic properties and sensitivities to inhibitors of lactate dehydrogenases (LDH1 and LDH2) from Toxoplasma gondii: comparisons with pLDH from Plasmodium falciparumMolecular and Biochemical Parasitology118233210.1016/S0166-6851(01)00360-7", 
+        "id": "bib24"
+    }, 
+    {
+        "article_title": "MolProbity: all-atom contacts and structure validation for proteins and nucleic acids", 
+        "lpage": "W383", 
+        "doi": "10.1093/nar/gkm216", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Davis", 
+                "given-names": "IW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Leaver-Fay", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "VB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Block", 
+                "given-names": "JN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kapral", 
+                "given-names": "GJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Murray", 
+                "given-names": "LW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arendall", 
+                "given-names": "WB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Snoeyink", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Richardson", 
+                "given-names": "DC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "MolProbity: all-atom contacts and structure validation for proteins and nucleic acids", 
+        "publication-type": "journal", 
+        "volume": "35", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkm216", 
+        "fpage": "W375", 
+        "year": "2007", 
+        "position": 24, 
+        "ref": "DavisIWLeaver-FayAChenVBBlockJNKapralGJWangXMurrayLWArendallWBSnoeyinkJRichardsonJSRichardsonDC2007MolProbity: all-atom contacts and structure validation for proteins and nucleic acidsNucleic Acids Research35W375W38310.1093/nar/gkm216", 
+        "id": "bib25"
+    }, 
+    {
+        "article_title": "Escape from adaptive conflict after duplication in an anthocyanin pathway gene", 
+        "lpage": "765", 
+        "doi": "10.1038/nature07092", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Des Marais", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rausher", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Escape from adaptive conflict after duplication in an anthocyanin pathway gene", 
+        "publication-type": "journal", 
+        "volume": "454", 
+        "source": "Nature", 
+        "reference_id": "10.1038/nature07092", 
+        "fpage": "762", 
+        "year": "2008", 
+        "position": 25, 
+        "ref": "Des MaraisDLRausherMD2008Escape from adaptive conflict after duplication in an anthocyanin pathway geneNature45476276510.1038/nature07092", 
+        "id": "bib26"
+    }, 
+    {
+        "article_title": "Better models by discarding data?", 
+        "lpage": "1222", 
+        "doi": "10.1107/S0907444913001121", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Diederichs", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Karplus", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Better models by discarding data?", 
+        "publication-type": "journal", 
+        "volume": "69", 
+        "source": "Acta Crystallographica Section D, Biological Crystallography", 
+        "reference_id": "10.1107/S0907444913001121", 
+        "fpage": "1215", 
+        "year": "2013", 
+        "position": 26, 
+        "ref": "DiederichsKKarplusPA2013Better models by discarding data?Acta Crystallographica Section D, Biological Crystallography691215122210.1107/S0907444913001121", 
+        "id": "bib27"
+    }, 
+    {
+        "article_title": "The timing of eukaryotic evolution: does a relaxed molecular clock reconcile proteins and fossils?", 
+        "lpage": "15391", 
+        "doi": "10.1073/pnas.0403984101", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Douzery", 
+                "given-names": "EJP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Snell", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bapteste", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Delsuc", 
+                "given-names": "F", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Philippe", 
+                "given-names": "H", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The timing of eukaryotic evolution: does a relaxed molecular clock reconcile proteins and fossils?", 
+        "publication-type": "journal", 
+        "volume": "101", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.0403984101", 
+        "fpage": "15386", 
+        "year": "2004", 
+        "position": 27, 
+        "ref": "DouzeryEJPSnellEABaptesteEDelsucFPhilippeH2004The timing of eukaryotic evolution: does a relaxed molecular clock reconcile proteins and fossils?Proceedings of the National Academy of Sciences of the United States of America101153861539110.1073/pnas.0403984101", 
+        "id": "bib28"
+    }, 
+    {
+        "article_title": "The structure of lactate dehydrogenase from Plasmodium falciparum reveals a new target for anti-malarial design", 
+        "lpage": "915", 
+        "doi": "10.1038/nsb1196-912", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Dunn", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Banfield", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barker", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Higham", 
+                "given-names": "CW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Moreton", 
+                "given-names": "KM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Turgut-Balik", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The structure of lactate dehydrogenase from <italic>Plasmodium falciparum</italic> reveals a new target for anti-malarial design", 
+        "publication-type": "journal", 
+        "volume": "3", 
+        "source": "Nature Structural Biology", 
+        "reference_id": "10.1038/nsb1196-912", 
+        "fpage": "912", 
+        "year": "1996", 
+        "position": 28, 
+        "ref": "DunnCRBanfieldMJBarkerJJHighamCWMoretonKMTurgut-BalikDBradyRLHolbrookJJ1996The structure of lactate dehydrogenase from Plasmodium falciparum reveals a new target for anti-malarial designNature Structural Biology391291510.1038/nsb1196-912", 
+        "id": "bib29"
+    }, 
+    {
+        "article_title": "MUSCLE: multiple sequence alignment with high accuracy and high throughput", 
+        "lpage": "1797", 
+        "doi": "10.1093/nar/gkh340", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Edgar", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "MUSCLE: multiple sequence alignment with high accuracy and high throughput", 
+        "publication-type": "journal", 
+        "volume": "32", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkh340", 
+        "fpage": "1792", 
+        "year": "2004", 
+        "position": 29, 
+        "ref": "EdgarRC2004MUSCLE: multiple sequence alignment with high accuracy and high throughputNucleic Acids Research321792179710.1093/nar/gkh340", 
+        "id": "bib30"
+    }, 
+    {
+        "article_title": "Features and development of Coot", 
+        "lpage": "501", 
+        "doi": "10.1107/S0907444910007493", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Emsley", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lohkamp", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scott", 
+                "given-names": "WG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cowtan", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Features and development of Coot", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "Acta Crystallographica Section D Biological Crystallography", 
+        "reference_id": "10.1107/S0907444910007493", 
+        "fpage": "486", 
+        "year": "2010", 
+        "position": 30, 
+        "ref": "EmsleyPLohkampBScottWGCowtanK2010Features and development of CootActa Crystallographica Section D Biological Crystallography6648650110.1107/S0907444910007493", 
+        "id": "bib31"
+    }, 
+    {
+        "article_title": "Structural adaptations of lactate-dehydrogenase isozymes", 
+        "lpage": "2681", 
+        "doi": "10.1073/pnas.74.7.2677", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Eventoff", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rossmann", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Taylor", 
+                "given-names": "SS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Torff", 
+                "given-names": "HJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Meyer", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keil", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kiltz", 
+                "given-names": "HH", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Structural adaptations of lactate-dehydrogenase isozymes", 
+        "publication-type": "journal", 
+        "volume": "74", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.74.7.2677", 
+        "fpage": "2677", 
+        "year": "1977", 
+        "position": 31, 
+        "ref": "EventoffWRossmannMGTaylorSSTorffHJMeyerHKeilWKiltzHH1977Structural adaptations of lactate-dehydrogenase isozymesProceedings of the National Academy of Sciences of the United States of America742677268110.1073/pnas.74.7.2677", 
+        "id": "bib32"
+    }, 
+    {
+        "article_title": "Deletion variants of L-hydroxyisocaproate dehydrogenase. Probing substrate specificity", 
+        "lpage": "863", 
+        "doi": "10.1111/j.1432-1033.1994.tb19062.x", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Feil", 
+                "given-names": "IK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lerch", 
+                "given-names": "HP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Schomburg", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Deletion variants of L-hydroxyisocaproate dehydrogenase. Probing substrate specificity", 
+        "publication-type": "journal", 
+        "volume": "223", 
+        "source": "European Journal of Biochemistry", 
+        "reference_id": "10.1111/j.1432-1033.1994.tb19062.x", 
+        "fpage": "857", 
+        "year": "1994", 
+        "position": 32, 
+        "ref": "FeilIKLerchHPSchomburgD1994Deletion variants of L-hydroxyisocaproate dehydrogenase. Probing substrate specificityEuropean Journal of Biochemistry22385786310.1111/j.1432-1033.1994.tb19062.x", 
+        "id": "bib33"
+    }, 
+    {
+        "article_title": "Abundance of intrinsically unstructured proteins in P. falciparum and other apicomplexan parasite proteomes", 
+        "lpage": "267", 
+        "doi": "10.1016/j.molbiopara.2006.08.011", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Feng", 
+                "given-names": "ZP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhang", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Han", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arora", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Anders", 
+                "given-names": "RF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Norton", 
+                "given-names": "RS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Abundance of intrinsically unstructured proteins in <italic>P. falciparum</italic> and other apicomplexan parasite proteomes", 
+        "publication-type": "journal", 
+        "volume": "150", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/j.molbiopara.2006.08.011", 
+        "fpage": "256", 
+        "year": "2006", 
+        "position": 33, 
+        "ref": "FengZPZhangXHanPAroraNAndersRFNortonRS2006Abundance of intrinsically unstructured proteins in P. falciparum and other apicomplexan parasite proteomesMolecular and Biochemical Parasitology15025626710.1016/j.molbiopara.2006.08.011", 
+        "id": "bib34"
+    }, 
+    {
+        "article_title": "Preservation of duplicate genes by complementary, degenerative mutations", 
+        "lpage": "1545", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Force", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lynch", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pickett", 
+                "given-names": "FB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Amores", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Yan", 
+                "given-names": "YL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Postlethwait", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Preservation of duplicate genes by complementary, degenerative mutations", 
+        "publication-type": "journal", 
+        "volume": "151", 
+        "source": "Genetics", 
+        "fpage": "1531", 
+        "year": "1999", 
+        "position": 34, 
+        "ref": "ForceALynchMPickettFBAmoresAYanYLPostlethwaitJ1999Preservation of duplicate genes by complementary, degenerative mutationsGenetics15115311545", 
+        "id": "bib35"
+    }, 
+    {
+        "article_title": "ToxoDB: an integrated Toxoplasma gondii database resource", 
+        "lpage": "D556", 
+        "doi": "10.1093/nar/gkm981", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Gajria", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bahl", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brestelli", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dommer", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fischer", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Heiges", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Iodice", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kissinger", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mackey", 
+                "given-names": "AJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Pinney", 
+                "given-names": "DF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roos", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stoeckert", 
+                "given-names": "CJ", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brunk", 
+                "given-names": "BP", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "ToxoDB: an integrated Toxoplasma gondii database resource", 
+        "publication-type": "journal", 
+        "volume": "36", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkm981", 
+        "fpage": "D553", 
+        "year": "2008", 
+        "position": 35, 
+        "ref": "GajriaBBahlABrestelliJDommerJFischerSGaoXHeigesMIodiceJKissingerJCMackeyAJPinneyDFRoosDSStoeckertCJJnrWangHBrunkBP2008ToxoDB: an integrated Toxoplasma gondii database resourceNucleic Acids Research36D553D55610.1093/nar/gkm981", 
+        "id": "bib36"
+    }, 
+    {
+        "publisher_loc": "Belmont, CA", 
+        "edition": "3rd edition", 
+        "article_doi": "10.7554/eLife.02304", 
+        "publisher_name": "Thomson Brooks/Cole", 
+        "year": "2005", 
+        "publication-type": "book", 
+        "source": "Biochemistry", 
+        "authors": [
+            {
+                "surname": "Garrett", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grisham", 
+                "given-names": "CM", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 36, 
+        "ref": "GarrettRGrishamCM2005BiochemistryBelmont, CAThomson Brooks/Cole3rd edition", 
+        "id": "bib37"
+    }, 
+    {
+        "article_title": "The structural basis of molecular adaptation", 
+        "lpage": "369", 
+        "doi": "10.1093/oxfordjournals.molbev.a025932", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Golding", 
+                "given-names": "GB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dean", 
+                "given-names": "AM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The structural basis of molecular adaptation", 
+        "publication-type": "journal", 
+        "volume": "15", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/oxfordjournals.molbev.a025932", 
+        "fpage": "355", 
+        "year": "1998", 
+        "position": 37, 
+        "ref": "GoldingGBDeanAM1998The structural basis of molecular adaptationMolecular Biology and Evolution1535536910.1093/oxfordjournals.molbev.a025932", 
+        "id": "bib38"
+    }, 
+    {
+        "article_title": "Substrate and cofactor specificity and selective inhibition of lactate dehydrogenase from the malarial parasite P falciparum", 
+        "lpage": "246", 
+        "doi": "10.1016/S0166-6851(97)00140-0", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Gomez", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Piper", 
+                "given-names": "RC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hunsaker", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Royer", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deck", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Makler", 
+                "given-names": "MT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vander Jagt", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Substrate and cofactor specificity and selective inhibition of lactate dehydrogenase from the malarial parasite <italic>P falciparum</italic>", 
+        "publication-type": "journal", 
+        "volume": "90", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/S0166-6851(97)00140-0", 
+        "fpage": "235", 
+        "year": "1997", 
+        "position": 38, 
+        "ref": "GomezMSPiperRCHunsakerLARoyerREDeckLMMaklerMTVander JagtDL1997Substrate and cofactor specificity and selective inhibition of lactate dehydrogenase from the malarial parasite P falciparumMolecular and Biochemical Parasitology9023524610.1016/S0166-6851(97)00140-0", 
+        "id": "bib39"
+    }, 
+    {
+        "article_title": "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0", 
+        "lpage": "321", 
+        "doi": "10.1093/sysbio/syq010", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Guindon", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dufayard", 
+                "given-names": "JF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lefort", 
+                "given-names": "V", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Anisimova", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hordijk", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gascuel", 
+                "given-names": "O", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0", 
+        "publication-type": "journal", 
+        "volume": "59", 
+        "source": "Systematic Biology", 
+        "reference_id": "10.1093/sysbio/syq010", 
+        "fpage": "307", 
+        "year": "2010", 
+        "position": 39, 
+        "ref": "GuindonSDufayardJFLefortVAnisimovaMHordijkWGascuelO2010New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0Systematic Biology5930732110.1093/sysbio/syq010", 
+        "id": "bib40"
+    }, 
+    {
+        "article_title": "Analyzing protein structure and function using ancestral gene reconstruction", 
+        "lpage": "366", 
+        "doi": "10.1016/j.sbi.2010.03.005", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Harms", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Analyzing protein structure and function using ancestral gene reconstruction", 
+        "publication-type": "journal", 
+        "volume": "20", 
+        "source": "Current Opinion in Structural Biology", 
+        "reference_id": "10.1016/j.sbi.2010.03.005", 
+        "fpage": "360", 
+        "year": "2010", 
+        "position": 40, 
+        "ref": "HarmsMJThorntonJW2010Analyzing protein structure and function using ancestral gene reconstructionCurrent Opinion in Structural Biology2036036610.1016/j.sbi.2010.03.005", 
+        "id": "bib41"
+    }, 
+    {
+        "article_title": "The importance of arginine 171 in substrate binding by Bacillus stearothermophilus lactate dehydrogenase", 
+        "lpage": "353", 
+        "doi": "10.1016/0006-291X(87)90731-5", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Hart", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wigley", 
+                "given-names": "DB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The importance of arginine 171 in substrate binding by Bacillus stearothermophilus lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "146", 
+        "source": "Biochemical and Biophysical Research Communications", 
+        "reference_id": "10.1016/0006-291X(87)90731-5", 
+        "fpage": "346", 
+        "year": "1987a", 
+        "position": 41, 
+        "ref": "HartKWClarkeARWigleyDBChiaWNBarstowDAAtkinsonTHolbrookJJ1987aThe importance of arginine 171 in substrate binding by Bacillus stearothermophilus lactate dehydrogenaseBiochemical and Biophysical Research Communications14634635310.1016/0006-291X(87)90731-5", 
+        "id": "bib42"
+    }, 
+    {
+        "article_title": "A strong carboxylate-arginine interaction is important in substrate orientation and recognition in lactate dehydrogenase", 
+        "lpage": "298", 
+        "doi": "10.1016/0167-4838(87)90289-5", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Hart", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wigley", 
+                "given-names": "DB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Waldman", 
+                "given-names": "AD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Jones", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A strong carboxylate-arginine interaction is important in substrate orientation and recognition in lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "914", 
+        "source": "Biochimica et Biophysica Acta", 
+        "reference_id": "10.1016/0167-4838(87)90289-5", 
+        "fpage": "294", 
+        "year": "1987b", 
+        "position": 42, 
+        "ref": "HartKWClarkeARWigleyDBWaldmanADChiaWNBarstowDAAtkinsonTJonesJBHolbrookJJ1987bA strong carboxylate-arginine interaction is important in substrate orientation and recognition in lactate dehydrogenaseBiochimica et Biophysica Acta91429429810.1016/0167-4838(87)90289-5", 
+        "id": "bib43"
+    }, 
+    {
+        "article_title": "CryptoDB: a Cryptosporidium bioinformatics resource update", 
+        "lpage": "D422", 
+        "doi": "10.1093/nar/gkj078", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Heiges", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Robinson", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Aurrecoechea", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gao", 
+                "given-names": "X", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kaluskar", 
+                "given-names": "N", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rhodes", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wang", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "He", 
+                "given-names": "CZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Su", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kraemer", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kissinger", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "CryptoDB: a Cryptosporidium bioinformatics resource update", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkj078", 
+        "fpage": "D419", 
+        "year": "2006", 
+        "position": 43, 
+        "ref": "HeigesMWangHRobinsonEAurrecoecheaCGaoXKaluskarNRhodesPWangSHeCZSuYMillerJKraemerEKissingerJC2006CryptoDB: a Cryptosporidium bioinformatics resource updateNucleic Acids Research34D419D42210.1093/nar/gkj078", 
+        "id": "bib44"
+    }, 
+    {
+        "article_title": "The evolution of gene duplications: classifying and distinguishing between models", 
+        "lpage": "108", 
+        "doi": "10.1038/nrg2689", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Innan", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kondrashov", 
+                "given-names": "F", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The evolution of gene duplications: classifying and distinguishing between models", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nature Reviews, Genetics", 
+        "reference_id": "10.1038/nrg2689", 
+        "fpage": "97", 
+        "year": "2010", 
+        "position": 44, 
+        "ref": "InnanHKondrashovF2010The evolution of gene duplications: classifying and distinguishing between modelsNature Reviews, Genetics119710810.1038/nrg2689", 
+        "id": "bib45"
+    }, 
+    {
+        "article_title": "Reconstrusting the evolutionary history of the artiodactyl ribonuclease superfamily", 
+        "lpage": "59", 
+        "doi": "10.1038/374057a0", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Jermann", 
+                "given-names": "TM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Opitz", 
+                "given-names": "JG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Stackhouse", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Benner", 
+                "given-names": "SA", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Reconstrusting the evolutionary history of the artiodactyl ribonuclease superfamily", 
+        "publication-type": "journal", 
+        "volume": "374", 
+        "source": "Nature", 
+        "reference_id": "10.1038/374057a0", 
+        "fpage": "57", 
+        "year": "1995", 
+        "position": 45, 
+        "ref": "JermannTMOpitzJGStackhouseJBennerSA1995Reconstrusting the evolutionary history of the artiodactyl ribonuclease superfamilyNature374575910.1038/374057a0", 
+        "id": "bib46"
+    }, 
+    {
+        "article_title": "Xds", 
+        "lpage": "132", 
+        "doi": "10.1107/S0907444909047337", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Kabsch", 
+                "given-names": "W", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Xds", 
+        "publication-type": "journal", 
+        "volume": "66", 
+        "source": "Acta Crystallographica Section D Biological Crystallography", 
+        "reference_id": "10.1107/S0907444909047337", 
+        "fpage": "125", 
+        "year": "2010", 
+        "position": 46, 
+        "ref": "KabschW2010XdsActa Crystallographica Section D Biological Crystallography6612513210.1107/S0907444909047337", 
+        "id": "bib85"
+    }, 
+    {
+        "article_title": "Linking crystallographic model and data quality", 
+        "lpage": "1033", 
+        "doi": "10.1126/science.1218231", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Karplus", 
+                "given-names": "PA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diederichs", 
+                "given-names": "K", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Linking crystallographic model and data quality", 
+        "publication-type": "journal", 
+        "volume": "336", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1218231", 
+        "fpage": "1030", 
+        "year": "2012", 
+        "position": 47, 
+        "ref": "KarplusPADiederichsK2012Linking crystallographic model and data qualityScience3361030103310.1126/science.1218231", 
+        "id": "bib47"
+    }, 
+    {
+        "article_title": "Structure of Toxoplasma gondii LDH1: active-site differences from human lactate dehydrogenases and the structural basis for efficient APAD(+) use", 
+        "lpage": "889", 
+        "doi": "10.1021/bi035108g", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Kavanagh", 
+                "given-names": "KL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Elling", 
+                "given-names": "RA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilson", 
+                "given-names": "DK", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Structure of Toxoplasma gondii LDH1: active-site differences from human lactate dehydrogenases and the structural basis for efficient APAD(+) use", 
+        "publication-type": "journal", 
+        "volume": "43", 
+        "source": "Biochemistry", 
+        "reference_id": "10.1021/bi035108g", 
+        "fpage": "879", 
+        "year": "2004", 
+        "position": 48, 
+        "ref": "KavanaghKLEllingRAWilsonDK2004Structure of Toxoplasma gondii LDH1: active-site differences from human lactate dehydrogenases and the structural basis for efficient APAD(+) useBiochemistry4387988910.1021/bi035108g", 
+        "id": "bib48"
+    }, 
+    {
+        "article_title": "Protein structure prediction on the Web: a case study using the Phyre server", 
+        "lpage": "371", 
+        "doi": "10.1038/nprot.2009.2", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Kelley", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sternberg", 
+                "given-names": "MJE", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Protein structure prediction on the Web: a case study using the Phyre server", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "Nature Protocols", 
+        "reference_id": "10.1038/nprot.2009.2", 
+        "fpage": "363", 
+        "year": "2009", 
+        "position": 49, 
+        "ref": "KelleyLASternbergMJE2009Protein structure prediction on the Web: a case study using the Phyre serverNature Protocols436337110.1038/nprot.2009.2", 
+        "id": "bib49"
+    }, 
+    {
+        "article_title": "Genome cartography: charting the apicomplexan genome", 
+        "lpage": "354", 
+        "doi": "10.1016/j.pt.2011.03.006", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Kissinger", 
+                "given-names": "JC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "DeBarry", 
+                "given-names": "J", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genome cartography: charting the apicomplexan genome", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Trends in Parasitology", 
+        "reference_id": "10.1016/j.pt.2011.03.006", 
+        "fpage": "345", 
+        "year": "2011", 
+        "position": 50, 
+        "ref": "KissingerJCDeBarryJ2011Genome cartography: charting the apicomplexan genomeTrends in Parasitology2734535410.1016/j.pt.2011.03.006", 
+        "id": "bib50"
+    }, 
+    {
+        "article_title": "Detecting internal inconsistencies in distance data", 
+        "lpage": "403", 
+        "doi": "10.2307/2413204", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Lanyon", 
+                "given-names": "SM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Detecting internal inconsistencies in distance data", 
+        "publication-type": "journal", 
+        "volume": "34", 
+        "source": "Systematic Zoology", 
+        "reference_id": "10.2307/2413204", 
+        "fpage": "397", 
+        "year": "1985", 
+        "position": 51, 
+        "ref": "LanyonSM1985Detecting internal inconsistencies in distance dataSystematic Zoology3439740310.2307/2413204", 
+        "id": "bib51"
+    }, 
+    {
+        "article_title": "An improved general amino acid replacement matrix", 
+        "lpage": "1320", 
+        "doi": "10.1093/molbev/msn067", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Le", 
+                "given-names": "SQ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gascuel", 
+                "given-names": "O", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "An improved general amino acid replacement matrix", 
+        "publication-type": "journal", 
+        "volume": "25", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/molbev/msn067", 
+        "fpage": "1307", 
+        "year": "2008", 
+        "position": 52, 
+        "ref": "LeSQGascuelO2008An improved general amino acid replacement matrixMolecular Biology and Evolution251307132010.1093/molbev/msn067", 
+        "id": "bib52"
+    }, 
+    {
+        "article_title": "The evolutionary fate and consequences of duplicate genes", 
+        "lpage": "1155", 
+        "doi": "10.1126/science.290.5494.1151", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Lynch", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Conery", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The evolutionary fate and consequences of duplicate genes", 
+        "publication-type": "journal", 
+        "volume": "290", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.290.5494.1151", 
+        "fpage": "1151", 
+        "year": "2000", 
+        "position": 53, 
+        "ref": "LynchMConeryJS2000The evolutionary fate and consequences of duplicate genesScience2901151115510.1126/science.290.5494.1151", 
+        "id": "bib53"
+    }, 
+    {
+        "article_title": "Evolution of Cryptosporidium parvum lactate dehydrogenase from malate dehydrogenase by a very recent event of gene duplication", 
+        "lpage": "497", 
+        "doi": "10.1093/molbev/msh042", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Madern", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cai", 
+                "given-names": "XM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abrahamsen", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Evolution of Cryptosporidium parvum lactate dehydrogenase from malate dehydrogenase by a very recent event of gene duplication", 
+        "publication-type": "journal", 
+        "volume": "21", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/molbev/msh042", 
+        "fpage": "489", 
+        "year": "2004", 
+        "position": 54, 
+        "ref": "MadernDCaiXMAbrahamsenMSZhuG2004Evolution of Cryptosporidium parvum lactate dehydrogenase from malate dehydrogenase by a very recent event of gene duplicationMolecular Biology and Evolution2148949710.1093/molbev/msh042", 
+        "id": "bib54"
+    }, 
+    {
+        "article_title": "Molecular evolution within the L-malate and L-lactate dehydrogenase super-family", 
+        "lpage": "840", 
+        "doi": "10.1007/s00239-001-0088-8", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Madern", 
+                "given-names": "D", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Molecular evolution within the L-malate and L-lactate dehydrogenase super-family", 
+        "publication-type": "journal", 
+        "volume": "54", 
+        "source": "Journal of Molecular Evolution", 
+        "reference_id": "10.1007/s00239-001-0088-8", 
+        "fpage": "825", 
+        "year": "2002", 
+        "position": 55, 
+        "ref": "MadernD2002Molecular evolution within the L-malate and L-lactate dehydrogenase super-familyJournal of Molecular Evolution5482584010.1007/s00239-001-0088-8", 
+        "id": "bib55"
+    }, 
+    {
+        "article_title": "The importance of arginine 102 for the substrate specificity of Escherichia coli malate dehydrogenase", 
+        "lpage": "1062", 
+        "doi": "10.1016/0006-291X(92)92311-K", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Nicholls", 
+                "given-names": "DJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Miller", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Scawen", 
+                "given-names": "MD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goward", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The importance of arginine 102 for the substrate specificity of <italic>Escherichia coli</italic> malate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "189", 
+        "source": "Biochemical and Biophysical Research Communications", 
+        "reference_id": "10.1016/0006-291X(92)92311-K", 
+        "fpage": "1057", 
+        "year": "1992", 
+        "position": 56, 
+        "ref": "NichollsDJMillerJScawenMDClarkeARHolbrookJJAtkinsonTGowardCR1992The importance of arginine 102 for the substrate specificity of Escherichia coli malate dehydrogenaseBiochemical and Biophysical Research Communications1891057106210.1016/0006-291X(92)92311-K", 
+        "id": "bib56"
+    }, 
+    {
+        "publisher_loc": "New York", 
+        "article_doi": "10.7554/eLife.02304", 
+        "publisher_name": "Springer", 
+        "year": "1970", 
+        "publication-type": "book", 
+        "source": "Evolution by gene duplication", 
+        "authors": [
+            {
+                "surname": "Ohno", 
+                "given-names": "S", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 57, 
+        "ref": "OhnoS1970Evolution by gene duplicationNew YorkSpringer", 
+        "id": "bib57"
+    }, 
+    {
+        "article_title": "Crystal structure of an ancient protein: evolution by conformational epistasis", 
+        "lpage": "1548", 
+        "doi": "10.1126/science.1142819", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Ortlund", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bridgham", 
+                "given-names": "JT", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Redinbo", 
+                "given-names": "MR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Thornton", 
+                "given-names": "JW", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Crystal structure of an ancient protein: evolution by conformational epistasis", 
+        "publication-type": "journal", 
+        "volume": "317", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.1142819", 
+        "fpage": "1544", 
+        "year": "2007", 
+        "position": 58, 
+        "ref": "OrtlundEABridghamJTRedinboMRThorntonJW2007Crystal structure of an ancient protein: evolution by conformational epistasisScience3171544154810.1126/science.1142819", 
+        "id": "bib58"
+    }, 
+    {
+        "article_title": "The oxaloacetate reductase activity of vertebrate lactate dehydrogenase", 
+        "lpage": "1105", 
+        "doi": "10.1016/0020-711X(81)90173-7", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Parker", 
+                "given-names": "DM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The oxaloacetate reductase activity of vertebrate lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "13", 
+        "source": "The International Journal of Biochemistry", 
+        "reference_id": "10.1016/0020-711X(81)90173-7", 
+        "fpage": "1101", 
+        "year": "1981", 
+        "position": 59, 
+        "ref": "ParkerDMHolbrookJJ1981The oxaloacetate reductase activity of vertebrate lactate dehydrogenaseThe International Journal of Biochemistry131101110510.1016/0020-711X(81)90173-7", 
+        "id": "bib59"
+    }, 
+    {
+        "article_title": "NCBI reference sequences: current status, policy and new initiatives", 
+        "lpage": "D36", 
+        "doi": "10.1093/nar/gkn721", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Pruitt", 
+                "given-names": "KD", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tatusova", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Klimke", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maglott", 
+                "given-names": "DR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "NCBI reference sequences: current status, policy and new initiatives", 
+        "publication-type": "journal", 
+        "volume": "37", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gkn721", 
+        "fpage": "D32", 
+        "year": "2009", 
+        "position": 60, 
+        "ref": "PruittKDTatusovaTKlimkeWMaglottDR2009NCBI reference sequences: current status, policy and new initiativesNucleic Acids Research37D32D3610.1093/nar/gkn721", 
+        "id": "bib60"
+    }, 
+    {
+        "article_title": "Comparison of super-secondary structures in proteins", 
+        "lpage": "256", 
+        "doi": "10.1016/0022-2836(73)90388-4", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Rao", 
+                "given-names": "ST", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rossmann", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Comparison of super-secondary structures in proteins", 
+        "publication-type": "journal", 
+        "volume": "76", 
+        "source": "Journal of Molecular Biology", 
+        "reference_id": "10.1016/0022-2836(73)90388-4", 
+        "fpage": "241", 
+        "year": "1973", 
+        "position": 61, 
+        "ref": "RaoSTRossmannMG1973Comparison of super-secondary structures in proteinsJournal of Molecular Biology7624125610.1016/0022-2836(73)90388-4", 
+        "id": "bib61"
+    }, 
+    {
+        "article_title": "Chloroquine binds in the cofactor binding site of Plasmodium falciparum lactate dehydrogenase", 
+        "lpage": "10218", 
+        "doi": "10.1074/jbc.274.15.10213", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Read", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wilkinson", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tranter", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sessions", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Chloroquine binds in the cofactor binding site of <italic>Plasmodium falciparum</italic> lactate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "274", 
+        "source": "Journal of Biological Chemistry", 
+        "reference_id": "10.1074/jbc.274.15.10213", 
+        "fpage": "10213", 
+        "year": "1999", 
+        "position": 62, 
+        "ref": "ReadJAWilkinsonKWTranterRSessionsRBBradyRL1999Chloroquine binds in the cofactor binding site of Plasmodium falciparum lactate dehydrogenaseJournal of Biological Chemistry274102131021810.1074/jbc.274.15.10213", 
+        "id": "bib62"
+    }, 
+    {
+        "article_title": "Hyperstability and substrate promiscuity in laboratory resurrections of Precambrian beta-Lactamases", 
+        "lpage": "2902", 
+        "doi": "10.1021/ja311630a", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Risso", 
+                "given-names": "VA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gavira", 
+                "given-names": "JA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mejia-Carmona", 
+                "given-names": "DF", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gaucher", 
+                "given-names": "EA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sanchez-Ruiz", 
+                "given-names": "JM", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Hyperstability and substrate promiscuity in laboratory resurrections of Precambrian beta-Lactamases", 
+        "publication-type": "journal", 
+        "volume": "135", 
+        "source": "Journal of the American Chemical Society", 
+        "reference_id": "10.1021/ja311630a", 
+        "fpage": "2899", 
+        "year": "2013", 
+        "position": 63, 
+        "ref": "RissoVAGaviraJAMejia-CarmonaDFGaucherEASanchez-RuizJM2013Hyperstability and substrate promiscuity in laboratory resurrections of Precambrian beta-LactamasesJournal of the American Chemical Society1352899290210.1021/ja311630a", 
+        "id": "bib63"
+    }, 
+    {
+        "article_title": "Evolutionary and structural relationships among dehydrogenases", 
+        "edition": "3rd edition", 
+        "article_doi": "10.7554/eLife.02304", 
+        "publisher_name": "Academic Press", 
+        "authors": [
+            {
+                "surname": "Rossmann", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liljas", 
+                "given-names": "A.", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Branden", 
+                "given-names": "C-I.", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Banaszak", 
+                "given-names": "LJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Boyer", 
+                "given-names": "PD", 
+                "group-type": "editor"
+            }
+        ], 
+        "full_article_title": "Evolutionary and structural relationships among dehydrogenases", 
+        "publication-type": "book", 
+        "lpage": "102", 
+        "source": "The Enzymes. II", 
+        "fpage": "61", 
+        "year": "1975", 
+        "position": 64, 
+        "ref": "RossmannMGLiljasA.BrandenC-I.BanaszakLJ1975Evolutionary and structural relationships among dehydrogenasesBoyerPDThe Enzymes. IIAcademic Press611023rd edition", 
+        "id": "bib64"
+    }, 
+    {
+        "article_title": "Biologically-active derivatives of gossypol - synthesis and antimalarial activities of peri-acylated gossylic nitriles", 
+        "lpage": "1801", 
+        "doi": "10.1021/jm00159a043", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Royer", 
+                "given-names": "RE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Deck", 
+                "given-names": "LM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Campos", 
+                "given-names": "NM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hunsaker", 
+                "given-names": "LA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vanderjagt", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Biologically-active derivatives of gossypol - synthesis and antimalarial activities of peri-acylated gossylic nitriles", 
+        "publication-type": "journal", 
+        "volume": "29", 
+        "source": "Journal of Medicinal Chemistry", 
+        "reference_id": "10.1021/jm00159a043", 
+        "fpage": "1799", 
+        "year": "1986", 
+        "position": 65, 
+        "ref": "RoyerREDeckLMCamposNMHunsakerLAVanderjagtDL1986Biologically-active derivatives of gossypol - synthesis and antimalarial activities of peri-acylated gossylic nitrilesJournal of Medicinal Chemistry291799180110.1021/jm00159a043", 
+        "id": "bib65"
+    }, 
+    {
+        "article_title": "Profile-profile comparisons by COMPASS predict intricate homologies between protein families", 
+        "lpage": "2272", 
+        "doi": "10.1110/ps.03197403", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Sadreyev", 
+                "given-names": "RI", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Baker", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Grishin", 
+                "given-names": "NV", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Profile-profile comparisons by COMPASS predict intricate homologies between protein families", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Protein Science", 
+        "reference_id": "10.1110/ps.03197403", 
+        "fpage": "2262", 
+        "year": "2003", 
+        "position": 66, 
+        "ref": "SadreyevRIBakerDGrishinNV2003Profile-profile comparisons by COMPASS predict intricate homologies between protein familiesProtein Science122262227210.1110/ps.03197403", 
+        "id": "bib66"
+    }, 
+    {
+        "article_title": "Enzymatic properties of the lactate dehydrogenase enzyme from Plasmodium falciparum", 
+        "lpage": "2748", 
+        "doi": "10.1111/j.1742-4658.2007.05808.x", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Shoemark", 
+                "given-names": "DK", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cliff", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sessions", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Enzymatic properties of the lactate dehydrogenase enzyme from <italic>Plasmodium falciparum</italic>", 
+        "publication-type": "journal", 
+        "volume": "274", 
+        "source": "The FEBS Journal", 
+        "reference_id": "10.1111/j.1742-4658.2007.05808.x", 
+        "fpage": "2738", 
+        "year": "2007", 
+        "position": 67, 
+        "ref": "ShoemarkDKCliffMJSessionsRBClarkeAR2007Enzymatic properties of the lactate dehydrogenase enzyme from Plasmodium falciparumThe FEBS Journal2742738274810.1111/j.1742-4658.2007.05808.x", 
+        "id": "bib67"
+    }, 
+    {
+        "article_title": "Another monophyly index: revisiting the jackknife", 
+        "lpage": "56", 
+        "doi": "10.1111/j.1096-0031.1995.tb00003.x", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Siddall", 
+                "given-names": "ME", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Another monophyly index: revisiting the jackknife", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Cladistics", 
+        "reference_id": "10.1111/j.1096-0031.1995.tb00003.x", 
+        "fpage": "33", 
+        "year": "1995", 
+        "position": 68, 
+        "ref": "SiddallME1995Another monophyly index: revisiting the jackknifeCladistics11335610.1111/j.1096-0031.1995.tb00003.x", 
+        "id": "bib68"
+    }, 
+    {
+        "article_title": "Mutational effects and the evolution of new protein functions", 
+        "lpage": "582", 
+        "doi": "10.1038/nrg2808", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Soskine", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tawfik", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Mutational effects and the evolution of new protein functions", 
+        "publication-type": "journal", 
+        "volume": "11", 
+        "source": "Nature Reviews Genetics", 
+        "reference_id": "10.1038/nrg2808", 
+        "fpage": "572", 
+        "year": "2010", 
+        "position": 69, 
+        "ref": "SoskineMTawfikDS2010Mutational effects and the evolution of new protein functionsNature Reviews Genetics1157258210.1038/nrg2808", 
+        "id": "bib69"
+    }, 
+    {
+        "comment": "PAUP*. Phylogenetic analysis using Parsimony (*and other methods). Version 4 Sinauer Associatesm Sunderland, Massachusetts", 
+        "article_doi": "10.7554/eLife.02304", 
+        "year": "2003", 
+        "publication-type": "other", 
+        "authors": [
+            {
+                "surname": "Swofford", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }
+        ], 
+        "position": 70, 
+        "ref": "SwoffordDL2003PAUP*. Phylogenetic analysis using Parsimony (*and other methods). Version 4 Sinauer Associatesm Sunderland, Massachusetts", 
+        "id": "bib70"
+    }, 
+    {
+        "article_title": "A genome-sequence survey for Ascogregarina taiwanensis supports evolutionary affiliation but metabolic diversity between a Gregarine and Cryptosporidium", 
+        "lpage": "248", 
+        "doi": "10.1093/molbev/msp226", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Templeton", 
+                "given-names": "TJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Enomoto", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chen", 
+                "given-names": "WJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Huang", 
+                "given-names": "CG", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lancto", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Abrahamsen", 
+                "given-names": "MS", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A genome-sequence survey for Ascogregarina taiwanensis supports evolutionary affiliation but metabolic diversity between a Gregarine and Cryptosporidium", 
+        "publication-type": "journal", 
+        "volume": "27", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/molbev/msp226", 
+        "fpage": "235", 
+        "year": "2009", 
+        "position": 71, 
+        "ref": "TempletonTJEnomotoSChenWJHuangCGLanctoCAAbrahamsenMSZhuG2009A genome-sequence survey for Ascogregarina taiwanensis supports evolutionary affiliation but metabolic diversity between a Gregarine and CryptosporidiumMolecular Biology and Evolution2723524810.1093/molbev/msp226", 
+        "id": "bib71"
+    }, 
+    {
+        "article_title": "Divergent evolution within protein superfolds inferred from profile-based phylogenetics", 
+        "lpage": "737", 
+        "doi": "10.1016/j.jmb.2005.08.071", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Theobald", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wuttke", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Divergent evolution within protein superfolds inferred from profile-based phylogenetics", 
+        "publication-type": "journal", 
+        "volume": "354", 
+        "source": "Journal of Molecular Biology", 
+        "reference_id": "10.1016/j.jmb.2005.08.071", 
+        "fpage": "722", 
+        "year": "2005", 
+        "position": 72, 
+        "ref": "TheobaldDLWuttkeDS2005Divergent evolution within protein superfolds inferred from profile-based phylogeneticsJournal of Molecular Biology35472273710.1016/j.jmb.2005.08.071", 
+        "id": "bib72"
+    }, 
+    {
+        "article_title": "Accurate structural correlations from maximum likelihood superpositions", 
+        "doi": "10.1371/journal.pcbi.0040043", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Theobald", 
+                "given-names": "DL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wuttke", 
+                "given-names": "DS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Accurate structural correlations from maximum likelihood superpositions", 
+        "publication-type": "journal", 
+        "volume": "4", 
+        "source": "PLOS Computational Biology", 
+        "reference_id": "10.1371/journal.pcbi.0040043", 
+        "fpage": "e43", 
+        "year": "2008", 
+        "position": 73, 
+        "ref": "TheobaldDLWuttkeDS2008Accurate structural correlations from maximum likelihood superpositionsPLOS Computational Biology4e4310.1371/journal.pcbi.0040043", 
+        "id": "bib73"
+    }, 
+    {
+        "article_title": "Update on activities at the Universal Protein Resource (UniProt) in 2013", 
+        "lpage": "D47", 
+        "doi": "10.1093/nar/gks1068", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "group-type": "author", 
+                "collab": "UniProt Consortium"
+            }
+        ], 
+        "full_article_title": "Update on activities at the Universal Protein Resource (UniProt) in 2013", 
+        "publication-type": "journal", 
+        "volume": "41", 
+        "source": "Nucleic Acids Research", 
+        "reference_id": "10.1093/nar/gks1068", 
+        "fpage": "D43", 
+        "year": "2013", 
+        "position": 74, 
+        "collab": "UniProt Consortium", 
+        "ref": "UniProt Consortium2013Update on activities at the Universal Protein Resource (UniProt) in 2013Nucleic Acids Research41D43D4710.1093/nar/gks1068", 
+        "id": "bib23"
+    }, 
+    {
+        "article_title": "Genome-scale protein expression and structural biology of Plasmodium falciparum and related Apicomplexan organisms", 
+        "lpage": "110", 
+        "doi": "10.1016/j.molbiopara.2006.10.011", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Vedadi", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lew", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Artz", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Amani", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Zhao", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dong", 
+                "given-names": "AP", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wasney", 
+                "given-names": "GA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Gao", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hills", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brokx", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Qiu", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sharma", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Diassiti", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Alam", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Melone", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Mulichak", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wernimont", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bray", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Loppnau", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Plotnikova", 
+                "given-names": "O", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Newberry", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sundararajan", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Houston", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Walker", 
+                "given-names": "J", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tempel", 
+                "given-names": "W", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Bochkarev", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kozieradzki", 
+                "given-names": "I", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Edwards", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Arrowsmith", 
+                "given-names": "C", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Roos", 
+                "given-names": "D", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Kain", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hui", 
+                "given-names": "R", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Genome-scale protein expression and structural biology of <italic>Plasmodium falciparum</italic> and related Apicomplexan organisms", 
+        "publication-type": "journal", 
+        "volume": "151", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/j.molbiopara.2006.10.011", 
+        "fpage": "100", 
+        "year": "2007", 
+        "position": 75, 
+        "ref": "VedadiMLewJArtzJAmaniMZhaoYDongAPWasneyGAGaoMHillsTBrokxSQiuWSharmaSDiassitiAAlamZMeloneMMulichakAWernimontABrayJLoppnauPPlotnikovaONewberryKSundararajanEHoustonSWalkerJTempelWBochkarevAKozieradzkiIEdwardsAArrowsmithCRoosDKainKHuiR2007Genome-scale protein expression and structural biology of Plasmodium falciparum and related Apicomplexan organismsMolecular and Biochemical Parasitology15110011010.1016/j.molbiopara.2006.10.011", 
+        "id": "bib74"
+    }, 
+    {
+        "article_title": "Reconstruction of ancestral metabolic enzymes reveals molecular mechanisms underlying evolutionary innovation through gene duplication", 
+        "doi": "10.1371/journal.pbio.1001446", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Voordeckers", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brown", 
+                "given-names": "CA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Vanneste", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "van der Zande", 
+                "given-names": "E", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Voet", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Maere", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Verstrepen", 
+                "given-names": "KJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Reconstruction of ancestral metabolic enzymes reveals molecular mechanisms underlying evolutionary innovation through gene duplication", 
+        "publication-type": "journal", 
+        "volume": "10", 
+        "source": "PLOS Biology", 
+        "reference_id": "10.1371/journal.pbio.1001446", 
+        "fpage": "e1001446", 
+        "year": "2012", 
+        "position": 76, 
+        "ref": "VoordeckersKBrownCAVannesteKvan der ZandeEVoetAMaereSVerstrepenKJ2012Reconstruction of ancestral metabolic enzymes reveals molecular mechanisms underlying evolutionary innovation through gene duplicationPLOS Biology10e100144610.1371/journal.pbio.1001446", 
+        "id": "bib75"
+    }, 
+    {
+        "article_title": "The use of a genetically engineered tryptophan to identify the movement of a domain of B.stearothermophilus lactate-dehydrogenase with the process which limits the steady-state Turnover of the enzyme", 
+        "lpage": "759", 
+        "doi": "10.1016/0006-291X(88)90455-X", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Waldman", 
+                "given-names": "ADB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hart", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Wigley", 
+                "given-names": "DB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "The use of a genetically engineered tryptophan to identify the movement of a domain of B.stearothermophilus lactate-dehydrogenase with the process which limits the steady-state Turnover of the enzyme", 
+        "publication-type": "journal", 
+        "volume": "150", 
+        "source": "Biochemical and Biophysical Research Communications", 
+        "reference_id": "10.1016/0006-291X(88)90455-X", 
+        "fpage": "752", 
+        "year": "1988", 
+        "position": 77, 
+        "ref": "WaldmanADBHartKWClarkeARWigleyDBBarstowDAAtkinsonTChiaWNHolbrookJJ1988The use of a genetically engineered tryptophan to identify the movement of a domain of B.stearothermophilus lactate-dehydrogenase with the process which limits the steady-state Turnover of the enzymeBiochemical and Biophysical Research Communications15075275910.1016/0006-291X(88)90455-X", 
+        "id": "bib76"
+    }, 
+    {
+        "article_title": "How often do duplicated genes evolve new functions", 
+        "lpage": "428", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Walsh", 
+                "given-names": "JB", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "How often do duplicated genes evolve new functions", 
+        "publication-type": "journal", 
+        "volume": "139", 
+        "source": "Genetics", 
+        "fpage": "421", 
+        "year": "1995", 
+        "position": 78, 
+        "ref": "WalshJB1995How often do duplicated genes evolve new functionsGenetics139421428", 
+        "id": "bib77"
+    }, 
+    {
+        "article_title": "A general empirical model of protein evolution derived from multiple protein families using a maximum-likelihood approach", 
+        "lpage": "699", 
+        "doi": "10.1093/oxfordjournals.molbev.a003851", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Whelan", 
+                "given-names": "S", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Goldman", 
+                "given-names": "N", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A general empirical model of protein evolution derived from multiple protein families using a maximum-likelihood approach", 
+        "publication-type": "journal", 
+        "volume": "18", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/oxfordjournals.molbev.a003851", 
+        "fpage": "691", 
+        "year": "2001", 
+        "position": 79, 
+        "ref": "WhelanSGoldmanN2001A general empirical model of protein evolution derived from multiple protein families using a maximum-likelihood approachMolecular Biology and Evolution1869169910.1093/oxfordjournals.molbev.a003851", 
+        "id": "bib78"
+    }, 
+    {
+        "article_title": "A comparison of the structures of apo dogfish M4 lactate dehydrogenase and its ternary complexes", 
+        "lpage": "779", 
+        "doi": "10.1016/0022-2836(76)90290-4", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "White", 
+                "given-names": "JL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hackert", 
+                "given-names": "ML", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Buehner", 
+                "given-names": "M", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Adams", 
+                "given-names": "MJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Ford", 
+                "given-names": "GC", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lentz", 
+                "given-names": "PJ", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Smiley", 
+                "given-names": "IE", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Steindel", 
+                "given-names": "SJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rossmann", 
+                "given-names": "MG", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A comparison of the structures of apo dogfish M4 lactate dehydrogenase and its ternary complexes", 
+        "publication-type": "journal", 
+        "volume": "102", 
+        "source": "Journal of Molecular Biology", 
+        "reference_id": "10.1016/0022-2836(76)90290-4", 
+        "fpage": "759", 
+        "year": "1976", 
+        "position": 80, 
+        "ref": "WhiteJLHackertMLBuehnerMAdamsMJFordGCLentzPJJnrSmileyIESteindelSJRossmannMG1976A comparison of the structures of apo dogfish M4 lactate dehydrogenase and its ternary complexesJournal of Molecular Biology10275977910.1016/0022-2836(76)90290-4", 
+        "id": "bib79"
+    }, 
+    {
+        "article_title": "A specific, highly active malate dehydrogenase by redesign of a lactate dehydrogenase framework", 
+        "lpage": "1544", 
+        "doi": "10.1126/science.3201242", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Wilks", 
+                "given-names": "HM", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Hart", 
+                "given-names": "KW", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Feeney", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Dunn", 
+                "given-names": "CR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Muirhead", 
+                "given-names": "H", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Chia", 
+                "given-names": "WN", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Barstow", 
+                "given-names": "DA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Atkinson", 
+                "given-names": "T", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Clarke", 
+                "given-names": "AR", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Holbrook", 
+                "given-names": "JJ", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A specific, highly active malate dehydrogenase by redesign of a lactate dehydrogenase framework", 
+        "publication-type": "journal", 
+        "volume": "242", 
+        "source": "Science", 
+        "reference_id": "10.1126/science.3201242", 
+        "fpage": "1541", 
+        "year": "1988", 
+        "position": 81, 
+        "ref": "WilksHMHartKWFeeneyRDunnCRMuirheadHChiaWNBarstowDAAtkinsonTClarkeARHolbrookJJ1988A specific, highly active malate dehydrogenase by redesign of a lactate dehydrogenase frameworkScience2421541154410.1126/science.3201242", 
+        "id": "bib80"
+    }, 
+    {
+        "article_title": "Crystal structure of Plasmodium berghei lactate dehydrogenase indicates the unique structural differences of these enzymes are shared across the Plasmodium genus", 
+        "lpage": "10", 
+        "doi": "10.1016/S0166-6851(03)00170-1", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Winter", 
+                "given-names": "VJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Cameron", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Tranter", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sessions", 
+                "given-names": "RB", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Brady", 
+                "given-names": "RL", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Crystal structure of Plasmodium berghei lactate dehydrogenase indicates the unique structural differences of these enzymes are shared across the Plasmodium genus", 
+        "publication-type": "journal", 
+        "volume": "131", 
+        "source": "Molecular and Biochemical Parasitology", 
+        "reference_id": "10.1016/S0166-6851(03)00170-1", 
+        "fpage": "1", 
+        "year": "2003", 
+        "position": 82, 
+        "ref": "WinterVJCameronATranterRSessionsRBBradyRL2003Crystal structure of Plasmodium berghei lactate dehydrogenase indicates the unique structural differences of these enzymes are shared across the Plasmodium genusMolecular and Biochemical Parasitology13111010.1016/S0166-6851(03)00170-1", 
+        "id": "bib81"
+    }, 
+    {
+        "article_title": "Kinetic challenges facing oxalate, malonate, acetoacetate, and oxaloacetate decarboxylases", 
+        "lpage": "5685", 
+        "doi": "10.1021/ja111457h", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Wolfenden", 
+                "given-names": "R", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Lewis", 
+                "given-names": "CA", 
+                "group-type": "author", 
+                "suffix": "Jnr"
+            }, 
+            {
+                "surname": "Yuan", 
+                "given-names": "Y", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Kinetic challenges facing oxalate, malonate, acetoacetate, and oxaloacetate decarboxylases", 
+        "publication-type": "journal", 
+        "volume": "133", 
+        "source": "Journal of the American Chemical Society", 
+        "reference_id": "10.1021/ja111457h", 
+        "fpage": "5683", 
+        "year": "2011", 
+        "position": 83, 
+        "ref": "WolfendenRLewisCAJnrYuanY2011Kinetic challenges facing oxalate, malonate, acetoacetate, and oxaloacetate decarboxylasesJournal of the American Chemical Society1335683568510.1021/ja111457h", 
+        "id": "bib82"
+    }, 
+    {
+        "article_title": "A despecialization step underlying evolution of a family of serine proteases", 
+        "lpage": "354", 
+        "doi": "10.1016/S1097-2765(03)00308-3", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Wouters", 
+                "given-names": "MA", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Liu", 
+                "given-names": "K", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Riek", 
+                "given-names": "P", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Husain", 
+                "given-names": "A", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "A despecialization step underlying evolution of a family of serine proteases", 
+        "publication-type": "journal", 
+        "volume": "12", 
+        "source": "Molecular Cell", 
+        "reference_id": "10.1016/S1097-2765(03)00308-3", 
+        "fpage": "343", 
+        "year": "2003", 
+        "position": 84, 
+        "ref": "WoutersMALiuKRiekPHusainA2003A despecialization step underlying evolution of a family of serine proteasesMolecular Cell1234335410.1016/S1097-2765(03)00308-3", 
+        "id": "bib83"
+    }, 
+    {
+        "article_title": "Convergent evolution of Trichomonas vaginalis lactate dehydrogenase from malate dehydrogenase", 
+        "lpage": "6290", 
+        "doi": "10.1073/pnas.96.11.6285", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Wu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Fiser", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "ter Kuile", 
+                "given-names": "B", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Sali", 
+                "given-names": "A", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Muller", 
+                "given-names": "M", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Convergent evolution of Trichomonas vaginalis lactate dehydrogenase from malate dehydrogenase", 
+        "publication-type": "journal", 
+        "volume": "96", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.96.11.6285", 
+        "fpage": "6285", 
+        "year": "1999", 
+        "position": 85, 
+        "ref": "WuGFiserAter KuileBSaliAMullerM1999Convergent evolution of Trichomonas vaginalis lactate dehydrogenase from malate dehydrogenaseProceedings of the National Academy of Sciences of the United States of America966285629010.1073/pnas.96.11.6285", 
+        "id": "bib84"
+    }, 
+    {
+        "article_title": "PAML 4: phylogenetic analysis by maximum likelihood", 
+        "lpage": "1591", 
+        "doi": "10.1093/molbev/msm088", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Yang", 
+                "given-names": "Z", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "PAML 4: phylogenetic analysis by maximum likelihood", 
+        "publication-type": "journal", 
+        "volume": "24", 
+        "source": "Molecular Biology and Evolution", 
+        "reference_id": "10.1093/molbev/msm088", 
+        "fpage": "1586", 
+        "year": "2007", 
+        "position": 86, 
+        "ref": "YangZ2007PAML 4: phylogenetic analysis by maximum likelihoodMolecular Biology and Evolution241586159110.1093/molbev/msm088", 
+        "id": "bib86"
+    }, 
+    {
+        "article_title": "Complementary advantageous substitutions in the evolution of an antiviral RNase of higher primates", 
+        "lpage": "5491", 
+        "doi": "10.1073/pnas.072626199", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Zhang", 
+                "given-names": "JZ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Rosenberg", 
+                "given-names": "HF", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Complementary advantageous substitutions in the evolution of an antiviral RNase of higher primates", 
+        "publication-type": "journal", 
+        "volume": "99", 
+        "source": "Proceedings of the National Academy of Sciences of the United States of America", 
+        "reference_id": "10.1073/pnas.072626199", 
+        "fpage": "5486", 
+        "year": "2002", 
+        "position": 87, 
+        "ref": "ZhangJZRosenbergHF2002Complementary advantageous substitutions in the evolution of an antiviral RNase of higher primatesProceedings of the National Academy of Sciences of the United States of America995486549110.1073/pnas.072626199", 
+        "id": "bib87"
+    }, 
+    {
+        "article_title": "Alpha-proteobacterial relationship of apicomplexan lactate and malate dehydrogenases", 
+        "lpage": "261", 
+        "doi": "10.1111/j.1550-7408.2002.tb00532.x", 
+        "article_doi": "10.7554/eLife.02304", 
+        "authors": [
+            {
+                "surname": "Zhu", 
+                "given-names": "G", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Keithly", 
+                "given-names": "JS", 
+                "group-type": "author"
+            }
+        ], 
+        "full_article_title": "Alpha-proteobacterial relationship of apicomplexan lactate and malate dehydrogenases", 
+        "publication-type": "journal", 
+        "volume": "49", 
+        "source": "The Journal of Eukaryotic Microbiology", 
+        "reference_id": "10.1111/j.1550-7408.2002.tb00532.x", 
+        "fpage": "255", 
+        "year": "2002", 
+        "position": 88, 
+        "ref": "ZhuGKeithlyJS2002Alpha-proteobacterial relationship of apicomplexan lactate and malate dehydrogenasesThe Journal of Eukaryotic Microbiology4925526110.1111/j.1550-7408.2002.tb00532.x", 
+        "id": "bib88"
+    }
+]

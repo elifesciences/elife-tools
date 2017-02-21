@@ -1,0 +1,16 @@
+[
+    {
+        "mimetype": "application", 
+        "parent_ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "parent_type": "supplementary-material", 
+        "mime-subtype": "doc", 
+        "xlink_href": "elife00190s001.doc", 
+        "ordinal": 1, 
+        "position": 1, 
+        "parent_component_doi": "10.7554/eLife.00190.025", 
+        "parent_sibling_ordinal": 1, 
+        "type": "media", 
+        "parent_asset": "supp"
+    }
+]

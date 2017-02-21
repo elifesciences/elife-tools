@@ -1,0 +1,58 @@
+[
+    {
+        "par-1": {
+            "award-id": "R37AI043542", 
+            "institution": "National Institute of Allergy and Infectious Diseases (NIAID)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000060"
+        }
+    }, 
+    {
+        "par-2": {
+            "award-id": "R01AI65644", 
+            "institution": "National Institute of Allergy and Infectious Diseases (NIAID)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000060"
+        }
+    }, 
+    {
+        "par-3": {
+            "award-id": "R01AI088377 718", 
+            "institution": "National Institute of Allergy and Infectious Diseases (NIAID)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000060"
+        }
+    }, 
+    {
+        "par-4": {
+            "award-id": "NIH common fund- Nanomedicine Development Center (PN2EY016586)", 
+            "institution": "National Institutes of Health (NIH)", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000002"
+        }
+    }, 
+    {
+        "par-5": {
+            "award-id": "Postdoctoral fellowship", 
+            "institution": "Cancer Research Institute", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100000884"
+        }
+    }, 
+    {
+        "par-6": {
+            "award-id": "Annual grant", 
+            "institution": "National Psoriasis Foundation", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100003185"
+        }
+    }, 
+    {
+        "par-7": {
+            "award-id": "NYUMC microscopy core", 
+            "institution": "New York University Langone Medical Center ", 
+            "id-type": "FundRef", 
+            "id": "http://dx.doi.org/10.13039/100006962"
+        }
+    }
+]

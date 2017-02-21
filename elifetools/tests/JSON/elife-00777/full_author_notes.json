@@ -1,0 +1,12 @@
+[
+    {
+        "text": "\n<label>\u2020</label>\n<p>These authors contributed equally to this work</p>\n", 
+        "id": "equal-contrib1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<label>*</label>\n<p>A free text footnote for this author</p>\n", 
+        "id": "fn1", 
+        "fn-type": "fn"
+    }
+]

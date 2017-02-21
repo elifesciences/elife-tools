@@ -1,0 +1,38 @@
+[
+    {
+        "parent_ordinal": 1, 
+        "ordinal": 1, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-00777-fig1.tif", 
+        "position": 1, 
+        "parent_sibling_ordinal": 1, 
+        "type": "graphic"
+    }, 
+    {
+        "parent_ordinal": 2, 
+        "ordinal": 2, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-00777-fig2.tif", 
+        "position": 2, 
+        "parent_sibling_ordinal": 2, 
+        "type": "graphic"
+    }, 
+    {
+        "parent_ordinal": 3, 
+        "ordinal": 3, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-00777-fig3.tif", 
+        "position": 3, 
+        "parent_sibling_ordinal": 3, 
+        "type": "graphic"
+    }, 
+    {
+        "parent_ordinal": 4, 
+        "ordinal": 4, 
+        "parent_type": "fig", 
+        "xlink_href": "elife-00777-fig4.tif", 
+        "position": 4, 
+        "parent_sibling_ordinal": 4, 
+        "type": "graphic"
+    }
+]

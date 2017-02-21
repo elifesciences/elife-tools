@@ -1,0 +1,307 @@
+[
+    {
+        "surname": "Alegado", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "RA: Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "author": "Rosanna A Alegado", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular and Cell Biology", 
+                "city": "Berkeley", 
+                "institution": "University of California, Berkeley", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Rosanna A", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-2"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 1668, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-1668"
+    }, 
+    {
+        "surname": "Brown", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "LB: Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "author": "Laura W Brown", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Laura W", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-3"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 1669, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-1669"
+    }, 
+    {
+        "surname": "Cao", 
+        "author": "Shugeng Cao", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Shugeng", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 1670, 
+        "notes-fn": [
+            "SC: Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "type": "author", 
+        "id": "author-1670"
+    }, 
+    {
+        "surname": "Dermenjian", 
+        "author": "Renee K Dermenjian", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Renee K", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 1671, 
+        "notes-fn": [
+            "RD: Acquisition of data, Analysis and interpretation of data", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "type": "author", 
+        "id": "author-1671"
+    }, 
+    {
+        "surname": "Zuzow", 
+        "author": "Richard Zuzow", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Biochemistry", 
+                "city": "Stanford", 
+                "institution": "Stanford University School of Medicine", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Richard", 
+        "references": {
+            "affiliation": [
+                "aff3"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 1672, 
+        "notes-fn": [
+            "RZ: Acquisition of data, Analysis and interpretation of data", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "type": "author", 
+        "id": "author-1672"
+    }, 
+    {
+        "surname": "Fairclough", 
+        "author": "Stephen R Fairclough", 
+        "article_doi": "10.7554/eLife.00013", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular and Cell Biology", 
+                "city": "Berkeley", 
+                "institution": "University of California, Berkeley", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Stephen R", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-6"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 1673, 
+        "notes-fn": [
+            "SF: Acquisition of data, Analysis and interpretation of data", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "type": "author", 
+        "id": "author-1673"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: jon_clardy@hms.harvard.edu (JC);"
+        ], 
+        "surname": "Clardy", 
+        "author": "Jon Clardy", 
+        "article_doi": "10.7554/eLife.00013", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Chemistry and Molecular Pharmacology", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jon", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 1060, 
+        "notes-fn": [
+            "JC: Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "JC: Reviewing Editor, eLife."
+        ], 
+        "type": "author", 
+        "id": "author-1060"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: nking@berkeley.edu (NK)"
+        ], 
+        "surname": "King", 
+        "author": "Nicole King", 
+        "article_doi": "10.7554/eLife.00013", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular and Cell Biology", 
+                "city": "Berkeley", 
+                "institution": "University of California, Berkeley", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Nicole", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-5"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "position": 8, 
+        "person_id": 1274, 
+        "notes-fn": [
+            "NK: Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The remaining authors have no competing interests to declare."
+        ], 
+        "type": "author", 
+        "id": "author-1274"
+    }
+]

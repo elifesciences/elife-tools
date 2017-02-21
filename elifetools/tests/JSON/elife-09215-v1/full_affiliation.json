@@ -1,0 +1,61 @@
+[
+    {
+        "aff1": {
+            "dept": "Department of Neurology and Neurological Sciences", 
+            "country": "United States", 
+            "institution": "Stanford University", 
+            "city": "Stanford"
+        }
+    }, 
+    {
+        "aff2": {
+            "dept": "Department of Bioengineering", 
+            "country": "United States", 
+            "institution": "Stanford University", 
+            "city": "Stanford"
+        }
+    }, 
+    {
+        "aff3": {
+            "dept": "Department of Electrical Engineering", 
+            "country": "United States", 
+            "institution": "Stanford University", 
+            "city": "Stanford"
+        }
+    }, 
+    {
+        "aff4": {
+            "country": "United States", 
+            "institution": "Cold Spring Harbor Laboratory", 
+            "city": "Cold Spring Harbor"
+        }
+    }, 
+    {
+        "aff5": {
+            "dept": "Department of Neurology", 
+            "country": "United States", 
+            "institution": "Weill Cornell Medical College", 
+            "city": "New York"
+        }
+    }, 
+    {
+        "aff6": {
+            "dept": "Department of Neurosurgery", 
+            "country": "United States", 
+            "institution": "Stanford University", 
+            "city": "Stanford"
+        }
+    }, 
+    {
+        "aff7": {
+            "country": "United Kingdom", 
+            "institution": "University of Oxford"
+        }
+    }, 
+    {
+        "aff8": {
+            "country": "United Kingdom", 
+            "institution": "University of Oxford"
+        }
+    }
+]

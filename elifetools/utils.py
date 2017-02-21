@@ -124,9 +124,44 @@ def starts_with_doi(tag):
     else:
         return False
 
+def paragraph_is_only_doi(tag):
+    if (node_text(tag).strip().startswith('http://dx.doi.org')
+        and ' ' not in node_text(tag).strip()
+        and node_contents_str(tag).startswith('<ext-link ext-link-type="doi"')):
+        return True
+    else:
+        return False
+
+def doi_uri_to_doi(value):
+    "Strip the uri schema from the start of DOI URL strings"
+    if value is None:
+        return value
+    replace_values = ['http://dx.doi.org/', 'https://dx.doi.org/',
+                      'http://doi.org/', 'https://doi.org/']
+    for replace_value in replace_values:
+        value = value.replace(replace_value, '')
+    return value
+
+def doi_to_doi_uri(value):
+    "Turn DOI into a valid uri"
+    if value is None:
+        return value
+    value = 'https://doi.org/' + value
+    return value
+
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    return filter(lambda tag: not starts_with_doi(tag), tags)
+    p_tags = filter(lambda tag: not starts_with_doi(tag), tags)
+    p_tags = filter(lambda tag: not paragraph_is_only_doi(tag), p_tags)
+    return p_tags
+
+def remove_tag_from_tag(tag, nodename):
+    if not nodename:
+        return tag
+    unwanted_tags = extract_nodes(tag, nodename)
+    for unwanted_tag in unwanted_tags:
+        unwanted_tag.decompose()
+    return tag
 
 def component_acting_parent_tag(parent_tag, tag):
     """
@@ -347,3 +382,23 @@ def prune_dict_of_none_values(dictionary):
     for key,value in dictionary.items():
         if value is None:
             del(dictionary[key])
+
+def text_to_title(value):
+    """when a title is required, generate one from the value"""
+    title = None
+    if not value:
+        return title
+    words = value.split(" ")
+    keep_words = []
+    for word in words:
+        if word.endswith(".") or word.endswith(":"):
+            keep_words.append(word)
+            if len(word) > 1 and "italic" not in word:
+                break
+        else:
+            keep_words.append(word)
+    if len(keep_words) > 0:
+        title = " ".join(keep_words)
+        if title.split(" ")[-1] != "spp.":
+            title = title.rstrip(" .:")
+    return title

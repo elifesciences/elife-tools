@@ -1,0 +1,27 @@
+[
+    {
+        "text": "\n<label>\u2020</label>\n<p>These authors contributed equally to this work</p>\n", 
+        "id": "equal-contrib1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<label>\u2021</label>\n<p>These authors also contributed equally to this work</p>\n", 
+        "id": "equal-contrib2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<label>\u00a7</label>\n<p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>\n", 
+        "id": "pa1", 
+        "fn-type": "present-address"
+    }, 
+    {
+        "text": "\n<label>#</label>\n<p>Deceased (not really!!)</p>\n", 
+        "id": "fn1", 
+        "fn-type": "fn"
+    }, 
+    {
+        "text": "\n<label>\u00b6</label>\n<p>This footnote text must work in isolation as nothing is processed on the html view to make it \"work\"</p>\n", 
+        "id": "fn2", 
+        "fn-type": "fn"
+    }
+]

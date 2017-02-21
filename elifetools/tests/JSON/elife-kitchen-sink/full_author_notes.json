@@ -1,0 +1,32 @@
+[
+    {
+        "text": "\n<label>\u2020</label>\n<p>These authors contributed equally to this work</p>\n", 
+        "id": "equal-contrib", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<label>\u2021</label>\n<p>These authors also contributed equally to this work</p>\n", 
+        "id": "equal-contrib2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<label>\u00b6</label>\n<p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>\n", 
+        "id": "pa1", 
+        "fn-type": "present-address"
+    }, 
+    {
+        "text": "\n<label>\u2016</label>\n<p>Department of Biological Chemistry and Molecular Pharmacology, Harvard\n                        Medical School, Boston, United States</p>\n", 
+        "id": "pa2", 
+        "fn-type": "present-address"
+    }, 
+    {
+        "text": "\n<p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United\n                        Kingdom</p>\n", 
+        "id": "pa3", 
+        "fn-type": "present-address"
+    }, 
+    {
+        "text": "\n<label>**</label>\n<p>Deceased</p>\n", 
+        "id": "fn1", 
+        "fn-type": "deceased"
+    }
+]

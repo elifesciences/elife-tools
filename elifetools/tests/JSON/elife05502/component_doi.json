@@ -1,0 +1,122 @@
+[
+    {
+        "position": 1, 
+        "doi": "10.7554/eLife.05502.001", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 2, 
+        "doi": "10.7554/eLife.05502.002", 
+        "type": "abstract"
+    }, 
+    {
+        "position": 3, 
+        "doi": "10.7554/eLife.05502.003", 
+        "type": "fig"
+    }, 
+    {
+        "position": 4, 
+        "doi": "10.7554/eLife.05502.004", 
+        "type": "fig"
+    }, 
+    {
+        "position": 5, 
+        "doi": "10.7554/eLife.05502.005", 
+        "type": "fig"
+    }, 
+    {
+        "position": 6, 
+        "doi": "10.7554/eLife.05502.006", 
+        "type": "fig"
+    }, 
+    {
+        "position": 7, 
+        "doi": "10.7554/eLife.05502.007", 
+        "type": "fig"
+    }, 
+    {
+        "position": 8, 
+        "doi": "10.7554/eLife.05502.008", 
+        "type": "fig"
+    }, 
+    {
+        "position": 9, 
+        "doi": "10.7554/eLife.05502.009", 
+        "type": "fig"
+    }, 
+    {
+        "position": 10, 
+        "doi": "10.7554/eLife.05502.010", 
+        "type": "fig"
+    }, 
+    {
+        "position": 11, 
+        "doi": "10.7554/eLife.05502.011", 
+        "type": "fig"
+    }, 
+    {
+        "position": 12, 
+        "doi": "10.7554/eLife.05502.012", 
+        "type": "fig"
+    }, 
+    {
+        "position": 13, 
+        "doi": "10.7554/eLife.05502.013", 
+        "type": "fig"
+    }, 
+    {
+        "position": 14, 
+        "doi": "10.7554/eLife.05502.014", 
+        "type": "boxed-text"
+    }, 
+    {
+        "position": 15, 
+        "doi": "10.7554/eLife.05502.015", 
+        "type": "fig"
+    }, 
+    {
+        "position": 16, 
+        "doi": "10.7554/eLife.05502.016", 
+        "type": "fig"
+    }, 
+    {
+        "position": 17, 
+        "doi": "10.7554/eLife.05502.017", 
+        "type": "fig"
+    }, 
+    {
+        "position": 18, 
+        "doi": "10.7554/eLife.05502.018", 
+        "type": "fig"
+    }, 
+    {
+        "position": 19, 
+        "doi": "10.7554/eLife.05502.019", 
+        "type": "table-wrap"
+    }, 
+    {
+        "position": 20, 
+        "doi": "10.7554/eLife.05502.020", 
+        "type": "fig"
+    }, 
+    {
+        "position": 21, 
+        "doi": "10.7554/eLife.05502.021", 
+        "type": "fig"
+    }, 
+    {
+        "position": 22, 
+        "doi": "10.7554/eLife.05502.022", 
+        "type": "table-wrap"
+    }, 
+    {
+        "position": 23, 
+        "doi": "10.7554/eLife.05502.023", 
+        "type": "fig"
+    }, 
+    {
+        "position": 24, 
+        "doi": "10.7554/eLife.05502.024", 
+        "type": "supplementary-material"
+    }
+]

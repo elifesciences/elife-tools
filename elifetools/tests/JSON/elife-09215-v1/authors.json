@@ -1,0 +1,509 @@
+[
+    {
+        "surname": "Liu", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "JL, Collected the fMRI data, Acquisition of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Jia Liu", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jia", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-6", 
+                "par-5", 
+                "par-4"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 35797, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-35797"
+    }, 
+    {
+        "surname": "Lee", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "HJL, Performed EEG, in vivo single-unit, and field potential electrophysiology recordings", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Hyun Joo Lee", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Hyun Joo", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 35798, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-35798"
+    }, 
+    {
+        "surname": "Weitz", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "AJW, Analyzed the fMRI and electrophysiology data and wrote the paper", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Andrew J Weitz", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Bioengineering", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Andrew J", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-5", 
+                "par-9"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 31989, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-31989"
+    }, 
+    {
+        "surname": "Fang", 
+        "notes-fn": [
+            "\u2020These authors contributed equally to this work", 
+            "ZF, Analyzed the data and helped make figures and videos", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "author": "Zhongnan Fang", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Electrical Engineering", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Zhongnan", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-6"
+            ], 
+            "equal-contrib": [
+                "equal-contrib"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 35800, 
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "id": "author-35800"
+    }, 
+    {
+        "surname": "Lin", 
+        "author": "Peter Lin", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Peter", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 35801, 
+        "notes-fn": [
+            "PL, Conducted behavioral experiments", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35801"
+    }, 
+    {
+        "surname": "Choy", 
+        "author": "ManKin Choy", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "ManKin", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-4", 
+                "par-5"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 35802, 
+        "notes-fn": [
+            "ManKC, Performed quantitative immunohistochemistry", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35802"
+    }, 
+    {
+        "surname": "Fisher", 
+        "author": "Robert Fisher", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Robert", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-11", 
+                "par-10"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 35803, 
+        "notes-fn": [
+            "RF, Scored the video-EEG data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35803"
+    }, 
+    {
+        "surname": "Pinskiy", 
+        "author": "Vadim Pinskiy", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Cold Spring Harbor Laboratory", 
+                "city": "Cold Spring Harbor"
+            }
+        ], 
+        "given-names": "Vadim", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-8", 
+                "par-7"
+            ]
+        }, 
+        "position": 8, 
+        "person_id": 35804, 
+        "notes-fn": [
+            "VP, Conducted optical brain slice imaging", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35804"
+    }, 
+    {
+        "surname": "Tolpygo", 
+        "author": "Alexander Tolpygo", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Cold Spring Harbor Laboratory", 
+                "city": "Cold Spring Harbor"
+            }
+        ], 
+        "given-names": "Alexander", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con9"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-7", 
+                "par-8"
+            ]
+        }, 
+        "position": 9, 
+        "person_id": 35805, 
+        "notes-fn": [
+            "AT, Conducted optical brain slice imaging", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35805"
+    }, 
+    {
+        "surname": "Mitra", 
+        "author": "Partha Mitra", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "Cold Spring Harbor Laboratory", 
+                "city": "Cold Spring Harbor"
+            }
+        ], 
+        "given-names": "Partha", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con10"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-7", 
+                "par-8"
+            ]
+        }, 
+        "position": 10, 
+        "person_id": 35806, 
+        "notes-fn": [
+            "PM, Advised VP and AT, and helped design the experiments", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35806"
+    }, 
+    {
+        "surname": "Schiff", 
+        "author": "Nicholas Schiff", 
+        "article_doi": "10.7554/eLife.09215", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology", 
+                "city": "New York", 
+                "institution": "Weill Cornell Medical College", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Nicholas", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con11"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-5"
+            ]
+        }, 
+        "position": 11, 
+        "person_id": 6176, 
+        "notes-fn": [
+            "NS, Helped with the design of the experiments, interpretation of the data, and writing of the paper", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-6176"
+    }, 
+    {
+        "notes-corresp": [
+            "ljinhy@stanford.edu"
+        ], 
+        "surname": "Lee", 
+        "author": "Jin Hyung Lee", 
+        "article_doi": "10.7554/eLife.09215", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Department of Neurology and Neurological Sciences", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Bioengineering", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Electrical Engineering", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Department of Neurosurgery", 
+                "city": "Stanford", 
+                "institution": "Stanford University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Jin Hyung", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2", 
+                "aff3", 
+                "aff6"
+            ], 
+            "contribution": [
+                "con12"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-4", 
+                "par-5", 
+                "par-6", 
+                "par-3", 
+                "par-2"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 12, 
+        "person_id": 35490, 
+        "notes-fn": [
+            "JHL, Designed and planned all experiments, supervised and organized the study, analyzed and interpreted data, wrote the paper, and outlined the figures and videos", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-35490"
+    }
+]

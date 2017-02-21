@@ -1,0 +1,76 @@
+[
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Wellcome Trust", 
+        "institution-id": "http://dx.doi.org/10.13039/100004440"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Wellcome Trust", 
+        "institution-id": "http://dx.doi.org/10.13039/100004440"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Kay Kendall Leukaemia Fund", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000402"
+    }, 
+    {
+        "institution": "Chordoma Foundation"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Adenoid Cystic Carcinoma Research Foundation", 
+        "institution-id": "http://dx.doi.org/10.13039/100006386"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "European Molecular Biology Organization", 
+        "institution-id": "http://dx.doi.org/10.13039/100004410"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "National Institute for Health Research", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000272"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Leukaemia and Lymphoma Research", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000651"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Cancer Research UK", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000289"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Leukemia and Lymphoma Society", 
+        "institution-id": "http://dx.doi.org/10.13039/100005189"
+    }, 
+    {
+        "institution": "European Union"
+    }, 
+    {
+        "institution": "National Cancer Research Institute"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "National Institute of Environmental Health Sciences", 
+        "institution-id": "http://dx.doi.org/10.13039/100000066"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "National Institute for Health Research", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000272"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "European Molecular Biology Organization", 
+        "institution-id": "http://dx.doi.org/10.13039/100004410"
+    }, 
+    {
+        "institution-id-type": "FundRef", 
+        "institution": "Department of Health", 
+        "institution-id": "http://dx.doi.org/10.13039/501100000276"
+    }
+]

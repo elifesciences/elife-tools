@@ -1,0 +1,22 @@
+[
+    {
+        "funding_source": [
+            "Swiss National Science Foundation"
+        ], 
+        "recipient": [
+            "Hugo Stocker"
+        ], 
+        "award_id": [
+            "31003A_125208"
+        ]
+    }, 
+    {
+        "funding_source": [
+            "ETH Z\u00fcrich"
+        ], 
+        "recipient": [
+            "Ernst Hafen"
+        ], 
+        "award_id": null
+    }
+]

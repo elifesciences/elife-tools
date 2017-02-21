@@ -1,0 +1,24 @@
+[
+    {
+        "ordinal": 1, 
+        "sibling_ordinal": 1, 
+        "label": "Movie 2\u2014source code 1.", 
+        "asset": "code", 
+        "full_label": "Movie 2\u2014source code 1.", 
+        "id": "SD1-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00005.017"
+    }, 
+    {
+        "ordinal": 2, 
+        "sibling_ordinal": 1, 
+        "label": "Supplementary file 1.", 
+        "asset": "supp", 
+        "full_label": "Supplementary file 1.", 
+        "id": "SD2-data", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00005.020"
+    }
+]

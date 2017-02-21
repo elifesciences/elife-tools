@@ -1,0 +1,417 @@
+[
+    {
+        "notes-corresp": [
+            "kumars04@mit.edu (SK)"
+        ], 
+        "surname": "Kumari", 
+        "author": "Sudha Kumari", 
+        "article_doi": "10.7554/eLife.04953", 
+        "corresp": "yes", 
+        "affiliations": [
+            {
+                "dept": "Skirball Institute of Biomolecular Medicine", 
+                "city": "New York", 
+                "institution": "New York University School of Medicine", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "David H. Koch Institute for Integrative Cancer research", 
+                "city": "Cambridge", 
+                "institution": "Massachusetts Institute of Technology", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Sudha", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-5", 
+                "par-6"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 13444, 
+        "notes-fn": [
+            "SK, Sudha Kumari designed the experiments, acquired and analyzed the data and wrote the manuscript., Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-13444"
+    }, 
+    {
+        "surname": "Depoil", 
+        "author": "David Depoil", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Skirball Institute of Biomolecular Medicine", 
+                "city": "New York", 
+                "institution": "New York University School of Medicine", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Nuffield Department of Orthopedics, Rheumatology and Musculosceletal Sciences", 
+                "city": "Headington", 
+                "institution": "University of Oxford", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "David", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 19792, 
+        "notes-fn": [
+            "DD, Conception and design, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19792"
+    }, 
+    {
+        "surname": "Martinelli", 
+        "author": "Roberta Martinelli", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Beth Israel Deaconess Medical Center", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Roberta", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 19789, 
+        "notes-fn": [
+            "RM, EC-T cell conjugate experiments, Conception and design, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19789"
+    }, 
+    {
+        "surname": "Judokusumo", 
+        "author": "Edward Judokusumo", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Engineering", 
+                "city": "New York", 
+                "institution": "Columbia University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Edward", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 19787, 
+        "notes-fn": [
+            "EJ, Conception and design, Contributed unpublished essential data or reagents", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19787"
+    }, 
+    {
+        "surname": "Carmona", 
+        "author": "Guillaume Carmona", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "David H. Koch Institute for Integrative Cancer research", 
+                "city": "Cambridge", 
+                "institution": "Massachusetts Institute of Technology", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Guillaume", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con9"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 19785, 
+        "notes-fn": [
+            "GC, Actin barbed end labeling experiments, Conception and design, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19785"
+    }, 
+    {
+        "surname": "Gertler", 
+        "author": "Frank B Gertler", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "David H. Koch Institute for Integrative Cancer research", 
+                "city": "Cambridge", 
+                "institution": "Massachusetts Institute of Technology", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Frank B", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con10"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 6, 
+        "person_id": 19786, 
+        "notes-fn": [
+            "FBG, Conception and design, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19786"
+    }, 
+    {
+        "surname": "Kam", 
+        "author": "Lance C Kam", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Engineering", 
+                "city": "New York", 
+                "institution": "Columbia University", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Lance C", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ]
+        }, 
+        "position": 7, 
+        "person_id": 19788, 
+        "notes-fn": [
+            "LCK, Conception and design, Contributed unpublished essential data or reagents", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19788"
+    }, 
+    {
+        "surname": "Carman", 
+        "author": "Christopher V Carman", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Beth Israel Deaconess Medical Center", 
+                "city": "Boston", 
+                "institution": "Harvard Medical School", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Christopher V", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 8, 
+        "person_id": 19790, 
+        "notes-fn": [
+            "CVC, EC-T cell conjugate experiments, Conception and design, Acquisition of data, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19790"
+    }, 
+    {
+        "surname": "Burkhardt", 
+        "author": "Janis K Burkhardt", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology and Laboratory Medicine, Perelman School of Medicine, The Children's Hospital of Philadelphia", 
+                "city": "Philadelphia", 
+                "institution": "University of Pennsylvania", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Janis K", 
+        "references": {
+            "affiliation": [
+                "aff6"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-2"
+            ]
+        }, 
+        "position": 9, 
+        "person_id": 19791, 
+        "notes-fn": [
+            "JKB, Conception and design, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-19791"
+    }, 
+    {
+        "surname": "Irvine", 
+        "author": "Darrell J Irvine", 
+        "article_doi": "10.7554/eLife.04953", 
+        "affiliations": [
+            {
+                "dept": "David H. Koch Institute for Integrative Cancer research", 
+                "city": "Cambridge", 
+                "institution": "Massachusetts Institute of Technology", 
+                "country": "United States"
+            }
+        ], 
+        "given-names": "Darrell J", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con11"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 10, 
+        "person_id": 17661, 
+        "notes-fn": [
+            "DJI, Analysis and interpretation of data, Contributed unpublished essential data or reagents", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-17661"
+    }, 
+    {
+        "notes-corresp": [
+            "*For correspondence: michael.dustin@kennedy.ox.ac.uk (MLD);"
+        ], 
+        "surname": "Dustin", 
+        "affiliations": [
+            {
+                "dept": "Skirball Institute of Biomolecular Medicine", 
+                "city": "New York", 
+                "institution": "New York University School of Medicine", 
+                "country": "United States"
+            }, 
+            {
+                "dept": "Nuffield Department of Orthopedics, Rheumatology and Musculosceletal Sciences", 
+                "city": "Headington", 
+                "institution": "University of Oxford", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "author": "Michael L Dustin", 
+        "article_doi": "10.7554/eLife.04953", 
+        "corresp": "yes", 
+        "person_id": 7917, 
+        "given-names": "Michael L", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-4", 
+                "par-6", 
+                "par-7"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 11, 
+        "orcid": "http://orcid.org/0000-0003-4983-6389", 
+        "notes-fn": [
+            "MLD, Conception and design, Analysis and interpretation of data, Drafting or revising the article, Contributed unpublished essential data or reagents", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-7917"
+    }
+]

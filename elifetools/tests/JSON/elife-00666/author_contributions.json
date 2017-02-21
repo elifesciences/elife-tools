@@ -1,0 +1,22 @@
+[
+    {
+        "text": "\n<p>Completed the XML mapping exercise and wrote this XML example</p>\n", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>Contributed to the XML mapping exercise and quality checked all the tagging and content</p>\n", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>Reviewed the PDF product</p>\n", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "\n<p>Chris Wilkinson, Performed the XML mapping exercise and generated the JSON Schema</p>\n<p>Graham Nott, Wrote the JATSscraper</p>\n<p>Luke Skibinski, Identified missing components from the JATSscraper</p>\n", 
+        "id": "con4", 
+        "fn-type": "con"
+    }
+]

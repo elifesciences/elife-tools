@@ -1,0 +1,2180 @@
+[
+    {
+        "surname": "Provenzano", 
+        "group-author-key": "group-author-id1", 
+        "author": "Elena Provenzano", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cambridge Breast Unit", 
+                "city": "Cambridge CB2 2QQ", 
+                "institution": "Addenbrooke\u2019s Hospital, Cambridge University Hospital NHS Foundation Trust and NIHR Cambridge Biomedical Research Centre", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Elena", 
+        "position": 1, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "van de Vijver", 
+        "group-author-key": "group-author-id1", 
+        "author": "Marc van de Vijver", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "1105 AZ Amsterdam", 
+                "institution": "Academic Medical Center, Meibergdreef 9", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Marc", 
+        "position": 2, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Richardson", 
+        "group-author-key": "group-author-id1", 
+        "author": "Andrea L Richardson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Cancer Biology", 
+                "city": "450 Brookline Ave., Boston, Massachusetts 02215", 
+                "institution": "Dana-Farber Cancer Institute", 
+                "country": "USA"
+            }, 
+            {
+                "dept": "Department of Pathology", 
+                "city": "75 Francis St., Boston, Massachusetts 02115", 
+                "institution": "Brigham and Women's Hospital, Harvard Medical School", 
+                "country": "USA"
+            }
+        ], 
+        "given-names": "Andrea L", 
+        "position": 3, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Purdie", 
+        "group-author-key": "group-author-id1", 
+        "author": "Colin Purdie", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "United Kingdom", 
+                "institution": "East of Scotland Breast Service, Ninewells Hospital", 
+                "city": "Dundee"
+            }
+        ], 
+        "given-names": "Colin", 
+        "position": 4, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Pinder", 
+        "group-author-key": "group-author-id1", 
+        "author": "Sarah Pinder", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Research Oncology", 
+                "city": "London SE1 9RT", 
+                "institution": "Guy\u2019s Hospital, King\u2019s Health Partners AHSC, King\u2019s College London School of Medicine", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Sarah", 
+        "position": 5, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "MacGrogan", 
+        "group-author-key": "group-author-id1", 
+        "author": "Gaetan MacGrogan", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Institut Bergoni\u00e9, 229 cours de l\u2019Argone, 33076", 
+                "city": "Bordeaux"
+            }
+        ], 
+        "given-names": "Gaetan", 
+        "position": 6, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Vincent-Salomon", 
+        "group-author-key": "group-author-id1", 
+        "author": "Anne Vincent-Salomon", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Institut Curie, Department of Tumor Biology, 26 rue d\u2019Ulm", 
+                "city": "75248 Paris c\u00e9dex 05"
+            }, 
+            {
+                "country": "France", 
+                "institution": "Institut Curie, INSERM Unit 830, 26 rue d\u2019Ulm", 
+                "city": "75248 Paris c\u00e9dex 05"
+            }
+        ], 
+        "given-names": "Anne", 
+        "position": 7, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Larsimont", 
+        "group-author-key": "group-author-id1", 
+        "author": "Denis Larsimont", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Brussels 1000", 
+                "institution": "Jules Bordet Institute", 
+                "country": "Belgium"
+            }
+        ], 
+        "given-names": "Denis", 
+        "position": 8, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Grabau", 
+        "group-author-key": "group-author-id1", 
+        "author": "Dorthe Grabau", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "SE-221 85 Lund", 
+                "institution": "Sk\u00e5ne University Hospital, Lund University", 
+                "country": "Sweden"
+            }
+        ], 
+        "given-names": "Dorthe", 
+        "position": 9, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Sauer", 
+        "group-author-key": "group-author-id1", 
+        "author": "Torill Sauer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Oslo", 
+                "institution": "Oslo University Hospital Ulleval and University of Oslo, Faculty of Medicine and Institute of Clinical Medicine", 
+                "country": "Norway"
+            }
+        ], 
+        "given-names": "Torill", 
+        "position": 10, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Garred", 
+        "group-author-key": "group-author-id1", 
+        "author": "\u00d8ystein Garred", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Oslo", 
+                "institution": "Oslo University Hospital Ulleval and University of Oslo, Faculty of Medicine and Institute of Clinical Medicine", 
+                "country": "Norway"
+            }
+        ], 
+        "given-names": "\u00d8ystein", 
+        "position": 11, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Ehinger", 
+        "group-author-key": "group-author-id1", 
+        "author": "Anna Ehinger", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Gynecology & Obstetrics, Department of Clinical Sciences", 
+                "city": "SE-221 85 Lund", 
+                "institution": "Lund University, Sk\u00e5ne University Hospital Lund", 
+                "country": "Sweden"
+            }
+        ], 
+        "given-names": "Anna", 
+        "position": 12, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Van den Eynden", 
+        "group-author-key": "group-author-id1", 
+        "author": "Gert G Van den Eynden", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "Belgium", 
+                "institution": "Translational Cancer Research Unit, GZA Hospitals St.-Augustinus", 
+                "city": "Antwerp"
+            }
+        ], 
+        "given-names": "Gert G", 
+        "position": 13, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "van Deurzen", 
+        "group-author-key": "group-author-id1", 
+        "author": "C.H.M. van Deurzen", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Rotterdam", 
+                "institution": "Erasmus Medical Center", 
+                "country": "the Netherlands"
+            }
+        ], 
+        "given-names": "C.H.M.", 
+        "position": 14, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Salgado", 
+        "group-author-key": "group-author-id1", 
+        "author": "Roberto Salgado", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Breast Cancer Translational Research Laboratory", 
+                "city": "Brussels", 
+                "institution": "Institut Jules Bordet, Universit\u00e9 Libre de Bruxelles", 
+                "country": "Belgium"
+            }
+        ], 
+        "given-names": "Roberto", 
+        "position": 15, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Brock", 
+        "group-author-key": "group-author-id1", 
+        "author": "Jane E Brock", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "75 Francis St., Boston, Massachusetts 02115", 
+                "institution": "Brigham and Women's Hospital, Harvard Medical School", 
+                "country": "USA"
+            }
+        ], 
+        "given-names": "Jane E", 
+        "position": 16, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Lakhani", 
+        "group-author-key": "group-author-id1", 
+        "author": "Sunil R Lakhani", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "Australia", 
+                "institution": "The University of Queensland, School of Medicine, Herston", 
+                "city": "Brisbane, QLD 4006"
+            }, 
+            {
+                "country": "Australia", 
+                "institution": "Pathology Queensland: The Royal Brisbane & Women\u2019s Hospital", 
+                "city": "Brisbane, QLD 4029"
+            }, 
+            {
+                "country": "Australia", 
+                "institution": "The University of Queensland, UQ Centre for Clinical Research, Herston", 
+                "city": "Brisbane, QLD 4029"
+            }
+        ], 
+        "given-names": "Sunil R", 
+        "position": 17, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Giri", 
+        "group-author-key": "group-author-id1", 
+        "author": "Dilip D Giri", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "New York", 
+                "institution": "Memorial Sloan-Kettering Cancer Center", 
+                "country": "USA"
+            }
+        ], 
+        "given-names": "Dilip D", 
+        "position": 18, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Arnould", 
+        "group-author-key": "group-author-id1", 
+        "author": "Laurent Arnould", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Centre Georges-Fran\u00e7ois Leclerc", 
+                "city": "Dijon"
+            }
+        ], 
+        "given-names": "Laurent", 
+        "position": 19, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Jacquemier", 
+        "group-author-key": "group-author-id1", 
+        "author": "Jocelyne Jacquemier", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "biopathology department", 
+                "city": "Marseille", 
+                "institution": "0nstitut Paoli Calmettes", 
+                "country": "France"
+            }
+        ], 
+        "given-names": "Jocelyne", 
+        "position": 20, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Treilleux", 
+        "group-author-key": "group-author-id1", 
+        "author": "Isabelle Treilleux", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Centre L\u00e9on B\u00e9rard", 
+                "city": "Lyon"
+            }
+        ], 
+        "given-names": "Isabelle", 
+        "position": 21, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Caldas", 
+        "group-author-key": "group-author-id1", 
+        "author": "Carlos Caldas", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cambridge Breast Unit, Addenbrooke\u2019s Hospital", 
+                "city": "Cambridge", 
+                "institution": "Cambridge University Hospital NHS Foundation Trust and NIHR Cambridge Biomedical Research Centre", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Department of Oncology", 
+                "institution": "University of Cambridge and Cancer Research UK Cambridge Research Institute, Li Ka Shin Centre", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Carlos", 
+        "position": 22, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Chin", 
+        "group-author-key": "group-author-id1", 
+        "author": "Suet-Feung Chin", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Oncology", 
+                "institution": "University of Cambridge and Cancer Research UK Cambridge Research Institute, Li Ka Shin Centre", 
+                "city": "Cambridge"
+            }
+        ], 
+        "given-names": "Suet-Feung", 
+        "position": 23, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Fatima", 
+        "group-author-key": "group-author-id1", 
+        "author": "Aquila Fatima", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Cancer Biology", 
+                "city": "Massachusetts", 
+                "institution": "Dana-Farber Cancer Institute", 
+                "country": "USA"
+            }
+        ], 
+        "given-names": "Aquila", 
+        "position": 24, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Thompson", 
+        "group-author-key": "group-author-id1", 
+        "author": "Alastair M Thompson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Dundee Cancer Centre, Ninewells Hospital", 
+                "city": "Dundee"
+            }
+        ], 
+        "given-names": "Alastair M", 
+        "position": 25, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Stenhouse", 
+        "group-author-key": "group-author-id1", 
+        "author": "Alasdair Stenhouse", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Dundee Cancer Centre, Ninewells Hospital", 
+                "city": "Dundee"
+            }
+        ], 
+        "given-names": "Alasdair", 
+        "position": 26, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Foekens", 
+        "group-author-key": "group-author-id1", 
+        "author": "John Foekens", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "The Netherlands", 
+                "institution": "Erasmus MC Cancer Institute, Erasmus University Medical Center", 
+                "city": "Rotterdam"
+            }
+        ], 
+        "given-names": "John", 
+        "position": 27, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Martens", 
+        "group-author-key": "group-author-id1", 
+        "author": "John Martens", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "The Netherlands", 
+                "institution": "Erasmus MC Cancer Institute, Erasmus University Medical Center", 
+                "city": "Rotterdam"
+            }
+        ], 
+        "given-names": "John", 
+        "position": 28, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Sieuwerts", 
+        "group-author-key": "group-author-id1", 
+        "author": "Anieta Sieuwerts", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "The Netherlands", 
+                "institution": "Erasmus MC Cancer Institute, Erasmus University Medical Center", 
+                "city": "Rotterdam"
+            }
+        ], 
+        "given-names": "Anieta", 
+        "position": 29, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Brinkman", 
+        "group-author-key": "group-author-id1", 
+        "author": "Arjen Brinkman", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology, Faculty of Science, Nijmegen Centre for Molecular Life Sciences", 
+                "city": "Nijmegen", 
+                "institution": "Radboud University", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Arjen", 
+        "position": 30, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Stunnenberg", 
+        "group-author-key": "group-author-id1", 
+        "author": "Henk Stunnenberg", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Biology, Faculty of Science, Nijmegen Centre for Molecular Life Sciences", 
+                "city": "Nijmegen", 
+                "institution": "Radboud University", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Henk", 
+        "position": 31, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Span", 
+        "group-author-key": "group-author-id1", 
+        "author": "Paul N. Span", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Radiation Oncology", 
+                "city": "Nijmegen", 
+                "institution": "Radboud University Medical Centre", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Paul N.", 
+        "position": 32, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Sweep", 
+        "group-author-key": "group-author-id1", 
+        "author": "Fred Sweep", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Laboratory Medicine", 
+                "city": "Nijmegen", 
+                "institution": "Radboud University Medical Centre", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Fred", 
+        "position": 33, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Desmedt", 
+        "group-author-key": "group-author-id1", 
+        "author": "Christine Desmedt", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Breast Cancer Translational Research Laboratory", 
+                "city": "Brussels", 
+                "institution": "Institut Jules Bordet, Universit\u00e9 Libre de Bruxelles", 
+                "country": "Belgium"
+            }
+        ], 
+        "given-names": "Christine", 
+        "position": 34, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Sotiriou", 
+        "group-author-key": "group-author-id1", 
+        "author": "Christos Sotiriou", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Breast Cancer Translational Research Laboratory", 
+                "city": "Brussels", 
+                "institution": "Institut Jules Bordet, Universit\u00e9 Libre de Bruxelles", 
+                "country": "Belgium"
+            }
+        ], 
+        "given-names": "Christos", 
+        "position": 35, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Thomas", 
+        "group-author-key": "group-author-id1", 
+        "author": "Gilles Thomas", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Universite Lyon1, INCa-Synergie, Centre Leon Berard", 
+                "city": "Lyon Cedex 08"
+            }
+        ], 
+        "given-names": "Gilles", 
+        "position": 36, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Broeks", 
+        "group-author-key": "group-author-id1", 
+        "author": "Annegein Broeks", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department Experimental Therapy", 
+                "city": "Amsterdam", 
+                "institution": "The Netherlands Cancer Institute", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Annegein", 
+        "position": 37, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Langerod", 
+        "group-author-key": "group-author-id1", 
+        "author": "Anita Langerod", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Genetics", 
+                "city": "Oslo", 
+                "institution": "Institute for Cancer Research, The Norwegian Radium Hospital, Oslo University Hospital", 
+                "country": "Norway"
+            }
+        ], 
+        "given-names": "Anita", 
+        "position": 38, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Aparicio", 
+        "group-author-key": "group-author-id1", 
+        "author": "Samuel Aparicio", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Oncology", 
+                "institution": "BC Cancer Agency", 
+                "city": "Vancouver"
+            }
+        ], 
+        "given-names": "Samuel", 
+        "position": 39, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Simpson", 
+        "group-author-key": "group-author-id1", 
+        "author": "Peter Simpson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "Australia", 
+                "institution": "The University of Queensland, UQ Centre for Clinical Research", 
+                "city": "Herston, Brisbane"
+            }
+        ], 
+        "given-names": "Peter", 
+        "position": 40, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Veer", 
+        "group-author-key": "group-author-id1", 
+        "author": "Laura van 't Veer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Molecular Carcinogenesis", 
+                "city": "Amsterdam", 
+                "institution": "The Netherlands Cancer Institute", 
+                "country": "The Netherlands"
+            }, 
+            {
+                "dept": "Department of Surgery", 
+                "city": "San Francisco, California", 
+                "institution": "University of California, San Francisco", 
+                "country": "United States of America"
+            }
+        ], 
+        "given-names": "Laura van 't", 
+        "position": 41, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Eyfj\u00f6rd", 
+        "group-author-key": "group-author-id1", 
+        "author": "J\u00f3runn Erla Eyfj\u00f6rd", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Research Laboratory, Faculty of Medicine", 
+                "city": "Reykjavik", 
+                "institution": "University of Iceland", 
+                "country": "Iceland"
+            }
+        ], 
+        "given-names": "J\u00f3runn Erla", 
+        "position": 42, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hilmarsdottir", 
+        "group-author-key": "group-author-id1", 
+        "author": "Holmfridur Hilmarsdottir", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Research Laboratory, Faculty of Medicine", 
+                "city": "Reykjavik", 
+                "institution": "University of Iceland", 
+                "country": "Iceland"
+            }
+        ], 
+        "given-names": "Holmfridur", 
+        "position": 43, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Jonasson", 
+        "group-author-key": "group-author-id1", 
+        "author": "Jon G Jonasson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Reykjavik", 
+                "institution": "University Hospital", 
+                "country": "Iceland"
+            }, 
+            {
+                "dept": "Icelandic Cancer Registry", 
+                "city": "Reykjavik", 
+                "institution": "Icelandic Cancer Society", 
+                "country": "Iceland"
+            }
+        ], 
+        "given-names": "Jon G", 
+        "position": 44, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "B\u00f8rresen-Dale", 
+        "group-author-key": "group-author-id1", 
+        "author": "Anne-Lise B\u00f8rresen-Dale", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Genetics", 
+                "city": "Oslo", 
+                "institution": "Institute for Cancer Research, The Norwegian Radium Hospital, Oslo University Hospital", 
+                "country": "Norway"
+            }, 
+            {
+                "dept": "Institute for Clinical Medicine, Faculty of Medicine", 
+                "institution": "University of Oslo"
+            }
+        ], 
+        "given-names": "Anne-Lise", 
+        "position": 45, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Michael Lee", 
+        "group-author-key": "group-author-id1", 
+        "author": "Ming Ta Michael Lee", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "National Genotyping Center", 
+                "city": "Nankang", 
+                "institution": "Institute of Biomedical Sciences", 
+                "country": "ROC"
+            }
+        ], 
+        "given-names": "Ming Ta", 
+        "position": 46, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Wong", 
+        "group-author-key": "group-author-id1", 
+        "author": "Bernice Huimin Wong", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "NCCS-VARI Translational Research Laboratory", 
+                "institution": "National Cancer Centre Singapore", 
+                "country": "Singapore"
+            }
+        ], 
+        "given-names": "Bernice Huimin", 
+        "position": 47, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Tee Tan", 
+        "group-author-key": "group-author-id1", 
+        "author": "Benita Kiat Tee Tan", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of General Surgery", 
+                "institution": "Singapore General Hospital", 
+                "country": "Singapore"
+            }
+        ], 
+        "given-names": "Benita Kiat", 
+        "position": 48, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hooijer", 
+        "group-author-key": "group-author-id1", 
+        "author": "Gerrit K.J. Hooijer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Pathology", 
+                "city": "Amsterdam", 
+                "institution": "Academic Medical Center", 
+                "country": "The Netherlands"
+            }
+        ], 
+        "given-names": "Gerrit K.J.", 
+        "position": 49, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Malcovati", 
+        "group-author-key": "group-author-id2", 
+        "author": "Luca Malcovati", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [], 
+        "given-names": "Luca", 
+        "position": 50, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Tauro", 
+        "group-author-key": "group-author-id2", 
+        "author": "Sudhir Tauro", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [], 
+        "given-names": "Sudhir", 
+        "position": 51, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Boultwood", 
+        "group-author-key": "group-author-id2", 
+        "author": "Jacqueline Boultwood", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Nuffield Department of Clinical Laboratory Sciences", 
+                "institution": "University of Oxford", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jacqueline", 
+        "position": 52, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Pellagatti", 
+        "group-author-key": "group-author-id2", 
+        "author": "Andrea Pellagatti", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Nuffield Department of Clinical Laboratory Sciences", 
+                "institution": "University of Oxford", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Andrea", 
+        "position": 53, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Groves", 
+        "group-author-key": "group-author-id2", 
+        "author": "Michael Groves", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Medial Sciences", 
+                "city": "Dundee", 
+                "institution": "University of Dundee", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Michael", 
+        "position": 54, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Sternberg", 
+        "group-author-key": "group-author-id2", 
+        "author": "Alex Sternberg", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Weatherall Institute of Molecular Medicine", 
+                "institution": "University of Oxford", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Department of Haematology", 
+                "city": "Swindon", 
+                "institution": "Great Western Hospital", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Alex", 
+        "position": 55, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Gambacorti-Passerini", 
+        "group-author-key": "group-author-id2", 
+        "author": "Carlo Gambacorti-Passerini", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Haematology", 
+                "city": "Milan", 
+                "institution": "University of Milan Bicocca", 
+                "country": "Italy"
+            }
+        ], 
+        "given-names": "Carlo", 
+        "position": 56, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Vyas", 
+        "group-author-key": "group-author-id2", 
+        "author": "Paresh Vyas", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Weatherall Institute of Molecular Medicine", 
+                "institution": "University of Oxford", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Paresh", 
+        "position": 57, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hellstrom-Lindberg", 
+        "group-author-key": "group-author-id2", 
+        "author": "Eva Hellstrom-Lindberg", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Haematology", 
+                "city": "Stockholm", 
+                "institution": "Karolinska Institute", 
+                "country": "Sweden"
+            }
+        ], 
+        "given-names": "Eva", 
+        "position": 58, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Bowen", 
+        "group-author-key": "group-author-id2", 
+        "author": "David Bowen", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "St James Institute of Oncology, St James Hospital", 
+                "city": "Leeds"
+            }
+        ], 
+        "given-names": "David", 
+        "position": 59, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Cross", 
+        "group-author-key": "group-author-id2", 
+        "author": "Nicholas CP Cross", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "School of Medicine", 
+                "city": "Southampton", 
+                "institution": "University of Southampton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Nicholas CP", 
+        "position": 60, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Green", 
+        "group-author-key": "group-author-id2", 
+        "author": "Anthony R Green", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Haematology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Anthony R", 
+        "position": 61, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Cazzola", 
+        "group-author-key": "group-author-id2", 
+        "author": "Mario Cazzola", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Fondazione IRCCS Policlinico San Matteo", 
+                "city": "Pavia", 
+                "institution": "University of Pavia", 
+                "country": "Italy"
+            }
+        ], 
+        "given-names": "Mario", 
+        "position": 62, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Cooper", 
+        "group-author-key": "group-author-id3", 
+        "author": "Colin Cooper", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Department of Biological Sciences and School of Medicine", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Colin", 
+        "position": 63, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Eeles", 
+        "group-author-key": "group-author-id3", 
+        "author": "Rosalind Eeles", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }, 
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Rosalind", 
+        "position": 64, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Wedge", 
+        "group-author-key": "group-author-id3", 
+        "author": "David Wedge", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "David", 
+        "position": 65, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Van Loo", 
+        "group-author-key": "group-author-id3", 
+        "author": "Peter Van Loo", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Human Genome Laboratory, Department of Human Genetics", 
+                "city": "Leuven", 
+                "institution": "VIB and KU Leuven", 
+                "country": "Belgium"
+            }
+        ], 
+        "given-names": "Peter", 
+        "position": 66, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Gundem", 
+        "group-author-key": "group-author-id3", 
+        "author": "Gunes Gundem", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Gunes", 
+        "position": 67, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Alexandrov", 
+        "group-author-key": "group-author-id3", 
+        "author": "Ludmil Alexandrov", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Ludmil", 
+        "position": 68, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Kremeyer", 
+        "group-author-key": "group-author-id3", 
+        "author": "Barbara Kremeyer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Barbara", 
+        "position": 69, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Butler", 
+        "group-author-key": "group-author-id3", 
+        "author": "Adam Butler", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Adam", 
+        "position": 70, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Lynch", 
+        "group-author-key": "group-author-id3", 
+        "author": "Andrew Lynch", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Statistics and Computational Biology Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Andrew", 
+        "position": 71, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Edwards", 
+        "group-author-key": "group-author-id3", 
+        "author": "Sandra Edwards", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Sandra", 
+        "position": 72, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Camacho", 
+        "group-author-key": "group-author-id3", 
+        "author": "Niedzica Camacho", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Niedzica", 
+        "position": 73, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Massie", 
+        "group-author-key": "group-author-id3", 
+        "author": "Charlie Massie", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Charlie", 
+        "position": 74, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Kote-Jarai", 
+        "group-author-key": "group-author-id3", 
+        "author": "ZSofia Kote-Jarai", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "ZSofia", 
+        "position": 75, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Dennis", 
+        "group-author-key": "group-author-id3", 
+        "author": "Nening Dennis", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Nening", 
+        "position": 76, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Merson", 
+        "group-author-key": "group-author-id3", 
+        "author": "Sue Merson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Sue", 
+        "position": 77, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Zamora", 
+        "group-author-key": "group-author-id3", 
+        "author": "Jorge Zamora", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jorge", 
+        "position": 78, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Kay", 
+        "group-author-key": "group-author-id3", 
+        "author": "Jonathan Kay", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jonathan", 
+        "position": 79, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Corbishley", 
+        "group-author-key": "group-author-id3", 
+        "author": "Cathy Corbishley", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Histopathology", 
+                "city": "London", 
+                "institution": "St Georges Hospital", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Cathy", 
+        "position": 80, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Thomas", 
+        "group-author-key": "group-author-id3", 
+        "author": "Sarah Thomas", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Sarah", 
+        "position": 81, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Nik-Zainai", 
+        "group-author-key": "group-author-id3", 
+        "author": "Serena Nik-Zainai", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Serena", 
+        "position": 82, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "O'Meara", 
+        "group-author-key": "group-author-id3", 
+        "author": "Sarah O'Meara", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Sarah", 
+        "position": 83, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Matthews", 
+        "group-author-key": "group-author-id3", 
+        "author": "Lucy Matthews", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Lucy", 
+        "position": 84, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Clark", 
+        "group-author-key": "group-author-id3", 
+        "author": "Jeremy Clark", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Sciences and School of Medicine", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jeremy", 
+        "position": 85, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hurst", 
+        "group-author-key": "group-author-id3", 
+        "author": "Rachel Hurst", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Biological Sciences and School of Medicine", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Rachel", 
+        "position": 86, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Mithen", 
+        "group-author-key": "group-author-id3", 
+        "author": "Richard Mithen", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Institute of Food Research", 
+                "city": "Norwich", 
+                "institution": "Norwich Research Park", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Richard", 
+        "position": 87, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Cooke", 
+        "group-author-key": "group-author-id3", 
+        "author": "Susanna Cooke", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Susanna", 
+        "position": 88, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Raine", 
+        "group-author-key": "group-author-id3", 
+        "author": "Keiran Raine", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Keiran", 
+        "position": 89, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Jones", 
+        "group-author-key": "group-author-id3", 
+        "author": "David Jones", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "David", 
+        "position": 90, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Menzies", 
+        "group-author-key": "group-author-id3", 
+        "author": "Andrew Menzies", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Andrew", 
+        "position": 91, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Stebbings", 
+        "group-author-key": "group-author-id3", 
+        "author": "Lucy Stebbings", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Lucy", 
+        "position": 92, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hinton", 
+        "group-author-key": "group-author-id3", 
+        "author": "Jon Hinton", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jon", 
+        "position": 93, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Teague", 
+        "group-author-key": "group-author-id3", 
+        "author": "Jon Teague", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Jon", 
+        "position": 94, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "McLaren", 
+        "group-author-key": "group-author-id3", 
+        "author": "Stuart McLaren", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Stuart", 
+        "position": 95, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Mudie", 
+        "group-author-key": "group-author-id3", 
+        "author": "Laura Mudie", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Laura", 
+        "position": 96, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hardy", 
+        "group-author-key": "group-author-id3", 
+        "author": "Claire Hardy", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Claire", 
+        "position": 97, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Anderson", 
+        "group-author-key": "group-author-id3", 
+        "author": "Elizabeth Anderson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Elizabeth", 
+        "position": 98, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Joseph", 
+        "group-author-key": "group-author-id3", 
+        "author": "Olivia Joseph", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Olivia", 
+        "position": 99, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Goody", 
+        "group-author-key": "group-author-id3", 
+        "author": "Victoria Goody", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Victoria", 
+        "position": 100, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Robinson", 
+        "group-author-key": "group-author-id3", 
+        "author": "Ben Robinson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Ben", 
+        "position": 101, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Maddison", 
+        "group-author-key": "group-author-id3", 
+        "author": "Mark Maddison", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Mark", 
+        "position": 102, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Gamble", 
+        "group-author-key": "group-author-id3", 
+        "author": "Stephen Gamble", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Stephen", 
+        "position": 103, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Greenman", 
+        "group-author-key": "group-author-id3", 
+        "author": "Christopher Greenman", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "School of Computing Sciences", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Christopher", 
+        "position": 104, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Berney", 
+        "group-author-key": "group-author-id3", 
+        "author": "Dan Berney", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Molecular Oncology", 
+                "city": "London", 
+                "institution": "Barts Cancer Centre, Barts and the London School of Medicine and Dentistry", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Dan", 
+        "position": 105, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Hazell", 
+        "group-author-key": "group-author-id3", 
+        "author": "Steven Hazell", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Steven", 
+        "position": 106, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Livni", 
+        "group-author-key": "group-author-id3", 
+        "author": "Naomi Livni", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Naomi", 
+        "position": 107, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Fisher", 
+        "group-author-key": "group-author-id3", 
+        "author": "Cyril Fisher", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Cyril", 
+        "position": 108, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Ogden", 
+        "group-author-key": "group-author-id3", 
+        "author": "Christopher Ogden", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Christopher", 
+        "position": 109, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Kumar", 
+        "group-author-key": "group-author-id3", 
+        "author": "Pardeep Kumar", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Pardeep", 
+        "position": 110, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Thompson", 
+        "group-author-key": "group-author-id3", 
+        "author": "Alan Thompson", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Alan", 
+        "position": 111, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Woodhouse", 
+        "group-author-key": "group-author-id3", 
+        "author": "Christopher Woodhouse", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Christopher", 
+        "position": 112, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Nicol", 
+        "group-author-key": "group-author-id3", 
+        "author": "David Nicol", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "David", 
+        "position": 113, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Mayer", 
+        "group-author-key": "group-author-id3", 
+        "author": "Erik Mayer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Erik", 
+        "position": 114, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Dudderidge", 
+        "group-author-key": "group-author-id3", 
+        "author": "Tim Dudderidge", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "country": "UK", 
+                "institution": "Royal Marsden NHS Foundation Trust", 
+                "city": "London and Sutton"
+            }
+        ], 
+        "given-names": "Tim", 
+        "position": 115, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Shah", 
+        "group-author-key": "group-author-id3", 
+        "author": "Nimish Shah", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Nimish", 
+        "position": 116, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Gnanapragasam", 
+        "group-author-key": "group-author-id3", 
+        "author": "Vincent Gnanapragasam", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Vincent", 
+        "position": 117, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Campbell", 
+        "group-author-key": "group-author-id3", 
+        "author": "Peter Campbell", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Peter", 
+        "position": 118, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Futreal", 
+        "group-author-key": "group-author-id3", 
+        "author": "Andrew Futreal", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Andrew", 
+        "position": 119, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Easton", 
+        "group-author-key": "group-author-id3", 
+        "author": "Douglas Easton", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Centre for Cancer Genetic Epidemiology, Department of Oncology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Douglas", 
+        "position": 120, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Warren", 
+        "group-author-key": "group-author-id3", 
+        "author": "Anne Y Warren", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Department of Histopathology", 
+                "city": "Cambridge", 
+                "institution": "Cambridge University Hospitals NHS Foundation Trust", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Anne Y", 
+        "position": 121, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Foster", 
+        "group-author-key": "group-author-id3", 
+        "author": "Christopher Foster", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Bostwick Laboratories", 
+                "city": "London", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Christopher", 
+        "position": 122, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Stratton", 
+        "group-author-key": "group-author-id3", 
+        "author": "Michael Stratton", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Michael", 
+        "position": 123, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Whitaker", 
+        "group-author-key": "group-author-id3", 
+        "author": "Hayley Whitaker", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Hayley", 
+        "position": 124, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "McDermott", 
+        "group-author-key": "group-author-id3", 
+        "author": "Ultan McDermott", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Cancer Genome Project,", 
+                "city": "Hinxton", 
+                "institution": "Wellcome Trust Sanger Institute", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Ultan", 
+        "position": 125, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Brewer", 
+        "group-author-key": "group-author-id3", 
+        "author": "Daniel Brewer", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Division of Genetics and Epidemiology", 
+                "institution": "The Institute Of Cancer Research, Sutton", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Department of Biological Sciences and School of Medicine", 
+                "city": "Norwich", 
+                "institution": "University of East Anglia", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "Daniel", 
+        "position": 126, 
+        "type": "author non-byline"
+    }, 
+    {
+        "surname": "Neal", 
+        "group-author-key": "group-author-id3", 
+        "author": "David Neal", 
+        "article_doi": "10.7554/eLife.02935", 
+        "affiliations": [
+            {
+                "dept": "Urological Research Laboratory", 
+                "city": "Cambridge", 
+                "institution": "Cancer Research UK Cambridge Research Institute", 
+                "country": "UK"
+            }, 
+            {
+                "dept": "Department of Surgical Oncology", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge, Addenbrooke's Hospital", 
+                "country": "UK"
+            }
+        ], 
+        "given-names": "David", 
+        "position": 127, 
+        "type": "author non-byline"
+    }
+]

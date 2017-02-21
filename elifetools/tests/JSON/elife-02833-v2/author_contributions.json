@@ -1,0 +1,37 @@
+[
+    {
+        "text": "<p>SKB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con1", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>AMD, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con2", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con3", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>HD, Conception and design, Acquisition of data</p>", 
+        "id": "con4", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>PIW, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con5", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>RIS, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con6", 
+        "fn-type": "con"
+    }, 
+    {
+        "text": "<p>REK, Conception and design, Analysis and interpretation of data, Drafting and revising the article</p>", 
+        "id": "con7", 
+        "fn-type": "con"
+    }
+]

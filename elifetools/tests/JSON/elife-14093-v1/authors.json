@@ -1,0 +1,273 @@
+[
+    {
+        "surname": "Refahi", 
+        "author": "Yassin Refahi", 
+        "article_doi": "10.7554/eLife.14093", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Laboratoire de Reproduction de d\u00e9veloppement des plantes", 
+                "city": "Lyon"
+            }, 
+            {
+                "dept": "Sainsbury Laboratory", 
+                "city": "Cambridge", 
+                "institution": "University of Cambridge", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Yassin", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-2", 
+                "par-4"
+            ]
+        }, 
+        "position": 1, 
+        "person_id": 48802, 
+        "notes-fn": [
+            "YR, Implemented the stochastic model, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-48802"
+    }, 
+    {
+        "surname": "Brunoud", 
+        "author": "G\u00e9raldine Brunoud", 
+        "article_doi": "10.7554/eLife.14093", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Laboratoire de Reproduction de d\u00e9veloppement des plantes", 
+                "city": "Lyon"
+            }
+        ], 
+        "given-names": "G\u00e9raldine", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 2, 
+        "person_id": 48803, 
+        "notes-fn": [
+            "GB, Acquisition of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-48803"
+    }, 
+    {
+        "surname": "Farcot", 
+        "author": "Etienne Farcot", 
+        "article_doi": "10.7554/eLife.14093", 
+        "affiliations": [
+            {
+                "dept": "School of Mathematical Sciences", 
+                "city": "Nottingham", 
+                "institution": "The University of Nottingham", 
+                "country": "United Kingdom"
+            }, 
+            {
+                "dept": "Center for Integrative Plant Biology", 
+                "city": "Notthingam", 
+                "institution": "The University of Nottingham", 
+                "country": "United Kingdom"
+            }
+        ], 
+        "given-names": "Etienne", 
+        "references": {
+            "affiliation": [
+                "aff3", 
+                "aff4"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 3, 
+        "person_id": 48804, 
+        "notes-fn": [
+            "EF, Conception and design, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-48804"
+    }, 
+    {
+        "surname": "Jean-Marie", 
+        "author": "Alain Jean-Marie", 
+        "article_doi": "10.7554/eLife.14093", 
+        "affiliations": [
+            {
+                "dept": "INRIA Project-Team Maestro", 
+                "city": "Montpellier", 
+                "institution": "INRIA Sophia-Antipolis M\u00e9diterran\u00e9e Research Center", 
+                "country": "France"
+            }
+        ], 
+        "given-names": "Alain", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 4, 
+        "person_id": 48805, 
+        "notes-fn": [
+            "AJ-M, Conception and design", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-48805"
+    }, 
+    {
+        "surname": "Pulkkinen", 
+        "author": "Minna Pulkkinen", 
+        "article_doi": "10.7554/eLife.14093", 
+        "affiliations": [
+            {
+                "dept": "UMR Lerfob", 
+                "city": "Nancy", 
+                "institution": "AgroParisTech", 
+                "country": "France"
+            }
+        ], 
+        "given-names": "Minna", 
+        "references": {
+            "affiliation": [
+                "aff6"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }, 
+        "position": 5, 
+        "person_id": 48806, 
+        "notes-fn": [
+            "MP, Analysis and interpretation of data", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-48806"
+    }, 
+    {
+        "notes-corresp": [
+            "teva.vernoux@ens-lyon.fr (TV);"
+        ], 
+        "surname": "Vernoux", 
+        "affiliations": [
+            {
+                "country": "France", 
+                "institution": "Laboratoire de Reproduction de d\u00e9veloppement des plantes", 
+                "city": "Lyon"
+            }
+        ], 
+        "author": "Teva Vernoux", 
+        "article_doi": "10.7554/eLife.14093", 
+        "corresp": "yes", 
+        "person_id": 7057, 
+        "given-names": "Teva", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "position": 6, 
+        "orcid": "http://orcid.org/0000-0002-8257-4088", 
+        "notes-fn": [
+            "TV, Conception and design, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-7057"
+    }, 
+    {
+        "notes-corresp": [
+            "Christophe.Godin@inria.fr (CG)"
+        ], 
+        "surname": "Godin", 
+        "affiliations": [
+            {
+                "dept": "INRIA Project-Team Virtual Plants", 
+                "city": "Montpellier", 
+                "institution": "CIRAD, INRA and INRIA Sophia-Antipolis M\u00e9diterran\u00e9e Research Center", 
+                "country": "France"
+            }
+        ], 
+        "author": "Christophe Godin", 
+        "article_doi": "10.7554/eLife.14093", 
+        "corresp": "yes", 
+        "person_id": 8383, 
+        "given-names": "Christophe", 
+        "references": {
+            "affiliation": [
+                "aff7"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2", 
+                "par-3"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "position": 7, 
+        "orcid": "http://orcid.org/0000-0002-1202-8460", 
+        "notes-fn": [
+            "CG, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting or revising the article", 
+            "The authors declare that no competing interests exist."
+        ], 
+        "type": "author", 
+        "id": "author-8383"
+    }
+]

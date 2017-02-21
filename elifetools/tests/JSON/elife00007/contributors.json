@@ -1,0 +1,90 @@
+[
+    {
+        "surname": "Schuman", 
+        "given-names": "Meredith C", 
+        "type": "author", 
+        "id": "author-1399", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Barthel", 
+        "given-names": "Kathleen", 
+        "type": "author", 
+        "id": "author-1400", 
+        "references": {
+            "present-address": [
+                "pa1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Baldwin", 
+        "corresp": "yes", 
+        "given-names": "Ian T", 
+        "references": {
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1"
+            ], 
+            "related-object": [
+                "dataro1"
+            ], 
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-1013"
+    }, 
+    {
+        "role": "Reviewing editor", 
+        "surname": "Weigel", 
+        "given-names": "Detlef", 
+        "type": "editor", 
+        "affiliations": [
+            {
+                "country": "Germany", 
+                "institution": "Max Planck Institute for Developmental Biology"
+            }
+        ]
+    }
+]

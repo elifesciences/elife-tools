@@ -1,0 +1,229 @@
+[
+    {
+        "surname": "Kumari", 
+        "corresp": "yes", 
+        "given-names": "Sudha", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-5", 
+                "par-6"
+            ], 
+            "email": [
+                "cor2"
+            ]
+        }, 
+        "type": "author", 
+        "id": "author-13444"
+    }, 
+    {
+        "surname": "Depoil", 
+        "given-names": "David", 
+        "type": "author", 
+        "id": "author-19792", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con4"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Martinelli", 
+        "given-names": "Roberta", 
+        "type": "author", 
+        "id": "author-19789", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con5"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Judokusumo", 
+        "given-names": "Edward", 
+        "type": "author", 
+        "id": "author-19787", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con7"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Carmona", 
+        "given-names": "Guillaume", 
+        "type": "author", 
+        "id": "author-19785", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con9"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Gertler", 
+        "given-names": "Frank B", 
+        "type": "author", 
+        "id": "author-19786", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con10"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Kam", 
+        "given-names": "Lance C", 
+        "type": "author", 
+        "id": "author-19788", 
+        "references": {
+            "affiliation": [
+                "aff5"
+            ], 
+            "contribution": [
+                "con8"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-3"
+            ]
+        }
+    }, 
+    {
+        "surname": "Carman", 
+        "given-names": "Christopher V", 
+        "type": "author", 
+        "id": "author-19790", 
+        "references": {
+            "affiliation": [
+                "aff4"
+            ], 
+            "contribution": [
+                "con6"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Burkhardt", 
+        "given-names": "Janis K", 
+        "type": "author", 
+        "id": "author-19791", 
+        "references": {
+            "affiliation": [
+                "aff6"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-2"
+            ]
+        }
+    }, 
+    {
+        "surname": "Irvine", 
+        "given-names": "Darrell J", 
+        "type": "author", 
+        "id": "author-17661", 
+        "references": {
+            "affiliation": [
+                "aff2"
+            ], 
+            "contribution": [
+                "con11"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ]
+        }
+    }, 
+    {
+        "surname": "Dustin", 
+        "corresp": "yes", 
+        "given-names": "Michael L", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff3"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-4", 
+                "par-6", 
+                "par-7"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0003-4983-6389", 
+        "type": "author", 
+        "id": "author-7917"
+    }, 
+    {
+        "role": "Reviewing editor", 
+        "surname": "Germain", 
+        "given-names": "Ronald N", 
+        "type": "editor", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "National Institute of Allergy and Infectious Diseases"
+            }
+        ]
+    }
+]

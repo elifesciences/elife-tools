@@ -1,0 +1,86 @@
+[
+    {
+        "surname": "Schuman", 
+        "corresp": "yes", 
+        "given-names": "Meredith C", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con1"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ], 
+            "email": [
+                "cor1"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0003-3159-3534", 
+        "type": "author", 
+        "id": "author-1399"
+    }, 
+    {
+        "surname": "Allmann", 
+        "given-names": "Silke", 
+        "type": "author", 
+        "id": "author-3416", 
+        "references": {
+            "affiliation": [
+                "aff1", 
+                "aff2"
+            ], 
+            "contribution": [
+                "con3"
+            ], 
+            "competing-interest": [
+                "conf2"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-3", 
+                "par-4"
+            ]
+        }
+    }, 
+    {
+        "surname": "Baldwin", 
+        "given-names": "Ian T", 
+        "references": {
+            "affiliation": [
+                "aff1"
+            ], 
+            "contribution": [
+                "con2"
+            ], 
+            "competing-interest": [
+                "conf1"
+            ], 
+            "funding": [
+                "par-1", 
+                "par-2"
+            ]
+        }, 
+        "orcid": "http://orcid.org/0000-0001-5371-2974", 
+        "type": "author", 
+        "id": "author-1013"
+    }, 
+    {
+        "surname": "Greenberg", 
+        "affiliations": [
+            {
+                "country": "United States", 
+                "institution": "University of Chicago"
+            }
+        ], 
+        "given-names": "Jean T", 
+        "role": "Reviewing editor", 
+        "type": "editor", 
+        "id": "author-1094"
+    }
+]
