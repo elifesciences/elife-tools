@@ -134,7 +134,7 @@ class TestJatsParser(unittest.TestCase):
 
     @unpack
     @data(
-        ("elife-kitchen-sink.xml", 176),
+        ("elife-kitchen-sink.xml", 177),
         ("elife_poa_e06828.xml", 3),
         ("elife07586.xml", 5)
     )
@@ -252,8 +252,8 @@ class TestJatsParser(unittest.TestCase):
 
     @unpack
     @data(
-        ("elife-kitchen-sink.xml", "doi", 77),
-        ("elife-kitchen-sink.xml", None, 78)
+        ("elife-kitchen-sink.xml", "doi", 78),
+        ("elife-kitchen-sink.xml", None, 79)
     )
     def test_pub_id_doi(self, filename, pub_id_type, expected_len):
         soup = parser.parse_document(sample_xml(filename))
@@ -324,7 +324,9 @@ class TestJatsParser(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(len(raw_parser.principal_award_recipient(soup)), expected_len)
 
-
+    def test_mixed_citations(self):
+        self.soup = parser.parse_document(sample_xml('elife-kitchen-sink.xml'))
+        self.assertEqual(1, len(raw_parser.mixed_citations(self.soup)))
 
 if __name__ == '__main__':
     unittest.main()
