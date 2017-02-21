@@ -100,7 +100,7 @@ All succeeding footnotes use the following symbols in order: † (&#x2020;), ‡
 NOTE: There can be multiple corresponding authors and they may not all have an ORCID as only one will be the primary correspondent for peer review. The
 primary corresponding author will be indicated as the corresponding author for the proofing process in the output XML from the submission system, but 
 this distinction will not be retained in the final XML. -->
-                    <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3523-4408</contrib-id>
+                    <contrib-id contrib-id-type="orcid"  authenticated="true">http://orcid.org/0000-0003-3523-4408</contrib-id>
 <!-- UPDATE: email for corresponding author is contained within contrib and no longer in author notes.
 For PDF display footnote "*For correspondence: " must be added as boilerplate followed by the email address pulled in from the XML.If there are multiple 
 corresponding authors, the email addresses must be added in order of the author list, separated with semicolons. Author initials should to be added in 
@@ -153,8 +153,6 @@ author. There is no display text associated with this link-->
                     </name>
                     <xref ref-type="aff" rid="aff1">1</xref>
                     <xref ref-type="fn" rid="equal-contrib1">&#x2020;</xref>
-                    <xref ref-type="other" rid="fund1"/>
-                    <xref ref-type="other" rid="fund2"/>
                     <xref ref-type="fn" rid="conf2"/>
                     <xref ref-type="fn" rid="con2"/>
                  </contrib>
@@ -259,6 +257,7 @@ list displayed in the PDF is retained as per the XML order-->
                     <xref ref-type="fn" rid="equal-contrib2">&#x2021;</xref>
                     <xref ref-type="fn" rid="con3"/>
                     <xref ref-type="fn" rid="conf2"/>
+                    <xref ref-type="aff" rid="aff1">1</xref>
                 </contrib>
                 <contrib contrib-type="author" equal-contrib="yes" corresp="yes">
                     <collab>eLife Technology Group
@@ -285,7 +284,7 @@ affiliations are truncated compared to normal author affiliations (usually just 
                                 <given-names>Chris</given-names>
                             </name>
                             <email>c.wilkinson@elifesciences.org</email>
-                            <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4921-6155</contrib-id>
+                            <contrib-id contrib-id-type="orcid"  authenticated="true">http://orcid.org/0000-0003-4921-6155</contrib-id>
                             <aff>
                                 <institution>eLife</institution>
                                 <addr-line>
@@ -311,6 +310,7 @@ affiliations are truncated compared to normal author affiliations (usually just 
             </collab>
                     <xref ref-type="aff" rid="aff2">2</xref>
                     <xref ref-type="fn" rid="equal-contrib2">&#x2021;</xref>
+                    <xref ref-type="other" rid="fund2"/>
                     <xref ref-type="fn" rid="conf3"/>
                     <xref ref-type="fn" rid="con4"/>
             </contrib>
@@ -382,7 +382,7 @@ Other footnotes are rare (they have only been used 3 times in the history of eLi
 content must work as a discrete item on each author's roll over and on the display at the end of the article -->
                 <fn fn-type="fn" id="fn1">
                     <label>&#035;</label>
-                    <p>Deceased. (not really!!)</p>
+                    <p>Deceased (not really!!)</p>
                 </fn>
                 <fn fn-type="fn" id="fn2">
                     <label>&#182;</label>
@@ -575,6 +575,7 @@ Individual members of a group authorship should not be named in the funding sect
                         </name>
                     </principal-award-recipient>
                 </award-group>
+                <!-- UPDATE: if an award recipient is a group, cannot use collab or name without subdivision, so added string-name-->
                 <award-group id="fund2">
                     <funding-source>
                         <institution-wrap>
@@ -582,7 +583,7 @@ Individual members of a group authorship should not be named in the funding sect
                         </institution-wrap>
                     </funding-source>
                     <principal-award-recipient>
-                        <institution>Reproducibility Project: Cancer Biology</institution>
+                        <string-name>eLife Technology Group</string-name>
                     </principal-award-recipient>
                 </award-group>
               <funding-statement>The funders had no role in study design; collection, analysis,
@@ -642,8 +643,8 @@ Impact statement:-->
                     Morgan, 2016</xref>. Approximately half of the articles that are
                     selected for peer review go on to be published (<xref ref-type="bibr" rid="bib5">Brettar et al., 2004a</xref>). If other researchers publish similar
                 findings after submission, this will not be a reason for rejection. The eLife
-                editorial process broadly occurs in three phases (<xref ref-type="bibr" rid="bib48">Turlings and Wäckers, 2004</xref>; <xref ref-type="bibr" rid="bib50">
-                    Wolski et al., 2008</xref>; <xref ref-type="bibr" rid="bib49">Walker, 1995</xref>; <xref ref-type="bibr" rid="bib44">Tanaka et al., 2016</xref>). If you are interested in
+                editorial process broadly occurs in three phases (<xref ref-type="bibr" rid="bib48">Turlings and Wäckers, 2004a</xref>; <xref ref-type="bibr" rid="bib49">Turlings and Wäckers, 2004b</xref>;  <xref ref-type="bibr" rid="bib51">
+                    Wolski et al., 2008</xref>; <xref ref-type="bibr" rid="bib50">Walker, 1995</xref>; <xref ref-type="bibr" rid="bib44">Tanaka et al., 2016</xref>). If you are interested in
                 submitting your work to eLife, please review the guidelines relating to initial
                 submissions. If you have received an encouraging response to your initial
                 submission, please review the guidelines relating to full submissions. If your full
@@ -900,14 +901,14 @@ Impact statement:-->
                             that&#x00A0;is, P(f|c) and P(f|&#x007E;c), respectively, with c denoting
                             a population change. The probabilities were compared, in conjunction
                             with the known prior probability of a population change (1/8), using
-                            Bayes&#x2019; rule, as stated in Equation 2:<disp-formula id="equ2"
+                            Bayes&#x2019; rule, as stated in Equation 2:<disp-formula id="equ1"
                                 ><label>(2)</label><mml:math id="m2"
                                     ><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>c</mml:mi><mml:mo>|</mml:mo><mml:mi>f</mml:mi><mml:mo>)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mtext>|</mml:mtext><mml:mi>c</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></p>
                         <p>Here, P(c|f) is the chance that a population change occurred at that
                             particular time. Given that P(c) is known to be 1/8, and P(f), the total
                             probability of the observed f value, can be rewritten
                             P(f|c)P(c)+P(f|&#x007E;c)(1-P(c)), the above equation can be rewritten
-                            as Equation 3:<disp-formula id="equ3"><label>(3)</label><mml:math
+                            as Equation 3:<disp-formula id="equ2"><label>(3)</label><mml:math
                                 id="m3"
                                 ><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mtext>|</mml:mtext><mml:mi>f</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:mn>7</mml:mn><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>|</mml:mo><mml:mo>&#x007E;</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>|</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></p>
                     </list-item>
@@ -992,7 +993,7 @@ Impact statement:-->
 Table containing coloured text and cells crossing multiple rows. It is wide enough that it would appear in landscape orientation in the PDF file (Table 1)
 UPDATE: Example of how to deal with spans in a citation. We cannot add the links to all the items and the HTML view will only link to the first one, so do 
 not add all rids to the xref as it does not work. Only add the first one -->
-                    <p>This section is an example of different tables, there are four in total(<xref ref-type="table" rid="table1">Tables 1 to 3</xref> and an unnamed inline table).</p>
+                    <p>This section is an example of different tables, there are four in total (<xref ref-type="table" rid="table1">Tables 1 to 3</xref> and an unnamed inline table).</p>
                         <table-wrap id="table1" position="float">
 <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
                             <object-id pub-id-type="doi">10.7554/eLife.00666.003</object-id>
@@ -1242,7 +1243,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                     <td>2 × 10<sup>3</sup></td>
                                     <td>10 × 10<sup>4</sup></td>
                                     <td>13 × 10<sup>4</sup></td>
-                                    <td><xref ref-type="bibr" rid="bib53">Zhong et al., 2013</xref></td>
+                                    <td><xref ref-type="bibr" rid="bib54">Zhong et al., 2013</xref></td>
                                 </tr>
                                 <tr>
                                     <td>Nyv1p</td>
@@ -1256,13 +1257,13 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                     <td>4 × 10<sup>3</sup></td>
                                     <td>1.9 × 10<sup>4</sup></td>
                                     <td>1.8 × 10<sup>4</sup></td>
-                                    <td><xref ref-type="bibr" rid="bib53">Zhong et al., 2013</xref></td>
+                                    <td><xref ref-type="bibr" rid="bib54">Zhong et al., 2013</xref></td>
                                 </tr>
                                 <tr>
                                     <td>Sec17p</td><td>7 × 10<sup>3</sup></td>
                                     <td>41 × 10<sup>4</sup></td>
                                     <td>13 × 10<sup>4</sup></td>
-                                    <td><xref ref-type="bibr" rid="bib50">Wolski et al., 2008</xref></td>
+                                    <td><xref ref-type="bibr" rid="bib51">Wolski et al., 2008</xref></td>
                                 </tr>
                                 <tr>
                                     <td>Sec18p</td>
@@ -1276,7 +1277,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                     <td>6 × 10<sup>3</sup></td>
                                     <td>17 × 10<sup>4</sup></td>
                                     <td>31 × 10<sup>4</sup></td>
-                                    <td><xref ref-type="bibr" rid="bib53">Zhong et al., 2013</xref></td>
+                                    <td><xref ref-type="bibr" rid="bib54">Zhong et al., 2013</xref></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1567,7 +1568,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         <xref ref-type="bibr" rid="bib46">The <italic>Shigella</italic> Genome Sequencing Consortium, 2015b</xref>
                         ):
                         <!-- id and a label required for display formulae -->
-                        <disp-formula id="equ1">
+                        <disp-formula id="equ3">
                             <label>(1)</label>
                             <mml:math id="m1">
                                 <mml:mstyle displaystyle="true" scriptlevel="0">
@@ -1704,7 +1705,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         <label>Figure 2.</label>
                         <caption>
                             <title>Figure with figure supplements. In the PDF this asset box will take full column width.</title> 
-                            <p>This is the basic infomration provided about an article. <xref ref-type="fig" rid="fig1">Figure 1
+                            <p>This is the basic information provided about an article. <xref ref-type="fig" rid="fig1">Figure 1
                             </xref> shows an expanded view (<xref ref-type="bibr" rid="bib26">Kok et al., 2015</xref>; <xref ref-type="bibr" rid="bib28">National Institute of Mental 
                                 Health, 1990</xref>).</p>
                         </caption>
@@ -1731,8 +1732,9 @@ not add all rids to the xref as it does not work. Only add the first one -->
                     </fig-group>
                     <p><xref ref-type="fig" rid="fig3">Figure 3</xref> is an example of a figure with a figure supplement (<xref ref-type="fig" rid="fig3s1">Figure 3—figure supplement 1</xref>) 
                         with two sub-assets, <xref ref-type="supplementary-material" rid="fig3sdata1">Figure 3—figure supplement 1—Source data 1</xref> and <xref ref-type="video"
-                            rid="fig3video1">Figure 3—figure supplement 1—Video 1</xref> (see <xref ref-type="bibr" rid="bib53">Zhong et al., 
-                            2013</xref>; <xref ref-type="bibr" rid="bib51">World Health Organization, 2016</xref>).</p>
+                            rid="fig3video1">Figure 3—figure supplement 1—Video 1</xref> (see <xref ref-type="bibr" rid="bib54">Zhong et al., 
+                                2010</xref>, <xref ref-type="bibr" rid="bib54">Zhang et al., 
+                            2013</xref>; <xref ref-type="bibr" rid="bib52">World Health Organization, 2016</xref>).</p>
                     <!-- UPDATE: new method of modelling supplementary material for a figure
                     A figure or a sub figure can have any assets - e.g. data, code, videos -->
                     <fig-group>
@@ -2093,6 +2095,7 @@ The tagging of the collaborator name again within this section is required for P
                     <source>Dryad Digital Repository</source>
                     <pub-id pub-id-type="doi" assigning-authority="Dryad Digital Repository"
                         xlink:href="https://doi.org/10.5061/dryad.cv323">10.5061/dryad.cv323</pub-id>
+                        <comment>Publicly available at Dryad.</comment>
                     </related-object>
                 </p>
             </sec>
@@ -2104,7 +2107,7 @@ The tagging of the collaborator name again within this section is required for P
             </sec>
                 <sec sec-type="ack" id="ack-2">
                     <title>Sub-thanks</title>
-                    <p>We need to allow authors to have sections in their acknowledgements</p>
+                    <p>We need to allow authors to have sections in their acknowledgements.</p>
                 </sec>
         </ack>
 <!-- All references shuld be cited in the text -->  
@@ -2716,6 +2719,7 @@ The tagging of the collaborator name again within this section is required for P
             <volume>36</volume>
             <fpage>120</fpage>
             <lpage>131</lpage>
+            <pub-id pub-id-type="doi">https://doi.org/10.1016/j.immuni.2011.11.018</pub-id>
             <pub-id pub-id-type="pmid">22284419</pub-id> 
         </element-citation>
     </ref>
@@ -3057,7 +3061,7 @@ The tagging of the collaborator name again within this section is required for P
             <data-title>String objects representing biological sequences, and matching algorithms</data-title>
             <source>Bioconductor</source>
              <!-- designator attribute added for version Feb 8 2017 -->
-            <version version="2.30.1">R Package Version 2.30.1</version>
+            <version designator="2.30.1">R Package Version 2.30.1</version>
             <ext-link ext-link-type="uri" xlink:href='https://bioconductor.org/packages/release/bioc/html/Biostrings.html'>
                 https://bioconductor.org/packages/release/bioc/html/Biostrings.html</ext-link>
         </element-citation>
@@ -3531,7 +3535,7 @@ The tagging of the collaborator name again within this section is required for P
                     <given-names>JG</given-names>
                 </name>
             </person-group>
-            <year iso-8601-date="2004">2004</year>
+            <year iso-8601-date="2004">2004a</year>
             <source>Advances in insect chemical ecology</source>
             <chapter-title>Recruitment of predators and parasitoids by herbivore-injured
                 plants</chapter-title>
@@ -3541,8 +3545,35 @@ The tagging of the collaborator name again within this section is required for P
             <lpage>75</lpage>
         </element-citation>
     </ref>
+<!-- Book reference: book with editors and authors, no chapter, and example of  -->
+            <ref id="bib49">
+                <element-citation publication-type="book">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Turlings</surname>
+                            <given-names>TCJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Wäckers</surname>
+                            <given-names>FL</given-names>
+                        </name>
+                    </person-group>
+                    <person-group person-group-type="editor">
+                        <name>
+                            <surname>Cardé</surname>
+                            <given-names>RT</given-names>
+                        </name>
+                        <name>
+                            <surname>Millar</surname>
+                            <given-names>JG</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2004">2004b</year>
+                    <source>Advances in insect chemical ecology</source>
+                </element-citation>
+            </ref>
  <!-- Reference to a whole Website -->
-    <ref id="bib49">
+    <ref id="bib50">
         <element-citation publication-type="web">
             <person-group person-group-type="author">
                 <name>
@@ -3557,7 +3588,7 @@ The tagging of the collaborator name again within this section is required for P
         </element-citation>
     </ref>
     <!-- Journal reference: elocation-id and DOI and PMID -->
-        <ref id="bib50">
+        <ref id="bib51">
                 <element-citation publication-type="journal">
                     <person-group person-group-type="author">
                         <name>
@@ -3596,7 +3627,7 @@ The tagging of the collaborator name again within this section is required for P
                 </element-citation>
             </ref>
 <!-- Book reference: Has edition, editor is author -->
-    <ref id="bib51">
+    <ref id="bib52">
         <element-citation publication-type="book">
             <person-group person-group-type="author">
                 <collab>World Health Organization</collab>
@@ -3609,7 +3640,7 @@ The tagging of the collaborator name again within this section is required for P
             <publisher-name>World Health Organization</publisher-name>
         </element-citation>
     </ref>
-    <ref id="bib52">
+    <ref id="bib53">
         <element-citation publication-type="data">
             <person-group person-group-type="author">
                 <name>
@@ -3656,7 +3687,7 @@ The tagging of the collaborator name again within this section is required for P
         </element-citation>
     </ref>
 <!-- Data reference: modMine pub-id-type="archive" -->
-            <ref id="bib53">
+            <ref id="bib54">
                 <element-citation publication-type="data">
                     <person-group person-group-type="author">
                         <name>

@@ -1405,10 +1405,22 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "authors_non_byline"),
                          parser.authors_non_byline(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00013.xml")
+    @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00013.xml", "elife-00666.xml")
     def test_award_groups(self, filename):
         self.assertEqual(self.json_expected(filename, "award_groups"),
                          parser.award_groups(self.soup(filename)))
+
+    @unpack
+    @data(
+        # 07383 v1 has a institution in the principal award recipient
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold Foundation</institution></institution-wrap></funding-source><principal-award-recipient><institution>Reproducibility Project: Cancer Biology</institution></principal-award-recipient></award-group></funding-group></root>',
+        [{'award_id': None, 'funding_source': [u'Laura and John Arnold Foundation'], 'recipient': [u'Reproducibility Project: Cancer Biology']}]
+         ),
+        )
+    def test_award_groups_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.award_groups(soup.contents[0])
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_category(self, filename):

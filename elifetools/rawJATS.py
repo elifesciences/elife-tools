@@ -423,3 +423,6 @@ def award_group(soup):
 
 def principal_award_recipient(soup):
     return extract_nodes(soup, "principal-award-recipient")
+
+def string_name(soup):
+    return extract_nodes(soup, "string-name")
