@@ -526,7 +526,7 @@ def mixed_citations(soup):
                 'name': mc.source.text,
                 'volume': mc.volume.text,
                 'fpage':  mc.fpage.text,
-                'lpage': mc.lpage.text,
+                'lpage': node_text(mc.lpage),
             },
             'article': {
                 'title': mc.find('article-title').text,
