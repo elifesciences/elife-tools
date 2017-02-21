@@ -179,6 +179,9 @@ def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
     return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
 
+def mixed_citations(soup):
+    return extract_nodes(soup, 'mixed-citation')
+
 def related_object(soup):
     return extract_nodes(soup, "related-object")
 
