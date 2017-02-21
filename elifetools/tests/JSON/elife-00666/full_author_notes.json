@@ -15,7 +15,7 @@
         "fn-type": "present-address"
     }, 
     {
-        "text": "\n<label>#</label>\n<p>Deceased. (not really!!)</p>\n", 
+        "text": "\n<label>#</label>\n<p>Deceased (not really!!)</p>\n", 
         "id": "fn1", 
         "fn-type": "fn"
     }, 

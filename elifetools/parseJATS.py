@@ -1818,23 +1818,24 @@ def award_group_principal_award_recipient(tag):
     
     for t in principal_award_recipients:
         principal_award_recipient_text = ""
-        
-        try:
-            institution = node_text(first(extract_nodes(t, "institution")))
-            surname = node_text(first(extract_nodes(t, "surname")))
-            given_names = node_text(first(extract_nodes(t, "given-names")))
-            # Concatenate name and institution values if found
-            #  while filtering out excess whitespace
-            if(given_names):
-                principal_award_recipient_text += given_names
-            if(principal_award_recipient_text != ""):
-                principal_award_recipient_text += " "
-            if(surname):
-                principal_award_recipient_text += surname
-            if(institution):
-                principal_award_recipient_text += institution
-        except IndexError:
-            continue
+
+        institution = node_text(first(extract_nodes(t, "institution")))
+        surname = node_text(first(extract_nodes(t, "surname")))
+        given_names = node_text(first(extract_nodes(t, "given-names")))
+        string_name = node_text(first(raw_parser.string_name(t)))
+        # Concatenate name and institution values if found
+        #  while filtering out excess whitespace
+        if(given_names):
+            principal_award_recipient_text += given_names
+        if(principal_award_recipient_text != ""):
+            principal_award_recipient_text += " "
+        if(surname):
+            principal_award_recipient_text += surname
+        if(institution):
+            principal_award_recipient_text += institution
+        if(string_name):
+            principal_award_recipient_text += string_name
+
         award_group_principal_award_recipient.append(principal_award_recipient_text)
     return award_group_principal_award_recipient
 
@@ -3019,21 +3020,11 @@ def references_json_authors(ref_authors, ref_content):
     "build the authors for references json here for testability"
     all_authors = references_authors(ref_authors)
     if all_authors != {}:
-        if ref_content.get("type") in ["book"]:
-            # Book must have authors from the authors or the editors
-            if all_authors.get("authors"):
-                set_if_value(ref_content, "authors", all_authors.get("authors"))
-                set_if_value(ref_content, "authorsEtAl", all_authors.get("authorsEtAl"))
-                ref_content["authorsType"] = "authors"
-            elif all_authors.get("editors"):
-                set_if_value(ref_content, "authors", all_authors.get("editors"))
-                set_if_value(ref_content, "authorsEtAl", all_authors.get("editorsEtAl"))
-                ref_content["authorsType"] = "editors"
-        elif ref_content.get("type") in ["conference-proceeding", "journal", "other",
+        if ref_content.get("type") in ["conference-proceeding", "journal", "other",
                                            "periodical", "preprint", "report", "web"]:
             for author_type in ["authors", "authorsEtAl"]:
                 set_if_value(ref_content, author_type, all_authors.get(author_type))
-        elif ref_content.get("type") in ["book-chapter"]:
+        elif ref_content.get("type") in ["book", "book-chapter"]:
             for author_type in ["authors", "authorsEtAl", "editors", "editorsEtAl"]:
                 set_if_value(ref_content, author_type, all_authors.get(author_type))
         elif ref_content.get("type") in ["clinical-trial"]:

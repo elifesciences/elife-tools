@@ -704,6 +704,7 @@
     {
         "article_title": "Autoimmunity initiates in nonhematopoietic cells and progresses\n                via lymphocytes in an interferon-dependent autoimmune\n                disease", 
         "lpage": "131", 
+        "doi": "10.1016/j.immuni.2011.11.018", 
         "article_doi": "10.7554/eLife.00666", 
         "authors": [
             {
@@ -742,12 +743,13 @@
         "year-iso-8601-date": "2012", 
         "volume": "36", 
         "source": "Immunity", 
+        "reference_id": "https://doi.org/10.1016/j.immuni.2011.11.018", 
         "fpage": "120", 
         "year": "2012", 
         "position": 17, 
         "pmid": "22284419", 
         "publication-type": "journal", 
-        "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 22284419", 
+        "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 https://doi.org/10.1016/j.immuni.2011.11.018 22284419", 
         "id": "bib17"
     }, 
     {
@@ -1784,16 +1786,48 @@
         "lpage": "75", 
         "source": "Advances in insect chemical ecology", 
         "fpage": "21", 
-        "year": "2004", 
+        "year": "2004a", 
         "position": 48, 
         "year-iso-8601-date": "2004", 
-        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004 Advances in insect chemical ecology Recruitment of predators and parasitoids by herbivore-injured plants Cambridge University Press Cambridge 21 75", 
+        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004a Advances in insect chemical ecology Recruitment of predators and parasitoids by herbivore-injured plants Cambridge University Press Cambridge 21 75", 
         "id": "bib48"
+    }, 
+    {
+        "article_doi": "10.7554/eLife.00666", 
+        "authors": [
+            {
+                "surname": "Turlings", 
+                "given-names": "TCJ", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "W\u00e4ckers", 
+                "given-names": "FL", 
+                "group-type": "author"
+            }, 
+            {
+                "surname": "Card\u00e9", 
+                "given-names": "RT", 
+                "group-type": "editor"
+            }, 
+            {
+                "surname": "Millar", 
+                "given-names": "JG", 
+                "group-type": "editor"
+            }
+        ], 
+        "publication-type": "book", 
+        "source": "Advances in insect chemical ecology", 
+        "year": "2004b", 
+        "position": 49, 
+        "year-iso-8601-date": "2004", 
+        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004b Advances in insect chemical ecology", 
+        "id": "bib49"
     }, 
     {
         "article_title": "Solar System Live", 
         "uri_text": "https://www.fourmilab.ch/solar/", 
-        "position": 49, 
+        "position": 50, 
         "date-in-citation": "September 10, 1995", 
         "article_doi": "10.7554/eLife.00666", 
         "uri": "https://www.fourmilab.ch/solar/", 
@@ -1808,7 +1842,7 @@
         "iso-8601-date": "1995-09-10", 
         "publication-type": "web", 
         "ref": "Walker J Solar System Live https://www.fourmilab.ch/solar/ September 10, 1995", 
-        "id": "bib49"
+        "id": "bib50"
     }, 
     {
         "article_title": "Crystal structure of the FeS cluster-containing nucleotide\n                        excision repair helicase XPD", 
@@ -1853,11 +1887,11 @@
         "source": "PLoS Biol", 
         "reference_id": "10.1371/journal.pbio.0060149", 
         "year": "2008", 
-        "position": 50, 
+        "position": 51, 
         "pmid": "18578568", 
         "publication-type": "journal", 
         "ref": "Wolski SC Kuper J Hanzelmann P Truglio JJ Croteau DL Van Houten B 2008 Crystal structure of the FeS cluster-containing nucleotide excision repair helicase XPD PLoS Biol 6 e149 10.1371/journal.pbio.0060149 18578568", 
-        "id": "bib50"
+        "id": "bib51"
     }, 
     {
         "edition": "2", 
@@ -1873,10 +1907,10 @@
         "publication-type": "book", 
         "source": " Growing up unequal: gender and socioeconomic differences in young\n                people's health and well-being. Health Behaviour in School-aged Children\n                (HBSC) study", 
         "year": "2016", 
-        "position": 51, 
+        "position": 52, 
         "year-iso-8601-date": "2016", 
         "ref": "World Health Organization 2016 2 Growing up unequal: gender and socioeconomic differences in young people's health and well-being. Health Behaviour in School-aged Children (HBSC) study World Health Organization", 
-        "id": "bib51"
+        "id": "bib52"
     }, 
     {
         "data-title": "Polymeric immunoglobulin receptor [Oncorhynchus mykiss]", 
@@ -1931,10 +1965,10 @@
         "publication-type": "data", 
         "source": "NCBI", 
         "year": "2010", 
-        "position": 52, 
+        "position": 53, 
         "year-iso-8601-date": "2010", 
         "ref": "Zhang YA Salinas I Li J Parra D Bjork S Xu Z LaPatra SE Bartholomew J Sunyer JO 2010 Polymeric immunoglobulin receptor [Oncorhynchus mykiss] NCBI GenBank: ADB81776.1", 
-        "id": "bib52"
+        "id": "bib53"
     }, 
     {
         "data-title": "ChIP-Seq Identification of C. elegans TF Binding Sites", 
@@ -2014,9 +2048,9 @@
         "publication-type": "data", 
         "source": "modMine", 
         "year": "2013", 
-        "position": 53, 
+        "position": 54, 
         "year-iso-8601-date": "2013", 
         "ref": "Zhong M Snyder M Slightam C Kim S Murray J Waterston R Gerstein M Niu W Janette J Raha D Agarwal A Reinke V Sarov M Hyman A 2013 ChIP-Seq Identification of C. elegans TF Binding Sites modMine modENCODE_3369", 
-        "id": "bib53"
+        "id": "bib54"
     }
 ]

@@ -3,7 +3,7 @@
         "notes-fn": [
             "\n\u2020\nThese authors contributed equally to this work\n", 
             "\n\u00a7\nDepartment of Wellcome Trust, Sanger Institute, London, United Kingdom\n", 
-            "\n#\nDeceased. (not really!!)\n", 
+            "\n#\nDeceased (not really!!)\n", 
             "\n\u00b6\nThis footnote text must work in isolation as nothing is processed on the html view to make it \"work\"\n", 
             "\nChair of JATS4R\n", 
             "\nCompleted the XML mapping exercise and wrote this XML example\n"
@@ -87,10 +87,6 @@
             "competing-interest": [
                 "conf2"
             ], 
-            "funding": [
-                "fund1", 
-                "fund2"
-            ], 
             "equal-contrib": [
                 "equal-contrib1"
             ]
@@ -105,6 +101,14 @@
         "group-author-key": "group-author-id1", 
         "article_doi": "10.7554/eLife.00666", 
         "collab": "eLife Editorial Production Group", 
+        "affiliations": [
+            {
+                "dept": "Department of Production", 
+                "city": "Cambridge", 
+                "institution": "eLife", 
+                "country": "United Kingdom"
+            }
+        ], 
         "references": {
             "equal-contrib": [
                 "equal-contrib2"
@@ -114,6 +118,9 @@
             ], 
             "competing-interest": [
                 "conf2"
+            ], 
+            "affiliation": [
+                "aff1"
             ]
         }, 
         "position": 3, 
@@ -151,6 +158,9 @@
             ], 
             "competing-interest": [
                 "conf3"
+            ], 
+            "funding": [
+                "fund2"
             ], 
             "equal-contrib": [
                 "equal-contrib2"

@@ -52,10 +52,6 @@
             "competing-interest": [
                 "conf2"
             ], 
-            "funding": [
-                "fund1", 
-                "fund2"
-            ], 
             "equal-contrib": [
                 "equal-contrib1"
             ]
@@ -74,6 +70,9 @@
             ], 
             "competing-interest": [
                 "conf2"
+            ], 
+            "affiliation": [
+                "aff1"
             ]
         }, 
         "type": "author", 
@@ -177,6 +176,9 @@
             ], 
             "competing-interest": [
                 "conf3"
+            ], 
+            "funding": [
+                "fund2"
             ], 
             "equal-contrib": [
                 "equal-contrib2"
