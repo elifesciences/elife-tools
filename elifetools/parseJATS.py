@@ -2196,12 +2196,12 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(caption_title(tag)))
+        set_if_value(tag_content, "title", convert(title_text(tag, "caption", tag.name)))
         if "title" not in tag_content and "label" in tag_content:
             set_if_value(tag_content, "title", tag_content.get("label"))
         supplementary_material_tags = None
-        if raw_parser.caption(tag):
-            caption_tags = body_blocks(raw_parser.caption(tag))
+        if caption_tag_inspected(tag, tag.name):
+            caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
