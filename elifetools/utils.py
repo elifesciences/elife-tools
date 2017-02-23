@@ -393,7 +393,7 @@ def text_to_title(value):
     for word in words:
         if word.endswith(".") or word.endswith(":"):
             keep_words.append(word)
-            if len(word) > 1 and "italic" not in word:
+            if len(word) > 1 and "<italic>" not in word and "<i>" not in word:
                 break
         else:
             keep_words.append(word)
