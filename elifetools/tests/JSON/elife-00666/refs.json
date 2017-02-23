@@ -743,13 +743,13 @@
         "year-iso-8601-date": "2012", 
         "volume": "36", 
         "source": "Immunity", 
-        "reference_id": "https://doi.org/10.1016/j.immuni.2011.11.018", 
+        "reference_id": "10.1016/j.immuni.2011.11.018", 
         "fpage": "120", 
         "year": "2012", 
         "position": 17, 
         "pmid": "22284419", 
         "publication-type": "journal", 
-        "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 https://doi.org/10.1016/j.immuni.2011.11.018 22284419", 
+        "ref": "Gall A Treuting P Elkon KB Loo YM Gale M Jnr Barber GN 2012 Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease Immunity 36 120 131 10.1016/j.immuni.2011.11.018 22284419", 
         "id": "bib17"
     }, 
     {
