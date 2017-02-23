@@ -1107,6 +1107,11 @@ class TestParseJats(unittest.TestCase):
          OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00007.008'), ('id', u'fig5'), ('label', u'Figure 5.'), ('title', 'Predation of <i>M. sexta</i> larvae and eggs by <i>Geocoris</i> spp.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', 'Predation of <i>M. sexta</i> larvae and eggs by <i>Geocoris</i> spp. (<b>A</b>) Examples of predated <i>M. sexta</i> larva (left panel) and egg (right panel). Left, the carcass of a predated first-instar <i>M. sexta</i> larva and typical feeding damage from early-instar <i>Manduca</i> spp. larvae....')])]), ('alt', '')])
         ),
 
+        # example table with a caption and no title needs a title added, based on 05604 v1
+        ('<root><table-wrap id="tblu1" position="anchor"><caption><p>PCR primer sets and reaction conditions for genotyping</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5′-TATGTTTGCATCATCTCGTCTTC-3′</td><td rowspan="2">1</td></tr></tbody></table></table-wrap></root>',
+        OrderedDict([('type', 'table'), ('id', u'tblu1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'PCR primer sets and reaction conditions for genotyping')])]), ('title', u'PCR primer sets and reaction conditions for genotyping'), ('tables', [u'<table><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5\u2032-TATGTTTGCATCATCTCGTCTTC-3\u2032</td><td rowspan="2">1</td></tr></tbody></table>'])])
+        ),
+
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
