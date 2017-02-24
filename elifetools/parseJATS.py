@@ -2168,9 +2168,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(caption_content) > 0:
                 # Attempt to extra the first sentence of the first paragraph of the caption
                 first_paragraph_text = caption_content[0]["text"]
-                sentences = first_paragraph_text.split(". ")
-                if len(sentences) > 0:
-                    tag_content["title"] = sentences[0]
+                set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -2205,6 +2203,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
             if len(caption_content) > 0:
                 tag_content["caption"] = caption_content
+                # If a title if not present take it from the caption
+                if "title" not in tag_content:
+                    first_paragraph_text = caption_content[0]["text"]
+                    set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
 
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
