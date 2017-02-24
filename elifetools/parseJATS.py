@@ -3120,9 +3120,9 @@ def references_json(soup, html_flag=True):
 
         # source
         if ref.get("publication-type") == "journal":
-            ref_content["journal"] = ref.get("source")
+            set_if_value(ref_content, "journal", ref.get("source"))
         elif ref.get("publication-type") == "periodical":
-            ref_content["periodical"] = ref.get("source")
+            set_if_value(ref_content, "periodical", ref.get("source"))
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
         elif ref.get("publication-type") in ["patent"]:
