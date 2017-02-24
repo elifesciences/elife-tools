@@ -3119,15 +3119,10 @@ def references_json(soup, html_flag=True):
                 ref.get("conf-name"), None))
 
         # source
-        if ref.get("publication-type") in ["journal", "periodical"]:
-            if ref.get("source"):
-                place = OrderedDict()
-                place["name"] = []
-                place["name"].append(ref.get("source"))
-                if ref.get("publication-type") == "journal":
-                    ref_content["journal"] = place
-                elif ref.get("publication-type") == "periodical":
-                    ref_content["periodical"] = place
+        if ref.get("publication-type") == "journal":
+            ref_content["journal"] = ref.get("source")
+        elif ref.get("publication-type") == "periodical":
+            ref_content["periodical"] = ref.get("source")
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
         elif ref.get("publication-type") in ["patent"]:
