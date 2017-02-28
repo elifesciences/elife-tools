@@ -373,7 +373,10 @@ def sub_article(soup, article_type=None):
     return extract_nodes(soup, "sub-article", attr = "article-type", value = article_type)
 
 def decision_letter(soup):
-    return first(sub_article(soup, "article-commentary"))
+    tag = first(sub_article(soup, "article-commentary"))
+    if not tag:
+        tag = first(sub_article(soup, "decision-letter"))
+    return tag
 
 def author_response(soup):
     return first(sub_article(soup, "reply"))
