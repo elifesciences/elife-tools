@@ -1806,7 +1806,8 @@ not add all rids to the xref as it does not work. Only add the first one -->
                 </sec>
                 <sec id="s2-5">
                     <title>Videos</title>
-                    <p><xref ref-type="video" rid="video1">Video 1</xref> shows the editorial process.</p>
+                    <p><xref ref-type="video" rid="video1">Video 1</xref> shows the editorial process and <xref ref-type="video" rid="video2">Animation 1</xref> 
+                        shows how we represent animated gif files.</p>
                     <!-- UPDATE: This no longer required: content-type="glencoe play-in-place height-250 width-310"  mime-subtype="wmv" mimetype="video"
                     UPDATE: changed id to videoX -->
                     <media mimetype="video" mime-subtype="mp4" id="video1" xlink:href="elife-00666-video1.mp4">
@@ -1815,11 +1816,11 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         <label>Video 1.</label>
                         <caption>
                             <title>
-                                A descirption of the eLife editorial process.
+                                A description of the eLife editorial process.
                             </title>
                             <p><supplementary-material id="video1sdata1">
                                 <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
-                                <object-id pub-id-type="doi">10.7554/eLife.00666.036</object-id>
+                                <object-id pub-id-type="doi">10.7554/eLife.00666.037</object-id>
                                 <label>Video 1—Source data 1.</label>
                                 <caption>
                                     <title>Title of the source code.</title>
@@ -1828,6 +1829,16 @@ not add all rids to the xref as it does not work. Only add the first one -->
                                 <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-video1-data1.xlsx"/>
                             </supplementary-material>
                             </p>
+                        </caption>
+                    </media>
+                    <media mimetype="video" mime-subtype="gif" id="video2" xlink:href="elife-00666-video2.gif">
+                        <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
+                        <!-- UPDATE: animated gifs must process through the Glencoe video workflow but must retain the mime-subtype="gif" 
+                            in the XML to ensure the online system recognises this--> 
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.038</object-id>
+                        <label>Animation 1.</label>
+                        <caption>
+                            <title>A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.</title>
                         </caption>
                     </media>
                 </sec>
@@ -1866,7 +1877,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                             nisi aliquam urna lobortis, eu efficitur nisl lobortis; <xref ref-type="bibr" rid="bib2">Bates et al., 2016</xref> and <xref ref-type="bibr" rid="bib32">Patterson et al., 2011</xref>.</p>
                         <fig id="box2fig1" position="float">
                             <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
-                            <object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id>
+                            <object-id pub-id-type="doi">10.7554/eLife.00666.036</object-id>
                             <label>Box 2—Figure 1.</label>
                             <caption>
                                 <title>Box figure</title>
@@ -2045,7 +2056,7 @@ All supplementary files are listed here -->
                    </caption>
                 <media mimetype="application" mime-subtype="pdf" xlink:href="elife-00666-repstand1.pdf"/>
             </supplementary-material>
-        </sec>        
+          </sec>        
 <!-- Datasets: this section is subject to change further to outcomes of FORCE11 Data citations working group. 
 Additionally, it is currently undecided whether they will be added to eLife profiles.
 The tagging of the collaborator name again within this section is required for PMC display, therefore no change proposed to tagging currently. -->
@@ -3799,7 +3810,7 @@ Appendices must have DOIs -->
                             <p>This is the text of the content of subheading 2 within appendix 2.</p>
                                 <table-wrap id="app1table1" position="float">
                                     <!-- UPDATE: DOI prefix removed from XML but must be added for display--> 
-                                    <object-id pub-id-type="doi">10.7554/eLife.00666.030</object-id>
+                                    <object-id pub-id-type="doi">10.7554/eLife.00666.039</object-id>
                                     <label>Apendix 1—Table 1.</label>
                                 <caption>
                                     <title>This is the title.</title>
