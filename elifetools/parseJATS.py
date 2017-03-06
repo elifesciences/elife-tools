@@ -2194,11 +2194,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "title", convert(title_text(tag, "caption", tag.name)))
-        if label(tag, tag.name):
-            if "title" in tag_content:
-                set_if_value(tag_content, "label", label(tag, tag.name))
-            elif "title" not in tag_content:
-                set_if_value(tag_content, "title", label(tag, tag.name))
+        set_if_value(tag_content, "label", label(tag, tag.name))
 
         supplementary_material_tags = None
         if caption_tag_inspected(tag, tag.name):
@@ -2210,6 +2206,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 if "title" not in tag_content:
                     first_paragraph_text = caption_content[0]["text"]
                     set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
+
+        if "title" not in tag_content:
+            set_if_value(tag_content, "title", label(tag, tag.name))
 
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
