@@ -2141,6 +2141,26 @@ def body_block_paragraph_content(text):
         tag_content["text"] = text
     return tag_content
 
+def body_block_title_label_caption(tag_content, title_value, label_value,
+                                   caption_content, set_caption=True):
+    "set the title, label and caption values in a consistent way"
+    set_if_value(tag_content, "label", label_value)
+    set_if_value(tag_content, "title", title_value)
+    if caption_content and "title" not in tag_content:
+        first_paragraph_text = caption_content[0]["text"]
+        set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
+    if "title" not in tag_content:
+        set_if_value(tag_content, "title", label_value)
+    if set_caption is True and caption_content and len(caption_content) > 0:
+        # Only set the caption if it is not the same as the title
+        if (len(caption_content) == 1 and "title" in tag_content
+            and (caption_content[0]["text"] == tag_content["title"]
+                 or caption_content[0]["text"] == tag_content["title"] + '.')):
+            # skip, do not add the caption
+            pass
+        else:
+            tag_content["caption"] = caption_content
+
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
@@ -2193,22 +2213,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "table"
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "title", convert(title_text(tag, "caption", tag.name)))
-        set_if_value(tag_content, "label", label(tag, tag.name))
+        title_value = convert(title_text(tag, "caption", tag.name))
+        label_value = label(tag, tag.name)
 
+        caption_content = None
         supplementary_material_tags = None
         if caption_tag_inspected(tag, tag.name):
             caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
-                # If a title if not present take it from the caption
-                if "title" not in tag_content:
-                    first_paragraph_text = caption_content[0]["text"]
-                    set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
 
-        if "title" not in tag_content:
-            set_if_value(tag_content, "title", label(tag, tag.name))
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
         tables = raw_parser.table(tag)
         tag_content["tables"] = []
