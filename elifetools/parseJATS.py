@@ -2146,11 +2146,9 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
     "set the title, label and caption values in a consistent way"
     set_if_value(tag_content, "label", label_value)
     set_if_value(tag_content, "title", title_value)
-    if caption_content and "title" not in tag_content:
+    if caption_content and len(caption_content) > 0 and "title" not in tag_content:
         first_paragraph_text = caption_content[0]["text"]
         set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
-    if "title" not in tag_content:
-        set_if_value(tag_content, "title", label_value)
     if set_caption is True and caption_content and len(caption_content) > 0:
         # Only set the caption if it is not the same as the title
         if (len(caption_content) == 1 and "title" in tag_content
@@ -2160,6 +2158,10 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
             pass
         else:
             tag_content["caption"] = caption_content
+    # if no title, use the label and unset the label
+    if "title" not in tag_content and label_value:
+        set_if_value(tag_content, "title", label_value)
+        del(tag_content["label"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2273,26 +2275,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "image"
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
-        if label(tag, tag.name):
-            if "title" in tag_content:
-                set_if_value(tag_content, "label", label(tag, tag.name))
-            elif "title" not in tag_content:
-                set_if_value(tag_content, "title", label(tag, tag.name))
 
+        title_value = convert(title_text(tag, u"caption", u"fig"))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
         supplementary_material_tags = None
-        caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        # Special, if there is no title then use a fragment of the caption as the title
-        if "title" not in tag_content and len(caption_content) > 0:
-            # Attempt to extra the first sentence of the first paragraph of the caption
-            first_paragraph_text = caption_content[0]["text"]
-            set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
-        # Now can add the caption after all possible title values are added
-        if len(caption_content) > 0:
-            tag_content["caption"] = caption_content
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
         # todo!! alt
         set_if_value(tag_content, "alt", "")
