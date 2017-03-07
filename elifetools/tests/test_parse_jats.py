@@ -295,7 +295,7 @@ class TestParseJats(unittest.TestCase):
 
         # 03405 v1, label and no title tag
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.03405.026</object-id><label>Source code 1.</label><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.03405.026">http://dx.doi.org/10.7554/eLife.03405.026</ext-link></p><media mime-subtype="rar" mimetype="application" xlink:href="elife-03405-code1-v1.rar"/></supplementary-material></sec></back></root>',
-        [OrderedDict([('doi', u'10.7554/eLife.03405.026'), ('id', u'SD1-data'), ('label', u'Source code 1.'), ('mediaType', u'application/rar'), ('uri', u'elife-03405-code1-v1.rar'), ('filename', u'elife-03405-code1-v1.rar'), ('title', u'Source code 1.')])]
+        [OrderedDict([('doi', u'10.7554/eLife.03405.026'), ('id', u'SD1-data'), ('title', u'Source code 1.'), ('mediaType', u'application/rar'), ('uri', u'elife-03405-code1-v1.rar'), ('filename', u'elife-03405-code1-v1.rar')])]
          ),
 
         # 00333 v1, mimetype contains a slash so ignore sub-mimetype

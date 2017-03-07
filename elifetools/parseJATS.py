@@ -2351,22 +2351,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(caption_title(tag)))
 
-        # caption, add if there are paragraph tags in the caption
+        title_value = convert(caption_title(tag))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
+        supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            
-            if len(caption_content) > 0:
-                # Delete the first paragraph of the caption if its text is the same as the title
-                if (tag_content.get("title") and caption_content[0].get("text")
-                    and caption_content[0].get("text") == tag_content.get("title")):
-                    del caption_content[0]
-            # If there are still captioni tags left then add them
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
