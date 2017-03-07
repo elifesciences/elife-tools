@@ -2181,16 +2181,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "box"
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(title_text(tag)))
-        # Special, if there is no title then use a fragment of the caption as the title
-        if "title" not in tag_content:
+
+        title_value = convert(title_text(tag))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
+        supplementary_material_tags = None
+        if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            if len(caption_content) > 0:
-                # Attempt to extra the first sentence of the first paragraph of the caption
-                first_paragraph_text = caption_content[0]["text"]
-                set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -3540,9 +3540,6 @@ def supplementary_files_json(soup):
             tag_content = poa_supplementary_material_block_content(tag)
 
         if tag_content != {}:
-            # Use label as title if no title
-            if tag_content.get("label") and not tag_content.get("title"):
-                set_if_value(tag_content, "title", tag_content.get("label"))
             additional_files_json.append(tag_content)
 
     # Support for older PoA article supplementary material tags

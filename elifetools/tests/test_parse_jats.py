@@ -955,12 +955,16 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        (None, 0),
         ("<root><italic></italic></root>", 0),
         ("<root><sec><p>Content</p></sec></root>", 1),
     )
     def test_body_blocks(self, xml_content, expected_len):
-        soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
+        if xml_content:
+            soup = parser.parse_xml(xml_content)
+            body_tag = soup.contents[0].contents[0]
+        else:
+            body_tag = xml_content
         body_block_tags = parser.body_blocks(body_tag)
         self.assertEqual(len(body_block_tags), expected_len)
 
