@@ -1135,6 +1135,10 @@ class TestParseJats(unittest.TestCase):
         OrderedDict([('type', 'table'), ('id', u'tblu1'), ('title', u'PCR primer sets and reaction conditions for genotyping'), ('tables', [u'<table><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5\u2032-TATGTTTGCATCATCTCGTCTTC-3\u2032</td><td rowspan="2">1</td></tr></tbody></table>'])])
         ),
 
+        # example video with only the DOI in the caption paragraph, based on 02277 v1
+        ('<root><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-02277-media1.mp4"><object-id pub-id-type="doi">10.7554/eLife.02277.012</object-id><label>Video 1.</label><caption><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.02277.012">http://dx.doi.org/10.7554/eLife.02277.012</ext-link></p></caption></media></root>',
+        OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.02277.012'), ('id', u'media1'), ('title', u'Video 1.')])
+        ),
 
     )
     def test_body_block_content(self, xml_content, expected):
