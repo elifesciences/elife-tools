@@ -61,6 +61,10 @@ def title_prefix(soup):
                 prefix = node_text(first(raw_parser.sub_display_channel(soup)))
     return prefix
 
+def title_prefix_json(soup):
+    "titlePrefix with capitalisation changed"
+    return title_case(title_prefix(soup))
+
 def doi(soup):
     # the first non-nil value returned by the raw parser
     return doi_uri_to_doi(node_text(raw_parser.doi(soup)))

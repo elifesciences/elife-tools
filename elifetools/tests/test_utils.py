@@ -127,6 +127,23 @@ class TestUtils(unittest.TestCase):
     def test_text_to_title(self, value, expected_title):
         self.assertEqual(utils.text_to_title(value), expected_title)
 
+    @unpack
+    @data(
+        (None, None),
+        (u'', u''),
+        (u'of', u'of'),
+        (u'p53 Family proteins', u'p53 Family Proteins'),
+        (u'mRna decay', u'mRna Decay'),
+        (u'mRNA decay', u'mRNA Decay'),
+        (u'Host-virus interactions', u'Host-virus Interactions'),
+        (u'Reproducibility in cancer biology', u'Reproducibility in Cancer Biology'),
+        (u'The Natural History Of Model Organisms', u'The Natural History of Model Organisms'),
+        (u'Point Of View', u'Point of View'),
+        (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
+        (u'你好！', u'你好！'),
+        )
+    def test_title_case(self, title, expected):
+        self.assertEqual(expected, utils.title_case(title))
 
 if __name__ == '__main__':
     unittest.main()

@@ -1811,6 +1811,35 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "title_prefix"),
                          parser.title_prefix(self.soup(filename)))
 
+    @unpack
+    @data(
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"></root>',
+        None
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Plant biology</subject></subj-group></root>',
+        u'Plant Biology'
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>The Natural History Of Model Organisms</subject></subj-group></root>',
+        u'The Natural History of Model Organisms'
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>p53 Family proteins</subject></subj-group></root>',
+        u'p53 Family Proteins'
+        ),
+
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>TOR signaling</subject></subj-group></root>',
+        u'TOR Signaling'
+        ),
+
+        )
+    def test_title_prefix_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.title_prefix_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_title_short(self, filename):
         self.assertEqual(self.json_expected(filename, "title_short"),
