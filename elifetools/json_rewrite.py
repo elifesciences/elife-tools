@@ -812,8 +812,10 @@ def rewrite_elife_editors_json(json_content, doi):
 
     # Remove affiliations with no name value
     for i, ref in enumerate(json_content):
-        if ref.get("affiliations") and not "name" in ref.get("affiliations"):
-            del(json_content[i]["affiliations"])
+        if ref.get("affiliations"):
+            for aff in ref.get("affiliations"):
+                if "name" not in aff:
+                    del(json_content[i]["affiliations"])
 
     # Add editor role
     editor_roles = {}
