@@ -140,6 +140,7 @@ class TestUtils(unittest.TestCase):
         (u'The Natural History Of Model Organisms', u'The Natural History of Model Organisms'),
         (u'Point Of View', u'Point of View'),
         (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
+        (u'mRNA p53', u'mRNA p53'),
         (u'你好！', u'你好！'),
         )
     def test_title_case(self, title, expected):

@@ -86,7 +86,7 @@ def title_case(title):
             for i, word in enumerate(words[1:]):
                 if word.lower() in change_to_lower:
                     words[i+1] = word.lower()
-                else:
+                elif word.lower() not in map(lambda word: word.lower(), do_not_change):
                     words[i+1] = word.capitalize()
         title = ' '.join(words)
     return title
