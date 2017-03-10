@@ -2847,7 +2847,8 @@ def editors_json(soup):
             editor_json = author_person(contributor, None, None, None, None, None, None)
         if editor_json:
             editors_json_data.append(editor_json)
-    return editors_json_data
+    editors_json_data_rewritten = rewrite_json("editors_json", soup, editors_json_data)
+    return editors_json_data_rewritten
 
 def authors_json(soup):
     """authors list in article json format"""
