@@ -809,6 +809,15 @@ def rewrite_elife_decision_letter_json(json_content, doi):
 
 def rewrite_elife_editors_json(json_content, doi):
     """ this does the work of rewriting elife editors json """
+
+    # Remove affiliations with no name value
+    for i, ref in enumerate(json_content):
+        if ref.get("affiliations"):
+            for aff in ref.get("affiliations"):
+                if "name" not in aff:
+                    del(json_content[i]["affiliations"])
+
+    # Add editor role
     editor_roles = {}
     editor_roles["10.7554/eLife.09376"] = "Reviewing editor"
     editor_roles["10.7554/eLife.10056"] = "Reviewing editor"
