@@ -565,7 +565,12 @@ class TestParseJats(unittest.TestCase):
 
          # 23804 v3 example, has no role tag and is rewritten
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">23804</article-id><article-id pub-id-type="doi">10.7554/eLife.23804</article-id><contrib-group content-type="section"><contrib contrib-type="editor"><name><surname>Shou</surname><given-names>Wenying</given-names></name><aff id="aff4"><institution>Fred Hutchinson Cancer Research Center</institution>, <country>United States</country></aff></contrib></contrib-group></article-meta></front></article></root>',
-[OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Wenying Shou'), ('index', u'Shou, Wenying')])), ('affiliations', [OrderedDict([('name', [u'Fred Hutchinson Cancer Research Center']), ('address', OrderedDict([('formatted', [u'United States']), ('components', OrderedDict([('country', u'United States')]))]))])]), ('role', u'Reviewing editor'), ])]
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Wenying Shou'), ('index', u'Shou, Wenying')])), ('affiliations', [OrderedDict([('name', [u'Fred Hutchinson Cancer Research Center']), ('address', OrderedDict([('formatted', [u'United States']), ('components', OrderedDict([('country', u'United States')]))]))])]), ('role', u'Reviewing editor'), ])]
+        ),
+
+         # 22028 v1 example, has a country but no institution
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">22028</article-id><article-id pub-id-type="doi">10.7554/eLife.22028</article-id><contrib-group content-type="section"><contrib contrib-type="editor" id="author-56094"><name><surname>Schlesinger</surname><given-names>Larry</given-names></name><role>Reviewing editor</role><aff><institution></institution>, <country>United States</country></aff></contrib></contrib-group></article-meta></front></article></root>',
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Larry Schlesinger'), ('index', u'Schlesinger, Larry')])), ('role', u'Reviewing editor')])]
         ),
 
         )
