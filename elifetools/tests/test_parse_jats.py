@@ -551,6 +551,30 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.body_json(body_tag, base_url=base_url)
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # 08647 v1 PoA editor has blank string in the affiliation tags
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group content-type="section"><contrib contrib-type="editor" id="author-11736"><name><surname>Kramer</surname><given-names>Achim</given-names></name><role>Reviewing editor</role><aff><institution> </institution>, <country> </country></aff></contrib></contrib-group></article-meta></front></root>',
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Achim Kramer'), ('index', u'Kramer, Achim')])), ('role', u'Reviewing editor')])]
+         ),
+
+         # 09560 v1 example, has two editors
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group content-type="section"><contrib contrib-type="editor" id="author-4542"><name><surname>Krause</surname><given-names>Johannes</given-names></name><role>Reviewing editor</role><aff><institution>University of Tübingen</institution>, <country>Germany</country></aff></contrib><contrib contrib-type="editor" id="author-37203"><name><surname>Conard</surname><given-names>Nicholas J</given-names></name><role>Reviewing editor</role><aff><institution>University of Tübingen</institution>, <country>Germany</country></aff></contrib></contrib-group></article-meta></front></root>',
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Johannes Krause'), ('index', u'Krause, Johannes')])), ('role', u'Reviewing editor'), ('affiliations', [OrderedDict([('name', [u'University of T\xfcbingen']), ('address', OrderedDict([('formatted', [u'Germany']), ('components', OrderedDict([('country', u'Germany')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Nicholas J Conard'), ('index', u'Conard, Nicholas J')])), ('role', u'Reviewing editor'), ('affiliations', [OrderedDict([('name', [u'University of T\xfcbingen']), ('address', OrderedDict([('formatted', [u'Germany']), ('components', OrderedDict([('country', u'Germany')]))]))])])])]
+        ),
+
+         # 23804 v3 example, has no role tag and is rewritten
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">23804</article-id><article-id pub-id-type="doi">10.7554/eLife.23804</article-id><contrib-group content-type="section"><contrib contrib-type="editor"><name><surname>Shou</surname><given-names>Wenying</given-names></name><aff id="aff4"><institution>Fred Hutchinson Cancer Research Center</institution>, <country>United States</country></aff></contrib></contrib-group></article-meta></front></article></root>',
+[OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Wenying Shou'), ('index', u'Shou, Wenying')])), ('affiliations', [OrderedDict([('name', [u'Fred Hutchinson Cancer Research Center']), ('address', OrderedDict([('formatted', [u'United States']), ('components', OrderedDict([('country', u'United States')]))]))])]), ('role', u'Reviewing editor'), ])]
+        ),
+
+        )
+    def test_editors_json_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.editors_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
 
     @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife00351.xml", "elife-00666.xml")
     def test_authors_json(self, filename):

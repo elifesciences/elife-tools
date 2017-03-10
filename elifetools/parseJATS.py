@@ -2562,21 +2562,22 @@ def author_affiliations(author, html_flag=True):
             affiliation_json["name"] = []
             if affiliation.get("dept"):
                 affiliation_json["name"].append(convert(affiliation.get("dept")))
-            if affiliation.get("institution"):
+            if affiliation.get("institution") and affiliation.get("institution").strip() != '':
                 affiliation_json["name"].append(convert(affiliation.get("institution")))
             # Remove if empty
             if affiliation_json["name"] == []:
                 del affiliation_json["name"]
 
-            if affiliation.get("city") or affiliation.get("country"):
+            if ((affiliation.get("city") and affiliation.get("city").strip() != '')
+                or affiliation.get("country") and affiliation.get("country").strip() != ''):
                 affiliation_address = OrderedDict()
                 affiliation_address["formatted"] = []
                 affiliation_address["components"] = OrderedDict()
-                if affiliation.get("city"):
+                if affiliation.get("city") and affiliation.get("city").strip() != '':
                     affiliation_address["formatted"].append(affiliation.get("city"))
                     affiliation_address["components"]["locality"] = []
                     affiliation_address["components"]["locality"].append(affiliation.get("city"))
-                if affiliation.get("country"):
+                if affiliation.get("country") and affiliation.get("country").strip() != '':
                     affiliation_address["formatted"].append(affiliation.get("country"))
                     affiliation_address["components"]["country"] = affiliation.get("country")
                 # Add if not empty
@@ -2836,6 +2837,18 @@ def map_equal_contributions(contributors):
     for i, equal_contribution_key in enumerate(equal_contribution_keys):
         equal_contribution_map[equal_contribution_key] = i+1
     return equal_contribution_map
+
+def editors_json(soup):
+    editors_json_data = []
+    contributors_data = contributors(soup, "full")
+    for contributor in contributors_data:
+        editor_json = None
+        if contributor["type"] == "editor":
+            editor_json = author_person(contributor, None, None, None, None, None, None)
+        if editor_json:
+            editors_json_data.append(editor_json)
+    editors_json_data_rewritten = rewrite_json("editors_json", soup, editors_json_data)
+    return editors_json_data_rewritten
 
 def authors_json(soup):
     """authors list in article json format"""
