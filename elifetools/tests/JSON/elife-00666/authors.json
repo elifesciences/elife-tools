@@ -21,7 +21,9 @@
                 "country": "United Kingdom"
             }
         ], 
-        "email": "m.harrison@elifesciences.org", 
+        "email": [
+            "m.harrison@elifesciences.org"
+        ], 
         "person_id": 1, 
         "given-names": "Melissa", 
         "references": {
@@ -169,6 +171,8 @@
         "position": 4, 
         "equal-contrib": "yes", 
         "type": "author", 
-        "email": "c.wilkinson@elifesciences.org"
+        "email": [
+            "c.wilkinson@elifesciences.org"
+        ]
     }
 ]

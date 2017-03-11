@@ -74,6 +74,16 @@ def inten(function):
         return coerce_to_int(function(*args, **kwargs))
     return wrapper
 
+def clean_whitespace(value):
+    if not value:
+        return value
+    if hasattr(value, 'lstrip'):
+        value = value.lstrip('\n ')
+    if hasattr(value, 'rstrip'):
+        value = value.rstrip('\n ')
+    value = value.replace('\n', ' ')
+    return value
+
 def title_case(title):
     "convert to title case with some words not changed"
     do_not_change = ['p53', 'mRNA']

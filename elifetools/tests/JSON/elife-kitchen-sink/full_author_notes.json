@@ -1,31 +1,31 @@
 [
     {
-        "text": "\n<label>\u2020</label>\n<p>These authors contributed equally to this work</p>\n", 
+        "text": "<label>\u2020</label> <p>These authors contributed equally to this work</p>", 
         "id": "equal-contrib", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<label>\u2021</label>\n<p>These authors also contributed equally to this work</p>\n", 
+        "text": "<label>\u2021</label> <p>These authors also contributed equally to this work</p>", 
         "id": "equal-contrib2", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<label>\u00b6</label>\n<p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>\n", 
+        "text": "<label>\u00b6</label> <p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>", 
         "id": "pa1", 
         "fn-type": "present-address"
     }, 
     {
-        "text": "\n<label>\u2016</label>\n<p>Department of Biological Chemistry and Molecular Pharmacology, Harvard\n                        Medical School, Boston, United States</p>\n", 
+        "text": "<label>\u2016</label> <p>Department of Biological Chemistry and Molecular Pharmacology, Harvard                         Medical School, Boston, United States</p>", 
         "id": "pa2", 
         "fn-type": "present-address"
     }, 
     {
-        "text": "\n<p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United\n                        Kingdom</p>\n", 
+        "text": "<p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United                         Kingdom</p>", 
         "id": "pa3", 
         "fn-type": "present-address"
     }, 
     {
-        "text": "\n<label>**</label>\n<p>Deceased</p>\n", 
+        "text": "<label>**</label> <p>Deceased</p>", 
         "id": "fn1", 
         "fn-type": "deceased"
     }

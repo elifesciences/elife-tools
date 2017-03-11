@@ -1,11 +1,11 @@
 [
     {
-        "text": "\n<p>The other authors declare that no competing interests exist.</p>\n", 
+        "text": "<p>The other authors declare that no competing interests exist.</p>", 
         "id": "conf1", 
         "fn-type": "conflict"
     }, 
     {
-        "text": "\n<p>Alain Laderach works for a drug company.</p>\n", 
+        "text": "<p>Alain Laderach works for a drug company.</p>", 
         "id": "conf2", 
         "fn-type": "conflict"
     }

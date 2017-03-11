@@ -2,7 +2,9 @@
     {
         "surname": "Schekman", 
         "corresp": "yes", 
-        "email": "editorial@elifesciences.org", 
+        "email": [
+            "editorial@elifesciences.org"
+        ], 
         "given-names": "Randy", 
         "role": "Editor-in-Chief", 
         "references": {

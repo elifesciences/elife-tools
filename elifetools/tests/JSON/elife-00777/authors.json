@@ -3,7 +3,7 @@
         "bio": [
             {
                 "type": "paragraph", 
-                "text": "Meredith Corley is in the Department of Biology, University of North\n                            Carolina, Chapel Hill, United States. She also likes knitting and has a\n                            dog."
+                "text": "Meredith Corley is in the Department of Biology, University of North                             Carolina, Chapel Hill, United States. She also likes knitting and has a                             dog."
             }
         ], 
         "surname": "Corley", 
@@ -39,13 +39,15 @@
             "\nThe other authors declare that no competing interests exist.\n"
         ], 
         "type": "author", 
-        "email": "mcorley@email.unc.edu"
+        "email": [
+            "mcorley@email.unc.edu"
+        ]
     }, 
     {
         "bio": [
             {
                 "type": "paragraph", 
-                "text": "Alain Laderach is an eLife Reviewing Editor and is in the Departments of Biology and Chemistry, University\n                            of North Carolina, Chapel Hill, United States. He's chair of something\n                            very important."
+                "text": "Alain Laderach is an eLife Reviewing Editor and is in the Departments of Biology and Chemistry, University                             of North Carolina, Chapel Hill, United States. He's chair of something                             very important."
             }
         ], 
         "notes-fn": [
@@ -69,7 +71,9 @@
         "author": "Alain Laderach", 
         "article_doi": "10.7554/eLife.00777", 
         "corresp": "yes", 
-        "email": "alain@unc.edu", 
+        "email": [
+            "alain@unc.edu"
+        ], 
         "person_id": 54862, 
         "given-names": "Alain", 
         "role": "Reviewing Editor", 
@@ -132,7 +136,7 @@
         "bio": [
             {
                 "type": "paragraph", 
-                "text": "M Dawn Teare is an eLife Reviewing Editor and is in Sheffield School of\n                            Health and Related Research, University of Sheffield, Sheffield, United\n                            Kingdom."
+                "text": "M Dawn Teare is an eLife Reviewing Editor and is in Sheffield School of                             Health and Related Research, University of Sheffield, Sheffield, United                             Kingdom."
             }
         ], 
         "surname": "Teare", 
@@ -143,7 +147,9 @@
         "author": "M Dawn Teare", 
         "article_doi": "10.7554/eLife.00777", 
         "corresp": "yes", 
-        "email": "m.d.teare@sheffield.ac.uk", 
+        "email": [
+            "m.d.teare@sheffield.ac.uk"
+        ], 
         "affiliations": [
             {
                 "dept": "Department of Biology", 

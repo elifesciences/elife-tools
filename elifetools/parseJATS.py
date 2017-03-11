@@ -877,11 +877,11 @@ def contrib_email(contrib_tag):
     Given a contrib tag, look for an email tag, and
     only return the value if it is not inside an aff tag
     """
-    email = None
+    email = []
     for email_tag in extract_nodes(contrib_tag, "email"):
         if email_tag.parent.name != "aff":
-            email = email_tag.text
-    return email
+            email.append(email_tag.text)
+    return email if len(email) > 0 else None
 
 def contrib_phone(contrib_tag):
     """
@@ -999,8 +999,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
     elif contributor.get('corresp') and not contributor.get('email'):
         # For corresponding group authors, look for an email address anywhere in the group
-        if raw_parser.email(contrib_tag):
-            contributor['email'] = node_contents_str(firstnn(raw_parser.email(contrib_tag)))
+        set_if_value(contributor, "email", contrib_email(contrib_tag))
 
     # on-behalf-of
     if contrib_tag.name == 'on-behalf-of':
@@ -1686,7 +1685,7 @@ def footnotes(fn, fntype_filter):
             if fntype_filter is None or f['fn-type'] in fntype_filter:
                 notes.append({
                     'id': f['id'],
-                    'text': node_contents_str(f),
+                    'text': clean_whitespace(node_contents_str(f)),
                     'fn-type': f['fn-type'],
                 })
         except KeyError:
@@ -2142,7 +2141,7 @@ def body_block_paragraph_content(text):
     tag_content = OrderedDict()
     if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = text
+        tag_content["text"] = clean_whitespace(text)
     return tag_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
@@ -2205,7 +2204,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
         if node_contents_str(tag_copy):
-            tag_content["text"] = convert(node_contents_str(tag_copy))
+            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
 
     elif tag.name == "disp-quote":
         tag_content["type"] = "quote"
@@ -2640,7 +2639,7 @@ def author_email_addresses(author, correspondence):
 
     # Also look at the author attributes
     if author.get("corresp") and author.get("email"):
-        email_addresses.append(author["email"])
+        email_addresses = author["email"]
 
     if email_addresses != []:
         return email_addresses
@@ -2876,7 +2875,7 @@ def authors_json(soup):
                                        foot_notes_data)
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
-        elif contributor["type"] == "author":
+        elif contributor["type"] == "author" and not contributor.get("group-author-key"):
             author_json = author_person(contributor, author_contributions_data,
                                         author_correspondence_data, author_competing_interests_data,
                                         equal_contributions_map, present_address_data, foot_notes_data)
@@ -2886,7 +2885,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+    for contributor in filter(lambda json_element: json_element.get("group-author-key")
+                              and not json_element.get("collab"), contributors_data):
         for group_author in filter(
             lambda json_element: json_element["type"] == "group", authors_json_data):
             group_author_key = None
