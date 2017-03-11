@@ -146,5 +146,16 @@ class TestUtils(unittest.TestCase):
     def test_title_case(self, title, expected):
         self.assertEqual(expected, utils.title_case(title))
 
+    @unpack
+    @data(
+        (None, None),
+        (u'', u''),
+        (u"\nText\n ", u'Text'),
+        (u"\nAn example <ext-link>link</i>\n<ext-link>link 2</ext-link>\n", u'An example <ext-link>link</i> <ext-link>link 2</ext-link>'),
+        )
+    def test_clean_whitespace(self, value, expected):
+        self.assertEqual(expected, utils.clean_whitespace(value))
+
+
 if __name__ == '__main__':
     unittest.main()

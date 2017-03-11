@@ -664,6 +664,143 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Silvestro Micera'), ('index', u'Micera, Silvestro')])), ('orcid', u'0000-0003-4396-8217'), ('affiliations', [OrderedDict([('name', [u'The BioRobotics Institute', u"Scuola Superiore Sant'Anna"]), ('address', OrderedDict([('formatted', [u'Pisa', u'Italy']), ('components', OrderedDict([('locality', [u'Pisa']), ('country', u'Italy')]))]))]), OrderedDict([('name', [u'Center for Neuroprosthetics', u'\xc9cole Polytechnique F\xe9d\xe9rale de Lausanne']), ('address', OrderedDict([('formatted', [u'Lausanne', u'Switzerland']), ('components', OrderedDict([('locality', [u'Lausanne']), ('country', u'Switzerland')]))]))]), OrderedDict([('name', [u'Bertarelli Foundation Chair in Translational NeuroEngineering, Institute of Bioengineering, School of Engineering', u'\xc9cole Polytechnique F\xe9d\xe9rale de Lausanne']), ('address', OrderedDict([('formatted', [u'Lausanne', u'Switzerland']), ('components', OrderedDict([('locality', [u'Lausanne']), ('country', u'Switzerland')]))]))])]), ('emailAddresses', [u'silvestro.micera@epfl.ch', u'silvestro.micera@sssup.it'])])]
         ),
 
+        # example of new kitchen sink group authors with multiple email addresses, based on 17044 v1
+        ('''
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+<front>
+<article-meta>
+<contrib-group>
+<contrib contrib-type="author" id="author-28457">
+<name>
+<surname>Kandela</surname>
+<given-names>Irawati</given-names>
+</name>
+<xref ref-type="aff" rid="aff1">1</xref>
+<xref ref-type="fn" rid="con1"/>
+<xref ref-type="fn" rid="conf1"/>
+</contrib>
+<contrib contrib-type="author" id="author-55803">
+<name>
+<surname>Aird</surname>
+<given-names>Fraser</given-names>
+</name>
+<xref ref-type="aff" rid="aff1">1</xref>
+<xref ref-type="fn" rid="con2"/>
+<xref ref-type="fn" rid="conf1"/>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<email>tim@cos.io</email>
+<email>nicole@scienceexchange.com</email>
+<collab>Reproducibility Project: Cancer Biology<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Iorns</surname>
+<given-names>Elizabeth</given-names>
+</name>
+<aff>
+<institution>Science Exchange</institution>
+<addr-line>
+<named-content content-type="city">Palo Alto</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Williams</surname>
+<given-names>Stephen R</given-names>
+</name>
+<aff>
+<institution>Center for Open Science</institution>
+<addr-line>
+<named-content content-type="city">Charlottesville</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Perfito</surname>
+<given-names>Nicole</given-names>
+</name>
+<aff>
+<institution>Science Exchange</institution>
+<addr-line>
+<named-content content-type="city">Palo Alto</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author" id="author-16276">
+<name>
+<surname>Errington</surname>
+<given-names>Timothy M</given-names>
+</name>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4959-5143</contrib-id>
+<aff>
+<institution>Center for Open Science</institution>
+<addr-line>
+<named-content content-type="city">Charlottesville</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+</contrib-group>
+</collab>
+<xref ref-type="fn" rid="con3"/>
+<xref ref-type="fn" rid="conf2"/>
+</contrib>
+<aff id="aff1">
+<label>1</label>
+<institution content-type="dept">Developmental Therapeutics Core</institution>
+<institution>Northwestern University</institution>
+<addr-line>
+<named-content content-type="city">Evanston</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Dang</surname>
+<given-names>Chi Van</given-names>
+</name>
+<role>Reviewing editor</role>
+<aff>
+<institution>University of Pennsylvania</institution>
+<country>United States</country>
+</aff>
+</contrib>
+</contrib-group></article-meta></front><back><sec id="s4" sec-type="additional-information">
+<title>Additional information</title>
+<fn-group content-type="competing-interest">
+<title>Competing interests</title>
+<fn fn-type="COI-statement" id="conf1">
+<p>Developmental Therapeutics Core is a Science Exchange associated lab</p>
+</fn>
+<fn fn-type="COI-statement" id="conf2">
+<p>EI, NP: Employed by and hold shares in Science Exchange Inc.</p>
+</fn>
+</fn-group>
+<fn-group content-type="author-contribution">
+<title>Author contributions</title>
+<fn fn-type="con" id="con1">
+<p>Acquisition of data, Drafting or revising the article</p>
+</fn>
+<fn fn-type="con" id="con2">
+<p>Acquisition of data, Drafting or revising the article</p>
+</fn>
+<fn fn-type="con" id="con3">
+<p>Analysis and interpretation of data, Drafting or revising the article</p>
+</fn>
+</fn-group>
+</back>
+</root>
+''',
+         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Irawati Kandela'), ('index', u'Kandela, Irawati')])), ('affiliations', [OrderedDict([('name', [u'Developmental Therapeutics Core', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('contribution', u'Acquisition of data, Drafting or revising the article'), ('competingInterests', u'Developmental Therapeutics Core is a Science Exchange associated lab')]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Fraser Aird'), ('index', u'Aird, Fraser')])), ('affiliations', [OrderedDict([('name', [u'Developmental Therapeutics Core', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('contribution', u'Acquisition of data, Drafting or revising the article'), ('competingInterests', u'Developmental Therapeutics Core is a Science Exchange associated lab')]), OrderedDict([('type', 'group'), ('name', u'Reproducibility Project: Cancer Biology'), ('emailAddresses', [u'tim@cos.io', u'nicole@scienceexchange.com']), ('contribution', u'Analysis and interpretation of data, Drafting or revising the article'), ('competingInterests', u'EI, NP: Employed by and hold shares in Science Exchange Inc.'), ('people', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Elizabeth Iorns'), ('index', u'Iorns, Elizabeth')])), ('affiliations', [OrderedDict([('name', [u'Science Exchange']), ('address', OrderedDict([('formatted', [u'Palo Alto', u'United States']), ('components', OrderedDict([('locality', [u'Palo Alto']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Stephen R Williams'), ('index', u'Williams, Stephen R')])), ('affiliations', [OrderedDict([('name', [u'Center for Open Science']), ('address', OrderedDict([('formatted', [u'Charlottesville', u'United States']), ('components', OrderedDict([('locality', [u'Charlottesville']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Nicole Perfito'), ('index', u'Perfito, Nicole')])), ('affiliations', [OrderedDict([('name', [u'Science Exchange']), ('address', OrderedDict([('formatted', [u'Palo Alto', u'United States']), ('components', OrderedDict([('locality', [u'Palo Alto']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Timothy M Errington'), ('index', u'Errington, Timothy M')])), ('orcid', u'0000-0002-4959-5143'), ('affiliations', [OrderedDict([('name', [u'Center for Open Science']), ('address', OrderedDict([('formatted', [u'Charlottesville', u'United States']), ('components', OrderedDict([('locality', [u'Charlottesville']), ('country', u'United States')]))]))])])])])])]
+         ),
+
         )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -1186,23 +1323,23 @@ class TestParseJats(unittest.TestCase):
 
 
         ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><p>This <disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This ')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption')])]), ('alt', '')])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption')])]), ('alt', '')])])])]
         ),
 
         ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><p>This <disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This ')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b> ')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by: ')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
         ),
 
         ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><p>This <xref ref-type="fig" rid="fig3">Figure 3A</xref> test<disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b> ')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by: ')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
         ),
         
         ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><p><bold>This</bold> is <xref ref-type="fig" rid="fig3">Figure 3A</xref> test<disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b> is <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b> ')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by: ')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b> is <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3.'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', u'<math><mrow></mrow></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('alt', '')])])])]
         ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b> ')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])])])]
         ),
 
         ('<root><disp-quote><p>content</p></disp-quote></root>',
@@ -1311,7 +1448,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b> ')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])]
+        [OrderedDict([('type', 'paragraph'), ('text', u'<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('alt', ''), ('uri', u'elife-00012-resp-fig2-v1.tif')])]
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig>More content</p></root>',

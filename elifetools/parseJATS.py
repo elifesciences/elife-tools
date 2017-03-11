@@ -1685,7 +1685,7 @@ def footnotes(fn, fntype_filter):
             if fntype_filter is None or f['fn-type'] in fntype_filter:
                 notes.append({
                     'id': f['id'],
-                    'text': node_contents_str(f),
+                    'text': clean_whitespace(node_contents_str(f)),
                     'fn-type': f['fn-type'],
                 })
         except KeyError:
@@ -2141,7 +2141,7 @@ def body_block_paragraph_content(text):
     tag_content = OrderedDict()
     if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = text
+        tag_content["text"] = clean_whitespace(text)
     return tag_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
@@ -2204,7 +2204,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
         if node_contents_str(tag_copy):
-            tag_content["text"] = convert(node_contents_str(tag_copy))
+            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
 
     elif tag.name == "disp-quote":
         tag_content["type"] = "quote"
