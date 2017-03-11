@@ -2875,7 +2875,7 @@ def authors_json(soup):
                                        foot_notes_data)
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
-        elif contributor["type"] == "author":
+        elif contributor["type"] == "author" and not contributor.get("group-author-key"):
             author_json = author_person(contributor, author_contributions_data,
                                         author_correspondence_data, author_competing_interests_data,
                                         equal_contributions_map, present_address_data, foot_notes_data)
@@ -2885,7 +2885,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+    for contributor in filter(lambda json_element: json_element.get("group-author-key")
+                              and not json_element.get("collab"), contributors_data):
         for group_author in filter(
             lambda json_element: json_element["type"] == "group", authors_json_data):
             group_author_key = None
