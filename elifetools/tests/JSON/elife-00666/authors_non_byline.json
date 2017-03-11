@@ -138,7 +138,9 @@
         "orcid": "http://orcid.org/0000-0003-4921-6155", 
         "position": 8, 
         "type": "author non-byline", 
-        "email": "c.wilkinson@elifesciences.org"
+        "email": [
+            "c.wilkinson@elifesciences.org"
+        ]
     }, 
     {
         "surname": "Skibinski", 

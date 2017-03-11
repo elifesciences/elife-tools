@@ -7,7 +7,9 @@
         "author": "Randy Schekman", 
         "article_doi": "10.7554/eLife.00270", 
         "corresp": "yes", 
-        "email": "editorial@elifesciences.org", 
+        "email": [
+            "editorial@elifesciences.org"
+        ], 
         "given-names": "Randy", 
         "role": "Editor-in-Chief", 
         "position": 1, 

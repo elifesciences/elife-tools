@@ -39,7 +39,9 @@
             "\nThe other authors declare that no competing interests exist.\n"
         ], 
         "type": "author", 
-        "email": "mcorley@email.unc.edu"
+        "email": [
+            "mcorley@email.unc.edu"
+        ]
     }, 
     {
         "bio": [
@@ -69,7 +71,9 @@
         "author": "Alain Laderach", 
         "article_doi": "10.7554/eLife.00777", 
         "corresp": "yes", 
-        "email": "alain@unc.edu", 
+        "email": [
+            "alain@unc.edu"
+        ], 
         "person_id": 54862, 
         "given-names": "Alain", 
         "role": "Reviewing Editor", 
@@ -143,7 +147,9 @@
         "author": "M Dawn Teare", 
         "article_doi": "10.7554/eLife.00777", 
         "corresp": "yes", 
-        "email": "m.d.teare@sheffield.ac.uk", 
+        "email": [
+            "m.d.teare@sheffield.ac.uk"
+        ], 
         "affiliations": [
             {
                 "dept": "Department of Biology", 

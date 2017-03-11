@@ -877,11 +877,11 @@ def contrib_email(contrib_tag):
     Given a contrib tag, look for an email tag, and
     only return the value if it is not inside an aff tag
     """
-    email = None
+    email = []
     for email_tag in extract_nodes(contrib_tag, "email"):
         if email_tag.parent.name != "aff":
-            email = email_tag.text
-    return email
+            email.append(email_tag.text)
+    return email if len(email) > 0 else None
 
 def contrib_phone(contrib_tag):
     """
@@ -999,8 +999,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
     elif contributor.get('corresp') and not contributor.get('email'):
         # For corresponding group authors, look for an email address anywhere in the group
-        if raw_parser.email(contrib_tag):
-            contributor['email'] = node_contents_str(firstnn(raw_parser.email(contrib_tag)))
+        set_if_value(contributor, "email", contrib_email(contrib_tag))
 
     # on-behalf-of
     if contrib_tag.name == 'on-behalf-of':
@@ -2640,7 +2639,7 @@ def author_email_addresses(author, correspondence):
 
     # Also look at the author attributes
     if author.get("corresp") and author.get("email"):
-        email_addresses.append(author["email"])
+        email_addresses = author["email"]
 
     if email_addresses != []:
         return email_addresses

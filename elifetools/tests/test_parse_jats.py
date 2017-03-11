@@ -1482,12 +1482,12 @@ class TestParseJats(unittest.TestCase):
                          parser.author_notes(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife00013.xml", "elife_poa_e06828.xml",
-          "elife02935.xml", "elife00270.xml", "elife00351.xml")
+          "elife02935.xml", "elife00270.xml", "elife00351.xml", "elife-00666.xml")
     def test_authors(self, filename):
         self.assertEqual(self.json_expected(filename, "authors"),
                          parser.authors(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml")
+    @data("elife-kitchen-sink.xml", "elife-00666.xml")
     def test_authors_non_byline(self, filename):
         self.assertEqual(self.json_expected(filename, "authors_non_byline"),
                          parser.authors_non_byline(self.soup(filename)))
@@ -1535,7 +1535,7 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "conflict"),
                          parser.conflict(self.soup(filename)))
 
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml")
+    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
     def test_contributors(self, filename):
         self.assertEqual(self.json_expected(filename, "contributors"),
                          parser.contributors(self.soup(filename)))

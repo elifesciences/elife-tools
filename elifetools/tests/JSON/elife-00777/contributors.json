@@ -23,7 +23,9 @@
         }, 
         "orcid": "http://orcid.org/0000-0002-4485-5663", 
         "type": "author", 
-        "email": "mcorley@email.unc.edu"
+        "email": [
+            "mcorley@email.unc.edu"
+        ]
     }, 
     {
         "bio": [
@@ -34,7 +36,9 @@
         ], 
         "surname": "Laderach", 
         "corresp": "yes", 
-        "email": "alain@unc.edu", 
+        "email": [
+            "alain@unc.edu"
+        ], 
         "given-names": "Alain", 
         "role": "Reviewing Editor", 
         "orcid": "http://orcid.org/0000-0002-5088-9907", 
@@ -84,7 +88,9 @@
         ], 
         "surname": "Teare", 
         "corresp": "yes", 
-        "email": "m.d.teare@sheffield.ac.uk", 
+        "email": [
+            "m.d.teare@sheffield.ac.uk"
+        ], 
         "given-names": "M Dawn", 
         "role": "Reviewing Editor", 
         "references": {
