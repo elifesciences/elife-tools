@@ -1830,6 +1830,19 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "license"),
                          parser.license(self.soup(filename)))
 
+    @unpack
+    @data(
+        # example license from 00666
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article-meta><permissions><copyright-statement>© 2016, Harrison et al</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Harrison et al</copyright-holder><ali:free_to_read/><license xlink:href="http://creativecommons.org/licenses/by/4.0/"><ali:license_ref>http://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p></license></permissions></article-meta></root>',
+        'This article is distributed under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.'
+        ),
+    )
+    def test_license_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.license_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_license_url(self, filename):
         self.assertEqual(self.json_expected(filename, "license_url"),

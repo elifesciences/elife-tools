@@ -190,6 +190,9 @@ def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     return raw_parser.licence_url(permissions_tag)
 
+def license_json(soup):
+    return xml_to_html(True, full_license(soup))
+
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
 
