@@ -1287,6 +1287,11 @@ class TestParseJats(unittest.TestCase):
         OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.02277.012'), ('id', u'media1'), ('title', u'Video 1.')])
         ),
 
+        # example animated gif as a video in 00666 kitchen sink
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media mimetype="video" mime-subtype="gif" id="video2" xlink:href="elife-00666-video2.gif"><object-id pub-id-type="doi">10.7554/eLife.00666.038</object-id><label>Animation 1.</label><caption><title>A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.</title></caption></media></root>',
+        OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00666.038'), ('id', u'video2'), ('label', u'Animation 1.'), ('title', u'A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.'), ('uri', u'elife-00666-video2.gif'), ('autoplay', True), ('loop', True)])
+        ),
+
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

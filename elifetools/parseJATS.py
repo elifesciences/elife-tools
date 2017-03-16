@@ -2338,6 +2338,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
         body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
         set_if_value(tag_content, "uri", tag.get('xlink:href'))
+        if "uri" in tag_content and tag_content["uri"].endswith('.gif'):
+            tag_content["autoplay"] = True
+            tag_content["loop"] = True
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
