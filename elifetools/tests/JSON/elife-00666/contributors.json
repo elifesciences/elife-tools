@@ -63,6 +63,9 @@
         "id": "author-00002"
     }, 
     {
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "group-author-key": "group-author-id1", 
         "references": {
             "equal-contrib": [
                 "equal-contrib2"
@@ -77,8 +80,6 @@
                 "aff1"
             ]
         }, 
-        "type": "author", 
-        "group-author-key": "group-author-id1", 
         "collab": "eLife Editorial Production Group"
     }, 
     {

@@ -159,7 +159,7 @@ author. There is no display text associated with this link-->
 <!-- UPDATE: group authors. If the individuals of the group are listed, they now will be listed as a contrib-group and contributors within collab.
 They are no longer separated from their group name in tagging and linked by author key. Multiple group authors are allowed and their position in the author
 list displayed in the PDF is retained as per the XML order-->
-                <contrib contrib-type="author">
+                <contrib contrib-type="author" equal-contrib="yes">
                    <collab>eLife Editorial Production Group
                         <contrib-group>
 <!-- UPDATE: use of role in group authors. If a group author is subdivided into sections or sub-groups, this is indicated using the role tag-->                           
@@ -862,6 +862,9 @@ Impact statement:-->
                                 1</xref>, lower-middle) constitute the inverse model (by which
                             hidden parameters can be estimated from observed f values).</p>
                     </list-item>
+                    <!-- UPDATE: this 2) below is in error - it creates a repeat on the html view and a space 
+                        on the PDF view. Should not be there -->
+                    
                     <list-item>
                         <p>2) For each segment, the model was inverted for its particular f value,
                             yielding a two-dimensional probability distribution for the hidden
@@ -902,13 +905,13 @@ Impact statement:-->
                             a population change. The probabilities were compared, in conjunction
                             with the known prior probability of a population change (1/8), using
                             Bayes&#x2019; rule, as stated in Equation 2:<disp-formula id="equ1"
-                                ><label>(2)</label><mml:math id="m2"
+                                ><label>(1)</label><mml:math id="m2"
                                     ><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>c</mml:mi><mml:mo>|</mml:mo><mml:mi>f</mml:mi><mml:mo>)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>f</mml:mi><mml:mtext>|</mml:mtext><mml:mi>c</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></p>
                         <p>Here, P(c|f) is the chance that a population change occurred at that
                             particular time. Given that P(c) is known to be 1/8, and P(f), the total
                             probability of the observed f value, can be rewritten
                             P(f|c)P(c)+P(f|&#x007E;c)(1-P(c)), the above equation can be rewritten
-                            as Equation 3:<disp-formula id="equ2"><label>(3)</label><mml:math
+                            as Equation 3:<disp-formula id="equ2"><label>(2)</label><mml:math
                                 id="m3"
                                 ><mml:mrow><mml:mi>P</mml:mi><mml:mrow><mml:mo>(</mml:mo><mml:mrow><mml:mi>c</mml:mi><mml:mtext>|</mml:mtext><mml:mi>f</mml:mi></mml:mrow><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mrow><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:mn>7</mml:mn><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>|</mml:mo><mml:mo>&#x007E;</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mrow><mml:mi>P</mml:mi><mml:mo>(</mml:mo><mml:mi>f</mml:mi><mml:mo>|</mml:mo><mml:mi>c</mml:mi><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></p>
                     </list-item>
@@ -1569,7 +1572,7 @@ not add all rids to the xref as it does not work. Only add the first one -->
                         ):
                         <!-- id and a label required for display formulae -->
                         <disp-formula id="equ3">
-                            <label>(1)</label>
+                            <label>(3)</label>
                             <mml:math id="m1">
                                 <mml:mstyle displaystyle="true" scriptlevel="0">
                                     <mml:mrow>
@@ -4143,7 +4146,7 @@ UPDATE: punctuation between institution and country removed. -->
                     <caption>
                         <p>Single figure: The header of an eLife article example on the HTML page.</p>
                     </caption>
-                <graphic mimetype="image" mime-subtype="png" xlink:href="elife-00666-resp-fig1.png"/>
+                <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-resp-fig1.tif"/>
                 </fig>
             <table-wrap id="resptable1" position="float">
                 <!-- UPDATE: added to author response assets UPDATE: DOI prefix removed from XML but must be added for display--> 
