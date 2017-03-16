@@ -100,6 +100,11 @@
         "id": "author-00002"
     }, 
     {
+        "notes-fn": [
+            "\n\u2021\nThese authors also contributed equally to this work\n", 
+            "\nReviewed the PDF product\n", 
+            "\nNo competing interests declared\n"
+        ], 
         "group-author-key": "group-author-id1", 
         "article_doi": "10.7554/eLife.00666", 
         "collab": "eLife Editorial Production Group", 
@@ -126,11 +131,7 @@
             ]
         }, 
         "position": 3, 
-        "notes-fn": [
-            "\n\u2021\nThese authors also contributed equally to this work\n", 
-            "\nReviewed the PDF product\n", 
-            "\nNo competing interests declared\n"
-        ], 
+        "equal-contrib": "yes", 
         "type": "author"
     }, 
     {
