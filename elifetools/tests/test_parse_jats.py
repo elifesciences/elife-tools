@@ -1292,6 +1292,11 @@ class TestParseJats(unittest.TestCase):
         OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00666.038'), ('id', u'video2'), ('label', u'Animation 1.'), ('title', u'A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.'), ('uri', u'elife-00666-video2.gif'), ('autoplay', True), ('loop', True)])
         ),
 
+        # example of named-content to be converted to HTML from new kitchen sink 00666
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Here is an example of making text display in different colours: <named-content content-type="author-callout-style-a1">Blue text: #366BFB</named-content>; <named-content content-type="author-callout-style-a2">Purple text: #9C27B0</named-content>; and <named-content content-type="author-callout-style-a3">Red text: #D50000</named-content>.</p></root>',
+        OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of making text display in different colours: <span class="author-callout-style-a1">Blue text: #366BFB</span>; <span class="author-callout-style-a2">Purple text: #9C27B0</span>; and <span class="author-callout-style-a3">Red text: #D50000</span>.')])
+        ),
+
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

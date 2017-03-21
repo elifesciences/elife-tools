@@ -10,6 +10,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_ext_link_tags(html_string)
     html_string = replace_email_tags(html_string)
     html_string = replace_inline_graphic_tags(html_string, base_url)
+    html_string = replace_named_content_tags(html_string)
     html_string = replace_mathml_tags(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
@@ -127,6 +128,22 @@ def replace_inline_graphic_tags(s, base_url=None):
                 s = s.replace(old_tag, new_tag)
             except StopIteration:
                 pass
+    return s
+
+def replace_named_content_tags(s):
+    for tag_match in re.finditer("<(named-content.*?)>", s):
+        content_type_match = re.finditer('content-type="(.*)"', tag_match.group())
+        try:
+            all_match = content_type_match.next().group(1)
+            # Take only the first value
+            span_class = all_match.split(' ')[0]
+            new_tag = '<span class="' + span_class + '">'
+            old_tag = '<' + tag_match.group(1) + '>'
+            s = s.replace(old_tag, new_tag)
+            # Replace all close tags even if one open tag gets replaced
+            s = replace_simple_tags(s, 'named-content', 'span')
+        except StopIteration:
+            pass
     return s
 
 def remove_comment_tags(s):
