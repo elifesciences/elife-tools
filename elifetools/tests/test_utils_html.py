@@ -78,6 +78,12 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<table><thead><!--  Header row  --><tr><!-- This header row ... --><th></th></tr></thead><tbody><!--  Table body  --><tr><td>Genotype</td></tr></tbody></table>', None,
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype</td></tr></tbody></table>'),
 
+        (True, u'<named-content content-type="author-callout-style-a1">author-callout-style-a1</named-content>', None,
+         u'<span class="author-callout-style-a1">author-callout-style-a1</span>'),
+
+        (True, u'<p>Bad named-content for test coverage <named-content/></p>', None,
+         u'<p>Bad named-content for test coverage <named-content></named-content></p>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
