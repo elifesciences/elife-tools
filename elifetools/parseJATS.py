@@ -2386,7 +2386,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "list"
         if tag.get("list-type"):
             if tag.get("list-type") == "simple":
-                tag_content["prefix"] = "bullet"
+                tag_content["prefix"] = "none"
             elif tag.get("list-type") == "order":
                 tag_content["prefix"] = "number"
             else:
