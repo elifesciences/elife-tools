@@ -2003,6 +2003,12 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                     for tag_block in tag_blocks:
                         if tag_block != {}:
                             body_content.append(tag_block)
+            else:
+                # Add it
+                tag_blocks = body_block_content_render(tag, base_url=base_url)
+                for tag_block in tag_blocks:
+                    if tag_block != {}:
+                        body_content.append(tag_block)
         else:
 
             tag_blocks = body_block_content_render(tag, base_url=base_url)
