@@ -2395,6 +2395,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["prefix"] = "none"
 
         for list_item_tag in raw_parser.list_item(tag):
+            # Do not add list items of child lists to the main list by skipping them here first
+            if list_item_tag.parent != tag:
+                continue
+
             if "items" not in tag_content:
                 tag_content["items"] = []
 
