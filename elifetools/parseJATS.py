@@ -2298,6 +2298,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         graphic_tags = raw_parser.graphic(tag)
         if graphic_tags:
             copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
+            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'image')
 
         # license or attribution
         attributions = []
