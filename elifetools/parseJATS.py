@@ -2387,7 +2387,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "list"
         if tag.get("list-type"):
             if tag.get("list-type") == "simple":
-                tag_content["prefix"] = "bullet"
+                tag_content["prefix"] = "none"
             elif tag.get("list-type") == "order":
                 tag_content["prefix"] = "number"
             else:
@@ -2396,6 +2396,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["prefix"] = "none"
 
         for list_item_tag in raw_parser.list_item(tag):
+            # Do not add list items of child lists to the main list by skipping them here first
+            if list_item_tag.parent != tag:
+                continue
+
             if "items" not in tag_content:
                 tag_content["items"] = []
 
