@@ -2298,13 +2298,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
         body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
-        # todo!! alt
-        set_if_value(tag_content, "alt", "")
-        # todo!! set base URL for images
-        graphic_tags = raw_parser.graphic(tag)
-        if graphic_tags:
-            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
-            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'image')
+        if raw_parser.graphic(tag):
+            image_content = {}
+            graphic_tags = raw_parser.graphic(tag)
+            if graphic_tags:
+                copy_attribute(first(graphic_tags).attrs, 'xlink:href', image_content, 'uri')
+                if "uri" in image_content:
+                    # todo!! alt
+                    set_if_value(image_content, "alt", "")
+            if len(image_content) > 0:
+                tag_content["image"] = image_content
 
         # license or attribution
         attributions = []
