@@ -3114,7 +3114,7 @@ def references_json(soup, html_flag=True):
         set_if_value(ref_content, "id", ref.get("id"))
 
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
-        set_if_value(ref_content, "date", ref.get("iso-8601-date"))
+        set_if_value(ref_content, "date", ref.get("year-iso-8601-date"))
         if "date" not in ref_content:
             set_if_value(ref_content, "date", year_date)
             set_if_value(ref_content, "discriminator", discriminator)

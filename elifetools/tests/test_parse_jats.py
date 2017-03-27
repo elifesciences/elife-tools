@@ -1095,7 +1095,7 @@ class TestParseJats(unittest.TestCase):
 
         # from 00666 kitchen sink example, reference of type periodical
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib40"><element-citation publication-type="periodical"><person-group person-group-type="author"><name><surname>Schwartz</surname><given-names>J</given-names></name></person-group><string-date><month>September</month> <day>9</day>, <year iso-8601-date="1993-09-09">1993</year></string-date><article-title>Obesity affects economic, social status</article-title><source>The Washington Post</source><fpage>A1</fpage><lpage>A4</lpage></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'periodical'), ('id', u'bib40'), ('date', u'1993'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Schwartz'), ('index', u'Schwartz, J')]))])]), ('articleTitle', u'Obesity affects economic, social status'), ('periodical', u'The Washington Post'), ('pages', OrderedDict([('first', u'A1'), ('last', u'A4'), ('range', u'A1\u2013A4')]))])]
+        [OrderedDict([('type', u'periodical'), ('id', u'bib40'), ('date', u'1993-09-09'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Schwartz'), ('index', u'Schwartz, J')]))])]), ('articleTitle', u'Obesity affects economic, social status'), ('periodical', u'The Washington Post'), ('pages', OrderedDict([('first', u'A1'), ('last', u'A4'), ('range', u'A1\u2013A4')]))])]
          ),
 
          # 00666 kitchen sink example with a version tag
