@@ -944,7 +944,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         # Clinical trial example, from new kitchen sink 00666
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib41"><element-citation publication-type="clinicaltrial"><person-group person-group-type="sponsor"><collab>Scripps Translational Science Institute</collab></person-group><year iso-8601-date="2006">2015</year><article-title>Scripps Wired for Health Study</article-title><ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link></element-citation></ref></ref-list></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib41"><element-citation publication-type="clinicaltrial"><person-group person-group-type="sponsor"><collab>Scripps Translational Science Institute</collab></person-group><year iso-8601-date="2015">2015</year><article-title>Scripps Wired for Health Study</article-title><ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link></element-citation></ref></ref-list></root>',
          [OrderedDict([('type', 'clinical-trial'), ('id', u'bib41'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'group'), ('name', 'Scripps Translational Science Institute')])]), ('authorsType', 'sponsors'), ('title', u'Scripps Wired for Health Study'), ('uri', u'https://clinicaltrials.gov/ct2/show/NCT01975428')])]
          ),
 
@@ -1028,9 +1028,9 @@ class TestParseJats(unittest.TestCase):
          []
          ),
 
-        # 19532 v2 bib27 has a date-in-citation and no year tag
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib27"><element-citation publication-type="web"><person-group person-group-type="author"><collab>Nature</collab></person-group><article-title>Challenges in irreproducible research</article-title><source>Nature News and Comment</source><ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link><date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('date', u'2015-12-14'), ('accessed', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552')])]
+        # 19532 v2 bib27 has a date-in-citation and no year tag, will get rewritten
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">19532</article-id><article-id pub-id-type="doi">10.7554/eLife.19532</article-id></article-meta><ref-list><ref id="bib27"><element-citation publication-type="web"><person-group person-group-type="author"><collab>Nature</collab></person-group><article-title>Challenges in irreproducible research</article-title><source>Nature News and Comment</source><ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link><date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation></element-citation></ref></ref-list></article></root>',
+         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('accessed', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552'), ('date', u'2015')])]
          ),
 
         # 00666 kitchen sink reference of type patent
@@ -1095,7 +1095,7 @@ class TestParseJats(unittest.TestCase):
 
         # from 00666 kitchen sink example, reference of type periodical
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib40"><element-citation publication-type="periodical"><person-group person-group-type="author"><name><surname>Schwartz</surname><given-names>J</given-names></name></person-group><string-date><month>September</month> <day>9</day>, <year iso-8601-date="1993-09-09">1993</year></string-date><article-title>Obesity affects economic, social status</article-title><source>The Washington Post</source><fpage>A1</fpage><lpage>A4</lpage></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'periodical'), ('id', u'bib40'), ('date', u'1993'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Schwartz'), ('index', u'Schwartz, J')]))])]), ('articleTitle', u'Obesity affects economic, social status'), ('periodical', u'The Washington Post'), ('pages', OrderedDict([('first', u'A1'), ('last', u'A4'), ('range', u'A1\u2013A4')]))])]
+        [OrderedDict([('type', u'periodical'), ('id', u'bib40'), ('date', u'1993-09-09'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Schwartz'), ('index', u'Schwartz, J')]))])]), ('articleTitle', u'Obesity affects economic, social status'), ('periodical', u'The Washington Post'), ('pages', OrderedDict([('first', u'A1'), ('last', u'A4'), ('range', u'A1\u2013A4')]))])]
          ),
 
          # 00666 kitchen sink example with a version tag
