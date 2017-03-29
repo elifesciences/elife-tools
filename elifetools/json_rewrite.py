@@ -122,7 +122,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.10042"] = {"bib14": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.10070"] = {"bib15": {"date": "2015"}, "bib38": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.10222"] = {"bib30": {"date": "2015"}}
-    references_rewrite_json["10.7554/eLife.10670"] = {"bib8": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.10670"] = {"bib7": {"date": "2015"}, "bib8": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.10781"] = {"bib32": {"date": "2003"}}
     references_rewrite_json["10.7554/eLife.11273"] = {"bib43": {"date": "2004"}}
     references_rewrite_json["10.7554/eLife.11305"] = {"bib68": {"date": "2000"}}
@@ -164,6 +164,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.20522"] = {
         "bib42": {"date": "2016"},
         "bib110": {"date": "1996"}}
+    references_rewrite_json["10.7554/eLife.22053"] = {"bib123": {"date": "2016"}}
 
     # Reference authors data to replace, processed further below into json
     references_authors = []
