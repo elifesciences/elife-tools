@@ -995,6 +995,8 @@ def rewrite_elife_editors_json(json_content, doi):
         for i, ref in enumerate(json_content):
             if not ref.get("role"):
                 json_content[i]["role"] = editor_roles[doi]
+            elif ref.get("role"):
+                json_content[i]["role"] = "Reviewing Editor"
     else:
         # Fix capitalisation on exiting role values
         for i, ref in enumerate(json_content):

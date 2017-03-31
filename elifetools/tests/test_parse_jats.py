@@ -560,7 +560,7 @@ class TestParseJats(unittest.TestCase):
     @data(
         # 08647 v1 PoA editor has blank string in the affiliation tags
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group content-type="section"><contrib contrib-type="editor" id="author-11736"><name><surname>Kramer</surname><given-names>Achim</given-names></name><role>Reviewing editor</role><aff><institution> </institution>, <country> </country></aff></contrib></contrib-group></article-meta></front></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Achim Kramer'), ('index', u'Kramer, Achim')])), ('role', u'Reviewing Editor')])]
+        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Achim Kramer'), ('index', u'Kramer, Achim')])), ('role', u'Reviewing editor')])]
          ),
 
          # 09560 v1 example, has two editors
