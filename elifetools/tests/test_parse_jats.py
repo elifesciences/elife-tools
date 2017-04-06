@@ -1030,8 +1030,41 @@ class TestParseJats(unittest.TestCase):
 
         # 19532 v2 bib27 has a date-in-citation and no year tag, will get rewritten
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">19532</article-id><article-id pub-id-type="doi">10.7554/eLife.19532</article-id></article-meta><ref-list><ref id="bib27"><element-citation publication-type="web"><person-group person-group-type="author"><collab>Nature</collab></person-group><article-title>Challenges in irreproducible research</article-title><source>Nature News and Comment</source><ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link><date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation></element-citation></ref></ref-list></article></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('accessed', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552'), ('date', u'2015')])]
+         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('date', u'2015'), ('accessed', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552')])]
          ),
+        
+        # 00666 kitchen sink reference of type web, no year tag
+        ("""<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list>
+          <ref id="bib50">
+            <element-citation publication-type="web">
+              <person-group person-group-type="author">
+                <name>
+                  <surname>Walker</surname>
+                  <given-names>J</given-names>
+                </name>
+              </person-group>
+              <article-title>Solar System Live</article-title>
+              <ext-link ext-link-type="uri" xlink:href="https://www.fourmilab.ch/solar/">https://www.fourmilab.ch/solar/</ext-link>
+              <date-in-citation iso-8601-date="1995-09-10">September 10, 1995</date-in-citation>
+            </element-citation>
+          </ref>
+          </ref-list></root>""",
+          [OrderedDict([
+              ('type', u'web'),
+              ('id', u'bib50'),
+              ('date', u'1995-09-10'),
+              ('accessed', u'1995-09-10'),
+              ('authors', [OrderedDict([
+                   ('type', u'person'),
+                   ('name', OrderedDict([
+                       ('preferred', u'J Walker'),
+                       ('index', u'Walker, J')
+                   ]))
+              ])]),
+              ('title', u'Solar System Live'),
+              ('uri', u'https://www.fourmilab.ch/solar/')
+          ])]
+        ),
 
         # 00666 kitchen sink reference of type patent
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="patent"><person-group person-group-type="inventor"><name><surname>Patterson</surname><given-names>JB</given-names></name><name><surname>Lonergan</surname><given-names>DG</given-names></name><name><surname>Flynn</surname><given-names>GA</given-names></name><name><surname>Qingpeng</surname><given-names>Z</given-names></name><name><surname>Pallai</surname><given-names>PV</given-names></name></person-group><person-group person-group-type="assignee"><collab>Mankind Corp</collab></person-group><year iso-8601-date="2011">2011</year><article-title>IRE-1alpha inhibitors</article-title><source>United States patent</source><patent country="United States">US20100941530</patent><ext-link ext-link-type="uri" xlink:href="http://europepmc.org/patents/PAT/US2011065162">http://europepmc.org/patents/PAT/US2011065162</ext-link></element-citation></ref></ref-list></root>',
