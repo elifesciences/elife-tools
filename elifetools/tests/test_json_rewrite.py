@@ -101,6 +101,16 @@ class TestJsonRewrite(unittest.TestCase):
         original_json_content = copy.deepcopy(json_content)
         self.assertNotEqual(json_rewrite.rewrite_elife_datasets_json(json_content, doi), original_json_content)
 
+    @unpack
+    @data(
+        ([{}], '10.7554/eLife.23804', [{'role': 'Reviewing Editor'}]),
+        ([{'role': 'Reviewing editor'}], '10.7554/eLife.00001', [{'role': 'Reviewing Editor'}]),
+        ([{'role': 'Specialised Role'}], '10.7554/eLife.00001', [{'role': 'Specialised Role'}]),
+        )
+    def test_rewrite_elife_editors_json(self, json_content, doi, expected):
+        """simple tests for coverage assert the result is different"""
+        original_json_content = copy.deepcopy(json_content)
+        self.assertEqual(json_rewrite.rewrite_elife_editors_json(json_content, doi), expected)
 
 if __name__ == '__main__':
     unittest.main()
