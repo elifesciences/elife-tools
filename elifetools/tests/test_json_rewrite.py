@@ -103,6 +103,15 @@ class TestJsonRewrite(unittest.TestCase):
 
     @unpack
     @data(
+        ([{}], '10.7554/eLife.00001', [{}]),
+        ([{}], '10.7554/eLife.00230', [{'competingInterests': 'The authors have declared that no competing interests exist'}]),
+        )
+    def test_rewrite_elife_authors_json(self, json_content, doi, expected):
+        original_json_content = copy.deepcopy(json_content)
+        self.assertEqual(json_rewrite.rewrite_elife_authors_json(json_content, doi), expected)
+
+    @unpack
+    @data(
         ([{}], '10.7554/eLife.23804', [{'role': 'Reviewing Editor'}]),
         ([{'role': 'Reviewing editor'}], '10.7554/eLife.00001', [{'role': 'Reviewing Editor'}]),
         ([{'role': 'Specialised Role'}], '10.7554/eLife.00001', [{'role': 'Specialised Role'}]),
