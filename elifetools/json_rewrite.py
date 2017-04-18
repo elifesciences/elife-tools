@@ -496,6 +496,14 @@ def rewrite_elife_authors_json(json_content, doi):
             if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
                 json_content[i]["orcid"] = "0000-0001-7224-925X"
 
+    elife_author_competing_interests = {}
+    elife_author_competing_interests["10.7554/eLife.00230"] = "The authors have declared that no competing interests exist"
+    elife_author_competing_interests["10.7554/eLife.10635"] = "The authors declare that no competing interests exist."
+    if doi in elife_author_competing_interests:
+        for i, ref in enumerate(json_content):
+            if not ref.get("competingInterests"):
+                json_content[i]["competingInterests"] = elife_author_competing_interests[doi]
+
     return json_content
 
 def rewrite_elife_datasets_json(json_content, doi):
