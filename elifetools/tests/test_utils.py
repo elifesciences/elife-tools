@@ -77,6 +77,15 @@ class TestUtils(unittest.TestCase):
     @unpack
     @data(
         (None, None),
+        ("10.7554/eLife.00666", "10.7554/eLife.00666"),
+        ("10.7554/eLife.507424566981410635", "10.7554/eLife.10635"),
+        )
+    def test_convert_end2end_doi(self, doi, expected_doi):
+        self.assertEqual(utils.convert_end2end_doi(doi), expected_doi)
+
+    @unpack
+    @data(
+        (None, None),
         ("http://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
         ("https://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
         ("http://doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
