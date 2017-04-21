@@ -485,27 +485,30 @@ def rewrite_elife_funding_awards(json_content, doi):
 def rewrite_elife_authors_json(json_content, doi):
     """ this does the work of rewriting elife authors json """
 
+    # Convert doi from testing doi if applicable
+    article_doi = utils.convert_testing_doi(doi)
+
     # Edge case fix an affiliation name
-    if utils.convert_testing_doi(doi) == "10.7554/eLife.06956":
+    if article_doi == "10.7554/eLife.06956":
         for i, ref in enumerate(json_content):
             if ref.get("orcid") and ref.get("orcid") == "0000-0001-6798-0064":
                 json_content[i]["affiliations"][0]["name"] = ["Cambridge"]
 
     # Edge case fix an ORCID
-    if utils.convert_testing_doi(doi) == "10.7554/eLife.09376":
+    if article_doi == "10.7554/eLife.09376":
         for i, ref in enumerate(json_content):
             if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
                 json_content[i]["orcid"] = "0000-0001-7224-925X"
 
     # Edge case competing interests
-    if utils.convert_testing_doi(doi) == "10.7554/eLife.00102":
+    if article_doi == "10.7554/eLife.00102":
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
                 if ref["name"]["index"].startswith("Chen,"):
                     json_content[i]["competingInterests"] = "ZJC: Reviewing Editor, <i>eLife</i>"
                 elif ref["name"]["index"].startswith("Li,"):
                     json_content[i]["competingInterests"] = "The remaining authors have no competing interests to declare."
-    if utils.convert_testing_doi(doi) == "10.7554/eLife.00270":
+    if article_doi == "10.7554/eLife.00270":
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
                 if ref["name"]["index"].startswith("Patterson,"):
@@ -581,10 +584,10 @@ def rewrite_elife_authors_json(json_content, doi):
     elife_author_competing_interests["10.7554/eLife.21491"] = "The other authors declare that no competing interests exist."
     elife_author_competing_interests["10.7554/eLife.22187"] = "The authors declare that no competing interests exist."
 
-    if utils.convert_testing_doi(doi) in elife_author_competing_interests:
+    if article_doi in elife_author_competing_interests:
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
-                json_content[i]["competingInterests"] = elife_author_competing_interests[utils.convert_testing_doi(doi)]
+                json_content[i]["competingInterests"] = elife_author_competing_interests[article_doi]
 
     return json_content
 
