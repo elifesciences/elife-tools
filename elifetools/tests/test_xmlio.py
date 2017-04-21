@@ -5,9 +5,7 @@ from ddt import ddt, data, unpack
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element
 
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import xmlio
+from elifetools import xmlio
 
 from file_utils import sample_xml
 
@@ -22,6 +20,21 @@ class TestXmlio(unittest.TestCase):
     def test_parse(self, filename):
         root = xmlio.parse(sample_xml(filename))
         self.assertEqual(type(root), Element)
+
+    @data("elife-02833-v2.xml", "simple-jats-doctype-1.1.xml", "simple-jats-doctype-1.1d3.xml")
+    def test_input_output(self, filename):
+        """test parsing a file while retaining the doctype"""
+        with open(sample_xml(filename), "rb") as xml_file:
+            xml_output_expected = xml_file.read()
+        root, doctype_dict = xmlio.parse(sample_xml(filename), return_doctype_dict=True)
+        self.assertEqual(xmlio.output(root, None, doctype_dict), xml_output_expected)
+
+    @data("elife-02833-v2.xml")
+    def test_input_output_forcing_jats_doctype(self, filename):
+        with open(sample_xml(filename), "rb") as xml_file:
+            xml_output_expected = xml_file.read()
+        root, doctype_dict = xmlio.parse(sample_xml(filename), return_doctype_dict=True)
+        self.assertEqual(xmlio.output(root, 'JATS'), xml_output_expected)
 
     @unpack
     @data(("xmlio_input.xml", "inline-graphic", 2),

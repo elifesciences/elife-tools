@@ -7,21 +7,36 @@ from xml.dom import minidom
 xmlio can do input and output of XML, allowing it to be edited using ElementTree library
 """
 
+class CustomXMLParser(ElementTree.XMLParser):
+    doctype_dict = {}
+    def doctype(self, name, pubid, system):
+        self.doctype_dict["name"] = name
+        self.doctype_dict["pubid"] = pubid
+        self.doctype_dict["system"] = system
+
 def register_xmlns():
     """
     Register namespaces globally
     """
     ElementTree.register_namespace("mml","http://www.w3.org/1998/Math/MathML")
     ElementTree.register_namespace("xlink","http://www.w3.org/1999/xlink")
+    ElementTree.register_namespace("ali","http://www.niso.org/schemas/ali/1.0/")
 
-def parse(filename):
-    parser = ElementTree.XMLParser(html=0, target=None, encoding='utf-8')
+def parse(filename, return_doctype_dict=False):
+    """
+    to extract the doctype details from the file when parsed and return the data
+    for later use, set return_doctype_dict to True
+    """
+    parser = CustomXMLParser(html=0, target=None, encoding='utf-8')
 
     tree = ElementTree.parse(filename, parser)
     root = tree.getroot()
-    
-    return root
-    
+
+    if return_doctype_dict is True:
+        return root, parser.doctype_dict
+    else:
+        return root
+
 def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     """
     Helper function to refactor the adding of new tags
@@ -74,19 +89,24 @@ def convert_xlink_href(root, name_map):
 
 
 
-def output(root, type = 'JATS'):
+def output(root, type='JATS', doctype_dict=None):
 
-    if type == 'JATS':
+    if doctype_dict is not None:
+        publicId = doctype_dict.get('pubid')
+        systemId = doctype_dict.get('system')
+        qualifiedName = doctype_dict.get('name')
+    elif type == 'JATS':
         publicId = "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"
         systemId = 'JATS-archivearticle1.dtd'
+        qualifiedName = "article"
     else:
         publicId = None
         systemId = None
+        qualifiedName = "article"
 
     encoding = 'UTF-8'
 
     namespaceURI = None
-    qualifiedName = "article"
 
     doctype = build_doctype(qualifiedName, publicId, systemId)
 
