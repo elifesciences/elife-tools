@@ -80,8 +80,8 @@ class TestUtils(unittest.TestCase):
         ("10.7554/eLife.00666", "10.7554/eLife.00666"),
         ("10.7554/eLife.507424566981410635", "10.7554/eLife.10635"),
         )
-    def test_convert_end2end_doi(self, doi, expected_doi):
-        self.assertEqual(utils.convert_end2end_doi(doi), expected_doi)
+    def test_convert_testing_doi(self, doi, expected_doi):
+        self.assertEqual(utils.convert_testing_doi(doi), expected_doi)
 
     @unpack
     @data(

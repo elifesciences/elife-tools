@@ -145,7 +145,7 @@ def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     return filter(lambda tag: tag.name == "p", tags)
 
-def convert_end2end_doi(doi):
+def convert_testing_doi(doi):
     if doi is None:
         return doi
     parts = doi.split('.')
