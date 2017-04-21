@@ -105,6 +105,12 @@ class TestJsonRewrite(unittest.TestCase):
     @data(
         ([{}], '10.7554/eLife.00001', [{}]),
         ([{}], '10.7554/eLife.00230', [{'competingInterests': 'The authors have declared that no competing interests exist'}]),
+        ([{'name': {'index': 'Chen, Zhijian J'}}, {'name': {'index': 'Li, Xiao-Dong'}}], '10.7554/eLife.00102',
+            [{'name': {'index': 'Chen, Zhijian J'}, 'competingInterests': 'ZJC: Reviewing Editor, <i>eLife</i>'},
+                {'name': {'index': 'Li, Xiao-Dong'}, 'competingInterests': 'The remaining authors have no competing interests to declare.'}]),
+        ([{'name': {'index': 'Patterson, Mark'}}], '10.7554/eLife.00270',
+            [{'name': {'index': 'Patterson, Mark'}, 'competingInterests': 'MP: Managing Executive Editor, <i>eLife</i>'}]),
+        
         )
     def test_rewrite_elife_authors_json(self, json_content, doi, expected):
         original_json_content = copy.deepcopy(json_content)
