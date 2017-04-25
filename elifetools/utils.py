@@ -145,6 +145,13 @@ def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     return filter(lambda tag: tag.name == "p", tags)
 
+def convert_testing_doi(doi):
+    if doi is None:
+        return doi
+    parts = doi.split('.')
+    new_msid = parts[-1][-5:]
+    return '.'.join(parts[0:-1] + [new_msid])
+
 def starts_with_doi(tag):
     if node_text(tag).strip().startswith("DOI:"):
         return True
