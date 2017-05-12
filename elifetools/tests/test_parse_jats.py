@@ -460,11 +460,16 @@ class TestParseJats(unittest.TestCase):
          ),
 
         # normal boxed-text and section, keep these
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><p><bold>Boxed text</bold></p></body></article></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><p><bold>Boxed text</bold></p></boxed-text></sec></body></article></root>',
          [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'box'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Boxed text</b>')])])])])])]
          ),
 
-        # 00301 v1 do not keep boxed-text and warp in section
+        # boxed-text paragraphs inside the caption tag, based on 05519 v2
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><object-id pub-id-type="doi">10.7554/eLife.05519.003</object-id><label>Box 1.</label><caption><title>Example: Elastomer pump study</title><p><bold>Boxed text</bold></p><p>Paragraph 2</p></caption></boxed-text></sec></body></article></root>',
+         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.05519.003'), ('label', u'Box 1.'), ('title', u'Example: Elastomer pump study'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Boxed text</b>')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])])])]
+         ),
+
+        # 00301 v1 do not keep boxed-text and wrap in section
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p><bold>Related research article</bold> Yan H, Zhong G, Xu G, He W, Jing Z, Gao Z, Huang Y, Qi Y, Peng B, Wang H, Fu L, Song M, Chen P, Gao W, Ren B, Sun Y, Cai T, Feng X, Sui J, Li W. 2012. Sodium taurocholate cotransporting polypeptide is a functional receptor for human hepatitis B and D virus. <italic>eLife</italic> <bold>1</bold>:e00049. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00049">10.7554/eLife.00049</ext-link></p><p><bold>Image</bold> HepG2 cells infected with the hepatitis B virus</p><p><inline-graphic xlink:href="elife-00301-inf1-v1"/></p></boxed-text><p>Approximately two billion people ...</p></body></article></root>',
          [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Approximately two billion people ...')])])])]
          ),
@@ -1313,6 +1318,10 @@ class TestParseJats(unittest.TestCase):
     @data(
         ('<root><sec><boxed-text><title>Strange content for test coverage</title><table-wrap><label>A label</label></table-wrap><fig></fig><fig><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id></fig></boxed-text></sec></root>',
         [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('title', u'A label'), ('tables', [])]), OrderedDict([('type', 'image')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024')])])])])])])])]
+         ),
+
+        ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content 1</p><p>content 2</p></caption></boxed-text></root>',
+         [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1.'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'content 2')])])])])])]
          ),
 
         ('<root><p>content <italic>test</italic></p></root>',

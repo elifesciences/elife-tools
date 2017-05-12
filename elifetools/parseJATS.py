@@ -2069,11 +2069,13 @@ def body_block_content_render(tag, recursive=False, base_url=None):
             tag_content["content"] = []
             for block_content in tag_content_content:
                 tag_content["content"].append(block_content)
+            block_content_list.append(tag_content)
         else:
             # Not a block tag, e.g. a caption tag, let the content pass through
-            tag_content = tag_content_content[0]
+            block_content_list = tag_content_content
+    else:
+        block_content_list.append(tag_content)
 
-    block_content_list.append(tag_content)
     return block_content_list
 
 def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
