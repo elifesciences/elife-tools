@@ -379,6 +379,11 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('id', u'par-1'), ('source', OrderedDict([('funderId', u'10.13039/100000065'), ('name', [u'National Institute of Neurological Disorders and Stroke (NINDS)'])])), ('awardId', u'#NS072030'), ('recipients', [{'type': 'person', 'name': {'index': 'Granger, Adam J', 'preferred': 'Adam J Granger'}}])])]
          ),
 
+        # 03609 v1 example funding award with multiple recipients
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">06412</article-id><article-id pub-id-type="doi">10.7554/eLife.06412</article-id><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100006955</institution-id><institution>Office of Extramural Research, National Institutes of Health</institution></institution-wrap></funding-source><award-id>R21AI107082</award-id><principal-award-recipient><name><surname>Zeng</surname><given-names>Xun</given-names></name><name><surname>Meyer</surname><given-names>Christina</given-names></name><name><surname>Chien</surname><given-names>Yueh-hsiu</given-names></name></principal-award-recipient></award-group></funding-group></front></article-meta></root>',
+        [OrderedDict([('id', u'par-1'), ('source', OrderedDict([('funderId', u'10.13039/100006955'), ('name', [u'Office of Extramural Research, National Institutes of Health'])])), ('awardId', u'R21AI107082'), ('recipients', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Xun Zeng'), ('index', u'Zeng, Xun')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Christina Meyer'), ('index', u'Meyer, Christina')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Yueh-hsiu Chien'), ('index', u'Chien, Yueh-hsiu')]))])])])]
+        ),
+
     )
     def test_funding_awards_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
