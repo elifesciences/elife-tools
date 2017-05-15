@@ -2158,7 +2158,7 @@ def body_block_paragraph_content(text):
 def body_block_title_label_caption(tag_content, title_value, label_value,
                                    caption_content, set_caption=True):
     "set the title, label and caption values in a consistent way"
-    set_if_value(tag_content, "label", label_value)
+    set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
     if caption_content and len(caption_content) > 0 and "title" not in tag_content:
         first_paragraph_text = caption_content[0]["text"]
@@ -2255,7 +2255,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 # Only set id if a label is present
                 if label(fn_tag, fn_tag.name):
                     set_if_value(footnote_content, "id", fn_tag.get("id"))
-                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
+                    set_if_value(footnote_content, "label", rstrip_punctuation(label(fn_tag, fn_tag.name)))
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
