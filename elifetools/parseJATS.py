@@ -2069,11 +2069,13 @@ def body_block_content_render(tag, recursive=False, base_url=None):
             tag_content["content"] = []
             for block_content in tag_content_content:
                 tag_content["content"].append(block_content)
+            block_content_list.append(tag_content)
         else:
             # Not a block tag, e.g. a caption tag, let the content pass through
-            tag_content = tag_content_content[0]
+            block_content_list = tag_content_content
+    else:
+        block_content_list.append(tag_content)
 
-    block_content_list.append(tag_content)
     return block_content_list
 
 def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
@@ -2156,7 +2158,7 @@ def body_block_paragraph_content(text):
 def body_block_title_label_caption(tag_content, title_value, label_value,
                                    caption_content, set_caption=True):
     "set the title, label and caption values in a consistent way"
-    set_if_value(tag_content, "label", label_value)
+    set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
     if caption_content and len(caption_content) > 0 and "title" not in tag_content:
         first_paragraph_text = caption_content[0]["text"]
@@ -2258,7 +2260,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 # Only set id if a label is present
                 if label(fn_tag, fn_tag.name):
                     set_if_value(footnote_content, "id", fn_tag.get("id"))
-                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
+                    set_if_value(footnote_content, "label", rstrip_punctuation(label(fn_tag, fn_tag.name)))
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
@@ -3668,13 +3670,17 @@ def funding_awards_json(soup):
         if recipient_tags:
             recipients = []
             for recipient_tag in recipient_tags:
-                recipient_content = OrderedDict()
                 if len(extract_nodes(recipient_tag, ["name", "institution"])) <= 0:
                     # A loose institution name not surrounded by institution tag
+                    recipient_content = OrderedDict()
                     recipient_content["type"] = "group"
                     set_if_value(recipient_content, "name", node_contents_str(recipient_tag))
+                    if len(recipient_content) > 0:
+                        # add it
+                        recipients.append(recipient_content)
                 else:
                     for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
+                        recipient_content = OrderedDict()
                         if contrib_tag.name == "institution":
                             recipient_content["type"] = "group"
                             set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
@@ -3687,8 +3693,9 @@ def funding_awards_json(soup):
                             set_if_value(person_details, "suffix",
                                          first_node_str_contents(contrib_tag, "suffix"))
                             recipient_content = references_author_person(person_details)
-                if len(recipient_content) > 0:
-                    recipients.append(recipient_content)
+                        if len(recipient_content) > 0:
+                            # add it
+                            recipients.append(recipient_content)
 
             # Add to the dict for adding to the award data later
             if len(recipients) > 0:
