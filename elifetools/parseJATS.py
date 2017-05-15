@@ -2279,8 +2279,11 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(source_data) > 0:
                 asset_tag_content["sourceData"] = source_data
 
-        # add the asset
-        tag_content["assets"].append(asset_tag_content)
+        # add to figure assets if there is a label otherwise use the table asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "disp-formula":
         tag_content["type"] = "mathml"
