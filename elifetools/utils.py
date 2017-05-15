@@ -436,3 +436,9 @@ def text_to_title(value):
         if title.split(" ")[-1] != "spp.":
             title = title.rstrip(" .:")
     return title
+
+def rstrip_punctuation(value):
+    "strip punctuation from the end of a label or title"
+    if not value:
+        return value
+    return value.rstrip('.:')

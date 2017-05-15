@@ -165,6 +165,16 @@ class TestUtils(unittest.TestCase):
     def test_clean_whitespace(self, value, expected):
         self.assertEqual(expected, utils.clean_whitespace(value))
 
+    @unpack
+    @data(
+        (None, None),
+        (u'Figure 8', u'Figure 8'),
+        (u'Reviewers’ figure 1', u'Reviewers’ figure 1'),
+        (u"Figure 7—figure supplement 1:", u'Figure 7—figure supplement 1'),
+        (u"Appendix 1—figure 3—figure supplement 1.", u'Appendix 1—figure 3—figure supplement 1'),
+        )
+    def test_rstrip_punctuation(self, value, expected):
+        self.assertEqual(expected, utils.rstrip_punctuation(value))
 
 if __name__ == '__main__':
     unittest.main()
