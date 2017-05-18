@@ -2156,8 +2156,11 @@ def body_block_paragraph_content(text):
     return tag_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
-                                   caption_content, set_caption=True):
-    "set the title, label and caption values in a consistent way"
+                                   caption_content, set_caption=True, prefer_title=False):
+    """set the title, label and caption values in a consistent way
+    
+    set_caption: insert a "caption" field
+    prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
     set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
     if caption_content and len(caption_content) > 0 and "title" not in tag_content:
@@ -2172,11 +2175,10 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
             pass
         else:
             tag_content["caption"] = caption_content
-    # if no title, use the label and unset the label
-    # deprecated: title is not mandatory anymore while label is for figures
-    #if "title" not in tag_content and label_value:
-    #    set_if_value(tag_content, "title", label_value)
-    #    del(tag_content["label"])
+    if prefer_title:
+        if "title" not in tag_content and label_value:
+            set_if_value(tag_content, "title", label_value)
+            del(tag_content["label"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2412,7 +2414,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
