@@ -295,7 +295,7 @@ class TestParseJats(unittest.TestCase):
 
         # 03405 v1, label and no title tag
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.03405.026</object-id><label>Source code 1.</label><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.03405.026">http://dx.doi.org/10.7554/eLife.03405.026</ext-link></p><media mime-subtype="rar" mimetype="application" xlink:href="elife-03405-code1-v1.rar"/></supplementary-material></sec></back></root>',
-        [OrderedDict([('doi', u'10.7554/eLife.03405.026'), ('id', u'SD1-data'), ('title', u'Source code 1.'), ('mediaType', u'application/rar'), ('uri', u'elife-03405-code1-v1.rar'), ('filename', u'elife-03405-code1-v1.rar')])]
+        [OrderedDict([('doi', u'10.7554/eLife.03405.026'), ('id', u'SD1-data'), ('label', u'Source code 1'), ('mediaType', u'application/rar'), ('uri', u'elife-03405-code1-v1.rar'), ('filename', u'elife-03405-code1-v1.rar')])]
          ),
 
         # 00333 v1, mimetype contains a slash so ignore sub-mimetype
@@ -1193,11 +1193,20 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption/><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'image'), ('id', u'fig8'), ('title', u'Reviewers\u2019 figure 1'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])
+         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])])])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('title', u'First sentence'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])])])
+         OrderedDict([
+             ('type', 'figure'),
+             ('assets', [OrderedDict([
+                 ('type', 'image'),
+                 ('id', u'fig8'),
+                 ('label', u'Reviewers\u2019 figure 1'),
+                 ('title', u'First sentence'), 
+                 ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})
+             ])])
+         ])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence. Second sentence.</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
@@ -1299,7 +1308,7 @@ class TestParseJats(unittest.TestCase):
 
         # example video with only the DOI in the caption paragraph, based on 02277 v1
         ('<root><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-02277-media1.mp4"><object-id pub-id-type="doi">10.7554/eLife.02277.012</object-id><label>Video 1.</label><caption><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.02277.012">http://dx.doi.org/10.7554/eLife.02277.012</ext-link></p></caption></media></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.02277.012'), ('id', u'media1'), ('title', u'Video 1.')])])])
+        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.02277.012'), ('id', u'media1'), ('label', u'Video 1')])])])
         ),
 
         # example animated gif as a video in 00666 kitchen sink
@@ -1322,8 +1331,35 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         ('<root><sec><boxed-text><title>Strange content for test coverage</title><table-wrap><label>A label</label></table-wrap><fig></fig><fig><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id></fig></boxed-text></sec></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('title', u'A label'), ('tables', [])]), OrderedDict([('type', 'image')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024')])])])])])])])]
-         ),
+        [
+            OrderedDict([('content', [
+                OrderedDict([
+                    ('type', 'section'),
+                    ('content', [OrderedDict([
+                        ('type', 'box'),
+                        ('title', u'Strange content for test coverage'),
+                        ('content', [
+                            OrderedDict([
+                                ('type', 'figure'),
+                                ('assets', [OrderedDict([
+                                    ('type', 'table'),
+                                    ('label', u'A label'),
+                                    ('tables', [ ]) 
+                                ])]),
+                            ]),
+                            OrderedDict([
+                                ('type', 'image') 
+                            ]), 
+                            OrderedDict([
+                                ('type', 'image'),
+                                ('doi', u'10.7554/eLife.00666.024') 
+                            ]) 
+                        ])
+                    ])])
+                ])
+            ])])
+        ]
+        ),
 
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content 1</p><p>content 2</p></caption></boxed-text></root>',
          [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'content 2')])])])])])]
@@ -1416,7 +1452,22 @@ class TestParseJats(unittest.TestCase):
 
         # example table: a label, no title, no caption
         ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table label.</label><caption><p></p></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('title', u'Table label.'), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'])])])])]
+         [OrderedDict([
+             ('content', [
+                 OrderedDict([
+                     ('type', 'figure'),
+                     ('assets', [OrderedDict([
+                         ('type', 'table'),
+                         ('doi', u'10.7554/eLife.22264.016'),
+                         ('id', u'tbl1'),
+                         ('label', u'Table label'), 
+                         ('tables', [
+                             '<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'
+                         ])
+                     ])])
+                 ])
+             ])
+        ])]
         ),
 
         # example table: a label, a title, no caption

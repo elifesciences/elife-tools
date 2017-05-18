@@ -2173,9 +2173,10 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
         else:
             tag_content["caption"] = caption_content
     # if no title, use the label and unset the label
-    if "title" not in tag_content and label_value:
-        set_if_value(tag_content, "title", label_value)
-        del(tag_content["label"])
+    # deprecated: title is not mandatory anymore while label is for figures
+    #if "title" not in tag_content and label_value:
+    #    set_if_value(tag_content, "title", label_value)
+    #    del(tag_content["label"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
