@@ -2346,8 +2346,11 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(source_data) > 0:
                 asset_tag_content["sourceData"] = source_data
 
-        # add the asset
-        tag_content["assets"].append(asset_tag_content)
+        # add to figure assets if there is a label otherwise use the asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "media":
         # For video media only
@@ -2394,9 +2397,6 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if i == 0:
                 tag_content = fig_tag_content
             elif i > 0:
-                if "assets" not in tag_content:
-                    tag_content["type"] = "figure"
-                    tag_content["assets"] = []
                 tag_content["assets"].append(fig_tag_content["assets"][0])
 
     elif tag.name == "supplementary-material":

@@ -1185,7 +1185,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fig title not in a paragraph'), ('image', {'alt': '', 'uri': u'elife-00639-fig1-v1.tif'})])])])
+         OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fig title not in a paragraph'), ('image', {'alt': '', 'uri': u'elife-00639-fig1-v1.tif'})])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></root>',
@@ -1193,7 +1193,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption/><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig8'), ('title', u'Reviewers\u2019 figure 1'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])])])
+         OrderedDict([('type', 'image'), ('id', u'fig8'), ('title', u'Reviewers\u2019 figure 1'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
@@ -1322,7 +1322,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         ('<root><sec><boxed-text><title>Strange content for test coverage</title><table-wrap><label>A label</label></table-wrap><fig></fig><fig><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id></fig></boxed-text></sec></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('title', u'A label'), ('tables', [])]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image')])])]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024')])])])])])])])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('content', [OrderedDict([('type', 'box'), ('title', u'Strange content for test coverage'), ('content', [OrderedDict([('type', 'table'), ('title', u'A label'), ('tables', [])]), OrderedDict([('type', 'image')]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024')])])])])])])])]
          ),
 
         ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content 1</p><p>content 2</p></caption></boxed-text></root>',
@@ -1366,7 +1366,7 @@ class TestParseJats(unittest.TestCase):
         ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])])])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])])])]
          ),
 
         ('<root><disp-quote><p>content</p></disp-quote></root>',
@@ -1441,7 +1441,7 @@ class TestParseJats(unittest.TestCase):
 
         # example fig with a caption and no title needs a title added, based on 00281 v1
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1" position="float"><caption><p>Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.</p></caption><graphic xlink:href="elife-00281-fig1-v1.tif"/><attrib>FIGURE CREDIT: TIM MCCORMACK.</attrib></fig></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed'), ('image', {'alt': '', 'uri': u'elife-00281-fig1-v1.tif'}), ('attribution', [u'FIGURE CREDIT: TIM MCCORMACK.'])])])])])])]
+        [OrderedDict([('content', [OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed'), ('image', {'alt': '', 'uri': u'elife-00281-fig1-v1.tif'}), ('attribution', [u'FIGURE CREDIT: TIM MCCORMACK.'])])])])]
         ),
 
         # example media with a label and no title, based on 00007 v1
@@ -1485,7 +1485,7 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])])])]
+        [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])]
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig>More content</p></root>',
