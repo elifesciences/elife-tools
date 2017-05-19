@@ -2156,8 +2156,11 @@ def body_block_paragraph_content(text):
     return tag_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
-                                   caption_content, set_caption=True):
-    "set the title, label and caption values in a consistent way"
+                                   caption_content, set_caption=True, prefer_title=False):
+    """set the title, label and caption values in a consistent way
+    
+    set_caption: insert a "caption" field
+    prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
     set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
     if caption_content and len(caption_content) > 0 and "title" not in tag_content:
@@ -2172,10 +2175,10 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
             pass
         else:
             tag_content["caption"] = caption_content
-    # if no title, use the label and unset the label
-    if "title" not in tag_content and label_value:
-        set_if_value(tag_content, "title", label_value)
-        del(tag_content["label"])
+    if prefer_title:
+        if "title" not in tag_content and label_value:
+            set_if_value(tag_content, "title", label_value)
+            del(tag_content["label"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2226,9 +2229,14 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
-        tag_content["type"] = "table"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
+
+        asset_tag_content["type"] = "table"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
         title_value = convert(title_text(tag, "caption", tag.name))
         label_value = label(tag, tag.name)
 
@@ -2238,14 +2246,14 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
 
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
         tables = raw_parser.table(tag)
-        tag_content["tables"] = []
+        asset_tag_content["tables"] = []
         for table in tables:
             # Add the table tag back for now
             table_content = '<table>' + node_contents_str(table) + '</table>'
-            tag_content["tables"].append(convert(table_content))
+            asset_tag_content["tables"].append(convert(table_content))
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
@@ -2264,15 +2272,21 @@ def body_block_content(tag, html_flag=True, base_url=None):
                         if footnote_block != {}:
                             footnote_content["text"].append(footnote_block)
 
-                if "footnotes" not in tag_content:
-                    tag_content["footnotes"] = []
-                tag_content["footnotes"].append(footnote_content)
+                if "footnotes" not in asset_tag_content:
+                    asset_tag_content["footnotes"] = []
+                asset_tag_content["footnotes"].append(footnote_content)
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add to figure assets if there is a label otherwise use the table asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "disp-formula":
         tag_content["type"] = "mathml"
@@ -2286,9 +2300,14 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["mathml"] = convert(math_content)
 
     elif tag.name == "fig":
-        tag_content["type"] = "image"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
+
+        asset_tag_content["type"] = "image"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
 
         title_value = convert(title_text(tag, u"caption", u"fig"))
         label_value = label(tag, tag.name)
@@ -2298,7 +2317,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
         if raw_parser.graphic(tag):
             image_content = {}
@@ -2309,7 +2328,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                     # todo!! alt
                     set_if_value(image_content, "alt", "")
             if len(image_content) > 0:
-                tag_content["image"] = image_content
+                asset_tag_content["image"] = image_content
 
         # license or attribution
         attributions = []
@@ -2320,24 +2339,35 @@ def body_block_content(tag, html_flag=True, base_url=None):
             for attrib_tag in raw_parser.licence_p(tag):
                 attributions.append(node_contents_str(attrib_tag))
         if len(attributions) > 0:
-            tag_content["attribution"] = []
+            asset_tag_content["attribution"] = []
             for attrib_string in attributions:
-                tag_content["attribution"].append(convert(attrib_string))
+                asset_tag_content["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add to figure assets if there is a label otherwise use the asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "media":
         # For video media only
         if tag.get("mimetype") != "video":
             return OrderedDict()
 
-        tag_content["type"] = "video"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
+
+        asset_tag_content["type"] = "video"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
 
         title_value = convert(title_text(tag, "caption", tag.name))
         label_value = label(tag, tag.name)
@@ -2347,27 +2377,30 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
-        set_if_value(tag_content, "uri", tag.get('xlink:href'))
-        if "uri" in tag_content and tag_content["uri"].endswith('.gif'):
-            tag_content["autoplay"] = True
-            tag_content["loop"] = True
+        set_if_value(asset_tag_content, "uri", tag.get('xlink:href'))
+        if "uri" in asset_tag_content and asset_tag_content["uri"].endswith('.gif'):
+            asset_tag_content["autoplay"] = True
+            asset_tag_content["loop"] = True
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add the asset
+        tag_content["assets"].append(asset_tag_content)
 
     elif tag.name == "fig-group":
+
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
+            fig_tag_content = body_block_content(fig_tag, base_url=base_url)
             if i == 0:
-                tag_content = body_block_content(fig_tag, base_url=base_url)
+                tag_content = fig_tag_content
             elif i > 0:
-                if "supplements" not in tag_content:
-                    tag_content["supplements"] = []
-                tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
+                tag_content["assets"].append(fig_tag_content["assets"][0])
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
@@ -2381,7 +2414,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
