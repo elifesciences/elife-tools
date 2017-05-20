@@ -589,6 +589,16 @@ def rewrite_elife_authors_json(json_content, doi):
             if not ref.get("competingInterests"):
                 json_content[i]["competingInterests"] = elife_author_competing_interests[article_doi]
 
+    # Rewrite "other authors declare" ... competing interests statements using a string match
+    for i, ref in enumerate(json_content):
+        if (ref.get("competingInterests") and (
+            ref.get("competingInterests").startswith("The other author") or
+            ref.get("competingInterests").startswith("The others author") or
+            ref.get("competingInterests").startswith("The remaining authors") or
+            ref.get("competingInterests").startswith("The remaining have declared")
+            )):
+            json_content[i]["competingInterests"] = "No competing interests declared."
+
     return json_content
 
 def rewrite_elife_datasets_json(json_content, doi):
