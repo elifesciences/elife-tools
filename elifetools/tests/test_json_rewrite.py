@@ -107,7 +107,7 @@ class TestJsonRewrite(unittest.TestCase):
         ([{}], '10.7554/eLife.00230', [{'competingInterests': 'The authors have declared that no competing interests exist'}]),
         ([{'name': {'index': 'Chen, Zhijian J'}}, {'name': {'index': 'Li, Xiao-Dong'}}], '10.7554/eLife.00102',
             [{'name': {'index': 'Chen, Zhijian J'}, 'competingInterests': 'ZJC: Reviewing Editor, <i>eLife</i>'},
-                {'name': {'index': 'Li, Xiao-Dong'}, 'competingInterests': 'The remaining authors have no competing interests to declare.'}]),
+                {'name': {'index': 'Li, Xiao-Dong'}, 'competingInterests': 'No competing interests declared.'}]),
         ([{'name': {'index': 'Patterson, Mark'}}], '10.7554/eLife.00270',
             [{'name': {'index': 'Patterson, Mark'}, 'competingInterests': 'MP: Managing Executive Editor, <i>eLife</i>'}]),
         ([{}], '10.7554/eLife.507424566981410635',  [{'competingInterests': 'The authors declare that no competing interests exist.'}]),
