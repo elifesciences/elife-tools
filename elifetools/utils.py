@@ -74,6 +74,33 @@ def inten(function):
         return coerce_to_int(function(*args, **kwargs))
     return wrapper
 
+def clean_whitespace(value):
+    if not value:
+        return value
+    if hasattr(value, 'lstrip'):
+        value = value.lstrip('\n ')
+    if hasattr(value, 'rstrip'):
+        value = value.rstrip('\n ')
+    value = value.replace('\n', ' ')
+    return value
+
+def title_case(title):
+    "convert to title case with some words not changed"
+    do_not_change = ['p53', 'mRNA']
+    change_to_lower = ['of', 'and', 'in']
+    if title:
+        words = title.split(' ')
+        if first(words) and first(words).lower() not in map(lambda word: word.lower(), do_not_change):
+            words[0].capitalize()
+        if len(words) > 1:
+            for i, word in enumerate(words[1:]):
+                if word.lower() in change_to_lower:
+                    words[i+1] = word.lower()
+                elif word.lower() not in map(lambda word: word.lower(), do_not_change):
+                    words[i+1] = word.capitalize()
+        title = ' '.join(words)
+    return title
+
 def date_struct(year, month, day, tz = "UTC"):
     """
     Given year, month and day numeric values and a timezone
@@ -117,6 +144,13 @@ def date_timestamp(date_struct):
 def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     return filter(lambda tag: tag.name == "p", tags)
+
+def convert_testing_doi(doi):
+    if doi is None:
+        return doi
+    parts = doi.split('.')
+    new_msid = parts[-1][-5:]
+    return '.'.join(parts[0:-1] + [new_msid])
 
 def starts_with_doi(tag):
     if node_text(tag).strip().startswith("DOI:"):
@@ -393,7 +427,7 @@ def text_to_title(value):
     for word in words:
         if word.endswith(".") or word.endswith(":"):
             keep_words.append(word)
-            if len(word) > 1 and "italic" not in word:
+            if len(word) > 1 and "<italic>" not in word and "<i>" not in word:
                 break
         else:
             keep_words.append(word)
@@ -402,3 +436,9 @@ def text_to_title(value):
         if title.split(" ")[-1] != "spp.":
             title = title.rstrip(" .:")
     return title
+
+def rstrip_punctuation(value):
+    "strip punctuation from the end of a label or title"
+    if not value:
+        return value
+    return value.rstrip('.:')

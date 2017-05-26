@@ -1,46 +1,46 @@
 [
     {
-        "text": "\n<p>RAA, Conception and design, Acquisition of data, Analysis and interpretation\n                        of data, Drafting or revising the article</p>\n", 
+        "text": "<p>RAA, Conception and design, Acquisition of data, Analysis and interpretation                         of data, Drafting or revising the article</p>", 
         "id": "con1", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>LWB, Conception and design, Acquisition of data, Analysis and interpretation\n                        of data, Drafting or revising the article</p>\n", 
+        "text": "<p>LWB, Conception and design, Acquisition of data, Analysis and interpretation                         of data, Drafting or revising the article</p>", 
         "id": "con2", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>CS, Acquisition of data, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "text": "<p>CS, Acquisition of data, Analysis and interpretation of data, Drafting or                         revising the article</p>", 
         "id": "con3", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>RKD, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "text": "<p>RKD, Acquisition of data, Analysis and interpretation of data</p>", 
         "id": "con4", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>RZ, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "text": "<p>RZ, Acquisition of data, Analysis and interpretation of data</p>", 
         "id": "con5", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>SRF, Acquisition of data, Analysis and interpretation of data</p>\n", 
+        "text": "<p>SRF, Acquisition of data, Analysis and interpretation of data</p>", 
         "id": "con6", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>JC, Conception and design, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "text": "<p>JC, Conception and design, Analysis and interpretation of data, Drafting or                         revising the article</p>", 
         "id": "con7", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>NK, Conception and design, Analysis and interpretation of data, Drafting or\n                        revising the article</p>\n", 
+        "text": "<p>NK, Conception and design, Analysis and interpretation of data, Drafting or                         revising the article</p>", 
         "id": "con8", 
         "fn-type": "con"
     }, 
     {
-        "text": "\n<p>NISC Comparative Sequencing Program: JM did X, IM did Y and JB did Z and Y</p>\n", 
+        "text": "<p>NISC Comparative Sequencing Program: JM did X, IM did Y and JB did Z and Y</p>", 
         "id": "con9", 
         "fn-type": "con"
     }

@@ -61,6 +61,10 @@ def title_prefix(soup):
                 prefix = node_text(first(raw_parser.sub_display_channel(soup)))
     return prefix
 
+def title_prefix_json(soup):
+    "titlePrefix with capitalisation changed"
+    return title_case(title_prefix(soup))
+
 def doi(soup):
     # the first non-nil value returned by the raw parser
     return doi_uri_to_doi(node_text(raw_parser.doi(soup)))
@@ -185,6 +189,9 @@ def full_license(soup):
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     return raw_parser.licence_url(permissions_tag)
+
+def license_json(soup):
+    return xml_to_html(True, full_license(soup))
 
 def funding_statement(soup):
     return node_text(raw_parser.funding_statement(soup))
@@ -873,11 +880,11 @@ def contrib_email(contrib_tag):
     Given a contrib tag, look for an email tag, and
     only return the value if it is not inside an aff tag
     """
-    email = None
+    email = []
     for email_tag in extract_nodes(contrib_tag, "email"):
         if email_tag.parent.name != "aff":
-            email = email_tag.text
-    return email
+            email.append(email_tag.text)
+    return email if len(email) > 0 else None
 
 def contrib_phone(contrib_tag):
     """
@@ -995,8 +1002,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             set_if_value(contributor, "sub-group", first_node_str_contents(contrib_tag.parent, "role"))
     elif contributor.get('corresp') and not contributor.get('email'):
         # For corresponding group authors, look for an email address anywhere in the group
-        if raw_parser.email(contrib_tag):
-            contributor['email'] = node_contents_str(firstnn(raw_parser.email(contrib_tag)))
+        set_if_value(contributor, "email", contrib_email(contrib_tag))
 
     # on-behalf-of
     if contrib_tag.name == 'on-behalf-of':
@@ -1682,7 +1688,7 @@ def footnotes(fn, fntype_filter):
             if fntype_filter is None or f['fn-type'] in fntype_filter:
                 notes.append({
                     'id': f['id'],
-                    'text': node_contents_str(f),
+                    'text': clean_whitespace(node_contents_str(f)),
                     'fn-type': f['fn-type'],
                 })
         except KeyError:
@@ -1997,6 +2003,12 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                     for tag_block in tag_blocks:
                         if tag_block != {}:
                             body_content.append(tag_block)
+            else:
+                # Add it
+                tag_blocks = body_block_content_render(tag, base_url=base_url)
+                for tag_block in tag_blocks:
+                    if tag_block != {}:
+                        body_content.append(tag_block)
         else:
 
             tag_blocks = body_block_content_render(tag, base_url=base_url)
@@ -2057,11 +2069,13 @@ def body_block_content_render(tag, recursive=False, base_url=None):
             tag_content["content"] = []
             for block_content in tag_content_content:
                 tag_content["content"].append(block_content)
+            block_content_list.append(tag_content)
         else:
             # Not a block tag, e.g. a caption tag, let the content pass through
-            tag_content = tag_content_content[0]
+            block_content_list = tag_content_content
+    else:
+        block_content_list.append(tag_content)
 
-    block_content_list.append(tag_content)
     return block_content_list
 
 def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
@@ -2138,8 +2152,33 @@ def body_block_paragraph_content(text):
     tag_content = OrderedDict()
     if text and text != '':
         tag_content["type"] = "paragraph"
-        tag_content["text"] = text
+        tag_content["text"] = clean_whitespace(text)
     return tag_content
+
+def body_block_title_label_caption(tag_content, title_value, label_value,
+                                   caption_content, set_caption=True, prefer_title=False):
+    """set the title, label and caption values in a consistent way
+    
+    set_caption: insert a "caption" field
+    prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
+    set_if_value(tag_content, "label", rstrip_punctuation(label_value))
+    set_if_value(tag_content, "title", title_value)
+    if caption_content and len(caption_content) > 0 and "title" not in tag_content:
+        first_paragraph_text = caption_content[0]["text"]
+        set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
+    if set_caption is True and caption_content and len(caption_content) > 0:
+        # Only set the caption if it is not the same as the title
+        if (len(caption_content) == 1 and "title" in tag_content
+            and (caption_content[0]["text"] == tag_content["title"]
+                 or caption_content[0]["text"] == tag_content["title"] + '.')):
+            # skip, do not add the caption
+            pass
+        else:
+            tag_content["caption"] = caption_content
+    if prefer_title:
+        if "title" not in tag_content and label_value:
+            set_if_value(tag_content, "title", label_value)
+            del(tag_content["label"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2159,18 +2198,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "box"
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(title_text(tag)))
-        # Special, if there is no title then use a fragment of the caption as the title
-        if "title" not in tag_content:
+
+        title_value = convert(title_text(tag))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
+        supplementary_material_tags = None
+        if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            if len(caption_content) > 0:
-                # Attempt to extra the first sentence of the first paragraph of the caption
-                first_paragraph_text = caption_content[0]["text"]
-                sentences = first_paragraph_text.split(". ")
-                if len(sentences) > 0:
-                    tag_content["title"] = sentences[0]
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -2181,7 +2218,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
 
         if node_contents_str(tag_copy):
-            tag_content["text"] = convert(node_contents_str(tag_copy))
+            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
 
     elif tag.name == "disp-quote":
         tag_content["type"] = "quote"
@@ -2192,26 +2229,31 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
-        tag_content["type"] = "table"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(caption_title(tag)))
-        if "title" not in tag_content and "label" in tag_content:
-            set_if_value(tag_content, "title", tag_content.get("label"))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
+
+        asset_tag_content["type"] = "table"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
+        title_value = convert(title_text(tag, "caption", tag.name))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
         supplementary_material_tags = None
-        if raw_parser.caption(tag):
-            caption_tags = body_blocks(raw_parser.caption(tag))
+        if caption_tag_inspected(tag, tag.name):
+            caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
         tables = raw_parser.table(tag)
-        tag_content["tables"] = []
+        asset_tag_content["tables"] = []
         for table in tables:
             # Add the table tag back for now
             table_content = '<table>' + node_contents_str(table) + '</table>'
-            tag_content["tables"].append(convert(table_content))
+            asset_tag_content["tables"].append(convert(table_content))
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
@@ -2221,7 +2263,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 # Only set id if a label is present
                 if label(fn_tag, fn_tag.name):
                     set_if_value(footnote_content, "id", fn_tag.get("id"))
-                    set_if_value(footnote_content, "label", label(fn_tag, fn_tag.name))
+                    set_if_value(footnote_content, "label", rstrip_punctuation(label(fn_tag, fn_tag.name)))
                 for p_tag in raw_parser.paragraph(fn_tag):
                     if "text" not in footnote_content:
                         footnote_content["text"] = []
@@ -2230,15 +2272,21 @@ def body_block_content(tag, html_flag=True, base_url=None):
                         if footnote_block != {}:
                             footnote_content["text"].append(footnote_block)
 
-                if "footnotes" not in tag_content:
-                    tag_content["footnotes"] = []
-                tag_content["footnotes"].append(footnote_content)
+                if "footnotes" not in asset_tag_content:
+                    asset_tag_content["footnotes"] = []
+                asset_tag_content["footnotes"].append(footnote_content)
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add to figure assets if there is a label otherwise use the table asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "disp-formula":
         tag_content["type"] = "mathml"
@@ -2252,35 +2300,35 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["mathml"] = convert(math_content)
 
     elif tag.name == "fig":
-        tag_content["type"] = "image"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(title_text(tag, u"caption", u"fig")))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
 
+        asset_tag_content["type"] = "image"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
+
+        title_value = convert(title_text(tag, u"caption", u"fig"))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
         supplementary_material_tags = None
-        caption_content = []
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        # Special, if there is no title then use a fragment of the caption as the title
-        if "title" not in tag_content and len(caption_content) > 0:
-            # Attempt to extra the first sentence of the first paragraph of the caption
-            first_paragraph_text = caption_content[0]["text"]
-            set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
-        # If there is still not title, then use the label
-        if "title" not in tag_content and "label" in tag_content:
-            tag_content["title"] = tag_content["label"]
-        # Now can add the caption after all possible title values are added
-        if len(caption_content) > 0:
-            tag_content["caption"] = caption_content
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
-        # todo!! alt
-        set_if_value(tag_content, "alt", "")
-        # todo!! set base URL for images
-        graphic_tags = raw_parser.graphic(tag)
-        if graphic_tags:
-            copy_attribute(first(graphic_tags).attrs, 'xlink:href', tag_content, 'uri')
+        if raw_parser.graphic(tag):
+            image_content = {}
+            graphic_tags = raw_parser.graphic(tag)
+            if graphic_tags:
+                copy_attribute(first(graphic_tags).attrs, 'xlink:href', image_content, 'uri')
+                if "uri" in image_content:
+                    # todo!! alt
+                    set_if_value(image_content, "alt", "")
+            if len(image_content) > 0:
+                asset_tag_content["image"] = image_content
 
         # license or attribution
         attributions = []
@@ -2291,69 +2339,82 @@ def body_block_content(tag, html_flag=True, base_url=None):
             for attrib_tag in raw_parser.licence_p(tag):
                 attributions.append(node_contents_str(attrib_tag))
         if len(attributions) > 0:
-            tag_content["attribution"] = []
+            asset_tag_content["attribution"] = []
             for attrib_string in attributions:
-                tag_content["attribution"].append(convert(attrib_string))
+                asset_tag_content["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add to figure assets if there is a label otherwise use the asset alone
+        if asset_tag_content.get("label"):
+            tag_content["assets"].append(asset_tag_content)
+        else:
+            tag_content = asset_tag_content
 
     elif tag.name == "media":
         # For video media only
         if tag.get("mimetype") != "video":
             return OrderedDict()
 
-        tag_content["type"] = "video"
-        set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-        set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(caption_title(tag)))
+        # figure wrap
+        tag_content["type"] = "figure"
+        tag_content["assets"] = []
+        asset_tag_content = OrderedDict()
+
+        asset_tag_content["type"] = "video"
+        set_if_value(asset_tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+        set_if_value(asset_tag_content, "id", tag.get("id"))
+
+        title_value = convert(title_text(tag, "caption", tag.name))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
         supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
 
-        set_if_value(tag_content, "uri", tag.get('xlink:href'))
+        set_if_value(asset_tag_content, "uri", tag.get('xlink:href'))
+        if "uri" in asset_tag_content and asset_tag_content["uri"].endswith('.gif'):
+            asset_tag_content["autoplay"] = True
+            asset_tag_content["loop"] = True
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
             source_data = body_block_supplementary_material_render(supplementary_material_tags, base_url=base_url)
             if len(source_data) > 0:
-                tag_content["sourceData"] = source_data
+                asset_tag_content["sourceData"] = source_data
+
+        # add the asset
+        tag_content["assets"].append(asset_tag_content)
 
     elif tag.name == "fig-group":
+
         for i, fig_tag in enumerate(raw_parser.fig(tag)):
+            fig_tag_content = body_block_content(fig_tag, base_url=base_url)
             if i == 0:
-                tag_content = body_block_content(fig_tag, base_url=base_url)
+                tag_content = fig_tag_content
             elif i > 0:
-                if "supplements" not in tag_content:
-                    tag_content["supplements"] = []
-                tag_content["supplements"].append(body_block_content(fig_tag, base_url=base_url))
+                tag_content["assets"].append(fig_tag_content["assets"][0])
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
-        set_if_value(tag_content, "label", label(tag, tag.name))
-        set_if_value(tag_content, "title", convert(caption_title(tag)))
 
-        # caption, add if there are paragraph tags in the caption
+        title_value = convert(caption_title(tag))
+        label_value = label(tag, tag.name)
+
+        caption_content = None
+        supplementary_material_tags = None
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-            
-            if len(caption_content) > 0:
-                # Delete the first paragraph of the caption if its text is the same as the title
-                if (tag_content.get("title") and caption_content[0].get("text")
-                    and caption_content[0].get("text") == tag_content.get("title")):
-                    del caption_content[0]
-            # If there are still captioni tags left then add them
-            if len(caption_content) > 0:
-                tag_content["caption"] = caption_content
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
@@ -2370,7 +2431,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["type"] = "list"
         if tag.get("list-type"):
             if tag.get("list-type") == "simple":
-                tag_content["prefix"] = "bullet"
+                tag_content["prefix"] = "none"
             elif tag.get("list-type") == "order":
                 tag_content["prefix"] = "number"
             else:
@@ -2379,6 +2440,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["prefix"] = "none"
 
         for list_item_tag in raw_parser.list_item(tag):
+            # Do not add list items of child lists to the main list by skipping them here first
+            if list_item_tag.parent != tag:
+                continue
+
             if "items" not in tag_content:
                 tag_content["items"] = []
 
@@ -2555,21 +2620,22 @@ def author_affiliations(author, html_flag=True):
             affiliation_json["name"] = []
             if affiliation.get("dept"):
                 affiliation_json["name"].append(convert(affiliation.get("dept")))
-            if affiliation.get("institution"):
+            if affiliation.get("institution") and affiliation.get("institution").strip() != '':
                 affiliation_json["name"].append(convert(affiliation.get("institution")))
             # Remove if empty
             if affiliation_json["name"] == []:
                 del affiliation_json["name"]
 
-            if affiliation.get("city") or affiliation.get("country"):
+            if ((affiliation.get("city") and affiliation.get("city").strip() != '')
+                or affiliation.get("country") and affiliation.get("country").strip() != ''):
                 affiliation_address = OrderedDict()
                 affiliation_address["formatted"] = []
                 affiliation_address["components"] = OrderedDict()
-                if affiliation.get("city"):
+                if affiliation.get("city") and affiliation.get("city").strip() != '':
                     affiliation_address["formatted"].append(affiliation.get("city"))
                     affiliation_address["components"]["locality"] = []
                     affiliation_address["components"]["locality"].append(affiliation.get("city"))
-                if affiliation.get("country"):
+                if affiliation.get("country") and affiliation.get("country").strip() != '':
                     affiliation_address["formatted"].append(affiliation.get("country"))
                     affiliation_address["components"]["country"] = affiliation.get("country")
                 # Add if not empty
@@ -2628,7 +2694,7 @@ def author_email_addresses(author, correspondence):
 
     # Also look at the author attributes
     if author.get("corresp") and author.get("email"):
-        email_addresses.append(author["email"])
+        email_addresses = author["email"]
 
     if email_addresses != []:
         return email_addresses
@@ -2830,6 +2896,18 @@ def map_equal_contributions(contributors):
         equal_contribution_map[equal_contribution_key] = i+1
     return equal_contribution_map
 
+def editors_json(soup):
+    editors_json_data = []
+    contributors_data = contributors(soup, "full")
+    for contributor in contributors_data:
+        editor_json = None
+        if contributor["type"] == "editor":
+            editor_json = author_person(contributor, None, None, None, None, None, None)
+        if editor_json:
+            editors_json_data.append(editor_json)
+    editors_json_data_rewritten = rewrite_json("editors_json", soup, editors_json_data)
+    return editors_json_data_rewritten
+
 def authors_json(soup):
     """authors list in article json format"""
     authors_json_data = []
@@ -2852,7 +2930,7 @@ def authors_json(soup):
                                        foot_notes_data)
         elif contributor.get("on-behalf-of"):
             author_json = author_on_behalf_of(contributor)
-        elif contributor["type"] == "author":
+        elif contributor["type"] == "author" and not contributor.get("group-author-key"):
             author_json = author_person(contributor, author_contributions_data,
                                         author_correspondence_data, author_competing_interests_data,
                                         equal_contributions_map, present_address_data, foot_notes_data)
@@ -2862,7 +2940,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in filter(lambda json_element: json_element["type"] == "author non-byline", contributors_data):
+    for contributor in filter(lambda json_element: json_element.get("group-author-key")
+                              and not json_element.get("collab"), contributors_data):
         for group_author in filter(
             lambda json_element: json_element["type"] == "group", authors_json_data):
             group_author_key = None
@@ -3070,7 +3149,8 @@ def references_json(soup, html_flag=True):
         set_if_value(ref_content, "id", ref.get("id"))
 
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
-        set_if_value(ref_content, "date", ref.get("iso-8601-date"))
+        if not discriminator:
+            set_if_value(ref_content, "date", ref.get("year-iso-8601-date"))
         if "date" not in ref_content:
             set_if_value(ref_content, "date", year_date)
             set_if_value(ref_content, "discriminator", discriminator)
@@ -3117,15 +3197,10 @@ def references_json(soup, html_flag=True):
                 ref.get("conf-name"), None))
 
         # source
-        if ref.get("publication-type") in ["journal", "periodical"]:
-            if ref.get("source"):
-                place = OrderedDict()
-                place["name"] = []
-                place["name"].append(ref.get("source"))
-                if ref.get("publication-type") == "journal":
-                    ref_content["journal"] = place
-                elif ref.get("publication-type") == "periodical":
-                    ref_content["periodical"] = place
+        if ref.get("publication-type") == "journal":
+            set_if_value(ref_content, "journal", ref.get("source"))
+        elif ref.get("publication-type") == "periodical":
+            set_if_value(ref_content, "periodical", ref.get("source"))
         elif ref.get("publication-type") in ["web"]:
             set_if_value(ref_content, "website", ref.get("source"))
         elif ref.get("publication-type") in ["patent"]:
@@ -3538,9 +3613,6 @@ def supplementary_files_json(soup):
             tag_content = poa_supplementary_material_block_content(tag)
 
         if tag_content != {}:
-            # Use label as title if no title
-            if tag_content.get("label") and not tag_content.get("title"):
-                set_if_value(tag_content, "title", tag_content.get("label"))
             additional_files_json.append(tag_content)
 
     # Support for older PoA article supplementary material tags
@@ -3604,13 +3676,17 @@ def funding_awards_json(soup):
         if recipient_tags:
             recipients = []
             for recipient_tag in recipient_tags:
-                recipient_content = OrderedDict()
                 if len(extract_nodes(recipient_tag, ["name", "institution"])) <= 0:
                     # A loose institution name not surrounded by institution tag
+                    recipient_content = OrderedDict()
                     recipient_content["type"] = "group"
                     set_if_value(recipient_content, "name", node_contents_str(recipient_tag))
+                    if len(recipient_content) > 0:
+                        # add it
+                        recipients.append(recipient_content)
                 else:
                     for contrib_tag in extract_nodes(recipient_tag, ["name", "institution"]):
+                        recipient_content = OrderedDict()
                         if contrib_tag.name == "institution":
                             recipient_content["type"] = "group"
                             set_if_value(recipient_content, "name", node_contents_str(contrib_tag))
@@ -3623,8 +3699,9 @@ def funding_awards_json(soup):
                             set_if_value(person_details, "suffix",
                                          first_node_str_contents(contrib_tag, "suffix"))
                             recipient_content = references_author_person(person_details)
-                if len(recipient_content) > 0:
-                    recipients.append(recipient_content)
+                        if len(recipient_content) > 0:
+                            # add it
+                            recipients.append(recipient_content)
 
             # Add to the dict for adding to the award data later
             if len(recipients) > 0:

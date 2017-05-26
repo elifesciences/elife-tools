@@ -77,6 +77,15 @@ class TestUtils(unittest.TestCase):
     @unpack
     @data(
         (None, None),
+        ("10.7554/eLife.00666", "10.7554/eLife.00666"),
+        ("10.7554/eLife.507424566981410635", "10.7554/eLife.10635"),
+        )
+    def test_convert_testing_doi(self, doi, expected_doi):
+        self.assertEqual(utils.convert_testing_doi(doi), expected_doi)
+
+    @unpack
+    @data(
+        (None, None),
         ("http://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
         ("https://dx.doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
         ("http://doi.org/10.7554/eLife.00666", "10.7554/eLife.00666"),
@@ -118,6 +127,7 @@ class TestUtils(unittest.TestCase):
         ('A simple example ', u'A simple example'),
         ('Testing one, two, three. Is this thing on?', u'Testing one, two, three'),
         ('Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp. (<bold>A</bold>) Examples of predated <italic>M. sexta</italic> larva (left panel) and egg (right panel).', 'Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp.'),
+        ('Predation of <i>M. sexta</i> larvae and eggs by <i>Geocoris</i> spp. (<b>A</b>) Examples of predated <i>M. sexta</i> larva (left panel) and egg (right panel).', 'Predation of <i>M. sexta</i> larvae and eggs by <i>Geocoris</i> spp.'),
         ('The wild tobacco plant <italic>N. attenuata</italic> relies on both direct and indirect mechanisms to defend it against <italic>M. sexta</italic> caterpillars. Indirect defence involves the release of volatile chemicals that attract <italic>Geocoris</italic> bugs that prey on the caterpillars. This photograph shows a <italic>Geocoris</italic> bug (bottom left) about to attack a caterpillar and two of its larvae.', 'The wild tobacco plant <italic>N. attenuata</italic> relies on both direct and indirect mechanisms to defend it against <italic>M. sexta</italic> caterpillars'),
         ('The unfolded protein response in <italic>S. pombe</italic> and other species. (<bold>A</bold>) The accumulation unfolded proteins in the endoplasmic reticulum (ER) of <italic>S. pombe</italic> leads to activation of IRE1 (presumably by nucleotide binding (green), auto-phosphorylation (red) and the formation of dimers), which is turn leads to the cleavage of mRNAs in the cytosol. The subsequent degradation of the cleaved mRNAs (known as RIDD) and explusion from the cell (via the exosome) reduced the protein-folding load on the ER. However, as described in the text, the mRNA that encodes for the molecular chaperone <italic>Bip1</italic> escapes this fate:', 'The unfolded protein response in <italic>S. pombe</italic> and other species'),
         ('Table summarizing the weights (<italic>w</italic><sub><italic>N</italic></sub>) and performance (expressed as Pearson\'s coefficient <italic>R</italic> and RMSE) of the fourfold cross-validation, repeated 10 times, of the following binding affinity regression model: <disp-formula id="equ4"><mml:math id="m4"><mml:mi>Δ</mml:mi><mml:msub><mml:mtext>G</mml:mtext><mml:mrow><mml:mtext>calc</mml:mtext></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>1</mml:mn></mml:msub><mml:msub><mml:mtext>ICs</mml:mtext><mml:mrow><mml:mtext>charged</mml:mtext><mml:mo>/</mml:mo><mml:mtext>charged</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>2</mml:mn></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>charged_apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>−</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>3</mml:mn></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>polar</mml:mtext><mml:mo>/</mml:mo><mml:mtext>polar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mtext>4</mml:mtext></mml:msub><mml:msub><mml:mtext> ICs</mml:mtext><mml:mrow><mml:mtext>polar</mml:mtext><mml:mo>/</mml:mo><mml:mtext>apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>5</mml:mn></mml:msub><mml:msub><mml:mtext> %NIS</mml:mtext><mml:mrow><mml:mtext>apolar</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mtext>w</mml:mtext><mml:mn>6</mml:mn></mml:msub><mml:msub><mml:mtext> %NIS</mml:mtext><mml:mrow><mml:mtext>charged</mml:mtext></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mtext>Q</mml:mtext><mml:mo>.</mml:mo></mml:math></disp-formula>Each coefficient has been reported as average on the four models trained on the respective folds.', 'Table summarizing the weights (<italic>w</italic><sub><italic>N</italic></sub>) and performance (expressed as Pearson\'s coefficient <italic>R</italic> and RMSE) of the fourfold cross-validation, repeated 10 times, of the following binding affinity regression model'),
@@ -126,6 +136,45 @@ class TestUtils(unittest.TestCase):
     def test_text_to_title(self, value, expected_title):
         self.assertEqual(utils.text_to_title(value), expected_title)
 
+    @unpack
+    @data(
+        (None, None),
+        (u'', u''),
+        (u'of', u'of'),
+        (u'p53 Family proteins', u'p53 Family Proteins'),
+        (u'mRna decay', u'mRna Decay'),
+        (u'mRNA decay', u'mRNA Decay'),
+        (u'Host-virus interactions', u'Host-virus Interactions'),
+        (u'Reproducibility in cancer biology', u'Reproducibility in Cancer Biology'),
+        (u'The Natural History Of Model Organisms', u'The Natural History of Model Organisms'),
+        (u'Point Of View', u'Point of View'),
+        (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
+        (u'mRNA p53', u'mRNA p53'),
+        (u'你好！', u'你好！'),
+        )
+    def test_title_case(self, title, expected):
+        self.assertEqual(expected, utils.title_case(title))
+
+    @unpack
+    @data(
+        (None, None),
+        (u'', u''),
+        (u"\nText\n ", u'Text'),
+        (u"\nAn example <ext-link>link</i>\n<ext-link>link 2</ext-link>\n", u'An example <ext-link>link</i> <ext-link>link 2</ext-link>'),
+        )
+    def test_clean_whitespace(self, value, expected):
+        self.assertEqual(expected, utils.clean_whitespace(value))
+
+    @unpack
+    @data(
+        (None, None),
+        (u'Figure 8', u'Figure 8'),
+        (u'Reviewers’ figure 1', u'Reviewers’ figure 1'),
+        (u"Figure 7—figure supplement 1:", u'Figure 7—figure supplement 1'),
+        (u"Appendix 1—figure 3—figure supplement 1.", u'Appendix 1—figure 3—figure supplement 1'),
+        )
+    def test_rstrip_punctuation(self, value, expected):
+        self.assertEqual(expected, utils.rstrip_punctuation(value))
 
 if __name__ == '__main__':
     unittest.main()

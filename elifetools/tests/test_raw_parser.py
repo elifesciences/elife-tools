@@ -103,7 +103,8 @@ class TestJatsParser(unittest.TestCase):
     @data(
         ("elife-kitchen-sink.xml", bs4.element.Tag),
         ("elife_poa_e06828.xml", type(None)),
-        ("elife07586.xml", type(None))
+        ("elife07586.xml", type(None)),
+        ("elife-00666.xml", bs4.element.Tag)
     )
     def test_decision_letter(self, filename, expected_type):
         soup = parser.parse_document(sample_xml(filename))

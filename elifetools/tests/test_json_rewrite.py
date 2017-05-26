@@ -101,6 +101,32 @@ class TestJsonRewrite(unittest.TestCase):
         original_json_content = copy.deepcopy(json_content)
         self.assertNotEqual(json_rewrite.rewrite_elife_datasets_json(json_content, doi), original_json_content)
 
+    @unpack
+    @data(
+        ([{}], '10.7554/eLife.00001', [{}]),
+        ([{}], '10.7554/eLife.00230', [{'competingInterests': 'The authors have declared that no competing interests exist'}]),
+        ([{'name': {'index': 'Chen, Zhijian J'}}, {'name': {'index': 'Li, Xiao-Dong'}}], '10.7554/eLife.00102',
+            [{'name': {'index': 'Chen, Zhijian J'}, 'competingInterests': 'ZJC: Reviewing Editor, <i>eLife</i>'},
+                {'name': {'index': 'Li, Xiao-Dong'}, 'competingInterests': 'No competing interests declared.'}]),
+        ([{'name': {'index': 'Patterson, Mark'}}], '10.7554/eLife.00270',
+            [{'name': {'index': 'Patterson, Mark'}, 'competingInterests': 'MP: Managing Executive Editor, <i>eLife</i>'}]),
+        ([{}], '10.7554/eLife.507424566981410635',  [{'competingInterests': 'The authors declare that no competing interests exist.'}]),
+
+        )
+    def test_rewrite_elife_authors_json(self, json_content, doi, expected):
+        original_json_content = copy.deepcopy(json_content)
+        self.assertEqual(json_rewrite.rewrite_elife_authors_json(json_content, doi), expected)
+
+    @unpack
+    @data(
+        ([{}], '10.7554/eLife.23804', [{'role': 'Reviewing Editor'}]),
+        ([{'role': 'Reviewing editor'}], '10.7554/eLife.00001', [{'role': 'Reviewing Editor'}]),
+        ([{'role': 'Specialised Role'}], '10.7554/eLife.00001', [{'role': 'Specialised Role'}]),
+        )
+    def test_rewrite_elife_editors_json(self, json_content, doi, expected):
+        """simple tests for coverage assert the result is different"""
+        original_json_content = copy.deepcopy(json_content)
+        self.assertEqual(json_rewrite.rewrite_elife_editors_json(json_content, doi), expected)
 
 if __name__ == '__main__':
     unittest.main()

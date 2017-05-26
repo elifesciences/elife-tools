@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import parseJATS as parser
+import utils
 from collections import OrderedDict
 
 def rewrite_json(rewrite_type, soup, json_content):
@@ -122,7 +123,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.10042"] = {"bib14": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.10070"] = {"bib15": {"date": "2015"}, "bib38": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.10222"] = {"bib30": {"date": "2015"}}
-    references_rewrite_json["10.7554/eLife.10670"] = {"bib8": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.10670"] = {"bib7": {"date": "2015"}, "bib8": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.10781"] = {"bib32": {"date": "2003"}}
     references_rewrite_json["10.7554/eLife.11273"] = {"bib43": {"date": "2004"}}
     references_rewrite_json["10.7554/eLife.11305"] = {"bib68": {"date": "2000"}}
@@ -156,6 +157,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.18370"] = {"bib1": {"date": "2006"}}
     references_rewrite_json["10.7554/eLife.18425"] = {"bib54": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.18683"] = {"bib47": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.19532"] = {"bib27": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.19545"] = {"bib51": {"date": "1996"}}
     references_rewrite_json["10.7554/eLife.19571"] = {"bib56": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.20352"] = {"bib53": {"country": "United States"}}
@@ -163,6 +165,7 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.20522"] = {
         "bib42": {"date": "2016"},
         "bib110": {"date": "1996"}}
+    references_rewrite_json["10.7554/eLife.22053"] = {"bib123": {"date": "2016"}}
 
     # Reference authors data to replace, processed further below into json
     references_authors = []
@@ -482,17 +485,119 @@ def rewrite_elife_funding_awards(json_content, doi):
 def rewrite_elife_authors_json(json_content, doi):
     """ this does the work of rewriting elife authors json """
 
+    # Convert doi from testing doi if applicable
+    article_doi = utils.convert_testing_doi(doi)
+
     # Edge case fix an affiliation name
-    if doi == "10.7554/eLife.06956":
+    if article_doi == "10.7554/eLife.06956":
         for i, ref in enumerate(json_content):
             if ref.get("orcid") and ref.get("orcid") == "0000-0001-6798-0064":
                 json_content[i]["affiliations"][0]["name"] = ["Cambridge"]
 
     # Edge case fix an ORCID
-    if doi == "10.7554/eLife.09376":
+    if article_doi == "10.7554/eLife.09376":
         for i, ref in enumerate(json_content):
             if ref.get("orcid") and ref.get("orcid") == "000-0001-7224-925X":
                 json_content[i]["orcid"] = "0000-0001-7224-925X"
+
+    # Edge case competing interests
+    if article_doi == "10.7554/eLife.00102":
+        for i, ref in enumerate(json_content):
+            if not ref.get("competingInterests"):
+                if ref["name"]["index"].startswith("Chen,"):
+                    json_content[i]["competingInterests"] = "ZJC: Reviewing Editor, <i>eLife</i>"
+                elif ref["name"]["index"].startswith("Li,"):
+                    json_content[i]["competingInterests"] = "The remaining authors have no competing interests to declare."
+    if article_doi == "10.7554/eLife.00270":
+        for i, ref in enumerate(json_content):
+            if not ref.get("competingInterests"):
+                if ref["name"]["index"].startswith("Patterson,"):
+                    json_content[i]["competingInterests"] = "MP: Managing Executive Editor, <i>eLife</i>"
+
+    # Remainder of competing interests rewrites
+    elife_author_competing_interests = {}
+    elife_author_competing_interests["10.7554/eLife.00133"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00190"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00230"] = "The authors have declared that no competing interests exist"
+    elife_author_competing_interests["10.7554/eLife.00288"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00352"] = "The author declares that no competing interest exist"
+    elife_author_competing_interests["10.7554/eLife.00362"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00475"] = "The remaining authors have no competing interests to declare."
+    elife_author_competing_interests["10.7554/eLife.00592"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00633"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.02725"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.02935"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.04126"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.04878"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.05322"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.06011"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.06416"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.07383"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08421"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08494"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08648"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08924"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.09083"] = "The other authors declare that no competing interests exists."
+    elife_author_competing_interests["10.7554/eLife.09102"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.09460"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.09591"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.09600"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.10113"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.10230"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.10453"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.10635"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.11407"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.11473"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.11750"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.12217"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.12620"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.12724"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.13023"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.13732"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.14116"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.14258"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.14694"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.15085"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.15312"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.16011"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.16940"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17023"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17092"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17218"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17267"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17523"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17556"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17769"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.17834"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.18101"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.18515"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.18544"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.18648"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.19071"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.19334"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.19510"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.20183"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.20242"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.20375"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.20797"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.21454"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.21491"] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.22187"] = "The authors declare that no competing interests exist."
+
+    if article_doi in elife_author_competing_interests:
+        for i, ref in enumerate(json_content):
+            if not ref.get("competingInterests"):
+                json_content[i]["competingInterests"] = elife_author_competing_interests[article_doi]
+
+    # Rewrite "other authors declare" ... competing interests statements using a string match
+    for i, ref in enumerate(json_content):
+        if (ref.get("competingInterests") and (
+            ref.get("competingInterests").startswith("The other author") or
+            ref.get("competingInterests").startswith("The others author") or
+            ref.get("competingInterests").startswith("The remaining authors") or
+            ref.get("competingInterests").startswith("The remaining have declared")
+            )):
+            json_content[i]["competingInterests"] = "No competing interests declared."
 
     return json_content
 
@@ -804,5 +909,201 @@ def rewrite_elife_decision_letter_json(json_content, doi):
     if doi == "10.7554/eLife.10856":
         if json_content.get("description") is None:
             json_content["description"] = [{"type": "paragraph", "text": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included."}]
+
+    return json_content
+
+def rewrite_elife_editors_json(json_content, doi):
+    """ this does the work of rewriting elife editors json """
+
+    # Remove affiliations with no name value
+    for i, ref in enumerate(json_content):
+        if ref.get("affiliations"):
+            for aff in ref.get("affiliations"):
+                if "name" not in aff:
+                    del(json_content[i]["affiliations"])
+
+    # Add editor role
+    editor_roles = {}
+    editor_roles["10.7554/eLife.09376"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.10056"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.11031"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.12081"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.12241"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.12509"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13023"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13053"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13426"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13620"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13810"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13828"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13887"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.13905"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14000"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14155"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14170"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14226"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14277"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14315"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14316"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14530"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14601"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14618"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14749"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.14814"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15266"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15275"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15292"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15316"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15470"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15545"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15716"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15747"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15828"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15833"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15915"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.15986"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16088"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16093"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16127"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16159"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16178"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16309"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16777"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16793"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.16950"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17101"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17180"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17240"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17262"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17282"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17463"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17551"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17667"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17681"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17978"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.17985"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18103"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18207"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18246"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18249"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18432"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18447"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18458"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18491"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18541"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18542"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18579"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18605"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18633"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18657"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18919"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.18970"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19027"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19088"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19089"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19295"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19377"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19406"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19466"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19484"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19505"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19535"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19568"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19573"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19662"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19671"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19686"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19695"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19720"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19749"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19766"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19804"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19809"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19887"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19976"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.19991"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20010"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20054"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20070"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20183"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20185"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20214"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20236"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20309"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20343"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20357"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20362"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20365"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20390"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20417"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20515"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20533"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20607"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20640"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20667"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20718"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20722"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20777"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20782"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20787"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20797"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20799"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20813"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20954"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20958"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.20985"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21032"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21049"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21052"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21170"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21172"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21290"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21330"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21394"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21397"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21455"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21481"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21491"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21589"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21598"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21616"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21635"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21728"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21771"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21776"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21855"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21886"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21920"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.21989"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22028"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22053"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22170"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22177"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22280"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22409"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22429"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22431"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22467"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22472"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22502"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22771"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22784"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.22866"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.23156"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.23352"] = "Reviewing Editor"
+    editor_roles["10.7554/eLife.23804"] = "Reviewing Editor"
+
+    # Edge case fix an affiliation name
+    if doi in editor_roles:
+        for i, ref in enumerate(json_content):
+            if not ref.get("role"):
+                json_content[i]["role"] = editor_roles[doi]
+            elif ref.get("role"):
+                json_content[i]["role"] = "Reviewing Editor"
+    else:
+        # Fix capitalisation on exiting role values
+        for i, ref in enumerate(json_content):
+            if ref.get("role") == "Reviewing editor":
+                json_content[i]["role"] = "Reviewing Editor"
 
     return json_content

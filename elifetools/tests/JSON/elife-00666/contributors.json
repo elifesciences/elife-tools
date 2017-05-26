@@ -3,7 +3,9 @@
         "surname": "Harrison", 
         "suffix": "Jnr", 
         "corresp": "yes", 
-        "email": "m.harrison@elifesciences.org", 
+        "email": [
+            "m.harrison@elifesciences.org"
+        ], 
         "given-names": "Melissa", 
         "references": {
             "present-address": [
@@ -61,6 +63,9 @@
         "id": "author-00002"
     }, 
     {
+        "equal-contrib": "yes", 
+        "type": "author", 
+        "group-author-key": "group-author-id1", 
         "references": {
             "equal-contrib": [
                 "equal-contrib2"
@@ -75,8 +80,6 @@
                 "aff1"
             ]
         }, 
-        "type": "author", 
-        "group-author-key": "group-author-id1", 
         "collab": "eLife Editorial Production Group"
     }, 
     {
@@ -186,7 +189,9 @@
         }, 
         "equal-contrib": "yes", 
         "type": "author", 
-        "email": "c.wilkinson@elifesciences.org"
+        "email": [
+            "c.wilkinson@elifesciences.org"
+        ]
     }, 
     {
         "surname": "Nott", 
@@ -214,7 +219,9 @@
         "given-names": "Chris", 
         "orcid": "http://orcid.org/0000-0003-4921-6155", 
         "type": "author non-byline", 
-        "email": "c.wilkinson@elifesciences.org"
+        "email": [
+            "c.wilkinson@elifesciences.org"
+        ]
     }, 
     {
         "surname": "Skibinski", 

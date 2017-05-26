@@ -1,11 +1,11 @@
 [
     {
-        "text": "\n<p>JC: Reviewing editor, <italic>eLife</italic>.</p>\n", 
+        "text": "<p>JC: Reviewing editor, <italic>eLife</italic>.</p>", 
         "id": "conf1", 
         "fn-type": "conflict"
     }, 
     {
-        "text": "\n<p>The other authors declare that no competing interests exist.</p>\n", 
+        "text": "<p>The other authors declare that no competing interests exist.</p>", 
         "id": "conf2", 
         "fn-type": "conflict"
     }
