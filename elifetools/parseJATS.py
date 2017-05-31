@@ -2728,6 +2728,9 @@ def author_competing_interests(author, competing_interests):
                     if competing_interest.get("text") and competing_interest.get("id") == ref_id:
                         competing_interests_text = (
                             competing_interest.get("text").replace('<p>', '').replace('</p>', ''))
+                        # Strip labels
+                        p = re.compile('<label>.*</label>')
+                        competing_interests_text = p.sub('', competing_interests_text)
 
     return competing_interests_text
 
