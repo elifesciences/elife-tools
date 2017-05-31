@@ -527,6 +527,9 @@ def mixed_citations(soup):
             'surname': nom.surname.text,
             'given': nom.find('given-names').text,
         }
+    def preferred_name(nom):
+        suffix = None
+        return author_preferred_name(nom.surname.text, nom.find('given-names').text, suffix)
     def do(mc):
         return {
             'journal': {
@@ -540,6 +543,7 @@ def mixed_citations(soup):
                 'doi': mc.find('pub-id', attrs={'pub-id-type': 'doi'}).text,
                 'pub-date': map(int, ymd(soup)[::-1]),
                 'authors': map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents),
+                'authorLine': format_author_line(map(preferred_name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents)),
             },
         }
     return map(do, mc_tags)
