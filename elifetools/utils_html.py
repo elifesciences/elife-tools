@@ -12,6 +12,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_inline_graphic_tags(html_string, base_url)
     html_string = replace_named_content_tags(html_string)
     html_string = replace_mathml_tags(html_string)
+    html_string = replace_table_style_author_callout(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
     html_string = replace_simple_tags(html_string, 'underline', 'span', '<span class="underline">')
@@ -150,4 +151,13 @@ def remove_comment_tags(s):
     for tag_match in re.finditer("<!--(.*?)-->", s):
         old_tag = '<!--' + tag_match.group(1) + '-->'
         s = s.replace(old_tag, '')
+    return s
+
+def replace_table_style_author_callout(s):
+    for tag_match in re.finditer('<(td style="author-callout-style.*?")>', s):
+        for style_match in re.finditer('style="(.*)"', tag_match.group()):
+            class_name = style_match.group(1)
+            new_tag = '<td class="' + class_name + '">'
+            old_tag = '<td style="' + class_name + '">'
+            s = s.replace(old_tag, new_tag)
     return s

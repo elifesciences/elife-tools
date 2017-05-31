@@ -78,6 +78,14 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<table><thead><!--  Header row  --><tr><!-- This header row ... --><th></th></tr></thead><tbody><!--  Table body  --><tr><td>Genotype</td></tr></tbody></table>', None,
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype</td></tr></tbody></table>'),
 
+        # Replace a particular style pattern with a class name
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
+
+        # Do not replace general styles with a class name
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="width:51.5pt;border-top:none;border-left:none; border-bottom:dashed; padding:0in 5.4pt 0in 5.4pt">CAP-Gly domain</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="width:51.5pt;border-top:none;border-left:none; border-bottom:dashed; padding:0in 5.4pt 0in 5.4pt">CAP-Gly domain</td></tr></tbody></table>'),
+
         (True, u'<named-content content-type="author-callout-style-a1">author-callout-style-a1</named-content>', None,
          u'<span class="author-callout-style-a1">author-callout-style-a1</span>'),
 
