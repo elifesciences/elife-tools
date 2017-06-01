@@ -3157,7 +3157,11 @@ def references_json(soup, html_flag=True):
 
         (year_date, discriminator, year_in_press) = references_date(ref.get("year"))
         if not discriminator:
-            set_if_value(ref_content, "date", ref.get("year-iso-8601-date"))
+            if ref.get("year-iso-8601-date"):
+                set_if_value(ref_content, "date", ref.get("year-iso-8601-date"))
+            else:
+                # if there is no <year>, fall back to iso-8601-date from <date-in-citation>
+                set_if_value(ref_content, "date", ref.get("iso-8601-date"))
         if "date" not in ref_content:
             set_if_value(ref_content, "date", year_date)
             set_if_value(ref_content, "discriminator", discriminator)
