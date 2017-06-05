@@ -3468,22 +3468,19 @@ def appendices_json(soup, base_url=None):
         if app_content.get("content") and len(app_content["content"]) > 0:
             app_content["content"][0] = unwrap_appendix_box(app_content["content"][0])
 
-        # If the first section has not title, set its child content to itself
-        if app_content.get("content") and len(app_content["content"]) > 0:
-            first_block = app_content["content"][0]
-            if (first_block.get("type")
-                and first_block.get("type") == "section"
-                and first_block.get("content")
-                and not first_block.get("title")):
-                app_content["content"] = first_block["content"]
-
-        # Then check all first level sections with no title, and fix them
+        # Then check all first level sections with no title, and fix them by
+        #  building the content list again, unwrapping each non-title section
+        clean_app_content = []
         for i, content_block in enumerate(app_content["content"]):
             if (content_block.get("type")
                 and content_block.get("type") == "section"
                 and content_block.get("content")
                 and not content_block.get("title")):
-                app_content["content"][i] = content_block["content"][0]
+                for block in content_block.get("content"):
+                    clean_app_content.append(block)
+            else:
+                clean_app_content.append(content_block)
+        app_content["content"] = clean_app_content
 
         appendices_json.append(app_content)
     return appendices_json
