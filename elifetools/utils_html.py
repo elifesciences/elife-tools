@@ -154,10 +154,10 @@ def remove_comment_tags(s):
     return s
 
 def replace_table_style_author_callout(s):
-    for tag_match in re.finditer('<(td style="author-callout-style.*?")>', s):
+    for tag_match in re.finditer('<(td style="author-callout-style[^>]*?")/?>', s):
         for style_match in re.finditer('style="(.*)"', tag_match.group()):
             class_name = style_match.group(1)
-            new_tag = '<td class="' + class_name + '">'
-            old_tag = '<td style="' + class_name + '">'
+            new_tag = '<td class="' + class_name + '"'
+            old_tag = '<td style="' + class_name + '"'
             s = s.replace(old_tag, new_tag)
     return s
