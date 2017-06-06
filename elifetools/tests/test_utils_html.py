@@ -85,8 +85,8 @@ class TestUtilsHtml(unittest.TestCase):
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8"></td></tr></tbody></table>'),
         (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8" valign="top">RS19</td></tr></tbody></table>', None,
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8" valign="top">RS19</td></tr></tbody></table>'),
-        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
-         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
+#        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
+#         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
         (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top"><bold>R143Q</bold></td><td valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td><bold>-2</bold></td><td valign="top"/></tr></tbody></table>', None,
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top"><b>R143Q</b></td><td valign="top"></td><td class="author-callout-style-b8" valign="top"></td><td class="author-callout-style-b8" valign="top"></td><td class="author-callout-style-b8" valign="top"></td><td class="author-callout-style-b8" valign="top"></td><td><b>-2</b></td><td valign="top"></td></tr></tbody></table>'),
 
