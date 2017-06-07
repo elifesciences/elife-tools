@@ -1899,20 +1899,6 @@ def caption_tag_inspected(tag, parent_tag_name=None):
         caption_tag = None
     return caption_tag
 
-def caption_title(tag):
-    """Extract the text of a title or p tag inside the first caption tag"""
-    title = None
-    caption = raw_parser.caption(tag)
-    if caption:
-        title_tag = raw_parser.title(caption)
-        if title_tag:
-            title = node_contents_str(title_tag)
-        if not title:
-            p_tags = raw_parser.paragraph(caption)
-            if p_tags:
-                title = node_contents_str(first(p_tags))
-    return title
-
 def label_tag_inspected(tag, parent_tag_name=None):
     label_tag = raw_parser.label(tag)
     if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
