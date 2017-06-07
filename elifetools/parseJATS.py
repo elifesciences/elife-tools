@@ -1899,20 +1899,6 @@ def caption_tag_inspected(tag, parent_tag_name=None):
         caption_tag = None
     return caption_tag
 
-def caption_title(tag):
-    """Extract the text of a title or p tag inside the first caption tag"""
-    title = None
-    caption = raw_parser.caption(tag)
-    if caption:
-        title_tag = raw_parser.title(caption)
-        if title_tag:
-            title = node_contents_str(title_tag)
-        if not title:
-            p_tags = raw_parser.paragraph(caption)
-            if p_tags:
-                title = node_contents_str(first(p_tags))
-    return title
-
 def label_tag_inspected(tag, parent_tag_name=None):
     label_tag = raw_parser.label(tag)
     if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
@@ -2167,18 +2153,8 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
     prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
     set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
-    if caption_content and len(caption_content) > 0 and "title" not in tag_content:
-        first_paragraph_text = caption_content[0]["text"]
-        set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
     if set_caption is True and caption_content and len(caption_content) > 0:
-        # Only set the caption if it is not the same as the title
-        if (len(caption_content) == 1 and "title" in tag_content
-            and (caption_content[0]["text"] == tag_content["title"]
-                 or caption_content[0]["text"] == tag_content["title"] + '.')):
-            # skip, do not add the caption
-            pass
-        else:
-            tag_content["caption"] = caption_content
+        tag_content["caption"] = caption_content
     if prefer_title:
         if "title" not in tag_content and label_value:
             set_if_value(tag_content, "title", label_value)
@@ -2211,7 +2187,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False, True)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -2410,7 +2386,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
 
-        title_value = convert(caption_title(tag))
+        title_value = convert(title_text(tag, "caption", tag.name))
         label_value = label(tag, tag.name)
 
         caption_content = None
