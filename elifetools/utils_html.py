@@ -87,6 +87,9 @@ def replace_ext_link_tags(s):
                 xlink = xlink_match.next().group(1)
                 ext_link_type = ext_link_type_match.next().group(1)
                 if ext_link_type.startswith('uri'):
+                    # Compare the start of the unicode string and prepend incomplete URL values
+                    if not xlink[0:4] in ['http', 'ftp:']:
+                        xlink = 'http://' + xlink
                     new_tag = '<a href="' + xlink + '">'
                 elif ext_link_type.startswith('doi'):
                     new_tag = '<a href="https://doi.org/' + xlink + '">'
