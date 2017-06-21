@@ -178,6 +178,14 @@ def copyright_holder(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     return node_text(raw_parser.copyright_holder(permissions_tag))
 
+def copyright_holder_json(soup):
+    "for json output add a full stop if ends in et al"
+    permissions_tag = raw_parser.article_permissions(soup)
+    holder = node_text(raw_parser.copyright_holder(permissions_tag))
+    if holder.endswith('et al'):
+        holder = holder + '.'
+    return holder
+
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     return node_text(first(raw_parser.licence_p(permissions_tag)))

@@ -1788,6 +1788,16 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "copyright_holder"),
                          parser.copyright_holder(self.soup(filename)))
 
+    @unpack
+    @data(
+        ('elife-kitchen-sink.xml', u'Alegado et al.'),
+        ('elife00240.xml', u'Pickett'),
+        ('elife09853.xml', 'Becker and Gitler')
+        )
+    def test_copyright_holder_json(self, filename, expected):
+        soup = parser.parse_document(sample_xml(filename))
+        self.assertEqual(expected, parser.copyright_holder_json(soup))
+
     @data("elife-kitchen-sink.xml")
     def test_copyright_statement(self, filename):
         self.assertEqual(self.json_expected(filename, "copyright_statement"),
