@@ -860,7 +860,7 @@ class TestParseJats(unittest.TestCase):
         (None, None),
         (["Randy Schekman"], "Randy Schekman"),
         (["Randy Schekman", "Mark Patterson"], "Randy Schekman, Mark Patterson"),
-        (["Randy Schekman", "Mark Patterson", "eLife"], "Randy Schekman et al"),
+        (["Randy Schekman", "Mark Patterson", "eLife"], "Randy Schekman et al."),
         )
     def test_format_author_line(self, author_names, expected):
         self.assertEqual(parser.format_author_line(author_names), expected)
@@ -878,7 +878,7 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ("elife_poa_e06828.xml", "Michael S Fleming et al"),
+        ("elife_poa_e06828.xml", "Michael S Fleming et al."),
         ("elife00351.xml", "Richard Smith"),
         )
     def test_author_line(self, filename, expected):
@@ -2118,7 +2118,7 @@ class TestParseJats(unittest.TestCase):
 
     def test_parse_mixed_citations(self):
         data = parser.mixed_citations(self.soup('elife-kitchen-sink.xml'))
-        expected = [{'article': {'authorLine': u'R Straussman et al', 'authors': [{'given': u'R', 'surname': u'Straussman'}, {'given': u'T', 'surname': u'Morikawa'}, {'given': u'K', 'surname': u'Shee'}, {'given': u'M', 'surname': u'Barzily-Rokni'}, {'given': u'ZR', 'surname': u'Qian'}, {'given': u'J', 'surname': u'Du'}, {'given': u'A', 'surname': u'Davis'}, {'given': u'MM', 'surname': u'Mongare'}, {'given': u'J', 'surname': u'Gould'}, {'given': u'DT', 'surname': u'Frederick'}, {'given': u'ZA', 'surname': u'Cooper'}, {'given': u'PB', 'surname': u'Chapman'}, {'given': u'DB', 'surname': u'Solit'}, {'given': u'A', 'surname': u'Ribas'}, {'given': u'RS', 'surname': u'Lo'}, {'given': u'KT', 'surname': u'Flaherty'}, {'given': u'S', 'surname': u'Ogino'}, {'given': u'JA', 'surname': u'Wargo'}, {'given': u'TR', 'surname': u'Golub'}], 'doi': u'10.1038/nature11183', 'pub-date': [2014, 2, 28], 'title': u'Tumour micro-environment elicits innate resistance to RAF inhibitors through HGF secretion'}, 'journal': {'volume': u'487', 'lpage': u'504', 'name': u'Nature', 'fpage': u'500'}}]
+        expected = [{'article': {'authorLine': u'R Straussman et al.', 'authors': [{'given': u'R', 'surname': u'Straussman'}, {'given': u'T', 'surname': u'Morikawa'}, {'given': u'K', 'surname': u'Shee'}, {'given': u'M', 'surname': u'Barzily-Rokni'}, {'given': u'ZR', 'surname': u'Qian'}, {'given': u'J', 'surname': u'Du'}, {'given': u'A', 'surname': u'Davis'}, {'given': u'MM', 'surname': u'Mongare'}, {'given': u'J', 'surname': u'Gould'}, {'given': u'DT', 'surname': u'Frederick'}, {'given': u'ZA', 'surname': u'Cooper'}, {'given': u'PB', 'surname': u'Chapman'}, {'given': u'DB', 'surname': u'Solit'}, {'given': u'A', 'surname': u'Ribas'}, {'given': u'RS', 'surname': u'Lo'}, {'given': u'KT', 'surname': u'Flaherty'}, {'given': u'S', 'surname': u'Ogino'}, {'given': u'JA', 'surname': u'Wargo'}, {'given': u'TR', 'surname': u'Golub'}], 'doi': u'10.1038/nature11183', 'pub-date': [2014, 2, 28], 'title': u'Tumour micro-environment elicits innate resistance to RAF inhibitors through HGF secretion'}, 'journal': {'volume': u'487', 'lpage': u'504', 'name': u'Nature', 'fpage': u'500'}}]
         self.assertEqual(expected, data)
 
 if __name__ == '__main__':

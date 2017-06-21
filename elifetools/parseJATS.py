@@ -2978,7 +2978,7 @@ def format_author_line(author_names):
     if len(author_names) <= 2:
         author_line = ", ".join(author_names)
     elif len(author_names) > 2:
-        author_line = author_names[0] + " et al"
+        author_line = author_names[0] + " et al."
     return author_line
 
 def references_publisher(publisher_name=None, publisher_loc=None):
