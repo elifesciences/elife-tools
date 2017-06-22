@@ -1792,7 +1792,8 @@ class TestParseJats(unittest.TestCase):
     @data(
         ('elife-kitchen-sink.xml', u'Alegado et al.'),
         ('elife00240.xml', u'Pickett'),
-        ('elife09853.xml', 'Becker and Gitler')
+        ('elife09853.xml', 'Becker and Gitler'),
+        ('elife02935.xml', None)
         )
     def test_copyright_holder_json(self, filename, expected):
         soup = parser.parse_document(sample_xml(filename))
