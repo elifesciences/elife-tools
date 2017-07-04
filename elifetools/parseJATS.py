@@ -12,16 +12,6 @@ import rawJATS as raw_parser
 import re
 from collections import OrderedDict
 
-
-import logging
-logger = logging.getLogger('myapp')
-hdlr = logging.FileHandler(os.getcwd() + os.sep + 'test.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr) 
-logger.setLevel(logging.INFO)
-
-
 def parse_xml(xml):
     return BeautifulSoup(xml, ["lxml", "xml"])
 
