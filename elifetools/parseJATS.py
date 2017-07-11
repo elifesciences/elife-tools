@@ -2317,9 +2317,15 @@ def body_block_content(tag, html_flag=True, base_url=None):
             for attrib_tag in raw_parser.licence_p(tag):
                 attributions.append(node_contents_str(attrib_tag))
         if len(attributions) > 0:
+            # TODO: deprecated, remove once api-raml#176 is merged
             asset_tag_content["attribution"] = []
+            # END deprecated
+            asset_tag_content["image"]["attribution"] = []
             for attrib_string in attributions:
+                # TODO: deprecated, remove once api-raml#176 is merged
                 asset_tag_content["attribution"].append(convert(attrib_string))
+                # END deprecated
+                asset_tag_content["image"]["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
