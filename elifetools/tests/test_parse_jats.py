@@ -1528,6 +1528,37 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's2-1-1-1'), ('title', u'Article types (XML only, not display) (level 4 heading)'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'This is an example of a list where the prefix character is a uppercase roman numeral. This is a controlled list from the JATS DTD')]), OrderedDict([('type', 'list'), ('prefix', u'roman-upper'), ('items', [[OrderedDict([('type', 'list'), ('prefix', u'roman-lower'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', '<i>P. falciparum</i>')])]])]), OrderedDict([('type', 'paragraph'), ('text', u'Genus: Leishmania. There are 3 subgenus of Leishmania:')])], [OrderedDict([('type', 'list'), ('prefix', u'roman-lower'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'Leishmania')])], [OrderedDict([('type', 'paragraph'), ('text', u'Sauroleishmania')])], [OrderedDict([('type', 'paragraph'), ('text', u'Viannia')])], [OrderedDict([('type', 'paragraph'), ('text', u'Within Viannia subgenus, there are 11 species:')]), OrderedDict([('type', 'list'), ('prefix', u'bullet'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', '<i>L. braziliensis</i>')])]])])]])])]])])])])])])]
          ),
 
+        # example of a video inside a fig group based on 00666 kitchen sink
+        (u'<fig-group><fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.00666.011</object-id><label>Figure 3.</label><caption><title>Figure with figure supplements and figure supplement with source data and a video (see <xref ref-type="bibr" rid="bib25">Koch, 1959</xref>) .</title></caption><graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tif"/></fig><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title></caption><graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tif"/><p><supplementary-material id="fig3sdata1"><!-- UPDATE: DOI prefix removed from XML but must be added for display-->  <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig3-figsupp1-data1.xlsx"/></supplementary-material></p></fig><media mimetype="video" mime-subtype="mp4" id="fig3video1" xlink:href="elife-00666-fig3-video1.mp4"><object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id><label>Figure 3—Video 1.</label><caption><title> A description of the eLife editorial process. </title></caption></media></fig-group>',
+        [
+            OrderedDict([
+                ('type', 'figure'),
+                ('assets', [
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.00666.011'),
+                        ('id', u'fig3'),
+                        ('label', u'Figure 3'),
+                        ('title', 'Figure with figure supplements and figure supplement with source data and a video (see <a href="#bib25">Koch, 1959</a>) .')
+                    ]),
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.00666.012'),
+                        ('id', u'fig3s1'),
+                        ('label', u'Figure 3\u2014figure supplement 1'),
+                        ('title', u'Title of the figure supplement')
+                    ]),
+                    OrderedDict([
+                        ('type', 'video'),
+                        ('doi', u'10.7554/eLife.00666.035'),
+                        ('id', u'fig3video1'),
+                        ('label', u'Figure 3\u2014Video 1'),
+                        ('title', u' A description of the eLife editorial process. ')
+                    ])
+                ])
+            ])]
+        ),
+
         )
     def test_body_block_content_render(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
