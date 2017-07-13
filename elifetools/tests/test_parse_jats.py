@@ -1559,6 +1559,52 @@ class TestParseJats(unittest.TestCase):
             ])]
         ),
 
+        # example of a video as supplementary material inside a fig-group based on 06726 v2
+        (u'<fig-group><fig id="fig1" position="float"><object-id pub-id-type="doi">10.7554/eLife.06726.003</object-id><label>Figure 1</label><caption><title>Angioblast migration ....</title><p>(<bold>A</bold>–<bold>F</bold>)</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.003">http://dx.doi.org/10.7554/eLife.06726.003</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.06726.004</object-id><label>Figure 1—source movie 1.</label><caption><title>Time-lapse movie ....</title><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.004">http://dx.doi.org/10.7554/eLife.06726.004</ext-link></p></caption><media mime-subtype="avi" mimetype="video" xlink:href="elife-06726-fig1-data1-v2.avi"/></supplementary-material></p></caption><graphic xlink:href="elife-06726-fig1-v2.tif"/></fig><fig id="fig1s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.06726.005</object-id><label>Figure 1—figure supplement 1.</label><caption><title>Inhibition of Vegfa signaling ....</title><p>(<bold>A</bold>–<bold>J</bold>)</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.005">http://dx.doi.org/10.7554/eLife.06726.005</ext-link></p></caption><graphic xlink:href="elife-06726-fig1-figsupp1-v2.tif"/></fig></fig-group>',
+        [
+            OrderedDict([
+                ('type', 'figure'),
+                ('assets', [
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.06726.003'),
+                        ('id', u'fig1'),
+                        ('label', u'Figure 1'),
+                        ('title', u'Angioblast migration ....'),
+                        ('caption', [
+                            OrderedDict([
+                                ('type', 'paragraph'),
+                                ('text', u'(<b>A</b>\u2013<b>F</b>)')
+                            ])
+                        ]),
+                        ('sourceData', [
+                            OrderedDict([
+                                ('doi', u'10.7554/eLife.06726.004'),
+                                ('id', u'SD1-data'),
+                                ('label', u'Figure 1\u2014source movie 1'),
+                                ('title', u'Time-lapse movie ....'),
+                                ('mediaType', u'video/avi')
+                            ])
+                        ])
+                    ]),
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.06726.005'),
+                        ('id', u'fig1s1'),
+                        ('label', u'Figure 1\u2014figure supplement 1'),
+                        ('title', u'Inhibition of Vegfa signaling ....'),
+                        ('caption', [
+                            OrderedDict([
+                                ('type', 'paragraph'),
+                                ('text', u'(<b>A</b>\u2013<b>J</b>)')
+                            ])
+                        ])
+                    ])
+                ])
+            ])
+        ]
+        ),
+
         )
     def test_body_block_content_render(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

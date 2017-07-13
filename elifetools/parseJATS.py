@@ -2384,7 +2384,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(tag_content) <= 0:
                 tag_content = fig_tag_content
             else:
-                tag_content["assets"].append(fig_tag_content["assets"][0])
+                asset = fig_tag_content["assets"][0]
+                # Only add if there is an id, should filter out unwanted supplementary file data
+                if "id" in asset:
+                    tag_content["assets"].append(asset)
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
