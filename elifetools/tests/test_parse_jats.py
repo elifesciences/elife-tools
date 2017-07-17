@@ -1227,12 +1227,48 @@ class TestParseJats(unittest.TestCase):
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><attrib>PHOTO CREDIT</attrib></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'}), ('attribution', [u'PHOTO CREDIT'])])])])
-         ),
+         OrderedDict([
+             ('type', 'figure'),
+             ('assets', [OrderedDict([
+                 ('type', 'image'),
+                 ('doi', u'10.7554/eLife.00666.024'),
+                 ('id', u'fig1'),
+                 ('label', u'Figure 1'),
+                 ('title', u'Figure title'),
+                 ('caption', [OrderedDict([
+                     ('type', 'paragraph'),
+                     ('text', u'Figure caption')
+                 ])]), 
+                 ('image', {
+                     'alt': '', 
+                     'uri': u'elife-00666-fig1-v1.tif',
+                     'attribution': [u'PHOTO CREDIT'],
+                 }),
+                 ('attribution', [u'PHOTO CREDIT'])
+             ])])
+         ])),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><permissions><copyright-statement>© 1991, Publisher 1, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 1</copyright-holder><license><license-p>The in situ image in panel 3 is reprinted with permission from Figure 2D, <xref ref-type="bibr" rid="bib72">Small et al. (1991)</xref>, <italic>Test &amp; Automated</italic>.</license-p></license></permissions><permissions><copyright-statement>© 1991, Publisher 2, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 2</copyright-holder><license><license-p>In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <xref ref-type="bibr" rid="bib74">Stanojevic et al. (1991)</xref>, <italic>Journal</italic>.</license-p></license></permissions></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'}), ('attribution', ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.'])])])])
-         ),
+         OrderedDict([
+             ('type', 'figure'),
+             ('assets', [OrderedDict([
+                 ('type', 'image'),
+                 ('doi', u'10.7554/eLife.00666.024'),
+                 ('id', u'fig1'),
+                 ('label', u'Figure 1'),
+                 ('title', u'Figure title'), 
+                 ('caption', [OrderedDict([
+                     ('type', 'paragraph'),
+                     ('text', u'Figure caption')
+                 ])]),
+                 ('image', {
+                     'alt': '',
+                     'uri': u'elife-00666-fig1-v1.tif',
+                     'attribution': ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.']
+                 }),
+                 ('attribution', ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.'])
+             ])])
+         ])),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/></supplementary-material></p></caption><graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/></fig></root>',
         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.012'), ('id', u'fig3s1'), ('label', u'Figure 3\u2014figure supplement 1'), ('title', u'Title of the figure supplement'), ('image', {'alt': '', 'uri': u'elife-00666-fig3-figsupp1-v1.tiff'}), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00666.013'), ('id', u'SD1-data'), ('label', u'Figure 3\u2014figure supplement 1\u2014Source data 1'), ('title', u'Title of the figure supplement source data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Legend of the figure supplement source data.')])]), ('mediaType', u'application/xlsx'), ('uri', u'elife-00666-fig3-figsupp1-data1-v1.xlsx'), ('filename', u'elife-00666-fig3-figsupp1-data1-v1.xlsx')])])])])])
@@ -1510,8 +1546,21 @@ class TestParseJats(unittest.TestCase):
 
         # example fig with a caption and no title, based on 00281 v1
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1" position="float"><caption><p>Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.</p></caption><graphic xlink:href="elife-00281-fig1-v1.tif"/><attrib>FIGURE CREDIT: TIM MCCORMACK.</attrib></fig></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'image'), ('id', u'fig1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.')])]), ('image', {'alt': '', 'uri': u'elife-00281-fig1-v1.tif'}), ('attribution', [u'FIGURE CREDIT: TIM MCCORMACK.'])])])])]
-        ),
+        [OrderedDict([
+            ('content', [OrderedDict([
+                ('type', 'image'), 
+                ('id', u'fig1'),
+                ('caption', [OrderedDict([
+                    ('type', 'paragraph'),
+                    ('text', u'Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.')])]),
+                ('image', {
+                    'alt': '', 
+                    'uri': u'elife-00281-fig1-v1.tif',
+                    'attribution': [u'FIGURE CREDIT: TIM MCCORMACK.'],
+                }),
+                ('attribution', [u'FIGURE CREDIT: TIM MCCORMACK.'])
+            ])])
+        ])]),
 
         # example media with a label and no title, based on 00007 v1
         ('<root><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="avi" mimetype="video" xlink:href="elife-00007-media1.avi"><object-id pub-id-type="doi">10.7554/eLife.00007.016</object-id><label>Video 1.</label><caption><p>On-plant assay, plant 7u, WT, June 18, 2011.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00007.016">http://dx.doi.org/10.7554/eLife.00007.016</ext-link></p></caption></media></root>',
