@@ -1770,6 +1770,36 @@ class TestParseJats(unittest.TestCase):
     Functions that require more than one argument to test against json output
     """
 
+    @unpack
+    @data(
+        # typical eLife format
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn publication-format="electronic" pub-type="epub">2050-084X</issn></journal-meta></front></root>',
+         'electronic',
+         None,
+         '2050-084X'
+         ),
+
+        # eLife format with specifying the publication format
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn publication-format="electronic" pub-type="epub">2050-084X</issn></journal-meta></front></root>',
+         None,
+         None,
+         '2050-084X'
+         ),
+
+        # a non-eLife format
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn pub-type="epub">2057-4991</issn></journal-meta></front></root>',
+         None,
+         'epub',
+         '2057-4991'
+         ),
+
+        )
+    def test_journal_issn_edge_cases(self, xml_content, pub_format, pub_type, expected):
+        soup = parser.parse_xml(xml_content)
+        content_tag = soup.contents[0]
+        tag_content = parser.journal_issn(content_tag, pub_format=pub_format, pub_type=pub_type)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_journal_issn(self, filename):
         self.assertEqual(self.json_expected(filename, "journal_issn"),

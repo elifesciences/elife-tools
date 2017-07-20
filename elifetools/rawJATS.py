@@ -41,8 +41,14 @@ def journal_id(soup):
 def journal_title(soup):
     return first(extract_nodes(soup, "journal-title"))
 
-def journal_issn(soup, pub_format):
-    return first(extract_nodes(soup, "issn", attr = "publication-format", value = pub_format))
+def journal_issn(soup, pub_format, pub_type):
+    if pub_format is None and pub_type is None:
+        # return the first issn tag found regardless of which type
+        return first(extract_nodes(soup, "issn"))
+    elif pub_format is not None:
+        return first(extract_nodes(soup, "issn", attr="publication-format", value=pub_format))
+    elif pub_type is not None:
+        return first(extract_nodes(soup, "issn", attr="pub-type", value=pub_type))
 
 def publisher(soup):
     return first(extract_nodes(soup, "publisher-name"))
