@@ -24,7 +24,7 @@ class TestJatsParser(unittest.TestCase):
             (parser.doi, u"10.7554/eLife.00013"),
             (parser.journal_id, u"eLife"),
             (parser.journal_title, u"eLife"),
-            #(parser.journal_issn, u"2050-084X"),
+            (parser.journal_issn, u"2050-084X"),
             (parser.publisher, u"eLife Sciences Publications, Ltd"),
         ]
         for func, expected in struct:

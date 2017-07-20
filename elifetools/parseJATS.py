@@ -69,9 +69,8 @@ def journal_id(soup):
 def journal_title(soup):
     return node_text(raw_parser.journal_title(soup))
 
-def journal_issn(soup, pub_format = None):
-    if pub_format:
-        return node_text(raw_parser.journal_issn(soup, pub_format))
+def journal_issn(soup, pub_format=None, pub_type=None):
+    return node_text(raw_parser.journal_issn(soup, pub_format, pub_type))
 
 def publisher(soup):
     return node_text(raw_parser.publisher(soup))
