@@ -1244,7 +1244,6 @@ class TestParseJats(unittest.TestCase):
                      'uri': u'elife-00666-fig1-v1.tif',
                      'attribution': [u'PHOTO CREDIT'],
                  }),
-                 ('attribution', [u'PHOTO CREDIT'])
              ])])
          ])),
 
@@ -1266,7 +1265,6 @@ class TestParseJats(unittest.TestCase):
                      'uri': u'elife-00666-fig1-v1.tif',
                      'attribution': ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.']
                  }),
-                 ('attribution', ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.'])
              ])])
          ])),
 
@@ -1558,7 +1556,6 @@ class TestParseJats(unittest.TestCase):
                     'uri': u'elife-00281-fig1-v1.tif',
                     'attribution': [u'FIGURE CREDIT: TIM MCCORMACK.'],
                 }),
-                ('attribution', [u'FIGURE CREDIT: TIM MCCORMACK.'])
             ])])
         ])]),
 
