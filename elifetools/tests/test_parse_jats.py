@@ -309,8 +309,170 @@ class TestParseJats(unittest.TestCase):
 
         # 04493 v1 PoA, multiple old style supplementary files
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><article-meta><supplementary-material><ext-link xlink:href="elife-04493-supp-v1.zip">Download zip of figure supplements and supplementary file</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material><supplementary-material><ext-link xlink:href="Video_2.zip">Download zip of Video 2</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_8.zip">Download zip of Video 8</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_6.zip">Download zip of Video 6</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_11.zip">Download zip of Video 11</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_17.zip">Download zip of Video 17</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_18.zip">Download zip of Video 18</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_7.zip">Download zip of Video 7</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_10.zip">Download zip of Video 10</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_5.zip">Download zip of Video 5</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_13.zip">Download zip of Video 13</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_19.zip">Download zip of Video 19</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_15.zip">Download zip of Video 15</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_21.zip">Download zip of Video 21</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_22.zip">Download zip of Video 22</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_4.zip">Download zip of Video 4</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_20.zip">Download zip of Video 20</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_12.zip">Download zip of Video 12</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_1.zip">Download zip of Video 1</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_16.zip">Download zip of Video 16</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_3.zip">Download zip of Video 3</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_9.zip">Download zip of Video 9</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_14.zip">Download zip of Video 14</ext-link></supplementary-material></article-meta></front></root>',
-        [OrderedDict([('mediaType', 'application/zip'), ('uri', u'elife-04493-supp-v1.zip'), ('filename', u'elife-04493-supp-v1.zip'), ('id', 'SD1-data'), ('title', 'Supplementary file 1.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_2.zip'), ('filename', u'Video_2.zip'), ('id', 'SD2-data'), ('title', 'Supplementary file 2.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_8.zip'), ('filename', u'Video_8.zip'), ('id', 'SD3-data'), ('title', 'Supplementary file 3.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_6.zip'), ('filename', u'Video_6.zip'), ('id', 'SD4-data'), ('title', 'Supplementary file 4.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_11.zip'), ('filename', u'Video_11.zip'), ('id', 'SD5-data'), ('title', 'Supplementary file 5.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_17.zip'), ('filename', u'Video_17.zip'), ('id', 'SD6-data'), ('title', 'Supplementary file 6.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_18.zip'), ('filename', u'Video_18.zip'), ('id', 'SD7-data'), ('title', 'Supplementary file 7.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_7.zip'), ('filename', u'Video_7.zip'), ('id', 'SD8-data'), ('title', 'Supplementary file 8.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_10.zip'), ('filename', u'Video_10.zip'), ('id', 'SD9-data'), ('title', 'Supplementary file 9.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_5.zip'), ('filename', u'Video_5.zip'), ('id', 'SD10-data'), ('title', 'Supplementary file 10.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_13.zip'), ('filename', u'Video_13.zip'), ('id', 'SD11-data'), ('title', 'Supplementary file 11.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_19.zip'), ('filename', u'Video_19.zip'), ('id', 'SD12-data'), ('title', 'Supplementary file 12.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_15.zip'), ('filename', u'Video_15.zip'), ('id', 'SD13-data'), ('title', 'Supplementary file 13.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_21.zip'), ('filename', u'Video_21.zip'), ('id', 'SD14-data'), ('title', 'Supplementary file 14.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_22.zip'), ('filename', u'Video_22.zip'), ('id', 'SD15-data'), ('title', 'Supplementary file 15.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_4.zip'), ('filename', u'Video_4.zip'), ('id', 'SD16-data'), ('title', 'Supplementary file 16.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_20.zip'), ('filename', u'Video_20.zip'), ('id', 'SD17-data'), ('title', 'Supplementary file 17.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_12.zip'), ('filename', u'Video_12.zip'), ('id', 'SD18-data'), ('title', 'Supplementary file 18.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_1.zip'), ('filename', u'Video_1.zip'), ('id', 'SD19-data'), ('title', 'Supplementary file 19.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_16.zip'), ('filename', u'Video_16.zip'), ('id', 'SD20-data'), ('title', 'Supplementary file 20.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_3.zip'), ('filename', u'Video_3.zip'), ('id', 'SD21-data'), ('title', 'Supplementary file 21.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_9.zip'), ('filename', u'Video_9.zip'), ('id', 'SD22-data'), ('title', 'Supplementary file 22.')]), OrderedDict([('mediaType', 'application/zip'), ('uri', u'Video_14.zip'), ('filename', u'Video_14.zip'), ('id', 'SD23-data'), ('title', 'Supplementary file 23.')])]
-         ),
+        [
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'elife-04493-supp-v1.zip'),
+            ('filename', u'elife-04493-supp-v1.zip'),
+            ('id', 'SD1-data'),
+            ('title', 'Supplementary file 1.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_2.zip'),
+            ('filename', u'Video_2.zip'),
+            ('id', 'SD2-data'),
+            ('title', 'Supplementary file 2.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_8.zip'),
+            ('filename', u'Video_8.zip'),
+            ('id', 'SD3-data'),
+            ('title', 'Supplementary file 3.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_6.zip'),
+            ('filename', u'Video_6.zip'),
+            ('id', 'SD4-data'),
+            ('title', 'Supplementary file 4.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_11.zip'),
+            ('filename', u'Video_11.zip'),
+            ('id', 'SD5-data'),
+            ('title', 'Supplementary file 5.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_17.zip'),
+            ('filename', u'Video_17.zip'),
+            ('id', 'SD6-data'),
+            ('title', 'Supplementary file 6.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_18.zip'),
+            ('filename', u'Video_18.zip'),
+            ('id', 'SD7-data'),
+            ('title', 'Supplementary file 7.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_7.zip'),
+            ('filename', u'Video_7.zip'),
+            ('id', 'SD8-data'),
+            ('title', 'Supplementary file 8.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_10.zip'),
+            ('filename', u'Video_10.zip'),
+            ('id', 'SD9-data'),
+            ('title', 'Supplementary file 9.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_5.zip'),
+            ('filename', u'Video_5.zip'),
+            ('id', 'SD10-data'),
+            ('title', 'Supplementary file 10.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_13.zip'),
+            ('filename', u'Video_13.zip'),
+            ('id', 'SD11-data'),
+            ('title', 'Supplementary file 11.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_19.zip'),
+            ('filename', u'Video_19.zip'),
+            ('id', 'SD12-data'),
+            ('title', 'Supplementary file 12.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_15.zip'),
+            ('filename', u'Video_15.zip'),
+            ('id', 'SD13-data'),
+            ('title', 'Supplementary file 13.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_21.zip'),
+            ('filename', u'Video_21.zip'),
+            ('id', 'SD14-data'),
+            ('title', 'Supplementary file 14.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_22.zip'),
+            ('filename', u'Video_22.zip'),
+            ('id', 'SD15-data'),
+            ('title', 'Supplementary file 15.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_4.zip'),
+            ('filename', u'Video_4.zip'),
+            ('id', 'SD16-data'),
+            ('title', 'Supplementary file 16.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_20.zip'),
+            ('filename', u'Video_20.zip'),
+            ('id', 'SD17-data'),
+            ('title', 'Supplementary file 17.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_12.zip'),
+            ('filename', u'Video_12.zip'),
+            ('id', 'SD18-data'),
+            ('title', 'Supplementary file 18.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_1.zip'),
+            ('filename', u'Video_1.zip'),
+            ('id', 'SD19-data'),
+            ('title', 'Supplementary file 19.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_16.zip'),
+            ('filename', u'Video_16.zip'),
+            ('id', 'SD20-data'),
+            ('title', 'Supplementary file 20.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_3.zip'),
+            ('filename', u'Video_3.zip'),
+            ('id', 'SD21-data'),
+            ('title', 'Supplementary file 21.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_9.zip'),
+            ('filename', u'Video_9.zip'),
+            ('id', 'SD22-data'),
+            ('title', 'Supplementary file 22.')
+        ]),
+        OrderedDict([
+            ('mediaType', 'application/zip'),
+            ('uri', u'Video_14.zip'),
+            ('filename', u'Video_14.zip'),
+            ('id', 'SD23-data'),
+            ('title', 'Supplementary file 23.')
+        ])
+        ]
+        ),
 
         # 10110 v1 excerpt, should only extract the supplementary-material from the back matter
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><sec><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.10110.004</object-id><label>Figure 1—source data 1.</label><caption><title>Dauer assay data for individual trials in <xref ref-type="fig" rid="fig1">Figure 1</xref>.</title><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.004">http://dx.doi.org/10.7554/eLife.10110.004</ext-link></p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-10110-fig1-data1-v1.xlsx"/></supplementary-material></p></sec></body><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD9-data"><object-id pub-id-type="doi">10.7554/eLife.10110.026</object-id><label>Supplementary file 1.</label><caption><p>List of strains used in this work.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.026">http://dx.doi.org/10.7554/eLife.10110.026</ext-link></p></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-10110-supp1-v1.docx"/></supplementary-material></back></root>',
