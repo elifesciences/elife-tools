@@ -269,7 +269,19 @@ class TestParseJats(unittest.TestCase):
 
         # Datasets from 16996 v1 PoA
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s2" sec-type="supplementary-material"><title>Additional Files</title><sec id="s3" sec-type="datasets"><title>Major datasets</title><p/><p>The following datasets were generated:</p><p><related-object content-type="generated-dataset" id="dataro1" source-id="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059" source-id-type="uri"><collab>Wang IE</collab>, <collab>Lapan SW</collab>, <collab>Scimone ML</collab>, <collab>Reddien PW</collab>, <year>2016</year><x>,</x> <source>Gene expression profiling of planarian heads or cephalic ganglia after inhibition of Hedgehog signaling pathway genes by RNAi</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059</ext-link><x>,</x> <comment> Publicly available at the NCBI Gene Expression Omnibus (accession no: GSE81059)</comment></related-object></p></sec><supplementary-material><ext-link xlink:href="elife-16996-supp-v1.zip">Download zip</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material></sec></back></root>',
-        [OrderedDict([('mediaType', 'application/zip'), ('uri', u'elife-16996-supp-v1.zip'), ('filename', u'elife-16996-supp-v1.zip'), ('id', 'SD1-data'), ('title', 'Supplementary file 1.')])]
+        [
+            OrderedDict([
+                ('mediaType', 'application/zip'), 
+                ('uri', u'elife-16996-supp-v1.zip'),
+                ('filename', u'elife-16996-supp-v1.zip'),
+                ('id', 'SD1-data'), 
+                ('title', 'All additional files'),
+                ('caption', [OrderedDict([
+                    ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
+                    ('type', 'paragraph'),
+                ])])
+            ])
+        ]
          ),
 
         # Datasets from 08477 v1 VoR
@@ -280,7 +292,19 @@ class TestParseJats(unittest.TestCase):
 
         # 02184 v1, older style PoA has supplementary files directly in the article-meta
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><supplementary-material><ext-link xlink:href="elife-02184-supp-v1.zip">Download zip</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material></article-meta></front></root>',
-        [OrderedDict([('mediaType', 'application/zip'), ('uri', u'elife-02184-supp-v1.zip'), ('filename', u'elife-02184-supp-v1.zip'), ('id', 'SD1-data'), ('title', 'Supplementary file 1.')])]
+        [
+            OrderedDict([
+                ('mediaType', 'application/zip'),
+                ('uri', u'elife-02184-supp-v1.zip'),
+                ('filename', u'elife-02184-supp-v1.zip'), 
+                ('id', 'SD1-data'),
+                ('title', 'All additional files'),
+                ('caption', [OrderedDict([
+                    ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
+                    ('type', 'paragraph'),
+                ])])
+            ])
+        ]
          ),
 
         # 04493 v1 PoA, multiple old style supplementary files
