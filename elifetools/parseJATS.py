@@ -3615,13 +3615,17 @@ def supplementary_files_json(soup):
         i = 1
         for file in additional_files_json:
             file["id"] = "SD" + str(i) + "-data"
-            file["title"] = "All additional files"
-            file['caption'] = [{
-                "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
-                "type": "paragraph",
-            }]
+            file["title"] = "Supplementary file " + str(i) + "."
             i = i + 1
-            # can't work for more than 1 file
+
+    # TODO: need to add a check for PoA here?
+    if len(additional_files_json) == 1 and additional_files_json[0]['filename'].endswith(".zip"):
+        file = additional_files_json[0]
+        file["title"] = "All additional files"
+        file['caption'] = [{
+            "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
+            "type": "paragraph",
+        }]
 
     return additional_files_json
 
