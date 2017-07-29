@@ -1333,6 +1333,7 @@ def refs(soup):
             ref['authors'] = authors
 
         set_if_value(ref, "volume", node_text(first(raw_parser.volume(tag))))
+        set_if_value(ref, "issue", node_text(first(raw_parser.issue(tag))))
         set_if_value(ref, "fpage", node_text(first(raw_parser.fpage(tag))))
         set_if_value(ref, "lpage", node_text(first(raw_parser.lpage(tag))))
         set_if_value(ref, "collab", node_text(first(raw_parser.collab(tag))))

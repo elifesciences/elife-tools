@@ -273,6 +273,9 @@ def ref_list(soup):
 def volume(soup):
     return extract_nodes(soup, "volume")
 
+def issue(soup):
+    return extract_nodes(soup, "issue")
+
 def elocation_id(soup):
     return extract_nodes(soup, "elocation-id")
 
