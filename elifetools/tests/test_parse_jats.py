@@ -2196,6 +2196,70 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "refs"),
                          parser.refs(self.soup(filename)))
 
+    @unpack
+    @data(
+         # non-elife example with issue tag from cstp77
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
+<ref-list><ref id="B7">
+<label>7</label>
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Conrad</surname>
+<given-names>C.C.</given-names>
+</name>
+<name>
+<surname>Hilchey</surname>
+<given-names>K.G.</given-names>
+</name>
+</person-group>
+<article-title>A review of citizen science and community-based environmental monitoring: Issues and opportunities</article-title>
+<source>Environmental Monitoring and Assessment</source>
+<year iso-8601-date="2011">2011</year>
+<volume>176</volume>
+<issue>1&#8211;4</issue>
+<fpage>273</fpage>
+<lpage>291</lpage>
+<pub-id pub-id-type="doi">10.1007/s10661-010-1582-5</pub-id>
+</element-citation>
+</ref></ref-list></back></article></root>''',
+        [{
+            'article_doi': u'10.5334/cstp.77',
+            'article_title': u'A review of citizen science and community-based environmental monitoring: Issues and opportunities',
+            'authors': [{
+                'given-names': u'C.C.',
+                'group-type': u'author',
+                'surname': u'Conrad'
+                },
+                {
+                'given-names': u'K.G.',
+                'group-type': u'author',
+                'surname': u'Hilchey'
+                }],
+            'doi': u'10.1007/s10661-010-1582-5',
+            'fpage': u'273',
+            'full_article_title': u'A review of citizen science and community-based environmental monitoring: Issues and opportunities',
+            'id': u'B7',
+            'issue': u'1\u20134',
+            'lpage': u'291',
+            'position': 1,
+            'publication-type': u'journal',
+            'ref': u'7 Conrad C.C. Hilchey K.G. A review of citizen science and community-based environmental monitoring: Issues and opportunities Environmental Monitoring and Assessment 2011 176 1\u20134 273 291 10.1007/s10661-010-1582-5',
+            'reference_id': u'10.1007/s10661-010-1582-5',
+            'source': u'Environmental Monitoring and Assessment',
+            'volume': u'176',
+            'year': u'2011',
+            'year-iso-8601-date': u'2011'
+        }]
+        ),
+
+        )
+    def test_refs_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.refs(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_related_article(self, filename):
         self.assertEqual(self.json_expected(filename, "related_article"),
