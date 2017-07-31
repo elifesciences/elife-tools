@@ -3619,6 +3619,18 @@ def supplementary_files_json(soup):
             file["title"] = "Supplementary file " + str(i) + "."
             i = i + 1
 
+    # if there is a single supplementary zip file for PoA,
+    # rename it and describe it
+    if len(additional_files_json) == 1:
+        single_additional_file = additional_files_json[0]['filename']
+        if re.match("^.+-supp-.+\.zip$", single_additional_file):
+            file = additional_files_json[0]
+            file["title"] = "All additional files"
+            file['caption'] = [{
+                "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
+                "type": "paragraph",
+            }]
+
     return additional_files_json
 
 def funding_statement_json(soup, html_flag=True):
