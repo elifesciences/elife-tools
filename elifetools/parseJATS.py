@@ -2264,10 +2264,16 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(source_data) > 0:
                 asset_tag_content["sourceData"] = source_data
 
-        # add to figure assets if there is a label otherwise use the table asset alone
+        # add to figure assets if there is a label and it is not a keyresource table
         if asset_tag_content.get("label"):
-            tag_content["assets"].append(asset_tag_content)
+            if (asset_tag_content.get("id") and
+                asset_tag_content.get("id").startswith("keyresource")):
+                # use the table asset alone
+                tag_content = asset_tag_content
+            else:
+                tag_content["assets"].append(asset_tag_content)
         else:
+            # use the table asset alone
             tag_content = asset_tag_content
 
     elif tag.name == "disp-formula":
