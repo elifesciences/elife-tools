@@ -1279,7 +1279,8 @@ def refs(soup):
 
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
-        copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
+        if raw_parser.element_citation(tag):
+            copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
 
         # authors
         person_group = raw_parser.person_group(tag)

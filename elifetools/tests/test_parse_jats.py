@@ -2482,6 +2482,141 @@ class TestParseJats(unittest.TestCase):
         }]
         ),
 
+        # mixed-citation example 1 from bmjopen
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back><ref-list><title>References</title><ref id="R15"><label>15</label><mixed-citation><person-group person-group-type="author"><name><surname>Atkinson</surname><given-names>W</given-names></name><name><surname>Hamborsky</surname><given-names>J</given-names></name><name><surname>McIntyre</surname><given-names>L</given-names></name><etal/></person-group>. <source>Epidemiology and prevention of vaccine-preventable diseases</source>. <publisher-loc>Washington, DC</publisher-loc>: <publisher-name>Public Health Foundation</publisher-name>, <year>2008</year>.</mixed-citation></ref></ref-list></back></article></root>''',
+        [{
+            'article_doi': u'10.1136/bmjopen-2013-003269',
+            'authors': [{
+                'given-names': u'W',
+                'group-type': u'author',
+                'surname': u'Atkinson'
+                },
+                {
+                'given-names': u'J',
+                'group-type': u'author',
+                'surname': u'Hamborsky'
+                },
+                {
+                'given-names': u'L',
+                'group-type': u'author',
+                'surname': u'McIntyre'
+                },
+                {
+                'etal': True,
+                'group-type': u'author'
+                }],
+            'id': u'R15',
+            'position': 1,
+            'publisher_loc': u'Washington, DC',
+            'publisher_name': u'Public Health Foundation',
+            'ref': u'15AtkinsonWHamborskyJMcIntyreL. Epidemiology and prevention of vaccine-preventable diseases. Washington, DC: Public Health Foundation, 2008.',
+            'source': u'Epidemiology and prevention of vaccine-preventable diseases',
+            'year': u'2008'
+        }]
+        ),
+
+        # mixed-citation example 2 from bmjopen
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back><ref-list><title>References</title><ref id="R29"><label>29</label><mixed-citation><person-group person-group-type="author"><name><surname>Armah</surname><given-names>GE</given-names></name><name><surname>Steele</surname><given-names>AD</given-names></name><name><surname>Esona</surname><given-names>MD</given-names></name><etal/></person-group>. <article-title>Diversity of rotavirus strains circulating in West Africa from 1996 to 2000</article-title>. <source>J Infect Dis</source> <year>2010</year>;<volume>202</volume><issue>(Suppl)</issue>:<fpage>S64</fpage>–<lpage>71</lpage>.</mixed-citation></ref></ref-list></back></article></root>''',
+        [{
+            'article_doi': u'10.1136/bmjopen-2013-003269',
+            'article_title': u'Diversity of rotavirus strains circulating in West Africa from 1996 to 2000',
+            'authors': [{
+                'given-names': u'GE',
+                'group-type': u'author',
+                'surname': u'Armah'
+                },
+                {
+                'given-names': u'AD',
+                'group-type': u'author',
+                'surname': u'Steele'
+                },
+                {
+                'given-names': u'MD',
+                'group-type': u'author',
+                'surname': u'Esona'
+                },
+                {
+                'etal': True,
+                'group-type': u'author'
+                }],
+            'fpage': u'S64',
+            'full_article_title': u'Diversity of rotavirus strains circulating in West Africa from 1996 to 2000',
+            'id': u'R29',
+            'issue': u'(Suppl)',
+            'lpage': u'71',
+            'position': 1,
+            'ref': u'29ArmahGESteeleADEsonaMD. Diversity of rotavirus strains circulating in West Africa from 1996 to 2000. J Infect Dis 2010;202(Suppl):S64\u201371.',
+            'source': u'J Infect Dis',
+            'volume': u'202',
+            'year': u'2010'
+        }]
+        ),
+
+        # mixed-citation example 3 from bmjopen
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back>
+<ref-list><title>References</title><ref id="R31"><label>31</label><mixed-citation><collab>World Health Organization</collab>. <article-title>Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region</article-title>. <comment><ext-link xlink:href="http://www.afro.who.int/index.php?option=com_content&amp;view=article&amp;id=2486:rotavirus-surveillance-in-the-african-region&amp;catid=1980&amp;Itemid=2737" ext-link-type="uri">http://www.afro.who.int/index.php?option=com_content&amp;view=article&amp;id=2486:rotavirus-surveillance-in-the-african-region&amp;catid=1980&amp;Itemid=2737</ext-link> (accessed 26 Jul 2013</comment>).</mixed-citation></ref></ref-list></back></article></root>''',
+        [{
+            'article_doi': u'10.1136/bmjopen-2013-003269',
+            'article_title': u'Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region',
+            'authors': [{
+                'collab': u'World Health Organization',
+                'group-type': u'author',
+                }],
+            'collab': u'World Health Organization',
+            'comment': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737 (accessed 26 Jul 2013',
+            'full_article_title': u'Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region',
+            'id': u'R31',
+            'position': 1,
+            'ref': u'31World Health Organization. Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region. http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737 (accessed 26 Jul 2013).',
+            'uri': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737',
+            'uri_text': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737',
+        }]
+        ),
+
+        # citation example from redalyc - udea
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">DOI:10.17533/udea.rfnsp.v34n2a02</article-id></article-meta></front><back>
+<ref-list><ref id="redalyc_12045638002_ref32">
+<label>1</label>
+<mixed-citation> Al Sahaf OS, Vega–Carrascal I. Chemical composition of smoke produced by high–frequency electrosurgery. Ir J Med Sci. [Revista en Internet] 2007 [Acceso 13 de mayo de 2014]; 176(3):229–32. Disponible en:  <ext-link ext-link-type="uri" xlink:href="www.ncbi.nlm.nih.gov/pubmed/17653513">www.ncbi.nlm.nih.gov/pubmed/17653513</ext-link> </mixed-citation>
+<element-citation publication-type="journal">
+<person-group person-group-type="author">
+<name>
+<surname>Al</surname>
+<given-names>Sahaf OS</given-names>
+</name>
+<name>
+<surname>Vega–Carrascal</surname>
+<given-names>I</given-names>
+</name>
+</person-group>
+<source>Ir J Med Sci</source>
+<year>2007</year>
+</element-citation>
+</ref>
+</ref-list></back></article></root>''',
+        [{
+            'article_doi': u'DOI:10.17533/udea.rfnsp.v34n2a02',
+            'authors': [{
+                'given-names': u'Sahaf OS',
+                'group-type': u'author',
+                'surname': u'Al'
+                },
+                {
+                'given-names': u'I',
+                'group-type': u'author',
+                'surname': u'Vega\u2013Carrascal'
+                }],
+            'id': u'redalyc_12045638002_ref32',
+            'position': 1,
+            'ref': u'1 Al Sahaf OS, Vega\u2013Carrascal I. Chemical composition of smoke produced by high\u2013frequency electrosurgery. Ir J Med Sci. [Revista en Internet] 2007 [Acceso 13 de mayo de 2014]; 176(3):229\u201332. Disponible en: www.ncbi.nlm.nih.gov/pubmed/17653513 Al Sahaf OS Vega\u2013Carrascal I Ir J Med Sci 2007',
+            'publication-type': u'journal',
+            'source': u'Ir J Med Sci',
+            'uri': u'www.ncbi.nlm.nih.gov/pubmed/17653513',
+            'uri_text': u'www.ncbi.nlm.nih.gov/pubmed/17653513',
+            "year": "2007",
+        }]
+        ),
+
         )
     def test_refs_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
