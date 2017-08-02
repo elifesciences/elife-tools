@@ -1972,7 +1972,7 @@ class TestParseJats(unittest.TestCase):
     @data(("elife-kitchen-sink.xml", "pub", ('28', '02', '2014')))
     def test_ymd(self, filename, test_date_type, expected):
         soup = self.soup(filename)
-        date_tag = raw_parser.pub_date(soup, date_type=test_date_type)
+        date_tag = raw_parser.pub_date(soup, date_type=test_date_type)[0]
         self.assertEqual(expected, parser.ymd(date_tag))
 
     @unpack

@@ -278,9 +278,9 @@ def pub_date(soup):
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
     Default date_type is pub
     """
-    pub_date = raw_parser.pub_date(soup, date_type = "pub")
+    pub_date = first(raw_parser.pub_date(soup, date_type="pub"))
     if pub_date is None:
-        pub_date = raw_parser.pub_date(soup, date_type = "publication")
+        pub_date = first(raw_parser.pub_date(soup, date_type="publication"))
     if pub_date is None:
         return None
     (day, month, year) = ymd(pub_date)
@@ -394,10 +394,10 @@ def collection_year(soup):
     """
     Pub date of type collection will hold a year element for VOR articles
     """
-    pub_date = raw_parser.pub_date_collection(soup, pub_type = "collection")
+    pub_date = first(raw_parser.pub_date(soup, pub_type="collection"))
     if pub_date is None:
         return None
-    
+
     year = None
     year_tag = raw_parser.year(pub_date)
     if year_tag:
