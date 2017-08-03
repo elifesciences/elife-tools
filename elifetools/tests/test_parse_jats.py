@@ -1972,7 +1972,7 @@ class TestParseJats(unittest.TestCase):
     @data(("elife-kitchen-sink.xml", "pub", ('28', '02', '2014')))
     def test_ymd(self, filename, test_date_type, expected):
         soup = self.soup(filename)
-        date_tag = raw_parser.pub_date(soup, date_type=test_date_type)
+        date_tag = raw_parser.pub_date(soup, date_type=test_date_type)[0]
         self.assertEqual(expected, parser.ymd(date_tag))
 
     @unpack
@@ -2352,6 +2352,84 @@ class TestParseJats(unittest.TestCase):
     def test_media(self, filename):
         self.assertEqual(self.json_expected(filename, "media"),
                          parser.media(self.soup(filename)))
+
+    @unpack
+    @data(
+        # pub-date values from 00666 kitchen sink
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date publication-format="electronic" date-type="update"><day>11</day><month>08</month><year>2016</year></pub-date><pub-date publication-format="electronic" date-type="publication"><day>25</day><month>04</month><year>2016</year></pub-date><pub-date pub-type="collection"><year>2016</year></pub-date></article></root>',
+        [
+            OrderedDict([
+                ('publication-format', u'electronic'),
+                ('date-type', u'update'),
+                ('day', u'11'),
+                ('month', u'08'),
+                ('year', u'2016'),
+                (u'date', date_struct(2016, 8, 11))
+            ]),
+            OrderedDict([
+                ('publication-format', u'electronic'),
+                ('date-type', u'publication'),
+                ('day', u'25'),
+                ('month', u'04'),
+                ('year', u'2016'),
+                (u'date', date_struct(2016, 4, 25))
+            ]),
+            OrderedDict([
+                ('pub-type', u'collection'),
+                ('day', None),
+                ('month', None),
+                ('year', u'2016'),
+                (u'date', date_struct(2016, 1, 1))
+            ]),
+        ]
+        ),
+
+        # example from cstp77
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date publication-format="electronic" date-type="pub" iso-8601-date="2017-07-04"><day>04</day><month>07</month><year>2017</year></pub-date></article></root>',
+        [
+            OrderedDict([
+                ('publication-format', u'electronic'),
+                ('date-type', u'pub'),
+                ('day', u'04'),
+                ('month', u'07'),
+                ('year', u'2017'),
+                (u'date', date_struct(2017, 7, 4))
+            ])
+        ]
+        ),
+
+        # example from bmjopen-2013-003269
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date pub-type="ppub"><month>1</month><year>2014</year></pub-date><pub-date pub-type="epub-original"><day>30</day><month>1</month><year>2014</year></pub-date><pub-date pub-type="epub"><day>31</day><month>1</month><year>2014</year></pub-date></article></root>',
+        [
+            OrderedDict([
+                ('pub-type', u'ppub'),
+                ('day', None),
+                ('month', u'1'),
+                ('year', u'2014'),
+                (u'date', date_struct(2014, 1, 1))
+            ]),
+            OrderedDict([
+                ('pub-type', u'epub-original'),
+                ('day', u'30'),
+                ('month', u'1'),
+                ('year', u'2014'),
+                (u'date', date_struct(2014, 1, 30))
+            ]),
+            OrderedDict([
+                ('pub-type', u'epub'),
+                ('day',  u'31'),
+                ('month', u'1'),
+                ('year', u'2014'),
+                (u'date', date_struct(2014, 1, 31))
+            ]),
+        ]
+        ),
+    )
+    def test_pub_dates_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_dates(soup)
+        self.assertEqual(expected, tag_content)
+
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_pub_date_timestamp(self, filename):
