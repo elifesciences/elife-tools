@@ -124,6 +124,15 @@ class TestUtils(unittest.TestCase):
     @unpack
     @data(
         (None, None),
+        ("http://orcid.org/0000-0003-3523-4408", "0000-0003-3523-4408"),
+        ("https://orcid.org/0000-0003-3523-4408", "0000-0003-3523-4408")
+        )
+    def test_orcid_uri_to_orcid(self, orcid_uri, expected_doi):
+        self.assertEqual(utils.orcid_uri_to_orcid(orcid_uri), expected_doi)
+
+    @unpack
+    @data(
+        (None, None),
         ('A simple example ', u'A simple example'),
         ('Testing one, two, three. Is this thing on?', u'Testing one, two, three'),
         ('Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp. (<bold>A</bold>) Examples of predated <italic>M. sexta</italic> larva (left panel) and egg (right panel).', 'Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp.'),
