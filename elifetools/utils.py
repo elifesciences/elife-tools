@@ -200,6 +200,15 @@ def remove_doi_paragraph(tags):
     p_tags = filter(lambda tag: not paragraph_is_only_doi(tag), p_tags)
     return p_tags
 
+def orcid_uri_to_orcid(value):
+    "Strip the uri schema from the start of ORCID URL strings"
+    if value is None:
+        return value
+    replace_values = ['http://orcid.org/', 'https://orcid.org/']
+    for replace_value in replace_values:
+        value = value.replace(replace_value, '')
+    return value
+
 def remove_tag_from_tag(tag, nodename):
     if not nodename:
         return tag

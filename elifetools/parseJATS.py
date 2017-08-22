@@ -2856,7 +2856,7 @@ def author_person(author, contributions, correspondence, competing_interests,
         author.get("surname"), author.get("given-names"), author.get("suffix"))
     author_json["name"] = author_name
     if author.get("orcid"):
-        author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+        author_json["orcid"] = orcid_uri_to_orcid(author.get("orcid"))
     if author.get("deceased"):
         author_json["deceased"] = True
     if author.get("role"):
