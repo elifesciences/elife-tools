@@ -1,11 +1,17 @@
 import re
 from bs4 import BeautifulSoup
+from utils import escape_unmatched_angle_brackets
 
 def xml_to_html(html_flag, xml_string, base_url=None):
     "For formatting json output into HTML friendly format"
     if not xml_string or not html_flag is True:
         return xml_string
     html_string = xml_string
+    html_string = remove_comment_tags(html_string)
+    #  Escape unmatched angle brackets
+    if '<' in html_string or '>' in html_string:
+        html_string = escape_html(html_string)
+    # Replace more tags
     html_string = replace_xref_tags(html_string)
     html_string = replace_ext_link_tags(html_string)
     html_string = replace_email_tags(html_string)
@@ -20,40 +26,45 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_simple_tags(html_string, 'monospace', 'span', '<span class="monospace">')
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
     html_string = replace_simple_tags(html_string, 'break', 'br')
-    html_string = remove_comment_tags(html_string)
-    #  Escape unmatched angle brackets
-    if '<' in html_string or '>' in html_string:
-        html_string = escape_html(html_string)
     return html_string
 
-def allowed_start_tag_fragments():
-    "tuples of whitelisted tag startswith values for matching"
-    return ('<i', '</i',
-            '<p', '</p',
-            '<b', '</b',
-            '<span', '</span',
-            '<a ', '</a',
-            '<ext-link', '</ext-link',
-            '<img', '</img',
-            '<xref', '</xref',
-            '<br', '</br',
-            '<table', '</table',
-            '<thead', '</thead',
-            '<tbody', '</tbody',
-            '<th', '</th',
-            '<tr', '</tr',
-            '<td', '</td',
-            '<named-content', '</named-content',
-            )
+
+def allowed_xml_tag_fragments():
+    """
+    tuples of whitelisted tag startswith values for matching tags found in inline text
+    prior to being converted to HTML
+    values can be a complete tag for exact matching just the first few characters of a tag
+    such as the case would be for mml: or table td tags
+    """
+    return (
+        '<p>', '</p>', '<p/>',
+        '<break>', '</break>', '<break/>',
+        '<underline>', '</underline>', '<underline/>',
+        '<italic>', '</italic>','<italic/>',
+        '<bold>', '</bold>', '<bold/>',
+        '<monospace>', '</monospace>', '<monospace/>',
+        '<sc>', '</sc>', '<sc/>',
+        '<sup>', '</sup>',
+        '<sub>', '</sub>',
+        '<email', '</email',
+        '<ext-link', '</ext-link',
+        '<xref', '</xref',
+        '<inline-graphic', '</inline-graphic',
+        '<inline-formula', '</inline-formula',
+        '<math', '</math',
+        '<mml:', '</mml:',
+        '<named-content', '</named-content',
+        '<table', '</table',
+        '<thead', '</thead',
+        '<tbody', '</tbody',
+        '<th', '</th',
+        '<tr', '</tr',
+        '<td', '</td',
+        )
 
 def escape_html(html_string):
     "escape unmatched angle brackets in HTML string allowing some whitelisted tags"
-    for tag_match in re.finditer(r"<([^>]*)", html_string):
-        if not(tag_match.group(0).startswith(allowed_start_tag_fragments())):
-            html_string = html_string.replace(tag_match.group(), '&lt;' + tag_match.group(1))
-    # quick clean up for unmatched gt tags
-    html_string = html_string.replace('>>', '>&gt;')
-    return html_string
+    return escape_unmatched_angle_brackets(html_string, allowed_xml_tag_fragments())
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):
     """

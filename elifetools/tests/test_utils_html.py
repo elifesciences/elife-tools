@@ -115,6 +115,10 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p>Regional analyses identified portions of ... (p<e-200) <italic>MYH7</italic></p>', None,
          u'<p>Regional analyses identified portions of ... (p&lt;e-200) <i>MYH7</i></p>'),
 
+        # Edge case with a greater than tag, based on elife article 28862
+        (True, u'<p>We observed significant colocalization (>74%) of <italic>Clensor</italic> with LMP-1-GFP labeled lysosomes ....</p>', None,
+         u'<p>We observed significant colocalization (&gt;74%) of <i>Clensor</i> with LMP-1-GFP labeled lysosomes ....</p>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
