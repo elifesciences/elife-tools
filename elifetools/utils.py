@@ -472,6 +472,8 @@ def escape_unmatched_angle_brackets(string, allowed_tag_fragments=()):
       on unicode ever again! Instead this uses string replace
     allowed_tag_fragments is a tuple of tag name matches for use with startswith()
     """
+    if not string:
+        return string
 
     # Split string on tags
     tags = re.split('(<.*?>)', string)

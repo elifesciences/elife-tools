@@ -8,6 +8,7 @@ from ddt import ddt, data, unpack
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import utils
+from utils_html import allowed_xml_tag_fragments
 import parseJATS as parser
 
 
@@ -184,6 +185,28 @@ class TestUtils(unittest.TestCase):
         )
     def test_rstrip_punctuation(self, value, expected):
         self.assertEqual(expected, utils.rstrip_punctuation(value))
+
+    @unpack
+    @data(
+        (None, None),
+        ('<p><italic><bold><sup><sub><sc><underline><bold>superstyling</bold></underline></sc></sub></sup></bold></italic></p>',
+         '<p><italic><bold><sup><sub><sc><underline><bold>superstyling</bold></underline></sc></sub></sup></bold></italic></p>'
+        ),
+        ('<', '&lt;'),
+        ('< T << G << C >> A <<italic>m</italic>',
+         '&lt; T &lt;&lt; G &lt;&lt; C &gt;&gt; A &lt;<italic>m</italic>'),
+        ('<p>**p<0.01; ***p<0.001. SI, aged mice >5 months old.</p>',
+         '<p>**p&lt;0.01; ***p&lt;0.001. SI, aged mice &gt;5 months old.</p>'),
+        )
+    def test_escape_unmatched_angle_brackets(self, value, expected):
+        """
+        Test some additional examples of unmatched angle brackets specifically
+        """
+        self.assertEqual(
+            utils.escape_unmatched_angle_brackets(value, allowed_xml_tag_fragments()),
+            expected)
+
+
 
 if __name__ == '__main__':
     unittest.main()
