@@ -21,15 +21,38 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_simple_tags(html_string, 'inline-formula', None)
     html_string = replace_simple_tags(html_string, 'break', 'br')
     html_string = remove_comment_tags(html_string)
-    # Run it through BeautifulSoup as HTML if it contains tags, this
-    #  encodes unmatched angle brackets
+    #  Escape unmatched angle brackets
     if '<' in html_string or '>' in html_string:
-        soup = BeautifulSoup(html_string, 'html.parser')
-        html_string = soup.encode('utf8')
-        try:
-            html_string.encode('utf8')
-        except UnicodeDecodeError:
-            html_string = html_string.decode('utf8')
+        html_string = escape_html(html_string)
+    return html_string
+
+def allowed_start_tag_fragments():
+    "tuples of whitelisted tag startswith values for matching"
+    return ('<i', '</i',
+            '<p', '</p',
+            '<b', '</b',
+            '<span', '</span',
+            '<a ', '</a',
+            '<ext-link', '</ext-link',
+            '<img', '</img',
+            '<xref', '</xref',
+            '<br', '</br',
+            '<table', '</table',
+            '<thead', '</thead',
+            '<tbody', '</tbody',
+            '<th', '</th',
+            '<tr', '</tr',
+            '<td', '</td',
+            '<named-content', '</named-content',
+            )
+
+def escape_html(html_string):
+    "escape unmatched angle brackets in HTML string allowing some whitelisted tags"
+    for tag_match in re.finditer(r"<([^>]*)", html_string):
+        if not(tag_match.group(0).startswith(allowed_start_tag_fragments())):
+            html_string = html_string.replace(tag_match.group(), '&lt;' + tag_match.group(1))
+    # quick clean up for unmatched gt tags
+    html_string = html_string.replace('>>', '>&gt;')
     return html_string
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):
@@ -130,6 +153,8 @@ def replace_inline_graphic_tags(s, base_url=None):
                 new_tag = '<img src="' + xlink + '"/>'
                 old_tag = '<' + tag_match.group(1) + '>'
                 s = s.replace(old_tag, new_tag)
+                # Replace close tag if present
+                s = s.replace('</inline-graphic>', '')
             except StopIteration:
                 pass
     return s
