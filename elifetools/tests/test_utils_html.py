@@ -119,6 +119,10 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p>We observed significant colocalization (>74%) of <italic>Clensor</italic> with LMP-1-GFP labeled lysosomes ....</p>', None,
          u'<p>We observed significant colocalization (&gt;74%) of <i>Clensor</i> with LMP-1-GFP labeled lysosomes ....</p>'),
 
+        # Ampersand test
+        (True, u'<p>&</p>', None,
+         u'<p>&amp;</p>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)

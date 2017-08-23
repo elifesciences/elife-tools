@@ -1,6 +1,6 @@
 import re
 from bs4 import BeautifulSoup
-from utils import escape_unmatched_angle_brackets
+from utils import escape_unmatched_angle_brackets, escape_ampersand
 
 def xml_to_html(html_flag, xml_string, base_url=None):
     "For formatting json output into HTML friendly format"
@@ -63,7 +63,8 @@ def allowed_xml_tag_fragments():
         )
 
 def escape_html(html_string):
-    "escape unmatched angle brackets in HTML string allowing some whitelisted tags"
+    "escape ampersands and unmatched angle brackets in HTML string allowing some whitelisted tags"
+    html_string = escape_ampersand(html_string)
     return escape_unmatched_angle_brackets(html_string, allowed_xml_tag_fragments())
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):

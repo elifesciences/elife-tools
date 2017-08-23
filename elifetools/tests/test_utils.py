@@ -206,6 +206,20 @@ class TestUtils(unittest.TestCase):
             utils.escape_unmatched_angle_brackets(value, allowed_xml_tag_fragments()),
             expected)
 
+    @unpack
+    @data(
+        (None, None),
+        ('', ''),
+        ('a', 'a'),
+        ('another & another & another', 'another &amp; another &amp; another'),
+        ('a&a', 'a&amp;a'),
+        ('a&amp;&a', 'a&amp;&amp;a'),
+        ('a&#x0117;a', 'a&#x0117;a'),
+        ('fake link http://example.org/?a=b&amp', 'fake link http://example.org/?a=b&amp;amp'),
+        ('CUT&RUN is performed', 'CUT&amp;RUN is performed'),
+        )
+    def test_escape_ampersand(self, value, expected):
+        self.assertEqual(utils.escape_ampersand(value), expected)
 
 
 if __name__ == '__main__':
