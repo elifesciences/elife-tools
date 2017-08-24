@@ -1430,7 +1430,7 @@ def components(soup):
     
     for tag in component_tags:
         
-        component = {}
+        component = OrderedDict()
         
         # Component type is the tag's name
         ctype = tag.name
@@ -1442,8 +1442,9 @@ def components(soup):
         else:
             component['doi'] = doi_uri_to_doi(component_doi)
             component['doi_url'] = doi_to_doi_uri(component['doi'])
-            
-        
+
+        copy_attribute(tag.attrs, 'id', component)
+
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)
         elif(ctype == "boxed-text"):
