@@ -177,6 +177,48 @@ class TestParseJats(unittest.TestCase):
          [OrderedDict([('id', u'appendix-1'), ('title', u'Appendix 1'), ('content', [OrderedDict([('type', 'section'), ('id', u's8'), ('title', u'Preparation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')])]), ('doi', u'10.7554/eLife.00666.023')])])])]
         ),
 
+        # appendix with a boxed-text in a subsequent section based on article 
+        ('<root><back><app-group><app id="appendix-7"><title>Appendix 7</title><sec id="s13" sec-type="appendix"><title>Photomechanical microsaccades move photoreceptors’ receptive fields</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.26117.079</object-id><sec id="s13-1"><title>Overview</title><p>This appendix ...</p></sec></boxed-text></sec><sec id="s14" sec-type="appendix"><title>Photomechanical rhabdomere movements vs. R1-R6s’ voltage responses</title><boxed-text><p>We next compared intracellular wild-type and ...</p></boxed-text></sec></sec></app></app-group></back></root>',
+         [
+            OrderedDict([
+                ('id', u'appendix-7'),
+                ('title', u'Appendix 7'),
+                ('content', [
+                    OrderedDict([
+                        ('type', 'section'),
+                        ('id', u's13'),
+                        ('title', u'Photomechanical microsaccades move photoreceptors\u2019 receptive fields'),
+                        ('content', [
+                            OrderedDict([
+                                ('type', 'section'),
+                                ('id', u's13-1'),
+                                ('title', u'Overview'),
+                                ('content', [
+                                    OrderedDict([
+                                        ('type', 'paragraph'),
+                                        ('text', u'This appendix ...')
+                                    ])
+                                ])
+                            ])
+                        ]),
+                        ('doi', u'10.7554/eLife.26117.079')
+                    ]),
+                    OrderedDict([
+                        ('type', 'section'),
+                        ('id', u's14'),
+                        ('title', u'Photomechanical rhabdomere movements vs. R1-R6s\u2019 voltage responses'),
+                        ('content', [
+                            OrderedDict([
+                                ('type', 'paragraph'),
+                                ('text', u'We next compared intracellular wild-type and ...')
+                            ])
+                        ])
+                    ])
+                ])
+            ])
+        ]
+        ),
+
         )
     def test_appendices_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
