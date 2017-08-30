@@ -3491,6 +3491,8 @@ def appendices_json(soup, base_url=None):
                 for block in content_block.get("content"):
                     clean_app_content.append(block)
             else:
+                # Unwrap boxed-text if found here too
+                content_block = unwrap_appendix_box(content_block)
                 clean_app_content.append(content_block)
         app_content["content"] = clean_app_content
 
