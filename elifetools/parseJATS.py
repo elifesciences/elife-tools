@@ -2289,12 +2289,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
         # add to figure assets if there is a label and it is not a keyresource table
         if asset_tag_content.get("label"):
-            if (asset_tag_content.get("id") and
-                asset_tag_content.get("id").startswith("keyresource")):
-                # use the table asset alone
-                tag_content = asset_tag_content
-            else:
-                tag_content["assets"].append(asset_tag_content)
+            tag_content["assets"].append(asset_tag_content)
         else:
             # use the table asset alone
             tag_content = asset_tag_content
