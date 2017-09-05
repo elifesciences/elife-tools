@@ -2226,12 +2226,17 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
 
     elif tag.name == "disp-quote":
-        tag_content["type"] = "quote"
+        if tag.get("content-type") and tag.get("content-type") == "editor-comment":
+            tag_content["type"] = "excerpt"
+            block_array_name = "content"
+        else:
+            tag_content["type"] = "quote"
+            block_array_name = "text"
         for child_tag in tag:
             if body_block_content(child_tag) != {}:
-                if "text" not in tag_content:
-                    tag_content["text"] = []
-                tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
+                if block_array_name not in tag_content:
+                    tag_content[block_array_name] = []
+                tag_content[block_array_name].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
         # figure wrap
