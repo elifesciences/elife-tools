@@ -261,6 +261,7 @@
                 "group-type": "author"
             }
         ], 
+        "accession": "GSE44902", 
         "publication-type": "data", 
         "source": "NCBI Gene Expression Omnibus", 
         "year": "2015", 
@@ -772,6 +773,7 @@
                 "group-type": "author"
             }
         ], 
+        "accession": "NM_009324", 
         "publication-type": "data", 
         "source": "NCBI Nucleotide", 
         "version": "NM_009324.2", 
@@ -852,6 +854,7 @@
                 "group-type": "author"
             }
         ], 
+        "accession": "GSE70542", 
         "publication-type": "data", 
         "source": "NCBI Gene Expression Omnibus", 
         "year": "2015", 
@@ -1415,6 +1418,7 @@
                 "group-type": "author"
             }
         ], 
+        "accession": "E-MTAB-3649", 
         "publication-type": "data", 
         "source": "ArrayExpress", 
         "year": "2015b", 
@@ -1702,6 +1706,7 @@
         "id": "bib44"
     }, 
     {
+        "collab": "The Shigella Genome Sequencing Consortium", 
         "data-title": "Global Diversity of Shigella Species", 
         "article_doi": "10.7554/eLife.00666", 
         "authors": [
@@ -1710,7 +1715,7 @@
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
-        "collab": "The Shigella Genome Sequencing Consortium", 
+        "accession": "PRJEB2846", 
         "publication-type": "data", 
         "source": "NCBI BioProject", 
         "year": "2015a", 
@@ -1720,6 +1725,7 @@
         "id": "bib45"
     }, 
     {
+        "collab": "The Shigella Genome Sequencing Consortium", 
         "data-title": "Shigella sonnei and flexneri from around the world", 
         "article_doi": "10.7554/eLife.00666", 
         "authors": [
@@ -1728,7 +1734,7 @@
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
-        "collab": "The Shigella Genome Sequencing Consortium", 
+        "accession": "PRJEB2460", 
         "publication-type": "data", 
         "source": "NCBI BioProject", 
         "year": "2015b", 
@@ -1738,6 +1744,7 @@
         "id": "bib46"
     }, 
     {
+        "collab": "The Shigella Genome Sequencing Consortium", 
         "data-title": "Shigella flexneri from around the world", 
         "article_doi": "10.7554/eLife.00666", 
         "authors": [
@@ -1746,7 +1753,7 @@
                 "collab": "The <italic>Shigella</italic> Genome Sequencing Consortium"
             }
         ], 
-        "collab": "The Shigella Genome Sequencing Consortium", 
+        "accession": "PRJEB2542", 
         "publication-type": "data", 
         "source": "NCBI BioProject ", 
         "year": "2015c", 
@@ -1962,6 +1969,7 @@
                 "group-type": "author"
             }
         ], 
+        "accession": "GenBank: ADB81776.1", 
         "publication-type": "data", 
         "source": "NCBI", 
         "year": "2010", 

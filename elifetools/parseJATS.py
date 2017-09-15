@@ -1286,6 +1286,11 @@ def refs(soup):
             set_if_value(ref, "uri", uri_tag.get('xlink:href'))
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
+        # accession, could be in either of two tags
+        set_if_value(ref, "accession", node_contents_str(first(raw_parser.object_id(tag, "art-access-id"))))
+        if not ref.get('accession'):
+            set_if_value(ref, "accession", node_contents_str(first(raw_parser.pub_id(tag, pub_id_type="accession"))))
+
         if(raw_parser.year(tag)):
             set_if_value(ref, "year", node_text(raw_parser.year(tag)))
             set_if_value(ref, "year-iso-8601-date", raw_parser.year(tag).get('iso-8601-date'))
@@ -3291,6 +3296,10 @@ def references_json(soup, html_flag=True):
                 pass
             else:
                 ref_content["type"] = "other"
+
+        # dataId
+        if ref.get("publication-type") in ["data"]:
+            set_if_value(ref_content, "dataId", ref.get("accession"))
 
         # doi
         if ref.get("publication-type") not in ["web"]:
