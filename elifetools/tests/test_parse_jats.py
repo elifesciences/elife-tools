@@ -1404,6 +1404,154 @@ class TestParseJats(unittest.TestCase):
         [OrderedDict([('type', u'book'), ('id', u'bib10'), ('date', u'1998'), ('editors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Ekstrom'), ('index', u'Ekstrom, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J. R Garrett'), ('index', u'Garrett, J. R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L. C Anderson'), ('index', u'Anderson, L. C')]))])]), ('bookTitle', u'Glandular Mechanisms of Salivary Secretion (Frontiers of Oral Biology , Vol. 10)'), ('publisher', OrderedDict([('name', [u'S Karger']), ('address', OrderedDict([('formatted', [u'Basel']), ('components', OrderedDict([('locality', [u'Basel'])]))]))])), ('edition', u'1st edn'), ('isbn', u'978-3805566308')])]
         ),
 
+         # example of data citation with a pub-id accession, based on article 07836
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
+<ref-list><ref id="bib105">
+<element-citation publication-type="data">
+<person-group person-group-type="author">
+<name>
+<surname>Steinbaugh</surname>
+<given-names>MJ</given-names>
+</name>
+<name>
+<surname>Dreyfuss</surname>
+<given-names>JM</given-names>
+</name>
+<name>
+<surname>Blackwell</surname>
+<given-names>TK</given-names>
+</name>
+</person-group>
+<year iso-8601-date="2015">2015</year>
+<data-title>
+RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
+</data-title>
+<source>NCBI Gene Expression Omnibus</source>
+<pub-id pub-id-type="accession" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075">GSE63075</pub-id>
+</element-citation>
+</ref></ref-list></back></article></root>''',
+        [
+            OrderedDict([
+                ('type', u'data'),
+                ('id', u'bib105'),
+                ('date', u'2015'),
+                ('authors', [
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'MJ Steinbaugh'),
+                            ('index', u'Steinbaugh, MJ')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'JM Dreyfuss'),
+                            ('index', u'Dreyfuss, JM')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'TK Blackwell'),
+                            ('index', u'Blackwell, TK')
+                        ]))
+                    ])
+                ]),
+                ('title', u'\nRNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans\n'),
+                ('source', u'NCBI Gene Expression Omnibus'),
+                ('dataId', u'GSE63075')
+            ])
+        ]
+        ),
+
+         # example of data citation with a object-id tag accession, gets converted to unknown because of the comment tag, based on article 07048
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
+<ref-list><ref id="bib15">
+<element-citation publication-type="data">
+<person-group person-group-type="author">
+<name>
+<surname>Bollag</surname>
+<given-names>RJ</given-names>
+</name>
+<name>
+<surname>Siegfried</surname>
+<given-names>Z</given-names>
+</name>
+<name>
+<surname>Cebra-Thomas</surname>
+<given-names>J</given-names>
+</name>
+<name>
+<surname>Garvey</surname>
+<given-names>N</given-names>
+</name>
+<name>
+<surname>Davison</surname>
+<given-names>EM</given-names>
+</name>
+<name>
+<surname>Silver</surname>
+<given-names>LM</given-names>
+</name>
+</person-group>
+<year>1994b</year>
+<data-title>Mus musculus T-box 2 (Tbx2), mRNA</data-title>
+<source>NCBI Nucleotide</source>
+<object-id pub-id-type="art-access-id">NM_009324</object-id>
+<comment>
+<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/nuccore/120407038">http://www.ncbi.nlm.nih.gov/nuccore/120407038</ext-link>
+</comment>
+</element-citation>
+</ref></ref-list></back></article></root>''',
+        [
+            OrderedDict([
+                ('type', 'unknown'),
+                ('id', u'bib15'),
+                ('date', u'1994'),
+                ('authors', [
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'RJ Bollag'),
+                            ('index', u'Bollag, RJ')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'Z Siegfried'),
+                            ('index', u'Siegfried, Z')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'J Cebra-Thomas'),
+                            ('index', u'Cebra-Thomas, J')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'N Garvey'),
+                            ('index', u'Garvey, N')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'EM Davison'),
+                            ('index', u'Davison, EM')
+                        ]))
+                    ]), OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'LM Silver'),
+                            ('index', u'Silver, LM')
+                    ]))
+                ])]),
+                ('title', u'Mus musculus T-box 2 (Tbx2), mRNA'),
+                ('details', u'Mus musculus T-box 2 (Tbx2), mRNA, NCBI Nucleotide, NM_009324, \nhttp://www.ncbi.nlm.nih.gov/nuccore/120407038\n'),
+                ('uri', u'http://www.ncbi.nlm.nih.gov/nuccore/120407038')
+            ])
+        ]
+        ),
+
         )
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2809,6 +2957,154 @@ class TestParseJats(unittest.TestCase):
             'uri_text': u'www.ncbi.nlm.nih.gov/pubmed/17653513',
             "year": "2007",
         }]
+        ),
+
+         # example of data citation with a pub-id accession, based on article 07836
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
+<ref-list><ref id="bib105">
+<element-citation publication-type="data">
+<person-group person-group-type="author">
+<name>
+<surname>Steinbaugh</surname>
+<given-names>MJ</given-names>
+</name>
+<name>
+<surname>Dreyfuss</surname>
+<given-names>JM</given-names>
+</name>
+<name>
+<surname>Blackwell</surname>
+<given-names>TK</given-names>
+</name>
+</person-group>
+<year iso-8601-date="2015">2015</year>
+<data-title>
+RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
+</data-title>
+<source>NCBI Gene Expression Omnibus</source>
+<pub-id pub-id-type="accession" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075">GSE63075</pub-id>
+</element-citation>
+</ref></ref-list></back></article></root>''',
+        [
+            {
+                "data-title": "\nRNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans\n",
+                "article_doi": "10.5334/cstp.77",
+                "authors": [
+                    {
+                        "surname": "Steinbaugh",
+                        "given-names": "MJ",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Dreyfuss",
+                        "given-names": "JM",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Blackwell",
+                        "given-names": "TK",
+                        "group-type": "author"
+                    }
+                ],
+                "accession": "GSE63075",
+                "publication-type": "data",
+                "source": "NCBI Gene Expression Omnibus",
+                "year": "2015",
+                "position": 1,
+                "year-iso-8601-date": "2015",
+                "ref": "Steinbaugh MJ Dreyfuss JM Blackwell TK 2015 RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans NCBI Gene Expression Omnibus GSE63075",
+                "id": "bib105"
+            }
+        ]
+        ),
+
+         # example of data citation with a object-id tag accession, based on article 07048
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
+<ref-list><ref id="bib15">
+<element-citation publication-type="data">
+<person-group person-group-type="author">
+<name>
+<surname>Bollag</surname>
+<given-names>RJ</given-names>
+</name>
+<name>
+<surname>Siegfried</surname>
+<given-names>Z</given-names>
+</name>
+<name>
+<surname>Cebra-Thomas</surname>
+<given-names>J</given-names>
+</name>
+<name>
+<surname>Garvey</surname>
+<given-names>N</given-names>
+</name>
+<name>
+<surname>Davison</surname>
+<given-names>EM</given-names>
+</name>
+<name>
+<surname>Silver</surname>
+<given-names>LM</given-names>
+</name>
+</person-group>
+<year>1994b</year>
+<data-title>Mus musculus T-box 2 (Tbx2), mRNA</data-title>
+<source>NCBI Nucleotide</source>
+<object-id pub-id-type="art-access-id">NM_009324</object-id>
+<comment>
+<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/nuccore/120407038">http://www.ncbi.nlm.nih.gov/nuccore/120407038</ext-link>
+</comment>
+</element-citation>
+</ref></ref-list></back></article></root>''',
+        [
+            {
+                "uri_text": "http://www.ncbi.nlm.nih.gov/nuccore/120407038",
+                "comment": "\nhttp://www.ncbi.nlm.nih.gov/nuccore/120407038\n",
+                "data-title": "Mus musculus T-box 2 (Tbx2), mRNA",
+                "article_doi": "10.5334/cstp.77",
+                "authors": [
+                    {
+                        "surname": "Bollag",
+                        "given-names": "RJ",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Siegfried",
+                        "given-names": "Z",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Cebra-Thomas",
+                        "given-names": "J",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Garvey",
+                        "given-names": "N",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Davison",
+                        "given-names": "EM",
+                        "group-type": "author"
+                    },
+                    {
+                        "surname": "Silver",
+                        "given-names": "LM",
+                        "group-type": "author"
+                    }
+                ],
+                "accession": "NM_009324",
+                "uri": "http://www.ncbi.nlm.nih.gov/nuccore/120407038",
+                "source": "NCBI Nucleotide",
+                "year": "1994b",
+                "position": 1,
+                "publication-type": "data",
+                "ref": "Bollag RJ Siegfried Z Cebra-Thomas J Garvey N Davison EM Silver LM 1994b Mus musculus T-box 2 (Tbx2), mRNA NCBI Nucleotide NM_009324 http://www.ncbi.nlm.nih.gov/nuccore/120407038",
+                "id": "bib15"
+            }
+        ]
         ),
 
         )
