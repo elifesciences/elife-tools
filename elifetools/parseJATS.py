@@ -2435,7 +2435,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
