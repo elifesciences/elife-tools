@@ -3,8 +3,8 @@ import os
 import StringIO
 from ddt import ddt, data, unpack
 from xml.etree import ElementTree
-from xml.etree.ElementTree import Element
-
+from xml.etree.ElementTree import Element, SubElement
+from xml.dom import minidom
 from elifetools import xmlio
 
 from file_utils import sample_xml
@@ -88,6 +88,24 @@ class TestXmlio(unittest.TestCase):
         xml_output = xmlio.output_root(root, doctype, encoding)
         self.assertEqual(xml_output, xml_expected)
 
+    def test_append_minidom_xml_to_elementtree_xml(self):
+        "test coverage of an edge case"
+        parent = Element('root')
+        tag = SubElement(parent, 'i')
+        tag.text = "Text"
+        tag.tail = " and tail."
+        attributes = ["class"]
+        # Add a first example
+        xml = '<span><i>and</i> some <i>XML</i>.</span>'
+        reparsed = minidom.parseString(xml.encode('utf-8'))
+        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed)
+        # Add another example to test more lines of code
+        xml = '<span class="span"> <i>more</i> text</span>'
+        reparsed = minidom.parseString(xml.encode('utf-8'))
+        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, False, attributes)
+        # Generate output and compare it
+        rough_string = ElementTree.tostring(parent)
+        self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i>XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
 
 if __name__ == '__main__':
     unittest.main()
