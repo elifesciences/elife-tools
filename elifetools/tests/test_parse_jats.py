@@ -362,7 +362,7 @@ class TestParseJats(unittest.TestCase):
                 ('uri', u'elife-16996-supp-v1.zip'),
                 ('filename', u'elife-16996-supp-v1.zip'),
                 ('id', 'SD1-data'), 
-                ('title', 'All additional files'),
+                ('label', 'All additional files'),
                 ('caption', [OrderedDict([
                     ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
                     ('type', 'paragraph'),
@@ -373,7 +373,36 @@ class TestParseJats(unittest.TestCase):
 
         # Datasets from 08477 v1 VoR
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD2-data"><object-id pub-id-type="doi">10.7554/eLife.08477.007</object-id><label>Source code 1.</label><caption><p>A Matlab GUI for synchronized video-taping and song stimulation in <xref ref-type="fig" rid="fig3">Figure 3</xref>.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.007">http://dx.doi.org/10.7554/eLife.08477.007</ext-link></p></caption><media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code1-v1.zip"/></supplementary-material><supplementary-material id="SD3-data"><object-id pub-id-type="doi">10.7554/eLife.08477.011</object-id><label>Source code 2.</label><caption><p>A Matlab GUI for processing and analyzing the calcium-imaging data in <xref ref-type="fig" rid="fig5">Figure 5</xref>.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.011">http://dx.doi.org/10.7554/eLife.08477.011</ext-link></p></caption><media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code2-v1.zip"/></supplementary-material></sec></back></root>',
-        [OrderedDict([('doi', u'10.7554/eLife.08477.007'), ('id', u'SD2-data'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'A Matlab GUI for synchronized video-taping and song stimulation in <a href="#fig3">Figure 3</a>.')])]),('title', u'Source code 1.'), ('mediaType', u'application/zip'), ('uri', u'elife-08477-code1-v1.zip'), ('filename', u'elife-08477-code1-v1.zip')]), OrderedDict([('doi', u'10.7554/eLife.08477.011'), ('id', u'SD3-data'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'A Matlab GUI for processing and analyzing the calcium-imaging data in <a href="#fig5">Figure 5</a>.')])]), ('title', u'Source code 2.'), ('mediaType', u'application/zip'), ('uri', u'elife-08477-code2-v1.zip'), ('filename', u'elife-08477-code2-v1.zip')])]
+        [
+            OrderedDict([
+                ('doi', u'10.7554/eLife.08477.007'),
+                ('id', u'SD2-data'),
+                ('label', u'Source code 1'),
+                ('caption', [
+                    OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', u'A Matlab GUI for synchronized video-taping and song stimulation in <a href="#fig3">Figure 3</a>.')
+                    ])
+                ]),
+                ('mediaType', u'application/zip'),
+                ('uri', u'elife-08477-code1-v1.zip'),
+                ('filename', u'elife-08477-code1-v1.zip')
+            ]),
+            OrderedDict([
+                ('doi', u'10.7554/eLife.08477.011'),
+                ('id', u'SD3-data'),
+                ('label', u'Source code 2'),
+                ('caption', [
+                    OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', u'A Matlab GUI for processing and analyzing the calcium-imaging data in <a href="#fig5">Figure 5</a>.')
+                    ])
+                ]),
+                ('mediaType', u'application/zip'),
+                ('uri', u'elife-08477-code2-v1.zip'),
+                ('filename', u'elife-08477-code2-v1.zip')
+            ])
+        ]
          ),
 
 
@@ -385,7 +414,7 @@ class TestParseJats(unittest.TestCase):
                 ('uri', u'elife-02184-supp-v1.zip'),
                 ('filename', u'elife-02184-supp-v1.zip'), 
                 ('id', 'SD1-data'),
-                ('title', 'All additional files'),
+                ('label', 'All additional files'),
                 ('caption', [OrderedDict([
                     ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
                     ('type', 'paragraph'),
@@ -402,168 +431,183 @@ class TestParseJats(unittest.TestCase):
             ('uri', u'elife-04493-supp-v1.zip'),
             ('filename', u'elife-04493-supp-v1.zip'),
             ('id', 'SD1-data'),
-            ('title', 'Supplementary file 1.')
+            ('label', 'Supplementary file 1.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_2.zip'),
             ('filename', u'Video_2.zip'),
             ('id', 'SD2-data'),
-            ('title', 'Supplementary file 2.')
+            ('label', 'Supplementary file 2.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_8.zip'),
             ('filename', u'Video_8.zip'),
             ('id', 'SD3-data'),
-            ('title', 'Supplementary file 3.')
+            ('label', 'Supplementary file 3.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_6.zip'),
             ('filename', u'Video_6.zip'),
             ('id', 'SD4-data'),
-            ('title', 'Supplementary file 4.')
+            ('label', 'Supplementary file 4.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_11.zip'),
             ('filename', u'Video_11.zip'),
             ('id', 'SD5-data'),
-            ('title', 'Supplementary file 5.')
+            ('label', 'Supplementary file 5.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_17.zip'),
             ('filename', u'Video_17.zip'),
             ('id', 'SD6-data'),
-            ('title', 'Supplementary file 6.')
+            ('label', 'Supplementary file 6.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_18.zip'),
             ('filename', u'Video_18.zip'),
             ('id', 'SD7-data'),
-            ('title', 'Supplementary file 7.')
+            ('label', 'Supplementary file 7.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_7.zip'),
             ('filename', u'Video_7.zip'),
             ('id', 'SD8-data'),
-            ('title', 'Supplementary file 8.')
+            ('label', 'Supplementary file 8.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_10.zip'),
             ('filename', u'Video_10.zip'),
             ('id', 'SD9-data'),
-            ('title', 'Supplementary file 9.')
+            ('label', 'Supplementary file 9.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_5.zip'),
             ('filename', u'Video_5.zip'),
             ('id', 'SD10-data'),
-            ('title', 'Supplementary file 10.')
+            ('label', 'Supplementary file 10.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_13.zip'),
             ('filename', u'Video_13.zip'),
             ('id', 'SD11-data'),
-            ('title', 'Supplementary file 11.')
+            ('label', 'Supplementary file 11.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_19.zip'),
             ('filename', u'Video_19.zip'),
             ('id', 'SD12-data'),
-            ('title', 'Supplementary file 12.')
+            ('label', 'Supplementary file 12.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_15.zip'),
             ('filename', u'Video_15.zip'),
             ('id', 'SD13-data'),
-            ('title', 'Supplementary file 13.')
+            ('label', 'Supplementary file 13.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_21.zip'),
             ('filename', u'Video_21.zip'),
             ('id', 'SD14-data'),
-            ('title', 'Supplementary file 14.')
+            ('label', 'Supplementary file 14.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_22.zip'),
             ('filename', u'Video_22.zip'),
             ('id', 'SD15-data'),
-            ('title', 'Supplementary file 15.')
+            ('label', 'Supplementary file 15.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_4.zip'),
             ('filename', u'Video_4.zip'),
             ('id', 'SD16-data'),
-            ('title', 'Supplementary file 16.')
+            ('label', 'Supplementary file 16.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_20.zip'),
             ('filename', u'Video_20.zip'),
             ('id', 'SD17-data'),
-            ('title', 'Supplementary file 17.')
+            ('label', 'Supplementary file 17.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_12.zip'),
             ('filename', u'Video_12.zip'),
             ('id', 'SD18-data'),
-            ('title', 'Supplementary file 18.')
+            ('label', 'Supplementary file 18.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_1.zip'),
             ('filename', u'Video_1.zip'),
             ('id', 'SD19-data'),
-            ('title', 'Supplementary file 19.')
+            ('label', 'Supplementary file 19.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_16.zip'),
             ('filename', u'Video_16.zip'),
             ('id', 'SD20-data'),
-            ('title', 'Supplementary file 20.')
+            ('label', 'Supplementary file 20.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_3.zip'),
             ('filename', u'Video_3.zip'),
             ('id', 'SD21-data'),
-            ('title', 'Supplementary file 21.')
+            ('label', 'Supplementary file 21.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_9.zip'),
             ('filename', u'Video_9.zip'),
             ('id', 'SD22-data'),
-            ('title', 'Supplementary file 22.')
+            ('label', 'Supplementary file 22.')
         ]),
         OrderedDict([
             ('mediaType', 'application/zip'),
             ('uri', u'Video_14.zip'),
             ('filename', u'Video_14.zip'),
             ('id', 'SD23-data'),
-            ('title', 'Supplementary file 23.')
+            ('label', 'Supplementary file 23.')
         ])
         ]
         ),
 
         # 10110 v1 excerpt, should only extract the supplementary-material from the back matter
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><sec><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.10110.004</object-id><label>Figure 1—source data 1.</label><caption><title>Dauer assay data for individual trials in <xref ref-type="fig" rid="fig1">Figure 1</xref>.</title><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.004">http://dx.doi.org/10.7554/eLife.10110.004</ext-link></p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-10110-fig1-data1-v1.xlsx"/></supplementary-material></p></sec></body><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD9-data"><object-id pub-id-type="doi">10.7554/eLife.10110.026</object-id><label>Supplementary file 1.</label><caption><p>List of strains used in this work.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.026">http://dx.doi.org/10.7554/eLife.10110.026</ext-link></p></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-10110-supp1-v1.docx"/></supplementary-material></back></root>',
-        [OrderedDict([('doi', u'10.7554/eLife.10110.026'), ('id', u'SD9-data'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'List of strains used in this work.')])]), ('title', u'Supplementary file 1.'), ('mediaType', u'application/docx'), ('uri', u'elife-10110-supp1-v1.docx'), ('filename', u'elife-10110-supp1-v1.docx')])]
+        [
+            OrderedDict([
+                ('doi', u'10.7554/eLife.10110.026'),
+                ('id', u'SD9-data'),
+                ('label', u'Supplementary file 1'),
+                ('caption', [
+                    OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', u'List of strains used in this work.')
+                    ])
+                ]),
+                ('mediaType', u'application/docx'),
+                ('uri', u'elife-10110-supp1-v1.docx'),
+                ('filename', u'elife-10110-supp1-v1.docx')
+            ])
+        ]
          ),
 
         # 03405 v1, label and no title tag
@@ -572,7 +616,7 @@ class TestParseJats(unittest.TestCase):
             OrderedDict([
                 ('doi', u'10.7554/eLife.03405.026'), 
                 ('id', u'SD1-data'),
-                ('title', u'Source code 1.'), 
+                ('label', u'Source code 1'), 
                 ('mediaType', u'application/rar'),
                 ('uri', u'elife-03405-code1-v1.rar'),
                 ('filename', u'elife-03405-code1-v1.rar')
@@ -581,8 +625,45 @@ class TestParseJats(unittest.TestCase):
 
        # 00333 v1, mimetype contains a slash so ignore sub-mimetype
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00333.023</object-id><label>Source code 1.</label><caption><p>Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00333.023">http://dx.doi.org/10.7554/eLife.00333.023</ext-link></p></caption><media mime-subtype="zip" mimetype="application/zip" xlink:href="elife-00333-code1-v1.zip"/></supplementary-material></sec></back></root>',
-        [OrderedDict([('doi', u'10.7554/eLife.00333.023'), ('id', u'SD1-data'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.')])]), ('title', u'Source code 1.'),  ('mediaType', u'application/zip'), ('uri', u'elife-00333-code1-v1.zip'), ('filename', u'elife-00333-code1-v1.zip')])]
+        [
+            OrderedDict([
+                ('doi', u'10.7554/eLife.00333.023'),
+                ('id', u'SD1-data'),
+                ('label', u'Source code 1'),
+                ('caption', [
+                    OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', u'Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.')
+                    ])
+                ]),
+                ('mediaType', u'application/zip'),
+                ('uri', u'elife-00333-code1-v1.zip'),
+                ('filename', u'elife-00333-code1-v1.zip')
+            ])
+        ]
          ),
+
+        # 26759 v2, example of title tag and no label tag
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="supp1"><object-id pub-id-type="doi">10.7554/eLife.26759.018</object-id><label>Supplementary file 1.</label><caption><title>All primer sequences used in this study.</title></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-supp1-v2.docx"/></supplementary-material><supplementary-material id="transrepform"><object-id pub-id-type="doi">10.7554/eLife.26759.019</object-id><caption><title>Transparent reporting form</title></caption><media mime-subtype="pdf" mimetype="application" xlink:href="elife-26759-transrepform-v2.pdf"/></supplementary-material></sec></back></root>',
+        [
+            OrderedDict([
+                ('doi', u'10.7554/eLife.26759.018'),
+                ('id', u'supp1'),
+                ('label', u'Supplementary file 1'),
+                ('title', u'All primer sequences used in this study.'),
+                ('mediaType', u'application/docx'),
+                ('uri', u'elife-26759-supp1-v2.docx'),
+                ('filename', u'elife-26759-supp1-v2.docx')
+            ]), OrderedDict([
+                ('doi', u'10.7554/eLife.26759.019'),
+                ('id', u'transrepform'),
+                ('label', u'Transparent reporting form'),
+                ('mediaType', u'application/pdf'),
+                ('uri', u'elife-26759-transrepform-v2.pdf'),
+                ('filename', u'elife-26759-transrepform-v2.pdf')
+            ])
+        ]
+        ),
 
         )
     def test_supplementary_files_json(self, xml_content, expected):
@@ -1619,7 +1700,12 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'image'), ('id', u'fig1'), ('title', u'Fig title not in a paragraph'), ('image', {'alt': '', 'uri': u'elife-00639-fig1-v1.tif'})])
+        OrderedDict([
+            ('type', 'image'),
+            ('id', u'fig1'),
+            ('title', u'Fig title not in a paragraph'),
+            ('image', {'alt': '', 'uri': u'elife-00639-fig1-v1.tif'})
+        ])
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></root>',
@@ -1726,7 +1812,41 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
          ),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="media2" mime-subtype="mov" mimetype="video" xlink:href="elife-00005-media2.mov"><object-id pub-id-type="doi">10.7554/eLife.00005.016</object-id><label>Movie 2.</label><caption><title>3D reconstruction of the human PRC2-AEBP2 complex.</title><p>Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00005.017</object-id><label>Movie 2—source code 1.</label><caption><p>Overall architecture of the PRC2 complex.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.017">http://dx.doi.org/10.7554/eLife.00005.017</ext-link></p></caption><media mime-subtype="wrl" mimetype="application" xlink:href="elife-00005-media2-code1-v1.wrl"/></supplementary-material></p></caption></media>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00005.016'), ('id', u'media2'), ('label', u'Movie 2'), ('title', u'3D reconstruction of the human PRC2-AEBP2 complex.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.')])]), ('uri', u'elife-00005-media2.mov'), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00005.017'), ('id', u'SD1-data'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Overall architecture of the PRC2 complex.')])]), ('title', u'Movie 2\u2014source code 1.'), ('mediaType', u'application/wrl'), ('uri', u'elife-00005-media2-code1-v1.wrl'), ('filename', u'elife-00005-media2-code1-v1.wrl')])])])])])
+        OrderedDict([
+            ('type', 'figure'),
+            ('assets', [
+                OrderedDict([
+                    ('type', 'video'),
+                    ('doi', u'10.7554/eLife.00005.016'),
+                    ('id', u'media2'),
+                    ('label', u'Movie 2'),
+                    ('title', u'3D reconstruction of the human PRC2-AEBP2 complex.'),
+                    ('caption', [
+                        OrderedDict([
+                            ('type', 'paragraph'),
+                            ('text', u'Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.')
+                        ])
+                    ]),
+                    ('uri', u'elife-00005-media2.mov'),
+                    ('sourceData', [
+                        OrderedDict([
+                            ('doi', u'10.7554/eLife.00005.017'),
+                            ('id', u'SD1-data'),
+                            ('label', u'Movie 2\u2014source code 1'),
+                            ('caption', [
+                                OrderedDict([
+                                    ('type', 'paragraph'),
+                                    ('text', u'Overall architecture of the PRC2 complex.')
+                                ])
+                            ]),
+                            ('mediaType', u'application/wrl'),
+                            ('uri', u'elife-00005-media2-code1-v1.wrl'),
+                            ('filename', u'elife-00005-media2-code1-v1.wrl')
+                        ])
+                    ])
+                ])
+            ])
+        ])
          ),
 
         ('<root><disp-quote><p>content</p></disp-quote></root>',

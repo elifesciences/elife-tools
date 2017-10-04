@@ -2176,7 +2176,7 @@ def body_block_paragraph_content(text):
     return tag_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
-                                   caption_content, set_caption=True, prefer_title=False):
+                                   caption_content, set_caption=True, prefer_title=False, prefer_label=False):
     """set the title, label and caption values in a consistent way
     
     set_caption: insert a "caption" field
@@ -2189,6 +2189,10 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
         if "title" not in tag_content and label_value:
             set_if_value(tag_content, "title", label_value)
             del(tag_content["label"])
+    if prefer_label:
+        if "label" not in tag_content and title_value:
+            set_if_value(tag_content, "label", title_value)
+            del(tag_content["title"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2217,7 +2221,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False, True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, set_caption=False, prefer_title=True)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -2261,7 +2265,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
 
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         tables = raw_parser.table(tag)
         asset_tag_content["tables"] = []
@@ -2333,7 +2337,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         if raw_parser.graphic(tag):
             image_content = {}
@@ -2393,7 +2397,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         set_if_value(asset_tag_content, "uri", tag.get('xlink:href'))
         if "uri" in asset_tag_content and asset_tag_content["uri"].endswith('.gif'):
@@ -2435,7 +2439,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, set_caption=True, prefer_label=True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
@@ -3656,7 +3660,7 @@ def supplementary_files_json(soup):
         i = 1
         for file in additional_files_json:
             file["id"] = "SD" + str(i) + "-data"
-            file["title"] = "Supplementary file " + str(i) + "."
+            file["label"] = "Supplementary file " + str(i) + "."
             i = i + 1
 
     # if there is a single supplementary zip file for PoA,
@@ -3665,7 +3669,7 @@ def supplementary_files_json(soup):
         single_additional_file = additional_files_json[0]['filename']
         if re.match("^.+-supp-.+\.zip$", single_additional_file):
             file = additional_files_json[0]
-            file["title"] = "All additional files"
+            file["label"] = "All additional files"
             file['caption'] = [{
                 "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
                 "type": "paragraph",
