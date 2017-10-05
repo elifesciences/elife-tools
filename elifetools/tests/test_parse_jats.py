@@ -1667,6 +1667,33 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @unpack
     @data(
+        (None, None, None, None, None, None, None, None, None),
+        ('title', None, None, None, None, None, 'title', None, None),
+        (None, 'label', None, None, None, None, None, 'label', None),
+        ('title', 'label', 'caption', None, None, None, 'title', 'label', None),
+        ('title', 'label', 'caption', True, None, None, 'title', 'label', 'caption'),
+        (None, 'label', None, None, True, None, 'label', None, None),
+        (None, 'label', None, None, True, True, 'label', None, None),
+        ('title', None, None, None, True, True, None, 'title', None),
+        ('title', None, None, None, None, True, None, 'title', None),
+        ('title', 'label', None, None, True, None, 'title', 'label', None),
+        ('title.', None, None, None, None, True, None, 'title', None),
+        (None, 'label:', None, None, True, None, 'label:', None, None),
+    )
+    def test_body_block_title_label_caption(self, title_value, label_value, caption_content,
+                                            set_caption, prefer_title, prefer_label,
+                                            expected_title, expected_label, expected_caption):
+        tag_content = OrderedDict()
+        parser.body_block_title_label_caption(tag_content, title_value, label_value,
+                                              caption_content, set_caption,
+                                              prefer_title, prefer_label)
+        self.assertEqual(tag_content.get('label'), expected_label)
+        self.assertEqual(tag_content.get('title'), expected_title)
+        self.assertEqual(tag_content.get('caption'), expected_caption)
+
+
+    @unpack
+    @data(
         ('<root><sec sec-type="intro" id="s1"><title>Introduction <italic>section</italic></title><p>content</p></sec></root>',
          OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Introduction <i>section</i>')])
          ),
@@ -2258,6 +2285,40 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
                                 ('text', u'(<b>A</b>\u2013<b>J</b>)')
                             ])
                         ])
+                    ])
+                ])
+            ])
+        ]
+        ),
+
+        # example of fig supplementary-material with only a title tag, based on elife-26759-v1.xml except
+        #  this example is fixed so the caption tag wraps the entire caption, and values are abbreviated
+        #  to test how the punctuation is stripped from the end of the supplementary-material title value
+        #  when it is converted to a label
+        (u'<fig-group><fig id="fig5" position="float"><object-id pub-id-type="doi">10.7554/eLife.26759.012</object-id><label>Figure 5.</label><caption><title>CUL3-BOP complex ....</p><p><supplementary-material id="fig5sdata1"><object-id pub-id-type="doi">10.7554/eLife.26759.014</object-id><caption><title>Quantification of ubiquitinated PIF4-HA protein levels relative to total ubiquitinated proteins from TUBEs assays.</title></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-fig1-v1.docx"/></supplementary-material></p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-v1"/></fig><fig id="fig5s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.26759.013</object-id><label>Figure 5—figure supplement 1.</label><caption><title>BOP2 mediates ....</p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-figsupp1-v1"/></fig></fig-group>',
+        [
+            OrderedDict([
+                ('type', 'figure'),
+                ('assets', [
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.26759.012'),
+                        ('id', u'fig5'),
+                        ('label', u'Figure 5'),
+                        ('title', u'CUL3-BOP complex ....'),
+                        ('sourceData', [
+                            OrderedDict([
+                                ('doi', u'10.7554/eLife.26759.014'),
+                                ('id', u'fig5sdata1'),
+                                ('label', u'Quantification of ubiquitinated PIF4-HA protein levels relative to total ubiquitinated proteins from TUBEs assays'), ('mediaType', u'application/docx')
+                            ])
+                        ])
+                    ]), OrderedDict([
+                        ('type', 'image'),
+                        ('doi', u'10.7554/eLife.26759.013'),
+                        ('id', u'fig5s1'),
+                        ('label', u'Figure 5\u2014figure supplement 1'),
+                        ('title', u'BOP2 mediates ....')
                     ])
                 ])
             ])

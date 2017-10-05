@@ -2191,7 +2191,7 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
             del(tag_content["label"])
     if prefer_label:
         if "label" not in tag_content and title_value:
-            set_if_value(tag_content, "label", title_value)
+            set_if_value(tag_content, "label", rstrip_punctuation(title_value))
             del(tag_content["title"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
