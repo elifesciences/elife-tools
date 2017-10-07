@@ -368,7 +368,7 @@
         "full_label": "Box 1.", 
         "caption": "Example of a small box", 
         "full_caption": "Example of a small box", 
-        "content": "Example of a small box Donec rhoncus in odio non vulputate. Donec vitae enim at erat tincidunt tincidunt in nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac \n                            turpis egestas. Aliquam id nunc id arcu maximus rutrum. Praesent bibendum nisl orci, ac sollicitudin purus aliquam in. Duis eu fermentum arcu. Fusce eget dolor augue. \n                            Nulla facilisi. Suspendisse eu nisl vitae neque ullamcorper imperdiet. (see Nell\u00e5ker, 2014; \n                                Pages et al., 2014; and  Palmer et al., 2007) Vestibulum ultrices vehicula nibh, \n                            a ullamcorper dui semper suscipit. Etiam in sem augue.", 
+        "content": "Example of a small box Donec rhoncus in odio non vulputate. Donec vitae enim at erat tincidunt tincidunt in nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac \n                            turpis egestas. Aliquam id nunc id arcu maximus rutrum. Praesent bibendum nisl orci, ac sollicitudin purus aliquam in. Duis eu fermentum arcu. Fusce eget dolor augue. \n                            Nulla facilisi. Suspendisse eu nisl vitae neque ullamcorper imperdiet. (see Nell\u00e5ker, 2014; \n                                Pages et al., 2014; and Palmer et al., 2007) Vestibulum ultrices vehicula nibh, \n                            a ullamcorper dui semper suscipit. Etiam in sem augue.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "boxed-text", 
         "position": 20, 
@@ -466,13 +466,11 @@
         "asset": "code"
     }, 
     {
-        "doi": "10.7554/eLife.00666.022", 
-        "doi_url": "https://doi.org/10.7554/eLife.00666.022", 
+        "doi": "10.7554/eLife.00666.034", 
+        "doi_url": "https://doi.org/10.7554/eLife.00666.034", 
         "id": "repstand1", 
-        "title": "CONSORT flow diagram.", 
-        "full_title": "CONSORT flow diagram.", 
-        "label": "Reporting Standard 1.", 
-        "full_label": "Reporting Standard 1.", 
+        "label": "Consort checklist and flow diagram.", 
+        "full_label": "Consort checklist and flow diagram.", 
         "mimetype": "application", 
         "mime-subtype": "pdf", 
         "article_doi": "10.7554/eLife.00666", 
@@ -480,6 +478,21 @@
         "position": 26, 
         "ordinal": 8, 
         "sibling_ordinal": 2, 
+        "asset": "supp"
+    }, 
+    {
+        "doi": "10.7554/eLife.00666.022", 
+        "doi_url": "https://doi.org/10.7554/eLife.00666.022", 
+        "id": "transrepform", 
+        "label": "Transparent reporting form.", 
+        "full_label": "Transparent reporting form.", 
+        "mimetype": "application", 
+        "mime-subtype": "pdf", 
+        "article_doi": "10.7554/eLife.00666", 
+        "type": "supplementary-material", 
+        "position": 27, 
+        "ordinal": 9, 
+        "sibling_ordinal": 3, 
         "asset": "supp"
     }, 
     {
@@ -492,7 +505,7 @@
         "content": "In order to prepare for this Kitchen sink we reviewed our archive and found common errors or miscommunication from the archive, tagging of Appendix 1\u2014Figure \n                        1 is a classic example and here the tagging is updated. Appendices figures can also have figure supplements, for example Appendix 1\u2014Figure \n                            1\u2014Figure Supplement 1 (Koch, 1959). If there is a caption to accompany the title it would display here (Koch, 1959). If there is a caption to accompany the title it would display here. This is the text of the content of subheading 1 within appendix 2. This is the text of the content of subheading 2 within appendix 2. This is the caption: A table containing interesting formating that is large enough to require landscape orientation in the PDF. Footnotes not linked to content within the table text are usually to define abbreviations. For example: WT, wild type.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "boxed-text", 
-        "position": 27, 
+        "position": 28, 
         "ordinal": 3, 
         "sibling_ordinal": 1, 
         "asset": null
@@ -514,7 +527,7 @@
         "content": "If there is a caption to accompany the title it would display here (Koch, 1959).", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "fig", 
-        "position": 28, 
+        "position": 29, 
         "ordinal": 9, 
         "sibling_ordinal": 1, 
         "asset": null
@@ -540,7 +553,7 @@
         "content": "If there is a caption to accompany the title it would display here.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "fig", 
-        "position": 29, 
+        "position": 30, 
         "ordinal": 10, 
         "sibling_ordinal": 2, 
         "asset": "figsupp"
@@ -562,8 +575,8 @@
         "content": "This is the caption: A table containing interesting formating that is large enough to require landscape orientation in the PDF. Footnotes not linked to content within the table text are usually to define abbreviations. For example: WT, wild type.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "table-wrap", 
-        "position": 30, 
-        "ordinal": 5, 
+        "position": 31, 
+        "ordinal": 6, 
         "sibling_ordinal": 1, 
         "asset": null
     }, 
@@ -575,7 +588,7 @@
         "content": "Generating the new rules involved negotation with varous vendors and downsteam hosts to ensure display would work for all instances. See Appendix 2\u2014Video 1 \n                            and Apendix 2\u2014Table 1. Appendix table.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "boxed-text", 
-        "position": 31, 
+        "position": 32, 
         "ordinal": 4, 
         "sibling_ordinal": 1, 
         "asset": null
@@ -596,8 +609,8 @@
         "mime-subtype": "mp4", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "media", 
-        "position": 32, 
-        "ordinal": 12, 
+        "position": 33, 
+        "ordinal": 13, 
         "sibling_ordinal": 1, 
         "asset": "media"
     }, 
@@ -616,8 +629,8 @@
         "content": "Appendix table.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "table-wrap", 
-        "position": 33, 
-        "ordinal": 6, 
+        "position": 34, 
+        "ordinal": 7, 
         "sibling_ordinal": 1, 
         "asset": null
     }, 
@@ -629,7 +642,7 @@
         "content": "This is an example of an appendix with no sections.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "boxed-text", 
-        "position": 34, 
+        "position": 35, 
         "ordinal": 5, 
         "sibling_ordinal": 1, 
         "asset": null
@@ -642,7 +655,7 @@
         "full_title": "Decision letter", 
         "contributors": [
             {
-                "role": "Reviewing editor", 
+                "role": "Reviewing Editor", 
                 "surname": "Collings", 
                 "given-names": "Andy", 
                 "type": "editor", 
@@ -657,7 +670,7 @@
         "content": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. \n                        A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns;\n                        minor comments are not usually included. Thank you for submitting your article \"The eLife research article\" for consideration by eLife. \n                    Your article has been reviewed by three peer reviewers, one of whom, Joe Bloggs, \n                    is a member of our editorial board and also oversaw the process as Senior editor. \n                    John Doe (peer reviewer) has agreed to reveal his identity.\n                 \n                    The reviewers have discussed the reviews with one another and the Reviewing Editor has drafted this decision to help you prepare a revised submission.\n                 You need to make sure the XML structure you creates works on the display of the PMC platform and also that there is enough information contained within the \n                    tagging to generate a typeset PDF from the XML with no additional information provided.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "sub-article", 
-        "position": 35, 
+        "position": 36, 
         "ordinal": 1, 
         "sibling_ordinal": 1, 
         "asset": "dec"
@@ -672,10 +685,10 @@
         "full_label": "Author response image 1.", 
         "caption": "Single figure: The header of an eLife article example on the HTML page.", 
         "full_caption": "Single figure: The header of an eLife article example on the HTML page.", 
-        "content": "You need to make sure the XML structure you creates works on the display of the PMC platform and also that there is enough \n    information contained within the tagging to generate a typeset PDF from the XML with no additional information provided. In response to this comment, we validated the XML against the DTD (JATS 1) each time we made an update. We also regularly used the \n                PMC validator to check our decisions against display on the PMC site, see Author response image 1., \n                Author response video 1 and Author response table 1. Single figure: The header of an eLife article example on the HTML page. Author response table Caption and/or a title is required for all author response assets However, some decisions required some communication with PMC \n                to discuss whether any of our updates could be accomodated by them - during this review we aimed to reduce the complexity of the XML structure and remove all \n                formatting and bioler plate text required for a PDF display format. We also produced buisness rules {Insert table} in order to produce rules for the \n                production systems and the website to follow. These buisness rules also informed the basis for a set of Schematron rules for our references.{Insert table} If an author referes to a reference in the response letter it is cross linked to the reference in the reference list (Coyne et al.,\n                1989), however, if it is a new reference only cited in the decision letter or author response it is not added to the main reference link and is just listed as free\n                text, for example, Butcher et al, 2006. If the author provides the reference it can be added as free text to the end of the letter, however, this is not a requirement\n                .", 
+        "content": "The reviewers have discussed the reviews with one another and the Reviewing Editor has drafted this decision to help you\n    prepare a revised submission. You need to make sure the XML structure you creates works on the display of the PMC platform and also that there is enough \n    information contained within the tagging to generate a typeset PDF from the XML with no additional information provided. In response to this comment, we validated the XML against the DTD (JATS 1) each time we made an update. We also regularly used the \n                PMC validator to check our decisions against display on the PMC site, see Author response image 1., \n                Author response video 1 and Author response table 1. Single figure: The header of an eLife article example on the HTML page. Author response table Caption and/or a title is required for all author response assets However, some decisions required some communication with PMC \n                to discuss whether any of our updates could be accomodated by them - during this review we aimed to reduce the complexity of the XML structure and remove all \n                formatting and bioler plate text required for a PDF display format. We also produced buisness rules {Insert table} in order to produce rules for the \n                production systems and the website to follow. These buisness rules also informed the basis for a set of Schematron rules for our references.{Insert table} If an author referes to a reference in the response letter it is cross linked to the reference in the reference list (Coyne and Orr,\n                1989), however, if it is a new reference only cited in the decision letter or author response it is not added to the main reference link and is just listed as free\n                text, for example, Butcher et al, 2006. If the author provides the reference it can be added as free text to the end of the letter, however, this is not a requirement\n                . Adding some MathML to the sub-article.\n\n\n\nm\n\n\n\n\np\n\n\nm\n\n=\n0\n\n\n\n\n", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "sub-article", 
-        "position": 36, 
+        "position": 37, 
         "ordinal": 2, 
         "sibling_ordinal": 2, 
         "asset": "resp"
@@ -695,7 +708,7 @@
         "content": "Single figure: The header of an eLife article example on the HTML page.", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "fig", 
-        "position": 37, 
+        "position": 38, 
         "ordinal": 11, 
         "sibling_ordinal": 1, 
         "asset": null
@@ -715,8 +728,8 @@
         "content": "Author response table", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "table-wrap", 
-        "position": 38, 
-        "ordinal": 7, 
+        "position": 39, 
+        "ordinal": 8, 
         "sibling_ordinal": 1, 
         "asset": null
     }, 
@@ -737,8 +750,8 @@
         "mime-subtype": "mp4", 
         "article_doi": "10.7554/eLife.00666", 
         "type": "media", 
-        "position": 39, 
-        "ordinal": 13, 
+        "position": 40, 
+        "ordinal": 14, 
         "sibling_ordinal": 1, 
         "asset": "media"
     }

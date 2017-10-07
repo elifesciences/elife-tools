@@ -1801,6 +1801,7 @@
     }, 
     {
         "article_doi": "10.7554/eLife.00666", 
+        "publisher_name": "Cambridge University Press", 
         "authors": [
             {
                 "surname": "Turlings", 
@@ -1828,7 +1829,7 @@
         "year": "2004b", 
         "position": 49, 
         "year-iso-8601-date": "2004", 
-        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004b Advances in insect chemical ecology", 
+        "ref": "Turlings TCJ W\u00e4ckers FL Card\u00e9 RT Millar JG 2004b Advances in insect chemical ecology Cambridge University Press", 
         "id": "bib49"
     }, 
     {
@@ -1837,8 +1838,6 @@
         "position": 50, 
         "date-in-citation": "September 10, 1995", 
         "article_doi": "10.7554/eLife.00666", 
-        "uri": "https://www.fourmilab.ch/solar/", 
-        "full_article_title": "Solar System Live", 
         "authors": [
             {
                 "surname": "Walker", 
@@ -1846,9 +1845,13 @@
                 "group-type": "author"
             }
         ], 
+        "uri": "https://www.fourmilab.ch/solar/", 
+        "full_article_title": "Solar System Live", 
+        "year": "1994", 
         "iso-8601-date": "1995-09-10", 
+        "year-iso-8601-date": "1994", 
         "publication-type": "web", 
-        "ref": "Walker J Solar System Live https://www.fourmilab.ch/solar/ September 10, 1995", 
+        "ref": "Walker J 1994 Solar System Live https://www.fourmilab.ch/solar/ September 10, 1995", 
         "id": "bib50"
     }, 
     {

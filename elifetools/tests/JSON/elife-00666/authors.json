@@ -55,7 +55,7 @@
             ]
         }, 
         "position": 1, 
-        "orcid": "http://orcid.org/0000-0003-3523-4408", 
+        "orcid": "https://orcid.org/0000-0003-3523-4408", 
         "equal-contrib": "yes", 
         "type": "author", 
         "id": "author-00001", 

@@ -126,61 +126,66 @@
     }, 
     {
         "position": 26, 
-        "doi": "10.7554/eLife.00666.022", 
-        "type": "supplementary-material"
-    }, 
-    {
-        "position": 27, 
-        "doi": "10.7554/eLife.00666.023", 
-        "type": "boxed-text"
-    }, 
-    {
-        "position": 28, 
-        "doi": "10.7554/eLife.00666.024", 
-        "type": "fig"
-    }, 
-    {
-        "position": 29, 
-        "doi": "10.7554/eLife.00666.025", 
-        "type": "fig"
-    }, 
-    {
-        "position": 30, 
-        "doi": "10.7554/eLife.00666.039", 
-        "type": "table-wrap"
-    }, 
-    {
-        "position": 31, 
-        "doi": "10.7554/eLife.00666.026", 
-        "type": "boxed-text"
-    }, 
-    {
-        "position": 32, 
-        "doi": "10.7554/eLife.00666.027", 
-        "type": "media"
-    }, 
-    {
-        "position": 33, 
-        "doi": "10.7554/eLife.00666.028", 
-        "type": "table-wrap"
-    }, 
-    {
-        "position": 34, 
         "doi": "10.7554/eLife.00666.034", 
         "type": "boxed-text"
     }, 
     {
+        "position": 27, 
+        "doi": "10.7554/eLife.00666.022", 
+        "type": "supplementary-material"
+    }, 
+    {
+        "position": 28, 
+        "doi": "10.7554/eLife.00666.023", 
+        "type": "boxed-text"
+    }, 
+    {
+        "position": 29, 
+        "doi": "10.7554/eLife.00666.024", 
+        "type": "fig"
+    }, 
+    {
+        "position": 30, 
+        "doi": "10.7554/eLife.00666.025", 
+        "type": "fig"
+    }, 
+    {
+        "position": 31, 
+        "doi": "10.7554/eLife.00666.039", 
+        "type": "table-wrap"
+    }, 
+    {
+        "position": 32, 
+        "doi": "10.7554/eLife.00666.026", 
+        "type": "boxed-text"
+    }, 
+    {
+        "position": 33, 
+        "doi": "10.7554/eLife.00666.027", 
+        "type": "media"
+    }, 
+    {
+        "position": 34, 
+        "doi": "10.7554/eLife.00666.028", 
+        "type": "table-wrap"
+    }, 
+    {
         "position": 35, 
+        "doi": "10.7554/eLife.00666.034", 
+        "type": "boxed-text"
+    }, 
+    {
+        "position": 36, 
         "doi": "10.7554/eLife.00666.031", 
         "type": "fig"
     }, 
     {
-        "position": 36, 
+        "position": 37, 
         "doi": "10.7554/eLife.00666.032", 
         "type": "table-wrap"
     }, 
     {
-        "position": 37, 
+        "position": 38, 
         "doi": "10.7554/eLife.00666.033", 
         "type": "media"
     }
