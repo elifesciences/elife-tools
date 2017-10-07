@@ -79,10 +79,21 @@
     {
         "ordinal": 8, 
         "sibling_ordinal": 2, 
-        "label": "Reporting Standard 1.", 
+        "label": "Consort checklist and flow diagram.", 
         "asset": "supp", 
-        "full_label": "Reporting Standard 1.", 
+        "full_label": "Consort checklist and flow diagram.", 
         "id": "repstand1", 
+        "position": 1, 
+        "type": "supplementary-material", 
+        "component_doi": "10.7554/eLife.00666.034"
+    }, 
+    {
+        "ordinal": 9, 
+        "sibling_ordinal": 3, 
+        "label": "Transparent reporting form.", 
+        "asset": "supp", 
+        "full_label": "Transparent reporting form.", 
+        "id": "transrepform", 
         "position": 1, 
         "type": "supplementary-material", 
         "component_doi": "10.7554/eLife.00666.022"
