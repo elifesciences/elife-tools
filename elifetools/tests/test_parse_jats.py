@@ -3400,5 +3400,79 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         expected = [{'article': {'authorLine': u'R Straussman et al.', 'authors': [{'given': u'R', 'surname': u'Straussman'}, {'given': u'T', 'surname': u'Morikawa'}, {'given': u'K', 'surname': u'Shee'}, {'given': u'M', 'surname': u'Barzily-Rokni'}, {'given': u'ZR', 'surname': u'Qian'}, {'given': u'J', 'surname': u'Du'}, {'given': u'A', 'surname': u'Davis'}, {'given': u'MM', 'surname': u'Mongare'}, {'given': u'J', 'surname': u'Gould'}, {'given': u'DT', 'surname': u'Frederick'}, {'given': u'ZA', 'surname': u'Cooper'}, {'given': u'PB', 'surname': u'Chapman'}, {'given': u'DB', 'surname': u'Solit'}, {'given': u'A', 'surname': u'Ribas'}, {'given': u'RS', 'surname': u'Lo'}, {'given': u'KT', 'surname': u'Flaherty'}, {'given': u'S', 'surname': u'Ogino'}, {'given': u'JA', 'surname': u'Wargo'}, {'given': u'TR', 'surname': u'Golub'}], 'doi': u'10.1038/nature11183', 'pub-date': [2014, 2, 28], 'title': u'Tumour micro-environment elicits innate resistance to RAF inhibitors through HGF secretion'}, 'journal': {'volume': u'487', 'lpage': u'504', 'name': u'Nature', 'fpage': u'500'}}]
         self.assertEqual(expected, data)
 
+
+    @unpack
+    @data(
+        # example with no history
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta></article-meta></front></root>',
+         []
+        ),
+        # example based on 00666 kitchen sink
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><related-object ext-link-type="url" xlink:href="https://elifesciences.org/articles/e00666v1">
+<date date-type="v1" iso-8601-date="2016-04-25">
+<day>25</day>
+<month>04</month>
+<year>2016</year>
+</date>
+</related-object>
+<related-object ext-link-type="url" xlink:href="https://elifesciences.org/articles/e00666v2">
+<date date-type="v2" iso-8601-date="2016-06-12">
+<day>12</day>
+<month>06</month>
+<year>2016</year>
+</date>
+<comment>
+The first version of this article was enhanced considerably between versions of the XML instance. These changes can bee seen on
+<ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</ext-link>
+.
+</comment>
+<!--
+If subsequent versions (v3 and onwards are published these will look like the below
+-->
+</related-object>
+<related-object ext-link-type="url" xlink:href="https://elifesciences.org/articles/e00666v3">
+<date date-type="v3" iso-8601-date="2016-06-27">
+<day>27</day>
+<month>06</month>
+<year>2016</year>
+</date>
+<comment>
+The author Christoph Wuelfing requested has surname was converted to the German spelling of "Wülfing".
+</comment>
+</related-object></article-meta></front></root>''',
+        [
+            OrderedDict([
+                ('version', u'v1'),
+                ('day', u'25'),
+                ('month', u'04'),
+                ('year', u'2016'),
+                ('date', date_struct(2016, 4, 25)),
+                ('xlink:href', u'https://elifesciences.org/articles/e00666v1')
+            ]), OrderedDict([
+                ('version', u'v2'),
+                ('day', u'12'),
+                ('month', u'06'),
+                ('year', u'2016'),
+                ('date', date_struct(2016, 6, 12)),
+                ('xlink:href', u'https://elifesciences.org/articles/e00666v2'),
+                ('comment', u'\nThe first version of this article was enhanced considerably between versions of the XML instance. These changes can bee seen on\n<a href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</a>\n.\n')
+            ]), OrderedDict([
+                ('version', u'v3'),
+                ('day', u'27'),
+                ('month', u'06'),
+                ('year', u'2016'),
+                ('date', date_struct(2016, 6, 27)),
+                ('xlink:href', u'https://elifesciences.org/articles/e00666v3'),
+                ('comment', u'\nThe author Christoph Wuelfing requested has surname was converted to the German spelling of "W\xfclfing".\n')
+            ])
+        ]
+        ),
+    )
+    def test_version_history(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.version_history(soup)
+        self.assertEqual(expected, tag_content)
+
+
 if __name__ == '__main__':
     unittest.main()
