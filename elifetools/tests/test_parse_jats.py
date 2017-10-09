@@ -3447,14 +3447,14 @@ The author Christoph Wuelfing requested has surname was converted to the German 
                 ('month', u'04'),
                 ('year', u'2016'),
                 ('date', date_struct(2016, 4, 25)),
-                ('xlink:href', u'https://elifesciences.org/articles/e00666v1')
+                ('xlink_href', u'https://elifesciences.org/articles/e00666v1')
             ]), OrderedDict([
                 ('version', u'v2'),
                 ('day', u'12'),
                 ('month', u'06'),
                 ('year', u'2016'),
                 ('date', date_struct(2016, 6, 12)),
-                ('xlink:href', u'https://elifesciences.org/articles/e00666v2'),
+                ('xlink_href', u'https://elifesciences.org/articles/e00666v2'),
                 ('comment', u'\nThe first version of this article was enhanced considerably between versions of the XML instance. These changes can bee seen on\n<a href="https://github.com/elifesciences/XML-mapping/blob/master/eLife00666.xml">Github</a>\n.\n')
             ]), OrderedDict([
                 ('version', u'v3'),
@@ -3462,7 +3462,7 @@ The author Christoph Wuelfing requested has surname was converted to the German 
                 ('month', u'06'),
                 ('year', u'2016'),
                 ('date', date_struct(2016, 6, 27)),
-                ('xlink:href', u'https://elifesciences.org/articles/e00666v3'),
+                ('xlink_href', u'https://elifesciences.org/articles/e00666v3'),
                 ('comment', u'\nThe author Christoph Wuelfing requested has surname was converted to the German spelling of "W\xfclfing".\n')
             ])
         ]

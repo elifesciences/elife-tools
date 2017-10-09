@@ -148,7 +148,7 @@ def version_history(soup, html_flag=True):
             article_version['month'] = month
             article_version['year'] = year
             article_version['date'] = date_struct_nn(year, month, day)
-        copy_attribute(tag.attrs, 'xlink:href', article_version)
+        copy_attribute(tag.attrs, 'xlink:href', article_version, 'xlink_href')
         set_if_value(article_version, "comment",
                      convert(node_contents_str(first(raw_parser.comment(tag)))))
         version_history.append(article_version)
