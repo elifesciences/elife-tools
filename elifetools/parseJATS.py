@@ -457,11 +457,11 @@ def abstracts(soup):
             abstract["title"] = node_text(title_tag)
         
         abstract["content"] = None
-        if len(paragraphs(tag)) > 0:
+        if raw_parser.paragraph(tag):
             abstract["content"] = ""
             abstract["full_content"] = ""
             
-            good_paragraphs = remove_doi_paragraph(paragraphs(tag))
+            good_paragraphs = remove_doi_paragraph(raw_parser.paragraph(tag))
             
             # Plain text content
             glue = ""
