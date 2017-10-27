@@ -91,13 +91,13 @@ def title_case(title):
     change_to_lower = ['of', 'and', 'in']
     if title:
         words = title.split(' ')
-        if first(words) and first(words).lower() not in map(lambda word: word.lower(), do_not_change):
+        if first(words) and first(words).lower() not in map(lambda word: word.lower(), do_not_change) and not first(words).isupper():
             words[0].capitalize()
         if len(words) > 1:
             for i, word in enumerate(words[1:]):
                 if word.lower() in change_to_lower:
                     words[i+1] = word.lower()
-                elif word.lower() not in map(lambda word: word.lower(), do_not_change):
+                elif word.lower() not in map(lambda word: word.lower(), do_not_change) and not word.isupper():
                     words[i+1] = word.capitalize()
         title = ' '.join(words)
     return title
