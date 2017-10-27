@@ -161,6 +161,8 @@ class TestUtils(unittest.TestCase):
         (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
         (u'mRNA p53', u'mRNA p53'),
         (u'你好！', u'你好！'),
+        (u'Functional MRI', u'Functional MRI'),
+        (u'Rab GTPases', u'Rab GTPases'),
         )
     def test_title_case(self, title, expected):
         self.assertEqual(expected, utils.title_case(title))

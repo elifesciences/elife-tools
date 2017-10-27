@@ -87,7 +87,7 @@ def clean_whitespace(value):
 
 def title_case(title):
     "convert to title case with some words not changed"
-    do_not_change = ['p53', 'mRNA']
+    do_not_change = ['p53', 'mRNA', 'MRI', 'GTPases']
     change_to_lower = ['of', 'and', 'in']
     if title:
         words = title.split(' ')
