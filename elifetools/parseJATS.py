@@ -53,7 +53,9 @@ def title_prefix(soup):
 
 def title_prefix_json(soup):
     "titlePrefix with capitalisation changed"
-    return title_case(title_prefix(soup))
+    prefix = title_prefix(soup)
+    prefix_rewritten = rewrite_json("title_prefix_json", soup, prefix)
+    return prefix_rewritten
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
