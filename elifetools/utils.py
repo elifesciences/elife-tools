@@ -85,23 +85,6 @@ def clean_whitespace(value):
     value = value.replace('\n', ' ')
     return value
 
-def title_case(title):
-    "convert to title case with some words not changed"
-    do_not_change = ['p53', 'mRNA', 'MRI', 'GTPases']
-    change_to_lower = ['of', 'and', 'in']
-    if title:
-        words = title.split(' ')
-        if first(words) and first(words).lower() not in map(lambda word: word.lower(), do_not_change):
-            words[0].capitalize()
-        if len(words) > 1:
-            for i, word in enumerate(words[1:]):
-                if word.lower() in change_to_lower:
-                    words[i+1] = word.lower()
-                elif word.lower() not in map(lambda word: word.lower(), do_not_change):
-                    words[i+1] = word.capitalize()
-        title = ' '.join(words)
-    return title
-
 def date_struct(year, month, day, tz = "UTC"):
     """
     Given year, month and day numeric values and a timezone

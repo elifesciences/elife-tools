@@ -150,27 +150,6 @@ class TestUtils(unittest.TestCase):
     @data(
         (None, None),
         (u'', u''),
-        (u'of', u'of'),
-        (u'p53 Family proteins', u'p53 Family Proteins'),
-        (u'mRna decay', u'mRna Decay'),
-        (u'mRNA decay', u'mRNA Decay'),
-        (u'Host-virus interactions', u'Host-virus Interactions'),
-        (u'Reproducibility in cancer biology', u'Reproducibility in Cancer Biology'),
-        (u'The Natural History Of Model Organisms', u'The Natural History of Model Organisms'),
-        (u'Point Of View', u'Point of View'),
-        (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
-        (u'mRNA p53', u'mRNA p53'),
-        (u'你好！', u'你好！'),
-        (u'Functional MRI', u'Functional MRI'),
-        (u'Rab GTPases', u'Rab GTPases'),
-        )
-    def test_title_case(self, title, expected):
-        self.assertEqual(expected, utils.title_case(title))
-
-    @unpack
-    @data(
-        (None, None),
-        (u'', u''),
         (u"\nText\n ", u'Text'),
         (u"\nAn example <ext-link>link</i>\n<ext-link>link 2</ext-link>\n", u'An example <ext-link>link</i> <ext-link>link 2</ext-link>'),
         )
