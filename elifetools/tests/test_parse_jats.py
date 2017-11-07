@@ -3391,19 +3391,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         None
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Plant biology</subject></subj-group></root>',
-        u'Plant Biology'
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">14973</article-id><article-id pub-id-type="doi">10.7554/eLife.14973</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Breast cancer</subject></subj-group></article-meta></front></root>',
+        u'Breast Cancer'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>The Natural History Of Model Organisms</subject></subj-group></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">05635</article-id><article-id pub-id-type="doi">10.7554/eLife.05635</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>The Natural History Of Model Organisms</subject></subj-group></article-meta></front></root>',
         u'The Natural History of Model Organisms'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>p53 Family proteins</subject></subj-group></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">17394</article-id><article-id pub-id-type="doi">10.7554/eLife.17394</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>p53 Family proteins</subject></subj-group></article-meta></front></root>',
         u'p53 Family Proteins'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>TOR signaling</subject></subj-group></root>',
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">25700</article-id><article-id pub-id-type="doi">10.7554/eLife.25700</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>TOR signaling</subject></subj-group></article-meta></front></root>',
         u'TOR Signaling'
         ),
 
