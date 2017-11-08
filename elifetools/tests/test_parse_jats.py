@@ -3407,6 +3407,11 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         u'TOR Signaling'
         ),
 
+        # example from elife-27438-v1.xml has no sub-display-channel and title_prefix is None
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">27438</article-id><article-id pub-id-type="doi">10.7554/eLife.27438</article-id><subj-group subj-group-type="display-channel"><subject>Feature Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Ecology</subject></subj-group></article-meta></front></root>',
+        None
+        ),
+
         )
     def test_title_prefix_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
