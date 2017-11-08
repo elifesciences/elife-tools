@@ -65,8 +65,14 @@ def pub_date(soup, date_type=None, pub_type=None):
     else:
         return extract_nodes(soup, "pub-date")
 
+def date(soup, date_type=None):
+    if date_type is not None:
+        return extract_nodes(soup, "date", attr="date-type", value=date_type)
+    else:
+        return extract_nodes(soup, "date")
+
 def history_date(soup, date_type):
-    date_tags = extract_nodes(soup, "date", attr = "date-type", value = date_type)
+    date_tags = date(soup, date_type)
     return first(filter(lambda tag: tag.parent.name == "history", date_tags))
 
 def day(soup):
