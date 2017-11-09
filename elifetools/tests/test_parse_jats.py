@@ -3412,6 +3412,11 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         None
         ),
 
+        # example from elife-27438-v2.xml which does have a title_prefix and it rewritten
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">27438</article-id><article-id pub-id-type="doi">10.7554/eLife.27438</article-id><subj-group subj-group-type="heading"><subject>Ecology</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Point of view</subject></subj-group><subj-group subj-group-type="display-channel"><subject>Feature article</subject></subj-group></article-meta></front></root>',
+        'Point of View'
+        ),
+
         )
     def test_title_prefix_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
