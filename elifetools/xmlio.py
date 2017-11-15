@@ -1,4 +1,4 @@
-import xml
+from __future__ import print_function
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
@@ -212,7 +212,7 @@ if __name__ == '__main__':
     article_xml_filenames = ["sample-xml/elife-kitchen-sink.xml"]
                            
     for filename in article_xml_filenames:
-        print "converting " + filename
+        print("converting " + filename)
         
         register_xmlns()
     
@@ -220,4 +220,4 @@ if __name__ == '__main__':
     
         reparsed_string = output(root)
     
-        print reparsed_string
+        print(reparsed_string)
