@@ -92,7 +92,7 @@ def replace_xref_tags(s):
         rid_match = re.finditer('rid="(.*)"', tag_match.group())
         if rid_match:
             try:
-                all_rid = rid_match.next().group(1)
+                all_rid = next(rid_match).group(1)
                 # Take only the first rid value if separated by spaces
                 rid = all_rid.split(' ')[0]
                 new_tag = '<a href="#' + rid + '">'
@@ -102,7 +102,7 @@ def replace_xref_tags(s):
                 s = replace_simple_tags(s, 'xref', 'a')
             except StopIteration:
                 pass
-            
+
     return s
 
 def replace_mathml_tags(s):
