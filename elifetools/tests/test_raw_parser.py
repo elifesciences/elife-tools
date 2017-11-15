@@ -1,4 +1,6 @@
-import os, unittest
+from __future__ import print_function
+import os
+import unittest
 from ddt import ddt, data, unpack
 import bs4
 
@@ -7,7 +9,7 @@ os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))
 import parseJATS as parser
 import rawJATS as raw_parser
 
-from file_utils import sample_xml
+from .file_utils import sample_xml
 
 @ddt
 class TestJatsParser(unittest.TestCase):
@@ -34,7 +36,7 @@ class TestJatsParser(unittest.TestCase):
 
                 self.assertEqual(got, expected)
             except AssertionError:
-                print 'failed on', func, 'expected', expected, 'got', got
+                print('failed on', func, 'expected', expected, 'got', got)
                 raise
         soup = parser.parse_document(self.kitchen_sink_xml)
         self.assertEqual(parser.journal_issn(soup, pub_format="electronic"), u"2050-084X")

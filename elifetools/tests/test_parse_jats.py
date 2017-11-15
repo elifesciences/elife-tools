@@ -13,7 +13,7 @@ import rawJATS as raw_parser
 from utils import date_struct, node_contents_str
 from collections import OrderedDict
 
-from file_utils import sample_xml, json_expected_folder, json_expected_file
+from .file_utils import sample_xml, json_expected_folder, json_expected_file
 
 
 
@@ -1278,7 +1278,6 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.references_json(soup), None)
 
-    @unpack
     @data(
         # Web reference with no title, use the uri from 01892
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
@@ -1634,6 +1633,7 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         ),
 
         )
+    @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         body_tag = soup.contents[0].contents[0]
