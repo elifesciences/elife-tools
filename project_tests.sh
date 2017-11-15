@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
-virtualenv venv
+if [ ! -e venv/bin/"${python_versioned:-python}" ]; then
+    rm -rf venv
+fi
+virtualenv --python="${python_versioned:-python}" venv
 source venv/bin/activate
 pip install -r requirements.txt
 pip install coveralls
