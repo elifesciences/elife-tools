@@ -1,13 +1,18 @@
+try:
+    # Python 2
+    import StringIO
+except ImportError:
+    # Python 3
+    from io import StringIO
 import unittest
-import os
-import StringIO
+
 from ddt import ddt, data, unpack
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-from elifetools import xmlio
 
-from file_utils import sample_xml
+from elifetools import xmlio
+from .file_utils import sample_xml
 
 
 @ddt
