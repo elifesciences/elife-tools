@@ -1,5 +1,4 @@
 import re
-from bs4 import BeautifulSoup
 from utils import escape_unmatched_angle_brackets, escape_ampersand
 
 def xml_to_html(html_flag, xml_string, base_url=None):

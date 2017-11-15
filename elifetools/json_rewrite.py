@@ -1,8 +1,9 @@
 # coding=utf-8
 
+from collections import OrderedDict
+
 import parseJATS as parser
 import utils
-from collections import OrderedDict
 
 def rewrite_json(rewrite_type, soup, json_content):
     """

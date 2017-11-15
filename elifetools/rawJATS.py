@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 from utils import first, firstnn, extract_nodes, node_contents_str
 
 """

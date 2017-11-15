@@ -1,5 +1,3 @@
-import cgi
-import htmlentitydefs
 import time
 import calendar
 import re

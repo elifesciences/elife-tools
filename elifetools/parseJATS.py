@@ -1,9 +1,4 @@
 from bs4 import BeautifulSoup
-import cgi
-import htmlentitydefs
-import os
-import time
-import calendar
 from slugify import slugify
 from utils import *
 from utils_html import xml_to_html
