@@ -1,15 +1,17 @@
 from __future__ import print_function
+
 import os
 import unittest
-from ddt import ddt, data, unpack
+
 import bs4
+from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import parseJATS as parser
-import rawJATS as raw_parser
+from elifetools import parseJATS as parser
+from elifetools import rawJATS as raw_parser
 
-from .file_utils import sample_xml
+from elifetools.file_utils import sample_xml
 
 @ddt
 class TestJatsParser(unittest.TestCase):

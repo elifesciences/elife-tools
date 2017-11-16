@@ -1,10 +1,11 @@
-import os, unittest
+import os
+import unittest
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import parseJATS as parser
 
-from .file_utils import sample_xml
+from elifetools.file_utils import sample_xml
 
 """ Basic code usage for the elifetools library.
 

@@ -1,19 +1,22 @@
 # coding=utf-8
 
-import unittest
-import os
+from __future__ import absolute_import
+
 import json
-from ddt import ddt, data, unpack
+import os
+import unittest
+
 from bs4 import BeautifulSoup
+from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import parseJATS as parser
-import rawJATS as raw_parser
-from utils import date_struct, node_contents_str
+from elifetools import parseJATS as parser
+from elifetools import rawJATS as raw_parser
+from elifetools.utils import date_struct, unicode_value
 from collections import OrderedDict
 
-from .file_utils import sample_xml, json_expected_folder, json_expected_file
+from elifetools.file_utils import sample_xml, json_expected_file
 
 
 
@@ -2435,7 +2438,7 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         soup = parser.parse_xml(xml)
         tags = getattr(raw_parser, parser_function)(soup)
         tag_copy = parser.duplicate_tag(tags[0])
-        self.assertEqual(expected_xml, unicode(tag_copy))
+        self.assertEqual(expected_xml, unicode_value(tag_copy))
 
     """
     Functions that require more than one argument to test against json output
@@ -2609,8 +2612,7 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife-00666.xml")
     def test_authors_non_byline(self, filename):
-        self.assertEqual(self.json_expected(filename, "authors_non_byline"),
-                         parser.authors_non_byline(self.soup(filename)))
+        self.assertEqual(self.json_expected(filename, "authors_non_byline"), parser.authors_non_byline(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00013.xml", "elife-00666.xml")
     def test_award_groups(self, filename):
@@ -2652,18 +2654,15 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_conflict(self, filename):
-        self.assertEqual(self.json_expected(filename, "conflict"),
-                         parser.conflict(self.soup(filename)))
+        self.assertEqual(self.json_expected(filename, "conflict"),  parser.conflict(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
     def test_contributors(self, filename):
-        self.assertEqual(self.json_expected(filename, "contributors"),
-                         parser.contributors(self.soup(filename)))
+        self.assertEqual(self.json_expected(filename, "contributors"), parser.contributors(self.soup(filename)))
 
     @data("elife-kitchen-sink.xml")
     def test_copyright_holder(self, filename):
-        self.assertEqual(self.json_expected(filename, "copyright_holder"),
-                         parser.copyright_holder(self.soup(filename)))
+        self.assertEqual(self.json_expected(filename, "copyright_holder"), parser.copyright_holder(self.soup(filename)))
 
     @unpack
     @data(

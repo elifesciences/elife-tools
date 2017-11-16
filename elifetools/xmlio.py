@@ -3,16 +3,23 @@ from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
 
+from six import iteritems
+
+from elifetools.utils import unicode_value
+
 """
 xmlio can do input and output of XML, allowing it to be edited using ElementTree library
 """
 
+
 class CustomXMLParser(ElementTree.XMLParser):
     doctype_dict = {}
+
     def doctype(self, name, pubid, system):
         self.doctype_dict["name"] = name
         self.doctype_dict["pubid"] = pubid
         self.doctype_dict["system"] = system
+
 
 def register_xmlns():
     """
@@ -46,7 +53,7 @@ def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     new_tag.text = tag_text
     parent_tag.insert( get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
     return parent_tag
-    
+
 
 def get_first_element_index(root, tag_name):
     """
@@ -54,7 +61,7 @@ def get_first_element_index(root, tag_name):
     this function will find the first child tag with tag_name
     and return its index position
     The index can then be used to insert an element before or after the
-    found tag using Element.insert() 
+    found tag using Element.insert()
     """
     tag_index = 1
     for tag in root:
@@ -67,15 +74,15 @@ def get_first_element_index(root, tag_name):
 
 
 def convert_xlink_href(root, name_map):
-    
+
     xpath_list = ['.//graphic', './/media', './/inline-graphic', './/self-uri', './/ext-link']
     count = 0
     for xpath in xpath_list:
         for tag in root.findall(xpath):
-            
+
             if tag.get('{http://www.w3.org/1999/xlink}href'):
-                
-                for k,v in name_map.iteritems():
+
+                for k, v in iteritems(name_map):
                     # Try to match the exact name first, and if not then
                     #  try to match it without the file extension
                     if tag.get('{http://www.w3.org/1999/xlink}href') == k:
@@ -121,7 +128,7 @@ def output_root(root, doctype, encoding):
         reparsed.insertBefore(doctype, reparsed.documentElement)
 
     #reparsed_string =  reparsed.toprettyxml(indent="\t", encoding = encoding)
-    reparsed_string = reparsed.toxml(encoding = encoding)
+    reparsed_string = reparsed.toxml(encoding=encoding)
 
     return reparsed_string
 
@@ -145,7 +152,11 @@ class ElifeDocumentType(minidom.DocumentType):
     """
     def writexml(self, writer, indent="", addindent="", newl=""):
         writer.write("<!DOCTYPE ")
+
+        # Throws TypeError if self.name is None, not sure if self.name always has to be set ??
+        # only happens in Python 3
         writer.write(self.name)
+
         if self.publicId:
             writer.write('%s PUBLIC "%s"%s  "%s"'
                          % (newl, self.publicId, newl, self.systemId))
@@ -207,17 +218,17 @@ def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attribut
 
 
 if __name__ == '__main__':
-    
+
     # Sample usage
     article_xml_filenames = ["sample-xml/elife-kitchen-sink.xml"]
-                           
+
     for filename in article_xml_filenames:
         print("converting " + filename)
-        
+
         register_xmlns()
-    
+
         root = parse(filename)
-    
+
         reparsed_string = output(root)
-    
+
         print(reparsed_string)

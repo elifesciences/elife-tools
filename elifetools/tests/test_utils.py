@@ -7,9 +7,10 @@ from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import utils
-from utils_html import allowed_xml_tag_fragments
-import parseJATS as parser
+from elifetools import utils
+from elifetools import parseJATS as parser
+from elifetools.utils import unicode_value
+from elifetools.utils_html import allowed_xml_tag_fragments
 
 
 
@@ -73,7 +74,7 @@ class TestUtils(unittest.TestCase):
         soup = parser.parse_xml(xml)
         tag = soup.find_all()[0]
         modified_tag = utils.remove_tag_from_tag(tag, unwanted_tag_names)
-        self.assertEqual(unicode(modified_tag), expected_xml)
+        self.assertEqual(unicode_value(modified_tag), expected_xml)
 
     @unpack
     @data(
@@ -120,7 +121,7 @@ class TestUtils(unittest.TestCase):
     def test_remove_doi_paragraph(self, xml, expected_xml):
         soup = parser.parse_xml(xml)
         modified_tag = utils.remove_doi_paragraph(soup.contents[0])
-        self.assertEqual(unicode(modified_tag), expected_xml)
+        self.assertEqual(unicode_value(modified_tag), expected_xml)
 
     @unpack
     @data(

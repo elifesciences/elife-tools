@@ -1,6 +1,16 @@
 import time
 import calendar
 import re
+from six import iteritems
+
+
+def unicode_value(value):
+    try:
+        return unicode(value)
+    except NameError:
+        # assume Python 3 and use str
+        return str(value)
+
 
 def first(x):
     if x is None:
@@ -13,7 +23,7 @@ def first(x):
 
 def firstnn(x):
     "returns the first non-nil value within given iterable"
-    return first(filter(None, x))
+    return first(list(filter(None, x)))
 
 def strip_strings(value):
     def strip_string(value):
@@ -39,7 +49,7 @@ def strip_punctuation_space(value):
     if value == None:
         return None
     if type(value) == list:
-        return map(strip_punctuation, value)
+        return [strip_punctuation(v) for v in value]
     return strip_punctuation(value)
 
 def coerce_to_int(val, default=0xDEADBEEF):
@@ -136,7 +146,7 @@ def date_timestamp(date_struct):
 
 def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
-    return filter(lambda tag: tag.name == "p", tags)
+    return list(filter(lambda tag: tag.name == "p", tags))
 
 def convert_testing_doi(doi):
     if doi is None:
@@ -178,8 +188,8 @@ def doi_to_doi_uri(value):
 
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    p_tags = filter(lambda tag: not starts_with_doi(tag), tags)
-    p_tags = filter(lambda tag: not paragraph_is_only_doi(tag), p_tags)
+    p_tags = list(filter(lambda tag: not starts_with_doi(tag), tags))
+    p_tags = list(filter(lambda tag: not paragraph_is_only_doi(tag), p_tags))
     return p_tags
 
 def orcid_uri_to_orcid(value):
@@ -225,8 +235,8 @@ def extract_nodes(soup, nodename, attr = None, value = None):
     further."""
     tags = soup.find_all(nodename)
     if attr != None and value != None:
-        return filter(lambda tag: tag.get(attr) == value, tags)
-    return tags
+        return list(filter(lambda tag: tag.get(attr) == value, tags))
+    return list(tags)
 
 def node_text(tag):
     "Returns the text contents of a tag"
@@ -239,8 +249,8 @@ def node_contents_str(tag):
     """
     if tag is None:
         return None
-    return "".join(map(unicode, tag.children)) or None
-    
+    return "".join(list(map(unicode_value, tag.children))) or None
+
 def first_parent(tag, nodename):
     """
     Given a beautiful soup tag, look at its parents and return the first
@@ -248,8 +258,8 @@ def first_parent(tag, nodename):
     """
     if nodename is not None and type(nodename) == str:
         nodename = [nodename]
-    return first(filter(lambda tag: tag.name in nodename, tag.parents))
-        
+    return first(list(filter(lambda tag: tag.name in nodename, tag.parents)))
+
 def tag_ordinal(tag):
     """
     Given a beautiful soup tag, look at the tags of the same name that come before it
@@ -267,8 +277,8 @@ def tag_fig_ordinal(tag):
     tag_count = 0
     if 'specific-use' not in tag.attrs:
         # Look for tags with no "specific-use" attribute
-        return len(filter(lambda tag: 'specific-use' not in tag.attrs,
-                          tag.find_all_previous(tag.name))) + 1
+        return len(list(filter(lambda tag: 'specific-use' not in tag.attrs,
+                          tag.find_all_previous(tag.name)))) + 1
 
 def tag_sibling_ordinal(tag):
     """
@@ -278,8 +288,8 @@ def tag_sibling_ordinal(tag):
     """
     tag_count = 0
     return len(tag.find_previous_siblings(tag.name)) + 1
-    
-    
+
+
 def tag_limit_sibling_ordinal(tag, stop_tag_name):
     """
     Count previous tags of the same name until it
@@ -293,7 +303,7 @@ def tag_limit_sibling_ordinal(tag, stop_tag_name):
             break
 
     return tag_count
-    
+
 def tag_subarticle_sibling_ordinal(tag):
     return tag_limit_sibling_ordinal(tag, 'sub-article')
 
@@ -307,12 +317,12 @@ def tag_media_sibling_ordinal(tag):
     """
     if hasattr(tag, 'name') and tag.name != 'media':
         return None
-    
+
     nodenames = ['fig','supplementary-material','sub-article']
     first_parent_tag = first_parent(tag, nodenames)
-    
+
     sibling_ordinal = None
-    
+
     if first_parent_tag:
         # Start counting at 0
         sibling_ordinal = 0
@@ -343,7 +353,7 @@ def tag_media_sibling_ordinal(tag):
                 else:
                     if supp_asset(prev_tag) == supp_asset(tag) and 'mimetype' not in prev_tag.attrs:
                         sibling_ordinal += 1
-    
+
     return sibling_ordinal
 
 def tag_supplementary_material_sibling_ordinal(tag):
@@ -358,9 +368,9 @@ def tag_supplementary_material_sibling_ordinal(tag):
 
     nodenames = ['fig','media','sub-article']
     first_parent_tag = first_parent(tag, nodenames)
-    
+
     sibling_ordinal = 1
-    
+
     if first_parent_tag:
         # Within the parent tag of interest, count the tags
         #  having the same asset value
@@ -370,7 +380,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
                 break
             if supp_asset(supp_tag) == supp_asset(tag):
                 sibling_ordinal += 1
-            
+
     else:
         # Look in all previous elements that do not have a parent
         #  and count the tags having the same asset value
@@ -378,7 +388,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
             if not first_parent(prev_tag, nodenames):
                 if supp_asset(prev_tag) == supp_asset(tag):
                     sibling_ordinal += 1
-    
+
     return sibling_ordinal
 
 
@@ -414,10 +424,8 @@ def set_if_value(dictionary, key, value):
         dictionary[key] = value
 
 def prune_dict_of_none_values(dictionary):
-    # If a dict key value is none, then remove the key
-    for key,value in dictionary.items():
-        if value is None:
-            del(dictionary[key])
+    return dict((k, v) for k, v in iteritems(dictionary) if v is not None)
+
 
 def text_to_title(value):
     """when a title is required, generate one from the value"""
