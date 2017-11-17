@@ -15,6 +15,7 @@ from xml.dom import minidom
 
 from elifetools import xmlio
 from elifetools.file_utils import sample_xml
+from elifetools.utils import unicode_value
 
 
 @ddt
@@ -75,7 +76,7 @@ class TestXmlio(unittest.TestCase):
     def test_output(self, xml, type, xml_expected):
         root = xmlio.parse(StringIO(xml))
         xml_output = xmlio.output(root, type)
-        self.assertEqual(xml_output, xml_expected)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     @unpack
     @data(("<article/>", "", "", None,
@@ -92,7 +93,7 @@ class TestXmlio(unittest.TestCase):
         root = xmlio.parse(StringIO(xml))
         doctype = xmlio.build_doctype(qualifiedName, publicId, systemId, internalSubset)
         xml_output = xmlio.output_root(root, doctype, encoding)
-        self.assertEqual(xml_output, xml_expected)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     def test_append_minidom_xml_to_elementtree_xml(self):
         "test coverage of an edge case"
