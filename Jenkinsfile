@@ -3,9 +3,9 @@ elifeLibrary {
         checkout scm
     }
 
-    elifeVariants(['python2.7', 'python3.5'], { python_versioned ->
-        elifeLocalTests "python_versioned=${python_versioned} ./project_tests.sh"
-    })
+    stage 'Project tests', {
+        elifeLocalTests "./project_tests.sh"
+    }
 
     elifeMainlineOnly {
         stage 'Downstream', {
