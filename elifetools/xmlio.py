@@ -4,6 +4,7 @@ from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
 
 from six import iteritems
+import sys
 
 from elifetools.utils import unicode_value
 
@@ -13,6 +14,15 @@ xmlio can do input and output of XML, allowing it to be edited using ElementTree
 
 
 class CustomXMLParser(ElementTree.XMLParser):
+    doctype_dict = {}
+
+    def doctype(self, name, pubid, system):
+        self.doctype_dict["name"] = name
+        self.doctype_dict["pubid"] = pubid
+        self.doctype_dict["system"] = system
+
+
+class CustomTreeBuilder(ElementTree.TreeBuilder):
     doctype_dict = {}
 
     def doctype(self, name, pubid, system):
@@ -34,13 +44,25 @@ def parse(filename, return_doctype_dict=False):
     to extract the doctype details from the file when parsed and return the data
     for later use, set return_doctype_dict to True
     """
-    parser = CustomXMLParser(html=0, target=None, encoding='utf-8')
+    doctype_dict = {}
+    # check for python version, doctype in ElementTree is deprecated 3.2 and above
+    if sys.version_info < (3,2):
+        parser = CustomXMLParser(html=0, target=None, encoding='utf-8')
+    else:
+        # Assume greater than Python 3.2, get the doctype from the TreeBuilder
+        tree_builder = CustomTreeBuilder()
+        parser = ElementTree.XMLParser(html=0, target=tree_builder, encoding='utf-8')
 
     tree = ElementTree.parse(filename, parser)
     root = tree.getroot()
 
+    if sys.version_info < (3,2):
+        doctype_dict = parser.doctype_dict
+    else:
+        doctype_dict = tree_builder.doctype_dict
+
     if return_doctype_dict is True:
-        return root, parser.doctype_dict
+        return root, doctype_dict
     else:
         return root
 
@@ -51,7 +73,8 @@ def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     """
     new_tag = Element(tag_name)
     new_tag.text = tag_text
-    parent_tag.insert( get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
+    if get_first_element_index(parent_tag, before_tag_name):
+        parent_tag.insert( get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
     return parent_tag
 
 
