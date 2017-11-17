@@ -2,5 +2,6 @@
 omit =
     */virtualenv/*
     */venv/*
+    */.tox/*
 exclude_lines =
     if __name__ == .__main__.:
