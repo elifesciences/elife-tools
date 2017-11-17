@@ -36,7 +36,7 @@ class TestParseJats(unittest.TestCase):
         json_file = json_expected_file(filename, function_name)
         try:
             with open(json_file, 'rb') as json_file_fp:
-                json_expected = json.loads(json_file_fp.read())
+                json_expected = json.loads(json_file_fp.read().decode('utf-8'))
         except IOError:
             # file may not exist or the value is None for this article
             pass
