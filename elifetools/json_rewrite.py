@@ -110,11 +110,12 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.09215"] = {"bib5": {"date": "2012"}}
 
     references_rewrite_json["10.7554/eLife.09520"] = {
-        "bib35": {
-            "conference": {
-                "name": ["WHO Expert Committee on Malaria"]},
-            "articleTitle": "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report",
-            "publisher": OrderedDict([
+        "bib35": OrderedDict([
+            ("conference", OrderedDict([
+                ("name", ["WHO Expert Committee on Malaria"])
+            ])),
+            ("articleTitle", "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report"),
+            ("publisher", OrderedDict([
                 ("name", ["World Health Organization"]),
                 ("address", OrderedDict([
                     ("formatted", ["Geneva"]),
@@ -122,8 +123,8 @@ def elife_references_rewrite_json():
                         ("locality", ["Geneva"])
                     ])),
                 ])),
-            ])
-        }
+            ])),
+        ])
     }
 
     references_rewrite_json["10.7554/eLife.09579"] = {
