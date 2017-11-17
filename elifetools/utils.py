@@ -31,7 +31,7 @@ def strip_strings(value):
             return value.strip()
         return value
     if type(value) == list:
-        return map(strip_string, value)
+        return list(map(strip_string, value))
     return strip_string(value)
 
 def strip_punctuation_space(value):

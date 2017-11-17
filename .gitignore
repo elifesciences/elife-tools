@@ -6,3 +6,5 @@ dist/
 elifetools.egg-info
 .coverage
 /venv
+/.tox
+

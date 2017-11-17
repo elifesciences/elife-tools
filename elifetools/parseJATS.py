@@ -177,7 +177,8 @@ def ack(soup):
 @nullify
 @strippen
 def conflict(soup):
-    return list(map(node_text, raw_parser.conflict(soup)))
+    result = [node_text(tag) for tag in raw_parser.conflict(soup)]
+    return result
 
 def copyright_statement(soup):
     permissions_tag = raw_parser.article_permissions(soup)
@@ -1163,8 +1164,6 @@ def authors_non_byline(soup, detail="full"):
     """Non-byline authors for group author members"""
     # Get a filtered list of contributors, in order to get their group-author-id
     contrib_type = "author non-byline"
-
-    # non_byline_authors = list(filter(lambda author: (author.get("type") and author.get("type") == contrib_type), contributors(soup, detail)))
     contributors_ = contributors(soup, detail)
     non_byline_authors = [author for author in contributors_ if author.get('type', None) == contrib_type]
 
@@ -2985,8 +2984,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in list(filter(lambda json_element: json_element.get("group-author-key") and not json_element.get("collab"), contributors_data)):
-        for group_author in list(filter(lambda json_element: json_element["type"] == "group", authors_json_data)):
+    for contributor in [elem for elem in contributors_data if elem.get("group-author-key") and not elem.get("collab")]:
+        for group_author in [elem for elem in authors_json_data if elem.get('type') == 'group']:
             group_author_key = None
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]

@@ -1,23 +1,7 @@
-# Python 3 ---------
-
-#beautifulsoup4==4.6.0
-#lxml==4.1.1
-#python-slugify==1.2.4
-#unittest-xml-reporting==2.1.0
-#coverage==4.4.2
-#ddt==1.1.1
-#requests==2.18.4
-
-
-# Python 2.7 --------
-
-beautifulsoup4==4.3.2
-lxml==3.4.1
+beautifulsoup4==4.6.0
+lxml==4.1.1
 python-slugify==1.2.4
 unittest-xml-reporting==1.12.0
 coverage==3.7.1
 ddt==1.1.0
 requests==2.11.1
-
-
-

@@ -208,9 +208,8 @@ def contributors(soup):
 def article_contributors(soup):
     article_meta_tag = article_meta(soup)
     if article_meta_tag:
-        contributor_tags = extract_nodes(article_meta_tag, ["contrib","on-behalf-of"])
-        return [tag for tag in contributor_tags if tag.parent.name == "contrib-group"
-                and tag.parent.parent.name == "article-meta"]
+        contributor_tags = extract_nodes(article_meta_tag, ["contrib", "on-behalf-of"])
+        return [tag for tag in contributor_tags if tag.parent.name == "contrib-group"]
 
 def authors(soup, contrib_type = "author"):
     if contrib_type:

@@ -2612,7 +2612,9 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife-00666.xml")
     def test_authors_non_byline(self, filename):
-        self.assertEqual(self.json_expected(filename, "authors_non_byline"), parser.authors_non_byline(self.soup(filename)))
+        expected = self.json_expected(filename, "authors_non_byline")
+        actual = parser.authors_non_byline(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00013.xml", "elife-00666.xml")
     def test_award_groups(self, filename):
@@ -2654,11 +2656,15 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_conflict(self, filename):
-        self.assertEqual(self.json_expected(filename, "conflict"),  parser.conflict(self.soup(filename)))
+        expected = self.json_expected(filename, "conflict")
+        actual = parser.conflict(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
     def test_contributors(self, filename):
-        self.assertEqual(self.json_expected(filename, "contributors"), parser.contributors(self.soup(filename)))
+        expected = self.json_expected(filename, "contributors")
+        actual = parser.contributors(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml")
     def test_copyright_holder(self, filename):
