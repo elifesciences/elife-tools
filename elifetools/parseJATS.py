@@ -1643,6 +1643,9 @@ def full_correspondence(soup):
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
+            # check for required id attribute
+            if 'id' not in tag.attrs:
+                continue
             if tag['id'] not in cor:
                 cor[tag['id']] = []
             if raw_parser.email(tag):

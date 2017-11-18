@@ -2736,6 +2736,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         self.assertEqual(self.json_expected(filename, "full_correspondence"),
                          parser.full_correspondence(self.soup(filename)))
 
+    @data(
+        # edge case, no id attribute on corresp tag, will be empty but not cause an error, based on 10.2196/resprot.3838
+        ('<root><article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article></root>',
+        {}
+        ),
+        )
+    @unpack
+    def test_full_correspondence_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.full_correspondence(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
     def test_full_digest(self, filename):
         self.assertEqual(self.json_expected(filename, "full_digest"),
