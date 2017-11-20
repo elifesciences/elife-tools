@@ -1643,6 +1643,9 @@ def full_correspondence(soup):
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
+            # check for required id attribute
+            if 'id' not in tag.attrs:
+                continue
             if tag['id'] not in cor:
                 cor[tag['id']] = []
             if raw_parser.email(tag):
@@ -1760,13 +1763,19 @@ def full_award_groups(soup):
     award_groups = []
 
     funding_group_section = extract_nodes(soup, "funding-group")
+    # counter for auto generated id values, if required
+    generated_id_counter = 1
     for fg in funding_group_section:
 
         award_group_tags = extract_nodes(fg, "award-group")
 
         for ag in award_group_tags:
-
-            ref = ag['id']
+            if 'id' in ag.attrs:
+                ref = ag['id']
+            else:
+                # hack: generate and increment an id value none is available
+                ref = "award-group-{id}".format(id=generated_id_counter)
+                generated_id_counter += 1
 
             award_group = {}
             award_group_id = award_group_award_id(ag)
