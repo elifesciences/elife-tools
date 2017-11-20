@@ -2736,10 +2736,73 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         self.assertEqual(self.json_expected(filename, "full_award_groups"),
                          parser.full_award_groups(self.soup(filename)))
 
+    @data(
+        # edge case, no id attribute on award-group tag, and id will be generated, based on 10.1098/rsob.150230
+        ('''<root>
+            <article>
+            <front>
+            <article-meta>
+            <funding-group specific-use="FundRef">
+            <award-group>
+            <funding-source>
+            <institution-wrap>
+            <institution>Grant-in-Aid for Scientific Research (S) from the Ministry of Education, Culture, Sports, Science and Technology (MEXT) of Japan</institution>
+            </institution-wrap>
+            </funding-source>
+            </award-group>
+            </funding-group>
+            <funding-group specific-use="FundRef">
+            <award-group>
+            <funding-source>
+            <institution-wrap>
+            <institution>Wellcome Trust</institution>
+            <institution-id>http://dx.doi.org/10.13039/100004440</institution-id>
+            </institution-wrap>
+            </funding-source>
+            <award-id>077707</award-id>
+            <award-id>084229</award-id>
+            <award-id>091020</award-id>
+            <award-id>092076</award-id>
+            <award-id>107022</award-id>
+            </award-group>
+            </funding-group>
+            </article-meta>
+            </front>
+            </article>
+         </root>''',
+        [
+            {'award-group-1': {
+                'institution': 'Grant-in-Aid for Scientific Research (S) from the Ministry of Education, Culture, Sports, Science and Technology (MEXT) of Japan'}
+            }, {'award-group-2': {
+                'award-id': u'077707', 'institution': u'Wellcome Trust', 'id': u'http://dx.doi.org/10.13039/100004440'}
+            }
+        ]
+        ),
+        )
+    @unpack
+    def test_full_award_groups_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.full_award_groups(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife-02833-v2.xml")
     def test_full_correspondence(self, filename):
         self.assertEqual(self.json_expected(filename, "full_correspondence"),
                          parser.full_correspondence(self.soup(filename)))
+
+    @data(
+        # edge case, no id attribute on corresp tag, will be empty but not cause an error, based on 10.2196/resprot.3838
+        ('<root><article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article></root>',
+        {}
+        ),
+        )
+    @unpack
+    def test_full_correspondence_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0].contents[0]
+        tag_content = parser.full_correspondence(body_tag)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
     def test_full_digest(self, filename):
