@@ -1464,8 +1464,33 @@ class TestParseJats(unittest.TestCase):
 
         # 09520 v2, reference rewriting conference data
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09520</article-id><article-id pub-id-type="doi">10.7554/eLife.09520</article-id></article-meta><ref-list><ref id="bib35"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>World Health Organization</collab></person-group><year iso-8601-date="1971">1971</year><conf-name>WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report</conf-name></element-citation></ref></ref-list></article></root>',
-        [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib35'), ('date', u'1971'), ('authors', [OrderedDict([('type', 'group'), ('name', u'World Health Organization')])]), ('conference', {'name': ['WHO Expert Committee on Malaria']}), ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'), ('publisher', {'name': ['World Health Organization'], 'address': {'formatted': ['Geneva'], 'components': {'locality': ['Geneva']}}})])]
-         ),
+        [
+            OrderedDict([
+                ('type', 'conference-proceeding'),
+                ('id', u'bib35'),
+                ('date', u'1971'),
+                ('authors', [
+                    OrderedDict([
+                        ('type', 'group'),
+                        ('name', u'World Health Organization')
+                    ])
+                ]),
+                ('conference', {
+                    'name': ['WHO Expert Committee on Malaria']
+                }),
+                ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'),
+                ('publisher', OrderedDict([
+                    ('name', ['World Health Organization']),
+                    ('address', OrderedDict([
+                        ('formatted', ['Geneva']),
+                        ('components', OrderedDict([
+                            ('locality', ['Geneva'])
+                        ])),
+                    ])),
+                ])),
+            ])
+        ]
+        ),
 
         # from 00666 kitchen sink example, will add a uri to the references json from the doi value
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib3"><element-citation publication-type="preprint"><person-group person-group-type="author"><name><surname>Bloss</surname><given-names>CS</given-names></name><name><surname>Wineinger</surname><given-names>NE</given-names></name><name><surname>Peters</surname><given-names>M</given-names></name><name><surname>Boeldt</surname><given-names>DL</given-names></name><name><surname>Ariniello</surname><given-names>L</given-names></name><name><surname>Kim</surname><given-names>JL</given-names></name><name><surname>Judy Sheard</surname><given-names>J</given-names></name><name><surname>Komatireddy</surname><given-names>R</given-names></name><name><surname>Barrett</surname><given-names>P</given-names></name><name><surname>Topol</surname><given-names>EJ</given-names></name></person-group><year iso-8601-date="2016">2016</year><article-title>A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors</article-title><source>bioRxiv</source><pub-id pub-id-type="doi">https://doi.org/10.1101/029983</pub-id></element-citation></ref></ref-list></root>',
