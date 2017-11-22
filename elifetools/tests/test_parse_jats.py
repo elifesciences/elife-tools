@@ -1,19 +1,22 @@
 # coding=utf-8
 
-import unittest
-import os
+from __future__ import absolute_import
+
 import json
-from ddt import ddt, data, unpack
+import os
+import unittest
+
 from bs4 import BeautifulSoup
+from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import parseJATS as parser
-import rawJATS as raw_parser
-from utils import date_struct, node_contents_str
+from elifetools import parseJATS as parser
+from elifetools import rawJATS as raw_parser
+from elifetools.utils import date_struct, unicode_value
 from collections import OrderedDict
 
-from file_utils import sample_xml, json_expected_folder, json_expected_file
+from elifetools.file_utils import sample_xml, json_expected_file
 
 
 
@@ -33,7 +36,7 @@ class TestParseJats(unittest.TestCase):
         json_file = json_expected_file(filename, function_name)
         try:
             with open(json_file, 'rb') as json_file_fp:
-                json_expected = json.loads(json_file_fp.read())
+                json_expected = json.loads(json_file_fp.read().decode('utf-8'))
         except IOError:
             # file may not exist or the value is None for this article
             pass
@@ -1278,7 +1281,6 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.references_json(soup), None)
 
-    @unpack
     @data(
         # Web reference with no title, use the uri from 01892
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
@@ -1462,8 +1464,33 @@ class TestParseJats(unittest.TestCase):
 
         # 09520 v2, reference rewriting conference data
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09520</article-id><article-id pub-id-type="doi">10.7554/eLife.09520</article-id></article-meta><ref-list><ref id="bib35"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>World Health Organization</collab></person-group><year iso-8601-date="1971">1971</year><conf-name>WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report</conf-name></element-citation></ref></ref-list></article></root>',
-        [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib35'), ('date', u'1971'), ('authors', [OrderedDict([('type', 'group'), ('name', u'World Health Organization')])]), ('conference', {'name': ['WHO Expert Committee on Malaria']}), ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'), ('publisher', {'name': ['World Health Organization'], 'address': {'formatted': ['Geneva'], 'components': {'locality': ['Geneva']}}})])]
-         ),
+        [
+            OrderedDict([
+                ('type', 'conference-proceeding'),
+                ('id', u'bib35'),
+                ('date', u'1971'),
+                ('authors', [
+                    OrderedDict([
+                        ('type', 'group'),
+                        ('name', u'World Health Organization')
+                    ])
+                ]),
+                ('conference', {
+                    'name': ['WHO Expert Committee on Malaria']
+                }),
+                ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'),
+                ('publisher', OrderedDict([
+                    ('name', ['World Health Organization']),
+                    ('address', OrderedDict([
+                        ('formatted', ['Geneva']),
+                        ('components', OrderedDict([
+                            ('locality', ['Geneva'])
+                        ])),
+                    ])),
+                ])),
+            ])
+        ]
+        ),
 
         # from 00666 kitchen sink example, will add a uri to the references json from the doi value
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib3"><element-citation publication-type="preprint"><person-group person-group-type="author"><name><surname>Bloss</surname><given-names>CS</given-names></name><name><surname>Wineinger</surname><given-names>NE</given-names></name><name><surname>Peters</surname><given-names>M</given-names></name><name><surname>Boeldt</surname><given-names>DL</given-names></name><name><surname>Ariniello</surname><given-names>L</given-names></name><name><surname>Kim</surname><given-names>JL</given-names></name><name><surname>Judy Sheard</surname><given-names>J</given-names></name><name><surname>Komatireddy</surname><given-names>R</given-names></name><name><surname>Barrett</surname><given-names>P</given-names></name><name><surname>Topol</surname><given-names>EJ</given-names></name></person-group><year iso-8601-date="2016">2016</year><article-title>A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors</article-title><source>bioRxiv</source><pub-id pub-id-type="doi">https://doi.org/10.1101/029983</pub-id></element-citation></ref></ref-list></root>',
@@ -1634,6 +1661,7 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         ),
 
         )
+    @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         body_tag = soup.contents[0].contents[0]
@@ -2435,7 +2463,7 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         soup = parser.parse_xml(xml)
         tags = getattr(raw_parser, parser_function)(soup)
         tag_copy = parser.duplicate_tag(tags[0])
-        self.assertEqual(expected_xml, unicode(tag_copy))
+        self.assertEqual(expected_xml, unicode_value(tag_copy))
 
     """
     Functions that require more than one argument to test against json output
@@ -2609,8 +2637,9 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife-00666.xml")
     def test_authors_non_byline(self, filename):
-        self.assertEqual(self.json_expected(filename, "authors_non_byline"),
-                         parser.authors_non_byline(self.soup(filename)))
+        expected = self.json_expected(filename, "authors_non_byline")
+        actual = parser.authors_non_byline(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00013.xml", "elife-00666.xml")
     def test_award_groups(self, filename):
@@ -2652,18 +2681,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_conflict(self, filename):
-        self.assertEqual(self.json_expected(filename, "conflict"),
-                         parser.conflict(self.soup(filename)))
+        expected = self.json_expected(filename, "conflict")
+        actual = parser.conflict(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
     def test_contributors(self, filename):
-        self.assertEqual(self.json_expected(filename, "contributors"),
-                         parser.contributors(self.soup(filename)))
+        expected = self.json_expected(filename, "contributors")
+        actual = parser.contributors(self.soup(filename))
+        self.assertEqual(expected, actual)
 
     @data("elife-kitchen-sink.xml")
     def test_copyright_holder(self, filename):
-        self.assertEqual(self.json_expected(filename, "copyright_holder"),
-                         parser.copyright_holder(self.soup(filename)))
+        self.assertEqual(self.json_expected(filename, "copyright_holder"), parser.copyright_holder(self.soup(filename)))
 
     @unpack
     @data(

@@ -1,4 +1,3 @@
-from bs4 import BeautifulSoup
 from utils import first, firstnn, extract_nodes, node_contents_str
 
 """
@@ -23,16 +22,16 @@ def abstract(soup, abstract_type=None):
 
 def article_id(soup, pub_id_type):
     return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)
-    
+
 def doi(soup):
     doi_tags = article_id(soup, pub_id_type = "doi")
     # the first article-id tag whose parent is article-meta
-    return first(filter(lambda tag: tag.parent.name == "article-meta", doi_tags))
+    return first([tag for tag in doi_tags if tag.parent.name == "article-meta"])
 
 def publisher_id(soup):
     article_id_tags = article_id(soup, pub_id_type = "publisher-id")
     # the first article-id tag whose parent is article-meta
-    return first(filter(lambda tag: tag.parent.name == "article-meta", article_id_tags))
+    return first([tag for tag in article_id_tags if tag.parent.name == "article-meta"])
 
 def journal_id(soup):
     # the first non-nil tag
@@ -73,7 +72,7 @@ def date(soup, date_type=None):
 
 def history_date(soup, date_type):
     date_tags = date(soup, date_type)
-    return first(filter(lambda tag: tag.parent.name == "history", date_tags))
+    return first([tag for tag in date_tags if tag.parent.name == "history"])
 
 def day(soup):
     return first(extract_nodes(soup, "day"))
@@ -102,7 +101,7 @@ def permissions(soup):
 def article_permissions(soup):
     # a better selector might be "article-meta.permissions"
     permissions_tags = permissions(soup)
-    return first(filter(lambda tag: tag.parent.name == "article-meta", permissions_tags))
+    return first([tag for tag in permissions_tags if tag.parent.name == "article-meta"])
 
 def licence(soup):
     return extract_nodes(soup, "license")
@@ -137,47 +136,45 @@ def research_organism_keywords(soup):
     tags = first(extract_nodes(soup, "kwd-group", attr = "kwd-group-type", value = "research-organism"))
     if not tags:
         return None
-    return filter(lambda tag: tag.name == "kwd", tags) or None   
+    return [tag for tag in tags if tag.name == "kwd"] or None
 
 def author_keywords(soup):
     # A few articles have kwd-group with no kwd-group-type, so account for those
     tags = extract_nodes(soup, "kwd-group")
     keyword_tags = []
     for tag in tags:
-        if (tag.get("kwd-group-type") == "author-keywords" 
-            or tag.get("kwd-group-type") is None):
-            keyword_tags += filter(lambda tag: tag.name == "kwd", tag)
+        if tag.get("kwd-group-type") == "author-keywords" or tag.get("kwd-group-type") is None:
+            keyword_tags += [tag for tag in tag if tag.name == "kwd"]
     return keyword_tags
 
 def subject_area(soup, subject_group_type = None):
-    # Supports all subject areas or just particular ones filtered by 
+    # Supports all subject areas or just particular ones filtered by
     subject_area_tags = []
     tags = extract_nodes(soup, "subject")
-    
-    subject_area_tags = filter(lambda tag: tag.parent.name == "subj-group" \
-                                           and tag.parent.parent.name == "article-categories"
-                                           and tag.parent.parent.parent.name == "article-meta", tags)
+
+    subject_area_tags = [tag for tag in tags if tag.parent.name == "subj-group"
+                         and tag.parent.parent.name == "article-categories"
+                         and tag.parent.parent.parent.name == "article-meta"]
     if subject_group_type:
-        subject_area_tags = filter(lambda tag:
-                                    tag.parent.get("subj-group-type") == subject_group_type, tags)
+        subject_area_tags = [tag for tag in tags if tag.parent.get("subj-group-type") == subject_group_type]
     return subject_area_tags
 
 def full_subject_area(soup, subject_group_type=None):
 
     subject_group_tags = extract_nodes(soup, "subj-group")
-    subject_group_tags = filter(lambda tag: tag.parent.name == "article-categories"
-                                              and tag.parent.parent.name == "article-meta", subject_group_tags)
+    subject_group_tags = [tag for tag in subject_group_tags
+                          if tag.parent.name == "article-categories" and tag.parent.parent.name == "article-meta"]
 
     if subject_group_type:
-        subject_group_tags = filter(lambda tag:
-                                    tag.get("subj-group-type" == subject_group_type))
+        subject_group_tags = list(filter(lambda tag: tag.get("subj-group-type" == subject_group_type)))
 
     return subject_group_tags
 
 def custom_meta(soup, meta_name=None):
     custom_meta_tags = extract_nodes(soup, "custom-meta")
     if meta_name is not None:
-        custom_meta_tags = filter(lambda tag: node_contents_str(first(extract_nodes(tag, "meta-name"))) == meta_name, custom_meta_tags)
+        custom_meta_tags = [tag for tag in custom_meta_tags
+                            if node_contents_str(first(extract_nodes(tag, "meta-name"))) == meta_name]
     return custom_meta_tags
 
 def display_channel(soup):
@@ -191,7 +188,7 @@ def category(soup):
 
 def related_article(soup):
     related_article_tags = extract_nodes(soup, "related-article")
-    return filter(lambda tag: tag.parent.name == "article-meta", related_article_tags)
+    return [tag for tag in related_article_tags if tag.parent.name == "article-meta"]
 
 def mixed_citations(soup):
     return extract_nodes(soup, 'mixed-citation')
@@ -211,10 +208,8 @@ def contributors(soup):
 def article_contributors(soup):
     article_meta_tag = article_meta(soup)
     if article_meta_tag:
-        contributor_tags = extract_nodes(article_meta_tag, ["contrib","on-behalf-of"])
-        return filter(lambda tag: tag.parent.name == "contrib-group", contributor_tags)
-    else:
-        return None
+        contributor_tags = extract_nodes(article_meta_tag, ["contrib", "on-behalf-of"])
+        return [tag for tag in contributor_tags if tag.parent.name == "contrib-group"]
 
 def authors(soup, contrib_type = "author"):
     if contrib_type:
@@ -289,7 +284,7 @@ def elocation_id(soup):
 
 def fpage(soup):
     return extract_nodes(soup, "fpage")
-            
+
 def lpage(soup):
     return extract_nodes(soup, "lpage")
 
@@ -418,7 +413,7 @@ def disp_formula(soup):
 
 def math(soup):
     return extract_nodes(soup, "math")
-    
+
 def boxed_text(soup):
     return extract_nodes(soup, "boxed-text")
 
@@ -428,7 +423,7 @@ def fig(soup):
 def fig_group(soup):
     return extract_nodes(soup, "fig-group")
 
-def list(soup):
+def list(soup): # Redefining `list` could be problematic
     return extract_nodes(soup, "list")
 
 def list_item(soup):

@@ -1,13 +1,21 @@
+from __future__ import absolute_import
+
+try:
+    # Python 2
+    from StringIO import StringIO
+except ImportError:
+    # Python 3
+    from io import StringIO
 import unittest
-import os
-import StringIO
+
 from ddt import ddt, data, unpack
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-from elifetools import xmlio
 
-from file_utils import sample_xml
+from elifetools import xmlio
+from elifetools.file_utils import sample_xml
+from elifetools.utils import unicode_value
 
 
 @ddt
@@ -48,11 +56,10 @@ class TestXmlio(unittest.TestCase):
     def test_add_tag_before(self, xml, tag_name, tag_text, before, expected_string):
         xml_element = ElementTree.fromstring(xml)
         element = xmlio.add_tag_before(tag_name, tag_text, xml_element, before)
-        self.assertEqual(ElementTree.tostring(element), expected_string)
+        self.assertEqual(ElementTree.tostring(element).decode('utf-8'), expected_string)
 
     @unpack
-    @data(({"doc1.pdf":"doc-1.pdf", "img2.tif":"img-2.tif"},
-        "xmlio_input.xml", "xmlio_output_convert_xlink.xml"))
+    @data(({"doc1.pdf":"doc-1.pdf", "img2.tif":"img-2.tif"}, "xmlio_input.xml", "xmlio_output_convert_xlink.xml"))
     def test_convert_xlink_href(self, name_map, xml_input_filename, xml_expected_filename):
         xmlio.register_xmlns()
         root = xmlio.parse(sample_xml(xml_input_filename))
@@ -67,9 +74,9 @@ class TestXmlio(unittest.TestCase):
     @data(("<article/>", "JATS", '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd"><article/>'),
         ("<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
     def test_output(self, xml, type, xml_expected):
-        root = xmlio.parse(StringIO.StringIO(xml))
+        root = xmlio.parse(StringIO(xml))
         xml_output = xmlio.output(root, type)
-        self.assertEqual(xml_output, xml_expected)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     @unpack
     @data(("<article/>", "", "", None,
@@ -83,10 +90,10 @@ class TestXmlio(unittest.TestCase):
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = 'UTF-8'
         qualifiedName = "article"
-        root = xmlio.parse(StringIO.StringIO(xml))
+        root = xmlio.parse(StringIO(xml))
         doctype = xmlio.build_doctype(qualifiedName, publicId, systemId, internalSubset)
         xml_output = xmlio.output_root(root, doctype, encoding)
-        self.assertEqual(xml_output, xml_expected)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     def test_append_minidom_xml_to_elementtree_xml(self):
         "test coverage of an edge case"
@@ -104,7 +111,7 @@ class TestXmlio(unittest.TestCase):
         reparsed = minidom.parseString(xml.encode('utf-8'))
         parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, False, attributes)
         # Generate output and compare it
-        rough_string = ElementTree.tostring(parent)
+        rough_string = ElementTree.tostring(parent).decode('utf-8')
         self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i>XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
 
 if __name__ == '__main__':

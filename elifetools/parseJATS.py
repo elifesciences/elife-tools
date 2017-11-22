@@ -1,26 +1,26 @@
 from bs4 import BeautifulSoup
-import cgi
-import htmlentitydefs
-import os
-import time
-import calendar
-from slugify import slugify
 from utils import *
 from utils_html import xml_to_html
 from json_rewrite import rewrite_json
 import rawJATS as raw_parser
 import re
 from collections import OrderedDict
+from six import iteritems
+
+from slugify import slugify
+
+from utils import unicode_value
 
 def parse_xml(xml):
     return BeautifulSoup(xml, ["lxml", "xml"])
 
 def parse_document(filelocation):
-    return parse_xml(open(filelocation))
+    with open(filelocation) as fp:
+        return parse_xml(fp)
 
 def duplicate_tag(tag):
     # Make a completely new copy of a tag by parsing its contents again
-    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode(tag) + u'</article>'
+    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode_value(tag) + u'</article>'
     soup_copy = parse_xml(tag_xml)
     tag_copy = first(extract_nodes(soup_copy, tag.name))
     return tag_copy
@@ -94,13 +94,13 @@ def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
     if not raw_parser.research_organism_keywords(soup):
         return []
-    return map(node_text, raw_parser.research_organism_keywords(soup))
+    return list(map(node_text, raw_parser.research_organism_keywords(soup)))
 
 def full_research_organism(soup):
     "research-organism list including inline tags, such as italic"
     if not raw_parser.research_organism_keywords(soup):
         return []
-    return map(node_contents_str, raw_parser.research_organism_keywords(soup))
+    return list(map(node_contents_str, raw_parser.research_organism_keywords(soup)))
 
 def keywords(soup):
     """
@@ -109,19 +109,19 @@ def keywords(soup):
     """
     if not raw_parser.author_keywords(soup):
         return []
-    return map(node_text, raw_parser.author_keywords(soup))
+    return list(map(node_text, raw_parser.author_keywords(soup)))
 
 def full_keywords(soup):
     "author keywords list including inline tags, such as italic"
     if not raw_parser.author_keywords(soup):
         return []
-    return map(node_contents_str, raw_parser.author_keywords(soup))
+    return list(map(node_contents_str, raw_parser.author_keywords(soup)))
 
 def full_keyword_groups(soup):
     groups = {}
     for group_tag in raw_parser.keyword_group(soup):
-        group = map(node_contents_str, extract_nodes(group_tag, "kwd"))
-        group = map(lambda s: s.strip(), group)
+        group = list(map(node_contents_str, extract_nodes(group_tag, "kwd")))
+        group = list(map(lambda s: s.strip(), group))
         if 'kwd-group-type' in group_tag.attrs:
             groups[group_tag['kwd-group-type'].strip()] = group
     return groups
@@ -163,7 +163,7 @@ def format_related_object(related_object):
 def related_object_ids(soup):
     tags = []
     if raw_parser.related_object(soup):
-        tags = filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup))
+        tags = list(filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup)))
     return dict(map(format_related_object, tags))
 
 @strippen
@@ -177,7 +177,8 @@ def ack(soup):
 @nullify
 @strippen
 def conflict(soup):
-    return map(node_text, raw_parser.conflict(soup))
+    result = [node_text(tag) for tag in raw_parser.conflict(soup)]
+    return result
 
 def copyright_statement(soup):
     permissions_tag = raw_parser.article_permissions(soup)
@@ -505,7 +506,7 @@ def abstract(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list)))
     if abstract:
         return abstract.get("content")
     else:
@@ -518,7 +519,7 @@ def full_abstract(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list)))
     if abstract:
         return abstract.get("full_content")
     else:
@@ -528,8 +529,7 @@ def digest(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
-                                abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") == "executive-summary", abstract_list)))
     if abstract:
         return abstract.get("content")
     else:
@@ -542,8 +542,7 @@ def full_digest(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
-                                abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") == "executive-summary", abstract_list)))
     if abstract:
         return abstract["full_content"]
     else:
@@ -584,12 +583,12 @@ def mixed_citations(soup):
             'article': {
                 'title': mc.find('article-title').text,
                 'doi': mc.find('pub-id', attrs={'pub-id-type': 'doi'}).text,
-                'pub-date': map(int, ymd(soup)[::-1]),
-                'authors': map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents),
-                'authorLine': format_author_line(map(preferred_name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents)),
+                'pub-date': list(map(int, ymd(soup)[::-1])),
+                'authors': list(map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents)),
+                'authorLine': format_author_line(list(map(preferred_name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents))),
             },
         }
-    return map(do, mc_tags)
+    return list(map(do, mc_tags))
 
 def component_doi(soup):
     """
@@ -1124,7 +1123,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             for cor in corresp_tags:
                 # Find the matching tag
                 rid = cor['rid']
-                corresp_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_corresp))
+                corresp_node = first(list(filter(lambda tag: tag.get("id") == rid, target_tags_corresp)))
                 author_notes = node_text(corresp_node)
                 if author_notes:
                     contributor['notes-corresp'].append(author_notes)
@@ -1138,7 +1137,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             for fn in fn_tags:
                # Find the matching tag
                rid = fn['rid']
-               fn_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_fn))
+               fn_node = first(list(filter(lambda tag: tag.get("id") == rid, target_tags_fn)))
                fn_text = node_text(fn_node)
                if fn_text:
                    contributor['notes-fn'].append(fn_text)
@@ -1164,10 +1163,10 @@ def is_author_non_byline(tag, contrib_type="author non-byline"):
 def authors_non_byline(soup, detail="full"):
     """Non-byline authors for group author members"""
     # Get a filtered list of contributors, in order to get their group-author-id
-    contrib_type="author non-byline"
-    non_byline_authors = filter(lambda author:
-        (author.get("type") and author.get("type") == contrib_type),
-        contributors(soup, detail))
+    contrib_type = "author non-byline"
+    contributors_ = contributors(soup, detail)
+    non_byline_authors = [author for author in contributors_ if author.get('type', None) == contrib_type]
+
     # Then renumber their position attribute
     position = 1
     for author in non_byline_authors:
@@ -1177,7 +1176,7 @@ def authors_non_byline(soup, detail="full"):
 
 def authors(soup, contrib_type = "author", detail = "full"):
     contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
-    tags = filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags)
+    tags = list(filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags))
     return format_authors(soup, tags, detail)
 
 def is_author_group_author(tag):
@@ -1240,14 +1239,13 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
 def format_aff(aff_tag):
     values = {
         'dept': node_contents_str(first(extract_nodes(aff_tag, "institution", "content-type", "dept"))),
-        'institution': node_contents_str(first(
-            filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution")))),
+        'institution': node_contents_str(first(list(filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution"))))),
         'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
         'country': node_contents_str(first(extract_nodes(aff_tag, "country"))),
         'email': node_contents_str(first(extract_nodes(aff_tag, "email")))
         }
     # Remove keys with None value
-    prune_dict_of_none_values(values)
+    values = prune_dict_of_none_values(values)
 
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
@@ -1257,7 +1255,7 @@ def format_aff(aff_tag):
 
 def full_affiliation(soup):
     aff_tags = raw_parser.affiliation(soup)
-    aff_tags = filter(lambda aff: 'id' in aff.attrs, aff_tags)
+    aff_tags = list(filter(lambda aff: 'id' in aff.attrs, aff_tags))
     affs = []
     for tag in aff_tags:
         aff = {}
@@ -1915,7 +1913,7 @@ def object_id_doi(tag, parent_tag_name=None):
     object_id = None
     object_ids = raw_parser.object_id(tag, "doi")
     if object_ids:
-        object_id = first(object_ids)
+        object_id = first([id_ for id_ in object_ids])
     if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
         object_id = None
     if object_id:
@@ -1987,16 +1985,15 @@ def acknowledgements_json(soup):
 def keywords_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
-    return map(convert, full_keywords(soup))
+    return list(map(convert, full_keywords(soup)))
 
 def research_organism_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
     do_not_include = ['none', 'other']
-    research_organisms = filter(lambda term: term and term.lower() not in do_not_include,
-                                full_research_organism(soup))
-    return map(convert, research_organisms)
+    research_organisms = list(filter(lambda term: term and term.lower() not in do_not_include, full_research_organism(soup)))
+    return list(map(convert, research_organisms))
 
 def body(soup, remove_key_info_box=False, base_url=None):
 
@@ -2149,7 +2146,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
-            paragraph_content = paragraph_content + unicode(child_tag)
+            paragraph_content = paragraph_content + unicode_value(child_tag)
 
         else:
             # Add previous paragraph content first
@@ -2652,18 +2649,12 @@ def digest_json(soup):
 
 
 def author_preferred_name(surname, given_names, suffix):
-    preferred_name = None
-    preferred_name = " ".join(filter(lambda element: element is not None,
-                                     [given_names, surname, suffix]))
-    return preferred_name
+    return " ".join([element for element in [given_names, surname, suffix] if element is not None])
 
 
 def author_index_name(surname, given_names, suffix):
-    index_name = None
-    index_name = ", ".join(filter(lambda element: element is not None,
-                                  [surname, given_names, suffix]))
+    index_name = ", ".join([element for element in [surname, given_names, suffix] if element is not None])
     return index_name
-
 
 def author_affiliations(author, html_flag=True):
     """compile author affiliations for json output"""
@@ -2714,7 +2705,7 @@ def author_phone_numbers(author, correspondence):
     phone_numbers = []
     if correspondence and "phone" in author.get("references"):
         for ref_id in author["references"]["phone"]:
-            for corr_ref_id, data in correspondence.iteritems():
+            for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
                     for phone_number in data:
                         phone_numbers.append(phone_number)
@@ -2731,7 +2722,7 @@ def phone_number_json(phone):
 def author_phone_numbers_json(author, correspondence):
     phone_numbers = author_phone_numbers(author, correspondence)
     if phone_numbers:
-        phone_numbers = map(phone_number_json, phone_numbers)
+        phone_numbers = list(map(phone_number_json, phone_numbers))
     return phone_numbers
 
 
@@ -2740,7 +2731,7 @@ def author_email_addresses(author, correspondence):
 
     if correspondence and "email" in author.get("references"):
         for ref_id in author["references"]["email"]:
-            for corr_ref_id, data in correspondence.iteritems():
+            for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
                     for email_address in data:
                         email_addresses.append(email_address)
@@ -3002,10 +2993,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in filter(lambda json_element: json_element.get("group-author-key")
-                              and not json_element.get("collab"), contributors_data):
-        for group_author in filter(
-            lambda json_element: json_element["type"] == "group", authors_json_data):
+    for contributor in [elem for elem in contributors_data if elem.get("group-author-key") and not elem.get("collab")]:
+        for group_author in [elem for elem in authors_json_data if elem.get('type') == 'group']:
             group_author_key = None
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
@@ -3041,12 +3030,12 @@ def extract_author_line_names(authors_json_data):
     if not authors_json_data:
         return author_names
     for author in authors_json_data:
-        if "name" in author and type(author["name"]) in (str, unicode):
-            # collab
-            author_names.append(author["name"])
-        elif "name" in author and "preferred" in author["name"]:
+        if "name" in author and "preferred" in author["name"]:
             # person
             author_names.append(author["name"]["preferred"])
+        elif "name" in author:
+            # collab
+            author_names.append(unicode_value(author["name"]))
     return author_names
 
 def format_author_line(author_names):
@@ -3082,7 +3071,12 @@ def references_pages_range(fpage=None, lpage=None):
     range = None
     if fpage and lpage:
         # use unichr(8211) for the hyphen because the schema is requiring it
-        range = fpage.strip() + unichr(8211) + lpage.strip()
+        try:
+            # Python 2
+            range = fpage.strip() + unichr(8211) + lpage.strip()
+        except NameError:
+            # Python 3
+            range = fpage.strip() + chr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
     elif lpage:
@@ -3113,7 +3107,7 @@ def references_author_collab(ref_author, html_flag=True):
 
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = unicode(convert(ref_author.get("collab")))
+    author_json["name"] = unicode_value(convert(ref_author.get("collab")))
     return author_json
 
 def references_author_person(ref_author):
@@ -3683,14 +3677,14 @@ def supplementary_files_json(soup):
     # Support for older PoA article supplementary material tags
     poa_supp_material_tags = []
     all_supp_material_tags = raw_parser.supplementary_material(soup)
-    poa_supp_material_tags = filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags)
+    poa_supp_material_tags = list(filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags))
     for tag in poa_supp_material_tags:
         tag_content = poa_supplementary_material_block_content(tag)
         if tag_content != {}:
             additional_files_json.append(tag_content)
 
     # Add id and title for PoA articles, i.e. if there are none with an id value
-    if len(filter(lambda file: file.get('id') is not None, supplementary_material_tags)) == 0:
+    if len(list(filter(lambda file: file.get('id') is not None, supplementary_material_tags))) == 0:
         i = 1
         for file in additional_files_json:
             file["id"] = "SD" + str(i) + "-data"
@@ -3721,7 +3715,7 @@ def funding_awards_json(soup):
     award_groups = full_award_groups(soup)
     if award_groups:
         for award_group_dict in award_groups:
-            for id, award_group in award_group_dict.iteritems():
+            for id, award_group in iteritems(award_group_dict):
                 award_content = OrderedDict()
                 set_if_value(award_content, "id", id)
 

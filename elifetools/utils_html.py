@@ -1,5 +1,4 @@
 import re
-from bs4 import BeautifulSoup
 from utils import escape_unmatched_angle_brackets, escape_ampersand
 
 def xml_to_html(html_flag, xml_string, base_url=None):
@@ -93,7 +92,7 @@ def replace_xref_tags(s):
         rid_match = re.finditer('rid="(.*)"', tag_match.group())
         if rid_match:
             try:
-                all_rid = rid_match.next().group(1)
+                all_rid = next(rid_match).group(1)
                 # Take only the first rid value if separated by spaces
                 rid = all_rid.split(' ')[0]
                 new_tag = '<a href="#' + rid + '">'
@@ -103,7 +102,7 @@ def replace_xref_tags(s):
                 s = replace_simple_tags(s, 'xref', 'a')
             except StopIteration:
                 pass
-            
+
     return s
 
 def replace_mathml_tags(s):
@@ -119,8 +118,8 @@ def replace_ext_link_tags(s):
         ext_link_type_match = re.finditer('ext-link-type="(.*)"', tag_match.group())
         if xlink_match and ext_link_type_match:
             try:
-                xlink = xlink_match.next().group(1)
-                ext_link_type = ext_link_type_match.next().group(1)
+                xlink = next(xlink_match).group(1)
+                ext_link_type = next(ext_link_type_match).group(1)
                 if ext_link_type.startswith('uri'):
                     # Compare the start of the unicode string and prepend incomplete URL values
                     if not xlink[0:4] in ['http', 'ftp:']:
@@ -151,7 +150,7 @@ def replace_inline_graphic_tags(s, base_url=None):
         xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
         if xlink_match:
             try:
-                xlink = xlink_match.next().group(1)
+                xlink = next(xlink_match).group(1)
                 # Add or change file extension
                 if '.' not in xlink:
                     xlink = xlink + to_file_extension
@@ -175,7 +174,7 @@ def replace_named_content_tags(s):
     for tag_match in re.finditer("<(named-content.*?)>", s):
         content_type_match = re.finditer('content-type="(.*)"', tag_match.group())
         try:
-            all_match = content_type_match.next().group(1)
+            all_match = next(content_type_match).group(1)
             # Take only the first value
             span_class = all_match.split(' ')[0]
             new_tag = '<span class="' + span_class + '">'

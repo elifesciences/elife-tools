@@ -2,7 +2,6 @@
 
 import unittest
 import os
-import time
 from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

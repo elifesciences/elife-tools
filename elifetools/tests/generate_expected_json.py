@@ -1,10 +1,10 @@
-import os
 import json
+import os
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import parseJATS as parser
-from file_utils import sample_xml, json_expected_folder, json_expected_file
+from elifetools.file_utils import sample_xml, json_expected_folder, json_expected_file
 
 """
 This is a helper to generate JSON files containing
