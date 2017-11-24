@@ -3,8 +3,8 @@
 from collections import OrderedDict
 from six import iteritems
 
-import parseJATS as parser
-import utils
+import elifetools.parseJATS 
+import elifetools.utils
 
 def rewrite_json(rewrite_type, soup, json_content):
     """
@@ -13,15 +13,15 @@ def rewrite_json(rewrite_type, soup, json_content):
     """
     if not soup:
         return json_content
-    if not parser.doi(soup) or not parser.journal_id(soup):
+    if not elifetools.parseJATS.doi(soup) or not elifetools.parseJATS.journal_id(soup):
         return json_content
 
     # Hook only onto elife articles for rewriting currently
-    if parser.journal_id(soup).lower() == "elife":
-        function_name = rewrite_function_name(parser.journal_id(soup), rewrite_type)
+    if elifetools.parseJATS.journal_id(soup).lower() == "elife":
+        function_name = rewrite_function_name(elifetools.parseJATS.journal_id(soup), rewrite_type)
         if function_name:
             try:
-                json_content = globals()[function_name](json_content, parser.doi(soup))
+                json_content = globals()[function_name](json_content, elifetools.parseJATS.doi(soup))
             except KeyError:
                 pass
     return json_content
@@ -366,9 +366,9 @@ def elife_references_rewrite_json():
         ref_json[id][author_type] = []
         for ref_author in authors:
             if  "collab" in ref_author:
-                author_json = parser.references_author_collab(ref_author)
+                author_json = elifetools.parseJATS.references_author_collab(ref_author)
             else:
-                author_json = parser.references_author_person(ref_author)
+                author_json = elifetools.parseJATS.references_author_person(ref_author)
             if author_json:
                 ref_json[id][author_type].append(author_json)
         # Add to json array, and do not verwrite existing rule of a specific bib id (if present)
@@ -503,7 +503,7 @@ def rewrite_elife_authors_json(json_content, doi):
     """ this does the work of rewriting elife authors json """
 
     # Convert doi from testing doi if applicable
-    article_doi = utils.convert_testing_doi(doi)
+    article_doi = elifetools.utils.convert_testing_doi(doi)
 
     # Edge case fix an affiliation name
     if article_doi == "10.7554/eLife.06956":
