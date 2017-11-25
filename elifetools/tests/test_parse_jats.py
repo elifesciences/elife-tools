@@ -2695,6 +2695,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
     def test_copyright_holder(self, filename):
         self.assertEqual(self.json_expected(filename, "copyright_holder"), parser.copyright_holder(self.soup(filename)))
 
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_copyright_holder_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.copyright_holder(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @unpack
     @data(
         ('elife-kitchen-sink.xml', u'Alegado et al.'),
@@ -2706,15 +2719,54 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(expected, parser.copyright_holder_json(soup))
 
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_copyright_holder_json_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.copyright_holder_json(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_copyright_statement(self, filename):
         self.assertEqual(self.json_expected(filename, "copyright_statement"),
                          parser.copyright_statement(self.soup(filename)))
 
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_copyright_statement_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.copyright_statement(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml")
     def test_copyright_year(self, filename):
         self.assertEqual(self.json_expected(filename, "copyright_year"),
                          parser.copyright_year(self.soup(filename)))
+
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_copyright_year_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.copyright_year(body_tag)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_correspondence(self, filename):
@@ -2854,6 +2906,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         self.assertEqual(self.json_expected(filename, "full_license"),
                          parser.full_license(self.soup(filename)))
 
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_full_license_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.full_license(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml", "elife00240.xml")
     def test_full_research_organism(self, filename):
         self.assertEqual(self.json_expected(filename, "full_research_organism"),
@@ -2917,12 +2982,29 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         self.assertEqual(self.json_expected(filename, "license"),
                          parser.license(self.soup(filename)))
 
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_license_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.license(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @unpack
     @data(
         # example license from 00666
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article-meta><permissions><copyright-statement>© 2016, Harrison et al</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Harrison et al</copyright-holder><ali:free_to_read/><license xlink:href="http://creativecommons.org/licenses/by/4.0/"><ali:license_ref>http://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This article is distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p></license></permissions></article-meta></root>',
         'This article is distributed under the terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</a>, which permits unrestricted use and redistribution provided that the original author and source are credited.'
         ),
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
     )
     def test_license_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2934,6 +3016,19 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
     def test_license_url(self, filename):
         self.assertEqual(self.json_expected(filename, "license_url"),
                          parser.license_url(self.soup(filename)))
+
+    @data(
+        # edge case, no permissions tag
+        ('<root><article></article></root>',
+         None
+        )
+    )
+    @unpack
+    def test_license_url_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.license_url(body_tag)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife02304.xml", "elife00007.xml", "elife04953.xml",
           "elife00005.xml", "elife05031.xml", "elife04493.xml", "elife06726.xml")
