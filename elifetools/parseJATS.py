@@ -1051,11 +1051,9 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
                 contributor["bio"] = biography_content[0].get("content")
         set_if_value(contributor, "email", contrib_email(contrib_tag))
         set_if_value(contributor, "phone", contrib_phone(contrib_tag))
-        name_tag = first(extract_nodes(contrib_tag, "name"))
-        if name_tag is not None:
-            set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
-            set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
-            set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+        set_if_value(contributor, "surname", first_node_str_contents(contrib_tag, "surname"))
+        set_if_value(contributor, "given-names", first_node_str_contents(contrib_tag, "given-names"))
+        set_if_value(contributor, "suffix", first_node_str_contents(contrib_tag, "suffix"))
         # Get the sub-group value from the parent role tag if it is inside a group
         if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
             and is_author_group_author(contrib_tag.parent.parent.parent)):
