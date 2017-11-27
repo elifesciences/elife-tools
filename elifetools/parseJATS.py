@@ -182,36 +182,50 @@ def conflict(soup):
 
 def copyright_statement(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_statement(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_statement(permissions_tag))
+    return None
 
 @inten
 def copyright_year(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_year(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_year(permissions_tag))
+    return None
 
 def copyright_holder(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_holder(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_holder(permissions_tag))
+    return None
 
 def copyright_holder_json(soup):
     "for json output add a full stop if ends in et al"
+    holder = None
     permissions_tag = raw_parser.article_permissions(soup)
-    holder = node_text(raw_parser.copyright_holder(permissions_tag))
+    if permissions_tag:
+        holder = node_text(raw_parser.copyright_holder(permissions_tag))
     if holder is not None and holder.endswith('et al'):
         holder = holder + '.'
     return holder
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_text(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return raw_parser.licence_url(permissions_tag)
+    if permissions_tag:
+        return raw_parser.licence_url(permissions_tag)
+    return None
 
 def license_json(soup):
     return xml_to_html(True, full_license(soup))
