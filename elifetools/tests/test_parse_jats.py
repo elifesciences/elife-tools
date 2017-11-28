@@ -1291,6 +1291,90 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertEqual(parser.author_line(soup), expected)
 
+
+    @data(
+        # standard expected author with name tag
+        ('''<root>
+         <article>
+         <article-meta>
+         <contrib-group>
+         <contrib contrb-type="author">
+         <name>
+         <surname>Author</surname>
+         <given-names>A Real</given-names>
+         <suffix>Jnr</suffix>
+         </name>
+         </contrib>
+         </contrib-group>
+         </article-meta>
+         </article>
+         </root>''',
+         {'given-names': 'A Real', 'suffix': 'Jnr', 'surname': 'Author'}
+        ),
+        # edge case, no valid contrib tags
+        ('''<root>
+         <article>
+         <article-meta>
+         <contrib-group>
+         <contrib></contrib>
+         </contrib-group>
+         </article-meta>
+         </article>
+         </root>''',
+         {}
+        ),
+        # edge case, string-name wrapper
+        ('''<root>
+         <article>
+         <article-meta>
+         <contrib-group>
+         <contrib contrb-type="author">
+         <string-name>
+         <given-names>A Real</given-names>
+         <surname>Author</surname>
+         ,
+         <suffix>Jnr</suffix>
+         </string-name>
+         </contrib>
+         </contrib-group>
+         </article-meta>
+         </article>
+         </root>''',
+         {'given-names': 'A Real', 'suffix': 'Jnr', 'surname': 'Author'}
+        ),
+        # edge case, incorrect aff tag xref values will not cause an error if aff tag is not found
+        ('''<root>
+         <article>
+         <article-meta>
+         <contrib-group>
+         <contrib contrb-type="author">
+         <name>
+         <surname>Author</surname>
+         <given-names>A Real</given-names>
+         <xref ref-type="aff" rid="a1 a2"/>
+         </name>
+         </contrib>
+         <aff id="a1">
+         <institution>School of XML, U. XML Madrid</institution>, <addr-line>28040 Madrid</addr-line>, <country>Spain</country>;
+         </aff>
+         <aff id="a2">
+         <institution>Center for XML Research, XML University</institution>, <addr-line>Stanford, California 94305</addr-line>; e-mail: <email>not_real@example.org</email>
+         </aff>
+         </contrib-group>
+         </article-meta>
+         </article>
+         </root>''',
+         {'given-names': 'A Real', 'references': {'affiliation': ['a1 a2']}, 'surname': 'Author'}
+        ),
+    )
+    @unpack
+    def test_format_contributor_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        contrib_tag = raw_parser.article_contributors(soup)[0]
+        tag_content = parser.format_contributor(contrib_tag, soup)
+        self.assertEqual(expected, tag_content)
+
+
     @unpack
     @data(
         ('(+1) 800-555-5555', '+18005555555')
