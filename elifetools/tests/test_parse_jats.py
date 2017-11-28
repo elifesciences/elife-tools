@@ -1223,6 +1223,55 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(parser.format_author_line(author_names), expected)
 
 
+    @data(
+        # aff tag linked via an rid to id attribute
+        ('''<aff id="aff1">
+<label>1</label>
+<institution content-type="dept">Department of Production</institution>
+<institution>eLife</institution>
+<addr-line>
+<named-content content-type="city">Cambridge</named-content>
+</addr-line>
+<country>United Kingdom</country>
+</aff>''',
+        ('aff1', {
+            'city': u'Cambridge',
+            'country': u'United Kingdom',
+            'dept': u'Department of Production',
+            'institution': u'eLife'}
+         )
+        ),
+        # inline aff tag example, no id attribute
+        ('''<aff>
+<institution>eLife</institution>
+<addr-line>
+<named-content content-type="city">Cambridge</named-content>
+</addr-line>
+<country>United Kingdom</country>
+</aff>''',
+        (None, {
+            'country': u'United Kingdom',
+            'institution': u'eLife',
+            'city': u'Cambridge'}
+         )
+        ),
+        # edge case, no aff tag or the rid idoes not match an aff id
+        (None,
+        (None, {})
+        ),
+    )
+    @unpack
+    def test_format_aff_edge_cases(self, xml_content, expected):
+        if xml_content:
+            soup = parser.parse_xml(xml_content)
+            aff_tag = soup.contents[0]
+        else:
+            # where the tag is None
+            aff_tag = xml_content
+        tag_content = parser.format_aff(aff_tag)
+        self.assertEqual(expected, tag_content)
+
+
     @unpack
     @data(
         (None, []),
