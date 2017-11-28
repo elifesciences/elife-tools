@@ -1249,6 +1249,8 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
 
 
 def format_aff(aff_tag):
+    if not aff_tag:
+        return None, {}
     values = {
         'dept': node_contents_str(first(extract_nodes(aff_tag, "institution", "content-type", "dept"))),
         'institution': node_contents_str(first(list(filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution"))))),
