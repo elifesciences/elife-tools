@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from slugify import slugify
 
 import elifetools.rawJATS as raw_parser
-import elifetools.json_rewrite
+from elifetools import json_rewrite
 from elifetools.utils import *
 from elifetools.utils import unicode_value
 from elifetools.utils_html import xml_to_html
@@ -53,7 +53,7 @@ def title_prefix(soup):
 def title_prefix_json(soup):
     "titlePrefix with capitalisation changed"
     prefix = title_prefix(soup)
-    prefix_rewritten = elifetools.json_rewrite.rewrite_json("title_prefix_json", soup, prefix)
+    prefix_rewritten = json_rewrite.rewrite_json("title_prefix_json", soup, prefix)
     return prefix_rewritten
 
 def doi(soup):
@@ -2024,7 +2024,7 @@ def body_json(soup, base_url=None):
         new_body = []
         new_body.append(new_body_section)
         body_content = new_body
-    body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
+    body_content_rewritten = json_rewrite.rewrite_json("body_json", soup, body_content)
     return body_content_rewritten
 
 def render_raw_body(tag, remove_key_info_box=False, base_url=None):
@@ -2588,11 +2588,11 @@ def decision_letter(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
-        body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
+        body_content_rewritten = json_rewrite.rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
-    return elifetools.json_rewrite.rewrite_json("decision_letter_json", soup, sub_article_content)
+    return json_rewrite.rewrite_json("decision_letter_json", soup, sub_article_content)
 
 
 def author_response(soup):
@@ -2610,7 +2610,7 @@ def author_response(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
-        body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
+        body_content_rewritten = json_rewrite.rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
@@ -2957,7 +2957,7 @@ def editors_json(soup):
             editor_json = author_person(contributor, None, None, None, None, None, None)
         if editor_json:
             editors_json_data.append(editor_json)
-    editors_json_data_rewritten = elifetools.json_rewrite.rewrite_json("editors_json", soup, editors_json_data)
+    editors_json_data_rewritten = json_rewrite.rewrite_json("editors_json", soup, editors_json_data)
     return editors_json_data_rewritten
 
 def authors_json(soup):
@@ -3012,7 +3012,7 @@ def authors_json(soup):
                         group_author["people"] = []
                     group_author["people"].append(author_json)
 
-    authors_json_data_rewritten = elifetools.json_rewrite.rewrite_json("authors_json", soup, authors_json_data)
+    authors_json_data_rewritten = json_rewrite.rewrite_json("authors_json", soup, authors_json_data)
     return authors_json_data_rewritten
 
 def author_line(soup):
@@ -3355,7 +3355,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, index, convert(ref_content.get(index)))
 
         # Rewrite references data with support to delete a reference too
-        ref_content_rewritten = elifetools.json_rewrite.rewrite_json("references_json", soup, [ref_content])
+        ref_content_rewritten = json_rewrite.rewrite_json("references_json", soup, [ref_content])
         if ref_content_rewritten and len(ref_content_rewritten) > 0:
             ref_content = ref_content_rewritten[0]
         elif len(ref_content_rewritten) == 0:
@@ -3637,7 +3637,7 @@ def datasets_json(soup, html_flag=True):
         if dataset_related_object_json(related_object) != {}:
             datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
 
-    return elifetools.json_rewrite.rewrite_json("datasets_json", soup, datasets_json)
+    return json_rewrite.rewrite_json("datasets_json", soup, datasets_json)
 
 def poa_supplementary_material_block_content(tag):
     tag_content = OrderedDict()
@@ -3784,6 +3784,6 @@ def funding_awards_json(soup):
         if award.get("id") and award.get("id") in award_recipients:
             award["recipients"] = award_recipients.get(award.get("id"))
 
-    awards = elifetools.json_rewrite.rewrite_json("funding_awards", soup, awards)
+    awards = json_rewrite.rewrite_json("funding_awards", soup, awards)
 
     return awards
