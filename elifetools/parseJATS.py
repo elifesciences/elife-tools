@@ -7,7 +7,7 @@ import elifetools.rawJATS as raw_parser
 import elifetools.json_rewrite
 from elifetools.utils import *
 from elifetools.utils import unicode_value
-from elifetools.utils_html import xml_to_html
+from elifetools.utils_html import xml_to_html, references_author_collab
 
 
 def parse_xml(xml):
@@ -2647,14 +2647,6 @@ def digest_json(soup):
     return abstract_json
 
 
-def author_preferred_name(surname, given_names, suffix):
-    return " ".join([element for element in [given_names, surname, suffix] if element is not None])
-
-
-def author_index_name(surname, given_names, suffix):
-    index_name = ", ".join([element for element in [surname, given_names, suffix] if element is not None])
-    return index_name
-
 def author_affiliations(author, html_flag=True):
     """compile author affiliations for json output"""
 
@@ -3099,28 +3091,6 @@ def references_date(year=None):
         else:
             date = year
     return (date, discriminator, in_press)
-
-def references_author_collab(ref_author, html_flag=True):
-    # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
-
-    author_json = OrderedDict()
-    author_json["type"] = "group"
-    author_json["name"] = unicode_value(convert(ref_author.get("collab")))
-    return author_json
-
-def references_author_person(ref_author):
-    author_json = OrderedDict()
-    author_json["type"] = "person"
-    author_name = OrderedDict()
-    author_name["preferred"] = author_preferred_name(ref_author.get("surname"),
-                                                     ref_author.get("given-names"),
-                                                     ref_author.get("suffix"))
-    author_name["index"] = author_index_name(ref_author.get("surname"),
-                                             ref_author.get("given-names"),
-                                             ref_author.get("suffix"))
-    author_json["name"] = author_name
-    return author_json
 
 def references_authors(ref_authors):
     all_authors = OrderedDict()
