@@ -1,6 +1,7 @@
 import time
 import calendar
 import re
+from collections import OrderedDict
 from six import iteritems
 
 
@@ -501,3 +502,23 @@ def escape_ampersand(string):
     # The pattern below is match & that is not immediately followed by #
     string = re.sub(r"&(?!" + start_with_match + ")", '&amp;', string)
     return string
+
+def references_author_person(ref_author):
+    author_json = OrderedDict()
+    author_json["type"] = "person"
+    author_name = OrderedDict()
+    author_name["preferred"] = author_preferred_name(ref_author.get("surname"),
+                                                     ref_author.get("given-names"),
+                                                     ref_author.get("suffix"))
+    author_name["index"] = author_index_name(ref_author.get("surname"),
+                                             ref_author.get("given-names"),
+                                             ref_author.get("suffix"))
+    author_json["name"] = author_name
+    return author_json
+
+def author_preferred_name(surname, given_names, suffix):
+    return " ".join([element for element in [given_names, surname, suffix] if element is not None])
+
+def author_index_name(surname, given_names, suffix):
+    index_name = ", ".join([element for element in [surname, given_names, suffix] if element is not None])
+    return index_name
