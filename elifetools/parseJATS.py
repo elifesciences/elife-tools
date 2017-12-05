@@ -12,7 +12,7 @@ from slugify import slugify
 from utils import unicode_value
 
 def parse_xml(xml):
-    return BeautifulSoup(xml, ["lxml", "xml"])
+    return BeautifulSoup(xml, "lxml-xml")
 
 def parse_document(filelocation):
     with open(filelocation) as fp:
