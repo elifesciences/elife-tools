@@ -6,7 +6,6 @@ from xml.dom import minidom
 from six import iteritems
 import sys
 
-from elifetools.utils import unicode_value
 
 """
 xmlio can do input and output of XML, allowing it to be edited using ElementTree library

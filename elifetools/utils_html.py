@@ -1,5 +1,6 @@
 import re
-from utils import escape_unmatched_angle_brackets, escape_ampersand
+from collections import OrderedDict
+from elifetools.utils import escape_unmatched_angle_brackets, escape_ampersand, unicode_value
 
 def xml_to_html(html_flag, xml_string, base_url=None):
     "For formatting json output into HTML friendly format"
@@ -202,3 +203,12 @@ def replace_table_style_author_callout(s):
             old_tag = tag_start + 'style="' + class_name + '"' + tag_end
             s = s.replace(old_tag, new_tag)
     return s
+
+def references_author_collab(ref_author, html_flag=True):
+    # Configure the XML to HTML conversion preference for shorthand use below
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
+    author_json = OrderedDict()
+    author_json["type"] = "group"
+    author_json["name"] = unicode_value(convert(ref_author.get("collab")))
+    return author_json

@@ -1,4 +1,4 @@
-from utils import first, firstnn, extract_nodes, node_contents_str
+from elifetools.utils import first, firstnn, extract_nodes, node_contents_str
 
 """
 rawParser.py extracts and returns the nodes from the article xml using BeautifulSoup so that functionality at higher levels may use and combine them as neccessary.
