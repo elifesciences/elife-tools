@@ -2008,24 +2008,6 @@ def research_organism_json(soup, html_flag=True):
     research_organisms = list(filter(lambda term: term and term.lower() not in do_not_include, full_research_organism(soup)))
     return list(map(convert, research_organisms))
 
-def boxed_text_to_image_block(tag):
-    "covert boxed-text to an image block containing an inline-graphic"
-    tag_block = OrderedDict()
-    image_content = body_block_image_content(first(raw_parser.inline_graphic(tag)))
-    tag_block["type"] = "image"
-    set_if_value(tag_block, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
-    set_if_value(tag_block, "id", tag.get("id"))
-    set_if_value(tag_block, "image", image_content)
-    # render paragraphs into a caption
-    p_tags = raw_parser.paragraph(tag)
-    caption_content = []
-    for p_tag in p_tags:
-        if not raw_parser.inline_graphic(p_tag):
-            caption_content.append(body_block_content(p_tag))
-    set_if_value(tag_block, "caption", caption_content)
-    return tag_block
-
-
 def body(soup, remove_key_info_box=False, base_url=None):
 
     body_content = []
@@ -2073,11 +2055,6 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                 and "related" in first_node_text.lower()):
                 # Skip this tag
                 continue
-
-            elif raw_parser.inline_graphic(tag):
-                # edge case where inline-graphic is in the first boxed-text
-                tag_block = boxed_text_to_image_block(tag)
-                body_content.append(tag_block)
 
             elif not raw_parser.title(tag) and not raw_parser.label(tag):
                 # Collapse boxed-text here if it has no title or label
@@ -2241,16 +2218,6 @@ def body_block_paragraph_content(text):
         tag_content["type"] = "paragraph"
         tag_content["text"] = clean_whitespace(text)
     return tag_content
-
-def body_block_image_content(tag):
-    "format a graphic or inline-graphic into a body block json format"
-    image_content = {}
-    if tag:
-        copy_attribute(tag.attrs, 'xlink:href', image_content, 'uri')
-        if "uri" in image_content:
-            # todo!! alt
-            set_if_value(image_content, "alt", "")
-    return image_content
 
 def body_block_title_label_caption(tag_content, title_value, label_value,
                                    caption_content, set_caption=True, prefer_title=False, prefer_label=False):
@@ -2417,8 +2384,13 @@ def body_block_content(tag, html_flag=True, base_url=None):
         body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         if raw_parser.graphic(tag):
+            image_content = {}
             graphic_tags = raw_parser.graphic(tag)
-            image_content = body_block_image_content(first(graphic_tags))
+            if graphic_tags:
+                copy_attribute(first(graphic_tags).attrs, 'xlink:href', image_content, 'uri')
+                if "uri" in image_content:
+                    # todo!! alt
+                    set_if_value(image_content, "alt", "")
             if len(image_content) > 0:
                 asset_tag_content["image"] = image_content
 
