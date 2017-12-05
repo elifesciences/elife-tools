@@ -14,7 +14,7 @@ def parse_xml(xml):
     return BeautifulSoup(xml, "lxml-xml")
 
 def parse_document(filelocation):
-    with open(filelocation) as fp:
+    with open(filelocation, 'rb') as fp:
         return parse_xml(fp)
 
 def duplicate_tag(tag):
