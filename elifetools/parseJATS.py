@@ -11,7 +11,7 @@ from elifetools.utils_html import xml_to_html, references_author_collab
 
 
 def parse_xml(xml):
-    return BeautifulSoup(xml, ["lxml", "xml"])
+    return BeautifulSoup(xml, "lxml-xml")
 
 def parse_document(filelocation):
     with open(filelocation) as fp:
@@ -181,36 +181,50 @@ def conflict(soup):
 
 def copyright_statement(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_statement(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_statement(permissions_tag))
+    return None
 
 @inten
 def copyright_year(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_year(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_year(permissions_tag))
+    return None
 
 def copyright_holder(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_holder(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_holder(permissions_tag))
+    return None
 
 def copyright_holder_json(soup):
     "for json output add a full stop if ends in et al"
+    holder = None
     permissions_tag = raw_parser.article_permissions(soup)
-    holder = node_text(raw_parser.copyright_holder(permissions_tag))
+    if permissions_tag:
+        holder = node_text(raw_parser.copyright_holder(permissions_tag))
     if holder is not None and holder.endswith('et al'):
         holder = holder + '.'
     return holder
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_text(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return raw_parser.licence_url(permissions_tag)
+    if permissions_tag:
+        return raw_parser.licence_url(permissions_tag)
+    return None
 
 def license_json(soup):
     return xml_to_html(True, full_license(soup))
@@ -1036,11 +1050,9 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
                 contributor["bio"] = biography_content[0].get("content")
         set_if_value(contributor, "email", contrib_email(contrib_tag))
         set_if_value(contributor, "phone", contrib_phone(contrib_tag))
-        name_tag = first(extract_nodes(contrib_tag, "name"))
-        if name_tag is not None:
-            set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
-            set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
-            set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+        set_if_value(contributor, "surname", first_node_str_contents(contrib_tag, "surname"))
+        set_if_value(contributor, "given-names", first_node_str_contents(contrib_tag, "given-names"))
+        set_if_value(contributor, "suffix", first_node_str_contents(contrib_tag, "suffix"))
         # Get the sub-group value from the parent role tag if it is inside a group
         if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
             and is_author_group_author(contrib_tag.parent.parent.parent)):
@@ -1236,6 +1248,8 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
 
 
 def format_aff(aff_tag):
+    if not aff_tag:
+        return None, {}
     values = {
         'dept': node_contents_str(first(extract_nodes(aff_tag, "institution", "content-type", "dept"))),
         'institution': node_contents_str(first(list(filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution"))))),
