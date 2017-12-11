@@ -2384,7 +2384,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         if raw_parser.graphic(tag):
-            image_content = {}
+            image_content = OrderedDict()
             graphic_tags = raw_parser.graphic(tag)
             if graphic_tags:
                 copy_attribute(first(graphic_tags).attrs, 'xlink:href', image_content, 'uri')
