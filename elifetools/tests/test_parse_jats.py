@@ -846,7 +846,29 @@ class TestParseJats(unittest.TestCase):
 
         # 00646 v1 boxed text to keep, and wrap in section
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p>This article by Emma Pewsey (pictured) was the winning entry in the <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</ext-link> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.</p><p><inline-graphic xlink:href="elife-00646-inf1-v1"/></p></boxed-text><p>Normal healthy bones can be thought of as nature\'s scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.</p></body></article></root>',
-        [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')]), OrderedDict([('type', 'paragraph'), ('text', '<img src="elife-00646-inf1-v1.jpg"/>')]), OrderedDict([('type', 'paragraph'), ('text', u"Normal healthy bones can be thought of as nature's scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.")])])])]
+        [
+            OrderedDict([
+                ('type', 'section'),
+                ('id', 's0'),
+                ('title', 'Main text'),
+                ('content', [
+                    OrderedDict([
+                        ('type', 'image'),
+                        ('id', u'B1'),
+                        ('image', {'alt': '', 'uri': u'elife-00646-inf1-v1'}),
+                        ('caption', [
+                            OrderedDict([
+                                ('type', 'paragraph'),
+                                ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')
+                            ])
+                        ])
+                    ]), OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', u"Normal healthy bones can be thought of as nature's scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.")
+                    ])
+                ])
+            ])
+        ]
          ),
 
         # 02945 v1, correction article keep the boxed-text
@@ -2527,11 +2549,28 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-v1.tif'})]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-figsupp1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])]
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><p><boxed-text id="B1"><p>Boxed text with no title</p></boxed-text></p></body></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'box'), ('id', u'B1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Boxed text with no title')])])])])])]
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p><boxed-text id="B1"><p>Boxed text with no title</p></boxed-text></p></root>',
+        [OrderedDict([('type', 'box'), ('id', u'B1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Boxed text with no title')])])])]
          ),
 
-        )
+        # excerpt from 00646 v1 with a boxed-text inline-graphic
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text id="B1"><p>This article by Emma Pewsey (pictured) was the winning entry in the <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</ext-link> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.</p><p><inline-graphic xlink:href="elife-00646-inf1-v1"/></p></boxed-text></root>',
+        [
+            OrderedDict([
+                ('type', 'image'),
+                ('id', u'B1'),
+                ('image', {'alt': '', 'uri': u'elife-00646-inf1-v1'}),
+                ('caption', [
+                    OrderedDict([
+                        ('type', 'paragraph'),
+                        ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')
+                    ])
+                ])
+            ])
+        ]
+
+        ),
+    )
     def test_render_raw_body(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.render_raw_body(soup.contents[0])
