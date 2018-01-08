@@ -1,50 +1,39 @@
-from bs4 import BeautifulSoup
-import cgi
-import htmlentitydefs
-import os
-import time
-import calendar
-from slugify import slugify
-from utils import *
-from utils_html import xml_to_html
-from json_rewrite import rewrite_json
-import rawJATS as raw_parser
-import re
 from collections import OrderedDict
 
+from bs4 import BeautifulSoup
+from slugify import slugify
 
-import logging
-logger = logging.getLogger('myapp')
-hdlr = logging.FileHandler(os.getcwd() + os.sep + 'test.log')
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr) 
-logger.setLevel(logging.INFO)
+import elifetools.rawJATS as raw_parser
+import elifetools.json_rewrite
+from elifetools.utils import *
+from elifetools.utils import unicode_value
+from elifetools.utils_html import xml_to_html, references_author_collab
 
 
 def parse_xml(xml):
-    return BeautifulSoup(xml, ["lxml", "xml"])
+    return BeautifulSoup(xml, "lxml-xml")
 
 def parse_document(filelocation):
-    return parse_xml(open(filelocation))
+    with open(filelocation, 'rb') as fp:
+        return parse_xml(fp)
 
 def duplicate_tag(tag):
     # Make a completely new copy of a tag by parsing its contents again
-    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode(tag) + u'</article>'
+    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode_value(tag) + u'</article>'
     soup_copy = parse_xml(tag_xml)
     tag_copy = first(extract_nodes(soup_copy, tag.name))
     return tag_copy
 
 def title(soup):
     return node_text(raw_parser.article_title(soup))
-    
+
 def full_title(soup):
     # The title including italic tags, etc.
     return node_contents_str(raw_parser.article_title(soup))
 
 def title_short(soup):
     "'title' truncated to 20 chars"
-    # TODO: 20 is arbitrary, 
+    # TODO: 20 is arbitrary,
     return title(soup)[:20]
 
 def title_slug(soup):
@@ -63,7 +52,9 @@ def title_prefix(soup):
 
 def title_prefix_json(soup):
     "titlePrefix with capitalisation changed"
-    return title_case(title_prefix(soup))
+    prefix = title_prefix(soup)
+    prefix_rewritten = elifetools.json_rewrite.rewrite_json("title_prefix_json", soup, prefix)
+    return prefix_rewritten
 
 def doi(soup):
     # the first non-nil value returned by the raw parser
@@ -79,9 +70,8 @@ def journal_id(soup):
 def journal_title(soup):
     return node_text(raw_parser.journal_title(soup))
 
-def journal_issn(soup, pub_format = None):
-    if pub_format:
-        return node_text(raw_parser.journal_issn(soup, pub_format))
+def journal_issn(soup, pub_format=None, pub_type=None):
+    return node_text(raw_parser.journal_issn(soup, pub_format, pub_type))
 
 def publisher(soup):
     return node_text(raw_parser.publisher(soup))
@@ -93,20 +83,23 @@ def article_type(soup):
 def volume(soup):
     return node_text(first(raw_parser.volume(soup)))
 
+def issue(soup):
+    return node_text(first(raw_parser.issue(raw_parser.article_meta(soup))))
+
 def elocation_id(soup):
     return node_text(first(raw_parser.elocation_id(soup)))
-    
+
 def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
     if not raw_parser.research_organism_keywords(soup):
         return []
-    return map(node_text, raw_parser.research_organism_keywords(soup))
+    return list(map(node_text, raw_parser.research_organism_keywords(soup)))
 
 def full_research_organism(soup):
     "research-organism list including inline tags, such as italic"
     if not raw_parser.research_organism_keywords(soup):
         return []
-    return map(node_contents_str, raw_parser.research_organism_keywords(soup))
+    return list(map(node_contents_str, raw_parser.research_organism_keywords(soup)))
 
 def keywords(soup):
     """
@@ -115,19 +108,19 @@ def keywords(soup):
     """
     if not raw_parser.author_keywords(soup):
         return []
-    return map(node_text, raw_parser.author_keywords(soup))
+    return list(map(node_text, raw_parser.author_keywords(soup)))
 
 def full_keywords(soup):
     "author keywords list including inline tags, such as italic"
     if not raw_parser.author_keywords(soup):
         return []
-    return map(node_contents_str, raw_parser.author_keywords(soup))
+    return list(map(node_contents_str, raw_parser.author_keywords(soup)))
 
 def full_keyword_groups(soup):
     groups = {}
     for group_tag in raw_parser.keyword_group(soup):
-        group = map(node_contents_str, extract_nodes(group_tag, "kwd"))
-        group = map(lambda s: s.strip(), group)
+        group = list(map(node_contents_str, extract_nodes(group_tag, "kwd")))
+        group = list(map(lambda s: s.strip(), group))
         if 'kwd-group-type' in group_tag.attrs:
             groups[group_tag['kwd-group-type'].strip()] = group
     return groups
@@ -141,6 +134,26 @@ def impact_statement(soup):
         return node_contents_str(first(extract_nodes(tag, "meta-value")))
     return ""
 
+def version_history(soup, html_flag=True):
+    "extract the article version history details"
+    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    version_history = []
+    related_object_tags = raw_parser.related_object(raw_parser.article_meta(soup))
+    for tag in related_object_tags:
+        article_version = OrderedDict()
+        date_tag = first(raw_parser.date(tag))
+        if date_tag:
+            copy_attribute(date_tag.attrs, 'date-type', article_version, 'version')
+            (day, month, year) = ymd(date_tag)
+            article_version['day'] = day
+            article_version['month'] = month
+            article_version['year'] = year
+            article_version['date'] = date_struct_nn(year, month, day)
+        copy_attribute(tag.attrs, 'xlink:href', article_version, 'xlink_href')
+        set_if_value(article_version, "comment",
+                     convert(node_contents_str(first(raw_parser.comment(tag)))))
+        version_history.append(article_version)
+    return version_history
 
 def format_related_object(related_object):
     return related_object["id"], {}
@@ -149,7 +162,7 @@ def format_related_object(related_object):
 def related_object_ids(soup):
     tags = []
     if raw_parser.related_object(soup):
-        tags = filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup))
+        tags = list(filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup)))
     return dict(map(format_related_object, tags))
 
 @strippen
@@ -163,32 +176,55 @@ def ack(soup):
 @nullify
 @strippen
 def conflict(soup):
-    return map(node_text, raw_parser.conflict(soup))
+    result = [node_text(tag) for tag in raw_parser.conflict(soup)]
+    return result
 
 def copyright_statement(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_statement(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_statement(permissions_tag))
+    return None
 
 @inten
 def copyright_year(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_year(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_year(permissions_tag))
+    return None
 
 def copyright_holder(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(raw_parser.copyright_holder(permissions_tag))
+    if permissions_tag:
+        return node_text(raw_parser.copyright_holder(permissions_tag))
+    return None
+
+def copyright_holder_json(soup):
+    "for json output add a full stop if ends in et al"
+    holder = None
+    permissions_tag = raw_parser.article_permissions(soup)
+    if permissions_tag:
+        holder = node_text(raw_parser.copyright_holder(permissions_tag))
+    if holder is not None and holder.endswith('et al'):
+        holder = holder + '.'
+    return holder
 
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_text(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_text(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    if permissions_tag:
+        return node_contents_str(first(raw_parser.licence_p(permissions_tag)))
+    return None
 
 def license_url(soup):
     permissions_tag = raw_parser.article_permissions(soup)
-    return raw_parser.licence_url(permissions_tag)
+    if permissions_tag:
+        return raw_parser.licence_url(permissions_tag)
+    return None
 
 def license_json(soup):
     return xml_to_html(True, full_license(soup))
@@ -224,11 +260,11 @@ def subject_area(soup):
     Find the subject areas from article-categories subject tags
     """
     subject_area = []
-    
+
     tags = raw_parser.subject_area(soup)
     for tag in tags:
         subject_area.append(node_text(tag))
-        
+
     return subject_area
 
 def full_subject_area(soup):
@@ -247,11 +283,11 @@ def display_channel(soup):
     Find the subject areas of type display-channel
     """
     display_channel = []
-    
+
     tags = raw_parser.display_channel(soup)
     for tag in tags:
         display_channel.append(node_text(tag))
-        
+
     return display_channel
 
 def category(soup):
@@ -259,11 +295,11 @@ def category(soup):
     Find the category from subject areas
     """
     category = []
-    
+
     tags = raw_parser.category(soup)
     for tag in tags:
         category.append(node_text(tag))
-        
+
     return category
 
 def ymd(soup):
@@ -281,13 +317,34 @@ def pub_date(soup):
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
     Default date_type is pub
     """
-    pub_date = raw_parser.pub_date(soup, date_type = "pub")
+    pub_date = first(raw_parser.pub_date(soup, date_type="pub"))
     if pub_date is None:
-        pub_date = raw_parser.pub_date(soup, date_type = "publication")
+        pub_date = first(raw_parser.pub_date(soup, date_type="publication"))
     if pub_date is None:
         return None
     (day, month, year) = ymd(pub_date)
     return date_struct(year, month, day)
+
+def pub_dates(soup):
+    """
+    return a list of all the pub dates
+    """
+    pub_dates = []
+    tags = raw_parser.pub_date(soup)
+    for tag in tags:
+        pub_date = OrderedDict()
+        copy_attribute(tag.attrs, 'publication-format', pub_date)
+        copy_attribute(tag.attrs, 'date-type', pub_date)
+        copy_attribute(tag.attrs, 'pub-type', pub_date)
+        for tag_attr in ["date-type", "pub-type"]:
+            if tag_attr in tag.attrs:
+                (day, month, year) = ymd(tag)
+                pub_date['day'] = day
+                pub_date['month'] = month
+                pub_date['year'] = year
+                pub_date['date'] = date_struct_nn(year, month, day)
+        pub_dates.append(pub_date)
+    return pub_dates
 
 def history_date(soup, date_type = None):
     """
@@ -296,7 +353,7 @@ def history_date(soup, date_type = None):
     """
     if(date_type == None):
         return None
-    
+
     history_date = raw_parser.history_date(soup, date_type)
     if history_date is None:
         return None
@@ -320,7 +377,7 @@ def pub_date_month(soup):
     Find the published date month
     """
     return month_text(pub_date(soup))
-    
+
 def pub_date_year(soup):
     """
     Find the published date year
@@ -338,7 +395,7 @@ def received_date_date(soup):
     Find the received date in human readable form
     """
     return date_text(history_date(soup, date_type = "received"))
-    
+
 def received_date_day(soup):
     """
     Find the received date day
@@ -350,25 +407,25 @@ def received_date_month(soup):
     Find the received date month
     """
     return month_text(history_date(soup, date_type = "received"))
-    
+
 def received_date_year(soup):
     """
     Find the received date year
     """
     return year_text(history_date(soup, date_type = "received"))
-    
+
 def received_date_timestamp(soup):
     """
     Find the received date timestamp, in UTC time
     """
     return date_timestamp(history_date(soup, date_type = "received"))
-    
+
 def accepted_date_date(soup):
     """
     Find the accepted date in human readable form
     """
     return date_text(history_date(soup, date_type = "accepted"))
-    
+
 def accepted_date_day(soup):
     """
     Find the accepted date day
@@ -380,7 +437,7 @@ def accepted_date_month(soup):
     Find the accepted date month
     """
     return month_text(history_date(soup, date_type = "accepted"))
-    
+
 def accepted_date_year(soup):
     """
     Find the accepted date year
@@ -392,20 +449,20 @@ def accepted_date_timestamp(soup):
     Find the accepted date timestamp, in UTC time
     """
     return date_timestamp(history_date(soup, date_type = "accepted"))
-    
+
 def collection_year(soup):
     """
     Pub date of type collection will hold a year element for VOR articles
     """
-    pub_date = raw_parser.pub_date_collection(soup, pub_type = "collection")
+    pub_date = first(raw_parser.pub_date(soup, pub_type="collection"))
     if pub_date is None:
         return None
-    
+
     year = None
     year_tag = raw_parser.year(pub_date)
     if year_tag:
         year = int(node_text(year_tag))
-        
+
     return year
 
 def is_poa(soup):
@@ -429,30 +486,30 @@ def abstracts(soup):
 
     for tag in abstract_tags:
         abstract = {}
-        
+
         abstract["abstract_type"] = tag.get("abstract-type")
         title_tag = raw_parser.title(tag)
-        if title_tag:    
+        if title_tag:
             abstract["title"] = node_text(title_tag)
-        
+
         abstract["content"] = None
-        if len(paragraphs(tag)) > 0:
+        if raw_parser.paragraph(tag):
             abstract["content"] = ""
             abstract["full_content"] = ""
-            
-            good_paragraphs = remove_doi_paragraph(paragraphs(tag))
-            
+
+            good_paragraphs = remove_doi_paragraph(raw_parser.paragraph(tag))
+
             # Plain text content
             glue = ""
             for p_tag in good_paragraphs:
                 abstract["content"] += glue + node_text(p_tag)
                 glue = " "
-            
+
             # Content including markup tags
             # When more than one paragraph, wrap each in a <p> tag
             for p_tag in good_paragraphs:
-                abstract["full_content"] += '<p>' + node_contents_str(p_tag) + '</p>'            
-    
+                abstract["full_content"] += '<p>' + node_contents_str(p_tag) + '</p>'
+
         abstracts.append(abstract)
 
     return abstracts
@@ -462,7 +519,7 @@ def abstract(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list)))
     if abstract:
         return abstract.get("content")
     else:
@@ -475,7 +532,7 @@ def full_abstract(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list)))
     if abstract:
         return abstract.get("full_content")
     else:
@@ -485,8 +542,7 @@ def digest(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
-                                abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") == "executive-summary", abstract_list)))
     if abstract:
         return abstract.get("content")
     else:
@@ -499,8 +555,7 @@ def full_digest(soup):
     abstract = None
     abstract_list = abstracts(soup)
     if abstract_list:
-        abstract = first(filter(lambda tag: tag.get("abstract_type") == "executive-summary",
-                                abstract_list))
+        abstract = first(list(filter(lambda tag: tag.get("abstract_type") == "executive-summary", abstract_list)))
     if abstract:
         return abstract["full_content"]
     else:
@@ -508,7 +563,7 @@ def full_digest(soup):
 
 def related_article(soup):
     related_articles = []
-    
+
     related_article_tags = raw_parser.related_article(soup)
 
     for tag in related_article_tags:
@@ -517,7 +572,7 @@ def related_article(soup):
         related_article["related_article_type"] =tag.get("related-article-type")
         related_article["xlink_href"] = tag.get("xlink:href")
         related_articles.append(related_article)
-    
+
     return related_articles
 
 def mixed_citations(soup):
@@ -527,6 +582,9 @@ def mixed_citations(soup):
             'surname': nom.surname.text,
             'given': nom.find('given-names').text,
         }
+    def preferred_name(nom):
+        suffix = None
+        return author_preferred_name(nom.surname.text, nom.find('given-names').text, suffix)
     def do(mc):
         return {
             'journal': {
@@ -538,18 +596,19 @@ def mixed_citations(soup):
             'article': {
                 'title': mc.find('article-title').text,
                 'doi': mc.find('pub-id', attrs={'pub-id-type': 'doi'}).text,
-                'pub-date': map(int, ymd(soup)[::-1]),
-                'authors': map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents),
+                'pub-date': list(map(int, ymd(soup)[::-1])),
+                'authors': list(map(name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents)),
+                'authorLine': format_author_line(list(map(preferred_name, mc.find('person-group', attrs={'person-group-type': 'author'}).contents))),
             },
         }
-    return map(do, mc_tags)
+    return list(map(do, mc_tags))
 
 def component_doi(soup):
     """
     Look for all object-id of pub-type-id = doi, these are the component DOI tags
     """
     component_doi = []
-    
+
     object_id_tags = raw_parser.object_id(soup, pub_id_type = "doi")
 
     # Get components too for later
@@ -561,21 +620,21 @@ def component_doi(soup):
         component_object = {}
         component_object["doi"] = doi_uri_to_doi(tag.text)
         component_object["position"] = position
-        
+
         # Try to find the type of component
         for component in component_list:
             if "doi" in component and component["doi"] == component_object["doi"]:
-                component_object["type"] = component["type"] 
+                component_object["type"] = component["type"]
 
         component_doi.append(component_object)
-        
+
         position = position + 1
-    
+
     return component_doi
 
 def tag_details_sibling_ordinal(tag):
     sibling_ordinal = None
-    
+
     if ((tag.name == "fig" and 'specific-use' not in tag.attrs)
          or tag.name == "media"):
         # Fig that is not a child figure / figure supplement
@@ -594,12 +653,12 @@ def tag_details_sibling_ordinal(tag):
     else:
         # Default
         sibling_ordinal = tag_sibling_ordinal(tag)
-        
+
     return sibling_ordinal
 
 def tag_details_asset(tag):
     asset = None
-    
+
     if tag.name == "fig" and 'specific-use' in tag.attrs:
         # Child figure / figure supplement
         asset = 'figsupp'
@@ -618,7 +677,7 @@ def tag_details_asset(tag):
         elif (node_text(raw_parser.article_title(tag)) and
               node_text(raw_parser.article_title(tag)).lower() == 'author response'):
             asset = 'resp'
-        
+
     return asset
 
 
@@ -630,7 +689,7 @@ def tag_details(tag, nodenames):
 
     details['type'] = tag.name
     details['ordinal'] = tag_ordinal(tag)
-    
+
     # Ordinal value
     if tag_details_sibling_ordinal(tag):
         details['sibling_ordinal'] = tag_details_sibling_ordinal(tag)
@@ -638,11 +697,11 @@ def tag_details(tag, nodenames):
     # Asset name
     if tag_details_asset(tag):
         details['asset'] = tag_details_asset(tag)
-    
+
     object_id_tag = first(raw_parser.object_id(tag, pub_id_type= "doi"))
     if object_id_tag:
         details['component_doi'] = extract_component_doi(tag, nodenames)
-    
+
     return details
 
 
@@ -652,19 +711,19 @@ def media(soup):
     and the parent of that doi (not always present)
     """
     media = []
-    
+
     media_tags = raw_parser.media(soup)
-    
+
     position = 1
-    
+
     for tag in media_tags:
         media_item = {}
-        
+
         copy_attribute(tag.attrs, 'mime-subtype', media_item)
         copy_attribute(tag.attrs, 'mimetype', media_item)
         copy_attribute(tag.attrs, 'xlink:href', media_item, 'xlink_href')
         copy_attribute(tag.attrs, 'content-type', media_item)
-        
+
         nodenames = ["sub-article", "media", "fig-group", "fig", "supplementary-material"]
 
         details = tag_details(tag, nodenames)
@@ -683,7 +742,7 @@ def media(soup):
                 copy_attribute(details, 'asset', media_item, 'parent_asset')
                 copy_attribute(details, 'sibling_ordinal', media_item, 'parent_sibling_ordinal')
                 copy_attribute(details, 'component_doi', media_item, 'parent_component_doi')
-        
+
             # Try to get the parent parent
             p_parent_tag = first_parent(parent_tag, nodenames)
             if p_parent_tag:
@@ -695,7 +754,7 @@ def media(soup):
                     copy_attribute(details, 'asset', media_item, 'p_parent_asset')
                     copy_attribute(details, 'sibling_ordinal', media_item, 'p_parent_sibling_ordinal')
                     copy_attribute(details, 'component_doi', media_item, 'p_parent_component_doi')
-                
+
                 # Try to get the parent parent parent
                 p_p_parent_tag = first_parent(p_parent_tag, nodenames)
                 if p_p_parent_tag:
@@ -712,14 +771,14 @@ def media(soup):
         media_item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
         media_item['ordinal'] = tag_ordinal(tag)
-        
+
         media.append(media_item)
-        
+
         position += 1
-    
+
     return media
-    
-    
+
+
 def graphics(soup):
     """
     All graphic tags and some associated data about the related component doi
@@ -727,21 +786,21 @@ def graphics(soup):
     part of a figure supplement
     """
     graphics = []
-    
+
     graphic_tags = raw_parser.graphic(soup)
-    
+
     position = 1
-    
+
     for tag in graphic_tags:
         graphic_item = {}
-        
+
         copy_attribute(tag.attrs, 'xlink:href', graphic_item, 'xlink_href')
-        
+
         # Get the tag type
         nodenames = ["sub-article", "fig-group", "fig", "app"]
         details = tag_details(tag, nodenames)
         copy_attribute(details, 'type', graphic_item)
-        
+
         parent_tag = first_parent(tag, nodenames)
         if parent_tag:
             details = tag_details(parent_tag, nodenames)
@@ -763,16 +822,16 @@ def graphics(soup):
                     copy_attribute(details, 'asset', graphic_item, 'p_parent_asset')
                     copy_attribute(details, 'sibling_ordinal', graphic_item, 'p_parent_sibling_ordinal')
                     copy_attribute(details, 'component_doi', graphic_item, 'p_parent_component_doi')
-                            
+
         # Increment the position
         graphic_item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
         graphic_item['ordinal'] = tag_ordinal(tag)
-        
+
         graphics.append(graphic_item)
-        
+
         position += 1
-    
+
     return graphics
 
 def inline_graphics(soup):
@@ -780,14 +839,14 @@ def inline_graphics(soup):
     inline-graphic tags
     """
     inline_graphics = []
-    
+
     inline_graphic_tags = raw_parser.inline_graphic(soup)
-    
+
     position = 1
-    
+
     for tag in inline_graphic_tags:
         item = {}
-        
+
         copy_attribute(tag.attrs, 'xlink:href', item, 'xlink_href')
 
         # Get the tag type
@@ -799,7 +858,7 @@ def inline_graphics(soup):
         item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
         item['ordinal'] = tag_ordinal(tag)
-        
+
         inline_graphics.append(item)
 
     return inline_graphics
@@ -808,28 +867,28 @@ def self_uri(soup):
     """
     self-uri tags
     """
-    
+
     self_uri = []
     self_uri_tags = raw_parser.self_uri(soup)
     position = 1
     for tag in self_uri_tags:
         item = {}
-        
+
         copy_attribute(tag.attrs, 'xlink:href', item, 'xlink_href')
         copy_attribute(tag.attrs, 'content-type', item)
-        
+
         # Get the tag type
         nodenames = ["sub-article"]
         details = tag_details(tag, nodenames)
         copy_attribute(details, 'type', item)
-        
+
         # Increment the position
         item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
         item['ordinal'] = tag_ordinal(tag)
-        
+
         self_uri.append(item)
-        
+
     return self_uri
 
 def supplementary_material(soup):
@@ -837,14 +896,14 @@ def supplementary_material(soup):
     supplementary-material tags
     """
     supplementary_material = []
-    
+
     supplementary_material_tags = raw_parser.supplementary_material(soup)
-    
+
     position = 1
-    
+
     for tag in supplementary_material_tags:
         item = {}
-        
+
         copy_attribute(tag.attrs, 'id', item)
 
         # Get the tag type
@@ -854,7 +913,7 @@ def supplementary_material(soup):
         copy_attribute(details, 'asset', item)
         copy_attribute(details, 'component_doi', item)
         copy_attribute(details, 'sibling_ordinal', item)
-        
+
         if raw_parser.label(tag):
             item['label'] = node_text(raw_parser.label(tag))
             item['full_label'] = node_contents_str(raw_parser.label(tag))
@@ -863,7 +922,7 @@ def supplementary_material(soup):
         item['position'] = position
         # Ordinal should be the same as position in this case but set it anyway
         item['ordinal'] = tag_ordinal(tag)
-        
+
         supplementary_material.append(item)
 
     return supplementary_material
@@ -991,11 +1050,9 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
                 contributor["bio"] = biography_content[0].get("content")
         set_if_value(contributor, "email", contrib_email(contrib_tag))
         set_if_value(contributor, "phone", contrib_phone(contrib_tag))
-        name_tag = first(extract_nodes(contrib_tag, "name"))
-        if name_tag is not None:
-            set_if_value(contributor, "surname", first_node_str_contents(name_tag, "surname"))
-            set_if_value(contributor, "given-names", first_node_str_contents(name_tag, "given-names"))
-            set_if_value(contributor, "suffix", first_node_str_contents(name_tag, "suffix"))
+        set_if_value(contributor, "surname", first_node_str_contents(contrib_tag, "surname"))
+        set_if_value(contributor, "given-names", first_node_str_contents(contrib_tag, "given-names"))
+        set_if_value(contributor, "suffix", first_node_str_contents(contrib_tag, "suffix"))
         # Get the sub-group value from the parent role tag if it is inside a group
         if (contrib_tag.parent and contrib_tag.parent.parent and contrib_tag.parent.parent.parent
             and is_author_group_author(contrib_tag.parent.parent.parent)):
@@ -1053,20 +1110,20 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             rid = aff_tag.get('rid')
             if rid:
                 # Look for the matching aff tag by rid
-                aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid)) 
+                aff_node = first(extract_nodes(soup, "aff", attr = "id", value = rid))
             else:
                 # Aff tag inside contrib tag
                 aff_node = aff_tag
-            
+
             (none_return, aff_detail) = format_aff(aff_node)
-            
+
             if len(aff_detail) > 0:
                 aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
                 contributor['affiliations'].append(contrib_affs)
-    
+
         # Add xref linked correspondence author notes if applicable
         corresp_tags = contrib_xref(contrib_tag, "corresp")
         if(len(corresp_tags) > 0):
@@ -1077,7 +1134,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             for cor in corresp_tags:
                 # Find the matching tag
                 rid = cor['rid']
-                corresp_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_corresp))
+                corresp_node = first(list(filter(lambda tag: tag.get("id") == rid, target_tags_corresp)))
                 author_notes = node_text(corresp_node)
                 if author_notes:
                     contributor['notes-corresp'].append(author_notes)
@@ -1091,11 +1148,11 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             for fn in fn_tags:
                # Find the matching tag
                rid = fn['rid']
-               fn_node = first(filter(lambda tag: tag.get("id") == rid, target_tags_fn))
+               fn_node = first(list(filter(lambda tag: tag.get("id") == rid, target_tags_fn)))
                fn_text = node_text(fn_node)
                if fn_text:
                    contributor['notes-fn'].append(fn_text)
-    
+
     return contributor
 
 def contributors(soup, detail="brief"):
@@ -1117,10 +1174,10 @@ def is_author_non_byline(tag, contrib_type="author non-byline"):
 def authors_non_byline(soup, detail="full"):
     """Non-byline authors for group author members"""
     # Get a filtered list of contributors, in order to get their group-author-id
-    contrib_type="author non-byline"
-    non_byline_authors = filter(lambda author:
-        (author.get("type") and author.get("type") == contrib_type),
-        contributors(soup, detail))
+    contrib_type = "author non-byline"
+    contributors_ = contributors(soup, detail)
+    non_byline_authors = [author for author in contributors_ if author.get('type', None) == contrib_type]
+
     # Then renumber their position attribute
     position = 1
     for author in non_byline_authors:
@@ -1130,7 +1187,7 @@ def authors_non_byline(soup, detail="full"):
 
 def authors(soup, contrib_type = "author", detail = "full"):
     contrib_tags = raw_parser.authors(raw_parser.article_meta(soup), contrib_type)
-    tags = filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags)
+    tags = list(filter(lambda tag: is_author_non_byline(tag) is False, contrib_tags))
     return format_authors(soup, tags, detail)
 
 def is_author_group_author(tag):
@@ -1144,12 +1201,12 @@ def is_author_group_author(tag):
 def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
     authors = []
     position = 1
-    
+
     article_doi = doi(soup)
-    
+
     group_author_id = 0
     prev_group_author_id = 0
-    
+
     # Pre-parse some values to pass to optimise this procedure
     target_tags_corresp = raw_parser.corresp(soup)
     target_tags_fn = raw_parser.fn(soup)
@@ -1180,7 +1237,7 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
             if detail == "full":
                 author['article_doi'] = article_doi
                 author['position'] = position
-                        
+
             authors.append(author)
             position += 1
 
@@ -1191,16 +1248,17 @@ def format_authors(soup, contrib_tags, detail = "full", contrib_type=None):
 
 
 def format_aff(aff_tag):
+    if not aff_tag:
+        return None, {}
     values = {
         'dept': node_contents_str(first(extract_nodes(aff_tag, "institution", "content-type", "dept"))),
-        'institution': node_contents_str(first(
-            filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution")))),
+        'institution': node_contents_str(first(list(filter(lambda n: "content-type" not in n.attrs, extract_nodes(aff_tag, "institution"))))),
         'city': node_contents_str(first(extract_nodes(aff_tag, "named-content", "content-type", "city"))),
         'country': node_contents_str(first(extract_nodes(aff_tag, "country"))),
         'email': node_contents_str(first(extract_nodes(aff_tag, "email")))
         }
     # Remove keys with None value
-    prune_dict_of_none_values(values)
+    values = prune_dict_of_none_values(values)
 
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
@@ -1210,7 +1268,7 @@ def format_aff(aff_tag):
 
 def full_affiliation(soup):
     aff_tags = raw_parser.affiliation(soup)
-    aff_tags = filter(lambda aff: 'id' in aff.attrs, aff_tags)
+    aff_tags = list(filter(lambda aff: 'id' in aff.attrs, aff_tags))
     affs = []
     for tag in aff_tags:
         aff = {}
@@ -1223,7 +1281,7 @@ def full_affiliation(soup):
 def references(soup):
     """Renamed to refs"""
     return refs(soup)
-    
+
 def refs(soup):
     """Find and return all the references"""
     tags = raw_parser.ref_list(soup)
@@ -1264,6 +1322,11 @@ def refs(soup):
             set_if_value(ref, "uri", uri_tag.get('xlink:href'))
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
 
+        # accession, could be in either of two tags
+        set_if_value(ref, "accession", node_contents_str(first(raw_parser.object_id(tag, "art-access-id"))))
+        if not ref.get('accession'):
+            set_if_value(ref, "accession", node_contents_str(first(raw_parser.pub_id(tag, pub_id_type="accession"))))
+
         if(raw_parser.year(tag)):
             set_if_value(ref, "year", node_text(raw_parser.year(tag)))
             set_if_value(ref, "year-iso-8601-date", raw_parser.year(tag).get('iso-8601-date'))
@@ -1278,7 +1341,8 @@ def refs(soup):
 
         set_if_value(ref, "source", node_text(first(raw_parser.source(tag))))
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
-        copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
+        if raw_parser.element_citation(tag):
+            copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
 
         # authors
         person_group = raw_parser.person_group(tag)
@@ -1332,6 +1396,7 @@ def refs(soup):
             ref['authors'] = authors
 
         set_if_value(ref, "volume", node_text(first(raw_parser.volume(tag))))
+        set_if_value(ref, "issue", node_text(first(raw_parser.issue(tag))))
         set_if_value(ref, "fpage", node_text(first(raw_parser.fpage(tag))))
         set_if_value(ref, "lpage", node_text(first(raw_parser.lpage(tag))))
         set_if_value(ref, "collab", node_text(first(raw_parser.collab(tag))))
@@ -1386,31 +1451,31 @@ def components(soup):
     - ordinal is in what order it is for all the tags of its own type
     """
     components = []
-    
+
     nodenames = ["abstract", "fig", "table-wrap", "media",
                  "chem-struct-wrap", "sub-article", "supplementary-material",
                  "boxed-text", "app"]
-    
+
     # Count node order overall
     position = 1
-    
+
     position_by_type = {}
     for nodename in nodenames:
         position_by_type[nodename] = 1
-     
+
     article_doi = doi(soup)
-    
+
     # Find all tags for all component_types, allows the order
     #  in which they are found to be preserved
     component_tags = extract_nodes(soup, nodenames)
-    
+
     for tag in component_tags:
-        
-        component = {}
-        
+
+        component = OrderedDict()
+
         # Component type is the tag's name
         ctype = tag.name
-        
+
         # First find the doi if present
         component_doi = extract_component_doi(tag, nodenames)
         if component_doi is None:
@@ -1418,8 +1483,9 @@ def components(soup):
         else:
             component['doi'] = doi_uri_to_doi(component_doi)
             component['doi_url'] = doi_to_doi_uri(component['doi'])
-            
-        
+
+        copy_attribute(tag.attrs, 'id', component)
+
         if(ctype == "sub-article"):
             title_tag = raw_parser.article_title(tag)
         elif(ctype == "boxed-text"):
@@ -1461,18 +1527,18 @@ def components(soup):
 
 
         if raw_parser.permissions(tag):
-            
+
             component['permissions'] = []
             for permissions_tag in raw_parser.permissions(tag):
                 permissions_item = {}
                 if raw_parser.copyright_statement(permissions_tag):
                     permissions_item['copyright_statement'] = \
                         node_text(raw_parser.copyright_statement(permissions_tag))
-                    
+
                 if raw_parser.copyright_year(permissions_tag):
                     permissions_item['copyright_year'] = \
                         node_text(raw_parser.copyright_year(permissions_tag))
-                    
+
                 if raw_parser.copyright_holder(permissions_tag):
                     permissions_item['copyright_holder'] = \
                         node_text(raw_parser.copyright_holder(permissions_tag))
@@ -1494,16 +1560,16 @@ def components(soup):
         #  and only check two levels of parentage
         parent_nodenames = ["sub-article", "fig-group", "fig", "boxed-text", "table-wrap", "app", "media"]
         parent_tag = first_parent(tag, parent_nodenames)
-        
+
         if parent_tag:
 
             # For fig-group we actually want the first fig of the fig-group as the parent
             acting_parent_tag = component_acting_parent_tag(parent_tag, tag)
-            
+
             # Only counts if the acting parent tag has a DOI
             if (acting_parent_tag and \
                extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
-                
+
                 component['parent_type'] = acting_parent_tag.name
                 component['parent_ordinal'] = tag_ordinal(acting_parent_tag)
                 component['parent_sibling_ordinal'] = tag_details_sibling_ordinal(acting_parent_tag)
@@ -1511,11 +1577,11 @@ def components(soup):
 
             # Look for parent parent, if available
             parent_parent_tag = first_parent(parent_tag, parent_nodenames)
-            
+
             if parent_parent_tag:
-                
+
                 acting_parent_tag = component_acting_parent_tag(parent_parent_tag, parent_tag)
-                
+
                 if (acting_parent_tag and \
                    extract_component_doi(acting_parent_tag, parent_nodenames) is not None):
                     component['parent_parent_type'] = acting_parent_tag.name
@@ -1529,10 +1595,10 @@ def components(soup):
                 # Add a space before each new paragraph for now
                 content = content + " "
             content = content + node_text(p_tag)
-            
+
         if(content != ""):
             component['content'] = content
-    
+
         # mime type
         media_tag = None
         if(ctype == "media"):
@@ -1542,24 +1608,24 @@ def components(soup):
         if media_tag:
             component['mimetype'] = media_tag.get("mimetype")
             component['mime-subtype'] = media_tag.get("mime-subtype")
-    
+
         if(len(component) > 0):
             component['article_doi'] = article_doi
             component['type'] = ctype
             component['position'] = position
-            
+
             # Ordinal is based on all tags of the same type even if they have no DOI
             component['ordinal'] = tag_ordinal(tag)
             component['sibling_ordinal'] = tag_details_sibling_ordinal(tag)
             component['asset'] = tag_details_asset(tag)
             #component['ordinal'] = position_by_type[ctype]
-                        
+
             components.append(component)
-            
+
             position += 1
             position_by_type[ctype] += 1
 
-    
+
     return components
 
 
@@ -1570,9 +1636,9 @@ def correspondence(soup):
     for primary correspondence
     """
     correspondence = []
-    
+
     author_notes_nodes = raw_parser.author_notes(soup)
-    
+
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
@@ -1588,6 +1654,9 @@ def full_correspondence(soup):
     if author_notes_nodes:
         corresp_nodes = raw_parser.corresp(author_notes_nodes)
         for tag in corresp_nodes:
+            # check for required id attribute
+            if 'id' not in tag.attrs:
+                continue
             if tag['id'] not in cor:
                 cor[tag['id']] = []
             if raw_parser.email(tag):
@@ -1624,7 +1693,7 @@ def full_author_notes(soup, fntype_filter=None):
     Find the fn tags included in author-notes
     """
     notes = []
-    
+
     author_notes_section = raw_parser.author_notes(soup)
     if author_notes_section:
         fn_nodes = raw_parser.fn(author_notes_section)
@@ -1705,13 +1774,19 @@ def full_award_groups(soup):
     award_groups = []
 
     funding_group_section = extract_nodes(soup, "funding-group")
+    # counter for auto generated id values, if required
+    generated_id_counter = 1
     for fg in funding_group_section:
 
         award_group_tags = extract_nodes(fg, "award-group")
 
         for ag in award_group_tags:
-
-            ref = ag['id']
+            if 'id' in ag.attrs:
+                ref = ag['id']
+            else:
+                # hack: generate and increment an id value none is available
+                ref = "award-group-{id}".format(id=generated_id_counter)
+                generated_id_counter += 1
 
             award_group = {}
             award_group_id = award_group_award_id(ag)
@@ -1736,14 +1811,14 @@ def award_groups(soup):
     Find the award-group items and return a list of details
     """
     award_groups = []
-    
+
     funding_group_section = extract_nodes(soup, "funding-group")
     for fg in funding_group_section:
-        
+
         award_group_tags = extract_nodes(fg, "award-group")
-        
+
         for ag in award_group_tags:
-        
+
             award_group = {}
 
             award_group['funding_source'] = award_group_funding_source(ag)
@@ -1751,7 +1826,7 @@ def award_groups(soup):
             award_group['award_id'] = award_group_award_id(ag)
 
             award_groups.append(award_group)
-    
+
     return award_groups
 
 
@@ -1821,7 +1896,7 @@ def award_group_principal_award_recipient(tag):
     """
     award_group_principal_award_recipient = []
     principal_award_recipients = extract_nodes(tag, "principal-award-recipient")
-    
+
     for t in principal_award_recipients:
         principal_award_recipient_text = ""
 
@@ -1851,7 +1926,7 @@ def object_id_doi(tag, parent_tag_name=None):
     object_id = None
     object_ids = raw_parser.object_id(tag, "doi")
     if object_ids:
-        object_id = first(object_ids)
+        object_id = first([id_ for id_ in object_ids])
     if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
         object_id = None
     if object_id:
@@ -1895,20 +1970,6 @@ def caption_tag_inspected(tag, parent_tag_name=None):
         caption_tag = None
     return caption_tag
 
-def caption_title(tag):
-    """Extract the text of a title or p tag inside the first caption tag"""
-    title = None
-    caption = raw_parser.caption(tag)
-    if caption:
-        title_tag = raw_parser.title(caption)
-        if title_tag:
-            title = node_contents_str(title_tag)
-        if not title:
-            p_tags = raw_parser.paragraph(caption)
-            if p_tags:
-                title = node_contents_str(first(p_tags))
-    return title
-
 def label_tag_inspected(tag, parent_tag_name=None):
     label_tag = raw_parser.label(tag)
     if parent_tag_name and label_tag and label_tag.parent.name != parent_tag_name:
@@ -1937,16 +1998,33 @@ def acknowledgements_json(soup):
 def keywords_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
-    return map(convert, full_keywords(soup))
+    return list(map(convert, full_keywords(soup)))
 
 def research_organism_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
     do_not_include = ['none', 'other']
-    research_organisms = filter(lambda term: term and term.lower() not in do_not_include,
-                                full_research_organism(soup))
-    return map(convert, research_organisms)
+    research_organisms = list(filter(lambda term: term and term.lower() not in do_not_include, full_research_organism(soup)))
+    return list(map(convert, research_organisms))
+
+def boxed_text_to_image_block(tag):
+    "covert boxed-text to an image block containing an inline-graphic"
+    tag_block = OrderedDict()
+    image_content = body_block_image_content(first(raw_parser.inline_graphic(tag)))
+    tag_block["type"] = "image"
+    set_if_value(tag_block, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
+    set_if_value(tag_block, "id", tag.get("id"))
+    set_if_value(tag_block, "image", image_content)
+    # render paragraphs into a caption
+    p_tags = raw_parser.paragraph(tag)
+    caption_content = []
+    for p_tag in p_tags:
+        if not raw_parser.inline_graphic(p_tag):
+            caption_content.append(body_block_content(p_tag))
+    set_if_value(tag_block, "caption", caption_content)
+    return tag_block
+
 
 def body(soup, remove_key_info_box=False, base_url=None):
 
@@ -1978,7 +2056,7 @@ def body_json(soup, base_url=None):
         new_body = []
         new_body.append(new_body_section)
         body_content = new_body
-    body_content_rewritten = rewrite_json("body_json", soup, body_content)
+    body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
     return body_content_rewritten
 
 def render_raw_body(tag, remove_key_info_box=False, base_url=None):
@@ -1995,6 +2073,11 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                 and "related" in first_node_text.lower()):
                 # Skip this tag
                 continue
+
+            elif raw_parser.inline_graphic(tag):
+                # edge case where inline-graphic is in the first boxed-text
+                tag_block = boxed_text_to_image_block(tag)
+                body_content.append(tag_block)
 
             elif not raw_parser.title(tag) and not raw_parser.label(tag):
                 # Collapse boxed-text here if it has no title or label
@@ -2059,6 +2142,10 @@ def body_block_content_render(tag, recursive=False, base_url=None):
             elif child_tag.name == "fig" and tag.name == "fig-group":
                 # Do not fig inside fig-group a second time
                 pass
+            elif child_tag.name == "media" and tag.name == "fig-group":
+                # Do not include a media video inside fig-group a second time
+                if child_tag.get("mimetype") == "video":
+                    pass
             else:
                 for block_content in body_block_content_render(child_tag, recursive=True, base_url=base_url):
                     if block_content != {}:
@@ -2095,7 +2182,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
-            paragraph_content = paragraph_content + unicode(child_tag)
+            paragraph_content = paragraph_content + unicode_value(child_tag)
 
         else:
             # Add previous paragraph content first
@@ -2155,30 +2242,34 @@ def body_block_paragraph_content(text):
         tag_content["text"] = clean_whitespace(text)
     return tag_content
 
+def body_block_image_content(tag):
+    "format a graphic or inline-graphic into a body block json format"
+    image_content = OrderedDict()
+    if tag:
+        copy_attribute(tag.attrs, 'xlink:href', image_content, 'uri')
+        if "uri" in image_content:
+            # todo!! alt
+            set_if_value(image_content, "alt", "")
+    return image_content
+
 def body_block_title_label_caption(tag_content, title_value, label_value,
-                                   caption_content, set_caption=True, prefer_title=False):
+                                   caption_content, set_caption=True, prefer_title=False, prefer_label=False):
     """set the title, label and caption values in a consistent way
-    
+
     set_caption: insert a "caption" field
     prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
     set_if_value(tag_content, "label", rstrip_punctuation(label_value))
     set_if_value(tag_content, "title", title_value)
-    if caption_content and len(caption_content) > 0 and "title" not in tag_content:
-        first_paragraph_text = caption_content[0]["text"]
-        set_if_value(tag_content, "title", text_to_title(first_paragraph_text))
     if set_caption is True and caption_content and len(caption_content) > 0:
-        # Only set the caption if it is not the same as the title
-        if (len(caption_content) == 1 and "title" in tag_content
-            and (caption_content[0]["text"] == tag_content["title"]
-                 or caption_content[0]["text"] == tag_content["title"] + '.')):
-            # skip, do not add the caption
-            pass
-        else:
-            tag_content["caption"] = caption_content
+        tag_content["caption"] = caption_content
     if prefer_title:
         if "title" not in tag_content and label_value:
             set_if_value(tag_content, "title", label_value)
             del(tag_content["label"])
+    if prefer_label:
+        if "label" not in tag_content and title_value:
+            set_if_value(tag_content, "label", rstrip_punctuation(title_value))
+            del(tag_content["title"])
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
@@ -2207,7 +2298,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, False)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, set_caption=False, prefer_title=True)
 
     elif tag.name == "p":
         tag_content["type"] = "paragraph"
@@ -2221,12 +2312,17 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
 
     elif tag.name == "disp-quote":
-        tag_content["type"] = "quote"
+        if tag.get("content-type") and tag.get("content-type") == "editor-comment":
+            tag_content["type"] = "excerpt"
+            block_array_name = "content"
+        else:
+            tag_content["type"] = "quote"
+            block_array_name = "text"
         for child_tag in tag:
             if body_block_content(child_tag) != {}:
-                if "text" not in tag_content:
-                    tag_content["text"] = []
-                tag_content["text"].append(body_block_content(child_tag, base_url=base_url))
+                if block_array_name not in tag_content:
+                    tag_content[block_array_name] = []
+                tag_content[block_array_name].append(body_block_content(child_tag, base_url=base_url))
 
     elif tag.name == "table-wrap":
         # figure wrap
@@ -2246,7 +2342,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_tags = body_blocks(caption_tag_inspected(tag, tag.name))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
 
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         tables = raw_parser.table(tag)
         asset_tag_content["tables"] = []
@@ -2282,10 +2378,11 @@ def body_block_content(tag, html_flag=True, base_url=None):
             if len(source_data) > 0:
                 asset_tag_content["sourceData"] = source_data
 
-        # add to figure assets if there is a label otherwise use the table asset alone
+        # add to figure assets if there is a label and it is not a keyresource table
         if asset_tag_content.get("label"):
             tag_content["assets"].append(asset_tag_content)
         else:
+            # use the table asset alone
             tag_content = asset_tag_content
 
     elif tag.name == "disp-formula":
@@ -2317,16 +2414,11 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         if raw_parser.graphic(tag):
-            image_content = {}
             graphic_tags = raw_parser.graphic(tag)
-            if graphic_tags:
-                copy_attribute(first(graphic_tags).attrs, 'xlink:href', image_content, 'uri')
-                if "uri" in image_content:
-                    # todo!! alt
-                    set_if_value(image_content, "alt", "")
+            image_content = body_block_image_content(first(graphic_tags))
             if len(image_content) > 0:
                 asset_tag_content["image"] = image_content
 
@@ -2339,9 +2431,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
             for attrib_tag in raw_parser.licence_p(tag):
                 attributions.append(node_contents_str(attrib_tag))
         if len(attributions) > 0:
-            asset_tag_content["attribution"] = []
+            asset_tag_content["image"]["attribution"] = []
             for attrib_string in attributions:
-                asset_tag_content["attribution"].append(convert(attrib_string))
+                asset_tag_content["image"]["attribution"].append(convert(attrib_string))
 
         # sourceData
         if supplementary_material_tags and len(supplementary_material_tags) > 0:
@@ -2377,7 +2469,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, True)
+        body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
         set_if_value(asset_tag_content, "uri", tag.get('xlink:href'))
         if "uri" in asset_tag_content and asset_tag_content["uri"].endswith('.gif'):
@@ -2394,19 +2486,24 @@ def body_block_content(tag, html_flag=True, base_url=None):
         tag_content["assets"].append(asset_tag_content)
 
     elif tag.name == "fig-group":
-
-        for i, fig_tag in enumerate(raw_parser.fig(tag)):
+        for fig_tag in extract_nodes(tag, ["fig", "media"]):
+            # Skip any media tags that are not videos
+            if fig_tag.name == "media" and fig_tag.get("mimetype") != "video":
+                continue
             fig_tag_content = body_block_content(fig_tag, base_url=base_url)
-            if i == 0:
+            if len(tag_content) <= 0:
                 tag_content = fig_tag_content
-            elif i > 0:
-                tag_content["assets"].append(fig_tag_content["assets"][0])
+            else:
+                asset = fig_tag_content["assets"][0]
+                # Only add if there is an id, should filter out unwanted supplementary file data
+                if "id" in asset:
+                    tag_content["assets"].append(asset)
 
     elif tag.name == "supplementary-material":
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
 
-        title_value = convert(caption_title(tag))
+        title_value = convert(title_text(tag, "caption", tag.name))
         label_value = label(tag, tag.name)
 
         caption_content = None
@@ -2414,7 +2511,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.caption(tag):
             caption_tags = body_blocks(raw_parser.caption(tag))
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
-        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, True, prefer_title=True)
+        body_block_title_label_caption(tag_content, title_value, label_value, caption_content, set_caption=True, prefer_label=True)
 
         if raw_parser.media(tag):
             media_tag = first(raw_parser.media(tag))
@@ -2533,11 +2630,11 @@ def decision_letter(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
-        body_content_rewritten = rewrite_json("body_json", soup, body_content)
+        body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
-    return rewrite_json("decision_letter_json", soup, sub_article_content)
+    return elifetools.json_rewrite.rewrite_json("decision_letter_json", soup, sub_article_content)
 
 
 def author_response(soup):
@@ -2555,7 +2652,7 @@ def author_response(soup):
     # content
     if raw_body:
         body_content = render_raw_body(raw_body)
-        body_content_rewritten = rewrite_json("body_json", soup, body_content)
+        body_content_rewritten = elifetools.json_rewrite.rewrite_json("body_json", soup, body_content)
         if len(body_content) > 0:
             sub_article_content["content"] = body_content
 
@@ -2590,20 +2687,6 @@ def digest_json(soup):
     for tag in abstract_tags:
         abstract_json = render_abstract_json(tag)
     return abstract_json
-
-
-def author_preferred_name(surname, given_names, suffix):
-    preferred_name = None
-    preferred_name = " ".join(filter(lambda element: element is not None,
-                                     [given_names, surname, suffix]))
-    return preferred_name
-
-
-def author_index_name(surname, given_names, suffix):
-    index_name = None
-    index_name = ", ".join(filter(lambda element: element is not None,
-                                  [surname, given_names, suffix]))
-    return index_name
 
 
 def author_affiliations(author, html_flag=True):
@@ -2655,7 +2738,7 @@ def author_phone_numbers(author, correspondence):
     phone_numbers = []
     if correspondence and "phone" in author.get("references"):
         for ref_id in author["references"]["phone"]:
-            for corr_ref_id, data in correspondence.iteritems():
+            for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
                     for phone_number in data:
                         phone_numbers.append(phone_number)
@@ -2672,7 +2755,7 @@ def phone_number_json(phone):
 def author_phone_numbers_json(author, correspondence):
     phone_numbers = author_phone_numbers(author, correspondence)
     if phone_numbers:
-        phone_numbers = map(phone_number_json, phone_numbers)
+        phone_numbers = list(map(phone_number_json, phone_numbers))
     return phone_numbers
 
 
@@ -2681,7 +2764,7 @@ def author_email_addresses(author, correspondence):
 
     if correspondence and "email" in author.get("references"):
         for ref_id in author["references"]["email"]:
-            for corr_ref_id, data in correspondence.iteritems():
+            for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
                     for email_address in data:
                         email_addresses.append(email_address)
@@ -2724,6 +2807,9 @@ def author_competing_interests(author, competing_interests):
                     if competing_interest.get("text") and competing_interest.get("id") == ref_id:
                         competing_interests_text = (
                             competing_interest.get("text").replace('<p>', '').replace('</p>', ''))
+                        # Strip labels
+                        p = re.compile('<label>.*</label>')
+                        competing_interests_text = p.sub('', competing_interests_text)
 
     return competing_interests_text
 
@@ -2838,7 +2924,7 @@ def author_person(author, contributions, correspondence, competing_interests,
         author.get("surname"), author.get("given-names"), author.get("suffix"))
     author_json["name"] = author_name
     if author.get("orcid"):
-        author_json["orcid"] = author.get("orcid").replace("http://orcid.org/", "")
+        author_json["orcid"] = orcid_uri_to_orcid(author.get("orcid"))
     if author.get("deceased"):
         author_json["deceased"] = True
     if author.get("role"):
@@ -2905,7 +2991,7 @@ def editors_json(soup):
             editor_json = author_person(contributor, None, None, None, None, None, None)
         if editor_json:
             editors_json_data.append(editor_json)
-    editors_json_data_rewritten = rewrite_json("editors_json", soup, editors_json_data)
+    editors_json_data_rewritten = elifetools.json_rewrite.rewrite_json("editors_json", soup, editors_json_data)
     return editors_json_data_rewritten
 
 def authors_json(soup):
@@ -2940,10 +3026,8 @@ def authors_json(soup):
 
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
-    for contributor in filter(lambda json_element: json_element.get("group-author-key")
-                              and not json_element.get("collab"), contributors_data):
-        for group_author in filter(
-            lambda json_element: json_element["type"] == "group", authors_json_data):
+    for contributor in [elem for elem in contributors_data if elem.get("group-author-key") and not elem.get("collab")]:
+        for group_author in [elem for elem in authors_json_data if elem.get('type') == 'group']:
             group_author_key = None
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
@@ -2962,7 +3046,7 @@ def authors_json(soup):
                         group_author["people"] = []
                     group_author["people"].append(author_json)
 
-    authors_json_data_rewritten = rewrite_json("authors_json", soup, authors_json_data)
+    authors_json_data_rewritten = elifetools.json_rewrite.rewrite_json("authors_json", soup, authors_json_data)
     return authors_json_data_rewritten
 
 def author_line(soup):
@@ -2979,12 +3063,12 @@ def extract_author_line_names(authors_json_data):
     if not authors_json_data:
         return author_names
     for author in authors_json_data:
-        if "name" in author and type(author["name"]) in (str, unicode):
-            # collab
-            author_names.append(author["name"])
-        elif "name" in author and "preferred" in author["name"]:
+        if "name" in author and "preferred" in author["name"]:
             # person
             author_names.append(author["name"]["preferred"])
+        elif "name" in author:
+            # collab
+            author_names.append(unicode_value(author["name"]))
     return author_names
 
 def format_author_line(author_names):
@@ -2995,7 +3079,7 @@ def format_author_line(author_names):
     if len(author_names) <= 2:
         author_line = ", ".join(author_names)
     elif len(author_names) > 2:
-        author_line = author_names[0] + " et al"
+        author_line = author_names[0] + " et al."
     return author_line
 
 def references_publisher(publisher_name=None, publisher_loc=None):
@@ -3020,7 +3104,12 @@ def references_pages_range(fpage=None, lpage=None):
     range = None
     if fpage and lpage:
         # use unichr(8211) for the hyphen because the schema is requiring it
-        range = fpage.strip() + unichr(8211) + lpage.strip()
+        try:
+            # Python 2
+            range = fpage.strip() + unichr(8211) + lpage.strip()
+        except NameError:
+            # Python 3
+            range = fpage.strip() + chr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
     elif lpage:
@@ -3044,28 +3133,6 @@ def references_date(year=None):
         else:
             date = year
     return (date, discriminator, in_press)
-
-def references_author_collab(ref_author, html_flag=True):
-    # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
-
-    author_json = OrderedDict()
-    author_json["type"] = "group"
-    author_json["name"] = unicode(convert(ref_author.get("collab")))
-    return author_json
-
-def references_author_person(ref_author):
-    author_json = OrderedDict()
-    author_json["type"] = "person"
-    author_name = OrderedDict()
-    author_name["preferred"] = author_preferred_name(ref_author.get("surname"),
-                                                     ref_author.get("given-names"),
-                                                     ref_author.get("suffix"))
-    author_name["index"] = author_index_name(ref_author.get("surname"),
-                                             ref_author.get("given-names"),
-                                             ref_author.get("suffix"))
-    author_json["name"] = author_name
-    return author_json
 
 def references_authors(ref_authors):
     all_authors = OrderedDict()
@@ -3273,6 +3340,10 @@ def references_json(soup, html_flag=True):
             else:
                 ref_content["type"] = "other"
 
+        # dataId
+        if ref.get("publication-type") in ["data"]:
+            set_if_value(ref_content, "dataId", ref.get("accession"))
+
         # doi
         if ref.get("publication-type") not in ["web"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
@@ -3296,7 +3367,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, index, convert(ref_content.get(index)))
 
         # Rewrite references data with support to delete a reference too
-        ref_content_rewritten = rewrite_json("references_json", soup, [ref_content])
+        ref_content_rewritten = elifetools.json_rewrite.rewrite_json("references_json", soup, [ref_content])
         if ref_content_rewritten and len(ref_content_rewritten) > 0:
             ref_content = ref_content_rewritten[0]
         elif len(ref_content_rewritten) == 0:
@@ -3461,22 +3532,21 @@ def appendices_json(soup, base_url=None):
         if app_content.get("content") and len(app_content["content"]) > 0:
             app_content["content"][0] = unwrap_appendix_box(app_content["content"][0])
 
-        # If the first section has not title, set its child content to itself
-        if app_content.get("content") and len(app_content["content"]) > 0:
-            first_block = app_content["content"][0]
-            if (first_block.get("type")
-                and first_block.get("type") == "section"
-                and first_block.get("content")
-                and not first_block.get("title")):
-                app_content["content"] = first_block["content"]
-
-        # Then check all first level sections with no title, and fix them
+        # Then check all first level sections with no title, and fix them by
+        #  building the content list again, unwrapping each non-title section
+        clean_app_content = []
         for i, content_block in enumerate(app_content["content"]):
             if (content_block.get("type")
                 and content_block.get("type") == "section"
                 and content_block.get("content")
                 and not content_block.get("title")):
-                app_content["content"][i] = content_block["content"][0]
+                for block in content_block.get("content"):
+                    clean_app_content.append(block)
+            else:
+                # Unwrap boxed-text if found here too
+                content_block = unwrap_appendix_box(content_block)
+                clean_app_content.append(content_block)
+        app_content["content"] = clean_app_content
 
         appendices_json.append(app_content)
     return appendices_json
@@ -3579,7 +3649,7 @@ def datasets_json(soup, html_flag=True):
         if dataset_related_object_json(related_object) != {}:
             datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
 
-    return rewrite_json("datasets_json", soup, datasets_json)
+    return elifetools.json_rewrite.rewrite_json("datasets_json", soup, datasets_json)
 
 def poa_supplementary_material_block_content(tag):
     tag_content = OrderedDict()
@@ -3618,19 +3688,31 @@ def supplementary_files_json(soup):
     # Support for older PoA article supplementary material tags
     poa_supp_material_tags = []
     all_supp_material_tags = raw_parser.supplementary_material(soup)
-    poa_supp_material_tags = filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags)
+    poa_supp_material_tags = list(filter(lambda tag: tag.parent.name == "article-meta", all_supp_material_tags))
     for tag in poa_supp_material_tags:
         tag_content = poa_supplementary_material_block_content(tag)
         if tag_content != {}:
             additional_files_json.append(tag_content)
 
     # Add id and title for PoA articles, i.e. if there are none with an id value
-    if len(filter(lambda file: file.get('id') is not None, supplementary_material_tags)) == 0:
+    if len(list(filter(lambda file: file.get('id') is not None, supplementary_material_tags))) == 0:
         i = 1
         for file in additional_files_json:
             file["id"] = "SD" + str(i) + "-data"
-            file["title"] = "Supplementary file " + str(i) + "."
+            file["label"] = "Supplementary file " + str(i) + "."
             i = i + 1
+
+    # if there is a single supplementary zip file for PoA,
+    # rename it and describe it
+    if len(additional_files_json) == 1:
+        single_additional_file = additional_files_json[0]['filename']
+        if re.match("^.+-supp-.+\.zip$", single_additional_file):
+            file = additional_files_json[0]
+            file["label"] = "All additional files"
+            file['caption'] = [{
+                "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
+                "type": "paragraph",
+            }]
 
     return additional_files_json
 
@@ -3644,7 +3726,7 @@ def funding_awards_json(soup):
     award_groups = full_award_groups(soup)
     if award_groups:
         for award_group_dict in award_groups:
-            for id, award_group in award_group_dict.iteritems():
+            for id, award_group in iteritems(award_group_dict):
                 award_content = OrderedDict()
                 set_if_value(award_content, "id", id)
 
@@ -3714,6 +3796,6 @@ def funding_awards_json(soup):
         if award.get("id") and award.get("id") in award_recipients:
             award["recipients"] = award_recipients.get(award.get("id"))
 
-    awards = rewrite_json("funding_awards", soup, awards)
+    awards = elifetools.json_rewrite.rewrite_json("funding_awards", soup, awards)
 
     return awards

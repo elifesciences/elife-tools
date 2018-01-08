@@ -2,7 +2,6 @@
 
 import unittest
 import os
-import time
 from ddt import ddt, data, unpack
 import copy
 

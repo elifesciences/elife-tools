@@ -2,7 +2,6 @@
 
 import unittest
 import os
-import time
 from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -42,11 +41,20 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'Bad link 1 <ext-link xlink:href="10.7554/eLife.00001.012">http://dx.doi.org/10.7554/eLife.00001.012</ext-link>', None,
          u'Bad link 1 <ext-link xlink:href="10.7554/eLife.00001.012">http://dx.doi.org/10.7554/eLife.00001.012</ext-link>'),
 
+        (True, u'External link rewrite 1 <ext-link ext-link-type="uri" xlink:href="www.r-project.org">www.r-project.org</ext-link>', None,
+         u'External link rewrite 1 <a href="http://www.r-project.org">www.r-project.org</a>'),
+
+        (True, u'External link rewrite 2 <ext-link ext-link-type="uri" xlink:href="http://www.r-project.org">www.r-project.org</ext-link>', None,
+         u'External link rewrite 2 <a href="http://www.r-project.org">www.r-project.org</a>'),
+
+        (True, u'External link rewrite 3 <ext-link ext-link-type="uri" xlink:href="ftp://example.org">ftp://example.org</ext-link>', None,
+         u'External link rewrite 3 <a href="ftp://example.org">ftp://example.org</a>'),
+
         (True, u'<p>The Panda database (<ext-link ext-link-type="uri" xlink:href="http://circadian.salk.edu/about.html)%20does%20not%20indicate%20restoration%20of%20Cyp2b10">http://circadian.salk.edu/about.html) does not indicate restoration of <italic>Cyp2b10</italic></ext-link> cycling by restricted feeding of clockless mice.</p>', None,
          u'<p>The Panda database (<a href="http://circadian.salk.edu/about.html)%20does%20not%20indicate%20restoration%20of%20Cyp2b10">http://circadian.salk.edu/about.html) does not indicate restoration of <i>Cyp2b10</i></a> cycling by restricted feeding of clockless mice.</p>'),
 
         (True, u'<p>An empty tag <italic/></p>', None,
-         u'<p>An empty tag <i></i></p>'),
+         u'<p>An empty tag <i/></p>'),
 
         (True, u'<p><email>email@example.org</email></p>', None,
          u'<p><a href="mailto:email@example.org">email@example.org</a></p>'),
@@ -64,13 +72,13 @@ class TestUtilsHtml(unittest.TestCase):
          u'<p><img src="https://example.org/elife-00240-inf1-v1.jpg"/>Some text <img src="https://example.org/elife-00240-inf2-v1.jpg"/>&gt;<img src="https://example.org/elife-00240-inf3-v1.gif"/></p>'),
 
         (True, u'<p>Bad inline-graphic for test coverage <inline-graphic/></p>', None,
-         u'<p>Bad inline-graphic for test coverage <inline-graphic></inline-graphic></p>'),
+         u'<p>Bad inline-graphic for test coverage <inline-graphic/></p>'),
 
         (True, u'<p>Xref tag with multiple rid from 09561 v1 to <xref ref-type="fig" rid="fig3 fig4">Figures 3, 4</xref></p>', None,
          u'<p>Xref tag with multiple rid from 09561 v1 to <a href="#fig3">Figures 3, 4</a></p>'),
 
         (True, u'<break></break>', None,
-         u'<br/>'),
+         u'<br></br>'),
 
         (True, u'<monospace>m</monospace>', None,
          u'<span class="monospace">m</span>'),
@@ -78,11 +86,41 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<table><thead><!--  Header row  --><tr><!-- This header row ... --><th></th></tr></thead><tbody><!--  Table body  --><tr><td>Genotype</td></tr></tbody></table>', None,
          u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype</td></tr></tbody></table>'),
 
+        # Replace a particular style pattern with a class name
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8"/></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8"/></tr></tbody></table>'),
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8" valign="top">RS19</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8" valign="top">RS19</td></tr></tbody></table>'),
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top" class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top"><bold>R143Q</bold></td><td valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td style="author-callout-style-b8" valign="top"/><td><bold>-2</bold></td><td valign="top"/></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td valign="top"><b>R143Q</b></td><td valign="top"/><td class="author-callout-style-b8" valign="top"/><td class="author-callout-style-b8" valign="top"/><td class="author-callout-style-b8" valign="top"/><td class="author-callout-style-b8" valign="top"/><td><b>-2</b></td><td valign="top"/></tr></tbody></table>'),
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="author-callout-style-b8">RS19</td><td style="author-callout-style-b8">RS19</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td class="author-callout-style-b8">RS19</td><td class="author-callout-style-b8">RS19</td></tr></tbody></table>'),
+
+        # Do not replace general styles with a class name
+        (True, u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="width:51.5pt;border-top:none;border-left:none; border-bottom:dashed; padding:0in 5.4pt 0in 5.4pt">CAP-Gly domain</td></tr></tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td style="width:51.5pt;border-top:none;border-left:none; border-bottom:dashed; padding:0in 5.4pt 0in 5.4pt">CAP-Gly domain</td></tr></tbody></table>'),
+
         (True, u'<named-content content-type="author-callout-style-a1">author-callout-style-a1</named-content>', None,
          u'<span class="author-callout-style-a1">author-callout-style-a1</span>'),
 
         (True, u'<p>Bad named-content for test coverage <named-content/></p>', None,
-         u'<p>Bad named-content for test coverage <named-content></named-content></p>'),
+         u'<p>Bad named-content for test coverage <named-content/></p>'),
+
+        # Edge case based on elife article 24634
+        (True, u'<p>Regional analyses identified portions of ... (p<e-200) <italic>MYH7</italic></p>', None,
+         u'<p>Regional analyses identified portions of ... (p&lt;e-200) <i>MYH7</i></p>'),
+
+        # Edge case with a greater than tag, based on elife article 28862
+        (True, u'<p>We observed significant colocalization (>74%) of <italic>Clensor</italic> with LMP-1-GFP labeled lysosomes ....</p>', None,
+         u'<p>We observed significant colocalization (&gt;74%) of <i>Clensor</i> with LMP-1-GFP labeled lysosomes ....</p>'),
+
+        # Ampersand test
+        (True, u'<p>&</p>', None,
+         u'<p>&amp;</p>'),
 
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):

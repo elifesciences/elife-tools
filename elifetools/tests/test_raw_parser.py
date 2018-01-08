@@ -1,13 +1,17 @@
-import os, unittest
-from ddt import ddt, data, unpack
+from __future__ import print_function
+
+import os
+import unittest
+
 import bs4
+from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import parseJATS as parser
-import rawJATS as raw_parser
+from elifetools import parseJATS as parser
+from elifetools import rawJATS as raw_parser
 
-from file_utils import sample_xml
+from elifetools.file_utils import sample_xml
 
 @ddt
 class TestJatsParser(unittest.TestCase):
@@ -24,7 +28,7 @@ class TestJatsParser(unittest.TestCase):
             (parser.doi, u"10.7554/eLife.00013"),
             (parser.journal_id, u"eLife"),
             (parser.journal_title, u"eLife"),
-            #(parser.journal_issn, u"2050-084X"),
+            (parser.journal_issn, u"2050-084X"),
             (parser.publisher, u"eLife Sciences Publications, Ltd"),
         ]
         for func, expected in struct:
@@ -34,7 +38,7 @@ class TestJatsParser(unittest.TestCase):
 
                 self.assertEqual(got, expected)
             except AssertionError:
-                print 'failed on', func, 'expected', expected, 'got', got
+                print('failed on', func, 'expected', expected, 'got', got)
                 raise
         soup = parser.parse_document(self.kitchen_sink_xml)
         self.assertEqual(parser.journal_issn(soup, pub_format="electronic"), u"2050-084X")

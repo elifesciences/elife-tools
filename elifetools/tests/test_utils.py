@@ -7,8 +7,10 @@ from ddt import ddt, data, unpack
 
 os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import utils
-import parseJATS as parser
+from elifetools import utils
+from elifetools import parseJATS as parser
+from elifetools.utils import unicode_value
+from elifetools.utils_html import allowed_xml_tag_fragments
 
 
 
@@ -72,7 +74,7 @@ class TestUtils(unittest.TestCase):
         soup = parser.parse_xml(xml)
         tag = soup.find_all()[0]
         modified_tag = utils.remove_tag_from_tag(tag, unwanted_tag_names)
-        self.assertEqual(unicode(modified_tag), expected_xml)
+        self.assertEqual(unicode_value(modified_tag), expected_xml)
 
     @unpack
     @data(
@@ -119,7 +121,16 @@ class TestUtils(unittest.TestCase):
     def test_remove_doi_paragraph(self, xml, expected_xml):
         soup = parser.parse_xml(xml)
         modified_tag = utils.remove_doi_paragraph(soup.contents[0])
-        self.assertEqual(unicode(modified_tag), expected_xml)
+        self.assertEqual(unicode_value(modified_tag), expected_xml)
+
+    @unpack
+    @data(
+        (None, None),
+        ("http://orcid.org/0000-0003-3523-4408", "0000-0003-3523-4408"),
+        ("https://orcid.org/0000-0003-3523-4408", "0000-0003-3523-4408")
+        )
+    def test_orcid_uri_to_orcid(self, orcid_uri, expected_doi):
+        self.assertEqual(utils.orcid_uri_to_orcid(orcid_uri), expected_doi)
 
     @unpack
     @data(
@@ -135,25 +146,6 @@ class TestUtils(unittest.TestCase):
         )
     def test_text_to_title(self, value, expected_title):
         self.assertEqual(utils.text_to_title(value), expected_title)
-
-    @unpack
-    @data(
-        (None, None),
-        (u'', u''),
-        (u'of', u'of'),
-        (u'p53 Family proteins', u'p53 Family Proteins'),
-        (u'mRna decay', u'mRna Decay'),
-        (u'mRNA decay', u'mRNA Decay'),
-        (u'Host-virus interactions', u'Host-virus Interactions'),
-        (u'Reproducibility in cancer biology', u'Reproducibility in Cancer Biology'),
-        (u'The Natural History Of Model Organisms', u'The Natural History of Model Organisms'),
-        (u'Point Of View', u'Point of View'),
-        (u'Innate like lymphocytes', u'Innate Like Lymphocytes'),
-        (u'mRNA p53', u'mRNA p53'),
-        (u'你好！', u'你好！'),
-        )
-    def test_title_case(self, title, expected):
-        self.assertEqual(expected, utils.title_case(title))
 
     @unpack
     @data(
@@ -175,6 +167,42 @@ class TestUtils(unittest.TestCase):
         )
     def test_rstrip_punctuation(self, value, expected):
         self.assertEqual(expected, utils.rstrip_punctuation(value))
+
+    @unpack
+    @data(
+        (None, None),
+        ('<p><italic><bold><sup><sub><sc><underline><bold>superstyling</bold></underline></sc></sub></sup></bold></italic></p>',
+         '<p><italic><bold><sup><sub><sc><underline><bold>superstyling</bold></underline></sc></sub></sup></bold></italic></p>'
+        ),
+        ('<', '&lt;'),
+        ('< T << G << C >> A <<italic>m</italic>',
+         '&lt; T &lt;&lt; G &lt;&lt; C &gt;&gt; A &lt;<italic>m</italic>'),
+        ('<p>**p<0.01; ***p<0.001. SI, aged mice >5 months old.</p>',
+         '<p>**p&lt;0.01; ***p&lt;0.001. SI, aged mice &gt;5 months old.</p>'),
+        )
+    def test_escape_unmatched_angle_brackets(self, value, expected):
+        """
+        Test some additional examples of unmatched angle brackets specifically
+        """
+        self.assertEqual(
+            utils.escape_unmatched_angle_brackets(value, allowed_xml_tag_fragments()),
+            expected)
+
+    @unpack
+    @data(
+        (None, None),
+        ('', ''),
+        ('a', 'a'),
+        ('another & another & another', 'another &amp; another &amp; another'),
+        ('a&a', 'a&amp;a'),
+        ('a&amp;&a', 'a&amp;&amp;a'),
+        ('a&#x0117;a', 'a&#x0117;a'),
+        ('fake link http://example.org/?a=b&amp', 'fake link http://example.org/?a=b&amp;amp'),
+        ('CUT&RUN is performed', 'CUT&amp;RUN is performed'),
+        )
+    def test_escape_ampersand(self, value, expected):
+        self.assertEqual(utils.escape_ampersand(value), expected)
+
 
 if __name__ == '__main__':
     unittest.main()

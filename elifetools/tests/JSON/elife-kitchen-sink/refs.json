@@ -2670,12 +2670,13 @@
                 "group-type": "author"
             }
         ], 
+        "accession": " 4bl0 ", 
         "uri": "http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
-        "publication-type": "data", 
         "source": "RCSB Protein Data Bank", 
         "year": "2014", 
         "position": 63, 
         "year-iso-8601-date": "2014", 
+        "publication-type": "data", 
         "ref": "Ly T, Endo A, LamondAngus I 2014 Crystal structure of yeast Bub3-Bub1 bound to phosopho-Spc105 RCSB Protein Data Bank 4bl0 http://www.rcsb.org/pdb/explore/explore.do?structureId=4bl0", 
         "id": "bib63"
     }, 
