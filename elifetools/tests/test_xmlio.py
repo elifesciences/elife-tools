@@ -1,11 +1,6 @@
 from __future__ import absolute_import
 
-try:
-    # Python 2
-    from StringIO import StringIO
-except ImportError:
-    # Python 3
-    from io import StringIO
+from io import BytesIO
 import unittest
 
 from ddt import ddt, data, unpack
@@ -74,7 +69,7 @@ class TestXmlio(unittest.TestCase):
     @data(("<article/>", "JATS", '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd"><article/>'),
         ("<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
     def test_output(self, xml, type, xml_expected):
-        root = xmlio.parse(StringIO(xml))
+        root = xmlio.parse(BytesIO(xml))
         xml_output = xmlio.output(root, type)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
@@ -90,7 +85,7 @@ class TestXmlio(unittest.TestCase):
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = 'UTF-8'
         qualifiedName = "article"
-        root = xmlio.parse(StringIO(xml))
+        root = xmlio.parse(BytesIO(xml))
         doctype = xmlio.build_doctype(qualifiedName, publicId, systemId, internalSubset)
         xml_output = xmlio.output_root(root, doctype, encoding)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
