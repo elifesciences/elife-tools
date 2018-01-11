@@ -114,5 +114,58 @@ class TestXmlio(unittest.TestCase):
         rough_string = ElementTree.tostring(parent).decode('utf-8')
         self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i>XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
 
+    @unpack
+    @data(
+        # example of removing and adding the same heading tags
+        ('<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+         ['Cell Biology', 'Plant Biology'],
+         'heading',
+         True,
+         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         ),
+        # example of removing and adding the display-channel should retain the same tag order
+        ('<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+         ['Research Article'],
+         'display-channel',
+         True,
+         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         ),
+        # example of appending a tag
+        ('<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+         ['New Heading'],
+         'heading',
+         False,
+         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>New Heading</subject></subj-group></article-categories></article-meta></front></article>'
+         ),
+        # example adding a new subject type will be added to the head of the list
+        ('<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+         ['New Heading'],
+         'sub-display-channel',
+         True,
+         '<article><front><article-meta><article-categories><subj-group subj-group-type="sub-display-channel"><subject>New Heading</subject></subj-group><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         ),
+        # example adding a new subject when none existed
+        ('<article><front><article-meta></article-meta></front></article>',
+         ['New Heading'],
+         'display-channel',
+         True,
+         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>New Heading</subject></subj-group></article-categories></article-meta></front></article>'
+         ),
+        # example removes the subject tags if an empty list of subjects is provided
+        ('<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group></article-categories></article-meta></front></article>',
+         [],
+         'display-channel',
+         True,
+         '<article><front><article-meta><article-categories /></article-meta></front></article>'
+         ),
+        )
+    def test_rewrite_subject_group(self, xml, subjects, subject_group_type, overwrite, xml_expected):
+        root = xmlio.parse(StringIO(xml))
+        xmlio.rewrite_subject_group(root, subjects, subject_group_type, overwrite)
+        rough_string = ElementTree.tostring(root).decode('utf-8')
+        self.assertEqual(rough_string, xml_expected)
+
+
+
 if __name__ == '__main__':
     unittest.main()
