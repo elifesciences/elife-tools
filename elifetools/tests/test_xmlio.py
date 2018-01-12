@@ -1,11 +1,6 @@
 from __future__ import absolute_import
 
-try:
-    # Python 2
-    from StringIO import StringIO
-except ImportError:
-    # Python 3
-    from io import StringIO
+from io import StringIO
 import unittest
 
 from ddt import ddt, data, unpack
@@ -71,21 +66,21 @@ class TestXmlio(unittest.TestCase):
         self.assertEqual(xml_output, xml_output_expected)
 
     @unpack
-    @data(("<article/>", "JATS", '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd"><article/>'),
-        ("<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
+    @data((u"<article/>", "JATS", '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd"><article/>'),
+        (u"<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
     def test_output(self, xml, type, xml_expected):
         root = xmlio.parse(StringIO(xml))
         xml_output = xmlio.output(root, type)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     @unpack
-    @data(("<article/>", "", "", None,
+    @data((u"<article/>", "", "", None,
            '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'),
-        ("<article/>", "-//a", "a", None,
+        (u"<article/>", "-//a", "a", None,
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//a"  "a"><article/>'),
-        ("<article/>", None, "b", "",
+        (u"<article/>", None, "b", "",
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article SYSTEM "b"><article/>'),
-        ("<article/>", "c", "", "subset",
+        (u"<article/>", "c", "", "subset",
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "c"  "" [subset]><article/>'))
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = 'UTF-8'
