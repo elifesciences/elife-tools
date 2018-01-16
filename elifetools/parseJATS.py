@@ -2487,6 +2487,13 @@ def body_block_content(tag, html_flag=True, base_url=None):
             caption_content, supplementary_material_tags = body_block_caption_render(caption_tags, base_url=base_url)
         body_block_title_label_caption(asset_tag_content, title_value, label_value, caption_content, set_caption=True)
 
+        # license or attribution
+        attributions = body_block_attribution(tag)
+        if attributions:
+            asset_tag_content["attribution"] = []
+            for attrib_string in attributions:
+                asset_tag_content["attribution"].append(convert(attrib_string))
+
         set_if_value(asset_tag_content, "uri", tag.get('xlink:href'))
         if "uri" in asset_tag_content and asset_tag_content["uri"].endswith('.gif'):
             asset_tag_content["autoplay"] = True

@@ -2016,6 +2016,25 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
             ])
         ])),
 
+         # example of video with attributions, based on article 17243
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-17243-media1.mp4"><object-id pub-id-type="doi">10.7554/eLife.17243.015</object-id><label>Video 1.</label><caption><title>Response to gaps (stimulus-reappearance lock).</title><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17243.015">http://dx.doi.org/10.7554/eLife.17243.015</ext-link></p></caption><permissions><license><license-p>Face photographs: Owen Lucas. Available on Flickr under the Public Domain Mark 1.0 <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">https://creativecommons.org/publicdomain/mark/1.0/</ext-link>). <ext-link ext-link-type="uri" xlink:href="https://www.flickr.com/photos/144006675@N05/27487033282">https://www.flickr.com/photos/144006675@N05/27487033282</ext-link>. Accessed on August 2016.</license-p></license></permissions></media></root>',
+         OrderedDict([
+            ('type', 'figure'),
+            ('assets', [
+                OrderedDict([
+                    ('type', 'video'),
+                    ('doi', u'10.7554/eLife.17243.015'),
+                    ('id', u'media1'),
+                    ('label', u'Video 1'),
+                    ('title', u'Response to gaps (stimulus-reappearance lock).'),
+                    ('attribution', [
+                        'Face photographs: Owen Lucas. Available on Flickr under the Public Domain Mark 1.0 <a href="https://creativecommons.org/publicdomain/mark/1.0/">https://creativecommons.org/publicdomain/mark/1.0/</a>). <a href="https://www.flickr.com/photos/144006675@N05/27487033282">https://www.flickr.com/photos/144006675@N05/27487033282</a>. Accessed on August 2016.'
+                    ]),
+                    ('uri', u'elife-17243-media1.mp4')
+                ])
+            ])
+        ])),
+
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/></supplementary-material></p></caption><graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/></fig></root>',
         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.012'), ('id', u'fig3s1'), ('label', u'Figure 3\u2014figure supplement 1'), ('title', u'Title of the figure supplement'), ('image', {'alt': '', 'uri': u'elife-00666-fig3-figsupp1-v1.tiff'}), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00666.013'), ('id', u'SD1-data'), ('label', u'Figure 3\u2014figure supplement 1\u2014Source data 1'), ('title', u'Title of the figure supplement source data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Legend of the figure supplement source data.')])]), ('mediaType', u'application/xlsx'), ('uri', u'elife-00666-fig3-figsupp1-data1-v1.xlsx'), ('filename', u'elife-00666-fig3-figsupp1-data1-v1.xlsx')])])])])])
          ),
