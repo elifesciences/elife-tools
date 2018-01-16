@@ -2271,6 +2271,28 @@ def body_block_title_label_caption(tag_content, title_value, label_value,
             set_if_value(tag_content, "label", rstrip_punctuation(title_value))
             del(tag_content["title"])
 
+def body_block_attribution(tag):
+    "extract the attribution content for figures, tables, videos"
+    attributions = []
+    if raw_parser.attrib(tag):
+        for attrib_tag in raw_parser.attrib(tag):
+            attributions.append(node_contents_str(attrib_tag))
+    if raw_parser.permissions(tag):
+        # concatenate content from from the permissions tag
+        for permissions_tag in raw_parser.permissions(tag):
+            attrib_string = ''
+            # add the copyright statement if found
+            attrib_string = join_sentences(attrib_string,
+                node_contents_str(raw_parser.copyright_statement(permissions_tag)), '.')
+            # add the license paragraphs
+            if raw_parser.licence_p(permissions_tag):
+                for licence_p_tag in raw_parser.licence_p(permissions_tag):
+                    attrib_string = join_sentences(attrib_string,
+                                                   node_contents_str(licence_p_tag), '.')
+            if attrib_string != '':
+                attributions.append(attrib_string)
+    return attributions
+
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
@@ -2423,24 +2445,8 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 asset_tag_content["image"] = image_content
 
         # license or attribution
-        attributions = []
-        if raw_parser.attrib(tag):
-            for attrib_tag in raw_parser.attrib(tag):
-                attributions.append(node_contents_str(attrib_tag))
-        if raw_parser.permissions(tag):
-            # concatenate content from from the permissions tag
-            for permissions_tag in raw_parser.permissions(tag):
-                attrib_string = ''
-                # add the copyright statement if found
-                attrib_string = join_sentences(attrib_string,
-                    node_contents_str(raw_parser.copyright_statement(permissions_tag)), '.')
-                if raw_parser.licence_p(permissions_tag):
-                    for licence_p_tag in raw_parser.licence_p(permissions_tag):
-                        attrib_string = join_sentences(attrib_string,
-                                                       node_contents_str(licence_p_tag), '.')
-                if attrib_string != '':
-                    attributions.append(attrib_string)
-        if len(attributions) > 0:
+        attributions = body_block_attribution(tag)
+        if attributions:
             asset_tag_content["image"]["attribution"] = []
             for attrib_string in attributions:
                 asset_tag_content["image"]["attribution"].append(convert(attrib_string))
