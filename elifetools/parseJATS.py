@@ -2427,9 +2427,23 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if raw_parser.attrib(tag):
             for attrib_tag in raw_parser.attrib(tag):
                 attributions.append(node_contents_str(attrib_tag))
-        if raw_parser.licence(tag) and raw_parser.licence_p(tag):
-            for attrib_tag in raw_parser.licence_p(tag):
-                attributions.append(node_contents_str(attrib_tag))
+        if raw_parser.permissions(tag):
+            # concatenate content from from the permissions tag
+            for permissions_tag in raw_parser.permissions(tag):
+                attrib_string = ''
+                if raw_parser.copyright_statement(permissions_tag):
+                    attrib_string += node_contents_str(raw_parser.copyright_statement(permissions_tag))
+                if raw_parser.licence(permissions_tag) and raw_parser.licence_p(permissions_tag):
+                    # fix punctuation of the copyright statement if it is missing
+                    if attrib_string != '':
+                        if not attrib_string.rstrip().endswith('.'):
+                            attrib_string += '. '
+                        elif attrib_string.endswith('.'):
+                            attrib_string += ' '
+                    for licence_p_tag in raw_parser.licence_p(permissions_tag):
+                        attrib_string += node_contents_str(licence_p_tag)
+                if attrib_string != '':
+                    attributions.append(attrib_string)
         if len(attributions) > 0:
             asset_tag_content["image"]["attribution"] = []
             for attrib_string in attributions:

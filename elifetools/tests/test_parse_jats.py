@@ -1977,13 +1977,44 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
                      ('type', 'paragraph'),
                      ('text', u'Figure caption')
                  ])]),
-                 ('image', {
-                     'alt': '',
-                     'uri': u'elife-00666-fig1-v1.tif',
-                     'attribution': ['The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 'In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.']
-                 }),
+                 ('image', OrderedDict([
+                     ('uri', u'elife-00666-fig1-v1.tif'),
+                     ('alt', u''),
+                     ('attribution', [
+                        u'\u00a9 1991, Publisher 1, All Rights Reserved. The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 
+                        u'\u00a9 1991, Publisher 2, All Rights Reserved. In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.'
+                    ])
+                 ])),
              ])])
          ])),
+
+        # example of copyright statements ending in a full stop, based on article 27041
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.27041.006</object-id><label>Figure 3.</label><caption><title>Developmental trajectories.</title><p>Each plot shows single cells (dots; colored by trajectory assignment, sampled time point, or developmental stage) embedded in low-dimensional space based on their RNA (<bold>A-C</bold>) or protein (<bold>D</bold>) profiles, using different methods for dimensionality reduction and embedding: Gaussian process patent variable model (<bold>A</bold>); t-stochastic neighborhood embedding (<bold>B</bold>, <bold>D</bold>); diffusion maps (<bold>C</bold>). Computational methods then identify trajectories of pseudo-temporal progression in each case. (<bold>A</bold>) Myoblast differentiation in vitro. (<bold>B</bold>) Neurogenesis in the mouse brain dentate gyrus. (<bold>C</bold>) Embryonic stem cell differentiation in vitro. (<bold>D</bold>) Early hematopoiesis.</p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-27041-fig3-v2"/><permissions><copyright-statement>© 2017 AAAS.</copyright-statement><copyright-year>2017</copyright-year><copyright-holder>AAAS</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3A</xref> reprinted from <xref ref-type="bibr" rid="bib109">Lönnberg et al., 2017</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 AAAS.</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>AAAS</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3B</xref> reprinted from <xref ref-type="bibr" rid="bib67">Habib et al., 2016a</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 Macmillan Publishers Limited. </copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Macmillan Publishers Limited</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3C</xref> adapted from <xref ref-type="bibr" rid="bib70">Haghverdi et al., 2016</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 Macmillan Publishers Limited.</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Macmillan Publishers Limited</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3D</xref> adapted from <xref ref-type="bibr" rid="bib157">Setty et al., 2016</xref> with permission.</license-p></license></permissions></fig></root>',
+         OrderedDict([
+            ('type', 'figure'),
+            ('assets', [
+                OrderedDict([
+                    ('type', 'image'),
+                    ('doi', u'10.7554/eLife.27041.006'),
+                    ('id', u'fig3'),
+                    ('label', u'Figure 3'),
+                    ('title', u'Developmental trajectories.'),
+                    ('caption', [
+                        OrderedDict([
+                            ('type', 'paragraph'),
+                            ('text', u'Each plot shows single cells (dots; colored by trajectory assignment, sampled time point, or developmental stage) embedded in low-dimensional space based on their RNA (<b>A-C</b>) or protein (<b>D</b>) profiles, using different methods for dimensionality reduction and embedding: Gaussian process patent variable model (<b>A</b>); t-stochastic neighborhood embedding (<b>B</b>, <b>D</b>); diffusion maps (<b>C</b>). Computational methods then identify trajectories of pseudo-temporal progression in each case. (<b>A</b>) Myoblast differentiation in vitro. (<b>B</b>) Neurogenesis in the mouse brain dentate gyrus. (<b>C</b>) Embryonic stem cell differentiation in vitro. (<b>D</b>) Early hematopoiesis.')
+                        ])
+                    ]),
+                    ('image', OrderedDict([
+                        ('uri', u'elife-27041-fig3-v2'),
+                        ('alt', ''),
+                        ('attribution', [
+                            u'\xa9 2017 AAAS. <a href="#fig3">Figure 3A</a> reprinted from <a href="#bib109">L\xf6nnberg et al., 2017</a> with permission.', u'\xa9 2016 AAAS. <a href="#fig3">Figure 3B</a> reprinted from <a href="#bib67">Habib et al., 2016a</a> with permission.', u'\xa9 2016 Macmillan Publishers Limited. <a href="#fig3">Figure 3C</a> adapted from <a href="#bib70">Haghverdi et al., 2016</a> with permission.', u'\xa9 2016 Macmillan Publishers Limited. <a href="#fig3">Figure 3D</a> adapted from <a href="#bib157">Setty et al., 2016</a> with permission.'
+                        ])
+                    ]))
+                ])
+            ])
+        ])),
 
         ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/></supplementary-material></p></caption><graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/></fig></root>',
         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.012'), ('id', u'fig3s1'), ('label', u'Figure 3\u2014figure supplement 1'), ('title', u'Title of the figure supplement'), ('image', {'alt': '', 'uri': u'elife-00666-fig3-figsupp1-v1.tiff'}), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00666.013'), ('id', u'SD1-data'), ('label', u'Figure 3\u2014figure supplement 1\u2014Source data 1'), ('title', u'Title of the figure supplement source data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Legend of the figure supplement source data.')])]), ('mediaType', u'application/xlsx'), ('uri', u'elife-00666-fig3-figsupp1-data1-v1.xlsx'), ('filename', u'elife-00666-fig3-figsupp1-data1-v1.xlsx')])])])])])
