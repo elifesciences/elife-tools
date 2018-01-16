@@ -37,6 +37,21 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(utils.strip_punctuation_space(value), expected)
 
     @unpack
+    @data(
+        (None, None, '.', None),
+        ('', None, '.', None),
+        ('Something', None, '.', 'Something'),
+        ('Short sentence', 'Another', '.', 'Short sentence. Another'),
+        ('Short sentence ', ' Another', '.', 'Short sentence. Another'),
+        ('Short sentence.', 'Another', '.', 'Short sentence. Another'),
+        ('Short sentence. ', 'Another', '.', 'Short sentence. Another'),
+        # use a comma as the glue just to check it works
+        ('Short sentence', 'Another', ',', 'Short sentence, Another'),
+        )
+    def test_join_sentences(self, value1, value2, glue, expected):
+        self.assertEqual(utils.join_sentences(value1, value2, glue), expected)
+
+    @unpack
     @data((None, None, None),
         ("1", 0xDEADBEEF, 1),
         ("1", "moo", 1),
