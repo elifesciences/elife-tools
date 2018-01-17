@@ -53,6 +53,19 @@ def strip_punctuation_space(value):
         return [strip_punctuation(v) for v in value]
     return strip_punctuation(value)
 
+def join_sentences(string1, string2, glue='.'):
+    "concatenate two sentences together with punctuation glue"
+    if not string1 or string1 == '':
+        return string2
+    if not string2 or string2 == '':
+        return string1
+    # both are strings, continue joining them together with the glue and whitespace
+    new_string = string1.rstrip()
+    if not new_string.endswith(glue):
+        new_string += glue
+    new_string += ' ' + string2.lstrip()
+    return new_string
+
 def coerce_to_int(val, default=0xDEADBEEF):
     """Attempts to cast given value to an integer, return the original value if failed or the default if one provided."""
     try:
