@@ -1343,6 +1343,8 @@ def refs(soup):
         set_if_value(ref, "elocation-id", node_text(first(raw_parser.elocation_id(tag))))
         if raw_parser.element_citation(tag):
             copy_attribute(first(raw_parser.element_citation(tag)).attrs, "publication-type", ref)
+        if "publication-type" not in ref and raw_parser.mixed_citations(tag):
+            copy_attribute(first(raw_parser.mixed_citations(tag)).attrs, "publication-type", ref)
 
         # authors
         person_group = raw_parser.person_group(tag)
@@ -1355,14 +1357,14 @@ def refs(soup):
                 author_type = group["person-group-type"]
 
             # Read name or collab tag in the order they are listed
-            for name_or_collab_tag in extract_nodes(group, ["name","collab"]):
+            for name_or_collab_tag in extract_nodes(group, ["name", "string-name", "collab"]):
                 author = {}
 
                 # Shared tag attribute
                 set_if_value(author, "group-type", author_type)
 
                 # name tag attributes
-                if name_or_collab_tag.name == "name":
+                if name_or_collab_tag.name in ["name", "string-name"]:
                     set_if_value(author, "surname", node_text(first(raw_parser.surname(name_or_collab_tag))))
                     set_if_value(author, "given-names", node_text(first(raw_parser.given_names(name_or_collab_tag))))
                     set_if_value(author, "suffix", node_text(first(raw_parser.suffix(name_or_collab_tag))))

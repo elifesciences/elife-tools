@@ -3748,6 +3748,24 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         ]
         ),
 
+         # example of mixed-citation with string-name, based on non-elife article
+        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list><ref><mixed-citation publication-type="book" meta="no" id="c2"><person-group person-group-type="author"><string-name><surname>Frank</surname>, <given-names>A. W.</given-names></string-name></person-group> (<year>1995</year>). <source>The wounded storyteller: Body, illness, and ethics</source>. <publisher-loc>Chicago</publisher-loc>: <publisher-name>University of Chicago Press</publisher-name>.</mixed-citation></ref></ref-list></back></article></root>',
+        [{
+            'article_doi': None,
+            'authors': [{
+                'given-names': u'A. W.',
+                'group-type': u'author',
+                'surname': u'Frank'}],
+            'position': 1,
+            'publication-type': u'book',
+            'publisher_loc': u'Chicago',
+            'publisher_name': u'University of Chicago Press',
+            'ref': u'Frank, A. W. (1995). The wounded storyteller: Body, illness, and ethics. Chicago: University of Chicago Press.',
+            'source': u'The wounded storyteller: Body, illness, and ethics',
+            'year': u'1995'
+        }]
+        ),
+
         )
     def test_refs_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
