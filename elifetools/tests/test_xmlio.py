@@ -9,7 +9,7 @@ from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
 
 from elifetools import xmlio
-from elifetools.file_utils import sample_xml
+from elifetools.file_utils import sample_xml, read_fixture
 from elifetools.utils import unicode_value
 
 
@@ -112,46 +112,46 @@ class TestXmlio(unittest.TestCase):
     @unpack
     @data(
         # example of removing and adding the same heading tags
-        (u'<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_01.xml'),
          ['Cell Biology', 'Plant Biology'],
          'heading',
          True,
-         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_01_expected.xml')
          ),
         # example of removing and adding the display-channel should retain the same tag order
-        (u'<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_02.xml'),
          ['Research Article'],
          'display-channel',
          True,
-         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_02_expected.xml')
          ),
         # example of appending a tag
-        (u'<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_03.xml'),
          ['New Heading'],
          'heading',
          False,
-         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>New Heading</subject></subj-group></article-categories></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_03_expected.xml')
          ),
         # example adding a new subject type will be added to the head of the list
-        (u'<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_04.xml'),
          ['New Heading'],
          'sub-display-channel',
          True,
-         '<article><front><article-meta><article-categories><subj-group subj-group-type="sub-display-channel"><subject>New Heading</subject></subj-group><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Cell Biology</subject></subj-group><subj-group subj-group-type="heading"><subject>Plant Biology</subject></subj-group></article-categories></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_04_expected.xml')
          ),
         # example adding a new subject when none existed
-        (u'<article><front><article-meta></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_05.xml'),
          ['New Heading'],
          'display-channel',
          True,
-         '<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>New Heading</subject></subj-group></article-categories></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_05_expected.xml')
          ),
         # example removes the subject tags if an empty list of subjects is provided
-        (u'<article><front><article-meta><article-categories><subj-group subj-group-type="display-channel"><subject>Research Article</subject></subj-group></article-categories></article-meta></front></article>',
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_06.xml'),
          [],
          'display-channel',
          True,
-         '<article><front><article-meta><article-categories /></article-meta></front></article>'
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_06_expected.xml'),
          ),
         )
     def test_rewrite_subject_group(self, xml, subjects, subject_group_type, overwrite, xml_expected):
