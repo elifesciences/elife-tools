@@ -9,7 +9,7 @@ from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
 
 from elifetools import xmlio
-from elifetools.file_utils import sample_xml
+from elifetools.file_utils import sample_xml, read_fixture
 from elifetools.utils import unicode_value
 
 
@@ -108,6 +108,59 @@ class TestXmlio(unittest.TestCase):
         # Generate output and compare it
         rough_string = ElementTree.tostring(parent).decode('utf-8')
         self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i>XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
+
+    @unpack
+    @data(
+        # example of removing and adding the same heading tags
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_01.xml'),
+         ['Cell Biology', 'Plant Biology'],
+         'heading',
+         True,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_01_expected.xml')
+         ),
+        # example of removing and adding the display-channel should retain the same tag order
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_02.xml'),
+         ['Research Article'],
+         'display-channel',
+         True,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_02_expected.xml')
+         ),
+        # example of appending a tag
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_03.xml'),
+         ['New Heading'],
+         'heading',
+         False,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_03_expected.xml')
+         ),
+        # example adding a new subject type will be added to the head of the list
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_04.xml'),
+         ['New Heading'],
+         'sub-display-channel',
+         True,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_04_expected.xml')
+         ),
+        # example adding a new subject when none existed
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_05.xml'),
+         ['New Heading'],
+         'display-channel',
+         True,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_05_expected.xml')
+         ),
+        # example removes the subject tags if an empty list of subjects is provided
+        (read_fixture('test_xmlio', 'test_rewrite_subject_group_06.xml'),
+         [],
+         'display-channel',
+         True,
+         read_fixture('test_xmlio', 'test_rewrite_subject_group_06_expected.xml'),
+         ),
+        )
+    def test_rewrite_subject_group(self, xml, subjects, subject_group_type, overwrite, xml_expected):
+        root = xmlio.parse(StringIO(xml))
+        xmlio.rewrite_subject_group(root, subjects, subject_group_type, overwrite)
+        rough_string = ElementTree.tostring(root).decode('utf-8')
+        self.assertEqual(rough_string, xml_expected)
+
+
 
 if __name__ == '__main__':
     unittest.main()
