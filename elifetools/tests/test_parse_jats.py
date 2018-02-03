@@ -1281,6 +1281,13 @@ class TestParseJats(unittest.TestCase):
         (None,
         (None, {})
         ),
+        # aff example mostly just text with no subtags
+        ('''<aff id="A1">
+<label>1</label>An Institute, University of Testing, Cambridge, UK.</aff>''',
+        ('A1', {
+            'text': u'An Institute, University of Testing, Cambridge, UK.'}
+         )
+        ),
     )
     @unpack
     def test_format_aff_edge_cases(self, xml_content, expected):

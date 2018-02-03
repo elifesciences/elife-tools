@@ -1078,7 +1078,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email', 'text']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
@@ -1118,7 +1118,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             (none_return, aff_detail) = format_aff(aff_node)
 
             if len(aff_detail) > 0:
-                aff_attributes = ['dept', 'institution', 'country', 'city', 'email']
+                aff_attributes = ['dept', 'institution', 'country', 'city', 'email', 'text']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
                         copy_attribute(aff_detail, aff_attribute, contrib_affs)
@@ -1259,6 +1259,14 @@ def format_aff(aff_tag):
         }
     # Remove keys with None value
     values = prune_dict_of_none_values(values)
+    # If all values are none then extract as text
+    if not values:
+        # extract the text ignoring the label tag
+        aff_tag_copy = duplicate_tag(aff_tag)
+        aff_tag_copy = remove_tag_from_tag(aff_tag, 'label')
+        values = {
+            'text': node_text(aff_tag_copy).strip()
+        }
 
     if 'id' in aff_tag.attrs:
         return aff_tag['id'], values
