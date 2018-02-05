@@ -1077,7 +1077,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
             contributor['affiliations'] = []
             contrib_affs = {}
             (none_return, aff_detail) = format_aff(aff_tag)
-            if len(aff_detail) > 0:
+            if aff_detail:
                 aff_attributes = ['dept', 'institution', 'country', 'city', 'email', 'text']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
@@ -1117,7 +1117,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
 
             (none_return, aff_detail) = format_aff(aff_node)
 
-            if len(aff_detail) > 0:
+            if aff_detail:
                 aff_attributes = ['dept', 'institution', 'country', 'city', 'email', 'text']
                 for aff_attribute in aff_attributes:
                     if aff_attribute in aff_detail and aff_detail[aff_attribute] is not None:
