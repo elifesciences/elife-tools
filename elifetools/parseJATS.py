@@ -2769,7 +2769,7 @@ def author_affiliations(author, html_flag=True):
 
 def author_phone_numbers(author, correspondence):
     phone_numbers = []
-    if correspondence and "phone" in author.get("references"):
+    if correspondence and "phone" in author.get("references", {}):
         for ref_id in author["references"]["phone"]:
             for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
@@ -2795,7 +2795,7 @@ def author_phone_numbers_json(author, correspondence):
 def author_email_addresses(author, correspondence):
     email_addresses = []
 
-    if correspondence and "email" in author.get("references"):
+    if correspondence and "email" in author.get("references", {}):
         for ref_id in author["references"]["email"]:
             for corr_ref_id, data in iteritems(correspondence):
                 if ref_id == corr_ref_id:
@@ -2820,7 +2820,7 @@ def author_email_addresses(author, correspondence):
 def author_contribution(author, contributions):
     contribution_text = None
 
-    if "contribution" in author.get("references"):
+    if "contribution" in author.get("references", {}):
         for ref_id in author["references"]["contribution"]:
             if contributions:
                 for contribution in contributions:
@@ -2833,7 +2833,7 @@ def author_contribution(author, contributions):
 def author_competing_interests(author, competing_interests):
     competing_interests_text = None
 
-    if "competing-interest" in author.get("references"):
+    if "competing-interest" in author.get("references", {}):
         for ref_id in author["references"]["competing-interest"]:
             if competing_interests:
                 for competing_interest in competing_interests:
@@ -2849,11 +2849,10 @@ def author_competing_interests(author, competing_interests):
 def author_equal_contribution(author, equal_contributions_map):
     equal_contributions = []
 
-    if "equal-contrib" in author.get("references"):
-        if "equal-contrib" in author["references"]:
-            for ref_id in author["references"]["equal-contrib"]:
-                if ref_id in equal_contributions_map:
-                    equal_contributions.append(equal_contributions_map[ref_id])
+    if "equal-contrib" in author.get("references", {}):
+        for ref_id in author["references"]["equal-contrib"]:
+            if ref_id in equal_contributions_map:
+                equal_contributions.append(equal_contributions_map[ref_id])
     if equal_contributions != []:
         return equal_contributions
     else:
@@ -2914,35 +2913,34 @@ def author_json_details(author, author_json, contributions, correspondence,
     if author_affiliations(author):
         author_json["affiliations"] = author_affiliations(author)
 
-    if author.get("references"):
-        # foot notes or additionalInformation
-        if author_foot_notes(author, foot_notes_data):
-            author_json["additionalInformation"] = author_foot_notes(author, foot_notes_data)
+    # foot notes or additionalInformation
+    if author_foot_notes(author, foot_notes_data):
+        author_json["additionalInformation"] = author_foot_notes(author, foot_notes_data)
 
-        # email
-        if author_email_addresses(author, correspondence):
-            author_json["emailAddresses"] = author_email_addresses(author, correspondence)
+    # email
+    if author_email_addresses(author, correspondence):
+        author_json["emailAddresses"] = author_email_addresses(author, correspondence)
 
-        # phone
-        if author_phone_numbers(author, correspondence):
-            author_json["phoneNumbers"] = author_phone_numbers_json(author, correspondence)
+    # phone
+    if author_phone_numbers(author, correspondence):
+        author_json["phoneNumbers"] = author_phone_numbers_json(author, correspondence)
 
-        # contributions
-        if author_contribution(author, contributions):
-            author_json["contribution"] = convert(author_contribution(author, contributions))
+    # contributions
+    if author_contribution(author, contributions):
+        author_json["contribution"] = convert(author_contribution(author, contributions))
 
-        # competing interests
-        if author_competing_interests(author, competing_interests):
-            author_json["competingInterests"] = convert(
-                author_competing_interests(author, competing_interests))
+    # competing interests
+    if author_competing_interests(author, competing_interests):
+        author_json["competingInterests"] = convert(
+            author_competing_interests(author, competing_interests))
 
-        # equal-contributions
-        if author_equal_contribution(author, equal_contributions_map):
-            author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
+    # equal-contributions
+    if author_equal_contribution(author, equal_contributions_map):
+        author_json["equalContributionGroups"] = author_equal_contribution(author, equal_contributions_map)
 
-        # postalAddress
-        if author_present_address(author, present_address_data):
-            author_json["postalAddresses"] = author_present_address(author, present_address_data)
+    # postalAddress
+    if author_present_address(author, present_address_data):
+        author_json["postalAddresses"] = author_present_address(author, present_address_data)
 
     return author_json
 
