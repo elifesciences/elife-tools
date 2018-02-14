@@ -861,7 +861,11 @@
         "group-author-key": "group-author-id2", 
         "author": "Luca Malcovati", 
         "article_doi": "10.7554/eLife.02935", 
-        "affiliations": [], 
+        "affiliations": [
+            {
+                "text": "Fondazione IRCCS Policlinico San Matteo, University of Pavia, Pavia, Italy"
+            }
+        ], 
         "given-names": "Luca", 
         "position": 50, 
         "type": "author non-byline"
@@ -871,7 +875,11 @@
         "group-author-key": "group-author-id2", 
         "author": "Sudhir Tauro", 
         "article_doi": "10.7554/eLife.02935", 
-        "affiliations": [], 
+        "affiliations": [
+            {
+                "text": "Division of Medial Sciences, University of Dundee, Dundee, UK"
+            }
+        ], 
         "given-names": "Sudhir", 
         "position": 51, 
         "type": "author non-byline"
@@ -1080,6 +1088,9 @@
                 "city": "Norwich", 
                 "institution": "University of East Anglia", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Colin", 
@@ -1101,6 +1112,9 @@
                 "country": "UK", 
                 "institution": "Royal Marsden NHS Foundation Trust", 
                 "city": "London and Sutton"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Rosalind", 
@@ -2025,6 +2039,9 @@
                 "city": "Hinxton", 
                 "institution": "Wellcome Trust Sanger Institute", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Andrew", 
@@ -2042,6 +2059,9 @@
                 "city": "Cambridge", 
                 "institution": "University of Cambridge", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Douglas", 
@@ -2075,6 +2095,9 @@
                 "dept": "Bostwick Laboratories", 
                 "city": "London", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Christopher", 
@@ -2092,6 +2115,9 @@
                 "city": "Hinxton", 
                 "institution": "Wellcome Trust Sanger Institute", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Michael", 
@@ -2126,6 +2152,9 @@
                 "city": "Hinxton", 
                 "institution": "Wellcome Trust Sanger Institute", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "Ultan", 
@@ -2171,6 +2200,9 @@
                 "city": "Cambridge", 
                 "institution": "University of Cambridge, Addenbrooke's Hospital", 
                 "country": "UK"
+            }, 
+            {
+                "text": "Senior Principal Investigators of the Cancer Research UK funded ICGC Prostate Cancer Project"
             }
         ], 
         "given-names": "David", 
