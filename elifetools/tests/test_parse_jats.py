@@ -1849,6 +1849,145 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
         ]
         ),
 
+         # example of data citation with a pub-id pub-id-type="archive", parse it as an accession number, based on 00666 kitchen sink example
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list>    <ref id="bib34">
+        <element-citation publication-type="data">
+            <person-group person-group-type="author">
+                <name>
+                    <surname>Radoshevich</surname>
+                    <given-names>L</given-names>
+                </name>
+                <name>
+                    <surname>Impens</surname>
+                    <given-names>F</given-names>
+                </name>
+                <name>
+                    <surname>Ribet</surname>
+                    <given-names>D</given-names>
+                </name>
+                <name>
+                    <surname>Quereda</surname>
+                    <given-names>JJ</given-names>
+                </name>
+                <name>
+                    <surname>Nam Tham</surname>
+                    <given-names>T</given-names>
+                </name>
+                <name>
+                    <surname>Nahori</surname>
+                    <given-names>MA</given-names>
+                </name>
+                <name>
+                    <surname>Bierne</surname>
+                    <given-names>H</given-names>
+                </name>
+                <name>
+                    <surname>Dussurget</surname>
+                    <given-names>O</given-names>
+                </name>
+                <name>
+                    <surname>Pizarro-Cerdá</surname>
+                    <given-names>J</given-names>
+                </name>
+                <name>
+                    <surname>Knobeloch</surname>
+                    <given-names>KP</given-names>
+                </name>
+                <name>
+                    <surname>Cossart</surname>
+                    <given-names>P</given-names>
+                </name>
+            </person-group>
+            <year iso-8601-date="2015">2015a</year>
+            <data-title>ISG15 counteracts <italic>Listeria monocytogenes</italic>
+                infection</data-title>
+            <source>ProteomeXchange</source>
+            <pub-id pub-id-type="archive"
+                xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805"
+                >PXD001805</pub-id>
+        </element-citation>
+    </ref></ref-list></back></article></root>''',
+        [
+            OrderedDict([
+                ('type', u'data'),
+                ('id', u'bib34'),
+                ('date', u'2015'),
+                ('discriminator', u'a'),
+                ('authors', [
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'L Radoshevich'),
+                            ('index', u'Radoshevich, L')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'F Impens'),
+                            ('index', u'Impens, F')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'D Ribet'),
+                            ('index', u'Ribet, D')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'JJ Quereda'),
+                            ('index', u'Quereda, JJ')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'T Nam Tham'),
+                            ('index', u'Nam Tham, T')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'MA Nahori'),
+                            ('index', u'Nahori, MA')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'H Bierne'),
+                            ('index', u'Bierne, H')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'O Dussurget'),
+                            ('index', u'Dussurget, O')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'J Pizarro-Cerd\xe1'),
+                            ('index', u'Pizarro-Cerd\xe1, J')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'KP Knobeloch'),
+                            ('index', u'Knobeloch, KP')])
+                         )]),
+                    OrderedDict([
+                        ('type', 'person'),
+                        ('name', OrderedDict([
+                            ('preferred', u'P Cossart'),
+                            ('index', u'Cossart, P')])
+                        )])
+                    ]),
+                ('title', u'ISG15 counteracts <i>Listeria monocytogenes</i>\n                infection'),
+                ('source', u'ProteomeXchange'),
+                ('dataId', u'PXD001805'),
+                ('uri', u'http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805')
+            ])
+        ])
+
         )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
@@ -3797,6 +3936,136 @@ RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
             'ref': u'Frank, A. W. (1995). The wounded storyteller: Body, illness, and ethics. Chicago: University of Chicago Press.',
             'source': u'The wounded storyteller: Body, illness, and ethics',
             'year': u'1995'
+        }]
+        ),
+
+         # example of data citation with a pub-id pub-id-type="archive", parse it as an accession number, based on 00666 kitchen sink example
+        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list>    <ref id="bib34">
+        <element-citation publication-type="data">
+            <person-group person-group-type="author">
+                <name>
+                    <surname>Radoshevich</surname>
+                    <given-names>L</given-names>
+                </name>
+                <name>
+                    <surname>Impens</surname>
+                    <given-names>F</given-names>
+                </name>
+                <name>
+                    <surname>Ribet</surname>
+                    <given-names>D</given-names>
+                </name>
+                <name>
+                    <surname>Quereda</surname>
+                    <given-names>JJ</given-names>
+                </name>
+                <name>
+                    <surname>Nam Tham</surname>
+                    <given-names>T</given-names>
+                </name>
+                <name>
+                    <surname>Nahori</surname>
+                    <given-names>MA</given-names>
+                </name>
+                <name>
+                    <surname>Bierne</surname>
+                    <given-names>H</given-names>
+                </name>
+                <name>
+                    <surname>Dussurget</surname>
+                    <given-names>O</given-names>
+                </name>
+                <name>
+                    <surname>Pizarro-Cerdá</surname>
+                    <given-names>J</given-names>
+                </name>
+                <name>
+                    <surname>Knobeloch</surname>
+                    <given-names>KP</given-names>
+                </name>
+                <name>
+                    <surname>Cossart</surname>
+                    <given-names>P</given-names>
+                </name>
+            </person-group>
+            <year iso-8601-date="2015">2015a</year>
+            <data-title>ISG15 counteracts <italic>Listeria monocytogenes</italic>
+                infection</data-title>
+            <source>ProteomeXchange</source>
+            <pub-id pub-id-type="archive"
+                xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805"
+                >PXD001805</pub-id>
+        </element-citation>
+    </ref></ref-list></back></article></root>''',
+        [{
+        "data-title": u"ISG15 counteracts <italic>Listeria monocytogenes</italic>\n                infection",
+        "article_doi": None,
+        "authors": [
+            {
+                "surname": u"Radoshevich",
+                "given-names": u"L",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Impens",
+                "given-names": u"F",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Ribet",
+                "given-names": u"D",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Quereda",
+                "given-names": u"JJ",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Nam Tham",
+                "given-names": u"T",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Nahori",
+                "given-names": u"MA",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Bierne",
+                "given-names": u"H",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Dussurget",
+                "given-names": u"O",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Pizarro-Cerd\u00e1",
+                "given-names": u"J",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Knobeloch",
+                "given-names": u"KP",
+                "group-type": u"author"
+            },
+            {
+                "surname": u"Cossart",
+                "given-names": u"P",
+                "group-type": u"author"
+            }
+        ],
+        "accession": "PXD001805",
+        "uri": "http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805",
+        "publication-type": u"data",
+        "source": u"ProteomeXchange",
+        "year": u"2015a",
+        "position": 1,
+        "year-iso-8601-date": u"2015",
+        "ref": u"Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015a ISG15 counteracts Listeria monocytogenes infection ProteomeXchange PXD001805",
+        "id": u"bib34"
         }]
         ),
 

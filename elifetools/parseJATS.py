@@ -1329,11 +1329,17 @@ def refs(soup):
         if uri_tag:
             set_if_value(ref, "uri", uri_tag.get('xlink:href'))
             set_if_value(ref, "uri_text", node_contents_str(uri_tag))
+        # look for a pub-id tag if no uri yet
+        if not ref.get('uri') and raw_parser.pub_id(tag, "archive"):
+            pub_id_tag = first(raw_parser.pub_id(tag, pub_id_type="archive"))
+            set_if_value(ref, "uri", pub_id_tag.get('xlink:href'))
 
         # accession, could be in either of two tags
         set_if_value(ref, "accession", node_contents_str(first(raw_parser.object_id(tag, "art-access-id"))))
         if not ref.get('accession'):
             set_if_value(ref, "accession", node_contents_str(first(raw_parser.pub_id(tag, pub_id_type="accession"))))
+        if not ref.get('accession'):
+            set_if_value(ref, "accession", node_contents_str(first(raw_parser.pub_id(tag, pub_id_type="archive"))))
 
         if(raw_parser.year(tag)):
             set_if_value(ref, "year", node_text(raw_parser.year(tag)))
