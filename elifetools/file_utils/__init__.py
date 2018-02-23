@@ -32,6 +32,9 @@ def read_fixture(folder_name, filename):
         # import the fixture and return the value of expected
         module_name = fixture_module_name(folder_name, filename)
         mod = importlib.import_module(module_name)
+        # assert expected exists before continuing
+        assert hasattr(mod, 'expected'), (
+            'expected property not found in module {module_name}'.format(module_name=module_name))
         return mod.expected
     else:
         with open(full_filename, 'rb') as file_fp:
