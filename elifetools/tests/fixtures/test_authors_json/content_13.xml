@@ -1,0 +1,31 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes" id="author-8100">
+                    <name><surname>Raman</surname><given-names>Indira M</given-names></name>
+                    <x>is an</x>
+                    <role><italic>eLife</italic> Reviewing Editor</role>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="corresp" rid="cor1">*</xref>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5245-8177</contrib-id>
+                    <x>and is in the</x>
+                    <aff id="aff1"><institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country></aff>
+                </contrib>
+                <aff id="aff1">
+                    <institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country>
+                </aff>
+            </contrib-group>
+            <author-notes>
+                <corresp id="cor1"><email>i-raman@northwestern.edu</email></corresp>
+            </author-notes>
+        </article-meta>
+    </front>
+    <back>
+        <fn-group content-type="competing-interest">
+            <title>Competing interests</title>
+            <fn fn-type="conflict" id="conf1"><p>The author declares that no competing interests exist.</p></fn>
+        </fn-group>
+    </back>
+</root>

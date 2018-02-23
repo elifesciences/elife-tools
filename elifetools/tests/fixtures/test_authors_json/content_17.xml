@@ -1,0 +1,134 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+<front>
+<article-meta>
+<contrib-group>
+<contrib contrib-type="author" id="author-28457">
+<name>
+<surname>Kandela</surname>
+<given-names>Irawati</given-names>
+</name>
+<xref ref-type="aff" rid="aff1">1</xref>
+<xref ref-type="fn" rid="con1"/>
+<xref ref-type="fn" rid="conf1"/>
+</contrib>
+<contrib contrib-type="author" id="author-55803">
+<name>
+<surname>Aird</surname>
+<given-names>Fraser</given-names>
+</name>
+<xref ref-type="aff" rid="aff1">1</xref>
+<xref ref-type="fn" rid="con2"/>
+<xref ref-type="fn" rid="conf1"/>
+</contrib>
+<contrib contrib-type="author" corresp="yes">
+<email>tim@cos.io</email>
+<email>nicole@scienceexchange.com</email>
+<collab>Reproducibility Project: Cancer Biology<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Iorns</surname>
+<given-names>Elizabeth</given-names>
+</name>
+<aff>
+<institution>Science Exchange</institution>
+<addr-line>
+<named-content content-type="city">Palo Alto</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Williams</surname>
+<given-names>Stephen R</given-names>
+</name>
+<aff>
+<institution>Center for Open Science</institution>
+<addr-line>
+<named-content content-type="city">Charlottesville</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>Perfito</surname>
+<given-names>Nicole</given-names>
+</name>
+<aff>
+<institution>Science Exchange</institution>
+<addr-line>
+<named-content content-type="city">Palo Alto</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+<contrib contrib-type="author" id="author-16276">
+<name>
+<surname>Errington</surname>
+<given-names>Timothy M</given-names>
+</name>
+<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4959-5143</contrib-id>
+<aff>
+<institution>Center for Open Science</institution>
+<addr-line>
+<named-content content-type="city">Charlottesville</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib>
+</contrib-group>
+</collab>
+<xref ref-type="fn" rid="con3"/>
+<xref ref-type="fn" rid="conf2"/>
+</contrib>
+<aff id="aff1">
+<label>1</label>
+<institution content-type="dept">Developmental Therapeutics Core</institution>
+<institution>Northwestern University</institution>
+<addr-line>
+<named-content content-type="city">Evanston</named-content>
+</addr-line>
+<country>United States</country>
+</aff>
+</contrib-group>
+<contrib-group content-type="section">
+<contrib contrib-type="editor">
+<name>
+<surname>Dang</surname>
+<given-names>Chi Van</given-names>
+</name>
+<role>Reviewing editor</role>
+<aff>
+<institution>University of Pennsylvania</institution>
+<country>United States</country>
+</aff>
+</contrib>
+</contrib-group></article-meta></front>
+<back>
+<sec id="s4" sec-type="additional-information">
+<title>Additional information</title>
+<fn-group content-type="competing-interest">
+<title>Competing interests</title>
+<fn fn-type="COI-statement" id="conf1">
+<p>Developmental Therapeutics Core is a Science Exchange associated lab</p>
+</fn>
+<fn fn-type="COI-statement" id="conf2">
+<p>EI, NP: Employed by and hold shares in Science Exchange Inc.</p>
+</fn>
+</fn-group>
+<fn-group content-type="author-contribution">
+<title>Author contributions</title>
+<fn fn-type="con" id="con1">
+<p>Acquisition of data, Drafting or revising the article</p>
+</fn>
+<fn fn-type="con" id="con2">
+<p>Acquisition of data, Drafting or revising the article</p>
+</fn>
+<fn fn-type="con" id="con3">
+<p>Analysis and interpretation of data, Drafting or revising the article</p>
+</fn>
+</fn-group>
+</sec>
+</back>
+</root>

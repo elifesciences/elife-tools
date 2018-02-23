@@ -16,7 +16,7 @@ from elifetools import rawJATS as raw_parser
 from elifetools.utils import date_struct, unicode_value
 from collections import OrderedDict
 
-from elifetools.file_utils import sample_xml, json_expected_file
+from elifetools.file_utils import sample_xml, json_expected_file, read_fixture
 
 
 
@@ -992,247 +992,93 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # Author with phone number, 02833 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-12496"><name><surname>Bender</surname><given-names>Welcome</given-names></name><xref ref-type="aff" rid="aff3"/><xref ref-type="corresp" rid="cor2">*</xref><xref ref-type="other" rid="par-2"/><xref ref-type="fn" rid="con3"/><xref ref-type="fn" rid="conf1"/><xref ref-type="other" rid="dataro1"/></contrib><aff id="aff3"><institution content-type="dept">Department of Biological Chemistry and Molecular Pharmacology</institution>, <institution>Harvard Medical School</institution>, <addr-line><named-content content-type="city">Boston</named-content></addr-line>, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor2"><label>*</label>For correspondence: <phone>(+1) 617-432-1906</phone> (WB)</corresp></author-notes><sec sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group><fn-group content-type="author-contribution"><fn fn-type="con" id="con3"><p>WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article</p></fn></article-meta></front></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Welcome Bender'), ('index', u'Bender, Welcome')])), ('affiliations', [OrderedDict([('name', [u'Department of Biological Chemistry and Molecular Pharmacology', u'Harvard Medical School']), ('address', OrderedDict([('formatted', [u'Boston', u'United States']), ('components', OrderedDict([('locality', [u'Boston']), ('country', u'United States')]))]))])]), ('phoneNumbers', [u'+16174321906']), ('contribution', u'WB, Conception and design, Acquisition of data, Analysis and interpretation of data, Drafting and revising the article'), ('competingInterests', u'The authors declare that no competing interests exist.')])]
+        (read_fixture('test_authors_json', 'content_01.xml'),
+         read_fixture('test_authors_json', 'content_01_expected.py')
          ),
 
         # 02935 v1, group authors (collab) but no members of those groups
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author"><collab>ICGC Breast Cancer Group</collab></contrib></contrib-group></article-meta></front></root>',
-        [OrderedDict([('type', 'group'), ('name', u'ICGC Breast Cancer Group')])]
+        (read_fixture('test_authors_json', 'content_02.xml'),
+         read_fixture('test_authors_json', 'content_02_expected.py')
         ),
 
         # 02935 v2, excerpt for group author parsing
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author"><contrib-id contrib-id-type="group-author-key">group-author-id1</contrib-id><collab>ICGC Breast Cancer Group</collab><xref ref-type="aff" rid="aff1"/></contrib><aff id="aff1"><institution content-type="dept">Cancer Genome Project</institution>, <institution>Wellcome Trust Sanger Institute</institution>, <addr-line><named-content content-type="city">Hinxton</named-content></addr-line>, <country>United Kingdom</country></aff></contrib-group><contrib-group><contrib contrib-type="author non-byline"><contrib-id contrib-id-type="group-author-key">group-author-id1</contrib-id><name><surname>Provenzano</surname><given-names>Elena</given-names></name><aff><institution content-type="dept">Cambridge Breast Unit</institution>, <institution>Addenbrooke’s Hospital, Cambridge University Hospital NHS Foundation Trust and NIHR Cambridge Biomedical Research Centre</institution>, <addr-line><named-content content-type="city">Cambridge CB2 2QQ</named-content></addr-line>, <country>UK</country></aff></contrib></contrib-group></article-meta></front></root>',
-         [OrderedDict([('type', 'group'), ('name', u'ICGC Breast Cancer Group'), ('affiliations', [OrderedDict([('name', [u'Cancer Genome Project', u'Wellcome Trust Sanger Institute']), ('address', OrderedDict([('formatted', [u'Hinxton', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Hinxton']), ('country', u'United Kingdom')]))]))])]), ('people', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Elena Provenzano'), ('index', u'Provenzano, Elena')])), ('affiliations', [OrderedDict([('name', [u'Cambridge Breast Unit', u'Addenbrooke\u2019s Hospital, Cambridge University Hospital NHS Foundation Trust and NIHR Cambridge Biomedical Research Centre']), ('address', OrderedDict([('formatted', [u'Cambridge CB2 2QQ', u'UK']), ('components', OrderedDict([('locality', [u'Cambridge CB2 2QQ']), ('country', u'UK')]))]))])])])])])]
+        (read_fixture('test_authors_json', 'content_03.xml'),
+         read_fixture('test_authors_json', 'content_03_expected.py')
          ),
 
         # 09376 v1, excerpt to rewrite an author ORCID
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09376</article-id><article-id pub-id-type="doi">10.7554/eLife.09376</article-id><contrib-group><contrib contrib-type="author" corresp="yes" id="author-1201"><name><surname>Weis</surname><given-names>Karsten</given-names></name><contrib-id contrib-id-type="orcid">http://orcid.org/000-0001-7224-925X</contrib-id></contrib-group></article-meta></front></article></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Karsten Weis'), ('index', u'Weis, Karsten')])), ('orcid', '0000-0001-7224-925X')])]
+        (read_fixture('test_authors_json', 'content_04.xml'),
+         read_fixture('test_authors_json', 'content_04_expected.py')
          ),
 
         # 06956 v1, excerpt, add an affiliation name to an author
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">elife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">06956</article-id><article-id pub-id-type="doi">10.7554/eLife.06956</article-id><contrib-group><contrib contrib-type="author" corresp="yes" id="author-17393"><name><surname>Alfred</surname><given-names>Jane</given-names></name><x> </x><role>Consultant Editor</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-6798-0064</contrib-id><xref ref-type="aff" rid="aff1"/></contrib><aff id="aff1"><addr-line><named-content content-type="city">Cambridge</named-content></addr-line>, <country>United Kingdom</country></aff></contrib-group></article-meta></front></article></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Jane Alfred'), ('index', u'Alfred, Jane')])), ('orcid', u'0000-0001-6798-0064'), ('role', u'Consultant Editor'), ('affiliations', [OrderedDict([('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))])), ('name', ['Cambridge'])])])])]
+        (read_fixture('test_authors_json', 'content_05.xml'),
+         read_fixture('test_authors_json', 'content_05_expected.py')
          ),
 
         # 21337 v1, example to pick up the email of corresponding authors from authors notes
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-10576"><name><surname>Seydoux</surname><given-names>Geraldine</given-names></name><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8257-0493</contrib-id><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="other" rid="par-2"/><xref ref-type="fn" rid="conf1"/></contrib><aff id="aff1"><institution content-type="dept">Department of Molecular Biology and Genetics</institution>, <institution>Howard Hughes Medical Institute, Johns Hopkins University School of Medicine</institution>, <addr-line><named-content content-type="city">Baltimore</named-content></addr-line>, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor1"><label>*</label>For correspondence: <email>gseydoux@jhmi.edu</email> (GS);</corresp></author-notes></article-meta></front><back><sec id="s1" sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interest</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group></sec></back></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Geraldine Seydoux'), ('index', u'Seydoux, Geraldine')])), ('orcid', u'0000-0001-8257-0493'), ('affiliations', [OrderedDict([('name', [u'Department of Molecular Biology and Genetics', u'Howard Hughes Medical Institute, Johns Hopkins University School of Medicine']), ('address', OrderedDict([('formatted', [u'Baltimore', u'United States']), ('components', OrderedDict([('locality', [u'Baltimore']), ('country', u'United States')]))]))])]), ('emailAddresses', [u'gseydoux@jhmi.edu']), ('competingInterests', u'The authors declare that no competing interests exist.')])]
+        (read_fixture('test_authors_json', 'content_06.xml'),
+         read_fixture('test_authors_json', 'content_06_expected.py')
          ),
 
         # 00007 v1, example with a present address
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-1399"><name><surname>Schuman</surname><given-names>Meredith C</given-names></name><xref ref-type="aff" rid="aff1"/><xref ref-type="other" rid="par-1"/><xref ref-type="fn" rid="conf2"/><xref ref-type="fn" rid="con1"/><xref ref-type="other" rid="dataro1"/></contrib><contrib contrib-type="author" id="author-1400"><name><surname>Barthel</surname><given-names>Kathleen</given-names></name><xref ref-type="aff" rid="aff1"/><xref ref-type="fn" rid="pa1">†</xref><xref ref-type="other" rid="par-1"/><xref ref-type="fn" rid="conf2"/><xref ref-type="fn" rid="con2"/><xref ref-type="other" rid="dataro1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1013"><name><surname>Baldwin</surname><given-names>Ian T</given-names></name><xref ref-type="aff" rid="aff1"/><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="other" rid="par-1"/><xref ref-type="fn" rid="conf1"/><xref ref-type="fn" rid="con3"/><xref ref-type="other" rid="dataro1"/></contrib><aff id="aff1"><institution content-type="dept">Department of Molecular Ecology</institution>, <institution>Max Planck Institute for Chemical Ecology</institution>, <addr-line><named-content content-type="city">Jena</named-content></addr-line>, <country>Germany</country></aff></contrib-group><contrib-group content-type="section"><contrib contrib-type="editor"><name><surname>Weigel</surname><given-names>Detlef</given-names></name><role>Reviewing editor</role><aff><institution>Max Planck Institute for Developmental Biology</institution>, <country>Germany</country></aff></contrib></contrib-group><author-notes><corresp id="cor1"><label>*</label>For correspondence: <email>baldwin@ice.mpg.de</email></corresp><fn fn-type="present-address" id="pa1"><label>†</label><p>Federal Research Center for Cultivated Plants Institute for Breeding Research on Horticultural And Fruit Crops, Julius Kühn Institute, Dresden, Germany</p></fn></author-notes></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Meredith C Schuman'), ('index', u'Schuman, Meredith C')])), ('affiliations', [OrderedDict([('name', [u'Department of Molecular Ecology', u'Max Planck Institute for Chemical Ecology']), ('address', OrderedDict([('formatted', [u'Jena', u'Germany']), ('components', OrderedDict([('locality', [u'Jena']), ('country', u'Germany')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Kathleen Barthel'), ('index', u'Barthel, Kathleen')])), ('affiliations', [OrderedDict([('name', [u'Department of Molecular Ecology', u'Max Planck Institute for Chemical Ecology']), ('address', OrderedDict([('formatted', [u'Jena', u'Germany']), ('components', OrderedDict([('locality', [u'Jena']), ('country', u'Germany')]))]))])]), ('postalAddresses', [OrderedDict([('formatted', [u'Federal Research Center for Cultivated Plants Institute for Breeding Research on Horticultural And Fruit Crops, Julius K\xfchn Institute, Dresden, Germany']), ('components', OrderedDict([('streetAddress', [u'Federal Research Center for Cultivated Plants Institute for Breeding Research on Horticultural And Fruit Crops, Julius K\xfchn Institute, Dresden, Germany'])]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Ian T Baldwin'), ('index', u'Baldwin, Ian T')])), ('affiliations', [OrderedDict([('name', [u'Department of Molecular Ecology', u'Max Planck Institute for Chemical Ecology']), ('address', OrderedDict([('formatted', [u'Jena', u'Germany']), ('components', OrderedDict([('locality', [u'Jena']), ('country', u'Germany')]))]))])]), ('emailAddresses', [u'baldwin@ice.mpg.de'])])]
+        (read_fixture('test_authors_json', 'content_07.xml'),
+         read_fixture('test_authors_json', 'content_07_expected.py')
          ),
 
         # 00666 kitchen sink (with extra whitespace removed), example to pick up the email of corresponding author
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-00001" deceased="yes"><name><surname>Harrison</surname><given-names>Melissa</given-names><suffix>Jnr</suffix></name><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-3523-4408</contrib-id><email>m.harrison@elifesciences.org</email><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="fn" rid="equal-contrib1">†</xref><xref ref-type="fn" rid="pa1">§</xref><xref ref-type="fn" rid="fn1">#</xref><xref ref-type="fn" rid="fn2">¶</xref><xref ref-type="other" rid="fund1"/><xref ref-type="fn" rid="conf1"/><xref ref-type="fn" rid="con1"/><xref ref-type="other" rid="dataset1"/><xref ref-type="other" rid="dataset2"/></contrib><aff id="aff1"><label>1</label><institution content-type="dept">Department of Production</institution><institution>eLife</institution><addr-line><named-content content-type="city">Cambridge</named-content></addr-line><country>United Kingdom</country></aff></contrib-group><author-notes><fn fn-type="con" id="equal-contrib1"><label>†</label><p>These authors contributed equally to this work</p></fn><fn fn-type="con" id="equal-contrib2"><label>‡</label><p>These authors also contributed equally to this work</p></fn><fn fn-type="present-address" id="pa1"><label>§</label><p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p></fn><fn fn-type="fn" id="fn1"><label>#</label><p>Deceased. (not really!!)</p></fn><fn fn-type="fn" id="fn2"><label>¶</label><p>This footnote text must work in isolation as nothing is processed on the html view to make it "work"</p></fn></author-notes></article-meta></front><back><sec sec-type="additional-information" id="s5"><fn-group content-type="competing-interest"><title>Additional information</title><fn fn-type="COI-statement" id="conf1"><p>Chair of JATS4R</p></fn></fn-group><fn-group content-type="author-contribution"><title>Author contributions</title><fn fn-type="con" id="con1"><p>Completed the XML mapping exercise and wrote this XML example</p></fn></fn-group></sec></back></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Melissa Harrison Jnr'), ('index', u'Harrison, Melissa, Jnr')])), ('orcid', u'0000-0003-3523-4408'), ('deceased', True), ('affiliations', [OrderedDict([('name', [u'Department of Production', u'eLife']), ('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))]))])]), ('additionalInformation', [u'This footnote text must work in isolation as nothing is processed on the html view to make it "work"']), ('emailAddresses', [u'm.harrison@elifesciences.org']), ('contribution', u'Completed the XML mapping exercise and wrote this XML example'), ('competingInterests', u'Chair of JATS4R'), ('equalContributionGroups', [1]), ('postalAddresses', [OrderedDict([('formatted', [u'Department of Wellcome Trust, Sanger Institute, London, United Kingdom']), ('components', OrderedDict([('streetAddress', [u'Department of Wellcome Trust, Sanger Institute, London, United Kingdom'])]))])])])]
+        (read_fixture('test_authors_json', 'content_08.xml'),
+         read_fixture('test_authors_json', 'content_08_expected.py')
          ),
 
         # 09594 v2 example of non-standard footnote fn-type other and id starting with 'fn'
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" deceased="yes" id="author-37132"><name><surname>Eguchi</surname><given-names>Yukiko</given-names></name><xref ref-type="aff" rid="aff6">6</xref><xref ref-type="fn" rid="con7"/><xref ref-type="fn" rid="conf1"/><xref ref-type="fn" rid="fn1">†</xref></contrib><aff id="aff6"><label>6</label><institution content-type="dept">National Institute for Basic Biology</institution>, <institution>National Institutes for Natural Sciences</institution>, <addr-line><named-content content-type="city">Okazaki</named-content></addr-line>, <country>Japan</country></aff><author-notes><fn fn-type="other" id="fn1"><label>†</label><p>Deceased</p></fn></author-notes></article-meta></front><back><sec id="s5" sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group><fn-group content-type="author-contribution"><title>Author contributions</title><fn fn-type="con" id="con7"><p>YE, Contributed reagents</p></fn></fn-group></sec></back></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Yukiko Eguchi'), ('index', u'Eguchi, Yukiko')])), ('deceased', True), ('affiliations', [OrderedDict([('name', [u'National Institute for Basic Biology', u'National Institutes for Natural Sciences']), ('address', OrderedDict([('formatted', [u'Okazaki', u'Japan']), ('components', OrderedDict([('locality', [u'Okazaki']), ('country', u'Japan')]))]))])]), ('contribution', u'YE, Contributed reagents'), ('competingInterests', u'The authors declare that no competing interests exist.')])]
+        (read_fixture('test_authors_json', 'content_09.xml'),
+         read_fixture('test_authors_json', 'content_09_expected.py')
          ),
 
         # 21230 v1 example of author role to parse
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-68973"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8615-6409</contrib-id><xref ref-type="fn" rid="conf1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1002"><name><surname>Patterson</surname><given-names>Mark</given-names></name><role>Executive Director</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7237-0797</contrib-id><xref ref-type="fn" rid="conf2"/><email>m.patterson@elifesciences.org</email></contrib></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>Receives funding from the Howard Hughes Medical Institute</p></fn><fn fn-type="conflict" id="conf2"><p>The other author declares that no competing interests exist.</p></fn></fn-group></back></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Randy Schekman'), ('index', u'Schekman, Randy')])), ('orcid', u'0000-0001-8615-6409'), ('role', u'Editor-in-Chief'), ('competingInterests', u'Receives funding from the Howard Hughes Medical Institute')]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Mark Patterson'), ('index', u'Patterson, Mark')])), ('orcid', u'0000-0001-7237-0797'), ('role', u'Executive Director'), ('emailAddresses', [u'm.patterson@elifesciences.org']), ('competingInterests', u'The other author declares that no competing interests exist.')])]
+        (read_fixture('test_authors_json', 'content_10.xml'),
+         read_fixture('test_authors_json', 'content_10_expected.py')
          ),
 
         # 21230 v1 as an example of competing interests rewrite rule for elife
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">21230</article-id><article-id pub-id-type="doi">10.7554/eLife.21230</article-id><contrib-group><contrib contrib-type="author" id="author-68973"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-8615-6409</contrib-id><xref ref-type="fn" rid="conf1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1002"><name><surname>Patterson</surname><given-names>Mark</given-names></name><role>Executive Director</role><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-7237-0797</contrib-id><xref ref-type="fn" rid="conf2"/><email>m.patterson@elifesciences.org</email></contrib></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>Receives funding from the Howard Hughes Medical Institute</p></fn><fn fn-type="conflict" id="conf2"><p>The other author declares that no competing interests exist.</p></fn></fn-group></back></root>',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Randy Schekman'), ('index', u'Schekman, Randy')])), ('orcid', u'0000-0001-8615-6409'), ('role', u'Editor-in-Chief'), ('competingInterests', u'Receives funding from the Howard Hughes Medical Institute')]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Mark Patterson'), ('index', u'Patterson, Mark')])), ('orcid', u'0000-0001-7237-0797'), ('role', u'Executive Director'), ('emailAddresses', [u'm.patterson@elifesciences.org']), ('competingInterests', u'No competing interests declared.')])]
+        (read_fixture('test_authors_json', 'content_11.xml'),
+         read_fixture('test_authors_json', 'content_11_expected.py')
          ),
 
         # 00351 v1 example of author role to parse
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-2919"><name><surname>Smith</surname><given-names>Richard</given-names></name><xref ref-type="fn" rid="conf1"/><x> is the </x><role>Chair of Patients Know Best</role><x> and was the </x><role>Editor of the BMJ from 1991 to 2004</role><aff><email>richardswsmith@yahoo.co.uk</email></aff></contrib></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><fn fn-type="conflict" id="conf1"><label>Competing interest:</label><p>The author reviewed Goldacre\'s first book for the BMJ, and is mentioned briefly in Bad Pharma. Over the years he has had some meals paid for by drug companies and spoken at meetings sponsored by drug companies (as has Goldacre), which is hard to avoid if you speak at all as a doctor. 30 years ago he won an award from the Medical Journalists\' Association that was sponsored by Eli Lilly, and discovered that the company thought it had bought him. Since then he has avoided prizes awarded by drug companies.</p></fn></fn-group></back></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Richard Smith'), ('index', u'Smith, Richard')])), ('role', u'Chair of Patients Know Best'), ('emailAddresses', [u'richardswsmith@yahoo.co.uk']), ('competingInterests', "The author reviewed Goldacre's first book for the BMJ, and is mentioned briefly in Bad Pharma. Over the years he has had some meals paid for by drug companies and spoken at meetings sponsored by drug companies (as has Goldacre), which is hard to avoid if you speak at all as a doctor. 30 years ago he won an award from the Medical Journalists' Association that was sponsored by Eli Lilly, and discovered that the company thought it had bought him. Since then he has avoided prizes awarded by drug companies.")])]
+        (read_fixture('test_authors_json', 'content_12.xml'),
+         read_fixture('test_authors_json', 'content_12_expected.py')
          ),
 
         # 21723 v1 another example of author role
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-8100"><name><surname>Raman</surname><given-names>Indira M</given-names></name><x>is an</x><role><italic>eLife</italic> Reviewing Editor</role><xref ref-type="aff" rid="aff1"/><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="fn" rid="conf1"/><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0001-5245-8177</contrib-id><x>and is in the</x><aff id="aff1"><institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country></aff></contrib><aff id="aff1"><institution content-type="dept">Department of Neurobiology</institution>, <institution>Northwestern University</institution>, <addr-line><named-content content-type="city">Evanston</named-content></addr-line>, <country>United States</country></aff></contrib-group><author-notes><corresp id="cor1"><email>i-raman@northwestern.edu</email></corresp></author-notes></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The author declares that no competing interests exist.</p></fn></fn-group></back>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Indira M Raman'), ('index', u'Raman, Indira M')])), ('orcid', u'0000-0001-5245-8177'), ('role', '<i>eLife</i> Reviewing Editor'), ('affiliations', [OrderedDict([('name', [u'Department of Neurobiology', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('emailAddresses', [u'i-raman@northwestern.edu']), ('competingInterests', u'The author declares that no competing interests exist.')])]
+        (read_fixture('test_authors_json', 'content_13.xml'),
+         read_fixture('test_authors_json', 'content_13_expected.py')
          ),
 
         # author with a bio based on kitchen sink 00777
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-1032" equal-contrib="yes"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><xref ref-type="fn" rid="conf1"/><xref ref-type="aff" rid="aff1"/><xref ref-type="fn" rid="equal-contrib1">&#x2020;</xref><bio><p>Randy Schekman is eLife\'s Editor-In-Chief and a Howard Hughes Medical Institute investigator.</p></bio></contrib><aff id="aff1"><institution content-type="dept">Department of Biology</institution><institution>University of North Carolina</institution><addr-line><named-content content-type="city">Chapel Hill</named-content></addr-line><country>United States</country></aff></contrib-group></article-meta></front><back><fn-group content-type="competing-interest"><title>Competing interests</title><fn fn-type="conflict" id="conf1"><p>The other authors declare that no competing interests exist.</p></fn><fn fn-type="conflict" id="conf2"><p>Alain Laderach works for a drug company.</p></fn></fn-group></back></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Randy Schekman'), ('index', u'Schekman, Randy')])), ('role', u'Editor-in-Chief'), ('biography', [OrderedDict([('type', 'paragraph'), ('text', u"Randy Schekman is eLife's Editor-In-Chief and a Howard Hughes Medical Institute investigator.")])]), ('affiliations', [OrderedDict([('name', [u'Department of Biology', u'University of North Carolina']), ('address', OrderedDict([('formatted', [u'Chapel Hill', u'United States']), ('components', OrderedDict([('locality', [u'Chapel Hill']), ('country', u'United States')]))]))])]), ('competingInterests', u'The other authors declare that no competing interests exist.'), ('equalContributionGroups', [1])])]
+        (read_fixture('test_authors_json', 'content_14.xml'),
+         read_fixture('test_authors_json', 'content_14_expected.py')
          ),
 
          # 02273 v1 example, equal contribution to parse
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-8563"><name><surname>Carazo Salas</surname><given-names>Rafael Edgardo</given-names></name><xref ref-type="aff" rid="aff8"/><xref ref-type="fn" rid="equal-contrib">†</xref><xref ref-type="fn" rid="conf1"/><x> is at </x></contrib><contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-10552"><name><surname>Csikász-Nagy</surname><given-names>Attila</given-names></name><xref ref-type="aff" rid="aff9"/><xref ref-type="aff" rid="aff10"/><xref ref-type="fn" rid="equal-contrib">†</xref><xref ref-type="fn" rid="conf1"/><x> is in the </x></contrib><aff id="aff8"><institution content-type="dept">the Gurdon Institute and the Genetics Department</institution>, <institution>University of Cambridge</institution>, <addr-line><named-content content-type="city">Cambridge</named-content></addr-line>, <country>United Kingdom</country> <email>cre20@cam.ac.uk</email></aff><aff id="aff9"><institution content-type="dept">Department of Computational Biology</institution>, <institution>Fondazione Edmund Mach</institution>, <addr-line><named-content content-type="city">San Michele all’Adige</named-content></addr-line>, <country>Italy</country> <email>attila.csikasz-nagy@fmach.it</email></aff><aff id="aff10"><institution content-type="dept">the Randall Division of Cell and Molecular Biophysics and Institute of Mathematical and Molecular Biomedicine</institution>, <institution>King’s College London</institution>, <addr-line><named-content content-type="city">London</named-content></addr-line>, <country>United Kingdom</country></aff></contrib-group></article-meta></front>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Rafael Edgardo Carazo Salas'), ('index', u'Carazo Salas, Rafael Edgardo')])), ('affiliations', [OrderedDict([('name', [u'the Gurdon Institute and the Genetics Department', u'University of Cambridge']), ('address', OrderedDict([('formatted', [u'Cambridge', u'United Kingdom']), ('components', OrderedDict([('locality', [u'Cambridge']), ('country', u'United Kingdom')]))]))])]), ('emailAddresses', [u'cre20@cam.ac.uk']), ('equalContributionGroups', [1])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Attila Csik\xe1sz-Nagy'), ('index', u'Csik\xe1sz-Nagy, Attila')])), ('affiliations', [OrderedDict([('name', [u'Department of Computational Biology', u'Fondazione Edmund Mach']), ('address', OrderedDict([('formatted', [u'San Michele all\u2019Adige', u'Italy']), ('components', OrderedDict([('locality', [u'San Michele all\u2019Adige']), ('country', u'Italy')]))]))]), OrderedDict([('name', [u'the Randall Division of Cell and Molecular Biophysics and Institute of Mathematical and Molecular Biomedicine', u'King\u2019s College London']), ('address', OrderedDict([('formatted', [u'London', u'United Kingdom']), ('components', OrderedDict([('locality', [u'London']), ('country', u'United Kingdom')]))]))])]), ('emailAddresses', [u'attila.csikasz-nagy@fmach.it']), ('equalContributionGroups', [1])])]
+        (read_fixture('test_authors_json', 'content_15.xml'),
+         read_fixture('test_authors_json', 'content_15_expected.py')
         ),
 
          # 09148 v1 example, and author with two email addresses
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes" id="author-35287"><name><surname>Micera</surname><given-names>Silvestro</given-names></name><contrib-id contrib-id-type="orcid">http://orcid.org/0000-0003-4396-8217</contrib-id><xref ref-type="aff" rid="aff1">1</xref><xref ref-type="aff" rid="aff3">3</xref><xref ref-type="aff" rid="aff2">2</xref><xref ref-type="corresp" rid="cor2">*</xref><xref ref-type="other" rid="par-1"/><xref ref-type="other" rid="par-2"/><xref ref-type="other" rid="par-4"/><xref ref-type="other" rid="par-5"/><xref ref-type="other" rid="par-7"/><xref ref-type="other" rid="par-8"/><xref ref-type="fn" rid="con17"/><xref ref-type="fn" rid="conf8"/></contrib><aff id="aff1"><label>1</label><institution content-type="dept">The BioRobotics Institute</institution>, <institution>Scuola Superiore Sant\'Anna</institution>, <addr-line><named-content content-type="city">Pisa</named-content></addr-line>, <country>Italy</country></aff><aff id="aff2"><label>2</label><institution content-type="dept">Bertarelli Foundation Chair in Translational NeuroEngineering, Institute of Bioengineering, School of Engineering</institution>, <institution>École Polytechnique Fédérale de Lausanne</institution>, <addr-line><named-content content-type="city">Lausanne</named-content></addr-line>, <country>Switzerland</country></aff><aff id="aff3"><label>3</label><institution content-type="dept">Center for Neuroprosthetics</institution>, <institution>École Polytechnique Fédérale de Lausanne</institution>, <addr-line><named-content content-type="city">Lausanne</named-content></addr-line>, <country>Switzerland</country></aff></contrib-group><author-notes><corresp id="cor1"><email>calogero.oddo@sssup.it</email> (CMO);</corresp><corresp id="cor2"><email>silvestro.micera@epfl.ch</email>;<email>silvestro.micera@sssup.it</email> (SM)</corresp><fn fn-type="con" id="equal-contrib"><label>†</label><p>These authors contributed equally to this work</p></fn></author-notes></article-meta></front>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Silvestro Micera'), ('index', u'Micera, Silvestro')])), ('orcid', u'0000-0003-4396-8217'), ('affiliations', [OrderedDict([('name', [u'The BioRobotics Institute', u"Scuola Superiore Sant'Anna"]), ('address', OrderedDict([('formatted', [u'Pisa', u'Italy']), ('components', OrderedDict([('locality', [u'Pisa']), ('country', u'Italy')]))]))]), OrderedDict([('name', [u'Center for Neuroprosthetics', u'\xc9cole Polytechnique F\xe9d\xe9rale de Lausanne']), ('address', OrderedDict([('formatted', [u'Lausanne', u'Switzerland']), ('components', OrderedDict([('locality', [u'Lausanne']), ('country', u'Switzerland')]))]))]), OrderedDict([('name', [u'Bertarelli Foundation Chair in Translational NeuroEngineering, Institute of Bioengineering, School of Engineering', u'\xc9cole Polytechnique F\xe9d\xe9rale de Lausanne']), ('address', OrderedDict([('formatted', [u'Lausanne', u'Switzerland']), ('components', OrderedDict([('locality', [u'Lausanne']), ('country', u'Switzerland')]))]))])]), ('emailAddresses', [u'silvestro.micera@epfl.ch', u'silvestro.micera@sssup.it'])])]
+        (read_fixture('test_authors_json', 'content_16.xml'),
+         read_fixture('test_authors_json', 'content_16_expected.py')
         ),
 
         # example of new kitchen sink group authors with multiple email addresses, based on 17044 v1
-        ('''
-<root xmlns:xlink="http://www.w3.org/1999/xlink">
-<front>
-<article-meta>
-<contrib-group>
-<contrib contrib-type="author" id="author-28457">
-<name>
-<surname>Kandela</surname>
-<given-names>Irawati</given-names>
-</name>
-<xref ref-type="aff" rid="aff1">1</xref>
-<xref ref-type="fn" rid="con1"/>
-<xref ref-type="fn" rid="conf1"/>
-</contrib>
-<contrib contrib-type="author" id="author-55803">
-<name>
-<surname>Aird</surname>
-<given-names>Fraser</given-names>
-</name>
-<xref ref-type="aff" rid="aff1">1</xref>
-<xref ref-type="fn" rid="con2"/>
-<xref ref-type="fn" rid="conf1"/>
-</contrib>
-<contrib contrib-type="author" corresp="yes">
-<email>tim@cos.io</email>
-<email>nicole@scienceexchange.com</email>
-<collab>Reproducibility Project: Cancer Biology<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Iorns</surname>
-<given-names>Elizabeth</given-names>
-</name>
-<aff>
-<institution>Science Exchange</institution>
-<addr-line>
-<named-content content-type="city">Palo Alto</named-content>
-</addr-line>
-<country>United States</country>
-</aff>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Williams</surname>
-<given-names>Stephen R</given-names>
-</name>
-<aff>
-<institution>Center for Open Science</institution>
-<addr-line>
-<named-content content-type="city">Charlottesville</named-content>
-</addr-line>
-<country>United States</country>
-</aff>
-</contrib>
-<contrib contrib-type="author">
-<name>
-<surname>Perfito</surname>
-<given-names>Nicole</given-names>
-</name>
-<aff>
-<institution>Science Exchange</institution>
-<addr-line>
-<named-content content-type="city">Palo Alto</named-content>
-</addr-line>
-<country>United States</country>
-</aff>
-</contrib>
-<contrib contrib-type="author" id="author-16276">
-<name>
-<surname>Errington</surname>
-<given-names>Timothy M</given-names>
-</name>
-<contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4959-5143</contrib-id>
-<aff>
-<institution>Center for Open Science</institution>
-<addr-line>
-<named-content content-type="city">Charlottesville</named-content>
-</addr-line>
-<country>United States</country>
-</aff>
-</contrib>
-</contrib-group>
-</collab>
-<xref ref-type="fn" rid="con3"/>
-<xref ref-type="fn" rid="conf2"/>
-</contrib>
-<aff id="aff1">
-<label>1</label>
-<institution content-type="dept">Developmental Therapeutics Core</institution>
-<institution>Northwestern University</institution>
-<addr-line>
-<named-content content-type="city">Evanston</named-content>
-</addr-line>
-<country>United States</country>
-</aff>
-</contrib-group>
-<contrib-group content-type="section">
-<contrib contrib-type="editor">
-<name>
-<surname>Dang</surname>
-<given-names>Chi Van</given-names>
-</name>
-<role>Reviewing editor</role>
-<aff>
-<institution>University of Pennsylvania</institution>
-<country>United States</country>
-</aff>
-</contrib>
-</contrib-group></article-meta></front><back><sec id="s4" sec-type="additional-information">
-<title>Additional information</title>
-<fn-group content-type="competing-interest">
-<title>Competing interests</title>
-<fn fn-type="COI-statement" id="conf1">
-<p>Developmental Therapeutics Core is a Science Exchange associated lab</p>
-</fn>
-<fn fn-type="COI-statement" id="conf2">
-<p>EI, NP: Employed by and hold shares in Science Exchange Inc.</p>
-</fn>
-</fn-group>
-<fn-group content-type="author-contribution">
-<title>Author contributions</title>
-<fn fn-type="con" id="con1">
-<p>Acquisition of data, Drafting or revising the article</p>
-</fn>
-<fn fn-type="con" id="con2">
-<p>Acquisition of data, Drafting or revising the article</p>
-</fn>
-<fn fn-type="con" id="con3">
-<p>Analysis and interpretation of data, Drafting or revising the article</p>
-</fn>
-</fn-group>
-</back>
-</root>
-''',
-         [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Irawati Kandela'), ('index', u'Kandela, Irawati')])), ('affiliations', [OrderedDict([('name', [u'Developmental Therapeutics Core', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('contribution', u'Acquisition of data, Drafting or revising the article'), ('competingInterests', u'Developmental Therapeutics Core is a Science Exchange associated lab')]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Fraser Aird'), ('index', u'Aird, Fraser')])), ('affiliations', [OrderedDict([('name', [u'Developmental Therapeutics Core', u'Northwestern University']), ('address', OrderedDict([('formatted', [u'Evanston', u'United States']), ('components', OrderedDict([('locality', [u'Evanston']), ('country', u'United States')]))]))])]), ('contribution', u'Acquisition of data, Drafting or revising the article'), ('competingInterests', u'Developmental Therapeutics Core is a Science Exchange associated lab')]), OrderedDict([('type', 'group'), ('name', u'Reproducibility Project: Cancer Biology'), ('emailAddresses', [u'tim@cos.io', u'nicole@scienceexchange.com']), ('contribution', u'Analysis and interpretation of data, Drafting or revising the article'), ('competingInterests', u'EI, NP: Employed by and hold shares in Science Exchange Inc.'), ('people', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Elizabeth Iorns'), ('index', u'Iorns, Elizabeth')])), ('affiliations', [OrderedDict([('name', [u'Science Exchange']), ('address', OrderedDict([('formatted', [u'Palo Alto', u'United States']), ('components', OrderedDict([('locality', [u'Palo Alto']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Stephen R Williams'), ('index', u'Williams, Stephen R')])), ('affiliations', [OrderedDict([('name', [u'Center for Open Science']), ('address', OrderedDict([('formatted', [u'Charlottesville', u'United States']), ('components', OrderedDict([('locality', [u'Charlottesville']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Nicole Perfito'), ('index', u'Perfito, Nicole')])), ('affiliations', [OrderedDict([('name', [u'Science Exchange']), ('address', OrderedDict([('formatted', [u'Palo Alto', u'United States']), ('components', OrderedDict([('locality', [u'Palo Alto']), ('country', u'United States')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Timothy M Errington'), ('index', u'Errington, Timothy M')])), ('orcid', u'0000-0002-4959-5143'), ('affiliations', [OrderedDict([('name', [u'Center for Open Science']), ('address', OrderedDict([('formatted', [u'Charlottesville', u'United States']), ('components', OrderedDict([('locality', [u'Charlottesville']), ('country', u'United States')]))]))])])])])])]
+        (read_fixture('test_authors_json', 'content_17.xml'),
+         read_fixture('test_authors_json', 'content_17_expected.py')
          ),
 
         # example of inline email address
-        ('''
-<root xmlns:xlink="http://www.w3.org/1999/xlink">
-<front>
-<article-meta>
-<contrib-group>
-<contrib contrib-type="author" corresp="yes" id="author-1">
-<name>
-<surname>Surname</surname>
-<given-names>FirstName</given-names>
-</name>
-<email>p@example.org</email>
-</contrib>
-</contrib-group>
-</article-meta>
-<front>
-</root>''',
-         [OrderedDict([
-            ('type', 'person'),
-            ('name', OrderedDict([
-                ('preferred', u'FirstName Surname'),
-                ('index', u'Surname, FirstName')])),
-            ('emailAddresses', [u'p@example.org'])
-            ])
-          ]
+        (read_fixture('test_authors_json', 'content_18.xml'),
+         read_fixture('test_authors_json', 'content_18_expected.py')
          ),
 
         )
