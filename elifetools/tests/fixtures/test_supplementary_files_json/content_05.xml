@@ -1,0 +1,34 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <body>
+        <sec>
+            <p>
+                <supplementary-material id="SD1-data">
+                    <object-id pub-id-type="doi">10.7554/eLife.10110.004</object-id>
+                    <label>Figure 1—source data 1.</label>
+                    <caption>
+                        <title>Dauer assay data for individual trials in <xref ref-type="fig" rid="fig1">Figure 1</xref>.</title>
+                        <p>
+                            <bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.004">http://dx.doi.org/10.7554/eLife.10110.004</ext-link>
+                        </p>
+                    </caption>
+                    <media mime-subtype="xlsx" mimetype="application" xlink:href="elife-10110-fig1-data1-v1.xlsx"/>
+                </supplementary-material>
+            </p>
+        </sec>
+    </body>
+    <back>
+        <sec id="s6" sec-type="supplementary-material">
+            <title>Additional files</title>
+            <supplementary-material id="SD9-data">
+                <object-id pub-id-type="doi">10.7554/eLife.10110.026</object-id>
+                <label>Supplementary file 1.</label>
+                <caption>
+                    <p>List of strains used in this work.</p>
+                    <p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.026">http://dx.doi.org/10.7554/eLife.10110.026</ext-link>
+                    </p>
+                </caption>
+                <media mime-subtype="docx" mimetype="application" xlink:href="elife-10110-supp1-v1.docx"/>
+            </supplementary-material>
+        </sec>
+    </back>
+</root>
