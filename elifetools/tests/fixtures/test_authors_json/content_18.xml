@@ -1,15 +1,15 @@
 <root xmlns:xlink="http://www.w3.org/1999/xlink">
-<front>
-<article-meta>
-<contrib-group>
-<contrib contrib-type="author" corresp="yes" id="author-1">
-<name>
-<surname>Surname</surname>
-<given-names>FirstName</given-names>
-</name>
-<email>p@example.org</email>
-</contrib>
-</contrib-group>
-</article-meta>
-</front>
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes" id="author-1">
+                    <name>
+                        <surname>Surname</surname>
+                        <given-names>FirstName</given-names>
+                    </name>
+                    <email>p@example.org</email>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
 </root>
