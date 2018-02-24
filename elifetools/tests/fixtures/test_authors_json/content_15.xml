@@ -1,0 +1,36 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-8563">
+                    <name>
+                        <surname>Carazo Salas</surname>
+                        <given-names>Rafael Edgardo</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff8"/>
+                    <xref ref-type="fn" rid="equal-contrib">†</xref>
+                    <xref ref-type="fn" rid="conf1"/><x> is at </x>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-10552">
+                    <name>
+                        <surname>Csikász-Nagy</surname>
+                        <given-names>Attila</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff9"/>
+                    <xref ref-type="aff" rid="aff10"/>
+                    <xref ref-type="fn" rid="equal-contrib">†</xref>
+                    <xref ref-type="fn" rid="conf1"/><x> is in the </x>
+                </contrib>
+                <aff id="aff8">
+                    <institution content-type="dept">the Gurdon Institute and the Genetics Department</institution>, <institution>University of Cambridge</institution>, <addr-line><named-content content-type="city">Cambridge</named-content></addr-line>, <country>United Kingdom</country> <email>cre20@cam.ac.uk</email>
+                </aff>
+                <aff id="aff9">
+                    <institution content-type="dept">Department of Computational Biology</institution>, <institution>Fondazione Edmund Mach</institution>, <addr-line><named-content content-type="city">San Michele all’Adige</named-content></addr-line>, <country>Italy</country> <email>attila.csikasz-nagy@fmach.it</email>
+                </aff>
+                <aff id="aff10">
+                    <institution content-type="dept">the Randall Division of Cell and Molecular Biophysics and Institute of Mathematical and Molecular Biomedicine</institution>, <institution>King’s College London</institution>, <addr-line><named-content content-type="city">London</named-content></addr-line>, <country>United Kingdom</country>
+                </aff>
+            </contrib-group>
+        </article-meta>
+    </front>
+</root>
