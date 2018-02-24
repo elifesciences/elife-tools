@@ -1,0 +1,45 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">10856</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.10856</article-id>
+        </article-meta>
+    </front>
+    <back>
+        <sec id="s5" sec-type="supplementary-material">
+            <title>Additional files</title>
+            <sec id="s6" sec-type="datasets">
+                <title>Major datasets</title>
+                <p>The following datasets were generated:</p>
+                <p>
+                    <related-object content-type="generated-dataset" id="dataro7" source-id="http://www.ncbi.nlm.nih." source-id-type="uri">
+                        <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/geo/
+                        <x>,</x>
+                        <comment>Publicly available at NCBI (Accession no: KR021366)</comment>
+                    </related-object>
+                </p>
+                <p>
+                    <related-object content-type="generated-dataset" id="dataro8" source-id="http://www.ncbi.nlm.nih." source-id-type="uri">
+                        <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/geo/
+                        <x>,</x>
+                        <comment>Publicly available at NCBI (Accession no: KR021365)</comment>
+                    </related-object>
+                </p>
+                <p>
+                    <related-object content-type="generated-dataset" id="dataro9" source-id="http://www.ncbi.nlm.nih." source-id-type="uri">
+                        <year>2016</year>
+                        <x>,</x>
+                        <source>PREDICTED: Solanum tuberosum protein NBR1 homolog (LOC102582603), transcript variant X2, mRNA</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/nuccore/ XM_006344410
+                        <x>,</x>
+                        <comment>Publicly available at NCBI nucleotide (Accession no: XM_006344410.2)</comment>
+                    </related-object>
+                </p>
+            </sec>
+        </sec>
+    </back>
+</root>
