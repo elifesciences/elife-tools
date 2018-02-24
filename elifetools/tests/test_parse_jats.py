@@ -336,6 +336,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_datasets_json', 'content_03_expected.py')
          ),
 
+        # Datasets example with section sec-type data-availability
+        (read_fixture('test_datasets_json', 'content_04.xml'),
+         read_fixture('test_datasets_json', 'content_04_expected.py')
+         ),
+
         )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

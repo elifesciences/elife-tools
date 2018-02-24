@@ -3654,7 +3654,11 @@ def datasets_json(soup, html_flag=True):
 
     back_tag = raw_parser.back(soup)
     if back_tag:
-        datasets_section_tag = first(raw_parser.section(back_tag, "datasets"))
+        # find the section containing datasets by its sec-type value
+        for sec_type in ["datasets", "data-availability"]:
+            if raw_parser.section(back_tag, sec_type):
+                datasets_section_tag = first(raw_parser.section(back_tag, sec_type))
+                break
         if datasets_section_tag:
             p_tags = raw_parser.paragraph(datasets_section_tag)
 
