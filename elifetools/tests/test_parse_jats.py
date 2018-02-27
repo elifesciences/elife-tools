@@ -841,8 +841,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_body_json_with_base_url(self, xml_content, base_url, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.body_json(body_tag, base_url=base_url)
+        tag_content = parser.body_json(soup, base_url=base_url)
         self.assertEqual(expected, tag_content)
 
     @unpack
