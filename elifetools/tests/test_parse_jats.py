@@ -149,15 +149,15 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # appendix with inline-graphic, based on 17092 v1
-        (read_fixture('test_appendices_json', 'content_01.xml'),
+        (read_fixture('test_appendices_json_base_url', 'content_01.xml'),
          None,
-         read_fixture('test_appendices_json', 'content_01_expected.py')
+         read_fixture('test_appendices_json_base_url', 'content_01_expected.py')
         ),
 
         # appendix with inline-graphic, based on 17092 v1
-        (read_fixture('test_appendices_json', 'content_02.xml'),
+        (read_fixture('test_appendices_json_base_url', 'content_02.xml'),
          'https://example.org/',
-         read_fixture('test_appendices_json', 'content_02_expected.py')
+         read_fixture('test_appendices_json_base_url', 'content_02_expected.py')
         ),
 
         )
