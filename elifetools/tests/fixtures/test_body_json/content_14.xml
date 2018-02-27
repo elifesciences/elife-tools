@@ -1,0 +1,17 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <body>
+            <p>What is replication? In one sense, the answer is easy. Replication is independently repeating the methodology of a previous study and obtaining the same results. In another sense, the answer is difficult. What does it mean to repeat the methodology? And what qualifies as the &quot;same&quot; results? Now that the first five Replication Studies in the <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link> have been published (see <xref ref-type="box" rid="B1">Box 1</xref>), it is timely to explore how we might answer these questions. The results of the first set of Replication Studies are mixed, and while it is too early to draw any conclusions, it is clear that assessing reproducibility in cancer biology is going to be as complex as it was in a similar project in psychology (<xref ref-type="bibr" rid="bib9">Open Science Collaboration, 2015</xref>).
+            </p>
+            <boxed-text id="B1">
+                <object-id pub-id-type="doi">10.7554/eLife.23383.002</object-id>
+                <label>Box 1:</label>
+                <caption>
+                    <title>The first results from the Reproducibility Project: Cancer Biology</title>
+                </caption>
+                <p>The first five Replication Studies published are listed below, along with a link to the Open Science Framework, where all the methods, data and analyses associated with the replication are publicly accessible. Each Replication Study also has a figure that shows the original result, the result from the replication, and a meta-analysis that combines these results. The meta-analysis indicates the cumulative evidence across both studies for the size of an effect and the uncertainty of the existing evidence.</p>
+                <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.23383.002">http://dx.doi.org/10.7554/eLife.23383.002</ext-link></p>
+            </boxed-text>
+        </body>
+    </article>
+</root>

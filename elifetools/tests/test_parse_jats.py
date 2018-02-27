@@ -740,102 +740,79 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # very simple body, wrap in a section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><p>Paragraph</p></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')])])])]
+        (read_fixture('test_body_json', 'content_01.xml'),
+         read_fixture('test_body_json', 'content_01_expected.py')
          ),
 
         # normal boxed-text and section, keep these
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><p><bold>Boxed text</bold></p></boxed-text></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'box'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Boxed text</b>')])])])])])]
+        (read_fixture('test_body_json', 'content_02.xml'),
+         read_fixture('test_body_json', 'content_02_expected.py')
          ),
 
         # boxed-text paragraphs inside the caption tag, based on 05519 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p>Paragraph</p><boxed-text><object-id pub-id-type="doi">10.7554/eLife.05519.003</object-id><label>Box 1.</label><caption><title>Example: Elastomer pump study</title><p><bold>Boxed text</bold></p><p>Paragraph 2</p></caption></boxed-text></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph')]), OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.05519.003'), ('label', u'Box 1'), ('title', u'Example: Elastomer pump study'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Boxed text</b>')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])])])]
+        (read_fixture('test_body_json', 'content_03.xml'),
+         read_fixture('test_body_json', 'content_03_expected.py')
          ),
 
         # 00301 v1 do not keep boxed-text and wrap in section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p><bold>Related research article</bold> Yan H, Zhong G, Xu G, He W, Jing Z, Gao Z, Huang Y, Qi Y, Peng B, Wang H, Fu L, Song M, Chen P, Gao W, Ren B, Sun Y, Cai T, Feng X, Sui J, Li W. 2012. Sodium taurocholate cotransporting polypeptide is a functional receptor for human hepatitis B and D virus. <italic>eLife</italic> <bold>1</bold>:e00049. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00049">10.7554/eLife.00049</ext-link></p><p><bold>Image</bold> HepG2 cells infected with the hepatitis B virus</p><p><inline-graphic xlink:href="elife-00301-inf1-v1"/></p></boxed-text><p>Approximately two billion people ...</p></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Approximately two billion people ...')])])])]
+        (read_fixture('test_body_json', 'content_04.xml'),
+         read_fixture('test_body_json', 'content_04_expected.py')
          ),
 
         # 00646 v1 boxed text to keep, and wrap in section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text id="B1"><p>This article by Emma Pewsey (pictured) was the winning entry in the <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</ext-link> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.</p><p><inline-graphic xlink:href="elife-00646-inf1-v1"/></p></boxed-text><p>Normal healthy bones can be thought of as nature\'s scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.</p></body></article></root>',
-        [
-            OrderedDict([
-                ('type', 'section'),
-                ('id', 's0'),
-                ('title', 'Main text'),
-                ('content', [
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('id', u'B1'),
-                        ('image', {'alt': '', 'uri': u'elife-00646-inf1-v1'}),
-                        ('caption', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')
-                            ])
-                        ])
-                    ]), OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u"Normal healthy bones can be thought of as nature's scaffold poles. The tightly packed minerals that make up the cortical bone form a sheath around an inner core of spongy bone and provide the strength that supports our bodies. Throughout our lives, our skeletons are kept strong by the continuous creation of new, fresh bone and the destruction of old, worn out bone. Unfortunately, as we become older, destruction becomes faster than creation, and so the cortical layer thins, causing the bone to weaken and break more easily. In severe cases, this is known as osteoporosis. As a result, simple trips or falls that would only bruise a younger person can cause serious fractures in the elderly. However, half of the elderly patients admitted to hospital with a broken hip do not suffer from osteoporosis.")
-                    ])
-                ])
-            ])
-        ]
+        (read_fixture('test_body_json', 'content_05.xml'),
+         read_fixture('test_body_json', 'content_05_expected.py')
          ),
 
         # 02945 v1, correction article keep the boxed-text
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><boxed-text><p>Momeni B, Brileya KA, Fields MW, Shou W. 2013. Strong inter-population cooperation leads to partner intermixing in microbial communities. <italic>eLife</italic> <bold>2</bold>:e00230. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00230">http://dx.doi.org/10.7554/eLife.00230</ext-link>. Published 22 January 2013</p></boxed-text><p>In Equation 3, ...</p></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Momeni B, Brileya KA, Fields MW, Shou W. 2013. Strong inter-population cooperation leads to partner intermixing in microbial communities. <i>eLife</i> <b>2</b>:e00230. doi: <a href="http://dx.doi.org/10.7554/eLife.00230">http://dx.doi.org/10.7554/eLife.00230</a>. Published 22 January 2013')]), OrderedDict([('type', 'paragraph'), ('text', u'In Equation 3, ...')])])])]
+        (read_fixture('test_body_json', 'content_06.xml'),
+         read_fixture('test_body_json', 'content_06_expected.py')
          ),
 
         # 12844 v1, based on, edge case to rewrite unacceptable sections that have no titles
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">12844</article-id><article-id pub-id-type="doi">10.7554/eLife.12844</article-id></article-meta><body><sec id="s1"><p>Paragraph 1</p></sec><sec id="s2"><title>How failure promotes translation</title><p>Paragraph 2</p></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'section'), ('id', u's2'), ('title', u'How failure promotes translation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])]), ('title', 'Main text')])]
+        (read_fixture('test_body_json', 'content_07.xml'),
+         read_fixture('test_body_json', 'content_07_expected.py')
          ),
 
         # 09977 v2, based on, edge case to remove a specific section with no content
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09977</article-id><article-id pub-id-type="doi">10.7554/eLife.09977</article-id></article-meta><body><sec id="s4"><title>Keep this section</title><sec id="s4-10"><title>Keep this inner section</title><p>Content</p></sec><sec id="s4-11"><title>Remove this section</title></sec></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Keep this section'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-10'), ('title', u'Keep this inner section'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])])])])])]
+        (read_fixture('test_body_json', 'content_08.xml'),
+         read_fixture('test_body_json', 'content_08_expected.py')
          ),
 
         # 09977 v3, based on, edge case to keep a specific section that does have content
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09977</article-id><article-id pub-id-type="doi">10.7554/eLife.09977</article-id></article-meta><body><sec id="s4"><title>Keep this section</title><sec id="s4-10"><title>Keep this inner section</title><p>Content</p></sec><sec id="s4-11"><title>Keep this section too</title><p>More content</p></sec></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Keep this section'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-10'), ('title', u'Keep this inner section'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])])]), OrderedDict([('type', 'section'), ('id', u's4-11'), ('title', u'Keep this section too'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])])])]
+        (read_fixture('test_body_json', 'content_09.xml'),
+         read_fixture('test_body_json', 'content_09_expected.py')
          ),
 
         # 05519 v2, based on, edge case to remove an unwanted section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">05519</article-id><article-id pub-id-type="doi">10.7554/eLife.05519</article-id></article-meta><body><sec id="s4"><title>Keep this section</title><sec><sec id="s4-1-1"><title>Keep this inner section</title><p>Content</p></sec><sec id="s4-1-2"><title>Keep this section too</title><p>More content</p></sec></sec></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Keep this section'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-1-1'), ('title', u'Keep this inner section'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])])]), OrderedDict([('type', 'section'), ('id', u's4-1-2'), ('title', u'Keep this section too'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])])])]
+        (read_fixture('test_body_json', 'content_10.xml'),
+         read_fixture('test_body_json', 'content_10_expected.py')
          ),
 
         # 00013 v1, excerpt, add an id to a section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">00013</article-id><article-id pub-id-type="doi">10.7554/eLife.00013</article-id></article-meta><body><sec><title>Introduction</title><sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('title', u'Introduction'), ('content', [OrderedDict([('type', 'section')])]), ('id', 's1')])]
+        (read_fixture('test_body_json', 'content_11.xml'),
+         read_fixture('test_body_json', 'content_11_expected.py')
          ),
 
         # 04232 v2, excerpt, remove an unwanted section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04232</article-id><article-id pub-id-type="doi">10.7554/eLife.04232</article-id></article-meta><body><sec id="s4" sec-type="materials|methods"><title>Materials and methods</title><sec id="s4-6"><title>Cell separation</title><sec id="s4-6-1"><p><bold>Splenic erythroid cells:</bold></p></sec></sec></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's4'), ('title', u'Materials and methods'), ('content', [OrderedDict([('type', 'section'), ('id', u's4-6'), ('title', u'Cell separation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>Splenic erythroid cells:</b>')])])])])])]
+        (read_fixture('test_body_json', 'content_12.xml'),
+         read_fixture('test_body_json', 'content_12_expected.py')
          ),
 
         # 07157 v1, add title to a section
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">07157</article-id><article-id pub-id-type="doi">10.7554/eLife.07157</article-id></article-meta><body><sec id="s1"><p>Content</p></sec></body></article></root>',
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])]), ('title', 'Main text')])]
+        (read_fixture('test_body_json', 'content_13.xml'),
+         read_fixture('test_body_json', 'content_13_expected.py')
          ),
 
         # excerpt of 23383 v1 where there is a boxed-text that was formerly stripped away, check it remains
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><p>What is replication? In one sense, the answer is easy. Replication is independently repeating the methodology of a previous study and obtaining the same results. In another sense, the answer is difficult. What does it mean to repeat the methodology? And what qualifies as the &quot;same&quot; results? Now that the first five Replication Studies in the <ext-link ext-link-type="uri" xlink:href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</ext-link> have been published (see <xref ref-type="box" rid="B1">Box 1</xref>), it is timely to explore how we might answer these questions. The results of the first set of Replication Studies are mixed, and while it is too early to draw any conclusions, it is clear that assessing reproducibility in cancer biology is going to be as complex as it was in a similar project in psychology (<xref ref-type="bibr" rid="bib9">Open Science Collaboration, 2015</xref>).</p><boxed-text id="B1"><object-id pub-id-type="doi">10.7554/eLife.23383.002</object-id><label>Box 1:</label><caption><title>The first results from the Reproducibility Project: Cancer Biology</title></caption><p>The first five Replication Studies published are listed below, along with a link to the Open Science Framework, where all the methods, data and analyses associated with the replication are publicly accessible. Each Replication Study also has a figure that shows the original result, the result from the replication, and a meta-analysis that combines these results. The meta-analysis indicates the cumulative evidence across both studies for the size of an effect and the uncertainty of the existing evidence.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.23383.002">http://dx.doi.org/10.7554/eLife.23383.002</ext-link></p></boxed-text></body></article></root>',
-        [OrderedDict([('type', 'section'), ('id', 's0'), ('title', 'Main text'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'What is replication? In one sense, the answer is easy. Replication is independently repeating the methodology of a previous study and obtaining the same results. In another sense, the answer is difficult. What does it mean to repeat the methodology? And what qualifies as the "same" results? Now that the first five Replication Studies in the <a href="https://osf.io/e81xl/wiki/home/">Reproducibility Project: Cancer Biology</a> have been published (see <a href="#B1">Box 1</a>), it is timely to explore how we might answer these questions. The results of the first set of Replication Studies are mixed, and while it is too early to draw any conclusions, it is clear that assessing reproducibility in cancer biology is going to be as complex as it was in a similar project in psychology (<a href="#bib9">Open Science Collaboration, 2015</a>).')]), OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.23383.002'), ('id', u'B1'), ('label', u'Box 1'), ('title', u'The first results from the Reproducibility Project: Cancer Biology'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'The first five Replication Studies published are listed below, along with a link to the Open Science Framework, where all the methods, data and analyses associated with the replication are publicly accessible. Each Replication Study also has a figure that shows the original result, the result from the replication, and a meta-analysis that combines these results. The meta-analysis indicates the cumulative evidence across both studies for the size of an effect and the uncertainty of the existing evidence.')])])])])])]
+        (read_fixture('test_body_json', 'content_14.xml'),
+         read_fixture('test_body_json', 'content_14_expected.py')
          ),
 
         )
     def test_body_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.body_json(body_tag)
+        tag_content = parser.body_json(soup)
         self.assertEqual(expected, tag_content)
 
 

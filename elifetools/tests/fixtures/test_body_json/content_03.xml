@@ -1,0 +1,18 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <body>
+            <sec id="s1">
+                <p>Paragraph</p>
+                <boxed-text>
+                    <object-id pub-id-type="doi">10.7554/eLife.05519.003</object-id>
+                    <label>Box 1.</label>
+                    <caption>
+                        <title>Example: Elastomer pump study</title>
+                        <p><bold>Boxed text</bold></p>
+                        <p>Paragraph 2</p>
+                    </caption>
+                </boxed-text>
+            </sec>
+        </body>
+    </article>
+</root>
