@@ -1,0 +1,13 @@
+<root>
+    <back>
+        <app-group>
+            <app id="appendix-3">
+                <title>Appendix 3</title>
+                <boxed-text>
+                    <object-id pub-id-type="doi">10.7554/eLife.00666.034</object-id>
+                    <p>This is an example of an appendix with no sections.</p>
+                </boxed-text>
+            </app>
+        </app-group>
+    </back>
+</root>

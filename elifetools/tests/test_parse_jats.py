@@ -115,110 +115,28 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # example based on 14093 v1 with many sections and content
-        ('<root><back><app-group><app id="app1"><title>Appendix 1</title><boxed-text><sec id="s25" sec-type="appendix"><title>1 Definitions related to phyllotaxis</title><p>Phyllotactic patterns emerge ...</p></sec><sec id="s26" sec-type="appendix"><title>2 The classical model of phyllotaxis: a brief recap</title><sec id="s27"><title>2.1 Model description</title><p>We implemented ...</p></sec></sec></boxed-text></sec></app><app id="app2"><title>Appendix 2</title><boxed-text><sec id="s53" sec-type="appendix"><title>Additional videos and initial conditions for all videos</title><p>For all videos, ...</p></sec></boxed-text></app></app-group></back></root>',
-        [OrderedDict([('id', u'app1'), ('title', u'Appendix 1'), ('content', [OrderedDict([('type', 'section'), ('id', u's25'), ('title', u'1 Definitions related to phyllotaxis'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Phyllotactic patterns emerge ...')])])]), OrderedDict([('type', 'section'), ('id', u's26'), ('title', u'2 The classical model of phyllotaxis: a brief recap'), ('content', [OrderedDict([('type', 'section'), ('id', u's27'), ('title', u'2.1 Model description'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'We implemented ...')])])])])])])])]
+        (read_fixture('test_appendices_json', 'content_01.xml'),
+         read_fixture('test_appendices_json', 'content_01_expected.py')
         ),
 
         # example based on 14022 v3 having a section with no title in it, with some additional scenarios
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><back><app-group><app id="app1"><title>Appendix 1: Details of the automated linear stability analysis</title><boxed-text><sec id="s15" sec-type="appendix"><p>We consider a reaction-diffusion system of the form<disp-formula id="equ5"><label>(1)</label><mml:math id="m5"><mml:mrow><mml:mi mathvariant="bold">c</mml:mi></mml:mrow></mml:math></disp-formula></p><p>where etc.</p></sec><sec id="s16" sec-type="appendix"><title>Step 1. Possible networks of size ...</title><p>We first generate a list of possible networks with ...</p></sec><sec id="test1"><p>Test another section with no title</p></sec><sec id="test2"><title>Section with title</title><p>Section content</p></sec><sec id="test3"><p>Second section with no title</p></sec></boxed-text></app></app-group></back></root>',
-         [
-            OrderedDict([
-                ('id', u'app1'),
-                ('title', u'Appendix 1: Details of the automated linear stability analysis'),
-                ('content', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'We consider a reaction-diffusion system of the form')
-                    ]), OrderedDict([
-                        ('type', 'mathml'),
-                        ('id', u'equ5'),
-                        ('label', u'(1)'),
-                        ('mathml', '<math><mrow><mi mathvariant="bold">c</mi></mrow></math>')
-                    ]), OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'where etc.')
-                    ]), OrderedDict([
-                        ('type', 'section'),
-                        ('id', u's16'),
-                        ('title', u'Step 1. Possible networks of size ...'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', u'We first generate a list of possible networks with ...')
-                            ]
-                        )]
-                    )]), OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'Test another section with no title')
-                    ]), OrderedDict([
-                        ('type', 'section'),
-                        ('id', u'test2'),
-                        ('title', u'Section with title'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                            ('text', u'Section content')
-                            ]
-                        )]
-                    )]), OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'Second section with no title')
-                    ])
-                ])
-            ])
-        ]
+        (read_fixture('test_appendices_json', 'content_02.xml'),
+         read_fixture('test_appendices_json', 'content_02_expected.py')
         ),
 
         # appendix with no sections, based on 00666 kitchen sink
-        ('<root><back><app-group><app id="appendix-3"><title>Appendix 3</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.00666.034</object-id><p>This is an example of an appendix with no sections.</p></boxed-text></app></app-group></back></root>',
-         [OrderedDict([('id', u'appendix-3'), ('title', u'Appendix 3'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'This is an example of an appendix with no sections.')])]), ('doi', u'10.7554/eLife.00666.034')])]
+        (read_fixture('test_appendices_json', 'content_03.xml'),
+         read_fixture('test_appendices_json', 'content_03_expected.py')
         ),
 
         # appendix with a section and a box, also based on 00666 kitchen sink
-        ('<root><back><app-group><app id="appendix-1"><title>Appendix 1</title><sec sec-type="appendix" id="s8"><title>Preparation</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.00666.023</object-id><p>Paragraph content.</p></boxed-text></sec></app></app-group></back></root>',
-         [OrderedDict([('id', u'appendix-1'), ('title', u'Appendix 1'), ('content', [OrderedDict([('type', 'section'), ('id', u's8'), ('title', u'Preparation'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')])]), ('doi', u'10.7554/eLife.00666.023')])])])]
+        (read_fixture('test_appendices_json', 'content_04.xml'),
+         read_fixture('test_appendices_json', 'content_04_expected.py')
         ),
 
         # appendix with a boxed-text in a subsequent section based on article 
-        ('<root><back><app-group><app id="appendix-7"><title>Appendix 7</title><sec id="s13" sec-type="appendix"><title>Photomechanical microsaccades move photoreceptors’ receptive fields</title><boxed-text><object-id pub-id-type="doi">10.7554/eLife.26117.079</object-id><sec id="s13-1"><title>Overview</title><p>This appendix ...</p></sec></boxed-text></sec><sec id="s14" sec-type="appendix"><title>Photomechanical rhabdomere movements vs. R1-R6s’ voltage responses</title><boxed-text><p>We next compared intracellular wild-type and ...</p></boxed-text></sec></sec></app></app-group></back></root>',
-         [
-            OrderedDict([
-                ('id', u'appendix-7'),
-                ('title', u'Appendix 7'),
-                ('content', [
-                    OrderedDict([
-                        ('type', 'section'),
-                        ('id', u's13'),
-                        ('title', u'Photomechanical microsaccades move photoreceptors\u2019 receptive fields'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'section'),
-                                ('id', u's13-1'),
-                                ('title', u'Overview'),
-                                ('content', [
-                                    OrderedDict([
-                                        ('type', 'paragraph'),
-                                        ('text', u'This appendix ...')
-                                    ])
-                                ])
-                            ])
-                        ]),
-                        ('doi', u'10.7554/eLife.26117.079')
-                    ]),
-                    OrderedDict([
-                        ('type', 'section'),
-                        ('id', u's14'),
-                        ('title', u'Photomechanical rhabdomere movements vs. R1-R6s\u2019 voltage responses'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', u'We next compared intracellular wild-type and ...')
-                            ])
-                        ])
-                    ])
-                ])
-            ])
-        ]
+        (read_fixture('test_appendices_json', 'content_05.xml'),
+         read_fixture('test_appendices_json', 'content_05_expected.py')
         ),
 
         )
@@ -231,15 +149,15 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # appendix with inline-graphic, based on 17092 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><app-group><app><title>Appendix 5</title><boxed-text><sec id="s56" sec-type="appendix"><sec id="s61"><title>E. Volatiles</title><p>Paragraph content.</p><table-wrap id="A5-tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.17092.035</object-id><label>Appendix 5—table 2.</label><caption><p>Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17092.035">http://dx.doi.org/10.7554/eLife.17092.035</ext-link></p></caption><table frame="hsides" rules="groups"><tbody><tr><td valign="top"><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf1-v1"/><break/><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf2-v1"/></td></tr></tbody></table></table-wrap></sec></sec></boxed-text></app></app-group></back></root>',
+        (read_fixture('test_appendices_json', 'content_01.xml'),
          None,
-         [OrderedDict([('title', u'Appendix 5'), ('content', [OrderedDict([('type', 'section'), ('id', u's61'), ('title', u'E. Volatiles'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.17092.035'), ('id', u'A5-tbl2'), ('label', u'Appendix 5\u2014table 2'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.')])]), ('tables', ['<table><tbody><tr><td valign="top"><img src="elife-17092-inf1-v1.jpg"/><br/><img src="elife-17092-inf2-v1.jpg"/></td></tr></tbody></table>'])])])])])])])])]
+         read_fixture('test_appendices_json', 'content_01_expected.py')
         ),
 
         # appendix with inline-graphic, based on 17092 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><app-group><app><title>Appendix 5</title><boxed-text><sec id="s56" sec-type="appendix"><sec id="s61"><title>E. Volatiles</title><p>Paragraph content.</p><table-wrap id="A5-tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.17092.035</object-id><label>Appendix 5—table 2.</label><caption><p>Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17092.035">http://dx.doi.org/10.7554/eLife.17092.035</ext-link></p></caption><table frame="hsides" rules="groups"><tbody><tr><td valign="top"><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf1-v1"/><break/><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf2-v1"/></td></tr></tbody></table></table-wrap></sec></sec></boxed-text></app></app-group></back></root>',
+        (read_fixture('test_appendices_json', 'content_02.xml'),
          'https://example.org/',
-         [OrderedDict([('title', u'Appendix 5'), ('content', [OrderedDict([('type', 'section'), ('id', u's61'), ('title', u'E. Volatiles'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.17092.035'), ('id', u'A5-tbl2'), ('label', u'Appendix 5\u2014table 2'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.')])]), ('tables', ['<table><tbody><tr><td valign="top"><img src="https://example.org/elife-17092-inf1-v1.jpg"/><br/><img src="https://example.org/elife-17092-inf2-v1.jpg"/></td></tr></tbody></table>'])])])])])])])])]
+         read_fixture('test_appendices_json', 'content_02_expected.py')
         ),
 
         )
