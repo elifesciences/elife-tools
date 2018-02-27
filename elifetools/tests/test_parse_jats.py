@@ -722,8 +722,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_author_response_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.author_response(body_tag)
+        tag_content = parser.author_response(soup)
         self.assertEqual(expected, tag_content)
 
 
