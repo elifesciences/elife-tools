@@ -716,11 +716,11 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 04871 v2, excerpt, remove unwanted sections
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04871</article-id><article-id pub-id-type="doi">10.7554/eLife.04871</article-id></article-meta><sub-article article-type="article-commentary" id="SA1"><body><sec id="s7"><sec id="s7-1"><title>Editorial note dated 06 November 2014</title><p>Thank you ...</p></sec></sec></body></sub-article><sub-article article-type="reply" id="SA2"><body><sec id="s8"><sec id="s8-1"><title>Authors response dated 19 December 2014 to editorial note dated 06 November 2014</title><p>Substantive comments:</p><p>Another paragraph</p></sec></sec></body></sub-article></article></root>',
-         OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's8-1'), ('title', u'Authors response dated 19 December 2014 to editorial note dated 06 November 2014'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Substantive comments:')]), OrderedDict([('type', 'paragraph'), ('text', u'Another paragraph')])])])])])
+        (read_fixture('test_author_response', 'content_01.xml'),
+         read_fixture('test_author_response', 'content_01_expected.py')
          ),
         )
-    def test_test_author_response_edge_cases(self, xml_content, expected):
+    def test_author_response_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         body_tag = soup.contents[0].contents[0]
         tag_content = parser.author_response(body_tag)
