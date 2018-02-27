@@ -818,24 +818,24 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p></sec></body></article></root>',
+        (read_fixture('test_body_json_base_url', 'content_01.xml'),
          None,
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<img src="elife-00240-inf1-v1.jpg"/>')])])])]
+         read_fixture('test_body_json_base_url', 'content_01_expected.py')
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s1"><p><inline-graphic xlink:href="elife-00240-inf1-v1"/></p></sec></body></article></root>',
+        (read_fixture('test_body_json_base_url', 'content_02.xml'),
          'https://example.org/',
-         [OrderedDict([('type', 'section'), ('id', u's1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', '<img src="https://example.org/elife-00240-inf1-v1.jpg"/>')])])])]
+         read_fixture('test_body_json_base_url', 'content_02_expected.py')
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s2-6-4"><title>Inline graphics</title><p>Here is an example of pulling in an inline graphic <inline-graphic mimetype="image" mime-subtype="jpeg" xlink:href="elife-00666-inf001.jpeg"/>.</p></sec></body></article></root>',
+        (read_fixture('test_body_json_base_url', 'content_03.xml'),
          None,
-         [OrderedDict([('type', 'section'), ('id', u's2-6-4'), ('title', u'Inline graphics'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of pulling in an inline graphic <img src="elife-00666-inf001.jpeg"/>.')])])])]
+         read_fixture('test_body_json_base_url', 'content_03_expected.py')
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><body><sec id="s2-6-4"><title>Inline graphics</title><p>Here is an example of pulling in an inline graphic <inline-graphic mimetype="image" mime-subtype="jpeg" xlink:href="elife-00666-inf001.jpeg"/>.</p></sec></body></article></root>',
+        (read_fixture('test_body_json_base_url', 'content_04.xml'),
          'https://example.org/',
-         [OrderedDict([('type', 'section'), ('id', u's2-6-4'), ('title', u'Inline graphics'), ('content', [OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of pulling in an inline graphic <img src="https://example.org/elife-00666-inf001.jpeg"/>.')])])])]
+         read_fixture('test_body_json_base_url', 'content_04_expected.py')
          ),
 
         )
