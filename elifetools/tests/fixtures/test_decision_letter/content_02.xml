@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">10856</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.10856</article-id>
+        </article-meta>
+        <sub-article article-type="article-commentary" id="SA1">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.10856.056</article-id>
+                <title-group>
+                    <article-title>Decision letter</article-title>
+                </title-group>
+                <body>
+                    <p>Content</p>
+                </body>
+            </front-stub>
+        </sub-article>
+    </article>
+</root>

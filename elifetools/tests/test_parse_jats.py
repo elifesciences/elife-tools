@@ -687,20 +687,19 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 04871 v2, excerpt, remove unwanted sections
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">04871</article-id><article-id pub-id-type="doi">10.7554/eLife.04871</article-id></article-meta><sub-article article-type="article-commentary" id="SA1"><body><sec id="s7"><sec id="s7-1"><title>Editorial note dated 06 November 2014</title><p>Thank you ...</p></sec></sec></body></sub-article><sub-article article-type="reply" id="SA2"><body><sec id="s8"><sec id="s8-1"><title>Authors response dated 19 December 2014 to editorial note dated 06 November 2014</title><p>Substantive comments:</p></sec></sec></body></sub-article></article></root>',
-         OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's7-1'), ('title', u'Editorial note dated 06 November 2014'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Thank you ...')])])])])])
+        (read_fixture('test_decision_letter', 'content_01.xml'),
+         read_fixture('test_decision_letter', 'content_01_expected.py')
          ),
 
         # 10856 v2, excerpt, add missing description via a rewrite
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">10856</article-id><article-id pub-id-type="doi">10.7554/eLife.10856</article-id></article-meta><sub-article article-type="article-commentary" id="SA1"><front-stub><article-id pub-id-type="doi">10.7554/eLife.10856.056</article-id><title-group><article-title>Decision letter</article-title></title-group><body><p>Content</p></body></sub-article></article></root>',
-         OrderedDict([('doi', u'10.7554/eLife.10856.056'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content')])]), ('description', [{'text': 'In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included.', 'type': 'paragraph'}])])
+        (read_fixture('test_decision_letter', 'content_02.xml'),
+         read_fixture('test_decision_letter', 'content_02_expected.py')
          ),
 
         )
-    def test_test_decision_letter_edge_cases(self, xml_content, expected):
+    def test_decision_letter_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.decision_letter(body_tag)
+        tag_content = parser.decision_letter(soup)
         self.assertEqual(expected, tag_content)
 
     @unpack
