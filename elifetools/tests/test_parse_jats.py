@@ -80,10 +80,9 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><fn-group content-type="ethics-information"><title>Ethics</title><fn fn-type="other"><p>Human subjects: This study was approved by the Institutional Review Board (IRB) of National Institute of Biological Sciences (IRBS030901) and consent was obtained; see the Materials and Methods section for details. The Helsinki guidelines were followed.</p></fn><fn fn-type="other"><p>Animal experimentation: The institutional animal care and use committee (IACUC) of the National Institute of Biological Sciences and the approved animal protocol is 09001T. The institutional guidelines for the care and use of laboratory animals were followed.</p></fn><fn fn-type="other"><p>Clinical trial Registry: NCT.</p><p>Registration ID: NCT00912041.</p><p>Clinical trial Registry: EudraCT.</p><p>Registration ID: EudraCT2004-000446-20.</p></fn></fn-group></back></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Human subjects: This study was approved by the Institutional Review Board (IRB) of National Institute of Biological Sciences (IRBS030901) and consent was obtained; see the Materials and Methods section for details. The Helsinki guidelines were followed.')]), OrderedDict([('type', 'paragraph'), ('text', u'Animal experimentation: The institutional animal care and use committee (IACUC) of the National Institute of Biological Sciences and the approved animal protocol is 09001T. The institutional guidelines for the care and use of laboratory animals were followed.')]), OrderedDict([('type', 'paragraph'), ('text', u'Clinical trial Registry: NCT.')]), OrderedDict([('type', 'paragraph'), ('text', u'Registration ID: NCT00912041.')]), OrderedDict([('type', 'paragraph'), ('text', u'Clinical trial Registry: EudraCT.')]), OrderedDict([('type', 'paragraph'), ('text', u'Registration ID: EudraCT2004-000446-20.')])]
+        (read_fixture('test_ethics_json', 'content_01.xml'),
+         read_fixture('test_ethics_json', 'content_01_expected.py')
          ),
-
         )
     def test_ethics_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
