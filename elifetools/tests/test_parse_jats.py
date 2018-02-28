@@ -1098,26 +1098,26 @@ class TestParseJats(unittest.TestCase):
          OrderedDict(),
          OrderedDict()
          ),
-
-        ([{"surname": "One", "given-names": "Person", "group-type": "sponsor"}, {"etal": True, "group-type": "sponsor"}],
+        # example of clinical trial contributors
+         (read_fixture('test_references_json', 'content_01.py'),
          OrderedDict([('type', u'clinical-trial')]),
-         OrderedDict([('type', u'clinical-trial'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('authorsEtAl', True), ('authorsType', 'sponsors')])
+         read_fixture('test_references_json', 'content_01_expected.py'),
          ),
-
-        ([{"surname": "One", "given-names": "Person", "group-type": "inventor"}, {"etal": True, "group-type": "inventor"}],
+        # example of patent contributors
+         (read_fixture('test_references_json', 'content_02.py'),
          OrderedDict([('type', u'patent')]),
-         OrderedDict([('type', u'patent'), ('inventors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))])]), ('inventorsEtAl', True)])
+         read_fixture('test_references_json', 'content_02_expected.py'),
          ),
-
-        ([{"surname": "One", "given-names": "Person", "group-type": "author"}],
+        # example of thesis contributors
+         (read_fixture('test_references_json', 'content_03.py'),
          OrderedDict([('type', u'thesis')]),
-         OrderedDict([('type', u'thesis'), ('author', OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Person One'), ('index', 'One, Person')]))]))])
+         read_fixture('test_references_json', 'content_03_expected.py'),
          ),
-
         )
     def test_references_json_authors(self, ref_authors, ref_content, expected):
         references_json = parser.references_json_authors(ref_authors, ref_content)
         self.assertEqual(expected, references_json)
+
 
     @data("elife-kitchen-sink.xml", "elife-09215-v1.xml", "elife00051.xml", "elife-10421-v1.xml", "elife-00666.xml")
     def test_references_json(self, filename):
