@@ -847,23 +847,23 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 08647 v1 PoA editor has blank string in the affiliation tags
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group content-type="section"><contrib contrib-type="editor" id="author-11736"><name><surname>Kramer</surname><given-names>Achim</given-names></name><role>Reviewing editor</role><aff><institution> </institution>, <country> </country></aff></contrib></contrib-group></article-meta></front></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Achim Kramer'), ('index', u'Kramer, Achim')])), ('role', u'Reviewing editor')])]
+        (read_fixture('test_editors_json', 'content_01.xml'),
+         read_fixture('test_editors_json', 'content_01_expected.py')
          ),
 
          # 09560 v1 example, has two editors
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group content-type="section"><contrib contrib-type="editor" id="author-4542"><name><surname>Krause</surname><given-names>Johannes</given-names></name><role>Reviewing editor</role><aff><institution>University of Tübingen</institution>, <country>Germany</country></aff></contrib><contrib contrib-type="editor" id="author-37203"><name><surname>Conard</surname><given-names>Nicholas J</given-names></name><role>Reviewing editor</role><aff><institution>University of Tübingen</institution>, <country>Germany</country></aff></contrib></contrib-group></article-meta></front></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Johannes Krause'), ('index', u'Krause, Johannes')])), ('role', u'Reviewing editor'), ('affiliations', [OrderedDict([('name', [u'University of T\xfcbingen']), ('address', OrderedDict([('formatted', [u'Germany']), ('components', OrderedDict([('country', u'Germany')]))]))])])]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Nicholas J Conard'), ('index', u'Conard, Nicholas J')])), ('role', u'Reviewing editor'), ('affiliations', [OrderedDict([('name', [u'University of T\xfcbingen']), ('address', OrderedDict([('formatted', [u'Germany']), ('components', OrderedDict([('country', u'Germany')]))]))])])])]
+        (read_fixture('test_editors_json', 'content_02.xml'),
+         read_fixture('test_editors_json', 'content_02_expected.py')
         ),
 
          # 23804 v3 example, has no role tag and is rewritten
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">23804</article-id><article-id pub-id-type="doi">10.7554/eLife.23804</article-id><contrib-group content-type="section"><contrib contrib-type="editor"><name><surname>Shou</surname><given-names>Wenying</given-names></name><aff id="aff4"><institution>Fred Hutchinson Cancer Research Center</institution>, <country>United States</country></aff></contrib></contrib-group></article-meta></front></article></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Wenying Shou'), ('index', u'Shou, Wenying')])), ('affiliations', [OrderedDict([('name', [u'Fred Hutchinson Cancer Research Center']), ('address', OrderedDict([('formatted', [u'United States']), ('components', OrderedDict([('country', u'United States')]))]))])]), ('role', u'Reviewing Editor'), ])]
+        (read_fixture('test_editors_json', 'content_03.xml'),
+         read_fixture('test_editors_json', 'content_03_expected.py')
         ),
 
          # 22028 v1 example, has a country but no institution
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">22028</article-id><article-id pub-id-type="doi">10.7554/eLife.22028</article-id><contrib-group content-type="section"><contrib contrib-type="editor" id="author-56094"><name><surname>Schlesinger</surname><given-names>Larry</given-names></name><role>Reviewing editor</role><aff><institution></institution>, <country>United States</country></aff></contrib></contrib-group></article-meta></front></article></root>',
-        [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Larry Schlesinger'), ('index', u'Schlesinger, Larry')])), ('role', u'Reviewing Editor')])]
+        (read_fixture('test_editors_json', 'content_04.xml'),
+         read_fixture('test_editors_json', 'content_04_expected.py')
         ),
 
         )
