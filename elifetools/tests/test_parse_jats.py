@@ -1099,19 +1099,19 @@ class TestParseJats(unittest.TestCase):
          OrderedDict()
          ),
         # example of clinical trial contributors
-         (read_fixture('test_references_json', 'content_01.py'),
+         (read_fixture('test_references_json_authors', 'content_01.py'),
          OrderedDict([('type', u'clinical-trial')]),
-         read_fixture('test_references_json', 'content_01_expected.py'),
+         read_fixture('test_references_json_authors', 'content_01_expected.py'),
          ),
         # example of patent contributors
-         (read_fixture('test_references_json', 'content_02.py'),
+         (read_fixture('test_references_json_authors', 'content_02.py'),
          OrderedDict([('type', u'patent')]),
-         read_fixture('test_references_json', 'content_02_expected.py'),
+         read_fixture('test_references_json_authors', 'content_02_expected.py'),
          ),
         # example of thesis contributors
-         (read_fixture('test_references_json', 'content_03.py'),
+         (read_fixture('test_references_json_authors', 'content_03.py'),
          OrderedDict([('type', u'thesis')]),
-         read_fixture('test_references_json', 'content_03_expected.py'),
+         read_fixture('test_references_json_authors', 'content_03_expected.py'),
          ),
         )
     def test_references_json_authors(self, ref_authors, ref_content, expected):
