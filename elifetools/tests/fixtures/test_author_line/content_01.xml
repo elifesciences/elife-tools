@@ -1,0 +1,25 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" id="author-1032">
+                    <name>
+                        <surname>Schekman</surname>
+                        <given-names>Randy</given-names>
+                    </name>
+                    <role>Editor-in-Chief</role>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" id="author-1002">
+                    <name>
+                        <surname>Patterson</surname>
+                        <given-names>Mark</given-names>
+                    </name>
+                    <role>Executive Director</role>
+                    <email>editorial@elifesciences.org</email>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+</root>

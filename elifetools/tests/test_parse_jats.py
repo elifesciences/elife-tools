@@ -982,12 +982,12 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 00855 v1, example of just person authors
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" id="author-1032"><name><surname>Schekman</surname><given-names>Randy</given-names></name><role>Editor-in-Chief</role><xref ref-type="fn" rid="conf1"/></contrib><contrib contrib-type="author" corresp="yes" id="author-1002"><name><surname>Patterson</surname><given-names>Mark</given-names></name><role>Executive Director</role><email>editorial@elifesciences.org</email><xref ref-type="fn" rid="conf1"/></contrib></contrib-group></article-meta></front></root>',
+        (read_fixture('test_author_line', 'content_01.xml'),
          u'Randy Schekman, Mark Patterson'
          ),
 
         # 08714 v1, group authors only
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><contrib-group><contrib contrib-type="author" corresp="yes"><contrib-id contrib-id-type="group-author-key">group-author-id1</contrib-id><collab>MalariaGEN Plasmodium falciparum Community Project</collab><xref ref-type="corresp" rid="cor1">*</xref><xref ref-type="corresp" rid="cor2">*</xref><xref ref-type="corresp" rid="cor3">*</xref><xref ref-type="other" rid="par-1"/><xref ref-type="fn" rid="con1"/><xref ref-type="fn" rid="conf1"/></contrib></contrib-group><author-notes><corresp id="cor1"><email>dominic@sanger.ac.uk</email> (DPK);</corresp><corresp id="cor2"><email>ra4@sanger.ac.uk</email> (RA);</corresp><corresp id="cor3"><email>olivo@tropmedres.ac.uk</email> (OM)</corresp></author-notes></article-meta></front></root>',
+        (read_fixture('test_author_line', 'content_02.xml'),
          u'MalariaGEN Plasmodium falciparum Community Project'
          ),
 

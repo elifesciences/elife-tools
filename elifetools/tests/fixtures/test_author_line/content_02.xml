@@ -1,0 +1,23 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes">
+                    <contrib-id contrib-id-type="group-author-key">group-author-id1</contrib-id>
+                    <collab>MalariaGEN Plasmodium falciparum Community Project</collab>
+                    <xref ref-type="corresp" rid="cor1">*</xref>
+                    <xref ref-type="corresp" rid="cor2">*</xref>
+                    <xref ref-type="corresp" rid="cor3">*</xref>
+                    <xref ref-type="other" rid="par-1"/>
+                    <xref ref-type="fn" rid="con1"/>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+            </contrib-group>
+            <author-notes>
+                <corresp id="cor1"><email>dominic@sanger.ac.uk</email> (DPK);</corresp>
+                <corresp id="cor2"><email>ra4@sanger.ac.uk</email> (RA);</corresp>
+                <corresp id="cor3"><email>olivo@tropmedres.ac.uk</email> (OM)</corresp>
+            </author-notes>
+        </article-meta>
+    </front>
+</root>
