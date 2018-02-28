@@ -1011,46 +1011,20 @@ class TestParseJats(unittest.TestCase):
 
     @data(
         # aff tag linked via an rid to id attribute
-        ('''<aff id="aff1">
-<label>1</label>
-<institution content-type="dept">Department of Production</institution>
-<institution>eLife</institution>
-<addr-line>
-<named-content content-type="city">Cambridge</named-content>
-</addr-line>
-<country>United Kingdom</country>
-</aff>''',
-        ('aff1', {
-            'city': u'Cambridge',
-            'country': u'United Kingdom',
-            'dept': u'Department of Production',
-            'institution': u'eLife'}
-         )
+        (read_fixture('test_format_aff', 'content_01.xml'),
+         read_fixture('test_format_aff', 'content_01_expected.py'),
         ),
         # inline aff tag example, no id attribute
-        ('''<aff>
-<institution>eLife</institution>
-<addr-line>
-<named-content content-type="city">Cambridge</named-content>
-</addr-line>
-<country>United Kingdom</country>
-</aff>''',
-        (None, {
-            'country': u'United Kingdom',
-            'institution': u'eLife',
-            'city': u'Cambridge'}
-         )
+        (read_fixture('test_format_aff', 'content_02.xml'),
+         read_fixture('test_format_aff', 'content_02_expected.py'),
+        ),
+        # aff example mostly just text with no subtags
+        (read_fixture('test_format_aff', 'content_03.xml'),
+         read_fixture('test_format_aff', 'content_03_expected.py'),
         ),
         # edge case, no aff tag or the rid idoes not match an aff id
         (None,
         (None, {})
-        ),
-        # aff example mostly just text with no subtags
-        ('''<aff id="A1">
-<label>1</label>An Institute, University of Testing, Cambridge, UK.</aff>''',
-        ('A1', {
-            'text': u'An Institute, University of Testing, Cambridge, UK.'}
-         )
         ),
     )
     @unpack
