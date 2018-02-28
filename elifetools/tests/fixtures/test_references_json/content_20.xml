@@ -1,0 +1,14 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib10">
+            <element-citation publication-type="data">
+                <person-group person-group-type="author">
+                    <collab>Biosharing.org</collab>
+                </person-group>
+                <year iso-8601-date="2016">2016</year>
+                <data-title>A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals</data-title>
+                <pub-id pub-id-type="accession" xlink:href="https://biosharing.org/policies">biosharing.org/policies</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

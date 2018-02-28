@@ -1,0 +1,36 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib32">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Kyoung</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Zhang</surname>
+                        <given-names>Y</given-names>
+                    </name>
+                    <name>
+                        <surname>Diao</surname>
+                        <given-names>J</given-names>
+                    </name>
+                    <name>
+                        <surname>Chu</surname>
+                        <given-names>S</given-names>
+                    </name>
+                    <name>
+                        <surname>Brunger</surname>
+                        <given-names>AT</given-names>
+                    </name>
+                </person-group>
+                <year>2012</year>
+                <article-title>Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system</article-title>
+                <source>Nature Protocols</source>
+                <volume>7</volume>
+                <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nprot.2012.134">10.1038/nprot.2012.134</ext-link>
+                <comment>, in press</comment>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

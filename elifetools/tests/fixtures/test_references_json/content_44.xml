@@ -1,0 +1,62 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref id="bib34">
+                    <element-citation publication-type="data">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Radoshevich</surname>
+                                <given-names>L</given-names>
+                            </name>
+                            <name>
+                                <surname>Impens</surname>
+                                <given-names>F</given-names>
+                            </name>
+                            <name>
+                                <surname>Ribet</surname>
+                                <given-names>D</given-names>
+                            </name>
+                            <name>
+                                <surname>Quereda</surname>
+                                <given-names>JJ</given-names>
+                            </name>
+                            <name>
+                                <surname>Nam Tham</surname>
+                                <given-names>T</given-names>
+                            </name>
+                            <name>
+                                <surname>Nahori</surname>
+                                <given-names>MA</given-names>
+                            </name>
+                            <name>
+                                <surname>Bierne</surname>
+                                <given-names>H</given-names>
+                            </name>
+                            <name>
+                                <surname>Dussurget</surname>
+                                <given-names>O</given-names>
+                            </name>
+                            <name>
+                                <surname>Pizarro-Cerdá</surname>
+                                <given-names>J</given-names>
+                            </name>
+                            <name>
+                                <surname>Knobeloch</surname>
+                                <given-names>KP</given-names>
+                            </name>
+                            <name>
+                                <surname>Cossart</surname>
+                                <given-names>P</given-names>
+                            </name>
+                        </person-group>
+                        <year iso-8601-date="2015">2015a</year>
+                        <data-title>ISG15 counteracts <italic>Listeria monocytogenes</italic> infection</data-title>
+                        <source>ProteomeXchange</source>
+                        <pub-id pub-id-type="archive" xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805">PXD001805</pub-id>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

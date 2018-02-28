@@ -1,0 +1,27 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib35">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Walsh</surname>
+                        <given-names>PD</given-names>
+                    </name>
+                    <name>
+                        <surname>Bermejo</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Rodriguez-Teijeiro</surname>
+                        <given-names>JD</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2009">2009</year>
+                <chapter-title>Disease avoidance and the evolution of primate social connectivity</chapter-title>
+                <source>Primate Parasite Ecology: The Dynamics and Study of Host-Parasite Relationships</source>
+                <fpage>183</fpage>
+                <lpage>197</lpage>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

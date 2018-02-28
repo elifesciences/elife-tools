@@ -1,0 +1,63 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">20352</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.20352</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib53">
+                <element-citation publication-type="patent">
+                    <person-group person-group-type="inventor">
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>L</given-names>
+                        </name>
+                        <name>
+                            <surname>Doherty</surname>
+                            <given-names>G</given-names>
+                        </name>
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>X</given-names>
+                        </name>
+                        <name>
+                            <surname>Tao</surname>
+                            <given-names>ZF</given-names>
+                        </name>
+                        <name>
+                            <surname>Brunko</surname>
+                            <given-names>M</given-names>
+                        </name>
+                        <name>
+                            <surname>Kunzer</surname>
+                            <given-names>AR</given-names>
+                        </name>
+                        <name>
+                            <surname>Wendt</surname>
+                            <given-names>MD</given-names>
+                        </name>
+                        <name>
+                            <surname>Song</surname>
+                            <given-names>X</given-names>
+                        </name>
+                        <name>
+                            <surname>Frey</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Hansen</surname>
+                            <given-names>TM</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2013">2013</year>
+                    <article-title>8-carbamoyl-2-(2,3-disubstituted pyrid-6-yl)-1,2,3,4-tetrahydroisoquinoline derivatives as apoptosis - inducing agents for the treatment of cancer and immune and autoimmune diseases</article-title>
+                    <source>United States Patent</source>
+                    <patent>WO2013139890 A1</patent>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

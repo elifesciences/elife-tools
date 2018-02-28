@@ -1,0 +1,15 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib55">
+            <element-citation publication-type="software">
+                <person-group person-group-type="author">
+                    <collab>Schrödinger, LLC</collab>
+                </person-group>
+                <year iso-8601-date="2014">2014</year>
+                <source>The PyMOL Molecular Graphics System</source>
+                <edition>Version 1.7.2</edition>
+                <publisher-name>Schrodinger, LLC</publisher-name>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

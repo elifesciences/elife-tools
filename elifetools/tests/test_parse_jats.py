@@ -1124,530 +1124,232 @@ class TestParseJats(unittest.TestCase):
         soup = parser.parse_document(sample_xml(filename))
         self.assertNotEqual(parser.references_json(soup), None)
 
+
     @data(
         # Web reference with no title, use the uri from 01892
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib1"><element-citation publication-type="web"><person-group person-group-type="author"><collab>The World Health Organization</collab></person-group><year>2014</year><ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib1'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', 'The World Health Organization')])]), ('title', u'http://www.who.int/topics/dengue/en/'), ('uri', u'http://www.who.int/topics/dengue/en/')])]
+         (read_fixture('test_references_json', 'content_01.xml'),
+          read_fixture('test_references_json', 'content_01_expected.py'),
          ),
 
         # Thesis title from 00626, also in converted to unknown because of its comment tag
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib36"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Schneider</surname><given-names>P</given-names></name></person-group><year>2006</year><comment>PhD Thesis</comment><article-title>Submicroscopic<italic>Plasmodium falciparum</italic>gametocytaemia and the contribution to malaria transmission</article-title><publisher-name>Radboud University Nijmegen Medical Centre</publisher-name><publisher-loc>Nijmegen, The Netherlands</publisher-loc></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'unknown'), ('id', u'bib36'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Schneider'), ('index', u'Schneider, P')]))])]), ('title', u'Submicroscopic<i>Plasmodium falciparum</i>gametocytaemia and the contribution to malaria transmission'), ('details', 'PhD Thesis, Radboud University Nijmegen Medical Centre, Nijmegen, The Netherlands')])]
+         (read_fixture('test_references_json', 'content_02.xml'),
+          read_fixture('test_references_json', 'content_02_expected.py'),
          ),
 
         # fpage value with usual characters from 00170
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib14"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Feng</surname><given-names>J</given-names></name><name><surname>Liu</surname><given-names>T</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name></person-group><year>2011</year><article-title>Using MACS to identify peaks from ChIP-Seq data</article-title><source>Curr Protoc Bioinformatics</source><volume>Chapter 2</volume><fpage>Unit 2.14</fpage></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib14'), ('date', u'2011'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Feng'), ('index', u'Feng, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'T Liu'), ('index', u'Liu, T')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))])]), ('articleTitle', u'Using MACS to identify peaks from ChIP-Seq data'), ('journal', u'Curr Protoc Bioinformatics'), ('volume', u'Chapter 2'), ('pages', u'Unit 2.14')])]
+         (read_fixture('test_references_json', 'content_03.xml'),
+          read_fixture('test_references_json', 'content_03_expected.py'),
          ),
 
         # fpage contains dots, 00569
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib96"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Zerbino</surname><given-names>DR</given-names></name></person-group><year>2010</year><article-title>Using the Velvet de novo assembler for short-read sequencing technologies</article-title><source>Curr Protoc Bioinformatics</source><volume>11</volume><fpage>11.5.1</fpage><lpage>11.5.12</lpage><pub-id pub-id-type="doi">10.1002/0471250953.bi1105s31</pub-id></element-citation></ref></ref-list></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib96'), ('date', u'2010'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DR Zerbino'), ('index', u'Zerbino, DR')]))])]), ('articleTitle', u'Using the Velvet de novo assembler for short-read sequencing technologies'), ('journal', u'Curr Protoc Bioinformatics'), ('volume', u'11'), ('pages', OrderedDict([('first', u'11.5.1'), ('last', u'11.5.12'), ('range', u'11.5.1\u201311.5.12')])), ('doi', u'10.1002/0471250953.bi1105s31')])]
+         (read_fixture('test_references_json', 'content_04.xml'),
+          read_fixture('test_references_json', 'content_04_expected.py'),
          ),
 
         # pages value of in press, 00109
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Kyoung</surname><given-names>M</given-names></name><name><surname>Zhang</surname><given-names>Y</given-names></name><name><surname>Diao</surname><given-names>J</given-names></name><name><surname>Chu</surname><given-names>S</given-names></name><name><surname>Brunger</surname><given-names>AT</given-names></name></person-group><year>2012</year><article-title>Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system</article-title><source>Nature Protocols</source><volume>7</volume><ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/nprot.2012.134">10.1038/nprot.2012.134</ext-link><comment>, in press</comment></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib32'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Kyoung'), ('index', u'Kyoung, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Y Zhang'), ('index', u'Zhang, Y')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Diao'), ('index', u'Diao, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Chu'), ('index', u'Chu, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AT Brunger'), ('index', u'Brunger, AT')]))])]), ('articleTitle', u'Studying calcium triggered vesicle fusion in a single vesicle content/lipid mixing system'), ('journal', u'Nature Protocols'), ('volume', u'7'), ('pages', 'In press'), ('uri', u'http://dx.doi.org/10.1038/nprot.2012.134')])]
+         (read_fixture('test_references_json', 'content_05.xml'),
+          read_fixture('test_references_json', 'content_05_expected.py'),
          ),
 
         # year value of in press, 02535
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Culumber</surname><given-names>ZW</given-names></name><name><surname>Ochoa</surname><given-names>OM</given-names></name><name><surname>Rosenthal</surname><given-names>GG</given-names></name></person-group><year>in press</year><article-title>Assortative mating and the maintenance of population structure in a natural hybrid zone</article-title><source>American Naturalist</source></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib12'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'ZW Culumber'), ('index', u'Culumber, ZW')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'OM Ochoa'), ('index', u'Ochoa, OM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'GG Rosenthal'), ('index', u'Rosenthal, GG')]))])]), ('articleTitle', u'Assortative mating and the maintenance of population structure in a natural hybrid zone'), ('journal', u'American Naturalist'), ('pages', 'In press')])]
+         (read_fixture('test_references_json', 'content_06.xml'),
+          read_fixture('test_references_json', 'content_06_expected.py'),
          ),
 
         # conference, 03532 v3
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib21"><element-citation publication-type="confproc"><person-group person-group-type="author"><name><surname>Haiyan</surname><given-names>L</given-names></name><name><surname>Jihua</surname><given-names>W</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Network properties of protein structures at three different length scales</article-title><conf-name>Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society</conf-name></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', 'conference-proceeding'), ('id', u'bib21'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Haiyan'), ('index', u'Haiyan, L')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Jihua'), ('index', u'Jihua, W')]))])]), ('articleTitle', u'Network properties of protein structures at three different length scales'), ('conference', OrderedDict([('name', [u'Proceedings of the 2009 Second Pacific-Asia Conference on Web Mining and Web-Based Application, IEEE Computer Society'])]))])]
+         (read_fixture('test_references_json', 'content_07.xml'),
+          read_fixture('test_references_json', 'content_07_expected.py'),
          ),
 
         # web with doi but no uri, 04775 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib45"><element-citation publication-type="web"><person-group person-group-type="author"><name><surname>Mikheyev</surname><given-names>AS</given-names></name><name><surname>Linksvayer</surname><given-names>TA</given-names></name></person-group><year>2014</year><article-title>Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns</article-title><source>Dryad Digital Repository.</source><pub-id pub-id-type="doi">10.5061/dryad.cv0q3</pub-id></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib45'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AS Mikheyev'), ('index', u'Mikheyev, AS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TA Linksvayer'), ('index', u'Linksvayer, TA')]))])]), ('title', u'Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns'), ('website', u'Dryad Digital Repository.'), ('uri', u'https://doi.org/10.5061/dryad.cv0q3')])]
+         (read_fixture('test_references_json', 'content_08.xml'),
+          read_fixture('test_references_json', 'content_08_expected.py'),
          ),
 
         # Clinical trial example, from new kitchen sink 00666
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib41"><element-citation publication-type="clinicaltrial"><person-group person-group-type="sponsor"><collab>Scripps Translational Science Institute</collab></person-group><year iso-8601-date="2015">2015</year><article-title>Scripps Wired for Health Study</article-title><ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', 'clinical-trial'), ('id', u'bib41'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'group'), ('name', 'Scripps Translational Science Institute')])]), ('authorsType', 'sponsors'), ('title', u'Scripps Wired for Health Study'), ('uri', u'https://clinicaltrials.gov/ct2/show/NCT01975428')])]
+         (read_fixture('test_references_json', 'content_09.xml'),
+          read_fixture('test_references_json', 'content_09_expected.py'),
          ),
 
         # Journal reference with no article-title, 05462 v3
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib20"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Elzinga</surname><given-names>SDJ</given-names></name><name><surname>Bednarz</surname><given-names>AL</given-names></name><name><surname>van Oosterum</surname><given-names>K</given-names></name><name><surname>Dekker</surname><given-names>PJT</given-names></name><name><surname>Grivell</surname><given-names>L</given-names></name></person-group><year iso-8601-date="1993">1993</year><source>Nucleic Acids Research</source><volume>21</volume><fpage>5328</fpage><lpage>5331</lpage><pub-id pub-id-type="doi">10.1093/nar/21.23.5328</pub-id></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib20'), ('date', u'1993'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'SDJ Elzinga'), ('index', u'Elzinga, SDJ')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AL Bednarz'), ('index', u'Bednarz, AL')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'K van Oosterum'), ('index', u'van Oosterum, K')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'PJT Dekker'), ('index', u'Dekker, PJT')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Grivell'), ('index', u'Grivell, L')]))])]), ('title', u'Nucleic Acids Research'), ('details', u'5328\u20135331, Nucleic Acids Research, 21, 10.1093/nar/21.23.5328')])]
+         (read_fixture('test_references_json', 'content_10.xml'),
+          read_fixture('test_references_json', 'content_10_expected.py'),
          ),
 
         # book reference, gets converted to book-chapter, and has no editors, 16412 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib35"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Walsh</surname><given-names>PD</given-names></name><name><surname>Bermejo</surname><given-names>M</given-names></name><name><surname>Rodriguez-Teijeiro</surname><given-names>JD</given-names></name></person-group><year iso-8601-date="2009">2009</year><chapter-title>Disease avoidance and the evolution of primate social connectivity</chapter-title><source>Primate Parasite Ecology: The Dynamics and Study of Host-Parasite Relationships</source><fpage>183</fpage><lpage>197</lpage></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib35'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'PD Walsh'), ('index', u'Walsh, PD')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Bermejo'), ('index', u'Bermejo, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'JD Rodriguez-Teijeiro'), ('index', u'Rodriguez-Teijeiro, JD')]))])]), ('title', u'Primate Parasite Ecology: The Dynamics and Study of Host-Parasite Relationships'), ('details', u'183\u2013197, Disease avoidance and the evolution of primate social connectivity, Primate Parasite Ecology: The Dynamics and Study of Host-Parasite Relationships')])]
+         (read_fixture('test_references_json', 'content_11.xml'),
+          read_fixture('test_references_json', 'content_11_expected.py'),
          ),
 
         # journal reference with no article title and no lpage, 11282 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib63"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Palmer</surname><given-names>D</given-names></name><name><surname>Frater</surname><given-names>J</given-names></name><name><surname>Phillips</surname><given-names>R</given-names></name><name><surname>McLean</surname><given-names>AR</given-names></name><name><surname>McVean</surname><given-names>G</given-names></name></person-group><year iso-8601-date="2013">2013</year><source>Proceedings of the Royal Society of London B</source><volume>280</volume><fpage>20130696</fpage></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib63'), ('date', u'2013'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Palmer'), ('index', u'Palmer, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Frater'), ('index', u'Frater, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Phillips'), ('index', u'Phillips, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AR McLean'), ('index', u'McLean, AR')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'G McVean'), ('index', u'McVean, G')]))])]), ('title', u'Proceedings of the Royal Society of London B'), ('details', u'20130696, Proceedings of the Royal Society of London B, 280')])]
+         (read_fixture('test_references_json', 'content_12.xml'),
+          read_fixture('test_references_json', 'content_12_expected.py'),
          ),
 
         # reference with no title uses detail as the titel, 00311 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib9"><element-citation publication-type="other"><person-group person-group-type="author"><name><surname>Bricogne</surname><given-names>G</given-names></name><name><surname>Blanc</surname><given-names>E</given-names></name><name><surname>Brandi</surname><given-names>M</given-names></name><name><surname>Flensburg</surname><given-names>C</given-names></name><name><surname>Keller</surname><given-names>P</given-names></name><name><surname>Paciorek</surname><given-names>W</given-names></name><etal/></person-group><year>2009</year><comment>BUSTER, version 2.8.0. Retrieved from about:home</comment></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib9'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'G Bricogne'), ('index', u'Bricogne, G')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'E Blanc'), ('index', u'Blanc, E')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Brandi'), ('index', u'Brandi, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'C Flensburg'), ('index', u'Flensburg, C')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Keller'), ('index', u'Keller, P')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Paciorek'), ('index', u'Paciorek, W')]))])]), ('authorsEtAl', True), ('title', u'BUSTER, version 2.8.0. Retrieved from about:home'), ('details', u'BUSTER, version 2.8.0. Retrieved from about:home')])]
+         (read_fixture('test_references_json', 'content_13.xml'),
+          read_fixture('test_references_json', 'content_13_expected.py'),
          ),
 
         # reference of type other with no details, 15266 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib12"><element-citation publication-type="other"><person-group person-group-type="author"><name><surname>Blench</surname><given-names>R</given-names></name></person-group><year iso-8601-date="2006">2006</year><article-title>Archaeology-Language-and-the-African-Past</article-title></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib12'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Blench'), ('index', u'Blench, R')]))])]), ('title', u'Archaeology-Language-and-the-African-Past')])]
+         (read_fixture('test_references_json', 'content_14.xml'),
+          read_fixture('test_references_json', 'content_14_expected.py'),
          ),
 
         # reference of type journal with no journal name, 00340 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib10"><element-citation publication-type="journal"><person-group person-group-type="author"><collab>WHO</collab></person-group><year>2012</year><article-title>Press release: 65th World Health Assembly closes with new global health measures</article-title><ext-link ext-link-type="uri" xlink:href="http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html">http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html</ext-link></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib10'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'group'), ('name', 'WHO')])]), ('title', u'Press release: 65th World Health Assembly closes with new global health measures'), ('details', u'http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html'), ('uri', u'http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html')])]
+         (read_fixture('test_references_json', 'content_15.xml'),
+          read_fixture('test_references_json', 'content_15_expected.py'),
          ),
 
         # reference of type book with no source, 00051 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib11"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Cutler</surname><given-names>DM</given-names></name><name><surname>Deaton</surname><given-names>AS</given-names></name><name><surname>Lleras-Muney</surname><given-names>A</given-names></name></person-group><year>2006</year><article-title>The determinants of mortality (No. w11963)</article-title><publisher-loc>Cambridge</publisher-loc><publisher-name>National Bureau of Economic Research</publisher-name></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib11'), ('date', u'2006'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DM Cutler'), ('index', u'Cutler, DM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AS Deaton'), ('index', u'Deaton, AS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Lleras-Muney'), ('index', u'Lleras-Muney, A')]))])]), ('title', u'The determinants of mortality (No. w11963)'), ('details', u'Cambridge, National Bureau of Economic Research')])]
+         (read_fixture('test_references_json', 'content_16.xml'),
+          read_fixture('test_references_json', 'content_16_expected.py'),
          ),
 
         # reference of type book with no publisher, 00031 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib4"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Engel</surname><given-names>W</given-names></name></person-group><year>2005</year><source>SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media</source><publisher-loc>Hingham, MA, USA</publisher-loc></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib4'), ('date', u'2005'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'W Engel'), ('index', u'Engel, W')]))])]), ('title', u'SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media'), ('details', 'SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media, Hingham, MA, USA')])]
+         (read_fixture('test_references_json', 'content_17.xml'),
+          read_fixture('test_references_json', 'content_17_expected.py'),
          ),
 
         # reference of type book with no bookTitle, 03069 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib24"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Laue</surname><given-names>TM</given-names></name><name><surname>Shah</surname><given-names>BD</given-names></name><name><surname>Ridgeway</surname><given-names>RM</given-names></name><name><surname>Pelletier</surname><given-names>SL</given-names></name></person-group><year>1992</year><publisher-loc>Cambridge</publisher-loc><publisher-name>The Royal Society of Chemistry</publisher-name><fpage>90</fpage><lpage>125</lpage></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib24'), ('date', u'1992'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TM Laue'), ('index', u'Laue, TM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BD Shah'), ('index', u'Shah, BD')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'RM Ridgeway'), ('index', u'Ridgeway, RM')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'SL Pelletier'), ('index', u'Pelletier, SL')]))])]), ('title', u'90\u2013125, Cambridge, The Royal Society of Chemistry'), ('details', u'90\u2013125, Cambridge, The Royal Society of Chemistry')])]
+         (read_fixture('test_references_json', 'content_18.xml'),
+          read_fixture('test_references_json', 'content_18_expected.py'),
          ),
 
         # reference with unicode in collab tag, also gets turned into unknown type, 18023 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib55"><element-citation publication-type="software"><person-group person-group-type="author"><collab>Schrödinger, LLC</collab></person-group><year iso-8601-date="2014">2014</year><source>The PyMOL Molecular Graphics System</source><edition>Version 1.7.2</edition><publisher-name>Schrodinger, LLC</publisher-name></element-citation></ref></ref-list>',
-         [OrderedDict([('type', u'software'), ('id', u'bib55'), ('date', u'2014'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Schr\xf6dinger, LLC')])]), ('title', u'The PyMOL Molecular Graphics System'), ('source', u'The PyMOL Molecular Graphics System'), ('publisher', OrderedDict([('name', [u'Schrodinger, LLC'])])), ('version', u'Version 1.7.2')])]
+         (read_fixture('test_references_json', 'content_19.xml'),
+          read_fixture('test_references_json', 'content_19_expected.py'),
          ),
 
         # data reference with no source, 16800 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib10"><element-citation publication-type="data"><person-group person-group-type="author"><collab>Biosharing.org</collab></person-group><year iso-8601-date="2016">2016</year><data-title>A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals</data-title><pub-id pub-id-type="accession" xlink:href="https://biosharing.org/policies">biosharing.org/policies</pub-id></element-citation></ref></ref-list>',
-         [OrderedDict([('type', 'unknown'), ('id', u'bib10'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Biosharing.org')])]), ('title', u'A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals'), ('details', u'A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals, biosharing.org/policies')])]
+         (read_fixture('test_references_json', 'content_20.xml'),
+          read_fixture('test_references_json', 'content_20_expected.py'),
          ),
 
         # reference with an lpage and not fpage still gets pages value set, 13905 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib71"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Yasuda</surname><given-names>R</given-names></name><name><surname>Nimchinsky</surname><given-names>EA</given-names></name><name><surname>Scheuss</surname><given-names>V</given-names></name><name><surname>Pologruto</surname><given-names>TA</given-names></name><name><surname>Oertner</surname><given-names>TG</given-names></name><name><surname>Sabatini</surname><given-names>BL</given-names></name><name><surname>Svoboda</surname><given-names>K</given-names></name></person-group><year iso-8601-date="2004">2004</year><article-title>Imaging calcium concentration dynamics in small neuronal compartments</article-title><source>Science\'s STKE</source><volume>2004</volume><lpage>, pl5.</lpage><pub-id pub-id-type="doi">10.1126/stke.2192004pl5</pub-id></element-citation></ref></ref-list>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib71'), ('date', u'2004'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Yasuda'), ('index', u'Yasuda, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'EA Nimchinsky'), ('index', u'Nimchinsky, EA')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'V Scheuss'), ('index', u'Scheuss, V')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TA Pologruto'), ('index', u'Pologruto, TA')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TG Oertner'), ('index', u'Oertner, TG')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BL Sabatini'), ('index', u'Sabatini, BL')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'K Svoboda'), ('index', u'Svoboda, K')]))])]), ('articleTitle', u'Imaging calcium concentration dynamics in small neuronal compartments'), ('journal', u"Science's STKE"), ('volume', u'2004'), ('pages', u', pl5.'), ('doi', u'10.1126/stke.2192004pl5')])]
+         (read_fixture('test_references_json', 'content_21.xml'),
+          read_fixture('test_references_json', 'content_21_expected.py'),
          ),
 
         # Reference with a collab using italic tag, from 05423 v2
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib101"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Wood</surname><given-names>WB</given-names></name><collab>The Community of <italic>C. elegans</italic>Researchers</collab></person-group><year>1988</year><source>The nematode Caenorhabditis elegans</source><publisher-loc>Cold Spring Harbor, New York</publisher-loc><publisher-name>Cold Spring Harbor Laboratory Press</publisher-name></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'book'), ('id', u'bib101'), ('date', u'1988'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'WB Wood'), ('index', u'Wood, WB')]))]), OrderedDict([('type', 'group'), ('name', u'The Community of <i>C. elegans</i>Researchers')])]), ('bookTitle', u'The nematode Caenorhabditis elegans'), ('publisher', OrderedDict([('name', [u'Cold Spring Harbor Laboratory Press']), ('address', OrderedDict([('formatted', [u'Cold Spring Harbor, New York']), ('components', OrderedDict([('locality', [u'Cold Spring Harbor, New York'])]))]))]))])]
+         (read_fixture('test_references_json', 'content_22.xml'),
+          read_fixture('test_references_json', 'content_22_expected.py'),
          ),
 
         # Reference with a non-numeric year, from 09215 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib13"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Castro-Alamancos</surname><given-names>MA</given-names></name><name><surname>Connors</surname><given-names>BW</given-names></name></person-group><year iso-8601-date="1996">1996a</year><article-title>Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway</article-title><source>Journal of Neuroscience</source><volume>16</volume><fpage>7742</fpage><lpage>7756</lpage></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'journal'), ('id', u'bib13'), ('date', '1996'), ('discriminator', 'a'),('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'MA Castro-Alamancos'), ('index', u'Castro-Alamancos, MA')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'BW Connors'), ('index', u'Connors, BW')]))])]), ('articleTitle', u'Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway'), ('journal', u'Journal of Neuroscience'), ('volume', u'16'), ('pages', OrderedDict([('first', u'7742'), ('last', u'7756'), ('range', u'7742\u20137756')]))])]
+         (read_fixture('test_references_json', 'content_23.xml'),
+          read_fixture('test_references_json', 'content_23_expected.py'),
          ),
 
         # no year value, 00051, with json rewriting enabled by adding elife XML metadata
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">00051</article-id><article-id pub-id-type="doi">10.7554/eLife.00051</article-id></article-meta><ref-list><ref id="bib25"><element-citation publication-type="web"><person-group person-group-type="author"><name><surname>Jha</surname><given-names>P</given-names></name><name><surname>Nugent</surname><given-names>R</given-names></name><name><surname>Verguet</surname><given-names>S</given-names></name><name><surname>Bloom</surname><given-names>D</given-names></name><name><surname>Hum</surname><given-names>R</given-names></name></person-group><article-title>Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper</article-title><ext-link ext-link-type="uri" xlink:href="http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf">http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf</ext-link></element-citation></ref></ref-list></article></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib25'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Jha'), ('index', u'Jha, P')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Nugent'), ('index', u'Nugent, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Verguet'), ('index', u'Verguet, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Bloom'), ('index', u'Bloom, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Hum'), ('index', u'Hum, R')]))])]), ('title', u'Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper'), ('uri', u'http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf'), ('date', '2012')])]
+         (read_fixture('test_references_json', 'content_24.xml'),
+          read_fixture('test_references_json', 'content_24_expected.py'),
          ),
 
         # elife 12125 v3 bib11 will get deleted in the JSON rewriting
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">12125</article-id><article-id pub-id-type="doi">10.7554/eLife.12125</article-id></article-meta><ref-list><ref id="bib11"><element-citation publication-type="other"><person-group person-group-type="author"><name><surname>Elazar</surname> <given-names>Assaf</given-names></name><name><surname>Weinstein</surname><given-names>Jonathan</given-names></name><name><surname>Prilusky</surname><given-names>Jaime</given-names></name><name><surname>Fleishman</surname><given-names>Sarel J.</given-names></name></person-group></element-citation></ref></ref-list></article></root>',
-         []
+         (read_fixture('test_references_json', 'content_25.xml'),
+          read_fixture('test_references_json', 'content_25_expected.py'),
          ),
 
         # 19532 v2 bib27 has a date-in-citation and no year tag, will get rewritten
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">19532</article-id><article-id pub-id-type="doi">10.7554/eLife.19532</article-id></article-meta><ref-list><ref id="bib27"><element-citation publication-type="web"><person-group person-group-type="author"><collab>Nature</collab></person-group><article-title>Challenges in irreproducible research</article-title><source>Nature News and Comment</source><ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link><date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation></element-citation></ref></ref-list></article></root>',
-         [OrderedDict([('type', u'web'), ('id', u'bib27'), ('accessed', u'2015-12-14'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Nature')])]), ('title', u'Challenges in irreproducible research'), ('website', u'Nature News and Comment'), ('uri', u'http://www.nature.com/news/reproducibility-1.17552'), ('date', u'2015')])]
+         (read_fixture('test_references_json', 'content_26.xml'),
+          read_fixture('test_references_json', 'content_26_expected.py'),
          ),
 
         # 00666 kitchen sink reference of type patent
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib32"><element-citation publication-type="patent"><person-group person-group-type="inventor"><name><surname>Patterson</surname><given-names>JB</given-names></name><name><surname>Lonergan</surname><given-names>DG</given-names></name><name><surname>Flynn</surname><given-names>GA</given-names></name><name><surname>Qingpeng</surname><given-names>Z</given-names></name><name><surname>Pallai</surname><given-names>PV</given-names></name></person-group><person-group person-group-type="assignee"><collab>Mankind Corp</collab></person-group><year iso-8601-date="2011">2011</year><article-title>IRE-1alpha inhibitors</article-title><source>United States patent</source><patent country="United States">US20100941530</patent><ext-link ext-link-type="uri" xlink:href="http://europepmc.org/patents/PAT/US2011065162">http://europepmc.org/patents/PAT/US2011065162</ext-link></element-citation></ref></ref-list></root>',
-         [OrderedDict([('type', u'patent'), ('id', u'bib32'), ('date', u'2011'), ('inventors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'JB Patterson'), ('index', u'Patterson, JB')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DG Lonergan'), ('index', u'Lonergan, DG')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'GA Flynn'), ('index', u'Flynn, GA')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'Z Qingpeng'), ('index', u'Qingpeng, Z')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'PV Pallai'), ('index', u'Pallai, PV')]))])]), ('assignees', [OrderedDict([('type', 'group'), ('name', u'Mankind Corp')])]), ('title', u'IRE-1alpha inhibitors'), ('patentType', u'United States patent'), ('number', u'US20100941530'), ('country', u'United States'), ('uri', u'http://europepmc.org/patents/PAT/US2011065162')])]
+         (read_fixture('test_references_json', 'content_27.xml'),
+          read_fixture('test_references_json', 'content_27_expected.py'),
          ),
 
         # 20352 v2 reference of type patent, with a rewrite of the country value
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">20352</article-id><article-id pub-id-type="doi">10.7554/eLife.20352</article-id></article-meta><ref-list><ref id="bib53"><element-citation publication-type="patent"><person-group person-group-type="inventor"><name><surname>Wang</surname><given-names>L</given-names></name><name><surname>Doherty</surname><given-names>G</given-names></name><name><surname>Wang</surname><given-names>X</given-names></name><name><surname>Tao</surname><given-names>ZF</given-names></name><name><surname>Brunko</surname><given-names>M</given-names></name><name><surname>Kunzer</surname><given-names>AR</given-names></name><name><surname>Wendt</surname><given-names>MD</given-names></name><name><surname>Song</surname><given-names>X</given-names></name><name><surname>Frey</surname><given-names>R</given-names></name><name><surname>Hansen</surname><given-names>TM</given-names></name></person-group><year iso-8601-date="2013">2013</year><article-title>8-carbamoyl-2-(2,3-disubstituted pyrid-6-yl)-1,2,3,4-tetrahydroisoquinoline derivatives as apoptosis - inducing agents for the treatment of cancer and immune and autoimmune diseases</article-title><source>United States Patent</source><patent>WO2013139890 A1</patent></element-citation></ref></ref-list></article></root>',
-         [OrderedDict([('type', u'patent'), ('id', u'bib53'), ('date', u'2013'), ('inventors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Wang'), ('index', u'Wang, L')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'G Doherty'), ('index', u'Doherty, G')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'X Wang'), ('index', u'Wang, X')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'ZF Tao'), ('index', u'Tao, ZF')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Brunko'), ('index', u'Brunko, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'AR Kunzer'), ('index', u'Kunzer, AR')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'MD Wendt'), ('index', u'Wendt, MD')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'X Song'), ('index', u'Song, X')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Frey'), ('index', u'Frey, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'TM Hansen'), ('index', u'Hansen, TM')]))])]), ('title', u'8-carbamoyl-2-(2,3-disubstituted pyrid-6-yl)-1,2,3,4-tetrahydroisoquinoline derivatives as apoptosis - inducing agents for the treatment of cancer and immune and autoimmune diseases'), ('patentType', u'United States Patent'), ('number', u'WO2013139890 A1'), ('country', u'United States')])]
+         (read_fixture('test_references_json', 'content_28.xml'),
+          read_fixture('test_references_json', 'content_28_expected.py'),
          ),
 
         # 20492 v3, report type reference with no publisher-name gets converted to unknown
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib42"><element-citation publication-type="report"><person-group person-group-type="author"><name><surname>World Health Organization</surname></name></person-group><year iso-8601-date="2015">2015</year><source>WHO Glocal Tuberculosis Report 2015</source></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', 'unknown'), ('id', u'bib42'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'World Health Organization'), ('index', u'World Health Organization')]))])]), ('title', u'WHO Glocal Tuberculosis Report 2015'), ('details', u'WHO Glocal Tuberculosis Report 2015')])]
+         (read_fixture('test_references_json', 'content_29.xml'),
+          read_fixture('test_references_json', 'content_29_expected.py'),
          ),
 
         # 15504 v2, reference with a pmid
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib6"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Berni</surname><given-names>J</given-names></name></person-group><year iso-8601-date="2015">2015</year><article-title>Genetic dissection of a regionally differentiated network for exploratory behavior in Drosophila larvae</article-title><source>Current Biology</source><volume><bold>25</bold></volume><fpage>1319</fpage><lpage>1326</lpage><pub-id pub-id-type="doi">10.1016/j.cub.2015.03.023</pub-id><pub-id pub-id-type="pmid">25959962</pub-id></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'journal'), ('id', u'bib6'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Berni'), ('index', u'Berni, J')]))])]), ('articleTitle', u'Genetic dissection of a regionally differentiated network for exploratory behavior in Drosophila larvae'), ('journal', u'Current Biology'), ('volume', u'25'), ('pages', OrderedDict([('first', u'1319'), ('last', u'1326'), ('range', u'1319\u20131326')])), ('doi', u'10.1016/j.cub.2015.03.023'), ('pmid', 25959962)])]
+         (read_fixture('test_references_json', 'content_30.xml'),
+          read_fixture('test_references_json', 'content_30_expected.py'),
          ),
 
         # 15504 v2, reference with an isbn
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib18"><element-citation publication-type="book"><person-group person-group-type="author"><name><surname>Fung</surname><given-names>YC</given-names></name></person-group><year iso-8601-date="2013">2013</year><source>Biomechanics: Mechanical Properties of Living Tissues</source><publisher-loc>New York</publisher-loc><publisher-name>Springer Science &amp; Business Media</publisher-name><pub-id pub-id-type="isbn">978-1-4757-2257-4</pub-id></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'book'), ('id', u'bib18'), ('date', u'2013'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'YC Fung'), ('index', u'Fung, YC')]))])]), ('bookTitle', u'Biomechanics: Mechanical Properties of Living Tissues'), ('publisher', OrderedDict([('name', [u'Springer Science & Business Media']), ('address', OrderedDict([('formatted', [u'New York']), ('components', OrderedDict([('locality', [u'New York'])]))]))])), ('isbn', u'978-1-4757-2257-4')])]
+         (read_fixture('test_references_json', 'content_31.xml'),
+          read_fixture('test_references_json', 'content_31_expected.py'),
          ),
 
         # 18296 v3, reference of type preprint
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib78"><element-citation publication-type="preprint"><person-group person-group-type="author"><name><surname>Ochoa</surname><given-names>D</given-names></name><name><surname>Jonikas</surname><given-names>M</given-names></name><name><surname>Lawrence</surname><given-names>RT</given-names></name><name><surname>El Debs</surname><given-names>B</given-names></name><name><surname>Selkrig</surname><given-names>J</given-names></name><name><surname>Typas</surname><given-names>A</given-names></name><name><surname>Villen</surname><given-names>J</given-names></name><name><surname>Santos</surname><given-names>S</given-names></name><name><surname>Beltrao</surname><given-names>P</given-names></name></person-group><year iso-8601-date="2016">2016</year><article-title>An atlas of human kinase regulation</article-title><source>bioRxiv</source><pub-id pub-id-type="doi">10.1101/067900</pub-id></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'preprint'), ('id', u'bib78'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Ochoa'), ('index', u'Ochoa, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Jonikas'), ('index', u'Jonikas, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'RT Lawrence'), ('index', u'Lawrence, RT')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B El Debs'), ('index', u'El Debs, B')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Selkrig'), ('index', u'Selkrig, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Typas'), ('index', u'Typas, A')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Villen'), ('index', u'Villen, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Santos'), ('index', u'Santos, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Beltrao'), ('index', u'Beltrao, P')]))])]), ('articleTitle', u'An atlas of human kinase regulation'), ('source', u'bioRxiv'), ('doi', u'10.1101/067900'), ('uri', u'https://doi.org/10.1101/067900')])]
+         (read_fixture('test_references_json', 'content_32.xml'),
+          read_fixture('test_references_json', 'content_32_expected.py'),
          ),
 
         # 16394 v2, reference of type thesis with no publisher, convert to unknown
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib6"><element-citation publication-type="thesis"><person-group person-group-type="author"><name><surname>Berret</surname><given-names>B</given-names></name></person-group><year iso-8601-date="2009">2009</year><article-title>Intégration de la force gravitaire dans la planification motrice et le contrôle des mouvements du bras et du corps</article-title><source>PhD. Thesis</source></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', 'unknown'), ('id', u'bib6'), ('date', u'2009'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Berret'), ('index', u'Berret, B')]))])]), ('title', u'Int\xe9gration de la force gravitaire dans la planification motrice et le contr\xf4le des mouvements du bras et du corps'), ('details', u'PhD. Thesis')])]
+         (read_fixture('test_references_json', 'content_33.xml'),
+          read_fixture('test_references_json', 'content_33_expected.py'),
          ),
 
         # 09672 v2, reference of type conference-proceeding with no conference
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">20352</article-id><article-id pub-id-type="doi">10.7554/eLife.20352</article-id></article-meta><ref-list><ref id="bib25"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>RBM</collab></person-group><article-title>Changes to guidance for vector vontrol indicators</article-title><article-title>Meeting Report of the 17th MERG Meeting</article-title><conf-date>15–17th June 2011.</conf-date> <year iso-8601-date="2011">2011</year><conf-loc>New York, USA</conf-loc><uri xlink:href="http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf">http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf</uri></element-citation></ref></ref-list></article></root>',
-        [OrderedDict([('type', 'unknown'), ('id', u'bib25'), ('date', u'2011'), ('authors', [OrderedDict([('type', 'group'), ('name', u'RBM')])]), ('title', u'Changes to guidance for vector vontrol indicators'), ('details', u'15\u201317th June 2011., New York, USA, http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf'), ('uri', u'http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf')])]
+         (read_fixture('test_references_json', 'content_34.xml'),
+          read_fixture('test_references_json', 'content_34_expected.py'),
          ),
 
         # 07460 v1, reference rewriting test, rewrites date and authors
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">07460</article-id><article-id pub-id-type="doi">10.7554/eLife.07460</article-id></article-meta><ref-list><ref id="bib1"><element-citation publication-type="web"><article-title>Fraxinus version1 data analysis</article-title><comment>URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/shyamrallapalli/fraxinus_version1_data_analysis">https://github.com/shyamrallapalli/fraxinus_version1_data_analysis</ext-link></comment></element-citation></ref><ref id="bib2"><element-citation publication-type="web"><article-title>Google api ruby client samples</article-title><comment>URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/google/google-api-ruby-client-samples/tree/master/service_account">https://github.com/google/google-api-ruby-client-samples/tree/master/service_account</ext-link></comment></element-citation></ref></ref-list></article></root>',
-        [OrderedDict([('type', u'unknown'), ('id', u'bib1'), ('date', '2013'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Ghanasyam Rallapalli'), ('index', 'Rallapalli, Ghanasyam')]))])]), ('title', u'Fraxinus version1 data analysis'), ('details', u'URL: https://github.com/shyamrallapalli/fraxinus_version1_data_analysis'), ('uri', u'https://github.com/shyamrallapalli/fraxinus_version1_data_analysis')]), OrderedDict([('type', u'unknown'), ('id', u'bib2'), ('date', '2014'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', 'Steven Bazyl'), ('index', 'Bazyl, Steven')]))])]), ('title', u'Google api ruby client samples'), ('details', u'URL: https://github.com/google/google-api-ruby-client-samples/tree/master/service_account'), ('uri', u'https://github.com/google/google-api-ruby-client-samples/tree/master/service_account')])]
+         (read_fixture('test_references_json', 'content_35.xml'),
+          read_fixture('test_references_json', 'content_35_expected.py'),
          ),
 
         # 20522 v1, reference rewriting year value in json output
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">20522</article-id><article-id pub-id-type="doi">10.7554/eLife.20522</article-id></article-meta><ref-list><ref id="bib42"><element-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Ellegren</surname><given-names>H</given-names></name><name><surname>Galtier</surname><given-names>N</given-names></name></person-group><year iso-8601-date=" 2016"> 2016</year><article-title>Self fertilization and population variability in the higher plants (vol 91, pg 41, 1957)</article-title><source>Nature Reviews Genetics</source><volume>17</volume><fpage>422</fpage><lpage>433</lpage><pub-id pub-id-type="doi">10.1038/nrg.2016.58</pub-id></element-citation></ref></ref-list></article></root>',
-        [OrderedDict([('type', u'journal'), ('id', u'bib42'), ('date', '2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'H Ellegren'), ('index', u'Ellegren, H')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'N Galtier'), ('index', u'Galtier, N')]))])]), ('articleTitle', u'Self fertilization and population variability in the higher plants (vol 91, pg 41, 1957)'), ('journal', u'Nature Reviews Genetics'), ('volume', u'17'), ('pages', OrderedDict([('first', u'422'), ('last', u'433'), ('range', u'422\u2013433')])), ('doi', u'10.1038/nrg.2016.58')])]
+         (read_fixture('test_references_json', 'content_36.xml'),
+          read_fixture('test_references_json', 'content_36_expected.py'),
          ),
 
         # 09520 v2, reference rewriting conference data
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">09520</article-id><article-id pub-id-type="doi">10.7554/eLife.09520</article-id></article-meta><ref-list><ref id="bib35"><element-citation publication-type="confproc"><person-group person-group-type="author"><collab>World Health Organization</collab></person-group><year iso-8601-date="1971">1971</year><conf-name>WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report</conf-name></element-citation></ref></ref-list></article></root>',
-        [
-            OrderedDict([
-                ('type', 'conference-proceeding'),
-                ('id', u'bib35'),
-                ('date', u'1971'),
-                ('authors', [
-                    OrderedDict([
-                        ('type', 'group'),
-                        ('name', u'World Health Organization')
-                    ])
-                ]),
-                ('conference', {
-                    'name': ['WHO Expert Committee on Malaria']
-                }),
-                ('articleTitle', 'WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report'),
-                ('publisher', OrderedDict([
-                    ('name', ['World Health Organization']),
-                    ('address', OrderedDict([
-                        ('formatted', ['Geneva']),
-                        ('components', OrderedDict([
-                            ('locality', ['Geneva'])
-                        ])),
-                    ])),
-                ])),
-            ])
-        ]
+         (read_fixture('test_references_json', 'content_37.xml'),
+          read_fixture('test_references_json', 'content_37_expected.py'),
         ),
 
         # from 00666 kitchen sink example, will add a uri to the references json from the doi value
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib3"><element-citation publication-type="preprint"><person-group person-group-type="author"><name><surname>Bloss</surname><given-names>CS</given-names></name><name><surname>Wineinger</surname><given-names>NE</given-names></name><name><surname>Peters</surname><given-names>M</given-names></name><name><surname>Boeldt</surname><given-names>DL</given-names></name><name><surname>Ariniello</surname><given-names>L</given-names></name><name><surname>Kim</surname><given-names>JL</given-names></name><name><surname>Judy Sheard</surname><given-names>J</given-names></name><name><surname>Komatireddy</surname><given-names>R</given-names></name><name><surname>Barrett</surname><given-names>P</given-names></name><name><surname>Topol</surname><given-names>EJ</given-names></name></person-group><year iso-8601-date="2016">2016</year><article-title>A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors</article-title><source>bioRxiv</source><pub-id pub-id-type="doi">https://doi.org/10.1101/029983</pub-id></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'preprint'), ('id', u'bib3'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'CS Bloss'), ('index', u'Bloss, CS')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'NE Wineinger'), ('index', u'Wineinger, NE')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Peters'), ('index', u'Peters, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'DL Boeldt'), ('index', u'Boeldt, DL')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L Ariniello'), ('index', u'Ariniello, L')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'JL Kim'), ('index', u'Kim, JL')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Judy Sheard'), ('index', u'Judy Sheard, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Komatireddy'), ('index', u'Komatireddy, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Barrett'), ('index', u'Barrett, P')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'EJ Topol'), ('index', u'Topol, EJ')]))])]), ('articleTitle', u'A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors'), ('source', u'bioRxiv'), ('doi', u'10.1101/029983'), ('uri', u'https://doi.org/10.1101/029983')])]
+         (read_fixture('test_references_json', 'content_38.xml'),
+          read_fixture('test_references_json', 'content_38_expected.py'),
          ),
 
         # from 00666 kitchen sink example, reference of type periodical
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib40"><element-citation publication-type="periodical"><person-group person-group-type="author"><name><surname>Schwartz</surname><given-names>J</given-names></name></person-group><string-date><month>September</month> <day>9</day>, <year iso-8601-date="1993-09-09">1993</year></string-date><article-title>Obesity affects economic, social status</article-title><source>The Washington Post</source><fpage>A1</fpage><lpage>A4</lpage></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'periodical'), ('id', u'bib40'), ('date', u'1993-09-09'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Schwartz'), ('index', u'Schwartz, J')]))])]), ('articleTitle', u'Obesity affects economic, social status'), ('periodical', u'The Washington Post'), ('pages', OrderedDict([('first', u'A1'), ('last', u'A4'), ('range', u'A1\u2013A4')]))])]
+         (read_fixture('test_references_json', 'content_39.xml'),
+          read_fixture('test_references_json', 'content_39_expected.py'),
          ),
 
          # 00666 kitchen sink example with a version tag
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib2"><element-citation publication-type="software"><person-group person-group-type="author"><name><surname>Bates</surname><given-names>D</given-names></name><name><surname>Maechler</surname><given-names>M</given-names></name><name><surname>Bolker</surname><given-names>B</given-names></name><name><surname>Walker</surname><given-names>S</given-names></name><name><surname>Haubo Bojesen Christensen</surname><given-names>R</given-names></name><name><surname>Singmann</surname><given-names>H</given-names></name><name><surname>Dai</surname><given-names>B</given-names></name><name><surname>Grothendieck</surname><given-names>G</given-names></name><name><surname>Green</surname><given-names>P</given-names></name></person-group><person-group person-group-type="curator"><name><surname>Bolker</surname><given-names>B</given-names></name></person-group><year iso-8601-date="2016">2016</year><data-title>Lme4: Linear Mixed-Effects Models Using Eigen and S4</data-title><source>CRAN</source><ext-link ext-link-type="uri" xlink:href="https://cran.r-project.org/web/packages/lme4/index.html">https://cran.r-project.org/web/packages/lme4/index.html</ext-link><!-- designator attribute added for version - Feb 8 2017 --><version designator="1.1-12">1.1-12</version></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'software'), ('id', u'bib2'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'D Bates'), ('index', u'Bates, D')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Maechler'), ('index', u'Maechler, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Bolker'), ('index', u'Bolker, B')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Walker'), ('index', u'Walker, S')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'R Haubo Bojesen Christensen'), ('index', u'Haubo Bojesen Christensen, R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'H Singmann'), ('index', u'Singmann, H')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Dai'), ('index', u'Dai, B')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'G Grothendieck'), ('index', u'Grothendieck, G')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'P Green'), ('index', u'Green, P')]))])]), ('curators', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'B Bolker'), ('index', u'Bolker, B')]))])]), ('title', u'Lme4: Linear Mixed-Effects Models Using Eigen and S4'), ('source', u'CRAN'), ('publisher', OrderedDict([('name', [u'CRAN'])])), ('version', u'1.1-12'), ('uri', u'https://cran.r-project.org/web/packages/lme4/index.html')])]
+         (read_fixture('test_references_json', 'content_40.xml'),
+          read_fixture('test_references_json', 'content_40_expected.py'),
         ),
 
          # 23193 v2 book references has editors and no authors
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><ref-list><ref id="bib10"><element-citation publication-type="book"><person-group person-group-type="editor"><name><surname>Ekstrom</surname> <given-names>J</given-names></name></person-group><person-group person-group-type="editor"><name><surname>Garrett</surname> <given-names>J. R</given-names></name></person-group><person-group person-group-type="editor"><name><surname>Anderson</surname> <given-names>L. C</given-names></name></person-group><year iso-8601-date="1998">1998</year><edition>1st edn</edition><source>Glandular Mechanisms of Salivary Secretion (Frontiers of Oral Biology , Vol. 10)</source><publisher-loc>Basel</publisher-loc><publisher-name>S Karger</publisher-name><pub-id pub-id-type="isbn">978-3805566308</pub-id></element-citation></ref></ref-list></root>',
-        [OrderedDict([('type', u'book'), ('id', u'bib10'), ('date', u'1998'), ('editors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Ekstrom'), ('index', u'Ekstrom, J')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J. R Garrett'), ('index', u'Garrett, J. R')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'L. C Anderson'), ('index', u'Anderson, L. C')]))])]), ('bookTitle', u'Glandular Mechanisms of Salivary Secretion (Frontiers of Oral Biology , Vol. 10)'), ('publisher', OrderedDict([('name', [u'S Karger']), ('address', OrderedDict([('formatted', [u'Basel']), ('components', OrderedDict([('locality', [u'Basel'])]))]))])), ('edition', u'1st edn'), ('isbn', u'978-3805566308')])]
+         (read_fixture('test_references_json', 'content_41.xml'),
+          read_fixture('test_references_json', 'content_41_expected.py'),
         ),
 
          # example of data citation with a pub-id accession, based on article 07836
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
-<ref-list><ref id="bib105">
-<element-citation publication-type="data">
-<person-group person-group-type="author">
-<name>
-<surname>Steinbaugh</surname>
-<given-names>MJ</given-names>
-</name>
-<name>
-<surname>Dreyfuss</surname>
-<given-names>JM</given-names>
-</name>
-<name>
-<surname>Blackwell</surname>
-<given-names>TK</given-names>
-</name>
-</person-group>
-<year iso-8601-date="2015">2015</year>
-<data-title>
-RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
-</data-title>
-<source>NCBI Gene Expression Omnibus</source>
-<pub-id pub-id-type="accession" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075">GSE63075</pub-id>
-</element-citation>
-</ref></ref-list></back></article></root>''',
-        [
-            OrderedDict([
-                ('type', u'data'),
-                ('id', u'bib105'),
-                ('date', u'2015'),
-                ('authors', [
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'MJ Steinbaugh'),
-                            ('index', u'Steinbaugh, MJ')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'JM Dreyfuss'),
-                            ('index', u'Dreyfuss, JM')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'TK Blackwell'),
-                            ('index', u'Blackwell, TK')
-                        ]))
-                    ])
-                ]),
-                ('title', u'\nRNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans\n'),
-                ('source', u'NCBI Gene Expression Omnibus'),
-                ('dataId', u'GSE63075')
-            ])
-        ]
+         (read_fixture('test_references_json', 'content_42.xml'),
+          read_fixture('test_references_json', 'content_42_expected.py'),
         ),
 
          # example of data citation with a object-id tag accession, gets converted to unknown because of the comment tag, based on article 07048
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
-<ref-list><ref id="bib15">
-<element-citation publication-type="data">
-<person-group person-group-type="author">
-<name>
-<surname>Bollag</surname>
-<given-names>RJ</given-names>
-</name>
-<name>
-<surname>Siegfried</surname>
-<given-names>Z</given-names>
-</name>
-<name>
-<surname>Cebra-Thomas</surname>
-<given-names>J</given-names>
-</name>
-<name>
-<surname>Garvey</surname>
-<given-names>N</given-names>
-</name>
-<name>
-<surname>Davison</surname>
-<given-names>EM</given-names>
-</name>
-<name>
-<surname>Silver</surname>
-<given-names>LM</given-names>
-</name>
-</person-group>
-<year>1994b</year>
-<data-title>Mus musculus T-box 2 (Tbx2), mRNA</data-title>
-<source>NCBI Nucleotide</source>
-<object-id pub-id-type="art-access-id">NM_009324</object-id>
-<comment>
-<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/nuccore/120407038">http://www.ncbi.nlm.nih.gov/nuccore/120407038</ext-link>
-</comment>
-</element-citation>
-</ref></ref-list></back></article></root>''',
-        [
-            OrderedDict([
-                ('type', 'unknown'),
-                ('id', u'bib15'),
-                ('date', u'1994'),
-                ('authors', [
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'RJ Bollag'),
-                            ('index', u'Bollag, RJ')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'Z Siegfried'),
-                            ('index', u'Siegfried, Z')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'J Cebra-Thomas'),
-                            ('index', u'Cebra-Thomas, J')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'N Garvey'),
-                            ('index', u'Garvey, N')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'EM Davison'),
-                            ('index', u'Davison, EM')
-                        ]))
-                    ]), OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'LM Silver'),
-                            ('index', u'Silver, LM')
-                    ]))
-                ])]),
-                ('title', u'Mus musculus T-box 2 (Tbx2), mRNA'),
-                ('details', u'Mus musculus T-box 2 (Tbx2), mRNA, NCBI Nucleotide, NM_009324, \nhttp://www.ncbi.nlm.nih.gov/nuccore/120407038\n'),
-                ('uri', u'http://www.ncbi.nlm.nih.gov/nuccore/120407038')
-            ])
-        ]
+         (read_fixture('test_references_json', 'content_43.xml'),
+          read_fixture('test_references_json', 'content_43_expected.py'),
         ),
 
          # example of data citation with a pub-id pub-id-type="archive", parse it as an accession number, based on 00666 kitchen sink example
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list>    <ref id="bib34">
-        <element-citation publication-type="data">
-            <person-group person-group-type="author">
-                <name>
-                    <surname>Radoshevich</surname>
-                    <given-names>L</given-names>
-                </name>
-                <name>
-                    <surname>Impens</surname>
-                    <given-names>F</given-names>
-                </name>
-                <name>
-                    <surname>Ribet</surname>
-                    <given-names>D</given-names>
-                </name>
-                <name>
-                    <surname>Quereda</surname>
-                    <given-names>JJ</given-names>
-                </name>
-                <name>
-                    <surname>Nam Tham</surname>
-                    <given-names>T</given-names>
-                </name>
-                <name>
-                    <surname>Nahori</surname>
-                    <given-names>MA</given-names>
-                </name>
-                <name>
-                    <surname>Bierne</surname>
-                    <given-names>H</given-names>
-                </name>
-                <name>
-                    <surname>Dussurget</surname>
-                    <given-names>O</given-names>
-                </name>
-                <name>
-                    <surname>Pizarro-Cerdá</surname>
-                    <given-names>J</given-names>
-                </name>
-                <name>
-                    <surname>Knobeloch</surname>
-                    <given-names>KP</given-names>
-                </name>
-                <name>
-                    <surname>Cossart</surname>
-                    <given-names>P</given-names>
-                </name>
-            </person-group>
-            <year iso-8601-date="2015">2015a</year>
-            <data-title>ISG15 counteracts <italic>Listeria monocytogenes</italic>
-                infection</data-title>
-            <source>ProteomeXchange</source>
-            <pub-id pub-id-type="archive"
-                xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805"
-                >PXD001805</pub-id>
-        </element-citation>
-    </ref></ref-list></back></article></root>''',
-        [
-            OrderedDict([
-                ('type', u'data'),
-                ('id', u'bib34'),
-                ('date', u'2015'),
-                ('discriminator', u'a'),
-                ('authors', [
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'L Radoshevich'),
-                            ('index', u'Radoshevich, L')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'F Impens'),
-                            ('index', u'Impens, F')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'D Ribet'),
-                            ('index', u'Ribet, D')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'JJ Quereda'),
-                            ('index', u'Quereda, JJ')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'T Nam Tham'),
-                            ('index', u'Nam Tham, T')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'MA Nahori'),
-                            ('index', u'Nahori, MA')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'H Bierne'),
-                            ('index', u'Bierne, H')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'O Dussurget'),
-                            ('index', u'Dussurget, O')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'J Pizarro-Cerd\xe1'),
-                            ('index', u'Pizarro-Cerd\xe1, J')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'KP Knobeloch'),
-                            ('index', u'Knobeloch, KP')])
-                         )]),
-                    OrderedDict([
-                        ('type', 'person'),
-                        ('name', OrderedDict([
-                            ('preferred', u'P Cossart'),
-                            ('index', u'Cossart, P')])
-                        )])
-                    ]),
-                ('title', u'ISG15 counteracts <i>Listeria monocytogenes</i>\n                infection'),
-                ('source', u'ProteomeXchange'),
-                ('dataId', u'PXD001805'),
-                ('uri', u'http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805')
-            ])
-        ])
-
+         (read_fixture('test_references_json', 'content_44.xml'),
+          read_fixture('test_references_json', 'content_44_expected.py'),
+        ),
         )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.references_json(body_tag)
+        tag_content = parser.references_json(soup)
         self.assertEqual(expected, tag_content)
 
 

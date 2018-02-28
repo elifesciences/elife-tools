@@ -1,0 +1,13 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib1">
+            <element-citation publication-type="web">
+                <person-group person-group-type="author">
+                    <collab>The World Health Organization</collab>
+                </person-group>
+                <year>2014</year>
+                <ext-link ext-link-type="uri" xlink:href="http://www.who.int/topics/dengue/en/">http://www.who.int/topics/dengue/en/</ext-link>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
