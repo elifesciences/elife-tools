@@ -1061,77 +1061,20 @@ class TestParseJats(unittest.TestCase):
 
     @data(
         # standard expected author with name tag
-        ('''<root>
-         <article>
-         <article-meta>
-         <contrib-group>
-         <contrib contrb-type="author">
-         <name>
-         <surname>Author</surname>
-         <given-names>A Real</given-names>
-         <suffix>Jnr</suffix>
-         </name>
-         </contrib>
-         </contrib-group>
-         </article-meta>
-         </article>
-         </root>''',
-         {'given-names': 'A Real', 'suffix': 'Jnr', 'surname': 'Author'}
+        (read_fixture('test_format_contributor', 'content_01.xml'),
+         read_fixture('test_format_contributor', 'content_01_expected.py'),
         ),
         # edge case, no valid contrib tags
-        ('''<root>
-         <article>
-         <article-meta>
-         <contrib-group>
-         <contrib></contrib>
-         </contrib-group>
-         </article-meta>
-         </article>
-         </root>''',
-         {}
+        (read_fixture('test_format_contributor', 'content_02.xml'),
+         read_fixture('test_format_contributor', 'content_02_expected.py'),
         ),
         # edge case, string-name wrapper
-        ('''<root>
-         <article>
-         <article-meta>
-         <contrib-group>
-         <contrib contrb-type="author">
-         <string-name>
-         <given-names>A Real</given-names>
-         <surname>Author</surname>
-         ,
-         <suffix>Jnr</suffix>
-         </string-name>
-         </contrib>
-         </contrib-group>
-         </article-meta>
-         </article>
-         </root>''',
-         {'given-names': 'A Real', 'suffix': 'Jnr', 'surname': 'Author'}
+        (read_fixture('test_format_contributor', 'content_03.xml'),
+         read_fixture('test_format_contributor', 'content_03_expected.py'),
         ),
         # edge case, incorrect aff tag xref values will not cause an error if aff tag is not found
-        ('''<root>
-         <article>
-         <article-meta>
-         <contrib-group>
-         <contrib contrb-type="author">
-         <name>
-         <surname>Author</surname>
-         <given-names>A Real</given-names>
-         <xref ref-type="aff" rid="a1 a2"/>
-         </name>
-         </contrib>
-         <aff id="a1">
-         <institution>School of XML, U. XML Madrid</institution>, <addr-line>28040 Madrid</addr-line>, <country>Spain</country>;
-         </aff>
-         <aff id="a2">
-         <institution>Center for XML Research, XML University</institution>, <addr-line>Stanford, California 94305</addr-line>; e-mail: <email>not_real@example.org</email>
-         </aff>
-         </contrib-group>
-         </article-meta>
-         </article>
-         </root>''',
-         {'given-names': 'A Real', 'references': {'affiliation': ['a1 a2']}, 'surname': 'Author'}
+        (read_fixture('test_format_contributor', 'content_04.xml'),
+         read_fixture('test_format_contributor', 'content_04_expected.py'),
         ),
     )
     @unpack
