@@ -1,0 +1,10 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <list list-type="alpha-upper">
+        <list-item>
+            <p>List paragraph one</p>
+        </list-item>
+        <list-item>
+            <p>List paragraph two</p>
+        </list-item>
+    </list>
+</root>

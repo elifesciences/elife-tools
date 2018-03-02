@@ -1,0 +1,10 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <media content-type="glencoe play-in-place height-250 width-310" id="video1" mime-subtype="avi" mimetype="video" xlink:href="elife00007v001.AVI">
+        <object-id pub-id-type="doi">10.7554/eLife.00007.016</object-id>
+        <label>Video 1.</label>
+        <caption>
+            <p>On-plant assay, plant 7u, WT, June 18, 2011.</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00007.016">http://dx.doi.org/10.7554/eLife.00007.016</ext-link></p>
+        </caption>
+    </media>
+</root>

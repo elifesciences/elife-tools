@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <media content-type="glencoe play-in-place height-250 width-310" id="media2" mime-subtype="mov" mimetype="video" xlink:href="elife-00005-media2.mov">
+        <object-id pub-id-type="doi">10.7554/eLife.00005.016</object-id>
+        <label>Movie 2.</label>
+        <caption>
+            <title>3D reconstruction of the human PRC2-AEBP2 complex.</title>
+            <p>Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link></p>
+            <p>
+                <supplementary-material id="SD1-data">
+                    <object-id pub-id-type="doi">10.7554/eLife.00005.017</object-id>
+                    <label>Movie 2—source code 1.</label>
+                    <caption>
+                        <p>Overall architecture of the PRC2 complex.</p>
+                        <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.017">http://dx.doi.org/10.7554/eLife.00005.017</ext-link></p>
+                    </caption>
+                    <media mime-subtype="wrl" mimetype="application" xlink:href="elife-00005-media2-code1-v1.wrl"/>
+                </supplementary-material>
+            </p>
+        </caption>
+    </media>
+</root>

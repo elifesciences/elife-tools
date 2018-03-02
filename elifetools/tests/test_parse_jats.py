@@ -1406,360 +1406,190 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root><sec sec-type="intro" id="s1"><title>Introduction <italic>section</italic></title><p>content</p></sec></root>',
-         OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Introduction <i>section</i>')])
+         (read_fixture('test_body_block_content', 'content_01.xml'),
+          read_fixture('test_body_block_content', 'content_01_expected.py'),
          ),
 
-        ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',
-         OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1'), ('title', u'Box title')])
+         (read_fixture('test_body_block_content', 'content_02.xml'),
+          read_fixture('test_body_block_content', 'content_02_expected.py'),
          ),
 
-        ('<root><p>content</p></root>',
-         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         (read_fixture('test_body_block_content', 'content_03.xml'),
+          read_fixture('test_body_block_content', 'content_03_expected.py'),
          ),
 
-        ('<root><p>content<table-wrap><table><thead><tr><th/><th></tr><tbody><tr><td></td></tr></tbody></table></table-wrap></p></root>',
-         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         (read_fixture('test_body_block_content', 'content_04.xml'),
+          read_fixture('test_body_block_content', 'content_04_expected.py'),
          ),
 
-        ('<root><p>content<disp-formula><mml:math><mml:mtext>Body\u2009Mass</mml:mtext></mml:mtext></disp-formula></p></root>',
-         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         (read_fixture('test_body_block_content', 'content_05.xml'),
+          read_fixture('test_body_block_content', 'content_05_expected.py'),
          ),
 
-        ('<root><p>content<fig-group><fig></fig><fig></fig></fig-group></p></root>',
-         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         (read_fixture('test_body_block_content', 'content_06.xml'),
+          read_fixture('test_body_block_content', 'content_06_expected.py'),
          ),
 
-        ('<root><p>content<fig></fig></p></root>',
-         OrderedDict([('type', 'paragraph'), ('text', u'content')])
+         (read_fixture('test_body_block_content', 'content_07.xml'),
+          read_fixture('test_body_block_content', 'content_07_expected.py'),
          ),
 
-        ('<root><p><fig id="fig7" position="float"><graphic xlink:href="elife-00498-fig7-v1.tif"/></fig></p></root>',
-         OrderedDict([('type', 'paragraph')])
+         (read_fixture('test_body_block_content', 'content_08.xml'),
+          read_fixture('test_body_block_content', 'content_08_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><caption><title>Fig title not in a paragraph</title></caption><graphic xlink:href="elife-00639-fig1-v1.tif"/></fig></root>',
-        OrderedDict([
-            ('type', 'image'),
-            ('id', u'fig1'),
-            ('title', u'Fig title not in a paragraph'),
-            ('image', {'alt': '', 'uri': u'elife-00639-fig1-v1.tif'})
-        ])
+         (read_fixture('test_body_block_content', 'content_09.xml'),
+          read_fixture('test_body_block_content', 'content_09_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'})])])])
+         (read_fixture('test_body_block_content', 'content_10.xml'),
+          read_fixture('test_body_block_content', 'content_10_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption/><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])])])
+         (read_fixture('test_body_block_content', 'content_11.xml'),
+          read_fixture('test_body_block_content', 'content_11_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([
-             ('type', 'figure'),
-             ('assets', [OrderedDict([
-                 ('type', 'image'),
-                 ('id', u'fig8'),
-                 ('label', u'Reviewers\u2019 figure 1'),
-                 ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'First sentence')])]), 
-                 ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})
-             ])])
-         ])
+         (read_fixture('test_body_block_content', 'content_12.xml'),
+          read_fixture('test_body_block_content', 'content_12_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig8" position="float"><label>Reviewers’ figure 1</label><caption><p>First sentence. Second sentence.</p></caption><graphic xlink:href="elife-00723-resp-fig1-v1.tif"/></fig></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('id', u'fig8'), ('label', u'Reviewers\u2019 figure 1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'First sentence. Second sentence.')])]), ('image', {'alt': '', 'uri': u'elife-00723-resp-fig1-v1.tif'})])])])
+         (read_fixture('test_body_block_content', 'content_13.xml'),
+          read_fixture('test_body_block_content', 'content_13_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><attrib>PHOTO CREDIT</attrib></fig></root>',
-         OrderedDict([
-             ('type', 'figure'),
-             ('assets', [OrderedDict([
-                 ('type', 'image'),
-                 ('doi', u'10.7554/eLife.00666.024'),
-                 ('id', u'fig1'),
-                 ('label', u'Figure 1'),
-                 ('title', u'Figure title'),
-                 ('caption', [OrderedDict([
-                     ('type', 'paragraph'),
-                     ('text', u'Figure caption')
-                 ])]), 
-                 ('image', {
-                     'alt': '', 
-                     'uri': u'elife-00666-fig1-v1.tif',
-                     'attribution': [u'PHOTO CREDIT'],
-                 }),
-             ])])
-         ])),
+         (read_fixture('test_body_block_content', 'content_14.xml'),
+          read_fixture('test_body_block_content', 'content_14_expected.py'),
+         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/><permissions><copyright-statement>© 1991, Publisher 1, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 1</copyright-holder><license><license-p>The in situ image in panel 3 is reprinted with permission from Figure 2D, <xref ref-type="bibr" rid="bib72">Small et al. (1991)</xref>, <italic>Test &amp; Automated</italic>.</license-p></license></permissions><permissions><copyright-statement>© 1991, Publisher 2, All Rights Reserved</copyright-statement><copyright-year>1991</copyright-year><copyright-holder>Publisher 2</copyright-holder><license><license-p>In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <xref ref-type="bibr" rid="bib74">Stanojevic et al. (1991)</xref>, <italic>Journal</italic>.</license-p></license></permissions></fig></root>',
-         OrderedDict([
-             ('type', 'figure'),
-             ('assets', [OrderedDict([
-                 ('type', 'image'),
-                 ('doi', u'10.7554/eLife.00666.024'),
-                 ('id', u'fig1'),
-                 ('label', u'Figure 1'),
-                 ('title', u'Figure title'), 
-                 ('caption', [OrderedDict([
-                     ('type', 'paragraph'),
-                     ('text', u'Figure caption')
-                 ])]),
-                 ('image', OrderedDict([
-                     ('uri', u'elife-00666-fig1-v1.tif'),
-                     ('alt', u''),
-                     ('attribution', [
-                        u'\u00a9 1991, Publisher 1, All Rights Reserved. The in situ image in panel 3 is reprinted with permission from Figure 2D, <a href="#bib72">Small et al. (1991)</a>, <i>Test &amp; Automated</i>.', 
-                        u'\u00a9 1991, Publisher 2, All Rights Reserved. In situ images in panels 4 and 5 are reprinted with permission from Figure 3A and 3C, <a href="#bib74">Stanojevic et al. (1991)</a>, <i>Journal</i>.'
-                    ])
-                 ])),
-             ])])
-         ])),
+         (read_fixture('test_body_block_content', 'content_15.xml'),
+          read_fixture('test_body_block_content', 'content_15_expected.py'),
+         ),
 
         # example of copyright statements ending in a full stop, based on article 27041
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.27041.006</object-id><label>Figure 3.</label><caption><title>Developmental trajectories.</title><p>Each plot shows single cells (dots; colored by trajectory assignment, sampled time point, or developmental stage) embedded in low-dimensional space based on their RNA (<bold>A-C</bold>) or protein (<bold>D</bold>) profiles, using different methods for dimensionality reduction and embedding: Gaussian process patent variable model (<bold>A</bold>); t-stochastic neighborhood embedding (<bold>B</bold>, <bold>D</bold>); diffusion maps (<bold>C</bold>). Computational methods then identify trajectories of pseudo-temporal progression in each case. (<bold>A</bold>) Myoblast differentiation in vitro. (<bold>B</bold>) Neurogenesis in the mouse brain dentate gyrus. (<bold>C</bold>) Embryonic stem cell differentiation in vitro. (<bold>D</bold>) Early hematopoiesis.</p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-27041-fig3-v2"/><permissions><copyright-statement>© 2017 AAAS.</copyright-statement><copyright-year>2017</copyright-year><copyright-holder>AAAS</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3A</xref> reprinted from <xref ref-type="bibr" rid="bib109">Lönnberg et al., 2017</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 AAAS.</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>AAAS</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3B</xref> reprinted from <xref ref-type="bibr" rid="bib67">Habib et al., 2016a</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 Macmillan Publishers Limited. </copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Macmillan Publishers Limited</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3C</xref> adapted from <xref ref-type="bibr" rid="bib70">Haghverdi et al., 2016</xref> with permission.</license-p></license></permissions><permissions><copyright-statement>© 2016 Macmillan Publishers Limited.</copyright-statement><copyright-year>2016</copyright-year><copyright-holder>Macmillan Publishers Limited</copyright-holder><license><license-p><xref ref-type="fig" rid="fig3">Figure 3D</xref> adapted from <xref ref-type="bibr" rid="bib157">Setty et al., 2016</xref> with permission.</license-p></license></permissions></fig></root>',
-         OrderedDict([
-            ('type', 'figure'),
-            ('assets', [
-                OrderedDict([
-                    ('type', 'image'),
-                    ('doi', u'10.7554/eLife.27041.006'),
-                    ('id', u'fig3'),
-                    ('label', u'Figure 3'),
-                    ('title', u'Developmental trajectories.'),
-                    ('caption', [
-                        OrderedDict([
-                            ('type', 'paragraph'),
-                            ('text', u'Each plot shows single cells (dots; colored by trajectory assignment, sampled time point, or developmental stage) embedded in low-dimensional space based on their RNA (<b>A-C</b>) or protein (<b>D</b>) profiles, using different methods for dimensionality reduction and embedding: Gaussian process patent variable model (<b>A</b>); t-stochastic neighborhood embedding (<b>B</b>, <b>D</b>); diffusion maps (<b>C</b>). Computational methods then identify trajectories of pseudo-temporal progression in each case. (<b>A</b>) Myoblast differentiation in vitro. (<b>B</b>) Neurogenesis in the mouse brain dentate gyrus. (<b>C</b>) Embryonic stem cell differentiation in vitro. (<b>D</b>) Early hematopoiesis.')
-                        ])
-                    ]),
-                    ('image', OrderedDict([
-                        ('uri', u'elife-27041-fig3-v2'),
-                        ('alt', ''),
-                        ('attribution', [
-                            u'\xa9 2017 AAAS. <a href="#fig3">Figure 3A</a> reprinted from <a href="#bib109">L\xf6nnberg et al., 2017</a> with permission.', u'\xa9 2016 AAAS. <a href="#fig3">Figure 3B</a> reprinted from <a href="#bib67">Habib et al., 2016a</a> with permission.', u'\xa9 2016 Macmillan Publishers Limited. <a href="#fig3">Figure 3C</a> adapted from <a href="#bib70">Haghverdi et al., 2016</a> with permission.', u'\xa9 2016 Macmillan Publishers Limited. <a href="#fig3">Figure 3D</a> adapted from <a href="#bib157">Setty et al., 2016</a> with permission.'
-                        ])
-                    ]))
-                ])
-            ])
-        ])),
+         (read_fixture('test_body_block_content', 'content_16.xml'),
+          read_fixture('test_body_block_content', 'content_16_expected.py'),
+         ),
 
          # example of video with attributions, based on article 17243
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-17243-media1.mp4"><object-id pub-id-type="doi">10.7554/eLife.17243.015</object-id><label>Video 1.</label><caption><title>Response to gaps (stimulus-reappearance lock).</title><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17243.015">http://dx.doi.org/10.7554/eLife.17243.015</ext-link></p></caption><permissions><license><license-p>Face photographs: Owen Lucas. Available on Flickr under the Public Domain Mark 1.0 <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">https://creativecommons.org/publicdomain/mark/1.0/</ext-link>). <ext-link ext-link-type="uri" xlink:href="https://www.flickr.com/photos/144006675@N05/27487033282">https://www.flickr.com/photos/144006675@N05/27487033282</ext-link>. Accessed on August 2016.</license-p></license></permissions></media></root>',
-         OrderedDict([
-            ('type', 'figure'),
-            ('assets', [
-                OrderedDict([
-                    ('type', 'video'),
-                    ('doi', u'10.7554/eLife.17243.015'),
-                    ('id', u'media1'),
-                    ('label', u'Video 1'),
-                    ('title', u'Response to gaps (stimulus-reappearance lock).'),
-                    ('attribution', [
-                        'Face photographs: Owen Lucas. Available on Flickr under the Public Domain Mark 1.0 <a href="https://creativecommons.org/publicdomain/mark/1.0/">https://creativecommons.org/publicdomain/mark/1.0/</a>). <a href="https://www.flickr.com/photos/144006675@N05/27487033282">https://www.flickr.com/photos/144006675@N05/27487033282</a>. Accessed on August 2016.'
-                    ]),
-                    ('uri', u'elife-17243-media1.mp4')
-                ])
-            ])
-        ])),
-
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/></supplementary-material></p></caption><graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/></fig></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.012'), ('id', u'fig3s1'), ('label', u'Figure 3\u2014figure supplement 1'), ('title', u'Title of the figure supplement'), ('image', {'alt': '', 'uri': u'elife-00666-fig3-figsupp1-v1.tiff'}), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00666.013'), ('id', u'SD1-data'), ('label', u'Figure 3\u2014figure supplement 1\u2014Source data 1'), ('title', u'Title of the figure supplement source data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Legend of the figure supplement source data.')])]), ('mediaType', u'application/xlsx'), ('uri', u'elife-00666-fig3-figsupp1-data1-v1.xlsx'), ('filename', u'elife-00666-fig3-figsupp1-data1-v1.xlsx')])])])])])
+         (read_fixture('test_body_block_content', 'content_17.xml'),
+          read_fixture('test_body_block_content', 'content_17_expected.py'),
          ),
 
-        ('<root><table-wrap id="tbl2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00013.011</object-id><label>Table 2.</label><caption><p>Caption <xref ref-type="table-fn" rid="tblfn2">*</xref>content</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00013.011">http://dx.doi.org/10.7554/eLife.00013.011</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th>Species</th><th>Reference<xref ref-type="table-fn" rid="tblfn3">*</xref></th></tr></thead><tbody><tr><td><italic>Algoriphagus machipongonensis</italic> PR1</td><td><xref ref-type="bibr" rid="bib3">Alegado et al. (2012)</xref></td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><label>*</label><p>Footnote 1</p></fn><fn id="tblfn3"><label>§</label><p>CM = conditioned medium;</p></fn><fn><p>MP, Middle Pleistocene.</p></fn><fn id="id_not_used"><p>Footnote parsed with no id</p></fn></table-wrap-foot></table-wrap></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.00013.011'), ('id', u'tbl2'), ('label', u'Table 2'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption <a href="#tblfn2">*</a>content')])]), ('tables', ['<table><thead><tr><th>Species</th><th>Reference<a href="#tblfn3">*</a></th></tr></thead><tbody><tr><td><i>Algoriphagus machipongonensis</i> PR1</td><td><a href="#bib3">Alegado et al. (2012)</a></td></tr></tbody></table>']), ('footnotes', [OrderedDict([('id', u'tblfn1'), ('label', u'*'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote 1')])])]), OrderedDict([('id', u'tblfn3'), ('label', u'\xa7'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'CM = conditioned medium;')])])]), OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'MP, Middle Pleistocene.')])])]), OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'Footnote parsed with no id')])])])])])])])
-        ),
-
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML"><disp-formula id="equ7"><label>(3)</label><mml:math id="m7"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mrow><mml:mo>(</mml:mo><mml:mi>I</mml:mi><mml:mi>O</mml:mi><mml:mo>)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>0.1</mml:mn><mml:mo>+</mml:mo><mml:mfrac><mml:mrow><mml:mn>0.5</mml:mn></mml:mrow><mml:mrow><mml:mo>(</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>0.3</mml:mn><mml:mrow><mml:mo>(</mml:mo><mml:mi>I</mml:mi><mml:msub><mml:mi>N</mml:mi><mml:mrow><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi></mml:mrow></mml:msub><mml:mo>-</mml:mo><mml:mn>100</mml:mn><mml:mo>)</mml:mo></mml:mrow></mml:mrow></mml:msup><mml:mo>)</mml:mo></mml:mrow></mml:mfrac></mml:mrow></mml:math></disp-formula></root>',
-        OrderedDict([('type', 'mathml'), ('id', u'equ7'), ('label', u'(3)'), ('mathml', u'<math><mrow><msub><mi>P</mi><mrow><mi>k</mi><mo>,</mo><mi>j</mi></mrow></msub><mrow><mo>(</mo><mi>I</mi><mi>O</mi><mo>)</mo></mrow><mo>=</mo><mn>0.1</mn><mo>+</mo><mfrac><mrow><mn>0.5</mn></mrow><mrow><mo>(</mo><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>-</mo><mn>0.3</mn><mrow><mo>(</mo><mi>I</mi><msub><mi>N</mi><mrow><mi>k</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>-</mo><mn>100</mn><mo>)</mo></mrow></mrow></msup><mo>)</mo></mrow></mfrac></mrow></math>')])
-        ),
-
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list><list-item>List item one</list-item><list-item>List item two</list-item></root>',
-         OrderedDict([('type', 'list'), ('prefix', 'none'), ('items', [u'List item one', u'List item two'])])
+         (read_fixture('test_body_block_content', 'content_18.xml'),
+          read_fixture('test_body_block_content', 'content_18_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="order"><list-item>List item one</list-item><list-item>List item two</list-item></root>',
-         OrderedDict([('type', 'list'), ('prefix', 'number'), ('items', [u'List item one', u'List item two'])])
+         (read_fixture('test_body_block_content', 'content_19.xml'),
+          read_fixture('test_body_block_content', 'content_19_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="alpha-upper"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
-         OrderedDict([('type', 'list'), ('prefix', 'alpha-upper'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')])], [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])]])])
+         (read_fixture('test_body_block_content', 'content_20.xml'),
+          read_fixture('test_body_block_content', 'content_20_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="simple"><list-item><p>List paragraph one</p></list-item><list-item><p>List paragraph two</p></list-item></root>',
-         OrderedDict([('type', 'list'), ('prefix', 'none'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'List paragraph one')])], [OrderedDict([('type', 'paragraph'), ('text', u'List paragraph two')])]])])
+         (read_fixture('test_body_block_content', 'content_21.xml'),
+          read_fixture('test_body_block_content', 'content_21_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media mime-subtype="xlsx" mimetype="application" xlink:href="elife00051s001.xlsx"/></root>',
-         OrderedDict()
+         (read_fixture('test_body_block_content', 'content_22.xml'),
+          read_fixture('test_body_block_content', 'content_22_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="video1" mime-subtype="avi" mimetype="video" xlink:href="elife00007v001.AVI"><object-id pub-id-type="doi">10.7554/eLife.00007.016</object-id><label>Video 1.</label><caption><p>On-plant assay, plant 7u, WT, June 18, 2011.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00007.016">http://dx.doi.org/10.7554/eLife.00007.016</ext-link></p></caption></media></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00007.016'), ('id', u'video1'), ('label', u'Video 1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'On-plant assay, plant 7u, WT, June 18, 2011.')])]), ('uri', u'elife00007v001.AVI')])])])
+         (read_fixture('test_body_block_content', 'content_23.xml'),
+          read_fixture('test_body_block_content', 'content_23_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media content-type="glencoe play-in-place height-250 width-310" id="media2" mime-subtype="mov" mimetype="video" xlink:href="elife-00005-media2.mov"><object-id pub-id-type="doi">10.7554/eLife.00005.016</object-id><label>Movie 2.</label><caption><title>3D reconstruction of the human PRC2-AEBP2 complex.</title><p>Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.016">http://dx.doi.org/10.7554/eLife.00005.016</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00005.017</object-id><label>Movie 2—source code 1.</label><caption><p>Overall architecture of the PRC2 complex.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00005.017">http://dx.doi.org/10.7554/eLife.00005.017</ext-link></p></caption><media mime-subtype="wrl" mimetype="application" xlink:href="elife-00005-media2-code1-v1.wrl"/></supplementary-material></p></caption></media>',
-        OrderedDict([
-            ('type', 'figure'),
-            ('assets', [
-                OrderedDict([
-                    ('type', 'video'),
-                    ('doi', u'10.7554/eLife.00005.016'),
-                    ('id', u'media2'),
-                    ('label', u'Movie 2'),
-                    ('title', u'3D reconstruction of the human PRC2-AEBP2 complex.'),
-                    ('caption', [
-                        OrderedDict([
-                            ('type', 'paragraph'),
-                            ('text', u'Docking of crystal structure for EED and RbAp48 WD40s (PDB: 2QXV; 2YB8) are indicated respectively in green and red. Docking of crystal structures of homologue SANT, SET and Zn finger domains (PDB: 3HM5, 3H6L and 2VY5) are shown in blue and purple.')
-                        ])
-                    ]),
-                    ('uri', u'elife-00005-media2.mov'),
-                    ('sourceData', [
-                        OrderedDict([
-                            ('doi', u'10.7554/eLife.00005.017'),
-                            ('id', u'SD1-data'),
-                            ('label', u'Movie 2\u2014source code 1'),
-                            ('caption', [
-                                OrderedDict([
-                                    ('type', 'paragraph'),
-                                    ('text', u'Overall architecture of the PRC2 complex.')
-                                ])
-                            ]),
-                            ('mediaType', u'application/wrl'),
-                            ('uri', u'elife-00005-media2-code1-v1.wrl'),
-                            ('filename', u'elife-00005-media2-code1-v1.wrl')
-                        ])
-                    ])
-                ])
-            ])
-        ])
+         (read_fixture('test_body_block_content', 'content_24.xml'),
+          read_fixture('test_body_block_content', 'content_24_expected.py'),
          ),
 
-        ('<root><disp-quote><p>content</p></disp-quote></root>',
-         OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])
+        # media tag that is not a video
+         (read_fixture('test_body_block_content', 'content_25.xml'),
+          read_fixture('test_body_block_content', 'content_25_expected.py'),
+         ),
+
+         (read_fixture('test_body_block_content', 'content_26.xml'),
+          read_fixture('test_body_block_content', 'content_26_expected.py'),
+         ),
+
+         (read_fixture('test_body_block_content', 'content_27.xml'),
+          read_fixture('test_body_block_content', 'content_27_expected.py'),
+         ),
+
+         (read_fixture('test_body_block_content', 'content_28.xml'),
+          read_fixture('test_body_block_content', 'content_28_expected.py'),
          ),
 
         # disp-quote content-type="editor-comment" is turned into an excerpt block
-        ('<root><disp-quote content-type="editor-comment"><p><italic>content</italic></p></disp-quote></root>',
-         OrderedDict([('type', 'excerpt'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'<i>content</i>')])])])
+         (read_fixture('test_body_block_content', 'content_29.xml'),
+          read_fixture('test_body_block_content', 'content_29_expected.py'),
          ),
 
         # 00109 v1, figure with a supplementary file that has multiple caption paragraphs
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig2" position="float"><object-id pub-id-type="doi">10.7554/eLife.00109.004</object-id><label>Figure 2.</label><caption><p>Imaging of donor/acceptor interface morphologies by cryo-EM before and after Ca<sup>2+</sup> addition. (<bold>A–F</bold>) Cryo-EM images of mixtures of donor (synaptobrevin and synaptotagmin 1) and acceptor (syntaxin and SNAP-25) vesicles before (<bold>A–C</bold>) and approximately 35 s after (<bold>D–F</bold>) 500 μM Ca<sup>2+</sup> addition (panels B, C, E, and F are close-up views). Vesicles were imaged in the holes of the substrate carbon film, visible as the darker areas in the image, in conditions that clearly show the lipid bilayers (‘Materials and methods’). The particular images shown in this figure were selected out of total of 16 (before Ca<sup>2+</sup> addition) and 21 (after Ca<sup>2+</sup> addition) EM micrographs, respectively, with emphasis on showing point contacts before Ca<sup>2+</sup> addition and extended interfaces after Ca<sup>2+</sup> addition in order to illustrate the variety of these particular states. Arrows indicate interfaces between vesicles that are approximately perpendicular to the direction of the projection (see ‘Materials and methods’ for definitions of all contact and interface types). Large black arrow: point contact (representative close-up in B), small black/white arrow: hemifusion diaphragm (representative close-ups in C and E), and large white arrow: extended close contact (representative close-up in F). Scale bars in A and D are 100 nm, and 20 nm in B, C, E, and F. (<bold>G</bold>) Distribution of vesicle sizes before and after Ca<sup>2+</sup> addition. Vesicle diameters were calculated from all cryo-EM images in both conditions (‘Materials and methods’). (<bold>H</bold>) Bar graph of the percentage of various vesicle interfaces, that is, point contacts, hemifusion diaphragms, and extended close contacts (including a few instances of mixed, i.e., extended/hemifused, interfaces), normalized with respect to the total number of interfaces observed before and after addition of 500 μM Ca<sup>2+</sup>, respectively (‘Materials and methods’). In addition to the changes in the distribution of vesicle interfaces upon Ca<sup>2+</sup> addition, some amount of complete fusion between vesicles occurred as indicated by the shift of the diameter distribution in panel G towards larger values. Source files of all cryo-EM micrographs used for the quantitative analysis are available in the <xref ref-type="supplementary-material" rid="SD1-data">Figure 2—source data 1</xref>.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00109.004">http://dx.doi.org/10.7554/eLife.00109.004</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00109.005</object-id><label>Figure 2—source data 1.</label><caption><title>Source files for cryo-EM data.</title><p>This zip archive contains all cryo-EM images used for the quantitative analyses shown in Fig. 2. The folder named “No_Ca++” contains the images before Ca++ addition (individual files are named P3_1_**. tif or jpg), and folder named “With_Ca++” contains the images ∼35s after Ca++ addition (individual files are named P3_3_**.tif or jpg).</p><p>Images were collected in low dose conditions at 200 kV acceleration voltage on a CM200 FEG electron microscope (FEI) with a 2k × 2k Gatan UltraScan 1000 camera, at 50,000× magnification and 1.5 mm underfocus.</p><p>The full resolution data were exported as 16 bit “tif” files (2048 × 2048 pixels, scale 0.2 nm/pixel at specimen (the corresponding files have the extension “tif”). Note that these files cannot not be viewed with a standard picture viewer, but must be viewed with a program, such as “ImageJ”. To facilitate easier viewing, the original images were converted to smaller (1024×1024, 0.4 nm/pixel), contrast adjusted jpeg images (8 bits) for easy and immediate visualization with commonly used picture viewers (the corresponding files have the extension “jpg”).</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00109.005">http://dx.doi.org/10.7554/eLife.00109.005</ext-link></p></caption><media mime-subtype="zip" mimetype="application" xlink:href="elife-00109-fig2-data1-v1.zip"/></supplementary-material></p></caption><graphic xlink:href="elife-00109-fig2-v1.tif"/></fig>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00109.004'), ('id', u'fig2'), ('label', u'Figure 2'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Imaging of donor/acceptor interface morphologies by cryo-EM before and after Ca<sup>2+</sup> addition. (<b>A\u2013F</b>) Cryo-EM images of mixtures of donor (synaptobrevin and synaptotagmin 1) and acceptor (syntaxin and SNAP-25) vesicles before (<b>A\u2013C</b>) and approximately 35 s after (<b>D\u2013F</b>) 500 \u03bcM Ca<sup>2+</sup> addition (panels B, C, E, and F are close-up views). Vesicles were imaged in the holes of the substrate carbon film, visible as the darker areas in the image, in conditions that clearly show the lipid bilayers (\u2018Materials and methods\u2019). The particular images shown in this figure were selected out of total of 16 (before Ca<sup>2+</sup> addition) and 21 (after Ca<sup>2+</sup> addition) EM micrographs, respectively, with emphasis on showing point contacts before Ca<sup>2+</sup> addition and extended interfaces after Ca<sup>2+</sup> addition in order to illustrate the variety of these particular states. Arrows indicate interfaces between vesicles that are approximately perpendicular to the direction of the projection (see \u2018Materials and methods\u2019 for definitions of all contact and interface types). Large black arrow: point contact (representative close-up in B), small black/white arrow: hemifusion diaphragm (representative close-ups in C and E), and large white arrow: extended close contact (representative close-up in F). Scale bars in A and D are 100 nm, and 20 nm in B, C, E, and F. (<b>G</b>) Distribution of vesicle sizes before and after Ca<sup>2+</sup> addition. Vesicle diameters were calculated from all cryo-EM images in both conditions (\u2018Materials and methods\u2019). (<b>H</b>) Bar graph of the percentage of various vesicle interfaces, that is, point contacts, hemifusion diaphragms, and extended close contacts (including a few instances of mixed, i.e., extended/hemifused, interfaces), normalized with respect to the total number of interfaces observed before and after addition of 500 \u03bcM Ca<sup>2+</sup>, respectively (\u2018Materials and methods\u2019). In addition to the changes in the distribution of vesicle interfaces upon Ca<sup>2+</sup> addition, some amount of complete fusion between vesicles occurred as indicated by the shift of the diameter distribution in panel G towards larger values. Source files of all cryo-EM micrographs used for the quantitative analysis are available in the <a href="#SD1-data">Figure 2\u2014source data 1</a>.')])]), ('image', {'alt': '', 'uri': u'elife-00109-fig2-v1.tif'}), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.00109.005'), ('id', u'SD1-data'), ('label', u'Figure 2\u2014source data 1'), ('title', u'Source files for cryo-EM data.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'This zip archive contains all cryo-EM images used for the quantitative analyses shown in Fig. 2. The folder named \u201cNo_Ca++\u201d contains the images before Ca++ addition (individual files are named P3_1_**. tif or jpg), and folder named \u201cWith_Ca++\u201d contains the images \u223c35s after Ca++ addition (individual files are named P3_3_**.tif or jpg).')]), OrderedDict([('type', 'paragraph'), ('text', u'Images were collected in low dose conditions at 200 kV acceleration voltage on a CM200 FEG electron microscope (FEI) with a 2k \xd7 2k Gatan UltraScan 1000 camera, at 50,000\xd7 magnification and 1.5 mm underfocus.')]), OrderedDict([('type', 'paragraph'), ('text', u'The full resolution data were exported as 16 bit \u201ctif\u201d files (2048 \xd7 2048 pixels, scale 0.2 nm/pixel at specimen (the corresponding files have the extension \u201ctif\u201d). Note that these files cannot not be viewed with a standard picture viewer, but must be viewed with a program, such as \u201cImageJ\u201d. To facilitate easier viewing, the original images were converted to smaller (1024\xd71024, 0.4 nm/pixel), contrast adjusted jpeg images (8 bits) for easy and immediate visualization with commonly used picture viewers (the corresponding files have the extension \u201cjpg\u201d).')])]), ('mediaType', u'application/zip'), ('uri', u'elife-00109-fig2-data1-v1.zip'), ('filename', u'elife-00109-fig2-data1-v1.zip')])])])])])
+         (read_fixture('test_body_block_content', 'content_30.xml'),
+          read_fixture('test_body_block_content', 'content_30_expected.py'),
          ),
 
         # code block, based on elife 20352 v2, contains new lines too
-        ('''<root><code>&lt;MotifGraft name=&quot;motif_grafting&quot;
-      context_structure=&quot;%%context%%&quot;
-      motif_structure=&quot;truncatedBH3.pdb&quot;
-      RMSD_tolerance=&quot;3.0&quot;
-      NC_points_RMSD_tolerance=&quot;2.0&quot;
-      clash_score_cutoff=&quot;0&quot;
-      clash_test_residue=&quot;ALA&quot;
-      hotspots=&quot;9:12:13:14:16:17&quot;
-      combinatory_fragment_size_delta=&quot;0:0&quot;
-      max_fragment_replacement_size_delta=&quot;0:0&quot;
-      full_motif_bb_alignment=&quot;1&quot;
-      allow_independent_alignment_per_fragment=&quot;0&quot;
-      graft_only_hotspots_by_replacement=&quot;0&quot;
-      only_allow_if_N_point_match_aa_identity=&quot;0&quot;
-      only_allow_if_C_point_match_aa_identity=&quot;0&quot;
-      revert_graft_to_native_sequence=&quot;1&quot;
-      allow_repeat_same_graft_output=&quot;1&quot;/&gt;</code></root>''',
-        OrderedDict([('type', 'code'), ('code', u'<MotifGraft name="motif_grafting"\n      context_structure="%%context%%"\n      motif_structure="truncatedBH3.pdb"\n      RMSD_tolerance="3.0"\n      NC_points_RMSD_tolerance="2.0"\n      clash_score_cutoff="0"\n      clash_test_residue="ALA"\n      hotspots="9:12:13:14:16:17"\n      combinatory_fragment_size_delta="0:0"\n      max_fragment_replacement_size_delta="0:0"\n      full_motif_bb_alignment="1"\n      allow_independent_alignment_per_fragment="0"\n      graft_only_hotspots_by_replacement="0"\n      only_allow_if_N_point_match_aa_identity="0"\n      only_allow_if_C_point_match_aa_identity="0"\n      revert_graft_to_native_sequence="1"\n      allow_repeat_same_graft_output="1"/>')])
-        ),
+         (read_fixture('test_body_block_content', 'content_31.xml'),
+          read_fixture('test_body_block_content', 'content_31_expected.py'),
+         ),
 
         # example of a table with a break tag, based on 7141 v1
-        ('<root><table-wrap id="tbl3" position="float"><object-id pub-id-type="doi">10.7554/eLife.07141.007</object-id><label>Table 3.</label><caption><p>Residues modeled for each chain of α (1–761) and β (1–375) in all four α<sub>4</sub>β<sub>4</sub> structures. In all four structures, the following regions are disordered and cannot be seen in the experimental electron density: the last ~24 C-terminal residues of α that contain redox active cysteines Cys754 and Cys759 and the ~20 residues of β that connect residue 330 to the ~15 C-terminal residues (360–375) that bind to the α subunit.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.07141.007">http://dx.doi.org/10.7554/eLife.07141.007</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th/><th colspan="8">Chain</th></tr></thead><tbody><tr><td>Structure</td><td>A (α)</td><td>B (α)</td><td>C (α)</td><td>D (α)</td><td>E (β)</td><td>F (β)</td><td>G (β)</td><td>H (β)</td></tr><tr><td>CDP/dATP</td><td>5-736</td><td>4-737</td><td>5-736</td><td>4-737</td><td>1-339, 363-375</td><td>1-341, 360-375</td><td>1-341, 360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>UDP/dATP</td><td>4-737</td><td>4-737</td><td>4-737</td><td>4-736</td><td>1-339,<break/>363-373</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>ADP/dGTP</td><td>5-736</td><td>4-736</td><td>4-736</td><td>4-736</td><td>1-339,<break/>363-375</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>GDP/TTP</td><td>1-736</td><td>5-736</td><td>4-737</td><td>4-737</td><td>1-339,<break/>363-375</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-344,<break/>361-375</td></tr></tbody></table></table-wrap></root>',
-         OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.07141.007'), ('id', u'tbl3'), ('label', u'Table 3'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Residues modeled for each chain of \u03b1 (1\u2013761) and \u03b2 (1\u2013375) in all four \u03b1<sub>4</sub>\u03b2<sub>4</sub> structures. In all four structures, the following regions are disordered and cannot be seen in the experimental electron density: the last ~24 C-terminal residues of \u03b1 that contain redox active cysteines Cys754 and Cys759 and the ~20 residues of \u03b2 that connect residue 330 to the ~15 C-terminal residues (360\u2013375) that bind to the \u03b1 subunit.')])]), ('tables', [u'<table><thead><tr><th/><th colspan="8">Chain</th></tr></thead><tbody><tr><td>Structure</td><td>A (\u03b1)</td><td>B (\u03b1)</td><td>C (\u03b1)</td><td>D (\u03b1)</td><td>E (\u03b2)</td><td>F (\u03b2)</td><td>G (\u03b2)</td><td>H (\u03b2)</td></tr><tr><td>CDP/dATP</td><td>5-736</td><td>4-737</td><td>5-736</td><td>4-737</td><td>1-339, 363-375</td><td>1-341, 360-375</td><td>1-341, 360-375</td><td>1-340,<br/>361-375</td></tr><tr><td>UDP/dATP</td><td>4-737</td><td>4-737</td><td>4-737</td><td>4-736</td><td>1-339,<br/>363-373</td><td>1-341,<br/>360-375</td><td>1-341,<br/>360-375</td><td>1-340,<br/>361-375</td></tr><tr><td>ADP/dGTP</td><td>5-736</td><td>4-736</td><td>4-736</td><td>4-736</td><td>1-339,<br/>363-375</td><td>1-341,<br/>360-375</td><td>1-341,<br/>360-375</td><td>1-340,<br/>361-375</td></tr><tr><td>GDP/TTP</td><td>1-736</td><td>5-736</td><td>4-737</td><td>4-737</td><td>1-339,<br/>363-375</td><td>1-341,<br/>360-375</td><td>1-341,<br/>360-375</td><td>1-344,<br/>361-375</td></tr></tbody></table>'])])])])
-        ),
+         (read_fixture('test_body_block_content', 'content_32.xml'),
+          read_fixture('test_body_block_content', 'content_32_expected.py'),
+         ),
 
         # example of a figure, based on 00007 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig5" position="float"><object-id pub-id-type="doi">10.7554/eLife.00007.008</object-id><label>Figure 5.</label><caption><p>Predation of <italic>M. sexta</italic> larvae and eggs by <italic>Geocoris</italic> spp. (<bold>A</bold>) Examples of predated <italic>M. sexta</italic> larva (left panel) and egg (right panel). Left, the carcass of a predated first-instar <italic>M. sexta</italic> larva and typical feeding damage from early-instar <italic>Manduca</italic> spp. larvae....</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00007.008">http://dx.doi.org/10.7554/eLife.00007.008</ext-link></p></caption><graphic xlink:href="elife-00007-fig5-v1.tif"/></fig></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00007.008'), ('id', u'fig5'), ('label', u'Figure 5'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', 'Predation of <i>M. sexta</i> larvae and eggs by <i>Geocoris</i> spp. (<b>A</b>) Examples of predated <i>M. sexta</i> larva (left panel) and egg (right panel). Left, the carcass of a predated first-instar <i>M. sexta</i> larva and typical feeding damage from early-instar <i>Manduca</i> spp. larvae....')])]), ('image', {'alt': '', 'uri': u'elife-00007-fig5-v1.tif'})])])])
-        ),
+         (read_fixture('test_body_block_content', 'content_33.xml'),
+          read_fixture('test_body_block_content', 'content_33_expected.py'),
+         ),
 
         # example table with a caption and no title needs a title added, based on 05604 v1
-        ('<root><table-wrap id="tblu1" position="anchor"><caption><p>PCR primer sets and reaction conditions for genotyping</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5′-TATGTTTGCATCATCTCGTCTTC-3′</td><td rowspan="2">1</td></tr></tbody></table></table-wrap></root>',
-        OrderedDict([('type', 'table'), ('id', u'tblu1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'PCR primer sets and reaction conditions for genotyping')])]), ('tables', [u'<table><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5\u2032-TATGTTTGCATCATCTCGTCTTC-3\u2032</td><td rowspan="2">1</td></tr></tbody></table>'])])
-        ),
+         (read_fixture('test_body_block_content', 'content_34.xml'),
+          read_fixture('test_body_block_content', 'content_34_expected.py'),
+         ),
 
         # example video with only the DOI in the caption paragraph, based on 02277 v1
-        ('<root><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-02277-media1.mp4"><object-id pub-id-type="doi">10.7554/eLife.02277.012</object-id><label>Video 1.</label><caption><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.02277.012">http://dx.doi.org/10.7554/eLife.02277.012</ext-link></p></caption></media></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.02277.012'), ('id', u'media1'), ('label', u'Video 1')])])])
-        ),
+         (read_fixture('test_body_block_content', 'content_35.xml'),
+          read_fixture('test_body_block_content', 'content_35_expected.py'),
+         ),
 
         # example animated gif as a video in 00666 kitchen sink
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><media mimetype="video" mime-subtype="gif" id="video2" xlink:href="elife-00666-video2.gif"><object-id pub-id-type="doi">10.7554/eLife.00666.038</object-id><label>Animation 1.</label><caption><title>A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.</title></caption></media></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00666.038'), ('id', u'video2'), ('label', u'Animation 1'), ('title', u'A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.'), ('uri', u'elife-00666-video2.gif'), ('autoplay', True), ('loop', True)])])])
-        ),
+         (read_fixture('test_body_block_content', 'content_36.xml'),
+          read_fixture('test_body_block_content', 'content_36_expected.py'),
+         ),
+
 
         # example of named-content to be converted to HTML from new kitchen sink 00666
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Here is an example of making text display in different colours: <named-content content-type="author-callout-style-a1">Blue text: #366BFB</named-content>; <named-content content-type="author-callout-style-a2">Purple text: #9C27B0</named-content>; and <named-content content-type="author-callout-style-a3">Red text: #D50000</named-content>.</p></root>',
-        OrderedDict([('type', 'paragraph'), ('text', 'Here is an example of making text display in different colours: <span class="author-callout-style-a1">Blue text: #366BFB</span>; <span class="author-callout-style-a2">Purple text: #9C27B0</span>; and <span class="author-callout-style-a3">Red text: #D50000</span>.')])
-        ),
+         (read_fixture('test_body_block_content', 'content_37.xml'),
+          read_fixture('test_body_block_content', 'content_37_expected.py'),
+         ),
 
         # example of table author-callout-style styles to replace as a class attribute, based on 24231 v1
-        (u'<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.24231.006</object-id><label>Table 1.</label><caption><p>Summary table of U-Th disequilibrium ages obtained for samples from the Dinaledi Chamber by James Cook University (JCU - <sup>1</sup>) and the University of Melbourne (UoM - <sup>2</sup>). The detailed analytical results are shown in <xref ref-type="table" rid="tbl2">Tables 2</xref> and <xref ref-type="table" rid="tbl3">3</xref>. Sample locations are shown in <xref ref-type="fig" rid="fig1">Figure 1b</xref>. The data are ranked by increasing age of the oldest flowstone horizon within the sample, based on the JCU ages. The grey shading highlights the different age groupings observed within the flowstones: 24–32 ka, ~50 ka, 88–105 ka, ~242 ka, ~290 ka and &gt;440 ka. Ages are reported relative to 1950.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.24231.006">http://dx.doi.org/10.7554/eLife.24231.006</ext-link></p></caption><table frame="hsides" rules="groups"><thead><tr><th valign="bottom">Sample ID</th><th valign="bottom">Flowstone group</th><th valign="bottom">Underlying unit</th><th valign="bottom">Age<sup>1</sup> (ka)</th><th valign="bottom">2σ<sup>1</sup> (ka)</th><th valign="bottom">Age<sup>2</sup> (ka)</th><th valign="bottom">2σ<sup>2</sup> (ka)</th></tr></thead><tbody><tr><td style="author-callout-style-b8"> RS19</td><td style="author-callout-style-b8">FS2</td><td style="author-callout-style-b8">sub-unit 3b</td><td style="author-callout-style-b8"><bold>24.7</bold></td><td style="author-callout-style-b8">0.2</td><td style="author-callout-style-b8"><bold>24.53</bold></td><td style="author-callout-style-b8">0.43</td></tr></tbody></table><table-wrap-foot><fn id="tblfn1"><p> <sup>1</sup>James Cook University (JCU), Advanced Analytical Centre.</p></fn><fn id="tblfn2"><p> <sup>2</sup>University of Melbourne (UoM), paleochronology laboratory.</p></fn></table-wrap-foot></table-wrap></root>',
-        OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.24231.006'), ('id', u'tbl1'), ('label', u'Table 1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Summary table of U-Th disequilibrium ages obtained for samples from the Dinaledi Chamber by James Cook University (JCU - <sup>1</sup>) and the University of Melbourne (UoM - <sup>2</sup>). The detailed analytical results are shown in <a href="#tbl2">Tables 2</a> and <a href="#tbl3">3</a>. Sample locations are shown in <a href="#fig1">Figure 1b</a>. The data are ranked by increasing age of the oldest flowstone horizon within the sample, based on the JCU ages. The grey shading highlights the different age groupings observed within the flowstones: 24\u201332 ka, ~50 ka, 88\u2013105 ka, ~242 ka, ~290 ka and &gt;440 ka. Ages are reported relative to 1950.')])]), ('tables', [u'<table><thead><tr><th valign="bottom">Sample ID</th><th valign="bottom">Flowstone group</th><th valign="bottom">Underlying unit</th><th valign="bottom">Age<sup>1</sup> (ka)</th><th valign="bottom">2\u03c3<sup>1</sup> (ka)</th><th valign="bottom">Age<sup>2</sup> (ka)</th><th valign="bottom">2\u03c3<sup>2</sup> (ka)</th></tr></thead><tbody><tr><td class="author-callout-style-b8">\u2003RS19</td><td class="author-callout-style-b8">FS2</td><td class="author-callout-style-b8">sub-unit 3b</td><td class="author-callout-style-b8"><b>24.7</b></td><td class="author-callout-style-b8">0.2</td><td class="author-callout-style-b8"><b>24.53</b></td><td class="author-callout-style-b8">0.43</td></tr></tbody></table>']), ('footnotes', [OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'\u2003<sup>1</sup>James Cook University (JCU), Advanced Analytical Centre.')])])]), OrderedDict([('text', [OrderedDict([('type', 'paragraph'), ('text', u'\u2003<sup>2</sup>University of Melbourne (UoM), paleochronology laboratory.')])])])])])])])
-        ),
+         (read_fixture('test_body_block_content', 'content_38.xml'),
+          read_fixture('test_body_block_content', 'content_38_expected.py'),
+         ),
 
         # example inline table adapted from 00666 kitchen sink
-        ('<root><table-wrap id="inlinetable1" position="anchor"><table frame="hsides" rules="groups"><thead><tr><th/><th>pY</th><th>Experiment</th><th>Concentration (μM)</th></tr></thead><tbody><tr><td>IGF1R-fl + IGF1</td><td>+</td><td><italic>K</italic><sub><italic>m</italic></sub> ATP</td><td>500, 400, 300, 250, 125, 62.5, 31.3, 15.6, 7.8</td></tr></tbody></table><table-wrap-foot><fn><p>This is an unmarked footnote for an anchored/inline table</p></fn></table-wrap-foot></table-wrap></root>',
-        OrderedDict([
-            ('type', 'table'),
-            ('id', u'inlinetable1'),
-            ('tables', [
-                u'<table><thead><tr><th/><th>pY</th><th>Experiment</th><th>Concentration (\u03bcM)</th></tr></thead><tbody><tr><td>IGF1R-fl + IGF1</td><td>+</td><td><i>K</i><sub><i>m</i></sub> ATP</td><td>500, 400, 300, 250, 125, 62.5, 31.3, 15.6, 7.8</td></tr></tbody></table>'
-            ]),
-            ('footnotes', [
-                OrderedDict([
-                    ('text', [
-                        OrderedDict([
-                            ('type', 'paragraph'),
-                            ('text', u'This is an unmarked footnote for an anchored/inline table')
-                        ])
-                    ])
-                ])
-            ])
-        ])
-        ),
+         (read_fixture('test_body_block_content', 'content_39.xml'),
+          read_fixture('test_body_block_content', 'content_39_expected.py'),
+         ),
 
         # example key resources inline table that has a label will be turned into a figure block
-        ('<root><table-wrap id="keyresource" position="anchor"><label>This is a label.</label><table frame="hsides" rules="groups"><thead><tr><th/><th>pY</th><th>Experiment</th><th>Concentration (μM)</th></tr></thead><tbody><tr><td>IGF1R-fl + IGF1</td><td>+</td><td><italic>K</italic><sub><italic>m</italic></sub> ATP</td><td>500, 400, 300, 250, 125, 62.5, 31.3, 15.6, 7.8</td></tr></tbody></table><table-wrap-foot><fn><p>This is an unmarked footnote for an anchored/inline table</p></fn></table-wrap-foot></table-wrap></root>',
-        OrderedDict([
-            ('type', 'figure'),
-            ('assets', [
-                OrderedDict([
-                    ('type', 'table'),
-                    ('id', u'keyresource'),
-                    ('label', u'This is a label'),
-                    ('tables', [
-                        u'<table><thead><tr><th/><th>pY</th><th>Experiment</th><th>Concentration (\u03bcM)</th></tr></thead><tbody><tr><td>IGF1R-fl + IGF1</td><td>+</td><td><i>K</i><sub><i>m</i></sub> ATP</td><td>500, 400, 300, 250, 125, 62.5, 31.3, 15.6, 7.8</td></tr></tbody></table>'
-                    ]),
-                    ('footnotes', [
-                        OrderedDict([
-                            ('text', [
-                                OrderedDict([
-                                    ('type', 'paragraph'),
-                                    ('text', u'This is an unmarked footnote for an anchored/inline table')
-                                ])
-                            ])
-                        ])
-                    ])
-                ])
-            ])
-        ])
-        ),
+         (read_fixture('test_body_block_content', 'content_40.xml'),
+          read_fixture('test_body_block_content', 'content_40_expected.py'),
+         ),
 
         )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
+        # find the first tag in the root with a name
+        for child in soup.root.children:
+            if child.name:
+                body_tag = child
+                break
         tag_content = parser.body_block_content(body_tag)
         self.assertEqual(expected, tag_content)
 
