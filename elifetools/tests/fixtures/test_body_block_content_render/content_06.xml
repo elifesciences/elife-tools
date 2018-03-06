@@ -1,0 +1,13 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <p>Content.
+        <fig id="fig1">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id>
+        <label>Figure 1.</label>
+        <caption>
+            <title>Figure title</title>
+            <p>Figure caption</p>
+        </caption>
+        <graphic xlink:href="elife-00666-fig1-v1.tif"/>
+        </fig>
+    </p>
+</root>

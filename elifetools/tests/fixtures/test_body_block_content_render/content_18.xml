@@ -1,0 +1,9 @@
+<root>
+    <p>The following is an example of monotype text within the body of an eLife article.</p>
+    <p><monospace>P<sub>NRE+AP-1</sub>: 5’– CTTCGTGACTAGTCTTGACTCAGA –3’</monospace></p>
+    <p><monospace>P<sub>RAM</sub>: 5’– CTAGAAGTTTGTTCGTGACTCAGA –3’</monospace></p>
+    <p><monospace>E1: 5’– CTAGAAGTTTGTTGACTCACCCGA –3’</monospace></p>
+    <p><monospace>E2: 5’– CTAGAAGTTTGTTGACTCATTAGA –3’</monospace></p>
+    <p><monospace>E3: 5’– CTAGAAGTTTGTGTATGACTCAGA –3’</monospace></p>
+    <p><monospace>CME: 5’– CTAGAAATTTGTACGTGCCACAGA –3’</monospace></p>
+</root>

@@ -1,0 +1,25 @@
+<root xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <p>This <xref ref-type="fig" rid="fig3">Figure 3A</xref> test
+    <disp-formula id="equ2">
+        <label>(2)</label>
+        <mml:math id="m2"><mml:mrow></mml:mrow></mml:math>
+    </disp-formula>was also
+        <fig id="fig3" position="float">
+            <object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id>
+            <label>Figure 3.</label>
+            <caption>
+                <title>Title</title>
+                <p>Caption <bold>b</bold>
+                <disp-formula id="equ3">
+                    <label>(3)</label>
+                    <mml:math id="m3"><mml:mrow></mml:mrow></mml:math>
+                </disp-formula>
+                </p>
+                <p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p>
+                <p>More caption</p>
+                <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p>
+            </caption>
+            <graphic xlink:href="elife-01944-fig3-v1.tif"/>
+        </fig>
+    </p>
+</root>

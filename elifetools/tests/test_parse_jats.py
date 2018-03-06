@@ -1595,326 +1595,149 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root><sec><boxed-text><title>Strange content for test coverage</title><table-wrap><label>A label</label></table-wrap><fig></fig><fig><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id></fig></boxed-text></sec></root>',
-        [
-            OrderedDict([('content', [
-                OrderedDict([
-                    ('type', 'section'),
-                    ('content', [OrderedDict([
-                        ('type', 'box'),
-                        ('title', u'Strange content for test coverage'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'figure'),
-                                ('assets', [OrderedDict([
-                                    ('type', 'table'),
-                                    ('label', u'A label'),
-                                    ('tables', [ ]) 
-                                ])]),
-                            ]),
-                            OrderedDict([
-                                ('type', 'image') 
-                            ]), 
-                            OrderedDict([
-                                ('type', 'image'),
-                                ('doi', u'10.7554/eLife.00666.024') 
-                            ]) 
-                        ])
-                    ])])
-                ])
-            ])])
-        ]
-        ),
-
-        ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content 1</p><p>content 2</p></caption></boxed-text></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'content 2')])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_01.xml'),
+         read_fixture('test_body_block_content_render', 'content_01_expected.py'),
          ),
 
-        ('<root><p>content <italic>test</italic></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'content <i>test</i>')])])])]
+        (read_fixture('test_body_block_content_render', 'content_02.xml'),
+         read_fixture('test_body_block_content_render', 'content_02_expected.py'),
          ),
 
-        ('<root><p>content<table-wrap><table><thead><tr><th/></tr></thead><tbody><tr><td></td></tr></tbody></table></table-wrap></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', 'content')]), OrderedDict([('type', 'table'), ('tables', ['<table><thead><tr><th/></tr></thead><tbody><tr><td/></tr></tbody></table>'])])])])]
+        (read_fixture('test_body_block_content_render', 'content_03.xml'),
+         read_fixture('test_body_block_content_render', 'content_03_expected.py'),
          ),
 
-        ('<root><p>content</p><table-wrap><table><thead><tr><th/></tr></thead><tbody><tr><td></td></tr></tbody></table></table-wrap></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', 'content')]), OrderedDict([('type', 'table'), ('tables', ['<table><thead><tr><th/></tr></thead><tbody><tr><td/></tr></tbody></table>'])])])])]
+        (read_fixture('test_body_block_content_render', 'content_04.xml'),
+         read_fixture('test_body_block_content_render', 'content_04_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'})])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_05.xml'),
+         read_fixture('test_body_block_content_render', 'content_05_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-v1.tif'})]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-figsupp1-v1.tif'})])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_06.xml'),
+         read_fixture('test_body_block_content_render', 'content_06_expected.py'),
          ),
 
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"><p>This <disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'This')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Caption')])]), ('image', {'alt': '', 'uri': u'elife-01944-fig3-v1.tif'})])])])])])]
-        ),
-
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"><p>This <disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', 'This')]), OrderedDict([('type', 'mathml'), ('id', 'equ2'), ('label', '(2)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'was also')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', '10.7554/eLife.01944.005'), ('id', 'fig3'), ('label', 'Figure 3'), ('title', 'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', 'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', 'equ3'), ('label', '(3)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', 'equ4'), ('label', '(4)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'More caption')])]), ('image', {'alt': '', 'uri': 'elife-01944-fig3-v1.tif'})])])])])])]
-        ),
-
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink"><p>This <xref ref-type="fig" rid="fig3">Figure 3A</xref> test<disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', 'This <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', 'equ2'), ('label', '(2)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'was also')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', '10.7554/eLife.01944.005'), ('id', 'fig3'), ('label', 'Figure 3'), ('title', 'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', 'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', 'equ3'), ('label', '(3)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', 'equ4'), ('label', '(4)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'More caption')])]), ('image', {'alt': '', 'uri': 'elife-01944-fig3-v1.tif'})])])])])])]
-        ),
-
-        ('<root xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> is <xref ref-type="fig" rid="fig3">Figure 3A</xref> test<disp-formula id="equ2"><label>(2)</label><mml:math id="m2"><mml:mrow></mml:mrow></mml:math></disp-formula>was also<fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.01944.005</object-id><label>Figure 3.</label><caption><title>Title</title><p>Caption <bold>b</bold> <disp-formula id="equ3"><label>(3)</label><mml:math id="m3"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>where m<sub>i</sub> given by: <disp-formula id="equ4"><label>(4)</label><mml:math id="m4"><mml:mrow></mml:mrow></mml:math></disp-formula></p><p>More caption</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.01944.005">http://dx.doi.org/10.7554/eLife.01944.005</ext-link></p></caption><graphic xlink:href="elife-01944-fig3-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b> is <a href="#fig3">Figure 3A</a> test')]), OrderedDict([('type', 'mathml'), ('id', u'equ2'), ('label', u'(2)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'was also')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.01944.005'), ('id', u'fig3'), ('label', u'Figure 3'), ('title', u'Title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', 'Caption <b>b</b>')]), OrderedDict([('type', 'mathml'), ('id', u'equ3'), ('label', u'(3)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', 'where m<sub>i</sub> given by:')]), OrderedDict([('type', 'mathml'), ('id', u'equ4'), ('label', u'(4)'), ('mathml', '<math><mrow/></math>')]), OrderedDict([('type', 'paragraph'), ('text', u'More caption')])]), ('image', {'alt': '', 'uri': u'elife-01944-fig3-v1.tif'})])])])])])]
-        ),
-
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])])])]
+        (read_fixture('test_body_block_content_render', 'content_07.xml'),
+         read_fixture('test_body_block_content_render', 'content_07_expected.py'),
          ),
 
-        ('<root><disp-quote><p>content</p></disp-quote></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'quote'), ('text', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_08.xml'),
+         read_fixture('test_body_block_content_render', 'content_08_expected.py'),
+         ),
+
+        (read_fixture('test_body_block_content_render', 'content_09.xml'),
+         read_fixture('test_body_block_content_render', 'content_09_expected.py'),
+         ),
+
+        (read_fixture('test_body_block_content_render', 'content_10.xml'),
+         read_fixture('test_body_block_content_render', 'content_10_expected.py'),
+         ),
+
+        (read_fixture('test_body_block_content_render', 'content_11.xml'),
+         read_fixture('test_body_block_content_render', 'content_11_expected.py'),
+         ),
+
+        (read_fixture('test_body_block_content_render', 'content_12.xml'),
+         read_fixture('test_body_block_content_render', 'content_12_expected.py'),
+         ),
+
+        (read_fixture('test_body_block_content_render', 'content_13.xml'),
+         read_fixture('test_body_block_content_render', 'content_13_expected.py'),
          ),
 
         # disp-quote content-type="editor-comment" is turned into an excerpt block
-        ('<root><disp-quote content-type="editor-comment"><p><italic>content</italic></p></disp-quote></root>',
-         [
-            OrderedDict([
-                ('content', [
-                    OrderedDict([
-                        ('type', 'excerpt'),
-                        ('content', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', u'<i>content</i>')
-                            ])
-                        ])
-                    ])
-                ])
-            ])
-         ]
+        (read_fixture('test_body_block_content_render', 'content_14.xml'),
+         read_fixture('test_body_block_content_render', 'content_14_expected.py'),
          ),
 
         # Boxed text with no title tag uses the first sentence of the caption paragraph, 00288 v1
-        ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00288.004</object-id><label>Box 1.</label><caption><p>Cohort A</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00288.004">http://dx.doi.org/10.7554/eLife.00288.004</ext-link></p></caption><p>Cohort A included three subjects who were seen within 12 hr of HSV-2 recurrence, and who collected genital swabs every 5 min for 4 hr. This experiment assessed whether there were alterations in viral load related to the PCR assay or collection technique. Only small changes occurred during 5-min intervals (<xref ref-type="fig" rid="fig1">Figure 1A</xref>, <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1A,B</xref>, <xref ref-type="supplement-material" rid="SD1-data">Figure 1—source data 1</xref>). The mean absolute value of viral DNA copy difference between successive swabs was 0.20, 0.28, and 0.34 log<sub>10</sub> genomic copies in the three participants, and generally increased with time between swabs (<xref ref-type="fig" rid="fig1">Figure 1B</xref>, <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1C</xref>). The mean difference in HSV DNA copies between swabs correlated tightly with time between swabs in two participants (<xref ref-type="fig" rid="fig1">Figure 1C</xref>, <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1D</xref>), with virtually no difference in viral quantity between swabs separated by 5-min intervals in all three subjects (<xref ref-type="fig" rid="fig1">Figure 1C</xref>, <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1D</xref>). Two episodes had negative mean differences in viral quantity with increasing time between swabs (<xref ref-type="fig" rid="fig1">Figure 1C</xref> , <xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1D</xref>), while one episode had a slightly positive mean difference (<xref ref-type="fig" rid="fig1s1">Figure 1—figure supplement 1D</xref>), suggesting that we captured two episodes during a decay phase and one episode near a peak of viral production. The standard deviation of the mean absolute value of viral DNA copy difference between successive swabs was 0.16, 0.22, and 0.26 in the three participants, respectively, suggesting that differences of &gt;0.5 log<sub>10</sub> HSV-2 DNA copies that may occur over hours usually reflect true changes in viral load rather than noise in the data attributable to clinical collection or PCR technique.</p></boxed-text></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00288.004'), ('id', u'box1'), ('title', u'Box 1.'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Cohort A')]), OrderedDict([('type', 'paragraph'), ('text', u'Cohort A included three subjects who were seen within 12 hr of HSV-2 recurrence, and who collected genital swabs every 5 min for 4 hr. This experiment assessed whether there were alterations in viral load related to the PCR assay or collection technique. Only small changes occurred during 5-min intervals (<a href="#fig1">Figure 1A</a>, <a href="#fig1s1">Figure 1\u2014figure supplement 1A,B</a>, <a href="#SD1-data">Figure 1\u2014source data 1</a>). The mean absolute value of viral DNA copy difference between successive swabs was 0.20, 0.28, and 0.34 log<sub>10</sub> genomic copies in the three participants, and generally increased with time between swabs (<a href="#fig1">Figure 1B</a>, <a href="#fig1s1">Figure 1\u2014figure supplement 1C</a>). The mean difference in HSV DNA copies between swabs correlated tightly with time between swabs in two participants (<a href="#fig1">Figure 1C</a>, <a href="#fig1s1">Figure 1\u2014figure supplement 1D</a>), with virtually no difference in viral quantity between swabs separated by 5-min intervals in all three subjects (<a href="#fig1">Figure 1C</a>, <a href="#fig1s1">Figure 1\u2014figure supplement 1D</a>). Two episodes had negative mean differences in viral quantity with increasing time between swabs (<a href="#fig1">Figure 1C</a> , <a href="#fig1s1">Figure 1\u2014figure supplement 1D</a>), while one episode had a slightly positive mean difference (<a href="#fig1s1">Figure 1\u2014figure supplement 1D</a>), suggesting that we captured two episodes during a decay phase and one episode near a peak of viral production. The standard deviation of the mean absolute value of viral DNA copy difference between successive swabs was 0.16, 0.22, and 0.26 in the three participants, respectively, suggesting that differences of &gt;0.5 log<sub>10</sub> HSV-2 DNA copies that may occur over hours usually reflect true changes in viral load rather than noise in the data attributable to clinical collection or PCR technique.')])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_15.xml'),
+         read_fixture('test_body_block_content_render', 'content_15_expected.py'),
          ),
 
         # Example of boxed-text with content inside its caption tag
-        ('<root><boxed-text id="box1"><object-id pub-id-type="doi">10.7554/eLife.00013.009</object-id><label>Box 1.</label><caption><title>Box title</title><p>content</p></caption></boxed-text></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'box'), ('doi', u'10.7554/eLife.00013.009'), ('id', u'box1'), ('label', u'Box 1'), ('title', u'Box title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'content')])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_16.xml'),
+         read_fixture('test_body_block_content_render', 'content_16_expected.py'),
          ),
 
         # code block, based on elife 20352 v2, contains new lines too
-        ('''<root><p>A paragraph</p><p><code>&lt;MotifGraft name=&quot;motif_grafting&quot;
-      context_structure=&quot;%%context%%&quot;
-      motif_structure=&quot;truncatedBH3.pdb&quot;
-      RMSD_tolerance=&quot;3.0&quot;
-      NC_points_RMSD_tolerance=&quot;2.0&quot;
-      clash_score_cutoff=&quot;0&quot;
-      clash_test_residue=&quot;ALA&quot;
-      hotspots=&quot;9:12:13:14:16:17&quot;
-      combinatory_fragment_size_delta=&quot;0:0&quot;
-      max_fragment_replacement_size_delta=&quot;0:0&quot;
-      full_motif_bb_alignment=&quot;1&quot;
-      allow_independent_alignment_per_fragment=&quot;0&quot;
-      graft_only_hotspots_by_replacement=&quot;0&quot;
-      only_allow_if_N_point_match_aa_identity=&quot;0&quot;
-      only_allow_if_C_point_match_aa_identity=&quot;0&quot;
-      revert_graft_to_native_sequence=&quot;1&quot;
-      allow_repeat_same_graft_output=&quot;1&quot;/&gt;</code></p></root>''',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'A paragraph')]), OrderedDict([('type', 'code'), ('code', u'<MotifGraft name="motif_grafting"\n      context_structure="%%context%%"\n      motif_structure="truncatedBH3.pdb"\n      RMSD_tolerance="3.0"\n      NC_points_RMSD_tolerance="2.0"\n      clash_score_cutoff="0"\n      clash_test_residue="ALA"\n      hotspots="9:12:13:14:16:17"\n      combinatory_fragment_size_delta="0:0"\n      max_fragment_replacement_size_delta="0:0"\n      full_motif_bb_alignment="1"\n      allow_independent_alignment_per_fragment="0"\n      graft_only_hotspots_by_replacement="0"\n      only_allow_if_N_point_match_aa_identity="0"\n      only_allow_if_C_point_match_aa_identity="0"\n      revert_graft_to_native_sequence="1"\n      allow_repeat_same_graft_output="1"/>')])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_17.xml'),
+         read_fixture('test_body_block_content_render', 'content_17_expected.py'),
+         ),
 
         # Example of monospace tags
-        ('<root><p>The following is an example of monotype text within the body of an eLife article.</p><p><monospace>P<sub>NRE+AP-1</sub>: 5’– CTTCGTGACTAGTCTTGACTCAGA –3’</monospace></p><p><monospace>P<sub>RAM</sub>: 5’– CTAGAAGTTTGTTCGTGACTCAGA –3’</monospace></p><p><monospace>E1: 5’– CTAGAAGTTTGTTGACTCACCCGA –3’</monospace></p><p><monospace>E2: 5’– CTAGAAGTTTGTTGACTCATTAGA –3’</monospace></p><p><monospace>E3: 5’– CTAGAAGTTTGTGTATGACTCAGA –3’</monospace></p><p><monospace>CME: 5’– CTAGAAATTTGTACGTGCCACAGA –3’</monospace></p></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'paragraph'), ('text', u'The following is an example of monotype text within the body of an eLife article.')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">P<sub>NRE+AP-1</sub>: 5\u2019\u2013 CTTCGTGACTAGTCTTGACTCAGA \u20133\u2019</span>')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">P<sub>RAM</sub>: 5\u2019\u2013 CTAGAAGTTTGTTCGTGACTCAGA \u20133\u2019</span>')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">E1: 5\u2019\u2013 CTAGAAGTTTGTTGACTCACCCGA \u20133\u2019</span>')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">E2: 5\u2019\u2013 CTAGAAGTTTGTTGACTCATTAGA \u20133\u2019</span>')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">E3: 5\u2019\u2013 CTAGAAGTTTGTGTATGACTCAGA \u20133\u2019</span>')]), OrderedDict([('type', 'paragraph'), ('text', u'<span class="monospace">CME: 5\u2019\u2013 CTAGAAATTTGTACGTGCCACAGA \u20133\u2019</span>')])])])]
+        (read_fixture('test_body_block_content_render', 'content_18.xml'),
+         read_fixture('test_body_block_content_render', 'content_18_expected.py'),
          ),
 
         # example of a table to not pickup a child element title, based on 22264 v2
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table 1.</label><caption><p>Progeny of <italic>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></italic> x <italic>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></italic> intercrosses.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.22264.016">http://dx.doi.org/10.7554/eLife.22264.016</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.22264.017</object-id><label>Table 1—source data 1.</label><caption><title>Progeny of <italic>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></italic> x <italic>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></italic> crosses</title><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.22264.017">http://dx.doi.org/10.7554/eLife.22264.017</ext-link></p></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-22264-table1-data1-v2.docx"/></supplementary-material></p></caption><table frame="hsides" rules="groups"><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('label', u'Table 1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Progeny of <i>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></i> x <i>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></i> intercrosses.')])]), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>']), ('sourceData', [OrderedDict([('doi', u'10.7554/eLife.22264.017'), ('id', u'SD1-data'), ('label', u'Table 1\u2014source data 1'), ('title', u'Progeny of <i>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></i> x <i>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></i> crosses'), ('mediaType', u'application/docx')])])])])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_19.xml'),
+         read_fixture('test_body_block_content_render', 'content_19_expected.py'),
+         ),
 
         # example table: a label, no title, no caption
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table label.</label><caption><p></p></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-         [OrderedDict([
-             ('content', [
-                 OrderedDict([
-                     ('type', 'figure'),
-                     ('assets', [OrderedDict([
-                         ('type', 'table'),
-                         ('doi', u'10.7554/eLife.22264.016'),
-                         ('id', u'tbl1'),
-                         ('label', u'Table label'), 
-                         ('tables', [
-                             '<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'
-                         ])
-                     ])])
-                 ])
-             ])
-        ])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_20.xml'),
+         read_fixture('test_body_block_content_render', 'content_20_expected.py'),
+         ),
 
         # example table: a label, a title, no caption
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table label.</label><caption><title>Table title.</title></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-         [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('label', u'Table label'), ('title', u'Table title.'), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'])])])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_21.xml'),
+         read_fixture('test_body_block_content_render', 'content_21_expected.py'),
+         ),
 
         # example table: a label, no title, a caption
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table label.</label><caption><p>Table caption.</p></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('label', u'Table label'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Table caption.')])]), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'])])])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_22.xml'),
+         read_fixture('test_body_block_content_render', 'content_22_expected.py'),
+         ),
 
         # example table: a label, a title, and a caption
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><label>Table label.</label><caption><title>Table title.</title><p>Table caption.</p></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('label', u'Table label'), ('title', u'Table title.'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Table caption.')])]), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'])])])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_23.xml'),
+         read_fixture('test_body_block_content_render', 'content_23_expected.py'),
+         ),
 
         # example table: no label, no title, and a caption
-        ('<root><table-wrap id="tbl1" position="float"><object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id><caption><p>Table caption. A second sentence.</p></caption><table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table></table-wrap></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'table'), ('doi', u'10.7554/eLife.22264.016'), ('id', u'tbl1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Table caption. A second sentence.')])]), ('tables', ['<table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>'])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_24.xml'),
+         read_fixture('test_body_block_content_render', 'content_24_expected.py'),
+         ),
 
         # example fig with a caption and no title, based on 00281 v1
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><fig id="fig1" position="float"><caption><p>Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.</p></caption><graphic xlink:href="elife-00281-fig1-v1.tif"/><attrib>FIGURE CREDIT: TIM MCCORMACK.</attrib></fig></root>',
-        [OrderedDict([
-            ('content', [OrderedDict([
-                ('type', 'image'), 
-                ('id', u'fig1'),
-                ('caption', [OrderedDict([
-                    ('type', 'paragraph'),
-                    ('text', u'Fog doubles the risk of an car accident, which is why researchers are keen to understand how it influences how drivers perceive their speed.')])]),
-                ('image', {
-                    'alt': '', 
-                    'uri': u'elife-00281-fig1-v1.tif',
-                    'attribution': [u'FIGURE CREDIT: TIM MCCORMACK.'],
-                }),
-            ])])
-        ])]),
+        (read_fixture('test_body_block_content_render', 'content_25.xml'),
+         read_fixture('test_body_block_content_render', 'content_25_expected.py'),
+         ),
 
         # example media with a label and no title, based on 00007 v1
-        ('<root><media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="avi" mimetype="video" xlink:href="elife-00007-media1.avi"><object-id pub-id-type="doi">10.7554/eLife.00007.016</object-id><label>Video 1.</label><caption><p>On-plant assay, plant 7u, WT, June 18, 2011.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00007.016">http://dx.doi.org/10.7554/eLife.00007.016</ext-link></p></caption></media></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'video'), ('doi', u'10.7554/eLife.00007.016'), ('id', u'media1'), ('label', u'Video 1'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'On-plant assay, plant 7u, WT, June 18, 2011.')])])])])])])])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_26.xml'),
+         read_fixture('test_body_block_content_render', 'content_26_expected.py'),
+         ),
 
         # example test from 02935 v2 of list within a list to not add child list-item to the parent list twice
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><list list-type="order"><list-item><p>At least 4 unique reads supporting variants and all variant reads at least 20 phred scale sequencing quality score (Q 20 = 1% sequencing error rate) and at least 3% variant allele fractions (VAFs).</p><list list-type="simple"><list-item><p>A. Regardless of in WGS and in WES, the ≥4 mismatches and the ≥3% VAF criteria must be satisfied simultaneously.</p></list-item><list-item><p>B. However, in WGS, the minimum number of reads (n = 4) criterion is not essential, because the ≥3% VAF criterion is much more stringent (3% VAF request at least 240 mismatches (&gt;&gt;4) given mtDNA coverage is ∼8000 for WGS).</p></list-item><list-item><p>C. In WES, the ≥3% VAF criterion is relatively less important than in WGS, because the ≥4 mismatches criterion is more stringent. For example, 4 mismatches in 90x (WXS average) coverage region (VAF = 4.4%) automatically fulfill the ≥3% VAF criterion. For less covered regions (i.e. &lt;40x coverage; n = 285 out of total 1907 substitutions), the VAF criterion becomes less important, because 4 mismatches would generate ≥10% VAF, much higher than the minimum threshold (i.e. 3%). As results, we are missing lower heteroplasmic variants (i.e. variants with 3–10% heteroplasmic levels) from low coverage samples (mostly by WXS). The lower sensitivity of WXS is also confirmed in our validation study (see “Validation of somatic variants” below).</p></list-item></list></list-item></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'list'), ('prefix', 'number'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'At least 4 unique reads supporting variants and all variant reads at least 20 phred scale sequencing quality score (Q 20 = 1% sequencing error rate) and at least 3% variant allele fractions (VAFs).')]), OrderedDict([('type', 'list'), ('prefix', 'none'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'A. Regardless of in WGS and in WES, the \u22654 mismatches and the \u22653% VAF criteria must be satisfied simultaneously.')])], [OrderedDict([('type', 'paragraph'), ('text', u'B. However, in WGS, the minimum number of reads (n = 4) criterion is not essential, because the \u22653% VAF criterion is much more stringent (3% VAF request at least 240 mismatches (&gt;&gt;4) given mtDNA coverage is \u223c8000 for WGS).')])], [OrderedDict([('type', 'paragraph'), ('text', u'C. In WES, the \u22653% VAF criterion is relatively less important than in WGS, because the \u22654 mismatches criterion is more stringent. For example, 4 mismatches in 90x (WXS average) coverage region (VAF = 4.4%) automatically fulfill the \u22653% VAF criterion. For less covered regions (i.e. &lt;40x coverage; n = 285 out of total 1907 substitutions), the VAF criterion becomes less important, because 4 mismatches would generate \u226510% VAF, much higher than the minimum threshold (i.e. 3%). As results, we are missing lower heteroplasmic variants (i.e. variants with 3\u201310% heteroplasmic levels) from low coverage samples (mostly by WXS). The lower sensitivity of WXS is also confirmed in our validation study (see \u201cValidation of somatic variants\u201d below).')])]])])]])])])])]
+        (read_fixture('test_body_block_content_render', 'content_27.xml'),
+         read_fixture('test_body_block_content_render', 'content_27_expected.py'),
          ),
 
         # example list from 00666 kitchen sink with paragraphs and list inside a list-item
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><sec id="s2-1-1-1"><title>Article types (XML only, not display) (level 4 heading)</title><p>This is an example of a list where the prefix character is a uppercase roman numeral. This is a controlled list from the JATS DTD</p><list list-type="roman-upper"><list-item><list list-type="roman-lower"><list-item><p><italic>P. falciparum</italic></p></list-item></list><p>Genus: Leishmania. There are 3 subgenus of Leishmania:</p></list-item><list-item><list list-type="roman-lower"><list-item><p>Leishmania</p></list-item><list-item><p>Sauroleishmania</p></list-item><list-item><p>Viannia</p></list-item><list-item><p>Within Viannia subgenus, there are 11 species:</p><list list-type="bullet"><list-item><p><italic>L. braziliensis</italic></p></list-item></list></list-item></list></list-item></list></sec></root>',
-        [OrderedDict([('content', [OrderedDict([('type', 'section'), ('id', u's2-1-1-1'), ('title', u'Article types (XML only, not display) (level 4 heading)'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'This is an example of a list where the prefix character is a uppercase roman numeral. This is a controlled list from the JATS DTD')]), OrderedDict([('type', 'list'), ('prefix', u'roman-upper'), ('items', [[OrderedDict([('type', 'list'), ('prefix', u'roman-lower'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', '<i>P. falciparum</i>')])]])]), OrderedDict([('type', 'paragraph'), ('text', u'Genus: Leishmania. There are 3 subgenus of Leishmania:')])], [OrderedDict([('type', 'list'), ('prefix', u'roman-lower'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', u'Leishmania')])], [OrderedDict([('type', 'paragraph'), ('text', u'Sauroleishmania')])], [OrderedDict([('type', 'paragraph'), ('text', u'Viannia')])], [OrderedDict([('type', 'paragraph'), ('text', u'Within Viannia subgenus, there are 11 species:')]), OrderedDict([('type', 'list'), ('prefix', u'bullet'), ('items', [[OrderedDict([('type', 'paragraph'), ('text', '<i>L. braziliensis</i>')])]])])]])])]])])])])])])]
+        (read_fixture('test_body_block_content_render', 'content_28.xml'),
+         read_fixture('test_body_block_content_render', 'content_28_expected.py'),
          ),
 
         # example of a video inside a fig group based on 00666 kitchen sink
-        (u'<fig-group><fig id="fig3" position="float"><object-id pub-id-type="doi">10.7554/eLife.00666.011</object-id><label>Figure 3.</label><caption><title>Figure with figure supplements and figure supplement with source data and a video (see <xref ref-type="bibr" rid="bib25">Koch, 1959</xref>) .</title></caption><graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tif"/></fig><fig id="fig3s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id><label>Figure 3—figure supplement 1.</label><caption><title>Title of the figure supplement</title></caption><graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tif"/><p><supplementary-material id="fig3sdata1"><!-- UPDATE: DOI prefix removed from XML but must be added for display-->  <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id><label>Figure 3—figure supplement 1—Source data 1.</label><caption><title>Title of the figure supplement source data.</title><p>Legend of the figure supplement source data.</p></caption><media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig3-figsupp1-data1.xlsx"/></supplementary-material></p></fig><media mimetype="video" mime-subtype="mp4" id="fig3video1" xlink:href="elife-00666-fig3-video1.mp4"><object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id><label>Figure 3—Video 1.</label><caption><title> A description of the eLife editorial process. </title></caption></media></fig-group>',
-        [
-            OrderedDict([
-                ('type', 'figure'),
-                ('assets', [
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.00666.011'),
-                        ('id', u'fig3'),
-                        ('label', u'Figure 3'),
-                        ('title', 'Figure with figure supplements and figure supplement with source data and a video (see <a href="#bib25">Koch, 1959</a>) .')
-                    ]),
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.00666.012'),
-                        ('id', u'fig3s1'),
-                        ('label', u'Figure 3\u2014figure supplement 1'),
-                        ('title', u'Title of the figure supplement')
-                    ]),
-                    OrderedDict([
-                        ('type', 'video'),
-                        ('doi', u'10.7554/eLife.00666.035'),
-                        ('id', u'fig3video1'),
-                        ('label', u'Figure 3\u2014Video 1'),
-                        ('title', u' A description of the eLife editorial process. ')
-                    ])
-                ])
-            ])]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_29.xml'),
+         read_fixture('test_body_block_content_render', 'content_29_expected.py'),
+         ),
 
         # example of a video as supplementary material inside a fig-group based on 06726 v2
-        (u'<fig-group><fig id="fig1" position="float"><object-id pub-id-type="doi">10.7554/eLife.06726.003</object-id><label>Figure 1</label><caption><title>Angioblast migration ....</title><p>(<bold>A</bold>–<bold>F</bold>)</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.003">http://dx.doi.org/10.7554/eLife.06726.003</ext-link></p><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.06726.004</object-id><label>Figure 1—source movie 1.</label><caption><title>Time-lapse movie ....</title><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.004">http://dx.doi.org/10.7554/eLife.06726.004</ext-link></p></caption><media mime-subtype="avi" mimetype="video" xlink:href="elife-06726-fig1-data1-v2.avi"/></supplementary-material></p></caption><graphic xlink:href="elife-06726-fig1-v2.tif"/></fig><fig id="fig1s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.06726.005</object-id><label>Figure 1—figure supplement 1.</label><caption><title>Inhibition of Vegfa signaling ....</title><p>(<bold>A</bold>–<bold>J</bold>)</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.005">http://dx.doi.org/10.7554/eLife.06726.005</ext-link></p></caption><graphic xlink:href="elife-06726-fig1-figsupp1-v2.tif"/></fig></fig-group>',
-        [
-            OrderedDict([
-                ('type', 'figure'),
-                ('assets', [
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.06726.003'),
-                        ('id', u'fig1'),
-                        ('label', u'Figure 1'),
-                        ('title', u'Angioblast migration ....'),
-                        ('caption', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', u'(<b>A</b>\u2013<b>F</b>)')
-                            ])
-                        ]),
-                        ('sourceData', [
-                            OrderedDict([
-                                ('doi', u'10.7554/eLife.06726.004'),
-                                ('id', u'SD1-data'),
-                                ('label', u'Figure 1\u2014source movie 1'),
-                                ('title', u'Time-lapse movie ....'),
-                                ('mediaType', u'video/avi')
-                            ])
-                        ])
-                    ]),
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.06726.005'),
-                        ('id', u'fig1s1'),
-                        ('label', u'Figure 1\u2014figure supplement 1'),
-                        ('title', u'Inhibition of Vegfa signaling ....'),
-                        ('caption', [
-                            OrderedDict([
-                                ('type', 'paragraph'),
-                                ('text', u'(<b>A</b>\u2013<b>J</b>)')
-                            ])
-                        ])
-                    ])
-                ])
-            ])
-        ]
-        ),
+        (read_fixture('test_body_block_content_render', 'content_30.xml'),
+         read_fixture('test_body_block_content_render', 'content_30_expected.py'),
+         ),
 
         # example of fig supplementary-material with only a title tag, based on elife-26759-v1.xml except
         #  this example is fixed so the caption tag wraps the entire caption, and values are abbreviated
         #  to test how the punctuation is stripped from the end of the supplementary-material title value
         #  when it is converted to a label
-        (u'<fig-group><fig id="fig5" position="float"><object-id pub-id-type="doi">10.7554/eLife.26759.012</object-id><label>Figure 5.</label><caption><title>CUL3-BOP complex ....</p><p><supplementary-material id="fig5sdata1"><object-id pub-id-type="doi">10.7554/eLife.26759.014</object-id><caption><title>Quantification of ubiquitinated PIF4-HA protein levels relative to total ubiquitinated proteins from TUBEs assays.</title></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-fig1-v1.docx"/></supplementary-material></p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-v1"/></fig><fig id="fig5s1" position="float" specific-use="child-fig"><object-id pub-id-type="doi">10.7554/eLife.26759.013</object-id><label>Figure 5—figure supplement 1.</label><caption><title>BOP2 mediates ....</p></caption><graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-figsupp1-v1"/></fig></fig-group>',
-        [
-            OrderedDict([
-                ('type', 'figure'),
-                ('assets', [
-                    OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.26759.012'),
-                        ('id', u'fig5'),
-                        ('label', u'Figure 5'),
-                        ('title', u'CUL3-BOP complex ....'),
-                        ('sourceData', [
-                            OrderedDict([
-                                ('doi', u'10.7554/eLife.26759.014'),
-                                ('id', u'fig5sdata1'),
-                                ('label', u'Quantification of ubiquitinated PIF4-HA protein levels relative to total ubiquitinated proteins from TUBEs assays'), ('mediaType', u'application/docx')
-                            ])
-                        ])
-                    ]), OrderedDict([
-                        ('type', 'image'),
-                        ('doi', u'10.7554/eLife.26759.013'),
-                        ('id', u'fig5s1'),
-                        ('label', u'Figure 5\u2014figure supplement 1'),
-                        ('title', u'BOP2 mediates ....')
-                    ])
-                ])
-            ])
-        ]
+        (read_fixture('test_body_block_content_render', 'content_31.xml'),
+         read_fixture('test_body_block_content_render', 'content_31_expected.py'),
         ),
 
         )
