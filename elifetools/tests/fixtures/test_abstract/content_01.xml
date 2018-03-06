@@ -1,0 +1,16 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <abstract>
+                <object-id pub-id-type="doi">10.7554/eLife.00666.001</object-id>
+                <p>This is the abstract.</p>
+                <p>eLife does not structure abstracts into sub headings except ...</p>
+            </abstract>
+            <abstract abstract-type="executive-summary">
+                <object-id pub-id-type="doi">10.7554/eLife.00666.002</object-id>
+                <title>eLife digest</title>
+                <p>eLife digest are now optional</p>
+            </abstract>
+        </article-meta>
+    </front>
+</root>

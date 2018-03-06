@@ -1929,46 +1929,13 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # example based on eLife format
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta>
-         <abstract>
-            <object-id pub-id-type="doi">10.7554/eLife.00666.001</object-id>
-            <p>This is the abstract.</p><p>eLife does not structure abstracts into sub headings except ...</p>
-         </abstract>
-         <abstract abstract-type="executive-summary">
-            <object-id pub-id-type="doi">10.7554/eLife.00666.002</object-id>
-            <title>eLife digest</title>
-            <p>eLife digest are now optional</p>
-        </abstract>
-        </article-meta></front></root>''',
-        'This is the abstract. eLife does not structure abstracts into sub headings except ...'
+        (read_fixture('test_abstract', 'content_01.xml'),
+         read_fixture('test_abstract', 'content_01_expected.py'),
         ),
+
         # example based on BMJ Open bmjopen-4-e003269.xml
-        (u'''<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta>
-<abstract><sec>
-<title>Objectives</title>
-<p>To estimate the proportion of rotavirus gastroenteritis (RVGE) among children aged less than 5 years who had been diagnosed with acute gastroenteritis (AGE) and admitted to hospitals and emergency rooms (ERs). The seasonal distribution of RVGE and most prevalent rotavirus (RV) strains was also assessed.</p>
-</sec><sec>
-<title>Design</title>
-<p>A cross-sectional hospital-based surveillance study.</p>
-</sec><sec>
-<title>Setting</title>
-<p>5 reference paediatric hospitals across Abidjan.</p>
-</sec><sec>
-<title>Participants</title>
-<p>Children aged less than 5 years, who were hospitalised/visiting ERs for WHO-defined AGE, were enrolled. Written informed consent was obtained from parents/guardians before enrolment. Children who acquired nosocomial infection were excluded from the study.</p>
-</sec><sec>
-<title>Primary and secondary outcome measures</title>
-<p>The proportion of RVGE among AGE hospitalisations and ER visits was expressed with 95% exact CI. Stool samples were collected from all enrolled children and were tested for the presence of RV using an enzyme immunoassay. RV-positive samples were serotyped using reverse transcriptase-PCR.</p>
-</sec><sec>
-<title>Results</title>
-<p>Of 357 enrolled children (mean age 13.6±11.14 months), 332 were included in the final analyses; 56.3% (187/332) were hospitalised and 43.7% (145/332) were admitted to ERs. The proportion of RVGE hospitalisations and ER visits among all AGE cases was 30.1% (95% CI 23.6% to 37.3%) and 26.9% (95% CI 19.9% to 34.9%), respectively. Ninety-five children (28.6%) were RV positive; the highest number of RVGE cases was observed in children aged 6–11 months. The number of GE cases peaked in July and August 2008; the highest percentage of RV-positive cases was observed in January 2008. G1P[8] wild-type and G8P[6] were the most commonly detected strains.</p>
-</sec><sec>
-<title>Conclusions</title>
-<p>RVGE causes substantial morbidity among children under 5 years of age and remains a health concern in the Republic of Ivory Coast, where implementation of prevention strategies such as vaccination might help to reduce disease burden.</p>
-</sec>
-</abstract>
-        </article-meta></front></root>''',
-        u'To estimate the proportion of rotavirus gastroenteritis (RVGE) among children aged less than 5\u2005years who had been diagnosed with acute gastroenteritis (AGE) and admitted to hospitals and emergency rooms (ERs). The seasonal distribution of RVGE and most prevalent rotavirus (RV) strains was also assessed. A cross-sectional hospital-based surveillance study. 5 reference paediatric hospitals across Abidjan. Children aged less than 5\u2005years, who were hospitalised/visiting ERs for WHO-defined AGE, were enrolled. Written informed consent was obtained from parents/guardians before enrolment. Children who acquired nosocomial infection were excluded from the study. The proportion of RVGE among AGE hospitalisations and ER visits was expressed with 95% exact CI. Stool samples were collected from all enrolled children and were tested for the presence of RV using an enzyme immunoassay. RV-positive samples were serotyped using reverse transcriptase-PCR. Of 357 enrolled children (mean age 13.6\xb111.14\u2005months), 332 were included in the final analyses; 56.3% (187/332) were hospitalised and 43.7% (145/332) were admitted to ERs. The proportion of RVGE hospitalisations and ER visits among all AGE cases was 30.1% (95% CI 23.6% to 37.3%) and 26.9% (95% CI 19.9% to 34.9%), respectively. Ninety-five children (28.6%) were RV positive; the highest number of RVGE cases was observed in children aged 6\u201311\u2005months. The number of GE cases peaked in July and August 2008; the highest percentage of RV-positive cases was observed in January 2008. G1P[8] wild-type and G8P[6] were the most commonly detected strains. RVGE causes substantial morbidity among children under 5\u2005years of age and remains a health concern in the Republic of Ivory Coast, where implementation of prevention strategies such as vaccination might help to reduce disease burden.'
+        (read_fixture('test_abstract', 'content_02.xml'),
+         read_fixture('test_abstract', 'content_02_expected.py'),
         ),
     )
     def test_abstract_edge_cases(self, xml_content, expected):
