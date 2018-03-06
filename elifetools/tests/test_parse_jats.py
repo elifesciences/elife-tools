@@ -2361,73 +2361,18 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # pub-date values from 00666 kitchen sink
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date publication-format="electronic" date-type="update"><day>11</day><month>08</month><year>2016</year></pub-date><pub-date publication-format="electronic" date-type="publication"><day>25</day><month>04</month><year>2016</year></pub-date><pub-date pub-type="collection"><year>2016</year></pub-date></article></root>',
-        [
-            OrderedDict([
-                ('publication-format', u'electronic'),
-                ('date-type', u'update'),
-                ('day', u'11'),
-                ('month', u'08'),
-                ('year', u'2016'),
-                (u'date', date_struct(2016, 8, 11))
-            ]),
-            OrderedDict([
-                ('publication-format', u'electronic'),
-                ('date-type', u'publication'),
-                ('day', u'25'),
-                ('month', u'04'),
-                ('year', u'2016'),
-                (u'date', date_struct(2016, 4, 25))
-            ]),
-            OrderedDict([
-                ('pub-type', u'collection'),
-                ('day', None),
-                ('month', None),
-                ('year', u'2016'),
-                (u'date', date_struct(2016, 1, 1))
-            ]),
-        ]
+        (read_fixture('test_pub_dates', 'content_01.xml'),
+         read_fixture('test_pub_dates', 'content_01_expected.py'),
         ),
 
         # example from cstp77
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date publication-format="electronic" date-type="pub" iso-8601-date="2017-07-04"><day>04</day><month>07</month><year>2017</year></pub-date></article></root>',
-        [
-            OrderedDict([
-                ('publication-format', u'electronic'),
-                ('date-type', u'pub'),
-                ('day', u'04'),
-                ('month', u'07'),
-                ('year', u'2017'),
-                (u'date', date_struct(2017, 7, 4))
-            ])
-        ]
+        (read_fixture('test_pub_dates', 'content_02.xml'),
+         read_fixture('test_pub_dates', 'content_02_expected.py'),
         ),
 
         # example from bmjopen-2013-003269
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><pub-date pub-type="ppub"><month>1</month><year>2014</year></pub-date><pub-date pub-type="epub-original"><day>30</day><month>1</month><year>2014</year></pub-date><pub-date pub-type="epub"><day>31</day><month>1</month><year>2014</year></pub-date></article></root>',
-        [
-            OrderedDict([
-                ('pub-type', u'ppub'),
-                ('day', None),
-                ('month', u'1'),
-                ('year', u'2014'),
-                (u'date', date_struct(2014, 1, 1))
-            ]),
-            OrderedDict([
-                ('pub-type', u'epub-original'),
-                ('day', u'30'),
-                ('month', u'1'),
-                ('year', u'2014'),
-                (u'date', date_struct(2014, 1, 30))
-            ]),
-            OrderedDict([
-                ('pub-type', u'epub'),
-                ('day',  u'31'),
-                ('month', u'1'),
-                ('year', u'2014'),
-                (u'date', date_struct(2014, 1, 31))
-            ]),
-        ]
+        (read_fixture('test_pub_dates', 'content_03.xml'),
+         read_fixture('test_pub_dates', 'content_03_expected.py'),
         ),
     )
     def test_pub_dates_edge_cases(self, xml_content, expected):
