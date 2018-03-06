@@ -1748,59 +1748,46 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><sec id="s1"><title>Section title</title><p>Content.<fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group></p><p>More content</p></sec></root>',
-        [OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-v1.tif'})]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-figsupp1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
+        (read_fixture('test_render_raw_body', 'content_01.xml'),
+         read_fixture('test_render_raw_body', 'content_01_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><sec id="s1"><title>Section title</title><p>Content.</p><fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group><p>More content</p></sec></root>',
-        [OrderedDict([('type', 'section'), ('id', u's1'), ('title', u'Section title'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-v1.tif'})]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-figsupp1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])])])]
+        (read_fixture('test_render_raw_body', 'content_02.xml'),
+         read_fixture('test_render_raw_body', 'content_02_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p><p>Content 2</p></boxed-text></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
+        (read_fixture('test_render_raw_body', 'content_03.xml'),
+         read_fixture('test_render_raw_body', 'content_03_expected.py'),
          ),
 
         # Below when there is a space between paragraph tags, it should not render as a paragraph
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text><p>Content 1</p> <p>Content 2</p></boxed-text></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Content 2')])]
+        (read_fixture('test_render_raw_body', 'content_04.xml'),
+         read_fixture('test_render_raw_body', 'content_04_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink><p><bold>This</bold> <fig id="fig7" position="float"><graphic xlink:href="elife-00012-resp-fig2-v1.tif"/></fig></p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', '<b>This</b>')]), OrderedDict([('type', 'image'), ('id', u'fig7'), ('image', {'alt': '', 'uri': u'elife-00012-resp-fig2-v1.tif'})])]
+        (read_fixture('test_render_raw_body', 'content_05.xml'),
+         read_fixture('test_render_raw_body', 'content_05_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.<fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig>More content</p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])]
+        (read_fixture('test_render_raw_body', 'content_06.xml'),
+         read_fixture('test_render_raw_body', 'content_06_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.</p><fig id="fig1"><object-id pub-id-type="doi">10.7554/eLife.00666.024</object-id><label>Figure 1.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig1-v1.tif"/></fig><p>More content</p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.024'), ('id', u'fig1'), ('label', u'Figure 1'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])]
+        (read_fixture('test_render_raw_body', 'content_07.xml'),
+         read_fixture('test_render_raw_body', 'content_07_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p>Content.</p><fig-group><fig id="fig2"><object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-v1.tif"/></fig><fig id="fig2s1"><object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id><label>Figure 2.</label><caption><title>Figure title</title><p>Figure caption</p></caption><graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/></fig></fig-group><p>More content</p></root>',
-        [OrderedDict([('type', 'paragraph'), ('text', u'Content.')]), OrderedDict([('type', 'figure'), ('assets', [OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.008'), ('id', u'fig2'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-v1.tif'})]), OrderedDict([('type', 'image'), ('doi', u'10.7554/eLife.00666.009'), ('id', u'fig2s1'), ('label', u'Figure 2'), ('title', u'Figure title'), ('caption', [OrderedDict([('type', 'paragraph'), ('text', u'Figure caption')])]), ('image', {'alt': '', 'uri': u'elife-00666-fig2-figsupp1-v1.tif'})])])]), OrderedDict([('type', 'paragraph'), ('text', u'More content')])]
+        (read_fixture('test_render_raw_body', 'content_08.xml'),
+         read_fixture('test_render_raw_body', 'content_08_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><p><boxed-text id="B1"><p>Boxed text with no title</p></boxed-text></p></root>',
-        [OrderedDict([('type', 'box'), ('id', u'B1'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Boxed text with no title')])])])]
+        (read_fixture('test_render_raw_body', 'content_09.xml'),
+         read_fixture('test_render_raw_body', 'content_09_expected.py'),
          ),
 
         # excerpt from 00646 v1 with a boxed-text inline-graphic
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><boxed-text id="B1"><p>This article by Emma Pewsey (pictured) was the winning entry in the <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</ext-link> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.</p><p><inline-graphic xlink:href="elife-00646-inf1-v1"/></p></boxed-text></root>',
-        [
-            OrderedDict([
-                ('type', 'image'),
-                ('id', u'B1'),
-                ('image', {'alt': '', 'uri': u'elife-00646-inf1-v1'}),
-                ('caption', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', 'This article by Emma Pewsey (pictured) was the winning entry in the <a href="http://europepmc.org/ScienceWritingCompetition">Access to Understanding science-writing competition</a> for PhD students and early career post-doctoral researchers organized by Europe PubMed Central in partnership with The British Library. Entrants were asked to explain to a non-scientific audience, in fewer than 800 words, the research reported in a scientific article and why it mattered.')
-                    ])
-                ])
-            ])
-        ]
-
+        (read_fixture('test_render_raw_body', 'content_10.xml'),
+         read_fixture('test_render_raw_body', 'content_10_expected.py'),
         ),
     )
     def test_render_raw_body(self, xml_content, expected):

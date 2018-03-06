@@ -1,0 +1,7 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <p>
+        <boxed-text id="B1">
+            <p>Boxed text with no title</p>
+        </boxed-text>
+    </p>
+</root>
