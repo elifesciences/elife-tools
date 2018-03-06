@@ -1865,21 +1865,21 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # typical eLife format
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn publication-format="electronic" pub-type="epub">2050-084X</issn></journal-meta></front></root>',
+        (read_fixture('test_journal_issn', 'content_01.xml'),
          'electronic',
          None,
          '2050-084X'
          ),
 
         # eLife format with specifying the publication format
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn publication-format="electronic" pub-type="epub">2050-084X</issn></journal-meta></front></root>',
+        (read_fixture('test_journal_issn', 'content_02.xml'),
          None,
          None,
          '2050-084X'
          ),
 
         # a non-eLife format
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><issn pub-type="epub">2057-4991</issn></journal-meta></front></root>',
+        (read_fixture('test_journal_issn', 'content_03.xml'),
          None,
          'epub',
          '2057-4991'
