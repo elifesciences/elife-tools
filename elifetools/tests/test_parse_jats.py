@@ -1796,19 +1796,20 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(expected, tag_content)
 
 
-
     @unpack
     @data(
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract><object-id pub-id-type="doi">10.7554/eLife.00070.001</object-id><p>Paragraph 1</p><p>Paragraph 2</p></root>',
-        OrderedDict([('doi', u'10.7554/eLife.00070.001'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')])])])
+        (read_fixture('test_abstract_json', 'content_01.xml'),
+         read_fixture('test_abstract_json', 'content_01_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract abstract-type="executive-summary"><object-id pub-id-type="doi">10.7554/eLife.00070.002</object-id><title>eLife digest</title><p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p></root>',
-        None
+        # executive-summary will return None
+        (read_fixture('test_abstract_json', 'content_02.xml'),
+         read_fixture('test_abstract_json', 'content_02_expected.py'),
          ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML"><abstract><object-id pub-id-type="doi">10.7554/eLife.00001.001</object-id><p>Example <sub>in</sub> <italic>cis</italic> <sc>or</sc> <italic>trans</italic> <underline>and</underline> <italic>Gfrα2</italic> <inline-formula><mml:math id="inf1"><mml:mstyle displaystyle="true" scriptlevel="0"><mml:mrow><mml:munder><mml:mo/><mml:mi>m</mml:mi></mml:munder><mml:mrow><mml:msub><mml:mover accent="true"><mml:mi>p</mml:mi><mml:mo/></mml:mover><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:mrow></mml:mstyle></mml:math></inline-formula> <sup>by</sup> <bold>its</bold> co-receptors as *p&lt;0.05 &gt;0.25% <xref ref-type="bibr" rid="bib25">Schneider et al., 2006</xref> and ligands.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00001.001">http://dx.doi.org/10.7554/eLife.00001.001</ext-link></p></abstract></root>',
-        OrderedDict([('doi', u'10.7554/eLife.00001.001'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Example <sub>in</sub> <i>cis</i> <span class="small-caps">or</span> <i>trans</i> <span class="underline">and</span> <i>Gfrα2</i> <math id="inf1"><mstyle displaystyle="true" scriptlevel="0"><mrow><munder><mo/><mi>m</mi></munder><mrow><msub><mover accent="true"><mi>p</mi><mo/></mover><mi>m</mi></msub><mo>=</mo><mn>0</mn></mrow></mrow></mstyle></math> <sup>by</sup> <b>its</b> co-receptors as *p&lt;0.05 &gt;0.25% <a href="#bib25">Schneider et al., 2006</a> and ligands.')])])])
+        # test lots of inline tagging
+        (read_fixture('test_abstract_json', 'content_03.xml'),
+         read_fixture('test_abstract_json', 'content_03_expected.py'),
          ),
 
         )
