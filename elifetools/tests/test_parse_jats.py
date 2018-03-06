@@ -1821,14 +1821,15 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><abstract abstract-type="executive-summary"><object-id pub-id-type="doi">10.7554/eLife.00070.002</object-id><title>eLife digest</title><p>Paragraph 1</p><p>Paragraph 2</p><p>Paragraph 3</p></root>',
-        OrderedDict([('doi', u'10.7554/eLife.00070.002'), ('content', [OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 1')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 2')]), OrderedDict([('type', 'paragraph'), ('text', u'Paragraph 3')])])])
+        (read_fixture('test_digest_json', 'content_01.xml'),
+         read_fixture('test_digest_json', 'content_01_expected.py'),
          ),
         )
     def test_digest_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.digest_json(soup.contents[0])
         self.assertEqual(expected, tag_content)
+
 
     """
     Unit test small or special cases
