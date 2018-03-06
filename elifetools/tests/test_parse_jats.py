@@ -2009,8 +2009,8 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # 07383 v1 has a institution in the principal award recipient
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><funding-group><award-group id="par-1"><funding-source><institution-wrap><institution>Laura and John Arnold Foundation</institution></institution-wrap></funding-source><principal-award-recipient><institution>Reproducibility Project: Cancer Biology</institution></principal-award-recipient></award-group></funding-group></root>',
-        [{'award_id': None, 'funding_source': [u'Laura and John Arnold Foundation'], 'recipient': [u'Reproducibility Project: Cancer Biology']}]
+        (read_fixture('test_award_groups', 'content_01.xml'),
+         read_fixture('test_award_groups', 'content_01_expected.py'),
          ),
         )
     def test_award_groups_edge_cases(self, xml_content, expected):
