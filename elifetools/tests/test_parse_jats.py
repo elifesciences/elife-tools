@@ -2175,45 +2175,8 @@ class TestParseJats(unittest.TestCase):
 
     @data(
         # edge case, no id attribute on award-group tag, and id will be generated, based on 10.1098/rsob.150230
-        ('''<root>
-            <article>
-            <front>
-            <article-meta>
-            <funding-group specific-use="FundRef">
-            <award-group>
-            <funding-source>
-            <institution-wrap>
-            <institution>Grant-in-Aid for Scientific Research (S) from the Ministry of Education, Culture, Sports, Science and Technology (MEXT) of Japan</institution>
-            </institution-wrap>
-            </funding-source>
-            </award-group>
-            </funding-group>
-            <funding-group specific-use="FundRef">
-            <award-group>
-            <funding-source>
-            <institution-wrap>
-            <institution>Wellcome Trust</institution>
-            <institution-id>http://dx.doi.org/10.13039/100004440</institution-id>
-            </institution-wrap>
-            </funding-source>
-            <award-id>077707</award-id>
-            <award-id>084229</award-id>
-            <award-id>091020</award-id>
-            <award-id>092076</award-id>
-            <award-id>107022</award-id>
-            </award-group>
-            </funding-group>
-            </article-meta>
-            </front>
-            </article>
-         </root>''',
-        [
-            {'award-group-1': {
-                'institution': 'Grant-in-Aid for Scientific Research (S) from the Ministry of Education, Culture, Sports, Science and Technology (MEXT) of Japan'}
-            }, {'award-group-2': {
-                'award-id': u'077707', 'institution': u'Wellcome Trust', 'id': u'http://dx.doi.org/10.13039/100004440'}
-            }
-        ]
+        (read_fixture('test_full_award_groups', 'content_01.xml'),
+         read_fixture('test_full_award_groups', 'content_01_expected.py'),
         ),
         )
     @unpack
