@@ -2552,29 +2552,29 @@ class TestParseJats(unittest.TestCase):
         None
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">14973</article-id><article-id pub-id-type="doi">10.7554/eLife.14973</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Breast cancer</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_01.xml'),
         u'Breast Cancer'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">05635</article-id><article-id pub-id-type="doi">10.7554/eLife.05635</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>The Natural History Of Model Organisms</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_02.xml'),
         u'The Natural History of Model Organisms'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">17394</article-id><article-id pub-id-type="doi">10.7554/eLife.17394</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>p53 Family proteins</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_03.xml'),
         u'p53 Family Proteins'
         ),
 
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">25700</article-id><article-id pub-id-type="doi">10.7554/eLife.25700</article-id><subj-group subj-group-type="display-channel"><subject>Insight</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>TOR signaling</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_04.xml'),
         u'TOR Signaling'
         ),
 
         # example from elife-27438-v1.xml has no sub-display-channel and title_prefix is None
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">27438</article-id><article-id pub-id-type="doi">10.7554/eLife.27438</article-id><subj-group subj-group-type="display-channel"><subject>Feature Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Ecology</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_05.xml'),
         None
         ),
 
         # example from elife-27438-v2.xml which does have a title_prefix and it rewritten
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">27438</article-id><article-id pub-id-type="doi">10.7554/eLife.27438</article-id><subj-group subj-group-type="heading"><subject>Ecology</subject></subj-group><subj-group subj-group-type="sub-display-channel"><subject>Point of view</subject></subj-group><subj-group subj-group-type="display-channel"><subject>Feature article</subject></subj-group></article-meta></front></root>',
+        (read_fixture('test_title_prefix_json', 'content_06.xml'),
         'Point of View'
         ),
 
