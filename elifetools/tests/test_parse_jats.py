@@ -2456,496 +2456,54 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
          # non-elife example with issue tag from cstp77
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
-<ref-list><ref id="B7">
-<label>7</label>
-<element-citation publication-type="journal">
-<person-group person-group-type="author">
-<name>
-<surname>Conrad</surname>
-<given-names>C.C.</given-names>
-</name>
-<name>
-<surname>Hilchey</surname>
-<given-names>K.G.</given-names>
-</name>
-</person-group>
-<article-title>A review of citizen science and community-based environmental monitoring: Issues and opportunities</article-title>
-<source>Environmental Monitoring and Assessment</source>
-<year iso-8601-date="2011">2011</year>
-<volume>176</volume>
-<issue>1&#8211;4</issue>
-<fpage>273</fpage>
-<lpage>291</lpage>
-<pub-id pub-id-type="doi">10.1007/s10661-010-1582-5</pub-id>
-</element-citation>
-</ref></ref-list></back></article></root>''',
-        [{
-            'article_doi': u'10.5334/cstp.77',
-            'article_title': u'A review of citizen science and community-based environmental monitoring: Issues and opportunities',
-            'authors': [{
-                'given-names': u'C.C.',
-                'group-type': u'author',
-                'surname': u'Conrad'
-                },
-                {
-                'given-names': u'K.G.',
-                'group-type': u'author',
-                'surname': u'Hilchey'
-                }],
-            'doi': u'10.1007/s10661-010-1582-5',
-            'fpage': u'273',
-            'full_article_title': u'A review of citizen science and community-based environmental monitoring: Issues and opportunities',
-            'id': u'B7',
-            'issue': u'1\u20134',
-            'lpage': u'291',
-            'position': 1,
-            'publication-type': u'journal',
-            'ref': u'7 Conrad C.C. Hilchey K.G. A review of citizen science and community-based environmental monitoring: Issues and opportunities Environmental Monitoring and Assessment 2011 176 1\u20134 273 291 10.1007/s10661-010-1582-5',
-            'reference_id': u'10.1007/s10661-010-1582-5',
-            'source': u'Environmental Monitoring and Assessment',
-            'volume': u'176',
-            'year': u'2011',
-            'year-iso-8601-date': u'2011'
-        }]
+        (read_fixture('test_refs', 'content_01.xml'),
+         read_fixture('test_refs', 'content_01_expected.py'),
         ),
 
         # mixed-citation example 1 from bmjopen
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back><ref-list><title>References</title><ref id="R15"><label>15</label><mixed-citation><person-group person-group-type="author"><name><surname>Atkinson</surname><given-names>W</given-names></name><name><surname>Hamborsky</surname><given-names>J</given-names></name><name><surname>McIntyre</surname><given-names>L</given-names></name><etal/></person-group>. <source>Epidemiology and prevention of vaccine-preventable diseases</source>. <publisher-loc>Washington, DC</publisher-loc>: <publisher-name>Public Health Foundation</publisher-name>, <year>2008</year>.</mixed-citation></ref></ref-list></back></article></root>''',
-        [{
-            'article_doi': u'10.1136/bmjopen-2013-003269',
-            'authors': [{
-                'given-names': u'W',
-                'group-type': u'author',
-                'surname': u'Atkinson'
-                },
-                {
-                'given-names': u'J',
-                'group-type': u'author',
-                'surname': u'Hamborsky'
-                },
-                {
-                'given-names': u'L',
-                'group-type': u'author',
-                'surname': u'McIntyre'
-                },
-                {
-                'etal': True,
-                'group-type': u'author'
-                }],
-            'id': u'R15',
-            'position': 1,
-            'publisher_loc': u'Washington, DC',
-            'publisher_name': u'Public Health Foundation',
-            'ref': u'15AtkinsonWHamborskyJMcIntyreL. Epidemiology and prevention of vaccine-preventable diseases. Washington, DC: Public Health Foundation, 2008.',
-            'source': u'Epidemiology and prevention of vaccine-preventable diseases',
-            'year': u'2008'
-        }]
+        (read_fixture('test_refs', 'content_02.xml'),
+         read_fixture('test_refs', 'content_02_expected.py'),
         ),
 
         # mixed-citation example 2 from bmjopen
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back><ref-list><title>References</title><ref id="R29"><label>29</label><mixed-citation><person-group person-group-type="author"><name><surname>Armah</surname><given-names>GE</given-names></name><name><surname>Steele</surname><given-names>AD</given-names></name><name><surname>Esona</surname><given-names>MD</given-names></name><etal/></person-group>. <article-title>Diversity of rotavirus strains circulating in West Africa from 1996 to 2000</article-title>. <source>J Infect Dis</source> <year>2010</year>;<volume>202</volume><issue>(Suppl)</issue>:<fpage>S64</fpage>–<lpage>71</lpage>.</mixed-citation></ref></ref-list></back></article></root>''',
-        [{
-            'article_doi': u'10.1136/bmjopen-2013-003269',
-            'article_title': u'Diversity of rotavirus strains circulating in West Africa from 1996 to 2000',
-            'authors': [{
-                'given-names': u'GE',
-                'group-type': u'author',
-                'surname': u'Armah'
-                },
-                {
-                'given-names': u'AD',
-                'group-type': u'author',
-                'surname': u'Steele'
-                },
-                {
-                'given-names': u'MD',
-                'group-type': u'author',
-                'surname': u'Esona'
-                },
-                {
-                'etal': True,
-                'group-type': u'author'
-                }],
-            'fpage': u'S64',
-            'full_article_title': u'Diversity of rotavirus strains circulating in West Africa from 1996 to 2000',
-            'id': u'R29',
-            'issue': u'(Suppl)',
-            'lpage': u'71',
-            'position': 1,
-            'ref': u'29ArmahGESteeleADEsonaMD. Diversity of rotavirus strains circulating in West Africa from 1996 to 2000. J Infect Dis 2010;202(Suppl):S64\u201371.',
-            'source': u'J Infect Dis',
-            'volume': u'202',
-            'year': u'2010'
-        }]
+        (read_fixture('test_refs', 'content_03.xml'),
+         read_fixture('test_refs', 'content_03_expected.py'),
         ),
 
         # mixed-citation example 3 from bmjopen
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id></article-meta></front><back>
-<ref-list><title>References</title><ref id="R31"><label>31</label><mixed-citation><collab>World Health Organization</collab>. <article-title>Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region</article-title>. <comment><ext-link xlink:href="http://www.afro.who.int/index.php?option=com_content&amp;view=article&amp;id=2486:rotavirus-surveillance-in-the-african-region&amp;catid=1980&amp;Itemid=2737" ext-link-type="uri">http://www.afro.who.int/index.php?option=com_content&amp;view=article&amp;id=2486:rotavirus-surveillance-in-the-african-region&amp;catid=1980&amp;Itemid=2737</ext-link> (accessed 26 Jul 2013</comment>).</mixed-citation></ref></ref-list></back></article></root>''',
-        [{
-            'article_doi': u'10.1136/bmjopen-2013-003269',
-            'article_title': u'Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region',
-            'authors': [{
-                'collab': u'World Health Organization',
-                'group-type': u'author',
-                }],
-            'collab': u'World Health Organization',
-            'comment': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737 (accessed 26 Jul 2013',
-            'full_article_title': u'Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region',
-            'id': u'R31',
-            'position': 1,
-            'ref': u'31World Health Organization. Rotavirus surveillance in the African Region. Updates of Rotavirus surveillance in the African Region. http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737 (accessed 26 Jul 2013).',
-            'uri': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737',
-            'uri_text': u'http://www.afro.who.int/index.php?option=com_content&view=article&id=2486:rotavirus-surveillance-in-the-african-region&catid=1980&Itemid=2737',
-        }]
+        (read_fixture('test_refs', 'content_04.xml'),
+         read_fixture('test_refs', 'content_04_expected.py'),
         ),
 
         # citation example from redalyc - udea
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">DOI:10.17533/udea.rfnsp.v34n2a02</article-id></article-meta></front><back>
-<ref-list><ref id="redalyc_12045638002_ref32">
-<label>1</label>
-<mixed-citation> Al Sahaf OS, Vega–Carrascal I. Chemical composition of smoke produced by high–frequency electrosurgery. Ir J Med Sci. [Revista en Internet] 2007 [Acceso 13 de mayo de 2014]; 176(3):229–32. Disponible en:  <ext-link ext-link-type="uri" xlink:href="www.ncbi.nlm.nih.gov/pubmed/17653513">www.ncbi.nlm.nih.gov/pubmed/17653513</ext-link> </mixed-citation>
-<element-citation publication-type="journal">
-<person-group person-group-type="author">
-<name>
-<surname>Al</surname>
-<given-names>Sahaf OS</given-names>
-</name>
-<name>
-<surname>Vega–Carrascal</surname>
-<given-names>I</given-names>
-</name>
-</person-group>
-<source>Ir J Med Sci</source>
-<year>2007</year>
-</element-citation>
-</ref>
-</ref-list></back></article></root>''',
-        [{
-            'article_doi': u'DOI:10.17533/udea.rfnsp.v34n2a02',
-            'authors': [{
-                'given-names': u'Sahaf OS',
-                'group-type': u'author',
-                'surname': u'Al'
-                },
-                {
-                'given-names': u'I',
-                'group-type': u'author',
-                'surname': u'Vega\u2013Carrascal'
-                }],
-            'id': u'redalyc_12045638002_ref32',
-            'position': 1,
-            'ref': u'1 Al Sahaf OS, Vega\u2013Carrascal I. Chemical composition of smoke produced by high\u2013frequency electrosurgery. Ir J Med Sci. [Revista en Internet] 2007 [Acceso 13 de mayo de 2014]; 176(3):229\u201332. Disponible en: www.ncbi.nlm.nih.gov/pubmed/17653513 Al Sahaf OS Vega\u2013Carrascal I Ir J Med Sci 2007',
-            'publication-type': u'journal',
-            'source': u'Ir J Med Sci',
-            'uri': u'www.ncbi.nlm.nih.gov/pubmed/17653513',
-            'uri_text': u'www.ncbi.nlm.nih.gov/pubmed/17653513',
-            "year": "2007",
-        }]
+        (read_fixture('test_refs', 'content_05.xml'),
+         read_fixture('test_refs', 'content_05_expected.py'),
         ),
 
          # example of data citation with a pub-id accession, based on article 07836
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
-<ref-list><ref id="bib105">
-<element-citation publication-type="data">
-<person-group person-group-type="author">
-<name>
-<surname>Steinbaugh</surname>
-<given-names>MJ</given-names>
-</name>
-<name>
-<surname>Dreyfuss</surname>
-<given-names>JM</given-names>
-</name>
-<name>
-<surname>Blackwell</surname>
-<given-names>TK</given-names>
-</name>
-</person-group>
-<year iso-8601-date="2015">2015</year>
-<data-title>
-RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans
-</data-title>
-<source>NCBI Gene Expression Omnibus</source>
-<pub-id pub-id-type="accession" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075">GSE63075</pub-id>
-</element-citation>
-</ref></ref-list></back></article></root>''',
-        [
-            {
-                "data-title": "\nRNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans\n",
-                "article_doi": "10.5334/cstp.77",
-                "authors": [
-                    {
-                        "surname": "Steinbaugh",
-                        "given-names": "MJ",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Dreyfuss",
-                        "given-names": "JM",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Blackwell",
-                        "given-names": "TK",
-                        "group-type": "author"
-                    }
-                ],
-                "accession": "GSE63075",
-                "publication-type": "data",
-                "source": "NCBI Gene Expression Omnibus",
-                "year": "2015",
-                "position": 1,
-                "year-iso-8601-date": "2015",
-                "ref": "Steinbaugh MJ Dreyfuss JM Blackwell TK 2015 RNA-seq analysis of germline stem cell removal and loss of SKN-1 in c. elegans NCBI Gene Expression Omnibus GSE63075",
-                "id": "bib105"
-            }
-        ]
+        (read_fixture('test_refs', 'content_06.xml'),
+         read_fixture('test_refs', 'content_06_expected.py'),
         ),
 
          # example of data citation with a object-id tag accession, based on article 07048
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><front><article-meta><article-id pub-id-type="doi">10.5334/cstp.77</article-id></article-meta></front><back>
-<ref-list><ref id="bib15">
-<element-citation publication-type="data">
-<person-group person-group-type="author">
-<name>
-<surname>Bollag</surname>
-<given-names>RJ</given-names>
-</name>
-<name>
-<surname>Siegfried</surname>
-<given-names>Z</given-names>
-</name>
-<name>
-<surname>Cebra-Thomas</surname>
-<given-names>J</given-names>
-</name>
-<name>
-<surname>Garvey</surname>
-<given-names>N</given-names>
-</name>
-<name>
-<surname>Davison</surname>
-<given-names>EM</given-names>
-</name>
-<name>
-<surname>Silver</surname>
-<given-names>LM</given-names>
-</name>
-</person-group>
-<year>1994b</year>
-<data-title>Mus musculus T-box 2 (Tbx2), mRNA</data-title>
-<source>NCBI Nucleotide</source>
-<object-id pub-id-type="art-access-id">NM_009324</object-id>
-<comment>
-<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/nuccore/120407038">http://www.ncbi.nlm.nih.gov/nuccore/120407038</ext-link>
-</comment>
-</element-citation>
-</ref></ref-list></back></article></root>''',
-        [
-            {
-                "uri_text": "http://www.ncbi.nlm.nih.gov/nuccore/120407038",
-                "comment": "\nhttp://www.ncbi.nlm.nih.gov/nuccore/120407038\n",
-                "data-title": "Mus musculus T-box 2 (Tbx2), mRNA",
-                "article_doi": "10.5334/cstp.77",
-                "authors": [
-                    {
-                        "surname": "Bollag",
-                        "given-names": "RJ",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Siegfried",
-                        "given-names": "Z",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Cebra-Thomas",
-                        "given-names": "J",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Garvey",
-                        "given-names": "N",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Davison",
-                        "given-names": "EM",
-                        "group-type": "author"
-                    },
-                    {
-                        "surname": "Silver",
-                        "given-names": "LM",
-                        "group-type": "author"
-                    }
-                ],
-                "accession": "NM_009324",
-                "uri": "http://www.ncbi.nlm.nih.gov/nuccore/120407038",
-                "source": "NCBI Nucleotide",
-                "year": "1994b",
-                "position": 1,
-                "publication-type": "data",
-                "ref": "Bollag RJ Siegfried Z Cebra-Thomas J Garvey N Davison EM Silver LM 1994b Mus musculus T-box 2 (Tbx2), mRNA NCBI Nucleotide NM_009324 http://www.ncbi.nlm.nih.gov/nuccore/120407038",
-                "id": "bib15"
-            }
-        ]
+        (read_fixture('test_refs', 'content_07.xml'),
+         read_fixture('test_refs', 'content_07_expected.py'),
         ),
 
          # example of mixed-citation with string-name, based on non-elife article
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list><ref><mixed-citation publication-type="book" meta="no" id="c2"><person-group person-group-type="author"><string-name><surname>Frank</surname>, <given-names>A. W.</given-names></string-name></person-group> (<year>1995</year>). <source>The wounded storyteller: Body, illness, and ethics</source>. <publisher-loc>Chicago</publisher-loc>: <publisher-name>University of Chicago Press</publisher-name>.</mixed-citation></ref></ref-list></back></article></root>',
-        [{
-            'article_doi': None,
-            'authors': [{
-                'given-names': u'A. W.',
-                'group-type': u'author',
-                'surname': u'Frank'}],
-            'position': 1,
-            'publication-type': u'book',
-            'publisher_loc': u'Chicago',
-            'publisher_name': u'University of Chicago Press',
-            'ref': u'Frank, A. W. (1995). The wounded storyteller: Body, illness, and ethics. Chicago: University of Chicago Press.',
-            'source': u'The wounded storyteller: Body, illness, and ethics',
-            'year': u'1995'
-        }]
+        (read_fixture('test_refs', 'content_08.xml'),
+         read_fixture('test_refs', 'content_08_expected.py'),
         ),
 
          # example of data citation with a pub-id pub-id-type="archive", parse it as an accession number, based on 00666 kitchen sink example
-        ('''<root xmlns:xlink="http://www.w3.org/1999/xlink"><article><back><ref-list>    <ref id="bib34">
-        <element-citation publication-type="data">
-            <person-group person-group-type="author">
-                <name>
-                    <surname>Radoshevich</surname>
-                    <given-names>L</given-names>
-                </name>
-                <name>
-                    <surname>Impens</surname>
-                    <given-names>F</given-names>
-                </name>
-                <name>
-                    <surname>Ribet</surname>
-                    <given-names>D</given-names>
-                </name>
-                <name>
-                    <surname>Quereda</surname>
-                    <given-names>JJ</given-names>
-                </name>
-                <name>
-                    <surname>Nam Tham</surname>
-                    <given-names>T</given-names>
-                </name>
-                <name>
-                    <surname>Nahori</surname>
-                    <given-names>MA</given-names>
-                </name>
-                <name>
-                    <surname>Bierne</surname>
-                    <given-names>H</given-names>
-                </name>
-                <name>
-                    <surname>Dussurget</surname>
-                    <given-names>O</given-names>
-                </name>
-                <name>
-                    <surname>Pizarro-Cerdá</surname>
-                    <given-names>J</given-names>
-                </name>
-                <name>
-                    <surname>Knobeloch</surname>
-                    <given-names>KP</given-names>
-                </name>
-                <name>
-                    <surname>Cossart</surname>
-                    <given-names>P</given-names>
-                </name>
-            </person-group>
-            <year iso-8601-date="2015">2015a</year>
-            <data-title>ISG15 counteracts <italic>Listeria monocytogenes</italic>
-                infection</data-title>
-            <source>ProteomeXchange</source>
-            <pub-id pub-id-type="archive"
-                xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805"
-                >PXD001805</pub-id>
-        </element-citation>
-    </ref></ref-list></back></article></root>''',
-        [{
-        "data-title": u"ISG15 counteracts <italic>Listeria monocytogenes</italic>\n                infection",
-        "article_doi": None,
-        "authors": [
-            {
-                "surname": u"Radoshevich",
-                "given-names": u"L",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Impens",
-                "given-names": u"F",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Ribet",
-                "given-names": u"D",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Quereda",
-                "given-names": u"JJ",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Nam Tham",
-                "given-names": u"T",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Nahori",
-                "given-names": u"MA",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Bierne",
-                "given-names": u"H",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Dussurget",
-                "given-names": u"O",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Pizarro-Cerd\u00e1",
-                "given-names": u"J",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Knobeloch",
-                "given-names": u"KP",
-                "group-type": u"author"
-            },
-            {
-                "surname": u"Cossart",
-                "given-names": u"P",
-                "group-type": u"author"
-            }
-        ],
-        "accession": "PXD001805",
-        "uri": "http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805",
-        "publication-type": u"data",
-        "source": u"ProteomeXchange",
-        "year": u"2015a",
-        "position": 1,
-        "year-iso-8601-date": u"2015",
-        "ref": u"Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015a ISG15 counteracts Listeria monocytogenes infection ProteomeXchange PXD001805",
-        "id": u"bib34"
-        }]
+        (read_fixture('test_refs', 'content_09.xml'),
+         read_fixture('test_refs', 'content_09_expected.py'),
         ),
 
         )
     def test_refs_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
-        tag_content = parser.refs(body_tag)
+        tag_content = parser.refs(soup)
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")

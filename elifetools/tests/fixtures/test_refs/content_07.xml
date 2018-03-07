@@ -1,0 +1,48 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <article-meta>
+                <article-id pub-id-type="doi">10.5334/cstp.77</article-id>
+            </article-meta>
+        </front>
+        <back>
+            <ref-list>
+                <ref id="bib15">
+                    <element-citation publication-type="data">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Bollag</surname>
+                                <given-names>RJ</given-names>
+                            </name>
+                            <name>
+                                <surname>Siegfried</surname>
+                                <given-names>Z</given-names>
+                            </name>
+                            <name>
+                                <surname>Cebra-Thomas</surname>
+                                <given-names>J</given-names>
+                            </name>
+                            <name>
+                                <surname>Garvey</surname>
+                                <given-names>N</given-names>
+                            </name>
+                            <name>
+                                <surname>Davison</surname>
+                                <given-names>EM</given-names>
+                            </name>
+                            <name>
+                                <surname>Silver</surname>
+                                <given-names>LM</given-names>
+                            </name>
+                        </person-group>
+                        <year>1994b</year>
+                        <data-title>Mus musculus T-box 2 (Tbx2), mRNA</data-title>
+                        <source>NCBI Nucleotide</source>
+                        <object-id pub-id-type="art-access-id">NM_009324</object-id>
+                        <comment><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/nuccore/120407038">http://www.ncbi.nlm.nih.gov/nuccore/120407038</ext-link></comment>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>
