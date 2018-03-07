@@ -2603,11 +2603,11 @@ class TestParseJats(unittest.TestCase):
     @unpack
     @data(
         # example issue from a non-eLife article
-        ('<root><front><article-meta><issue>1</issue></article-meta></front></root>',
+        (read_fixture('test_issue', 'content_01.xml'),
         '1'
         ),
         # example of no article issue
-        ('<root><front><article-meta><volume>1</volume></article-meta></front><back><ref-list><ref id="bib1"><element-citation><issue>1</issue></element-citation></ref></ref-list></back></root>',
+        (read_fixture('test_issue', 'content_02.xml'),
         None
         ),
     )
