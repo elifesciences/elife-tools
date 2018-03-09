@@ -1,0 +1,14 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib41">
+            <element-citation publication-type="clinicaltrial">
+                <person-group person-group-type="sponsor">
+                    <collab>Scripps Translational Science Institute</collab>
+                </person-group>
+                <year iso-8601-date="2015">2015</year>
+                <article-title>Scripps Wired for Health Study</article-title>
+                <ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/ct2/show/NCT01975428">NCT01975428</ext-link>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

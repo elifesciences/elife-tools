@@ -1,0 +1,60 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib2">
+            <element-citation publication-type="software">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Bates</surname>
+                        <given-names>D</given-names>
+                    </name>
+                    <name>
+                        <surname>Maechler</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Bolker</surname>
+                        <given-names>B</given-names>
+                    </name>
+                    <name>
+                        <surname>Walker</surname>
+                        <given-names>S</given-names>
+                    </name>
+                    <name>
+                        <surname>Haubo Bojesen Christensen</surname>
+                        <given-names>R</given-names>
+                    </name>
+                    <name>
+                        <surname>Singmann</surname>
+                        <given-names>H</given-names>
+                    </name>
+                    <name>
+                        <surname>Dai</surname>
+                        <given-names>B</given-names>
+                    </name>
+                    <name>
+                        <surname>Grothendieck</surname>
+                        <given-names>G</given-names>
+                    </name>
+                    <name>
+                        <surname>Green</surname>
+                        <given-names>P</given-names>
+                    </name>
+                </person-group>
+                <person-group person-group-type="curator">
+                    <name>
+                        <surname>Bolker</surname>
+                        <given-names>B</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2016">2016</year>
+                <data-title>Lme4: Linear Mixed-Effects Models Using Eigen and S4</data-title>
+                <source>CRAN</source>
+                <ext-link ext-link-type="uri" xlink:href="https://cran.r-project.org/web/packages/lme4/index.html">https://cran.r-project.org/web/packages/lme4/index.html</ext-link>
+                <!--
+                 designator attribute added for version - Feb 8 2017 
+                -->
+                <version designator="1.1-12">1.1-12</version>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

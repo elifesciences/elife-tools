@@ -1,0 +1,10 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <body>
+            <sec id="s2-6-4">
+                <title>Inline graphics</title>
+                <p>Here is an example of pulling in an inline graphic <inline-graphic mimetype="image" mime-subtype="jpeg" xlink:href="elife-00666-inf001.jpeg"/>.</p>
+            </sec>
+        </body>
+    </article>
+</root>

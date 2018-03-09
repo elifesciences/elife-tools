@@ -1,0 +1,3 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <p>Here is an example of making text display in different colours: <named-content content-type="author-callout-style-a1">Blue text: #366BFB</named-content>; <named-content content-type="author-callout-style-a2">Purple text: #9C27B0</named-content>; and <named-content content-type="author-callout-style-a3">Red text: #D50000</named-content>.</p>
+</root>

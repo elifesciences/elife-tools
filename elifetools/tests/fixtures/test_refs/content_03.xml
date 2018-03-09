@@ -1,0 +1,40 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <article-meta>
+                <article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id>
+            </article-meta>
+        </front>
+        <back>
+            <ref-list>
+                <title>References</title>
+                <ref id="R29">
+                    <label>29</label>
+                    <mixed-citation>
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Armah</surname>
+                                <given-names>GE</given-names>
+                            </name>
+                            <name>
+                                <surname>Steele</surname>
+                                <given-names>AD</given-names>
+                            </name>
+                            <name>
+                                <surname>Esona</surname>
+                                <given-names>MD</given-names>
+                            </name>
+                            <etal/>
+                        </person-group>.
+                        <article-title>Diversity of rotavirus strains circulating in West Africa from 1996 to 2000</article-title>.
+                        <source>J Infect Dis</source>
+                        <year>2010</year>;
+                        <volume>202</volume>
+                        <issue>(Suppl)</issue>:
+                        <fpage>S64</fpage>–<lpage>71</lpage>.
+                    </mixed-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

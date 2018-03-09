@@ -1,0 +1,23 @@
+<root>
+    <table-wrap id="tbl1" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id>
+        <label>Table 1.</label>
+        <caption>
+            <p>Progeny of <italic>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></italic> x <italic>Fn1<sup>syn/+</sup>;Itgb3<sup>+/-</sup></italic> intercrosses.</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.22264.016">http://dx.doi.org/10.7554/eLife.22264.016</ext-link></p>
+            <p>
+                <supplementary-material id="SD1-data">
+                    <object-id pub-id-type="doi">10.7554/eLife.22264.017</object-id>
+                    <label>Table 1—source data 1.</label>
+                    <caption>
+                        <title>Progeny of <italic>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></italic> x <italic>Fn1<sup>syn/syn</sup>;Itgb3<sup>+/-</sup></italic> crosses</title>
+                        <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.22264.017">http://dx.doi.org/10.7554/eLife.22264.017</ext-link>
+                        </p>
+                    </caption>
+                    <media mime-subtype="docx" mimetype="application" xlink:href="elife-22264-table1-data1-v2.docx"/>
+                </supplementary-material>
+            </p>
+        </caption>
+        <table frame="hsides" rules="groups"><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>
+    </table-wrap>
+</root>

@@ -1,0 +1,35 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">12125</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.12125</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib11">
+                <element-citation publication-type="other">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Elazar</surname>
+                            <given-names>Assaf</given-names>
+                        </name>
+                        <name>
+                            <surname>Weinstein</surname>
+                            <given-names>Jonathan</given-names>
+                        </name>
+                        <name>
+                            <surname>Prilusky</surname>
+                            <given-names>Jaime</given-names>
+                        </name>
+                        <name>
+                            <surname>Fleishman</surname>
+                            <given-names>Sarel J.</given-names>
+                        </name>
+                    </person-group>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

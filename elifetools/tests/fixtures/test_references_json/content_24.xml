@@ -1,0 +1,41 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">00051</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00051</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib25">
+                <element-citation publication-type="web">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Jha</surname>
+                            <given-names>P</given-names>
+                        </name>
+                        <name>
+                            <surname>Nugent</surname>
+                            <given-names>R</given-names>
+                        </name>
+                        <name>
+                            <surname>Verguet</surname>
+                            <given-names>S</given-names>
+                        </name>
+                        <name>
+                            <surname>Bloom</surname>
+                            <given-names>D</given-names>
+                        </name>
+                        <name>
+                            <surname>Hum</surname>
+                            <given-names>R</given-names>
+                        </name>
+                    </person-group>
+                    <article-title>Chronic Disease Prevention and Control. Copenhagen Consensus 2012 Challenge Paper</article-title>
+                    <ext-link ext-link-type="uri" xlink:href="http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf">http://www.copenhagenconsensus.com/files/Filer/CC12%20papers/Chronic%20Disease.pdf</ext-link>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

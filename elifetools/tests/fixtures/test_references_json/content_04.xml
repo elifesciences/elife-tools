@@ -1,0 +1,21 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib96">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Zerbino</surname>
+                        <given-names>DR</given-names>
+                    </name>
+                </person-group>
+                <year>2010</year>
+                <article-title>Using the Velvet de novo assembler for short-read sequencing technologies</article-title>
+                <source>Curr Protoc Bioinformatics</source>
+                <volume>11</volume>
+                <fpage>11.5.1</fpage>
+                <lpage>11.5.12</lpage>
+                <pub-id pub-id-type="doi">10.1002/0471250953.bi1105s31</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

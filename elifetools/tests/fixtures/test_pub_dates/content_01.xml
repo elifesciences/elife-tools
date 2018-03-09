@@ -1,0 +1,17 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <pub-date publication-format="electronic" date-type="update">
+            <day>11</day>
+            <month>08</month>
+            <year>2016</year>
+        </pub-date>
+        <pub-date publication-format="electronic" date-type="publication">
+            <day>25</day>
+            <month>04</month>
+            <year>2016</year>
+        </pub-date>
+        <pub-date pub-type="collection">
+            <year>2016</year>
+        </pub-date>
+    </article>
+</root>

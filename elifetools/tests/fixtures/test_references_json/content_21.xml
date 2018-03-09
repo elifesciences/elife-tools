@@ -1,0 +1,44 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib71">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Yasuda</surname>
+                        <given-names>R</given-names>
+                    </name>
+                    <name>
+                        <surname>Nimchinsky</surname>
+                        <given-names>EA</given-names>
+                    </name>
+                    <name>
+                        <surname>Scheuss</surname>
+                        <given-names>V</given-names>
+                    </name>
+                    <name>
+                        <surname>Pologruto</surname>
+                        <given-names>TA</given-names>
+                    </name>
+                    <name>
+                        <surname>Oertner</surname>
+                        <given-names>TG</given-names>
+                    </name>
+                    <name>
+                        <surname>Sabatini</surname>
+                        <given-names>BL</given-names>
+                    </name>
+                    <name>
+                        <surname>Svoboda</surname>
+                        <given-names>K</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2004">2004</year>
+                <article-title>Imaging calcium concentration dynamics in small neuronal compartments</article-title>
+                <source>Science's STKE</source>
+                <volume>2004</volume>
+                <lpage>, pl5.</lpage>
+                <pub-id pub-id-type="doi">10.1126/stke.2192004pl5</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

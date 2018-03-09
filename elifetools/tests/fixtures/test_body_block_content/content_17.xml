@@ -1,0 +1,15 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <media content-type="glencoe play-in-place height-250 width-310" id="media1" mime-subtype="mp4" mimetype="video" xlink:href="elife-17243-media1.mp4">
+        <object-id pub-id-type="doi">10.7554/eLife.17243.015</object-id>
+        <label>Video 1.</label>
+        <caption>
+            <title>Response to gaps (stimulus-reappearance lock).</title>
+            <p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17243.015">http://dx.doi.org/10.7554/eLife.17243.015</ext-link></p>
+        </caption>
+        <permissions>
+            <license>
+                <license-p>Face photographs: Owen Lucas. Available on Flickr under the Public Domain Mark 1.0 <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/">https://creativecommons.org/publicdomain/mark/1.0/</ext-link>). <ext-link ext-link-type="uri" xlink:href="https://www.flickr.com/photos/144006675@N05/27487033282">https://www.flickr.com/photos/144006675@N05/27487033282</ext-link>. Accessed on August 2016.</license-p>
+            </license>
+        </permissions>
+    </media>
+</root>

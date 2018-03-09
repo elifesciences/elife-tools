@@ -1,0 +1,11 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <body>
+            <boxed-text id="B1"><p><bold>Related research article</bold> Yan H, Zhong G, Xu G, He W, Jing Z, Gao Z, Huang Y, Qi Y, Peng B, Wang H, Fu L, Song M, Chen P, Gao W, Ren B, Sun Y, Cai T, Feng X, Sui J, Li W. 2012. Sodium taurocholate cotransporting polypeptide is a functional receptor for human hepatitis B and D virus. <italic>eLife</italic> <bold>1</bold>:e00049. doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.7554/eLife.00049">10.7554/eLife.00049</ext-link></p>
+                <p><bold>Image</bold> HepG2 cells infected with the hepatitis B virus</p>
+                <p><inline-graphic xlink:href="elife-00301-inf1-v1"/></p>
+            </boxed-text>
+            <p>Approximately two billion people ...</p>
+        </body>
+    </article>
+</root>

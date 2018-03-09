@@ -1,0 +1,27 @@
+<fig-group>
+    <fig id="fig5" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.26759.012</object-id>
+        <label>Figure 5.</label>
+        <caption>
+            <title>CUL3-BOP complex ....</title>
+            <p>
+                <supplementary-material id="fig5sdata1">
+                    <object-id pub-id-type="doi">10.7554/eLife.26759.014</object-id>
+                    <caption>
+                        <title>Quantification of ubiquitinated PIF4-HA protein levels relative to total ubiquitinated proteins from TUBEs assays.</title>
+                    </caption>
+                    <media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-fig1-v1.docx"/>
+                </supplementary-material>
+            </p>
+        </caption>
+        <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-v1"/>
+    </fig>
+    <fig id="fig5s1" position="float" specific-use="child-fig">
+        <object-id pub-id-type="doi">10.7554/eLife.26759.013</object-id>
+        <label>Figure 5—figure supplement 1.</label>
+        <caption>
+            <title>BOP2 mediates ....</title>
+        </caption>
+        <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-26759-fig5-figsupp1-v1"/>
+    </fig>
+</fig-group>

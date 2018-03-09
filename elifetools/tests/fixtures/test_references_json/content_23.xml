@@ -1,0 +1,24 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib13">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Castro-Alamancos</surname>
+                        <given-names>MA</given-names>
+                    </name>
+                    <name>
+                        <surname>Connors</surname>
+                        <given-names>BW</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="1996">1996a</year>
+                <article-title>Cellular mechanisms of the augmenting response: short-term plasticity in a thalamocortical pathway</article-title>
+                <source>Journal of Neuroscience</source>
+                <volume>16</volume>
+                <fpage>7742</fpage>
+                <lpage>7756</lpage>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

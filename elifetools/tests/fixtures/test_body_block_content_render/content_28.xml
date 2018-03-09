@@ -1,0 +1,37 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <sec id="s2-1-1-1">
+        <title>Article types (XML only, not display) (level 4 heading)</title>
+        <p>This is an example of a list where the prefix character is a uppercase roman numeral. This is a controlled list from the JATS DTD</p>
+        <list list-type="roman-upper">
+            <list-item>
+                <list list-type="roman-lower">
+                    <list-item>
+                        <p><italic>P. falciparum</italic></p>
+                    </list-item>
+                </list>
+                <p>Genus: Leishmania. There are 3 subgenus of Leishmania:</p>
+            </list-item>
+            <list-item>
+                <list list-type="roman-lower">
+                    <list-item>
+                        <p>Leishmania</p>
+                    </list-item>
+                    <list-item>
+                        <p>Sauroleishmania</p>
+                    </list-item>
+                    <list-item>
+                        <p>Viannia</p>
+                    </list-item>
+                    <list-item>
+                        <p>Within Viannia subgenus, there are 11 species:</p>
+                        <list list-type="bullet">
+                            <list-item>
+                                <p><italic>L. braziliensis</italic></p>
+                            </list-item>
+                        </list>
+                    </list-item>
+                </list>
+            </list-item>
+        </list>
+    </sec>
+</root>

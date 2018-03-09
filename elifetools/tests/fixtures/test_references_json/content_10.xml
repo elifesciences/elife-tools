@@ -1,0 +1,36 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib20">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Elzinga</surname>
+                        <given-names>SDJ</given-names>
+                    </name>
+                    <name>
+                        <surname>Bednarz</surname>
+                        <given-names>AL</given-names>
+                    </name>
+                    <name>
+                        <surname>van Oosterum</surname>
+                        <given-names>K</given-names>
+                    </name>
+                    <name>
+                        <surname>Dekker</surname>
+                        <given-names>PJT</given-names>
+                    </name>
+                    <name>
+                        <surname>Grivell</surname>
+                        <given-names>L</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="1993">1993</year>
+                <source>Nucleic Acids Research</source>
+                <volume>21</volume>
+                <fpage>5328</fpage>
+                <lpage>5331</lpage>
+                <pub-id pub-id-type="doi">10.1093/nar/21.23.5328</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

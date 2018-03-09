@@ -1,0 +1,19 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib101">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Wood</surname>
+                        <given-names>WB</given-names>
+                    </name>
+                    <collab>The Community of <italic>C. elegans</italic> Researchers</collab>
+                </person-group>
+                <year>1988</year>
+                <source>The nematode Caenorhabditis elegans</source>
+                <publisher-loc>Cold Spring Harbor, New York</publisher-loc>
+                <publisher-name>Cold Spring Harbor Laboratory Press</publisher-name>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

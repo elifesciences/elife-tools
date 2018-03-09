@@ -1,0 +1,31 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib24">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Laue</surname>
+                        <given-names>TM</given-names>
+                    </name>
+                    <name>
+                        <surname>Shah</surname>
+                        <given-names>BD</given-names>
+                    </name>
+                    <name>
+                        <surname>Ridgeway</surname>
+                        <given-names>RM</given-names>
+                    </name>
+                    <name>
+                        <surname>Pelletier</surname>
+                        <given-names>SL</given-names>
+                    </name>
+                </person-group>
+                <year>1992</year>
+                <publisher-loc>Cambridge</publisher-loc>
+                <publisher-name>The Royal Society of Chemistry</publisher-name>
+                <fpage>90</fpage>
+                <lpage>125</lpage>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

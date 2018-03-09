@@ -1,0 +1,6 @@
+<root>
+    <sec sec-type="intro" id="s1">
+        <title>Introduction <italic>section</italic></title>
+        <p>content</p>
+    </sec>
+</root>

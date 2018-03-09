@@ -1,0 +1,19 @@
+<root>
+    <code>&lt;MotifGraft name=&quot;motif_grafting&quot;
+      context_structure=&quot;%%context%%&quot;
+      motif_structure=&quot;truncatedBH3.pdb&quot;
+      RMSD_tolerance=&quot;3.0&quot;
+      NC_points_RMSD_tolerance=&quot;2.0&quot;
+      clash_score_cutoff=&quot;0&quot;
+      clash_test_residue=&quot;ALA&quot;
+      hotspots=&quot;9:12:13:14:16:17&quot;
+      combinatory_fragment_size_delta=&quot;0:0&quot;
+      max_fragment_replacement_size_delta=&quot;0:0&quot;
+      full_motif_bb_alignment=&quot;1&quot;
+      allow_independent_alignment_per_fragment=&quot;0&quot;
+      graft_only_hotspots_by_replacement=&quot;0&quot;
+      only_allow_if_N_point_match_aa_identity=&quot;0&quot;
+      only_allow_if_C_point_match_aa_identity=&quot;0&quot;
+      revert_graft_to_native_sequence=&quot;1&quot;
+      allow_repeat_same_graft_output=&quot;1&quot;/&gt;</code>
+</root>

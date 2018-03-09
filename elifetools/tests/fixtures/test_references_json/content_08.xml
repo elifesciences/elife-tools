@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib45">
+            <element-citation publication-type="web">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Mikheyev</surname>
+                        <given-names>AS</given-names>
+                    </name>
+                    <name>
+                        <surname>Linksvayer</surname>
+                        <given-names>TA</given-names>
+                    </name>
+                </person-group>
+                <year>2014</year>
+                <article-title>Data from: genes associated with ant social behavior show distinct transcriptional and evolutionary patterns</article-title>
+                <source>Dryad Digital Repository.</source>
+                <pub-id pub-id-type="doi">10.5061/dryad.cv0q3</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
