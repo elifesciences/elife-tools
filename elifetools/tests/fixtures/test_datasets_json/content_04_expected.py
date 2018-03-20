@@ -1,5 +1,11 @@
 from collections import OrderedDict
 expected = OrderedDict([
+    ('availability', [
+        OrderedDict([
+            ('type', 'paragraph'),
+            ('text', 'This is the text entered for the data availability text entry box.')
+            ])
+        ]),
     ('generated', [
         OrderedDict([
             ('id', u'dataset1'),
