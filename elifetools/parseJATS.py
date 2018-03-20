@@ -3685,9 +3685,12 @@ def datasets_json(soup, html_flag=True):
 
     # add data availability paragraphs
     for p_tag in availabilty_p_tags:
-        if "availabiltiy" not in datasets_json:
-            datasets_json["availability"] = []
-        datasets_json["availability"].append(body_block_content(p_tag))
+        block_content = body_block_content(p_tag)
+        # check the text is not empty before adding
+        if block_content and "text" in block_content:
+            if "availabiltiy" not in datasets_json:
+                datasets_json["availability"] = []
+            datasets_json["availability"].append(block_content)
 
     for related_object in generated_datasets_related_object_tags:
         if "generated" not in datasets_json:

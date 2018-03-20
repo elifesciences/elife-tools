@@ -258,6 +258,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_datasets_json', 'content_04_expected.py')
          ),
 
+        # Datasets example with a blank paragraph on some PoA XML files based 33420 v1
+        (read_fixture('test_datasets_json', 'content_05.xml'),
+         read_fixture('test_datasets_json', 'content_05_expected.py')
+         ),
+
         )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
