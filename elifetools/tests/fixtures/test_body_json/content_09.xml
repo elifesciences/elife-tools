@@ -1,0 +1,24 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">09977</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.09977</article-id>
+        </article-meta>
+        <body>
+            <sec id="s4">
+                <title>Keep this section</title>
+                <sec id="s4-10">
+                    <title>Keep this inner section</title>
+                    <p>Content</p>
+                </sec>
+                <sec id="s4-11">
+                    <title>Keep this section too</title>
+                    <p>More content</p>
+                </sec>
+            </sec>
+        </body>
+    </article>
+</root>

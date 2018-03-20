@@ -1,0 +1,16 @@
+<root>
+    <back>
+        <app-group>
+            <app id="appendix-1">
+                <title>Appendix 1</title>
+                <sec sec-type="appendix" id="s8">
+                    <title>Preparation</title>
+                    <boxed-text>
+                        <object-id pub-id-type="doi">10.7554/eLife.00666.023</object-id>
+                        <p>Paragraph content.</p>
+                    </boxed-text>
+                </sec>
+            </app>
+        </app-group>
+    </back>
+</root>

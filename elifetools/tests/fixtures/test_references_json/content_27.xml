@@ -1,0 +1,38 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib32">
+            <element-citation publication-type="patent">
+                <person-group person-group-type="inventor">
+                    <name>
+                        <surname>Patterson</surname>
+                        <given-names>JB</given-names>
+                    </name>
+                    <name>
+                        <surname>Lonergan</surname>
+                        <given-names>DG</given-names>
+                    </name>
+                    <name>
+                        <surname>Flynn</surname>
+                        <given-names>GA</given-names>
+                    </name>
+                    <name>
+                        <surname>Qingpeng</surname>
+                        <given-names>Z</given-names>
+                    </name>
+                    <name>
+                        <surname>Pallai</surname>
+                        <given-names>PV</given-names>
+                    </name>
+                </person-group>
+                <person-group person-group-type="assignee">
+                    <collab>Mankind Corp</collab>
+                </person-group>
+                <year iso-8601-date="2011">2011</year>
+                <article-title>IRE-1alpha inhibitors</article-title>
+                <source>United States patent</source>
+                <patent country="United States">US20100941530</patent>
+                <ext-link ext-link-type="uri" xlink:href="http://europepmc.org/patents/PAT/US2011065162">http://europepmc.org/patents/PAT/US2011065162</ext-link>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

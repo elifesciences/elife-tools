@@ -1,0 +1,8 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <fig id="fig1">
+        <caption>
+            <title>Fig title not in a paragraph</title>
+        </caption>
+        <graphic xlink:href="elife-00639-fig1-v1.tif"/>
+    </fig>
+</root>

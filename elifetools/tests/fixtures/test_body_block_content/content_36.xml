@@ -1,0 +1,9 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <media mimetype="video" mime-subtype="gif" id="video2" xlink:href="elife-00666-video2.gif">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.038</object-id>
+        <label>Animation 1.</label>
+        <caption>
+            <title>A demonstration of how to tag an animated gif file to ensure it is autolooped when on the eLife website.</title>
+        </caption>
+    </media>
+</root>

@@ -1,0 +1,19 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib18">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Fung</surname>
+                        <given-names>YC</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2013">2013</year>
+                <source>Biomechanics: Mechanical Properties of Living Tissues</source>
+                <publisher-loc>New York</publisher-loc>
+                <publisher-name>Springer Science &amp; Business Media</publisher-name>
+                <pub-id pub-id-type="isbn">978-1-4757-2257-4</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

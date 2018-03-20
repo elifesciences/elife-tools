@@ -1,0 +1,26 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib11">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Cutler</surname>
+                        <given-names>DM</given-names>
+                    </name>
+                    <name>
+                        <surname>Deaton</surname>
+                        <given-names>AS</given-names>
+                    </name>
+                    <name>
+                        <surname>Lleras-Muney</surname>
+                        <given-names>A</given-names>
+                    </name>
+                </person-group>
+                <year>2006</year>
+                <article-title>The determinants of mortality (No. w11963)</article-title>
+                <publisher-loc>Cambridge</publisher-loc>
+                <publisher-name>National Bureau of Economic Research</publisher-name>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

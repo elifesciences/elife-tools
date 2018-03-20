@@ -1,0 +1,12 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <body>
+            <sec id="s1">
+                <p>Paragraph</p>
+                <boxed-text>
+                    <p><bold>Boxed text</bold></p>
+                </boxed-text>
+            </sec>
+        </body>
+    </article>
+</root>

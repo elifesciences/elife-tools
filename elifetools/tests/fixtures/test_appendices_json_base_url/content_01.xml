@@ -1,0 +1,26 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <app-group>
+            <app>
+                <title>Appendix 5</title>
+                <boxed-text>
+                    <sec id="s56" sec-type="appendix">
+                        <sec id="s61">
+                            <title>E. Volatiles</title>
+                            <p>Paragraph content.</p>
+                            <table-wrap id="A5-tbl2" position="float">
+                                <object-id pub-id-type="doi">10.7554/eLife.17092.035</object-id>
+                                <label>Appendix 5—table 2.</label>
+                                <caption>
+                                    <p>Crushed eggshell sulfur-containing VOC emissions from 2.7 Ma OES (Laetoli LOT 13901). NA = no structural isomer can be determined.</p>
+                                    <p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.17092.035">http://dx.doi.org/10.7554/eLife.17092.035</ext-link></p>
+                                </caption>
+                                <table frame="hsides" rules="groups"><tbody><tr><td valign="top"><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf1-v1"/><break/><inline-graphic mime-subtype="x-tiff" mimetype="image" xlink:href="elife-17092-inf2-v1"/></td></tr></tbody></table>
+                            </table-wrap>
+                        </sec>
+                    </sec>
+                </boxed-text>
+            </app>
+        </app-group>
+    </back>
+</root>

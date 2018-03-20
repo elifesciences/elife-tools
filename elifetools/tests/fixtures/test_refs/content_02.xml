@@ -1,0 +1,38 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <article-meta>
+                <article-id pub-id-type="doi">10.1136/bmjopen-2013-003269</article-id>
+            </article-meta>
+        </front>
+        <back>
+            <ref-list>
+                <title>References</title>
+                <ref id="R15">
+                    <label>15</label>
+                    <mixed-citation>
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Atkinson</surname>
+                                <given-names>W</given-names>
+                            </name>
+                            <name>
+                                <surname>Hamborsky</surname>
+                                <given-names>J</given-names>
+                            </name>
+                            <name>
+                                <surname>McIntyre</surname>
+                                <given-names>L</given-names>
+                            </name>
+                            <etal/>
+                        </person-group>.
+                        <source>Epidemiology and prevention of vaccine-preventable diseases</source>.
+                        <publisher-loc>Washington, DC</publisher-loc>:
+                        <publisher-name>Public Health Foundation</publisher-name>,
+                        <year>2008</year>.
+                    </mixed-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

@@ -1,0 +1,14 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib10">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <collab>WHO</collab>
+                </person-group>
+                <year>2012</year>
+                <article-title>Press release: 65th World Health Assembly closes with new global health measures</article-title>
+                <ext-link ext-link-type="uri" xlink:href="http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html">http://www.who.int/mediacentre/news/releases/2012/wha65_closes_20120526/en/index.html</ext-link>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

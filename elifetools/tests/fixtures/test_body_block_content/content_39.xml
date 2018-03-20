@@ -1,0 +1,10 @@
+<root>
+    <table-wrap id="inlinetable1" position="anchor">
+        <table frame="hsides" rules="groups"><thead><tr><th/><th>pY</th><th>Experiment</th><th>Concentration (μM)</th></tr></thead><tbody><tr><td>IGF1R-fl + IGF1</td><td>+</td><td><italic>K</italic><sub><italic>m</italic></sub> ATP</td><td>500, 400, 300, 250, 125, 62.5, 31.3, 15.6, 7.8</td></tr></tbody></table>
+        <table-wrap-foot>
+            <fn>
+                <p>This is an unmarked footnote for an anchored/inline table</p>
+            </fn>
+        </table-wrap-foot>
+    </table-wrap>
+</root>

@@ -1,0 +1,21 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref>
+                    <mixed-citation publication-type="book" meta="no" id="c2">
+                        <person-group person-group-type="author">
+                            <string-name>
+                                <surname>Frank</surname>,
+                                <given-names>A. W.</given-names>
+                            </string-name>
+                        </person-group> (<year>1995</year>).
+                        <source>The wounded storyteller: Body, illness, and ethics</source>.
+                        <publisher-loc>Chicago</publisher-loc>:
+                        <publisher-name>University of Chicago Press</publisher-name>.
+                    </mixed-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

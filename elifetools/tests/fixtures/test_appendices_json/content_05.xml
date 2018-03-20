@@ -1,0 +1,25 @@
+<root>
+    <back>
+        <app-group>
+            <app id="appendix-7">
+                <title>Appendix 7</title>
+                <sec id="s13" sec-type="appendix">
+                    <title>Photomechanical microsaccades move photoreceptors’ receptive fields</title>
+                    <boxed-text>
+                        <object-id pub-id-type="doi">10.7554/eLife.26117.079</object-id>
+                        <sec id="s13-1">
+                            <title>Overview</title>
+                            <p>This appendix ...</p>
+                        </sec>
+                    </boxed-text>
+                </sec>
+                <sec id="s14" sec-type="appendix">
+                    <title>Photomechanical rhabdomere movements vs. R1-R6s’ voltage responses</title>
+                    <boxed-text>
+                        <p>We next compared intracellular wild-type and ...</p>
+                    </boxed-text>
+                </sec>
+            </app>
+        </app-group>
+    </back>
+</root>

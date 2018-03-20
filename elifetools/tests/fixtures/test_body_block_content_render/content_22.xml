@@ -1,0 +1,10 @@
+<root>
+    <table-wrap id="tbl1" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.22264.016</object-id>
+        <label>Table label.</label>
+        <caption>
+            <p>Table caption.</p>
+        </caption>
+        <table><thead><tr><th valign="top">Age</th></tr></thead><tbody><tr><td valign="top">E11.5</td></tr></tbody></table>
+    </table-wrap>
+</root>

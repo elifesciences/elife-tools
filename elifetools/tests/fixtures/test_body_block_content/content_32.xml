@@ -1,0 +1,11 @@
+<root>
+    <table-wrap id="tbl3" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.07141.007</object-id>
+        <label>Table 3.</label>
+        <caption>
+            <p>Residues modeled for each chain of α (1–761) and β (1–375) in all four α<sub>4</sub>β<sub>4</sub> structures. In all four structures, the following regions are disordered and cannot be seen in the experimental electron density: the last ~24 C-terminal residues of α that contain redox active cysteines Cys754 and Cys759 and the ~20 residues of β that connect residue 330 to the ~15 C-terminal residues (360–375) that bind to the α subunit.</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.07141.007">http://dx.doi.org/10.7554/eLife.07141.007</ext-link></p>
+        </caption>
+        <table frame="hsides" rules="groups"><thead><tr><th/><th colspan="8">Chain</th></tr></thead><tbody><tr><td>Structure</td><td>A (α)</td><td>B (α)</td><td>C (α)</td><td>D (α)</td><td>E (β)</td><td>F (β)</td><td>G (β)</td><td>H (β)</td></tr><tr><td>CDP/dATP</td><td>5-736</td><td>4-737</td><td>5-736</td><td>4-737</td><td>1-339, 363-375</td><td>1-341, 360-375</td><td>1-341, 360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>UDP/dATP</td><td>4-737</td><td>4-737</td><td>4-737</td><td>4-736</td><td>1-339,<break/>363-373</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>ADP/dGTP</td><td>5-736</td><td>4-736</td><td>4-736</td><td>4-736</td><td>1-339,<break/>363-375</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-340,<break/>361-375</td></tr><tr><td>GDP/TTP</td><td>1-736</td><td>5-736</td><td>4-737</td><td>4-737</td><td>1-339,<break/>363-375</td><td>1-341,<break/>360-375</td><td>1-341,<break/>360-375</td><td>1-344,<break/>361-375</td></tr></tbody></table>
+    </table-wrap>
+</root>

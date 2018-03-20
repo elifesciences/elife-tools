@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib6">
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Berni</surname>
+                        <given-names>J</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2015">2015</year>
+                <article-title>Genetic dissection of a regionally differentiated network for exploratory behavior in Drosophila larvae</article-title>
+                <source>Current Biology</source>
+                <volume><bold>25</bold></volume>
+                <fpage>1319</fpage>
+                <lpage>1326</lpage>
+                <pub-id pub-id-type="doi">10.1016/j.cub.2015.03.023</pub-id>
+                <pub-id pub-id-type="pmid">25959962</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

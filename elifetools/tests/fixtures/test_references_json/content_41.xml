@@ -1,0 +1,32 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib10">
+            <element-citation publication-type="book">
+                <person-group person-group-type="editor">
+                    <name>
+                        <surname>Ekstrom</surname>
+                        <given-names>J</given-names>
+                    </name>
+                </person-group>
+                <person-group person-group-type="editor">
+                    <name>
+                        <surname>Garrett</surname>
+                        <given-names>J. R</given-names>
+                    </name>
+                </person-group>
+                <person-group person-group-type="editor">
+                    <name>
+                        <surname>Anderson</surname>
+                        <given-names>L. C</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="1998">1998</year>
+                <edition>1st edn</edition>
+                <source>Glandular Mechanisms of Salivary Secretion (Frontiers of Oral Biology , Vol. 10)</source>
+                <publisher-loc>Basel</publisher-loc>
+                <publisher-name>S Karger</publisher-name>
+                <pub-id pub-id-type="isbn">978-3805566308</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

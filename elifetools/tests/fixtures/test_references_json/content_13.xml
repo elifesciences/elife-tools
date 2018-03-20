@@ -1,0 +1,37 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib9">
+            <element-citation publication-type="other">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Bricogne</surname>
+                        <given-names>G</given-names>
+                    </name>
+                    <name>
+                        <surname>Blanc</surname>
+                        <given-names>E</given-names>
+                    </name>
+                    <name>
+                        <surname>Brandi</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Flensburg</surname>
+                        <given-names>C</given-names>
+                    </name>
+                    <name>
+                        <surname>Keller</surname>
+                        <given-names>P</given-names>
+                    </name>
+                    <name>
+                        <surname>Paciorek</surname>
+                        <given-names>W</given-names>
+                    </name>
+                    <etal/>
+                </person-group>
+                <year>2009</year>
+                <comment>BUSTER, version 2.8.0. Retrieved from about:home</comment>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

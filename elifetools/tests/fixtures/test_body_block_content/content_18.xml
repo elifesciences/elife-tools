@@ -1,0 +1,21 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <fig id="fig3s1" position="float" specific-use="child-fig">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id>
+        <label>Figure 3—figure supplement 1.</label>
+        <caption>
+            <title>Title of the figure supplement</title>
+            <p>
+                <supplementary-material id="SD1-data">
+                    <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id>
+                    <label>Figure 3—figure supplement 1—Source data 1.</label>
+                    <caption>
+                        <title>Title of the figure supplement source data.</title>
+                        <p>Legend of the figure supplement source data.</p>
+                    </caption>
+                    <media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00666-fig3-figsupp1-data1-v1.xlsx"/>
+                </supplementary-material>
+            </p>
+        </caption>
+        <graphic xlink:href="elife-00666-fig3-figsupp1-v1.tiff"/>
+    </fig>
+</root>

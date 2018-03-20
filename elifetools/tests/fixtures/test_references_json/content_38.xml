@@ -1,0 +1,54 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib3">
+            <element-citation publication-type="preprint">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Bloss</surname>
+                        <given-names>CS</given-names>
+                    </name>
+                    <name>
+                        <surname>Wineinger</surname>
+                        <given-names>NE</given-names>
+                    </name>
+                    <name>
+                        <surname>Peters</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Boeldt</surname>
+                        <given-names>DL</given-names>
+                    </name>
+                    <name>
+                        <surname>Ariniello</surname>
+                        <given-names>L</given-names>
+                    </name>
+                    <name>
+                        <surname>Kim</surname>
+                        <given-names>JL</given-names>
+                    </name>
+                    <name>
+                        <surname>Judy Sheard</surname>
+                        <given-names>J</given-names>
+                    </name>
+                    <name>
+                        <surname>Komatireddy</surname>
+                        <given-names>R</given-names>
+                    </name>
+                    <name>
+                        <surname>Barrett</surname>
+                        <given-names>P</given-names>
+                    </name>
+                    <name>
+                        <surname>Topol</surname>
+                        <given-names>EJ</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2016">2016</year>
+                <article-title>A prospective randomized trial examining health care utilization in individuals using multiple smartphone-enabled biosensors</article-title>
+                <source>bioRxiv</source>
+                <pub-id pub-id-type="doi">https://doi.org/10.1101/029983</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
