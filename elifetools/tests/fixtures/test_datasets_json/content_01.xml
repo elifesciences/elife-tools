@@ -1,0 +1,67 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec sec-type="supplementary-material">
+            <title>Additional files</title>
+            <supplementary-material id="SD1-data">
+                <object-id pub-id-type="doi">10.7554/eLife.00825.026</object-id>
+                <label>Supplementary file 1.</label>
+                <caption>
+                    <title>(<bold>A</bold>) MDS patient characteristics. (<bold>B</bold>) Genes positively correlated with MYBL2 (MYBL2 gene signature). (<bold>C</bold>) qRT-PCR primer sequences.</title>
+                    <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00825.026">http://dx.doi.org/10.7554/eLife.00825.026</ext-link></p>
+                </caption>
+                <media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00825-supp1-v1.xlsx"/>
+            </supplementary-material>
+            <sec sec-type="datasets">
+                <title>Major dataset</title>
+                <p>The following dataset was generated:</p>
+                <p>
+                    <related-object content-type="generated-dataset" document-id="Dataset ID and/or url" document-id-type="dataset" document-type="data" id="dataro1">
+                        <name>
+                            <surname>Heinrichs</surname>
+                            <given-names>S</given-names>
+                        </name>,
+                        <year>2013</year><x>, </x>
+                        <source><italic>MYBL2</italic> Is a Sub-haploinsufficient Tumor Suppressor Gene in Myeloid Malignancy</source>
+                        <x>, </x>
+                        <object-id pub-id-type="art-access-id">GSE43401</object-id>
+                        <x>; </x>
+                        <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43401">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43401</ext-link>
+                        <x>, </x>
+                        <comment>Publicly available at GEO (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</ext-link>).</comment>
+                    </related-object>
+                </p>
+                <p>The following previously published dataset was used:</p>
+                <p>
+                    <related-object content-type="generated-dataset" document-id="Dataset ID and/or url" document-id-type="dataset" document-type="data" id="dataro2">
+                        <name>
+                            <surname>Pellagatti</surname>
+                            <given-names>A</given-names>
+                        </name>,
+                        <name>
+                            <surname>Cazzola</surname>
+                            <given-names>M</given-names>
+                        </name>,
+                        <name>
+                            <surname>Giagounidis</surname>
+                            <given-names>A</given-names>
+                        </name>,
+                        <name>
+                            <surname>Perry</surname>
+                            <given-names>J</given-names>
+                        </name>,
+                        <etal/>,
+                        <year>2010</year>
+                        <x>, </x>
+                        <source>Expression data from bone marrow CD34+ cells of MDS patients and healthy controls</source>
+                        <x>, </x>
+                        <object-id pub-id-type="art-access-id">GSE19429</object-id>
+                        <x>; </x>
+                        <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19429">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19429</ext-link>
+                        <x>, </x>
+                        <comment>Publicly available at GEO (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</ext-link>).</comment>
+                    </related-object>
+                </p>
+            </sec>
+        </sec>
+    </back>
+</root>

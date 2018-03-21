@@ -239,18 +239,28 @@ class TestParseJats(unittest.TestCase):
     @data(
         
         # Datasets from 00825 v1, has generated, used, etal and italic tags
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00825.026</object-id><label>Supplementary file 1.</label><caption><title>(<bold>A</bold>) MDS patient characteristics. (<bold>B</bold>) Genes positively correlated with MYBL2 (MYBL2 gene signature). (<bold>C</bold>) qRT-PCR primer sequences.</title><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00825.026">http://dx.doi.org/10.7554/eLife.00825.026</ext-link></p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-00825-supp1-v1.xlsx"/></supplementary-material><sec sec-type="datasets"><title>Major dataset</title><p>The following dataset was generated:</p><p><related-object content-type="generated-dataset" document-id="Dataset ID and/or url" document-id-type="dataset" document-type="data" id="dataro1"><name><surname>Heinrichs</surname><given-names>S</given-names></name>, <year>2013</year><x>, </x><source><italic>MYBL2</italic> Is a Sub-haploinsufficient Tumor Suppressor Gene in Myeloid Malignancy</source><x>, </x><object-id pub-id-type="art-access-id">GSE43401</object-id><x>; </x><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43401">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43401</ext-link><x>, </x><comment>Publicly available at GEO (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</ext-link>).</comment></related-object></p><p>The following previously published dataset was used:</p><p><related-object content-type="generated-dataset" document-id="Dataset ID and/or url" document-id-type="dataset" document-type="data" id="dataro2"><name><surname>Pellagatti</surname><given-names>A</given-names></name>, <name><surname>Cazzola</surname><given-names>M</given-names></name>, <name><surname>Giagounidis</surname><given-names>A</given-names></name>, <name><surname>Perry</surname><given-names>J</given-names></name>, <etal/>, <year>2010</year><x>, </x><source>Expression data from bone marrow CD34+ cells of MDS patients and healthy controls</source><x>, </x><object-id pub-id-type="art-access-id">GSE19429</object-id><x>; </x><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19429">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19429</ext-link><x>, </x><comment>Publicly available at GEO (<ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</ext-link>).</comment></related-object></p></sec></sec></back></root>',
-        OrderedDict([('generated', [OrderedDict([('id', u'dataro1'), ('date', u'2013'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'S Heinrichs'), ('index', u'Heinrichs, S')]))])]), ('title', '<i>MYBL2</i> Is a Sub-haploinsufficient Tumor Suppressor Gene in Myeloid Malignancy'), ('dataId', u'GSE43401'), ('details', 'Publicly available at GEO (<a href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</a>).'), ('uri', u'http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE43401')])]), ('used', [OrderedDict([('id', u'dataro2'), ('date', u'2010'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Pellagatti'), ('index', u'Pellagatti, A')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Cazzola'), ('index', u'Cazzola, M')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'A Giagounidis'), ('index', u'Giagounidis, A')]))]), OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'J Perry'), ('index', u'Perry, J')]))])]), ('authorsEtAl', True), ('title', u'Expression data from bone marrow CD34+ cells of MDS patients and healthy controls'), ('dataId', u'GSE19429'), ('details', 'Publicly available at GEO (<a href="http://www.ncbi.nlm.nih.gov/geo/">http://www.ncbi.nlm.nih.gov/geo/</a>).'), ('uri', u'http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE19429')])])])
+        (read_fixture('test_datasets_json', 'content_01.xml'),
+         read_fixture('test_datasets_json', 'content_01_expected.py')
          ),
 
         # Datasets from 00666 kitchen sink, includes a DOI
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="datasets" id="s7"><title>Major datasets</title><p>The following dataset was generated:</p><p><related-object content-type="generated-dataset" source-id="https://github.com/elifesciences/XML-mapping/blob/master/elife-00666.xml" source-id-type="uri" id="dataset1"><name><surname>Harrison</surname><given-names>M</given-names></name><collab collab-type="author">York University</collab><year iso-8601-date="2016">2016</year><source>xml-mapping</source><ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/XML-mapping/blob/master/elife-00666.xml">https://github.com/elifesciences/XML-mapping/blob/master/elife-00666.xml</ext-link><comment>Publicly available on GitHub</comment></related-object></p><p>The following previously published datasets were used:</p><p><related-object content-type="existing-dataset" source-id="https://github.com/elifesciences/elife-vendor-workflow-config/blob/master/elife-kitchen-sink.xml" source-id-type="uri" id="dataset2"><collab collab-type="author">M Harrison</collab><year iso-8601-date="2012">2012</year><source>elife-vendor-workflow-config</source><ext-link ext-link-type="uri" xlink:href="https://github.com/elifesciences/elife-vendor-workflow-config">https://github.com/elifesciences/elife-vendor-workflow-config</ext-link><comment>Publicly available on GitHub.</comment></related-object></p><p><related-object content-type="existing-dataset" source-id="https://github.com/elifesciences/elife-vendor-workflow-config/blob/master/elife-kitchen-sink.xml" source-id-type="uri" id="dataset3"><collab collab-type="author">Kok K</collab><collab collab-type="author">Ay A</collab><collab collab-type="author">Li L</collab><collab collab-type="author">Arnosti DN</collab><year iso-8601-date="2015">2015</year><data-title>Data from: Genome-wide errant targeting by Hairy</data-title><source>Dryad Digital Repository</source><pub-id pub-id-type="doi" assigning-authority="Dryad Digital Repository" xlink:href="https://doi.org/10.5061/dryad.cv323">https://doi.org/10.5061/dryad.cv323</pub-id></related-object></p></sec></back></root>',
-        OrderedDict([('generated', [OrderedDict([('id', u'dataset1'), ('date', u'2016'), ('authors', [OrderedDict([('type', 'person'), ('name', OrderedDict([('preferred', u'M Harrison'), ('index', u'Harrison, M')]))]), OrderedDict([('type', 'group'), ('name', u'York University')])]), ('title', u'xml-mapping'), ('details', u'Publicly available on GitHub'), ('uri', u'https://github.com/elifesciences/XML-mapping/blob/master/elife-00666.xml')])]), ('used', [OrderedDict([('id', u'dataset2'), ('date', u'2012'), ('authors', [OrderedDict([('type', 'group'), ('name', u'M Harrison')])]), ('title', u'elife-vendor-workflow-config'), ('details', u'Publicly available on GitHub.'), ('uri', u'https://github.com/elifesciences/elife-vendor-workflow-config')]), OrderedDict([('id', u'dataset3'), ('date', u'2015'), ('authors', [OrderedDict([('type', 'group'), ('name', u'Kok K')]), OrderedDict([('type', 'group'), ('name', u'Ay A')]), OrderedDict([('type', 'group'), ('name', u'Li L')]), OrderedDict([('type', 'group'), ('name', u'Arnosti DN')])]), ('title', u'Dryad Digital Repository'), ('doi', u'10.5061/dryad.cv323')])])])
+        (read_fixture('test_datasets_json', 'content_02.xml'),
+         read_fixture('test_datasets_json', 'content_02_expected.py')
          ),
 
         # 10856 v2, excerpt, for adding dates to datasets missing a year value
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><journal-meta><journal-id journal-id-type="publisher-id">eLife</journal-id></journal-meta><article-meta><article-id pub-id-type="publisher-id">10856</article-id><article-id pub-id-type="doi">10.7554/eLife.10856</article-id></front><back><sec id="s5" sec-type="supplementary-material"><title>Additional files</title><sec id="s6" sec-type="datasets"><title>Major datasets</title><p>The following datasets were generated:</p><p><related-object content-type="generated-dataset" id="dataro7" source-id="http://www.ncbi.nlm.nih." source-id-type="uri"><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/geo/<x>,</x><comment>Publicly available at NCBI (Accession no: KR021366)</comment></related-object></p><p><related-object content-type="generated-dataset" id="dataro8" source-id="http://www.ncbi.nlm.nih." source-id-type="uri"><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/geo/<x>,</x><comment>Publicly available at NCBI (Accession no: KR021365)</comment></related-object></p><p><related-object content-type="generated-dataset" id="dataro9" source-id="http://www.ncbi.nlm.nih." source-id-type="uri"><year>2016</year><x>,</x><source>PREDICTED: Solanum tuberosum protein NBR1 homolog (LOC102582603), transcript variant X2, mRNA</source><x>,</x><ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.">http://www.ncbi.nlm.nih.</ext-link>gov/nuccore/ XM_006344410<x>,</x><comment>Publicly available at NCBI nucleotide (Accession no: XM_006344410.2)</comment></related-object></p></sec></sec></back></root>',
-        OrderedDict([('generated', [OrderedDict([('id', u'dataro7'), ('details', u'Publicly available at NCBI (Accession no: KR021366)'), ('uri', u'https://www.ncbi.nlm.nih.gov/nuccore/976151098/'), ('date', u'2016'), ('title', u'An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor'), ('authors', [{'type': 'group', 'name': 'Dagdas YF'}, {'type': 'group', 'name': 'Belhaj K'}, {'type': 'group', 'name': 'Maqbool A'}, {'type': 'group', 'name': 'Chaparro-Garcia A'}, {'type': 'group', 'name': 'Pandey P'}, {'type': 'group', 'name': 'Petre B'}, {'type': 'group', 'name': 'Tabassum N'}, {'type': 'group', 'name': 'Cruz-Mireles N'}, {'type': 'group', 'name': 'Hughes RK'}, {'type': 'group', 'name': 'Sklenar J'}, {'type': 'group', 'name': 'Win J'}, {'type': 'group', 'name': 'Menke F'}, {'type': 'group', 'name': 'Findlay K'}, {'type': 'group', 'name': 'Banfield MJ'}, {'type': 'group', 'name': 'Kamoun S'}, {'type': 'group', 'name': 'Bozkurt TO'}])]), OrderedDict([('id', u'dataro8'), ('details', u'Publicly available at NCBI (Accession no: KR021365)'), ('uri', u'https://www.ncbi.nlm.nih.gov/nuccore/976151096/'), ('date', u'2015'), ('title', u'An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor'), ('authors', [{'type': 'group', 'name': 'Dagdas YF'}, {'type': 'group', 'name': 'Belhaj K'}, {'type': 'group', 'name': 'Maqbool A'}, {'type': 'group', 'name': 'Chaparro-Garcia A'}, {'type': 'group', 'name': 'Pandey P'}, {'type': 'group', 'name': 'Petre B'}, {'type': 'group', 'name': 'Tabassum N'}, {'type': 'group', 'name': 'Cruz-Mireles N'}, {'type': 'group', 'name': 'Hughes RK'}, {'type': 'group', 'name': 'Sklenar J'}, {'type': 'group', 'name': 'Win J'}, {'type': 'group', 'name': 'Menke F'}, {'type': 'group', 'name': 'Findlay K'}, {'type': 'group', 'name': 'Banfield MJ'}, {'type': 'group', 'name': 'Kamoun S'}, {'type': 'group', 'name': 'Bozkurt TO'}])]), OrderedDict([('id', u'dataro9'), ('date', u'2016'), ('title', u'PREDICTED: Solanum tuberosum protein NBR1 homolog (LOC102582603), transcript variant X2, mRNA'), ('details', u'Publicly available at NCBI nucleotide (Accession no: XM_006344410.2)'), ('uri', u'http://www.ncbi.nlm.nih.'), ('authors', [{'type': 'group', 'name': 'Dagdas YF'}, {'type': 'group', 'name': 'Belhaj K'}, {'type': 'group', 'name': 'Maqbool A'}, {'type': 'group', 'name': 'Chaparro-Garcia A'}, {'type': 'group', 'name': 'Pandey P'}, {'type': 'group', 'name': 'Petre B'}, {'type': 'group', 'name': 'Tabassum N'}, {'type': 'group', 'name': 'Cruz-Mireles N'}, {'type': 'group', 'name': 'Hughes RK'}, {'type': 'group', 'name': 'Sklenar J'}, {'type': 'group', 'name': 'Win J'}, {'type': 'group', 'name': 'Menke F'}, {'type': 'group', 'name': 'Findlay K'}, {'type': 'group', 'name': 'Banfield MJ'}, {'type': 'group', 'name': 'Kamoun S'}, {'type': 'group', 'name': 'Bozkurt TO'}])])])])
+        (read_fixture('test_datasets_json', 'content_03.xml'),
+         read_fixture('test_datasets_json', 'content_03_expected.py')
+         ),
+
+        # Datasets example with section sec-type data-availability
+        (read_fixture('test_datasets_json', 'content_04.xml'),
+         read_fixture('test_datasets_json', 'content_04_expected.py')
+         ),
+
+        # Datasets example with a blank paragraph on some PoA XML files based 33420 v1
+        (read_fixture('test_datasets_json', 'content_05.xml'),
+         read_fixture('test_datasets_json', 'content_05_expected.py')
          ),
 
         )
@@ -275,314 +285,43 @@ class TestParseJats(unittest.TestCase):
     @data(
 
         # Datasets from 16996 v1 PoA
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s2" sec-type="supplementary-material"><title>Additional Files</title><sec id="s3" sec-type="datasets"><title>Major datasets</title><p/><p>The following datasets were generated:</p><p><related-object content-type="generated-dataset" id="dataro1" source-id="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059" source-id-type="uri"><collab>Wang IE</collab>, <collab>Lapan SW</collab>, <collab>Scimone ML</collab>, <collab>Reddien PW</collab>, <year>2016</year><x>,</x> <source>Gene expression profiling of planarian heads or cephalic ganglia after inhibition of Hedgehog signaling pathway genes by RNAi</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059">http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?token=idyfyieendgpdoz&amp;acc=GSE81059</ext-link><x>,</x> <comment> Publicly available at the NCBI Gene Expression Omnibus (accession no: GSE81059)</comment></related-object></p></sec><supplementary-material><ext-link xlink:href="elife-16996-supp-v1.zip">Download zip</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material></sec></back></root>',
-        [
-            OrderedDict([
-                ('mediaType', 'application/zip'), 
-                ('uri', u'elife-16996-supp-v1.zip'),
-                ('filename', u'elife-16996-supp-v1.zip'),
-                ('id', 'SD1-data'), 
-                ('label', 'All additional files'),
-                ('caption', [OrderedDict([
-                    ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
-                    ('type', 'paragraph'),
-                ])])
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_01.xml'),
+         read_fixture('test_supplementary_files_json', 'content_01_expected.py')
          ),
 
         # Datasets from 08477 v1 VoR
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD2-data"><object-id pub-id-type="doi">10.7554/eLife.08477.007</object-id><label>Source code 1.</label><caption><p>A Matlab GUI for synchronized video-taping and song stimulation in <xref ref-type="fig" rid="fig3">Figure 3</xref>.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.007">http://dx.doi.org/10.7554/eLife.08477.007</ext-link></p></caption><media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code1-v1.zip"/></supplementary-material><supplementary-material id="SD3-data"><object-id pub-id-type="doi">10.7554/eLife.08477.011</object-id><label>Source code 2.</label><caption><p>A Matlab GUI for processing and analyzing the calcium-imaging data in <xref ref-type="fig" rid="fig5">Figure 5</xref>.</p><p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.011">http://dx.doi.org/10.7554/eLife.08477.011</ext-link></p></caption><media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code2-v1.zip"/></supplementary-material></sec></back></root>',
-        [
-            OrderedDict([
-                ('doi', u'10.7554/eLife.08477.007'),
-                ('id', u'SD2-data'),
-                ('label', u'Source code 1'),
-                ('caption', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'A Matlab GUI for synchronized video-taping and song stimulation in <a href="#fig3">Figure 3</a>.')
-                    ])
-                ]),
-                ('mediaType', u'application/zip'),
-                ('uri', u'elife-08477-code1-v1.zip'),
-                ('filename', u'elife-08477-code1-v1.zip')
-            ]),
-            OrderedDict([
-                ('doi', u'10.7554/eLife.08477.011'),
-                ('id', u'SD3-data'),
-                ('label', u'Source code 2'),
-                ('caption', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'A Matlab GUI for processing and analyzing the calcium-imaging data in <a href="#fig5">Figure 5</a>.')
-                    ])
-                ]),
-                ('mediaType', u'application/zip'),
-                ('uri', u'elife-08477-code2-v1.zip'),
-                ('filename', u'elife-08477-code2-v1.zip')
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_02.xml'),
+         read_fixture('test_supplementary_files_json', 'content_02_expected.py')
          ),
 
-
         # 02184 v1, older style PoA has supplementary files directly in the article-meta
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><front><article-meta><supplementary-material><ext-link xlink:href="elife-02184-supp-v1.zip">Download zip</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material></article-meta></front></root>',
-        [
-            OrderedDict([
-                ('mediaType', 'application/zip'),
-                ('uri', u'elife-02184-supp-v1.zip'),
-                ('filename', u'elife-02184-supp-v1.zip'), 
-                ('id', 'SD1-data'),
-                ('label', 'All additional files'),
-                ('caption', [OrderedDict([
-                    ('text', 'Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.'),
-                    ('type', 'paragraph'),
-                ])])
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_03.xml'),
+         read_fixture('test_supplementary_files_json', 'content_03_expected.py')
          ),
 
         # 04493 v1 PoA, multiple old style supplementary files
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><article-meta><supplementary-material><ext-link xlink:href="elife-04493-supp-v1.zip">Download zip of figure supplements and supplementary file</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material><supplementary-material><ext-link xlink:href="Video_2.zip">Download zip of Video 2</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_8.zip">Download zip of Video 8</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_6.zip">Download zip of Video 6</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_11.zip">Download zip of Video 11</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_17.zip">Download zip of Video 17</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_18.zip">Download zip of Video 18</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_7.zip">Download zip of Video 7</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_10.zip">Download zip of Video 10</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_5.zip">Download zip of Video 5</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_13.zip">Download zip of Video 13</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_19.zip">Download zip of Video 19</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_15.zip">Download zip of Video 15</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_21.zip">Download zip of Video 21</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_22.zip">Download zip of Video 22</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_4.zip">Download zip of Video 4</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_20.zip">Download zip of Video 20</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_12.zip">Download zip of Video 12</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_1.zip">Download zip of Video 1</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_16.zip">Download zip of Video 16</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_3.zip">Download zip of Video 3</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_9.zip">Download zip of Video 9</ext-link></supplementary-material><supplementary-material><ext-link xlink:href="Video_14.zip">Download zip of Video 14</ext-link></supplementary-material></article-meta></front></root>',
-        [
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'elife-04493-supp-v1.zip'),
-            ('filename', u'elife-04493-supp-v1.zip'),
-            ('id', 'SD1-data'),
-            ('label', 'Supplementary file 1.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_2.zip'),
-            ('filename', u'Video_2.zip'),
-            ('id', 'SD2-data'),
-            ('label', 'Supplementary file 2.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_8.zip'),
-            ('filename', u'Video_8.zip'),
-            ('id', 'SD3-data'),
-            ('label', 'Supplementary file 3.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_6.zip'),
-            ('filename', u'Video_6.zip'),
-            ('id', 'SD4-data'),
-            ('label', 'Supplementary file 4.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_11.zip'),
-            ('filename', u'Video_11.zip'),
-            ('id', 'SD5-data'),
-            ('label', 'Supplementary file 5.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_17.zip'),
-            ('filename', u'Video_17.zip'),
-            ('id', 'SD6-data'),
-            ('label', 'Supplementary file 6.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_18.zip'),
-            ('filename', u'Video_18.zip'),
-            ('id', 'SD7-data'),
-            ('label', 'Supplementary file 7.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_7.zip'),
-            ('filename', u'Video_7.zip'),
-            ('id', 'SD8-data'),
-            ('label', 'Supplementary file 8.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_10.zip'),
-            ('filename', u'Video_10.zip'),
-            ('id', 'SD9-data'),
-            ('label', 'Supplementary file 9.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_5.zip'),
-            ('filename', u'Video_5.zip'),
-            ('id', 'SD10-data'),
-            ('label', 'Supplementary file 10.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_13.zip'),
-            ('filename', u'Video_13.zip'),
-            ('id', 'SD11-data'),
-            ('label', 'Supplementary file 11.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_19.zip'),
-            ('filename', u'Video_19.zip'),
-            ('id', 'SD12-data'),
-            ('label', 'Supplementary file 12.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_15.zip'),
-            ('filename', u'Video_15.zip'),
-            ('id', 'SD13-data'),
-            ('label', 'Supplementary file 13.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_21.zip'),
-            ('filename', u'Video_21.zip'),
-            ('id', 'SD14-data'),
-            ('label', 'Supplementary file 14.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_22.zip'),
-            ('filename', u'Video_22.zip'),
-            ('id', 'SD15-data'),
-            ('label', 'Supplementary file 15.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_4.zip'),
-            ('filename', u'Video_4.zip'),
-            ('id', 'SD16-data'),
-            ('label', 'Supplementary file 16.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_20.zip'),
-            ('filename', u'Video_20.zip'),
-            ('id', 'SD17-data'),
-            ('label', 'Supplementary file 17.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_12.zip'),
-            ('filename', u'Video_12.zip'),
-            ('id', 'SD18-data'),
-            ('label', 'Supplementary file 18.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_1.zip'),
-            ('filename', u'Video_1.zip'),
-            ('id', 'SD19-data'),
-            ('label', 'Supplementary file 19.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_16.zip'),
-            ('filename', u'Video_16.zip'),
-            ('id', 'SD20-data'),
-            ('label', 'Supplementary file 20.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_3.zip'),
-            ('filename', u'Video_3.zip'),
-            ('id', 'SD21-data'),
-            ('label', 'Supplementary file 21.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_9.zip'),
-            ('filename', u'Video_9.zip'),
-            ('id', 'SD22-data'),
-            ('label', 'Supplementary file 22.')
-        ]),
-        OrderedDict([
-            ('mediaType', 'application/zip'),
-            ('uri', u'Video_14.zip'),
-            ('filename', u'Video_14.zip'),
-            ('id', 'SD23-data'),
-            ('label', 'Supplementary file 23.')
-        ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_04.xml'),
+         read_fixture('test_supplementary_files_json', 'content_04_expected.py')
         ),
 
         # 10110 v1 excerpt, should only extract the supplementary-material from the back matter
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><body><sec><p><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.10110.004</object-id><label>Figure 1—source data 1.</label><caption><title>Dauer assay data for individual trials in <xref ref-type="fig" rid="fig1">Figure 1</xref>.</title><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.004">http://dx.doi.org/10.7554/eLife.10110.004</ext-link></p></caption><media mime-subtype="xlsx" mimetype="application" xlink:href="elife-10110-fig1-data1-v1.xlsx"/></supplementary-material></p></sec></body><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD9-data"><object-id pub-id-type="doi">10.7554/eLife.10110.026</object-id><label>Supplementary file 1.</label><caption><p>List of strains used in this work.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.10110.026">http://dx.doi.org/10.7554/eLife.10110.026</ext-link></p></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-10110-supp1-v1.docx"/></supplementary-material></back></root>',
-        [
-            OrderedDict([
-                ('doi', u'10.7554/eLife.10110.026'),
-                ('id', u'SD9-data'),
-                ('label', u'Supplementary file 1'),
-                ('caption', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'List of strains used in this work.')
-                    ])
-                ]),
-                ('mediaType', u'application/docx'),
-                ('uri', u'elife-10110-supp1-v1.docx'),
-                ('filename', u'elife-10110-supp1-v1.docx')
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_05.xml'),
+         read_fixture('test_supplementary_files_json', 'content_05_expected.py')
          ),
 
         # 03405 v1, label and no title tag
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.03405.026</object-id><label>Source code 1.</label><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.03405.026">http://dx.doi.org/10.7554/eLife.03405.026</ext-link></p><media mime-subtype="rar" mimetype="application" xlink:href="elife-03405-code1-v1.rar"/></supplementary-material></sec></back></root>',
-        [
-            OrderedDict([
-                ('doi', u'10.7554/eLife.03405.026'), 
-                ('id', u'SD1-data'),
-                ('label', u'Source code 1'), 
-                ('mediaType', u'application/rar'),
-                ('uri', u'elife-03405-code1-v1.rar'),
-                ('filename', u'elife-03405-code1-v1.rar')
-            ])]
+        (read_fixture('test_supplementary_files_json', 'content_06.xml'),
+         read_fixture('test_supplementary_files_json', 'content_06_expected.py')
          ),
 
        # 00333 v1, mimetype contains a slash so ignore sub-mimetype
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="SD1-data"><object-id pub-id-type="doi">10.7554/eLife.00333.023</object-id><label>Source code 1.</label><caption><p>Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.</p><p><bold>DOI:</bold><ext-link ext-link-type="doi" xlink:href="10.7554/eLife.00333.023">http://dx.doi.org/10.7554/eLife.00333.023</ext-link></p></caption><media mime-subtype="zip" mimetype="application/zip" xlink:href="elife-00333-code1-v1.zip"/></supplementary-material></sec></back></root>',
-        [
-            OrderedDict([
-                ('doi', u'10.7554/eLife.00333.023'),
-                ('id', u'SD1-data'),
-                ('label', u'Source code 1'),
-                ('caption', [
-                    OrderedDict([
-                        ('type', 'paragraph'),
-                        ('text', u'Simulation script, s_arrest_hemifusion_simulation.m, and accompanying functions, generate_patch.m, s_randomdist.m, isaN2tuplet.m, findFlippedNeighbors.m, for MATLAB version R2012a.')
-                    ])
-                ]),
-                ('mediaType', u'application/zip'),
-                ('uri', u'elife-00333-code1-v1.zip'),
-                ('filename', u'elife-00333-code1-v1.zip')
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_07.xml'),
+         read_fixture('test_supplementary_files_json', 'content_07_expected.py')
          ),
 
         # 26759 v2, example of title tag and no label tag
-        ('<root xmlns:xlink="http://www.w3.org/1999/xlink"><back><sec id="s6" sec-type="supplementary-material"><title>Additional files</title><supplementary-material id="supp1"><object-id pub-id-type="doi">10.7554/eLife.26759.018</object-id><label>Supplementary file 1.</label><caption><title>All primer sequences used in this study.</title></caption><media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-supp1-v2.docx"/></supplementary-material><supplementary-material id="transrepform"><object-id pub-id-type="doi">10.7554/eLife.26759.019</object-id><caption><title>Transparent reporting form</title></caption><media mime-subtype="pdf" mimetype="application" xlink:href="elife-26759-transrepform-v2.pdf"/></supplementary-material></sec></back></root>',
-        [
-            OrderedDict([
-                ('doi', u'10.7554/eLife.26759.018'),
-                ('id', u'supp1'),
-                ('label', u'Supplementary file 1'),
-                ('title', u'All primer sequences used in this study.'),
-                ('mediaType', u'application/docx'),
-                ('uri', u'elife-26759-supp1-v2.docx'),
-                ('filename', u'elife-26759-supp1-v2.docx')
-            ]), OrderedDict([
-                ('doi', u'10.7554/eLife.26759.019'),
-                ('id', u'transrepform'),
-                ('label', u'Transparent reporting form'),
-                ('mediaType', u'application/pdf'),
-                ('uri', u'elife-26759-transrepform-v2.pdf'),
-                ('filename', u'elife-26759-transrepform-v2.pdf')
-            ])
-        ]
+        (read_fixture('test_supplementary_files_json', 'content_08.xml'),
+         read_fixture('test_supplementary_files_json', 'content_08_expected.py')
         ),
 
         )

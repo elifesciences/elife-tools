@@ -3650,11 +3650,16 @@ def datasets_json(soup, html_flag=True):
     used_datasets = []
     generated_datasets_related_object_tags = []
     used_datasets_related_object_tags = []
+    availabilty_p_tags = []
     p_tags = []
 
     back_tag = raw_parser.back(soup)
     if back_tag:
-        datasets_section_tag = first(raw_parser.section(back_tag, "datasets"))
+        # find the section containing datasets by its sec-type value
+        for sec_type in ["datasets", "data-availability"]:
+            if raw_parser.section(back_tag, sec_type):
+                datasets_section_tag = first(raw_parser.section(back_tag, sec_type))
+                break
         if datasets_section_tag:
             p_tags = raw_parser.paragraph(datasets_section_tag)
 
@@ -3669,10 +3674,23 @@ def datasets_json(soup, html_flag=True):
                 elif dataset_type == "used":
                     used_datasets_related_object_tags += raw_parser.related_object(p_tag)
             else:
-                if node_text(p_tag) and "generated" in node_text(p_tag):
+                # Look for paragraphs ending in a certain term optionally with a colon at the end
+                if node_text(p_tag) and node_text(p_tag).rstrip(':').endswith("generated"):
                     dataset_type = "generated"
-                elif node_text(p_tag):
+                elif node_text(p_tag) and node_text(p_tag).rstrip(':').endswith("used"):
                     dataset_type = "used"
+            # If no dataset type found yet, collect the first paragraphs for the data availability
+            if not dataset_type:
+                availabilty_p_tags.append(p_tag)
+
+    # add data availability paragraphs
+    for p_tag in availabilty_p_tags:
+        block_content = body_block_content(p_tag)
+        # check the text is not empty before adding
+        if block_content and "text" in block_content:
+            if "availabiltiy" not in datasets_json:
+                datasets_json["availability"] = []
+            datasets_json["availability"].append(block_content)
 
     for related_object in generated_datasets_related_object_tags:
         if "generated" not in datasets_json:
