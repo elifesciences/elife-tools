@@ -3652,6 +3652,7 @@ def datasets_json(soup, html_flag=True):
     used_datasets_related_object_tags = []
     availabilty_p_tags = []
     p_tags = []
+    datasets_section_tag = None
 
     back_tag = raw_parser.back(soup)
     if back_tag:
