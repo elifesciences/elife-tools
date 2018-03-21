@@ -1,3 +1,85 @@
 <root xmlns:xlink="http://www.w3.org/1999/xlink">
-    <back><sec id="s1" sec-type="additional-information"><title>Additional information</title><fn-group content-type="competing-interest"><title>Competing interest</title><fn fn-type="conflict" id="conf1"><p>The authors declare that no competing interests exist.</p></fn></fn-group><fn-group content-type="ethics-information"><title>Ethics</title><fn fn-type="other"><p>Animal experimentation: All animal protocols (#08-0083-4) were approved by the Institutional Animal Use and Care Committee of The Scripps Research Institute.</p></fn></fn-group></sec><sec id="s2" sec-type="supplementary-material"><title>Additional Files</title><sec id="s3" sec-type="datasets"><title>Major datasets</title><p/><p>The following datasets were generated:</p><p><related-object content-type="generated-dataset" id="dataro1" source-id="www.proteomexchange.org" source-id-type="uri"><collab>Liu et al</collab>, <year>2018</year><x>,</x> <source>Xenopus Brain Proteome</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="www.proteomexchange.org">www.proteomexchange.org</ext-link><x>,</x> <comment>ftp://MSV000081728@massive.ucsd.edu</comment></related-object></p><p>The following previously published datasets were used:</p><p><related-object content-type="generated-dataset" id="dataro2" source-id="http://www.xenbase.org" source-id-type="uri"><collab>Xenbase</collab>, <year>2014</year><x>,</x> <source>Xenbase_Xenopus_laevis_05-29-2014</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://www.xenbase.org">http://www.xenbase.org</ext-link><x>,</x> <comment>RRID:SCR_003280</comment></related-object><related-object content-type="generated-dataset" id="dataro3" source-id="http://kirschner.med.harvard.edu/MADX.html" source-id-type="uri"><collab>Wuhr et al</collab>, <year>2014</year><x>,</x> <source>Molecular Atlas of Development</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://kirschner.med.harvard.edu/MADX.html">http://kirschner.med.harvard.edu/MADX.html</ext-link><x>,</x> <comment>accession no. PXD000926</comment></related-object><related-object content-type="generated-dataset" id="dataro4" source-id="http://www.xenbase.org" source-id-type="uri"><collab>Xenbase</collab>, <year>2015</year><x>,</x> <source>UniProt_Xenopus_laevis_01-23-2015</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://www.xenbase.org">http://www.xenbase.org</ext-link><x>,</x> <comment>Proteome ID: UP000186698</comment></related-object><related-object content-type="generated-dataset" id="dataro5" source-id="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659" source-id-type="uri"><collab>Shen et al</collab>, <year>2014</year><x>,</x> <source>Xenopus brain</source><x>,</x> <ext-link ext-link-type="uri" xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659">http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659</ext-link><x>,</x> <comment>ProteomeExchange number: PXD008659</comment></related-object></p></sec><supplementary-material><ext-link xlink:href="elife-33420-supp-v1.zip">Download zip</ext-link><p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p></supplementary-material></sec></back>
+    <back>
+        <sec id="s1" sec-type="additional-information">
+            <title>Additional information</title>
+            <fn-group content-type="competing-interest">
+                <title>Competing interest</title>
+                <fn fn-type="conflict" id="conf1">
+                    <p>The authors declare that no competing interests exist.</p>
+                </fn>
+            </fn-group>
+            <fn-group content-type="ethics-information">
+                <title>Ethics</title>
+                <fn fn-type="other">
+                    <p>Animal experimentation: All animal protocols (#08-0083-4) were approved by the Institutional Animal Use and Care Committee of The Scripps Research Institute.</p>
+                </fn>
+            </fn-group>
+        </sec>
+        <sec id="s2" sec-type="supplementary-material">
+            <title>Additional Files</title>
+            <sec id="s3" sec-type="datasets">
+                <title>Major datasets</title><p/>
+                <p>The following datasets were generated:</p>
+                <p>
+                    <related-object content-type="generated-dataset" id="dataro1" source-id="www.proteomexchange.org" source-id-type="uri">
+                        <collab>Liu et al</collab>,
+                        <year>2018</year>
+                        <x>,</x>
+                        <source>Xenopus Brain Proteome</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="www.proteomexchange.org">www.proteomexchange.org</ext-link>
+                        <x>,</x>
+                        <comment>ftp://MSV000081728@massive.ucsd.edu</comment>
+                    </related-object>
+                </p>
+                <p>The following previously published datasets were used:</p>
+                <p>
+                    <related-object content-type="generated-dataset" id="dataro2" source-id="http://www.xenbase.org" source-id-type="uri">
+                        <collab>Xenbase</collab>,
+                        <year>2014</year>
+                        <x>,</x>
+                        <source>Xenbase_Xenopus_laevis_05-29-2014</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="http://www.xenbase.org">http://www.xenbase.org</ext-link>
+                        <x>,</x>
+                        <comment>RRID:SCR_003280</comment>
+                    </related-object>
+                    <related-object content-type="generated-dataset" id="dataro3" source-id="http://kirschner.med.harvard.edu/MADX.html" source-id-type="uri">
+                        <collab>Wuhr et al</collab>,
+                        <year>2014</year>
+                        <x>,</x>
+                        <source>Molecular Atlas of Development</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="http://kirschner.med.harvard.edu/MADX.html">http://kirschner.med.harvard.edu/MADX.html</ext-link>
+                        <x>,</x>
+                        <comment>accession no. PXD000926</comment>
+                    </related-object>
+                    <related-object content-type="generated-dataset" id="dataro4" source-id="http://www.xenbase.org" source-id-type="uri">
+                        <collab>Xenbase</collab>,
+                        <year>2015</year>
+                        <x>,</x>
+                        <source>UniProt_Xenopus_laevis_01-23-2015</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="http://www.xenbase.org">http://www.xenbase.org</ext-link>
+                        <x>,</x>
+                        <comment>Proteome ID: UP000186698</comment>
+                    </related-object>
+                    <related-object content-type="generated-dataset" id="dataro5" source-id="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659" source-id-type="uri">
+                        <collab>Shen et al</collab>,
+                        <year>2014</year>
+                        <x>,</x>
+                        <source>Xenopus brain</source>
+                        <x>,</x>
+                        <ext-link ext-link-type="uri" xlink:href="http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659">http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD008659</ext-link>
+                        <x>,</x>
+                        <comment>ProteomeExchange number: PXD008659</comment>
+                    </related-object>
+                </p>
+            </sec>
+            <supplementary-material>
+                <ext-link xlink:href="elife-33420-supp-v1.zip">Download zip</ext-link>
+                <p>Any figures and tables for this article are included in the PDF. The zip folder contains additional supplemental files.</p>
+            </supplementary-material>
+        </sec>
+    </back>
 </root>
