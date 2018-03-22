@@ -3589,7 +3589,7 @@ def appendices_json(soup, base_url=None):
     return appendices_json
 
 
-def dataset_related_object_json(tag, html_flag=True):
+def dataset_tag_json(tag, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
     convert = lambda xml_string: xml_to_html(html_flag, xml_string)
 
@@ -3648,8 +3648,8 @@ def datasets_json(soup, html_flag=True):
     datasets_json = OrderedDict()
     generated_datasets = []
     used_datasets = []
-    generated_datasets_related_object_tags = []
-    used_datasets_related_object_tags = []
+    generated_datasets_tags = []
+    used_datasets_tags = []
     availabilty_p_tags = []
     p_tags = []
     datasets_section_tag = None
@@ -3671,9 +3671,15 @@ def datasets_json(soup, html_flag=True):
             #  ones with out them are above the generated and used datasets
             if raw_parser.related_object(p_tag):
                 if dataset_type == "generated":
-                    generated_datasets_related_object_tags += raw_parser.related_object(p_tag)
+                    generated_datasets_tags += raw_parser.related_object(p_tag)
                 elif dataset_type == "used":
-                    used_datasets_related_object_tags += raw_parser.related_object(p_tag)
+                    used_datasets_tags += raw_parser.related_object(p_tag)
+            elif raw_parser.element_citation(p_tag):
+                # also look for ones with element-citation tag
+                if dataset_type == "generated":
+                    generated_datasets_tags += raw_parser.element_citation(p_tag)
+                elif dataset_type == "used":
+                    used_datasets_tags += raw_parser.element_citation(p_tag)
             else:
                 # Look for paragraphs ending in a certain term optionally with a colon at the end
                 if node_text(p_tag) and node_text(p_tag).rstrip(':').endswith("generated"):
@@ -3693,17 +3699,17 @@ def datasets_json(soup, html_flag=True):
                 datasets_json["availability"] = []
             datasets_json["availability"].append(block_content)
 
-    for related_object in generated_datasets_related_object_tags:
+    for dataset_tag in generated_datasets_tags:
         if "generated" not in datasets_json:
             datasets_json["generated"] = []
-        if dataset_related_object_json(related_object) != {}:
-            datasets_json["generated"].append(dataset_related_object_json(related_object, html_flag))
+        if dataset_tag_json(dataset_tag) != {}:
+            datasets_json["generated"].append(dataset_tag_json(dataset_tag, html_flag))
 
-    for related_object in used_datasets_related_object_tags:
+    for dataset_tag in used_datasets_tags:
         if "used" not in datasets_json:
             datasets_json["used"] = []
-        if dataset_related_object_json(related_object) != {}:
-            datasets_json["used"].append(dataset_related_object_json(related_object, html_flag))
+        if dataset_tag_json(dataset_tag) != {}:
+            datasets_json["used"].append(dataset_tag_json(dataset_tag, html_flag))
 
     return elifetools.json_rewrite.rewrite_json("datasets_json", soup, datasets_json)
 
