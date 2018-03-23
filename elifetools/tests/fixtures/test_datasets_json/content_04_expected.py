@@ -64,6 +64,7 @@ expected = OrderedDict([
                     ])
                 ]),
             ('title', u'Dryad Digital Repository'),
+            ('details', u'Data from: Genome-wide errant targeting by Hairy'),
             ('doi', u'10.5061/dryad.cv323')
             ])
         ])

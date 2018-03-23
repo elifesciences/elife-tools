@@ -35,8 +35,9 @@ expected = OrderedDict([
                         ]))
                     ])
                 ]),
-            ('title', u'Zenodo'),
-            ('uri', u'http://dx.doi.org/10.5061/dryad.j1fd7')
+            ('title', u'Dryad'),
+            ('details', u'Data from: Data archiving is a good investmen'),
+            ('doi', u'10.5061/dryad.j1fd7')
             ]),
         ]),
     ('used', [
@@ -78,7 +79,8 @@ expected = OrderedDict([
                     ])
                 ]),
             ('title', u'Zenodo'),
-            ('uri', u'http://example.org')
+            ('details', u'This is an amazing dataset'),
+            ('doi', u'10.11144/Javeriana.cl20-39.bdfp')
             ])
         ])
     ])
