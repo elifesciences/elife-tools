@@ -3629,7 +3629,11 @@ def dataset_tag_json(tag, html_flag=True):
                  convert(node_contents_str(first(raw_parser.object_id(tag, "art-access-id")))))
 
     # details
-    set_if_value(dataset_content, "details", convert(node_contents_str(first(raw_parser.comment(tag)))))
+    # prefer the data-title value first, then if not present use the comment tag value
+    if raw_parser.data_title(tag):
+        set_if_value(dataset_content, "details", convert(node_contents_str(first(raw_parser.data_title(tag)))))
+    elif raw_parser.comment(tag):
+        set_if_value(dataset_content, "details", convert(node_contents_str(first(raw_parser.comment(tag)))))
 
     # doi
     if raw_parser.pub_id(tag, "doi"):
