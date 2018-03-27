@@ -268,6 +268,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_datasets_json', 'content_06_expected.py')
          ),
 
+        # Datasets example for PoA XML in new style tagging, based 33420 v1
+        (read_fixture('test_datasets_json', 'content_07.xml'),
+         read_fixture('test_datasets_json', 'content_07_expected.py')
+         ),
+
         )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

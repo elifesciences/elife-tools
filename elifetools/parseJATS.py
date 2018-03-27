@@ -3639,6 +3639,9 @@ def dataset_tag_json(tag, html_flag=True):
     if raw_parser.pub_id(tag, "doi"):
         doi_tag = first(raw_parser.pub_id(tag, "doi"))
         set_if_value(dataset_content, "doi", doi_uri_to_doi(doi_tag.get('xlink:href')))
+        if "doi" not in dataset_content:
+            # use the tag value if xlink:href attribute is not present
+            set_if_value(dataset_content, "doi", doi_uri_to_doi(node_contents_str(doi_tag)))
 
     # uri
     if raw_parser.ext_link(tag, "uri"):

@@ -23,7 +23,7 @@
                     <year iso-8601-date="2017">2017</year>
                     <data-title>Data from: Data archiving is a good investmen</data-title>
                     <source>Dryad</source>
-                    <pub-id pub-id-type="doi" assigning-authority="dryad" xlink:href="http://dx.doi.org/10.5061/dryad.j1fd7">http://dx.doi.org/10.5061/dryad.j1fd7</pub-id>
+                    <pub-id pub-id-type="doi" assigning-authority="dryad">http://dx.doi.org/10.5061/dryad.j1fd7</pub-id>
                 </element-citation>
             </p>
             <p>The following previously published datasets were used:</p>
@@ -50,7 +50,7 @@
                     <year iso-8601-date="2012">2012</year>
                     <data-title>This is an amazing dataset</data-title>
                     <source>Zenodo</source>
-                    <pub-id pub-id-type="doi" assigning-authority="zenodo" xlink:href="https://doi.org/10.11144/Javeriana.cl20-39.bdfp">https://doi.org/10.11144/Javeriana.cl20-39.bdfp</pub-id>
+                    <pub-id pub-id-type="doi" assigning-authority="zenodo">https://doi.org/10.11144/Javeriana.cl20-39.bdfp</pub-id>
                 </element-citation>
             </p>
         </sec>
