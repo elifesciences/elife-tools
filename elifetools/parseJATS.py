@@ -3247,6 +3247,8 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "type", "conference-proceeding")
         elif ref.get("publication-type") == "clinicaltrial":
             set_if_value(ref_content, "type", "clinical-trial")
+        elif ref.get("publication-type") == "webpage":
+            set_if_value(ref_content, "type", "web")
         else:
             set_if_value(ref_content, "type", ref.get("publication-type"))
 
@@ -3260,7 +3262,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "discriminator", discriminator)
 
         # accessed
-        if ref.get("publication-type") in ["web"] and ref.get("iso-8601-date"):
+        if ref.get("publication-type") in ["web", "webpage"] and ref.get("iso-8601-date"):
             set_if_value(ref_content, "accessed", ref.get("iso-8601-date"))
             # Set the date to the year tag value if accessed is set and there is a year
             set_if_value(ref_content, "date", year_date)
@@ -3283,7 +3285,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "title", ref.get("data-title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("source"))
-        elif ref.get("publication-type") in ["patent", "web"]:
+        elif ref.get("publication-type") in ["patent", "web", "webpage"]:
             set_if_value(ref_content, "title", ref.get("full_article_title"))
             if "title" not in ref_content:
                 set_if_value(ref_content, "title", ref.get("comment"))
@@ -3305,7 +3307,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "journal", ref.get("source"))
         elif ref.get("publication-type") == "periodical":
             set_if_value(ref_content, "periodical", ref.get("source"))
-        elif ref.get("publication-type") in ["web"]:
+        elif ref.get("publication-type") in ["web", "webpage"]:
             set_if_value(ref_content, "website", ref.get("source"))
         elif ref.get("publication-type") in ["patent"]:
             set_if_value(ref_content, "patentType", ref.get("source"))
@@ -3382,7 +3384,7 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "dataId", ref.get("accession"))
 
         # doi
-        if ref.get("publication-type") not in ["web"]:
+        if ref.get("publication-type") not in ["web", "webpage"]:
             set_if_value(ref_content, "doi", ref.get("doi"))
 
         # pmid
@@ -3393,8 +3395,12 @@ def references_json(soup, html_flag=True):
 
         # uri
         set_if_value(ref_content, "uri", ref.get("uri"))
+        # take the uri_text value if no uri yet
+        if "uri" not in ref_content:
+            set_if_value(ref_content, "uri", ref.get("uri_text"))
+        # next option is to set the uri from the doi value
         if ("uri" not in ref_content
-            and ref.get("publication-type") in ["confproc", "data", "web", "preprint"]):
+            and ref.get("publication-type") in ["confproc", "data", "web", "webpage", "preprint"]):
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")

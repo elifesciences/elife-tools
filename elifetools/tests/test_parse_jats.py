@@ -1094,6 +1094,12 @@ class TestParseJats(unittest.TestCase):
          (read_fixture('test_references_json', 'content_44.xml'),
           read_fixture('test_references_json', 'content_44_expected.py'),
         ),
+
+         # example of ref of type webpage, based on article 10.5334/sta.606, note: does not parse author names
+         (read_fixture('test_references_json', 'content_45.xml'),
+          read_fixture('test_references_json', 'content_45_expected.py'),
+        ),
+
         )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
