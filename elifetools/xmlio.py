@@ -169,6 +169,34 @@ def rewrite_subject_group(root, subjects, subject_group_type, overwrite=True):
     return count
 
 
+def add_version_history(root, version_history, overwrite=False):
+    """
+    add related object tags containing version history data
+    version_history is a list of dict values for each article version
+    overwrite to overwrite existing versions, otherwise leave them unchanged in the XML
+    """
+    wrap_tag_name = 'article-meta'
+    # the parent tag where it should be found
+    xpath_parent = './/front/article-meta'
+    # the wraping tag in case article-categories does not exist
+    xpath_article_meta = './/front'
+
+    # get the parent tag
+    parent_tag = root.find(xpath_parent)
+    if parent_tag is None:
+        # parent tag not found, add one
+        wrap_tag = root.find(xpath_article_meta)
+        article_meta_tag = SubElement(wrap_tag, wrap_tag_name)
+        parent_tag = article_meta_tag
+
+    count = 0
+    if version_history:
+        for article_version in version_history:
+            # todo
+            pass
+    return count
+
+
 def output(root, type='JATS', doctype_dict=None):
 
     if doctype_dict is not None:

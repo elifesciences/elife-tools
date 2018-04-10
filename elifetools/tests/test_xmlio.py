@@ -161,6 +161,26 @@ class TestXmlio(unittest.TestCase):
         self.assertEqual(rough_string, xml_expected)
 
 
+    @unpack
+    @data(
+        # example of providing no version history data
+        (fixture_file('test_xmlio', 'test_add_version_history_01.xml'),
+         [],
+         True,
+         fixture_file('test_xmlio', 'test_add_version_history_01_expected.xml')
+         ),
+        )
+    def test_add_version_history(self, xml, version_history, overwrite, xml_expected):
+        encoding = 'utf8'
+        root = xmlio.parse(xml)
+        # add version history
+        xmlio.add_version_history(root, version_history, overwrite)
+        # convert to string for comparison
+        rough_string = ElementTree.tostring(root)
+        # parse and convert the expected XML for comparison
+        root_expected = xmlio.parse(xml_expected)
+        expected_rough_string = ElementTree.tostring(root_expected)
+        self.assertEqual(rough_string, expected_rough_string)
 
 if __name__ == '__main__':
     unittest.main()
