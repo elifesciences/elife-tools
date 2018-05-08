@@ -1090,7 +1090,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         if 'id' in contributor:
             if contributor['id'].startswith("author"):
                 person_id = contributor['id'].replace("author-", "")
-                contributor['person_id'] = int(person_id)
+                contributor['person_id'] = int(person_id) if person_id else None
         # Author - given names + surname
         author_name = ""
         if 'given-names' in contributor:
