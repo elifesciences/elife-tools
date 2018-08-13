@@ -3019,17 +3019,20 @@ def map_equal_contributions(contributors):
         equal_contribution_map[equal_contribution_key] = i+1
     return equal_contribution_map
 
+
 def editors_json(soup):
     editors_json_data = []
     contributors_data = contributors(soup, "full")
     for contributor in contributors_data:
         editor_json = None
-        if contributor["type"] == "editor":
+        if contributor["type"] in ["editor", "senior_editor"]:
             editor_json = author_person(contributor, None, None, None, None, None, None)
         if editor_json:
             editors_json_data.append(editor_json)
-    editors_json_data_rewritten = elifetools.json_rewrite.rewrite_json("editors_json", soup, editors_json_data)
+    editors_json_data_rewritten = elifetools.json_rewrite.rewrite_json(
+        "editors_json", soup, editors_json_data)
     return editors_json_data_rewritten
+
 
 def authors_json(soup):
     """authors list in article json format"""
