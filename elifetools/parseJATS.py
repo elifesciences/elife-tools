@@ -2644,6 +2644,7 @@ def decision_letter(soup):
     sub_article = raw_parser.decision_letter(soup)
 
     if sub_article:
+        copy_attribute(sub_article.attrs, "id", sub_article_content)
         if sub_article_doi(sub_article):
             sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)
@@ -2682,6 +2683,7 @@ def author_response(soup):
     sub_article = raw_parser.author_response(soup)
 
     if sub_article:
+        copy_attribute(sub_article.attrs, "id", sub_article_content)
         if sub_article_doi(sub_article):
             sub_article_content["doi"] = doi_uri_to_doi(sub_article_doi(sub_article))
         raw_body = raw_parser.article_body(sub_article)

@@ -1,5 +1,6 @@
 from collections import OrderedDict
 expected = OrderedDict([
+    ('id', u'SA1'),
     ('content', [
         OrderedDict([
             ('type', 'section'),
