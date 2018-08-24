@@ -1128,6 +1128,19 @@ def rewrite_elife_editors_json(json_content, doi):
             if ref.get("role") == "Reviewing editor":
                 json_content[i]["role"] = "Reviewing Editor"
 
+    # Remove duplicates
+    editors_kept = []
+    for i, ref in enumerate(json_content):
+        editor_values = OrderedDict()
+        editor_values["role"] = ref.get("role")
+        if ref.get("name"):
+            editor_values["name"] = ref.get("name").get("index")
+        if editor_values in editors_kept:
+            # remove if one is already kept
+            del(json_content[i])
+        else:
+            editors_kept.append(editor_values)
+
     return json_content
 
 def rewrite_elife_title_prefix_json(json_content, doi):
