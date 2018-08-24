@@ -1172,6 +1172,8 @@ def person_same_name_map(json_content, role_from):
                        if person.get('role') in role_from]
     same_name_map = {}
     for i, editor in matched_editors:
+        if not editor.get("name"):
+            continue
         # compare name of each
         name = editor.get("name").get("index")
         if name not in same_name_map:
