@@ -1137,11 +1137,48 @@ def rewrite_elife_editors_json(json_content, doi):
             editor_values["name"] = ref.get("name").get("index")
         if editor_values in editors_kept:
             # remove if one is already kept
-            del(json_content[i])
+            del json_content[i]
         else:
             editors_kept.append(editor_values)
 
+    # Merge two role values
+    role_replacements = [
+        {
+            "role_from": ["Senior Editor", "Reviewing Editor"],
+            "role_to": "Senior and Reviewing Editor"}
+    ]
+    for replace_rule in role_replacements:
+        same_name_map = person_same_name_map(json_content, replace_rule.get('role_from'))
+        role_is_set = None
+        for same_id_list in same_name_map.values():
+            if not same_id_list or len(same_id_list) <= 1:
+                # no more than one name match, nothing to replace
+                continue
+            for same_id in same_id_list:
+                if not role_is_set:
+                    # reset the role for the first person record
+                    json_content[same_id]["role"] = replace_rule.get("role_to")
+                    role_is_set = True
+                else:
+                    # first one is already set, remove the duplicates
+                    del json_content[same_id]
+
     return json_content
+
+
+def person_same_name_map(json_content, role_from):
+    "to merge multiple editors into one record, filter by role values and group by name"
+    matched_editors = [(i, person) for i, person in enumerate(json_content)
+                       if person.get('role') in role_from]
+    same_name_map = {}
+    for i, editor in matched_editors:
+        # compare name of each
+        name = editor.get("name").get("index")
+        if name not in same_name_map:
+            same_name_map[name] = []
+        same_name_map[name].append(i)
+    return same_name_map
+
 
 def rewrite_elife_title_prefix_json(json_content, doi):
     """ this does the work of rewriting elife title prefix json values"""

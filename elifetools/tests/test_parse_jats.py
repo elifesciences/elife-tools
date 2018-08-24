@@ -620,6 +620,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_editors_json', 'content_05_expected.py')
         ),
 
+         # kitchen sink example, reviewing editor and senior editor is the same person
+        (read_fixture('test_editors_json', 'content_06.xml'),
+         read_fixture('test_editors_json', 'content_06_expected.py')
+        ),
+
         )
     def test_editors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
