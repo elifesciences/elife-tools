@@ -946,6 +946,7 @@ def rewrite_elife_editors_json(json_content, doi):
 
     # Add editor role
     editor_roles = {}
+    editor_roles["10.7554/eLife.00534"] = "Reviewing Editor"
     editor_roles["10.7554/eLife.09376"] = "Reviewing Editor"
     editor_roles["10.7554/eLife.10056"] = "Reviewing Editor"
     editor_roles["10.7554/eLife.11031"] = "Reviewing Editor"
