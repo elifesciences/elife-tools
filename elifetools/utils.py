@@ -3,6 +3,7 @@ import calendar
 import re
 from collections import OrderedDict
 from six import iteritems
+from slugify import slugify
 
 
 def unicode_value(value):
@@ -11,6 +12,13 @@ def unicode_value(value):
     except NameError:
         # assume Python 3 and use str
         return str(value)
+
+
+def subject_slug(subject, stopwords=['and', 'of']):
+    "create a slug for a subject value"
+    if not subject:
+        return subject
+    return slugify(subject, stopwords=stopwords)
 
 
 def first(x):

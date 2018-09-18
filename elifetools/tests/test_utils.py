@@ -30,6 +30,24 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(utils.first(value), expected)
 
     @unpack
+    @data(
+        (None, None),
+        ("this and that", "this-that"),
+        ("six of one and half a dozen", "six-one-half-a-dozen"))
+    def test_subject_slug_default(self, value, expected):
+        "subject_slug with the default stopwords"
+        self.assertEqual(utils.subject_slug(value), expected)
+
+    @unpack
+    @data(
+        (None, None, None),
+        ("this and that", None, "this-and-that"),
+        ("this and that", ["this", "and", "that"], ""))
+    def test_subject_slug_stopwords(self, value, stopwords, expected):
+        "subject_slug specifying alternate stopwords"
+        self.assertEqual(utils.subject_slug(value, stopwords), expected)
+
+    @unpack
     @data((None, None),
         ("An : ( example ) .", "An: (example)."),
         (["bees .","( knees )"], ["bees.","(knees)"]))
