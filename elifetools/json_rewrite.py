@@ -1155,6 +1155,7 @@ def rewrite_elife_editors_json(json_content, doi):
             if not same_id_list or len(same_id_list) <= 1:
                 # no more than one name match, nothing to replace
                 continue
+            deleted_count = 0
             for same_id in same_id_list:
                 if not role_is_set:
                     # reset the role for the first person record
@@ -1162,7 +1163,8 @@ def rewrite_elife_editors_json(json_content, doi):
                     role_is_set = True
                 else:
                     # first one is already set, remove the duplicates
-                    del json_content[same_id]
+                    del json_content[same_id-deleted_count]
+                    deleted_count += 1
 
     return json_content
 
