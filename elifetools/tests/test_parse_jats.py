@@ -273,6 +273,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_datasets_json', 'content_07_expected.py')
          ),
 
+        # Datasets example with new pub-id uri tagging
+        (read_fixture('test_datasets_json', 'content_08.xml'),
+         read_fixture('test_datasets_json', 'content_08_expected.py')
+         ),
+
         )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

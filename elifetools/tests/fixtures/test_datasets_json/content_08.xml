@@ -1,0 +1,87 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec sec-type="data-availability" id="s7">
+            <title>Data availability</title>
+            <p>A data availability statement will generally describe how the authors have provided the source data for their work. This can list the source data files accompanying their figures, supplementary files, and/or external dataasets. Hyperlinks can be included here, for example: <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102999">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE102999</ext-link></p>
+            <p>The following dataset was generated:</p>
+            <p>
+                <!--
+               UPDATE: Change to use element citation for datasets
+               -->
+               <element-citation publication-type="data" specific-use="isSupplementedBy" id="dataset1">
+                   <person-group person-group-type="author">
+                       <name>
+                           <surname>Düsterwald</surname>
+                           <given-names>KM</given-names>
+                       </name>
+                       <name>
+                           <surname>Currin</surname>
+                           <given-names>CB</given-names>
+                       </name>
+                       <name>
+                           <surname>Burman</surname>
+                           <given-names>RJ</given-names>
+                       </name>
+                       <name>
+                           <surname>Akerman</surname>
+                           <given-names>CJ</given-names>
+                       </name>
+                       <name>
+                           <surname>Kay</surname>
+                           <given-names>AR</given-names>
+                       </name>
+                       <name>
+                           <surname>Raimondo</surname>
+                           <given-names>JV</given-names>
+                       </name>
+                   </person-group>
+                   <year iso-8601-date="2018">2018</year>
+                   <data-title>Data from: Biophysical models reveal the relative importance of transporter proteins and impermeant anions in chloride homeostasis</data-title>
+                   <source>Dryad Digital Repository</source>
+                   <pub-id assigning-authority="Dryad" pub-id-type="doi">10.5061/dryad.kj1f3v4</pub-id>
+               </element-citation>
+            </p>
+            <p>The following previously published datasets were used:</p>
+            <p>
+                <element-citation publication-type="data" specific-use="references" id="dataset2">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Rau</surname>
+                            <given-names>CD</given-names>
+                        </name>
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>J</given-names>
+                        </name>
+                        <name>
+                            <surname>Wang</surname>
+                            <given-names>Y</given-names>
+                        </name>
+                        <name>
+                            <surname>Lusis</surname>
+                            <given-names>AJ</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2013">2013</year>
+                    <data-title>Transcriptomes of the hybrid mouse diversity panel subjected to Isoproterenol challenge</data-title>
+                    <source>NCBI Gene Expression Omnibus</source>
+                    <pub-id assigning-authority="NCBI" pub-id-type="accession" xlink:href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760">GSE48760</pub-id>
+                </element-citation>
+            </p>
+            <p>
+                <element-citation publication-type="data" specific-use="references" id="dataset3">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Garcia</surname>
+                            <given-names>Miguel A</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2018">2018</year>
+                    <data-title>Shear Manuscript</data-title>
+                    <source>Open Science Framework</source>
+                    <pub-id assigning-authority="other" pub-id-type="archive" xlink:href="https://osf.io/kvu5j/">kvu5j</pub-id>
+                </element-citation>
+            </p>
+        </sec>
+    </back>
+</root>
