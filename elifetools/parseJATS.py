@@ -3665,6 +3665,16 @@ def dataset_tag_json(tag, html_flag=True):
         uri_tag = first(raw_parser.ext_link(tag, "uri"))
         set_if_value(dataset_content, "uri", uri_tag.get('xlink:href'))
 
+    # uri from pub-id accession tag 
+    if "uri" not in dataset_content and raw_parser.pub_id(tag, "accession"):
+        pub_id_tag = first(raw_parser.pub_id(tag, "accession"))
+        set_if_value(dataset_content, "uri", doi_uri_to_doi(pub_id_tag.get('xlink:href')))
+
+    # uri from pub-id archive tag
+    if "uri" not in dataset_content and raw_parser.pub_id(tag, "archive"):
+        pub_id_tag = first(raw_parser.pub_id(tag, "archive"))
+        set_if_value(dataset_content, "uri", doi_uri_to_doi(pub_id_tag.get('xlink:href')))
+
     return dataset_content
 
 
