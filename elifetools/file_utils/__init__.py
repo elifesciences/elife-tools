@@ -1,4 +1,5 @@
 import os
+import io
 import importlib
 from elifetools.utils import unicode_value
 
@@ -37,7 +38,7 @@ def read_fixture(folder_name, filename):
             'expected property not found in module {module_name}'.format(module_name=module_name))
         return mod.expected
     else:
-        with open(full_filename, 'rb') as file_fp:
+        with io.open(full_filename, mode='r', encoding='utf-8') as file_fp:
             return file_fp.read()
 
 __all__ = [json_expected_file, json_expected_folder, sample_xml,
