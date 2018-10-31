@@ -1625,7 +1625,7 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(("<p></p>", "paragraph", "<p/>"),
-        ("<p>§ <italic>*</italic></p>", "paragraph", u"<p>§ <italic>*</italic></p>"),)
+        (u"<p>§ <italic>*</italic></p>", "paragraph", u"<p>§ <italic>*</italic></p>"),)
     def test_duplicate_tag(self, xml, parser_function, expected_xml):
         # To test, first parse the XML into a tag, then duplicate it, then check the contents
         soup = parser.parse_xml(xml)
