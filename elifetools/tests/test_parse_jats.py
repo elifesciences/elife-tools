@@ -1803,6 +1803,34 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "collection_year"),
                          parser.collection_year(self.soup(filename)))
 
+    @unpack
+    @data(
+        ('<root></root>',
+         None
+        ),
+        ('''
+        <root>
+            <pub-date pub-type="collection">
+                <year>2016</year>
+            </pub-date>
+        </root>''',
+         2016
+        ),
+        ('''
+        <root>
+            <pub-date date-type="collection">
+                <year>2016</year>
+            </pub-date>
+        </root>''',
+         2016
+        ),
+    )
+    def test_collection_year_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        body_tag = soup.contents[0]
+        tag_content = parser.collection_year(body_tag)
+        self.assertEqual(expected, tag_content)
+
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_component_doi(self, filename):
         self.assertEqual(self.json_expected(filename, "component_doi"),
