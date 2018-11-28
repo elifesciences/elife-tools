@@ -4,11 +4,8 @@ import unittest
 import os
 from ddt import ddt, data, unpack
 import copy
-
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import parseJATS as parser
-import json_rewrite
+import elifetools.parseJATS as parser
+import elifetools.json_rewrite as json_rewrite
 
 @ddt
 class TestJsonRewrite(unittest.TestCase):

@@ -1,5 +1,5 @@
 from collections import OrderedDict
-from utils import date_struct
+from elifetools.utils import date_struct
 expected = [
     OrderedDict([
         ('version', u'v1'),

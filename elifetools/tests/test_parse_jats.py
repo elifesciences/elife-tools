@@ -5,19 +5,13 @@ from __future__ import absolute_import
 import json
 import os
 import unittest
-
+from collections import OrderedDict
 from bs4 import BeautifulSoup
 from ddt import ddt, data, unpack
-
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
 from elifetools.utils import date_struct, unicode_value
-from collections import OrderedDict
-
 from elifetools.file_utils import sample_xml, json_expected_file, read_fixture
-
 from elifetools.tests import soup_body
 
 
