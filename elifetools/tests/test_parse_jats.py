@@ -18,7 +18,7 @@ from collections import OrderedDict
 
 from elifetools.file_utils import sample_xml, json_expected_file, read_fixture
 
-
+from elifetools.tests import soup_body
 
 
 @ddt
@@ -86,7 +86,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_ethics_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.ethics_json(soup.contents[0])
+        tag_content = parser.ethics_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -142,7 +142,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_appendices_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.appendices_json(soup.contents[0])
+        tag_content = parser.appendices_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -163,7 +163,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_appendices_json_with_base_url(self, xml_content, base_url, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.appendices_json(soup.contents[0], base_url)
+        tag_content = parser.appendices_json(soup_body(soup), base_url)
         self.assertEqual(expected, tag_content)
 
 
@@ -194,8 +194,7 @@ class TestParseJats(unittest.TestCase):
 
     def test_research_organism_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.research_organism_json(body_tag)
+        tag_content = parser.research_organism_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -219,8 +218,7 @@ class TestParseJats(unittest.TestCase):
     )
     def test_acknowledgements_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.acknowledgements_json(body_tag)
+        tag_content = parser.acknowledgements_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -281,7 +279,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.datasets_json(soup.contents[0])
+        tag_content = parser.datasets_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -342,7 +340,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_supplementary_files_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.supplementary_files_json(soup.contents[0])
+        tag_content = parser.supplementary_files_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -638,8 +636,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_editors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.editors_json(body_tag)
+        tag_content = parser.editors_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -744,8 +741,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.authors_json(body_tag)
+        tag_content = parser.authors_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -763,8 +759,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_author_line_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        article_tag = soup.contents[0]
-        tag_content = parser.author_line(article_tag)
+        tag_content = parser.author_line(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -800,7 +795,7 @@ class TestParseJats(unittest.TestCase):
     def test_format_aff_edge_cases(self, xml_content, expected):
         if xml_content:
             soup = parser.parse_xml(xml_content)
-            aff_tag = soup.contents[0]
+            aff_tag = soup_body(soup)
         else:
             # where the tag is None
             aff_tag = xml_content
@@ -1145,7 +1140,7 @@ class TestParseJats(unittest.TestCase):
     def test_body_blocks(self, xml_content, expected_len):
         if xml_content:
             soup = parser.parse_xml(xml_content)
-            body_tag = soup.contents[0].contents[0]
+            body_tag = soup_body(soup_body(soup))
         else:
             body_tag = xml_content
         body_block_tags = parser.body_blocks(body_tag)
@@ -1518,7 +1513,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_body_block_content_render(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.body_block_content_render(soup.contents[0])
+        tag_content = parser.body_block_content_render(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -1567,7 +1562,7 @@ class TestParseJats(unittest.TestCase):
     )
     def test_render_raw_body(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.render_raw_body(soup.contents[0])
+        tag_content = parser.render_raw_body(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -1590,7 +1585,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_abstract_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.abstract_json(soup.contents[0])
+        tag_content = parser.abstract_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -1602,7 +1597,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_digest_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.digest_json(soup.contents[0])
+        tag_content = parser.digest_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
 
@@ -1663,8 +1658,8 @@ class TestParseJats(unittest.TestCase):
         )
     def test_journal_issn_edge_cases(self, xml_content, pub_format, pub_type, expected):
         soup = parser.parse_xml(xml_content)
-        content_tag = soup.contents[0]
-        tag_content = parser.journal_issn(content_tag, pub_format=pub_format, pub_type=pub_type)
+        tag_content = parser.journal_issn(
+            soup_body(soup), pub_format=pub_format, pub_type=pub_type)
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
@@ -1790,7 +1785,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_award_groups_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.award_groups(soup.contents[0])
+        tag_content = parser.award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
@@ -1827,8 +1822,7 @@ class TestParseJats(unittest.TestCase):
     )
     def test_collection_year_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.collection_year(body_tag)
+        tag_content = parser.collection_year(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
@@ -1867,8 +1861,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_copyright_holder_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.copyright_holder(body_tag)
+        tag_content = parser.copyright_holder(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -1891,8 +1884,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_copyright_holder_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.copyright_holder_json(body_tag)
+        tag_content = parser.copyright_holder_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
@@ -1909,8 +1901,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_copyright_statement_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.copyright_statement(body_tag)
+        tag_content = parser.copyright_statement(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
@@ -1927,8 +1918,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_copyright_year_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.copyright_year(body_tag)
+        tag_content = parser.copyright_year(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
@@ -1985,8 +1975,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_full_award_groups_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.full_award_groups(body_tag)
+        tag_content = parser.full_award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife-02833-v2.xml")
@@ -2003,7 +1992,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_full_correspondence_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0].contents[0]
+        body_tag = soup_body(soup_body(soup))
         tag_content = parser.full_correspondence(body_tag)
         self.assertEqual(expected, tag_content)
 
@@ -2041,8 +2030,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_full_license_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.full_license(body_tag)
+        tag_content = parser.full_license(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife00240.xml")
@@ -2117,8 +2105,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_license_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.license(body_tag)
+        tag_content = parser.license(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -2151,8 +2138,7 @@ class TestParseJats(unittest.TestCase):
     @unpack
     def test_license_url_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.license_url(body_tag)
+        tag_content = parser.license_url(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife02304.xml", "elife00007.xml", "elife04953.xml",
@@ -2384,8 +2370,7 @@ class TestParseJats(unittest.TestCase):
         )
     def test_title_prefix_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup.contents[0]
-        tag_content = parser.title_prefix_json(body_tag)
+        tag_content = parser.title_prefix_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
