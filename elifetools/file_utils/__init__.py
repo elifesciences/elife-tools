@@ -22,7 +22,7 @@ def fixture_folder(folder_name):
     return os.path.join(BASE_DIR, "tests", "fixtures", folder_name)
 
 def fixture_module_name(folder_name, filename):
-    return '.'.join(["tests", "fixtures", folder_name, filename.rstrip('.py')])
+    return '.'.join(["elifetools", "tests", "fixtures", folder_name, filename.rstrip('.py')])
 
 def fixture_file(folder_name, filename):
     return os.path.join(fixture_folder(folder_name), filename)

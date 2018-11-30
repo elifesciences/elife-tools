@@ -3,10 +3,7 @@
 import unittest
 import os
 from ddt import ddt, data, unpack
-
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import utils_html
+from elifetools import utils_html
 
 
 @ddt

@@ -2,15 +2,10 @@ from __future__ import print_function
 
 import os
 import unittest
-
 import bs4
 from ddt import ddt, data, unpack
-
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
-
 from elifetools.file_utils import sample_xml
 
 @ddt
