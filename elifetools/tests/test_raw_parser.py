@@ -6,7 +6,8 @@ import bs4
 from ddt import ddt, data, unpack
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
-from elifetools.file_utils import sample_xml
+from elifetools.file_utils import sample_xml, read_fixture
+
 
 @ddt
 class TestJatsParser(unittest.TestCase):
@@ -327,6 +328,23 @@ class TestJatsParser(unittest.TestCase):
     def test_mixed_citations(self):
         self.soup = parser.parse_document(sample_xml('elife-kitchen-sink.xml'))
         self.assertEqual(1, len(raw_parser.mixed_citations(self.soup)))
+
+    @unpack
+    @data(
+        (read_fixture("test_pub_history", "content_01.xml"), 1),
+    )
+    def test_pub_history(self, xml_content, expected_len):
+        soup = parser.parse_xml(xml_content)
+        self.assertEqual(len(raw_parser.pub_history(soup)), expected_len)
+
+    @unpack
+    @data(
+        (read_fixture("test_pub_history", "content_01.xml"), 1),
+    )
+    def test_raw_event(self, xml_content, expected_len):
+        soup = parser.parse_xml(xml_content)
+        self.assertEqual(len(raw_parser.event(soup)), expected_len)
+
 
 if __name__ == '__main__':
     unittest.main()
