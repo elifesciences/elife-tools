@@ -2427,7 +2427,7 @@ class TestParseJats(unittest.TestCase):
         ('',
          []
         ),
-        (read_fixture('test_pub_history','content_01.xml'),
+        (read_fixture('test_pub_history', 'content_01.xml'),
          read_fixture('test_pub_history', 'content_01_expected.py')
         ),
     )
