@@ -165,6 +165,38 @@ def related_object_ids(soup):
         tags = list(filter(lambda tag: tag.get("id") is not None, raw_parser.related_object(soup)))
     return dict(map(format_related_object, tags))
 
+
+def pub_history(soup):
+    events = []
+    pub_history = first(raw_parser.pub_history(soup))
+    if pub_history:
+        event_tags = raw_parser.event(pub_history)
+        for event_tag in event_tags:
+            event = OrderedDict()
+            # parse event tag
+            set_if_value(event, "event_type", event_tag.get("event-type"))
+            event_desc_tag = first(raw_parser.event_desc(event_tag))
+            if event_desc_tag:
+                event_desc = node_contents_str(event_desc_tag).rstrip()
+                set_if_value(event, "event_desc", event_desc)
+                set_if_value(event, "event_desc_html", xml_to_html(True, event_desc))
+            uri_tag = first(raw_parser.ext_link(event_tag, "uri"))
+            if uri_tag:
+                set_if_value(event, "uri", uri_tag.get('xlink:href'))
+                set_if_value(event, "uri_text", node_contents_str(uri_tag))
+            date_tag = first(raw_parser.date(event_tag))
+            if date_tag:
+                (day, month, year) = ymd(date_tag)
+                event['day'] = day
+                event['month'] = month
+                event['year'] = year
+                event['date'] = date_struct_nn(year, month, day)
+                set_if_value(event, "iso-8601-date", date_tag.get('iso-8601-date'))
+                (day, month, year) = ymd(date_tag)
+            events.append(event)
+    return events
+
+
 @strippen
 def acknowledgements(soup):
     return node_text(raw_parser.acknowledgements(soup))

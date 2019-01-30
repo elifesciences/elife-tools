@@ -2422,6 +2422,19 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.version_history(soup)
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        ('',
+         []
+        ),
+        (read_fixture('test_pub_history','content_01.xml'),
+         read_fixture('test_pub_history', 'content_01_expected.py')
+        ),
+    )
+    def test_pub_history(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_history(soup)
+        self.assertEqual(expected, tag_content)
 
 
 if __name__ == '__main__':
