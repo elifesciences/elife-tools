@@ -345,6 +345,16 @@ class TestJatsParser(unittest.TestCase):
         soup = parser.parse_xml(xml_content)
         self.assertEqual(len(raw_parser.event(soup)), expected_len)
 
+    @unpack
+    @data(
+        (read_fixture("test_pub_history", "content_01.xml"), 1),
+    )
+    def test_event_desc(self, xml_content, expected_len):
+        soup = parser.parse_xml(xml_content)
+        self.assertEqual(len(raw_parser.event_desc(soup)), expected_len)
+
+
+
 
 if __name__ == '__main__':
     unittest.main()

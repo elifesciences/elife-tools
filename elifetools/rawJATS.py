@@ -205,6 +205,9 @@ def pub_history(soup):
 def event(soup):
     return extract_nodes(soup, "event")
 
+def event_desc(soup):
+    return extract_nodes(soup, "event-desc")
+
 def label(soup):
     return first(extract_nodes(soup, "label"))
 
