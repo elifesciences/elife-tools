@@ -12,7 +12,7 @@ expected = [
         ('day', '24'),
         ('month', '03'),
         ('year', '2017'),
-        (u'date', date_struct(2017, 3, 24)),
+        ('date', date_struct(2017, 3, 24)),
         ('iso-8601-date', '2017-03-24')
         ])
     ]
