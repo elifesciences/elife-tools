@@ -3693,6 +3693,7 @@ def dataset_tag_json(tag, html_flag=True):
         if "doi" not in dataset_content:
             # use the tag value if xlink:href attribute is not present
             set_if_value(dataset_content, "doi", doi_uri_to_doi(node_contents_str(doi_tag)))
+        set_if_value(dataset_content, "assigningAuthority", doi_tag.get('assigning-authority'))
 
     # uri
     if raw_parser.ext_link(tag, "uri"):
@@ -3708,6 +3709,7 @@ def dataset_tag_json(tag, html_flag=True):
         # set dataId if missing and the pub-id is an accession
         if "dataId" not in dataset_content and pub_id_tag.get("pub-id-type") == "accession":
             set_if_value(dataset_content, "dataId", convert(node_contents_str(pub_id_tag)))
+        set_if_value(dataset_content, "assigningAuthority", pub_id_tag.get('assigning-authority'))
 
     return dataset_content
 
