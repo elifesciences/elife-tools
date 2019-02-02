@@ -95,7 +95,8 @@ expected = OrderedDict([
                 ]),
             ('title', u'NCBI Gene Expression Omnibus'),
             ('details', u'Transcriptomes of the hybrid mouse diversity panel subjected to Isoproterenol challenge'),
-            ('uri', u'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760')
+            ('uri', u'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760'),
+            ('dataId', u'GSE48760')
             ]),
         OrderedDict([
             ('id', u'dataset3'),

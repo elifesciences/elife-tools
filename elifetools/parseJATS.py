@@ -3699,15 +3699,15 @@ def dataset_tag_json(tag, html_flag=True):
         uri_tag = first(raw_parser.ext_link(tag, "uri"))
         set_if_value(dataset_content, "uri", uri_tag.get('xlink:href'))
 
-    # uri from pub-id accession tag 
-    if "uri" not in dataset_content and raw_parser.pub_id(tag, "accession"):
-        pub_id_tag = first(raw_parser.pub_id(tag, "accession"))
-        set_if_value(dataset_content, "uri", doi_uri_to_doi(pub_id_tag.get('xlink:href')))
-
-    # uri from pub-id archive tag
-    if "uri" not in dataset_content and raw_parser.pub_id(tag, "archive"):
-        pub_id_tag = first(raw_parser.pub_id(tag, "archive"))
-        set_if_value(dataset_content, "uri", doi_uri_to_doi(pub_id_tag.get('xlink:href')))
+    # uri from pub-id tag 
+    if "uri" not in dataset_content and raw_parser.pub_id(tag):
+        pub_id_tag = first(raw_parser.pub_id(tag))
+        # set uri if it is not a doi tag
+        if pub_id_tag.get("pub-id-type") != "doi":
+            set_if_value(dataset_content, "uri", pub_id_tag.get("xlink:href"))
+        # set dataId if missing and the pub-id is an accession
+        if "dataId" not in dataset_content and pub_id_tag.get("pub-id-type") == "accession":
+            set_if_value(dataset_content, "dataId", convert(node_contents_str(pub_id_tag)))
 
     return dataset_content
 
