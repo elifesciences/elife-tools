@@ -1579,7 +1579,7 @@ def components(soup):
                 # Remove the supplementary tag from the paragraph if present
                 if raw_parser.supplementary_material(first_paragraph):
                     first_paragraph = remove_tag_from_tag(first_paragraph, 'supplementary-material')
-                if node_text(first_paragraph).strip() != '':
+                if node_text(first_paragraph).strip():
                     component['caption'] = node_text(first_paragraph)
                     component['full_caption'] = node_contents_str(first_paragraph)
 
