@@ -1068,9 +1068,8 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         collab_tag = first(raw_parser.collab(contrib_tag))
         if collab_tag:
             # Clean up if there are tags inside the collab tag
-            tag_copy = duplicate_tag(collab_tag)
-            tag_copy = remove_tag_from_tag(tag_copy, 'contrib-group')
-            contributor['collab'] = node_contents_str(tag_copy).rstrip()
+            collab_tag = remove_tag_from_tag(collab_tag, 'contrib-group')
+            contributor['collab'] = node_contents_str(collab_tag).rstrip()
 
     # Check if it is not a group author
     if not is_author_group_author(contrib_tag):
