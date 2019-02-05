@@ -2386,11 +2386,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
         # Remove unwanted nested tags
         unwanted_tag_names = body_block_nodenames()
-        tag_copy = duplicate_tag(tag)
-        tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
+        tag = remove_tag_from_tag(tag, unwanted_tag_names)
 
-        if node_contents_str(tag_copy):
-            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
+        if node_contents_str(tag):
+            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag)))
 
     elif tag.name == "disp-quote":
         if tag.get("content-type") and tag.get("content-type") == "editor-comment":
