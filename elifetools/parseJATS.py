@@ -1571,16 +1571,19 @@ def components(soup):
 
         if raw_parser.caption(tag):
             first_paragraph = first(paragraphs(raw_parser.caption(tag)))
+            # fix a problem with the new kitchen sink of caption within caption tag
+            if first_paragraph:
+                nested_caption = raw_parser.caption(first_paragraph)
+                if nested_caption:
+                    nested_paragraphs = paragraphs(nested_caption) 
+                    first_paragraph = first(nested_paragraphs) or first_paragraph
             if first_paragraph and not starts_with_doi(first_paragraph):
                 # Remove the supplementary tag from the paragraph if present
-                #  fixes a problem with the new kitchen sink of caption within caption tag
-                paragraph_tag_copy = duplicate_tag(first_paragraph)
-                if raw_parser.supplementary_material(paragraph_tag_copy):
-                    paragraph_tag_copy = remove_tag_from_tag(paragraph_tag_copy, 'supplementary-material')
-                if node_text(paragraph_tag_copy).strip() != '':
-                    component['caption'] = node_text(paragraph_tag_copy)
-                    component['full_caption'] = node_contents_str(paragraph_tag_copy)
-
+                if raw_parser.supplementary_material(first_paragraph):
+                    first_paragraph = remove_tag_from_tag(first_paragraph, 'supplementary-material')
+                if node_text(first_paragraph).strip():
+                    component['caption'] = node_text(first_paragraph)
+                    component['full_caption'] = node_contents_str(first_paragraph)
 
         if raw_parser.permissions(tag):
 
