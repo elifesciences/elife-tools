@@ -18,13 +18,6 @@ def parse_document(filelocation):
     with open(filelocation, 'rb') as fp:
         return parse_xml(fp)
 
-def duplicate_tag(tag):
-    # Make a completely new copy of a tag by parsing its contents again
-    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode_value(tag) + u'</article>'
-    soup_copy = parse_xml(tag_xml)
-    tag_copy = first(extract_nodes(soup_copy, tag.name))
-    return tag_copy
-
 def title(soup):
     return node_text(raw_parser.article_title(soup))
 
