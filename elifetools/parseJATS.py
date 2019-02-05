@@ -1301,10 +1301,9 @@ def format_aff(aff_tag):
     # If all values are none then extract as text
     if not values:
         # extract the text ignoring the label tag
-        aff_tag_copy = duplicate_tag(aff_tag)
-        aff_tag_copy = remove_tag_from_tag(aff_tag, 'label')
+        aff_tag = remove_tag_from_tag(aff_tag, 'label')
         values = {
-            'text': node_text(aff_tag_copy).strip()
+            'text': node_text(aff_tag).strip()
         }
 
     if 'id' in aff_tag.attrs:
