@@ -1612,16 +1612,6 @@ class TestParseJats(unittest.TestCase):
     def test_history_date(self, filename, date_type, expected):
         self.assertEqual(expected, parser.history_date(self.soup(filename), date_type))
 
-    @unpack
-    @data(("<p></p>", "paragraph", "<p/>"),
-        (u"<p>§ <italic>*</italic></p>", "paragraph", u"<p>§ <italic>*</italic></p>"),)
-    def test_duplicate_tag(self, xml, parser_function, expected_xml):
-        # To test, first parse the XML into a tag, then duplicate it, then check the contents
-        soup = parser.parse_xml(xml)
-        tags = getattr(raw_parser, parser_function)(soup)
-        tag_copy = parser.duplicate_tag(tags[0])
-        self.assertEqual(expected_xml, unicode_value(tag_copy))
-
     """
     Functions that require more than one argument to test against json output
     """

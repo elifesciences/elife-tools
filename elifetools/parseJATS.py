@@ -1,4 +1,5 @@
 from collections import OrderedDict
+import copy
 
 from bs4 import BeautifulSoup
 from slugify import slugify
@@ -16,13 +17,6 @@ def parse_xml(xml):
 def parse_document(filelocation):
     with open(filelocation, 'rb') as fp:
         return parse_xml(fp)
-
-def duplicate_tag(tag):
-    # Make a completely new copy of a tag by parsing its contents again
-    tag_xml = u'<article xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">' + unicode_value(tag) + u'</article>'
-    soup_copy = parse_xml(tag_xml)
-    tag_copy = first(extract_nodes(soup_copy, tag.name))
-    return tag_copy
 
 def title(soup):
     return node_text(raw_parser.article_title(soup))
@@ -1068,7 +1062,7 @@ def format_contributor(contrib_tag, soup, detail="brief", contrib_type=None,
         collab_tag = first(raw_parser.collab(contrib_tag))
         if collab_tag:
             # Clean up if there are tags inside the collab tag
-            tag_copy = duplicate_tag(collab_tag)
+            tag_copy = copy.copy(collab_tag)
             tag_copy = remove_tag_from_tag(tag_copy, 'contrib-group')
             contributor['collab'] = node_contents_str(tag_copy).rstrip()
 
@@ -1302,10 +1296,9 @@ def format_aff(aff_tag):
     # If all values are none then extract as text
     if not values:
         # extract the text ignoring the label tag
-        aff_tag_copy = duplicate_tag(aff_tag)
-        aff_tag_copy = remove_tag_from_tag(aff_tag, 'label')
+        aff_tag = remove_tag_from_tag(aff_tag, 'label')
         values = {
-            'text': node_text(aff_tag_copy).strip()
+            'text': node_text(aff_tag).strip()
         }
 
     if 'id' in aff_tag.attrs:
@@ -2386,11 +2379,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
         # Remove unwanted nested tags
         unwanted_tag_names = body_block_nodenames()
-        tag_copy = duplicate_tag(tag)
-        tag_copy = remove_tag_from_tag(tag_copy, unwanted_tag_names)
+        tag = remove_tag_from_tag(tag, unwanted_tag_names)
 
-        if node_contents_str(tag_copy):
-            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag_copy)))
+        if node_contents_str(tag):
+            tag_content["text"] = convert(clean_whitespace(node_contents_str(tag)))
 
     elif tag.name == "disp-quote":
         if tag.get("content-type") and tag.get("content-type") == "editor-comment":
