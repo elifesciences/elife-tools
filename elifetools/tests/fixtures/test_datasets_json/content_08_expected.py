@@ -56,7 +56,8 @@ expected = OrderedDict([
                 ]),
             ('title', u'Dryad Digital Repository'),
             ('details', u'Data from: Biophysical models reveal the relative importance of transporter proteins and impermeant anions in chloride homeostasis'),
-            ('doi', u'10.5061/dryad.kj1f3v4')
+            ('doi', u'10.5061/dryad.kj1f3v4'),
+            ('assigningAuthority', u'Dryad')
             ])
         ]),
     ('used', [
@@ -95,7 +96,9 @@ expected = OrderedDict([
                 ]),
             ('title', u'NCBI Gene Expression Omnibus'),
             ('details', u'Transcriptomes of the hybrid mouse diversity panel subjected to Isoproterenol challenge'),
-            ('uri', u'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760')
+            ('uri', u'https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760'),
+            ('dataId', u'GSE48760'),
+            ('assigningAuthority', u'NCBI')
             ]),
         OrderedDict([
             ('id', u'dataset3'),
@@ -111,7 +114,8 @@ expected = OrderedDict([
                 ]),
             ('title', u'Open Science Framework'),
             ('details', u'Shear Manuscript'),
-            ('uri', u'https://osf.io/kvu5j/')
+            ('uri', u'https://osf.io/kvu5j/'),
+            ('assigningAuthority', u'other')
             ])
         ])
     ])
