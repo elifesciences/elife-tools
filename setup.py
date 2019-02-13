@@ -15,7 +15,8 @@ setup(
     install_requires=[
         "beautifulsoup4",
         "lxml",
-        "python-slugify"
+        "python-slugify",
+        "six"
     ],
     url='https://github.com/elifesciences/elife-tools',
     maintainer='eLife Sciences Publications Ltd.',
