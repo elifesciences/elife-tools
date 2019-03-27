@@ -2852,7 +2852,7 @@ def author_email_addresses(author, correspondence):
                 email_addresses.append(affiliation["email"])
 
     # Also look at the author attributes
-    if author.get("corresp") and author.get("email"):
+    if author.get("email"):
         email_addresses = author["email"]
 
     if email_addresses != []:
