@@ -2420,6 +2420,9 @@ class TestParseJats(unittest.TestCase):
         (read_fixture('test_pub_history', 'content_01.xml'),
          read_fixture('test_pub_history', 'content_01_expected.py')
         ),
+        (read_fixture('test_pub_history', 'content_02.xml'),
+         read_fixture('test_pub_history', 'content_02_expected.py')
+        ),
     )
     def test_pub_history(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

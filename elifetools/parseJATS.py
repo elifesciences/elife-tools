@@ -178,6 +178,9 @@ def pub_history(soup):
             if uri_tag:
                 set_if_value(event, "uri", uri_tag.get('xlink:href'))
                 set_if_value(event, "uri_text", node_contents_str(uri_tag))
+            article_id_tag = first(raw_parser.article_id(event_tag, "doi"))
+            if article_id_tag:
+                event['doi'] = article_id_tag.text
             date_tag = first(raw_parser.date(event_tag))
             if date_tag:
                 (day, month, year) = ymd(date_tag)
