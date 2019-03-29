@@ -160,6 +160,18 @@ def related_object_ids(soup):
     return dict(map(format_related_object, tags))
 
 
+def article_id_list(soup):
+    """return a list of article-id data"""
+    id_list = []
+    for article_id_tag in raw_parser.article_id(soup):
+        id_details = OrderedDict()
+        set_if_value(id_details, "type", article_id_tag.get("pub-id-type"))
+        set_if_value(id_details, "value", article_id_tag.text)
+        set_if_value(id_details, "assigning-authority", article_id_tag.get("assigning-authority"))
+        id_list.append(id_details)
+    return id_list
+
+
 def pub_history(soup):
     events = []
     pub_history = first(raw_parser.pub_history(soup))
@@ -178,9 +190,8 @@ def pub_history(soup):
             if uri_tag:
                 set_if_value(event, "uri", uri_tag.get('xlink:href'))
                 set_if_value(event, "uri_text", node_contents_str(uri_tag))
-            article_id_tag = first(raw_parser.article_id(event_tag, "doi"))
-            if article_id_tag:
-                event['doi'] = article_id_tag.text
+            if article_id_list(event_tag):
+                event['id_list'] = article_id_list(event_tag)
             date_tag = first(raw_parser.date(event_tag))
             if date_tag:
                 (day, month, year) = ymd(date_tag)

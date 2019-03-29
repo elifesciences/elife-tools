@@ -20,8 +20,11 @@ def abstract(soup, abstract_type=None):
     else:
         return extract_nodes(soup, "abstract")
 
-def article_id(soup, pub_id_type):
-    return extract_nodes(soup, "article-id", attr = "pub-id-type", value = pub_id_type)
+def article_id(soup, pub_id_type=None):
+    if pub_id_type:
+        return extract_nodes(soup, "article-id", attr="pub-id-type", value=pub_id_type)
+    else:
+        return extract_nodes(soup, "article-id")
 
 def doi(soup):
     doi_tags = article_id(soup, pub_id_type = "doi")

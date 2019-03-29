@@ -9,7 +9,13 @@ expected = [
         ('event_desc_html', 'This article was originally published as a <a href="https://doi.org/10.1101/118356">preprint</a> on bioRxiv.'),
         ('uri', 'https://doi.org/10.1101/118356'),
         ('uri_text', 'preprint'),
-        ('doi', '10.1101/118356'),
+        ('id_list', [
+            OrderedDict([
+                ('type', 'doi'),
+                ('value', '10.1101/118356'),
+                ('assigning-authority', 'crossref')
+                ])
+        ]),
         ('day', '24'),
         ('month', '03'),
         ('year', '2017'),
