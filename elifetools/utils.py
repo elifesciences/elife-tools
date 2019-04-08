@@ -276,8 +276,7 @@ def node_contents_str(tag):
     for child_tag in tag.children:
         if isinstance(child_tag, Comment):
             # BeautifulSoup does not preserve content tags, add them back
-            if unicode_value(child_tag):
-                tag_string += '<!--%s-->' % unicode_value(child_tag)
+            tag_string += '<!--%s-->' % unicode_value(child_tag)
         else:
             tag_string += unicode_value(child_tag)
     return tag_string
