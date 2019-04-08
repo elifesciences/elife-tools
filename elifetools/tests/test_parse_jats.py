@@ -1346,6 +1346,11 @@ class TestParseJats(unittest.TestCase):
           read_fixture('test_body_block_content', 'content_40_expected.py'),
          ),
 
+        # test for stripping out comment tag content when it is inside a paragraph tag
+         (read_fixture('test_body_block_content', 'content_41.xml'),
+          read_fixture('test_body_block_content', 'content_41_expected.py'),
+         ),
+
         )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
