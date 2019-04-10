@@ -1,0 +1,14 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <pub-history>
+        <event event-type="preprint-publication">
+            <event-desc>This article was originally published as a <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1101/118356">preprint</ext-link> on bioRxiv.
+            </event-desc>
+            <article-id pub-id-type="doi" assigning-authority="crossref">10.1101/118356</article-id>
+            <date iso-8601-date="2017-03-24">
+                <day>24</day>
+                <month>03</month>
+                <year>2017</year>
+            </date>
+        </event>
+    </pub-history>
+</root>
