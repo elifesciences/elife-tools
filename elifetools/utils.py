@@ -4,6 +4,7 @@ import re
 from collections import OrderedDict
 from six import iteritems
 from slugify import slugify
+from bs4 import Comment
 
 
 def unicode_value(value):
@@ -271,7 +272,14 @@ def node_contents_str(tag):
     """
     if tag is None:
         return None
-    return "".join(list(map(unicode_value, tag.children))) or None
+    tag_string = ''
+    for child_tag in tag.children:
+        if isinstance(child_tag, Comment):
+            # BeautifulSoup does not preserve comment tags, add them back
+            tag_string += '<!--%s-->' % unicode_value(child_tag)
+        else:
+            tag_string += unicode_value(child_tag)
+    return tag_string
 
 def first_parent(tag, nodename):
     """
