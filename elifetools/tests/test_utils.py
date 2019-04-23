@@ -233,6 +233,24 @@ class TestUtils(unittest.TestCase):
     def test_escape_ampersand(self, value, expected):
         self.assertEqual(utils.escape_ampersand(value), expected)
 
+    @unpack
+    @data(
+        (None, None),
+        ('', None),
+        ('<root></root>', None),
+        ('<root><p>Content <!-- comments --></p></root>',
+         '<p>Content <!-- comments --></p>'),
+        )
+    def test_node_contents_str(self, xml, expected):
+        if not xml:
+            # to test with blank values
+            tag = xml
+        else:
+            # parse the XML into tags to test with
+            soup = parser.parse_xml(xml)
+            tag = soup_body(soup)
+        self.assertEqual(utils.node_contents_str(tag), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
