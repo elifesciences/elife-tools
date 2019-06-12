@@ -3454,7 +3454,8 @@ def references_json(soup, html_flag=True):
             set_if_value(ref_content, "uri", ref.get("uri_text"))
         # next option is to set the uri from the doi value
         if ("uri" not in ref_content
-            and ref.get("publication-type") in ["confproc", "data", "web", "webpage", "preprint"]):
+            and ref.get("publication-type") in 
+            ["confproc", "data", "web", "webpage", "preprint", "report"]):
             if ref.get("doi"):
                 # Convert doi to uri
                 ref_content["uri"] = "https://doi.org/" + ref.get("doi")

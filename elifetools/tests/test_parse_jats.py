@@ -1109,6 +1109,11 @@ class TestParseJats(unittest.TestCase):
           read_fixture('test_references_json', 'content_45_expected.py'),
         ),
 
+        # example of ref of type report, with a doi but no uri, uri gets filled in
+        (read_fixture('test_references_json', 'content_46.xml'),
+         read_fixture('test_references_json', 'content_46_expected.py'),
+        ),
+
         )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
