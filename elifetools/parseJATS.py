@@ -2378,7 +2378,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
 
-        title_value = convert(title_text(tag))
+        title_value = convert(title_text(tag, direct_sibling_only=True))
         label_value = label(tag, tag.name)
 
         caption_content = None
