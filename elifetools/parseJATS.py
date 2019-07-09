@@ -2378,7 +2378,12 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))
         set_if_value(tag_content, "id", tag.get("id"))
 
-        title_value = convert(title_text(tag))
+        title_parent_tag = first_parent(raw_parser.title(tag), ["boxed-text", "fig"])
+        if title_parent_tag and title_parent_tag.name == "boxed-text":
+            title_value = convert(title_text(tag))
+        else:
+            title_value = None
+
         label_value = label(tag, tag.name)
 
         caption_content = None
