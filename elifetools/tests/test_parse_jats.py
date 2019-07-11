@@ -1356,6 +1356,11 @@ class TestParseJats(unittest.TestCase):
           read_fixture('test_body_block_content', 'content_41_expected.py'),
          ),
 
+        # test ignoring nested fig title as a box-text title
+         (read_fixture('test_body_block_content', 'content_42.xml'),
+          read_fixture('test_body_block_content', 'content_42_expected.py'),
+         ),
+
         )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

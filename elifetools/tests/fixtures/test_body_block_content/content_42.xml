@@ -1,0 +1,19 @@
+<root>
+    <boxed-text id="box2">
+        <object-id pub-id-type="doi">10.7554/eLife.46994.005</object-id>
+        <label>Box 2.</label>
+        <caption>
+            <p>content</p>
+        </caption>
+        <p>Text.</p>
+        <fig id="box2fig1" position="float">
+            <object-id pub-id-type="doi">10.7554/eLife.46994.006</object-id>
+            <label>Box 2—figure 1.</label>
+            <caption>
+                <title>Fig title.</title>
+                <p>Fig caption paragraph.</p>
+            </caption>
+            <graphic mime-subtype="tiff" mimetype="image" xlink:href="elife-46994-box2-fig1-v1.tif"/>
+        </fig>
+    </boxed-text>
+</root>

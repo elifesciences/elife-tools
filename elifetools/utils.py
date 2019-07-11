@@ -288,7 +288,9 @@ def first_parent(tag, nodename):
     """
     if nodename is not None and type(nodename) == str:
         nodename = [nodename]
-    return first(list(filter(lambda tag: tag.name in nodename, tag.parents)))
+    if tag and tag.parents:
+        return first(list(filter(lambda tag: tag.name in nodename, tag.parents)))
+    return None
 
 def tag_ordinal(tag):
     """
