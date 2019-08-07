@@ -624,6 +624,8 @@ def sub_articles(soup):
     for tag in sub_article_tags:
         sub_article = OrderedDict()
         set_if_value(sub_article, 'doi', sub_article_doi(tag))
+        set_if_value(sub_article, 'article_type', tag.get("article-type"))
+        set_if_value(sub_article, 'id', tag.get("id"))
         set_if_value(sub_article, 'article_title', title(tag))
         if all_contributors(tag):
             sub_article['contributors'] = all_contributors(tag)
@@ -631,6 +633,7 @@ def sub_articles(soup):
         for parent in tag.parents:
             if parent.name == "article":
                 set_if_value(sub_article, 'parent_doi', doi(parent))
+                set_if_value(sub_article, 'parent_article_type', parent.get("article-type"))
                 set_if_value(sub_article, 'parent_article_title', title(parent))
                 set_if_value(sub_article, 'parent_license_url', license_url(parent))
                 break
