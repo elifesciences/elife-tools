@@ -2299,6 +2299,19 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(self.json_expected(filename, "related_article"),
                          parser.related_article(self.soup(filename)))
 
+
+    @unpack
+    @data(
+        (read_fixture('test_sub_articles', 'content_01.xml'),
+         read_fixture('test_sub_articles', 'content_01_expected.py'),
+        ),
+        )
+    def test_sub_articles(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.sub_articles(soup)
+        self.assertEqual(expected, tag_content)
+
+
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_related_object_ids(self, filename):
         self.assertEqual(self.json_expected(filename, "related_object_ids"),
