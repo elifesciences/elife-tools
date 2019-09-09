@@ -99,16 +99,16 @@ class TestXmlio(unittest.TestCase):
         tag.tail = " and tail."
         attributes = ["class"]
         # Add a first example
-        xml = '<span><i>and</i> some <i>XML</i>.</span>'
+        xml = '<span><i>and</i> some <i id="test">XML</i>.</span>'
         reparsed = minidom.parseString(xml.encode('utf-8'))
-        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed)
+        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, child_attributes=True)
         # Add another example to test more lines of code
         xml = '<span class="span"> <i>more</i> text</span>'
         reparsed = minidom.parseString(xml.encode('utf-8'))
         parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, False, attributes)
         # Generate output and compare it
         rough_string = ElementTree.tostring(parent).decode('utf-8')
-        self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i>XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
+        self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i id="test">XML</i>.</span><span class="span"> <i>more</i> text</span></root>')
 
     @unpack
     @data(

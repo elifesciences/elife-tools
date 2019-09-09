@@ -242,7 +242,8 @@ class ElifeDocumentType(minidom.DocumentType):
         writer.write(">"+newl)
 
 
-def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attributes=None):
+def append_minidom_xml_to_elementtree_xml(
+        parent, xml, recursive=False, attributes=None, child_attributes=False):
     """
     Recursively,
     Given an ElementTree.Element as parent, and a minidom instance as xml,
@@ -264,6 +265,10 @@ def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attribut
         node = xml
         tag_name = node.tagName
         new_elem = parent
+        # copy child tag attributes if present
+        if child_attributes and node.hasAttributes():
+            for name, value in node.attributes.items():
+                new_elem.set(name, value)
 
     i = 0
     for child_node in node.childNodes:
@@ -277,8 +282,8 @@ def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attribut
 
         elif child_node.childNodes is not None:
             new_elem_sub = SubElement(new_elem, child_node.tagName)
-            new_elem_sub = append_minidom_xml_to_elementtree_xml(new_elem_sub, child_node,
-                                                                 True, attributes)
+            new_elem_sub = append_minidom_xml_to_elementtree_xml(
+                new_elem_sub, child_node, True, attributes, child_attributes)
 
         i = i + 1
 
