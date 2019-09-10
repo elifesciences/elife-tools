@@ -12,6 +12,15 @@ xmlio can do input and output of XML, allowing it to be edited using ElementTree
 """
 
 
+# namespaces for when reparsing XML strings
+REPARSING_NAMESPACES = (
+    'xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1" ' +
+    'xmlns:ali="http://www.niso.org/schemas/ali/1.0/" ' +
+    'xmlns:mml="http://www.w3.org/1998/Math/MathML" ' +
+    'xmlns:xlink="http://www.w3.org/1999/xlink"'
+)
+
+
 class CustomXMLParser(ElementTree.XMLParser):
     doctype_dict = {}
 
@@ -310,3 +319,12 @@ if __name__ == '__main__':
         reparsed_string = output(root)
 
         print(reparsed_string)
+
+
+def reparsed_tag(tag_name, tag_string, namespaces=REPARSING_NAMESPACES, attributes_text=''):
+    """given tag content and attributes, reparse to a minidom tag"""
+    open_tag_parts = [value for value in [tag_name, namespaces, attributes_text] if value]
+    open_tag = '<%s>' % ' '.join(open_tag_parts)
+    close_tag = '</%s>' % tag_name
+    tagged_string = '%s%s%s' % (open_tag, tag_string, close_tag)
+    return minidom.parseString(tagged_string.encode('utf-8'))

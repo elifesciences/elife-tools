@@ -165,6 +165,14 @@ class TestXmlio(unittest.TestCase):
             rough_string = ElementTree.tostring(root, encoding='unicode')
         self.assertEqual(rough_string, xml_expected)
 
+    def test_reparsed_tag(self):
+        """test parsing a string into xml.dom"""
+        tag_name = 'root'
+        tag_string = 'Test &amp; <i class="a">a</i> <mml:math><mml:mi>K</mml:mi></mml:math>.'
+        reparsed = xmlio.reparsed_tag(tag_name, tag_string)
+        self.assertEqual(
+            reparsed.toxml(), read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
+
 
 if __name__ == '__main__':
     unittest.main()
