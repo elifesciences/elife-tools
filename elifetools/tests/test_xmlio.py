@@ -171,7 +171,7 @@ class TestXmlio(unittest.TestCase):
         tag_string = 'Test &amp; <i class="a">a</i> <mml:math><mml:mi>K</mml:mi></mml:math>.'
         reparsed = xmlio.reparsed_tag(tag_name, tag_string)
         self.assertEqual(
-            reparsed.toprettyxml(indent="    "), read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
+            reparsed.toprettyxml(indent=""), read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
 
 
 if __name__ == '__main__':
