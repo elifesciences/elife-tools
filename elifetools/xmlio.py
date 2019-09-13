@@ -12,6 +12,15 @@ xmlio can do input and output of XML, allowing it to be edited using ElementTree
 """
 
 
+# namespaces for when reparsing XML strings
+REPARSING_NAMESPACES = (
+    'xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1" ' +
+    'xmlns:ali="http://www.niso.org/schemas/ali/1.0/" ' +
+    'xmlns:mml="http://www.w3.org/1998/Math/MathML" ' +
+    'xmlns:xlink="http://www.w3.org/1999/xlink"'
+)
+
+
 class CustomXMLParser(ElementTree.XMLParser):
     doctype_dict = {}
 
@@ -242,7 +251,8 @@ class ElifeDocumentType(minidom.DocumentType):
         writer.write(">"+newl)
 
 
-def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attributes=None):
+def append_minidom_xml_to_elementtree_xml(
+        parent, xml, recursive=False, attributes=None, child_attributes=False):
     """
     Recursively,
     Given an ElementTree.Element as parent, and a minidom instance as xml,
@@ -264,6 +274,10 @@ def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attribut
         node = xml
         tag_name = node.tagName
         new_elem = parent
+        # copy child tag attributes if present
+        if child_attributes and node.hasAttributes():
+            for name, value in node.attributes.items():
+                new_elem.set(name, value)
 
     i = 0
     for child_node in node.childNodes:
@@ -277,8 +291,8 @@ def append_minidom_xml_to_elementtree_xml(parent, xml, recursive=False, attribut
 
         elif child_node.childNodes is not None:
             new_elem_sub = SubElement(new_elem, child_node.tagName)
-            new_elem_sub = append_minidom_xml_to_elementtree_xml(new_elem_sub, child_node,
-                                                                 True, attributes)
+            new_elem_sub = append_minidom_xml_to_elementtree_xml(
+                new_elem_sub, child_node, True, attributes, child_attributes)
 
         i = i + 1
 
@@ -305,3 +319,12 @@ if __name__ == '__main__':
         reparsed_string = output(root)
 
         print(reparsed_string)
+
+
+def reparsed_tag(tag_name, tag_string, namespaces=REPARSING_NAMESPACES, attributes_text=''):
+    """given tag content and attributes, reparse to a minidom tag"""
+    open_tag_parts = [value for value in [tag_name, namespaces, attributes_text] if value]
+    open_tag = '<%s>' % ' '.join(open_tag_parts)
+    close_tag = '</%s>' % tag_name
+    tagged_string = '%s%s%s' % (open_tag, tag_string, close_tag)
+    return minidom.parseString(tagged_string.encode('utf-8'))
