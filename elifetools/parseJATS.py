@@ -3224,13 +3224,8 @@ def references_publisher(publisher_name=None, publisher_loc=None):
 def references_pages_range(fpage=None, lpage=None):
     range = None
     if fpage and lpage:
-        # use unichr(8211) for the hyphen because the schema is requiring it
-        try:
-            # Python 2
-            range = fpage.strip() + unichr(8211) + lpage.strip()
-        except NameError:
-            # Python 3
-            range = fpage.strip() + chr(8211) + lpage.strip()
+        # use chr(8211) for the hyphen because the schema is requiring it
+        range = fpage.strip() + chr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
     elif lpage:
