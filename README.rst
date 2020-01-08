@@ -13,7 +13,6 @@ Tools for using article data in Python
 Supports
 ============
 
-* Python 2.7
 * Python >=3.5
 
 Non-Python dependencies
