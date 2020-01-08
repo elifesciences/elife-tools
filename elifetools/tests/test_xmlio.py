@@ -1,5 +1,3 @@
-from __future__ import absolute_import
-
 import sys
 from io import StringIO
 import unittest
@@ -158,11 +156,8 @@ class TestXmlio(unittest.TestCase):
     def test_rewrite_subject_group(self, xml, subjects, subject_group_type, overwrite, xml_expected):
         root = xmlio.parse(xml)
         xmlio.rewrite_subject_group(root, subjects, subject_group_type, overwrite)
-        if sys.version_info < (3,0):
-            rough_string = ElementTree.tostring(root)
-        else:
-            # unicode encoding option added in python 3
-            rough_string = ElementTree.tostring(root, encoding='unicode')
+        # unicode encoding option added in python 3
+        rough_string = ElementTree.tostring(root, encoding='unicode')
         self.assertEqual(rough_string, xml_expected)
 
     def test_reparsed_tag(self):
