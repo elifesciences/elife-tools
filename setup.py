@@ -16,7 +16,6 @@ setup(
         "beautifulsoup4",
         "lxml",
         "python-slugify",
-        "six"
     ],
     url='https://github.com/elifesciences/elife-tools',
     maintainer='eLife Sciences Publications Ltd.',

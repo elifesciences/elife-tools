@@ -2,8 +2,6 @@ from __future__ import print_function
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-
-from six import iteritems
 import sys
 
 
@@ -113,7 +111,7 @@ def convert_xlink_href(root, name_map):
 
             if tag.get('{http://www.w3.org/1999/xlink}href'):
 
-                for k, v in iteritems(name_map):
+                for k, v in name_map.items():
                     # Try to match the exact name first, and if not then
                     #  try to match it without the file extension
                     if tag.get('{http://www.w3.org/1999/xlink}href') == k:

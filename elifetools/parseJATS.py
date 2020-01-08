@@ -2858,7 +2858,7 @@ def author_phone_numbers(author, correspondence):
     phone_numbers = []
     if correspondence and "phone" in author.get("references", {}):
         for ref_id in author["references"]["phone"]:
-            for corr_ref_id, data in iteritems(correspondence):
+            for corr_ref_id, data in correspondence.items():
                 if ref_id == corr_ref_id:
                     for phone_number in data:
                         phone_numbers.append(phone_number)
@@ -2884,7 +2884,7 @@ def author_email_addresses(author, correspondence):
 
     if correspondence and "email" in author.get("references", {}):
         for ref_id in author["references"]["email"]:
-            for corr_ref_id, data in iteritems(correspondence):
+            for corr_ref_id, data in correspondence.items():
                 if ref_id == corr_ref_id:
                     for email_address in data:
                         email_addresses.append(email_address)
@@ -3898,7 +3898,7 @@ def funding_awards_json(soup):
     award_groups = full_award_groups(soup)
     if award_groups:
         for award_group_dict in award_groups:
-            for id, award_group in iteritems(award_group_dict):
+            for id, award_group in award_group_dict.items():
                 award_content = OrderedDict()
                 set_if_value(award_content, "id", id)
 

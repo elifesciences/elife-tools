@@ -2,7 +2,6 @@ import time
 import calendar
 import re
 from collections import OrderedDict
-from six import iteritems
 from slugify import slugify
 from bs4 import Comment
 
@@ -456,7 +455,7 @@ def set_if_value(dictionary, key, value):
         dictionary[key] = value
 
 def prune_dict_of_none_values(dictionary):
-    return dict((k, v) for k, v in iteritems(dictionary) if v is not None)
+    return dict((k, v) for k, v in dictionary.items() if v is not None)
 
 
 def text_to_title(value):
