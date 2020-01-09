@@ -16,7 +16,6 @@ setup(
         "beautifulsoup4",
         "lxml",
         "python-slugify",
-        "six"
     ],
     url='https://github.com/elifesciences/elife-tools',
     maintainer='eLife Sciences Publications Ltd.',
@@ -25,7 +24,5 @@ setup(
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.5",
     ])

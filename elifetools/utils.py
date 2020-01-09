@@ -2,17 +2,8 @@ import time
 import calendar
 import re
 from collections import OrderedDict
-from six import iteritems
 from slugify import slugify
 from bs4 import Comment
-
-
-def unicode_value(value):
-    try:
-        return unicode(value)
-    except NameError:
-        # assume Python 3 and use str
-        return str(value)
 
 
 def subject_slug(subject, stopwords=['and', 'of']):
@@ -276,9 +267,9 @@ def node_contents_str(tag):
     for child_tag in tag.children:
         if isinstance(child_tag, Comment):
             # BeautifulSoup does not preserve comment tags, add them back
-            tag_string += '<!--%s-->' % unicode_value(child_tag)
+            tag_string += '<!--%s-->' % str(child_tag)
         else:
-            tag_string += unicode_value(child_tag)
+            tag_string += str(child_tag)
     return tag_string if tag_string != '' else None
 
 def first_parent(tag, nodename):
@@ -456,7 +447,7 @@ def set_if_value(dictionary, key, value):
         dictionary[key] = value
 
 def prune_dict_of_none_values(dictionary):
-    return dict((k, v) for k, v in iteritems(dictionary) if v is not None)
+    return dict((k, v) for k, v in dictionary.items() if v is not None)
 
 
 def text_to_title(value):

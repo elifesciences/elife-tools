@@ -7,7 +7,6 @@ from slugify import slugify
 import elifetools.rawJATS as raw_parser
 import elifetools.json_rewrite
 from elifetools.utils import *
-from elifetools.utils import unicode_value
 from elifetools.utils_html import xml_to_html, references_author_collab
 
 
@@ -2273,7 +2272,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
-            paragraph_content = paragraph_content + unicode_value(child_tag)
+            paragraph_content = paragraph_content + str(child_tag)
 
         else:
             # Add previous paragraph content first
@@ -2858,7 +2857,7 @@ def author_phone_numbers(author, correspondence):
     phone_numbers = []
     if correspondence and "phone" in author.get("references", {}):
         for ref_id in author["references"]["phone"]:
-            for corr_ref_id, data in iteritems(correspondence):
+            for corr_ref_id, data in correspondence.items():
                 if ref_id == corr_ref_id:
                     for phone_number in data:
                         phone_numbers.append(phone_number)
@@ -2884,7 +2883,7 @@ def author_email_addresses(author, correspondence):
 
     if correspondence and "email" in author.get("references", {}):
         for ref_id in author["references"]["email"]:
-            for corr_ref_id, data in iteritems(correspondence):
+            for corr_ref_id, data in correspondence.items():
                 if ref_id == corr_ref_id:
                     for email_address in data:
                         email_addresses.append(email_address)
@@ -3189,7 +3188,7 @@ def extract_author_line_names(authors_json_data):
             author_names.append(author["name"]["preferred"])
         elif "name" in author:
             # collab
-            author_names.append(unicode_value(author["name"]))
+            author_names.append(str(author["name"]))
     return author_names
 
 def format_author_line(author_names):
@@ -3224,13 +3223,8 @@ def references_publisher(publisher_name=None, publisher_loc=None):
 def references_pages_range(fpage=None, lpage=None):
     range = None
     if fpage and lpage:
-        # use unichr(8211) for the hyphen because the schema is requiring it
-        try:
-            # Python 2
-            range = fpage.strip() + unichr(8211) + lpage.strip()
-        except NameError:
-            # Python 3
-            range = fpage.strip() + chr(8211) + lpage.strip()
+        # use chr(8211) for the hyphen because the schema is requiring it
+        range = fpage.strip() + chr(8211) + lpage.strip()
     elif fpage:
         range = fpage.strip()
     elif lpage:
@@ -3898,7 +3892,7 @@ def funding_awards_json(soup):
     award_groups = full_award_groups(soup)
     if award_groups:
         for award_group_dict in award_groups:
-            for id, award_group in iteritems(award_group_dict):
+            for id, award_group in award_group_dict.items():
                 award_content = OrderedDict()
                 set_if_value(award_content, "id", id)
 

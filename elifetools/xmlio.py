@@ -1,9 +1,6 @@
-from __future__ import print_function
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-
-from six import iteritems
 import sys
 
 
@@ -19,15 +16,6 @@ REPARSING_NAMESPACES = (
     'xmlns:mml="http://www.w3.org/1998/Math/MathML" ' +
     'xmlns:xlink="http://www.w3.org/1999/xlink"'
 )
-
-
-class CustomXMLParser(ElementTree.XMLParser):
-    doctype_dict = {}
-
-    def doctype(self, name, pubid, system):
-        self.doctype_dict["name"] = name
-        self.doctype_dict["pubid"] = pubid
-        self.doctype_dict["system"] = system
 
 
 class CustomTreeBuilder(ElementTree.TreeBuilder):
@@ -53,21 +41,15 @@ def parse(filename, return_doctype_dict=False):
     for later use, set return_doctype_dict to True
     """
     doctype_dict = {}
-    # check for python version, doctype in ElementTree is deprecated 3.2 and above
-    if sys.version_info < (3,2):
-        parser = CustomXMLParser(html=0, target=None, encoding='utf-8')
-    else:
-        # Assume greater than Python 3.2, get the doctype from the TreeBuilder
-        tree_builder = CustomTreeBuilder()
-        parser = ElementTree.XMLParser(html=0, target=tree_builder, encoding='utf-8')
+
+    # Assume greater than Python 3.2, get the doctype from the TreeBuilder
+    tree_builder = CustomTreeBuilder()
+    parser = ElementTree.XMLParser(html=0, target=tree_builder, encoding='utf-8')
 
     tree = ElementTree.parse(filename, parser)
     root = tree.getroot()
 
-    if sys.version_info < (3,2):
-        doctype_dict = parser.doctype_dict
-    else:
-        doctype_dict = tree_builder.doctype_dict
+    doctype_dict = tree_builder.doctype_dict
 
     if return_doctype_dict is True:
         return root, doctype_dict
@@ -113,7 +95,7 @@ def convert_xlink_href(root, name_map):
 
             if tag.get('{http://www.w3.org/1999/xlink}href'):
 
-                for k, v in iteritems(name_map):
+                for k, v in name_map.items():
                     # Try to match the exact name first, and if not then
                     #  try to match it without the file extension
                     if tag.get('{http://www.w3.org/1999/xlink}href') == k:

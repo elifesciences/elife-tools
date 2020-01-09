@@ -1,7 +1,6 @@
 import os
 import io
 import importlib
-from elifetools.utils import unicode_value
 
 BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
