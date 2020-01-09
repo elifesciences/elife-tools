@@ -9,7 +9,6 @@ from xml.dom import minidom
 
 from elifetools import xmlio
 from elifetools.file_utils import sample_xml, read_fixture, fixture_file
-from elifetools.utils import unicode_value
 
 
 @ddt

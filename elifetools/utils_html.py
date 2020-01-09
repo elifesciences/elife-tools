@@ -1,6 +1,6 @@
 import re
 from collections import OrderedDict
-from elifetools.utils import escape_unmatched_angle_brackets, escape_ampersand, unicode_value
+from elifetools.utils import escape_unmatched_angle_brackets, escape_ampersand
 
 def xml_to_html(html_flag, xml_string, base_url=None):
     "For formatting json output into HTML friendly format"
@@ -210,5 +210,5 @@ def references_author_collab(ref_author, html_flag=True):
 
     author_json = OrderedDict()
     author_json["type"] = "group"
-    author_json["name"] = unicode_value(convert(ref_author.get("collab")))
+    author_json["name"] = str(convert(ref_author.get("collab")))
     return author_json

@@ -7,7 +7,6 @@ from slugify import slugify
 import elifetools.rawJATS as raw_parser
 import elifetools.json_rewrite
 from elifetools.utils import *
-from elifetools.utils import unicode_value
 from elifetools.utils_html import xml_to_html, references_author_collab
 
 
@@ -2273,7 +2272,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
-            paragraph_content = paragraph_content + unicode_value(child_tag)
+            paragraph_content = paragraph_content + str(child_tag)
 
         else:
             # Add previous paragraph content first
@@ -3189,7 +3188,7 @@ def extract_author_line_names(authors_json_data):
             author_names.append(author["name"]["preferred"])
         elif "name" in author:
             # collab
-            author_names.append(unicode_value(author["name"]))
+            author_names.append(str(author["name"]))
     return author_names
 
 def format_author_line(author_names):

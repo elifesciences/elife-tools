@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 from ddt import ddt, data, unpack
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
-from elifetools.utils import date_struct, unicode_value
+from elifetools.utils import date_struct
 from elifetools.file_utils import sample_xml, json_expected_file, read_fixture
 from elifetools.tests import soup_body
 
