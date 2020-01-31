@@ -250,7 +250,7 @@ def append_minidom_xml_to_elementtree_xml(
         new_elem = SubElement(parent, tag_name)
         if attributes:
             for attribute in attributes:
-                if xml.documentElement.getAttribute(attribute):
+                if xml.documentElement.hasAttribute(attribute):
                     new_elem.set(attribute, xml.documentElement.getAttribute(attribute))
     else:
         node = xml
