@@ -1,5 +1,5 @@
 import sys
-from io import StringIO
+from io import BytesIO
 import unittest
 
 from ddt import ddt, data, unpack
@@ -64,26 +64,19 @@ class TestXmlio(unittest.TestCase):
         self.assertEqual(xml_output, xml_output_expected)
 
     @unpack
-    @data((u"<article/>", "JATS", '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"  "JATS-archivearticle1.dtd"><article/>'),
-        (u"<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
-    def test_output(self, xml, type, xml_expected):
-        root = xmlio.parse(StringIO(xml))
-        xml_output = xmlio.output(root, type)
-        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
-
-    @unpack
-    @data((u"<article/>", "", "", None,
-           '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'),
-        (u"<article/>", "-//a", "a", None,
+    @data(
+        (b"<article/>", "", "", None,
+         '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'),
+        (b"<article/>", "-//a", "a", None,
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "-//a"  "a"><article/>'),
-        (u"<article/>", None, "b", "",
+        (b"<article/>", None, "b", "",
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article SYSTEM "b"><article/>'),
-        (u"<article/>", "c", "", "subset",
+        (b"<article/>", "c", "", "subset",
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "c"  "" [subset]><article/>'))
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = 'UTF-8'
         qualifiedName = "article"
-        root = xmlio.parse(StringIO(xml))
+        root = xmlio.parse(BytesIO(xml))
         doctype = xmlio.build_doctype(qualifiedName, publicId, systemId, internalSubset)
         xml_output = xmlio.output_root(root, doctype, encoding)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
@@ -166,6 +159,89 @@ class TestXmlio(unittest.TestCase):
         reparsed = xmlio.reparsed_tag(tag_name, tag_string)
         self.assertEqual(
             reparsed.toprettyxml(indent=""), read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
+
+
+@ddt
+class TestParse(unittest.TestCase):
+
+    @unpack
+    @data((
+        (
+            b'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC'
+            b' "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
+            b'  "JATS-archivearticle1.dtd">'
+            b'<article/>'
+            ),
+        {
+            'name': 'article',
+            'pubid': (
+                '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD'
+                ' v1.1 20151215//EN'),
+            'system': 'JATS-archivearticle1.dtd'
+            }
+        ))
+    def test_parse_doctype(self, xml, doctype_dict_expected):
+        root, doctype_dict = xmlio.parse(BytesIO(xml), True)
+        self.assertEqual(doctype_dict, doctype_dict_expected)
+
+    @unpack
+    @data((
+        (
+            b'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC'
+            b' "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
+            b'  "JATS-archivearticle1.dtd">'
+            b'<?covid-19-tdm?>'
+            b'<article/>'
+            ),
+        'covid-19-tdm'
+        ))
+    def test_parse_doctype_processing(self, xml, pi_target_expected):
+        root, doctype_dict, processing_instruction_nodes = xmlio.parse(BytesIO(xml), True, True)
+        self.assertEqual(processing_instruction_nodes[0].target, pi_target_expected)
+
+
+@ddt
+class TestOutput(unittest.TestCase):
+
+    @unpack
+    @data(
+        (
+            b"<article/>",
+            "JATS",
+            (
+                '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC '
+                '"-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3'
+                ' 20150301//EN"  "JATS-archivearticle1.dtd">'
+                '<article/>')
+            ),
+        (b"<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
+    def test_output(self, xml, type, xml_expected):
+        root = xmlio.parse(BytesIO(xml))
+        xml_output = xmlio.output(root, type)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
+
+    @unpack
+    @data((
+        (
+            b'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC'
+            b' "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
+            b'  "JATS-archivearticle1.dtd">'
+            b'<?covid-19-tdm?>'
+            b'<article/>'
+        ),
+        "JATS",
+        (
+            '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article '
+            'PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange '
+            'DTD v1.1 20151215//EN"  "JATS-archivearticle1.dtd">'
+            '<?covid-19-tdm ?>'
+            '<article/>')
+        )
+        )
+    def test_output_processing_instructions(self, xml, type, xml_expected):
+        root, doctype_dict, processing_instructions = xmlio.parse(BytesIO(xml), True, True)
+        xml_output = xmlio.output(root, type, doctype_dict, processing_instructions)
+        self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
 
 if __name__ == '__main__':
