@@ -1,11 +1,10 @@
-import sys
 from io import BytesIO
 import unittest
 
-from ddt import ddt, data, unpack
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
+from ddt import ddt, data, unpack
 
 from elifetools import xmlio
 from elifetools.file_utils import sample_xml, read_fixture, fixture_file
@@ -38,7 +37,8 @@ class TestXmlio(unittest.TestCase):
         self.assertEqual(xmlio.output(root, 'JATS'), xml_output_expected)
 
     @unpack
-    @data(("xmlio_input.xml", "inline-graphic", 2),
+    @data(
+        ("xmlio_input.xml", "inline-graphic", 2),
         ("xmlio_input.xml", "italic", None))
     def test_get_first_element_index(self, filename, tag_name, index):
         root = xmlio.parse(sample_xml(filename))
@@ -52,7 +52,10 @@ class TestXmlio(unittest.TestCase):
         self.assertEqual(ElementTree.tostring(element).decode('utf-8'), expected_string)
 
     @unpack
-    @data(({"doc1.pdf":"doc-1.pdf", "img2.tif":"img-2.tif"}, "xmlio_input.xml", "xmlio_output_convert_xlink.xml"))
+    @data((
+        {"doc1.pdf": "doc-1.pdf", "img2.tif": "img-2.tif"},
+        "xmlio_input.xml",
+        "xmlio_output_convert_xlink.xml"))
     def test_convert_xlink_href(self, name_map, xml_input_filename, xml_expected_filename):
         xmlio.register_xmlns()
         root = xmlio.parse(sample_xml(xml_input_filename))
@@ -62,6 +65,7 @@ class TestXmlio(unittest.TestCase):
         with open(sample_xml(xml_expected_filename), "rb") as xml_file:
             xml_output_expected = xml_file.read()
         self.assertEqual(xml_output, xml_output_expected)
+        self.assertEqual(xlink_count, 2)
 
     @unpack
     @data(
@@ -72,7 +76,10 @@ class TestXmlio(unittest.TestCase):
         (b"<article/>", None, "b", "",
          '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article SYSTEM "b"><article/>'),
         (b"<article/>", "c", "", "subset",
-         '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "c"  "" [subset]><article/>'))
+         (
+             '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "c"'
+             '  "" [subset]><article/>'))
+        )
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = 'UTF-8'
         qualifiedName = "article"
@@ -91,61 +98,72 @@ class TestXmlio(unittest.TestCase):
         # Add a first example
         xml = '<span><i>and</i> some <i id="test">XML</i>.</span>'
         reparsed = minidom.parseString(xml.encode('utf-8'))
-        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, child_attributes=True)
+        parent = xmlio.append_minidom_xml_to_elementtree_xml(
+            parent, reparsed, child_attributes=True)
         # Add another example to test more lines of code
         xml = '<span class="span" empty=""> <i>more</i> text</span>'
         reparsed = minidom.parseString(xml.encode('utf-8'))
-        parent = xmlio.append_minidom_xml_to_elementtree_xml(parent, reparsed, False, attributes)
+        parent = xmlio.append_minidom_xml_to_elementtree_xml(
+            parent, reparsed, False, attributes)
         # Generate output and compare it
         rough_string = ElementTree.tostring(parent).decode('utf-8')
-        self.assertEqual(rough_string, '<root><i>Text</i> and tail.<span><i>and</i> some <i id="test">XML</i>.</span><span class="span" empty=""> <i>more</i> text</span></root>')
+        self.assertEqual(rough_string, (
+            '<root><i>Text</i> and tail.<span><i>and</i> some <i id="test">XML</i>.'
+            '</span><span class="span" empty=""> <i>more</i> text</span></root>'))
 
     @unpack
     @data(
         # example of removing and adding the same heading tags
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_01.xml'),
-         ['Cell Biology', 'Plant Biology'],
-         'heading',
-         True,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_01_expected.xml')
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_01.xml'),
+            ['Cell Biology', 'Plant Biology'],
+            'heading',
+            True,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_01_expected.xml')
+        ),
         # example of removing and adding the display-channel should retain the same tag order
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_02.xml'),
-         ['Research Article'],
-         'display-channel',
-         True,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_02_expected.xml')
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_02.xml'),
+            ['Research Article'],
+            'display-channel',
+            True,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_02_expected.xml')
+        ),
         # example of appending a tag
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_03.xml'),
-         ['New Heading'],
-         'heading',
-         False,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_03_expected.xml')
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_03.xml'),
+            ['New Heading'],
+            'heading',
+            False,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_03_expected.xml')
+        ),
         # example adding a new subject type will be added to the head of the list
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_04.xml'),
-         ['New Heading'],
-         'sub-display-channel',
-         True,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_04_expected.xml')
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_04.xml'),
+            ['New Heading'],
+            'sub-display-channel',
+            True,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_04_expected.xml')
+        ),
         # example adding a new subject when none existed
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_05.xml'),
-         ['New Heading'],
-         'display-channel',
-         True,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_05_expected.xml')
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_05.xml'),
+            ['New Heading'],
+            'display-channel',
+            True,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_05_expected.xml')
+        ),
         # example removes the subject tags if an empty list of subjects is provided
-        (fixture_file('test_xmlio', 'test_rewrite_subject_group_06.xml'),
-         [],
-         'display-channel',
-         True,
-         read_fixture('test_xmlio', 'test_rewrite_subject_group_06_expected.xml'),
-         ),
+        (
+            fixture_file('test_xmlio', 'test_rewrite_subject_group_06.xml'),
+            [],
+            'display-channel',
+            True,
+            read_fixture('test_xmlio', 'test_rewrite_subject_group_06_expected.xml'),
+        ),
         )
-    def test_rewrite_subject_group(self, xml, subjects, subject_group_type, overwrite, xml_expected):
+    def test_rewrite_subject_group(self, xml, subjects, subject_group_type,
+                                   overwrite, xml_expected):
         root = xmlio.parse(xml)
         xmlio.rewrite_subject_group(root, subjects, subject_group_type, overwrite)
         # unicode encoding option added in python 3
@@ -158,7 +176,8 @@ class TestXmlio(unittest.TestCase):
         tag_string = 'Test &amp; <i class="a">a</i> <mml:math><mml:mi>K</mml:mi></mml:math>.'
         reparsed = xmlio.reparsed_tag(tag_name, tag_string)
         self.assertEqual(
-            reparsed.toprettyxml(indent=""), read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
+            reparsed.toprettyxml(indent=""),
+            read_fixture('test_xmlio', 'test_reparsed_tag_01_expected.xml'))
 
 
 @ddt
@@ -215,9 +234,9 @@ class TestOutput(unittest.TestCase):
                 '<article/>')
             ),
         (b"<article/>", None, '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article><article/>'))
-    def test_output(self, xml, type, xml_expected):
+    def test_output(self, xml, doc_type, xml_expected):
         root = xmlio.parse(BytesIO(xml))
-        xml_output = xmlio.output(root, type)
+        xml_output = xmlio.output(root, doc_type)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
     @unpack
@@ -236,11 +255,10 @@ class TestOutput(unittest.TestCase):
             'DTD v1.1 20151215//EN"  "JATS-archivearticle1.dtd">'
             '<?covid-19-tdm ?>'
             '<article/>')
-        )
-        )
-    def test_output_processing_instructions(self, xml, type, xml_expected):
+        ))
+    def test_output_processing_instructions(self, xml, doc_type, xml_expected):
         root, doctype_dict, processing_instructions = xmlio.parse(BytesIO(xml), True, True)
-        xml_output = xmlio.output(root, type, doctype_dict, processing_instructions)
+        xml_output = xmlio.output(root, doc_type, doctype_dict, processing_instructions)
         self.assertEqual(xml_output.decode('utf-8'), xml_expected)
 
 

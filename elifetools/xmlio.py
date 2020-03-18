@@ -2,7 +2,6 @@ from io import BytesIO
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-import sys
 
 
 """
@@ -32,9 +31,10 @@ def register_xmlns():
     """
     Register namespaces globally
     """
-    ElementTree.register_namespace("mml","http://www.w3.org/1998/Math/MathML")
-    ElementTree.register_namespace("xlink","http://www.w3.org/1999/xlink")
-    ElementTree.register_namespace("ali","http://www.niso.org/schemas/ali/1.0/")
+    ElementTree.register_namespace("mml", "http://www.w3.org/1998/Math/MathML")
+    ElementTree.register_namespace("xlink", "http://www.w3.org/1999/xlink")
+    ElementTree.register_namespace("ali", "http://www.niso.org/schemas/ali/1.0/")
+
 
 def parse(filename, return_doctype_dict=False, return_processing_instructions=False):
     """
@@ -74,6 +74,7 @@ def parse(filename, return_doctype_dict=False, return_processing_instructions=Fa
     else:
         return root
 
+
 def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     """
     Helper function to refactor the adding of new tags
@@ -82,7 +83,7 @@ def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     new_tag = Element(tag_name)
     new_tag.text = tag_text
     if get_first_element_index(parent_tag, before_tag_name):
-        parent_tag.insert( get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
+        parent_tag.insert(get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
     return parent_tag
 
 
@@ -195,8 +196,6 @@ def output(root, type='JATS', doctype_dict=None, processing_instructions=None):
 
     encoding = 'UTF-8'
 
-    namespaceURI = None
-
     doctype = build_doctype(qualifiedName, publicId, systemId)
 
     return output_root(root, doctype, encoding, processing_instructions)
@@ -213,7 +212,7 @@ def output_root(root, doctype, encoding, processing_instructions=None):
         for pi_node in processing_instructions:
             reparsed.insertBefore(pi_node, reparsed.documentElement)
 
-    #reparsed_string =  reparsed.toprettyxml(indent="\t", encoding = encoding)
+    # reparsed_string =  reparsed.toprettyxml(indent="\t", encoding = encoding)
     reparsed_string = reparsed.toxml(encoding=encoding)
 
     return reparsed_string
@@ -301,9 +300,9 @@ def append_minidom_xml_to_elementtree_xml(
         i = i + 1
 
     # Debug
-    #encoding = 'utf-8'
-    #rough_string = ElementTree.tostring(parent, encoding)
-    #print rough_string
+    # encoding = 'utf-8'
+    # rough_string = ElementTree.tostring(parent, encoding)
+    # print rough_string
 
     return parent
 
