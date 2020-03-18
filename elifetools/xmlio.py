@@ -1,7 +1,7 @@
+from io import BytesIO
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
 from xml.dom import minidom
-import sys
 
 
 """
@@ -31,30 +31,49 @@ def register_xmlns():
     """
     Register namespaces globally
     """
-    ElementTree.register_namespace("mml","http://www.w3.org/1998/Math/MathML")
-    ElementTree.register_namespace("xlink","http://www.w3.org/1999/xlink")
-    ElementTree.register_namespace("ali","http://www.niso.org/schemas/ali/1.0/")
+    ElementTree.register_namespace("mml", "http://www.w3.org/1998/Math/MathML")
+    ElementTree.register_namespace("xlink", "http://www.w3.org/1999/xlink")
+    ElementTree.register_namespace("ali", "http://www.niso.org/schemas/ali/1.0/")
 
-def parse(filename, return_doctype_dict=False):
+
+def parse(filename, return_doctype_dict=False, return_processing_instructions=False):
     """
     to extract the doctype details from the file when parsed and return the data
     for later use, set return_doctype_dict to True
     """
     doctype_dict = {}
+    processing_instructions = []
+
+    # support BytesIO or actual files
+    try:
+        xml_bytes = filename.getvalue()
+    except AttributeError:
+        with open(filename, 'rb') as open_file:
+            xml_bytes = open_file.read()
+
+    # collect processing instruction nodes using minidom
+    with minidom.parseString(xml_bytes) as dom:
+        for node in dom.childNodes:
+            if isinstance(node, minidom.ProcessingInstruction):
+                processing_instructions.append(node)
 
     # Assume greater than Python 3.2, get the doctype from the TreeBuilder
     tree_builder = CustomTreeBuilder()
     parser = ElementTree.XMLParser(html=0, target=tree_builder, encoding='utf-8')
+    new_file = BytesIO(xml_bytes)
+    tree = ElementTree.parse(new_file, parser)
 
-    tree = ElementTree.parse(filename, parser)
     root = tree.getroot()
 
     doctype_dict = tree_builder.doctype_dict
 
-    if return_doctype_dict is True:
+    if return_doctype_dict is True and return_processing_instructions is True:
+        return root, doctype_dict, processing_instructions
+    elif return_doctype_dict is True:
         return root, doctype_dict
     else:
         return root
+
 
 def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     """
@@ -64,7 +83,7 @@ def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
     new_tag = Element(tag_name)
     new_tag.text = tag_text
     if get_first_element_index(parent_tag, before_tag_name):
-        parent_tag.insert( get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
+        parent_tag.insert(get_first_element_index(parent_tag, before_tag_name) - 1, new_tag)
     return parent_tag
 
 
@@ -160,7 +179,7 @@ def rewrite_subject_group(root, subjects, subject_group_type, overwrite=True):
     return count
 
 
-def output(root, type='JATS', doctype_dict=None):
+def output(root, type='JATS', doctype_dict=None, processing_instructions=None):
 
     if doctype_dict is not None:
         publicId = doctype_dict.get('pubid')
@@ -177,21 +196,23 @@ def output(root, type='JATS', doctype_dict=None):
 
     encoding = 'UTF-8'
 
-    namespaceURI = None
-
     doctype = build_doctype(qualifiedName, publicId, systemId)
 
-    return output_root(root, doctype, encoding)
+    return output_root(root, doctype, encoding, processing_instructions)
 
 
-def output_root(root, doctype, encoding):
+def output_root(root, doctype, encoding, processing_instructions=None):
     rough_string = ElementTree.tostring(root, encoding)
 
     reparsed = minidom.parseString(rough_string)
     if doctype:
         reparsed.insertBefore(doctype, reparsed.documentElement)
 
-    #reparsed_string =  reparsed.toprettyxml(indent="\t", encoding = encoding)
+    if processing_instructions:
+        for pi_node in processing_instructions:
+            reparsed.insertBefore(pi_node, reparsed.documentElement)
+
+    # reparsed_string =  reparsed.toprettyxml(indent="\t", encoding = encoding)
     reparsed_string = reparsed.toxml(encoding=encoding)
 
     return reparsed_string
@@ -279,9 +300,9 @@ def append_minidom_xml_to_elementtree_xml(
         i = i + 1
 
     # Debug
-    #encoding = 'utf-8'
-    #rough_string = ElementTree.tostring(parent, encoding)
-    #print rough_string
+    # encoding = 'utf-8'
+    # rough_string = ElementTree.tostring(parent, encoding)
+    # print rough_string
 
     return parent
 
