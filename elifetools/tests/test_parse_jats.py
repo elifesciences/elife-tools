@@ -1589,6 +1589,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_abstract_json', 'content_03_expected.py'),
          ),
 
+        # structured abstract example based on BMJ Open bmjopen-4-e003269.xml
+        (read_fixture('test_abstract_json', 'content_04.xml'),
+         read_fixture('test_abstract_json', 'content_04_expected.py'),
+         ),
+
         )
     def test_abstract_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
