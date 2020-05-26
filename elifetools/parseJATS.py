@@ -2397,6 +2397,12 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
+    if tag.name == "related-object":
+        # related-object tag for clinical trial data in structured abstract sec tag
+        tag_content["type"] = "paragraph"
+        set_if_value(tag_content, "id", tag.get("id"))
+        tag_content["text"] = convert(clean_whitespace(str(tag)))
+
     elif tag.name == "boxed-text":
         tag_content["type"] = "box"
         set_if_value(tag_content, "doi", doi_uri_to_doi(object_id_doi(tag, tag.name)))

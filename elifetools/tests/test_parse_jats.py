@@ -1594,6 +1594,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_abstract_json', 'content_04_expected.py'),
          ),
 
+        # structured abstract elife example
+        (read_fixture('test_abstract_json', 'content_05.xml'),
+         read_fixture('test_abstract_json', 'content_05_expected.py'),
+         ),
+
         )
     def test_abstract_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
