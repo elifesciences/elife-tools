@@ -2397,7 +2397,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         set_if_value(tag_content, "id", tag.get("id"))
         set_if_value(tag_content, "title", convert(title_text(tag, direct_sibling_only=True)))
 
-    if tag.name == "related-object":
+    elif tag.name == "related-object":
         # related-object tag for clinical trial data in structured abstract sec tag
         tag_content["type"] = "paragraph"
         set_if_value(tag_content, "id", tag.get("id"))
