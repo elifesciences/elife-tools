@@ -64,7 +64,6 @@ expected = OrderedDict([
             ('content', [
                 OrderedDict([
                     ('type', 'paragraph'),
-                    ('id', 'CT1'),
                     ('text', (
                         '<a href="https://clinicaltrials.gov/show/NCT02968459">NCT02968459.</a>'))
                 ])
