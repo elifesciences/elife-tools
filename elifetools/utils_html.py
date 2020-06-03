@@ -13,6 +13,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
         html_string = escape_html(html_string)
     # Replace more tags
     html_string = replace_xref_tags(html_string)
+    html_string = replace_related_object_tags(html_string)
     html_string = replace_ext_link_tags(html_string)
     html_string = replace_email_tags(html_string)
     html_string = replace_inline_graphic_tags(html_string, base_url)
@@ -49,6 +50,7 @@ def allowed_xml_tag_fragments():
         '<email', '</email',
         '<ext-link', '</ext-link',
         '<xref', '</xref',
+        '<related-object', '</related-object',
         '<inline-graphic', '</inline-graphic',
         '<inline-formula', '</inline-formula',
         '<math', '</math',
@@ -66,6 +68,15 @@ def escape_html(html_string):
     "escape ampersands and unmatched angle brackets in HTML string allowing some whitelisted tags"
     html_string = escape_ampersand(html_string)
     return escape_unmatched_angle_brackets(html_string, allowed_xml_tag_fragments())
+
+
+def enhance_xlink_href(href):
+    """if the href is not prefaced with a protocol, add one"""
+    if not href[0:4] in ['http', 'ftp:']:
+        # for cases like 'foo.bar/baz'
+        href = 'http://%s' % href
+    return href
+
 
 def replace_simple_tags(s, from_tag='italic', to_tag='i', to_open_tag=None):
     """
@@ -106,6 +117,21 @@ def replace_xref_tags(s):
 
     return s
 
+def replace_related_object_tags(s):
+    for tag_match in re.finditer("<(related-object.*?)>", s):
+        xlink_match = re.finditer('xlink:href="(.*)"', tag_match.group())
+        if xlink_match:
+            try:
+                xlink = next(xlink_match).group(1)
+                new_tag = '<a href="' + enhance_xlink_href(xlink) + '">'
+                old_tag = '<' + tag_match.group(1) + '>'
+                s = s.replace(old_tag, new_tag)
+                # Replace all close tags even if one open tag gets replaced
+                s = replace_simple_tags(s, 'related-object', 'a')
+            except StopIteration:
+                pass
+    return s
+
 def replace_mathml_tags(s):
     p = re.compile('<mml:')
     s = p.sub('<', s)
@@ -122,10 +148,7 @@ def replace_ext_link_tags(s):
                 xlink = next(xlink_match).group(1)
                 ext_link_type = next(ext_link_type_match).group(1)
                 if ext_link_type.startswith('uri'):
-                    # Compare the start of the unicode string and prepend incomplete URL values
-                    if not xlink[0:4] in ['http', 'ftp:']:
-                        xlink = 'http://' + xlink
-                    new_tag = '<a href="' + xlink + '">'
+                    new_tag = '<a href="' + enhance_xlink_href(xlink) + '">'
                 elif ext_link_type.startswith('doi'):
                     new_tag = '<a href="https://doi.org/' + xlink + '">'
                 old_tag = '<' + tag_match.group(1) + '>'

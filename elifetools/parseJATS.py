@@ -2785,7 +2785,8 @@ def render_abstract_json(abstract_tag):
         if body_block_content(child_tag) != {}:
             if "content" not in abstract_json:
                  abstract_json["content"] = []
-            abstract_json["content"].append(body_block_content(child_tag))
+            # supports p or sec tags by recursive rendering the tag then keep the first element
+            abstract_json["content"].append(body_block_content_render(child_tag)[0])
     return abstract_json
 
 

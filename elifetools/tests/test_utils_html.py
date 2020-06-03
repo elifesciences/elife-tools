@@ -119,9 +119,28 @@ class TestUtilsHtml(unittest.TestCase):
         (True, u'<p>&</p>', None,
          u'<p>&amp;</p>'),
 
+        # related-object tag, can be found in a structured abstract
+        (True, (
+            '<related-object id="CT1" source-type="clinical-trials-registry" '
+            'source-id="ClinicalTrials.gov" source-id-type="registry-name" '
+            'document-id="NCT02968459" document-id-type="clinical-trial-number" '
+            'xlink:href="https://clinicaltrials.gov/show/NCT02968459">NCT02968459.'
+            '</related-object>'), None,
+         '<a href="https://clinicaltrials.gov/show/NCT02968459">NCT02968459.</a>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
+
+
+    def test_replace_related_object_tagsl(self):
+        """test when link is not prefaced with an internet scheme prefix"""
+        tag_string = (
+            '<related-object xlink:href="clinicaltrials.gov/show/NCT02968459">NCT02968459.'
+            '</related-object>')
+        expected = '<a href="http://clinicaltrials.gov/show/NCT02968459">NCT02968459.</a>'
+        self.assertEqual(utils_html.replace_related_object_tags(tag_string), expected)
+
 
 if __name__ == '__main__':
     unittest.main()
