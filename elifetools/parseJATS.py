@@ -154,6 +154,23 @@ def version_history(soup, html_flag=True):
     return version_history
 
 
+def clinical_trials(soup):
+    clinical_trials = []
+    related_object_tags = raw_parser.related_object(raw_parser.article_meta(soup))
+    # only consider related-object tags that have a source-id-type attribute
+    for tag in [tag for tag in related_object_tags if 'source-id-type' in tag.attrs]:
+        clinical_trial = OrderedDict()
+        for attribute in [
+                'id', 'content-type', 'document-id', 'document-id-type',
+                'source-id', 'source-id-type', 'source-type']:
+            copy_attribute(tag.attrs, attribute, clinical_trial)
+        clinical_trial['text'] = tag.text
+        copy_attribute(tag.attrs, 'xlink:href', clinical_trial, 'xlink_href')
+        if clinical_trial:
+            clinical_trials.append(clinical_trial)
+    return clinical_trials
+
+
 def format_related_object(related_object):
     return related_object["id"], {}
 

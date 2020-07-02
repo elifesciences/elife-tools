@@ -2450,6 +2450,28 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        (
+            read_fixture('test_clinical_trials', 'content_01.xml'),
+            read_fixture('test_clinical_trials', 'content_01_expected.py'),
+        ),
+        # eLife example
+        (
+            read_fixture('test_clinical_trials', 'content_02.xml'),
+            read_fixture('test_clinical_trials', 'content_02_expected.py'),
+        ),
+        # example with all tag attributes and a related-object tag to ignore
+        (
+            read_fixture('test_clinical_trials', 'content_03.xml'),
+            read_fixture('test_clinical_trials', 'content_03_expected.py'),
+        ),
+        )
+    def test_clinical_trials(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.clinical_trials(soup_body(soup))
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         ('',
          []
         ),
