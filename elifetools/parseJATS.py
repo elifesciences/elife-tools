@@ -166,8 +166,7 @@ def clinical_trials(soup):
             copy_attribute(tag.attrs, attribute, clinical_trial)
         clinical_trial['text'] = tag.text
         copy_attribute(tag.attrs, 'xlink:href', clinical_trial, 'xlink_href')
-        if clinical_trial:
-            clinical_trials.append(clinical_trial)
+        clinical_trials.append(clinical_trial)
     return clinical_trials
 
 
