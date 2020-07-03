@@ -3,7 +3,7 @@ from collections import OrderedDict
 expected = [
     OrderedDict([
         ('id', 'CT1'),
-        ('content-type', 'post-result'),
+        ('content-type', 'post-results'),
         ('document-id', 'NCT02836002'),
         ('document-id-type', 'clinical-trial-number'),
         ('source-id', 'ClinicalTrials.gov'),
@@ -14,7 +14,7 @@ expected = [
         ]),
     OrderedDict([
         ('id', 'CT1'),
-        ('content-type', 'preResult'),
+        ('content-type', 'preResults'),
         ('document-id', 'NCT04094727'),
         ('document-id-type', 'clinical-trial-number'),
         ('source-id', '10.18810/clinical-trials-gov'),
