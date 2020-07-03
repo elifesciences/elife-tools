@@ -1,0 +1,15 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <related-object id="CT1" content-type="post-results" source-type="clinical-trials-registry" source-id="ClinicalTrials.gov" source-id-type="registry-name" document-id="NCT02836002" document-id-type="clinical-trial-number" xlink:href="https://clinicaltrials.gov/show/NCT02836002">NCT02836002</related-object>
+            <related-object id="CT1" content-type="preResults" source-type="clinical-trials-registry" source-id="10.18810/clinical-trials-gov" source-id-type="crossref-doi" document-id="NCT04094727" document-id-type="clinical-trial-number" xlink:href="https://clinicaltrials.gov/show/NCT04094727">NCT04094727</related-object>
+            <related-object ext-link-type="url" xlink:href="https://elifesciences.org/articles/e00666v1">
+                <date date-type="v1" iso-8601-date="2016-04-25">
+                    <day>25</day>
+                    <month>04</month>
+                    <year>2016</year>
+                </date>
+            </related-object>
+        </article-meta>
+    </front>
+</root>
