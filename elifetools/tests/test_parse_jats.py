@@ -1720,6 +1720,36 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.abstract(soup)
         self.assertEqual(expected, tag_content)
 
+
+    @unpack
+    @data(
+        (
+            # very basic abstract
+            read_fixture('test_abstract_xml', 'content_01.xml'),
+            read_fixture('test_abstract_xml', 'content_01_expected.py'),
+        ),
+        (
+            # abstract tag with id attribute and mathml tags
+            read_fixture('test_abstract_xml', 'content_02.xml'),
+            read_fixture('test_abstract_xml', 'content_02_expected.py'),
+        ),
+        (
+            # structured abstract example
+            read_fixture('test_abstract_xml', 'content_03.xml'),
+            read_fixture('test_abstract_xml', 'content_03_expected.py'),
+        ),
+        (
+            # no abstract tag
+            read_fixture('test_abstract_xml', 'content_04.xml'),
+            read_fixture('test_abstract_xml', 'content_04_expected.py'),
+        ),
+        )
+    def test_abstract_xml(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.abstract_xml(soup_body(soup))
+        self.assertEqual(expected, tag_content)
+
+
     @data("elife-kitchen-sink.xml")
     def test_accepted_date_date(self, filename):
         self.assertEqual(self.json_expected(filename, "accepted_date_date"),
