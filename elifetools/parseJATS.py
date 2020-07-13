@@ -10,6 +10,20 @@ from elifetools.utils import *
 from elifetools.utils_html import xml_to_html, references_author_collab
 
 
+XML_NAMESPACES = [
+    OrderedDict([
+        ('prefix', 'mml:'),
+        ('attribute', 'xmlns:mml'),
+        ('uri', 'http://www.w3.org/1998/Math/MathML')
+    ]),
+    OrderedDict([
+        ('prefix', 'xlink:'),
+        ('attribute', 'xmlns:xlink'),
+        ('uri', 'http://www.w3.org/1999/xlink')
+    ])
+]
+
+
 def parse_xml(xml):
     return BeautifulSoup(xml, "lxml-xml")
 
@@ -593,26 +607,15 @@ def abstract_xml(soup, strip_doi_paragraphs=True):
     abstract_tag = first(raw_parser.abstract(soup))
     if not abstract_tag:
         return None
-    if strip_doi_paragraphs and abstract_tag and raw_parser.paragraph(abstract_tag):
+    if strip_doi_paragraphs and raw_parser.paragraph(abstract_tag):
         for p_tag in raw_parser.paragraph(abstract_tag):
             if paragraph_is_only_doi(p_tag) or starts_with_doi(p_tag):
                 p_tag.clear()
     # add in common JATS XML namespaces which are getting lost
-    namespaces = [
-        OrderedDict([
-            ('prefix', '<mml:'),
-            ('attribute', 'xmlns:mml'),
-            ('uri', 'http://www.w3.org/1998/Math/MathML')
-        ]),
-        OrderedDict([
-            ('prefix', '<xlink:'),
-            ('attribute', 'xmlns:xlink'),
-            ('uri', 'http://www.w3.org/1999/xlink')
-        ])
-    ]
-    for namespace in namespaces:
-        if (namespace.get('prefix') not in abstract_tag.attrs and
-                namespace.get('prefix') in str(abstract_tag)):
+    for namespace in XML_NAMESPACES:
+        prefix_match = '<%s' % namespace.get('prefix')
+        if (namespace.get('attribute') not in abstract_tag.attrs and
+                prefix_match in str(abstract_tag)):
             abstract_tag[namespace.get('attribute')] = namespace.get('uri')
 
     return str(abstract_tag)
