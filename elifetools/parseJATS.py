@@ -604,9 +604,10 @@ def abstract(soup):
 
 
 def abstract_xml(soup, strip_doi_paragraphs=True, abstract_type=None):
-    abstract_tag = first(raw_parser.abstract(soup, abstract_type))
-    if not abstract_tag:
+    original_abstract_tag = first(raw_parser.abstract(soup, abstract_type))
+    if not original_abstract_tag:
         return None
+    abstract_tag = copy.copy(original_abstract_tag)
     if strip_doi_paragraphs and raw_parser.paragraph(abstract_tag):
         for p_tag in raw_parser.paragraph(abstract_tag):
             if paragraph_is_only_doi(p_tag) or starts_with_doi(p_tag):
