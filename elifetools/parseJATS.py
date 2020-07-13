@@ -611,7 +611,7 @@ def abstract_xml(soup, strip_doi_paragraphs=True, abstract_type=None):
     if strip_doi_paragraphs and raw_parser.paragraph(abstract_tag):
         for p_tag in raw_parser.paragraph(abstract_tag):
             if paragraph_is_only_doi(p_tag) or starts_with_doi(p_tag):
-                p_tag.clear()
+                p_tag.decompose()
     # add in common JATS XML namespaces which are getting lost
     for namespace in XML_NAMESPACES:
         prefix_match = '<%s' % namespace.get('prefix')
