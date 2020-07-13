@@ -603,8 +603,8 @@ def abstract(soup):
         return None
 
 
-def abstract_xml(soup, strip_doi_paragraphs=True):
-    abstract_tag = first(raw_parser.abstract(soup))
+def abstract_xml(soup, strip_doi_paragraphs=True, abstract_type=None):
+    abstract_tag = first(raw_parser.abstract(soup, abstract_type))
     if not abstract_tag:
         return None
     if strip_doi_paragraphs and raw_parser.paragraph(abstract_tag):
