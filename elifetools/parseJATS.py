@@ -93,6 +93,12 @@ def volume(soup):
 def issue(soup):
     return node_text(first(raw_parser.issue(raw_parser.article_meta(soup))))
 
+def fpage(soup):
+    return node_text(first(raw_parser.fpage(raw_parser.article_meta(soup))))
+
+def lpage(soup):
+    return node_text(first(raw_parser.lpage(raw_parser.article_meta(soup))))
+
 def elocation_id(soup):
     return node_text(first(raw_parser.elocation_id(soup)))
 
