@@ -100,7 +100,7 @@ def lpage(soup):
     return node_text(first(raw_parser.lpage(raw_parser.article_meta(soup))))
 
 def elocation_id(soup):
-    return node_text(first(raw_parser.elocation_id(soup)))
+    return node_text(first(raw_parser.elocation_id(raw_parser.article_meta(soup))))
 
 def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
