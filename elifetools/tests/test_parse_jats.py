@@ -2454,6 +2454,37 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.issue(soup)
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # example fpage from a non-eLife article
+        (read_fixture('test_fpage', 'content_01.xml'),
+         '1'
+        ),
+        # example of no article fpage
+        (read_fixture('test_fpage', 'content_02.xml'),
+         None
+        ),
+    )
+    def test_fpage(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.fpage(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example lpage from a non-eLife article
+        (read_fixture('test_lpage', 'content_01.xml'),
+         '2'
+        ),
+        # example of no article lpage
+        (read_fixture('test_lpage', 'content_02.xml'),
+         None
+        ),
+    )
+    def test_lpage(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.lpage(soup)
+        self.assertEqual(expected, tag_content)
 
     def test_parse_mixed_citations(self):
         data = parser.mixed_citations(self.soup('elife-kitchen-sink.xml'))
