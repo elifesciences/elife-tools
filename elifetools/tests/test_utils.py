@@ -234,6 +234,25 @@ class TestUtils(unittest.TestCase):
 
     @unpack
     @data(
+        (None, None, ''),
+        ('p', '<p class="p1">Paragraph.</p>', 'Paragraph.'),
+        ('bold', '<p>\n<bold>One<bold> <bold>two</bold>\n</p>', '<p>One two</p>'),
+        ('italic', '<p><italic><italic>Very italic.</italic></italic></p>', '<p>Very italic.</p>'),
+        )
+    def test_remove_tag(self, tag_name, string, expected):
+        self.assertEqual(utils.remove_tag(tag_name, string), expected)
+
+    @unpack
+    @data(
+        (None, None, ''),
+        ('p', '<p class="p1">Paragraph.</p>', ''),
+        ('italic', '<p><italic><italic>Very italic.</italic></italic></p>', '<p></p>'),
+        )
+    def test_remove_tag_and_text(self, tag_name, string, expected):
+        self.assertEqual(utils.remove_tag_and_text(tag_name, string), expected)
+
+    @unpack
+    @data(
         (None, None),
         ('', None),
         ('<root></root>', None),

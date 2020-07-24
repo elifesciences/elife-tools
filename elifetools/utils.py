@@ -525,6 +525,19 @@ def escape_ampersand(string):
     string = re.sub(r"&(?!" + start_with_match + ")", '&amp;', string)
     return string
 
+
+def remove_tag(tag_name, string):
+    "remove open tag and its attributes and remove close tag from an XML string"
+    pattern = r'\n*</?%s.*?>\n*' % tag_name
+    return re.sub(pattern, '', string) if string else ''
+
+
+def remove_tag_and_text(tag_name, string):
+    "remove open tag and close tag and the contents between them from an XML string"
+    pattern = r'\n*<%s.*?>.*?</%s>\n*' % (tag_name, tag_name)
+    return remove_tag(tag_name, re.sub(pattern, '', string)) if string else ''
+
+
 def references_author_person(ref_author):
     author_json = OrderedDict()
     author_json["type"] = "person"
