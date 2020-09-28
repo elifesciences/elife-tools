@@ -2497,10 +2497,12 @@ def body_block_content(tag, html_flag=True, base_url=None):
             tag_content["type"] = "quote"
             block_array_name = "text"
         for child_tag in tag:
-            if body_block_content(child_tag) != {}:
-                if block_array_name not in tag_content:
-                    tag_content[block_array_name] = []
-                tag_content[block_array_name].append(body_block_content(child_tag, base_url=base_url))
+            if child_tag.name == "p":
+                for block_content in body_block_paragraph_render(child_tag, base_url=base_url):
+                    if block_content != {}:
+                        if block_array_name not in tag_content:
+                            tag_content[block_array_name] = []
+                        tag_content[block_array_name].append(block_content)
 
     elif tag.name == "table-wrap":
         # figure wrap
