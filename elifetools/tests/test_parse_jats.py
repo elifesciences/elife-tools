@@ -1517,6 +1517,11 @@ class TestParseJats(unittest.TestCase):
          read_fixture('test_body_block_content_render', 'content_31_expected.py'),
         ),
 
+        # example of disp-formula inside a disp-quote based on 55588
+        (read_fixture('test_body_block_content_render', 'content_32.xml'),
+         read_fixture('test_body_block_content_render', 'content_32_expected.py'),
+         ),
+
         )
     def test_body_block_content_render(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
