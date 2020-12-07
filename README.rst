@@ -23,7 +23,7 @@ Non-Python dependencies
 Install for users
 =================
 
-Install via `pip <http://www.pip-installer.org/>`_:
+Install via `pip <https://pip.pypa.io/en/stable/>`_:
 
 .. code-block:: bash
 
@@ -68,23 +68,10 @@ Example usage
 
     >>> from elifetools import parseJATS as parser
     >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
-    >>> print parser.doi(soup)
+    >>> print(parser.doi(soup))
 
 More code examples can be found in `tests/basic_usage_test.py`
 
-These code examples can be run with:
-
-.. code-block:: bash
-
-    $ cd elifetools/
-    $ python -m unittest discover -s tests  -p *_test.py
-
-and with xml output:
-
-.. code-block:: bash
-
-    $ cd elifetools/
-    $ python -m xmlrunner discover -s tests -p *_test.py
 
 Testing
 =======

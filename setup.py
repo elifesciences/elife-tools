@@ -19,7 +19,7 @@ setup(
     ],
     url='https://github.com/elifesciences/elife-tools',
     maintainer='eLife Sciences Publications Ltd.',
-    maintainer_email='py@elifesciences.org',
+    maintainer_email='tech-team@elifesciences.org',
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
