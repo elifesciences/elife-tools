@@ -3488,11 +3488,11 @@ def references_json(soup, html_flag=True):
         # pages
         if ref.get("elocation-id"):
             ref_content["pages"] = ref.get("elocation-id")
-        elif ref.get("fpage") and not re.match("^[A-Za-z0-9\.]+$", ref.get("fpage")):
+        elif ref.get("fpage") and not re.match(r"^[A-Za-z0-9\.]+$", ref.get("fpage")):
             # Use range as string value
             ref_content["pages"] = references_pages_range(
                 ref.get("fpage"), ref.get("lpage"))
-        elif ref.get("lpage") and not re.match("^[A-Za-z0-9\.]+$", ref.get("lpage")):
+        elif ref.get("lpage") and not re.match(r"^[A-Za-z0-9\.]+$", ref.get("lpage")):
             # Use range as string value
             ref_content["pages"] = references_pages_range(
                 ref.get("fpage"), ref.get("lpage"))
@@ -3937,7 +3937,7 @@ def supplementary_files_json(soup):
     # rename it and describe it
     if len(additional_files_json) == 1:
         single_additional_file = additional_files_json[0]['filename']
-        if re.match("^.+-supp-.+\.zip$", single_additional_file):
+        if re.match(r"^.+-supp-.+\.zip$", single_additional_file):
             file = additional_files_json[0]
             file["label"] = "All additional files"
             file['caption'] = [{
