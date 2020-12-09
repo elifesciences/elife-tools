@@ -557,3 +557,14 @@ def author_preferred_name(surname, given_names, suffix):
 def author_index_name(surname, given_names, suffix):
     index_name = ", ".join([element for element in [surname, given_names, suffix] if element is not None])
     return index_name
+
+
+def list_type_prefix(list_type):
+    """from a JATS list list-type attribute return a list style prefix"""
+    if list_type:
+        if list_type == "simple":
+            return "none"
+        elif list_type == "order":
+            return "number"
+        return list_type
+    return "none"
