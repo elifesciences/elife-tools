@@ -19,6 +19,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_inline_graphic_tags(html_string, base_url)
     html_string = replace_named_content_tags(html_string)
     html_string = replace_mathml_tags(html_string)
+    html_string = replace_list_tags(html_string)
     html_string = replace_table_style_author_callout(html_string)
     html_string = replace_simple_tags(html_string, 'italic', 'i')
     html_string = replace_simple_tags(html_string, 'bold', 'b')
@@ -62,6 +63,7 @@ def allowed_xml_tag_fragments():
         '<th', '</th',
         '<tr', '</tr',
         '<td', '</td',
+        '<list', '</list',
         )
 
 def escape_html(html_string):
@@ -215,6 +217,59 @@ def remove_comment_tags(s):
         old_tag = '<!--' + tag_match.group(1) + '-->'
         s = s.replace(old_tag, '')
     return s
+
+
+def list_tag_name(attributes):
+    """look at the XML tag list-type attribute to rewrite it to either an HTML ul or ol tag"""
+    ordered_list_types = [
+        'list-type="alpha-lower"',
+        'list-type="alpha-upper"',
+        'list-type="order"',
+        'list-type="roman-lower"',
+        'list-type="roman-upper"',
+    ]
+    for list_type in ordered_list_types:
+        if list_type in attributes:
+            return 'ol'
+    return 'ul'
+
+
+def list_tag_attributes(attributes):
+    """rewrite JATS list-type attribute as an HTML class attribute"""
+    if 'list-type' in attributes:
+        list_type_class_map = OrderedDict([
+            ('list-type="alpha-lower"', 'class="list list--alpha-lower"'),
+            ('list-type="alpha-upper"', 'class="list list--alpha-upper"'),
+            ('list-type="bullet"', 'class="list list--bullet"'),
+            ('list-type="order"', 'class="list list--number"'),
+            ('list-type="roman-lower"', 'class="list list--roman-lower"'),
+            ('list-type="roman-upper"', 'class="list list--roman-upper"'),
+            ('list-type="simple"', 'class="list"'),
+        ])
+        for key, value in list_type_class_map.items():
+            attributes = attributes.replace(key, value)
+    return attributes
+
+
+def replace_list_tags(s):
+    for tag_match in re.finditer("<list-item(.*?)>", s):
+        tag_attributes = tag_match.group(1)
+        old_tag = '<list-item%s>' % tag_attributes
+        new_tag = '<li%s>' % tag_attributes
+        s = s.replace(old_tag, new_tag)
+        s = s.replace('</list-item>', '</li>')
+    for tag_match in re.finditer("<list(.*?)>", s):
+        tag_attributes = tag_match.group(1)
+        old_tag = '<list%s>' % tag_attributes
+
+        new_tag_name = list_tag_name(tag_attributes)
+        new_tag_attributes = list_tag_attributes(tag_attributes)
+
+        new_tag = '<%s%s>' % (new_tag_name, new_tag_attributes)
+        s = s.replace(old_tag, new_tag)
+        s = s.replace('</list>', '</%s>' % new_tag_name)
+    return s
+
 
 def replace_table_style_author_callout(s):
     for tag_match in re.finditer('<(td[^>]*style="author-callout-style[^>]*?")/?>', s):

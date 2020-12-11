@@ -128,6 +128,13 @@ class TestUtilsHtml(unittest.TestCase):
             '</related-object>'), None,
          '<a href="https://clinicaltrials.gov/show/NCT02968459">NCT02968459.</a>'),
 
+        # table containing a list
+        (True,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype<list></list></td></tr>'
+         u'</tbody></table>', None,
+         u'<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype<ul></ul></td></tr>'
+         u'</tbody></table>'),
+
         )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(utils_html.xml_to_html(html_flag, xml_string, base_url), expected)
@@ -140,6 +147,41 @@ class TestUtilsHtml(unittest.TestCase):
             '</related-object>')
         expected = '<a href="http://clinicaltrials.gov/show/NCT02968459">NCT02968459.</a>'
         self.assertEqual(utils_html.replace_related_object_tags(tag_string), expected)
+
+    @unpack
+    @data(
+        ('', ''),
+
+        ('<list/>', '<ul/>'),
+
+        ('<list><list-item/></list>', '<ul><li/></ul>'),
+
+        ('<list><list-item>One</list-item></list>', '<ul><li>One</li></ul>'),
+
+        ('<list list-type="alpha-lower"><list-item>One</list-item></list>',
+         '<ol class="list list--alpha-lower"><li>One</li></ol>'),
+
+        ('<list list-type="alpha-upper"><list-item>One</list-item></list>',
+         '<ol class="list list--alpha-upper"><li>One</li></ol>'),
+
+        ('<list list-type="bullet"><list-item>One</list-item></list>',
+         '<ul class="list list--bullet"><li>One</li></ul>'),
+
+        ('<list list-type="order"><list-item>One</list-item></list>',
+         '<ol class="list list--number"><li>One</li></ol>'),
+
+        ('<list list-type="roman-lower"><list-item>One</list-item></list>',
+         '<ol class="list list--roman-lower"><li>One</li></ol>'),
+
+        ('<list list-type="roman-upper"><list-item>One</list-item></list>',
+         '<ol class="list list--roman-upper"><li>One</li></ol>'),
+
+        ('<list list-type="simple"><list-item>One</list-item></list>',
+         '<ul class="list"><li>One</li></ul>'),
+
+    )
+    def test_replace_list_tags(self, xml_string, expected):
+        self.assertEqual(utils_html.replace_list_tags(xml_string), expected)
 
 
 if __name__ == '__main__':

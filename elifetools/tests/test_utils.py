@@ -269,6 +269,20 @@ class TestUtils(unittest.TestCase):
             tag = soup_body(soup)
         self.assertEqual(utils.node_contents_str(tag), expected)
 
+    @unpack
+    @data(
+        (None, 'none'),
+        ('alpha-lower', 'alpha-lower'),
+        ('alpha-upper', 'alpha-upper'),
+        ('bullet', 'bullet'),
+        ('order', 'number'),
+        ('roman-lower', 'roman-lower'),
+        ('roman-upper', 'roman-upper'),
+        ('simple', 'none'),
+        )
+    def test_list_type_prefix(self, list_type, expected):
+        self.assertEqual(utils.list_type_prefix(list_type), expected)
+
 
 if __name__ == '__main__':
     unittest.main()

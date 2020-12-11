@@ -6,6 +6,7 @@ from slugify import slugify
 
 import elifetools.rawJATS as raw_parser
 import elifetools.json_rewrite
+from elifetools import utils
 from elifetools.utils import *
 from elifetools.utils_html import xml_to_html, references_author_collab
 
@@ -2707,15 +2708,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "list":
         tag_content["type"] = "list"
-        if tag.get("list-type"):
-            if tag.get("list-type") == "simple":
-                tag_content["prefix"] = "none"
-            elif tag.get("list-type") == "order":
-                tag_content["prefix"] = "number"
-            else:
-                tag_content["prefix"] = tag.get("list-type")
-        else:
-            tag_content["prefix"] = "none"
+        tag_content["prefix"] = utils.list_type_prefix(tag.get("list-type"))
 
         for list_item_tag in raw_parser.list_item(tag):
             # Do not add list items of child lists to the main list by skipping them here first
