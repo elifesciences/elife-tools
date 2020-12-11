@@ -241,7 +241,7 @@ def list_tag_attributes(attributes):
             ('list-type="alpha-lower"', 'class="list list--alpha-lower"'),
             ('list-type="alpha-upper"', 'class="list list--alpha-upper"'),
             ('list-type="bullet"', 'class="list list--bullet"'),
-            ('list-type="order"', 'class="list list--order"'),
+            ('list-type="order"', 'class="list list--number"'),
             ('list-type="roman-lower"', 'class="list list--roman-lower"'),
             ('list-type="roman-upper"', 'class="list list--roman-upper"'),
             ('list-type="simple"', 'class="list"'),

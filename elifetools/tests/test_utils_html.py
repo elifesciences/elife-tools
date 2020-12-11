@@ -168,7 +168,7 @@ class TestUtilsHtml(unittest.TestCase):
          '<ul class="list list--bullet"><li>One</li></ul>'),
 
         ('<list list-type="order"><list-item>One</list-item></list>',
-         '<ol class="list list--order"><li>One</li></ol>'),
+         '<ol class="list list--number"><li>One</li></ol>'),
 
         ('<list list-type="roman-lower"><list-item>One</list-item></list>',
          '<ol class="list list--roman-lower"><li>One</li></ol>'),
