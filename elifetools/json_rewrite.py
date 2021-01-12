@@ -5,6 +5,7 @@ import elifetools.rawJATS
 import elifetools.utils
 import elifetools.utils_html
 
+
 def rewrite_json(rewrite_type, soup, json_content):
     """
     Due to XML content that will not conform with the strict JSON schema validation rules,
@@ -29,17 +30,21 @@ def rewrite_json(rewrite_type, soup, json_content):
                 pass
     return json_content
 
+
 def rewrite_function_name(journal_id, rewrite_type):
     """ concatenate the name of the rewriting function """
     if not journal_id or not rewrite_type:
         return None
     return "rewrite_" + journal_id.lower() + "_" + rewrite_type
 
+
 def rewrite_elife_references_json(json_content, doi):
     """ this does the work of rewriting elife references json """
     references_rewrite_json = elife_references_rewrite_json()
     if doi in references_rewrite_json:
-        json_content = rewrite_references_json(json_content, references_rewrite_json[doi])
+        json_content = rewrite_references_json(
+            json_content, references_rewrite_json[doi]
+        )
 
     # Edge case delete one reference
     if doi == "10.7554/eLife.12125":
@@ -49,6 +54,7 @@ def rewrite_elife_references_json(json_content, doi):
 
     return json_content
 
+
 def rewrite_references_json(json_content, rewrite_json):
     """ general purpose references json rewriting by matching the id value """
     for ref in json_content:
@@ -56,6 +62,7 @@ def rewrite_references_json(json_content, rewrite_json):
             for key, value in rewrite_json.get(ref.get("id")).items():
                 ref[key] = value
     return json_content
+
 
 def elife_references_rewrite_json():
     """ Here is the DOI and references json replacements data for elife """
@@ -73,7 +80,10 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.01530"] = {"bib12": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.01681"] = {"bib5": {"date": "2000"}}
     references_rewrite_json["10.7554/eLife.01917"] = {"bib35": {"date": "2014"}}
-    references_rewrite_json["10.7554/eLife.02030"] = {"bib53": {"date": "2013"}, "bib56": {"date": "2013"}}
+    references_rewrite_json["10.7554/eLife.02030"] = {
+        "bib53": {"date": "2013"},
+        "bib56": {"date": "2013"},
+    }
     references_rewrite_json["10.7554/eLife.02076"] = {"bib93a": {"date": "1990"}}
     references_rewrite_json["10.7554/eLife.02217"] = {"bib27": {"date": "2009"}}
     references_rewrite_json["10.7554/eLife.02535"] = {"bib12": {"date": "2014"}}
@@ -84,7 +94,8 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.04247"] = {"bib19a": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.04333"] = {
         "bib3": {"date": "1859"},
-        "bib37": {"date": "1959"}}
+        "bib37": {"date": "1959"},
+    }
     references_rewrite_json["10.7554/eLife.04478"] = {"bib49": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.04580"] = {"bib139": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.05042"] = {"bib78": {"date": "2015"}}
@@ -98,57 +109,95 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.07361"] = {"bib76": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.07460"] = {
         "bib1": {"date": "2013"},
-        "bib2": {"date": "2014"}}
+        "bib2": {"date": "2014"},
+    }
     references_rewrite_json["10.7554/eLife.08500"] = {"bib55": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09066"] = {"bib46": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.09100"] = {"bib50": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.09148"] = {
         "bib47": {"articleTitle": "97–104"},
-        "bib59": {"articleTitle": "1913–1918"}}
+        "bib59": {"articleTitle": "1913–1918"},
+    }
     references_rewrite_json["10.7554/eLife.09186"] = {
         "bib31": {"date": "2015"},
         "bib54": {"date": "2014"},
         "bib56": {"date": "2014"},
-        "bib65": {"date": "2015"}}
+        "bib65": {"date": "2015"},
+    }
     references_rewrite_json["10.7554/eLife.09215"] = {"bib5": {"date": "2012"}}
 
     references_rewrite_json["10.7554/eLife.09520"] = {
-        "bib35": OrderedDict([
-            ("conference", OrderedDict([
-                ("name", ["WHO Expert Committee on Malaria"])
-            ])),
-            ("articleTitle", "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report"),
-            ("publisher", OrderedDict([
-                ("name", ["World Health Organization"]),
-                ("address", OrderedDict([
-                    ("formatted", ["Geneva"]),
-                    ("components", OrderedDict([
-                        ("locality", ["Geneva"])
-                    ])),
-                ])),
-            ])),
-        ])
+        "bib35": OrderedDict(
+            [
+                (
+                    "conference",
+                    OrderedDict([("name", ["WHO Expert Committee on Malaria"])]),
+                ),
+                (
+                    "articleTitle",
+                    "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report",
+                ),
+                (
+                    "publisher",
+                    OrderedDict(
+                        [
+                            ("name", ["World Health Organization"]),
+                            (
+                                "address",
+                                OrderedDict(
+                                    [
+                                        ("formatted", ["Geneva"]),
+                                        (
+                                            "components",
+                                            OrderedDict([("locality", ["Geneva"])]),
+                                        ),
+                                    ]
+                                ),
+                            ),
+                        ]
+                    ),
+                ),
+            ]
+        )
     }
 
     references_rewrite_json["10.7554/eLife.09579"] = {
         "bib19": {"date": "2007"},
-        "bib49": {"date": "2002"}}
+        "bib49": {"date": "2002"},
+    }
     references_rewrite_json["10.7554/eLife.09600"] = {"bib13": {"date": "2009"}}
     references_rewrite_json["10.7554/eLife.09672"] = {
-        "bib25": {"conference": {"name": ["Seventeenth Meeting of the RBM Partnership Monitoring and Evaluation Reference Group (MERG)"]}}}
+        "bib25": {
+            "conference": {
+                "name": [
+                    "Seventeenth Meeting of the RBM Partnership Monitoring and Evaluation Reference Group (MERG)"
+                ]
+            }
+        }
+    }
     references_rewrite_json["10.7554/eLife.09771"] = {"bib22": {"date": "2012"}}
-    references_rewrite_json["10.7554/eLife.09972"] = {"bib61": {"date": "2007", "discriminator": "a"}}
+    references_rewrite_json["10.7554/eLife.09972"] = {
+        "bib61": {"date": "2007", "discriminator": "a"}
+    }
     references_rewrite_json["10.7554/eLife.09977"] = {"bib41": {"date": "2014"}}
     references_rewrite_json["10.7554/eLife.10032"] = {"bib45": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.10042"] = {"bib14": {"date": "2015"}}
-    references_rewrite_json["10.7554/eLife.10070"] = {"bib15": {"date": "2015"}, "bib38": {"date": "2014"}}
+    references_rewrite_json["10.7554/eLife.10070"] = {
+        "bib15": {"date": "2015"},
+        "bib38": {"date": "2014"},
+    }
     references_rewrite_json["10.7554/eLife.10222"] = {"bib30": {"date": "2015"}}
-    references_rewrite_json["10.7554/eLife.10670"] = {"bib7": {"date": "2015"}, "bib8": {"date": "2015"}}
+    references_rewrite_json["10.7554/eLife.10670"] = {
+        "bib7": {"date": "2015"},
+        "bib8": {"date": "2015"},
+    }
     references_rewrite_json["10.7554/eLife.10781"] = {"bib32": {"date": "2003"}}
     references_rewrite_json["10.7554/eLife.11273"] = {"bib43": {"date": "2004"}}
     references_rewrite_json["10.7554/eLife.11305"] = {"bib68": {"date": "2000"}}
     references_rewrite_json["10.7554/eLife.11416"] = {"bib22": {"date": "1997"}}
-    references_rewrite_json["10.7554/eLife.11860"] = {"bib48": {"title": "Light-switchable gene expression system"}}
+    references_rewrite_json["10.7554/eLife.11860"] = {
+        "bib48": {"title": "Light-switchable gene expression system"}
+    }
     references_rewrite_json["10.7554/eLife.12401"] = {"bib25": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.12366"] = {"bib10": {"date": "2008"}}
     references_rewrite_json["10.7554/eLife.12703"] = {"bib27": {"date": "2013"}}
@@ -156,20 +205,31 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.12830"] = {"bib118": {"date": "1982"}}
     references_rewrite_json["10.7554/eLife.13133"] = {"bib11": {"date": "2011"}}
     references_rewrite_json["10.7554/eLife.13152"] = {"bib25": {"date": "2000"}}
-    references_rewrite_json["10.7554/eLife.13195"] = {"bib6": {"date": "2013"}, "bib12": {"date": "2003"}}
+    references_rewrite_json["10.7554/eLife.13195"] = {
+        "bib6": {"date": "2013"},
+        "bib12": {"date": "2003"},
+    }
     references_rewrite_json["10.7554/eLife.13479"] = {"bib5": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.13463"] = {"bib15": {"date": "2016"}}
     references_rewrite_json["10.7554/eLife.14119"] = {"bib40": {"date": "2007"}}
     references_rewrite_json["10.7554/eLife.14169"] = {"bib6": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.14523"] = {"bib7": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.15272"] = {"bib78": {"date": "2014"}}
-    references_rewrite_json["10.7554/eLife.15504"] = {"bib67": {"isbn": "9780198524304"}}
+    references_rewrite_json["10.7554/eLife.15504"] = {
+        "bib67": {"isbn": "9780198524304"}
+    }
     references_rewrite_json["10.7554/eLife.16105"] = {"bib2": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.16349"] = {"bib68": {"date": "2005"}}
     references_rewrite_json["10.7554/eLife.16394"] = {
-        "bib6": {"type": "thesis",
-        "author": {"type": "person", "name": {"preferred": "B Berret","index": "Berret, B" }},
-        "publisher": {"name": ["Université de Bourgogne"]}}}
+        "bib6": {
+            "type": "thesis",
+            "author": {
+                "type": "person",
+                "name": {"preferred": "B Berret", "index": "Berret, B"},
+            },
+            "publisher": {"name": ["Université de Bourgogne"]},
+        }
+    }
     references_rewrite_json["10.7554/eLife.16443"] = {"bib58": {"date": "1987"}}
     references_rewrite_json["10.7554/eLife.16764"] = {"bib4": {"date": "2013"}}
     references_rewrite_json["10.7554/eLife.17092"] = {"bib102": {"date": "1980"}}
@@ -180,195 +240,389 @@ def elife_references_rewrite_json():
     references_rewrite_json["10.7554/eLife.19532"] = {"bib27": {"date": "2015"}}
     references_rewrite_json["10.7554/eLife.19545"] = {"bib51": {"date": "1996"}}
     references_rewrite_json["10.7554/eLife.19571"] = {"bib56": {"date": "2016"}}
-    references_rewrite_json["10.7554/eLife.20352"] = {"bib53": {"country": "United States"}}
+    references_rewrite_json["10.7554/eLife.20352"] = {
+        "bib53": {"country": "United States"}
+    }
     references_rewrite_json["10.7554/eLife.21864"] = {"bib2": {"date": "2016-10-24"}}
     references_rewrite_json["10.7554/eLife.20522"] = {
         "bib42": {"date": "2016"},
-        "bib110": {"date": "1996"}}
+        "bib110": {"date": "1996"},
+    }
     references_rewrite_json["10.7554/eLife.22053"] = {"bib123": {"date": "2016"}}
 
     # Reference authors data to replace, processed further below into json
     references_authors = []
-    references_authors.append(("10.7554/eLife.00036", "bib8", "authors", [
-        {"surname": "Butler", "given-names": "H"},
-        {"surname": "Juurlink", "given-names": "BHJ"}
-        ]))
-    references_authors.append(("10.7554/eLife.00036", "bib30", "authors", [
-        {"surname": "Joyner", "given-names": "AL"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.00036",
+            "bib8",
+            "authors",
+            [
+                {"surname": "Butler", "given-names": "H"},
+                {"surname": "Juurlink", "given-names": "BHJ"},
+            ],
+        )
+    )
+    references_authors.append(
+        (
+            "10.7554/eLife.00036",
+            "bib30",
+            "authors",
+            [{"surname": "Joyner", "given-names": "AL"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.00048", "bib15", "authors", [
-        {"surname": "Guthrie", "given-names": "C"},
-        {"surname": "Fink", "given-names": "GR"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.00048",
+            "bib15",
+            "authors",
+            [
+                {"surname": "Guthrie", "given-names": "C"},
+                {"surname": "Fink", "given-names": "GR"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.00051", "bib21", "authors", [
-        {"surname": "Jamison", "given-names": "DT"},
-        {"surname": "Breman", "given-names": "JG"},
-        {"surname": "Measham", "given-names": "AR"},
-        {"surname": "Alleyne", "given-names": "G"},
-        {"surname": "Claeson", "given-names": "M"},
-        {"surname": "Evans", "given-names": "DB"},
-        {"surname": "Jha", "given-names": "P"},
-        {"surname": "Mills", "given-names": "A"},
-        {"surname": "Musgrove", "given-names": "P"}
-        ]))
-    references_authors.append(("10.7554/eLife.00051", "bib36", "authors", [
-        {"surname": "Rogers", "given-names": "RG"},
-        {"surname": "Crimmins", "given-names": "EM"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.00051",
+            "bib21",
+            "authors",
+            [
+                {"surname": "Jamison", "given-names": "DT"},
+                {"surname": "Breman", "given-names": "JG"},
+                {"surname": "Measham", "given-names": "AR"},
+                {"surname": "Alleyne", "given-names": "G"},
+                {"surname": "Claeson", "given-names": "M"},
+                {"surname": "Evans", "given-names": "DB"},
+                {"surname": "Jha", "given-names": "P"},
+                {"surname": "Mills", "given-names": "A"},
+                {"surname": "Musgrove", "given-names": "P"},
+            ],
+        )
+    )
+    references_authors.append(
+        (
+            "10.7554/eLife.00051",
+            "bib36",
+            "authors",
+            [
+                {"surname": "Rogers", "given-names": "RG"},
+                {"surname": "Crimmins", "given-names": "EM"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.00668", "bib39", "authors", [
-        {"surname": "Rice", "given-names": "SA"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.00668",
+            "bib39",
+            "authors",
+            [{"surname": "Rice", "given-names": "SA"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.01730", "bib75", "authors", [
-        {"collab": "Look AHEAD Research Group"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.01730",
+            "bib75",
+            "authors",
+            [{"collab": "Look AHEAD Research Group"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.03714", "bib64", "authors", [
-        {"surname": "Otwinowski", "given-names": "Z"},
-        {"surname": "Minor", "given-names": "W"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.03714",
+            "bib64",
+            "authors",
+            [
+                {"surname": "Otwinowski", "given-names": "Z"},
+                {"surname": "Minor", "given-names": "W"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.04220", "bib31", "authors", [
-        {"surname": "Tishby", "given-names": "N"},
-        {"surname": "Polani", "given-names": "D"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.04220",
+            "bib31",
+            "authors",
+            [
+                {"surname": "Tishby", "given-names": "N"},
+                {"surname": "Polani", "given-names": "D"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.04395", "bib67", "authors", [
-        {"surname": "King", "given-names": "AMQ"},
-        {"surname": "Adams", "given-names": "MJ"},
-        {"surname": "Carstens", "given-names": "EB"},
-        {"surname": "Lefkowitz", "given-names": "E"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.04395",
+            "bib67",
+            "authors",
+            [
+                {"surname": "King", "given-names": "AMQ"},
+                {"surname": "Adams", "given-names": "MJ"},
+                {"surname": "Carstens", "given-names": "EB"},
+                {"surname": "Lefkowitz", "given-names": "E"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.04449", "bib62", "authors", [
-        {"surname": "Shaham", "given-names": "S"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.04449",
+            "bib62",
+            "authors",
+            [{"surname": "Shaham", "given-names": "S"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.04659", "bib57", "authors", [
-        {"surname": "Sambrook", "given-names": "J"},
-        {"surname": "Russell", "given-names": "TW"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.04659",
+            "bib57",
+            "authors",
+            [
+                {"surname": "Sambrook", "given-names": "J"},
+                {"surname": "Russell", "given-names": "TW"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.05423", "bib4", "authors", [
-        {"surname": "Birkhead", "given-names": "TR"},
-        {"surname": "Møller", "given-names": "AP"}
-        ]))
-    references_authors.append(("10.7554/eLife.05423", "bib5", "authors", [
-        {"surname": "Birkhead", "given-names": "TR"},
-        {"surname": "Møller", "given-names": "AP"}
-        ]))
-    references_authors.append(("10.7554/eLife.05423", "bib90", "authors", [
-        {"surname": "Smith", "given-names": "RL"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.05423",
+            "bib4",
+            "authors",
+            [
+                {"surname": "Birkhead", "given-names": "TR"},
+                {"surname": "Møller", "given-names": "AP"},
+            ],
+        )
+    )
+    references_authors.append(
+        (
+            "10.7554/eLife.05423",
+            "bib5",
+            "authors",
+            [
+                {"surname": "Birkhead", "given-names": "TR"},
+                {"surname": "Møller", "given-names": "AP"},
+            ],
+        )
+    )
+    references_authors.append(
+        (
+            "10.7554/eLife.05423",
+            "bib90",
+            "authors",
+            [{"surname": "Smith", "given-names": "RL"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.05564", "bib39", "authors", [
-        {"surname": "Pattyn", "given-names": "S"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.05564",
+            "bib39",
+            "authors",
+            [{"surname": "Pattyn", "given-names": "S"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.05959", "bib76", "authors", [
-        {"surname": "Macholán", "given-names": "M"},
-        {"surname": "Baird", "given-names": "SJE"},
-        {"surname": "Munclinger", "given-names": "P"},
-        {"surname": "Piálek", "given-names": "J"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.05959",
+            "bib76",
+            "authors",
+            [
+                {"surname": "Macholán", "given-names": "M"},
+                {"surname": "Baird", "given-names": "SJE"},
+                {"surname": "Munclinger", "given-names": "P"},
+                {"surname": "Piálek", "given-names": "J"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.06565", "bib1", "authors", [
-        {"surname": "Ahringer", "given-names": "J"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.06565",
+            "bib1",
+            "authors",
+            [{"surname": "Ahringer", "given-names": "J"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.06576", "bib57", "authors", [
-        {"surname": "Moller", "given-names": "AR"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.06576",
+            "bib57",
+            "authors",
+            [{"surname": "Moller", "given-names": "AR"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.06813", "bib54", "authors", [
-        {"surname": "King", "given-names": "JA"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.06813",
+            "bib54",
+            "authors",
+            [{"surname": "King", "given-names": "JA"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.06813", "bib55", "authors", [
-        {"surname": "Kirkland", "given-names": "Gl"},
-        {"surname": "Layne", "given-names": "JN"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.06813",
+            "bib55",
+            "authors",
+            [
+                {"surname": "Kirkland", "given-names": "Gl"},
+                {"surname": "Layne", "given-names": "JN"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.07460", "bib1", "authors", [
-        {"surname": "Rallapalli", "given-names": "Ghanasyam"}
-        ]))
-    references_authors.append(("10.7554/eLife.07460", "bib2", "authors", [
-        {"surname": "Bazyl", "given-names": "Steven"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.07460",
+            "bib1",
+            "authors",
+            [{"surname": "Rallapalli", "given-names": "Ghanasyam"}],
+        )
+    )
+    references_authors.append(
+        (
+            "10.7554/eLife.07460",
+            "bib2",
+            "authors",
+            [{"surname": "Bazyl", "given-names": "Steven"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.07847", "bib40", "authors", [
-        {"collab": "Nature Immunology"}
-        ]))
+    references_authors.append(
+        ("10.7554/eLife.07847", "bib40", "authors", [{"collab": "Nature Immunology"}])
+    )
 
-    references_authors.append(("10.7554/eLife.09666", "bib9", "authors", [
-        {"surname": "Schüler", "given-names": "D"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.09666",
+            "bib9",
+            "authors",
+            [{"surname": "Schüler", "given-names": "D"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.09868", "bib5", "authors", [
-        {"surname": "Barlow", "given-names": "HB"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.09868",
+            "bib5",
+            "authors",
+            [{"surname": "Barlow", "given-names": "HB"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.10222", "bib30", "authors", [
-        {"collab": "PharmaMar"}
-        ]))
+    references_authors.append(
+        ("10.7554/eLife.10222", "bib30", "authors", [{"collab": "PharmaMar"}])
+    )
 
-    references_authors.append(("10.7554/eLife.11860", "bib48", "authors", [
-        {"surname": "Yang", "given-names": "Y"},
-        {"surname": "Wang", "given-names": "X"},
-        {"surname": "Chen", "given-names": "X"},
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.11860",
+            "bib48",
+            "authors",
+            [
+                {"surname": "Yang", "given-names": "Y"},
+                {"surname": "Wang", "given-names": "X"},
+                {"surname": "Chen", "given-names": "X"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.11945", "bib23", "authors", [
-        {"surname": "Glimcher", "given-names": "P"},
-        {"surname": "Fehr", "given-names": "E"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.11945",
+            "bib23",
+            "authors",
+            [
+                {"surname": "Glimcher", "given-names": "P"},
+                {"surname": "Fehr", "given-names": "E"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.13135", "bib26", "authors", [
-        {"surname": "Ivanova", "given-names": "S"},
-        {"surname": "Herbreteau", "given-names": "B"},
-        {"surname": "Blasdell", "given-names": "K"},
-        {"surname": "Chaval", "given-names": "Y"},
-        {"surname": "Buchy", "given-names": "P"},
-        {"surname": "Guillard", "given-names": "B"},
-        {"surname": "Morand", "given-names": "S"},
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.13135",
+            "bib26",
+            "authors",
+            [
+                {"surname": "Ivanova", "given-names": "S"},
+                {"surname": "Herbreteau", "given-names": "B"},
+                {"surname": "Blasdell", "given-names": "K"},
+                {"surname": "Chaval", "given-names": "Y"},
+                {"surname": "Buchy", "given-names": "P"},
+                {"surname": "Guillard", "given-names": "B"},
+                {"surname": "Morand", "given-names": "S"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.13135", "bib27", "authors", [
-        {"surname": "King", "given-names": "AMQ"},
-        {"surname": "Adams", "given-names": "J"},
-        {"surname": "Carstens", "given-names": "EB"},
-        {"surname": "Lefkowitz", "given-names": "EJ"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.13135",
+            "bib27",
+            "authors",
+            [
+                {"surname": "King", "given-names": "AMQ"},
+                {"surname": "Adams", "given-names": "J"},
+                {"surname": "Carstens", "given-names": "EB"},
+                {"surname": "Lefkowitz", "given-names": "EJ"},
+            ],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.14188", "bib1", "authors", [
-        {"collab": "Avisoft Bioacoustics"}
-        ]))
+    references_authors.append(
+        ("10.7554/eLife.14188", "bib1", "authors", [{"collab": "Avisoft Bioacoustics"}])
+    )
 
-    references_authors.append(("10.7554/eLife.17716", "bib7", "authors", [
-        {"collab": "World Health Organization"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.17716",
+            "bib7",
+            "authors",
+            [{"collab": "World Health Organization"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.17956", "bib4", "authors", [
-        {"surname": "Barrett", "given-names": "SCH"}
-        ]))
+    references_authors.append(
+        (
+            "10.7554/eLife.17956",
+            "bib4",
+            "authors",
+            [{"surname": "Barrett", "given-names": "SCH"}],
+        )
+    )
 
-    references_authors.append(("10.7554/eLife.18109", "bib39", "authors", [
-        {"surname": "Weber", "given-names": "EH"}
-        ]))
-
+    references_authors.append(
+        (
+            "10.7554/eLife.18109",
+            "bib39",
+            "authors",
+            [{"surname": "Weber", "given-names": "EH"}],
+        )
+    )
 
     # Now turn the authors data into the json
     for author_row in references_authors:
         ref_json = OrderedDict()
         doi, id, author_type, authors = author_row
-        #if id not in ref_json:
+        # if id not in ref_json:
         ref_json[id] = OrderedDict()
         ref_json[id][author_type] = []
         for ref_author in authors:
-            if  "collab" in ref_author:
+            if "collab" in ref_author:
                 author_json = elifetools.utils_html.references_author_collab(ref_author)
             else:
                 author_json = elifetools.utils.references_author_person(ref_author)
@@ -388,70 +642,90 @@ def elife_references_rewrite_json():
 
     return references_rewrite_json
 
+
 def rewrite_elife_body_json(json_content, doi):
     """ rewrite elife body json """
 
     # Edge case add an id to a section
     if doi == "10.7554/eLife.00013":
-        if (json_content and len(json_content) > 0):
-            if (json_content[0].get("type") and json_content[0].get("type") == "section"
-                and json_content[0].get("title") and json_content[0].get("title") =="Introduction"
-                and not json_content[0].get("id")):
+        if json_content and len(json_content) > 0:
+            if (
+                json_content[0].get("type")
+                and json_content[0].get("type") == "section"
+                and json_content[0].get("title")
+                and json_content[0].get("title") == "Introduction"
+                and not json_content[0].get("id")
+            ):
                 json_content[0]["id"] = "s1"
 
     # Edge case remove an extra section
     if doi == "10.7554/eLife.04232":
-        if (json_content and len(json_content) > 0):
+        if json_content and len(json_content) > 0:
             for outer_block in json_content:
                 if outer_block.get("id") and outer_block.get("id") == "s4":
                     for mid_block in outer_block.get("content"):
                         if mid_block.get("id") and mid_block.get("id") == "s4-6":
                             for inner_block in mid_block.get("content"):
-                                if inner_block.get("content") and not inner_block.get("title"):
+                                if inner_block.get("content") and not inner_block.get(
+                                    "title"
+                                ):
                                     mid_block["content"] = inner_block.get("content")
 
     # Edge case remove unwanted sections
     if doi == "10.7554/eLife.04871":
-        if (json_content and len(json_content) > 0):
+        if json_content and len(json_content) > 0:
             for i, outer_block in enumerate(json_content):
-                if (outer_block.get("id") and outer_block.get("id") in ["s7", "s8"]
-                    and not outer_block.get("title")):
+                if (
+                    outer_block.get("id")
+                    and outer_block.get("id") in ["s7", "s8"]
+                    and not outer_block.get("title")
+                ):
                     if outer_block.get("content"):
                         json_content[i] = outer_block.get("content")[0]
 
     # Edge case remove an extra section
     if doi == "10.7554/eLife.05519":
-        if (json_content and len(json_content) > 0):
+        if json_content and len(json_content) > 0:
             for outer_block in json_content:
                 if outer_block.get("id") and outer_block.get("id") == "s4":
                     for mid_block in outer_block.get("content"):
                         if mid_block.get("content") and not mid_block.get("id"):
                             new_blocks = []
                             for inner_block in mid_block.get("content"):
-                                 new_blocks.append(inner_block)
+                                new_blocks.append(inner_block)
                             outer_block["content"] = new_blocks
 
     # Edge case add a title to a section
     if doi == "10.7554/eLife.07157":
-        if (json_content and len(json_content) > 0):
-            if (json_content[0].get("type") and json_content[0].get("type") == "section"
-                and json_content[0].get("id") and json_content[0].get("id") == "s1"):
+        if json_content and len(json_content) > 0:
+            if (
+                json_content[0].get("type")
+                and json_content[0].get("type") == "section"
+                and json_content[0].get("id")
+                and json_content[0].get("id") == "s1"
+            ):
                 json_content[0]["title"] = "Main text"
 
     # Edge case remove a section with no content
     if doi == "10.7554/eLife.09977":
-        if (json_content and len(json_content) > 0):
+        if json_content and len(json_content) > 0:
             i_index = j_index = None
             for i, outer_block in enumerate(json_content):
-                if (outer_block.get("id") and outer_block.get("id") == "s4"
-                    and outer_block.get("content")):
+                if (
+                    outer_block.get("id")
+                    and outer_block.get("id") == "s4"
+                    and outer_block.get("content")
+                ):
                     # We have i
                     i_index = i
                     break
             if i_index is not None:
                 for j, inner_block in enumerate(json_content[i_index].get("content")):
-                    if (inner_block.get("id") and inner_block.get("id") == "s4-11"
-                        and inner_block.get("content") is None):
+                    if (
+                        inner_block.get("id")
+                        and inner_block.get("id") == "s4-11"
+                        and inner_block.get("content") is None
+                    ):
                         # Now we have i and j for deletion outside of the loop
                         j_index = j
                         break
@@ -461,8 +735,12 @@ def rewrite_elife_body_json(json_content, doi):
 
     # Edge case wrap sections differently
     if doi == "10.7554/eLife.12844":
-        if (json_content and len(json_content) > 0 and json_content[0].get("type")
-            and json_content[0]["type"] == "section"):
+        if (
+            json_content
+            and len(json_content) > 0
+            and json_content[0].get("type")
+            and json_content[0]["type"] == "section"
+        ):
             new_body = OrderedDict()
             for i, tag_block in enumerate(json_content):
                 if i == 0:
@@ -486,7 +764,12 @@ def rewrite_elife_funding_awards(json_content, doi):
 
     # add funding award recipient
     if doi == "10.7554/eLife.04250":
-        recipients_for_04250 = [{"type": "person", "name": {"preferred": "Eric Jonas", "index": "Jonas, Eric"}}]
+        recipients_for_04250 = [
+            {
+                "type": "person",
+                "name": {"preferred": "Eric Jonas", "index": "Jonas, Eric"},
+            }
+        ]
         for i, award in enumerate(json_content):
             if "id" in award and award["id"] in ["par-2", "par-3", "par-4"]:
                 if "recipients" not in award:
@@ -494,13 +777,19 @@ def rewrite_elife_funding_awards(json_content, doi):
 
     # add funding award recipient
     if doi == "10.7554/eLife.06412":
-        recipients_for_06412 = [{"type": "person", "name": {"preferred": "Adam J Granger", "index": "Granger, Adam J"}}]
+        recipients_for_06412 = [
+            {
+                "type": "person",
+                "name": {"preferred": "Adam J Granger", "index": "Granger, Adam J"},
+            }
+        ]
         for i, award in enumerate(json_content):
             if "id" in award and award["id"] == "par-1":
                 if "recipients" not in award:
                     json_content[i]["recipients"] = recipients_for_06412
 
     return json_content
+
 
 def rewrite_elife_authors_json(json_content, doi):
     """ this does the work of rewriting elife authors json """
@@ -525,101 +814,245 @@ def rewrite_elife_authors_json(json_content, doi):
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
                 if ref["name"]["index"].startswith("Chen,"):
-                    json_content[i]["competingInterests"] = "ZJC: Reviewing Editor, <i>eLife</i>"
+                    json_content[i][
+                        "competingInterests"
+                    ] = "ZJC: Reviewing Editor, <i>eLife</i>"
                 elif ref["name"]["index"].startswith("Li,"):
-                    json_content[i]["competingInterests"] = "The remaining authors have no competing interests to declare."
+                    json_content[i][
+                        "competingInterests"
+                    ] = "The remaining authors have no competing interests to declare."
     if article_doi == "10.7554/eLife.00270":
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
                 if ref["name"]["index"].startswith("Patterson,"):
-                    json_content[i]["competingInterests"] = "MP: Managing Executive Editor, <i>eLife</i>"
+                    json_content[i][
+                        "competingInterests"
+                    ] = "MP: Managing Executive Editor, <i>eLife</i>"
 
     # Remainder of competing interests rewrites
     elife_author_competing_interests = {}
-    elife_author_competing_interests["10.7554/eLife.00133"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.00190"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.00230"] = "The authors have declared that no competing interests exist"
-    elife_author_competing_interests["10.7554/eLife.00288"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.00352"] = "The author declares that no competing interest exist"
-    elife_author_competing_interests["10.7554/eLife.00362"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.00475"] = "The remaining authors have no competing interests to declare."
-    elife_author_competing_interests["10.7554/eLife.00592"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.00633"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.02725"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.02935"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.04126"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.04878"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.05322"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.06011"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.06416"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.07383"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.08421"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.08494"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.08648"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.08924"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.09083"] = "The other authors declare that no competing interests exists."
-    elife_author_competing_interests["10.7554/eLife.09102"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.09460"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.09591"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.09600"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.10113"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.10230"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.10453"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.10635"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.11407"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.11473"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.11750"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.12217"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.12620"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.12724"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.13023"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.13732"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.14116"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.14258"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.14694"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.15085"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.15312"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.16011"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.16940"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17023"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17092"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17218"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17267"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17523"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17556"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17769"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.17834"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.18101"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.18515"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.18544"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.18648"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.19071"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.19334"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.19510"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.20183"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.20242"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.20375"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.20797"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.21454"] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.21491"] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests["10.7554/eLife.22187"] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00133"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00190"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00230"
+    ] = "The authors have declared that no competing interests exist"
+    elife_author_competing_interests[
+        "10.7554/eLife.00288"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00352"
+    ] = "The author declares that no competing interest exist"
+    elife_author_competing_interests[
+        "10.7554/eLife.00362"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00475"
+    ] = "The remaining authors have no competing interests to declare."
+    elife_author_competing_interests[
+        "10.7554/eLife.00592"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.00633"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.02725"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.02935"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.04126"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.04878"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.05322"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.06011"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.06416"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.07383"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.08421"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.08494"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.08648"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.08924"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.09083"
+    ] = "The other authors declare that no competing interests exists."
+    elife_author_competing_interests[
+        "10.7554/eLife.09102"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.09460"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.09591"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.09600"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.10113"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.10230"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.10453"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.10635"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.11407"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.11473"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.11750"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.12217"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.12620"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.12724"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.13023"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.13732"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.14116"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.14258"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.14694"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.15085"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.15312"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.16011"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.16940"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17023"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17092"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17218"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17267"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17523"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17556"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17769"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.17834"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.18101"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.18515"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.18544"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.18648"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.19071"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.19334"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.19510"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.20183"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.20242"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.20375"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.20797"
+    ] = "The other authors declare that no competing interests exist."
+    msg = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.21454"
+    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.21491"
+    ] = "The other authors declare that no competing interests exist."
+    elife_author_competing_interests[
+        "10.7554/eLife.22187"
+    ] = "The authors declare that no competing interests exist."
 
     if article_doi in elife_author_competing_interests:
         for i, ref in enumerate(json_content):
             if not ref.get("competingInterests"):
-                json_content[i]["competingInterests"] = elife_author_competing_interests[article_doi]
+                json_content[i][
+                    "competingInterests"
+                ] = elife_author_competing_interests[article_doi]
 
     # Rewrite "other authors declare" ... competing interests statements using a string match
     for i, ref in enumerate(json_content):
-        if (ref.get("competingInterests") and (
-            ref.get("competingInterests").startswith("The other author") or
-            ref.get("competingInterests").startswith("The others author") or
-            ref.get("competingInterests").startswith("The remaining authors") or
-            ref.get("competingInterests").startswith("The remaining have declared")
-            )):
+        if ref.get("competingInterests") and (
+            ref.get("competingInterests").startswith("The other author")
+            or ref.get("competingInterests").startswith("The others author")
+            or ref.get("competingInterests").startswith("The remaining authors")
+            or ref.get("competingInterests").startswith("The remaining have declared")
+        ):
             json_content[i]["competingInterests"] = "No competing interests declared."
 
     return json_content
+
 
 def rewrite_elife_datasets_json(json_content, doi):
     """ this does the work of rewriting elife datasets json """
@@ -645,7 +1078,11 @@ def rewrite_elife_datasets_json(json_content, doi):
     if doi == "10.7554/eLife.01311":
         if json_content.get("used"):
             for dataset in json_content["used"]:
-                if dataset.get("id") and dataset["id"] in ["dataro3", "dataro4", "dataro5"]:
+                if dataset.get("id") and dataset["id"] in [
+                    "dataro3",
+                    "dataro4",
+                    "dataro5",
+                ]:
                     if not dataset.get("date"):
                         dataset["date"] = u"2012"
                     if not dataset.get("authors"):
@@ -659,19 +1096,31 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2011"
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Baylor College of Medicine (BCM)"}]
+                        dataset["authors"] = [
+                            {
+                                "type": "group",
+                                "name": "Baylor College of Medicine (BCM)",
+                            }
+                        ]
                 if dataset.get("id") and dataset["id"] in ["dataro8", "dataro9"]:
                     if not dataset.get("date"):
                         dataset["date"] = u"2012"
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "University of California, Berkeley"}]
+                        dataset["authors"] = [
+                            {
+                                "type": "group",
+                                "name": "University of California, Berkeley",
+                            }
+                        ]
 
     if doi == "10.7554/eLife.01440":
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "EnsemblMetazoa"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "EnsemblMetazoa"}
+                        ]
 
     if doi == "10.7554/eLife.01535":
         if json_content.get("used"):
@@ -685,7 +1134,9 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro11":
                     if not dataset.get("title"):
-                        dataset["title"] = u"T.gondii LDH1 ternary complex with APAD+ and oxalate"
+                        dataset[
+                            "title"
+                        ] = u"T.gondii LDH1 ternary complex with APAD+ and oxalate"
 
     if doi == "10.7554/eLife.03574":
         if json_content.get("used"):
@@ -694,7 +1145,27 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2006"
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Riley,M."}, {"type": "group", "name": "Abe,T."}, {"type": "group", "name": "Arnaud,M.B."}, {"type": "group", "name": "Berlyn,M.K."}, {"type": "group", "name": "Blattner,F.R."}, {"type": "group", "name": "Chaudhuri,R.R."}, {"type": "group", "name": "Glasner,J.D."}, {"type": "group", "name": "Horiuchi,T."}, {"type": "group", "name": "Keseler,I.M."}, {"type": "group", "name": "Kosuge,T."}, {"type": "group", "name": "Mori,H."}, {"type": "group", "name": "Perna,N.T."}, {"type": "group", "name": "Plunkett,G. III"}, {"type": "group", "name": "Rudd,K.E."}, {"type": "group", "name": "Serres,M.H."}, {"type": "group", "name": "Thomas,G.H."}, {"type": "group", "name": "Thomson,N.R."}, {"type": "group", "name": "Wishart,D."}, {"type": "group", "name": "Wanner,B.L."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Riley,M."},
+                            {"type": "group", "name": "Abe,T."},
+                            {"type": "group", "name": "Arnaud,M.B."},
+                            {"type": "group", "name": "Berlyn,M.K."},
+                            {"type": "group", "name": "Blattner,F.R."},
+                            {"type": "group", "name": "Chaudhuri,R.R."},
+                            {"type": "group", "name": "Glasner,J.D."},
+                            {"type": "group", "name": "Horiuchi,T."},
+                            {"type": "group", "name": "Keseler,I.M."},
+                            {"type": "group", "name": "Kosuge,T."},
+                            {"type": "group", "name": "Mori,H."},
+                            {"type": "group", "name": "Perna,N.T."},
+                            {"type": "group", "name": "Plunkett,G. III"},
+                            {"type": "group", "name": "Rudd,K.E."},
+                            {"type": "group", "name": "Serres,M.H."},
+                            {"type": "group", "name": "Thomas,G.H."},
+                            {"type": "group", "name": "Thomson,N.R."},
+                            {"type": "group", "name": "Wishart,D."},
+                            {"type": "group", "name": "Wanner,B.L."},
+                        ]
 
     if doi == "10.7554/eLife.03676":
         if json_content.get("used"):
@@ -703,14 +1174,18 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2013"
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Human Gene Sequencing Center"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Human Gene Sequencing Center"}
+                        ]
 
     if doi == "10.7554/eLife.03971":
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro2":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Vanderperre B."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Vanderperre B."}
+                        ]
 
     if doi == "10.7554/eLife.04660":
         if json_content.get("generated"):
@@ -739,10 +1214,16 @@ def rewrite_elife_datasets_json(json_content, doi):
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro2":
-                    if dataset.get("date") and dataset.get("date") == "2008, updated 2014":
+                    if (
+                        dataset.get("date")
+                        and dataset.get("date") == "2008, updated 2014"
+                    ):
                         dataset["date"] = u"2008"
                 if dataset.get("id") and dataset["id"] == "dataro3":
-                    if dataset.get("date") and dataset.get("date") == "2013, updated 2014":
+                    if (
+                        dataset.get("date")
+                        and dataset.get("date") == "2013, updated 2014"
+                    ):
                         dataset["date"] = u"2013"
 
     if doi == "10.7554/eLife.08955":
@@ -750,14 +1231,23 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro2":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Kurdistani S"}, {"type": "group", "name": "Marrban C"}, {"type": "group", "name": "Su T"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Kurdistani S"},
+                            {"type": "group", "name": "Marrban C"},
+                            {"type": "group", "name": "Su T"},
+                        ]
 
     if doi == "10.7554/eLife.09207":
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Prostate Cancer Genome Sequencing Project"}]
+                        dataset["authors"] = [
+                            {
+                                "type": "group",
+                                "name": "Prostate Cancer Genome Sequencing Project",
+                            }
+                        ]
 
     if doi == "10.7554/eLife.10607":
         if json_content.get("generated"):
@@ -776,26 +1266,57 @@ def rewrite_elife_datasets_json(json_content, doi):
     # Add dates, authors, other details
     if doi == "10.7554/eLife.10856":
         if json_content.get("generated"):
-            datasets_authors_for_10856 = [{"type": "group", "name": "Dagdas YF"}, {"type": "group", "name": "Belhaj K"}, {"type": "group", "name": "Maqbool A"}, {"type": "group", "name": "Chaparro-Garcia A"}, {"type": "group", "name": "Pandey P"}, {"type": "group", "name": "Petre B"}, {"type": "group", "name": "Tabassum N"}, {"type": "group", "name": "Cruz-Mireles N"}, {"type": "group", "name": "Hughes RK"}, {"type": "group", "name": "Sklenar J"}, {"type": "group", "name": "Win J"}, {"type": "group", "name": "Menke F"}, {"type": "group", "name": "Findlay K"}, {"type": "group", "name": "Banfield MJ"}, {"type": "group", "name": "Kamoun S"}, {"type": "group", "name": "Bozkurt TO"}]
+            datasets_authors_for_10856 = [
+                {"type": "group", "name": "Dagdas YF"},
+                {"type": "group", "name": "Belhaj K"},
+                {"type": "group", "name": "Maqbool A"},
+                {"type": "group", "name": "Chaparro-Garcia A"},
+                {"type": "group", "name": "Pandey P"},
+                {"type": "group", "name": "Petre B"},
+                {"type": "group", "name": "Tabassum N"},
+                {"type": "group", "name": "Cruz-Mireles N"},
+                {"type": "group", "name": "Hughes RK"},
+                {"type": "group", "name": "Sklenar J"},
+                {"type": "group", "name": "Win J"},
+                {"type": "group", "name": "Menke F"},
+                {"type": "group", "name": "Findlay K"},
+                {"type": "group", "name": "Banfield MJ"},
+                {"type": "group", "name": "Kamoun S"},
+                {"type": "group", "name": "Bozkurt TO"},
+            ]
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro7":
                     if not dataset.get("date"):
                         dataset["date"] = u"2016"
                     if not dataset.get("title"):
-                        dataset["title"] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                        dataset[
+                            "title"
+                        ] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
-                    if dataset.get("uri") and dataset["uri"] == "http://www.ncbi.nlm.nih.":
-                         dataset["uri"] = "https://www.ncbi.nlm.nih.gov/nuccore/976151098/"
+                    if (
+                        dataset.get("uri")
+                        and dataset["uri"] == "http://www.ncbi.nlm.nih."
+                    ):
+                        dataset[
+                            "uri"
+                        ] = "https://www.ncbi.nlm.nih.gov/nuccore/976151098/"
                 if dataset.get("id") and dataset["id"] == "dataro8":
                     if not dataset.get("date"):
                         dataset["date"] = u"2015"
                     if not dataset.get("title"):
-                        dataset["title"] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                        dataset[
+                            "title"
+                        ] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
-                    if dataset.get("uri") and dataset["uri"] == "http://www.ncbi.nlm.nih.":
-                         dataset["uri"] = "https://www.ncbi.nlm.nih.gov/nuccore/976151096/"
+                    if (
+                        dataset.get("uri")
+                        and dataset["uri"] == "http://www.ncbi.nlm.nih."
+                    ):
+                        dataset[
+                            "uri"
+                        ] = "https://www.ncbi.nlm.nih.gov/nuccore/976151096/"
                 if dataset.get("id") and dataset["id"] == "dataro9":
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
@@ -805,19 +1326,29 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("title"):
-                        dataset["title"] = u"Oct4 ChIP-Seq at G1 and G2/M phase of cell cycle in mouse embryonic stem cells"
+                        dataset[
+                            "title"
+                        ] = u"Oct4 ChIP-Seq at G1 and G2/M phase of cell cycle in mouse embryonic stem cells"
 
     if doi == "10.7554/eLife.10921":
         if json_content.get("generated"):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Floor SN"}, {"type": "group", "name": "Doudna JA"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Floor SN"},
+                            {"type": "group", "name": "Doudna JA"},
+                        ]
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro2":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Sidrauski C"}, {"type": "group", "name": "McGeachy A"}, {"type": "group", "name": "Ingolia N"}, {"type": "group", "name": "Walter P"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Sidrauski C"},
+                            {"type": "group", "name": "McGeachy A"},
+                            {"type": "group", "name": "Ingolia N"},
+                            {"type": "group", "name": "Walter P"},
+                        ]
 
     if doi == "10.7554/eLife.11117":
         if json_content.get("used"):
@@ -831,42 +1362,149 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Rhodes DR"}, {"type": "group", "name": "Kalyana-Sundaram S"}, {"type": "group", "name": "Mahavisno V"}, {"type": "group", "name": "Varambally R"}, {"type": "group", "name": "Yu J"}, {"type": "group", "name": "Briggs BB"}, {"type": "group", "name": "Barrette TR"}, {"type": "group", "name": "Anstet MJ"}, {"type": "group", "name": "Kincead-Beal C"}, {"type": "group", "name": "Kulkarni P"}, {"type": "group", "name": "Varambally S"}, {"type": "group", "name": "Ghosh D"}, {"type": "group", "name": "Chinnaiyan AM."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Rhodes DR"},
+                            {"type": "group", "name": "Kalyana-Sundaram S"},
+                            {"type": "group", "name": "Mahavisno V"},
+                            {"type": "group", "name": "Varambally R"},
+                            {"type": "group", "name": "Yu J"},
+                            {"type": "group", "name": "Briggs BB"},
+                            {"type": "group", "name": "Barrette TR"},
+                            {"type": "group", "name": "Anstet MJ"},
+                            {"type": "group", "name": "Kincead-Beal C"},
+                            {"type": "group", "name": "Kulkarni P"},
+                            {"type": "group", "name": "Varambally S"},
+                            {"type": "group", "name": "Ghosh D"},
+                            {"type": "group", "name": "Chinnaiyan AM."},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro2":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Gaspar C"}, {"type": "group", "name": "Cardoso J"}, {"type": "group", "name": "Franken P"}, {"type": "group", "name": "Molenaar L"}, {"type": "group", "name": "Morreau H"}, {"type": "group", "name": "Möslein G"}, {"type": "group", "name": "Sampson J"}, {"type": "group", "name": "Boer JM"}, {"type": "group", "name": "de Menezes RX"}, {"type": "group", "name": "Fodde R."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Gaspar C"},
+                            {"type": "group", "name": "Cardoso J"},
+                            {"type": "group", "name": "Franken P"},
+                            {"type": "group", "name": "Molenaar L"},
+                            {"type": "group", "name": "Morreau H"},
+                            {"type": "group", "name": "Möslein G"},
+                            {"type": "group", "name": "Sampson J"},
+                            {"type": "group", "name": "Boer JM"},
+                            {"type": "group", "name": "de Menezes RX"},
+                            {"type": "group", "name": "Fodde R."},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro3":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Graudens E"}, {"type": "group", "name": "Boulanger V"}, {"type": "group", "name": "Mollard C"}, {"type": "group", "name": "Mariage-Samson R"}, {"type": "group", "name": "Barlet X"}, {"type": "group", "name": "Grémy G"}, {"type": "group", "name": "Couillault C"}, {"type": "group", "name": "Lajémi M"}, {"type": "group", "name": "Piatier-Tonneau D"}, {"type": "group", "name": "Zaborski P"}, {"type": "group", "name": "Eveno E"}, {"type": "group", "name": "Auffray C"}, {"type": "group", "name": "Imbeaud S."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Graudens E"},
+                            {"type": "group", "name": "Boulanger V"},
+                            {"type": "group", "name": "Mollard C"},
+                            {"type": "group", "name": "Mariage-Samson R"},
+                            {"type": "group", "name": "Barlet X"},
+                            {"type": "group", "name": "Grémy G"},
+                            {"type": "group", "name": "Couillault C"},
+                            {"type": "group", "name": "Lajémi M"},
+                            {"type": "group", "name": "Piatier-Tonneau D"},
+                            {"type": "group", "name": "Zaborski P"},
+                            {"type": "group", "name": "Eveno E"},
+                            {"type": "group", "name": "Auffray C"},
+                            {"type": "group", "name": "Imbeaud S."},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro4":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Hong Y"}, {"type": "group", "name": "Downey T"}, {"type": "group", "name": "Eu KW"}, {"type": "group", "name": "Koh PK"},{"type": "group", "name": "Cheah PY"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Hong Y"},
+                            {"type": "group", "name": "Downey T"},
+                            {"type": "group", "name": "Eu KW"},
+                            {"type": "group", "name": "Koh PK"},
+                            {"type": "group", "name": "Cheah PY"},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro5":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Kaiser S"}, {"type": "group", "name": "Park YK"}, {"type": "group", "name": "Franklin JL"}, {"type": "group", "name": "Halberg RB"}, {"type": "group", "name": "Yu M"}, {"type": "group", "name": "Jessen WJ"}, {"type": "group", "name": "Freudenberg J"}, {"type": "group", "name": "Chen X"}, {"type": "group", "name": "Haigis K"}, {"type": "group", "name": "Jegga AG"}, {"type": "group", "name": "Kong S"}, {"type": "group", "name": "Sakthivel B"}, {"type": "group", "name": "Xu H"}, {"type": "group", "name": "Reichling T"}, {"type": "group", "name": "Azhar M"}, {"type": "group", "name": "Boivin GP"}, {"type": "group", "name": "Roberts RB"}, {"type": "group", "name": "Bissahoyo AC"}, {"type": "group", "name": "Gonzales F"}, {"type": "group", "name": "Bloom GC"}, {"type": "group", "name": "Eschrich S"}, {"type": "group", "name": "Carter SL"}, {"type": "group", "name": "Aronow JE"}, {"type": "group", "name": "Kleimeyer J"}, {"type": "group", "name": "Kleimeyer M"}, {"type": "group", "name": "Ramaswamy V"}, {"type": "group", "name": "Settle SH"}, {"type": "group", "name": "Boone B"}, {"type": "group", "name": "Levy S"}, {"type": "group", "name": "Graff JM"}, {"type": "group", "name": "Doetschman T"}, {"type": "group", "name": "Groden J"}, {"type": "group", "name": "Dove WF"}, {"type": "group", "name": "Threadgill DW"}, {"type": "group", "name": "Yeatman TJ"}, {"type": "group", "name": "Coffey RJ Jr"}, {"type": "group", "name": "Aronow BJ."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Kaiser S"},
+                            {"type": "group", "name": "Park YK"},
+                            {"type": "group", "name": "Franklin JL"},
+                            {"type": "group", "name": "Halberg RB"},
+                            {"type": "group", "name": "Yu M"},
+                            {"type": "group", "name": "Jessen WJ"},
+                            {"type": "group", "name": "Freudenberg J"},
+                            {"type": "group", "name": "Chen X"},
+                            {"type": "group", "name": "Haigis K"},
+                            {"type": "group", "name": "Jegga AG"},
+                            {"type": "group", "name": "Kong S"},
+                            {"type": "group", "name": "Sakthivel B"},
+                            {"type": "group", "name": "Xu H"},
+                            {"type": "group", "name": "Reichling T"},
+                            {"type": "group", "name": "Azhar M"},
+                            {"type": "group", "name": "Boivin GP"},
+                            {"type": "group", "name": "Roberts RB"},
+                            {"type": "group", "name": "Bissahoyo AC"},
+                            {"type": "group", "name": "Gonzales F"},
+                            {"type": "group", "name": "Bloom GC"},
+                            {"type": "group", "name": "Eschrich S"},
+                            {"type": "group", "name": "Carter SL"},
+                            {"type": "group", "name": "Aronow JE"},
+                            {"type": "group", "name": "Kleimeyer J"},
+                            {"type": "group", "name": "Kleimeyer M"},
+                            {"type": "group", "name": "Ramaswamy V"},
+                            {"type": "group", "name": "Settle SH"},
+                            {"type": "group", "name": "Boone B"},
+                            {"type": "group", "name": "Levy S"},
+                            {"type": "group", "name": "Graff JM"},
+                            {"type": "group", "name": "Doetschman T"},
+                            {"type": "group", "name": "Groden J"},
+                            {"type": "group", "name": "Dove WF"},
+                            {"type": "group", "name": "Threadgill DW"},
+                            {"type": "group", "name": "Yeatman TJ"},
+                            {"type": "group", "name": "Coffey RJ Jr"},
+                            {"type": "group", "name": "Aronow BJ."},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro6":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Muzny DM et al"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Muzny DM et al"}
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro7":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Skrzypczak M"}, {"type": "group", "name": "Goryca K"}, {"type": "group", "name": "Rubel T"}, {"type": "group", "name": "Paziewska A"}, {"type": "group", "name": "Mikula M"}, {"type": "group", "name": "Jarosz D"}, {"type": "group", "name": "Pachlewski J"}, {"type": "group", "name": "Oledzki J"}, {"type": "group", "name": "Ostrowski J."}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Skrzypczak M"},
+                            {"type": "group", "name": "Goryca K"},
+                            {"type": "group", "name": "Rubel T"},
+                            {"type": "group", "name": "Paziewska A"},
+                            {"type": "group", "name": "Mikula M"},
+                            {"type": "group", "name": "Jarosz D"},
+                            {"type": "group", "name": "Pachlewski J"},
+                            {"type": "group", "name": "Oledzki J"},
+                            {"type": "group", "name": "Ostrowski J."},
+                        ]
                 if dataset.get("id") and dataset["id"] == "dataro8":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Cancer Genome Atlas Network"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Cancer Genome Atlas Network"}
+                        ]
 
     if doi == "10.7554/eLife.12876":
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Department of Human Genetics, University of Utah"}]
+                        dataset["authors"] = [
+                            {
+                                "type": "group",
+                                "name": "Department of Human Genetics, University of Utah",
+                            }
+                        ]
 
     if doi == "10.7554/eLife.13195":
         if json_content.get("generated"):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Microbial Ecology Group, Colorado State University"}]
+                        dataset["authors"] = [
+                            {
+                                "type": "group",
+                                "name": "Microbial Ecology Group, Colorado State University",
+                            }
+                        ]
 
     if doi == "10.7554/eLife.14158":
         if json_content.get("generated"):
@@ -876,7 +1514,9 @@ def rewrite_elife_datasets_json(json_content, doi):
                         dataset["title"] = u"Bacterial initiation protein"
                 if dataset.get("id") and dataset["id"] == "data-ro2":
                     if not dataset.get("title"):
-                        dataset["title"] = u"Bacterial initiation protein in complex with Phage inhibitor protein"
+                        dataset[
+                            "title"
+                        ] = u"Bacterial initiation protein in complex with Phage inhibitor protein"
         if json_content.get("used"):
             for dataset in json_content["used"]:
                 if dataset.get("id") and dataset["id"] == "dataro3":
@@ -888,14 +1528,25 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro2":
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "Tramantano M"}, {"type": "group", "name": "Sun L"}, {"type": "group", "name": "Au C"}, {"type": "group", "name": "Labuz D"}, {"type": "group", "name": "Liu Z"}, {"type": "group", "name": "Chou M"}, {"type": "group", "name": "Shen C"}, {"type": "group", "name": "Luk E"}]
-
+                        dataset["authors"] = [
+                            {"type": "group", "name": "Tramantano M"},
+                            {"type": "group", "name": "Sun L"},
+                            {"type": "group", "name": "Au C"},
+                            {"type": "group", "name": "Labuz D"},
+                            {"type": "group", "name": "Liu Z"},
+                            {"type": "group", "name": "Chou M"},
+                            {"type": "group", "name": "Shen C"},
+                            {"type": "group", "name": "Luk E"},
+                        ]
 
     if doi == "10.7554/eLife.16078":
         if json_content.get("generated"):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
-                    if dataset.get("date") and dataset.get("date") == "current manuscript":
+                    if (
+                        dataset.get("date")
+                        and dataset.get("date") == "current manuscript"
+                    ):
                         dataset["date"] = u"2016"
 
     if doi == "10.7554/eLife.17082":
@@ -911,16 +1562,21 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2014"
                     if not dataset.get("authors"):
-                        dataset["authors"] = [{"type": "group", "name": "The Cancer Genome Atlas (TCGA)"}]
+                        dataset["authors"] = [
+                            {"type": "group", "name": "The Cancer Genome Atlas (TCGA)"}
+                        ]
 
     if doi == "10.7554/eLife.17473":
         if json_content.get("generated"):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
-                    if dataset.get("date") and dataset.get("date").startswith("Release date"):
+                    if dataset.get("date") and dataset.get("date").startswith(
+                        "Release date"
+                    ):
                         dataset["date"] = u"2016"
 
     return json_content
+
 
 def rewrite_elife_decision_letter_json(json_content, doi):
     """ this does the work of rewriting elife decision letter json """
@@ -928,9 +1584,15 @@ def rewrite_elife_decision_letter_json(json_content, doi):
     # Add description
     if doi == "10.7554/eLife.10856":
         if json_content.get("description") is None:
-            json_content["description"] = [{"type": "paragraph", "text": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included."}]
+            json_content["description"] = [
+                {
+                    "type": "paragraph",
+                    "text": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included.",
+                }
+            ]
 
     return json_content
+
 
 def rewrite_elife_editors_json(json_content, doi):
     """ this does the work of rewriting elife editors json """
@@ -940,7 +1602,7 @@ def rewrite_elife_editors_json(json_content, doi):
         if ref.get("affiliations"):
             for aff in ref.get("affiliations"):
                 if "name" not in aff:
-                    del(json_content[i]["affiliations"])
+                    del json_content[i]["affiliations"]
 
     # Add editor role
     editor_roles = {}
@@ -1144,10 +1806,13 @@ def rewrite_elife_editors_json(json_content, doi):
     role_replacements = [
         {
             "role_from": ["Senior Editor", "Reviewing Editor"],
-            "role_to": "Senior and Reviewing Editor"}
+            "role_to": "Senior and Reviewing Editor",
+        }
     ]
     for replace_rule in role_replacements:
-        same_name_map = person_same_name_map(json_content, replace_rule.get('role_from'))
+        same_name_map = person_same_name_map(
+            json_content, replace_rule.get("role_from")
+        )
         role_is_set = None
         for same_id_list in same_name_map.values():
             if not same_id_list or len(same_id_list) <= 1:
@@ -1161,7 +1826,7 @@ def rewrite_elife_editors_json(json_content, doi):
                     role_is_set = True
                 else:
                     # first one is already set, remove the duplicates
-                    del json_content[same_id-deleted_count]
+                    del json_content[same_id - deleted_count]
                     deleted_count += 1
 
     return json_content
@@ -1169,8 +1834,11 @@ def rewrite_elife_editors_json(json_content, doi):
 
 def person_same_name_map(json_content, role_from):
     "to merge multiple editors into one record, filter by role values and group by name"
-    matched_editors = [(i, person) for i, person in enumerate(json_content)
-                       if person.get('role') in role_from]
+    matched_editors = [
+        (i, person)
+        for i, person in enumerate(json_content)
+        if person.get("role") in role_from
+    ]
     same_name_map = {}
     for i, editor in matched_editors:
         if not editor.get("name"):
@@ -1202,17 +1870,39 @@ def rewrite_elife_title_prefix_json(json_content, doi):
     title_prefix_values["10.7554/eLife.02576"] = "Point of View"
     title_prefix_values["10.7554/eLife.04902"] = "Point of View"
     title_prefix_values["10.7554/eLife.05614"] = "Point of View"
-    title_prefix_values["10.7554/eLife.05635"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.05826"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.05835"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.05849"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.05861"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.05959"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.06024"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.06100"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.06793"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.06813"] = "The Natural History of Model Organisms"
-    title_prefix_values["10.7554/eLife.06956"] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05635"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05826"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05835"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05849"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05861"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.05959"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.06024"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.06100"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.06793"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.06813"
+    ] = "The Natural History of Model Organisms"
+    title_prefix_values[
+        "10.7554/eLife.06956"
+    ] = "The Natural History of Model Organisms"
     title_prefix_values["10.7554/eLife.09305"] = "Point of View"
     title_prefix_values["10.7554/eLife.10825"] = "Point of View"
     title_prefix_values["10.7554/eLife.11628"] = "Living Science"
