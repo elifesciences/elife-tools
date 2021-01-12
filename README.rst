@@ -1,9 +1,5 @@
 elife-tools
 ===========
-
-.. image:: https://travis-ci.org/elifesciences/elife-tools.svg?branch=master
-   :target: https://travis-ci.org/elifesciences/elife-tools
-   :alt: Latest Version
    
 .. image:: https://coveralls.io/repos/elifesciences/elife-tools/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/elifesciences/elife-tools?branch=master
