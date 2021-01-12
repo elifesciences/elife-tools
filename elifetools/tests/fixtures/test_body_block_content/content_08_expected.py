@@ -1,4 +1,3 @@
 from collections import OrderedDict
-expected = OrderedDict([
-    ('type', 'paragraph')
-    ])
+
+expected = OrderedDict([("type", "paragraph")])

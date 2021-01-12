@@ -1,3 +1,1 @@
-expected = ('A1', {
-            'text': u'An Institute, University of Testing, Cambridge, UK.'}
-            )
+expected = ("A1", {"text": u"An Institute, University of Testing, Cambridge, UK."})
