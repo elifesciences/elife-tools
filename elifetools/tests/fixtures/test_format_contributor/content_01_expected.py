@@ -1,5 +1,1 @@
-expected = {
-            'given-names': 'A Real',
-            'suffix': 'Jnr',
-            'surname': 'Author'
-            }
+expected = {"given-names": "A Real", "suffix": "Jnr", "surname": "Author"}

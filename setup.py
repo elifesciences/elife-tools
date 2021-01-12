@@ -2,27 +2,28 @@ from setuptools import setup
 
 import elifetools
 
-with open('README.rst') as fp:
+with open("README.rst") as fp:
     README = fp.read()
 
 setup(
-    name='elifetools',
+    name="elifetools",
     version=elifetools.__version__,
-    description='Tools for using article data in Python.',
+    description="Tools for using article data in Python.",
     long_description=README,
-    packages=['elifetools'],
-    license='MIT',
+    packages=["elifetools"],
+    license="MIT",
     install_requires=[
         "beautifulsoup4",
         "lxml",
         "python-slugify",
     ],
-    url='https://github.com/elifesciences/elife-tools',
-    maintainer='eLife Sciences Publications Ltd.',
-    maintainer_email='tech-team@elifesciences.org',
+    url="https://github.com/elifesciences/elife-tools",
+    maintainer="eLife Sciences Publications Ltd.",
+    maintainer_email="tech-team@elifesciences.org",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-    ])
+    ],
+)
