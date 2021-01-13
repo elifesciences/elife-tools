@@ -59,6 +59,7 @@ expected = [
             ),
             ("source", u"NCBI Gene Expression Omnibus"),
             ("dataId", u"GSE63075"),
+            ("uri", u"http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075"),
         ]
     )
 ]
