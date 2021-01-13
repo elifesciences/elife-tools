@@ -18,6 +18,7 @@ expected = [
                 "details",
                 u"A catalogue of data preservation, management and sharing policies from international funding agencies, regulators and journals, biosharing.org/policies",
             ),
+            ("uri", "https://biosharing.org/policies"),
         ]
     )
 ]

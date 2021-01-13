@@ -12,6 +12,7 @@ expected = [
         "accession": "GSE63075",
         "publication-type": "data",
         "source": "NCBI Gene Expression Omnibus",
+        "uri": "http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE63075",
         "year": "2015",
         "position": 1,
         "year-iso-8601-date": "2015",
