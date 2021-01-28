@@ -4668,7 +4668,7 @@ def datasets_json(soup, html_flag=True):
         block_content = body_block_content(p_tag)
         # check the text is not empty before adding
         if block_content and "text" in block_content:
-            if "availabiltiy" not in datasets_json:
+            if "availability" not in datasets_json:
                 datasets_json["availability"] = []
             datasets_json["availability"].append(block_content)
 
