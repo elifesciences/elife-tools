@@ -1118,6 +1118,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_references_json", "content_46.xml"),
             read_fixture("test_references_json", "content_46_expected.py"),
         ),
+        # example of ref of type journal with no pages
+        (
+            read_fixture("test_references_json", "content_47.xml"),
+            read_fixture("test_references_json", "content_47_expected.py"),
+        ),
     )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
