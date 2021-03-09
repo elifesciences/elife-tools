@@ -1123,6 +1123,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_references_json", "content_47.xml"),
             read_fixture("test_references_json", "content_47_expected.py"),
         ),
+        # example of ref author having a suffix from the elife 00666 kitchen sink XML
+        (
+            read_fixture("test_references_json", "content_48.xml"),
+            read_fixture("test_references_json", "content_48_expected.py"),
+        ),
     )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
