@@ -15,7 +15,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"D Bates"), ("index", u"Bates, D")]
+                                    [("preferred", u"Bates D"), ("index", u"Bates, D")]
                                 ),
                             ),
                         ]
@@ -27,7 +27,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"M Maechler"),
+                                        ("preferred", u"Maechler M"),
                                         ("index", u"Maechler, M"),
                                     ]
                                 ),
@@ -41,7 +41,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"B Bolker"),
+                                        ("preferred", u"Bolker B"),
                                         ("index", u"Bolker, B"),
                                     ]
                                 ),
@@ -55,7 +55,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"S Walker"),
+                                        ("preferred", u"Walker S"),
                                         ("index", u"Walker, S"),
                                     ]
                                 ),
@@ -69,7 +69,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"R Haubo Bojesen Christensen"),
+                                        ("preferred", u"Haubo Bojesen Christensen R"),
                                         ("index", u"Haubo Bojesen Christensen, R"),
                                     ]
                                 ),
@@ -83,7 +83,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"H Singmann"),
+                                        ("preferred", u"Singmann H"),
                                         ("index", u"Singmann, H"),
                                     ]
                                 ),
@@ -96,7 +96,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"B Dai"), ("index", u"Dai, B")]
+                                    [("preferred", u"Dai B"), ("index", u"Dai, B")]
                                 ),
                             ),
                         ]
@@ -108,7 +108,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"G Grothendieck"),
+                                        ("preferred", u"Grothendieck G"),
                                         ("index", u"Grothendieck, G"),
                                     ]
                                 ),
@@ -121,7 +121,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"P Green"), ("index", u"Green, P")]
+                                    [("preferred", u"Green P"), ("index", u"Green, P")]
                                 ),
                             ),
                         ]
@@ -138,7 +138,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"B Bolker"),
+                                        ("preferred", u"Bolker B"),
                                         ("index", u"Bolker, B"),
                                     ]
                                 ),

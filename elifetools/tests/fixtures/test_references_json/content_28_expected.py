@@ -15,7 +15,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"L Wang"), ("index", u"Wang, L")]
+                                    [("preferred", u"Wang L"), ("index", u"Wang, L")]
                                 ),
                             ),
                         ]
@@ -27,7 +27,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"G Doherty"),
+                                        ("preferred", u"Doherty G"),
                                         ("index", u"Doherty, G"),
                                     ]
                                 ),
@@ -40,7 +40,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"X Wang"), ("index", u"Wang, X")]
+                                    [("preferred", u"Wang X"), ("index", u"Wang, X")]
                                 ),
                             ),
                         ]
@@ -51,7 +51,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"ZF Tao"), ("index", u"Tao, ZF")]
+                                    [("preferred", u"Tao ZF"), ("index", u"Tao, ZF")]
                                 ),
                             ),
                         ]
@@ -63,7 +63,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"M Brunko"),
+                                        ("preferred", u"Brunko M"),
                                         ("index", u"Brunko, M"),
                                     ]
                                 ),
@@ -77,7 +77,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"AR Kunzer"),
+                                        ("preferred", u"Kunzer AR"),
                                         ("index", u"Kunzer, AR"),
                                     ]
                                 ),
@@ -91,7 +91,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"MD Wendt"),
+                                        ("preferred", u"Wendt MD"),
                                         ("index", u"Wendt, MD"),
                                     ]
                                 ),
@@ -104,7 +104,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"X Song"), ("index", u"Song, X")]
+                                    [("preferred", u"Song X"), ("index", u"Song, X")]
                                 ),
                             ),
                         ]
@@ -115,7 +115,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"R Frey"), ("index", u"Frey, R")]
+                                    [("preferred", u"Frey R"), ("index", u"Frey, R")]
                                 ),
                             ),
                         ]
@@ -127,7 +127,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"TM Hansen"),
+                                        ("preferred", u"Hansen TM"),
                                         ("index", u"Hansen, TM"),
                                     ]
                                 ),

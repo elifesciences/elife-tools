@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"M Kyoung"),
+                                        ("preferred", u"Kyoung M"),
                                         ("index", u"Kyoung, M"),
                                     ]
                                 ),
@@ -29,7 +29,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"Y Zhang"), ("index", u"Zhang, Y")]
+                                    [("preferred", u"Zhang Y"), ("index", u"Zhang, Y")]
                                 ),
                             ),
                         ]
@@ -40,7 +40,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"J Diao"), ("index", u"Diao, J")]
+                                    [("preferred", u"Diao J"), ("index", u"Diao, J")]
                                 ),
                             ),
                         ]
@@ -51,7 +51,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"S Chu"), ("index", u"Chu, S")]
+                                    [("preferred", u"Chu S"), ("index", u"Chu, S")]
                                 ),
                             ),
                         ]
@@ -63,7 +63,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"AT Brunger"),
+                                        ("preferred", u"Brunger AT"),
                                         ("index", u"Brunger, AT"),
                                     ]
                                 ),

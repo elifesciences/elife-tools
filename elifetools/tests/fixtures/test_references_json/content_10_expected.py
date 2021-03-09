@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"SDJ Elzinga"),
+                                        ("preferred", u"Elzinga SDJ"),
                                         ("index", u"Elzinga, SDJ"),
                                     ]
                                 ),
@@ -30,7 +30,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"AL Bednarz"),
+                                        ("preferred", u"Bednarz AL"),
                                         ("index", u"Bednarz, AL"),
                                     ]
                                 ),
@@ -44,7 +44,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"K van Oosterum"),
+                                        ("preferred", u"van Oosterum K"),
                                         ("index", u"van Oosterum, K"),
                                     ]
                                 ),
@@ -58,7 +58,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"PJT Dekker"),
+                                        ("preferred", u"Dekker PJT"),
                                         ("index", u"Dekker, PJT"),
                                     ]
                                 ),
@@ -72,7 +72,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"L Grivell"),
+                                        ("preferred", u"Grivell L"),
                                         ("index", u"Grivell, L"),
                                     ]
                                 ),

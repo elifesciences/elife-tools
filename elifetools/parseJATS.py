@@ -4859,7 +4859,7 @@ def funding_awards_json(soup):
                                 "suffix",
                                 first_node_str_contents(contrib_tag, "suffix"),
                             )
-                            recipient_content = references_author_person(person_details)
+                            recipient_content = article_author_person(person_details)
                         if len(recipient_content) > 0:
                             # add it
                             recipients.append(recipient_content)

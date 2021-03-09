@@ -3,9 +3,9 @@ from collections import OrderedDict
 expected = [
     OrderedDict(
         [
-            ("type", "unknown"),
-            ("id", u"bib63"),
-            ("date", u"2013"),
+            ("type", "journal"),
+            ("id", "bib17"),
+            ("date", "2012"),
             (
                 "authors",
                 [
@@ -15,9 +15,56 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
+                                    [("preferred", "Gall A"), ("index", "Gall, A")]
+                                ),
+                            ),
+                        ]
+                    ),
+                    OrderedDict(
+                        [
+                            ("type", "person"),
+                            (
+                                "name",
+                                OrderedDict(
                                     [
-                                        ("preferred", u"Palmer D"),
-                                        ("index", u"Palmer, D"),
+                                        ("preferred", "Treuting P"),
+                                        ("index", "Treuting, P"),
+                                    ]
+                                ),
+                            ),
+                        ]
+                    ),
+                    OrderedDict(
+                        [
+                            ("type", "person"),
+                            (
+                                "name",
+                                OrderedDict(
+                                    [("preferred", "Elkon KB"), ("index", "Elkon, KB")]
+                                ),
+                            ),
+                        ]
+                    ),
+                    OrderedDict(
+                        [
+                            ("type", "person"),
+                            (
+                                "name",
+                                OrderedDict(
+                                    [("preferred", "Loo YM"), ("index", "Loo, YM")]
+                                ),
+                            ),
+                        ]
+                    ),
+                    OrderedDict(
+                        [
+                            ("type", "person"),
+                            (
+                                "name",
+                                OrderedDict(
+                                    [
+                                        ("preferred", "Gale M Jnr"),
+                                        ("index", "Gale, M, Jnr"),
                                     ]
                                 ),
                             ),
@@ -30,50 +77,8 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"Frater J"),
-                                        ("index", u"Frater, J"),
-                                    ]
-                                ),
-                            ),
-                        ]
-                    ),
-                    OrderedDict(
-                        [
-                            ("type", "person"),
-                            (
-                                "name",
-                                OrderedDict(
-                                    [
-                                        ("preferred", u"Phillips R"),
-                                        ("index", u"Phillips, R"),
-                                    ]
-                                ),
-                            ),
-                        ]
-                    ),
-                    OrderedDict(
-                        [
-                            ("type", "person"),
-                            (
-                                "name",
-                                OrderedDict(
-                                    [
-                                        ("preferred", u"McLean AR"),
-                                        ("index", u"McLean, AR"),
-                                    ]
-                                ),
-                            ),
-                        ]
-                    ),
-                    OrderedDict(
-                        [
-                            ("type", "person"),
-                            (
-                                "name",
-                                OrderedDict(
-                                    [
-                                        ("preferred", u"McVean G"),
-                                        ("index", u"McVean, G"),
+                                        ("preferred", "Barber GN"),
+                                        ("index", "Barber, GN"),
                                     ]
                                 ),
                             ),
@@ -81,8 +86,18 @@ expected = [
                     ),
                 ],
             ),
-            ("title", u"Proceedings of the Royal Society of London B"),
-            ("details", u"20130696, Proceedings of the Royal Society of London B, 280"),
+            (
+                "articleTitle",
+                "Autoimmunity initiates in nonhematopoietic cells and progresses via lymphocytes in an interferon-dependent autoimmune disease",
+            ),
+            ("journal", "Immunity"),
+            ("volume", "36"),
+            (
+                "pages",
+                OrderedDict([("first", "120"), ("last", "131"), ("range", "120–131")]),
+            ),
+            ("doi", "10.1016/j.immuni.2011.11.018"),
+            ("pmid", 22284419),
         ]
     )
 ]

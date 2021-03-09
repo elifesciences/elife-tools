@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"AS Mikheyev"),
+                                        ("preferred", u"Mikheyev AS"),
                                         ("index", u"Mikheyev, AS"),
                                     ]
                                 ),
@@ -30,7 +30,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"TA Linksvayer"),
+                                        ("preferred", u"Linksvayer TA"),
                                         ("index", u"Linksvayer, TA"),
                                     ]
                                 ),

@@ -14,7 +14,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"P Jha"), ("index", u"Jha, P")]
+                                    [("preferred", u"Jha P"), ("index", u"Jha, P")]
                                 ),
                             ),
                         ]
@@ -26,7 +26,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"R Nugent"),
+                                        ("preferred", u"Nugent R"),
                                         ("index", u"Nugent, R"),
                                     ]
                                 ),
@@ -40,7 +40,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"S Verguet"),
+                                        ("preferred", u"Verguet S"),
                                         ("index", u"Verguet, S"),
                                     ]
                                 ),
@@ -53,7 +53,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"D Bloom"), ("index", u"Bloom, D")]
+                                    [("preferred", u"Bloom D"), ("index", u"Bloom, D")]
                                 ),
                             ),
                         ]
@@ -64,7 +64,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"R Hum"), ("index", u"Hum, R")]
+                                    [("preferred", u"Hum R"), ("index", u"Hum, R")]
                                 ),
                             ),
                         ]
