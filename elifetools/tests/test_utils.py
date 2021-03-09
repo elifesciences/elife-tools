@@ -3,6 +3,7 @@
 import unittest
 import os
 import time
+from collections import OrderedDict
 from ddt import ddt, data, unpack
 from elifetools import utils
 from elifetools import parseJATS as parser
@@ -330,6 +331,55 @@ class TestUtils(unittest.TestCase):
     )
     def test_list_type_prefix(self, list_type, expected):
         self.assertEqual(utils.list_type_prefix(list_type), expected)
+
+
+class TestUtilsNameFormatting(unittest.TestCase):
+    def setUp(self):
+        self.surname = "Doe"
+        self.given_names = "Jane"
+        self.suffix = "Jnr"
+
+    def test_references_author_person(self):
+        author = {
+            "surname": self.surname,
+            "given-names": self.given_names,
+            "suffix": self.suffix,
+        }
+        expected = OrderedDict(
+            [
+                ("type", "person"),
+                (
+                    "name",
+                    OrderedDict(
+                        [("preferred", "Doe Jane Jnr"), ("index", "Doe, Jane, Jnr")]
+                    ),
+                ),
+            ]
+        )
+        self.assertEqual(utils.references_author_person(author), expected)
+
+    def test_reference_author_preferred_name(self):
+        expected = "Doe Jane Jnr"
+        self.assertEqual(
+            utils.reference_author_preferred_name(
+                self.surname, self.given_names, self.suffix
+            ),
+            expected,
+        )
+
+    def test_author_preferred_name(self):
+        expected = "Jane Doe Jnr"
+        self.assertEqual(
+            utils.author_preferred_name(self.surname, self.given_names, self.suffix),
+            expected,
+        )
+
+    def test_author_index_name(self):
+        expected = "Doe, Jane, Jnr"
+        self.assertEqual(
+            utils.author_index_name(self.surname, self.given_names, self.suffix),
+            expected,
+        )
 
 
 if __name__ == "__main__":

@@ -619,15 +619,33 @@ def remove_tag_and_text(tag_name, string):
     return remove_tag(tag_name, re.sub(pattern, "", string)) if string else ""
 
 
+def article_author_person(ref_author):
+    return generate_author_person(ref_author, "article_author")
+
+
 def references_author_person(ref_author):
+    return generate_author_person(ref_author, "reference_author")
+
+
+def generate_author_person(ref_author, preferred_format):
+    "Create a person data structure, its preferred value depends on the preferred_format type"
     author_json = OrderedDict()
     author_json["type"] = "person"
     author_name = OrderedDict()
-    author_name["preferred"] = author_preferred_name(
-        ref_author.get("surname"),
-        ref_author.get("given-names"),
-        ref_author.get("suffix"),
-    )
+
+    if preferred_format == "article_author":
+        author_name["preferred"] = author_preferred_name(
+            ref_author.get("surname"),
+            ref_author.get("given-names"),
+            ref_author.get("suffix"),
+        )
+    elif preferred_format == "reference_author":
+        author_name["preferred"] = reference_author_preferred_name(
+            ref_author.get("surname"),
+            ref_author.get("given-names"),
+            ref_author.get("suffix"),
+        )
+
     author_name["index"] = author_index_name(
         ref_author.get("surname"),
         ref_author.get("given-names"),
@@ -635,6 +653,13 @@ def references_author_person(ref_author):
     )
     author_json["name"] = author_name
     return author_json
+
+
+def reference_author_preferred_name(surname, given_names, suffix):
+    # join surname given_names suffix, in that order, with a space character
+    return " ".join(
+        [element for element in [surname, given_names, suffix] if element is not None]
+    )
 
 
 def author_preferred_name(surname, given_names, suffix):

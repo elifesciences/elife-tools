@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"JB Patterson"),
+                                        ("preferred", u"Patterson JB"),
                                         ("index", u"Patterson, JB"),
                                     ]
                                 ),
@@ -30,7 +30,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"DG Lonergan"),
+                                        ("preferred", u"Lonergan DG"),
                                         ("index", u"Lonergan, DG"),
                                     ]
                                 ),
@@ -44,7 +44,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"GA Flynn"),
+                                        ("preferred", u"Flynn GA"),
                                         ("index", u"Flynn, GA"),
                                     ]
                                 ),
@@ -58,7 +58,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"Z Qingpeng"),
+                                        ("preferred", u"Qingpeng Z"),
                                         ("index", u"Qingpeng, Z"),
                                     ]
                                 ),
@@ -72,7 +72,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"PV Pallai"),
+                                        ("preferred", u"Pallai PV"),
                                         ("index", u"Pallai, PV"),
                                     ]
                                 ),

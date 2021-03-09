@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"D Palmer"),
+                                        ("preferred", u"Palmer D"),
                                         ("index", u"Palmer, D"),
                                     ]
                                 ),
@@ -30,7 +30,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"J Frater"),
+                                        ("preferred", u"Frater J"),
                                         ("index", u"Frater, J"),
                                     ]
                                 ),
@@ -44,7 +44,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"R Phillips"),
+                                        ("preferred", u"Phillips R"),
                                         ("index", u"Phillips, R"),
                                     ]
                                 ),
@@ -58,7 +58,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"AR McLean"),
+                                        ("preferred", u"McLean AR"),
                                         ("index", u"McLean, AR"),
                                     ]
                                 ),
@@ -72,7 +72,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"G McVean"),
+                                        ("preferred", u"McVean G"),
                                         ("index", u"McVean, G"),
                                     ]
                                 ),

@@ -16,7 +16,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"CS Bloss"),
+                                        ("preferred", u"Bloss CS"),
                                         ("index", u"Bloss, CS"),
                                     ]
                                 ),
@@ -30,7 +30,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"NE Wineinger"),
+                                        ("preferred", u"Wineinger NE"),
                                         ("index", u"Wineinger, NE"),
                                     ]
                                 ),
@@ -44,7 +44,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"M Peters"),
+                                        ("preferred", u"Peters M"),
                                         ("index", u"Peters, M"),
                                     ]
                                 ),
@@ -58,7 +58,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"DL Boeldt"),
+                                        ("preferred", u"Boeldt DL"),
                                         ("index", u"Boeldt, DL"),
                                     ]
                                 ),
@@ -72,7 +72,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"L Ariniello"),
+                                        ("preferred", u"Ariniello L"),
                                         ("index", u"Ariniello, L"),
                                     ]
                                 ),
@@ -85,7 +85,7 @@ expected = [
                             (
                                 "name",
                                 OrderedDict(
-                                    [("preferred", u"JL Kim"), ("index", u"Kim, JL")]
+                                    [("preferred", u"Kim JL"), ("index", u"Kim, JL")]
                                 ),
                             ),
                         ]
@@ -97,7 +97,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"J Judy Sheard"),
+                                        ("preferred", u"Judy Sheard J"),
                                         ("index", u"Judy Sheard, J"),
                                     ]
                                 ),
@@ -111,7 +111,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"R Komatireddy"),
+                                        ("preferred", u"Komatireddy R"),
                                         ("index", u"Komatireddy, R"),
                                     ]
                                 ),
@@ -125,7 +125,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"P Barrett"),
+                                        ("preferred", u"Barrett P"),
                                         ("index", u"Barrett, P"),
                                     ]
                                 ),
@@ -139,7 +139,7 @@ expected = [
                                 "name",
                                 OrderedDict(
                                     [
-                                        ("preferred", u"EJ Topol"),
+                                        ("preferred", u"Topol EJ"),
                                         ("index", u"Topol, EJ"),
                                     ]
                                 ),
