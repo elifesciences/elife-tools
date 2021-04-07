@@ -10,6 +10,7 @@ setup(
     version=elifetools.__version__,
     description="Tools for using article data in Python.",
     long_description=README,
+    long_description_content_type="text/x-rst",
     packages=["elifetools"],
     license="MIT",
     install_requires=[
