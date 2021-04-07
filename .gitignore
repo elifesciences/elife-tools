@@ -5,6 +5,7 @@ build/
 dist/
 elifetools.egg-info
 .coverage
+/release-venv
 /venv
 /.tox
 
