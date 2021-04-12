@@ -1,0 +1,24 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group content-type="section">
+                <contrib contrib-type="editor" id="author-4542">
+                    <name>
+                        <surname>Krause</surname>
+                        <given-names>Johannes</given-names>
+                    </name>
+                    <role>Reviewing editor</role>
+                    <aff><institution>University of Tübingen</institution>, <country>Germany</country></aff>
+                </contrib>
+                <contrib contrib-type="editor" id="author-37203">
+                    <name>
+                        <surname>Conard</surname>
+                        <given-names>Nicholas J</given-names>
+                    </name>
+                    <role>Reviewing editor</role>
+                    <aff><institution>University of Tübingen</institution>, <country>Germany</country></aff>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+</root>

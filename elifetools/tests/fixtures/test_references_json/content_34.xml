@@ -1,0 +1,26 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">20352</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.20352</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib25">
+                <element-citation publication-type="confproc">
+                    <person-group person-group-type="author">
+                        <collab>RBM</collab>
+                    </person-group>
+                    <article-title>Changes to guidance for vector vontrol indicators</article-title>
+                    <article-title>Meeting Report of the 17th MERG Meeting</article-title>
+                    <conf-date>15–17th June 2011.</conf-date>
+                    <year iso-8601-date="2011">2011</year>
+                    <conf-loc>New York, USA</conf-loc>
+                    <uri xlink:href="http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf">http://www.rollbackmalaria.org/files/files/partnership/wg/wg_monitoring/docs/17merg_meeting_report.pdf</uri>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

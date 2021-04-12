@@ -1,0 +1,8 @@
+<root>
+    <table-wrap id="tblu1" position="anchor">
+        <caption>
+            <p>PCR primer sets and reaction conditions for genotyping</p>
+        </caption>
+        <table frame="hsides" rules="groups"><thead><tr><th>Locus</th><th>Primers sequence</th><th>Group</th></tr></thead><tbody><tr><td rowspan="2">MYB29 gene</td><td>myb29-1 RP 5′-TATGTTTGCATCATCTCGTCTTC-3′</td><td rowspan="2">1</td></tr></tbody></table>
+    </table-wrap>
+</root>

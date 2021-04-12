@@ -1,0 +1,19 @@
+<root>
+    <table-wrap id="tbl1" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.24231.006</object-id>
+        <label>Table 1.</label>
+        <caption>
+            <p>Summary table of U-Th disequilibrium ages obtained for samples from the Dinaledi Chamber by James Cook University (JCU - <sup>1</sup>) and the University of Melbourne (UoM - <sup>2</sup>). The detailed analytical results are shown in <xref ref-type="table" rid="tbl2">Tables 2</xref> and <xref ref-type="table" rid="tbl3">3</xref>. Sample locations are shown in <xref ref-type="fig" rid="fig1">Figure 1b</xref>. The data are ranked by increasing age of the oldest flowstone horizon within the sample, based on the JCU ages. The grey shading highlights the different age groupings observed within the flowstones: 24–32 ka, ~50 ka, 88–105 ka, ~242 ka, ~290 ka and &gt;440 ka. Ages are reported relative to 1950.</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.24231.006">http://dx.doi.org/10.7554/eLife.24231.006</ext-link></p>
+        </caption>
+        <table frame="hsides" rules="groups"><thead><tr><th valign="bottom">Sample ID</th><th valign="bottom">Flowstone group</th><th valign="bottom">Underlying unit</th><th valign="bottom">Age<sup>1</sup> (ka)</th><th valign="bottom">2σ<sup>1</sup> (ka)</th><th valign="bottom">Age<sup>2</sup> (ka)</th><th valign="bottom">2σ<sup>2</sup> (ka)</th></tr></thead><tbody><tr><td style="author-callout-style-b8"> RS19</td><td style="author-callout-style-b8">FS2</td><td style="author-callout-style-b8">sub-unit 3b</td><td style="author-callout-style-b8"><bold>24.7</bold></td><td style="author-callout-style-b8">0.2</td><td style="author-callout-style-b8"><bold>24.53</bold></td><td style="author-callout-style-b8">0.43</td></tr></tbody></table>
+        <table-wrap-foot>
+            <fn id="tblfn1">
+                <p> <sup>1</sup>James Cook University (JCU), Advanced Analytical Centre.</p>
+            </fn>
+            <fn id="tblfn2">
+                <p> <sup>2</sup>University of Melbourne (UoM), paleochronology laboratory.</p>
+            </fn>
+        </table-wrap-foot>
+    </table-wrap>
+</root>

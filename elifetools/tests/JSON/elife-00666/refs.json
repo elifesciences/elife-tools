@@ -1350,11 +1350,13 @@
                 "group-type": "author"
             }
         ], 
-        "publication-type": "data", 
+        "accession": "PXD001805", 
+        "uri": "http://proteomecentral.proteomexchange.org/cgi/GetDataset?ID=PXD001805", 
         "source": "ProteomeXchange", 
         "year": "2015a", 
         "position": 34, 
         "year-iso-8601-date": "2015", 
+        "publication-type": "data", 
         "ref": "Radoshevich L Impens F Ribet D Quereda JJ Nam Tham T Nahori MA Bierne H Dussurget O Pizarro-Cerd\u00e1 J Knobeloch KP Cossart P 2015a ISG15 counteracts Listeria monocytogenes infection ProteomeXchange PXD001805", 
         "id": "bib34"
     }, 
@@ -1641,11 +1643,13 @@
                 "group-type": "author"
             }
         ], 
-        "publication-type": "data", 
+        "accession": "MA0547.1", 
+        "uri": "http://jaspar.genereg.net/cgi-bin/jaspar_db.pl", 
         "source": "JASPAR", 
         "year": "2013", 
         "position": 43, 
         "year-iso-8601-date": "2013", 
+        "publication-type": "data", 
         "ref": "Staab TA Griffen TC Corcoran C Evgrafov O Knowles JA Sieburth D 2013 SKN-1 from the JASPAR CORE database JASPAR MA0547.1", 
         "id": "bib43"
     }, 
@@ -2056,11 +2060,13 @@
                 "group-type": "author"
             }
         ], 
-        "publication-type": "data", 
+        "accession": "modENCODE_3369", 
+        "uri": "http://intermine.modencode.org/release-33/report.do?id=77000379", 
         "source": "modMine", 
         "year": "2013", 
         "position": 54, 
         "year-iso-8601-date": "2013", 
+        "publication-type": "data", 
         "ref": "Zhong M Snyder M Slightam C Kim S Murray J Waterston R Gerstein M Niu W Janette J Raha D Agarwal A Reinke V Sarov M Hyman A 2013 ChIP-Seq Identification of C. elegans TF Binding Sites modMine modENCODE_3369", 
         "id": "bib54"
     }

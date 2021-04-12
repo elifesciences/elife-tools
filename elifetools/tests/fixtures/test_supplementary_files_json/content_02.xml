@@ -1,0 +1,29 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec id="s6" sec-type="supplementary-material">
+            <title>Additional files</title>
+            <supplementary-material id="SD2-data">
+                <object-id pub-id-type="doi">10.7554/eLife.08477.007</object-id>
+                <label>Source code 1.</label>
+                <caption>
+                    <p>A Matlab GUI for synchronized video-taping and song stimulation in <xref ref-type="fig" rid="fig3">Figure 3</xref>.</p>
+                    <p>
+                        <bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.007">http://dx.doi.org/10.7554/eLife.08477.007</ext-link>
+                    </p>
+                </caption>
+                <media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code1-v1.zip"/>
+            </supplementary-material>
+            <supplementary-material id="SD3-data">
+                <object-id pub-id-type="doi">10.7554/eLife.08477.011</object-id>
+                <label>Source code 2.</label>
+                <caption>
+                    <p>A Matlab GUI for processing and analyzing the calcium-imaging data in <xref ref-type="fig" rid="fig5">Figure 5</xref>.</p>
+                    <p>
+                        <bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.08477.011">http://dx.doi.org/10.7554/eLife.08477.011</ext-link>
+                    </p>
+                </caption>
+                <media mime-subtype="zip" mimetype="application" xlink:href="elife-08477-code2-v1.zip"/>
+            </supplementary-material>
+        </sec>
+    </back>
+</root>

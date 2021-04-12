@@ -1,0 +1,17 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib4">
+            <element-citation publication-type="book">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Engel</surname>
+                        <given-names>W</given-names>
+                    </name>
+                </person-group>
+                <year>2005</year>
+                <source>SHADERX3: Advanced Rendering with DirectX and OpenGL: Charles River Media</source>
+                <publisher-loc>Hingham, MA, USA</publisher-loc>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

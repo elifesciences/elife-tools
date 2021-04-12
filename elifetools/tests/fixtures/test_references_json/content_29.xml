@@ -1,0 +1,15 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib42">
+            <element-citation publication-type="report">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>World Health Organization</surname>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2015">2015</year>
+                <source>WHO Glocal Tuberculosis Report 2015</source>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

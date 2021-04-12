@@ -1,0 +1,58 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec sec-type="data-availability" id="s7">
+            <title>Data availability</title>
+            <p>All relevant data are within the paper and its Supporting Information files. The two musculoskeletal graphs used, as well as muscle community assignments, and data used to generate all figures can be found at DOI:10.5281/zenodo.1069104.</p>
+            <p>The following dataset was generated:</p>
+            <p>
+                <element-citation publication-type="data" specific-use="isSupplementedBy" id="dataset1">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Piwowar</surname>
+                            <given-names>HA</given-names>
+                        </name>
+                        <name>
+                            <surname>Vision</surname>
+                            <given-names>TJ</given-names>
+                        </name>
+                        <name>
+                            <surname>Whitlock</surname>
+                            <given-names>MC</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2017">2017</year>
+                    <data-title>Data from: Data archiving is a good investmen</data-title>
+                    <source>Dryad</source>
+                    <pub-id pub-id-type="doi" assigning-authority="dryad">http://dx.doi.org/10.5061/dryad.j1fd7</pub-id>
+                </element-citation>
+            </p>
+            <p>The following previously published datasets were used:</p>
+            <p>
+                <element-citation publication-type="data" specific-use="references" id="dataset2">
+                    <person-group person-group-type="author">
+                        <name>
+                            <surname>Luco</surname>
+                            <given-names>RF</given-names>
+                        </name>
+                        <name>
+                            <surname>Pan</surname>
+                            <given-names>Q</given-names>
+                        </name>
+                        <name>
+                            <surname>Tominaga</surname>
+                            <given-names>K</given-names>
+                        </name>
+                        <name>
+                            <surname>Blencowe</surname>
+                            <given-names>BJ</given-names>
+                        </name>
+                    </person-group>
+                    <year iso-8601-date="2012">2012</year>
+                    <data-title>This is an amazing dataset</data-title>
+                    <source>Zenodo</source>
+                    <pub-id pub-id-type="doi" assigning-authority="zenodo">https://doi.org/10.11144/Javeriana.cl20-39.bdfp</pub-id>
+                </element-citation>
+            </p>
+        </sec>
+    </back>
+</root>

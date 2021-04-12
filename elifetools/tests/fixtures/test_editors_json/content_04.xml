@@ -1,0 +1,23 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <journal-meta>
+                <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            </journal-meta>
+            <article-meta>
+                <article-id pub-id-type="publisher-id">22028</article-id>
+                <article-id pub-id-type="doi">10.7554/eLife.22028</article-id>
+                <contrib-group content-type="section">
+                    <contrib contrib-type="editor" id="author-56094">
+                        <name>
+                            <surname>Schlesinger</surname>
+                            <given-names>Larry</given-names>
+                        </name>
+                        <role>Reviewing editor</role>
+                        <aff><institution></institution>, <country>United States</country></aff>
+                    </contrib>
+                </contrib-group>
+            </article-meta>
+        </front>
+    </article>
+</root>

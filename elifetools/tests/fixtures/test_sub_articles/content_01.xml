@@ -1,0 +1,189 @@
+<article article-type="research-article" dtd-version="1.1" xmlns:ali="http://www.niso.org/schemas/ali/1.0/"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="nlm-ta">eLife</journal-id>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            <journal-title-group>
+                <journal-title>eLife</journal-title>
+            </journal-title-group>
+            <issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+            <publisher>
+                <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">00666</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00666</article-id>
+            <title-group>
+                <article-title>The eLife research article</article-title>
+            </title-group>
+            <contrib-group>
+               <contrib contrib-type="author" corresp="yes" equal-contrib="yes" id="author-00001" deceased="yes">
+                    <name>
+                        <surname>Harrison</surname>
+                        <given-names>Melissa</given-names>
+                        <suffix>Jnr</suffix>
+                     </name>
+                    <contrib-id contrib-id-type="orcid"  authenticated="true">http://orcid.org/0000-0003-3523-4408</contrib-id>
+                    <email>m.harrison@elifesciences.org</email>
+                    <xref ref-type="aff" rid="aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author" equal-contrib="yes">
+                   <collab>eLife Editorial Production Group</collab>
+                   <xref ref-type="aff" rid="aff1">1</xref>
+                </contrib>
+                <aff id="aff1">
+                    <label>1</label>
+                    <institution content-type="dept">Department of Production</institution>
+                    <institution>eLife</institution>
+                    <addr-line>
+                        <named-content content-type="city">Cambridge</named-content>
+                    </addr-line>
+                    <country>United Kingdom</country>
+                </aff>
+            </contrib-group>
+            <pub-date publication-format="electronic" date-type="publication">
+                <day>25</day>
+                <month>04</month>
+                <year>2016</year>
+            </pub-date>
+            <permissions>
+                <copyright-statement>&#x00A9; 2016, Harrison et al</copyright-statement>
+                <copyright-year>2016</copyright-year>
+                <copyright-holder>Harrison et al</copyright-holder>
+                <ali:free_to_read/>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                    <ali:license_ref>http://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+                    <license-p>This article is distributed under the terms of the <ext-link
+                            ext-link-type="uri"
+                            xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</ext-link>, which permits unrestricted use and redistribution provided that the original author and source are credited.</license-p>
+                </license>
+            </permissions>
+        </article-meta>
+    </front>
+    <body>
+        <p>Article body.</p>
+    </body>
+    <back>
+        <sec sec-type="additional-information" id="s1"></sec>
+    </back>
+    <sub-article article-type="decision-letter" id="SA1">
+        <front-stub>
+            <article-id pub-id-type="doi">10.7554/eLife.00666.DL</article-id>
+            <title-group>
+                <article-title>Decision letter</article-title>
+            </title-group>
+            <contrib-group>
+                <contrib contrib-type="editor">
+                    <name>
+                        <surname>Collings</surname>
+                        <given-names>Andy</given-names>
+                    </name>
+                    <role>Reviewing editor</role>
+                    <aff>
+                        <institution>eLife</institution>
+                        <country>United Kingdom</country>
+                    </aff>
+                </contrib>
+            </contrib-group>
+        </front-stub>
+        <body>
+            <boxed-text>
+                <p>In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included.</p>
+            </boxed-text>
+            <p>Thank you for submitting your article "The eLife research article" for consideration by <italic>eLife</italic>. Your article has been reviewed by three peer reviewers, one of whom, Joe Bloggs, is a member of our editorial board and also oversaw the process as Senior editor. John Doe (peer reviewer) has agreed to reveal his identity.</p>
+            <p>The reviewers have discussed the reviews with one another and the Reviewing Editor has drafted this decision to help you prepare a revised submission.</p>
+            <p>You need to make sure the XML structure you creates works on the display of the PMC platform and also that there is enough information contained within the tagging to generate a typeset PDF from the XML with no additional information provided.</p>
+        </body>
+    </sub-article>
+    <sub-article article-type="reply" id="SA2">
+        <front-stub>
+            <article-id pub-id-type="doi">10.7554/eLife.00666.AR</article-id>
+            <title-group>
+                <article-title>Author response</article-title>
+            </title-group>
+        </front-stub>
+        <body>
+            <disp-quote content-type="editor-comment">
+                <p>You need to make sure the XML structure you creates works on the display of the PMC platform and also that there is enough information contained within the tagging to generate a typeset PDF from the XML with no additional information provided.</p>
+            </disp-quote>
+            <p>In response to this comment, we validated the XML against the DTD (JATS 1) each time we made an update. We also regularly used the PMC validator to check our decisions against display on the PMC site, see <xref ref-type="fig" rid="respfig1">Author response image 1.</xref>, <xref ref-type="video" rid="respvideo1">Author response video 1</xref> and <xref ref-type="table" rid="resptable1">Author response table 1</xref>.</p>
+            <fig id="respfig1" position="float"> 
+                <object-id pub-id-type="doi">10.7554/eLife.00666.031</object-id>
+                <label>Author response image 1.</label>
+                    <caption>
+                        <p>Single figure: The header of an eLife article example on the HTML page.</p>
+                    </caption>
+                <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-resp-fig1.tif"/>
+                </fig>
+            <table-wrap id="resptable1" position="float">
+                <object-id pub-id-type="doi">10.7554/eLife.00666.032</object-id>
+                <label>Author response Table 1.</label>
+                <caption>
+                    <p>Author response table</p>
+                </caption>
+                <table frame="hsides" rules="groups">
+                    <thead>
+                        <tr>
+                            <th>Sample</th>
+                            <th>Same</th>
+                            <th>Difference more than 10%</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DKO1.cell.1</td>
+                            <td>77.00%</td>
+                            <td>6.90%</td>
+                        </tr>
+                        <tr>
+                            <td>DKO1.cell.2</td>
+                            <td>78.80%</td>
+                            <td>7.20%</td>
+                        </tr>
+                        <tr>
+                            <td>DKO1.cell.3</td>
+                            <td>79.10%</td>
+                            <td>6.70%</td>
+                        </tr>
+                        <tr>
+                            <td>DKO1.exo.1</td>
+                            <td>78.90%</td>
+                            <td>6.50%</td>
+                        </tr>
+                        <tr>
+                            <td>DKO1.exo.2</td>
+                            <td>80.00%</td>
+                            <td>5.80%</td>
+                        </tr>
+                        <tr>
+                            <td>DKO1.exo.3</td>
+                            <td>86.80%</td>
+                            <td>2.30%</td>
+                        </tr>
+                        <tr>
+                            <td>DKS8.cell.1</td>
+                            <td>77.30%</td>
+                            <td>7.80%</td>
+                        </tr>
+                        <tr>
+                            <td>DKS8.cell.2</td>
+                            <td>79.70%</td>
+                            <td>6.70%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </table-wrap>
+            <media mimetype="video" mime-subtype="mp4" id="respvideo1" xlink:href="elife-00666-resp-video1.mp4">
+                <object-id pub-id-type="doi">10.7554/eLife.00666.033</object-id>
+                <label>Author response video 1.</label>
+                <caption>
+                    <p>Caption and/or a title is required for all author response assets</p>
+                </caption>
+            </media>
+            <p>However, some decisions required some communication with PMC to discuss whether any of our updates could be accomodated by them - during this review we aimed to reduce the complexity of the XML structure and remove all formatting and bioler plate text required for a PDF display format. We also produced buisness rules {Insert table} in order to produce rules for the production systems and the website to follow. These buisness rules also informed the basis for a set of Schematron rules for our references.{Insert table}</p>
+            <p>If an author referes to a reference in the response letter it is cross linked to the reference in the reference list (<xref ref-type="bibr" rid="bib11">Coyne et al., 1989</xref>), however, if it is a new reference only cited in the decision letter or author response it is not added to the main reference link and is just listed as free text, for example, Butcher et al, 2006. If the author provides the reference it can be added as free text to the end of the letter, however, this is not a requirement.</p>
+        </body>
+    </sub-article>
+</article>

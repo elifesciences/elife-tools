@@ -1,0 +1,9 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec sec-type="data-availability" id="s7">
+            <title>Data availability</title>
+            <p>First data availability paragraph.</p>
+            <p>Second data availability paragraph.</p>
+        </sec>
+    </back>
+</root>

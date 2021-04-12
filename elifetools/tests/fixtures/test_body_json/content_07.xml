@@ -1,0 +1,20 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">12844</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.12844</article-id>
+        </article-meta>
+        <body>
+            <sec id="s1">
+                <p>Paragraph 1</p>
+            </sec>
+            <sec id="s2">
+                <title>How failure promotes translation</title>
+                <p>Paragraph 2</p>
+            </sec>
+        </body>
+    </article>
+</root>

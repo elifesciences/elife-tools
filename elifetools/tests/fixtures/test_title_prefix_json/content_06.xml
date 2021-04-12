@@ -1,0 +1,20 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">27438</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.27438</article-id>
+            <subj-group subj-group-type="heading">
+                <subject>Ecology</subject>
+            </subj-group>
+            <subj-group subj-group-type="sub-display-channel">
+                <subject>Point of view</subject>
+            </subj-group>
+            <subj-group subj-group-type="display-channel">
+                <subject>Feature article</subject>
+            </subj-group>
+        </article-meta>
+    </front>
+</root>

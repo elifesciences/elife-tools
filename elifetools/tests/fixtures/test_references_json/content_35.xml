@@ -1,0 +1,23 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">07460</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.07460</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib1">
+                <element-citation publication-type="web">
+                    <article-title>Fraxinus version1 data analysis</article-title><comment>URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/shyamrallapalli/fraxinus_version1_data_analysis">https://github.com/shyamrallapalli/fraxinus_version1_data_analysis</ext-link></comment>
+                </element-citation>
+            </ref>
+            <ref id="bib2">
+                <element-citation publication-type="web">
+                    <article-title>Google api ruby client samples</article-title><comment>URL: <ext-link ext-link-type="uri" xlink:href="https://github.com/google/google-api-ruby-client-samples/tree/master/service_account">https://github.com/google/google-api-ruby-client-samples/tree/master/service_account</ext-link></comment>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

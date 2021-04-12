@@ -1,0 +1,18 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <list list-type="order">
+        <list-item>
+            <p>At least 4 unique reads supporting variants and all variant reads at least 20 phred scale sequencing quality score (Q 20 = 1% sequencing error rate) and at least 3% variant allele fractions (VAFs).</p>
+            <list list-type="simple">
+                <list-item>
+                    <p>A. Regardless of in WGS and in WES, the ≥4 mismatches and the ≥3% VAF criteria must be satisfied simultaneously.</p>
+                </list-item>
+                <list-item>
+                    <p>B. However, in WGS, the minimum number of reads (n = 4) criterion is not essential, because the ≥3% VAF criterion is much more stringent (3% VAF request at least 240 mismatches (&gt;&gt;4) given mtDNA coverage is ∼8000 for WGS).</p>
+                </list-item>
+                <list-item>
+                    <p>C. In WES, the ≥3% VAF criterion is relatively less important than in WGS, because the ≥4 mismatches criterion is more stringent. For example, 4 mismatches in 90x (WXS average) coverage region (VAF = 4.4%) automatically fulfill the ≥3% VAF criterion. For less covered regions (i.e. &lt;40x coverage; n = 285 out of total 1907 substitutions), the VAF criterion becomes less important, because 4 mismatches would generate ≥10% VAF, much higher than the minimum threshold (i.e. 3%). As results, we are missing lower heteroplasmic variants (i.e. variants with 3–10% heteroplasmic levels) from low coverage samples (mostly by WXS). The lower sensitivity of WXS is also confirmed in our validation study (see “Validation of somatic variants” below).</p>
+                </list-item>
+            </list>
+        </list-item>
+    </list>
+</root>

@@ -1,9 +1,5 @@
 elife-tools
 ===========
-
-.. image:: https://travis-ci.org/elifesciences/elife-tools.svg?branch=master
-   :target: https://travis-ci.org/elifesciences/elife-tools
-   :alt: Latest Version
    
 .. image:: https://coveralls.io/repos/elifesciences/elife-tools/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/elifesciences/elife-tools?branch=master
@@ -13,7 +9,6 @@ Tools for using article data in Python
 Supports
 ============
 
-* Python 2.7
 * Python >=3.5
 
 Non-Python dependencies
@@ -24,7 +19,7 @@ Non-Python dependencies
 Install for users
 =================
 
-Install via `pip <http://www.pip-installer.org/>`_:
+Install via `pip <https://pip.pypa.io/en/stable/>`_:
 
 .. code-block:: bash
 
@@ -69,23 +64,10 @@ Example usage
 
     >>> from elifetools import parseJATS as parser
     >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
-    >>> print parser.doi(soup)
+    >>> print(parser.doi(soup))
 
 More code examples can be found in `tests/basic_usage_test.py`
 
-These code examples can be run with:
-
-.. code-block:: bash
-
-    $ cd elifetools/
-    $ python -m unittest discover -s tests  -p *_test.py
-
-and with xml output:
-
-.. code-block:: bash
-
-    $ cd elifetools/
-    $ python -m xmlrunner discover -s tests -p *_test.py
 
 Testing
 =======

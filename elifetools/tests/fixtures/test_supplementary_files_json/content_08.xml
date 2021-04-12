@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec id="s6" sec-type="supplementary-material">
+            <title>Additional files</title>
+            <supplementary-material id="supp1">
+                <object-id pub-id-type="doi">10.7554/eLife.26759.018</object-id>
+                <label>Supplementary file 1.</label>
+                <caption>
+                    <title>All primer sequences used in this study.</title>
+                </caption>
+                <media mime-subtype="docx" mimetype="application" xlink:href="elife-26759-supp1-v2.docx"/>
+            </supplementary-material>
+            <supplementary-material id="transrepform">
+                <object-id pub-id-type="doi">10.7554/eLife.26759.019</object-id>
+                <caption>
+                    <title>Transparent reporting form</title>
+                </caption>
+                <media mime-subtype="pdf" mimetype="application" xlink:href="elife-26759-transrepform-v2.pdf"/>
+            </supplementary-material>
+        </sec>
+    </back>
+</root>

@@ -1,0 +1,24 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">19532</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.19532</article-id>
+        </article-meta>
+        <ref-list>
+            <ref id="bib27">
+                <element-citation publication-type="web">
+                    <person-group person-group-type="author">
+                        <collab>Nature</collab>
+                    </person-group>
+                    <article-title>Challenges in irreproducible research</article-title>
+                    <source>Nature News and Comment</source>
+                    <ext-link ext-link-type="uri" xlink:href="http://www.nature.com/news/reproducibility-1.17552">http://www.nature.com/news/reproducibility-1.17552</ext-link>
+                    <date-in-citation iso-8601-date="2015-12-14">December 14, 2015</date-in-citation>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </article>
+</root>

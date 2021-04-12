@@ -1,0 +1,50 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib78">
+            <element-citation publication-type="preprint">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Ochoa</surname>
+                        <given-names>D</given-names>
+                    </name>
+                    <name>
+                        <surname>Jonikas</surname>
+                        <given-names>M</given-names>
+                    </name>
+                    <name>
+                        <surname>Lawrence</surname>
+                        <given-names>RT</given-names>
+                    </name>
+                    <name>
+                        <surname>El Debs</surname>
+                        <given-names>B</given-names>
+                    </name>
+                    <name>
+                        <surname>Selkrig</surname>
+                        <given-names>J</given-names>
+                    </name>
+                    <name>
+                        <surname>Typas</surname>
+                        <given-names>A</given-names>
+                    </name>
+                    <name>
+                        <surname>Villen</surname>
+                        <given-names>J</given-names>
+                    </name>
+                    <name>
+                        <surname>Santos</surname>
+                        <given-names>S</given-names>
+                    </name>
+                    <name>
+                        <surname>Beltrao</surname>
+                        <given-names>P</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2016">2016</year>
+                <article-title>An atlas of human kinase regulation</article-title>
+                <source>bioRxiv</source>
+                <pub-id pub-id-type="doi">10.1101/067900</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

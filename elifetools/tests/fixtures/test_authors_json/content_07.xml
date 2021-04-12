@@ -1,0 +1,60 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" id="author-1399">
+                    <name>
+                        <surname>Schuman</surname>
+                        <given-names>Meredith C</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="other" rid="par-1"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                    <xref ref-type="fn" rid="con1"/>
+                    <xref ref-type="other" rid="dataro1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-1400">
+                    <name>
+                        <surname>Barthel</surname>
+                        <given-names>Kathleen</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="fn" rid="pa1">†</xref>
+                    <xref ref-type="other" rid="par-1"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                    <xref ref-type="fn" rid="con2"/>
+                    <xref ref-type="other" rid="dataro1"/>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" id="author-1013">
+                    <name>
+                        <surname>Baldwin</surname>
+                        <given-names>Ian T</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff1"/>
+                    <xref ref-type="corresp" rid="cor1">*</xref>
+                    <xref ref-type="other" rid="par-1"/>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <xref ref-type="fn" rid="con3"/>
+                    <xref ref-type="other" rid="dataro1"/>
+                </contrib>
+                <aff id="aff1">
+                    <institution content-type="dept">Department of Molecular Ecology</institution>, <institution>Max Planck Institute for Chemical Ecology</institution>, <addr-line><named-content content-type="city">Jena</named-content></addr-line>, <country>Germany</country>
+                </aff>
+            </contrib-group>
+            <contrib-group content-type="section">
+                <contrib contrib-type="editor">
+                    <name>
+                        <surname>Weigel</surname>
+                        <given-names>Detlef</given-names>
+                    </name>
+                    <role>Reviewing editor</role>
+                    <aff>
+                        <institution>Max Planck Institute for Developmental Biology</institution>, <country>Germany</country>
+                    </aff>
+                </contrib>
+            </contrib-group>
+            <author-notes><corresp id="cor1"><label>*</label>For correspondence: <email>baldwin@ice.mpg.de</email></corresp><fn fn-type="present-address" id="pa1"><label>†</label><p>Federal Research Center for Cultivated Plants Institute for Breeding Research on Horticultural And Fruit Crops, Julius Kühn Institute, Dresden, Germany</p></fn>
+            </author-notes>
+        </article-meta>
+    </front>
+</root>

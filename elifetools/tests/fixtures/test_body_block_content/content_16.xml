@@ -1,0 +1,43 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <fig id="fig3" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.27041.006</object-id>
+        <label>Figure 3.</label>
+        <caption>
+            <title>Developmental trajectories.</title>
+            <p>Each plot shows single cells (dots; colored by trajectory assignment, sampled time point, or developmental stage) embedded in low-dimensional space based on their RNA (<bold>A-C</bold>) or protein (<bold>D</bold>) profiles, using different methods for dimensionality reduction and embedding: Gaussian process patent variable model (<bold>A</bold>); t-stochastic neighborhood embedding (<bold>B</bold>, <bold>D</bold>); diffusion maps (<bold>C</bold>). Computational methods then identify trajectories of pseudo-temporal progression in each case. (<bold>A</bold>) Myoblast differentiation in vitro. (<bold>B</bold>) Neurogenesis in the mouse brain dentate gyrus. (<bold>C</bold>) Embryonic stem cell differentiation in vitro. (<bold>D</bold>) Early hematopoiesis.</p>
+        </caption>
+        <graphic mime-subtype="postscript" mimetype="application" xlink:href="elife-27041-fig3-v2"/>
+        <permissions>
+            <copyright-statement>© 2017 AAAS.</copyright-statement>
+            <copyright-year>2017</copyright-year>
+            <copyright-holder>AAAS</copyright-holder>
+            <license>
+                <license-p><xref ref-type="fig" rid="fig3">Figure 3A</xref> reprinted from <xref ref-type="bibr" rid="bib109">Lönnberg et al., 2017</xref> with permission.</license-p>
+            </license>
+        </permissions>
+        <permissions>
+            <copyright-statement>© 2016 AAAS.</copyright-statement>
+            <copyright-year>2016</copyright-year>
+            <copyright-holder>AAAS</copyright-holder>
+            <license>
+                <license-p><xref ref-type="fig" rid="fig3">Figure 3B</xref> reprinted from <xref ref-type="bibr" rid="bib67">Habib et al., 2016a</xref> with permission.</license-p>
+            </license>
+        </permissions>
+        <permissions>
+            <copyright-statement>© 2016 Macmillan Publishers Limited. </copyright-statement>
+            <copyright-year>2016</copyright-year>
+            <copyright-holder>Macmillan Publishers Limited</copyright-holder>
+            <license>
+                <license-p><xref ref-type="fig" rid="fig3">Figure 3C</xref> adapted from <xref ref-type="bibr" rid="bib70">Haghverdi et al., 2016</xref> with permission.</license-p>
+            </license>
+        </permissions>
+        <permissions>
+            <copyright-statement>© 2016 Macmillan Publishers Limited.</copyright-statement>
+            <copyright-year>2016</copyright-year>
+            <copyright-holder>Macmillan Publishers Limited</copyright-holder>
+            <license>
+                <license-p><xref ref-type="fig" rid="fig3">Figure 3D</xref> adapted from <xref ref-type="bibr" rid="bib157">Setty et al., 2016</xref> with permission.</license-p>
+            </license>
+        </permissions>
+    </fig>
+</root>

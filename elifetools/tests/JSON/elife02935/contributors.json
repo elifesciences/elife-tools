@@ -1638,14 +1638,22 @@
         "given-names": "Luca", 
         "type": "author non-byline", 
         "group-author-key": "group-author-id2", 
-        "affiliations": []
+        "affiliations": [
+            {
+                "text": "Fondazione IRCCS Policlinico San Matteo, University of Pavia, Pavia, Italy"
+            }
+        ]
     }, 
     {
         "surname": "Tauro", 
         "given-names": "Sudhir", 
         "type": "author non-byline", 
         "group-author-key": "group-author-id2", 
-        "affiliations": []
+        "affiliations": [
+            {
+                "text": "Division of Medial Sciences, University of Dundee, Dundee, UK"
+            }
+        ]
     }, 
     {
         "surname": "Boultwood", 

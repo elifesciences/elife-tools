@@ -1,0 +1,36 @@
+<fig-group>
+    <fig id="fig3" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.011</object-id>
+        <label>Figure 3.</label>
+        <caption>
+            <title>Figure with figure supplements and figure supplement with source data and a video (see <xref ref-type="bibr" rid="bib25">Koch, 1959</xref>) .</title>
+        </caption>
+        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3.tif"/>
+    </fig>
+    <fig id="fig3s1" position="float" specific-use="child-fig">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.012</object-id>
+        <label>Figure 3—figure supplement 1.</label>
+        <caption>
+            <title>Title of the figure supplement</title>
+        </caption>
+        <graphic mimetype="image" mime-subtype="tiff" xlink:href="elife-00666-fig3-figsupp1.tif"/>
+        <p>
+            <supplementary-material id="fig3sdata1"><!-- UPDATE: DOI prefix removed from XML but must be added for display-->
+            <object-id pub-id-type="doi">10.7554/eLife.00666.013</object-id>
+            <label>Figure 3—figure supplement 1—Source data 1.</label>
+            <caption>
+                <title>Title of the figure supplement source data.</title>
+                <p>Legend of the figure supplement source data.</p>
+            </caption>
+            <media mimetype="application" mime-subtype="xlsx" xlink:href="elife-00666-fig3-figsupp1-data1.xlsx"/>
+            </supplementary-material>
+        </p>
+    </fig>
+    <media mimetype="video" mime-subtype="mp4" id="fig3video1" xlink:href="elife-00666-fig3-video1.mp4">
+        <object-id pub-id-type="doi">10.7554/eLife.00666.035</object-id>
+        <label>Figure 3—Video 1.</label>
+        <caption>
+            <title> A description of the eLife editorial process. </title>
+        </caption>
+    </media>
+</fig-group>

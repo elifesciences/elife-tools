@@ -1,0 +1,30 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref id="bib37">
+                    <element-citation publication-type="report">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Rumelhart</surname>
+                                <given-names>DE</given-names>
+                            </name>
+                            <name>
+                                <surname>Hinton</surname>
+                                <given-names>GE</given-names>
+                            </name>
+                            <name>
+                                <surname>Williams</surname>
+                                <given-names>RJ</given-names>
+                            </name>
+                        </person-group>
+                        <year iso-8601-date="1985">1985</year>
+                        <source>Learning Internal Representations by Error Propagation</source>
+                        <publisher-name>California Univ San Diego La Jolla Inst for Cognitive Science</publisher-name>
+                        <pub-id pub-id-type="doi">10.21236/ADA164453</pub-id>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

@@ -1,0 +1,16 @@
+<root>
+    <front>
+        <article-meta>
+            <volume>1</volume>
+        </article-meta>
+    </front>
+    <back>
+        <ref-list>
+            <ref id="bib1">
+                <element-citation>
+                    <issue>1</issue>
+                </element-citation>
+            </ref>
+        </ref-list>
+    </back>
+</root>

@@ -1,0 +1,33 @@
+<fig-group>
+    <fig id="fig1" position="float">
+        <object-id pub-id-type="doi">10.7554/eLife.06726.003</object-id>
+        <label>Figure 1</label>
+        <caption>
+            <title>Angioblast migration ....</title>
+            <p>(<bold>A</bold>–<bold>F</bold>)</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.003">http://dx.doi.org/10.7554/eLife.06726.003</ext-link></p>
+            <p>
+                <supplementary-material id="SD1-data">
+                    <object-id pub-id-type="doi">10.7554/eLife.06726.004</object-id>
+                    <label>Figure 1—source movie 1.</label>
+                    <caption>
+                        <title>Time-lapse movie ....</title>
+                        <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.004">http://dx.doi.org/10.7554/eLife.06726.004</ext-link></p>
+                    </caption>
+                    <media mime-subtype="avi" mimetype="video" xlink:href="elife-06726-fig1-data1-v2.avi"/>
+                </supplementary-material>
+            </p>
+        </caption>
+        <graphic xlink:href="elife-06726-fig1-v2.tif"/>
+    </fig>
+    <fig id="fig1s1" position="float" specific-use="child-fig">
+        <object-id pub-id-type="doi">10.7554/eLife.06726.005</object-id>
+        <label>Figure 1—figure supplement 1.</label>
+        <caption>
+            <title>Inhibition of Vegfa signaling ....</title>
+            <p>(<bold>A</bold>–<bold>J</bold>)</p>
+            <p><bold>DOI:</bold> <ext-link ext-link-type="doi" xlink:href="10.7554/eLife.06726.005">http://dx.doi.org/10.7554/eLife.06726.005</ext-link></p>
+        </caption>
+        <graphic xlink:href="elife-06726-fig1-figsupp1-v2.tif"/>
+    </fig>
+</fig-group>

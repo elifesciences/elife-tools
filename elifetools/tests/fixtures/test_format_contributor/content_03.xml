@@ -1,0 +1,16 @@
+<root>
+    <article>
+        <article-meta>
+            <contrib-group>
+                <contrib contrb-type="author">
+                    <string-name>
+                        <given-names>A Real</given-names>
+                        <surname>Author</surname>
+                        ,
+                        <suffix>Jnr</suffix>
+                    </string-name>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </article>
+</root>

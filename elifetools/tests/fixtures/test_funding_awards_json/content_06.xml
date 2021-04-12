@@ -1,0 +1,23 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">06412</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.06412</article-id>
+            <funding-group>
+                <award-group id="par-1">
+                    <funding-source>
+                        <institution-wrap>
+                            <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000065</institution-id>
+                            <institution>National Institute of Neurological Disorders and Stroke (NINDS)</institution>
+                        </institution-wrap>
+                    </funding-source>
+                    <award-id>#NS072030</award-id>
+                </award-group>
+                <funding-statement>The funder had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement>
+            </funding-group>
+        </article-meta>
+    </front>
+</root>

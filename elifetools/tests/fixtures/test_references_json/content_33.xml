@@ -1,0 +1,17 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib6">
+            <element-citation publication-type="thesis">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Berret</surname>
+                        <given-names>B</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="2009">2009</year>
+                <article-title>Intégration de la force gravitaire dans la planification motrice et le contrôle des mouvements du bras et du corps</article-title>
+                <source>PhD. Thesis</source>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>

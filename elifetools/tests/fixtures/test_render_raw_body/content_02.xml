@@ -1,0 +1,27 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <sec id="s1">
+        <title>Section title</title>
+        <p>Content.</p>
+        <fig-group>
+            <fig id="fig2">
+                <object-id pub-id-type="doi">10.7554/eLife.00666.008</object-id>
+                <label>Figure 2.</label>
+                <caption>
+                    <title>Figure title</title>
+                    <p>Figure caption</p>
+                </caption>
+                <graphic xlink:href="elife-00666-fig2-v1.tif"/>
+            </fig>
+            <fig id="fig2s1">
+                <object-id pub-id-type="doi">10.7554/eLife.00666.009</object-id>
+                <label>Figure 2.</label>
+                <caption>
+                    <title>Figure title</title>
+                    <p>Figure caption</p>
+                </caption>
+                <graphic xlink:href="elife-00666-fig2-figsupp1-v1.tif"/>
+            </fig>
+        </fig-group>
+        <p>More content</p>
+    </sec>
+</root>

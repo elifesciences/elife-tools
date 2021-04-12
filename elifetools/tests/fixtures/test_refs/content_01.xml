@@ -1,0 +1,35 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <article-meta>
+                <article-id pub-id-type="doi">10.5334/cstp.77</article-id>
+            </article-meta>
+        </front>
+        <back>
+            <ref-list><ref id="B7">
+            <label>7</label>
+            <element-citation publication-type="journal">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Conrad</surname>
+                        <given-names>C.C.</given-names>
+                    </name>
+                    <name>
+                        <surname>Hilchey</surname>
+                        <given-names>K.G.</given-names>
+                    </name>
+                </person-group>
+                <article-title>A review of citizen science and community-based environmental monitoring: Issues and opportunities</article-title>
+                <source>Environmental Monitoring and Assessment</source>
+                <year iso-8601-date="2011">2011</year>
+                <volume>176</volume>
+                <issue>1&#8211;4</issue>
+                <fpage>273</fpage>
+                <lpage>291</lpage>
+                <pub-id pub-id-type="doi">10.1007/s10661-010-1582-5</pub-id>
+            </element-citation>
+            </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>
