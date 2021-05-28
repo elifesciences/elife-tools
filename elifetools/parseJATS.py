@@ -268,20 +268,31 @@ def pub_history(soup):
         event_tags = raw_parser.event(pub_history)
         for event_tag in event_tags:
             event = OrderedDict()
-            # parse event tag
+
+            date_tag = first(raw_parser.date(event_tag))
+
+            # set event_type from the event tag, otherwise from the date tag
             set_if_value(event, "event_type", event_tag.get("event-type"))
+            if not event.get("event_type") and date_tag:
+                set_if_value(event, "event_type", date_tag.get("date-type"))
+
             event_desc_tag = first(raw_parser.event_desc(event_tag))
             if event_desc_tag:
                 event_desc = node_contents_str(event_desc_tag).rstrip()
                 set_if_value(event, "event_desc", event_desc)
                 set_if_value(event, "event_desc_html", xml_to_html(True, event_desc))
-            uri_tag = first(raw_parser.ext_link(event_tag, "uri"))
-            if uri_tag:
-                set_if_value(event, "uri", uri_tag.get("xlink:href"))
-                set_if_value(event, "uri_text", node_contents_str(uri_tag))
+            # look for uri in a self-uri tag, otherwise look for an ext-link tag
+            self_uri_tag = first(raw_parser.self_uri(event_tag))
+            if self_uri_tag:
+                set_if_value(event, "uri", self_uri_tag.get("xlink:href"))
+            else:
+                uri_tag = first(raw_parser.ext_link(event_tag, "uri"))
+                if uri_tag:
+                    set_if_value(event, "uri", uri_tag.get("xlink:href"))
+                    set_if_value(event, "uri_text", node_contents_str(uri_tag))
             if article_id_list(event_tag):
                 event["id_list"] = article_id_list(event_tag)
-            date_tag = first(raw_parser.date(event_tag))
+            
             if date_tag:
                 (day, month, year) = ymd(date_tag)
                 event["day"] = day
