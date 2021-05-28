@@ -9,7 +9,8 @@ elifePipeline {
     }
     
     stage 'Release', {
-        elifePypiRelease()
+        tag = elifePypiRelease()
+        elifeGitTagRevision(tag)
     }
     
 }
