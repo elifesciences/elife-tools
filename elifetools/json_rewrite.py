@@ -135,7 +135,10 @@ def elife_references_rewrite_json():
                 ),
                 (
                     "articleTitle",
-                    "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 October 1970]: fifteenth report",
+                    (
+                        "WHO Expert Committee on Malaria [meeting held in Geneva from 19 to 30 "
+                        "October 1970]: fifteenth report"
+                    ),
                 ),
                 (
                     "publisher",
@@ -170,7 +173,10 @@ def elife_references_rewrite_json():
         "bib25": {
             "conference": {
                 "name": [
-                    "Seventeenth Meeting of the RBM Partnership Monitoring and Evaluation Reference Group (MERG)"
+                    (
+                        "Seventeenth Meeting of the RBM Partnership Monitoring and Evaluation "
+                        "Reference Group (MERG)"
+                    )
                 ]
             }
         }
@@ -617,18 +623,19 @@ def elife_references_rewrite_json():
     # Now turn the authors data into the json
     for author_row in references_authors:
         ref_json = OrderedDict()
-        doi, id, author_type, authors = author_row
-        # if id not in ref_json:
-        ref_json[id] = OrderedDict()
-        ref_json[id][author_type] = []
+        doi, author_id, author_type, authors = author_row
+        # if author_id not in ref_json:
+        ref_json[author_id] = OrderedDict()
+        ref_json[author_id][author_type] = []
         for ref_author in authors:
             if "collab" in ref_author:
                 author_json = elifetools.utils_html.references_author_collab(ref_author)
             else:
                 author_json = elifetools.utils.references_author_person(ref_author)
             if author_json:
-                ref_json[id][author_type].append(author_json)
-        # Add to json array, and do not verwrite existing rule of a specific bib id (if present)
+                ref_json[author_id][author_type].append(author_json)
+        # Add to json array, and do not rewrite existing rule of a
+        # specific bib author_id (if present)
         if doi not in references_rewrite_json:
             references_rewrite_json[doi] = ref_json
         else:
@@ -637,8 +644,8 @@ def elife_references_rewrite_json():
                     references_rewrite_json[doi][key] = value
                 else:
                     # Append dict items
-                    for k, v in value.items():
-                        references_rewrite_json[doi][key][k] = v
+                    for child_key, child_value in value.items():
+                        references_rewrite_json[doi][key][child_key] = child_value
 
     return references_rewrite_json
 
@@ -830,209 +837,104 @@ def rewrite_elife_authors_json(json_content, doi):
                     ] = "MP: Managing Executive Editor, <i>eLife</i>"
 
     # Remainder of competing interests rewrites
+    no_competing_interests_msg = (
+        "The authors declare that no competing interests exist."
+    )
+
     elife_author_competing_interests = {}
-    elife_author_competing_interests[
-        "10.7554/eLife.00133"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.00190"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00133"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.00190"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.00230"
     ] = "The authors have declared that no competing interests exist"
-    elife_author_competing_interests[
-        "10.7554/eLife.00288"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00288"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.00352"
     ] = "The author declares that no competing interest exist"
-    elife_author_competing_interests[
-        "10.7554/eLife.00362"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00362"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.00475"
     ] = "The remaining authors have no competing interests to declare."
     elife_author_competing_interests[
         "10.7554/eLife.00592"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.00633"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.00633"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.02725"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.02935"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.04126"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.04878"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.02935"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.04126"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.04878"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.05322"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.06011"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.06416"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.06011"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.06416"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.07383"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.08421"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.08494"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08421"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.08494"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.08648"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.08924"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.08924"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.09083"
     ] = "The other authors declare that no competing interests exists."
-    elife_author_competing_interests[
-        "10.7554/eLife.09102"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.09460"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.09591"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.09600"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.10113"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.10230"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.10453"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.10635"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.11407"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.11473"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.11750"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.12217"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.12620"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.12724"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.13023"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.13732"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.14116"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.14258"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.14694"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.09102"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.09460"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.09591"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.09600"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.10113"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.10230"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.10453"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.10635"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.11407"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.11473"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.11750"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.12217"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.12620"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.12724"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.13023"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.13732"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.14116"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.14258"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.14694"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.15085"
     ] = "The other authors declare that no competing interests exist."
     elife_author_competing_interests[
         "10.7554/eLife.15312"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.16011"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.16940"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17023"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17092"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17218"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17267"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17523"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17556"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17769"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.17834"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.18101"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.18515"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.18544"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.18648"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.19071"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.19334"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.19510"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.20183"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.20242"
-    ] = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.20375"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.16011"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.16940"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17023"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17092"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17218"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17267"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17523"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17556"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17769"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.17834"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.18101"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.18515"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.18544"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.18648"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.19071"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.19334"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.19510"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.20183"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.20242"] = no_competing_interests_msg
+    elife_author_competing_interests["10.7554/eLife.20375"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.20797"
     ] = "The other authors declare that no competing interests exist."
-    msg = "The authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.21454"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.21454"] = no_competing_interests_msg
     elife_author_competing_interests[
         "10.7554/eLife.21491"
     ] = "The other authors declare that no competing interests exist."
-    elife_author_competing_interests[
-        "10.7554/eLife.22187"
-    ] = "The authors declare that no competing interests exist."
+    elife_author_competing_interests["10.7554/eLife.22187"] = no_competing_interests_msg
 
     if article_doi in elife_author_competing_interests:
         for i, ref in enumerate(json_content):
@@ -1066,11 +968,16 @@ def rewrite_elife_datasets_json(json_content, doi):
     elife_dataset_dates.append(("10.7554/eLife.02935", "used", "dataro2", u"2014"))
     elife_dataset_dates.append(("10.7554/eLife.03583", "used", "dataro5", u"2013"))
     if doi in map(lambda dataset: dataset[0], elife_dataset_dates):
-        for (match_doi, used_or_generated, id, dataset_date) in elife_dataset_dates:
+        for (
+            match_doi,
+            used_or_generated,
+            dataset_id,
+            dataset_date,
+        ) in elife_dataset_dates:
             if doi == match_doi:
                 if json_content.get(used_or_generated):
                     for dataset in json_content[used_or_generated]:
-                        if dataset.get("id") and dataset["id"] == id:
+                        if dataset.get("id") and dataset["id"] == dataset_id:
                             if not dataset.get("date"):
                                 dataset["date"] = dataset_date
 
@@ -1289,9 +1196,10 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2016"
                     if not dataset.get("title"):
-                        dataset[
-                            "title"
-                        ] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                        dataset["title"] = (
+                            u"An effector of the Irish potato famine pathogen antagonizes a "
+                            u"host autophagy cargo receptor"
+                        )
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
                     if (
@@ -1305,9 +1213,10 @@ def rewrite_elife_datasets_json(json_content, doi):
                     if not dataset.get("date"):
                         dataset["date"] = u"2015"
                     if not dataset.get("title"):
-                        dataset[
-                            "title"
-                        ] = u"An effector of the Irish potato famine pathogen antagonizes a host autophagy cargo receptor"
+                        dataset["title"] = (
+                            u"An effector of the Irish potato famine pathogen antagonizes a "
+                            u"host autophagy cargo receptor"
+                        )
                     if not dataset.get("authors"):
                         dataset["authors"] = datasets_authors_for_10856
                     if (
@@ -1326,9 +1235,10 @@ def rewrite_elife_datasets_json(json_content, doi):
             for dataset in json_content["generated"]:
                 if dataset.get("id") and dataset["id"] == "dataro1":
                     if not dataset.get("title"):
-                        dataset[
-                            "title"
-                        ] = u"Oct4 ChIP-Seq at G1 and G2/M phase of cell cycle in mouse embryonic stem cells"
+                        dataset["title"] = (
+                            u"Oct4 ChIP-Seq at G1 and G2/M phase of cell cycle in "
+                            u"mouse embryonic stem cells"
+                        )
 
     if doi == "10.7554/eLife.10921":
         if json_content.get("generated"):
@@ -1587,7 +1497,13 @@ def rewrite_elife_decision_letter_json(json_content, doi):
             json_content["description"] = [
                 {
                     "type": "paragraph",
-                    "text": "In the interests of transparency, eLife includes the editorial decision letter and accompanying author responses. A lightly edited version of the letter sent to the authors after peer review is shown, indicating the most substantive concerns; minor comments are not usually included.",
+                    "text": (
+                        "In the interests of transparency, eLife includes the editorial "
+                        "decision letter and accompanying author responses. A lightly edited "
+                        "version of the letter sent to the authors after peer review is shown, "
+                        "indicating the most substantive concerns; minor comments are not "
+                        "usually included."
+                    ),
                 }
             ]
 
