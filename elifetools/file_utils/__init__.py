@@ -12,6 +12,7 @@ def json_expected_folder(filename):
 def json_expected_file(filename, function_name):
     if json_expected_folder(filename):
         return os.path.join(json_expected_folder(filename), function_name + ".json")
+    return None
 
 
 def sample_xml(filename):
@@ -51,9 +52,9 @@ def read_fixture(folder_name, filename):
 
 
 __all__ = [
-    json_expected_file,
-    json_expected_folder,
-    sample_xml,
-    fixture_folder,
-    read_fixture,
+    "json_expected_file",
+    "json_expected_folder",
+    "sample_xml",
+    "fixture_folder",
+    "read_fixture",
 ]
