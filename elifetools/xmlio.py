@@ -69,10 +69,9 @@ def parse(filename, return_doctype_dict=False, return_processing_instructions=Fa
 
     if return_doctype_dict is True and return_processing_instructions is True:
         return root, doctype_dict, processing_instructions
-    elif return_doctype_dict is True:
+    if return_doctype_dict is True:
         return root, doctype_dict
-    else:
-        return root
+    return root
 
 
 def add_tag_before(tag_name, tag_text, parent_tag, before_tag_name):
@@ -122,16 +121,19 @@ def convert_xlink_href(root, name_map):
 
             if tag.get("{http://www.w3.org/1999/xlink}href"):
 
-                for k, v in name_map.items():
+                for key, value in name_map.items():
                     # Try to match the exact name first, and if not then
                     #  try to match it without the file extension
-                    if tag.get("{http://www.w3.org/1999/xlink}href") == k:
-                        tag.set("{http://www.w3.org/1999/xlink}href", v)
+                    if tag.get("{http://www.w3.org/1999/xlink}href") == key:
+                        tag.set("{http://www.w3.org/1999/xlink}href", value)
                         count += 1
                     elif (
-                        tag.get("{http://www.w3.org/1999/xlink}href") == k.split(".")[0]
+                        tag.get("{http://www.w3.org/1999/xlink}href")
+                        == key.split(".")[0]
                     ):
-                        tag.set("{http://www.w3.org/1999/xlink}href", v.split(".")[0])
+                        tag.set(
+                            "{http://www.w3.org/1999/xlink}href", value.split(".")[0]
+                        )
                         count += 1
     return count
 
@@ -193,14 +195,17 @@ def rewrite_subject_group(root, subjects, subject_group_type, overwrite=True):
     return count
 
 
-def output(root, type="JATS", doctype_dict=None, processing_instructions=None):
+def output(root, output_type="JATS", doctype_dict=None, processing_instructions=None):
 
     if doctype_dict is not None:
         publicId = doctype_dict.get("pubid")
         systemId = doctype_dict.get("system")
         qualifiedName = doctype_dict.get("name")
-    elif type == "JATS":
-        publicId = "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1d3 20150301//EN"
+    elif output_type == "JATS":
+        publicId = (
+            "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange "
+            "DTD v1.1d3 20150301//EN"
+        )
         systemId = "JATS-archivearticle1.dtd"
         qualifiedName = "article"
     else:
@@ -299,14 +304,15 @@ def append_minidom_xml_to_elementtree_xml(
             for name, value in node.attributes.items():
                 new_elem.set(name, value)
 
+    new_elem_sub = None
     i = 0
     for child_node in node.childNodes:
         if child_node.nodeName == "#text":
             if not new_elem.text and i <= 0:
                 new_elem.text = child_node.nodeValue
-            elif not new_elem.text and i > 0:
+            elif new_elem_sub is not None and (not new_elem.text and i > 0):
                 new_elem_sub.tail = child_node.nodeValue
-            else:
+            elif new_elem_sub is not None:
                 new_elem_sub.tail = child_node.nodeValue
 
         elif child_node.childNodes is not None:
