@@ -35,7 +35,7 @@ class TestUtils(unittest.TestCase):
     @unpack
     @data(
         (None, None, None),
-        ("this and that", None, "this-and-that"),
+        ("this and that", [], "this-and-that"),
         ("this and that", ["this", "and", "that"], ""),
     )
     def test_subject_slug_stopwords(self, value, stopwords, expected):
