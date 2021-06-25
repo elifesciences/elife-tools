@@ -193,7 +193,10 @@ def impact_statement(soup):
 
 def version_history(soup, html_flag=True):
     "extract the article version history details"
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
+
     version_history = []
     related_object_tags = raw_parser.related_object(raw_parser.article_meta(soup))
     for tag in related_object_tags:
@@ -2719,13 +2722,16 @@ def acknowledgements_json(soup):
 
 def keywords_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
+
     return list(map(convert, full_keywords(soup)))
 
 
 def research_organism_json(soup, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
 
     do_not_include = ["none", "other"]
     research_organisms = list(
@@ -2944,7 +2950,8 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     this is separated out so it can be called from more than one place
     """
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string, base_url)
 
     block_content_list = []
 
@@ -3096,7 +3103,8 @@ def body_block_attribution(tag):
 
 def body_block_content(tag, html_flag=True, base_url=None):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string, base_url)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string, base_url)
 
     tag_content = OrderedDict()
 
@@ -3615,7 +3623,8 @@ def author_affiliations(author, html_flag=True):
     """compile author affiliations for json output"""
 
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
 
     affilations = []
 
@@ -3833,7 +3842,8 @@ def author_json_details(
     html_flag=True,
 ):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
 
     """add more author json"""
     if author_affiliations(author):
@@ -4265,7 +4275,8 @@ def references_json_authors(ref_authors, ref_content):
 def references_json(soup, html_flag=True):
 
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
 
     references_json = []
     for ref in refs(soup):
@@ -4686,7 +4697,8 @@ def appendices_json(soup, base_url=None):
 
 def dataset_tag_json(tag, html_flag=True):
     # Configure the XML to HTML conversion preference for shorthand use below
-    convert = lambda xml_string: xml_to_html(html_flag, xml_string)
+    def convert(xml_string):
+        return xml_to_html(html_flag, xml_string)
 
     dataset_content = OrderedDict()
 
