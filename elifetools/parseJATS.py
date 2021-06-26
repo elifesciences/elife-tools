@@ -531,7 +531,7 @@ def history_date(soup, date_type=None):
     Find a date in the history tag for the specific date_type
     typical date_type values: received, accepted
     """
-    if date_type == None:
+    if date_type is None:
         return None
 
     history_date = raw_parser.history_date(soup, date_type)
@@ -4513,7 +4513,7 @@ def convert_references_json(ref_content, soup=None):
         (ref_content.get("type") == "other")
         or (ref_content.get("type") == "book-chapter" and "editors" not in ref_content)
         or (ref_content.get("type") == "journal" and "articleTitle" not in ref_content)
-        or (ref_content.get("type") in ["book-chapter"] and not "pages" in ref_content)
+        or (ref_content.get("type") == "book-chapter" and "pages" not in ref_content)
         or (ref_content.get("type") == "journal" and "journal" not in ref_content)
         or (
             ref_content.get("type")
