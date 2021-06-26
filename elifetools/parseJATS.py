@@ -670,8 +670,8 @@ def is_poa(soup):
     """
     if collection_year(soup) is None:
         return True
-    else:
-        return False
+
+    return False
 
 
 def abstracts(soup):
@@ -725,8 +725,8 @@ def abstract(soup):
         )
     if abstract:
         return abstract.get("content")
-    else:
-        return None
+
+    return None
 
 
 def abstract_xml(soup, strip_doi_paragraphs=True, abstract_type=None):
@@ -761,8 +761,8 @@ def full_abstract(soup):
         )
     if abstract:
         return abstract.get("full_content")
-    else:
-        return None
+
+    return None
 
 
 def digest(soup):
@@ -779,8 +779,8 @@ def digest(soup):
         )
     if abstract:
         return abstract.get("content")
-    else:
-        return None
+
+    return None
 
 
 def full_digest(soup):
@@ -800,8 +800,8 @@ def full_digest(soup):
         )
     if abstract:
         return abstract["full_content"]
-    else:
-        return None
+
+    return None
 
 
 def related_article(soup):
@@ -1604,9 +1604,7 @@ def all_contributors(soup, detail="brief"):
 def is_author_non_byline(tag, contrib_type="author non-byline"):
     if tag and tag.get("contrib-type") and tag.get("contrib-type") == contrib_type:
         return True
-    elif (
-        tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab"
-    ):
+    if tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab":
         return True
     return False
 
@@ -1743,8 +1741,8 @@ def format_aff(aff_tag):
 
     if "id" in aff_tag.attrs:
         return aff_tag["id"], values
-    else:
-        return None, values
+
+    return None, values
 
 
 def full_affiliation(soup):
@@ -2109,9 +2107,9 @@ def components(soup):
         component_doi = extract_component_doi(tag, nodenames)
         if component_doi is None:
             continue
-        else:
-            component["doi"] = utils.doi_uri_to_doi(component_doi)
-            component["doi_url"] = utils.doi_to_doi_uri(component["doi"])
+
+        component["doi"] = utils.doi_uri_to_doi(component_doi)
+        component["doi_url"] = utils.doi_to_doi_uri(component["doi"])
 
         utils.copy_attribute(tag.attrs, "id", component)
 
@@ -2630,7 +2628,7 @@ def object_id_doi(tag, parent_tag_name=None):
     object_id = None
     object_ids = raw_parser.object_id(tag, "doi")
     if object_ids:
-        object_id = utils.first([id_ for id_ in object_ids])
+        object_id = utils.first(object_ids)
     if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
         object_id = None
     if object_id:
@@ -2716,8 +2714,8 @@ def acknowledgements_json(soup):
         return body_block_content_render(raw_parser.acknowledgements(soup))[0].get(
             "content"
         )
-    else:
-        return None
+
+    return None
 
 
 def keywords_json(soup, html_flag=True):
@@ -2824,7 +2822,7 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                 # Skip this tag
                 continue
 
-            elif raw_parser.inline_graphic(tag):
+            if raw_parser.inline_graphic(tag):
                 # edge case where inline-graphic is in the first boxed-text
                 tag_block = boxed_text_to_image_block(tag)
                 body_content.append(tag_block)
@@ -2899,7 +2897,7 @@ def body_block_content_render(tag, recursive=False, base_url=None):
         "code",
     ]:
         for child_tag in tag:
-            if not (hasattr(child_tag, "name")):
+            if not hasattr(child_tag, "name"):
                 continue
 
             if child_tag.name == "p":
@@ -3110,7 +3108,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     tag_content = OrderedDict()
 
-    if not (hasattr(tag, "name")):
+    if not hasattr(tag, "name"):
         return OrderedDict()
 
     if tag.name == "sec":
@@ -3677,8 +3675,8 @@ def author_affiliations(author, html_flag=True):
 
     if affilations != []:
         return affilations
-    else:
-        return None
+
+    return None
 
 
 def author_phone_numbers(author, correspondence):
@@ -3691,8 +3689,8 @@ def author_phone_numbers(author, correspondence):
                         phone_numbers.append(phone_number)
     if phone_numbers != []:
         return phone_numbers
-    else:
-        return None
+
+    return None
 
 
 def phone_number_json(phone):
@@ -3730,8 +3728,8 @@ def author_email_addresses(author, correspondence):
 
     if email_addresses != []:
         return email_addresses
-    else:
-        return None
+
+    return None
 
 
 def author_contribution(author, contributions):
@@ -3783,8 +3781,8 @@ def author_equal_contribution(author, equal_contributions_map):
                 equal_contributions.append(equal_contributions_map[ref_id])
     if equal_contributions != []:
         return equal_contributions
-    else:
-        return None
+
+    return None
 
 
 def author_present_address(author, present_address_data):
@@ -3808,8 +3806,8 @@ def author_present_address(author, present_address_data):
                     postal_addresses.append(address)
     if postal_addresses != []:
         return postal_addresses
-    else:
-        return None
+
+    return None
 
 
 def author_foot_notes(author, foot_notes_data):
@@ -3828,8 +3826,8 @@ def author_foot_notes(author, foot_notes_data):
                         foot_notes.append(text)
     if foot_notes != []:
         return foot_notes
-    else:
-        return None
+
+    return None
 
 
 def author_json_details(
@@ -4146,8 +4144,8 @@ def references_publisher(publisher_name=None, publisher_loc=None):
         publisher["address"] = address
     if len(publisher) > 0:
         return publisher
-    else:
-        return None
+
+    return None
 
 
 def references_pages_range(fpage=None, lpage=None):
@@ -4607,8 +4605,8 @@ def references_json_unknown_details(ref_content, soup=None):
                         details += utils.node_text(tag)
     if details == "":
         return None
-    else:
-        return details
+
+    return details
 
 
 def ethics_json(soup):
