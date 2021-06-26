@@ -2954,7 +2954,6 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
     block_content_list = []
 
     tag_content_content = []
-    nodenames = body_block_nodenames()
 
     paragraph_content = u""
     for child_tag in p_tag:
@@ -3219,7 +3218,6 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
         table_wrap_foot = raw_parser.table_wrap_foot(tag)
         for foot_tag in table_wrap_foot:
-            footnotes = []
             for fn_tag in raw_parser.fn(foot_tag):
                 footnote_content = OrderedDict()
                 # Only set id if a label is present
@@ -3551,8 +3549,8 @@ def decision_letter(soup):
         body_content_rewritten = elifetools.json_rewrite.rewrite_json(
             "body_json", soup, body_content
         )
-        if len(body_content) > 0:
-            sub_article_content["content"] = body_content
+        if len(body_content_rewritten) > 0:
+            sub_article_content["content"] = body_content_rewritten
 
     return elifetools.json_rewrite.rewrite_json(
         "decision_letter_json", soup, sub_article_content
@@ -3580,8 +3578,8 @@ def author_response(soup):
         body_content_rewritten = elifetools.json_rewrite.rewrite_json(
             "body_json", soup, body_content
         )
-        if len(body_content) > 0:
-            sub_article_content["content"] = body_content
+        if len(body_content_rewritten) > 0:
+            sub_article_content["content"] = body_content_rewritten
 
     return sub_article_content
 
@@ -4015,7 +4013,6 @@ def authors_json(soup):
     author_contributions_data = author_contributions(soup, None)
     author_competing_interests_data = competing_interests(soup, None)
     author_correspondence_data = full_correspondence(soup)
-    authors_non_byline_data = authors_non_byline(soup)
     equal_contributions_map = map_equal_contributions(contributors_data)
     present_address_data = present_addresses(soup)
     foot_notes_data = other_foot_notes(soup)
@@ -4676,7 +4673,7 @@ def appendices_json(soup, base_url=None):
         # Then check all first level sections with no title, and fix them by
         #  building the content list again, unwrapping each non-title section
         clean_app_content = []
-        for i, content_block in enumerate(app_content["content"]):
+        for content_block in app_content["content"]:
             if (
                 content_block.get("type")
                 and content_block.get("type") == "section"
@@ -4820,8 +4817,6 @@ def dataset_tag_json(tag, html_flag=True):
 
 def datasets_json(soup, html_flag=True):
     datasets_json = OrderedDict()
-    generated_datasets = []
-    used_datasets = []
     generated_datasets_tags = []
     used_datasets_tags = []
     availabilty_p_tags = []
@@ -5006,7 +5001,6 @@ def funding_awards_json(soup):
                         utils.doi_uri_to_doi(award_group.get("id")),
                     )
                     if award_group.get("institution"):
-                        source_name_content = OrderedDict()
                         utils.set_if_value(
                             source_content, "name", [award_group.get("institution")]
                         )
