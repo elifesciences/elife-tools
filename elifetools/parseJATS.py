@@ -3055,7 +3055,9 @@ def body_block_title_label_caption(
     """set the title, label and caption values in a consistent way
 
     set_caption: insert a "caption" field
-    prefer_title: when only one value is available, set title rather than label. If False, set label rather than title"""
+    prefer_title: when only one value is available,
+       set title rather than label. If False, set label rather than title
+    """
     utils.set_if_value(tag_content, "label", utils.rstrip_punctuation(label_value))
     utils.set_if_value(tag_content, "title", title_value)
     if set_caption is True and caption_content and len(caption_content) > 0:
@@ -4970,7 +4972,11 @@ def supplementary_files_json(soup):
             file["label"] = "All additional files"
             file["caption"] = [
                 {
-                    "text": "Any figure supplements, source code, source data, videos or supplementary files associated with this article are contained within this zip.",
+                    "text": (
+                        "Any figure supplements, source code, source data, videos or "
+                        "supplementary files associated with this article are contained "
+                        "within this zip."
+                    ),
                     "type": "paragraph",
                 }
             ]
