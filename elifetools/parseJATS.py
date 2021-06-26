@@ -34,8 +34,8 @@ def parse_xml(xml):
 
 
 def parse_document(filelocation):
-    with open(filelocation, "rb") as fp:
-        return parse_xml(fp)
+    with open(filelocation, "rb") as open_file:
+        return parse_xml(open_file)
 
 
 def title(soup):
@@ -50,7 +50,7 @@ def full_title(soup):
 def title_short(soup):
     "'title' truncated to 20 chars"
     # TODO: 20 is arbitrary,
-    return title(soup)[:20]
+    return str(title(soup))[:20]
 
 
 def title_slug(soup):
@@ -862,22 +862,22 @@ def mixed_citations(soup):
             nom.surname.text, nom.find("given-names").text, suffix
         )
 
-    def do(mc):
+    def do_format(mc_tag):
         return {
             "journal": {
-                "name": mc.source.text,
-                "volume": mc.volume.text,
-                "fpage": mc.fpage.text,
-                "lpage": utils.node_text(mc.lpage),
+                "name": mc_tag.source.text,
+                "volume": mc_tag.volume.text,
+                "fpage": mc_tag.fpage.text,
+                "lpage": utils.node_text(mc_tag.lpage),
             },
             "article": {
-                "title": mc.find("article-title").text,
-                "doi": mc.find("pub-id", attrs={"pub-id-type": "doi"}).text,
+                "title": mc_tag.find("article-title").text,
+                "doi": mc_tag.find("pub-id", attrs={"pub-id-type": "doi"}).text,
                 "pub-date": list(map(int, ymd(soup)[::-1])),
                 "authors": list(
                     map(
                         name,
-                        mc.find(
+                        mc_tag.find(
                             "person-group", attrs={"person-group-type": "author"}
                         ).contents,
                     )
@@ -886,7 +886,7 @@ def mixed_citations(soup):
                     list(
                         map(
                             preferred_name,
-                            mc.find(
+                            mc_tag.find(
                                 "person-group", attrs={"person-group-type": "author"}
                             ).contents,
                         )
@@ -895,7 +895,7 @@ def mixed_citations(soup):
             },
         }
 
-    return list(map(do, mc_tags))
+    return list(map(do_format, mc_tags))
 
 
 def component_doi(soup):
@@ -1570,9 +1570,9 @@ def format_contributor(
                 contributor["notes-fn"] = []
             if not target_tags_fn:
                 target_tags_fn = raw_parser.fn(soup)
-            for fn in fn_tags:
+            for fn_tag in fn_tags:
                 # Find the matching tag
-                rid = fn["rid"]
+                rid = fn_tag["rid"]
                 fn_node = utils.first(
                     list(filter(lambda tag: tag.get("id") == rid, target_tags_fn))
                 )
@@ -1751,8 +1751,8 @@ def full_affiliation(soup):
     affs = []
     for tag in aff_tags:
         aff = {}
-        (id, aff_details) = format_aff(tag)
-        aff[id] = aff_details
+        (aff_id, aff_details) = format_aff(tag)
+        aff[aff_id] = aff_details
         affs.append(aff)
     return affs
 
@@ -2383,8 +2383,8 @@ def competing_interests(soup, fntype_filter):
     )
     if not competing_interests_section:
         return None
-    fn = utils.extract_nodes(utils.first(competing_interests_section), "fn")
-    interests = footnotes(fn, fntype_filter)
+    fn_nodes = utils.extract_nodes(utils.first(competing_interests_section), "fn")
+    interests = footnotes(fn_nodes, fntype_filter)
 
     return interests
 
@@ -2422,22 +2422,24 @@ def author_contributions(soup, fntype_filter):
     )
     if not author_contributions_section:
         return None
-    fn = utils.extract_nodes(utils.first(author_contributions_section), "fn")
-    cons = footnotes(fn, fntype_filter)
+    fn_nodes = utils.extract_nodes(utils.first(author_contributions_section), "fn")
+    cons = footnotes(fn_nodes, fntype_filter)
 
     return cons
 
 
-def footnotes(fn, fntype_filter):
+def footnotes(fn_nodes, fntype_filter):
     notes = []
-    for f in fn:
+    for fn_node in fn_nodes:
         try:
-            if fntype_filter is None or f["fn-type"] in fntype_filter:
+            if fntype_filter is None or fn_node["fn-type"] in fntype_filter:
                 notes.append(
                     {
-                        "id": f["id"],
-                        "text": utils.clean_whitespace(utils.node_contents_str(f)),
-                        "fn-type": f["fn-type"],
+                        "id": fn_node["id"],
+                        "text": utils.clean_whitespace(
+                            utils.node_contents_str(fn_node)
+                        ),
+                        "fn-type": fn_node["fn-type"],
                     }
                 )
         except KeyError:
@@ -2456,23 +2458,23 @@ def full_award_groups(soup):
     funding_group_section = utils.extract_nodes(soup, "funding-group")
     # counter for auto generated id values, if required
     generated_id_counter = 1
-    for fg in funding_group_section:
+    for funding_group in funding_group_section:
 
-        award_group_tags = utils.extract_nodes(fg, "award-group")
+        award_group_tags = utils.extract_nodes(funding_group, "award-group")
 
-        for ag in award_group_tags:
-            if "id" in ag.attrs:
-                ref = ag["id"]
+        for award_group_tag in award_group_tags:
+            if "id" in award_group_tag.attrs:
+                ref = award_group_tag["id"]
             else:
                 # hack: generate and increment an id value none is available
                 ref = "award-group-{id}".format(id=generated_id_counter)
                 generated_id_counter += 1
 
             award_group = {}
-            award_group_id = award_group_award_id(ag)
+            award_group_id = award_group_award_id(award_group_tag)
             if award_group_id is not None:
                 award_group["award-id"] = utils.first(award_group_id)
-            funding_sources = full_award_group_funding_source(ag)
+            funding_sources = full_award_group_funding_source(award_group_tag)
             source = utils.first(funding_sources)
             if source is not None:
                 utils.copy_attribute(source, "institution", award_group)
@@ -2498,17 +2500,19 @@ def award_groups(soup):
     award_groups = []
 
     funding_group_section = utils.extract_nodes(soup, "funding-group")
-    for fg in funding_group_section:
+    for funding_group in funding_group_section:
 
-        award_group_tags = utils.extract_nodes(fg, "award-group")
+        award_group_tags = utils.extract_nodes(funding_group, "award-group")
 
-        for ag in award_group_tags:
+        for award_group_tag in award_group_tags:
 
             award_group = {}
 
-            award_group["funding_source"] = award_group_funding_source(ag)
-            award_group["recipient"] = award_group_principal_award_recipient(ag)
-            award_group["award_id"] = award_group_award_id(ag)
+            award_group["funding_source"] = award_group_funding_source(award_group_tag)
+            award_group["recipient"] = award_group_principal_award_recipient(
+                award_group_tag
+            )
+            award_group["award_id"] = award_group_award_id(award_group_tag)
 
             award_groups.append(award_group)
 
@@ -2524,8 +2528,8 @@ def award_group_funding_source(tag):
     """
     award_group_funding_source = []
     funding_source_tags = utils.extract_nodes(tag, "funding-source")
-    for t in funding_source_tags:
-        award_group_funding_source.append(t.text)
+    for funding_source_tag in funding_source_tags:
+        award_group_funding_source.append(funding_source_tag.text)
     return award_group_funding_source
 
 
@@ -2580,8 +2584,8 @@ def award_group_award_id(tag):
     """
     award_group_award_id = []
     award_id_tags = utils.extract_nodes(tag, "award-id")
-    for t in award_id_tags:
-        award_group_award_id.append(t.text)
+    for award_id_tag in award_id_tags:
+        award_group_award_id.append(award_id_tag.text)
     return award_group_award_id
 
 
@@ -2594,17 +2598,21 @@ def award_group_principal_award_recipient(tag):
     award_group_principal_award_recipient = []
     principal_award_recipients = utils.extract_nodes(tag, "principal-award-recipient")
 
-    for t in principal_award_recipients:
+    for recipient_tag in principal_award_recipients:
         principal_award_recipient_text = ""
 
         institution = utils.node_text(
-            utils.first(utils.extract_nodes(t, "institution"))
+            utils.first(utils.extract_nodes(recipient_tag, "institution"))
         )
-        surname = utils.node_text(utils.first(utils.extract_nodes(t, "surname")))
+        surname = utils.node_text(
+            utils.first(utils.extract_nodes(recipient_tag, "surname"))
+        )
         given_names = utils.node_text(
-            utils.first(utils.extract_nodes(t, "given-names"))
+            utils.first(utils.extract_nodes(recipient_tag, "given-names"))
         )
-        string_name = utils.node_text(utils.first(raw_parser.string_name(t)))
+        string_name = utils.node_text(
+            utils.first(raw_parser.string_name(recipient_tag))
+        )
         # Concatenate name and institution values if found
         #  while filtering out excess whitespace
         if given_names:
@@ -2807,12 +2815,12 @@ def body_json(soup, base_url=None):
 def render_raw_body(tag, remove_key_info_box=False, base_url=None):
     body_content = []
     body_tags = body_blocks(tag)
-    for tag in body_tags:
-        if tag.name == "boxed-text":
+    for body_tag in body_tags:
+        if body_tag.name == "boxed-text":
             # Extract the text of the first child tag for comparison, if present
             first_node_text = None
-            if tag.children:
-                first_node_text = utils.node_text(utils.first(list(tag.children)))
+            if body_tag.children:
+                first_node_text = utils.node_text(utils.first(list(body_tag.children)))
 
             if (
                 remove_key_info_box is True
@@ -2822,27 +2830,27 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
                 # Skip this tag
                 continue
 
-            if raw_parser.inline_graphic(tag):
+            if raw_parser.inline_graphic(body_tag):
                 # edge case where inline-graphic is in the first boxed-text
-                tag_block = boxed_text_to_image_block(tag)
+                tag_block = boxed_text_to_image_block(body_tag)
                 body_content.append(tag_block)
 
-            elif not raw_parser.title(tag) and not raw_parser.label(tag):
+            elif not raw_parser.title(body_tag) and not raw_parser.label(body_tag):
                 # Collapse boxed-text here if it has no title or label
-                for boxed_tag in tag:
+                for boxed_tag in body_tag:
                     tag_blocks = body_block_content_render(boxed_tag, base_url=base_url)
                     for tag_block in tag_blocks:
                         if tag_block != {}:
                             body_content.append(tag_block)
             else:
                 # Add it
-                tag_blocks = body_block_content_render(tag, base_url=base_url)
+                tag_blocks = body_block_content_render(body_tag, base_url=base_url)
                 for tag_block in tag_blocks:
                     if tag_block != {}:
                         body_content.append(tag_block)
         else:
 
-            tag_blocks = body_block_content_render(tag, base_url=base_url)
+            tag_blocks = body_block_content_render(body_tag, base_url=base_url)
             # tag_content = body_block_content_render(tag)
             for tag_block in tag_blocks:
                 if tag_block != {}:
@@ -3750,6 +3758,8 @@ def author_contribution(author, contributions):
 def author_competing_interests(author, competing_interests):
     competing_interests_text = None
 
+    label_pattern = re.compile(r"<label>.*</label>")
+
     if "competing-interest" in author.get("references", {}):
         for ref_id in author["references"]["competing-interest"]:
             if competing_interests:
@@ -3764,8 +3774,9 @@ def author_competing_interests(author, competing_interests):
                             .replace("</p>", "")
                         )
                         # Strip labels
-                        p = re.compile("<label>.*</label>")
-                        competing_interests_text = p.sub("", competing_interests_text)
+                        competing_interests_text = label_pattern.sub(
+                            "", competing_interests_text
+                        )
 
     return competing_interests_text
 
@@ -4146,15 +4157,15 @@ def references_publisher(publisher_name=None, publisher_loc=None):
 
 
 def references_pages_range(fpage=None, lpage=None):
-    range = None
+    page_range = None
     if fpage and lpage:
         # use chr(8211) for the hyphen because the schema is requiring it
-        range = fpage.strip() + chr(8211) + lpage.strip()
+        page_range = fpage.strip() + chr(8211) + lpage.strip()
     elif fpage:
-        range = fpage.strip()
+        page_range = fpage.strip()
     elif lpage:
-        range = lpage.strip()
-    return range
+        page_range = lpage.strip()
+    return page_range
 
 
 def references_date(year=None):
@@ -4988,9 +4999,9 @@ def funding_awards_json(soup):
     award_groups = full_award_groups(soup)
     if award_groups:
         for award_group_dict in award_groups:
-            for id, award_group in award_group_dict.items():
+            for award_id, award_group in award_group_dict.items():
                 award_content = OrderedDict()
-                utils.set_if_value(award_content, "id", id)
+                utils.set_if_value(award_content, "id", award_id)
 
                 if award_group.get("institution") or award_group.get("id"):
                     # Set the source
@@ -5022,7 +5033,7 @@ def funding_awards_json(soup):
     if funding_group:
         award_group_tags = raw_parser.award_group(funding_group)
     for a_tag in award_group_tags:
-        id = a_tag.get("id")
+        award_id = a_tag.get("id")
         recipient_tags = raw_parser.principal_award_recipient(a_tag)
         if recipient_tags:
             recipients = []
@@ -5082,9 +5093,9 @@ def funding_awards_json(soup):
 
             # Add to the dict for adding to the award data later
             if len(recipients) > 0:
-                if id not in award_recipients:
-                    award_recipients[id] = []
-                award_recipients[id] = recipients
+                if award_id not in award_recipients:
+                    award_recipients[award_id] = []
+                award_recipients[award_id] = recipients
 
     # Add recipient data to the award data
     for award in awards:
