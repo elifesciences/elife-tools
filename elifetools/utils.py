@@ -6,26 +6,28 @@ from slugify import slugify
 from bs4 import Comment
 
 
-def subject_slug(subject, stopwords=["and", "of"]):
+def subject_slug(subject, stopwords=None):
     "create a slug for a subject value"
+    if stopwords is None:
+        stopwords = ["and", "of"]
     if not subject:
         return subject
     return slugify(subject, stopwords=stopwords)
 
 
-def first(x):
-    if x is None:
+def first(value):
+    if value is None:
         return None
     "returns the first element of an iterable, swallowing index errors and returning None"
     try:
-        return x[0]
+        return value[0]
     except IndexError:
         return None
 
 
-def firstnn(x):
+def firstnn(value):
     "returns the first non-nil value within given iterable"
-    return first(list(filter(None, x)))
+    return first(list(filter(None, value)))
 
 
 def strip_strings(value):
@@ -34,7 +36,7 @@ def strip_strings(value):
             return value.strip()
         return value
 
-    if type(value) == list:
+    if isinstance(value, list):
         return list(map(strip_string, value))
     return strip_string(value)
 
@@ -53,9 +55,9 @@ def strip_punctuation_space(value):
             string = string.replace(match, replacement)
         return string
 
-    if value == None:
+    if value is None:
         return None
-    if type(value) == list:
+    if isinstance(value, list):
         return [strip_punctuation(v) for v in value]
     return strip_punctuation(value)
 
@@ -75,7 +77,10 @@ def join_sentences(string1, string2, glue="."):
 
 
 def coerce_to_int(val, default=0xDEADBEEF):
-    """Attempts to cast given value to an integer, return the original value if failed or the default if one provided."""
+    """
+    Attempts to cast given value to an integer, return the original value if
+    failed or the default if one provided.
+    """
     try:
         return int(val)
     except (TypeError, ValueError):
@@ -89,7 +94,7 @@ def nullify(function):
 
     def wrapper(*args, **kwargs):
         value = function(*args, **kwargs)
-        if type(value) == list and len(value) == 0:
+        if isinstance(value, list) and len(value) == 0:
             return None
         return value
 
@@ -138,7 +143,7 @@ def date_struct(year, month, day, tz="UTC"):
         return time.strptime("%s-%s-%s %s" % ymdtz, "%Y-%m-%d %Z")
     except (TypeError, ValueError):
         # logger.debug("date failed to convert: %s" % str(ymdtz))
-        pass
+        return None
 
 
 def date_struct_nn(year, month, day, tz="UTC"):
@@ -180,7 +185,7 @@ def date_timestamp(date_struct):
     try:
         return calendar.timegm(date_struct)
     except (TypeError, ValueError):
-        pass
+        return None
 
 
 def paragraphs(tags):
@@ -197,21 +202,15 @@ def convert_testing_doi(doi):
 
 
 def starts_with_doi(tag):
-    if node_text(tag).strip().startswith("DOI:"):
-        return True
-    else:
-        return False
+    return bool(node_text(tag).strip().startswith("DOI:"))
 
 
 def paragraph_is_only_doi(tag):
-    if (
+    return bool(
         node_text(tag).strip().startswith("http://dx.doi.org")
         and " " not in node_text(tag).strip()
         and node_contents_str(tag).startswith('<ext-link ext-link-type="doi"')
-    ):
-        return True
-    else:
-        return False
+    )
 
 
 def doi_uri_to_doi(value):
@@ -290,7 +289,7 @@ def extract_nodes(soup, nodename, attr=None, value=None):
     If an optional attribute and value are given, these are used to filter the results
     further."""
     tags = soup.find_all(nodename)
-    if attr != None and value != None:
+    if attr is not None and value is not None:
         return list(filter(lambda tag: tag.get(attr) == value, tags))
     return list(tags)
 
@@ -322,7 +321,7 @@ def first_parent(tag, nodename):
     Given a beautiful soup tag, look at its parents and return the first
     tag name that matches nodename or the list nodename
     """
-    if nodename is not None and type(nodename) == str:
+    if nodename is not None and isinstance(nodename, str):
         nodename = [nodename]
     if tag and tag.parents:
         return first(list(filter(lambda tag: tag.name in nodename, tag.parents)))
@@ -335,7 +334,6 @@ def tag_ordinal(tag):
     to get the tag ordinal. For example, if it is tag name fig
     and two fig tags are before it, then it is the third fig (3)
     """
-    tag_count = 0
     return len(tag.find_all_previous(tag.name)) + 1
 
 
@@ -344,7 +342,6 @@ def tag_fig_ordinal(tag):
     Meant for finding the position of fig tags with respect to whether
     they are for a main figure or a child figure
     """
-    tag_count = 0
     if "specific-use" not in tag.attrs:
         # Look for tags with no "specific-use" attribute
         return (
@@ -358,6 +355,7 @@ def tag_fig_ordinal(tag):
             )
             + 1
         )
+    return None
 
 
 def tag_sibling_ordinal(tag):
@@ -366,7 +364,6 @@ def tag_sibling_ordinal(tag):
     to get a sibling "local" ordinal value. This is useful in counting
     child figures within a fig-group, for example
     """
-    tag_count = 0
     return len(tag.find_previous_siblings(tag.name)) + 1
 
 
@@ -680,7 +677,7 @@ def list_type_prefix(list_type):
     if list_type:
         if list_type == "simple":
             return "none"
-        elif list_type == "order":
+        if list_type == "order":
             return "number"
         return list_type
     return "none"
