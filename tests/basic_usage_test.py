@@ -1,7 +1,7 @@
 import os
 import unittest
 import elifetools.parseJATS as parser
-from elifetools.file_utils import sample_xml
+from tests.file_utils import sample_xml
 
 """ Basic code usage for the elifetools library.
 
