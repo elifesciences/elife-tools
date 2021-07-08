@@ -4,7 +4,7 @@ import bs4
 from ddt import ddt, data, unpack
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
-from elifetools.file_utils import sample_xml, read_fixture
+from tests.file_utils import sample_xml, read_fixture
 
 
 @ddt

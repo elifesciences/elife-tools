@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 
 def json_expected_folder(filename):
-    return os.path.join(BASE_DIR, "tests", "JSON", filename.split(".")[0])
+    return os.path.join(BASE_DIR, "JSON", filename.split(".")[0])
 
 
 def json_expected_file(filename, function_name):
@@ -20,12 +20,12 @@ def sample_xml(filename):
 
 
 def fixture_folder(folder_name):
-    return os.path.join(BASE_DIR, "tests", "fixtures", folder_name)
+    return os.path.join(BASE_DIR, "fixtures", folder_name)
 
 
 def fixture_module_name(folder_name, filename):
     return ".".join(
-        ["elifetools", "tests", "fixtures", folder_name, filename.rstrip(".py")]
+        ["tests", "fixtures", folder_name, filename.rstrip(".py")]
     )
 
 

@@ -3,6 +3,6 @@ omit =
     */virtualenv/*
     */venv/*
     */.tox/*
-    */elifetools/tests/fixtures/*
+    */tests/fixtures/*
 exclude_lines =
     if __name__ == .__main__.:

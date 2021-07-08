@@ -63,7 +63,7 @@ Example usage
 .. code-block:: python
 
     >>> from elifetools import parseJATS as parser
-    >>> soup = parser.parse_document('sample-xml/elife-kitchen-sink.xml')
+    >>> soup = parser.parse_document('tests/sample-xml/elife-kitchen-sink.xml')
     >>> print(parser.doi(soup))
 
 More code examples can be found in `tests/basic_usage_test.py`
@@ -76,13 +76,13 @@ You can run the full automated test suite from the base folder with:
 
 .. code-block:: bash
 
-    $ python -m unittest discover elifetools/tests
+    $ python -m unittest discover tests
 
 or you can run tests with coverage:
 
 .. code-block:: bash
 
-    $ coverage run -m unittest discover elifetools/tests
+    $ coverage run -m unittest discover tests
 
 and then view the coverage report:
 

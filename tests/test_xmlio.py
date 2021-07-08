@@ -7,7 +7,7 @@ from xml.dom import minidom
 from ddt import ddt, data, unpack
 
 from elifetools import xmlio
-from elifetools.file_utils import sample_xml, read_fixture, fixture_file
+from tests.file_utils import sample_xml, read_fixture, fixture_file
 
 
 @ddt

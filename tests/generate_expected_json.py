@@ -1,10 +1,8 @@
 import json
 import os
 
-os.sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-import parseJATS as parser
-from elifetools.file_utils import sample_xml, json_expected_folder, json_expected_file
+from elifetools import parseJATS as parser
+from file_utils import sample_xml, json_expected_folder, json_expected_file
 
 """
 This is a helper to generate JSON files containing
@@ -87,7 +85,7 @@ for filename in xml_filenames:
             if type(function_attrs[1]) == tuple:
                 function_arguments = function_attrs[1]
             else:
-                print "arguments for function " + function_name + " must be a tuple"
+                print("arguments for function " + function_name + " must be a tuple")
 
 
         soup = parser.parse_document(sample_xml(filename))
@@ -98,7 +96,7 @@ for filename in xml_filenames:
             result = getattr(parser, function_name)(soup)
 
         if result is not None:
-            print "writing " + json_expected_file(filename, function_name)
-            with open(json_expected_file(filename, function_name), "wb") as json_file_fp:
+            print("writing " + json_expected_file(filename, function_name))
+            with open(json_expected_file(filename, function_name), "w") as json_file_fp:
                 json_file_fp.write(json.dumps(result, indent=4))
 
