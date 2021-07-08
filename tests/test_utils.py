@@ -8,7 +8,7 @@ from ddt import ddt, data, unpack
 from elifetools import utils
 from elifetools import parseJATS as parser
 from elifetools.utils_html import allowed_xml_tag_fragments
-from elifetools.tests import soup_body
+from tests import soup_body
 
 
 @ddt
