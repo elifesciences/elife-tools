@@ -30,7 +30,7 @@ json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date
 "full_digest", "full_keyword_groups", "full_license",
 "full_subject_area", "full_title", "funding_statement",
 "impact_statement", "inline_graphics", "is_poa", "journal_id",
-"journal_issn", "journal_title", "keywords", "license", "license_url", "media", 
+"journal_issn", "journal_title", "keywords", "license", "license_url", 
 "pub_date_timestamp", "pub_date_date", "pub_date_day", "pub_date_month",
 "pub_date_year", "publisher", "publisher_id",
 "received_date_date", "received_date_day", "received_date_month",

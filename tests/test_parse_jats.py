@@ -2349,20 +2349,45 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.license_url(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife02304.xml",
-        "elife00007.xml",
-        "elife04953.xml",
-        "elife00005.xml",
-        "elife05031.xml",
-        "elife04493.xml",
-        "elife06726.xml",
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_media", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife02304.xml"),
+            read_fixture("test_media", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife00007.xml"),
+            read_fixture("test_media", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04953.xml"),
+            read_fixture("test_media", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00005.xml"),
+            read_fixture("test_media", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife05031.xml"),
+            read_fixture("test_media", "content_06_expected.py"),
+        ),
+        (
+            sample_xml("elife04493.xml"),
+            read_fixture("test_media", "content_07_expected.py"),
+        ),
+        (
+            sample_xml("elife06726.xml"),
+            read_fixture("test_media", "content_08_expected.py"),
+        ),
     )
-    def test_media(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "media"), parser.media(self.soup(filename))
-        )
+    def test_media(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.media(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
