@@ -18,7 +18,6 @@ json_functions accepts either
 json_functions = []
 json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
-json_functions.append(("competing_interests", (["conflict", "COI-statement"],)))
 json_functions.append(("full_author_notes", (None,)))
 json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date_day",
 "accepted_date_month", "accepted_date_timestamp", "accepted_date_year",
@@ -52,7 +51,6 @@ xml_filenames.append("elife_poa_e06828.xml")
 xml_filenames.append("elife02304.xml")
 xml_filenames.append("elife02935.xml")
 xml_filenames.append("elife00051.xml")
-xml_filenames.append("elife00190.xml")
 xml_filenames.append("elife00240.xml")
 xml_filenames.append("elife04953.xml")
 xml_filenames.append("elife00133.xml")

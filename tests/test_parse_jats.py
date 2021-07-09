@@ -1712,12 +1712,28 @@ class TestParseJats(unittest.TestCase):
             parser.author_contributions(self.soup(filename), "con"),
         )
 
-    @data("elife-kitchen-sink.xml", "elife00190.xml")
-    def test_competing_interests(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "competing_interests"),
-            parser.competing_interests(self.soup(filename), "conflict"),
-        )
+    @unpack
+    @data(
+        (
+            # snippet from elife-kitchen-sink.xml
+            read_fixture("test_competing_interests", "content_01.xml"),
+            read_fixture("test_competing_interests", "content_01_expected.py"),
+        ),
+        (
+            # snippet from elife00190.xml
+            read_fixture("test_competing_interests", "content_02.xml"),
+            read_fixture("test_competing_interests", "content_02_expected.py"),
+        ),
+        (
+            # snippet from elife-00666.xml
+            read_fixture("test_competing_interests", "content_03.xml"),
+            read_fixture("test_competing_interests", "content_03_expected.py"),
+        ),
+    )
+    def test_competing_interests(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.competing_interests(soup, ["conflict", "COI-statement"])
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_full_author_notes(self, filename):
