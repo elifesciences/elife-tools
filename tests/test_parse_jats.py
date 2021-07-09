@@ -2648,14 +2648,33 @@ class TestParseJats(unittest.TestCase):
             self.json_expected(filename, "title"), parser.title(self.soup(filename))
         )
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml", "elife00240.xml", "elife00270.xml", "elife00351.xml"
+        # example with no title prefix
+        (
+            read_fixture("test_title_prefix", "content_01.xml"),
+            read_fixture("test_title_prefix", "content_01_expected.py"),
+        ),
+        # example from elife00240.xml
+        (
+            read_fixture("test_title_prefix", "content_02.xml"),
+            read_fixture("test_title_prefix", "content_02_expected.py"),
+        ),
+        # example from elife00270.xml
+        (
+            read_fixture("test_title_prefix", "content_03.xml"),
+            read_fixture("test_title_prefix", "content_03_expected.py"),
+        ),
+        # example from elife00351.xml
+        (
+            read_fixture("test_title_prefix", "content_04.xml"),
+            read_fixture("test_title_prefix", "content_04_expected.py"),
+        ),
     )
-    def test_title_prefix(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "title_prefix"),
-            parser.title_prefix(self.soup(filename)),
-        )
+    def test_title_prefix(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.title_prefix(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(

@@ -38,7 +38,7 @@ json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date
 "refs", "related_article", "related_object_ids", "research_organism",
 "self_uri", "subject_area", "supplementary_material", "title", "title_short",
 "title_slug", "volume", "ymd", "full_research_organism", "full_keywords",
-"title_prefix", "full_funding_statement"]
+"full_funding_statement"]
 
 
 xml_filenames = []
