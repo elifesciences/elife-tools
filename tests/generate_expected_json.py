@@ -28,7 +28,7 @@ json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date
 "display_channel", "doi", "elocation_id", "full_abstract", "full_affiliation",
 "full_award_group_funding_source", "full_award_groups", "full_correspondence",
 "full_digest", "full_keyword_groups", "full_license",
-"full_subject_area", "full_title", "funding_statement", "graphics",
+"full_subject_area", "full_title", "funding_statement",
 "impact_statement", "inline_graphics", "is_poa", "journal_id",
 "journal_issn", "journal_title", "keywords", "license", "license_url", "media", 
 "pub_date_timestamp", "pub_date_date", "pub_date_day", "pub_date_month",

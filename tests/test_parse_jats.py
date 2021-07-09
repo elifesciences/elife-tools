@@ -2232,18 +2232,33 @@ class TestParseJats(unittest.TestCase):
             parser.funding_statement(self.soup(filename)),
         )
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife00240.xml",
-        "elife04953.xml",
-        "elife00133.xml",
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_graphics", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00013.xml"),
+            read_fixture("test_graphics", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife00240.xml"),
+            read_fixture("test_graphics", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04953.xml"),
+            read_fixture("test_graphics", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00133.xml"),
+            read_fixture("test_graphics", "content_05_expected.py"),
+        ),
     )
-    def test_graphics(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "graphics"),
-            parser.graphics(self.soup(filename)),
-        )
+    def test_graphics(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.graphics(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_impact_statement(self, filename):
