@@ -23,7 +23,7 @@ json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date
 "accepted_date_month", "accepted_date_timestamp", "accepted_date_year",
 "ack", "acknowledgements", "article_type", "author_notes", "authors",
 "authors_non_byline", "award_groups", "category", "collection_year",
-"component_doi", "components", "conflict", "contributors", "copyright_holder",
+"component_doi", "conflict", "contributors", "copyright_holder",
 "copyright_statement", "copyright_year", "correspondence", "digest",
 "display_channel", "doi", "elocation_id", "full_abstract", "full_affiliation",
 "full_award_group_funding_source", "full_award_groups", "full_correspondence",
@@ -57,7 +57,6 @@ xml_filenames.append("elife00133.xml")
 xml_filenames.append("elife04493.xml")
 xml_filenames.append("elife-14093-v1.xml")
 xml_filenames.append("elife04490.xml")
-xml_filenames.append("elife05502.xml")
 xml_filenames.append("elife00351.xml")
 xml_filenames.append("elife-02833-v2.xml")
 xml_filenames.append("elife-00666.xml")

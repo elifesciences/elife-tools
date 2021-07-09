@@ -1961,19 +1961,37 @@ class TestParseJats(unittest.TestCase):
             parser.component_doi(self.soup(filename)),
         )
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife02304.xml",
-        "elife05502.xml",
-        "elife04490.xml",
-        "elife-14093-v1.xml",
-        "elife-00666.xml",
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_components", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife02304.xml"),
+            read_fixture("test_components", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife05502.xml"),
+            read_fixture("test_components", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04490.xml"),
+            read_fixture("test_components", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife-14093-v1.xml"),
+            read_fixture("test_components", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife-00666.xml"),
+            read_fixture("test_components", "content_06_expected.py"),
+        ),
     )
-    def test_components(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "components"),
-            parser.components(self.soup(filename)),
-        )
+    def test_components(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.components(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_conflict(self, filename):
