@@ -21,7 +21,7 @@ json_functions.append(("author_contributions", ("con",)))
 json_functions.append(("full_author_notes", (None,)))
 json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date_day",
 "accepted_date_month", "accepted_date_timestamp", "accepted_date_year",
-"ack", "acknowledgements", "article_type", "author_notes", "authors",
+"ack", "acknowledgements", "article_type", "author_notes",
 "authors_non_byline", "award_groups", "category", "collection_year",
 "component_doi", "conflict", "contributors", "copyright_holder",
 "copyright_statement", "copyright_year", "correspondence", "digest",
@@ -45,7 +45,6 @@ xml_filenames = []
 xml_filenames.append("elife-09215-v1.xml")
 xml_filenames.append("elife-kitchen-sink.xml")
 xml_filenames.append("elife00013.xml")
-xml_filenames.append("elife00270.xml")
 xml_filenames.append("elife07586.xml")
 xml_filenames.append("elife_poa_e06828.xml")
 xml_filenames.append("elife02304.xml")

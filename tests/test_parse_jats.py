@@ -1868,19 +1868,41 @@ class TestParseJats(unittest.TestCase):
             parser.author_notes(self.soup(filename)),
         )
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife_poa_e06828.xml",
-        "elife02935.xml",
-        "elife00270.xml",
-        "elife00351.xml",
-        "elife-00666.xml",
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_authors", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00013.xml"),
+            read_fixture("test_authors", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_authors", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife02935.xml"),
+            read_fixture("test_authors", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00270.xml"),
+            read_fixture("test_authors", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife00351.xml"),
+            read_fixture("test_authors", "content_06_expected.py"),
+        ),
+        (
+            sample_xml("elife-00666.xml"),
+            read_fixture("test_authors", "content_07_expected.py"),
+        ),
     )
-    def test_authors(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "authors"), parser.authors(self.soup(filename))
-        )
+    def test_authors(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.authors(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife-00666.xml")
     def test_authors_non_byline(self, filename):
