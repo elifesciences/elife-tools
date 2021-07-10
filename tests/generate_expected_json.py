@@ -56,7 +56,6 @@ xml_filenames.append("elife00133.xml")
 xml_filenames.append("elife04493.xml")
 xml_filenames.append("elife-14093-v1.xml")
 xml_filenames.append("elife04490.xml")
-xml_filenames.append("elife00351.xml")
 xml_filenames.append("elife-02833-v2.xml")
 xml_filenames.append("elife-00666.xml")
 

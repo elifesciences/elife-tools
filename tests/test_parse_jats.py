@@ -735,6 +735,16 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_author_line", "content_02.xml"),
             u"MalariaGEN Plasmodium falciparum Community Project",
         ),
+        # elife00351.xml, one author
+        (
+            read_fixture("test_author_line", "content_03.xml"),
+            "Richard Smith",
+        ),
+        # elife_poa_e06828.xml, multiple authors adds et al.
+        (
+            read_fixture("test_author_line", "content_04.xml"),
+            "Michael S Fleming et al.",
+        ),
     )
     def test_author_line_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -795,15 +805,6 @@ class TestParseJats(unittest.TestCase):
     )
     def test_extract_author_line_names(self, authors_json, expected):
         self.assertEqual(parser.extract_author_line_names(authors_json), expected)
-
-    @unpack
-    @data(
-        ("elife_poa_e06828.xml", "Michael S Fleming et al."),
-        ("elife00351.xml", "Richard Smith"),
-    )
-    def test_author_line(self, filename, expected):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertEqual(parser.author_line(soup), expected)
 
     @data(
         # standard expected author with name tag
