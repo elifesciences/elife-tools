@@ -1,0 +1,49 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">09215</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.09215</article-id>
+        </article-meta>
+        <back>
+            <ref-list>
+                <ref id="bib5">
+                    <element-citation publication-type="journal">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Baker</surname>
+                                <given-names>JL</given-names>
+                            </name>
+                            <name>
+                                <surname>Wei</surname>
+                                <given-names>XF</given-names>
+                            </name>
+                            <name>
+                                <surname>Ryou</surname>
+                                <given-names>JW</given-names>
+                            </name>
+                            <name>
+                                <surname>Butson</surname>
+                                <given-names>CR</given-names>
+                            </name>
+                            <name>
+                                <surname>Schiff</surname>
+                                <given-names>ND</given-names>
+                            </name>
+                            <name>
+                                <surname>Purpura</surname>
+                                <given-names>KP</given-names>
+                            </name>
+                        </person-group>
+                        <year iso-8601-date=" 2012">October 2012</year>
+                        <article-title>Modulation of behavior and global brain oscillations with central thalamic deep brain stimulation in the non-human primate</article-title>
+                        <source>Society for Neuroscience</source>
+                        <volume>Abstract 597.14</volume>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

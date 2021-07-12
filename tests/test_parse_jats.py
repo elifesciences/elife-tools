@@ -872,17 +872,6 @@ class TestParseJats(unittest.TestCase):
         self.assertEqual(expected, references_json)
 
     @data(
-        "elife-kitchen-sink.xml",
-        "elife-09215-v1.xml",
-        "elife00051.xml",
-        "elife-10421-v1.xml",
-        "elife-00666.xml",
-    )
-    def test_references_json(self, filename):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertNotEqual(parser.references_json(soup), None)
-
-    @data(
         # Web reference with no title, use the uri from 01892
         (
             read_fixture("test_references_json", "content_01.xml"),
@@ -1122,6 +1111,16 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_references_json", "content_48.xml"),
             read_fixture("test_references_json", "content_48_expected.py"),
+        ),
+        # example of ref with an elocation-id, no pages, from elife-kitchen-sink.xml
+        (
+            read_fixture("test_references_json", "content_49.xml"),
+            read_fixture("test_references_json", "content_49_expected.py"),
+        ),
+        # example of ref with a strange year tag value, json_rewrite invoked, from elife-09215-v1.xml
+        (
+            read_fixture("test_references_json", "content_50.xml"),
+            read_fixture("test_references_json", "content_50_expected.py"),
         ),
     )
     @unpack
