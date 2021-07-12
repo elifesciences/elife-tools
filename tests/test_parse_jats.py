@@ -1923,18 +1923,6 @@ class TestParseJats(unittest.TestCase):
         actual = parser.authors_non_byline(self.soup(filename))
         self.assertEqual(expected, actual)
 
-    @data(
-        "elife-kitchen-sink.xml",
-        "elife-09215-v1.xml",
-        "elife00013.xml",
-        "elife-00666.xml",
-    )
-    def test_award_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "award_groups"),
-            parser.award_groups(self.soup(filename)),
-        )
-
     @unpack
     @data(
         # 07383 v1 has a institution in the principal award recipient
@@ -1942,8 +1930,28 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_award_groups", "content_01.xml"),
             read_fixture("test_award_groups", "content_01_expected.py"),
         ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_award_groups", "content_02.xml"),
+            read_fixture("test_award_groups", "content_02_expected.py"),
+        ),
+        # example from elife-09215-v1.xml
+        (
+            read_fixture("test_award_groups", "content_03.xml"),
+            read_fixture("test_award_groups", "content_03_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_fixture("test_award_groups", "content_04.xml"),
+            read_fixture("test_award_groups", "content_04_expected.py"),
+        ),
+        # example from elife-00666.xml
+        (
+            read_fixture("test_award_groups", "content_05.xml"),
+            read_fixture("test_award_groups", "content_05_expected.py"),
+        ),
     )
-    def test_award_groups_edge_cases(self, xml_content, expected):
+    def test_award_groups(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
