@@ -2205,19 +2205,18 @@ class TestParseJats(unittest.TestCase):
             parser.full_affiliation(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_award_group_funding_source(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_award_group_funding_source"),
-            parser.full_award_group_funding_source(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_award_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_award_groups"),
-            parser.full_award_groups(self.soup(filename)),
-        )
+    @data(
+        # elife-kitchen-sink.xml example
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_award_group_funding_source", "content_01_expected.py"),
+        ),
+    )
+    @unpack
+    def test_full_award_group_funding_source(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_award_group_funding_source(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no id attribute on award-group tag, and id will be generated, based on 10.1098/rsob.150230
@@ -2225,9 +2224,14 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_full_award_groups", "content_01.xml"),
             read_fixture("test_full_award_groups", "content_01_expected.py"),
         ),
+        # elife-kitchen-sink.xml example
+        (
+            read_fixture("test_full_award_groups", "content_02.xml"),
+            read_fixture("test_full_award_groups", "content_02_expected.py"),
+        ),
     )
     @unpack
-    def test_full_award_groups_edge_cases(self, xml_content, expected):
+    def test_full_award_groups(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.full_award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
