@@ -19,15 +19,15 @@ json_functions = []
 json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
 json_functions.append(("full_author_notes", (None,)))
-json_functions += ["abstract", "abstracts", "accepted_date_date", "accepted_date_day",
+json_functions += ["accepted_date_date", "accepted_date_day",
 "accepted_date_month", "accepted_date_timestamp", "accepted_date_year",
 "ack", "acknowledgements", "article_type", "author_notes",
 "authors_non_byline", "award_groups", "category", "collection_year",
 "component_doi", "conflict", "contributors", "copyright_holder",
-"copyright_statement", "copyright_year", "correspondence", "digest",
-"display_channel", "doi", "elocation_id", "full_abstract", "full_affiliation",
+"copyright_statement", "copyright_year", "correspondence",
+"display_channel", "doi", "elocation_id", "full_affiliation",
 "full_award_group_funding_source", "full_award_groups", "full_correspondence",
-"full_digest", "full_keyword_groups", "full_license",
+"full_keyword_groups", "full_license",
 "full_subject_area", "full_title", "funding_statement",
 "impact_statement", "inline_graphics", "is_poa", "journal_id",
 "journal_issn", "journal_title", "keywords", "license", "license_url", 

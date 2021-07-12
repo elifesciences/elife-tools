@@ -9,7 +9,12 @@ from ddt import ddt, data, unpack
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
 from elifetools.utils import date_struct
-from tests.file_utils import sample_xml, json_expected_file, read_fixture
+from tests.file_utils import (
+    sample_xml,
+    json_expected_file,
+    read_fixture,
+    read_sample_xml,
+)
 from tests import soup_body
 
 
@@ -1736,19 +1741,33 @@ class TestParseJats(unittest.TestCase):
     Functions that only need soup to test them against json output
     """
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_abstract(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "abstract"),
-            parser.abstract(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife_poa_e06828.xml")
-    def test_abstracts(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "abstracts"),
-            parser.abstracts(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_abstracts", "content_01_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_sample_xml("elife00013.xml"),
+            read_fixture("test_abstracts", "content_02_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_abstracts", "content_03_expected.py"),
+        ),
+    )
+    def test_abstracts(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.abstracts(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -1761,6 +1780,11 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_abstract", "content_02.xml"),
             read_fixture("test_abstract", "content_02_expected.py"),
+        ),
+        # example with no abstract, such as a correction article
+        (
+            "<article/>",
+            None,
         ),
     )
     def test_abstract_edge_cases(self, xml_content, expected):
@@ -2096,11 +2120,28 @@ class TestParseJats(unittest.TestCase):
             parser.correspondence(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
-    def test_digest(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "digest"), parser.digest(self.soup(filename))
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_digest", "content_01_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            None
+        ),
+    )
+    def test_digest(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.digest(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_display_channel(self, filename):
@@ -2122,17 +2163,33 @@ class TestParseJats(unittest.TestCase):
             parser.elocation_id(self.soup(filename)),
         )
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife07586.xml",
-        "elife_poa_e06828.xml",
-        "elife00013.xml",
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_abstract", "content_01_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_sample_xml("elife00013.xml"),
+            read_fixture("test_full_abstract", "content_02_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_full_abstract", "content_03_expected.py"),
+        ),
     )
-    def test_full_abstract(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_abstract"),
-            parser.full_abstract(self.soup(filename)),
-        )
+    def test_full_abstract(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_abstract(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_full_affiliation(self, filename):
@@ -2189,12 +2246,28 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.full_correspondence(body_tag)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
-    def test_full_digest(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_digest"),
-            parser.full_digest(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_digest", "content_01_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            None
+        ),
+    )
+    def test_full_digest(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_digest(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_full_funding_statement(self, filename):
