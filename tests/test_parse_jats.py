@@ -2622,26 +2622,10 @@ class TestParseJats(unittest.TestCase):
             parser.received_date_year(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml")
-    def test_references(self, filename):
+    def test_references(self):
         # Alias of refs
-        self.assertEqual(
-            self.json_expected(filename, "refs"), parser.references(self.soup(filename))
-        )
-
-    @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife02935.xml",
-        "elife00051.xml",
-        "elife_poa_e06828.xml",
-        "elife02304.xml",
-        "elife-14093-v1.xml",
-    )
-    def test_refs(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "refs"), parser.refs(self.soup(filename))
-        )
+        soup = parser.parse_xml("<article/>")
+        self.assertEqual(parser.references(soup), [])
 
     @unpack
     @data(
@@ -2689,6 +2673,16 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_refs", "content_09.xml"),
             read_fixture("test_refs", "content_09_expected.py"),
+        ),
+        # example of citation with a pub-id pub-id-type="pmid", from elife-kitchen-sink.xml
+        (
+            read_fixture("test_refs", "content_10.xml"),
+            read_fixture("test_refs", "content_10_expected.py"),
+        ),
+        # example of person-group with a collab, from elife-kitchen-sink.xml
+        (
+            read_fixture("test_refs", "content_11.xml"),
+            read_fixture("test_refs", "content_11_expected.py"),
         ),
     )
     def test_refs_edge_cases(self, xml_content, expected):

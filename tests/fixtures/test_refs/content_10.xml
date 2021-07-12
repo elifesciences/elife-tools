@@ -1,0 +1,42 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref id="bib99">
+                    <element-citation publication-type="journal">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Yoon</surname>
+                                <given-names>J-H</given-names>
+                            </name>
+                            <name>
+                                <surname>Kang</surname>
+                                <given-names>S-J</given-names>
+                            </name>
+                            <name>
+                                <surname>Jung</surname>
+                                <given-names>S-Y</given-names>
+                            </name>
+                            <name>
+                                <surname>Lee</surname>
+                                <given-names>C-H</given-names>
+                            </name>
+                            <name>
+                                <surname>Oh</surname>
+                                <given-names>TK</given-names>
+                            </name>
+                        </person-group>
+                        <year iso-8601-date="2005">2005</year>
+                        <article-title>Algoriphagus yeomjeoni sp. nov., isolated from a marine solar saltern in the Yellow Sea, Korea</article-title>
+                        <source>International journal of systematic and evolutionary microbiology</source>
+                        <volume>55</volume>
+                        <fpage>865</fpage>
+                        <lpage>870</lpage>
+                        <pub-id pub-id-type="doi">10.1099/ijs.0.63479-0</pub-id>
+                        <pub-id pub-id-type="pmid">1234566</pub-id>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

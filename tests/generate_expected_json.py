@@ -35,7 +35,7 @@ json_functions += ["accepted_date_date", "accepted_date_day",
 "pub_date_year", "publisher", "publisher_id",
 "received_date_date", "received_date_day", "received_date_month",
 "received_date_timestamp", "received_date_year",
-"refs", "related_article", "related_object_ids", "research_organism",
+"related_article", "related_object_ids", "research_organism",
 "self_uri", "subject_area", "supplementary_material", "title", "title_short",
 "title_slug", "volume", "ymd", "full_research_organism", "full_keywords",
 ]
@@ -48,12 +48,10 @@ xml_filenames.append("elife07586.xml")
 xml_filenames.append("elife_poa_e06828.xml")
 xml_filenames.append("elife02304.xml")
 xml_filenames.append("elife02935.xml")
-xml_filenames.append("elife00051.xml")
 xml_filenames.append("elife00240.xml")
 xml_filenames.append("elife04953.xml")
 xml_filenames.append("elife00133.xml")
 xml_filenames.append("elife04493.xml")
-xml_filenames.append("elife-14093-v1.xml")
 xml_filenames.append("elife04490.xml")
 xml_filenames.append("elife-02833-v2.xml")
 xml_filenames.append("elife-00666.xml")
