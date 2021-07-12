@@ -2280,12 +2280,18 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.full_digest(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_funding_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_funding_statement"),
-            parser.full_funding_statement(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_full_funding_statement", "content_01.xml"),
+            read_fixture("test_full_funding_statement", "content_01_expected.py"),
+        ),
+    )
+    def test_full_funding_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_funding_statement(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_full_keyword_groups(self, filename):
@@ -2339,12 +2345,18 @@ class TestParseJats(unittest.TestCase):
             parser.full_title(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml")
-    def test_funding_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "funding_statement"),
-            parser.funding_statement(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_funding_statement", "content_01.xml"),
+            read_fixture("test_funding_statement", "content_01_expected.py"),
+        ),
+    )
+    def test_funding_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.funding_statement(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(

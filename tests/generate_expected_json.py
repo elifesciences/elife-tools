@@ -28,7 +28,7 @@ json_functions += ["accepted_date_date", "accepted_date_day",
 "display_channel", "doi", "elocation_id", "full_affiliation",
 "full_correspondence",
 "full_keyword_groups", "full_license",
-"full_subject_area", "full_title", "funding_statement",
+"full_subject_area", "full_title",
 "impact_statement", "inline_graphics", "is_poa", "journal_id",
 "journal_issn", "journal_title", "keywords", "license", "license_url", 
 "pub_date_timestamp", "pub_date_date", "pub_date_day", "pub_date_month",
@@ -38,7 +38,7 @@ json_functions += ["accepted_date_date", "accepted_date_day",
 "refs", "related_article", "related_object_ids", "research_organism",
 "self_uri", "subject_area", "supplementary_material", "title", "title_short",
 "title_slug", "volume", "ymd", "full_research_organism", "full_keywords",
-"full_funding_statement"]
+]
 
 
 xml_filenames = []
