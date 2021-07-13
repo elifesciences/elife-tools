@@ -2094,76 +2094,79 @@ class TestParseJats(unittest.TestCase):
         actual = parser.contributors(self.soup(filename))
         self.assertEqual(expected, actual)
 
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_holder(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_holder"),
-            parser.copyright_holder(self.soup(filename)),
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "Alegado et al",
+        ),
     )
     @unpack
-    def test_copyright_holder_edge_cases(self, xml_content, expected):
+    def test_copyright_holder(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_holder(soup_body(soup))
+        tag_content = parser.copyright_holder(soup)
         self.assertEqual(expected, tag_content)
 
-    @unpack
-    @data(
-        ("elife-kitchen-sink.xml", u"Alegado et al."),
-        ("elife00240.xml", u"Pickett"),
-        ("elife09853.xml", "Becker and Gitler"),
-        ("elife02935.xml", None),
-    )
-    def test_copyright_holder_json(self, filename, expected):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertEqual(expected, parser.copyright_holder_json(soup))
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "Alegado et al.",
+        ),
+        # example from elife00240.xml
+        (
+            read_fixture("test_copyright_holder_json", "content_01.xml"),
+            "Pickett",
+        ),
+        # example from elife09853.xml
+        (
+            read_fixture("test_copyright_holder_json", "content_02.xml"),
+            "Becker and Gitler",
+        ),
+        # example from elife02935.xml which is CC0 license
+        (
+            read_fixture("test_copyright_holder_json", "content_03.xml"),
+            None,
+        ),
     )
     @unpack
-    def test_copyright_holder_json_edge_cases(self, xml_content, expected):
+    def test_copyright_holder_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_holder_json(soup_body(soup))
+        tag_content = parser.copyright_holder_json(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_statement"),
-            parser.copyright_statement(self.soup(filename)),
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "© 2012, Alegado et al",
+        ),
     )
     @unpack
-    def test_copyright_statement_edge_cases(self, xml_content, expected):
+    def test_copyright_statement(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_statement(soup_body(soup))
+        tag_content = parser.copyright_statement(soup)
         self.assertEqual(expected, tag_content)
-
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_year"),
-            parser.copyright_year(self.soup(filename)),
-        )
 
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            2012,
+        ),
     )
     @unpack
     def test_copyright_year_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_year(soup_body(soup))
+        tag_content = parser.copyright_year(soup)
         self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
