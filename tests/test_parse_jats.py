@@ -1647,20 +1647,25 @@ class TestParseJats(unittest.TestCase):
     """
 
     @unpack
-    @data(("elife-kitchen-sink.xml", "pub", ("28", "02", "2014")))
-    def test_ymd(self, filename, test_date_type, expected):
-        soup = self.soup(filename)
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (read_fixture("", "article_dates.xml"), "pub", ("28", "02", "2014")),
+    )
+    def test_ymd(self, xml_content, test_date_type, expected):
+        soup = parser.parse_xml(xml_content)
         date_tag = raw_parser.pub_date(soup, date_type=test_date_type)[0]
         self.assertEqual(expected, parser.ymd(date_tag))
 
     @unpack
     @data(
-        ("elife-kitchen-sink.xml", "received", date_struct(2012, 6, 22)),
-        ("elife-kitchen-sink.xml", None, None),
-        ("elife-kitchen-sink.xml", "not_a_date_type", None),
+        # snippet of XML from elife-kitchen-sink.xml
+        (read_fixture("", "article_dates.xml"), "received", date_struct(2012, 6, 22)),
+        (read_fixture("", "article_dates.xml"), None, None),
+        (read_fixture("", "article_dates.xml"), "not_a_date_type", None),
     )
-    def test_history_date(self, filename, date_type, expected):
-        self.assertEqual(expected, parser.history_date(self.soup(filename), date_type))
+    def test_history_date(self, xml_content, date_type, expected):
+        soup = parser.parse_xml(xml_content)
+        self.assertEqual(expected, parser.history_date(soup, date_type))
 
     """
     Functions that require more than one argument to test against json output

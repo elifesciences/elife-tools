@@ -31,7 +31,7 @@ json_functions += ["ack", "acknowledgements", "article_type", "author_notes",
 "publisher", "publisher_id",
 "related_article", "related_object_ids", "research_organism",
 "self_uri", "subject_area", "supplementary_material", "title", "title_short",
-"title_slug", "volume", "ymd", "full_research_organism", "full_keywords",
+"title_slug", "volume", "full_research_organism", "full_keywords",
 ]
 
 
