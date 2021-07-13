@@ -2356,19 +2356,24 @@ class TestParseJats(unittest.TestCase):
             parser.full_keywords(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_full_license(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_license"),
-            parser.full_license(self.soup(filename)),
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            (
+                "This article is distributed under the terms of the "
+                '<ext-link ext-link-type="uri" '
+                'xlink:href="http://creativecommons.org/licenses/by/4.0/">'
+                "Creative Commons Attribution License</ext-link>, which permits "
+                "unrestricted use and redistribution provided that the original "
+                "author and source are credited."
+            ),
+        ),
     )
     @unpack
-    def test_full_license_edge_cases(self, xml_content, expected):
+    def test_full_license(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.full_license(soup_body(soup))
         self.assertEqual(expected, tag_content)
@@ -2476,18 +2481,22 @@ class TestParseJats(unittest.TestCase):
             parser.keywords(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_license(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "license"), parser.license(self.soup(filename))
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            (
+                "This article is distributed under the terms of the "
+                "Creative Commons Attribution License, which permits "
+                "unrestricted use and redistribution provided that "
+                "the original author and source are credited."
+            ),
+        ),
     )
     @unpack
-    def test_license_edge_cases(self, xml_content, expected):
+    def test_license(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.license(soup_body(soup))
         self.assertEqual(expected, tag_content)
@@ -2507,19 +2516,17 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.license_json(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_license_url(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "license_url"),
-            parser.license_url(self.soup(filename)),
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            ("http://creativecommons.org/licenses/by/4.0/"),
+        ),
     )
     @unpack
-    def test_license_url_edge_cases(self, xml_content, expected):
+    def test_license_url(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.license_url(soup_body(soup))
         self.assertEqual(expected, tag_content)
