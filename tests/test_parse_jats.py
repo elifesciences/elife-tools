@@ -2191,12 +2191,27 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.copyright_year(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_correspondence(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "correspondence"),
-            parser.correspondence(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            [
+                "*For correspondence: jon_clardy@hms.harvard.edu(JC);",
+                "nking@berkeley.edu(NK);",
+                "mharrison@elifesciences.org(MH)",
+            ],
+        ),
+    )
+    def test_correspondence(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.correspondence(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2307,25 +2322,39 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.full_award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife-02833-v2.xml")
-    def test_full_correspondence(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_correspondence"),
-            parser.full_correspondence(self.soup(filename)),
-        )
-
     @data(
         # edge case, no id attribute on corresp tag, will be empty but not cause an error, based on 10.2196/resprot.3838
         (
-            "<root><article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article></root>",
+            "<article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article>",
             {},
+        ),
+        # example with no author notes
+        (
+            "<article/>",
+            {},
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            {
+                "cor1": ["jon_clardy@hms.harvard.edu"],
+                "cor2": ["nking@berkeley.edu"],
+                "cor3": ["mharrison@elifesciences.org"],
+            },
+        ),
+        # example elife-02833-v2.xml
+        (
+            read_sample_xml("elife-02833-v2.xml"),
+            {
+                "cor1": ["kingston@molbio.mgh.harvard.edu"],
+                "cor2": ["(+1) 617-432-1906"],
+            },
         ),
     )
     @unpack
-    def test_full_correspondence_edge_cases(self, xml_content, expected):
+    def test_full_correspondence(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup_body(soup_body(soup))
-        tag_content = parser.full_correspondence(body_tag)
+        tag_content = parser.full_correspondence(soup)
         self.assertEqual(expected, tag_content)
 
     @unpack
