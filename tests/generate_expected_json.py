@@ -20,7 +20,7 @@ json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
 json_functions.append(("full_author_notes", (None,)))
 json_functions += ["ack", "acknowledgements", "article_type", "author_notes",
-"authors_non_byline", "category", "collection_year",
+"authors_non_byline", "category",
 "component_doi", "conflict", "contributors", "copyright_holder",
 "copyright_statement", "copyright_year", "correspondence",
 "display_channel", "doi", "elocation_id", "full_affiliation",

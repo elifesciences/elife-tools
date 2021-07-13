@@ -1998,12 +1998,23 @@ class TestParseJats(unittest.TestCase):
             parser.category(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_collection_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "collection_year"),
-            parser.collection_year(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2014,
+        ),
+        # poa XML has no collection date
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_collection_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.collection_year(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
