@@ -1819,40 +1819,75 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.abstract_xml(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "July 18, 2012",
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_accepted_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_date"),
-            parser.accepted_date_date(self.soup(filename)),
-        )
+    def test_accepted_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_date(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            18,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_accepted_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_day"),
-            parser.accepted_date_day(self.soup(filename)),
-        )
+    def test_accepted_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_day(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            7,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_accepted_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_month"),
-            parser.accepted_date_month(self.soup(filename)),
-        )
+    def test_accepted_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_month(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1342569600,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_accepted_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_timestamp"),
-            parser.accepted_date_timestamp(self.soup(filename)),
-        )
+    def test_accepted_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2012,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_accepted_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_year"),
-            parser.accepted_date_year(self.soup(filename)),
-        )
+    def test_accepted_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_year(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_ack(self, filename):
@@ -2538,40 +2573,95 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.pub_dates(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_timestamp"),
-            parser.pub_date_timestamp(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1393545600,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_date"),
-            parser.pub_date_date(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "February 28, 2014",
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_date(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_day"),
-            parser.pub_date_day(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            28,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_day(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_month"),
-            parser.pub_date_month(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_month(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_year"),
-            parser.pub_date_year(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2014,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_year(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_publisher(self, filename):
@@ -2587,40 +2677,75 @@ class TestParseJats(unittest.TestCase):
             parser.publisher_id(self.soup(filename)),
         )
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "June 22, 2012",
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_received_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_date"),
-            parser.received_date_date(self.soup(filename)),
-        )
+    def test_received_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_date(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            22,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_received_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_day"),
-            parser.received_date_day(self.soup(filename)),
-        )
+    def test_received_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_day(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            6,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_received_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_month"),
-            parser.received_date_month(self.soup(filename)),
-        )
+    def test_received_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_month(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1340323200,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_received_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_timestamp"),
-            parser.received_date_timestamp(self.soup(filename)),
-        )
+    def test_received_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2012,
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_received_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_year"),
-            parser.received_date_year(self.soup(filename)),
-        )
+    def test_received_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_year(soup)
+        self.assertEqual(expected, tag_content)
 
     def test_references(self):
         # Alias of refs
