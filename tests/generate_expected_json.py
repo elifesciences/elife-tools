@@ -18,8 +18,7 @@ json_functions accepts either
 json_functions = []
 json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
-json_functions.append(("full_author_notes", (None,)))
-json_functions += ["ack", "acknowledgements", "article_type", "author_notes",
+json_functions += ["ack", "acknowledgements", "article_type",
 "authors_non_byline", "category",
 "component_doi", "conflict",
 "display_channel", "doi", "elocation_id", "full_affiliation",

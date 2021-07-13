@@ -1734,12 +1734,23 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.competing_interests(soup, ["conflict", "COI-statement"])
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_author_notes(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_author_notes"),
-            parser.full_author_notes(self.soup(filename), None),
-        )
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            read_fixture("test_full_author_notes", "content_01_expected.py"),
+        ),
+    )
+    def test_full_author_notes(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_author_notes(soup)
+        self.assertEqual(expected, tag_content)
 
     """
     Functions that only need soup to test them against json output
@@ -1914,12 +1925,27 @@ class TestParseJats(unittest.TestCase):
             parser.article_type(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife00240.xml")
-    def test_author_notes(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "author_notes"),
-            parser.author_notes(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            [
+                "\n†\nThese authors contributed equally to this work\n",
+                "\n‡\nThese authors also contributed equally to this work\n",
+                "\n**\nDeceased\n",
+            ],
+        ),
+    )
+    def test_author_notes(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.author_notes(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
