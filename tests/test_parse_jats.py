@@ -2093,11 +2093,28 @@ class TestParseJats(unittest.TestCase):
         actual = parser.conflict(self.soup(filename))
         self.assertEqual(expected, actual)
 
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
-    def test_contributors(self, filename):
-        expected = self.json_expected(filename, "contributors")
-        actual = parser.contributors(self.soup(filename))
-        self.assertEqual(expected, actual)
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_contributors", "content_01_expected.py"),
+        ),
+        # example from elife-02833-v2.xml
+        (
+            read_sample_xml("elife-02833-v2.xml"),
+            read_fixture("test_contributors", "content_02_expected.py"),
+        ),
+        # example from elife-00666.xml
+        (
+            read_sample_xml("elife-00666.xml"),
+            read_fixture("test_contributors", "content_03_expected.py"),
+        ),
+    )
+    def test_contributors(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.contributors(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag
