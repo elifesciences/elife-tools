@@ -1697,12 +1697,21 @@ class TestParseJats(unittest.TestCase):
         )
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife00240.xml")
-    def test_author_contributions(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "author_contributions"),
-            parser.author_contributions(self.soup(filename), "con"),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            None,
+        ),
+        (
+            read_fixture("test_author_contributions", "content_01.xml"),
+            read_fixture("test_author_contributions", "content_01_expected.py"),
+        ),
+    )
+    def test_author_contributions(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.author_contributions(soup, "con")
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2707,12 +2716,25 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.graphics(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_impact_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "impact_statement"),
-            parser.impact_statement(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            "",
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            "The chemical nature of RIF-1 may reveal a new class of bacterial signaling molecules.",
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            "",
+        ),
+    )
+    def test_impact_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.impact_statement(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2730,11 +2752,25 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.inline_graphics(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_is_poa(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "is_poa"), parser.is_poa(self.soup(filename))
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            True,
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            False,
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            True,
+        ),
+    )
+    def test_is_poa(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.is_poa(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
