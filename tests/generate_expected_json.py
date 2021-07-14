@@ -22,13 +22,13 @@ json_functions += [
 "category",
 "display_channel", "doi", "elocation_id",
 "full_keyword_groups",
-"full_subject_area", "full_title",
+"full_subject_area",
 "impact_statement", "is_poa", "journal_id",
 "journal_issn", "journal_title", "keywords",
 "publisher", "publisher_id",
 "related_article", "related_object_ids", "research_organism",
-"self_uri", "subject_area", "supplementary_material", "title", "title_short",
-"title_slug", "volume", "full_research_organism", "full_keywords",
+"self_uri", "subject_area", "supplementary_material",
+"volume", "full_research_organism", "full_keywords",
 ]
 
 

@@ -1,0 +1,65 @@
+<!-- basic article and journal meta tags from elife-kitchen-sink.xml excluding contributors, dates, abstract, funding, and other data which are already included in other test fixtures -->
+<article>
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="nlm-ta">elife</journal-id>
+            <journal-id journal-id-type="hwp">eLife</journal-id>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            <journal-title-group>
+                <journal-title>eLife</journal-title>
+            </journal-title-group>
+            <issn publication-format="electronic">2050-084X</issn>
+            <publisher>
+                <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">00013</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00013</article-id>
+            <article-categories>
+                <subj-group subj-group-type="display-channel">
+                    <subject>Research article</subject>
+                </subj-group>
+                <subj-group subj-group-type="heading">
+                    <subject>Cell biology</subject>
+                </subj-group>
+                <subj-group subj-group-type="heading">
+                    <subject>Computational and systems biology</subject>
+                </subj-group>
+            </article-categories>
+            <title-group>
+                <article-title>Bacterial regulation of colony development in the closest living relatives of animals</article-title>
+            </title-group>
+            <pub-date publication-format="electronic" date-type="pub">
+                <day>28</day>
+                <month>02</month>
+                <year>2014</year>
+            </pub-date>
+            <pub-date pub-type="collection">
+                <year>2014</year>
+            </pub-date>
+            <volume>3</volume>
+            <elocation-id>e00013</elocation-id>
+            <self-uri content-type="pdf" xlink:href="elife00013.pdf"/>
+            <related-article ext-link-type="doi" related-article-type="commentary"
+                xlink:href="10.7554/eLife.00013"/>
+            <kwd-group kwd-group-type="author-keywords">
+                <title>Author keywords</title>
+                <kwd>
+                    <italic>Salpingoeca rosetta</italic>
+                </kwd>
+                <kwd>Algoriphagus</kwd>
+                <kwd>bacterial sulfonolipid</kwd>
+                <kwd>multicellular development</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="research-organism">
+                <title>Research organism</title>
+                <kwd>Mouse</kwd>
+                <kwd>
+                    <italic>C. elegans</italic>
+                </kwd>
+                <kwd>Other</kwd>
+            </kwd-group>
+        </article-meta>
+    </front>
+</article>
