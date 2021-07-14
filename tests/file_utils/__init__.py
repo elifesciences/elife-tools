@@ -19,14 +19,17 @@ def sample_xml(filename):
     return os.path.join(BASE_DIR, "sample-xml", filename)
 
 
+def read_sample_xml(filename):
+    with io.open(sample_xml(filename), mode="r", encoding="utf-8") as file_fp:
+        return file_fp.read()
+
+
 def fixture_folder(folder_name):
     return os.path.join(BASE_DIR, "fixtures", folder_name)
 
 
 def fixture_module_name(folder_name, filename):
-    return ".".join(
-        ["tests", "fixtures", folder_name, filename.rstrip(".py")]
-    )
+    return ".".join(["tests", "fixtures", folder_name, filename.rstrip(".py")])
 
 
 def fixture_file(folder_name, filename):

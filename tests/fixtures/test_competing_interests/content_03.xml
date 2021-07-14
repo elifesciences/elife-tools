@@ -1,0 +1,49 @@
+<back>
+    <sec sec-type="additional-information" id="s5">
+        <fn-group content-type="competing-interest">
+        <title>Additional information</title>
+            <fn fn-type="COI-statement" id="conf1">
+                <p>Chair of JATS4R</p>
+            </fn>
+            <fn fn-type="COI-statement" id="conf2">
+                <p>No competing interests declared</p>
+            </fn>
+            <fn fn-type="COI-statement" id="conf3">
+                <p>Graham Nott is not an eLife employee</p>
+            </fn>
+        </fn-group>
+        <fn-group content-type="author-contribution">
+            <title>Author contributions</title>
+            <fn fn-type="con" id="con1">
+                <p>Completed the XML mapping exercise and wrote this XML example</p>
+            </fn>
+            <fn fn-type="con" id="con2">
+                <p>Contributed to the XML mapping exercise and quality checked all the tagging and content</p>
+            </fn>
+            <fn fn-type="con" id="con3">
+                <p>Reviewed the PDF product</p>
+            </fn>
+            <fn fn-type="con" id="con4">
+                <p>Chris Wilkinson, Performed the XML mapping exercise and generated the JSON Schema</p>
+                <p>Graham Nott, Wrote the JATSscraper</p>
+                <p>Luke Skibinski, Identified missing components from the JATSscraper</p>
+            </fn>
+        </fn-group>
+        <fn-group content-type="ethics-information">
+            <title>Ethics</title>
+            <fn fn-type="other">
+                <p>Human subjects: If Research Ethics Committee and Institutional Review Board approval was 
+                    required for this article the details would be listed here.</p>
+            </fn>
+            <fn fn-type="other">
+                <p>Animal subjects: If there were animal subjects involved in the study the approval number for the research 
+                    along with protocol approval would be listed here.</p>
+            </fn>
+            <fn fn-type="other">
+                <p>If this article was part of a clinical trial the Clinical trial registry and ID would be listed here, for example:</p>
+                <p>Clinical trial Registry: EudraCT.</p>
+                <p>Registration ID: EudraCT2004-000446-20.</p>
+            </fn>
+        </fn-group>
+    </sec>
+</back>

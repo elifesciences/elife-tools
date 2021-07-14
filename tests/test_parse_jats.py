@@ -9,7 +9,12 @@ from ddt import ddt, data, unpack
 from elifetools import parseJATS as parser
 from elifetools import rawJATS as raw_parser
 from elifetools.utils import date_struct
-from tests.file_utils import sample_xml, json_expected_file, read_fixture
+from tests.file_utils import (
+    sample_xml,
+    json_expected_file,
+    read_fixture,
+    read_sample_xml,
+)
 from tests import soup_body
 
 
@@ -625,17 +630,6 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.editors_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data(
-        "elife-kitchen-sink.xml",
-        "elife-02833-v2.xml",
-        "elife00351.xml",
-        "elife-00666.xml",
-    )
-    def test_authors_json(self, filename):
-        """note elife00351.xml has email inside an inline aff tag, very irregular"""
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertNotEqual(parser.authors_json(soup), None)
-
     @unpack
     @data(
         # Author with phone number, 02833 v2
@@ -746,6 +740,16 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_author_line", "content_02.xml"),
             u"MalariaGEN Plasmodium falciparum Community Project",
         ),
+        # elife00351.xml, one author
+        (
+            read_fixture("test_author_line", "content_03.xml"),
+            "Richard Smith",
+        ),
+        # elife_poa_e06828.xml, multiple authors adds et al.
+        (
+            read_fixture("test_author_line", "content_04.xml"),
+            "Michael S Fleming et al.",
+        ),
     )
     def test_author_line_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -807,15 +811,6 @@ class TestParseJats(unittest.TestCase):
     def test_extract_author_line_names(self, authors_json, expected):
         self.assertEqual(parser.extract_author_line_names(authors_json), expected)
 
-    @unpack
-    @data(
-        ("elife_poa_e06828.xml", "Michael S Fleming et al."),
-        ("elife00351.xml", "Richard Smith"),
-    )
-    def test_author_line(self, filename, expected):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertEqual(parser.author_line(soup), expected)
-
     @data(
         # standard expected author with name tag
         (
@@ -875,17 +870,6 @@ class TestParseJats(unittest.TestCase):
     def test_references_json_authors(self, ref_authors, ref_content, expected):
         references_json = parser.references_json_authors(ref_authors, ref_content)
         self.assertEqual(expected, references_json)
-
-    @data(
-        "elife-kitchen-sink.xml",
-        "elife-09215-v1.xml",
-        "elife00051.xml",
-        "elife-10421-v1.xml",
-        "elife-00666.xml",
-    )
-    def test_references_json(self, filename):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertNotEqual(parser.references_json(soup), None)
 
     @data(
         # Web reference with no title, use the uri from 01892
@@ -1127,6 +1111,16 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_references_json", "content_48.xml"),
             read_fixture("test_references_json", "content_48_expected.py"),
+        ),
+        # example of ref with an elocation-id, no pages, from elife-kitchen-sink.xml
+        (
+            read_fixture("test_references_json", "content_49.xml"),
+            read_fixture("test_references_json", "content_49_expected.py"),
+        ),
+        # example of ref with a strange year tag value, json_rewrite invoked, from elife-09215-v1.xml
+        (
+            read_fixture("test_references_json", "content_50.xml"),
+            read_fixture("test_references_json", "content_50_expected.py"),
         ),
     )
     @unpack
@@ -1653,20 +1647,25 @@ class TestParseJats(unittest.TestCase):
     """
 
     @unpack
-    @data(("elife-kitchen-sink.xml", "pub", ("28", "02", "2014")))
-    def test_ymd(self, filename, test_date_type, expected):
-        soup = self.soup(filename)
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (read_fixture("", "article_dates.xml"), "pub", ("28", "02", "2014")),
+    )
+    def test_ymd(self, xml_content, test_date_type, expected):
+        soup = parser.parse_xml(xml_content)
         date_tag = raw_parser.pub_date(soup, date_type=test_date_type)[0]
         self.assertEqual(expected, parser.ymd(date_tag))
 
     @unpack
     @data(
-        ("elife-kitchen-sink.xml", "received", date_struct(2012, 6, 22)),
-        ("elife-kitchen-sink.xml", None, None),
-        ("elife-kitchen-sink.xml", "not_a_date_type", None),
+        # snippet of XML from elife-kitchen-sink.xml
+        (read_fixture("", "article_dates.xml"), "received", date_struct(2012, 6, 22)),
+        (read_fixture("", "article_dates.xml"), None, None),
+        (read_fixture("", "article_dates.xml"), "not_a_date_type", None),
     )
-    def test_history_date(self, filename, date_type, expected):
-        self.assertEqual(expected, parser.history_date(self.soup(filename), date_type))
+    def test_history_date(self, xml_content, date_type, expected):
+        soup = parser.parse_xml(xml_content)
+        self.assertEqual(expected, parser.history_date(soup, date_type))
 
     """
     Functions that require more than one argument to test against json output
@@ -1691,58 +1690,101 @@ class TestParseJats(unittest.TestCase):
             "2057-4991",
         ),
     )
-    def test_journal_issn_edge_cases(self, xml_content, pub_format, pub_type, expected):
+    def test_journal_issn(self, xml_content, pub_format, pub_type, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.journal_issn(
             soup_body(soup), pub_format=pub_format, pub_type=pub_type
         )
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_journal_issn(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_issn"),
-            parser.journal_issn(self.soup(filename), "electronic"),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            None,
+        ),
+        (
+            read_fixture("test_author_contributions", "content_01.xml"),
+            read_fixture("test_author_contributions", "content_01_expected.py"),
+        ),
+    )
+    def test_author_contributions(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.author_contributions(soup, "con")
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife00240.xml")
-    def test_author_contributions(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "author_contributions"),
-            parser.author_contributions(self.soup(filename), "con"),
-        )
+    @unpack
+    @data(
+        (
+            # snippet from elife-kitchen-sink.xml
+            read_fixture("test_competing_interests", "content_01.xml"),
+            read_fixture("test_competing_interests", "content_01_expected.py"),
+        ),
+        (
+            # snippet from elife00190.xml
+            read_fixture("test_competing_interests", "content_02.xml"),
+            read_fixture("test_competing_interests", "content_02_expected.py"),
+        ),
+        (
+            # snippet from elife-00666.xml
+            read_fixture("test_competing_interests", "content_03.xml"),
+            read_fixture("test_competing_interests", "content_03_expected.py"),
+        ),
+    )
+    def test_competing_interests(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.competing_interests(soup, ["conflict", "COI-statement"])
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife00190.xml")
-    def test_competing_interests(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "competing_interests"),
-            parser.competing_interests(self.soup(filename), "conflict"),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_author_notes(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_author_notes"),
-            parser.full_author_notes(self.soup(filename), None),
-        )
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            read_fixture("test_full_author_notes", "content_01_expected.py"),
+        ),
+    )
+    def test_full_author_notes(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_author_notes(soup)
+        self.assertEqual(expected, tag_content)
 
     """
     Functions that only need soup to test them against json output
     """
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_abstract(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "abstract"),
-            parser.abstract(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife_poa_e06828.xml")
-    def test_abstracts(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "abstracts"),
-            parser.abstracts(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_abstracts", "content_01_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_sample_xml("elife00013.xml"),
+            read_fixture("test_abstracts", "content_02_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_abstracts", "content_03_expected.py"),
+        ),
+    )
+    def test_abstracts(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.abstracts(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -1755,6 +1797,11 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_abstract", "content_02.xml"),
             read_fixture("test_abstract", "content_02_expected.py"),
+        ),
+        # example with no abstract, such as a correction article
+        (
+            "<article/>",
+            None,
         ),
     )
     def test_abstract_edge_cases(self, xml_content, expected):
@@ -1790,99 +1837,207 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.abstract_xml(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_accepted_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_date"),
-            parser.accepted_date_date(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_accepted_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_day"),
-            parser.accepted_date_day(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_accepted_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_month"),
-            parser.accepted_date_month(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_accepted_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_timestamp"),
-            parser.accepted_date_timestamp(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_accepted_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "accepted_date_year"),
-            parser.accepted_date_year(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_ack(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "ack"), parser.ack(self.soup(filename))
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_acknowledgements(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "acknowledgements"),
-            parser.acknowledgements(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_article_type(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "article_type"),
-            parser.article_type(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife00013.xml", "elife00240.xml")
-    def test_author_notes(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "author_notes"),
-            parser.author_notes(self.soup(filename)),
-        )
-
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife_poa_e06828.xml",
-        "elife02935.xml",
-        "elife00270.xml",
-        "elife00351.xml",
-        "elife-00666.xml",
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "July 18, 2012",
+        ),
     )
-    def test_authors(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "authors"), parser.authors(self.soup(filename))
-        )
+    @data("elife-kitchen-sink.xml")
+    def test_accepted_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_date(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife-00666.xml")
-    def test_authors_non_byline(self, filename):
-        expected = self.json_expected(filename, "authors_non_byline")
-        actual = parser.authors_non_byline(self.soup(filename))
-        self.assertEqual(expected, actual)
-
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife-09215-v1.xml",
-        "elife00013.xml",
-        "elife-00666.xml",
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            18,
+        ),
     )
-    def test_award_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "award_groups"),
-            parser.award_groups(self.soup(filename)),
-        )
+    @data("elife-kitchen-sink.xml")
+    def test_accepted_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_day(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            7,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_accepted_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_month(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1342569600,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_accepted_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2012,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_accepted_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.accepted_date_year(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            """Acknowledgements
+We thank Michael Fischbach, Richard Losick, and Russell Vance for critical reading of
+                the manuscript. NK is a Fellow in the Integrated Microbial Biodiversity Program of
+                the Canadian Institute for Advanced Research.""",
+        ),
+    )
+    def test_ack(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.ack(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            """Acknowledgements
+We thank Michael Fischbach, Richard Losick, and Russell Vance for critical reading of
+                the manuscript. NK is a Fellow in the Integrated Microbial Biodiversity Program of
+                the Canadian Institute for Advanced Research.""",
+        ),
+    )
+    def test_acknowledgements(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.acknowledgements(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            (
+                '<article xmlns:mml="http://www.w3.org/1998/Math/MathML" '
+                'xmlns:xlink="http://www.w3.org/1999/xlink" '
+                'article-type="research-article" dtd-version="1.1d3">'
+            ),
+            "research-article",
+        ),
+    )
+    def test_article_type(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.article_type(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            [
+                "\n†\nThese authors contributed equally to this work\n",
+                "\n‡\nThese authors also contributed equally to this work\n",
+                "\n**\nDeceased\n",
+            ],
+        ),
+    )
+    def test_author_notes(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.author_notes(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_authors", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00013.xml"),
+            read_fixture("test_authors", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_authors", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife02935.xml"),
+            read_fixture("test_authors", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00270.xml"),
+            read_fixture("test_authors", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife00351.xml"),
+            read_fixture("test_authors", "content_06_expected.py"),
+        ),
+        (
+            sample_xml("elife-00666.xml"),
+            read_fixture("test_authors", "content_07_expected.py"),
+        ),
+    )
+    def test_authors(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.authors(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_authors_non_byline", "content_01_expected.py"),
+        ),
+        (
+            read_sample_xml("elife-00666.xml"),
+            read_fixture("test_authors_non_byline", "content_02_expected.py"),
+        ),
+    )
+    def test_authors_non_byline(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.authors_non_byline(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -1891,25 +2046,65 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_award_groups", "content_01.xml"),
             read_fixture("test_award_groups", "content_01_expected.py"),
         ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_award_groups", "content_02.xml"),
+            read_fixture("test_award_groups", "content_02_expected.py"),
+        ),
+        # example from elife-09215-v1.xml
+        (
+            read_fixture("test_award_groups", "content_03.xml"),
+            read_fixture("test_award_groups", "content_03_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_fixture("test_award_groups", "content_04.xml"),
+            read_fixture("test_award_groups", "content_04_expected.py"),
+        ),
+        # example from elife-00666.xml
+        (
+            read_fixture("test_award_groups", "content_05.xml"),
+            read_fixture("test_award_groups", "content_05_expected.py"),
+        ),
     )
-    def test_award_groups_edge_cases(self, xml_content, expected):
+    def test_award_groups(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_category(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "category"),
-            parser.category(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            ["Cell biology", "Computational and systems biology"],
+        ),
+    )
+    def test_category(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.category(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_collection_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "collection_year"),
-            parser.collection_year(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2014,
+        ),
+        # poa XML has no collection date
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_collection_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.collection_year(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -1938,176 +2133,309 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.collection_year(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_component_doi(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "component_doi"),
-            parser.component_doi(self.soup(filename)),
-        )
-
-    @data(
-        "elife-kitchen-sink.xml",
-        "elife02304.xml",
-        "elife05502.xml",
-        "elife04490.xml",
-        "elife-14093-v1.xml",
-        "elife-00666.xml",
-    )
-    def test_components(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "components"),
-            parser.components(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_conflict(self, filename):
-        expected = self.json_expected(filename, "conflict")
-        actual = parser.conflict(self.soup(filename))
-        self.assertEqual(expected, actual)
-
-    @data("elife-kitchen-sink.xml", "elife-02833-v2.xml", "elife-00666.xml")
-    def test_contributors(self, filename):
-        expected = self.json_expected(filename, "contributors")
-        actual = parser.contributors(self.soup(filename))
-        self.assertEqual(expected, actual)
-
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_holder(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_holder"),
-            parser.copyright_holder(self.soup(filename)),
-        )
-
-    @data(
-        # edge case, no permissions tag
-        ("<root><article></article></root>", None)
-    )
     @unpack
-    def test_copyright_holder_edge_cases(self, xml_content, expected):
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_component_doi", "content_01_expected.py"),
+        ),
+    )
+    def test_component_doi(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_holder(soup_body(soup))
+        tag_content = parser.component_doi(soup)
         self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
-        ("elife-kitchen-sink.xml", u"Alegado et al."),
-        ("elife00240.xml", u"Pickett"),
-        ("elife09853.xml", "Becker and Gitler"),
-        ("elife02935.xml", None),
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_components", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife02304.xml"),
+            read_fixture("test_components", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife05502.xml"),
+            read_fixture("test_components", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04490.xml"),
+            read_fixture("test_components", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife-14093-v1.xml"),
+            read_fixture("test_components", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife-00666.xml"),
+            read_fixture("test_components", "content_06_expected.py"),
+        ),
     )
-    def test_copyright_holder_json(self, filename, expected):
-        soup = parser.parse_document(sample_xml(filename))
-        self.assertEqual(expected, parser.copyright_holder_json(soup))
-
-    @data(
-        # edge case, no permissions tag
-        ("<root><article></article></root>", None)
-    )
-    @unpack
-    def test_copyright_holder_json_edge_cases(self, xml_content, expected):
-        soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_holder_json(soup_body(soup))
+    def test_components(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.components(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_statement"),
-            parser.copyright_statement(self.soup(filename)),
-        )
-
-    @data(
-        # edge case, no permissions tag
-        ("<root><article></article></root>", None)
-    )
     @unpack
-    def test_copyright_statement_edge_cases(self, xml_content, expected):
+    @data(
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_conflict", "content_01.xml"),
+            read_fixture("test_conflict", "content_01_expected.py"),
+        ),
+    )
+    def test_conflict(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_statement(soup_body(soup))
+        tag_content = parser.conflict(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_copyright_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "copyright_year"),
-            parser.copyright_year(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_contributors", "content_01_expected.py"),
+        ),
+        # example from elife-02833-v2.xml
+        (
+            read_sample_xml("elife-02833-v2.xml"),
+            read_fixture("test_contributors", "content_02_expected.py"),
+        ),
+        # example from elife-00666.xml
+        (
+            read_sample_xml("elife-00666.xml"),
+            read_fixture("test_contributors", "content_03_expected.py"),
+        ),
+    )
+    def test_contributors(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.contributors(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "Alegado et al",
+        ),
+    )
+    @unpack
+    def test_copyright_holder(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.copyright_holder(soup)
+        self.assertEqual(expected, tag_content)
+
+    @data(
+        # edge case, no permissions tag
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "Alegado et al.",
+        ),
+        # example from elife00240.xml
+        (
+            read_fixture("test_copyright_holder_json", "content_01.xml"),
+            "Pickett",
+        ),
+        # example from elife09853.xml
+        (
+            read_fixture("test_copyright_holder_json", "content_02.xml"),
+            "Becker and Gitler",
+        ),
+        # example from elife02935.xml which is CC0 license
+        (
+            read_fixture("test_copyright_holder_json", "content_03.xml"),
+            None,
+        ),
+    )
+    @unpack
+    def test_copyright_holder_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.copyright_holder_json(soup)
+        self.assertEqual(expected, tag_content)
+
+    @data(
+        # edge case, no permissions tag
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            "© 2012, Alegado et al",
+        ),
+    )
+    @unpack
+    def test_copyright_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.copyright_statement(soup)
+        self.assertEqual(expected, tag_content)
+
+    @data(
+        # edge case, no permissions tag
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            2012,
+        ),
     )
     @unpack
     def test_copyright_year_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        tag_content = parser.copyright_year(soup_body(soup))
+        tag_content = parser.copyright_year(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_correspondence(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "correspondence"),
-            parser.correspondence(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no author notes
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            [
+                "*For correspondence: jon_clardy@hms.harvard.edu(JC);",
+                "nking@berkeley.edu(NK);",
+                "mharrison@elifesciences.org(MH)",
+            ],
+        ),
+    )
+    def test_correspondence(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.correspondence(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
-    def test_digest(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "digest"), parser.digest(self.soup(filename))
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_digest", "content_01_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (read_sample_xml("elife_poa_e06828.xml"), None),
+    )
+    def test_digest(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.digest(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            ["Research article"],
+        ),
+    )
+    def test_display_channel(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.display_channel(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), "10.7554/eLife.00013"),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_display_channel(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "display_channel"),
-            parser.display_channel(self.soup(filename)),
-        )
+    def test_doi(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.doi(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), "e00013"),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_doi(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "doi"), parser.doi(self.soup(filename))
-        )
+    def test_elocation_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.elocation_id(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_elocation_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "elocation_id"),
-            parser.elocation_id(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_abstract", "content_01_expected.py"),
+        ),
+        # example from elife00013.xml
+        (
+            read_sample_xml("elife00013.xml"),
+            read_fixture("test_full_abstract", "content_02_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            read_fixture("test_full_abstract", "content_03_expected.py"),
+        ),
+    )
+    def test_full_abstract(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_abstract(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no affs
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_affiliation", "content_01_expected.py"),
+        ),
+    )
+    def test_full_affiliation(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_affiliation(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
-        "elife-kitchen-sink.xml",
-        "elife07586.xml",
-        "elife_poa_e06828.xml",
-        "elife00013.xml",
+        # elife-kitchen-sink.xml example
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture(
+                "test_full_award_group_funding_source", "content_01_expected.py"
+            ),
+        ),
     )
-    def test_full_abstract(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_abstract"),
-            parser.full_abstract(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_affiliation(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_affiliation"),
-            parser.full_affiliation(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_award_group_funding_source(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_award_group_funding_source"),
-            parser.full_award_group_funding_source(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_award_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_award_groups"),
-            parser.full_award_groups(self.soup(filename)),
-        )
+    @unpack
+    def test_full_award_group_funding_source(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_award_group_funding_source(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no id attribute on award-group tag, and id will be generated, based on 10.1098/rsob.150230
@@ -2115,173 +2443,402 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_full_award_groups", "content_01.xml"),
             read_fixture("test_full_award_groups", "content_01_expected.py"),
         ),
+        # elife-kitchen-sink.xml example
+        (
+            read_fixture("test_full_award_groups", "content_02.xml"),
+            read_fixture("test_full_award_groups", "content_02_expected.py"),
+        ),
     )
     @unpack
-    def test_full_award_groups_edge_cases(self, xml_content, expected):
+    def test_full_award_groups(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.full_award_groups(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife-02833-v2.xml")
-    def test_full_correspondence(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_correspondence"),
-            parser.full_correspondence(self.soup(filename)),
-        )
-
     @data(
         # edge case, no id attribute on corresp tag, will be empty but not cause an error, based on 10.2196/resprot.3838
         (
-            "<root><article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article></root>",
+            "<article><author-notes><corresp>Corresponding Author: Elisa J Gordon<email>eg@example.org</email></corresp></author-notes></article>",
             {},
+        ),
+        # example with no author notes
+        (
+            "<article/>",
+            {},
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_author_notes.xml"),
+            {
+                "cor1": ["jon_clardy@hms.harvard.edu"],
+                "cor2": ["nking@berkeley.edu"],
+                "cor3": ["mharrison@elifesciences.org"],
+            },
+        ),
+        # example elife-02833-v2.xml
+        (
+            read_sample_xml("elife-02833-v2.xml"),
+            {
+                "cor1": ["kingston@molbio.mgh.harvard.edu"],
+                "cor2": ["(+1) 617-432-1906"],
+            },
         ),
     )
     @unpack
-    def test_full_correspondence_edge_cases(self, xml_content, expected):
+    def test_full_correspondence(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        body_tag = soup_body(soup_body(soup))
-        tag_content = parser.full_correspondence(body_tag)
+        tag_content = parser.full_correspondence(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml", "elife_poa_e06828.xml")
-    def test_full_digest(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_digest"),
-            parser.full_digest(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no abstracts, such as a correction article
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_digest", "content_01_expected.py"),
+        ),
+        # example from elife_poa_e06828.xml
+        (read_sample_xml("elife_poa_e06828.xml"), None),
+    )
+    def test_full_digest(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_digest(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_funding_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_funding_statement"),
-            parser.full_funding_statement(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_full_funding_statement", "content_01.xml"),
+            read_fixture("test_full_funding_statement", "content_01_expected.py"),
+        ),
+    )
+    def test_full_funding_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_funding_statement(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_keyword_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_keyword_groups"),
-            parser.full_keyword_groups(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            {},
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            {
+                "author-keywords": [
+                    "<italic>Salpingoeca rosetta</italic>",
+                    "Algoriphagus",
+                    "bacterial sulfonolipid",
+                    "multicellular development",
+                ],
+                "research-organism": ["Mouse", "<italic>C. elegans</italic>", "Other"],
+            },
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            {
+                "author-keywords": [
+                    "neurotrophins",
+                    "RET signaling",
+                    "DRG neuron development",
+                    "cis and trans activation",
+                ],
+                "research-organism": ["Mouse"],
+            },
+        ),
+    )
+    def test_full_keyword_groups(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_keyword_groups(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_full_keywords(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_keywords"),
-            parser.full_keywords(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_full_license(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_license"),
-            parser.full_license(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                "<italic>Salpingoeca rosetta</italic>",
+                "Algoriphagus",
+                "bacterial sulfonolipid",
+                "multicellular development",
+            ],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [
+                "neurotrophins",
+                "RET signaling",
+                "DRG neuron development",
+                "cis and trans activation",
+            ],
+        ),
+    )
+    def test_full_keywords(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_keywords(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            (
+                "This article is distributed under the terms of the "
+                '<ext-link ext-link-type="uri" '
+                'xlink:href="http://creativecommons.org/licenses/by/4.0/">'
+                "Creative Commons Attribution License</ext-link>, which permits "
+                "unrestricted use and redistribution provided that the original "
+                "author and source are credited."
+            ),
+        ),
     )
     @unpack
-    def test_full_license_edge_cases(self, xml_content, expected):
+    def test_full_license(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.full_license(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife00240.xml")
-    def test_full_research_organism(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_research_organism"),
-            parser.full_research_organism(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_full_subject_area(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_subject_area"),
-            parser.full_subject_area(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_full_title(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_title"),
-            parser.full_title(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_funding_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "funding_statement"),
-            parser.funding_statement(self.soup(filename)),
-        )
-
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife00240.xml",
-        "elife04953.xml",
-        "elife00133.xml",
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            ["Mouse", "<italic>C. elegans</italic>", "Other"],
+        ),
     )
-    def test_graphics(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "graphics"),
-            parser.graphics(self.soup(filename)),
-        )
+    def test_full_research_organism(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_research_organism(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_impact_statement(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "impact_statement"),
-            parser.impact_statement(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            {},
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            {
+                "display-channel": ["Research article"],
+                "heading": ["Cell biology", "Computational and systems biology"],
+            },
+        ),
+    )
+    def test_full_subject_area(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_subject_area(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife00240.xml")
-    def test_inline_graphics(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "inline_graphics"),
-            parser.inline_graphics(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_is_poa(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "is_poa"), parser.is_poa(self.soup(filename))
-        )
-
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            (
+                "Bacterial regulation of colony development in the closest "
+                "living relatives of animals"
+            ),
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            (
+                "<italic>Cis</italic> and <italic>trans</italic> RET signaling control the "
+                "survival and central projection growth of rapidly adapting mechanoreceptors"
+            ),
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_journal_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_id"),
-            parser.journal_id(self.soup(filename)),
-        )
+    def test_full_title(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_title(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_journal_title(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_title"),
-            parser.journal_title(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_funding_statement", "content_01.xml"),
+            read_fixture("test_funding_statement", "content_01_expected.py"),
+        ),
+    )
+    def test_funding_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.funding_statement(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_keywords(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "keywords"),
-            parser.keywords(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_graphics", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00013.xml"),
+            read_fixture("test_graphics", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife00240.xml"),
+            read_fixture("test_graphics", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04953.xml"),
+            read_fixture("test_graphics", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00133.xml"),
+            read_fixture("test_graphics", "content_05_expected.py"),
+        ),
+    )
+    def test_graphics(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.graphics(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_license(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "license"), parser.license(self.soup(filename))
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            "",
+        ),
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            "The chemical nature of RIF-1 may reveal a new class of bacterial signaling molecules.",
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            "",
+        ),
+    )
+    def test_impact_statement(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.impact_statement(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_inline_graphics", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00240.xml"),
+            read_fixture("test_inline_graphics", "content_02_expected.py"),
+        ),
+    )
+    def test_inline_graphics(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.inline_graphics(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            "<article/>",
+            True,
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            False,
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            True,
+        ),
+    )
+    def test_is_poa(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.is_poa(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife",
+        ),
+    )
+    def test_journal_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.journal_id(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife",
+        ),
+    )
+    def test_journal_title(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.journal_title(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                "Salpingoeca rosetta",
+                "Algoriphagus",
+                "bacterial sulfonolipid",
+                "multicellular development",
+            ],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [
+                "neurotrophins",
+                "RET signaling",
+                "DRG neuron development",
+                "cis and trans activation",
+            ],
+        ),
+    )
+    def test_keywords(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.keywords(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            (
+                "This article is distributed under the terms of the "
+                "Creative Commons Attribution License, which permits "
+                "unrestricted use and redistribution provided that "
+                "the original author and source are credited."
+            ),
+        ),
     )
     @unpack
-    def test_license_edge_cases(self, xml_content, expected):
+    def test_license(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.license(soup_body(soup))
         self.assertEqual(expected, tag_content)
@@ -2301,37 +2858,60 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.license_json(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_license_url(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "license_url"),
-            parser.license_url(self.soup(filename)),
-        )
-
     @data(
         # edge case, no permissions tag
-        ("<root><article></article></root>", None)
+        ("<root><article></article></root>", None),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_permissions.xml"),
+            ("http://creativecommons.org/licenses/by/4.0/"),
+        ),
     )
     @unpack
-    def test_license_url_edge_cases(self, xml_content, expected):
+    def test_license_url(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.license_url(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife02304.xml",
-        "elife00007.xml",
-        "elife04953.xml",
-        "elife00005.xml",
-        "elife05031.xml",
-        "elife04493.xml",
-        "elife06726.xml",
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_media", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife02304.xml"),
+            read_fixture("test_media", "content_02_expected.py"),
+        ),
+        (
+            sample_xml("elife00007.xml"),
+            read_fixture("test_media", "content_03_expected.py"),
+        ),
+        (
+            sample_xml("elife04953.xml"),
+            read_fixture("test_media", "content_04_expected.py"),
+        ),
+        (
+            sample_xml("elife00005.xml"),
+            read_fixture("test_media", "content_05_expected.py"),
+        ),
+        (
+            sample_xml("elife05031.xml"),
+            read_fixture("test_media", "content_06_expected.py"),
+        ),
+        (
+            sample_xml("elife04493.xml"),
+            read_fixture("test_media", "content_07_expected.py"),
+        ),
+        (
+            sample_xml("elife06726.xml"),
+            read_fixture("test_media", "content_08_expected.py"),
+        ),
     )
-    def test_media(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "media"), parser.media(self.soup(filename))
-        )
+    def test_media(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.media(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2356,110 +2936,196 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.pub_dates(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_timestamp"),
-            parser.pub_date_timestamp(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_date"),
-            parser.pub_date_date(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_day"),
-            parser.pub_date_day(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_month"),
-            parser.pub_date_month(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_pub_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "pub_date_year"),
-            parser.pub_date_year(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_publisher(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "publisher"),
-            parser.publisher(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_publisher_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "publisher_id"),
-            parser.publisher_id(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_received_date_date(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_date"),
-            parser.received_date_date(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_received_date_day(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_day"),
-            parser.received_date_day(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_received_date_month(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_month"),
-            parser.received_date_month(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_received_date_timestamp(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_timestamp"),
-            parser.received_date_timestamp(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_received_date_year(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "received_date_year"),
-            parser.received_date_year(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_references(self, filename):
-        # Alias of refs
-        self.assertEqual(
-            self.json_expected(filename, "refs"), parser.references(self.soup(filename))
-        )
-
+    @unpack
     @data(
-        "elife-kitchen-sink.xml",
-        "elife00013.xml",
-        "elife02935.xml",
-        "elife00051.xml",
-        "elife_poa_e06828.xml",
-        "elife02304.xml",
-        "elife-14093-v1.xml",
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1393545600,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
     )
-    def test_refs(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "refs"), parser.refs(self.soup(filename))
-        )
+    def test_pub_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "February 28, 2014",
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_date(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            28,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_day(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_month(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2014,
+        ),
+        # poa XML before pub-date is added
+        (
+            "<article/>",
+            None,
+        ),
+    )
+    def test_pub_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.pub_date_year(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife Sciences Publications, Ltd",
+        ),
+    )
+    def test_publisher(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.publisher(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "00013",
+        ),
+    )
+    def test_publisher_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.publisher_id(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            "June 22, 2012",
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_received_date_date(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_date(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            22,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_received_date_day(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_day(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            6,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_received_date_month(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_month(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            1340323200,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_received_date_timestamp(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_timestamp(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # snippet of XML from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_dates.xml"),
+            2012,
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_received_date_year(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.received_date_year(soup)
+        self.assertEqual(expected, tag_content)
+
+    def test_references(self):
+        # Alias of refs
+        soup = parser.parse_xml("<article/>")
+        self.assertEqual(parser.references(soup), [])
 
     @unpack
     @data(
@@ -2508,18 +3174,40 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_refs", "content_09.xml"),
             read_fixture("test_refs", "content_09_expected.py"),
         ),
+        # example of citation with a pub-id pub-id-type="pmid", from elife-kitchen-sink.xml
+        (
+            read_fixture("test_refs", "content_10.xml"),
+            read_fixture("test_refs", "content_10_expected.py"),
+        ),
+        # example of person-group with a collab, from elife-kitchen-sink.xml
+        (
+            read_fixture("test_refs", "content_11.xml"),
+            read_fixture("test_refs", "content_11_expected.py"),
+        ),
     )
     def test_refs_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.refs(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_related_article(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "related_article"),
-            parser.related_article(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                {
+                    "ext_link_type": "doi",
+                    "related_article_type": "commentary",
+                    "xlink_href": None,
+                }
+            ],
+        ),
+    )
+    def test_related_article(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.related_article(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2533,55 +3221,136 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.sub_articles(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_related_object_ids(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "related_object_ids"),
-            parser.related_object_ids(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_research_organism(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "research_organism"),
-            parser.research_organism(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_self_uri(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "self_uri"),
-            parser.self_uri(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_subject_area(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "subject_area"),
-            parser.subject_area(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife02304.xml")
-    def test_supplementary_material(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "supplementary_material"),
-            parser.supplementary_material(self.soup(filename)),
-        )
-
-    @data("elife-kitchen-sink.xml")
-    def test_title(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "title"), parser.title(self.soup(filename))
-        )
-
+    @unpack
     @data(
-        "elife-kitchen-sink.xml", "elife00240.xml", "elife00270.xml", "elife00351.xml"
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            {"dataro1": {}, "dataro2": {}, "dataro3": {}},
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            {},
+        ),
     )
-    def test_title_prefix(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "title_prefix"),
-            parser.title_prefix(self.soup(filename)),
-        )
+    def test_related_object_ids(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.related_object_ids(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            ["Mouse", "C. elegans", "Other"],
+        ),
+    )
+    def test_research_organism(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.research_organism(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            [{"content-type": "pdf", "type": "self-uri", "position": 1, "ordinal": 1}],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [],
+        ),
+    )
+    def test_self_uri(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.self_uri(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            ["Research article", "Cell biology", "Computational and systems biology"],
+        ),
+    )
+    def test_subject_area(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.subject_area(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_supplementary_material", "content_01_expected.py"),
+        ),
+        (
+            read_sample_xml("elife02304.xml"),
+            read_fixture("test_supplementary_material", "content_02_expected.py"),
+        ),
+    )
+    def test_supplementary_material(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.supplementary_material(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            (
+                "Bacterial regulation of colony development in the closest "
+                "living relatives of animals"
+            ),
+        ),
+    )
+    @data("elife-kitchen-sink.xml")
+    def test_title(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.title(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example with no title prefix
+        (
+            read_fixture("test_title_prefix", "content_01.xml"),
+            read_fixture("test_title_prefix", "content_01_expected.py"),
+        ),
+        # example from elife00240.xml
+        (
+            read_fixture("test_title_prefix", "content_02.xml"),
+            read_fixture("test_title_prefix", "content_02_expected.py"),
+        ),
+        # example from elife00270.xml
+        (
+            read_fixture("test_title_prefix", "content_03.xml"),
+            read_fixture("test_title_prefix", "content_03_expected.py"),
+        ),
+        # example from elife00351.xml
+        (
+            read_fixture("test_title_prefix", "content_04.xml"),
+            read_fixture("test_title_prefix", "content_04_expected.py"),
+        ),
+    )
+    def test_title_prefix(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.title_prefix(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -2606,25 +3375,47 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.title_prefix_json(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), "Bacterial regulation"),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_title_short(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "title_short"),
-            parser.title_short(self.soup(filename)),
-        )
+    def test_title_short(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.title_short(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "bacterial-regulation-of-colony-development-in-the-closest-living-relatives-of-animals",
+        ),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_title_slug(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "title_slug"),
-            parser.title_slug(self.soup(filename)),
-        )
+    def test_title_slug(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.title_slug(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_volume(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "volume"), parser.volume(self.soup(filename))
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "3",
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            None,
+        ),
+    )
+    def test_volume(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.volume(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(

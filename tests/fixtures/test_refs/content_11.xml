@@ -1,0 +1,21 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref id="bib96">
+                    <element-citation publication-type="journal">
+                        <person-group person-group-type="author">
+                            <collab>WHO</collab>
+                        </person-group>
+                        <year iso-8601-date="2011">2011</year>
+                        <article-title>FlyBase 101-the basics of navigating FlyBase</article-title>
+                        <source>Nucleic acids research</source>
+                        <volume>39</volume>
+                        <fpage>21</fpage>
+                        <lpage>23</lpage>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>
