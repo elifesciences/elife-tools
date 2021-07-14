@@ -2500,19 +2500,72 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.full_funding_statement(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_keyword_groups(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_keyword_groups"),
-            parser.full_keyword_groups(self.soup(filename)),
-        )
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_full_keywords(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_keywords"),
-            parser.full_keywords(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            {},
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            {
+                "author-keywords": [
+                    "<italic>Salpingoeca rosetta</italic>",
+                    "Algoriphagus",
+                    "bacterial sulfonolipid",
+                    "multicellular development",
+                ],
+                "research-organism": ["Mouse", "<italic>C. elegans</italic>", "Other"],
+            },
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            {
+                "author-keywords": [
+                    "neurotrophins",
+                    "RET signaling",
+                    "DRG neuron development",
+                    "cis and trans activation",
+                ],
+                "research-organism": ["Mouse"],
+            },
+        ),
+    )
+    def test_full_keyword_groups(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_keyword_groups(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                "<italic>Salpingoeca rosetta</italic>",
+                "Algoriphagus",
+                "bacterial sulfonolipid",
+                "multicellular development",
+            ],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [
+                "neurotrophins",
+                "RET signaling",
+                "DRG neuron development",
+                "cis and trans activation",
+            ],
+        ),
+    )
+    def test_full_keywords(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_keywords(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag
@@ -2670,12 +2723,35 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.journal_title(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife07586.xml")
-    def test_keywords(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "keywords"),
-            parser.keywords(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                "Salpingoeca rosetta",
+                "Algoriphagus",
+                "bacterial sulfonolipid",
+                "multicellular development",
+            ],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [
+                "neurotrophins",
+                "RET signaling",
+                "DRG neuron development",
+                "cis and trans activation",
+            ],
+        ),
+    )
+    def test_keywords(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.keywords(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # edge case, no permissions tag

@@ -20,13 +20,11 @@ json_functions.append(("author_contributions", ("con",)))
 json_functions += [
 "category",
 "display_channel",
-"full_keyword_groups",
 "full_subject_area",
 "impact_statement", "is_poa",
-"keywords",
 "research_organism",
 "subject_area", "supplementary_material",
-"full_research_organism", "full_keywords",
+"full_research_organism",
 ]
 
 
