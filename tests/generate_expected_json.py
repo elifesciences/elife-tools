@@ -21,7 +21,7 @@ json_functions.append(("author_contributions", ("con",)))
 json_functions += ["ack", "acknowledgements", "article_type",
 "category",
 "component_doi", "conflict",
-"display_channel", "doi", "elocation_id", "full_affiliation",
+"display_channel", "doi", "elocation_id",
 "full_keyword_groups",
 "full_subject_area", "full_title",
 "impact_statement", "inline_graphics", "is_poa", "journal_id",

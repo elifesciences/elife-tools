@@ -2320,12 +2320,23 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.full_abstract(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_full_affiliation(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "full_affiliation"),
-            parser.full_affiliation(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no affs
+        (
+            "<article/>",
+            [],
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_full_affiliation", "content_01_expected.py"),
+        ),
+    )
+    def test_full_affiliation(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.full_affiliation(soup)
+        self.assertEqual(expected, tag_content)
 
     @data(
         # elife-kitchen-sink.xml example
