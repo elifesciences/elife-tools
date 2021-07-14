@@ -1947,12 +1947,21 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.acknowledgements(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_article_type(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "article_type"),
-            parser.article_type(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            (
+                '<article xmlns:mml="http://www.w3.org/1998/Math/MathML" '
+                'xmlns:xlink="http://www.w3.org/1999/xlink" '
+                'article-type="research-article" dtd-version="1.1d3">'
+            ),
+            "research-article",
+        ),
+    )
+    def test_article_type(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.article_type(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(

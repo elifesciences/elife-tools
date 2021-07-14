@@ -18,7 +18,7 @@ json_functions accepts either
 json_functions = []
 json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
-json_functions += ["article_type",
+json_functions += [
 "category",
 "component_doi", "conflict",
 "display_channel", "doi", "elocation_id",
