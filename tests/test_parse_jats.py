@@ -2337,18 +2337,27 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             parser.display_channel(self.soup(filename)),
         )
 
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), "10.7554/eLife.00013"),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_doi(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "doi"), parser.doi(self.soup(filename))
-        )
+    def test_doi(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.doi(soup)
+        self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), "e00013"),
+    )
     @data("elife-kitchen-sink.xml")
-    def test_elocation_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "elocation_id"),
-            parser.elocation_id(self.soup(filename)),
-        )
+    def test_elocation_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.elocation_id(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
