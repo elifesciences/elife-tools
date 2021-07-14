@@ -1905,18 +1905,47 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.accepted_date_year(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_ack(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "ack"), parser.ack(self.soup(filename))
-        )
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            """Acknowledgements
+We thank Michael Fischbach, Richard Losick, and Russell Vance for critical reading of
+                the manuscript. NK is a Fellow in the Integrated Microbial Biodiversity Program of
+                the Canadian Institute for Advanced Research.""",
+        ),
+    )
+    def test_ack(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.ack(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_acknowledgements(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "acknowledgements"),
-            parser.acknowledgements(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            """Acknowledgements
+We thank Michael Fischbach, Richard Losick, and Russell Vance for critical reading of
+                the manuscript. NK is a Fellow in the Integrated Microbial Biodiversity Program of
+                the Canadian Institute for Advanced Research.""",
+        ),
+    )
+    def test_acknowledgements(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.acknowledgements(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_article_type(self, filename):
