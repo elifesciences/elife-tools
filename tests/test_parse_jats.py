@@ -1690,19 +1690,12 @@ class TestParseJats(unittest.TestCase):
             "2057-4991",
         ),
     )
-    def test_journal_issn_edge_cases(self, xml_content, pub_format, pub_type, expected):
+    def test_journal_issn(self, xml_content, pub_format, pub_type, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.journal_issn(
             soup_body(soup), pub_format=pub_format, pub_type=pub_type
         )
         self.assertEqual(expected, tag_content)
-
-    @data("elife-kitchen-sink.xml")
-    def test_journal_issn(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_issn"),
-            parser.journal_issn(self.soup(filename), "electronic"),
-        )
 
     @data("elife-kitchen-sink.xml", "elife00240.xml")
     def test_author_contributions(self, filename):
@@ -2651,19 +2644,31 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             self.json_expected(filename, "is_poa"), parser.is_poa(self.soup(filename))
         )
 
-    @data("elife-kitchen-sink.xml")
-    def test_journal_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_id"),
-            parser.journal_id(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife",
+        ),
+    )
+    def test_journal_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.journal_id(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_journal_title(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "journal_title"),
-            parser.journal_title(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife",
+        ),
+    )
+    def test_journal_title(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.journal_title(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife07586.xml")
     def test_keywords(self, filename):
@@ -2875,19 +2880,31 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.pub_date_year(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_publisher(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "publisher"),
-            parser.publisher(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "eLife Sciences Publications, Ltd",
+        ),
+    )
+    def test_publisher(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.publisher(soup)
+        self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_publisher_id(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "publisher_id"),
-            parser.publisher_id(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "00013",
+        ),
+    )
+    def test_publisher_id(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.publisher_id(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -3027,12 +3044,24 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.refs(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml")
-    def test_related_article(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "related_article"),
-            parser.related_article(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            [
+                {
+                    "ext_link_type": "doi",
+                    "related_article_type": "commentary",
+                    "xlink_href": None,
+                }
+            ],
+        ),
+    )
+    def test_related_article(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.related_article(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
@@ -3046,12 +3075,21 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.sub_articles(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_related_object_ids(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "related_object_ids"),
-            parser.related_object_ids(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            {"dataro1": {}, "dataro2": {}, "dataro3": {}},
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            {},
+        ),
+    )
+    def test_related_object_ids(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.related_object_ids(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife07586.xml")
     def test_research_organism(self, filename):
@@ -3060,12 +3098,22 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             parser.research_organism(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_self_uri(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "self_uri"),
-            parser.self_uri(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            [{"content-type": "pdf", "type": "self-uri", "position": 1, "ordinal": 1}],
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            [],
+        ),
+    )
+    def test_self_uri(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.self_uri(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_subject_area(self, filename):
@@ -3188,11 +3236,22 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.title_slug(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_volume(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "volume"), parser.volume(self.soup(filename))
-        )
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("", "article_meta.xml"),
+            "3",
+        ),
+        (
+            read_sample_xml("elife_poa_e06828.xml"),
+            None,
+        ),
+    )
+    def test_volume(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.volume(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
