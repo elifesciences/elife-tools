@@ -19,7 +19,7 @@ json_functions = []
 json_functions.append(("journal_issn", ("electronic",)))
 json_functions.append(("author_contributions", ("con",)))
 json_functions += ["ack", "acknowledgements", "article_type",
-"authors_non_byline", "category",
+"category",
 "component_doi", "conflict",
 "display_channel", "doi", "elocation_id", "full_affiliation",
 "full_keyword_groups",

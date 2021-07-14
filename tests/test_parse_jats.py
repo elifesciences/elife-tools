@@ -1983,11 +1983,21 @@ class TestParseJats(unittest.TestCase):
         tag_content = parser.authors(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife-00666.xml")
-    def test_authors_non_byline(self, filename):
-        expected = self.json_expected(filename, "authors_non_byline")
-        actual = parser.authors_non_byline(self.soup(filename))
-        self.assertEqual(expected, actual)
+    @unpack
+    @data(
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_authors_non_byline", "content_01_expected.py"),
+        ),
+        (
+            read_sample_xml("elife-00666.xml"),
+            read_fixture("test_authors_non_byline", "content_02_expected.py"),
+        ),
+    )
+    def test_authors_non_byline(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.authors_non_byline(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
