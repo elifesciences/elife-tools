@@ -2331,10 +2331,7 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_digest", "content_01_expected.py"),
         ),
         # example from elife_poa_e06828.xml
-        (
-            read_sample_xml("elife_poa_e06828.xml"),
-            None
-        ),
+        (read_sample_xml("elife_poa_e06828.xml"), None),
     )
     def test_digest(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2429,7 +2426,9 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         # elife-kitchen-sink.xml example
         (
             read_sample_xml("elife-kitchen-sink.xml"),
-            read_fixture("test_full_award_group_funding_source", "content_01_expected.py"),
+            read_fixture(
+                "test_full_award_group_funding_source", "content_01_expected.py"
+            ),
         ),
     )
     @unpack
@@ -2504,10 +2503,7 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_full_digest", "content_01_expected.py"),
         ),
         # example from elife_poa_e06828.xml
-        (
-            read_sample_xml("elife_poa_e06828.xml"),
-            None
-        ),
+        (read_sample_xml("elife_poa_e06828.xml"), None),
     )
     def test_full_digest(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2526,7 +2522,6 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         soup = parser.parse_xml(xml_content)
         tag_content = parser.full_funding_statement(soup)
         self.assertEqual(expected, tag_content)
-
 
     @unpack
     @data(
