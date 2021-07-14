@@ -2122,12 +2122,21 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.collection_year(soup_body(soup))
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_component_doi(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "component_doi"),
-            parser.component_doi(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_component_doi", "content_01_expected.py"),
+        ),
+    )
+    def test_component_doi(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.component_doi(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
