@@ -2170,11 +2170,22 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.components(soup)
         self.assertEqual(expected, tag_content)
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
-    def test_conflict(self, filename):
-        expected = self.json_expected(filename, "conflict")
-        actual = parser.conflict(self.soup(filename))
-        self.assertEqual(expected, actual)
+    @unpack
+    @data(
+        (
+            "<article/>",
+            None,
+        ),
+        # example from elife-kitchen-sink.xml
+        (
+            read_fixture("test_conflict", "content_01.xml"),
+            read_fixture("test_conflict", "content_01_expected.py"),
+        ),
+    )
+    def test_conflict(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.conflict(soup)
+        self.assertEqual(expected, tag_content)
 
     @unpack
     @data(
