@@ -3010,12 +3010,26 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             parser.subject_area(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml", "elife02304.xml")
-    def test_supplementary_material(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "supplementary_material"),
-            parser.supplementary_material(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        # example with no data
+        (
+            "<article/>",
+            [],
+        ),
+        (
+            read_sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_supplementary_material", "content_01_expected.py"),
+        ),
+        (
+            read_sample_xml("elife02304.xml"),
+            read_fixture("test_supplementary_material", "content_02_expected.py"),
+        ),
+    )
+    def test_supplementary_material(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.supplementary_material(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml")
     def test_title(self, filename):
