@@ -2574,12 +2574,21 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             parser.impact_statement(self.soup(filename)),
         )
 
-    @data("elife-kitchen-sink.xml", "elife00240.xml")
-    def test_inline_graphics(self, filename):
-        self.assertEqual(
-            self.json_expected(filename, "inline_graphics"),
-            parser.inline_graphics(self.soup(filename)),
-        )
+    @unpack
+    @data(
+        (
+            sample_xml("elife-kitchen-sink.xml"),
+            read_fixture("test_inline_graphics", "content_01_expected.py"),
+        ),
+        (
+            sample_xml("elife00240.xml"),
+            read_fixture("test_inline_graphics", "content_02_expected.py"),
+        ),
+    )
+    def test_inline_graphics(self, filename, expected):
+        soup = parser.parse_document(filename)
+        tag_content = parser.inline_graphics(soup)
+        self.assertEqual(expected, tag_content)
 
     @data("elife-kitchen-sink.xml", "elife_poa_e06828.xml")
     def test_is_poa(self, filename):
