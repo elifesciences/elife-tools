@@ -2718,7 +2718,7 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             "",
         ),
         (
-            read_fixture("", "article_meta.xml"),
+            read_sample_xml("elife-kitchen-sink.xml"),
             "The chemical nature of RIF-1 may reveal a new class of bacterial signaling molecules.",
         ),
         (
