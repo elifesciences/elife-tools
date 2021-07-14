@@ -45,9 +45,7 @@
                 xlink:href="10.7554/eLife.00013"/>
             <kwd-group kwd-group-type="author-keywords">
                 <title>Author keywords</title>
-                <kwd>
-                    <italic>Salpingoeca rosetta</italic>
-                </kwd>
+                <kwd><italic>Salpingoeca rosetta</italic></kwd>
                 <kwd>Algoriphagus</kwd>
                 <kwd>bacterial sulfonolipid</kwd>
                 <kwd>multicellular development</kwd>
@@ -55,9 +53,7 @@
             <kwd-group kwd-group-type="research-organism">
                 <title>Research organism</title>
                 <kwd>Mouse</kwd>
-                <kwd>
-                    <italic>C. elegans</italic>
-                </kwd>
+                <kwd><italic>C. elegans</italic></kwd>
                 <kwd>Other</kwd>
             </kwd-group>
         </article-meta>
