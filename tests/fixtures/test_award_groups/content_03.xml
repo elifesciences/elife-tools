@@ -1,0 +1,230 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <funding-group>
+        <award-group id="par-1">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000001</institution-id>
+                    <institution>National Science Foundation</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>CAREER Award, 1056008</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Fang</surname>
+                    <given-names>Zhongnan</given-names>
+                </name>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-2">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/501100004399</institution-id>
+                    <institution>Okawa Foundation for Information and Telecommunications</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>Research Grant Award</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-3">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000879</institution-id>
+                    <institution>Alfred P. Sloan Foundation</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>Sloan Research Fellowship</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-4">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000002</institution-id>
+                    <institution>National Institutes of Health</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>NIH Director's New Innovator Award</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Liu</surname>
+                    <given-names>Jia</given-names>
+                </name>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Hyun Joo</given-names>
+                </name>
+                <name>
+                    <surname>Lin</surname>
+                    <given-names>Peter</given-names>
+                </name>
+                <name>
+                    <surname>Choy</surname>
+                    <given-names>ManKin</given-names>
+                </name>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-5">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000065</institution-id>
+                    <institution>National Institute of Neurological Disorders and Stroke</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>R01NS087159</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Hyun Joo</given-names>
+                </name>
+                <name>
+                    <surname>Weitz</surname>
+                    <given-names>Andrew J</given-names>
+                </name>
+                <name>
+                    <surname>Lin</surname>
+                    <given-names>Peter</given-names>
+                </name>
+                <name>
+                    <surname>Choy</surname>
+                    <given-names>ManKin</given-names>
+                </name>
+                <name>
+                    <surname>Schiff</surname>
+                    <given-names>Nicholas</given-names>
+                </name>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-6">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000070</institution-id>
+                    <institution>National Institute of Biomedical Imaging and Bioengineering</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>R00EB008738</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Liu</surname>
+                    <given-names>Jia</given-names>
+                </name>
+                <name>
+                    <surname>Fang</surname>
+                    <given-names>Zhongnan</given-names>
+                </name>
+                <name>
+                    <surname>Lee</surname>
+                    <given-names>Jin Hyung</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-7">
+            <funding-source>
+                <institution-wrap>
+                    <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100000002</institution-id>
+                    <institution>National Institutes of Health</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>Transformative R01, R01MH087988</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Pinskiy</surname>
+                    <given-names>Vadim</given-names>
+                </name>
+                <name>
+                    <surname>Tolpygo</surname>
+                    <given-names>Alexander</given-names>
+                </name>
+                <name>
+                    <surname>Mitra</surname>
+                    <given-names>Partha</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-8">
+            <funding-source>
+                <institution-wrap>
+                    <institution>Mathers Charitable Foundation</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id/>
+            <principal-award-recipient>
+                <name>
+                    <surname>Pinskiy</surname>
+                    <given-names>Vadim</given-names>
+                </name>
+                <name>
+                    <surname>Tolpygo</surname>
+                    <given-names>Alexander</given-names>
+                </name>
+                <name>
+                    <surname>Mitra</surname>
+                    <given-names>Partha</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-9">
+            <funding-source>
+                <institution-wrap>
+                    <institution>Stanford Bio-X</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id>Bioengineering Graduate Fellowship</award-id>
+            <principal-award-recipient>
+                <name>
+                    <surname>Weitz</surname>
+                    <given-names>Andrew J</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-10">
+            <funding-source>
+                <institution-wrap>
+                    <institution>James and Carrie Anderson Fund for Epilepsy Research</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id/>
+            <principal-award-recipient>
+                <name>
+                    <surname>Fisher</surname>
+                    <given-names>Robert</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+        <award-group id="par-11">
+            <funding-source>
+                <institution-wrap>
+                    <institution>Susan Horngren and Littlefield Funds</institution>
+                </institution-wrap>
+            </funding-source>
+            <award-id/>
+            <principal-award-recipient>
+                <name>
+                    <surname>Fisher</surname>
+                    <given-names>Robert</given-names>
+                </name>
+            </principal-award-recipient>
+        </award-group>
+    <funding-statement>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement>
+    </funding-group>
+</root>

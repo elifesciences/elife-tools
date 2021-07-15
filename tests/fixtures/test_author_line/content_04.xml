@@ -1,0 +1,80 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" id="author-28783">
+                    <name>
+                        <surname>Fleming</surname>
+                        <given-names>Michael S</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Department of Neuroscience, Perelman School of Medicine</institution>, <institution>University of Pennsylvania</institution>, <addr-line><named-content content-type="city">Philadelphia</named-content></addr-line>, <country>United States</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-28784">
+                    <name>
+                        <surname>Vysochan</surname>
+                        <given-names>Anna</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Department of Neuroscience, Perelman School of Medicine</institution>, <institution>University of Pennsylvania</institution>, <addr-line>
+                        <named-content content-type="city">Philadelphia</named-content></addr-line>, <country>United States</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-28785">
+                    <name>
+                        <surname>Paixão</surname>
+                        <given-names>Sόnia</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Molecules - Signals - Development</institution>, <institution>Max Planck Institute of Neurobiology</institution>, <addr-line><named-content content-type="city">Martinsried</named-content></addr-line>, <country>Germany</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-28786">
+                    <name>
+                        <surname>Niu</surname>
+                        <given-names>Jingwen</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Department of Neuroscience, Perelman School of Medicine</institution>, <institution>University of Pennsylvania</institution>, <addr-line><named-content content-type="city">Philadelphia</named-content></addr-line>, <country>United States</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-6426">
+                    <name>
+                        <surname>Klein</surname>
+                        <given-names>Rüdiger</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Molecules - Signals - Development</institution>, <institution>Max Planck Institute of Neurobiology</institution>, <addr-line><named-content content-type="city">Martinsried</named-content></addr-line>, <country>Germany</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" id="author-28787">
+                    <name>
+                        <surname>Savitt</surname>
+                        <given-names>Joseph M</given-names>
+                    </name>
+                    <aff>
+                        <institution>Parkinson's Disease and Movement Disorder Center of Maryland</institution>, <addr-line>
+                        <named-content content-type="city">Elkridge</named-content></addr-line>, <country>United States</country>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes" id="author-18016">
+                    <name>
+                        <surname>Luo</surname>
+                        <given-names>Wenqin</given-names>
+                    </name>
+                    <aff>
+                        <institution content-type="dept">Department of Neuroscience, Perelman School of Medicine</institution>, <institution>University of Pennsylvania</institution>, <addr-line><named-content content-type="city">Philadelphia</named-content></addr-line>, <country>United States</country><email>luow@mail.med.upenn.edu</email>
+                    </aff>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+</root>

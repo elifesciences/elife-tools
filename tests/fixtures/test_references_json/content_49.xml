@@ -1,0 +1,52 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <back>
+            <ref-list>
+                <ref id="bib13">
+                    <element-citation publication-type="journal">
+                        <person-group person-group-type="author">
+                            <name>
+                                <surname>Bradley</surname>
+                                <given-names>RK</given-names>
+                            </name>
+                            <name>
+                                <surname>Roberts</surname>
+                                <given-names>A</given-names>
+                            </name>
+                            <name>
+                                <surname>Smoot</surname>
+                                <given-names>M</given-names>
+                            </name>
+                            <name>
+                                <surname>Juvekar</surname>
+                                <given-names>S</given-names>
+                            </name>
+                            <name>
+                                <surname>Do</surname>
+                                <given-names>J</given-names>
+                            </name>
+                            <name>
+                                <surname>Dewey</surname>
+                                <given-names>C</given-names>
+                            </name>
+                            <name>
+                                <surname>Holmes</surname>
+                                <given-names>I</given-names>
+                            </name>
+                            <name>
+                                <surname>Pachter</surname>
+                                <given-names>L</given-names>
+                            </name>
+                        </person-group>
+                        <year iso-8601-date="2009">2009</year>
+                        <article-title>Fast statistical alignment</article-title>
+                        <source>Public Library of Science International Society for Computational Biology</source>
+                        <volume>5</volume>
+                        <elocation-id>e1000392</elocation-id>
+                        <pub-id pub-id-type="doi">10.1371/journal.pcbi.1000392</pub-id>
+                    </element-citation>
+                </ref>
+            </ref-list>
+        </back>
+    </article>
+</root>

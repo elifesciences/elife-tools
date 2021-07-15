@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <article-meta>
+            <contrib-group>
+                <contrib contrib-type="author" corresp="yes" id="author-2919">
+                    <name>
+                        <surname>Smith</surname>
+                        <given-names>Richard</given-names>
+                    </name>
+                    <xref ref-type="fn" rid="conf1"/>
+                    <x> is the </x>
+                    <role>Chair of Patients Know Best</role>
+                    <x> and was the </x>
+                    <role>Editor of the BMJ from 1991 to 2004</role>
+                    <aff>
+                        <email>richardswsmith@yahoo.co.uk</email>
+                    </aff>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+</root>

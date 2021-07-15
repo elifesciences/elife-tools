@@ -1,0 +1,34 @@
+<article>
+    <front>
+        <article-meta>
+            <author-notes>
+                <corresp id="cor1"><label>*</label>For correspondence: <email>jon_clardy@hms.harvard.edu</email>(JC);</corresp>
+                <corresp id="cor2"><email>nking@berkeley.edu</email>(NK);</corresp>
+                <corresp id="cor3"><email>mharrison@elifesciences.org</email>(MH)</corresp>
+                <fn fn-type="con" id="equal-contrib">
+                    <label>†</label>
+                    <p>These authors contributed equally to this work</p>
+                </fn>
+                <fn fn-type="con" id="equal-contrib2">
+                    <label>‡</label>
+                    <p>These authors also contributed equally to this work</p>
+                </fn>
+                <fn fn-type="present-address" id="pa1">
+                    <label>¶</label>
+                    <p>Department of Wellcome Trust, Sanger Institute, London, United Kingdom</p>
+                </fn>
+                <fn fn-type="present-address" id="pa2">
+                    <label>‖</label>
+                    <p>Department of Biological Chemistry and Molecular Pharmacology, Harvard Medical School, Boston, United States</p>
+                </fn>
+                <fn fn-type="present-address" id="pa3">
+                    <p>eLife Sciences editorial Office, eLife Sciences, Cambridge, United Kingdom</p>
+                </fn>
+                <fn fn-type="deceased" id="fn1">
+                    <label>**</label>
+                    <p>Deceased</p>
+                </fn>
+            </author-notes>
+        </article-meta>
+    </front>
+</article>

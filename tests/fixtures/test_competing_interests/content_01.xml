@@ -1,0 +1,69 @@
+<back>
+    <sec sec-type="additional-information" id="s5">
+        <title>Additional information</title>
+        <fn-group content-type="competing-interest">
+            <title>Competing interests</title>
+            <fn fn-type="conflict" id="conf1">
+                <p>JC: Reviewing editor, <italic>eLife</italic>.</p>
+            </fn>
+            <fn fn-type="conflict" id="conf2">
+                <p>The other authors declare that no competing interests exist.</p>
+            </fn>
+        </fn-group>
+        <fn-group content-type="author-contribution">
+            <title>Author contributions</title>
+            <fn fn-type="con" id="con1">
+                <p>RAA, Conception and design, Acquisition of data, Analysis and interpretation
+                    of data, Drafting or revising the article</p>
+            </fn>
+            <fn fn-type="con" id="con2">
+                <p>LWB, Conception and design, Acquisition of data, Analysis and interpretation
+                    of data, Drafting or revising the article</p>
+            </fn>
+            <fn fn-type="con" id="con3">
+                <p>CS, Acquisition of data, Analysis and interpretation of data, Drafting or
+                    revising the article</p>
+            </fn>
+            <fn fn-type="con" id="con4">
+                <p>RKD, Acquisition of data, Analysis and interpretation of data</p>
+            </fn>
+            <fn fn-type="con" id="con5">
+                <p>RZ, Acquisition of data, Analysis and interpretation of data</p>
+            </fn>
+            <fn fn-type="con" id="con6">
+                <p>SRF, Acquisition of data, Analysis and interpretation of data</p>
+            </fn>
+            <fn fn-type="con" id="con7">
+                <p>JC, Conception and design, Analysis and interpretation of data, Drafting or
+                    revising the article</p>
+            </fn>
+            <fn fn-type="con" id="con8">
+                <p>NK, Conception and design, Analysis and interpretation of data, Drafting or
+                    revising the article</p>
+            </fn>
+            <fn fn-type="con" id="con9">
+                <p>NISC Comparative Sequencing Program: JM did X, IM did Y and JB did Z and Y</p>
+            </fn>
+        </fn-group>
+        <fn-group content-type="ethics-information">
+            <title>Ethics</title>
+            <fn fn-type="other">
+                <p>Clinical trial Registry: NCT.</p>
+                <p>Registration ID: NCT00912041.</p>
+                <p>Clinical trial Registry: EudraCT.</p>
+                <p>Registration ID: EudraCT2004-000446-20.</p>
+            </fn>
+            <fn fn-type="other">
+                <p>Human subjects: Participants were recruited and sampled using methods
+                    approved by the Institutional Review Board at the University of Colorado
+                    (Protocol#: 0409.13). Informed consent and consent to publish was obtained
+                    from all subjects. The Helsinki guidelines were followed.</p>
+            </fn>
+            <fn fn-type="other">
+                <p>Animal experimentation: All animals were handled and sampled according to
+                    protocol #1102.06, approved by the approved institutional animal care and
+                    use committee (IACUC) of the University of Colorado.</p>
+            </fn>
+        </fn-group>
+    </sec>
+</back>
