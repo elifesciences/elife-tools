@@ -256,10 +256,11 @@ class ElifeDocumentType(minidom.DocumentType):
     """
 
     def writexml(self, writer, indent="", addindent="", newl=""):
+        assert self.name is not None, "the `minidom.DocumentType.name` property has not been set. see `output` and `build_doctype`."
+
         writer.write("<!DOCTYPE ")
 
-        # Throws TypeError if self.name is None, not sure if self.name always has to be set ??
-        # only happens in Python 3
+        # Throws TypeError if self.name is None. only happens in Python 3.
         writer.write(self.name)
 
         if self.publicId:
@@ -268,6 +269,7 @@ class ElifeDocumentType(minidom.DocumentType):
             )
         elif self.systemId:
             writer.write('%s SYSTEM "%s"' % (newl, self.systemId))
+
         if self.internalSubset is not None:
             writer.write(" [")
             writer.write(self.internalSubset)
