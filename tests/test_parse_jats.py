@@ -3233,6 +3233,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_sub_articles", "content_01.xml"),
             read_fixture("test_sub_articles", "content_01_expected.py"),
         ),
+        # editor evaluation sub-article parsing
+        (
+            read_fixture("test_sub_articles", "content_02.xml"),
+            read_fixture("test_sub_articles", "content_02_expected.py"),
+        ),
     )
     def test_sub_articles(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

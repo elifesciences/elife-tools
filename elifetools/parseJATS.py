@@ -830,6 +830,17 @@ def sub_articles(soup):
         utils.set_if_value(sub_article, "article_title", title(tag))
         if all_contributors(tag):
             sub_article["contributors"] = all_contributors(tag)
+        if raw_parser.related_object(tag):
+            sub_article["related_objects"] = []
+            for related_object_tag in raw_parser.related_object(tag):
+                related_object = OrderedDict()
+                utils.set_if_value(
+                    related_object, "link_type", related_object_tag.get("link-type")
+                )
+                utils.set_if_value(
+                    related_object, "xlink_href", related_object_tag.get("xlink:href")
+                )
+                sub_article["related_objects"].append(related_object)
         # find parent article tag and set attributes
         for parent in tag.parents:
             if parent.name == "article":
