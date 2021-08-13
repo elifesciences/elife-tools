@@ -419,6 +419,24 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # test for no sub-article
+        (
+            "<root/>",
+            OrderedDict(),
+        ),
+        # example from elife 00666 kitchen sink XML
+        (
+            read_fixture("test_editor_evaluation", "content_01.xml"),
+            read_fixture("test_editor_evaluation", "content_01_expected.py"),
+        ),
+    )
+    def test_editor_evaluation(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.editor_evaluation(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
         ("elife_poa_e06828.xml", OrderedDict(), None),
     )

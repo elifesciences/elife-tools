@@ -3520,6 +3520,31 @@ def sub_article_doi(tag):
     return doi
 
 
+def editor_evaluation(soup):
+    "parse the Editor's evaluation sub-article into JSON format matching the API schema format"
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.editor_evaluation(soup)
+
+    if not sub_article:
+        return sub_article_content
+
+    utils.copy_attribute(sub_article.attrs, "id", sub_article_content)
+    if sub_article_doi(sub_article):
+        sub_article_content["doi"] = utils.doi_uri_to_doi(sub_article_doi(sub_article))
+
+    # content
+    raw_body = raw_parser.article_body(sub_article)
+    if raw_body:
+        sub_article_content["content"] = render_raw_body(raw_body)
+
+    # uri
+    if raw_parser.related_object(sub_article):
+        uri = utils.first(raw_parser.related_object(sub_article)).get("xlink:href")
+        utils.set_if_value(sub_article_content, "uri", uri)
+
+    return sub_article_content
+
+
 def decision_letter(soup):
 
     sub_article_content = OrderedDict()
