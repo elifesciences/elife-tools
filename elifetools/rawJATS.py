@@ -530,6 +530,10 @@ def sub_article(soup, article_type=None):
     return extract_nodes(soup, "sub-article", attr="article-type", value=article_type)
 
 
+def editor_evaluation(soup):
+    return first(sub_article(soup, "editor-report"))
+
+
 def decision_letter(soup):
     tag = first(sub_article(soup, "article-commentary"))
     if not tag:

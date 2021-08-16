@@ -830,6 +830,17 @@ def sub_articles(soup):
         utils.set_if_value(sub_article, "article_title", title(tag))
         if all_contributors(tag):
             sub_article["contributors"] = all_contributors(tag)
+        if raw_parser.related_object(tag):
+            sub_article["related_objects"] = []
+            for related_object_tag in raw_parser.related_object(tag):
+                related_object = OrderedDict()
+                utils.set_if_value(
+                    related_object, "link_type", related_object_tag.get("link-type")
+                )
+                utils.set_if_value(
+                    related_object, "xlink_href", related_object_tag.get("xlink:href")
+                )
+                sub_article["related_objects"].append(related_object)
         # find parent article tag and set attributes
         for parent in tag.parents:
             if parent.name == "article":
@@ -3518,6 +3529,31 @@ def sub_article_doi(tag):
     if article_id_tag:
         doi = article_id_tag.text
     return doi
+
+
+def editor_evaluation(soup):
+    "parse the Editor's evaluation sub-article into JSON format matching the API schema format"
+    sub_article_content = OrderedDict()
+    sub_article = raw_parser.editor_evaluation(soup)
+
+    if not sub_article:
+        return sub_article_content
+
+    utils.copy_attribute(sub_article.attrs, "id", sub_article_content)
+    if sub_article_doi(sub_article):
+        sub_article_content["doi"] = utils.doi_uri_to_doi(sub_article_doi(sub_article))
+
+    # content
+    raw_body = raw_parser.article_body(sub_article)
+    if raw_body:
+        sub_article_content["content"] = render_raw_body(raw_body)
+
+    # uri
+    if raw_parser.related_object(sub_article):
+        uri = utils.first(raw_parser.related_object(sub_article)).get("xlink:href")
+        utils.set_if_value(sub_article_content, "uri", uri)
+
+    return sub_article_content
 
 
 def decision_letter(soup):
