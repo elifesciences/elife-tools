@@ -834,6 +834,7 @@ def sub_articles(soup):
             sub_article["related_objects"] = []
             for related_object_tag in raw_parser.related_object(tag):
                 related_object = OrderedDict()
+                utils.set_if_value(related_object, "id", related_object_tag.get("id"))
                 utils.set_if_value(
                     related_object, "link_type", related_object_tag.get("link-type")
                 )
