@@ -29,7 +29,8 @@ expected = [
                 [
                     OrderedDict(
                         [
-                            ("link_type", "hasRelatedMaterial"),
+                            ("id", "ro1"),
+                            ("link_type", "continued-by"),
                             (
                                 "xlink_href",
                                 "https://sciety.org/articles/activity/10.1101/2020.11.21.391326",
