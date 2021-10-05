@@ -28,6 +28,8 @@ XML_NAMESPACES = [
     ),
 ]
 
+SCIETY_URI_DOMAIN = "sciety.org"
+
 
 def parse_xml(xml):
     return BeautifulSoup(xml, "lxml-xml")
@@ -3549,10 +3551,13 @@ def editor_evaluation(soup):
     if raw_body:
         sub_article_content["content"] = render_raw_body(raw_body)
 
-    # uri
+    # scietyUri
     if raw_parser.related_object(sub_article):
-        uri = utils.first(raw_parser.related_object(sub_article)).get("xlink:href")
-        utils.set_if_value(sub_article_content, "uri", uri)
+        for related_object in raw_parser.related_object(sub_article):
+            uri = related_object.get("xlink:href")
+            if SCIETY_URI_DOMAIN in uri:
+                utils.set_if_value(sub_article_content, "scietyUri", uri)
+                break
 
     return sub_article_content
 

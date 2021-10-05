@@ -18,6 +18,6 @@ expected = OrderedDict(
                 )
             ],
         ),
-        ("uri", "https://sciety.org/articles/activity/10.1101/2020.11.21.391326"),
+        ("scietyUri", "https://sciety.org/articles/activity/10.1101/2020.11.21.391326"),
     ]
 )
