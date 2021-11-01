@@ -800,6 +800,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_format_aff", "content_03.xml"),
             read_fixture("test_format_aff", "content_03_expected.py"),
         ),
+        # aff example with ror institution-id
+        (
+            read_fixture("test_format_aff", "content_04.xml"),
+            read_fixture("test_format_aff", "content_04_expected.py"),
+        ),
         # edge case, no aff tag or the rid idoes not match an aff id
         (None, (None, {})),
     )
