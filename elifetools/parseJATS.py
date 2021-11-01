@@ -1499,6 +1499,7 @@ def format_contributor(
                     "country",
                     "city",
                     "email",
+                    "ror",
                     "text",
                 ]
                 for aff_attribute in aff_attributes:
@@ -1551,6 +1552,7 @@ def format_contributor(
                     "country",
                     "city",
                     "email",
+                    "ror",
                     "text",
                 ]
                 for aff_attribute in aff_attributes:
@@ -1743,6 +1745,13 @@ def format_aff(aff_tag):
         ),
         "email": utils.node_contents_str(
             utils.first(utils.extract_nodes(aff_tag, "email"))
+        ),
+        "ror": utils.node_contents_str(
+            utils.first(
+                utils.extract_nodes(
+                    aff_tag, "institution-id", "institution-id-type", "ror"
+                )
+            )
         ),
     }
     # Remove keys with None value
