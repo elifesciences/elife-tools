@@ -1145,6 +1145,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_references_json", "content_50.xml"),
             read_fixture("test_references_json", "content_50_expected.py"),
         ),
+        # example of thesis ref with a doi, its uri will be populated from the doi
+        (
+            read_fixture("test_references_json", "content_51.xml"),
+            read_fixture("test_references_json", "content_51_expected.py"),
+        ),
     )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):

@@ -4541,6 +4541,7 @@ def references_json(soup, html_flag=True):
             "webpage",
             "preprint",
             "report",
+            "thesis",
         ]:
             if ref.get("doi"):
                 # Convert doi to uri

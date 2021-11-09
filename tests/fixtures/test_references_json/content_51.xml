@@ -1,0 +1,18 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib1">
+            <element-citation publication-type="thesis">
+                <person-group person-group-type="author">
+                    <name>
+                        <surname>Arita</surname>
+                        <given-names>GS</given-names>
+                    </name>
+                </person-group>
+                <year iso-8601-date="1967">1967</year>
+                <article-title>A Comparative Study of the Structure and Function of the Adhesive Apparatus of the Cyclopteridae and Gobiesocidae</article-title>
+                <publisher-name>The University of British Columbia</publisher-name>
+                <pub-id pub-id-type="doi">10.14288/1.0104391</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
