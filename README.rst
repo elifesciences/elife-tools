@@ -1,8 +1,5 @@
 elife-tools
 ===========
-   
-.. image:: https://coveralls.io/repos/elifesciences/elife-tools/badge.svg?branch=master&service=github
-   :target: https://coveralls.io/github/elifesciences/elife-tools?branch=master
 
 Tools for using article data in Python
 

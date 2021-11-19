@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-
-tox
-. .tox/py3/bin/activate
-pip install coveralls
-COVERALLS_REPO_TOKEN=$(cat /etc/coveralls/tokens/elife-tools) coveralls
+. mkvenv.sh
+source venv/bin/activate
+pip install pip wheel pytest coverage --upgrade
+pip install -r requirements.txt
+coverage run -m pytest
