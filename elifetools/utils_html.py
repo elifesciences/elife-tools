@@ -22,6 +22,7 @@ def xml_to_html(html_flag, xml_string, base_url=None):
     html_string = replace_mathml_tags(html_string)
     html_string = replace_list_tags(html_string)
     html_string = replace_table_style_author_callout(html_string)
+    html_string = replace_styled_content_tags(html_string)
     html_string = replace_simple_tags(html_string, "italic", "i")
     html_string = replace_simple_tags(html_string, "bold", "b")
     html_string = replace_simple_tags(
@@ -103,6 +104,8 @@ def allowed_xml_tag_fragments():
         "</td",
         "<list",
         "</list",
+        "<styled-content",
+        "</styled-content>",
     )
 
 
@@ -344,3 +347,12 @@ def references_author_collab(ref_author, html_flag=True):
     author_json["type"] = "group"
     author_json["name"] = str(convert(ref_author.get("collab")))
     return author_json
+
+
+def replace_styled_content_tags(string):
+    "convert styled-content tags to span tags"
+    pattern = re.compile("<styled-content")
+    string = pattern.sub("<span", string)
+    pattern = re.compile("</styled-content>")
+    string = pattern.sub("</span>", string)
+    return string

@@ -227,6 +227,19 @@ class TestUtilsHtml(unittest.TestCase):
             u"<table><thead><tr><th></th></tr></thead><tbody><tr><td>Genotype<ul></ul></td></tr>"
             u"</tbody></table>",
         ),
+        # table with inline styles and styled-content
+        (
+            True,
+            "<table><thead><tr><th></th><th></th></tr></thead><tbody><tr>"
+            '<td><styled-content style="color: #D50000;">400</styled-content></td>'
+            '<td style="background-color: #FFB74D;">30503.40</td>'
+            "</tr></tbody></table>",
+            None,
+            "<table><thead><tr><th></th><th></th></tr></thead><tbody><tr>"
+            '<td><span style="color: #D50000;">400</span></td>'
+            '<td style="background-color: #FFB74D;">30503.40</td>'
+            "</tr></tbody></table>",
+        ),
     )
     def test_xml_to_html(self, html_flag, xml_string, base_url, expected):
         self.assertEqual(
