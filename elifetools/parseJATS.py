@@ -4687,6 +4687,37 @@ def datasets_json(soup, html_flag=True):
     return elifetools.json_rewrite.rewrite_json("datasets_json", soup, datasets_json)
 
 
+def footnotes_json(soup, base_url=None):
+    "format content from particular fn tags and ignore other fn tags"
+    back = raw_parser.back(soup)
+    if not back:
+        return None
+    fn_group_tags = raw_parser.fn_group(back)
+    if not fn_group_tags:
+        return None
+    fn_group_tag = None
+    # find the first tag with no content-type attribute and its direct parent is a back tag
+    for tag in fn_group_tags:
+        parent_tag = utils.first_parent(tag, ["back", "table-wrap"])
+        if not tag.attrs.get("content-type") and parent_tag.name == "back":
+            fn_group_tag = tag
+            break
+    if not fn_group_tag:
+        return None
+    footnotes_content = []
+    for fn_tag in raw_parser.fn(fn_group_tag):
+        # get title from label tag
+        label_tag = raw_parser.label(fn_tag)
+        section = {
+            "id": fn_tag.attrs.get("id"),
+            "title": label_tag.text,
+            "type": "section",
+        }
+        section["content"] = render_raw_body(fn_tag, base_url=base_url)
+        footnotes_content.append(section)
+    return footnotes_content
+
+
 def poa_supplementary_material_block_content(tag):
     tag_content = OrderedDict()
 
