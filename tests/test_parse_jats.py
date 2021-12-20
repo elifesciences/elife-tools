@@ -279,6 +279,28 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # Example of fn-group and fn tags included and ignored in footnotes_json output
+        (
+            read_fixture("test_footnotes_json", "content_01.xml"),
+            read_fixture("test_footnotes_json", "content_01_expected.py"),
+        ),
+        # Test for no back tag
+        ("<article/>", None),
+        # Test for no fn-group tags
+        ("<article><back/></article>", None),
+        # Only fn-group tag with a content-type
+        (
+            '<article><back><fn-group content-type="competing-interest"/></back></article>',
+            None,
+        ),
+    )
+    def test_footnotes_json(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.footnotes_json(soup_body(soup))
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         ("elife02304.xml", 2),
         ("elife02935.xml", 6),
     )

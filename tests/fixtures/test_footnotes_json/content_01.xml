@@ -1,0 +1,44 @@
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec id="s1">
+            <table-wrap id="table1" position="float">
+                <label>Table 1.</label>
+                <caption><title>A caption<xref ref-type="table-fn" rid="tfn5_1"><sup>a</sup></xref>.</title></caption>
+                <table frame="hsides" rules="groups">
+                    <thead>
+                        <tr>
+                            <th>Really?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table-wrap-foot>
+                    <fn-group><title>Notes:</title>
+                        <fn id="tfn5_1"><label>a.</label><p>This will not be included in footnotes JSON.</p>
+                        </fn>
+                    </fn-group>
+                </table-wrap-foot>
+            </table-wrap>
+        </sec>
+        <fn-group content-type="competing-interest">
+            <label>Conflict of Interest</label>
+            <fn fn-type="COI-statement" id="conf1">
+                <p>No competing interests reported</p>
+            </fn>
+        </fn-group>
+        <fn-group>
+            <fn id="fn1-1">
+                <label>1.</label>
+                <p>First footnote.</p>
+            </fn>
+            <fn id="fn1-2">
+                <label>2.</label>
+                <p>See abstract in <italic>Econometrica</italic>, XXIV (July I956); I. Blumen, M. Kogan, and J. McCarthy.</p>
+            </fn>
+        </fn-group>
+    </back>
+</article>

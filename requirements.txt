@@ -1,5 +1,5 @@
 beautifulsoup4==4.7.1
-lxml==4.6.3
+lxml==4.6.5
 python-slugify==1.2.4
 coverage==5.1
 ddt==1.1.0
