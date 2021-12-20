@@ -1,27 +1,29 @@
 <article xmlns:xlink="http://www.w3.org/1999/xlink">
-    <body>
-        <table-wrap id="table1" position="float">
-            <label>Table 1.</label>
-            <caption><title>A caption<xref ref-type="table-fn" rid="tfn5_1"><sup>a</sup></xref>.</title></caption>
-            <table frame="hsides" rules="groups">
-                <thead>
-                    <tr>
-                        <th>Really?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Yes</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table-wrap-foot>
-                <fn id="tfn5_1"><label>a.</label><p>This will not be included in footnotes JSON.</p>
-                </fn>
-            </table-wrap-foot>
-        </table-wrap>
-    </body>
     <back>
+        <sec id="s1">
+            <table-wrap id="table1" position="float">
+                <label>Table 1.</label>
+                <caption><title>A caption<xref ref-type="table-fn" rid="tfn5_1"><sup>a</sup></xref>.</title></caption>
+                <table frame="hsides" rules="groups">
+                    <thead>
+                        <tr>
+                            <th>Really?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table-wrap-foot>
+                    <fn-group><title>Notes:</title>
+                        <fn id="tfn5_1"><label>a.</label><p>This will not be included in footnotes JSON.</p>
+                        </fn>
+                    </fn-group>
+                </table-wrap-foot>
+            </table-wrap>
+        </sec>
         <fn-group content-type="competing-interest">
             <label>Conflict of Interest</label>
             <fn fn-type="COI-statement" id="conf1">
