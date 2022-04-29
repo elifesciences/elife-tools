@@ -2271,6 +2271,18 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         tag_content = parser.contributors(soup)
         self.assertEqual(expected, tag_content)
 
+    @unpack
+    @data(
+        (
+            read_fixture("test_contributors", "content_04.xml"),
+            read_fixture("test_contributors", "content_04_expected.py"),
+        ),
+    )
+    def test_contributors_edge_cases(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.contributors(soup)
+        self.assertEqual(expected, tag_content)
+
     @data(
         # edge case, no permissions tag
         ("<root><article></article></root>", None),
