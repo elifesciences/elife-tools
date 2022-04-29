@@ -13,5 +13,11 @@ elifePipeline {
         elifeGitTagRevision(tag)
     }
     
+    stage 'Downstream', {
+        elifeMainlineOnly {
+            build job: '/dependencies/dependencies-elife-bot-update-dependency', parameters: [string(name: 'package', value: 'elifetools'), string(name: 'tag', value: tag)], wait: false
+            build job: '/dependencies/dependencies-bot-lax-adaptor-update-dependency', parameters: [string(name: 'package', value: 'elifetools'), string(name: 'tag', value: tag)], wait: false
+        }
+    }
 }
 
