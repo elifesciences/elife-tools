@@ -1,0 +1,71 @@
+<article>
+    <front>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">75374</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.75374</article-id>
+            <contrib-group>
+                <contrib contrib-type="author">
+                    <collab>the PRACTICAL consortium
+                        <contrib-group>
+                            <contrib>
+                                <name>
+                                    <surname>Eeles</surname>
+                                    <given-names>Rosalind A</given-names>
+                                </name>
+                                <aff>
+                                    <institution-wrap>
+                                        <institution-id institution-id-type="ror">https://ror.org/043jzw605</institution-id>
+                                        <institution>The Institute of Cancer Research</institution>
+                                    </institution-wrap>
+                                    <addr-line>
+                                        <named-content content-type="city">London</named-content>
+                                    </addr-line>
+                                    <country>United Kingdom</country>
+                                </aff>
+                                <aff>
+                                    <institution>Royal Marsden NHS Foundation Trust</institution>
+                                    <addr-line>
+                                        <named-content content-type="city">London</named-content>
+                                    </addr-line>
+                                    <country>United Kingdom</country>
+                                </aff>
+                            </contrib>
+                            <contrib>
+                                <!-- collab inside a collab -->
+                                <collab>APCB BioResource (Australian Prostate Cancer BioResource)</collab>
+                                <aff>
+                                    <institution>Translational Research Institute</institution>
+                                    <addr-line>
+                                        <named-content content-type="city">Brisbane</named-content>
+                                    </addr-line>
+                                    <country>Australia</country>
+                                </aff>
+                                <aff>
+                                    <institution>Australian Prostate Cancer Research Centre-Qld, Queensland University of Technology, Brisbane; Prostate Cancer Research Program, Monash University, Melbourne; Dame Roma Mitchell Cancer Centre, University of Adelaide</institution>
+                                    <addr-line>
+                                        <named-content content-type="city">Adelaide</named-content>
+                                    </addr-line>
+                                    <country>Australia</country>
+                                </aff>
+                            </contrib>
+                            <!-- check a contrib after the collab is assigned the correct group author id -->
+                            <contrib>
+                                <name>
+                                    <surname>Grönberg</surname>
+                                    <given-names>Henrik</given-names>
+                                </name>
+                                <aff>
+                                    <institution>Department of Medical Epidemiology and Biostatistics, Karolinska Institute</institution>
+                                    <addr-line>
+                                        <named-content content-type="city">Stockholm</named-content>
+                                    </addr-line>
+                                    <country>Sweden</country>
+                                </aff>
+                            </contrib>
+                        </contrib-group>
+                    </collab>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+</article>

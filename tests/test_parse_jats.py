@@ -762,6 +762,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_authors_json", "content_18.xml"),
             read_fixture("test_authors_json", "content_18_expected.py"),
         ),
+        # example of collab inside collab
+        (
+            read_fixture("test_authors_json", "content_19.xml"),
+            read_fixture("test_authors_json", "content_19_expected.py"),
+        ),
     )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
