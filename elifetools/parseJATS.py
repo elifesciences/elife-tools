@@ -1460,6 +1460,11 @@ def format_contributor(
         utils.set_if_value(
             contributor, "suffix", utils.first_node_str_contents(contrib_tag, "suffix")
         )
+        utils.set_if_value(
+            contributor,
+            "collab",
+            utils.first_node_str_contents(contrib_tag, "collab"),
+        )
         # Get the sub-group value from the parent role tag if it is inside a group
         if (
             contrib_tag.parent
@@ -4034,7 +4039,7 @@ def collab_to_group_author_key_map(authors):
     """compile a map of author collab to group-author-key"""
     collab_map = {}
     for author in authors:
-        if author.get("collab"):
+        if author.get("collab") and not author.get("type") == "author non-byline":
             collab_map[author.get("collab")] = author.get("group-author-key")
     return collab_map
 
@@ -4118,10 +4123,13 @@ def authors_json(soup):
     # Second, add byline author data
     collab_map = collab_to_group_author_key_map(contributors_data)
     for contributor in [
-        elem
-        for elem in contributors_data
-        if elem.get("group-author-key") and not elem.get("collab")
+        elem for elem in contributors_data if elem.get("group-author-key")
     ]:
+        # skip the collab if its name is the same as the group author key
+        if contributor.get("group-author-key") == collab_map.get(
+            contributor.get("collab")
+        ):
+            continue
         for group_author in [
             elem for elem in authors_json_data if elem.get("type") == "group"
         ]:
@@ -4129,15 +4137,26 @@ def authors_json(soup):
             if group_author["name"] in collab_map:
                 group_author_key = collab_map[group_author["name"]]
             if contributor.get("group-author-key") == group_author_key:
-                author_json = author_person(
-                    contributor,
-                    author_contributions_data,
-                    author_correspondence_data,
-                    author_competing_interests_data,
-                    equal_contributions_map,
-                    present_address_data,
-                    foot_notes_data,
-                )
+                if contributor.get("collab"):
+                    author_json = author_group(
+                        contributor,
+                        author_contributions_data,
+                        author_correspondence_data,
+                        author_competing_interests_data,
+                        equal_contributions_map,
+                        present_address_data,
+                        foot_notes_data,
+                    )
+                else:
+                    author_json = author_person(
+                        contributor,
+                        author_contributions_data,
+                        author_correspondence_data,
+                        author_competing_interests_data,
+                        equal_contributions_map,
+                        present_address_data,
+                        foot_notes_data,
+                    )
                 if contributor.get("sub-group"):
                     if "groups" not in group_author:
                         group_author["groups"] = OrderedDict()
