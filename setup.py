@@ -14,9 +14,9 @@ setup(
     packages=["elifetools"],
     license="MIT",
     install_requires=[
-        "beautifulsoup4",
-        "lxml",
-        "python-slugify",
+        "beautifulsoup4>=4.7.1",
+        "lxml>=4.6.5",
+        "python-slugify>=1.2.4",
     ],
     url="https://github.com/elifesciences/elife-tools",
     maintainer="eLife Sciences Publications Ltd.",
