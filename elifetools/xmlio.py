@@ -11,8 +11,8 @@ xmlio can do input and output of XML, allowing it to be edited using ElementTree
 
 # namespaces for when reparsing XML strings
 REPARSING_NAMESPACES = (
-    'xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1" '
-    + 'xmlns:ali="http://www.niso.org/schemas/ali/1.0/" '
+    'xmlns:ali="http://www.niso.org/schemas/ali/1.0/" '
+    + 'xmlns:jats="http://www.ncbi.nlm.nih.gov/JATS1" '
     + 'xmlns:mml="http://www.w3.org/1998/Math/MathML" '
     + 'xmlns:xlink="http://www.w3.org/1999/xlink"'
 )
@@ -31,9 +31,9 @@ def register_xmlns():
     """
     Register namespaces globally
     """
+    ElementTree.register_namespace("ali", "http://www.niso.org/schemas/ali/1.0/")
     ElementTree.register_namespace("mml", "http://www.w3.org/1998/Math/MathML")
     ElementTree.register_namespace("xlink", "http://www.w3.org/1999/xlink")
-    ElementTree.register_namespace("ali", "http://www.niso.org/schemas/ali/1.0/")
 
 
 def parse(filename, return_doctype_dict=False, return_processing_instructions=False):
@@ -59,7 +59,7 @@ def parse(filename, return_doctype_dict=False, return_processing_instructions=Fa
 
     # Assume greater than Python 3.2, get the doctype from the TreeBuilder
     tree_builder = CustomTreeBuilder()
-    parser = ElementTree.XMLParser(html=0, target=tree_builder, encoding="utf-8")
+    parser = ElementTree.XMLParser(target=tree_builder, encoding="utf-8")
     new_file = BytesIO(xml_bytes)
     tree = ElementTree.parse(new_file, parser)
 

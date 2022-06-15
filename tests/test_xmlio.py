@@ -1,4 +1,5 @@
 from io import BytesIO
+import sys
 import unittest
 
 from xml.etree import ElementTree
@@ -8,6 +9,16 @@ from ddt import ddt, data, unpack
 
 from elifetools import xmlio
 from tests.file_utils import sample_xml, read_fixture, fixture_file
+
+
+def xml_expected_namespace_fix(xml_string):
+    "prior to Python 3.8 the XML attributes are alphabetised, change the test fixtures"
+    if sys.version_info < (3, 8):
+        xml_string = xml_string.replace(
+            b'<article xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="1.1d3">',
+            b'<article article-type="research-article" dtd-version="1.1d3" xmlns:xlink="http://www.w3.org/1999/xlink">',
+        )
+    return xml_string
 
 
 @ddt
@@ -29,6 +40,8 @@ class TestXmlio(unittest.TestCase):
         """test parsing a file while retaining the doctype"""
         with open(sample_xml(filename), "rb") as xml_file:
             xml_output_expected = xml_file.read()
+        # hack for running less than Python 3.8, the XML attributes are alphabetised
+        xml_output_expected = xml_expected_namespace_fix(xml_output_expected)
         root, doctype_dict = xmlio.parse(sample_xml(filename), return_doctype_dict=True)
         self.assertEqual(xmlio.output(root, None, doctype_dict), xml_output_expected)
 
@@ -36,6 +49,8 @@ class TestXmlio(unittest.TestCase):
     def test_input_output_forcing_jats_doctype(self, filename):
         with open(sample_xml(filename), "rb") as xml_file:
             xml_output_expected = xml_file.read()
+        # hack for running less than Python 3.8, the XML attributes are alphabetised
+        xml_output_expected = xml_expected_namespace_fix(xml_output_expected)
         root, doctype_dict = xmlio.parse(sample_xml(filename), return_doctype_dict=True)
         self.assertEqual(xmlio.output(root, "JATS"), xml_output_expected)
 
@@ -70,6 +85,8 @@ class TestXmlio(unittest.TestCase):
         xml_output_expected = None
         with open(sample_xml(xml_expected_filename), "rb") as xml_file:
             xml_output_expected = xml_file.read()
+        # hack for running less than Python 3.8, the XML attributes are alphabetised
+        xml_output_expected = xml_expected_namespace_fix(xml_output_expected)
         self.assertEqual(xml_output, xml_output_expected)
         self.assertEqual(xlink_count, 2)
 
