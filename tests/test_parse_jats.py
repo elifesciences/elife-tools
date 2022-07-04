@@ -1820,10 +1820,10 @@ class TestParseJats(unittest.TestCase):
             "<article/>",
             [],
         ),
-        # example from elife-kitchen-sink.xml
+        # example with an empty abstract, a correction article in accepted submission format
         (
-            read_sample_xml("elife-kitchen-sink.xml"),
-            read_fixture("test_abstracts", "content_01_expected.py"),
+            "<article><abstract><p/></abstract></article>",
+            [{"abstract_type": None, "content": "", "full_content": ""}],
         ),
         # example from elife00013.xml
         (
@@ -1857,6 +1857,11 @@ class TestParseJats(unittest.TestCase):
         (
             "<article/>",
             None,
+        ),
+        # example with an empty abstract, a correction article in accepted submission format
+        (
+            "<article><abstract><p/></abstract></article>",
+            "",
         ),
     )
     def test_abstract_edge_cases(self, xml_content, expected):
