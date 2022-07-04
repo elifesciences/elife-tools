@@ -709,9 +709,10 @@ def abstracts(soup):
             # Content including markup tags
             # When more than one paragraph, wrap each in a <p> tag
             for p_tag in good_paragraphs:
-                abstract["full_content"] += (
-                    "<p>" + utils.node_contents_str(p_tag) + "</p>"
-                )
+                if utils.node_contents_str(p_tag):
+                    abstract["full_content"] += (
+                        "<p>" + utils.node_contents_str(p_tag) + "</p>"
+                    )
 
         abstracts.append(abstract)
 
