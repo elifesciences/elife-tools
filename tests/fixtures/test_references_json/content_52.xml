@@ -1,0 +1,18 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib61">
+            <element-citation publication-type="software">
+                <person-group person-group-type="author">
+                    <collab>R Development Core Team, R. F. F. S. C</collab>
+                </person-group>
+                <year iso-8601-date="2008">2008</year>
+                <data-title>
+                    <italic>R: A Language and Environment for Statistical Computing</italic>
+                </data-title>
+                <publisher-loc>Vienna, Austria</publisher-loc>
+                <publisher-name>R Foundation for Statistical Computing</publisher-name>
+                <pub-id pub-id-type="doi">10.1007/978-3-540-74686-7</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
