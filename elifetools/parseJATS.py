@@ -4746,11 +4746,13 @@ def appendices_json(soup, base_url=None):
         if app_blocks:
             app_content["content"] = []
             for block_tag in app_blocks:
-                if len(body_block_content_render(block_tag)) > 0:
-                    if body_block_content_render(block_tag)[0] != {}:
-                        app_content["content"].append(
-                            body_block_content_render(block_tag, base_url=base_url)[0]
-                        )
+                content_blocks = [
+                    block
+                    for block in body_block_content_render(block_tag, base_url=base_url)
+                    if block
+                ]
+                # append the blocks to the content list
+                app_content["content"] += content_blocks
 
         # If the first element is a box and it has no DOI, then ignore it
         #  by setting its child content to itself
