@@ -131,6 +131,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_appendices_json", "content_05.xml"),
             read_fixture("test_appendices_json", "content_05_expected.py"),
         ),
+        # example of an appendix with no boxed-content tag wrapping the content
+        (
+            read_fixture("test_appendices_json", "content_06.xml"),
+            read_fixture("test_appendices_json", "content_06_expected.py"),
+        ),
     )
     def test_appendices_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
