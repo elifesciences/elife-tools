@@ -1,7 +1,4 @@
 #!/bin/bash
 set -e
-. mkvenv.sh
-source venv/bin/activate
-pip install pip wheel pytest coverage --upgrade
-pip install -r requirements.txt
+. install.sh
 coverage run -m pytest
