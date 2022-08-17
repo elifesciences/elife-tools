@@ -775,7 +775,8 @@ def digest(soup):
         abstract = utils.first(
             list(
                 filter(
-                    lambda tag: tag.get("abstract_type") == "executive-summary",
+                    lambda tag: tag.get("abstract_type")
+                    in ["executive-summary", "plain-language-summary"],
                     abstract_list,
                 )
             )
@@ -796,7 +797,8 @@ def full_digest(soup):
         abstract = utils.first(
             list(
                 filter(
-                    lambda tag: tag.get("abstract_type") == "executive-summary",
+                    lambda tag: tag.get("abstract_type")
+                    in ["executive-summary", "plain-language-summary"],
                     abstract_list,
                 )
             )
@@ -3681,6 +3683,10 @@ def abstract_json(soup):
 def digest_json(soup):
     """digest in article json format"""
     abstract_tags = raw_parser.abstract(soup, abstract_type="executive-summary")
+    if not abstract_tags:
+        abstract_tags = raw_parser.abstract(
+            soup, abstract_type="plain-language-summary"
+        )
     abstract_json = None
     for tag in abstract_tags:
         abstract_json = render_abstract_json(tag)
@@ -3890,7 +3896,7 @@ def author_foot_notes(author, foot_notes_data):
             for foot_note in foot_notes_data:
                 if foot_note.get("text") and foot_note.get("id") == ref_id:
                     # Clean up the text
-                    text = re.sub(u"<label>.*</label>", "", foot_note.get("text"))
+                    text = re.sub("<label>.*</label>", "", foot_note.get("text"))
                     text = text.replace("<p>", "").replace("</p>", "")
                     # For authors json do not include footnotes regarding deceased
                     if "deceased" not in text.lower():
