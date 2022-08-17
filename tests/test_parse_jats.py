@@ -1701,6 +1701,10 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_digest_json", "content_01.xml"),
             read_fixture("test_digest_json", "content_01_expected.py"),
         ),
+        (
+            read_fixture("test_digest_json", "content_02.xml"),
+            read_fixture("test_digest_json", "content_02_expected.py"),
+        ),
     )
     def test_digest_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2414,6 +2418,17 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         ),
         # example from elife_poa_e06828.xml
         (read_sample_xml("elife_poa_e06828.xml"), None),
+        # example of plain-language-summary
+        (
+            (
+                "<article>"
+                '<abstract abstract-type="plain-language-summary">'
+                "<title>eLife digest</title><p>Paragraph.</p>"
+                "</abstract>"
+                "</article>"
+            ),
+            "Paragraph.",
+        ),
     )
     def test_digest(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2586,6 +2601,17 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         ),
         # example from elife_poa_e06828.xml
         (read_sample_xml("elife_poa_e06828.xml"), None),
+        # example of plain-language-summary
+        (
+            (
+                "<article>"
+                '<abstract abstract-type="plain-language-summary">'
+                "<title>eLife digest</title><p>Paragraph.</p>"
+                "</abstract>"
+                "</article>"
+            ),
+            "<p>Paragraph.</p>",
+        ),
     )
     def test_full_digest(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
