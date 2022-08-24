@@ -798,7 +798,7 @@ class TestParseJats(unittest.TestCase):
         # elife_poa_e06828.xml, multiple authors adds et al.
         (
             read_fixture("test_author_line", "content_04.xml"),
-            "Michael S Fleming et al.",
+            "Michael S Fleming, Anna Vysochan ... Wenqin Luo",
         ),
     )
     def test_author_line_edge_cases(self, xml_content, expected):
@@ -815,6 +815,42 @@ class TestParseJats(unittest.TestCase):
     )
     def test_format_author_line(self, author_names, expected):
         self.assertEqual(parser.format_author_line(author_names), expected)
+
+    @unpack
+    @data(
+        (None, None, None),
+        (["Randy Schekman"], 2, "Randy Schekman"),
+        (["Randy Schekman", "Mark Patterson"], 2, "Randy Schekman, Mark Patterson"),
+        (["Randy Schekman", "Mark Patterson", "eLife"], 2, "Randy Schekman et al."),
+        (["Randy Schekman", "Mark Patterson", "eLife"], 1, "Randy Schekman et al."),
+        (
+            ["Randy Schekman", "Mark Patterson", "eLife"],
+            3,
+            "Randy Schekman, Mark Patterson, eLife",
+        ),
+    )
+    def test_format_author_line_etal(self, author_names, max_names, expected):
+        self.assertEqual(
+            parser.format_author_line_etal(author_names, max_names), expected
+        )
+
+    @unpack
+    @data(
+        (None, None, None),
+        (["Randy Schekman"], 3, "Randy Schekman"),
+        (["Randy Schekman", "Mark Patterson"], 3, "Randy Schekman, Mark Patterson"),
+        (
+            ["Randy Schekman", "Mark Patterson", "eLife"],
+            3,
+            "Randy Schekman, Mark Patterson, eLife",
+        ),
+        (["One", "Two", "Three", "Four"], 1, "One, Two ... Four"),
+        (["One", "Two", "Three", "Four"], 4, "One, Two, Three, Four"),
+    )
+    def test_format_author_line_ellipsis(self, author_names, max_names, expected):
+        self.assertEqual(
+            parser.format_author_line_ellipsis(author_names, max_names), expected
+        )
 
     @data(
         # aff tag linked via an rid to id attribute
