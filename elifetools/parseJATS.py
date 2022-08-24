@@ -4189,7 +4189,7 @@ def author_line(soup):
     authors_json_data = authors_json(soup)
     author_names = extract_author_line_names(authors_json_data)
     if len(author_names) > 0:
-        author_line = format_author_line(author_names)
+        author_line = format_author_line(author_names, style="ellipsis")
     return author_line
 
 
@@ -4207,15 +4207,51 @@ def extract_author_line_names(authors_json_data):
     return author_names
 
 
-def format_author_line(author_names):
+def format_author_line(author_names, style="etal"):
     """authorLine format depends on if there is 1, 2 or more than 2 authors"""
+    if style == "ellipsis":
+        return format_author_line_ellipsis(author_names)
+    # default
+    return format_author_line_etal(author_names)
+
+
+def format_author_line_etal(author_names, max_names=2):
+    """
+    author line ending in etal if there are many authors
+    example: Firstname M Lastname et al.
+    """
     author_line = None
     if not author_names:
         return author_line
-    if len(author_names) <= 2:
+    # ensure max_names is a minimum of 2
+    if not max_names or not (isinstance(max_names, int)) or max_names < 2:
+        max_names = 2
+    if len(author_names) <= max_names:
         author_line = ", ".join(author_names)
-    elif len(author_names) > 2:
+    elif len(author_names) > max_names:
         author_line = author_names[0] + " et al."
+    return author_line
+
+
+def format_author_line_ellipsis(author_names, max_names=3):
+    """
+    author line with an ellipsis before the final author if there are many authors
+    example for three authors, max_names=3: First, Second, Third
+    example for four authors, max_names=3: First, Second ... Fourth
+    """
+    author_line = None
+    if not author_names:
+        return author_line
+    # ensure max_names is a minimum of 3
+    if not max_names or not (isinstance(max_names, int)) or max_names < 3:
+        max_names = 3
+    if len(author_names) <= max_names:
+        author_line = ", ".join(author_names)
+    elif len(author_names) > max_names:
+        author_line = "%s ... %s" % (
+            ", ".join(author_names[0 : max_names - 1]),
+            author_names[-1],
+        )
     return author_line
 
 
