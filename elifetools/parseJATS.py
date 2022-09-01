@@ -2835,7 +2835,7 @@ def body(soup, remove_key_info_box=False, base_url=None):
 
 
 def body_json(soup, base_url=None):
-    """ Get body json and then alter it with section wrapping and removing boxed-text """
+    """Get body json and then alter it with section wrapping and removing boxed-text"""
     body_content = body(soup, remove_key_info_box=True, base_url=base_url)
     # Wrap in a section if the first block is not a section
     if (
@@ -3012,7 +3012,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
 
     tag_content_content = []
 
-    paragraph_content = u""
+    paragraph_content = ""
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
@@ -3024,7 +3024,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
                 tag_content_content.append(
                     body_block_paragraph_content(convert(paragraph_content))
                 )
-                paragraph_content = u""
+                paragraph_content = ""
 
         if child_tag.name is not None and body_block_content(child_tag) != {}:
             for block_content in body_block_content_render(
@@ -3337,7 +3337,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         )
         utils.set_if_value(asset_tag_content, "id", tag.get("id"))
 
-        title_value = convert(title_text(tag, u"caption", u"fig"))
+        title_value = convert(title_text(tag, "caption", "fig"))
         label_value = label(tag, tag.name)
 
         caption_content = None
@@ -3884,7 +3884,7 @@ def author_present_address(author, present_address_data):
             for present_address in present_address_data:
                 if present_address.get("text") and present_address.get("id") == ref_id:
                     # Clean up the text
-                    text = re.sub(u"<label>.*</label>", "", present_address.get("text"))
+                    text = re.sub("<label>.*</label>", "", present_address.get("text"))
                     text = text.replace("<p>", "").replace("</p>", "")
                     # Format as a JSON address
                     address = OrderedDict()
