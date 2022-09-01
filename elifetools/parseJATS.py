@@ -1409,6 +1409,7 @@ def format_contributor(
     group_author_key=None,
     target_tags_corresp=None,
     target_tags_fn=None,
+    target_tags_aff=None,
 ):
     contributor = {}
     utils.copy_attribute(contrib_tag.attrs, "contrib-type", contributor, "type")
@@ -1544,9 +1545,20 @@ def format_contributor(
             rid = aff_tag.get("rid")
             if rid:
                 # Look for the matching aff tag by rid
-                aff_node = utils.first(
-                    utils.extract_nodes(soup, "aff", attr="id", value=rid)
-                )
+                if target_tags_aff:
+                    # look in the list of aff_nodes supplied as an argument
+                    aff_node = utils.first(
+                        [
+                            aff_tag
+                            for aff_tag in target_tags_aff
+                            if aff_tag.get("id") == rid
+                        ]
+                    )
+                else:
+                    # search for aff nodes
+                    aff_node = utils.first(
+                        utils.extract_nodes(soup, "aff", attr="id", value=rid)
+                    )
             else:
                 # Aff tag inside contrib tag
                 aff_node = aff_tag
@@ -1682,7 +1694,7 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
     # Pre-parse some values to pass to optimise this procedure
     target_tags_corresp = raw_parser.corresp(soup)
     target_tags_fn = raw_parser.fn(soup)
-
+    target_tags_aff = raw_parser.affiliation(soup)
     for tag in contrib_tags:
 
         # Set the group author key if missing
@@ -1713,6 +1725,7 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
             group_author_key,
             target_tags_corresp,
             target_tags_fn,
+            target_tags_aff,
         )
 
         # If not empty, add position value, append, then increment the position counter
@@ -2822,7 +2835,7 @@ def body(soup, remove_key_info_box=False, base_url=None):
 
 
 def body_json(soup, base_url=None):
-    """ Get body json and then alter it with section wrapping and removing boxed-text """
+    """Get body json and then alter it with section wrapping and removing boxed-text"""
     body_content = body(soup, remove_key_info_box=True, base_url=base_url)
     # Wrap in a section if the first block is not a section
     if (
@@ -2999,7 +3012,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
 
     tag_content_content = []
 
-    paragraph_content = u""
+    paragraph_content = ""
     for child_tag in p_tag:
 
         if child_tag.name is None or body_block_content(child_tag) == {}:
@@ -3011,7 +3024,7 @@ def body_block_paragraph_render(p_tag, html_flag=True, base_url=None):
                 tag_content_content.append(
                     body_block_paragraph_content(convert(paragraph_content))
                 )
-                paragraph_content = u""
+                paragraph_content = ""
 
         if child_tag.name is not None and body_block_content(child_tag) != {}:
             for block_content in body_block_content_render(
@@ -3324,7 +3337,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         )
         utils.set_if_value(asset_tag_content, "id", tag.get("id"))
 
-        title_value = convert(title_text(tag, u"caption", u"fig"))
+        title_value = convert(title_text(tag, "caption", "fig"))
         label_value = label(tag, tag.name)
 
         caption_content = None
@@ -3871,7 +3884,7 @@ def author_present_address(author, present_address_data):
             for present_address in present_address_data:
                 if present_address.get("text") and present_address.get("id") == ref_id:
                     # Clean up the text
-                    text = re.sub(u"<label>.*</label>", "", present_address.get("text"))
+                    text = re.sub("<label>.*</label>", "", present_address.get("text"))
                     text = text.replace("<p>", "").replace("</p>", "")
                     # Format as a JSON address
                     address = OrderedDict()
