@@ -1409,6 +1409,7 @@ def format_contributor(
     group_author_key=None,
     target_tags_corresp=None,
     target_tags_fn=None,
+    target_tags_aff=None,
 ):
     contributor = {}
     utils.copy_attribute(contrib_tag.attrs, "contrib-type", contributor, "type")
@@ -1544,9 +1545,20 @@ def format_contributor(
             rid = aff_tag.get("rid")
             if rid:
                 # Look for the matching aff tag by rid
-                aff_node = utils.first(
-                    utils.extract_nodes(soup, "aff", attr="id", value=rid)
-                )
+                if target_tags_aff:
+                    # look in the list of aff_nodes supplied as an argument
+                    aff_node = utils.first(
+                        [
+                            aff_tag
+                            for aff_tag in target_tags_aff
+                            if aff_tag.get("id") == rid
+                        ]
+                    )
+                else:
+                    # search for aff nodes
+                    aff_node = utils.first(
+                        utils.extract_nodes(soup, "aff", attr="id", value=rid)
+                    )
             else:
                 # Aff tag inside contrib tag
                 aff_node = aff_tag
@@ -1682,7 +1694,7 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
     # Pre-parse some values to pass to optimise this procedure
     target_tags_corresp = raw_parser.corresp(soup)
     target_tags_fn = raw_parser.fn(soup)
-
+    target_tags_aff = raw_parser.affiliation(soup)
     for tag in contrib_tags:
 
         # Set the group author key if missing
@@ -1713,6 +1725,7 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
             group_author_key,
             target_tags_corresp,
             target_tags_fn,
+            target_tags_aff,
         )
 
         # If not empty, add position value, append, then increment the position counter
