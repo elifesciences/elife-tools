@@ -3224,18 +3224,33 @@ def body_block_content(tag, html_flag=True, base_url=None):
         if tag.get("content-type") and tag.get("content-type") == "editor-comment":
             tag_content["type"] = "excerpt"
             block_array_name = "content"
-        else:
-            tag_content["type"] = "quote"
-            block_array_name = "text"
-        for child_tag in tag:
-            if child_tag.name == "p":
-                for block_content in body_block_paragraph_render(
-                    child_tag, base_url=base_url
-                ):
+            for child_tag in tag:
+                if child_tag.name == "p":
+                    for block_content in body_block_paragraph_render(
+                        child_tag, base_url=base_url
+                    ):
+                        if block_content != {}:
+                            if block_array_name not in tag_content:
+                                tag_content[block_array_name] = []
+                            tag_content[block_array_name].append(block_content)
+                elif child_tag.name in ["code", "disp-formula", "list", "table-wrap"]:
+                    block_content = body_block_content(child_tag, base_url=base_url)
                     if block_content != {}:
                         if block_array_name not in tag_content:
                             tag_content[block_array_name] = []
                         tag_content[block_array_name].append(block_content)
+        else:
+            tag_content["type"] = "quote"
+            block_array_name = "text"
+            for child_tag in tag:
+                if child_tag.name == "p":
+                    for block_content in body_block_paragraph_render(
+                        child_tag, base_url=base_url
+                    ):
+                        if block_content != {}:
+                            if block_array_name not in tag_content:
+                                tag_content[block_array_name] = []
+                            tag_content[block_array_name].append(block_content)
 
     elif tag.name == "table-wrap":
         # figure wrap
