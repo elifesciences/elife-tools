@@ -1,7 +1,7 @@
 expected = [
     {
         "article": {
-            "authorLine": u"R Straussman et al.",
+            "authorLine": u"R Straussman, T Morikawa ... TR Golub",
             "authors": [
                 {"given": u"R", "surname": u"Straussman"},
                 {"given": u"T", "surname": u"Morikawa"},
