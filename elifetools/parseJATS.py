@@ -907,7 +907,8 @@ def mixed_citations(soup):
                                 "person-group", attrs={"person-group-type": "author"}
                             ).contents,
                         )
-                    )
+                    ),
+                    style="ellipsis",
                 ),
             },
         }
