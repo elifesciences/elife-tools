@@ -1,0 +1,31 @@
+<root>
+    <disp-quote content-type="editor-comment">
+        <code>&lt;Code&gt;</code>
+        <list list-type="bullet">
+            <list-item>
+                <p><italic>L. braziliensis</italic></p>
+            </list-item>
+        </list>
+        <disp-formula>
+            <mml:math>
+                <mml:mtext>Body\u2009Mass</mml:mtext>
+            </mml:math>
+        </disp-formula>
+        <p>Paragraph content.</p>
+        <table-wrap>
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </table-wrap>
+    </disp-quote>
+</root>
