@@ -34,16 +34,18 @@ def article_id(soup, pub_id_type=None):
         return extract_nodes(soup, "article-id")
 
 
-def doi(soup):
-    doi_tags = article_id(soup, pub_id_type="doi")
+def meta_article_id(soup, pub_id_type):
+    tags = article_id(soup, pub_id_type)
     # the first article-id tag whose parent is article-meta
-    return first([tag for tag in doi_tags if tag.parent.name == "article-meta"])
+    return first([tag for tag in tags if tag.parent.name == "article-meta"])
+
+
+def doi(soup):
+    return meta_article_id(soup, pub_id_type="doi")
 
 
 def publisher_id(soup):
-    article_id_tags = article_id(soup, pub_id_type="publisher-id")
-    # the first article-id tag whose parent is article-meta
-    return first([tag for tag in article_id_tags if tag.parent.name == "article-meta"])
+    return meta_article_id(soup, pub_id_type="publisher-id")
 
 
 def journal_id(soup):
