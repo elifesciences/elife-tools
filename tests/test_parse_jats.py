@@ -923,11 +923,16 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_format_contributor", "content_04.xml"),
             read_fixture("test_format_contributor", "content_04_expected.py"),
         ),
+        # edge case, a group author in a sub-article
+        (
+            read_fixture("test_format_contributor", "content_05.xml"),
+            read_fixture("test_format_contributor", "content_05_expected.py"),
+        ),
     )
     @unpack
     def test_format_contributor_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
-        contrib_tag = raw_parser.article_contributors(soup)[0]
+        contrib_tag = raw_parser.contributors(soup)[0]
         tag_content = parser.format_contributor(contrib_tag, soup)
         self.assertEqual(expected, tag_content)
 

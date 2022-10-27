@@ -1676,8 +1676,10 @@ def is_author_group_author(tag):
             # and that its parent tag is not a collab tag
             if (
                 child_tag.name == "collab"
-                and utils.first_parent(tag, ["collab", "article-meta"]).name
-                == "article-meta"
+                and utils.first_parent(tag, ["collab", "article-meta", "front-stub"])
+                and utils.first_parent(
+                    tag, ["collab", "article-meta", "front-stub"]
+                ).name != "collab"
             ):
                 return True
     return False

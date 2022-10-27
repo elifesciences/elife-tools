@@ -1,0 +1,23 @@
+<root>
+    <article>
+        <sub-article>
+            <front-stub>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <collab>Example Group author
+                            <contrib-group content-type="group-members">
+                                <contrib contrib-type="author">
+                                    <name>
+                                        <surname>Member</surname>
+                                        <given-names>Group</given-names>
+                                    </name>
+                                </contrib>
+                            </contrib-group>
+                        </collab>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+        </sub-article>
+    </article>
+</root>
