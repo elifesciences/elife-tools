@@ -4708,9 +4708,13 @@ def footnotes_json(soup, base_url=None):
     for fn_tag in raw_parser.fn(fn_group_tag):
         # get title from label tag
         label_tag = raw_parser.label(fn_tag)
+        try:
+            title = label_tag.text
+        except:
+            title = fn_tag.attrs.get("id")
         section = {
             "id": fn_tag.attrs.get("id"),
-            "title": label_tag.text,
+            "title": title,
             "type": "section",
         }
         section["content"] = render_raw_body(fn_tag, base_url=base_url)
