@@ -2908,7 +2908,7 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             True,
         ),
         (
-            read_fixture("", "article_meta.xml"),
+            read_sample_xml("elife-kitchen-sink.xml"),
             False,
         ),
         (
