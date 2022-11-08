@@ -670,7 +670,7 @@ def is_poa(soup):
     """
     Test for whether is POA XML or not
     """
-    if collection_year(soup) is None:
+    if not raw_parser.body(soup):
         return True
 
     return False
