@@ -3672,6 +3672,10 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_pub_history", "content_03.xml"),
             read_fixture("test_pub_history", "content_03_expected.py"),
         ),
+        (
+            read_fixture("test_pub_history", "content_04.xml"),
+            read_fixture("test_pub_history", "content_04_expected.py"),
+        ),
     )
     def test_pub_history(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
