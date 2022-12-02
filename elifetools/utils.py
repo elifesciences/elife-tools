@@ -598,7 +598,7 @@ def escape_ampersand(string):
     """
     if not string:
         return string
-    start_with_match = r"(\#x(....);|lt;|gt;|amp;)"
+    start_with_match = r"(\#x(....);|\#\d+?;|lt;|gt;|amp;)"
     # The pattern below is match & that is not immediately followed by #
     string = re.sub(r"&(?!" + start_with_match + ")", "&amp;", string)
     return string
