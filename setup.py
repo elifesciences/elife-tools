@@ -8,6 +8,7 @@ with open("README.rst") as fp:
 setup(
     name="elifetools",
     version=elifetools.__version__,
+    author="Graham Nott"
     description="Tools for using article data in Python.",
     long_description=README,
     long_description_content_type="text/x-rst",
