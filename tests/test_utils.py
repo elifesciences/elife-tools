@@ -271,6 +271,7 @@ class TestUtils(unittest.TestCase):
             "fake link http://example.org/?a=b&amp;amp",
         ),
         ("CUT&RUN is performed", "CUT&amp;RUN is performed"),
+        ("&#8220;&what?;&#8221; &#169; Anon", "&#8220;&amp;what?;&#8221; &#169; Anon"),
     )
     def test_escape_ampersand(self, value, expected):
         self.assertEqual(utils.escape_ampersand(value), expected)
