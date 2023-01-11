@@ -34,14 +34,20 @@ def article_id(soup, pub_id_type=None):
         return extract_nodes(soup, "article-id")
 
 
-def meta_article_id(soup, pub_id_type):
+def meta_article_id(soup, pub_id_type, specific_use=None):
     tags = article_id(soup, pub_id_type)
+    # filter by specific-use attribute
+    tags = [tag for tag in tags if tag.get("specific-use") == specific_use]
     # the first article-id tag whose parent is article-meta
     return first([tag for tag in tags if tag.parent.name == "article-meta"])
 
 
 def doi(soup):
     return meta_article_id(soup, pub_id_type="doi")
+
+
+def version_doi(soup):
+    return meta_article_id(soup, pub_id_type="doi", specific_use="version")
 
 
 def publisher_id(soup):

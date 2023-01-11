@@ -87,6 +87,12 @@ def doi(soup):
     return utils.doi_uri_to_doi(utils.node_text(raw_parser.doi(soup)))
 
 
+def version_doi(soup):
+    "article-id tag for the doi with specific-use=version"
+    # the first non-nil value returned by the raw parser
+    return utils.doi_uri_to_doi(utils.node_text(raw_parser.version_doi(soup)))
+
+
 def publisher_id(soup):
     # aka the article_id, specified by the publisher
     return utils.node_text(raw_parser.publisher_id(soup))
