@@ -1,0 +1,74 @@
+<!-- from elife-1234567890-v2.xml circa year 2023 -->
+<article>
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="nlm-ta">elife</journal-id>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            <journal-title-group>
+                <journal-title>eLife</journal-title>
+            </journal-title-group>
+            <issn publication-format="electronic" pub-type="epub">2050-084X</issn>
+            <publisher>
+                <publisher-name>eLife Sciences Publications, Ltd</publisher-name>
+            </publisher>
+        </journal-meta>
+        <article-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">1234567890</article-id>
+            <!-- Concept DOI -->
+            <article-id pub-id-type="doi">10.7554/eLife.1234567890</article-id>
+            <!-- Specific version DOI -->
+            <article-id pub-id-type="doi" specific-use="version">10.7554/eLife.1234567890.4</article-id>
+            <article-categories>
+                <subj-group subj-group-type="display-channel">
+                    <subject>Research Article</subject>
+                </subj-group>
+                <subj-group subj-group-type="heading">
+                    <subject>Biological Sciences</subject>
+                    <subj-group subj-group-type="heading">
+                        <subject>Biochemistry and Chemical Biology</subject>
+                    </subj-group>
+                </subj-group>
+                <subj-group subj-group-type="heading">
+                    <subject>Biological Sciences</subject>
+                    <subj-group subj-group-type="heading">
+                        <subject>Chromosomes and Gene Expression</subject>
+                    </subj-group>
+                </subj-group>
+            </article-categories>
+            <title-group>
+                <article-title>eLife kitchen sink 3.0</article-title>
+            </title-group>
+            <pub-date publication-format="electronic" date-type="publication">
+                <day>22</day>
+                <month>10</month>
+                <year>2023</year>
+            </pub-date>
+            <volume>12</volume>
+            <elocation-id>RP1234567890</elocation-id>
+            <self-uri content-type="pdf" xlink:href="elife-1234567890.pdf"/>
+            <self-uri content-type="pdf" xlink:href="elife-1234567890-figures.pdf"/>
+            <related-article ext-link-type="doi" id="ra1" related-article-type="article-reference" xlink:href="10.7554/eLife.16381"/>
+            <related-article ext-link-type="doi" id="ra2" related-article-type="article-reference" xlink:href="10.7554/eLife.43788"/>
+            <kwd-group kwd-group-type="author-keywords">
+                <kwd>flight</kwd>
+                <kwd>swimming</kwd>
+                <kwd>locomotion</kwd>
+                <kwd>muscle efficiency</kwd>
+                <kwd>strouhal number</kwd>
+                <kwd>wing</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="research-organism">
+                <title>Research organism</title>
+                <kwd>Human</kwd>
+                <kwd>Mouse</kwd>
+            </kwd-group>
+            <kwd-group kwd-group-type="osf-badges" vocab-identifier="https://www.cos.io/initiatives/badges">
+                <title>Badges</title>
+                <kwd>Open Data</kwd>
+                <kwd>Open Materials</kwd>
+                <kwd>Prereigstered</kwd>
+            </kwd-group>
+        </article-meta>
+    </front>
+</article>

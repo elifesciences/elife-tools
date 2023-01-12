@@ -73,6 +73,55 @@ class TestJatsParser(unittest.TestCase):
 
     @unpack
     @data(
+        ("elife-kitchen-sink.xml", 4),
+        ("elife_poa_e06828.xml", 2),
+        ("elife07586.xml", 2),
+    )
+    def test_article_id(self, filename, expected_len):
+        soup = get_cached_soup(filename)
+        self.assertEqual(len(raw_parser.article_id(soup)), expected_len)
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", 1),
+        ("elife_poa_e06828.xml", 1),
+        ("elife07586.xml", 1),
+    )
+    def test_meta_article_id(self, filename, expected_len):
+        soup = get_cached_soup(filename)
+        self.assertEqual(len(raw_parser.meta_article_id(soup, "doi")), expected_len)
+
+    @unpack
+    @data(
+        (
+            "elife-kitchen-sink.xml",
+            '<article-id pub-id-type="doi">10.7554/eLife.00013</article-id>',
+        ),
+        (
+            "elife_poa_e06828.xml",
+            '<article-id pub-id-type="doi">10.7554/eLife.06828</article-id>',
+        ),
+        (
+            "elife07586.xml",
+            '<article-id pub-id-type="doi">10.7554/eLife.07586</article-id>',
+        ),
+    )
+    def test_doi(self, filename, expected):
+        soup = get_cached_soup(filename)
+        self.assertEqual(str(raw_parser.doi(soup)), expected)
+
+    @unpack
+    @data(
+        ("elife-kitchen-sink.xml", "None"),
+        ("elife_poa_e06828.xml", "None"),
+        ("elife07586.xml", "None"),
+    )
+    def test_version_doi(self, filename, expected):
+        soup = get_cached_soup(filename)
+        self.assertEqual(str(raw_parser.version_doi(soup)), expected)
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", 3),
         ("elife_poa_e06828.xml", 0),
         ("elife07586.xml", 1),
