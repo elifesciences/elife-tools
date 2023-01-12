@@ -2501,11 +2501,24 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
     @data(
         # example from elife-kitchen-sink.xml
         (read_fixture("", "article_meta.xml"), "10.7554/eLife.00013"),
+        # example from elife-1234567890-v2.xml
+        (read_fixture("", "article_meta_v2.xml"), "10.7554/eLife.1234567890"),
     )
-    @data("elife-kitchen-sink.xml")
     def test_doi(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.doi(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # example from elife-kitchen-sink.xml
+        (read_fixture("", "article_meta.xml"), None),
+        # example from elife-1234567890-v2.xml
+        (read_fixture("", "article_meta_v2.xml"), "10.7554/eLife.1234567890.4"),
+    )
+    def test_version_doi(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.version_doi(soup)
         self.assertEqual(expected, tag_content)
 
     @unpack
