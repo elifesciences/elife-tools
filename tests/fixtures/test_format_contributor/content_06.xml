@@ -1,0 +1,14 @@
+<root>
+    <article>
+        <sub-article>
+            <front-stub>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+        </sub-article>
+    </article>
+</root>
