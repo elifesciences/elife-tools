@@ -1442,6 +1442,14 @@ def format_contributor(
             tag_copy = utils.remove_tag_from_tag(tag_copy, "contrib-group")
             contributor["collab"] = utils.node_contents_str(tag_copy).rstrip()
 
+    # set anonymous value only if the tag is present
+    if utils.extract_nodes(contrib_tag, "anonymous"):
+        utils.set_if_value(
+            contributor,
+            "anonymous",
+            bool(utils.extract_nodes(contrib_tag, "anonymous")),
+        )
+
     # Check if it is not a group author
     if not is_author_group_author(contrib_tag):
         if contrib_id_tag and "contrib-id-type" in contrib_id_tag.attrs:

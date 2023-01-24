@@ -928,6 +928,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_format_contributor", "content_05.xml"),
             read_fixture("test_format_contributor", "content_05_expected.py"),
         ),
+        # example of anonymous author
+        (
+            read_fixture("test_format_contributor", "content_06.xml"),
+            read_fixture("test_format_contributor", "content_06_expected.py"),
+        ),
     )
     @unpack
     def test_format_contributor_edge_cases(self, xml_content, expected):
