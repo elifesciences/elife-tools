@@ -1,0 +1,61 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <sub-article article-type="author-comment" id="sa5">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa5</article-id>
+                <title-group>
+                    <article-title>Author response</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Atherden</surname>
+                            <given-names>Frederick Peter</given-names>
+                            <suffix>III</suffix>
+                        </name>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Harrison</surname>
+                            <given-names>Melissa</given-names>
+                        </name>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <collab>Example Group author
+                            <contrib-group content-type="group-members">
+                                <contrib contrib-type="author">
+                                    <name>
+                                        <surname>Gilbert</surname>
+                                        <given-names>James</given-names>
+                                    </name>
+                                </contrib>
+                            </contrib-group>
+                        </collab>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Claus</surname>
+                            <given-names>Santa</given-names>
+                        </name>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>West</surname>
+                            <given-names>Cornel</given-names>
+                            <suffix>Jnr</suffix>
+                        </name>
+                        <role specific-use="author">Author</role>
+                    </contrib>
+                    <on-behalf-of>on behalf of whoever finds this interesting</on-behalf-of>
+                </contrib-group>
+            </front-stub>
+            <body>
+                <p>We thank the reviewers for the positive assessment of our work and their insightful remarks. Please find below a point-by-point response to each comment.</p>
+            </body>
+        </sub-article>
+    </article>
+</root>

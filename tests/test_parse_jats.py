@@ -456,10 +456,38 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_editor_evaluation", "content_01.xml"),
             read_fixture("test_editor_evaluation", "content_01_expected.py"),
         ),
+        # example from eLife kitchen sink 3.0
+        (
+            read_fixture("test_editor_evaluation", "content_02.xml"),
+            read_fixture("test_editor_evaluation", "content_02_expected.py"),
+        ),
     )
     def test_editor_evaluation(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
         tag_content = parser.editor_evaluation(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # test for no sub-article
+        (
+            "<root/>",
+            OrderedDict(),
+        ),
+        # example from elife 00666 kitchen sink XML
+        (
+            read_fixture("test_elife_assessment", "content_01.xml"),
+            read_fixture("test_elife_assessment", "content_01_expected.py"),
+        ),
+        # example from eLife kitchen sink 3.0
+        (
+            read_fixture("test_elife_assessment", "content_02.xml"),
+            read_fixture("test_elife_assessment", "content_02_expected.py"),
+        ),
+    )
+    def test_elife_assessment(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.elife_assessment(soup)
         self.assertEqual(expected, tag_content)
 
     @unpack
@@ -494,6 +522,52 @@ class TestParseJats(unittest.TestCase):
 
     @unpack
     @data(
+        # test for no sub-article
+        (
+            "<root/>",
+            [],
+        ),
+        # example from elife 00666 kitchen sink XML
+        (
+            read_fixture("test_public_reviews", "content_01.xml"),
+            read_fixture("test_public_reviews", "content_01_expected.py"),
+        ),
+        # example from eLife kitchen sink 3.0
+        (
+            read_fixture("test_public_reviews", "content_02.xml"),
+            read_fixture("test_public_reviews", "content_02_expected.py"),
+        ),
+    )
+    def test_public_reviews(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.public_reviews(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
+        # test for no sub-article
+        (
+            "<root/>",
+            OrderedDict(),
+        ),
+        # example from elife 00666 kitchen sink XML
+        (
+            read_fixture("test_recommendations_for_authors", "content_01.xml"),
+            read_fixture("test_recommendations_for_authors", "content_01_expected.py"),
+        ),
+        # example from eLife kitchen sink 3.0
+        (
+            read_fixture("test_recommendations_for_authors", "content_02.xml"),
+            read_fixture("test_recommendations_for_authors", "content_02_expected.py"),
+        ),
+    )
+    def test_recommendations_for_authors(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.recommendations_for_authors(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         ("elife-kitchen-sink.xml", None, OrderedDict()),
         ("elife_poa_e06828.xml", OrderedDict(), None),
     )
@@ -510,6 +584,11 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_author_response", "content_01.xml"),
             read_fixture("test_author_response", "content_01_expected.py"),
+        ),
+        # example from eLife kitchen sink 3.0
+        (
+            read_fixture("test_author_response", "content_02.xml"),
+            read_fixture("test_author_response", "content_02_expected.py"),
         ),
     )
     def test_author_response_edge_cases(self, xml_content, expected):

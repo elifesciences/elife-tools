@@ -534,12 +534,76 @@ def article_body(soup):
     return first(extract_nodes(soup, "body"))
 
 
+#
+# sub-article
+#
+
+
 def sub_article(soup, article_type=None):
     return extract_nodes(soup, "sub-article", attr="article-type", value=article_type)
 
 
+def filter_sub_articles_by_title(
+    sub_article_nodes, include_title=None, exclude_title=None
+):
+    "filter a list of sub-article nodes by case-insensitive article-title matching"
+    node_list = []
+
+    if not sub_article_nodes:
+        return node_list
+
+    for node in sub_article_nodes:
+
+        # only filter by the title value if there is one
+        if article_title(node):
+            if include_title and exclude_title:
+                # test if include_title matches and exclude_title does not match
+                if (
+                    include_title.lower()
+                    in node_contents_str(article_title(node)).lower()
+                ) and (
+                    exclude_title.lower()
+                    not in node_contents_str(article_title(node)).lower()
+                ):
+                    node_list.append(node)
+            elif include_title:
+                # if only include_title matches
+                if (
+                    include_title.lower()
+                    in node_contents_str(article_title(node)).lower()
+                ):
+                    node_list.append(node)
+            elif exclude_title:
+                # if only exclude_title does not match
+                if (
+                    exclude_title.lower()
+                    not in node_contents_str(article_title(node)).lower()
+                ):
+                    node_list.append(node)
+            else:
+                # by default keep the node
+                node_list.append(node)
+        else:
+            # by default keep the node if it has no title regardless of filter term
+            node_list.append(node)
+
+    return node_list
+
+
+def editor_report_by_title(soup, include_title=None):
+    "list of editor-report sub-article filtered by article-title value"
+    sub_article_nodes = sub_article(soup, "editor-report")
+    return filter_sub_articles_by_title(sub_article_nodes, include_title=include_title)
+
+
 def editor_evaluation(soup):
-    return first(sub_article(soup, "editor-report"))
+    "sub-article node of type editor-report with evaluation in the article-title"
+    return first(editor_report_by_title(soup, include_title="evaluation"))
+
+
+def elife_assessment(soup):
+    "sub-article node of type editor-report with assessment in the article-title"
+    return first(editor_report_by_title(soup, include_title="assessment"))
 
 
 def decision_letter(soup):
@@ -550,7 +614,31 @@ def decision_letter(soup):
 
 
 def author_response(soup):
-    return first(sub_article(soup, "reply"))
+    "sub-article node of type reply or author-comment, return the first one found"
+    return first(sub_article(soup, "reply") + sub_article(soup, "author-comment"))
+
+
+def referee_report_by_title(soup, include_title=None, exclude_title=None):
+    "list of referee-report sub-article filtered by article-title value"
+    sub_article_nodes = sub_article(soup, "referee-report")
+    return filter_sub_articles_by_title(
+        sub_article_nodes, include_title=include_title, exclude_title=exclude_title
+    )
+
+
+def recommendations_for_authors(soup):
+    "sub-article node of type referee-report with recommendations in the article-title"
+    return first(referee_report_by_title(soup, include_title="recommendations"))
+
+
+def public_reviews(soup):
+    "list of sub-article node of type referee-report without recommendations in the article-title"
+    return referee_report_by_title(soup, exclude_title="recommendations")
+
+
+#
+# block content
+#
 
 
 def section(soup, sec_type=None):

@@ -358,5 +358,158 @@ class TestJatsParser(unittest.TestCase):
         self.assertEqual(len(raw_parser.event_desc(soup)), expected_len)
 
 
+# some XML content for testing sub-article parsing functions
+SUB_ARTICLE_XML_CONTENT = read_fixture("", "sub_articles.xml")
+
+
+class TestFilterSubArticles(unittest.TestCase):
+    def setUp(self):
+        # sample data with a variety of XML data with an abbreviated structure for testing
+        soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+        self.nodes = raw_parser.sub_article(soup)
+
+    def test_filter_none(self):
+        expected_len = 0
+        self.assertEqual(
+            len(raw_parser.filter_sub_articles_by_title(None)), expected_len
+        )
+
+    def test_filter_blank(self):
+        expected_len = 0
+        self.assertEqual(len(raw_parser.filter_sub_articles_by_title([])), expected_len)
+
+    def test_filter_no_article_title(self):
+        "test when a node has no article title"
+        xml_content = "<root><sub-article/></root>"
+        expected_len = 1
+        soup = parser.parse_xml(xml_content)
+        nodes = raw_parser.sub_article(soup)
+        self.assertEqual(
+            len(raw_parser.filter_sub_articles_by_title(nodes)), expected_len
+        )
+
+    def test_filter_default(self):
+        expected_len = len(self.nodes)
+        self.assertEqual(
+            len(raw_parser.filter_sub_articles_by_title(self.nodes)), expected_len
+        )
+
+    def test_filter_include_title(self):
+        include_title = "recommendations"
+        expected_len = 1
+        self.assertEqual(
+            len(
+                raw_parser.filter_sub_articles_by_title(
+                    self.nodes, include_title=include_title
+                )
+            ),
+            expected_len,
+        )
+
+    def test_filter_exclude_title(self):
+        exclude_title = "recommendations"
+        expected_len = len(self.nodes) - 1
+        self.assertEqual(
+            len(
+                raw_parser.filter_sub_articles_by_title(
+                    self.nodes, exclude_title=exclude_title
+                )
+            ),
+            expected_len,
+        )
+
+    def test_filter_include_and_exclude(self):
+        include_title = "evaluation"
+        exclude_title = "assessment"
+        expected_len = 1
+        self.assertEqual(
+            len(
+                raw_parser.filter_sub_articles_by_title(
+                    self.nodes, include_title=include_title, exclude_title=exclude_title
+                )
+            ),
+            expected_len,
+        )
+
+
+class TestEditorEvaluation(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_editor_evaluation(self):
+        node = raw_parser.editor_evaluation(self.soup)
+        self.assertEqual(node.name, "sub-article")
+        self.assertEqual(
+            str(raw_parser.article_title(node)),
+            "<article-title>Editor's evaluation</article-title>",
+        )
+
+
+class TestElifeAssessment(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_elife_assessment(self):
+        node = raw_parser.elife_assessment(self.soup)
+        self.assertEqual(node.name, "sub-article")
+        self.assertEqual(
+            str(raw_parser.article_title(node)),
+            "<article-title>eLife assessment</article-title>",
+        )
+
+
+class TestDecisionLetter(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_decision_letter(self):
+        node = raw_parser.decision_letter(self.soup)
+        self.assertEqual(node.name, "sub-article")
+        self.assertEqual(
+            str(raw_parser.article_title(node)),
+            "<article-title>Decision letter</article-title>",
+        )
+
+
+class TestAuthorResponse(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_author_response(self):
+        node = raw_parser.author_response(self.soup)
+        self.assertEqual(node.name, "sub-article")
+        self.assertEqual(
+            str(raw_parser.article_title(node)),
+            "<article-title>Author response</article-title>",
+        )
+
+
+class TestRecommendationsForAuthors(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_recommendations_for_authors(self):
+        node = raw_parser.recommendations_for_authors(self.soup)
+        self.assertEqual(node.name, "sub-article")
+        self.assertEqual(
+            str(raw_parser.article_title(node)),
+            "<article-title>Recommendations for authors</article-title>",
+        )
+
+
+class TestPublicReviews(unittest.TestCase):
+    def setUp(self):
+        self.soup = parser.parse_xml(SUB_ARTICLE_XML_CONTENT)
+
+    def test_public_reviews(self):
+        expected_len = 3
+        nodes = raw_parser.public_reviews(self.soup)
+        self.assertEqual(len(nodes), expected_len)
+        self.assertEqual(
+            str(raw_parser.article_title(nodes[0])),
+            "<article-title>Reviewer #1 (public review)</article-title>",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

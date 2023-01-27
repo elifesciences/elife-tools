@@ -3601,26 +3601,41 @@ def sub_article_doi(tag):
     return doi
 
 
+def elife_assessment(soup):
+    "sub-article having a title containing the term assessment"
+    sub_article = raw_parser.elife_assessment(soup)
+    return editor_report(sub_article, add_title=True)
+
+
 def editor_evaluation(soup):
     "parse the Editor's evaluation sub-article into JSON format matching the API schema format"
-    sub_article_content = OrderedDict()
     sub_article = raw_parser.editor_evaluation(soup)
+    return editor_report(sub_article)
 
-    if not sub_article:
-        return sub_article_content
 
-    utils.copy_attribute(sub_article.attrs, "id", sub_article_content)
-    if sub_article_doi(sub_article):
-        sub_article_content["doi"] = utils.doi_uri_to_doi(sub_article_doi(sub_article))
+def editor_report(tag, add_title=False):
+    "JSON format of a sub-article of type editor-report"
+    sub_article_content = OrderedDict()
+    if not tag:
+        return OrderedDict()
+
+    if add_title:
+        utils.set_if_value(
+            sub_article_content, "title", utils.node_text(raw_parser.article_title(tag))
+        )
+
+    utils.copy_attribute(tag.attrs, "id", sub_article_content)
+    if sub_article_doi(tag):
+        sub_article_content["doi"] = utils.doi_uri_to_doi(sub_article_doi(tag))
 
     # content
-    raw_body = raw_parser.article_body(sub_article)
+    raw_body = raw_parser.article_body(tag)
     if raw_body:
         sub_article_content["content"] = render_raw_body(raw_body)
 
     # scietyUri
-    if raw_parser.related_object(sub_article):
-        for related_object in raw_parser.related_object(sub_article):
+    if raw_parser.related_object(tag):
+        for related_object in raw_parser.related_object(tag):
             uri = related_object.get("xlink:href")
             if SCIETY_URI_DOMAIN in uri:
                 utils.set_if_value(sub_article_content, "scietyUri", uri)
@@ -3630,7 +3645,7 @@ def editor_evaluation(soup):
 
 
 def decision_letter(soup):
-
+    "JSON format of the decision letter sub-article"
     sub_article_content = OrderedDict()
     sub_article = raw_parser.decision_letter(soup)
 
@@ -3675,7 +3690,7 @@ def decision_letter(soup):
 
 
 def author_response(soup):
-
+    "JSON format of the author response sub-article"
     sub_article_content = OrderedDict()
     sub_article = raw_parser.author_response(soup)
 
@@ -3699,6 +3714,44 @@ def author_response(soup):
             sub_article_content["content"] = body_content_rewritten
 
     return sub_article_content
+
+
+def referee_report(tag):
+    "JSON format of a sub-article of type referee-report"
+    sub_article_content = OrderedDict()
+    if not tag:
+        return OrderedDict()
+
+    # title
+    utils.set_if_value(
+        sub_article_content, "title", utils.node_text(raw_parser.article_title(tag))
+    )
+
+    utils.copy_attribute(tag.attrs, "id", sub_article_content)
+    if sub_article_doi(tag):
+        sub_article_content["doi"] = utils.doi_uri_to_doi(sub_article_doi(tag))
+
+    # content
+    raw_body = raw_parser.article_body(tag)
+    if raw_body:
+        sub_article_content["content"] = render_raw_body(raw_body)
+
+    return sub_article_content
+
+
+def recommendations_for_authors(soup):
+    "JSON for public review sub-article having a title containing the term recommendations"
+    sub_article = raw_parser.recommendations_for_authors(soup)
+    return referee_report(sub_article)
+
+
+def public_reviews(soup):
+    "list of JSON for public review sub-articles which do not contain recommendations in their title"
+    public_review_list = []
+    sub_article_nodes = raw_parser.public_reviews(soup)
+    for node in sub_article_nodes:
+        public_review_list.append(referee_report(node))
+    return public_review_list
 
 
 def render_abstract_json(abstract_tag):
