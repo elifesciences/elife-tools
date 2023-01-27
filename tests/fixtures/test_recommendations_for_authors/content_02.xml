@@ -1,0 +1,105 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <sub-article id="sa1" article-type="referee-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa1</article-id>
+                <title-group>
+                    <article-title>Reviewer #1 (public review)</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name><surname>Taylor</surname><given-names>J Paul</given-names></name>
+                        <role specific-use="referee">Reviewer</role>
+                        <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0070-0001-0404-000X</contrib-id>
+                        <aff>
+                            <institution>St Jude Children's Research Hospital</institution>
+                            <country country="US">United States</country>
+                        </aff>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+            <body>
+                <p>Reviewer #1: Each reviewer's report is included as a separate sub-article. This will usually mean three reviews, though more or fewer are permitted. Reviews may be published anonymously.</p>
+            </body>
+        </sub-article>
+        <sub-article id="sa2" article-type="referee-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa2</article-id>
+                <title-group>
+                    <article-title>Reviewer #2 (public review)</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+            <body>
+                <p>Reviewer #2: Each reviewer's report is included as a separate sub-article. This will usually mean three reviews, though more or fewer are permitted. Reviews may be published anonymously.</p>
+            </body>
+        </sub-article>
+        <sub-article id="sa3" article-type="referee-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa3</article-id>
+                <title-group>
+                    <article-title>Reviewer #3 (public review)</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+            <body>
+                <p>Reviewer #3: Each reviewer's report is included as a separate sub-article. This will usually mean three reviews, though more or fewer are permitted. Reviews may be published anonymously.</p>
+            </body>
+        </sub-article>
+        <sub-article id="sa4" article-type="referee-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa4</article-id>
+                <title-group>
+                    <article-title>Recommendations for authors</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Helaine</surname>
+                            <given-names>Sophie</given-names>
+                        </name>
+                        <role specific-use="editor">Reviewing Editor</role>
+                        <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0000-0404-001X</contrib-id>
+                        <aff>
+                            <institution-wrap>
+                                <institution-id institution-id-type="ror">https://ror.org/041kmwe10</institution-id>
+                                <institution>Imperial College London</institution>
+                            </institution-wrap>
+                            <country country="GB">United Kingdom</country>
+                        </aff>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <name><surname>Taylor</surname><given-names>J Paul</given-names></name>
+                        <role specific-use="referee">Reviewer</role>
+                        <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0070-0001-0404-000X</contrib-id>
+                        <aff>
+                            <institution>St Jude Children's Research Hospital</institution>
+                            <country country="US">United States</country>
+                        </aff>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+            <body>
+                <p>Recommendations for edits to the initial preprint, based on the reviewers' comments.</p>
+            </body>
+        </sub-article>
+    </article>
+</root>
