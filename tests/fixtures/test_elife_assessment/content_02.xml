@@ -1,0 +1,33 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <sub-article id="sa0" article-type="editor-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa0</article-id>
+                <title-group>
+                    <article-title>eLife assessment</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Helaine</surname>
+                            <given-names>Sophie</given-names>
+                        </name>
+                        <role specific-use="editor">Reviewing Editor</role>
+                        <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0000-0404-001X</contrib-id>
+                        <aff>
+                            <institution-wrap>
+                                <institution-id institution-id-type="ror">https://ror.org/041kmwe10</institution-id>
+                                <institution>Imperial College London</institution>
+                            </institution-wrap>
+                            <country country="GB">United Kingdom</country>
+                        </aff>
+                    </contrib>
+                </contrib-group>
+                <related-object id="ro1" link-type="continued-by" xlink:href="https://sciety.org/articles/activity/10.1101/2020.11.21.391326"/>
+            </front-stub>
+            <body>
+                <p>This is an eLife assessment, which is a summary of the peer reviews provided by the BRE. It will only contain one or more paragraphs, no figures, tables or videos. It might say something like, "with respect to blah blah, this study is <bold>noteworthy</bold> backed up by data that is <bold>compelling</bold>, however the model design for blah is <bold>flawed</bold> and the evidence <bold>incomplete</bold>.</p>
+            </body>
+        </sub-article>
+    </article>
+</root>

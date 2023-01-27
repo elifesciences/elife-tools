@@ -1,0 +1,35 @@
+<root>
+    <sub-article>
+        <article-title>Unfiltered title</article-title>
+    </sub-article>
+    <sub-article article-type="editor-report">
+        <article-title>Editor's evaluation</article-title>
+    </sub-article>
+    <sub-article article-type="editor-report">
+        <article-title>eLife assessment</article-title>
+    </sub-article>
+    <sub-article article-type="article-commentary">
+        <article-title>Decision letter</article-title>
+    </sub-article>
+    <sub-article article-type="decision-letter">
+        <article-title>Decision letter</article-title>
+    </sub-article>
+    <sub-article article-type="referee-report">
+        <article-title>Reviewer #1 (public review)</article-title>
+    </sub-article>
+    <sub-article article-type="referee-report">
+        <article-title>Reviewer #2 (public review)</article-title>
+    </sub-article>
+    <sub-article article-type="referee-report">
+        <article-title>Reviewer #3 (public review)</article-title>
+    </sub-article>
+    <sub-article article-type="referee-report">
+        <article-title>Recommendations for authors</article-title>
+    </sub-article>
+    <sub-article article-type="reply">
+        <article-title>Author response</article-title>
+    </sub-article>
+    <sub-article article-type="author-comment">
+        <article-title>Author response</article-title>
+    </sub-article>
+</root>
