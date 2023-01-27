@@ -1,0 +1,36 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">00666</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.00666</article-id>
+        </article-meta>
+        <sub-article article-type="editor-report" id="sa0">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.00666.sa0</article-id>
+                <title-group>
+                    <article-title>Editor's evaluation</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Ma</surname>
+                            <given-names>Yuting</given-names>
+                        </name>
+                        <role specific-use="editor">Reviewing Editor</role>
+                        <aff>
+                            <institution>Suzhou Institute of Systems Medicine</institution>
+                            <country>China</country>
+                        </aff>
+                    </contrib>
+                </contrib-group>
+                <related-object id="ro1" link-type="continued-by" xlink:href="https://sciety.org/articles/activity/10.1101/2020.11.21.391326"/>
+            </front-stub>
+            <body>
+                <p>Collagen is a major component of extracellular matrix. The authors have identified a high-affinity inhibitory collagen receptor LAIR-1 and a soluble decoy receptor LAIR-2 (with even higher binding affinity to collagen), which can be therapeutically targeted to block tumor progression. Dr Meyaard and colleagues have also generated a dimeric LAIR-2 human IgG1 Fc fusion protein NC410 for therapeutic use. With humanized mouse models engrafted with functional human immune systems (PBMC), they have explored the anti-cancer efficacy of NC410 and revealed its impact on modulating immune responses. Furthermore, they extended this study to identify biomarkers of predictive value for NC410-based anti-cancer therapy.</p>
+            </body>
+        </sub-article>
+    </article>
+</root>
