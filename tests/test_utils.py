@@ -115,14 +115,33 @@ class TestUtils(unittest.TestCase):
         modified_tag = utils.remove_tag_from_tag(tag, unwanted_tag_names)
         self.assertEqual(str(modified_tag), expected_xml)
 
-    @unpack
-    @data(
-        (None, None),
-        ("10.7554/eLife.00666", "10.7554/eLife.00666"),
-        ("10.7554/eLife.507424566981410635", "10.7554/eLife.10635"),
-    )
-    def test_convert_testing_doi(self, doi, expected_doi):
-        self.assertEqual(utils.convert_testing_doi(doi), expected_doi)
+    def test_convert_testing_doi(self):
+        cases = [
+            ("10.7554/eLife.00666", "10.7554/eLife.00666"),
+            ("10.7554/eLife.507424566981410635", "10.7554/eLife.10635"),
+            # component
+            ('10.7554/eLife.09560.sa0', '10.7554/eLife.09560.sa0'),
+            # versioned
+            ('10.7554/eLife.09560.1', '10.7554/eLife.09560.1'),
+            ('10.7554/eLife.09560.1.sa0', '10.7554/eLife.09560.1.sa0'),
+            # case preserved
+            ('10.7554/ELIFE.09560', '10.7554/ELIFE.09560'),
+            # unlikely cases
+            ('10.7554/eLife.0', '10.7554/eLife.0'),
+            ('10.7554/eLife.0.1', '10.7554/eLife.0.1'),
+            ('10.7554/eLife.0.1.2.3.4', '10.7554/eLife.0.1.2.3.4'),
+
+            # preserves unparseable strings
+            ('', ''),
+            ('not_a_doi', 'not_a_doi'),
+
+            # no match cases
+            (None, None),
+            ([], None),
+            ({}, None),
+        ]
+        for given, expected in cases:
+            self.assertEqual(utils.convert_testing_doi(given), expected, "failed case %r" % given)
 
     @unpack
     @data(

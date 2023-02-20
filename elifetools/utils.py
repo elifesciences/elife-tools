@@ -195,10 +195,19 @@ def paragraphs(tags):
 
 def convert_testing_doi(doi):
     if doi is None:
+        return
+    if not isinstance(doi, str):
+        return
+    if not doi.lower().startswith('10.7554/elife'):
         return doi
-    parts = doi.split(".")
-    new_msid = parts[-1][-5:]
-    return ".".join(parts[0:-1] + [new_msid])
+    # "10.7554/eLife.09560.4.sa0" => ['10', '7554/eLife', '09560', '4', 'sa0']
+    parts = doi.split(".") 
+    msid = parts[2]
+    if len(msid) > 6:
+        # if msid in doi > 6 digits, assume a testing doi and truncate to last *5* digits.
+        msid = msid[-5:]
+    parts[2] = msid
+    return ".".join(parts)
 
 
 def starts_with_doi(tag):
