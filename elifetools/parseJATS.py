@@ -2540,6 +2540,10 @@ def full_award_groups(soup):
             award_group_id = award_group_award_id(award_group_tag)
             if award_group_id is not None:
                 award_group["award-id"] = utils.first(award_group_id)
+                # look for an award-id-type attribute
+                award_id_tag = utils.first(award_group_award_id_tags(award_group_tag))
+                if award_id_tag.get("award-id-type"):
+                    award_group["award-id-type"] = award_id_tag.get("award-id-type")
             funding_sources = full_award_group_funding_source(award_group_tag)
             source = utils.first(funding_sources)
             if source is not None:
@@ -2642,6 +2646,11 @@ def full_award_group_funding_source(tag):
     return award_group_funding_sources
 
 
+def award_group_award_id_tags(tag):
+    "return award-id tags inside tag"
+    return utils.extract_nodes(tag, "award-id")
+
+
 @utils.nullify
 def award_group_award_id(tag):
     """
@@ -2649,7 +2658,7 @@ def award_group_award_id(tag):
     item found in the get_funding_group section
     """
     award_group_award_id = []
-    award_id_tags = utils.extract_nodes(tag, "award-id")
+    award_id_tags = award_group_award_id_tags(tag)
     for award_id_tag in award_id_tags:
         award_group_award_id.append(award_id_tag.text)
     return award_group_award_id

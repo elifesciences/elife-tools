@@ -1,0 +1,65 @@
+<root>
+    <article>
+        <front>
+            <article-meta>
+                <funding-group>
+                    <award-group id="fund1">
+                        <funding-source>
+                            <institution-wrap>
+                                <!-- institution-id-type changed to ror -->
+                                <institution-id institution-id-type="ror">https://ror.org/01cwqze88</institution-id>
+                                <institution>National Institutes of Health</institution>
+                            </institution-wrap>
+                        </funding-source>
+                        <award-id>DA037327</award-id>
+                        <principal-award-recipient>
+                            <name>
+                                <surname>Atherden</surname>
+                                <given-names>Frederick Peter</given-names>
+                                <suffix>III</suffix>
+                            </name>
+                            <name>
+                                <surname>Harrison</surname>
+                                <given-names>Melissa</given-names>
+                            </name>
+                        </principal-award-recipient>
+                    </award-group>
+                    <!-- institution-id-type changed to ror -->
+                    <award-group id="fund2">
+                        <funding-source>
+                            <institution-wrap>
+                                <institution-id institution-id-type="ror">https://ror.org/01pv73b02</institution-id>
+                                <institution>Czech Science Foundation</institution>
+                            </institution-wrap>
+                        </funding-source>
+                        <!-- award-id-type should be applied for funding DOIs; use for grants where a DOI is available -->
+                        <award-id award-id-type="doi">10.13039/501100001824</award-id>
+                        <principal-award-recipient>
+                            <name>
+                                <surname>Atherden</surname>
+                                <given-names>Frederick Peter</given-names>
+                                <suffix>III</suffix>
+                            </name>
+                        </principal-award-recipient>
+                    </award-group>
+                    <award-group id="fund3">
+                        <funding-source>
+                            <institution-wrap>
+                                <institution>eLife Sciences</institution>
+                            </institution-wrap>
+                        </funding-source>
+                        <award-id>00000000001</award-id>
+                        <principal-award-recipient>
+                            <name>
+                                <surname>Atherden</surname>
+                                <given-names>Frederick Peter</given-names>
+                                <suffix>III</suffix>
+                            </name>
+                        </principal-award-recipient>
+                    </award-group>
+                    <funding-statement>The funders had no role in study design, data collection and interpretation, or the decision to submit the work for publication.</funding-statement>
+                </funding-group>
+            </article-meta>
+        </front>
+    </article>
+</root>
