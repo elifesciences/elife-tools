@@ -2270,6 +2270,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_award_groups", "content_05.xml"),
             read_fixture("test_award_groups", "content_05_expected.py"),
         ),
+        # funding DOI example
+        (
+            read_fixture("test_award_groups", "content_06.xml"),
+            read_fixture("test_award_groups", "content_06_expected.py"),
+        ),
     )
     def test_award_groups(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2687,6 +2692,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         (
             read_fixture("test_full_award_groups", "content_02.xml"),
             read_fixture("test_full_award_groups", "content_02_expected.py"),
+        ),
+        # funding DOI example
+        (
+            read_fixture("test_full_award_groups", "content_03.xml"),
+            read_fixture("test_full_award_groups", "content_03_expected.py"),
         ),
     )
     @unpack
