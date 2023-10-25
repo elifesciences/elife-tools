@@ -1385,10 +1385,11 @@ def format_contrib_refs(contrib_tag, soup):
             if ref_type == "corresp":
                 # Check for email or phone type
                 corresp_tag = utils.firstnn(soup.find_all(id=rid))
-                if contrib_phone(corresp_tag):
-                    add_to_list_dictionary(contrib_refs, "phone", rid)
-                elif contrib_email(corresp_tag):
-                    add_to_list_dictionary(contrib_refs, "email", rid)
+                if corresp_tag:
+                    if contrib_phone(corresp_tag):
+                        add_to_list_dictionary(contrib_refs, "phone", rid)
+                    elif contrib_email(corresp_tag):
+                        add_to_list_dictionary(contrib_refs, "email", rid)
             if ref_type == "fn":
                 if rid.startswith("equal-contrib"):
                     add_to_list_dictionary(contrib_refs, "equal-contrib", rid)
