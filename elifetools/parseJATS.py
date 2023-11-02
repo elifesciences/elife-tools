@@ -1665,10 +1665,24 @@ def authors_non_byline(soup, detail="full"):
     """Non-byline authors for group author members"""
     # Get a filtered list of contributors, in order to get their group-author-id
     contrib_type = "author non-byline"
-    contributors_ = contributors(soup, detail)
+    contrib_tags = raw_parser.article_contributors(soup)
+    # filter the contrib_tags by contrib_type
+    non_byline_contrib_tags = [tag for tag in contrib_tags if is_author_non_byline(tag)]
+    # format the author details
+    non_byline_authors = format_authors(soup, non_byline_contrib_tags, detail)
+    # filter again by contrib_type
     non_byline_authors = [
-        author for author in contributors_ if author.get("type", None) == contrib_type
+        author for author in non_byline_authors if author.get("type", None) == contrib_type
     ]
+    # get correct group-author-key values using all the contrib_tags
+    authors = format_author_non_byline_groups(contrib_tags)
+    # reset the group-author-key values
+    for i, contrib_tag in enumerate(non_byline_contrib_tags):
+        try:
+            non_byline_authors[i]["group-author-key"] = authors[i].get("group-author-key")
+        except IndexError:
+            # in case the list lenghts do not match
+            pass
 
     # Then renumber their position attribute
     position = 1
@@ -1700,6 +1714,49 @@ def is_author_group_author(tag):
     return False
 
 
+def format_author_non_byline_groups(contrib_tags):
+    "format the author group details for non-byline authors"
+    authors = []
+    group_author_id = 0
+    prev_group_author_id = 0
+    for tag in contrib_tags:
+        # Set the group author key if missing
+        group_author_id, group_author_key = author_group_author_key(
+            tag, None, group_author_id, prev_group_author_id
+        )
+        author = {"group-author-key": group_author_key}
+        if is_author_non_byline(tag) is True:
+            authors.append(author)
+        prev_group_author_id = group_author_id
+    return authors
+
+
+def author_group_author_key(
+    contrib_tag, contrib_type=None, group_author_id=0, prev_group_author_id=0
+):
+    "generate an author group key"
+    # Set the group author key if missing
+    if is_author_group_author(contrib_tag):
+        group_author_id = group_author_id + 1
+        group_author_key = "group-author-id" + str(group_author_id)
+    else:
+        group_author_key = None
+    # Set the group author key for non-byline authors
+    if is_author_non_byline(contrib_tag) is True and contrib_type is None:
+        group_author_key = "group-author-id" + str(prev_group_author_id)
+    elif (
+        is_author_non_byline(contrib_tag) is False
+        and is_author_group_author(contrib_tag) is not True
+    ):
+        group_author_key = None
+    contrib_id_tag = utils.first(raw_parser.contrib_id(contrib_tag))
+    if contrib_id_tag and "contrib-id-type" in contrib_id_tag.attrs:
+        if contrib_id_tag["contrib-id-type"] == "group-author-key":
+            group_author_key = utils.node_contents_str(contrib_id_tag)
+
+    return group_author_id, group_author_key
+
+
 def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
     authors = []
     position = 1
@@ -1715,23 +1772,18 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
     target_tags_aff = raw_parser.affiliation(soup)
     for tag in contrib_tags:
 
-        # Set the group author key if missing
-        if is_author_group_author(tag):
-            group_author_id = group_author_id + 1
-            group_author_key = "group-author-id" + str(group_author_id)
-        else:
-            group_author_key = None
+        group_author_id, group_author_key = author_group_author_key(
+            tag, contrib_type, group_author_id, prev_group_author_id
+        )
 
-        # Set the contrib_type and group author key for non-byline authors
+        # Set the contrib_type and for non-byline authors
         if is_author_non_byline(tag) is True and contrib_type is None:
             author_contrib_type = "author non-byline"
-            group_author_key = "group-author-id" + str(prev_group_author_id)
         elif (
             is_author_non_byline(tag) is False
             and is_author_group_author(tag) is not True
         ):
             author_contrib_type = contrib_type
-            group_author_key = None
         else:
             author_contrib_type = contrib_type
 
