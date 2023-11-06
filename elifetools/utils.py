@@ -297,10 +297,19 @@ def extract_nodes(soup, nodename, attr=None, value=None):
     Returns a list of tags (nodes) from the given soup matching the given nodename.
     If an optional attribute and value are given, these are used to filter the results
     further."""
-    tags = soup.find_all(nodename)
+    # convert string value to list
+    if isinstance(nodename, str):
+        nodename = [nodename]
     if attr is not None and value is not None:
-        return list(filter(lambda tag: tag.get(attr) == value, tags))
-    return list(tags)
+        # filter nodes by tag namd and attribute name
+        return [
+            tag
+            for tag in soup.descendants
+            if tag.name in nodename and tag.get(attr) == value
+        ]
+    else:
+        # filter nodes by tag name only
+        return [tag for tag in soup.descendants if tag.name in nodename]
 
 
 def node_text(tag):
