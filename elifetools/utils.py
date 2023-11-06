@@ -37,7 +37,7 @@ def strip_strings(value):
         return value
 
     if isinstance(value, list):
-        return list(map(strip_string, value))
+        return [strip_string(val) for val in value]
     return strip_string(value)
 
 
