@@ -1360,7 +1360,7 @@ def contrib_xref(contrib_tag, ref_type):
     return utils.extract_nodes(contrib_tag, "xref", attr="ref-type", value=ref_type)
 
 
-def format_contrib_refs(contrib_tag, soup):
+def format_contrib_refs(contrib_tag, corresp_id_map=None):
     contrib_refs = {}
     ref_tags = utils.extract_nodes(contrib_tag, "xref")
     ref_type_aff_count = 0
@@ -1372,15 +1372,17 @@ def format_contrib_refs(contrib_tag, soup):
             if ref_type == "aff":
                 ref_type_aff_count += 1
                 add_to_list_dictionary(contrib_refs, "affiliation", rid)
-            if ref_type == "corresp":
+            elif ref_type == "corresp":
                 # Check for email or phone type
-                corresp_tag = utils.firstnn(soup.find_all(id=rid))
+                corresp_tag = None
+                if corresp_id_map:
+                    corresp_tag = corresp_id_map.get(rid)
                 if corresp_tag:
                     if contrib_phone(corresp_tag):
                         add_to_list_dictionary(contrib_refs, "phone", rid)
                     elif contrib_email(corresp_tag):
                         add_to_list_dictionary(contrib_refs, "email", rid)
-            if ref_type == "fn":
+            elif ref_type == "fn":
                 if rid.startswith("equal-contrib"):
                     add_to_list_dictionary(contrib_refs, "equal-contrib", rid)
                 elif rid.startswith("conf"):
@@ -1405,9 +1407,9 @@ def format_contributor(
     detail="brief",
     contrib_type=None,
     group_author_key=None,
-    target_tags_corresp=None,
-    target_tags_fn=None,
-    target_tags_aff=None,
+    corresp_id_map=None,
+    fn_id_map=None,
+    aff_id_map=None,
 ):
     contributor = {}
     utils.copy_attribute(contrib_tag.attrs, "contrib-type", contributor, "type")
@@ -1496,8 +1498,8 @@ def format_contributor(
         contributor["type"] = "on-behalf-of"
         contributor["on-behalf-of"] = utils.node_contents_str(contrib_tag)
 
-    contrib_refs, ref_type_aff_count = format_contrib_refs(contrib_tag, soup)
-    if len(contrib_refs) > 0:
+    contrib_refs, ref_type_aff_count = format_contrib_refs(contrib_tag, corresp_id_map)
+    if contrib_refs:
         contributor["references"] = contrib_refs
 
     if detail == "brief" or ref_type_aff_count == 0:
@@ -1549,21 +1551,15 @@ def format_contributor(
         for aff_tag in aff_tags:
             contrib_affs = {}
             rid = aff_tag.get("rid")
-            if rid:
+            if rid and aff_id_map:
                 # Look for the matching aff tag by rid
-                if target_tags_aff:
+                if rid in aff_id_map.keys():
                     # look in the list of aff_nodes supplied as an argument
-                    aff_node = utils.first(
-                        [
-                            aff_tag
-                            for aff_tag in target_tags_aff
-                            if aff_tag.get("id") == rid
-                        ]
-                    )
+                    aff_node = aff_id_map.get(rid)
                 else:
                     # search for aff nodes
-                    aff_node = utils.first(
-                        utils.extract_nodes(soup, "aff", attr="id", value=rid)
+                    aff_node = utils.extract_first_node(
+                        soup, "aff", attr="id", value=rid
                     )
             else:
                 # Aff tag inside contrib tag
@@ -1594,33 +1590,27 @@ def format_contributor(
         if len(corresp_tags) > 0:
             if "notes-corresp" not in contributor:
                 contributor["notes-corresp"] = []
-            if not target_tags_corresp:
-                target_tags_corresp = raw_parser.corresp(soup)
             for cor in corresp_tags:
                 # Find the matching tag
-                rid = cor["rid"]
-                corresp_node = utils.first(
-                    list(filter(lambda tag: tag.get("id") == rid, target_tags_corresp))
-                )
-                author_notes = utils.node_text(corresp_node)
-                if author_notes:
-                    contributor["notes-corresp"].append(author_notes)
+                if corresp_id_map:
+                    corresp_node = corresp_id_map.get(cor.get("rid"))
+                    if corresp_node:
+                        author_notes = utils.node_text(corresp_node)
+                        if author_notes:
+                            contributor["notes-corresp"].append(author_notes)
         # Add xref linked footnotes if applicable
         fn_tags = contrib_xref(contrib_tag, "fn")
         if len(fn_tags) > 0:
             if "notes-fn" not in contributor:
                 contributor["notes-fn"] = []
-            if not target_tags_fn:
-                target_tags_fn = raw_parser.fn(soup)
             for fn_tag in fn_tags:
                 # Find the matching tag
-                rid = fn_tag["rid"]
-                fn_node = utils.first(
-                    list(filter(lambda tag: tag.get("id") == rid, target_tags_fn))
-                )
-                fn_text = utils.node_text(fn_node)
-                if fn_text:
-                    contributor["notes-fn"].append(fn_text)
+                if fn_id_map:
+                    fn_node = fn_id_map.get(fn_tag.get("rid"))
+                    if fn_node:
+                        fn_text = utils.node_text(fn_node)
+                        if fn_text:
+                            contributor["notes-fn"].append(fn_text)
 
     return contributor
 
@@ -1698,7 +1688,8 @@ def is_author_group_author(tag):
                 and utils.first_parent(tag, ["collab", "article-meta", "front-stub"])
                 and utils.first_parent(
                     tag, ["collab", "article-meta", "front-stub"]
-                ).name != "collab"
+                ).name
+                != "collab"
             ):
                 return True
     return False
@@ -1760,6 +1751,29 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
     target_tags_corresp = raw_parser.corresp(soup)
     target_tags_fn = raw_parser.fn(soup)
     target_tags_aff = raw_parser.affiliation(soup)
+
+    corresp_id_map = {}
+    if target_tags_corresp:
+        corresp_id_map = {
+            corresp_tag.get("id"): corresp_tag
+            for corresp_tag in target_tags_corresp
+            if corresp_tag.get("id")
+        }
+
+    aff_id_map = {}
+    if target_tags_aff:
+        aff_id_map = {
+            aff_tag.get("id"): aff_tag
+            for aff_tag in target_tags_aff
+            if aff_tag.get("id")
+        }
+
+    fn_id_map = {}
+    if target_tags_fn:
+        fn_id_map = {
+            fn_tag.get("id"): fn_tag for fn_tag in target_tags_fn if fn_tag.get("id")
+        }
+
     for tag in contrib_tags:
 
         group_author_id, group_author_key = author_group_author_key(
@@ -1783,9 +1797,9 @@ def format_authors(soup, contrib_tags, detail="full", contrib_type=None):
             detail,
             author_contrib_type,
             group_author_key,
-            target_tags_corresp,
-            target_tags_fn,
-            target_tags_aff,
+            corresp_id_map,
+            fn_id_map,
+            aff_id_map,
         )
 
         # If not empty, add position value, append, then increment the position counter
