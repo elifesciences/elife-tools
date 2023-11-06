@@ -1444,11 +1444,11 @@ def format_contributor(
             contributor["collab"] = utils.node_contents_str(tag_copy).rstrip()
 
     # set anonymous value only if the tag is present
-    if utils.extract_nodes(contrib_tag, "anonymous"):
+    if utils.extract_first_node(contrib_tag, "anonymous"):
         utils.set_if_value(
             contributor,
             "anonymous",
-            bool(utils.extract_nodes(contrib_tag, "anonymous")),
+            bool(utils.extract_first_node(contrib_tag, "anonymous")),
         )
 
     # Check if it is not a group author
@@ -1817,9 +1817,7 @@ def format_aff(aff_tag):
         return None, {}
     values = {
         "dept": utils.node_contents_str(
-            utils.first(
-                utils.extract_nodes(aff_tag, "institution", "content-type", "dept")
-            )
+            utils.extract_first_node(aff_tag, "institution", "content-type", "dept")
         ),
         "institution": utils.node_contents_str(
             utils.first(
@@ -1832,21 +1830,15 @@ def format_aff(aff_tag):
             )
         ),
         "city": utils.node_contents_str(
-            utils.first(
-                utils.extract_nodes(aff_tag, "named-content", "content-type", "city")
-            )
+            utils.extract_first_node(aff_tag, "named-content", "content-type", "city")
         ),
         "country": utils.node_contents_str(
-            utils.first(utils.extract_nodes(aff_tag, "country"))
+            utils.extract_first_node(aff_tag, "country")
         ),
-        "email": utils.node_contents_str(
-            utils.first(utils.extract_nodes(aff_tag, "email"))
-        ),
+        "email": utils.node_contents_str(utils.extract_first_node(aff_tag, "email")),
         "ror": utils.node_contents_str(
-            utils.first(
-                utils.extract_nodes(
-                    aff_tag, "institution-id", "institution-id-type", "ror"
-                )
+            utils.extract_first_node(
+                aff_tag, "institution-id", "institution-id-type", "ror"
             )
         ),
     }
