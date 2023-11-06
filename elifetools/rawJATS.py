@@ -1,4 +1,10 @@
-from elifetools.utils import first, firstnn, extract_nodes, node_contents_str
+from elifetools.utils import (
+    first,
+    firstnn,
+    extract_first_node,
+    extract_nodes,
+    node_contents_str,
+)
 
 """
 rawParser.py extracts and returns the nodes from the article xml using BeautifulSoup so that functionality at higher levels may use and combine them as neccessary.
@@ -7,15 +13,15 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 
 def article_meta(soup):
-    return first(extract_nodes(soup, "article-meta"))
+    return extract_first_node(soup, "article-meta")
 
 
 def article_title(soup):
-    return first(extract_nodes(soup, "article-title"))
+    return extract_first_node(soup, "article-title")
 
 
 def title(soup):
-    return first(extract_nodes(soup, "title"))
+    return extract_first_node(soup, "title")
 
 
 def abstract(soup, abstract_type=None):
@@ -62,28 +68,29 @@ def journal_id(soup):
 
 
 def journal_title(soup):
-    return first(extract_nodes(soup, "journal-title"))
+    return extract_first_node(soup, "journal-title")
 
 
 def journal_issn(soup, pub_format, pub_type):
     if pub_format is None and pub_type is None:
         # return the first issn tag found regardless of which type
-        return first(extract_nodes(soup, "issn"))
+        return extract_first_node(soup, "issn")
     elif pub_format is not None:
-        return first(
-            extract_nodes(soup, "issn", attr="publication-format", value=pub_format)
+        return extract_first_node(
+            soup, "issn", attr="publication-format", value=pub_format
         )
+
     elif pub_type is not None:
-        return first(extract_nodes(soup, "issn", attr="pub-type", value=pub_type))
+        return extract_first_node(soup, "issn", attr="pub-type", value=pub_type)
 
 
 def publisher(soup):
-    return first(extract_nodes(soup, "publisher-name"))
+    return extract_first_node(soup, "publisher-name")
 
 
 def article_type(soup):
     # returns raw data, just that the data doesn't contain any BS nodes
-    return first(extract_nodes(soup, "article")).get("article-type")
+    return extract_first_node(soup, "article").get("article-type")
 
 
 def pub_date(soup, date_type=None, pub_type=None):
@@ -108,15 +115,15 @@ def history_date(soup, date_type):
 
 
 def day(soup):
-    return first(extract_nodes(soup, "day"))
+    return extract_first_node(soup, "day")
 
 
 def month(soup):
-    return first(extract_nodes(soup, "month"))
+    return extract_first_node(soup, "month")
 
 
 def year(soup):
-    return first(extract_nodes(soup, "year"))
+    return extract_first_node(soup, "year")
 
 
 def keyword_group(soup):
@@ -124,7 +131,7 @@ def keyword_group(soup):
 
 
 def acknowledgements(soup):
-    return first(extract_nodes(soup, "ack"))
+    return extract_first_node(soup, "ack")
 
 
 def conflict(soup):
@@ -163,19 +170,19 @@ def attrib(soup):
 
 
 def copyright_statement(soup):
-    return first(extract_nodes(soup, "copyright-statement"))
+    return extract_first_node(soup, "copyright-statement")
 
 
 def copyright_year(soup):
-    return first(extract_nodes(soup, "copyright-year"))
+    return extract_first_node(soup, "copyright-year")
 
 
 def copyright_holder(soup):
-    return first(extract_nodes(soup, "copyright-holder"))
+    return extract_first_node(soup, "copyright-holder")
 
 
 def funding_statement(soup):
-    return first(extract_nodes(soup, "funding-statement"))
+    return extract_first_node(soup, "funding-statement")
 
 
 def affiliation(soup):
@@ -183,11 +190,10 @@ def affiliation(soup):
 
 
 def research_organism_keywords(soup):
-    tags = first(
-        extract_nodes(
-            soup, "kwd-group", attr="kwd-group-type", value="research-organism"
-        )
+    tags = extract_first_node(
+        soup, "kwd-group", attr="kwd-group-type", value="research-organism"
     )
+
     if not tags:
         return None
     return [tag for tag in tags if tag.name == "kwd"] or None
@@ -251,7 +257,7 @@ def custom_meta(soup, meta_name=None):
         custom_meta_tags = [
             tag
             for tag in custom_meta_tags
-            if node_contents_str(first(extract_nodes(tag, "meta-name"))) == meta_name
+            if node_contents_str(extract_first_node(tag, "meta-name")) == meta_name
         ]
     return custom_meta_tags
 
@@ -298,7 +304,7 @@ def event_desc(soup):
 
 
 def label(soup):
-    return first(extract_nodes(soup, "label"))
+    return extract_first_node(soup, "label")
 
 
 def contributors(soup):
@@ -320,11 +326,11 @@ def authors(soup, contrib_type="author"):
 
 
 def caption(soup):
-    return first(extract_nodes(soup, "caption"))
+    return extract_first_node(soup, "caption")
 
 
 def author_notes(soup):
-    return first(extract_nodes(soup, "author-notes"))
+    return extract_first_node(soup, "author-notes")
 
 
 def corresp(soup):
@@ -510,7 +516,7 @@ def patent(soup):
 
 
 def back(soup):
-    return first(extract_nodes(soup, "back"))
+    return extract_first_node(soup, "back")
 
 
 def app_group(soup):
@@ -531,7 +537,7 @@ def body(soup):
 
 
 def article_body(soup):
-    return first(extract_nodes(soup, "body"))
+    return extract_first_node(soup, "body")
 
 
 #

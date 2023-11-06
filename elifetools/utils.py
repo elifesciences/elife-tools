@@ -37,7 +37,7 @@ def strip_strings(value):
         return value
 
     if isinstance(value, list):
-        return list(map(strip_string, value))
+        return [strip_string(val) for val in value]
     return strip_string(value)
 
 
@@ -312,6 +312,22 @@ def extract_nodes(soup, nodename, attr=None, value=None):
         return [tag for tag in soup.descendants if tag.name in nodename]
 
 
+def extract_first_node(soup, nodename, attr=None, value=None):
+    "return the first node of name nodename and optionally matching an attribute value"
+    # convert string value to list
+    if attr is not None and value is not None:
+        # filter nodes by tag namd and attribute name
+        for tag in soup.descendants:
+            if tag.name == nodename and tag.get(attr) == value:
+                return tag
+    else:
+        # filter nodes by tag name only
+        for tag in soup.descendants:
+            if tag.name == nodename:
+                return tag
+    return None
+
+
 def node_text(tag):
     "Returns the text contents of a tag"
     return getattr(tag, "text", None)
@@ -525,9 +541,7 @@ def copy_attribute(source, source_key, destination, destination_key=None):
 
 
 def first_node_str_contents(soup, nodename, attr=None, value=None):
-    return node_contents_str(
-        first(extract_nodes(soup, nodename, attr=attr, value=value))
-    )
+    return node_contents_str(extract_first_node(soup, nodename, attr=attr, value=value))
 
 
 def set_if_value(dictionary, key, value):
