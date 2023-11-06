@@ -1652,14 +1652,18 @@ def authors_non_byline(soup, detail="full"):
     non_byline_authors = format_authors(soup, non_byline_contrib_tags, detail)
     # filter again by contrib_type
     non_byline_authors = [
-        author for author in non_byline_authors if author.get("type", None) == contrib_type
+        author
+        for author in non_byline_authors
+        if author.get("type", None) == contrib_type
     ]
     # get correct group-author-key values using all the contrib_tags
     authors = format_author_non_byline_groups(contrib_tags)
     # reset the group-author-key values
     for i, contrib_tag in enumerate(non_byline_contrib_tags):
         try:
-            non_byline_authors[i]["group-author-key"] = authors[i].get("group-author-key")
+            non_byline_authors[i]["group-author-key"] = authors[i].get(
+                "group-author-key"
+            )
         except IndexError:
             # in case the list lenghts do not match
             pass
