@@ -3518,7 +3518,10 @@ def body_block_content(tag, html_flag=True, base_url=None):
                 asset_tag_content["attribution"].append(convert(attrib_string))
 
         utils.set_if_value(asset_tag_content, "uri", tag.get("xlink:href"))
-        if "uri" in asset_tag_content and asset_tag_content["uri"].endswith(".gif"):
+        if "uri" in asset_tag_content and (
+            asset_tag_content["uri"].endswith(".gif")
+            or "animation" in label_value.lower()
+        ):
             asset_tag_content["autoplay"] = True
             asset_tag_content["loop"] = True
 

@@ -1,0 +1,8 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <media mimetype="video" mime-subtype="mp4" id="video2" xlink:href="elife-1234567890-video2.mp4">
+        <label>Animation 1.</label>
+        <caption>
+            <title>A demonstration of how to tag an mp4 animation file to ensure it is autolooped when on the eLife website.</title>
+        </caption>
+    </media>
+</root>

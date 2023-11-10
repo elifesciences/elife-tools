@@ -1574,6 +1574,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_body_block_content", "content_43.xml"),
             read_fixture("test_body_block_content", "content_43_expected.py"),
         ),
+        # mp4 animation example
+        (
+            read_fixture("test_body_block_content", "content_44.xml"),
+            read_fixture("test_body_block_content", "content_44_expected.py"),
+        ),
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
