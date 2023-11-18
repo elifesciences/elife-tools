@@ -277,8 +277,8 @@ def component_acting_parent_tag(parent_tag, tag):
     and if so, find the first fig tag inside it as the acting parent tag
     """
     if parent_tag.name == "fig-group":
-        if len(tag.find_previous_siblings("fig")) > 0:
-            acting_parent_tag = first(extract_nodes(parent_tag, "fig"))
+        if len(extract_previous_siblings(tag, "fig")) > 0:
+            acting_parent_tag = extract_first_node(parent_tag, "fig")
         else:
             # Do not return the first fig as parent of itself
             return None
@@ -328,6 +328,20 @@ def extract_first_node(soup, nodename, attr=None, value=None):
     return None
 
 
+def extract_previous_nodes(soup, nodename):
+    "return previous elements of soup with name nodename"
+    return [
+        prev_tag for prev_tag in soup.previous_elements if prev_tag.name == nodename
+    ]
+
+
+def extract_previous_siblings(soup, nodename):
+    "return previous sibling tags of soup with name nodename"
+    return [
+        prev_tag for prev_tag in soup.previous_siblings if prev_tag.name == nodename
+    ]
+
+
 def node_text(tag):
     "Returns the text contents of a tag"
     return getattr(tag, "text", None)
@@ -358,7 +372,9 @@ def first_parent(tag, nodename):
     if nodename is not None and isinstance(nodename, str):
         nodename = [nodename]
     if tag and tag.parents:
-        return first(list(filter(lambda tag: tag.name in nodename, tag.parents)))
+        return first(
+            [parent_tag for parent_tag in tag.parents if parent_tag.name in nodename]
+        )
     return None
 
 
@@ -368,7 +384,7 @@ def tag_ordinal(tag):
     to get the tag ordinal. For example, if it is tag name fig
     and two fig tags are before it, then it is the third fig (3)
     """
-    return len(tag.find_all_previous(tag.name)) + 1
+    return len(extract_previous_nodes(tag, tag.name)) + 1
 
 
 def tag_fig_ordinal(tag):
@@ -380,12 +396,11 @@ def tag_fig_ordinal(tag):
         # Look for tags with no "specific-use" attribute
         return (
             len(
-                list(
-                    filter(
-                        lambda tag: "specific-use" not in tag.attrs,
-                        tag.find_all_previous(tag.name),
-                    )
-                )
+                [
+                    prev_tag
+                    for prev_tag in extract_previous_nodes(tag, tag.name)
+                    if "specific-use" not in prev_tag.attrs
+                ]
             )
             + 1
         )
@@ -398,7 +413,7 @@ def tag_sibling_ordinal(tag):
     to get a sibling "local" ordinal value. This is useful in counting
     child figures within a fig-group, for example
     """
-    return len(tag.find_previous_siblings(tag.name)) + 1
+    return len(extract_previous_siblings(tag, tag.name)) + 1
 
 
 def tag_limit_sibling_ordinal(tag, stop_tag_name):
@@ -440,7 +455,7 @@ def tag_media_sibling_ordinal(tag):
     if first_parent_tag:
         # Start counting at 0
         sibling_ordinal = 0
-        for media_tag in first_parent_tag.find_all(tag.name):
+        for media_tag in extract_nodes(first_parent_tag, tag.name):
             if "mimetype" in tag.attrs and tag["mimetype"] == "video":
                 # Count all video type media tags
                 if "mimetype" in media_tag.attrs and tag["mimetype"] == "video":
@@ -459,7 +474,7 @@ def tag_media_sibling_ordinal(tag):
     else:
         # Start counting at 1
         sibling_ordinal = 1
-        for prev_tag in tag.find_all_previous(tag.name):
+        for prev_tag in extract_previous_nodes(tag, tag.name):
             if not first_parent(prev_tag, nodenames):
                 if "mimetype" in tag.attrs and tag["mimetype"] == "video":
                     # Count all video type media tags
@@ -496,7 +511,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
     if first_parent_tag:
         # Within the parent tag of interest, count the tags
         #  having the same asset value
-        for supp_tag in first_parent_tag.find_all(tag.name):
+        for supp_tag in extract_nodes(first_parent_tag, tag.name):
             if tag == supp_tag:
                 # Stop once we reach the same tag we are checking
                 break
@@ -506,7 +521,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
     else:
         # Look in all previous elements that do not have a parent
         #  and count the tags having the same asset value
-        for prev_tag in tag.find_all_previous(tag.name):
+        for prev_tag in extract_previous_nodes(tag, tag.name):
             if not first_parent(prev_tag, nodenames):
                 if supp_asset(prev_tag) == supp_asset(tag):
                     sibling_ordinal += 1
