@@ -3642,12 +3642,16 @@ def body_blocks(soup):
     if not soup:
         return body_block_tags
 
-    first_sibling_node = utils.firstnn(soup.find_all())
+    first_sibling_node = soup.find()
 
     if first_sibling_node is None:
         return body_block_tags
 
-    sibling_tags = first_sibling_node.find_next_siblings(nodenames)
+    sibling_tags = [
+        tag
+        for tag in first_sibling_node.next_siblings
+        if tag.name and tag.name in nodenames
+    ]
 
     # Add the first component tag and the ResultSet tags together
     body_block_tags.append(first_sibling_node)
