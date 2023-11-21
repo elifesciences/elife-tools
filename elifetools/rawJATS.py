@@ -1,8 +1,8 @@
 from elifetools.utils import (
     first,
     firstnn,
-    extract_first_node,
     lazy_extract_nodes,
+    lazy_extract_first_node,
     extract_nodes,
     node_contents_str,
 )
@@ -14,15 +14,15 @@ rawParser.py extracts and returns the nodes from the article xml using Beautiful
 
 
 def article_meta(soup):
-    return extract_first_node(soup, "article-meta")
+    return lazy_extract_first_node(soup, "article-meta")
 
 
 def article_title(soup):
-    return extract_first_node(soup, "article-title")
+    return lazy_extract_first_node(soup, "article-title")
 
 
 def title(soup):
-    return extract_first_node(soup, "title")
+    return lazy_extract_first_node(soup, "title")
 
 
 def abstract(soup, abstract_type=None):
@@ -69,29 +69,29 @@ def journal_id(soup):
 
 
 def journal_title(soup):
-    return extract_first_node(soup, "journal-title")
+    return lazy_extract_first_node(soup, "journal-title")
 
 
 def journal_issn(soup, pub_format, pub_type):
     if pub_format is None and pub_type is None:
         # return the first issn tag found regardless of which type
-        return extract_first_node(soup, "issn")
+        return lazy_extract_first_node(soup, "issn")
     elif pub_format is not None:
-        return extract_first_node(
+        return lazy_extract_first_node(
             soup, "issn", attr="publication-format", value=pub_format
         )
 
     elif pub_type is not None:
-        return extract_first_node(soup, "issn", attr="pub-type", value=pub_type)
+        return lazy_extract_first_node(soup, "issn", attr="pub-type", value=pub_type)
 
 
 def publisher(soup):
-    return extract_first_node(soup, "publisher-name")
+    return lazy_extract_first_node(soup, "publisher-name")
 
 
 def article_type(soup):
     # returns raw data, just that the data doesn't contain any BS nodes
-    return extract_first_node(soup, "article").get("article-type")
+    return lazy_extract_first_node(soup, "article").get("article-type")
 
 
 def pub_date(soup, date_type=None, pub_type=None):
@@ -116,15 +116,15 @@ def history_date(soup, date_type):
 
 
 def day(soup):
-    return extract_first_node(soup, "day")
+    return lazy_extract_first_node(soup, "day")
 
 
 def month(soup):
-    return extract_first_node(soup, "month")
+    return lazy_extract_first_node(soup, "month")
 
 
 def year(soup):
-    return extract_first_node(soup, "year")
+    return lazy_extract_first_node(soup, "year")
 
 
 def keyword_group(soup):
@@ -132,7 +132,7 @@ def keyword_group(soup):
 
 
 def acknowledgements(soup):
-    return extract_first_node(soup, "ack")
+    return lazy_extract_first_node(soup, "ack")
 
 
 def conflict(soup):
@@ -171,19 +171,19 @@ def attrib(soup):
 
 
 def copyright_statement(soup):
-    return extract_first_node(soup, "copyright-statement")
+    return lazy_extract_first_node(soup, "copyright-statement")
 
 
 def copyright_year(soup):
-    return extract_first_node(soup, "copyright-year")
+    return lazy_extract_first_node(soup, "copyright-year")
 
 
 def copyright_holder(soup):
-    return extract_first_node(soup, "copyright-holder")
+    return lazy_extract_first_node(soup, "copyright-holder")
 
 
 def funding_statement(soup):
-    return extract_first_node(soup, "funding-statement")
+    return lazy_extract_first_node(soup, "funding-statement")
 
 
 def affiliation(soup):
@@ -191,7 +191,7 @@ def affiliation(soup):
 
 
 def research_organism_keywords(soup):
-    tags = extract_first_node(
+    tags = lazy_extract_first_node(
         soup, "kwd-group", attr="kwd-group-type", value="research-organism"
     )
 
@@ -258,7 +258,7 @@ def custom_meta(soup, meta_name=None):
         custom_meta_tags = [
             tag
             for tag in custom_meta_tags
-            if node_contents_str(extract_first_node(tag, "meta-name")) == meta_name
+            if node_contents_str(lazy_extract_first_node(tag, "meta-name")) == meta_name
         ]
     return custom_meta_tags
 
@@ -305,7 +305,7 @@ def event_desc(soup):
 
 
 def label(soup):
-    return extract_first_node(soup, "label")
+    return lazy_extract_first_node(soup, "label")
 
 
 def contributors(soup):
@@ -327,11 +327,11 @@ def authors(soup, contrib_type="author"):
 
 
 def caption(soup):
-    return extract_first_node(soup, "caption")
+    return lazy_extract_first_node(soup, "caption")
 
 
 def author_notes(soup):
-    return extract_first_node(soup, "author-notes")
+    return lazy_extract_first_node(soup, "author-notes")
 
 
 def corresp(soup):
@@ -517,7 +517,7 @@ def patent(soup):
 
 
 def back(soup):
-    return extract_first_node(soup, "back")
+    return lazy_extract_first_node(soup, "back")
 
 
 def app_group(soup):
@@ -538,7 +538,7 @@ def body(soup):
 
 
 def article_body(soup):
-    return extract_first_node(soup, "body")
+    return lazy_extract_first_node(soup, "body")
 
 
 #

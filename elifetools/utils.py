@@ -297,7 +297,7 @@ def component_acting_parent_tag(parent_tag, tag):
     """
     if parent_tag.name == "fig-group":
         if len(extract_previous_siblings(tag, "fig")) > 0:
-            acting_parent_tag = extract_first_node(parent_tag, "fig")
+            acting_parent_tag = lazy_extract_first_node(parent_tag, "fig")
         else:
             # Do not return the first fig as parent of itself
             return None
@@ -349,6 +349,8 @@ def lazy_extract_nodes(soup, nodename, attr=None, value=None):
             if tag.name in nodename:
                 yield tag
 
+'''
+# fully replaced by lazy_extract_first_node
 def extract_first_node(soup, nodename, attr=None, value=None):
     "return the first node of name nodename and optionally matching an attribute value"
     # convert string value to list
@@ -363,6 +365,7 @@ def extract_first_node(soup, nodename, attr=None, value=None):
             if tag.name == nodename:
                 return tag
     return None
+'''
 
 def lazy_extract_first_node(soup, nodename, attr=None, value=None):
     "return the first node of name nodename and optionally matching an attribute value"
@@ -611,7 +614,7 @@ def copy_attribute(source, source_key, destination, destination_key=None):
 
 
 def first_node_str_contents(soup, nodename, attr=None, value=None):
-    return node_contents_str(extract_first_node(soup, nodename, attr=attr, value=value))
+    return node_contents_str(lazy_extract_first_node(soup, nodename, attr=attr, value=value))
 
 
 def set_if_value(dictionary, key, value):
