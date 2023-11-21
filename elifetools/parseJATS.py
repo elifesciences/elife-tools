@@ -177,10 +177,7 @@ def full_keywords(soup):
 def full_keyword_groups(soup):
     groups = {}
     for group_tag in raw_parser.keyword_group(soup):
-        group = list(
-            map(utils.node_contents_str, utils.extract_nodes(group_tag, "kwd"))
-        )
-        group = list(map(lambda s: s.strip(), group))
+        group = [utils.node_contents_str(node).strip() for node in utils.extract_nodes(group_tag, "kwd")]
         if "kwd-group-type" in group_tag.attrs:
             groups[group_tag["kwd-group-type"].strip()] = group
     return groups
@@ -190,11 +187,15 @@ def full_custom_meta(soup, meta_name=None):
     return raw_parser.custom_meta(soup, meta_name)
 
 
+def lazy_full_custom_meta(soup, meta_name=None):
+    return raw_parser.lazy_custom_meta(soup, meta_name)
+
+
 def impact_statement(soup):
-    tag = utils.first(full_custom_meta(soup, "Author impact statement"))
+    tag = utils.first(lazy_full_custom_meta(soup, "Author impact statement"))
     if tag is not None:
         return utils.node_contents_str(
-            utils.first(utils.extract_nodes(tag, "meta-value"))
+            utils.first(utils.lazy_extract_nodes(tag, "meta-value"))
         )
     return ""
 

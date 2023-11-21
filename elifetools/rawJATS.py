@@ -262,6 +262,15 @@ def custom_meta(soup, meta_name=None):
         ]
     return custom_meta_tags
 
+def lazy_custom_meta(soup, meta_name=None):
+    custom_meta_tags = lazy_extract_nodes(soup, "custom-meta")
+    if meta_name is not None:
+        for tag in custom_meta_tags:
+            if node_contents_str(lazy_extract_first_node(tag, "meta-name")) == meta_name:
+                yield tag
+    else:
+        for tag in custom_meta_tags:
+            yield tag
 
 def display_channel(soup):
     return subject_area(soup, subject_group_type="display-channel")
