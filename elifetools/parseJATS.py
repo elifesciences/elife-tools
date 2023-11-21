@@ -2268,12 +2268,12 @@ def components(soup):
             component["full_label"] = utils.node_contents_str(label_tag)
 
         if raw_parser.caption(tag):
-            first_paragraph = utils.first(utils.paragraphs(raw_parser.caption(tag)))
+            first_paragraph = utils.first(utils.lazy_paragraphs(raw_parser.caption(tag)))
             # fix a problem with the new kitchen sink of caption within caption tag
             if first_paragraph:
                 nested_caption = raw_parser.caption(first_paragraph)
                 if nested_caption:
-                    nested_paragraphs = utils.paragraphs(nested_caption)
+                    nested_paragraphs = utils.lazy_paragraphs(nested_caption)
                     first_paragraph = utils.first(nested_paragraphs) or first_paragraph
             if first_paragraph and not utils.starts_with_doi(first_paragraph):
                 # Remove the supplementary tag from the paragraph if present
