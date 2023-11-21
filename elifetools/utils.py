@@ -510,7 +510,7 @@ def tag_media_sibling_ordinal(tag):
     if first_parent_tag:
         # Start counting at 0
         sibling_ordinal = 0
-        for media_tag in extract_nodes(first_parent_tag, tag.name):
+        for media_tag in lazy_extract_nodes(first_parent_tag, tag.name):
             if "mimetype" in tag.attrs and tag["mimetype"] == "video":
                 # Count all video type media tags
                 if "mimetype" in media_tag.attrs and tag["mimetype"] == "video":
@@ -566,7 +566,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
     if first_parent_tag:
         # Within the parent tag of interest, count the tags
         #  having the same asset value
-        for supp_tag in extract_nodes(first_parent_tag, tag.name):
+        for supp_tag in lazy_extract_nodes(first_parent_tag, tag.name):
             if tag == supp_tag:
                 # Stop once we reach the same tag we are checking
                 break
@@ -592,7 +592,7 @@ def supp_asset(tag):
     """
     # Default
     asset = "supp"
-    first_tag = first(extract_nodes(tag, "label"))
+    first_tag = first(lazy_extract_nodes(tag, "label"))
     if first_tag:
         label_text = node_text(first_tag).lower()
         # Keyword match the label
