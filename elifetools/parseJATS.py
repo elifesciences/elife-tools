@@ -700,21 +700,23 @@ def abstracts(soup):
             abstract["title"] = utils.node_text(title_tag)
 
         abstract["content"] = None
-        if raw_parser.paragraph(tag):
+
+        tag_paragraph_list = raw_parser.paragraph(tag)
+        if tag_paragraph_list:
             abstract["content"] = ""
             abstract["full_content"] = ""
 
-            good_paragraphs = utils.remove_doi_paragraph(raw_parser.paragraph(tag))
+            good_paragraphs = utils.remove_doi_paragraph(tag_paragraph_list)
 
             # Plain text content
             glue = ""
-            for p_tag in good_paragraphs:
-                abstract["content"] += glue + utils.node_text(p_tag)
-                glue = " "
 
             # Content including markup tags
             # When more than one paragraph, wrap each in a <p> tag
             for p_tag in good_paragraphs:
+                abstract["content"] += glue + utils.node_text(p_tag)
+                glue = " "
+
                 if utils.node_contents_str(p_tag):
                     abstract["full_content"] += (
                         "<p>" + utils.node_contents_str(p_tag) + "</p>"
@@ -3660,6 +3662,26 @@ def body_blocks(soup):
         body_block_tags.append(tag)
 
     return body_block_tags
+
+def lazy_body_blocks(soup):
+    """
+    Note: for some reason this works and few other attempted methods work
+    Search for certain node types, find the first nodes siblings of the same type
+    Add the first sibling and the other siblings to a list and return them
+    """
+    if not soup:
+        return None
+
+    first_sibling_node = soup.find()
+    if first_sibling_node is None:
+        return None
+
+    yield first_sibling_node
+
+    nodenames = body_block_nodenames()
+    for tag in first_sibling_node.next_siblings:
+        if tag.name and tag.name in nodenames:
+            yield tag
 
 
 def sub_article_doi(tag):
