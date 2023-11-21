@@ -261,14 +261,15 @@ def remove_doi_paragraph(tags):
     p_tags = list(filter(lambda tag: not paragraph_is_only_doi(tag), p_tags))
     return p_tags
 
-
+'''
+# unused. all cases using `remove_doi_paragraph` require the whole sequence to be realised.
 def lazy_remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     for tag in tags:
         if not starts_with_doi(tag):
             if not paragraph_is_only_doi(tag):
                 yield tag
-
+'''
 
 def orcid_uri_to_orcid(value):
     "Strip the uri schema from the start of ORCID URL strings"
