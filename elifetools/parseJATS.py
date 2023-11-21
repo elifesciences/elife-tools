@@ -1829,11 +1829,9 @@ def format_aff(aff_tag):
         ),
         "institution": utils.node_contents_str(
             utils.first(
-                list(
-                    filter(
-                        lambda n: "content-type" not in n.attrs,
-                        utils.extract_nodes(aff_tag, "institution"),
-                    )
+                filter(
+                    lambda n: "content-type" not in n.attrs,
+                    utils.lazy_extract_nodes(aff_tag, "institution"),
                 )
             )
         ),
@@ -2497,12 +2495,13 @@ def competing_interests(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    competing_interests_section = utils.extract_nodes(
+    competing_interests_section = utils.peek(utils.lazy_extract_nodes(
         soup, "fn-group", attr="content-type", value="competing-interest"
-    )
-    if not competing_interests_section:
+    ))
+    if competing_interests_section is None:
         return None
-    fn_nodes = utils.extract_nodes(utils.first(competing_interests_section), "fn")
+    first_competing_interests_section, _ = competing_interests_section
+    fn_nodes = utils.extract_nodes(first_competing_interests_section, "fn")
     interests = footnotes(fn_nodes, fntype_filter)
 
     return interests
@@ -2536,12 +2535,13 @@ def author_contributions(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    author_contributions_section = utils.extract_nodes(
+    author_contributions_section = utils.peek(utils.lazy_extract_nodes(
         soup, "fn-group", attr="content-type", value="author-contribution"
-    )
-    if not author_contributions_section:
+    ))
+    if author_contributions_section is None:
         return None
-    fn_nodes = utils.extract_nodes(utils.first(author_contributions_section), "fn")
+    first_author_contributions_section, _ = author_contributions_section
+    fn_nodes = utils.extract_nodes(first_author_contributions_section, "fn")
     cons = footnotes(fn_nodes, fntype_filter)
 
     return cons
@@ -2669,9 +2669,7 @@ def full_award_group_funding_source(tag):
 
         award_group_funding_source = {}
 
-        institution_nodes = utils.extract_nodes(funding_source_node, "institution")
-
-        institution_node = utils.first(institution_nodes)
+        institution_node = utils.first(utils.lazy_extract_nodes(funding_source_node, "institution"))
         if institution_node:
             award_group_funding_source["institution"] = utils.node_text(
                 institution_node
@@ -2681,10 +2679,9 @@ def full_award_group_funding_source(tag):
                     "content-type"
                 ]
 
-        institution_id_nodes = utils.extract_nodes(
+        institution_id_node = utils.first(utils.lazy_extract_nodes(
             funding_source_node, "institution-id"
-        )
-        institution_id_node = utils.first(institution_id_nodes)
+        ))
         if institution_id_node:
             award_group_funding_source["institution-id"] = utils.node_text(
                 institution_id_node

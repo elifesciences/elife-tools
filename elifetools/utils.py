@@ -1,3 +1,4 @@
+import itertools
 import time
 import calendar
 import re
@@ -29,6 +30,12 @@ def first(value):
         except IndexError:
             return None
 
+def peek(iterable):
+    try:
+        first = next(iterable)
+    except StopIteration:
+        return None
+    return first, itertools.chain([first], iterable)
 
 def firstnn(value):
     "returns the first non-nil value within given iterable"
