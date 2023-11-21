@@ -2,6 +2,7 @@ from elifetools.utils import (
     first,
     firstnn,
     extract_first_node,
+    lazy_extract_nodes,
     extract_nodes,
     node_contents_str,
 )
@@ -63,7 +64,7 @@ def publisher_id(soup):
 def journal_id(soup):
     # the first non-nil tag
     return firstnn(
-        extract_nodes(soup, "journal-id", attr="journal-id-type", value="publisher-id")
+        lazy_extract_nodes(soup, "journal-id", attr="journal-id-type", value="publisher-id")
     )
 
 
