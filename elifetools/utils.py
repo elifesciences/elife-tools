@@ -420,19 +420,6 @@ def first_parent(tag, nodename):
     Given a beautiful soup tag, look at its parents and return the first
     tag name that matches nodename or the list nodename
     """
-    if nodename is not None and isinstance(nodename, str):
-        nodename = [nodename]
-    if tag and tag.parents:
-        return first(
-            [parent_tag for parent_tag in tag.parents if parent_tag.name in nodename]
-        )
-    return None
-
-def lazy_first_parent(tag, nodename):
-    """
-    Given a beautiful soup tag, look at its parents and return the first
-    tag name that matches nodename or the list nodename
-    """
     if isinstance(nodename, str):
         nodename = [nodename]
     if tag and tag.parents:
