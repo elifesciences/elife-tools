@@ -233,6 +233,22 @@ def subject_area(soup, subject_group_type=None):
         ]
     return subject_area_tags
 
+def lazy_subject_area(soup, subject_group_type=None):
+    # Supports all subject areas or just particular ones filtered by
+    tags = lazy_extract_nodes(soup, "subject")
+
+    if subject_group_type:
+        for tag in tags:
+            if tag.parent.get("subj-group-type") == subject_group_type:
+                yield tag
+    else:
+        for tag in tags:
+            if (
+                tag.parent.name == "subj-group" and
+                tag.parent.parent.name == "article-categories" and
+                tag.parent.parent.parent.name == "article-meta"
+            ):
+                yield tag
 
 def full_subject_area(soup, subject_group_type=None):
 
@@ -278,6 +294,10 @@ def display_channel(soup):
 
 def sub_display_channel(soup):
     return subject_area(soup, subject_group_type="sub-display-channel")
+
+
+def lazy_sub_display_channel(soup):
+    return lazy_subject_area(soup, subject_group_type="sub-display-channel")
 
 
 def category(soup):

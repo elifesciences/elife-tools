@@ -66,10 +66,10 @@ def title_prefix(soup):
     display_channel_match_list = ["feature article", "insight", "editorial"]
     for d_channel in display_channel(soup):
         if d_channel.lower() in display_channel_match_list:
-            if raw_parser.sub_display_channel(soup):
-                prefix = utils.node_text(
-                    utils.first(raw_parser.sub_display_channel(soup))
-                )
+            tags = utils.peek(raw_parser.lazy_sub_display_channel(soup))
+            if tags is not None:
+                first_tag, _ = tags
+                prefix = utils.node_text(first_tag)
     return prefix
 
 
