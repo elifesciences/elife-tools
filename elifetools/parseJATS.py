@@ -120,24 +120,24 @@ def article_type(soup):
 
 
 def volume(soup):
-    return utils.node_text(utils.first(raw_parser.volume(soup)))
+    return utils.node_text(utils.first(raw_parser.lazy_volume(soup)))
 
 
 def issue(soup):
-    return utils.node_text(utils.first(raw_parser.issue(raw_parser.article_meta(soup))))
+    return utils.node_text(utils.first(raw_parser.lazy_issue(raw_parser.article_meta(soup))))
 
 
 def fpage(soup):
-    return utils.node_text(utils.first(raw_parser.fpage(raw_parser.article_meta(soup))))
+    return utils.node_text(utils.first(raw_parser.lazy_fpage(raw_parser.article_meta(soup))))
 
 
 def lpage(soup):
-    return utils.node_text(utils.first(raw_parser.lpage(raw_parser.article_meta(soup))))
+    return utils.node_text(utils.first(raw_parser.lazy_lpage(raw_parser.article_meta(soup))))
 
 
 def elocation_id(soup):
     return utils.node_text(
-        utils.first(raw_parser.elocation_id(raw_parser.article_meta(soup)))
+        utils.first(raw_parser.lazy_elocation_id(raw_parser.article_meta(soup)))
     )
 
 
@@ -210,7 +210,7 @@ def version_history(soup, html_flag=True):
     related_object_tags = raw_parser.related_object(raw_parser.article_meta(soup))
     for tag in related_object_tags:
         article_version = OrderedDict()
-        date_tag = utils.first(raw_parser.date(tag))
+        date_tag = utils.first(raw_parser.lazy_date(tag))
 
         if not date_tag:
             continue
@@ -226,7 +226,7 @@ def version_history(soup, html_flag=True):
         utils.set_if_value(
             article_version,
             "comment",
-            convert(utils.node_contents_str(utils.first(raw_parser.comment(tag)))),
+            convert(utils.node_contents_str(utils.first(raw_parser.lazy_comment(tag)))),
         )
         version_history.append(article_version)
     return version_history
@@ -272,7 +272,7 @@ def related_object_ids(soup):
 def article_id_list(soup):
     """return a list of article-id data"""
     id_list = []
-    for article_id_tag in raw_parser.article_id(soup):
+    for article_id_tag in raw_parser.lazy_article_id(soup):
         id_details = OrderedDict()
         utils.set_if_value(id_details, "type", article_id_tag.get("pub-id-type"))
         utils.set_if_value(id_details, "value", article_id_tag.text)
@@ -285,20 +285,20 @@ def article_id_list(soup):
 
 def pub_history(soup):
     events = []
-    pub_history = utils.first(raw_parser.pub_history(soup))
+    pub_history = utils.first(raw_parser.lazy_pub_history(soup))
     if pub_history:
         event_tags = raw_parser.event(pub_history)
         for event_tag in event_tags:
             event = OrderedDict()
 
-            date_tag = utils.first(raw_parser.date(event_tag))
+            date_tag = utils.first(raw_parser.lazy_date(event_tag))
 
             # set event_type from the event tag, otherwise from the date tag
             utils.set_if_value(event, "event_type", event_tag.get("event-type"))
             if not event.get("event_type") and date_tag:
                 utils.set_if_value(event, "event_type", date_tag.get("date-type"))
 
-            event_desc_tag = utils.first(raw_parser.event_desc(event_tag))
+            event_desc_tag = utils.first(raw_parser.lazy_event_desc(event_tag))
             if event_desc_tag:
                 event_desc = utils.node_contents_str(event_desc_tag).rstrip()
                 utils.set_if_value(event, "event_desc", event_desc)
@@ -306,11 +306,11 @@ def pub_history(soup):
                     event, "event_desc_html", xml_to_html(True, event_desc)
                 )
             # look for uri in a self-uri tag, otherwise look for an ext-link tag
-            self_uri_tag = utils.first(raw_parser.self_uri(event_tag))
+            self_uri_tag = utils.first(raw_parser.lazy_self_uri(event_tag))
             if self_uri_tag:
                 utils.set_if_value(event, "uri", self_uri_tag.get("xlink:href"))
             else:
-                uri_tag = utils.first(raw_parser.ext_link(event_tag, "uri"))
+                uri_tag = utils.first(raw_parser.lazy_ext_link(event_tag, "uri"))
                 if uri_tag:
                     utils.set_if_value(event, "uri", uri_tag.get("xlink:href"))
                     utils.set_if_value(
@@ -386,7 +386,7 @@ def copyright_holder_json(soup):
 def license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     if permissions_tag:
-        return utils.node_text(utils.first(raw_parser.licence_p(permissions_tag)))
+        return utils.node_text(utils.first(raw_parser.lazy_licence_p(permissions_tag)))
     return None
 
 
@@ -394,7 +394,7 @@ def full_license(soup):
     permissions_tag = raw_parser.article_permissions(soup)
     if permissions_tag:
         return utils.node_contents_str(
-            utils.first(raw_parser.licence_p(permissions_tag))
+            utils.first(raw_parser.lazy_licence_p(permissions_tag))
         )
     return None
 
@@ -504,9 +504,9 @@ def pub_date(soup):
     pub_date_date, pub_date_day, pub_date_month, pub_date_year, pub_date_timestamp
     Default date_type is pub
     """
-    pub_date = utils.first(raw_parser.pub_date(soup, date_type="pub"))
+    pub_date = utils.first(raw_parser.lazy_pub_date(soup, date_type="pub"))
     if pub_date is None:
-        pub_date = utils.first(raw_parser.pub_date(soup, date_type="publication"))
+        pub_date = utils.first(raw_parser.lazy_pub_date(soup, date_type="publication"))
     if pub_date is None:
         return None
     (day, month, year) = ymd(pub_date)
@@ -659,9 +659,9 @@ def collection_year(soup):
     """
     Pub date of type collection will hold a year element for VOR articles
     """
-    pub_date = utils.first(raw_parser.pub_date(soup, pub_type="collection"))
+    pub_date = utils.first(raw_parser.lazy_pub_date(soup, pub_type="collection"))
     if not pub_date:
-        pub_date = utils.first(raw_parser.pub_date(soup, date_type="collection"))
+        pub_date = utils.first(raw_parser.lazy_pub_date(soup, date_type="collection"))
     if not pub_date:
         return None
 
@@ -733,7 +733,7 @@ def abstract(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = utils.first(
-            list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+            filter(lambda tag: tag.get("abstract_type") is None, abstract_list)
         )
     if abstract:
         return abstract.get("content")
@@ -742,7 +742,7 @@ def abstract(soup):
 
 
 def abstract_xml(soup, strip_doi_paragraphs=True, abstract_type=None):
-    original_abstract_tag = utils.first(raw_parser.abstract(soup, abstract_type))
+    original_abstract_tag = utils.first(raw_parser.lazy_abstract(soup, abstract_type))
     if not original_abstract_tag:
         return None
     abstract_tag = copy.copy(original_abstract_tag)
@@ -769,7 +769,7 @@ def full_abstract(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = utils.first(
-            list(filter(lambda tag: tag.get("abstract_type") is None, abstract_list))
+            filter(lambda tag: tag.get("abstract_type") is None, abstract_list)
         )
     if abstract:
         return abstract.get("full_content")
@@ -782,12 +782,10 @@ def digest(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = utils.first(
-            list(
-                filter(
-                    lambda tag: tag.get("abstract_type")
-                    in ["executive-summary", "plain-language-summary"],
-                    abstract_list,
-                )
+            filter(
+                lambda tag: tag.get("abstract_type")
+                in ["executive-summary", "plain-language-summary"],
+                abstract_list,
             )
         )
     if abstract:
@@ -804,12 +802,10 @@ def full_digest(soup):
     abstract_list = abstracts(soup)
     if abstract_list:
         abstract = utils.first(
-            list(
-                filter(
-                    lambda tag: tag.get("abstract_type")
-                    in ["executive-summary", "plain-language-summary"],
-                    abstract_list,
-                )
+            filter(
+                lambda tag: tag.get("abstract_type")
+                in ["executive-summary", "plain-language-summary"],
+                abstract_list,
             )
         )
     if abstract:
@@ -1027,7 +1023,7 @@ def tag_details(tag, nodenames):
     if tag_details_asset(tag):
         details["asset"] = tag_details_asset(tag)
 
-    object_id_tag = utils.first(raw_parser.object_id(tag, pub_id_type="doi"))
+    object_id_tag = utils.first(raw_parser.lazy_object_id(tag, pub_id_type="doi"))
     if object_id_tag:
         details["component_doi"] = extract_component_doi(tag, nodenames)
 
@@ -1341,7 +1337,7 @@ def contrib_phone(contrib_tag):
     """
     phone = None
     if raw_parser.phone(contrib_tag):
-        phone = utils.first(raw_parser.phone(contrib_tag)).text
+        phone = utils.first(raw_parser.lazy_phone(contrib_tag)).text
     return phone
 
 
@@ -1354,6 +1350,15 @@ def contrib_inline_aff(contrib_tag):
         if child_tag and child_tag.name and child_tag.name == "aff":
             aff_tags.append(child_tag)
     return aff_tags
+
+
+def lazy_contrib_inline_aff(contrib_tag):
+    """
+    Given a contrib tag, look for an aff tag directly inside it
+    """
+    for child_tag in contrib_tag:
+        if child_tag and child_tag.name and child_tag.name == "aff":
+            yield child_tag
 
 
 def contrib_xref(contrib_tag, ref_type):
@@ -1423,20 +1428,20 @@ def format_contributor(
     utils.copy_attribute(contrib_tag.attrs, "corresp", contributor)
     utils.copy_attribute(contrib_tag.attrs, "deceased", contributor)
     utils.copy_attribute(contrib_tag.attrs, "id", contributor)
-    contrib_id_tag = utils.first(raw_parser.contrib_id(contrib_tag))
+    contrib_id_tag = utils.first(raw_parser.lazy_contrib_id(contrib_tag))
     if contrib_id_tag and "contrib-id-type" in contrib_id_tag.attrs:
         if contrib_id_tag["contrib-id-type"] == "group-author-key":
             contributor["group-author-key"] = utils.node_contents_str(contrib_id_tag)
     # Set group-author-key if passed via params
     if not contributor.get("group-author-key") and group_author_key:
         contributor["group-author-key"] = group_author_key
-    if raw_parser.collab(contrib_tag):
-        collab_tag = utils.first(raw_parser.collab(contrib_tag))
-        if collab_tag:
-            # Clean up if there are tags inside the collab tag
-            tag_copy = copy.copy(collab_tag)
-            tag_copy = utils.remove_tag_from_tag(tag_copy, "contrib-group")
-            contributor["collab"] = utils.node_contents_str(tag_copy).rstrip()
+
+    collab_tag = utils.first(raw_parser.lazy_collab(contrib_tag))
+    if collab_tag:
+        # Clean up if there are tags inside the collab tag
+        tag_copy = copy.copy(collab_tag)
+        tag_copy = utils.remove_tag_from_tag(tag_copy, "contrib-group")
+        contributor["collab"] = utils.node_contents_str(tag_copy).rstrip()
 
     # set anonymous value only if the tag is present
     anonymous_tag = utils.lazy_extract_first_node(contrib_tag, "anonymous")
@@ -1453,7 +1458,7 @@ def format_contributor(
         )
         if raw_parser.bio(contrib_tag):
             biography_content = body_block_content_render(
-                utils.firstnn(raw_parser.bio(contrib_tag))
+                utils.firstnn(raw_parser.lazy_bio(contrib_tag))
             )
             if len(biography_content) > 0:
                 contributor["bio"] = biography_content[0].get("content")
@@ -1504,7 +1509,7 @@ def format_contributor(
 
     if detail == "brief" or ref_type_aff_count == 0:
         # Brief format only allows one aff and it must be within the contrib tag
-        aff_tag = utils.firstnn(contrib_inline_aff(contrib_tag))
+        aff_tag = utils.firstnn(lazy_contrib_inline_aff(contrib_tag))
         if aff_tag:
             contributor["affiliations"] = []
             contrib_affs = {}
@@ -1687,15 +1692,10 @@ def is_author_group_author(tag):
         for child_tag in tag:
             # look at the child tags for a collab tag
             # and that its parent tag is not a collab tag
-            if (
-                child_tag.name == "collab"
-                and utils.first_parent(tag, ["collab", "article-meta", "front-stub"])
-                and utils.first_parent(
-                    tag, ["collab", "article-meta", "front-stub"]
-                ).name
-                != "collab"
-            ):
-                return True
+            if child_tag.name == "collab":
+                parent_tag = utils.first_parent(tag, ["collab", "article-meta", "front-stub"])
+                if parent_tag and parent_tag.name != "collab":
+                    return True
     return False
 
 
@@ -1734,7 +1734,7 @@ def author_group_author_key(
         and is_author_group_author(contrib_tag) is not True
     ):
         group_author_key = None
-    contrib_id_tag = utils.first(raw_parser.contrib_id(contrib_tag))
+    contrib_id_tag = utils.first(raw_parser.lazy_contrib_id(contrib_tag))
     if contrib_id_tag and "contrib-id-type" in contrib_id_tag.attrs:
         if contrib_id_tag["contrib-id-type"] == "group-author-key":
             group_author_key = utils.node_contents_str(contrib_id_tag)
@@ -1904,27 +1904,31 @@ def refs(soup):
 
         if raw_parser.pub_id(tag, "pmid"):
             ref["pmid"] = utils.node_contents_str(
-                utils.first(raw_parser.pub_id(tag, "pmid"))
+                utils.first(raw_parser.lazy_pub_id(tag, "pmid"))
             )
 
         if raw_parser.pub_id(tag, "isbn"):
             ref["isbn"] = utils.node_contents_str(
-                utils.first(raw_parser.pub_id(tag, "isbn"))
+                utils.first(raw_parser.lazy_pub_id(tag, "isbn"))
             )
 
         if raw_parser.pub_id(tag, "doi"):
             ref["reference_id"] = utils.node_contents_str(
-                utils.first(raw_parser.pub_id(tag, "doi"))
+                utils.first(raw_parser.lazy_pub_id(tag, "doi"))
             )
             ref["doi"] = utils.doi_uri_to_doi(
-                utils.node_contents_str(utils.first(raw_parser.pub_id(tag, "doi")))
+                utils.node_contents_str(utils.first(raw_parser.lazy_pub_id(tag, "doi")))
             )
 
         uri_tag = None
-        if raw_parser.ext_link(tag, "uri"):
-            uri_tag = utils.first(raw_parser.ext_link(tag, "uri"))
-        elif raw_parser.uri(tag):
-            uri_tag = utils.first(raw_parser.uri(tag))
+        first_ext_link = utils.first(raw_parser.lazy_ext_link(tag, "uri")) 
+        if first_ext_link:
+            uri_tag = first_ext_link
+        else:
+            first_uri = utils.first(raw_parser.lazy_uri(tag))
+            if first_uri:
+                uri_tag = first_uri
+
         if uri_tag:
             utils.set_if_value(ref, "uri", uri_tag.get("xlink:href"))
             utils.set_if_value(ref, "uri_text", utils.node_contents_str(uri_tag))
@@ -1933,7 +1937,7 @@ def refs(soup):
             for pub_id_type in ["archive", "accession"]:
                 if raw_parser.pub_id(tag, pub_id_type):
                     pub_id_tag = utils.first(
-                        raw_parser.pub_id(tag, pub_id_type=pub_id_type)
+                        raw_parser.lazy_pub_id(tag, pub_id_type=pub_id_type)
                     )
                     utils.set_if_value(ref, "uri", pub_id_tag.get("xlink:href"))
                 if ref.get("uri"):
@@ -1944,7 +1948,7 @@ def refs(soup):
             ref,
             "accession",
             utils.node_contents_str(
-                utils.first(raw_parser.object_id(tag, "art-access-id"))
+                utils.first(raw_parser.lazy_object_id(tag, "art-access-id"))
             ),
         )
         if not ref.get("accession"):
@@ -1952,7 +1956,7 @@ def refs(soup):
                 ref,
                 "accession",
                 utils.node_contents_str(
-                    utils.first(raw_parser.pub_id(tag, pub_id_type="accession"))
+                    utils.first(raw_parser.lazy_pub_id(tag, pub_id_type="accession"))
                 ),
             )
         if not ref.get("accession"):
@@ -1960,7 +1964,7 @@ def refs(soup):
                 ref,
                 "accession",
                 utils.node_contents_str(
-                    utils.first(raw_parser.pub_id(tag, pub_id_type="archive"))
+                    utils.first(raw_parser.lazy_pub_id(tag, pub_id_type="archive"))
                 ),
             )
 
@@ -1974,39 +1978,39 @@ def refs(soup):
             utils.set_if_value(
                 ref,
                 "date-in-citation",
-                utils.node_text(utils.first(raw_parser.date_in_citation(tag))),
+                utils.node_text(utils.first(raw_parser.lazy_date_in_citation(tag))),
             )
             utils.set_if_value(
                 ref,
                 "iso-8601-date",
-                utils.first(raw_parser.date_in_citation(tag)).get("iso-8601-date"),
+                utils.first(raw_parser.lazy_date_in_citation(tag)).get("iso-8601-date"),
             )
 
         if raw_parser.patent(tag):
             utils.set_if_value(
-                ref, "patent", utils.node_text(utils.first(raw_parser.patent(tag)))
+                ref, "patent", utils.node_text(utils.first(raw_parser.lazy_patent(tag)))
             )
             utils.set_if_value(
-                ref, "country", utils.first(raw_parser.patent(tag)).get("country")
+                ref, "country", utils.first(raw_parser.lazy_patent(tag)).get("country")
             )
 
         utils.set_if_value(
-            ref, "source", utils.node_text(utils.first(raw_parser.source(tag)))
+            ref, "source", utils.node_text(utils.first(raw_parser.lazy_source(tag)))
         )
         utils.set_if_value(
             ref,
             "elocation-id",
-            utils.node_text(utils.first(raw_parser.elocation_id(tag))),
+            utils.node_text(utils.first(raw_parser.lazy_elocation_id(tag))),
         )
         if raw_parser.element_citation(tag):
             utils.copy_attribute(
-                utils.first(raw_parser.element_citation(tag)).attrs,
+                utils.first(raw_parser.lazy_element_citation(tag)).attrs,
                 "publication-type",
                 ref,
             )
         if "publication-type" not in ref and raw_parser.mixed_citations(tag):
             utils.copy_attribute(
-                utils.first(raw_parser.mixed_citations(tag)).attrs,
+                utils.first(raw_parser.lazy_mixed_citations(tag)).attrs,
                 "publication-type",
                 ref,
             )
@@ -2036,21 +2040,21 @@ def refs(soup):
                         author,
                         "surname",
                         utils.node_text(
-                            utils.first(raw_parser.surname(name_or_collab_tag))
+                            utils.first(raw_parser.lazy_surname(name_or_collab_tag))
                         ),
                     )
                     utils.set_if_value(
                         author,
                         "given-names",
                         utils.node_text(
-                            utils.first(raw_parser.given_names(name_or_collab_tag))
+                            utils.first(raw_parser.lazy_given_names(name_or_collab_tag))
                         ),
                     )
                     utils.set_if_value(
                         author,
                         "suffix",
                         utils.node_text(
-                            utils.first(raw_parser.suffix(name_or_collab_tag))
+                            utils.first(raw_parser.lazy_suffix(name_or_collab_tag))
                         ),
                     )
 
@@ -2064,7 +2068,7 @@ def refs(soup):
                     authors.append(author)
 
             # etal for the person group
-            if utils.first(raw_parser.etal(group)):
+            if utils.first(raw_parser.lazy_etal(group)):
                 author = {}
                 author["etal"] = True
                 utils.set_if_value(author, "group-type", author_type)
@@ -2087,55 +2091,55 @@ def refs(soup):
             ref["authors"] = authors
 
         utils.set_if_value(
-            ref, "volume", utils.node_text(utils.first(raw_parser.volume(tag)))
+            ref, "volume", utils.node_text(utils.first(raw_parser.lazy_volume(tag)))
         )
         utils.set_if_value(
-            ref, "issue", utils.node_text(utils.first(raw_parser.issue(tag)))
+            ref, "issue", utils.node_text(utils.first(raw_parser.lazy_issue(tag)))
         )
         utils.set_if_value(
-            ref, "fpage", utils.node_text(utils.first(raw_parser.fpage(tag)))
+            ref, "fpage", utils.node_text(utils.first(raw_parser.lazy_fpage(tag)))
         )
         utils.set_if_value(
-            ref, "lpage", utils.node_text(utils.first(raw_parser.lpage(tag)))
+            ref, "lpage", utils.node_text(utils.first(raw_parser.lazy_lpage(tag)))
         )
         utils.set_if_value(
-            ref, "collab", utils.node_text(utils.first(raw_parser.collab(tag)))
+            ref, "collab", utils.node_text(utils.first(raw_parser.lazy_collab(tag)))
         )
         utils.set_if_value(
             ref,
             "publisher_loc",
-            utils.node_text(utils.first(raw_parser.publisher_loc(tag))),
+            utils.node_text(utils.first(raw_parser.lazy_publisher_loc(tag))),
         )
         utils.set_if_value(
             ref,
             "publisher_name",
-            utils.node_text(utils.first(raw_parser.publisher_name(tag))),
+            utils.node_text(utils.first(raw_parser.lazy_publisher_name(tag))),
         )
         utils.set_if_value(
             ref,
             "edition",
-            utils.node_contents_str(utils.first(raw_parser.edition(tag))),
+            utils.node_contents_str(utils.first(raw_parser.lazy_edition(tag))),
         )
         utils.set_if_value(
             ref,
             "version",
-            utils.node_contents_str(utils.first(raw_parser.version(tag))),
+            utils.node_contents_str(utils.first(raw_parser.lazy_version(tag))),
         )
         utils.set_if_value(
             ref,
             "chapter-title",
-            utils.node_contents_str(utils.first(raw_parser.chapter_title(tag))),
+            utils.node_contents_str(utils.first(raw_parser.lazy_chapter_title(tag))),
         )
         utils.set_if_value(
-            ref, "comment", utils.node_text(utils.first(raw_parser.comment(tag)))
+            ref, "comment", utils.node_text(utils.first(raw_parser.lazy_comment(tag)))
         )
         utils.set_if_value(
             ref,
             "data-title",
-            utils.node_contents_str(utils.first(raw_parser.data_title(tag))),
+            utils.node_contents_str(utils.first(raw_parser.lazy_data_title(tag))),
         )
         utils.set_if_value(
-            ref, "conf-name", utils.node_text(utils.first(raw_parser.conf_name(tag)))
+            ref, "conf-name", utils.node_text(utils.first(raw_parser.lazy_conf_name(tag)))
         )
 
         # If not empty, add position value, append, then increment the position counter
@@ -2159,10 +2163,10 @@ def extract_component_doi(tag, nodenames):
 
     if tag.name == "sub-article":
         component_doi = utils.doi_uri_to_doi(
-            utils.node_text(utils.first(raw_parser.article_id(tag, pub_id_type="doi")))
+            utils.node_text(utils.first(raw_parser.lazy_article_id(tag, pub_id_type="doi")))
         )
     else:
-        object_id_tag = utils.first(raw_parser.object_id(tag, pub_id_type="doi"))
+        object_id_tag = utils.first(raw_parser.lazy_object_id(tag, pub_id_type="doi"))
         # Tweak: if it is media and has no object_id_tag then it is not a "component"
         if tag.name == "media" and not object_id_tag:
             component_doi = None
@@ -2303,10 +2307,10 @@ def components(soup):
 
                 if raw_parser.licence_p(permissions_tag):
                     permissions_item["license"] = utils.node_text(
-                        utils.first(raw_parser.licence_p(permissions_tag))
+                        utils.first(raw_parser.lazy_licence_p(permissions_tag))
                     )
                     permissions_item["full_license"] = utils.node_contents_str(
-                        utils.first(raw_parser.licence_p(permissions_tag))
+                        utils.first(raw_parser.lazy_licence_p(permissions_tag))
                     )
 
                 component["permissions"].append(permissions_item)
@@ -2390,7 +2394,7 @@ def components(soup):
         if ctype == "media":
             media_tag = tag
         elif ctype == "supplementary-material":
-            media_tag = utils.first(raw_parser.media(tag))
+            media_tag = utils.first(raw_parser.lazy_media(tag))
         if media_tag:
             component["mimetype"] = media_tag.get("mimetype")
             component["mime-subtype"] = media_tag.get("mime-subtype")
@@ -2450,7 +2454,7 @@ def full_correspondence(soup):
             elif raw_parser.phone(tag):
                 # Look for a phone number
                 cor[tag["id"]].append(
-                    utils.node_contents_str(utils.first(raw_parser.phone(tag)))
+                    utils.node_contents_str(utils.first(raw_parser.lazy_phone(tag)))
                 )
 
     return cor
@@ -2727,16 +2731,16 @@ def award_group_principal_award_recipient(tag):
         principal_award_recipient_text = ""
 
         institution = utils.node_text(
-            utils.first(utils.extract_nodes(recipient_tag, "institution"))
+            utils.first(utils.lazy_extract_nodes(recipient_tag, "institution"))
         )
         surname = utils.node_text(
-            utils.first(utils.extract_nodes(recipient_tag, "surname"))
+            utils.first(utils.lazy_extract_nodes(recipient_tag, "surname"))
         )
         given_names = utils.node_text(
-            utils.first(utils.extract_nodes(recipient_tag, "given-names"))
+            utils.first(utils.lazy_extract_nodes(recipient_tag, "given-names"))
         )
         string_name = utils.node_text(
-            utils.first(raw_parser.string_name(recipient_tag))
+            utils.first(raw_parser.lazy_string_name(recipient_tag))
         )
         # Concatenate name and institution values if found
         #  while filtering out excess whitespace
@@ -2759,9 +2763,9 @@ def object_id_doi(tag, parent_tag_name=None):
     """DOI in an object-id tag found inside the tag"""
     doi = None
     object_id = None
-    object_ids = raw_parser.object_id(tag, "doi")
-    if object_ids:
-        object_id = utils.first(object_ids)
+    first_object_id = utils.first(raw_parser.lazy_object_id(tag, "doi"))
+    if first_object_id:
+        object_id = first_object_id
     if parent_tag_name and object_id and object_id.parent.name != parent_tag_name:
         object_id = None
     if object_id:
@@ -2878,7 +2882,7 @@ def boxed_text_to_image_block(tag):
     "covert boxed-text to an image block containing an inline-graphic"
     tag_block = OrderedDict()
     image_content = body_block_image_content(
-        utils.first(raw_parser.inline_graphic(tag))
+        utils.first(raw_parser.lazy_inline_graphic(tag))
     )
     tag_block["type"] = "image"
     utils.set_if_value(
@@ -2945,7 +2949,7 @@ def render_raw_body(tag, remove_key_info_box=False, base_url=None):
             # Extract the text of the first child tag for comparison, if present
             first_node_text = None
             if body_tag.children:
-                first_node_text = utils.node_text(utils.first(list(body_tag.children)))
+                first_node_text = utils.node_text(utils.first(body_tag.children))
 
             if (
                 remove_key_info_box is True
@@ -3258,7 +3262,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         utils.set_if_value(tag_content, "id", tag.get("id"))
 
         title_parent_tag = utils.first_parent(
-            raw_parser.title(tag), ["boxed-text", "fig"]
+            raw_parser.lazy_title(tag), ["boxed-text", "fig"]
         )
         if title_parent_tag and title_parent_tag.name == "boxed-text":
             title_value = convert(title_text(tag))
@@ -3411,7 +3415,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         utils.set_if_value(tag_content, "id", tag.get("id"))
         utils.set_if_value(tag_content, "label", label(tag, tag.name))
 
-        math_tag = utils.first(raw_parser.math(tag))
+        math_tag = utils.first(raw_parser.lazy_math(tag))
         # Add the math tag back for now
         math_content = "<math>" + utils.node_contents_str(math_tag) + "</math>"
         tag_content["mathml"] = convert(math_content)
@@ -3446,9 +3450,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
             set_caption=True,
         )
 
-        if raw_parser.graphic(tag):
-            graphic_tags = raw_parser.graphic(tag)
-            image_content = body_block_image_content(utils.first(graphic_tags))
+        first_graphic_tag = utils.first(raw_parser.graphic(tag))
+        if first_graphic_tag:
+            image_content = body_block_image_content(first_graphic_tag)
             if len(image_content) > 0:
                 asset_tag_content["image"] = image_content
 
@@ -3572,8 +3576,9 @@ def body_block_content(tag, html_flag=True, base_url=None):
             prefer_label=True,
         )
 
-        if raw_parser.media(tag):
-            media_tag = utils.first(raw_parser.media(tag))
+        first_media = utils.first(raw_parser.lazy_media(tag))
+        if first_media:
+            media_tag = first_media
             # If a mimetype contains a slash just use it, otherwise concatenate a value
             if media_tag.get("mimetype") and "/" in media_tag.get("mimetype"):
                 tag_content["mediaType"] = media_tag.get("mimetype")
@@ -3681,7 +3686,7 @@ def lazy_body_blocks(soup):
 
 def sub_article_doi(tag):
     doi = None
-    article_id_tag = utils.first(raw_parser.article_id(tag, "doi"))
+    article_id_tag = utils.first(raw_parser.lazy_article_id(tag, "doi"))
     if article_id_tag:
         doi = article_id_tag.text
     return doi
@@ -3750,7 +3755,7 @@ def decision_letter(soup):
         # Description will be the first boxed-text tag
         if raw_parser.boxed_text(raw_body):
             sub_article_content["description"] = []
-            boxed_text_description = utils.first(raw_parser.boxed_text(raw_body))
+            boxed_text_description = utils.first(raw_parser.lazy_boxed_text(raw_body))
             tags = body_blocks(boxed_text_description)
             for tag in tags:
                 block_content = body_block_content_render(tag)
@@ -4910,7 +4915,7 @@ def references_json_unknown_details(ref_content, soup=None):
                 ]:
                     ref_tag = utils.remove_tag_from_tag(ref_tag, remove_tag)
                 # Add the remaining tag content comma separated
-                for tag in utils.first(raw_parser.element_citation(ref_tag)):
+                for tag in utils.first(raw_parser.lazy_element_citation(ref_tag)):
                     if utils.node_text(tag) is not None:
                         if details != "":
                             details += ", "
@@ -4923,7 +4928,7 @@ def references_json_unknown_details(ref_content, soup=None):
 
 def ethics_json(soup):
     ethics_json = []
-    ethics_fn_group = utils.first(raw_parser.fn_group(soup, "ethics-information"))
+    ethics_fn_group = utils.first(raw_parser.lazy_fn_group(soup, "ethics-information"))
 
     # Part one, find the fn tags in the ethics section
     fn_body_blocks = []
@@ -4963,7 +4968,7 @@ def appendices_json(soup, base_url=None):
     app_tags = []
     back = raw_parser.back(soup)
     if back:
-        app_group = utils.first(raw_parser.app_group(back))
+        app_group = utils.first(raw_parser.lazy_app_group(back))
     if app_group:
         app_tags = raw_parser.app(app_group)
     for app_tag in app_tags:
@@ -5060,7 +5065,7 @@ def dataset_tag_json(tag, html_flag=True):
     utils.set_if_value(
         dataset_content,
         "title",
-        convert(utils.node_contents_str(utils.first(raw_parser.source(tag)))),
+        convert(utils.node_contents_str(utils.first(raw_parser.lazy_source(tag)))),
     )
 
     # dataId
@@ -5069,7 +5074,7 @@ def dataset_tag_json(tag, html_flag=True):
         "dataId",
         convert(
             utils.node_contents_str(
-                utils.first(raw_parser.object_id(tag, "art-access-id"))
+                utils.first(raw_parser.lazy_object_id(tag, "art-access-id"))
             )
         ),
     )
@@ -5080,18 +5085,20 @@ def dataset_tag_json(tag, html_flag=True):
         utils.set_if_value(
             dataset_content,
             "details",
-            convert(utils.node_contents_str(utils.first(raw_parser.data_title(tag)))),
+            convert(utils.node_contents_str(utils.first(raw_parser.lazy_data_title(tag)))),
         )
-    elif raw_parser.comment(tag):
-        utils.set_if_value(
-            dataset_content,
-            "details",
-            convert(utils.node_contents_str(utils.first(raw_parser.comment(tag)))),
-        )
+    else:
+        first_comment = utils.first(raw_parser.lazy_comment(tag))
+        if first_comment:
+            utils.set_if_value(
+                dataset_content,
+                "details",
+                convert(utils.node_contents_str(first_comment))
+            )
 
     # doi
     if raw_parser.pub_id(tag, "doi"):
-        doi_tag = utils.first(raw_parser.pub_id(tag, "doi"))
+        doi_tag = utils.first(raw_parser.lazy_pub_id(tag, "doi"))
         utils.set_if_value(
             dataset_content, "doi", utils.doi_uri_to_doi(doi_tag.get("xlink:href"))
         )
@@ -5107,13 +5114,14 @@ def dataset_tag_json(tag, html_flag=True):
         )
 
     # uri
-    if raw_parser.ext_link(tag, "uri"):
-        uri_tag = utils.first(raw_parser.ext_link(tag, "uri"))
+    first_ext_link = utils.first(raw_parser.lazy_ext_link(tag, "uri"))
+    if first_ext_link:
+        uri_tag = first_ext_link
         utils.set_if_value(dataset_content, "uri", uri_tag.get("xlink:href"))
 
     # uri from pub-id tag
     if "uri" not in dataset_content and raw_parser.pub_id(tag):
-        pub_id_tag = utils.first(raw_parser.pub_id(tag))
+        pub_id_tag = utils.first(raw_parser.lazy_pub_id(tag))
         # set uri if it is not a doi tag
         if pub_id_tag.get("pub-id-type") != "doi":
             utils.set_if_value(dataset_content, "uri", pub_id_tag.get("xlink:href"))
@@ -5146,7 +5154,7 @@ def datasets_json(soup, html_flag=True):
         for sec_type in ["datasets", "data-availability"]:
             if raw_parser.section(back_tag, sec_type):
                 datasets_section_tag = utils.first(
-                    raw_parser.section(back_tag, sec_type)
+                    raw_parser.lazy_section(back_tag, sec_type)
                 )
                 break
         if datasets_section_tag:
@@ -5247,7 +5255,7 @@ def poa_supplementary_material_block_content(tag):
         and raw_parser.ext_link(tag)
         and not raw_parser.media(tag)
     ):
-        ext_link_tag = utils.first(raw_parser.ext_link(tag))
+        ext_link_tag = utils.first(raw_parser.lazy_ext_link(tag))
         filename = ext_link_tag.get("xlink:href")
 
         if filename and filename.endswith(".zip"):
@@ -5366,7 +5374,7 @@ def funding_awards_json(soup):
     # recipients to parse fresh
     award_group_tags = []
     award_recipients = {}
-    funding_group = utils.first(raw_parser.funding_group(soup))
+    funding_group = utils.first(raw_parser.lazy_funding_group(soup))
     if funding_group:
         award_group_tags = raw_parser.award_group(funding_group)
     for a_tag in award_group_tags:

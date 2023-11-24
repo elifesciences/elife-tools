@@ -30,6 +30,7 @@ def first(value):
         except IndexError:
             return None
 
+# https://stackoverflow.com/questions/661603/how-do-i-know-if-a-generator-is-empty-from-the-start
 def peek(iterable):
     try:
         first = next(iterable)
@@ -426,6 +427,7 @@ def node_contents_str(tag):
     return tag_string if tag_string != "" else None
 
 
+# lazy already
 def first_parent(tag, nodename):
     """
     Given a beautiful soup tag, look at its parents and return the first
