@@ -177,8 +177,8 @@ def full_keywords(soup):
 def full_keyword_groups(soup):
     groups = {}
     for group_tag in raw_parser.keyword_group(soup):
-        group = [utils.node_contents_str(node).strip() for node in utils.extract_nodes(group_tag, "kwd")]
         if "kwd-group-type" in group_tag.attrs:
+            group = [utils.node_contents_str(node).strip() for node in utils.extract_nodes(group_tag, "kwd")]
             groups[group_tag["kwd-group-type"].strip()] = group
     return groups
 
