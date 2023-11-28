@@ -142,18 +142,18 @@ def elocation_id(soup):
 
 def research_organism(soup):
     "Find the research-organism from the set of kwd-group tags"
-    if not raw_parser.research_organism_keywords(soup):
+    research_organism_keywords = raw_parser.research_organism_keywords(soup)
+    if not research_organism_keywords:
         return []
-    return list(map(utils.node_text, raw_parser.research_organism_keywords(soup)))
+    return [utils.node_text(tag) for tag in research_organism_keywords]
 
 
 def full_research_organism(soup):
     "research-organism list including inline tags, such as italic"
-    if not raw_parser.research_organism_keywords(soup):
+    research_organism_keywords = raw_parser.research_organism_keywords(soup)
+    if not research_organism_keywords:
         return []
-    return list(
-        map(utils.node_contents_str, raw_parser.research_organism_keywords(soup))
-    )
+    return [utils.node_contents_str(tag) for tag in research_organism_keywords]
 
 
 def keywords(soup):
@@ -161,16 +161,18 @@ def keywords(soup):
     Find the keywords from the set of kwd-group tags
     which are typically labelled as the author keywords
     """
-    if not raw_parser.author_keywords(soup):
+    author_keywords = raw_parser.author_keywords(soup)
+    if not author_keywords:
         return []
-    return list(map(utils.node_text, raw_parser.author_keywords(soup)))
+    return [utils.node_text(tag) for tag in author_keywords]
 
 
 def full_keywords(soup):
     "author keywords list including inline tags, such as italic"
-    if not raw_parser.author_keywords(soup):
+    author_keywords = raw_parser.author_keywords(soup)
+    if not author_keywords:
         return []
-    return list(map(utils.node_contents_str, raw_parser.author_keywords(soup)))
+    return [utils.node_contents_str(tag) for tag in author_keywords]
 
 
 def full_keyword_groups(soup):
@@ -682,12 +684,10 @@ def is_poa(soup):
     return False
 
 
-def abstracts(soup):
+def lazy_abstracts(soup):
     """
     Find the article abstract and format it
     """
-
-    abstracts = []
 
     abstract_tags = raw_parser.abstract(soup)
 
@@ -722,15 +722,16 @@ def abstracts(soup):
                         "<p>" + utils.node_contents_str(p_tag) + "</p>"
                     )
 
-        abstracts.append(abstract)
+        yield abstract
 
-    return abstracts
-
+def abstracts(soup):
+    return list(lazy_abstracts(soup))
 
 def abstract(soup):
     abstract = None
-    abstract_list = abstracts(soup)
+    abstract_list = utils.peek(lazy_abstracts(soup))
     if abstract_list:
+        _, abstract_list = abstract_list
         abstract = utils.first(
             filter(lambda tag: tag.get("abstract_type") is None, abstract_list)
         )
@@ -765,8 +766,9 @@ def full_abstract(soup):
     Return the abstract including inline tags
     """
     abstract = None
-    abstract_list = abstracts(soup)
+    abstract_list = utils.peek(lazy_abstracts(soup))
     if abstract_list:
+        _, abstract_list = abstract_list
         abstract = utils.first(
             filter(lambda tag: tag.get("abstract_type") is None, abstract_list)
         )
@@ -778,8 +780,9 @@ def full_abstract(soup):
 
 def digest(soup):
     abstract = None
-    abstract_list = abstracts(soup)
+    abstract_list = utils.peek(lazy_abstracts(soup))
     if abstract_list:
+        _, abstract_list = abstract_list
         abstract = utils.first(
             filter(
                 lambda tag: tag.get("abstract_type")
@@ -798,8 +801,9 @@ def full_digest(soup):
     Return the digest including inline tags
     """
     abstract = None
-    abstract_list = abstracts(soup)
+    abstract_list = utils.peek(lazy_abstracts(soup))
     if abstract_list:
+        _, abstract_list = abstract_list
         abstract = utils.first(
             filter(
                 lambda tag: tag.get("abstract_type")
