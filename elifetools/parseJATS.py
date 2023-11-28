@@ -66,10 +66,9 @@ def title_prefix(soup):
     display_channel_match_list = ["feature article", "insight", "editorial"]
     for d_channel in display_channel(soup):
         if d_channel.lower() in display_channel_match_list:
-            tags = utils.peek(raw_parser.lazy_sub_display_channel(soup))
-            if tags is not None:
-                first_tag, _ = tags
-                prefix = utils.node_text(first_tag)
+            first_sub_display_channel = utils.first(raw_parser.lazy_sub_display_channel(soup))
+            if first_sub_display_channel is not None:
+                prefix = utils.node_text(first_sub_display_channel)
     return prefix
 
 
@@ -2285,10 +2284,11 @@ def components(soup):
                     component["caption"] = utils.node_text(first_paragraph)
                     component["full_caption"] = utils.node_contents_str(first_paragraph)
 
-        if raw_parser.permissions(tag):
+        raw_permissions_tag = raw_parser.permissions(tag)
+        if raw_permissions_tag:
 
             component["permissions"] = []
-            for permissions_tag in raw_parser.permissions(tag):
+            for permissions_tag in raw_permissions_tag:
                 permissions_item = {}
                 if raw_parser.copyright_statement(permissions_tag):
                     permissions_item["copyright_statement"] = utils.node_text(
@@ -2594,14 +2594,14 @@ def full_award_groups(soup):
                 generated_id_counter += 1
 
             award_group = {}
-            award_group_id = award_group_award_id(award_group_tag)
-            if award_group_id is not None:
-                award_group["award-id"] = utils.first(award_group_id)
+            first_award_group_id = utils.first(award_group_award_id(award_group_tag))
+            if first_award_group_id is not None:
+                award_group["award-id"] = first_award_group_id
                 # look for an award-id-type attribute
                 award_id_tag = utils.first(award_group_award_id_tags(award_group_tag))
                 if award_id_tag.get("award-id-type"):
                     award_group["award-id-type"] = award_id_tag.get("award-id-type")
-            funding_sources = full_award_group_funding_source(award_group_tag)
+            funding_sources = lazy_full_award_group_funding_source(award_group_tag)
             source = utils.first(funding_sources)
             if source is not None:
                 utils.copy_attribute(source, "institution", award_group)
@@ -2660,16 +2660,13 @@ def award_group_funding_source(tag):
     return award_group_funding_source
 
 
-@utils.nullify
-def full_award_group_funding_source(tag):
+def lazy_full_award_group_funding_source(tag):
     """
     Given a funding group element
     Find the award group funding sources, one for each
     item found in the get_funding_group section
     """
-    award_group_funding_sources = []
-    funding_source_nodes = utils.extract_nodes(tag, "funding-source")
-    for funding_source_node in funding_source_nodes:
+    for funding_source_node in utils.lazy_extract_nodes(tag, "funding-source"):
 
         award_group_funding_source = {}
 
@@ -2695,14 +2692,22 @@ def full_award_group_funding_source(tag):
                     "institution-id-type"
                 ]
 
-        award_group_funding_sources.append(award_group_funding_source)
+        yield award_group_funding_source
 
-    return award_group_funding_sources
+
+@utils.nullify
+def full_award_group_funding_source(tag):
+    """
+    Given a funding group element
+    Find the award group funding sources, one for each
+    item found in the get_funding_group section
+    """
+    return list(lazy_full_award_group_funding_source(tag))
 
 
 def award_group_award_id_tags(tag):
     "return award-id tags inside tag"
-    return utils.extract_nodes(tag, "award-id")
+    return utils.lazy_extract_nodes(tag, "award-id")
 
 
 @utils.nullify
@@ -2717,6 +2722,14 @@ def award_group_award_id(tag):
         award_group_award_id.append(award_id_tag.text)
     return award_group_award_id
 
+
+def lazy_award_group_award_id(tag):
+    """
+    Find the award group award id, one for each
+    item found in the get_funding_group section
+    """
+    for award_id_tag in award_group_award_id_tags(tag):
+        yield award_id_tag.text
 
 @utils.nullify
 def award_group_principal_award_recipient(tag):
@@ -3211,12 +3224,14 @@ def body_block_title_label_caption(
 def body_block_attribution(tag):
     "extract the attribution content for figures, tables, videos"
     attributions = []
-    if raw_parser.attrib(tag):
-        for attrib_tag in raw_parser.attrib(tag):
+    raw_attrib_tag = raw_parser.attrib(tag)
+    if raw_attrib_tag:
+        for attrib_tag in raw_attrib_tag:
             attributions.append(utils.node_contents_str(attrib_tag))
-    if raw_parser.permissions(tag):
+    raw_permissions_tag = raw_parser.permissions(tag)
+    if raw_permissions_tag:
         # concatenate content from from the permissions tag
-        for permissions_tag in raw_parser.permissions(tag):
+        for permissions_tag in raw_permissions_tag:
             attrib_string = ""
             # add the copyright statement if found
             attrib_string = utils.join_sentences(
@@ -3227,8 +3242,9 @@ def body_block_attribution(tag):
                 ".",
             )
             # add the license paragraphs
-            if raw_parser.licence_p(permissions_tag):
-                for licence_p_tag in raw_parser.licence_p(permissions_tag):
+            raw_licence_tag = raw_parser.licence_p(permissions_tag)
+            if raw_licence_tag:
+                for licence_p_tag in raw_licence_tag:
                     attrib_string = utils.join_sentences(
                         attrib_string, utils.node_contents_str(licence_p_tag), "."
                     )
@@ -3450,7 +3466,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
             set_caption=True,
         )
 
-        first_graphic_tag = utils.first(raw_parser.graphic(tag))
+        first_graphic_tag = utils.first(raw_parser.lazy_graphic(tag))
         if first_graphic_tag:
             image_content = body_block_image_content(first_graphic_tag)
             if len(image_content) > 0:

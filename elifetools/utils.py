@@ -233,9 +233,10 @@ def starts_with_doi(tag):
 
 
 def paragraph_is_only_doi(tag):
+    tag_text = node_text(tag).strip()
     return bool(
-        node_text(tag).strip().startswith("http://dx.doi.org")
-        and " " not in node_text(tag).strip()
+        tag_text.startswith("http://dx.doi.org")
+        and " " not in tag_text
         and node_contents_str(tag).startswith('<ext-link ext-link-type="doi"')
     )
 
@@ -304,7 +305,8 @@ def component_acting_parent_tag(parent_tag, tag):
     and if so, find the first fig tag inside it as the acting parent tag
     """
     if parent_tag.name == "fig-group":
-        if len(extract_previous_siblings(tag, "fig")) > 0:
+        previous_sibling = first(lazy_extract_previous_siblings(tag, "fig"))
+        if previous_sibling:
             acting_parent_tag = lazy_extract_first_node(parent_tag, "fig")
         else:
             # Do not return the first fig as parent of itself

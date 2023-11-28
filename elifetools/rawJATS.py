@@ -149,8 +149,9 @@ def lazy_date(soup, date_type=None):
 
 
 def history_date(soup, date_type):
-    date_tags = date(soup, date_type)
-    return first([tag for tag in date_tags if tag.parent.name == "history"])
+    for date_tag in lazy_date(soup, date_type):
+        if date_tag.parent.name == "history":
+            return date_tag
 
 
 def day(soup):
@@ -169,6 +170,10 @@ def keyword_group(soup):
     return extract_nodes(soup, "kwd-group")
 
 
+def lazy_keyword_group(soup):
+    return lazy_extract_nodes(soup, "kwd-group")
+
+
 def acknowledgements(soup):
     return lazy_extract_first_node(soup, "ack")
 
@@ -179,16 +184,29 @@ def conflict(soup):
     return conflict_tags
 
 
+def lazy_conflict(soup):
+    for tag in lazy_extract_nodes(soup, "fn", attr="fn-type", value="conflict"):
+        yield tag
+    for tag in lazy_extract_nodes(soup, "fn", attr="fn-type", value="COI-statement"):
+        yield tag
+
+
 def permissions(soup):
     # a better selector might be "article-meta.permissions"
     return extract_nodes(soup, "permissions")
 
 
+def lazy_permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    return lazy_extract_nodes(soup, "permissions")
+
+
 def article_permissions(soup):
     # a better selector might be "article-meta.permissions"
-    permissions_tags = permissions(soup)
-    return first([tag for tag in permissions_tags if tag.parent.name == "article-meta"])
-
+    for tag in lazy_permissions(soup):
+        if tag.parent.name == "article-meta":
+            return tag
+    return None
 
 def licence(soup):
     return extract_nodes(soup, "license")
@@ -461,6 +479,9 @@ def lazy_inline_graphic(soup):
 
 def graphic(soup):
     return extract_nodes(soup, "graphic")
+
+def lazy_graphic(soup):
+    return lazy_extract_nodes(soup, "graphic")
 
 
 def self_uri(soup):
