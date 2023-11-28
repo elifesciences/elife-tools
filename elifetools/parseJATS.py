@@ -1338,11 +1338,9 @@ def contrib_phone(contrib_tag):
     """
     Given a contrib tag, look for an phone tag
     """
-    phone = None
-    if raw_parser.phone(contrib_tag):
-        phone = utils.first(raw_parser.lazy_phone(contrib_tag)).text
-    return phone
-
+    first_phone = utils.first(raw_parser.lazy_phone(contrib_tag))
+    if first_phone:
+        return first_phone.text
 
 def contrib_inline_aff(contrib_tag):
     """
@@ -2503,12 +2501,11 @@ def competing_interests(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    competing_interests_section = utils.peek(utils.lazy_extract_nodes(
+    first_competing_interests_section = utils.first(utils.lazy_extract_nodes(
         soup, "fn-group", attr="content-type", value="competing-interest"
     ))
-    if competing_interests_section is None:
+    if first_competing_interests_section is None:
         return None
-    first_competing_interests_section, _ = competing_interests_section
     fn_nodes = utils.extract_nodes(first_competing_interests_section, "fn")
     interests = footnotes(fn_nodes, fntype_filter)
 
@@ -2543,12 +2540,11 @@ def author_contributions(soup, fntype_filter):
     Find the fn tags included in the competing interest
     """
 
-    author_contributions_section = utils.peek(utils.lazy_extract_nodes(
+    first_author_contributions_section = utils.first(utils.lazy_extract_nodes(
         soup, "fn-group", attr="content-type", value="author-contribution"
     ))
-    if author_contributions_section is None:
+    if first_author_contributions_section is None:
         return None
-    first_author_contributions_section, _ = author_contributions_section
     fn_nodes = utils.extract_nodes(first_author_contributions_section, "fn")
     cons = footnotes(fn_nodes, fntype_filter)
 
@@ -5403,10 +5399,8 @@ def funding_awards_json(soup):
         if recipient_tags:
             recipients = []
             for recipient_tag in recipient_tags:
-                if (
-                    len(utils.extract_nodes(recipient_tag, ["name", "institution"]))
-                    <= 0
-                ):
+                name_institution = utils.extract_nodes(recipient_tag, ["name", "institution"])
+                if (len(name_institution) <= 0):
                     # A loose institution name not surrounded by institution tag
                     recipient_content = OrderedDict()
                     recipient_content["type"] = "group"
@@ -5419,9 +5413,7 @@ def funding_awards_json(soup):
                         # add it
                         recipients.append(recipient_content)
                 else:
-                    for contrib_tag in utils.extract_nodes(
-                        recipient_tag, ["name", "institution"]
-                    ):
+                    for contrib_tag in name_institution:
                         recipient_content = OrderedDict()
                         if contrib_tag.name == "institution":
                             recipient_content["type"] = "group"
