@@ -18,7 +18,13 @@ class TestUtils(unittest.TestCase):
         setattr(self.mock_tag, "name", "foo")
 
     @unpack
-    @data((None, None), ([], None), (["bees"], "bees"), (["bees", "knees"], "bees"))
+    @data((None, None),
+          ([], None),
+          (iter([]), None),
+          (["bees"], "bees"),
+          (["bees", "knees"], "bees"),
+          (iter(["bees", "knees"]), "bees")
+    )
     def test_first(self, value, expected):
         self.assertEqual(utils.first(value), expected)
 
@@ -352,6 +358,22 @@ class TestUtils(unittest.TestCase):
     def test_list_type_prefix(self, list_type, expected):
         self.assertEqual(utils.list_type_prefix(list_type), expected)
 
+class TestUtilsPlain(unittest.TestCase):
+    def test_peek_empty(self):
+        "peeking into an empty sequence yields a None"
+        self.assertEqual(utils.peek(iter([])), None)
+
+    def test_peek_single(self):
+        "peeking into a sequence with a single value yields a pair of: the single value and a new sequence of the same value"
+        first, first_and_rest = utils.peek(iter([1]))
+        self.assertEqual(first, 1)
+        self.assertEqual(list(first_and_rest), [1])
+
+    def test_peek_multi(self):
+        "peeking into a sequence with multiple values yields a pair of: the first value and a new sequence of the old values."
+        first, first_and_rest = utils.peek(iter([1, 2, 3, 4]))
+        self.assertEqual(first, 1)
+        self.assertEqual(list(first_and_rest), [1, 2, 3, 4])
 
 class TestUtilsNameFormatting(unittest.TestCase):
     def setUp(self):
