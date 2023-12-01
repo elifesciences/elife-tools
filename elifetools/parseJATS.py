@@ -5375,7 +5375,7 @@ def funding_awards_json(soup):
             recipients = []
             for recipient_tag in recipient_tags:
                 name_institution = utils.extract_nodes(recipient_tag, ["name", "institution"])
-                if (len(name_institution) <= 0):
+                if len(name_institution) <= 0:
                     # A loose institution name not surrounded by institution tag
                     recipient_content = OrderedDict()
                     recipient_content["type"] = "group"
