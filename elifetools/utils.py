@@ -205,11 +205,13 @@ def paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     return list(filter(lambda tag: tag.name == "p", tags))
 
+
 def lazy_paragraphs(tags):
     "Given a list of tags, only return the paragraph tags"
     for tag in tags:
         if tag.name == "p":
             yield tag
+
 
 def convert_testing_doi(doi):
     if doi is None:
@@ -270,15 +272,14 @@ def remove_doi_paragraph(tags):
     p_tags = list(filter(lambda tag: not paragraph_is_only_doi(tag), p_tags))
     return p_tags
 
-'''
-# unused. all cases using `remove_doi_paragraph` require the whole sequence to be realised.
+
 def lazy_remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     for tag in tags:
         if not starts_with_doi(tag):
             if not paragraph_is_only_doi(tag):
                 yield tag
-'''
+
 
 def orcid_uri_to_orcid(value):
     "Strip the uri schema from the start of ORCID URL strings"
@@ -307,7 +308,7 @@ def component_acting_parent_tag(parent_tag, tag):
     if parent_tag.name == "fig-group":
         previous_sibling = first(lazy_extract_previous_siblings(tag, "fig"))
         if previous_sibling:
-            acting_parent_tag = lazy_extract_first_node(parent_tag, "fig")
+            acting_parent_tag = extract_first_node(parent_tag, "fig")
         else:
             # Do not return the first fig as parent of itself
             return None
@@ -340,6 +341,7 @@ def extract_nodes(soup, nodename, attr=None, value=None):
         # filter nodes by tag name only
         return [tag for tag in soup.descendants if tag.name in nodename]
 
+
 def lazy_extract_nodes(soup, nodename, attr=None, value=None):
     """
     Returns a list of tags (nodes) from the given soup matching the given nodename.
@@ -359,25 +361,8 @@ def lazy_extract_nodes(soup, nodename, attr=None, value=None):
             if tag.name in nodename:
                 yield tag
 
-'''
-# fully replaced by lazy_extract_first_node
-def extract_first_node(soup, nodename, attr=None, value=None):
-    "return the first node of name nodename and optionally matching an attribute value"
-    # convert string value to list
-    if attr is not None and value is not None:
-        # filter nodes by tag namd and attribute name
-        for tag in soup.descendants:
-            if tag.name == nodename and tag.get(attr) == value:
-                return tag
-    else:
-        # filter nodes by tag name only
-        for tag in soup.descendants:
-            if tag.name == nodename:
-                return tag
-    return None
-'''
 
-def lazy_extract_first_node(soup, nodename, attr=None, value=None):
+def extract_first_node(soup, nodename, attr=None, value=None):
     "return the first node of name nodename and optionally matching an attribute value"
     return first(lazy_extract_nodes(soup, nodename, attr, value))
 
@@ -388,17 +373,20 @@ def extract_previous_nodes(soup, nodename):
         prev_tag for prev_tag in soup.previous_elements if prev_tag.name == nodename
     ]
 
+
 def lazy_extract_previous_nodes(soup, nodename):
     "return previous elements of soup with name nodename"
     for prev_tag in soup.previous_elements:
         if prev_tag.name == nodename:
             yield prev_tag
 
+
 def extract_previous_siblings(soup, nodename):
     "return previous sibling tags of soup with name nodename"
     return [
         prev_tag for prev_tag in soup.previous_siblings if prev_tag.name == nodename
     ]
+
 
 def lazy_extract_previous_siblings(soup, nodename):
     "return previous sibling tags of soup with name nodename"
@@ -429,7 +417,6 @@ def node_contents_str(tag):
     return tag_string if tag_string != "" else None
 
 
-# lazy already
 def first_parent(tag, nodename):
     """
     Given a beautiful soup tag, look at its parents and return the first
@@ -625,7 +612,7 @@ def copy_attribute(source, source_key, destination, destination_key=None):
 
 
 def first_node_str_contents(soup, nodename, attr=None, value=None):
-    return node_contents_str(lazy_extract_first_node(soup, nodename, attr=attr, value=value))
+    return node_contents_str(extract_first_node(soup, nodename, attr=attr, value=value))
 
 
 def set_if_value(dictionary, key, value):
