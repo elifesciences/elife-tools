@@ -184,12 +184,12 @@ def full_keyword_groups(soup):
     return groups
 
 
-def full_custom_meta(soup, meta_name=None):
-    return raw_parser.custom_meta(soup, meta_name)
-
-
 def lazy_full_custom_meta(soup, meta_name=None):
     return raw_parser.lazy_custom_meta(soup, meta_name)
+
+
+def full_custom_meta(soup, meta_name=None):
+    return list(lazy_full_custom_meta(soup, meta_name))
 
 
 def impact_statement(soup):
@@ -724,7 +724,11 @@ def lazy_abstracts(soup):
 
         yield abstract
 
+
 def abstracts(soup):
+    """
+    Find the article abstract and format it
+    """
     return list(lazy_abstracts(soup))
 
 def abstract(soup):
@@ -1342,16 +1346,6 @@ def contrib_phone(contrib_tag):
     if first_phone:
         return first_phone.text
 
-def contrib_inline_aff(contrib_tag):
-    """
-    Given a contrib tag, look for an aff tag directly inside it
-    """
-    aff_tags = []
-    for child_tag in contrib_tag:
-        if child_tag and child_tag.name and child_tag.name == "aff":
-            aff_tags.append(child_tag)
-    return aff_tags
-
 
 def lazy_contrib_inline_aff(contrib_tag):
     """
@@ -1360,6 +1354,13 @@ def lazy_contrib_inline_aff(contrib_tag):
     for child_tag in contrib_tag:
         if child_tag and child_tag.name and child_tag.name == "aff":
             yield child_tag
+
+
+def contrib_inline_aff(contrib_tag):
+    """
+    Given a contrib tag, look for an aff tag directly inside it
+    """
+    return list(lazy_contrib_inline_aff(contrib_tag))
 
 
 def contrib_xref(contrib_tag, ref_type):
@@ -1447,7 +1448,7 @@ def format_contributor(
     # set anonymous value only if the tag is present
     anonymous_tag = utils.extract_first_node(contrib_tag, "anonymous")
     if anonymous_tag:
-        utils.set_if_value(contributor,"anonymous",bool(anonymous_tag))
+        utils.set_if_value(contributor, "anonymous", bool(anonymous_tag))
 
     # Check if it is not a group author
     if not is_author_group_author(contrib_tag):
@@ -2710,19 +2711,6 @@ def award_group_award_id_tags(tag):
     return utils.lazy_extract_nodes(tag, "award-id")
 
 
-@utils.nullify
-def award_group_award_id(tag):
-    """
-    Find the award group award id, one for each
-    item found in the get_funding_group section
-    """
-    award_group_award_id = []
-    award_id_tags = award_group_award_id_tags(tag)
-    for award_id_tag in award_id_tags:
-        award_group_award_id.append(award_id_tag.text)
-    return award_group_award_id
-
-
 def lazy_award_group_award_id(tag):
     """
     Find the award group award id, one for each
@@ -2730,6 +2718,16 @@ def lazy_award_group_award_id(tag):
     """
     for award_id_tag in award_group_award_id_tags(tag):
         yield award_id_tag.text
+
+
+@utils.nullify
+def award_group_award_id(tag):
+    """
+    Find the award group award id, one for each
+    item found in the get_funding_group section
+    """
+    return list(lazy_award_group_award_id(tag))
+
 
 @utils.nullify
 def award_group_principal_award_recipient(tag):
@@ -3278,7 +3276,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
         utils.set_if_value(tag_content, "id", tag.get("id"))
 
         title_parent_tag = utils.first_parent(
-            raw_parser.lazy_title(tag), ["boxed-text", "fig"]
+            raw_parser.title(tag), ["boxed-text", "fig"]
         )
         if title_parent_tag and title_parent_tag.name == "boxed-text":
             title_value = convert(title_text(tag))
@@ -3647,38 +3645,6 @@ def body_block_content(tag, html_flag=True, base_url=None):
     return tag_content
 
 
-def body_blocks(soup):
-    """
-    Note: for some reason this works and few other attempted methods work
-    Search for certain node types, find the first nodes siblings of the same type
-    Add the first sibling and the other siblings to a list and return them
-    """
-    nodenames = body_block_nodenames()
-
-    body_block_tags = []
-
-    if not soup:
-        return body_block_tags
-
-    first_sibling_node = soup.find()
-
-    if first_sibling_node is None:
-        return body_block_tags
-
-    sibling_tags = [
-        tag
-        for tag in first_sibling_node.next_siblings
-        if tag.name and tag.name in nodenames
-    ]
-
-    # Add the first component tag and the ResultSet tags together
-    body_block_tags.append(first_sibling_node)
-
-    for tag in sibling_tags:
-        body_block_tags.append(tag)
-
-    return body_block_tags
-
 def lazy_body_blocks(soup):
     """
     Note: for some reason this works and few other attempted methods work
@@ -3698,6 +3664,15 @@ def lazy_body_blocks(soup):
     for tag in first_sibling_node.next_siblings:
         if tag.name and tag.name in nodenames:
             yield tag
+
+
+def body_blocks(soup):
+    """
+    Note: for some reason this works and few other attempted methods work
+    Search for certain node types, find the first nodes siblings of the same type
+    Add the first sibling and the other siblings to a list and return them
+    """
+    return list(lazy_body_blocks(soup))
 
 
 def sub_article_doi(tag):
