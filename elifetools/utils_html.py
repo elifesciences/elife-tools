@@ -117,7 +117,7 @@ def escape_html(html_string):
 
 def enhance_xlink_href(href):
     """if the href is not prefaced with a protocol, add one"""
-    if not href[0:4] in ["http", "ftp:"]:
+    if href[0:4] not in ["http", "ftp:"]:
         # for cases like 'foo.bar/baz'
         href = "http://%s" % href
     return href
