@@ -1,3 +1,4 @@
+import itertools
 import time
 import calendar
 import re
@@ -16,18 +17,30 @@ def subject_slug(subject, stopwords=None):
 
 
 def first(value):
+    "returns the first element of an iterable, swallowing index errors and returning None"
     if value is None:
         return None
-    "returns the first element of an iterable, swallowing index errors and returning None"
     try:
-        return value[0]
-    except IndexError:
+        return next(iter(value))
+    except StopIteration:
         return None
+    except TypeError:
+        try:
+            return value[0]
+        except IndexError:
+            return None
 
+# https://stackoverflow.com/questions/661603/how-do-i-know-if-a-generator-is-empty-from-the-start
+def peek(iterable):
+    try:
+        first = next(iterable)
+    except StopIteration:
+        return None
+    return first, itertools.chain([first], iterable)
 
 def firstnn(value):
     "returns the first non-nil value within given iterable"
-    return first(list(filter(None, value)))
+    return first(filter(None, value))
 
 
 def strip_strings(value):
@@ -193,6 +206,13 @@ def paragraphs(tags):
     return list(filter(lambda tag: tag.name == "p", tags))
 
 
+def lazy_paragraphs(tags):
+    "Given a list of tags, only return the paragraph tags"
+    for tag in tags:
+        if tag.name == "p":
+            yield tag
+
+
 def convert_testing_doi(doi):
     if doi is None:
         return
@@ -215,9 +235,10 @@ def starts_with_doi(tag):
 
 
 def paragraph_is_only_doi(tag):
+    tag_text = node_text(tag).strip()
     return bool(
-        node_text(tag).strip().startswith("http://dx.doi.org")
-        and " " not in node_text(tag).strip()
+        tag_text.startswith("http://dx.doi.org")
+        and " " not in tag_text
         and node_contents_str(tag).startswith('<ext-link ext-link-type="doi"')
     )
 
@@ -245,11 +266,17 @@ def doi_to_doi_uri(value):
     return value
 
 
+def lazy_remove_doi_paragraph(tags):
+    "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
+    for tag in tags:
+        if not starts_with_doi(tag):
+            if not paragraph_is_only_doi(tag):
+                yield tag
+
+
 def remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    p_tags = list(filter(lambda tag: not starts_with_doi(tag), tags))
-    p_tags = list(filter(lambda tag: not paragraph_is_only_doi(tag), p_tags))
-    return p_tags
+    return list(lazy_remove_doi_paragraph(tags))
 
 
 def orcid_uri_to_orcid(value):
@@ -277,7 +304,8 @@ def component_acting_parent_tag(parent_tag, tag):
     and if so, find the first fig tag inside it as the acting parent tag
     """
     if parent_tag.name == "fig-group":
-        if len(extract_previous_siblings(tag, "fig")) > 0:
+        previous_sibling = first(lazy_extract_previous_siblings(tag, "fig"))
+        if previous_sibling:
             acting_parent_tag = extract_first_node(parent_tag, "fig")
         else:
             # Do not return the first fig as parent of itself
@@ -312,20 +340,29 @@ def extract_nodes(soup, nodename, attr=None, value=None):
         return [tag for tag in soup.descendants if tag.name in nodename]
 
 
-def extract_first_node(soup, nodename, attr=None, value=None):
-    "return the first node of name nodename and optionally matching an attribute value"
+def lazy_extract_nodes(soup, nodename, attr=None, value=None):
+    """
+    Returns a list of tags (nodes) from the given soup matching the given nodename.
+    If an optional attribute and value are given, these are used to filter the results
+    further."""
     # convert string value to list
+    if isinstance(nodename, str):
+        nodename = [nodename]
     if attr is not None and value is not None:
         # filter nodes by tag namd and attribute name
         for tag in soup.descendants:
-            if tag.name == nodename and tag.get(attr) == value:
-                return tag
+            if tag.name in nodename and tag.get(attr) == value:
+                yield tag
     else:
         # filter nodes by tag name only
         for tag in soup.descendants:
-            if tag.name == nodename:
-                return tag
-    return None
+            if tag.name in nodename:
+                yield tag
+
+
+def extract_first_node(soup, nodename, attr=None, value=None):
+    "return the first node of name nodename and optionally matching an attribute value"
+    return first(lazy_extract_nodes(soup, nodename, attr, value))
 
 
 def extract_previous_nodes(soup, nodename):
@@ -335,11 +372,25 @@ def extract_previous_nodes(soup, nodename):
     ]
 
 
+def lazy_extract_previous_nodes(soup, nodename):
+    "return previous elements of soup with name nodename"
+    for prev_tag in soup.previous_elements:
+        if prev_tag.name == nodename:
+            yield prev_tag
+
+
 def extract_previous_siblings(soup, nodename):
     "return previous sibling tags of soup with name nodename"
     return [
         prev_tag for prev_tag in soup.previous_siblings if prev_tag.name == nodename
     ]
+
+
+def lazy_extract_previous_siblings(soup, nodename):
+    "return previous sibling tags of soup with name nodename"
+    for prev_tag in soup.previous_siblings:
+        if prev_tag.name == nodename:
+            yield prev_tag
 
 
 def node_text(tag):
@@ -369,12 +420,12 @@ def first_parent(tag, nodename):
     Given a beautiful soup tag, look at its parents and return the first
     tag name that matches nodename or the list nodename
     """
-    if nodename is not None and isinstance(nodename, str):
+    if isinstance(nodename, str):
         nodename = [nodename]
     if tag and tag.parents:
-        return first(
-            [parent_tag for parent_tag in tag.parents if parent_tag.name in nodename]
-        )
+        for parent_tag in tag.parents:
+            if parent_tag.name in nodename:
+                return parent_tag
     return None
 
 
@@ -455,7 +506,7 @@ def tag_media_sibling_ordinal(tag):
     if first_parent_tag:
         # Start counting at 0
         sibling_ordinal = 0
-        for media_tag in extract_nodes(first_parent_tag, tag.name):
+        for media_tag in lazy_extract_nodes(first_parent_tag, tag.name):
             if "mimetype" in tag.attrs and tag["mimetype"] == "video":
                 # Count all video type media tags
                 if "mimetype" in media_tag.attrs and tag["mimetype"] == "video":
@@ -511,7 +562,7 @@ def tag_supplementary_material_sibling_ordinal(tag):
     if first_parent_tag:
         # Within the parent tag of interest, count the tags
         #  having the same asset value
-        for supp_tag in extract_nodes(first_parent_tag, tag.name):
+        for supp_tag in lazy_extract_nodes(first_parent_tag, tag.name):
             if tag == supp_tag:
                 # Stop once we reach the same tag we are checking
                 break
@@ -537,8 +588,9 @@ def supp_asset(tag):
     """
     # Default
     asset = "supp"
-    if first(extract_nodes(tag, "label")):
-        label_text = node_text(first(extract_nodes(tag, "label"))).lower()
+    first_tag = first(lazy_extract_nodes(tag, "label"))
+    if first_tag:
+        label_text = node_text(first_tag).lower()
         # Keyword match the label
         if label_text.find("code") > 0:
             asset = "code"
@@ -548,11 +600,13 @@ def supp_asset(tag):
 
 
 def copy_attribute(source, source_key, destination, destination_key=None):
+    if source is None or destination is None:
+        return None
+    if source_key not in source:
+        return None
     if destination_key is None:
         destination_key = source_key
-    if source is not None:
-        if source is not None and destination is not None and source_key in source:
-            destination[destination_key] = source[source_key]
+    destination[destination_key] = source[source_key]
 
 
 def first_node_str_contents(soup, nodename, attr=None, value=None):

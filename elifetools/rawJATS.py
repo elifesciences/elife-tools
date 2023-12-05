@@ -1,6 +1,7 @@
 from elifetools.utils import (
     first,
     firstnn,
+    lazy_extract_nodes,
     extract_first_node,
     extract_nodes,
     node_contents_str,
@@ -24,28 +25,38 @@ def title(soup):
     return extract_first_node(soup, "title")
 
 
-def abstract(soup, abstract_type=None):
+def lazy_abstract(soup, abstract_type=None):
     if abstract_type:
-        return extract_nodes(
+        return lazy_extract_nodes(
             soup, "abstract", attr="abstract-type", value=abstract_type
         )
     else:
-        return extract_nodes(soup, "abstract")
+        return lazy_extract_nodes(soup, "abstract")
+
+
+def abstract(soup, abstract_type=None):
+    return list(lazy_abstract(soup, abstract_type))
+
+
+def lazy_article_id(soup, pub_id_type=None):
+    if pub_id_type:
+        return lazy_extract_nodes(soup, "article-id", attr="pub-id-type", value=pub_id_type)
+    else:
+        return lazy_extract_nodes(soup, "article-id")
 
 
 def article_id(soup, pub_id_type=None):
-    if pub_id_type:
-        return extract_nodes(soup, "article-id", attr="pub-id-type", value=pub_id_type)
-    else:
-        return extract_nodes(soup, "article-id")
+    return list(lazy_article_id(soup, pub_id_type))
 
 
 def meta_article_id(soup, pub_id_type, specific_use=None):
-    tags = article_id(soup, pub_id_type)
-    # filter by specific-use attribute
-    tags = [tag for tag in tags if tag.get("specific-use") == specific_use]
-    # the first article-id tag whose parent is article-meta
-    return first([tag for tag in tags if tag.parent.name == "article-meta"])
+    for tag in lazy_article_id(soup, pub_id_type):
+        # filter by specific-use attribute
+        if tag.get("specific-use") == specific_use:
+            # the first article-id tag whose parent is article-meta
+            if tag.parent.name == "article-meta":
+                return tag
+    return None
 
 
 def doi(soup):
@@ -63,7 +74,7 @@ def publisher_id(soup):
 def journal_id(soup):
     # the first non-nil tag
     return firstnn(
-        extract_nodes(soup, "journal-id", attr="journal-id-type", value="publisher-id")
+        lazy_extract_nodes(soup, "journal-id", attr="journal-id-type", value="publisher-id")
     )
 
 
@@ -93,25 +104,34 @@ def article_type(soup):
     return extract_first_node(soup, "article").get("article-type")
 
 
-def pub_date(soup, date_type=None, pub_type=None):
+def lazy_pub_date(soup, date_type=None, pub_type=None):
     if date_type is not None:
-        return extract_nodes(soup, "pub-date", attr="date-type", value=date_type)
+        return lazy_extract_nodes(soup, "pub-date", attr="date-type", value=date_type)
     elif pub_type is not None:
-        return extract_nodes(soup, "pub-date", attr="pub-type", value=pub_type)
+        return lazy_extract_nodes(soup, "pub-date", attr="pub-type", value=pub_type)
     else:
-        return extract_nodes(soup, "pub-date")
+        return lazy_extract_nodes(soup, "pub-date")
+
+
+def pub_date(soup, date_type=None, pub_type=None):
+    return list(lazy_pub_date(soup, date_type, pub_type))
+
+
+def lazy_date(soup, date_type=None):
+    if date_type is not None:
+        return lazy_extract_nodes(soup, "date", attr="date-type", value=date_type)
+    else:
+        return lazy_extract_nodes(soup, "date")
 
 
 def date(soup, date_type=None):
-    if date_type is not None:
-        return extract_nodes(soup, "date", attr="date-type", value=date_type)
-    else:
-        return extract_nodes(soup, "date")
+    return list(lazy_date(soup, date_type))
 
 
 def history_date(soup, date_type):
-    date_tags = date(soup, date_type)
-    return first([tag for tag in date_tags if tag.parent.name == "history"])
+    for date_tag in lazy_date(soup, date_type):
+        if date_tag.parent.name == "history":
+            return date_tag
 
 
 def day(soup):
@@ -126,43 +146,66 @@ def year(soup):
     return extract_first_node(soup, "year")
 
 
+def lazy_keyword_group(soup):
+    return lazy_extract_nodes(soup, "kwd-group")
+
+
 def keyword_group(soup):
-    return extract_nodes(soup, "kwd-group")
+    return list(lazy_keyword_group(soup))
 
 
 def acknowledgements(soup):
     return extract_first_node(soup, "ack")
 
 
+def lazy_conflict(soup):
+    for tag in lazy_extract_nodes(soup, "fn", attr="fn-type", value="conflict"):
+        yield tag
+    for tag in lazy_extract_nodes(soup, "fn", attr="fn-type", value="COI-statement"):
+        yield tag
+
+
 def conflict(soup):
-    conflict_tags = extract_nodes(soup, "fn", attr="fn-type", value="conflict")
-    conflict_tags += extract_nodes(soup, "fn", attr="fn-type", value="COI-statement")
-    return conflict_tags
+    return list(lazy_conflict(soup))
+
+
+def lazy_permissions(soup):
+    # a better selector might be "article-meta.permissions"
+    return lazy_extract_nodes(soup, "permissions")
 
 
 def permissions(soup):
-    # a better selector might be "article-meta.permissions"
-    return extract_nodes(soup, "permissions")
+    return list(lazy_permissions(soup))
 
 
 def article_permissions(soup):
     # a better selector might be "article-meta.permissions"
-    permissions_tags = permissions(soup)
-    return first([tag for tag in permissions_tags if tag.parent.name == "article-meta"])
+    for tag in lazy_permissions(soup):
+        if tag.parent.name == "article-meta":
+            return tag
+
+
+def lazy_licence(soup):
+    return lazy_extract_nodes(soup, "license")
 
 
 def licence(soup):
-    return extract_nodes(soup, "license")
+    return list(lazy_licence(soup))
+
+
+def lazy_licence_p(soup):
+    return lazy_extract_nodes(soup, "license-p")
 
 
 def licence_p(soup):
-    return extract_nodes(soup, "license-p")
+    return list(lazy_licence_p(soup))
 
 
 def licence_url(soup):
     "License url attribute of the license tag"
-    if licence(soup):
-        return first(licence(soup)).get("xlink:href")
+    first_licence = first(lazy_licence(soup))
+    if first_licence:
+        return first_licence.get("xlink:href")
 
 
 def attrib(soup):
@@ -212,25 +255,26 @@ def author_keywords(soup):
     return keyword_tags
 
 
-def subject_area(soup, subject_group_type=None):
+def lazy_subject_area(soup, subject_group_type=None):
     # Supports all subject areas or just particular ones filtered by
-    subject_area_tags = []
-    tags = extract_nodes(soup, "subject")
+    tags = lazy_extract_nodes(soup, "subject")
 
-    subject_area_tags = [
-        tag
-        for tag in tags
-        if tag.parent.name == "subj-group"
-        and tag.parent.parent.name == "article-categories"
-        and tag.parent.parent.parent.name == "article-meta"
-    ]
     if subject_group_type:
-        subject_area_tags = [
-            tag
-            for tag in tags
-            if tag.parent.get("subj-group-type") == subject_group_type
-        ]
-    return subject_area_tags
+        for tag in tags:
+            if tag.parent.get("subj-group-type") == subject_group_type:
+                yield tag
+    else:
+        for tag in tags:
+            if (
+                tag.parent.name == "subj-group" and
+                tag.parent.parent.name == "article-categories" and
+                tag.parent.parent.parent.name == "article-meta"
+            ):
+                yield tag
+
+
+def subject_area(soup, subject_group_type=None):
+    return list(lazy_subject_area(soup, subject_group_type))
 
 
 def full_subject_area(soup, subject_group_type=None):
@@ -251,23 +295,31 @@ def full_subject_area(soup, subject_group_type=None):
     return subject_group_tags
 
 
-def custom_meta(soup, meta_name=None):
-    custom_meta_tags = extract_nodes(soup, "custom-meta")
+def lazy_custom_meta(soup, meta_name=None):
+    custom_meta_tags = lazy_extract_nodes(soup, "custom-meta")
     if meta_name is not None:
-        custom_meta_tags = [
-            tag
-            for tag in custom_meta_tags
-            if node_contents_str(extract_first_node(tag, "meta-name")) == meta_name
-        ]
-    return custom_meta_tags
+        for tag in custom_meta_tags:
+            if node_contents_str(extract_first_node(tag, "meta-name")) == meta_name:
+                yield tag
+    else:
+        for tag in custom_meta_tags:
+            yield tag
+
+
+def custom_meta(soup, meta_name=None):
+    return list(lazy_custom_meta(soup, meta_name))
 
 
 def display_channel(soup):
     return subject_area(soup, subject_group_type="display-channel")
 
 
+def lazy_sub_display_channel(soup):
+    return lazy_subject_area(soup, subject_group_type="sub-display-channel")
+
+
 def sub_display_channel(soup):
-    return subject_area(soup, subject_group_type="sub-display-channel")
+    return list(lazy_sub_display_channel(soup))
 
 
 def category(soup):
@@ -279,28 +331,44 @@ def related_article(soup):
     return [tag for tag in related_article_tags if tag.parent.name == "article-meta"]
 
 
+def lazy_mixed_citations(soup):
+    return lazy_extract_nodes(soup, "mixed-citation")
+
+
 def mixed_citations(soup):
-    return extract_nodes(soup, "mixed-citation")
+    return list(lazy_mixed_citations(soup))
 
 
 def related_object(soup):
     return extract_nodes(soup, "related-object")
 
 
+def lazy_object_id(soup, pub_id_type):
+    return lazy_extract_nodes(soup, "object-id", attr="pub-id-type", value=pub_id_type)
+
+
 def object_id(soup, pub_id_type):
-    return extract_nodes(soup, "object-id", attr="pub-id-type", value=pub_id_type)
+    return list(lazy_object_id(soup, pub_id_type))
+
+
+def lazy_pub_history(soup):
+    return lazy_extract_nodes(soup, "pub-history")
 
 
 def pub_history(soup):
-    return extract_nodes(soup, "pub-history")
+    return list(lazy_pub_history(soup))
 
 
 def event(soup):
     return extract_nodes(soup, "event")
 
 
+def lazy_event_desc(soup):
+    return lazy_extract_nodes(soup, "event-desc")
+
+
 def event_desc(soup):
-    return extract_nodes(soup, "event-desc")
+    return list(lazy_event_desc(soup))
 
 
 def label(soup):
@@ -337,56 +405,91 @@ def corresp(soup):
     return extract_nodes(soup, "corresp")
 
 
-def fn_group(soup, content_type=None):
+def lazy_fn_group(soup, content_type=None):
     if content_type:
-        return extract_nodes(soup, "fn-group", attr="content-type", value=content_type)
+        return lazy_extract_nodes(soup, "fn-group", attr="content-type", value=content_type)
     else:
-        return extract_nodes(soup, "fn-group")
+        return lazy_extract_nodes(soup, "fn-group")
+
+
+def fn_group(soup, content_type=None):
+    return list(lazy_fn_group(soup, content_type))
 
 
 def fn(soup):
     return extract_nodes(soup, "fn")
 
 
+def lazy_media(soup):
+    return lazy_extract_nodes(soup, "media")
+
+
 def media(soup):
-    return extract_nodes(soup, "media")
+    return list(lazy_media(soup))
+
+
+def lazy_inline_graphic(soup):
+    return lazy_extract_nodes(soup, "inline-graphic")
 
 
 def inline_graphic(soup):
-    return extract_nodes(soup, "inline-graphic")
+    return list(lazy_inline_graphic(soup))
+
+
+def lazy_graphic(soup):
+    return lazy_extract_nodes(soup, "graphic")
 
 
 def graphic(soup):
-    return extract_nodes(soup, "graphic")
+    return list(lazy_graphic(soup))
+
+
+def lazy_self_uri(soup):
+    return lazy_extract_nodes(soup, "self-uri")
 
 
 def self_uri(soup):
-    return extract_nodes(soup, "self-uri")
+    return list(lazy_self_uri(soup))
+
+
+def lazy_supplementary_material(soup):
+    return lazy_extract_nodes(soup, "supplementary-material")
 
 
 def supplementary_material(soup):
-    return extract_nodes(soup, "supplementary-material")
+    return list(lazy_supplementary_material(soup))
 
 
 #
 # authors
 #
 
+def lazy_contrib_id(soup):
+    return lazy_extract_nodes(soup, "contrib-id")
+
 
 def contrib_id(soup):
-    return extract_nodes(soup, "contrib-id")
+    return list(lazy_contrib_id(soup))
 
 
 def email(soup):
     return extract_nodes(soup, "email")
 
 
+def lazy_phone(soup):
+    return lazy_extract_nodes(soup, "phone")
+
+
 def phone(soup):
-    return extract_nodes(soup, "phone")
+    return list(lazy_phone(soup))
+
+
+def lazy_bio(soup):
+    return lazy_extract_nodes(soup, "bio")
 
 
 def bio(soup):
-    return extract_nodes(soup, "bio")
+    return list(lazy_bio(soup))
 
 
 #
@@ -398,116 +501,215 @@ def ref_list(soup):
     return extract_nodes(soup, "ref")
 
 
+def lazy_volume(soup):
+    return lazy_extract_nodes(soup, "volume")
+
+
 def volume(soup):
-    return extract_nodes(soup, "volume")
+    return list(lazy_volume(soup))
+
+
+def lazy_issue(soup):
+    return lazy_extract_nodes(soup, "issue")
 
 
 def issue(soup):
-    return extract_nodes(soup, "issue")
+    return list(lazy_issue(soup))
+
+
+def lazy_elocation_id(soup):
+    return lazy_extract_nodes(soup, "elocation-id")
 
 
 def elocation_id(soup):
-    return extract_nodes(soup, "elocation-id")
+    return list(lazy_elocation_id(soup))
+
+
+def lazy_fpage(soup):
+    return lazy_extract_nodes(soup, "fpage")    
 
 
 def fpage(soup):
-    return extract_nodes(soup, "fpage")
+    return list(lazy_fpage(soup))
+
+
+def lazy_lpage(soup):
+    return lazy_extract_nodes(soup, "lpage")
 
 
 def lpage(soup):
-    return extract_nodes(soup, "lpage")
+    return list(lazy_lpage(soup))
+
+
+def lazy_collab(soup):
+    return lazy_extract_nodes(soup, "collab")
 
 
 def collab(soup):
-    return extract_nodes(soup, "collab")
+    return list(lazy_collab(soup))
+
+
+def lazy_publisher_loc(soup):
+    return lazy_extract_nodes(soup, "publisher-loc")
 
 
 def publisher_loc(soup):
-    return extract_nodes(soup, "publisher-loc")
+    return list(lazy_publisher_loc(soup))
+
+
+def lazy_publisher_name(soup):
+    return lazy_extract_nodes(soup, "publisher-name")
 
 
 def publisher_name(soup):
-    return extract_nodes(soup, "publisher-name")
+    return list(lazy_publisher_name(soup))
+
+
+def lazy_comment(soup):
+    return lazy_extract_nodes(soup, "comment")
 
 
 def comment(soup):
-    return extract_nodes(soup, "comment")
+    return list(lazy_comment(soup))
+
+
+def lazy_element_citation(soup):
+    return lazy_extract_nodes(soup, "element-citation")
 
 
 def element_citation(soup):
-    return extract_nodes(soup, "element-citation")
+    return list(lazy_element_citation(soup))
+
+
+def lazy_etal(soup):
+    return lazy_extract_nodes(soup, "etal")
 
 
 def etal(soup):
-    return extract_nodes(soup, "etal")
+    return list(lazy_etal(soup))
+
+
+def lazy_pub_id(soup, pub_id_type=None):
+    if pub_id_type:
+        return lazy_extract_nodes(soup, "pub-id", attr="pub-id-type", value=pub_id_type)
+    else:
+        return lazy_extract_nodes(soup, "pub-id")
 
 
 def pub_id(soup, pub_id_type=None):
-    if pub_id_type:
-        return extract_nodes(soup, "pub-id", attr="pub-id-type", value=pub_id_type)
-    else:
-        return extract_nodes(soup, "pub-id")
+    return list(lazy_pub_id(soup, pub_id_type))
+
+
+def lazy_source(soup):
+    return lazy_extract_nodes(soup, "source")
 
 
 def source(soup):
-    return extract_nodes(soup, "source")
+    return list(lazy_source(soup))
 
 
 def person_group(soup):
     return extract_nodes(soup, "person-group")
 
 
+def lazy_surname(soup):
+    return lazy_extract_nodes(soup, "surname")
+
+
 def surname(soup):
-    return extract_nodes(soup, "surname")
+    return list(lazy_surname(soup))
+
+
+def lazy_given_names(soup):
+    return lazy_extract_nodes(soup, "given-names")
 
 
 def given_names(soup):
-    return extract_nodes(soup, "given-names")
+    return list(lazy_given_names(soup))
+
+
+def lazy_suffix(soup):
+    return lazy_extract_nodes(soup, "suffix")
 
 
 def suffix(soup):
-    return extract_nodes(soup, "suffix")
+    return list(lazy_suffix(soup))
 
 
-def ext_link(soup, ext_link_type=None):
+def lazy_ext_link(soup, ext_link_type=None):
     if ext_link_type:
-        return extract_nodes(
+        return lazy_extract_nodes(
             soup, "ext-link", attr="ext-link-type", value=ext_link_type
         )
     else:
-        return extract_nodes(soup, "ext-link")
+        return lazy_extract_nodes(soup, "ext-link")
+
+
+def ext_link(soup, ext_link_type=None):
+    return list(lazy_ext_link(soup, ext_link_type))
+
+
+def lazy_uri(soup):
+    return lazy_extract_nodes(soup, "uri")
 
 
 def uri(soup):
-    return extract_nodes(soup, "uri")
+    return list(lazy_uri(soup))
+
+
+def lazy_edition(soup):
+    return lazy_extract_nodes(soup, "edition")
 
 
 def edition(soup):
-    return extract_nodes(soup, "edition")
+    return list(lazy_edition(soup))
+
+
+def lazy_version(soup):
+    return lazy_extract_nodes(soup, "version")
 
 
 def version(soup):
-    return extract_nodes(soup, "version")
+    return list(lazy_version(soup))
+
+def lazy_chapter_title(soup):
+    return lazy_extract_nodes(soup, "chapter-title")
 
 
 def chapter_title(soup):
-    return extract_nodes(soup, "chapter-title")
+    return list(lazy_chapter_title(soup))
+
+
+def lazy_data_title(soup):
+    return lazy_extract_nodes(soup, "data-title")
 
 
 def data_title(soup):
-    return extract_nodes(soup, "data-title")
+    return list(lazy_data_title(soup))
+
+
+def lazy_conf_name(soup):
+    return lazy_extract_nodes(soup, "conf-name")
 
 
 def conf_name(soup):
-    return extract_nodes(soup, "conf-name")
+    return list(lazy_conf_name(soup))
+
+
+def lazy_date_in_citation(soup):
+    return lazy_extract_nodes(soup, "date-in-citation")
 
 
 def date_in_citation(soup):
-    return extract_nodes(soup, "date-in-citation")
+    return list(lazy_date_in_citation(soup))
+
+
+def lazy_patent(soup):
+    return lazy_extract_nodes(soup, "patent")
 
 
 def patent(soup):
-    return extract_nodes(soup, "patent")
+    return list(lazy_patent(soup))
 
 
 #
@@ -519,8 +721,12 @@ def back(soup):
     return extract_first_node(soup, "back")
 
 
+def lazy_app_group(soup):
+    return lazy_extract_nodes(soup, "app-group")
+
+
 def app_group(soup):
-    return extract_nodes(soup, "app-group")
+    return list(lazy_app_group(soup))
 
 
 def app(soup):
@@ -646,16 +852,23 @@ def public_reviews(soup):
 # block content
 #
 
+def lazy_section(soup, sec_type=None):
+    if sec_type:
+        return lazy_extract_nodes(soup, "sec", attr="sec-type", value=sec_type)
+    else:
+        return lazy_extract_nodes(soup, "sec")
+
 
 def section(soup, sec_type=None):
-    if sec_type:
-        return extract_nodes(soup, "sec", attr="sec-type", value=sec_type)
-    else:
-        return extract_nodes(soup, "sec")
+    return list(lazy_section(soup, sec_type))
+
+
+def lazy_paragraph(soup):
+    return lazy_extract_nodes(soup, "p")
 
 
 def paragraph(soup):
-    return extract_nodes(soup, "p")
+    return list(lazy_paragraph(soup))
 
 
 def table(soup):
@@ -670,12 +883,20 @@ def disp_formula(soup):
     return extract_nodes(soup, "disp-formula")
 
 
+def lazy_math(soup):
+    return lazy_extract_nodes(soup, "math")
+
+
 def math(soup):
-    return extract_nodes(soup, "math")
+    return list(lazy_math(soup))
+
+
+def lazy_boxed_text(soup):
+    return lazy_extract_nodes(soup, "boxed-text")
 
 
 def boxed_text(soup):
-    return extract_nodes(soup, "boxed-text")
+    return list(lazy_boxed_text(soup))
 
 
 def fig(soup):
@@ -686,7 +907,9 @@ def fig_group(soup):
     return extract_nodes(soup, "fig-group")
 
 
-def list(soup):  # Redefining `list` could be problematic
+# Redefining `list` could be problematic
+# lsh@2023-12-01: renamed `list` to `get_list`
+def get_list(soup): 
     return extract_nodes(soup, "list")
 
 
@@ -698,9 +921,12 @@ def list_item(soup):
 # funding
 #
 
+def lazy_funding_group(soup):
+    return lazy_extract_nodes(soup, "funding-group")
+
 
 def funding_group(soup):
-    return extract_nodes(soup, "funding-group")
+    return list(lazy_funding_group(soup))
 
 
 def award_group(soup):
@@ -711,5 +937,11 @@ def principal_award_recipient(soup):
     return extract_nodes(soup, "principal-award-recipient")
 
 
+def lazy_string_name(soup):
+    return lazy_extract_nodes(soup, "string-name")
+
+
 def string_name(soup):
-    return extract_nodes(soup, "string-name")
+    return list(lazy_string_name(soup))
+
+

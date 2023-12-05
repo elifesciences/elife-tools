@@ -268,7 +268,7 @@ class TestJatsParser(unittest.TestCase):
     @data(("elife-kitchen-sink.xml", 0), ("elife-02833-v2.xml", 1))
     def test_list(self, filename, expected_len):
         soup = get_cached_soup(filename)
-        self.assertEqual(len(raw_parser.list(soup)), expected_len)
+        self.assertEqual(len(raw_parser.get_list(soup)), expected_len)
 
     @unpack
     @data(("elife-kitchen-sink.xml", 0), ("elife-02833-v2.xml", 4))
