@@ -452,8 +452,12 @@ def self_uri(soup):
     return list(lazy_self_uri(soup))
 
 
+def lazy_supplementary_material(soup):
+    return lazy_extract_nodes(soup, "supplementary-material")
+
+
 def supplementary_material(soup):
-    return extract_nodes(soup, "supplementary-material")
+    return list(lazy_supplementary_material(soup))
 
 
 #

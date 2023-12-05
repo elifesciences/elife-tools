@@ -266,19 +266,17 @@ def doi_to_doi_uri(value):
     return value
 
 
-def remove_doi_paragraph(tags):
-    "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
-    p_tags = list(filter(lambda tag: not starts_with_doi(tag), tags))
-    p_tags = list(filter(lambda tag: not paragraph_is_only_doi(tag), p_tags))
-    return p_tags
-
-
 def lazy_remove_doi_paragraph(tags):
     "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
     for tag in tags:
         if not starts_with_doi(tag):
             if not paragraph_is_only_doi(tag):
                 yield tag
+
+
+def remove_doi_paragraph(tags):
+    "Given a list of tags, only return those whose text doesn't start with 'DOI:'"
+    return list(lazy_remove_doi_paragraph(tags))
 
 
 def orcid_uri_to_orcid(value):

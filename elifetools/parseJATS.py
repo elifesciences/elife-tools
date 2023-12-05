@@ -3050,9 +3050,10 @@ def body_block_content_render(tag, recursive=False, base_url=None):
 
             if child_tag.name == "p":
                 # Ignore paragraphs that start with DOI:
+                paragraphs_without_doi = utils.lazy_remove_doi_paragraph([child_tag])
                 if (
                     utils.node_text(child_tag)
-                    and len(utils.remove_doi_paragraph([child_tag])) <= 0
+                    and utils.first(paragraphs_without_doi) is None
                 ):
                     continue
                 for block_content in body_block_paragraph_render(
@@ -3141,10 +3142,12 @@ def body_block_caption_render(caption_tags, base_url=None):
     caption_content = []
     supplementary_material_tags = []
 
-    for block_tag in utils.remove_doi_paragraph(caption_tags):
+    for block_tag in utils.lazy_remove_doi_paragraph(caption_tags):
         # Note then skip p tags with supplementary-material inside
-        if raw_parser.supplementary_material(block_tag):
-            for supp_tag in raw_parser.supplementary_material(block_tag):
+        supplementary_material = utils.peek(raw_parser.lazy_supplementary_material(block_tag))
+        if supplementary_material:
+            _, supplementary_material = supplementary_material
+            for supp_tag in supplementary_material:
                 supplementary_material_tags.append(supp_tag)
             continue
 
