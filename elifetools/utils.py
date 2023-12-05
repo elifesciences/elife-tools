@@ -21,7 +21,7 @@ def first(value):
     if value is None:
         return None
     try:
-        return next(iter(value))
+        return next(value)
     except StopIteration:
         return None
     except TypeError:
