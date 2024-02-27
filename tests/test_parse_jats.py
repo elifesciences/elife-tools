@@ -438,6 +438,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_funding_awards_json", "content_07.xml"),
             read_fixture("test_funding_awards_json", "content_07_expected.py"),
         ),
+        # 90959 v1 example funding award with an award DOI, sans recipients
+        (
+            read_fixture("test_funding_awards_json", "content_08.xml"),
+            read_fixture("test_funding_awards_json", "content_08_expected.py"),
+        ),
     )
     def test_funding_awards_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
