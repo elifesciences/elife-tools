@@ -1,0 +1,22 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <front>
+        <journal-meta>
+            <journal-id journal-id-type="publisher-id">eLife</journal-id>
+        </journal-meta>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">90959</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.90959</article-id>
+            <funding-group>
+                <award-group id="fund3">
+                    <funding-source>
+                        <institution-wrap>
+                            <institution-id institution-id-type="FundRef">http://dx.doi.org/10.13039/100010269</institution-id>
+                            <institution>Wellcome Trust</institution>
+                        </institution-wrap>
+                    </funding-source>
+                    <award-id award-id-type="doi">10.35802/212242</award-id>
+                </award-group>
+            </funding-group>
+        </article-meta>
+    </front>
+</root>
