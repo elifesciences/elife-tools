@@ -5361,6 +5361,11 @@ def funding_awards_json(soup):
                     utils.set_if_value(
                         award_content, "awardId", award_group.get("award-id")
                     )
+                    # set awardDoi if applicable
+                    if award_group.get("award-id-type") == "doi":
+                        utils.set_if_value(
+                            award_content, "awardDoi", award_group.get("award-id")
+                        )
 
                 if len(award_content) > 0:
                     awards.append(award_content)
