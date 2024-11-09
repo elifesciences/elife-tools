@@ -1317,6 +1317,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_references_json", "content_52.xml"),
             read_fixture("test_references_json", "content_52_expected.py"),
         ),
+        # example of data references with specific-use attribute, from elife-1234567890-v2.xml
+        (
+            read_fixture("test_references_json", "content_53.xml"),
+            read_fixture("test_references_json", "content_53_expected.py"),
+        ),
     )
     @unpack
     def test_references_json_edge_cases(self, xml_content, expected):
@@ -3454,6 +3459,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         (
             read_fixture("test_refs", "content_11.xml"),
             read_fixture("test_refs", "content_11_expected.py"),
+        ),
+        # example of data references with specific-use attribute, from elife-1234567890-v2.xml
+        (
+            read_fixture("test_refs", "content_12.xml"),
+            read_fixture("test_refs", "content_12_expected.py"),
         ),
     )
     def test_refs_edge_cases(self, xml_content, expected):

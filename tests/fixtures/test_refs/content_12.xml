@@ -1,0 +1,48 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib8">
+            <element-citation publication-type="data" specific-use="analyzed">
+            <person-group person-group-type="author">
+                <name>
+                <surname>Kok</surname>
+                <given-names>K</given-names>
+                </name>
+                <name>
+                <surname>Ay</surname>
+                <given-names>A</given-names>
+                </name>
+                <name>
+                <surname>Li</surname>
+                <given-names>L</given-names>
+                </name>
+            </person-group>
+            <data-title>Genome-wide errant targeting by Hairy</data-title>
+            <source>Dryad Digital Repository</source>
+                <year iso-8601-date="2015">2015</year>
+            <pub-id pub-id-type="doi">10.5061/dryad.cv323</pub-id>
+            </element-citation>
+        </ref>
+        <ref id="bib5">
+            <element-citation publication-type="data" specific-use="generated">
+            <person-group person-group-type="author">
+                <name>
+                <surname>Hao</surname>
+                <given-names>Q</given-names>
+                </name>
+                <name>
+                <surname>Prasanth</surname>
+                <given-names>KV</given-names>
+                </name>
+                <name>
+                <surname>Sun</surname>
+                <given-names>Q</given-names>
+                </name>
+            </person-group>
+            <year iso-8601-date="2020">2020</year>
+            <data-title>poly A+ RNA sequencing of cell cycle-synchronized RNA from U2OS cells</data-title>
+            <source>NCBI Gene Expression Omnibus</source>
+            <pub-id pub-id-type="accession" xlink:href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE143275">GSE143275</pub-id>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
