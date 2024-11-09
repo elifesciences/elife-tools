@@ -2143,6 +2143,12 @@ def refs(soup):
         utils.set_if_value(
             ref, "conf-name", utils.node_text(utils.first(raw_parser.lazy_conf_name(tag)))
         )
+        if raw_parser.element_citation(tag):
+            utils.copy_attribute(
+                utils.first(raw_parser.lazy_element_citation(tag)).attrs,
+                "specific-use",
+                ref,
+            )
 
         # If not empty, add position value, append, then increment the position counter
         if len(ref) > 0:
@@ -4765,6 +4771,10 @@ def references_json(soup, html_flag=True):
         # dataId
         if ref.get("publication-type") in ["data"]:
             utils.set_if_value(ref_content, "dataId", ref.get("accession"))
+
+        # specificUse
+        if ref.get("publication-type") in ["data"]:
+            utils.set_if_value(ref_content, "specificUse", ref.get("specific-use"))
 
         # doi
         if ref.get("publication-type") not in ["web", "webpage"]:
