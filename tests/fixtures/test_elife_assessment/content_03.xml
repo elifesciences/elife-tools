@@ -1,0 +1,49 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <sub-article id="sa0" article-type="editor-report">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.1234567890.4.sa0</article-id>
+                <title-group>
+                    <!-- 'Editor's evaluation' changed to 'eLife assessment' -->
+                    <article-title>eLife assessment</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>Helaine</surname>
+                            <given-names>Sophie</given-names>
+                        </name>
+                        <!-- role element added with appropriate specific-use attribute value -->
+                        <role specific-use="editor">Reviewing Editor</role>
+                        <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0000-0404-001X</contrib-id>
+                        <aff>
+                            <!-- ROR ids also permitted here -->
+                            <institution-wrap>
+                                <institution-id institution-id-type="ror">https://ror.org/041kmwe10</institution-id>
+                                <institution>Imperial College London</institution>
+                            </institution-wrap>
+                            <country country="GB">United Kingdom</country>
+                        </aff>
+                    </contrib>
+                </contrib-group>
+                <!-- Working on assumption that Sciety related-object is not required in PRC content -->
+                <kwd-group kwd-group-type="claim-importance">
+                    <!-- Controlled vocabulary of importance values: Landmark; Fundamental; Important; Valuable; Useful -->
+                    <!-- Multiple terms may be selected -->
+                    <kwd>Valuable</kwd>
+                    <kwd>Useful</kwd>
+                </kwd-group>
+                <kwd-group kwd-group-type="evidence-strength">
+                    <!-- Controlled vocabulary of strength values: Exceptional; Compelling; Convincing; Solid; Incomplete; Inadequate -->
+                    <!-- Multiple terms may be selected -->
+                    <kwd>Compelling</kwd>
+                    <kwd>Incomplete</kwd>
+                </kwd-group>
+            </front-stub>
+            <body>
+                <!-- The summary text will include hyperlinked words identical or similar to those used in the controlled vocabulary -->
+                <p>This is an eLife assessment, which is a summary of the peer reviews provided by the BRE. It will only contain one or more paragraphs, no figures, tables or videos. It might say something like, "with respect to blah blah, this study is <bold>valuable</bold> backed up by data that is <bold>compelling</bold>, however the model design for blah is only <bold>useful</bold> and the evidence <bold>incomplete</bold>.</p>
+            </body>
+        </sub-article>
+    </article>
+</root>

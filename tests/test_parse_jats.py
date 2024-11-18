@@ -489,6 +489,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_elife_assessment", "content_02.xml"),
             read_fixture("test_elife_assessment", "content_02_expected.py"),
         ),
+        # example from eLife kitchen sink 1234567890
+        (
+            read_fixture("test_elife_assessment", "content_03.xml"),
+            read_fixture("test_elife_assessment", "content_03_expected.py"),
+        ),
     )
     def test_elife_assessment(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
