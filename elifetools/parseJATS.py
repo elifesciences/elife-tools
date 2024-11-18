@@ -3695,7 +3695,22 @@ def sub_article_doi(tag):
 def elife_assessment(soup):
     "sub-article having a title containing the term assessment"
     sub_article = raw_parser.elife_assessment(soup)
-    return editor_report(sub_article, add_title=True)
+    editor_report_json = editor_report(sub_article, add_title=True)
+    # add terms
+    if sub_article:
+        term_group_map = {
+            "claim-importance": "significance",
+            "evidence-strength": "strength",
+        }
+        for group_tag in raw_parser.keyword_group(sub_article):
+            if group_tag.get("kwd-group-type") in term_group_map:
+                term_type = term_group_map.get(group_tag.get("kwd-group-type"))
+                for kwd_tag in utils.extract_nodes(group_tag, "kwd"):
+                    if editor_report_json.get(term_type) is None:
+                        # initialise list
+                        editor_report_json[term_type] = []
+                    editor_report_json[term_type].append(kwd_tag.text.lower())
+    return editor_report_json
 
 
 def editor_evaluation(soup):
