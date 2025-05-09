@@ -118,6 +118,13 @@ def article_type(soup):
     return raw_parser.article_type(soup)
 
 
+def publication_state(soup):
+    "publication-state from article-version-alternatives article-version tags"
+    for tag in raw_parser.article_version(soup):
+        if tag.get("article-version-type") == "publication-state":
+            return tag.text
+
+
 def volume(soup):
     return utils.node_text(utils.first(raw_parser.lazy_volume(soup)))
 

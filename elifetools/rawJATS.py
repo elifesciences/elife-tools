@@ -104,6 +104,10 @@ def article_type(soup):
     return extract_first_node(soup, "article").get("article-type")
 
 
+def article_version(soup):
+    return lazy_extract_nodes(soup, "article-version")
+
+
 def lazy_pub_date(soup, date_type=None, pub_type=None):
     if date_type is not None:
         return lazy_extract_nodes(soup, "pub-date", attr="date-type", value=date_type)
