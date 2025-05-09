@@ -2191,6 +2191,31 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
 
     @unpack
     @data(
+        (
+            (
+                "<article>"
+                "<front>"
+                "<article-meta>"
+                "<article-version-alternatives>"
+                '<article-version article-version-type="publication-state">'
+                "reviewed preprint"
+                "</article-version>"
+                '<article-version article-version-type="preprint-version">1.2</article-version>'
+                "</article-version-alternatives>"
+                "</article-meta>"
+                "</front>"
+                "</article>"
+            ),
+            "reviewed preprint",
+        ),
+    )
+    def test_publication_state(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.publication_state(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         # example with no author notes
         (
             "<article/>",
