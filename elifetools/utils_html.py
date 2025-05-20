@@ -1,6 +1,14 @@
 import re
 from collections import OrderedDict
-from elifetools.utils import escape_unmatched_angle_brackets, escape_ampersand
+from elifetools.utils import (
+    escape_unmatched_angle_brackets,
+    escape_ampersand,
+    remove_tag,
+    remove_tag_and_text,
+)
+
+
+REMOVE_TEX_MATH = True
 
 
 def xml_to_html(html_flag, xml_string, base_url=None):
@@ -9,6 +17,10 @@ def xml_to_html(html_flag, xml_string, base_url=None):
         return xml_string
     html_string = xml_string
     html_string = remove_comment_tags(html_string)
+    # remove tex-math and alternatives tags
+    if REMOVE_TEX_MATH:
+        html_string = remove_tex_math_tags(html_string)
+        html_string = remove_alternatives_tags(html_string)
     #  Escape unmatched angle brackets
     if "<" in html_string or ">" in html_string:
         html_string = escape_html(html_string)
@@ -50,6 +62,8 @@ def allowed_xml_tag_fragments():
         "<p>",
         "</p>",
         "<p/>",
+        "<alternatives",
+        "</alternatives>",
         "<break>",
         "</break>",
         "<break/>",
@@ -267,6 +281,25 @@ def remove_comment_tags(string):
     for tag_match in re.finditer("<!--(.*?)-->", string):
         old_tag = "<!--" + tag_match.group(1) + "-->"
         string = string.replace(old_tag, "")
+    return string
+
+
+def remove_tex_math_tags(string):
+    "remove tex-math tags found inside inline-formula or disp-formula"
+    return remove_tag_and_text("tex-math", string)
+
+
+def remove_alternatives_tags(string):
+    "remove alternatives tag usually found inside inline-formula or disp-formula"
+    for tag_name in ["disp-formula", "inline-formula"]:
+        match_pattern = re.compile(
+            "(<%s.*?>)(.*?<alternatives.*?>.*)(</%s>)" % (tag_name, tag_name)
+        )
+        for tag_match in match_pattern.finditer(string):
+            sub_string = "".join(
+                [tag_match.group(1), tag_match.group(2), tag_match.group(3)]
+            )
+            string = string.replace(sub_string, remove_tag("alternatives", sub_string))
     return string
 
 

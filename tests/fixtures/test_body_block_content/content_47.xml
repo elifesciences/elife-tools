@@ -1,0 +1,30 @@
+<root>
+    <disp-formula id="equ100000000">
+        <alternatives>
+            <mml:math id="m2">
+                <mml:mi>P</mml:mi>
+                <mml:mi>P</mml:mi>
+                <mml:mi>V</mml:mi>
+                <mml:mi/>
+                <mml:mo>=</mml:mo>
+                <mml:mi/>
+                <mml:mfrac>
+                    <mml:mrow>
+                        <mml:mi>T</mml:mi>
+                        <mml:mi>P</mml:mi>
+                    </mml:mrow>
+                    <mml:mrow>
+                        <mml:mi>T</mml:mi>
+                        <mml:mi>P</mml:mi>
+                        <mml:mi/>
+                        <mml:mo>+</mml:mo>
+                        <mml:mi/>
+                        <mml:mi>F</mml:mi>
+                        <mml:mi>P</mml:mi>
+                    </mml:mrow>
+                </mml:mfrac>
+            </mml:math>
+            <tex-math id="t2"><![CDATA[\begin{document}\displaystyle PPV=\frac{TP}{TP+FP}\end{document}]]></tex-math>
+        </alternatives>
+    </disp-formula>
+</root>
