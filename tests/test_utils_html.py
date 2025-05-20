@@ -260,6 +260,32 @@ class TestUtilsHtml(unittest.TestCase):
     @unpack
     @data(
         ("", ""),
+        ("<tex-math/>", ""),
+    )
+    def test_remove_tex_math_tags(self, xml_string, expected):
+        "tests for remove_tex_math_tags()"
+        self.assertEqual(utils_html.remove_tex_math_tags(xml_string), expected)
+
+    @unpack
+    @data(
+        ("", ""),
+        ("<alternatives/>", "<alternatives/>"),
+        (
+            '<disp-formula id="equ1"><alternatives/></disp-formula>',
+            '<disp-formula id="equ1"></disp-formula>',
+        ),
+        (
+            "<inline-formula><alternatives/></inline-formula>",
+            "<inline-formula></inline-formula>",
+        ),
+    )
+    def test_remove_alternatives_tags(self, xml_string, expected):
+        "test for remove_alternatives_tags()"
+        self.assertEqual(utils_html.remove_alternatives_tags(xml_string), expected)
+
+    @unpack
+    @data(
+        ("", ""),
         ("<list/>", "<ul/>"),
         ("<list><list-item/></list>", "<ul><li/></ul>"),
         ("<list><list-item>One</list-item></list>", "<ul><li>One</li></ul>"),
