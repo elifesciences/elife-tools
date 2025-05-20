@@ -1594,6 +1594,21 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_body_block_content", "content_44.xml"),
             read_fixture("test_body_block_content", "content_44_expected.py"),
         ),
+        # paragraph with alternatives tag
+        (
+            read_fixture("test_body_block_content", "content_45.xml"),
+            read_fixture("test_body_block_content", "content_45_expected.py"),
+        ),
+        # inline-formula tags with alternatives tag
+        (
+            read_fixture("test_body_block_content", "content_46.xml"),
+            read_fixture("test_body_block_content", "content_46_expected.py"),
+        ),
+        # disp-formula with alternatives tag
+        (
+            read_fixture("test_body_block_content", "content_47.xml"),
+            read_fixture("test_body_block_content", "content_47_expected.py"),
+        ),
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
