@@ -3518,6 +3518,19 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
 
     @unpack
     @data(
+        # element-citation tags in the sec of sec-type data-availability
+        (
+            read_fixture("test_data_refs", "content_01.xml"),
+            read_fixture("test_data_refs", "content_01_expected.py"),
+        ),
+    )
+    def test_data_refs(self, xml_content, expected):
+        soup = parser.parse_xml(xml_content)
+        tag_content = parser.data_refs(soup)
+        self.assertEqual(expected, tag_content)
+
+    @unpack
+    @data(
         # example from elife-kitchen-sink.xml
         (
             read_fixture("", "article_meta.xml"),

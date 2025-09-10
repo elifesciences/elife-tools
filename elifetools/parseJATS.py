@@ -66,7 +66,9 @@ def title_prefix(soup):
     display_channel_match_list = ["feature article", "insight", "editorial"]
     for d_channel in display_channel(soup):
         if d_channel.lower() in display_channel_match_list:
-            first_sub_display_channel = utils.first(raw_parser.lazy_sub_display_channel(soup))
+            first_sub_display_channel = utils.first(
+                raw_parser.lazy_sub_display_channel(soup)
+            )
             if first_sub_display_channel is not None:
                 prefix = utils.node_text(first_sub_display_channel)
     return prefix
@@ -1891,6 +1893,28 @@ def references(soup):
 def refs(soup):
     """Find and return all the references"""
     tags = raw_parser.ref_list(soup)
+    return populate_refs(soup, tags)
+
+
+def data_refs(soup):
+    "Find and return references found in the data availability sec"
+    sec_tag = utils.first(raw_parser.section(soup, "data-availability"))
+    if sec_tag:
+        element_citation_tags = raw_parser.element_citation(sec_tag)
+        tags = []
+        # construct a list of ref tag with element-citation child tags
+        for tag in element_citation_tags:
+            ref_tag = tag.wrap(soup.new_tag("ref"))
+            # move the id attribute
+            if tag["id"]:
+                ref_tag["id"] = tag["id"]
+                del tag["id"]
+            tags.append(ref_tag)
+        return populate_refs(soup, tags)
+
+
+def populate_refs(soup, tags):
+    "collect citation data from tags"
     refs = []
     position = 1
 
