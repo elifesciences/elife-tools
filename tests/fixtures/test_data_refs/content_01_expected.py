@@ -1,0 +1,63 @@
+from collections import OrderedDict
+
+expected = [
+    {
+        "ref": "Düsterwald KM Currin CB Burman RJ Akerman CJ Kay AR Raimondo JV 2018 Data from: Biophysical models reveal the relative importance of transporter proteins and impermeant anions in chloride homeostasis Dryad Digital Repository 10.5061/dryad.kj1f3v4",
+        "id": "dataset1",
+        "reference_id": "10.5061/dryad.kj1f3v4",
+        "doi": "10.5061/dryad.kj1f3v4",
+        "year": "2018",
+        "year-iso-8601-date": "2018",
+        "source": "Dryad Digital Repository",
+        "publication-type": "data",
+        "authors": [
+            {"group-type": "author", "surname": "Düsterwald", "given-names": "KM"},
+            {"group-type": "author", "surname": "Currin", "given-names": "CB"},
+            {"group-type": "author", "surname": "Burman", "given-names": "RJ"},
+            {"group-type": "author", "surname": "Akerman", "given-names": "CJ"},
+            {"group-type": "author", "surname": "Kay", "given-names": "AR"},
+            {"group-type": "author", "surname": "Raimondo", "given-names": "JV"},
+        ],
+        "data-title": "Data from: Biophysical models reveal the relative importance of transporter proteins and impermeant anions in chloride homeostasis",
+        "specific-use": "isSupplementedBy",
+        "article_doi": "10.7554/eLife.1234567890",
+        "position": 1,
+    },
+    {
+        "ref": "Rau CD Wang J Wang Y Lusis AJ 2013 Transcriptomes of the hybrid mouse diversity panel subjected to Isoproterenol challenge NCBI Gene Expression Omnibus GSE48760",
+        "id": "dataset2",
+        "uri": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48760",
+        "accession": "GSE48760",
+        "year": "2013",
+        "year-iso-8601-date": "2013",
+        "source": "NCBI Gene Expression Omnibus",
+        "publication-type": "data",
+        "authors": [
+            {"group-type": "author", "surname": "Rau", "given-names": "CD"},
+            {"group-type": "author", "surname": "Wang", "given-names": "J"},
+            {"group-type": "author", "surname": "Wang", "given-names": "Y"},
+            {"group-type": "author", "surname": "Lusis", "given-names": "AJ"},
+        ],
+        "data-title": "Transcriptomes of the hybrid mouse diversity panel subjected to Isoproterenol challenge",
+        "specific-use": "references",
+        "article_doi": "10.7554/eLife.1234567890",
+        "position": 2,
+    },
+    {
+        "ref": "Garcia Miguel A 2018 Shear Manuscript Open Science Framework kvu5j",
+        "id": "dataset3",
+        "uri": "https://osf.io/kvu5j/",
+        "accession": "kvu5j",
+        "year": "2018",
+        "year-iso-8601-date": "2018",
+        "source": "Open Science Framework",
+        "publication-type": "data",
+        "authors": [
+            {"group-type": "author", "surname": "Garcia", "given-names": "Miguel A"}
+        ],
+        "data-title": "Shear Manuscript",
+        "specific-use": "references",
+        "article_doi": "10.7554/eLife.1234567890",
+        "position": 3,
+    },
+]
