@@ -424,6 +424,23 @@ class TestUtilsNameFormatting(unittest.TestCase):
         )
 
 
+class TestNamedEntityToUnicode(unittest.TestCase):
+    "tests for named_entity_to_unicode()"
+
+    def test_named_entity_to_unicode(self):
+        "test converting a named HTML entity to unicode"
+        string = "&alpha;-helix &#x03B1;-helix"
+        expected = "\u03b1-helix &#x03B1;-helix"
+        # invoke
+        result = utils.named_entity_to_unicode(string)
+        # assert
+        self.assertEqual(result, expected)
+
+    def test_none(self):
+        "test None input for coverage"
+        self.assertEqual(utils.named_entity_to_unicode(None), None)
+
+
 class TestEntityToUnicode(unittest.TestCase):
     "tests for entity_to_unicode()"
 

@@ -792,8 +792,8 @@ def repl(match):
     return chr(chr_code)
 
 
-def entity_to_unicode(string):
-    "convert unicode HTML entities to unicode characters using a regular expression replacement"
+def named_entity_to_unicode(string):
+    "convert particular HTML entities to unicode characters"
     if not string:
         return string
     # Selected character replacements that have been seen
@@ -807,10 +807,16 @@ def entity_to_unicode(string):
     replacements.append((r"&iuml;", "\u00cf"))
     replacements.append((r"&ldquo;", '"'))
     replacements.append((r"&rdquo;", '"'))
-
-    # First, replace numeric entities with unicode
-    string = re.sub(r"&#x(....);", repl, string)
-    # Second, replace some specific entities specified in the list
     for entity, replacement in replacements:
         string = re.sub(entity, replacement, string)
     return string
+
+
+def entity_to_unicode(string):
+    "convert unicode HTML entities to unicode characters using a regular expression replacement"
+    if not string:
+        return string
+    # First, replace numeric entities with unicode
+    string = re.sub(r"&#x(....);", repl, string)
+    # Second, replace some specific entities specified in the list
+    return named_entity_to_unicode(string)
