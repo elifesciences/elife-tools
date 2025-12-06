@@ -123,11 +123,21 @@ class TestXmlio(unittest.TestCase):
                 '  "" [subset]><article/>'
             ),
         ),
+        (
+            b"<article>\n<p/>\n<?fig-width 50%?>\n<fig/>\n</article>",
+            "c",
+            "",
+            "subset",
+            (
+                '<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC "c"'
+                '  "" [subset]><article>\n<p/>\n<?fig-width 50%?>\n<fig/>\n</article>'
+            ),
+        ),
     )
     def test_output_root(self, xml, publicId, systemId, internalSubset, xml_expected):
         encoding = "UTF-8"
         qualifiedName = "article"
-        root = xmlio.parse(BytesIO(xml))
+        root = xmlio.parse(BytesIO(xml), insert_pis=True)
         doctype = xmlio.build_doctype(qualifiedName, publicId, systemId, internalSubset)
         xml_output = xmlio.output_root(root, doctype, encoding)
         self.assertEqual(xml_output.decode("utf-8"), xml_expected)
@@ -277,6 +287,30 @@ class TestParse(unittest.TestCase):
             BytesIO(xml), True, True
         )
         self.assertEqual(processing_instruction_nodes[0].target, pi_target_expected)
+
+    @unpack
+    @data(
+        (
+            (
+                b'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC'
+                b' "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
+                b'  "JATS-archivearticle1.dtd">'
+                b"<?covid-19-tdm ?>"
+                b"<article>\n<p/>\n<?fig-width 50%?>\n<fig/>\n</article>"
+            ),
+            "covid-19-tdm",
+        )
+    )
+    def test_parse_doctype_insert_pis(self, xml, pi_target_expected):
+        "test parse XML including to insert processing instruction nodes"
+        root, doctype_dict, processing_instructions = xmlio.parse(
+            BytesIO(xml), True, True, insert_pis=True
+        )
+        xml_string = xmlio.output(root,
+        output_type=None,
+        doctype_dict=doctype_dict,
+        processing_instructions=processing_instructions,)
+        self.assertEqual(xml_string, xml)
 
 
 @ddt
