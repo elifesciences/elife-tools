@@ -1,3 +1,4 @@
+import sys
 from io import BytesIO
 from xml.etree import ElementTree
 from xml.etree.ElementTree import Element, SubElement
@@ -36,7 +37,12 @@ def register_xmlns():
     ElementTree.register_namespace("xlink", "http://www.w3.org/1999/xlink")
 
 
-def parse(filename, return_doctype_dict=False, return_processing_instructions=False):
+def parse(
+    filename,
+    return_doctype_dict=False,
+    return_processing_instructions=False,
+    insert_pis=False,
+):
     """
     to extract the doctype details from the file when parsed and return the data
     for later use, set return_doctype_dict to True
@@ -58,7 +64,11 @@ def parse(filename, return_doctype_dict=False, return_processing_instructions=Fa
                 processing_instructions.append(node)
 
     # Assume greater than Python 3.2, get the doctype from the TreeBuilder
-    tree_builder = CustomTreeBuilder()
+    if sys.version_info < (3, 8):
+        tree_builder = CustomTreeBuilder()
+    else:
+        # can retain processing instructions when parsing in Python 3.8 and above
+        tree_builder = CustomTreeBuilder(insert_pis=insert_pis)
     parser = ElementTree.XMLParser(target=tree_builder, encoding="utf-8")
     new_file = BytesIO(xml_bytes)
     tree = ElementTree.parse(new_file, parser)
