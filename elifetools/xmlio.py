@@ -42,6 +42,7 @@ def parse(
     return_doctype_dict=False,
     return_processing_instructions=False,
     insert_pis=False,
+    insert_comments=False,
 ):
     """
     to extract the doctype details from the file when parsed and return the data
@@ -68,7 +69,9 @@ def parse(
         tree_builder = CustomTreeBuilder()
     else:
         # can retain processing instructions when parsing in Python 3.8 and above
-        tree_builder = CustomTreeBuilder(insert_pis=insert_pis)
+        tree_builder = CustomTreeBuilder(
+            insert_comments=insert_comments, insert_pis=insert_pis
+        )
     parser = ElementTree.XMLParser(target=tree_builder, encoding="utf-8")
     new_file = BytesIO(xml_bytes)
     tree = ElementTree.parse(new_file, parser)

@@ -298,18 +298,48 @@ class TestParse(unittest.TestCase):
                 b"<?covid-19-tdm ?>"
                 b"<article>\n<p/>\n<?fig-width 50%?>\n<fig/>\n</article>"
             ),
-            "covid-19-tdm",
         )
     )
-    def test_parse_doctype_insert_pis(self, xml, pi_target_expected):
+    def test_parse_doctype_insert_pis(self, xml):
         "test parse XML including to insert processing instruction nodes"
         root, doctype_dict, processing_instructions = xmlio.parse(
             BytesIO(xml), True, True, insert_pis=True
         )
-        xml_string = xmlio.output(root,
-        output_type=None,
-        doctype_dict=doctype_dict,
-        processing_instructions=processing_instructions,)
+        xml_string = xmlio.output(
+            root,
+            output_type=None,
+            doctype_dict=doctype_dict,
+            processing_instructions=processing_instructions,
+        )
+        self.assertEqual(xml_string, xml)
+
+    @unpack
+    @data(
+        (
+            (
+                b'<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE article PUBLIC'
+                b' "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN"'
+                b'  "JATS-archivearticle1.dtd">'
+                b"<?covid-19-tdm ?>"
+                b"<article>\n<!-- paragraph --><p/>\n<?fig-width 50%?>\n<fig/>\n</article>"
+            ),
+        )
+    )
+    def test_parse_doctype_insert_comments(self, xml):
+        "test parse XML including to insert comment nodes"
+        root, doctype_dict, processing_instructions = xmlio.parse(
+            BytesIO(xml),
+            True,
+            True,
+            insert_pis=True,
+            insert_comments=True,
+        )
+        xml_string = xmlio.output(
+            root,
+            output_type=None,
+            doctype_dict=doctype_dict,
+            processing_instructions=processing_instructions,
+        )
         self.assertEqual(xml_string, xml)
 
 
