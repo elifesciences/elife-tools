@@ -4289,10 +4289,12 @@ def references_json(soup, html_flag=True):
         if "uri" not in ref_content and ref.get("publication-type") in [
             "confproc",
             "data",
-            "web",
-            "webpage",
             "preprint",
             "report",
+            "software",
+            "thesis",
+            "web",
+            "webpage",
         ]:
             if ref.get("doi"):
                 # Convert doi to uri
