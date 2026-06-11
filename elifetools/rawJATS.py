@@ -553,6 +553,18 @@ def collab(soup):
     return list(lazy_collab(soup))
 
 
+def lazy_collab_wrap(soup):
+    return lazy_extract_nodes(soup, "collab-wrap")
+
+
+def collab_wrap(soup):
+    return list(lazy_collab_wrap(soup))
+
+
+def lazy_collab_name(soup):
+    return lazy_extract_nodes(soup, "collab-name")
+
+
 def lazy_publisher_loc(soup):
     return lazy_extract_nodes(soup, "publisher-loc")
 
