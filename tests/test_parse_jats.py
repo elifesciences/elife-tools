@@ -861,6 +861,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_authors_json", "content_19.xml"),
             read_fixture("test_authors_json", "content_19_expected.py"),
         ),
+        # example of JATS 1.4 kitchen sink XML circa 2026
+        (
+            read_fixture("test_authors_json", "content_20.xml"),
+            read_fixture("test_authors_json", "content_20_expected.py"),
+        ),
     )
     def test_authors_json_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -2496,6 +2501,10 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_contributors", "content_04.xml"),
             read_fixture("test_contributors", "content_04_expected.py"),
         ),
+        (
+            read_fixture("test_contributors", "content_05.xml"),
+            read_fixture("test_contributors", "content_05_expected.py"),
+        ),
     )
     def test_contributors_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -3509,6 +3518,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
         (
             read_fixture("test_refs", "content_12.xml"),
             read_fixture("test_refs", "content_12_expected.py"),
+        ),
+        # example of collab-name, from elife-1234567890-v2.xml circa 2026
+        (
+            read_fixture("test_refs", "content_13.xml"),
+            read_fixture("test_refs", "content_13_expected.py"),
         ),
     )
     def test_refs_edge_cases(self, xml_content, expected):

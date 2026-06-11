@@ -1,0 +1,165 @@
+<article>
+    <front>
+        <article-meta>
+            <article-id pub-id-type="publisher-id">75374</article-id>
+            <article-id pub-id-type="doi">10.7554/eLife.75374</article-id>
+            <contrib-group>
+                <!-- Remove id attribute from authors -->
+                <contrib contrib-type="author" equal-contrib="yes" corresp="yes">
+                    <name>
+                        <surname>Atherden</surname>
+                        <given-names>Frederick Peter</given-names>
+                        <suffix>III</suffix>
+                    </name>
+                    <contrib-id authenticated="true"
+                        contrib-id-type="orcid">https://orcid.org/0000-0002-6048-1470</contrib-id>
+                    <email>f.atherden@elifesciences.org</email>
+                    <xref ref-type="aff" rid="aff1">1</xref>
+                    <xref ref-type="fn" rid="equal-contrib1">†</xref>
+                    <xref ref-type="fn" rid="fn1">‡</xref>
+                    <!-- Without content, these do not show up well in PMC. Do we want to add indicators for these as well? -->
+                    <xref ref-type="fn" rid="con1"/>
+                    <xref ref-type="fn" rid="conf1"/>
+                </contrib>
+                <contrib contrib-type="author" equal-contrib="yes" corresp="yes">
+                    <name>
+                        <surname>Harrison</surname>
+                        <given-names>Melissa</given-names>
+                    </name>
+                    <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-4932-938X</contrib-id>
+                    <email>...@elifesciences.org</email>
+                    <xref ref-type="aff" rid="aff1">1</xref>
+                    <xref ref-type="fn" rid="equal-contrib1">†</xref>
+                    <xref ref-type="fn" rid="fn1">‡</xref>
+                    <xref ref-type="fn" rid="con2"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                </contrib>
+                <contrib contrib-type="author" corresp="yes">
+                    <!-- The <collab> element has been depricated; group authors will now use the <collab-wrap> structure, with their name captured in <collab-name> -->
+                    <collab-wrap>
+                        <collab-name>Example Group author</collab-name>
+                        <contrib-group content-type="group-members">
+                            <contrib contrib-type="author">
+                                <name>
+                                    <surname>Gilbert</surname>
+                                    <given-names>James</given-names>
+                                </name>
+                                <contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-1002-4932-938X</contrib-id>
+                                <aff>
+                                    <institution>eLife</institution>
+                                    <addr-line>
+                                        <named-content content-type="city">Cambridge</named-content>
+                                    </addr-line>
+                                    <country>United Kingdom</country>
+                                </aff>
+                            </contrib>
+                        </contrib-group>
+                    </collab-wrap>
+                    <!-- group author roles added at the top level -->
+                    <xref ref-type="fn" rid="con3"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                    <email>...@elifesciences.org</email>
+                </contrib>
+                <contrib contrib-type="author" equal-contrib="yes" deceased="yes">
+                    <name>
+                        <surname>Claus</surname>
+                        <given-names>Santa</given-names>
+                    </name>
+                    <xref ref-type="aff" rid="aff1">1</xref>
+                    <xref ref-type="fn" rid="equal-contrib2">§</xref>
+                    <xref ref-type="fn" rid="con4"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                    <xref ref-type="fn" rid="fn2"/>
+                </contrib>
+                <contrib contrib-type="author" equal-contrib="yes">
+                    <name>
+                        <surname>West</surname>
+                        <given-names>Cornel</given-names>
+                        <suffix>Jnr</suffix>
+                    </name>
+                    <xref ref-type="aff" rid="aff2">2</xref>
+                    <xref ref-type="fn" rid="equal-contrib2">§</xref>
+                    <xref ref-type="fn" rid="con5"/>
+                    <xref ref-type="fn" rid="conf2"/>
+                </contrib>
+                <on-behalf-of>on behalf of whoever finds this interesting</on-behalf-of>
+                <aff id="aff1">
+                    <label>1</label>
+                    <institution>The department of production, eLife Sciences</institution>
+                    <addr-line><named-content content-type="city">Cambridge</named-content></addr-line>
+                    <country>United Kingdom</country>
+                </aff>
+                <aff id="aff2">
+                    <label>2</label>
+                    <!-- ROR id included institution-id 
+                        Not all instutitions may have one so its presence is optional 
+                    -->
+                    <institution-wrap>
+                        <institution-id institution-id-type="ror">https://ror.org/046rm7j60</institution-id>
+                        <institution>JATS4R</institution>
+                    </institution-wrap>
+                    <addr-line><named-content content-type="city">Bethesda</named-content></addr-line>
+                    <country country="US">United States</country>
+                </aff>
+            </contrib-group>
+            <contrib-group content-type="section">
+                <contrib contrib-type="senior_editor">
+                    <name>
+                        <surname>Behrens</surname>
+                        <given-names>Timothy</given-names>
+                    </name>
+                    <role>Senior Editor</role>
+                    <aff>
+                        <institution-wrap>
+                            <institution-id institution-id-type="ror">https://ror.org/052gg0110</institution-id>
+                            <institution>University of Oxford</institution>
+                        </institution-wrap>
+                        <addr-line><named-content content-type="city">Oxford</named-content></addr-line>
+                        <country country="GB">United Kingdom</country>
+                    </aff>
+                </contrib>
+                <contrib contrib-type="editor">
+                    <name>
+                        <surname>Helaine</surname>
+                        <given-names>Sophie</given-names>
+                    </name>
+                    <role>Reviewing Editor</role>
+                    <aff>
+                        <institution>Imperial College London</institution>
+                        <country country="GB">United Kingdom</country>
+                    </aff>
+                </contrib>
+            </contrib-group>
+        </article-meta>
+    </front>
+    <back>
+        <sec id="s5" sec-type="additional-information">
+            <title>Additional information</title>
+            <fn-group content-type="competing-interest">
+                <title>Competing interests</title>
+                <fn fn-type="COI-statement" id="conf1"><p>is a member of some group, and has shares in some company. No other competing interests to declare</p></fn>
+                <fn fn-type="COI-statement" id="conf2"><p>No competing interests declared</p></fn>
+            </fn-group>
+            <fn-group content-type="author-contribution">
+                <title>Author contributions</title>
+                <fn fn-type="con" id="con1"><p>Conceptualization, Data curation, Formal analysis, Validation, Investigation, Visualization, Methodology, Writing - original draft</p></fn>
+                <fn fn-type="con" id="con2"><p>Conceptualization, Resources, Supervision, Funding acquisition, Validation, Writing &#x2013; review and editing</p></fn>
+                <fn fn-type="con" id="con3"><p>Resources, Methodology, Group atuhor contributions may break-down contribution per author in some cases</p></fn>
+                <fn fn-type="con" id="con4"><p>Resources, Supervision, Writing &#x2013; review and editing, Free text contribution</p></fn>
+                <fn fn-type="con" id="con5"><p>Resources, Supervision, Writing &#x2013; review and editing, Free text contribution</p></fn>
+            </fn-group>
+            <fn-group content-type="ethics-information">
+                <title>Ethics</title>
+                <fn fn-type="other">
+                    <p>Human subjects: If Research Ethics Committee and Institutional Review Board approval was required for this article the details would be listed here.</p>
+                </fn>
+                <fn fn-type="other"><p>Animal subjects: If there were animal subjects involved in the study the approval number for the research along with protocol approval would be listed here.</p></fn>
+                <fn fn-type="other">
+                    <p>If this article was part of a clinical trial and the article didn't have a structured abstract, the Clinical trial registry and ID would be listed here, for example:</p>
+                    <p>Clinical trial Registry: EudraCT.</p>
+                    <p>Registration ID: EudraCT2004-000446-20.</p>
+                </fn>
+            </fn-group>
+        </sec>
+    </back>
+</article>
