@@ -1454,6 +1454,13 @@ def format_contributor(
         tag_copy = utils.remove_tag_from_tag(tag_copy, "contrib-group")
         contributor["collab"] = utils.node_contents_str(tag_copy).rstrip()
 
+    # also look for collab-wrap
+    collab_wrap_tag = utils.first(raw_parser.lazy_collab_wrap(contrib_tag))
+    if collab_wrap_tag:
+        collab_name_tag = utils.first(raw_parser.lazy_collab_name(collab_wrap_tag))
+        if collab_name_tag:
+            contributor["collab"] = utils.node_contents_str(collab_name_tag).rstrip()
+
     # set anonymous value only if the tag is present
     anonymous_tag = utils.extract_first_node(contrib_tag, "anonymous")
     if anonymous_tag:
@@ -1493,6 +1500,12 @@ def format_contributor(
             "collab",
             utils.first_node_str_contents(contrib_tag, "collab"),
         )
+        if not contributor.get("collab"):
+            utils.set_if_value(
+                contributor,
+                "collab",
+                utils.first_node_str_contents(contrib_tag, "collab-name"),
+            )
         # Get the sub-group value from the parent role tag if it is inside a group
         if (
             contrib_tag.parent
@@ -1652,7 +1665,12 @@ def all_contributors(soup, detail="brief"):
 def is_author_non_byline(tag, contrib_type="author non-byline"):
     if tag and tag.get("contrib-type") and tag.get("contrib-type") == contrib_type:
         return True
-    if tag and tag.parent and tag.parent.parent and tag.parent.parent.name == "collab":
+    if (
+        tag
+        and tag.parent
+        and tag.parent.parent
+        and tag.parent.parent.name in ["collab", "collab-wrap"]
+    ):
         return True
     return False
 
@@ -1704,8 +1722,16 @@ def is_author_group_author(tag):
             # look at the child tags for a collab tag
             # and that its parent tag is not a collab tag
             if child_tag.name == "collab":
-                parent_tag = utils.first_parent(tag, ["collab", "article-meta", "front-stub"])
+                parent_tag = utils.first_parent(
+                    tag, ["collab", "article-meta", "front-stub"]
+                )
                 if parent_tag and parent_tag.name != "collab":
+                    return True
+            if child_tag.name == "collab-wrap":
+                parent_tag = utils.first_parent(
+                    tag, ["collab-wrap", "article-meta", "front-stub"]
+                )
+                if parent_tag and parent_tag.name != "collab-wrap":
                     return True
     return False
 
@@ -2060,7 +2086,7 @@ def populate_refs(soup, tags):
 
             # Read name or collab tag in the order they are listed
             for name_or_collab_tag in utils.extract_nodes(
-                group, ["name", "string-name", "collab"]
+                group, ["name", "string-name", "collab", "collab-name"]
             ):
                 author = {}
 
@@ -2092,7 +2118,7 @@ def populate_refs(soup, tags):
                     )
 
                 # collab tag attribute
-                if name_or_collab_tag.name == "collab":
+                if name_or_collab_tag.name in ["collab", "collab-name"]:
                     utils.set_if_value(
                         author, "collab", utils.node_contents_str(name_or_collab_tag)
                     )
@@ -2137,6 +2163,9 @@ def populate_refs(soup, tags):
         )
         utils.set_if_value(
             ref, "collab", utils.node_text(utils.first(raw_parser.lazy_collab(tag)))
+        )
+        utils.set_if_value(
+            ref, "collab", utils.node_text(utils.first(raw_parser.lazy_collab_name(tag)))
         )
         utils.set_if_value(
             ref,

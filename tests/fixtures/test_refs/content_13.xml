@@ -1,0 +1,18 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <ref-list>
+        <ref id="bib11">
+            <element-citation publication-type="software">
+                <person-group person-group-type="author">
+                    <!-- <collab> changed to <collab-name> for group authors in references -->
+                    <collab-name>R Development Core Team</collab-name>
+                </person-group>
+                <year iso-8601-date="2017">2017</year>
+                <data-title>R: a language and environment for statistical computing</data-title>
+                <version designator="3.3.2">3.3.2</version>
+                <publisher-loc>Vienna, Austria</publisher-loc>
+                <publisher-name>R Foundation for Statistical Computing</publisher-name>
+                <ext-link ext-link-type="uri" xlink:href="http://www.r-project.org/">http://www.r-project.org/</ext-link>
+            </element-citation>
+        </ref>
+    </ref-list>
+</root>
