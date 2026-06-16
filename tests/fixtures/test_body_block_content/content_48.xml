@@ -1,0 +1,17 @@
+<root>
+    <media id="fig1video3" mimetype="video/mp4" xlink:href="elife-1234567890-fig1-video3.mp4">
+        <label>Figure 1&#x2014;Animation 1.</label>
+        <caption>
+            <title>Animation associated with a main figure.</title>
+            <p>Note that file naming and ID for videos and animations is sequential regardless of labelling (e.g. videos and animations are counted together).</p>
+        </caption>
+        <permissions>
+            <copyright-statement>© 2004, American Society for Cell Biology, All Rights Reserved</copyright-statement>
+            <copyright-year>2004</copyright-year>
+            <copyright-holder>American Society for Cell Biology</copyright-holder>
+            <license>
+                <license-p>video is reproduced from  with permission. It is not covered by the CC-BY 4.0 licence and further reproduction of this panel would need permission from the copyright holder.</license-p>
+            </license>
+        </permissions>
+    </media>
+</root>
