@@ -3133,7 +3133,7 @@ def body_block_content_render(tag, recursive=False, base_url=None):
                 pass
             elif child_tag.name == "media" and tag.name == "fig-group":
                 # Do not include a media video inside fig-group a second time
-                if child_tag.get("mimetype") == "video":
+                if child_tag.get("mimetype") and "video" in child_tag.get("mimetype"):
                     pass
             else:
                 for block_content in body_block_content_render(
@@ -3562,7 +3562,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
 
     elif tag.name == "media":
         # For video media only
-        if tag.get("mimetype") != "video":
+        if "video" not in tag.get("mimetype", ""):
             return OrderedDict()
 
         # figure wrap
@@ -3623,7 +3623,7 @@ def body_block_content(tag, html_flag=True, base_url=None):
     elif tag.name == "fig-group":
         for fig_tag in utils.extract_nodes(tag, ["fig", "media"]):
             # Skip any media tags that are not videos
-            if fig_tag.name == "media" and fig_tag.get("mimetype") != "video":
+            if fig_tag.name == "media" and "video" not in fig_tag.get("mimetype", ""):
                 continue
             fig_tag_content = body_block_content(fig_tag, base_url=base_url)
             if len(tag_content) <= 0:
