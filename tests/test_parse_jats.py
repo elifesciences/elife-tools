@@ -1614,6 +1614,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_body_block_content", "content_47.xml"),
             read_fixture("test_body_block_content", "content_47_expected.py"),
         ),
+        # mimetype format in new JATS 1.4 sample
+        (
+            read_fixture("test_body_block_content", "content_48.xml"),
+            read_fixture("test_body_block_content", "content_48_expected.py"),
+        ),
     )
     def test_body_block_content(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
@@ -1776,6 +1781,11 @@ class TestParseJats(unittest.TestCase):
         (
             read_fixture("test_body_block_content_render", "content_32.xml"),
             read_fixture("test_body_block_content_render", "content_32_expected.py"),
+        ),
+        # mimetype format in new JATS 1.4 sample
+        (
+            read_fixture("test_body_block_content_render", "content_33.xml"),
+            read_fixture("test_body_block_content_render", "content_33_expected.py"),
         ),
     )
     def test_body_block_content_render(self, xml_content, expected):
