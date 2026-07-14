@@ -3534,6 +3534,11 @@ We thank Michael Fischbach, Richard Losick, and Russell Vance for critical readi
             read_fixture("test_refs", "content_13.xml"),
             read_fixture("test_refs", "content_13_expected.py"),
         ),
+        # example of mixed-citation with specific-use attribiute
+        (
+            read_fixture("test_refs", "content_14.xml"),
+            read_fixture("test_refs", "content_14_expected.py"),
+        ),
     )
     def test_refs_edge_cases(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)

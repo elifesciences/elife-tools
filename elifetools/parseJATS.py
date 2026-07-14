@@ -2209,6 +2209,12 @@ def populate_refs(soup, tags):
                 "specific-use",
                 ref,
             )
+        elif raw_parser.mixed_citations(tag):
+            utils.copy_attribute(
+                utils.first(raw_parser.lazy_mixed_citations(tag)).attrs,
+                "specific-use",
+                ref,
+            )
 
         # If not empty, add position value, append, then increment the position counter
         if len(ref) > 0:
