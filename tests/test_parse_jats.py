@@ -276,6 +276,11 @@ class TestParseJats(unittest.TestCase):
             read_fixture("test_datasets_json", "content_09.xml"),
             read_fixture("test_datasets_json", "content_09_expected.py"),
         ),
+        # Datasets example with collab-name
+        (
+            read_fixture("test_datasets_json", "content_10.xml"),
+            read_fixture("test_datasets_json", "content_10_expected.py"),
+        ),
     )
     def test_datasets_json(self, xml_content, expected):
         soup = parser.parse_xml(xml_content)
