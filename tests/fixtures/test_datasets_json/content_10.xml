@@ -1,0 +1,8 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <back>
+        <sec sec-type="data-availability" id="s7">
+            <p>The following previously published datasets were used:</p>
+            <p><element-citation publication-type="data" id="dataset4" specific-use="analyzed"><person-group person-group-type="author"><collab-name>10x Genomics</collab-name></person-group><year iso-8601-date="2020">2020</year><data-title>Fresh Embryonic E18 Mouse Brain (5k)</data-title><source>10x Genomics</source><pub-id pub-id-type="accession" xlink:href="https://www.10xgenomics.com/datasets/fresh-embryonic-e-18-mouse-brain-5-k-1-standard-1-0-0">fresh-embryonic-e-18-mouse-brain-5-k-1-standard-1-0-0</pub-id></element-citation></p>
+        </sec>
+    </back>
+</root>
