@@ -4,6 +4,10 @@ elifePipeline {
         checkout scm master
     }
     
+    stage 'Sandbox release', {
+        elifePypiRelease('test')
+    }
+    
     stage 'Release', {
         tag = elifePypiRelease()
         elifeGitTagRevision(tag)
