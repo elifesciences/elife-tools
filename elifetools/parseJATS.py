@@ -5112,9 +5112,9 @@ def dataset_tag_json(tag, html_flag=True):
 
     # authors
     dataset_authors = []
-    for contrib_tag in utils.extract_nodes(tag, ["name", "collab"]):
+    for contrib_tag in utils.extract_nodes(tag, ["name", "collab", "collab-name"]):
         dataset_author = OrderedDict()
-        if contrib_tag.name == "collab":
+        if contrib_tag.name in ["collab", "collab-name"]:
             dataset_author["type"] = "group"
             utils.set_if_value(
                 dataset_author, "name", utils.node_contents_str(contrib_tag)
