@@ -1,0 +1,58 @@
+<root xmlns:xlink="http://www.w3.org/1999/xlink">
+    <article>
+        <front>
+            <journal-meta>
+                <journal-id journal-id-type="publisher-id">eLife</journal-id>
+            </journal-meta>
+            <article-meta>
+                <article-id pub-id-type="publisher-id">00666</article-id>
+                <article-id pub-id-type="doi">10.7554/eLife.00666</article-id>
+                <contrib-group content-type="section">
+                    <contrib contrib-type="senior_editor">
+                        <name>
+                            <surname>Harrison</surname>
+                            <given-names>Melissa</given-names>
+                        </name>
+                        <role>Senior Editor</role>
+                        <aff>
+                            <institution>eLife</institution>
+                            <country>United Kingdom</country>
+                        </aff>
+                    </contrib>
+                    <contrib contrib-type="editor" id="author-10">
+                        <name>
+                            <surname>Collings</surname>
+                            <given-names>Andy</given-names>
+                        </name>
+                        <role>Reviewing Editor</role>
+                        <aff>
+                            <institution>eLife Sciences</institution>
+                            <country>United Kingdom</country>
+                        </aff>
+                    </contrib>
+                </contrib-group>
+            </article-meta>
+        </front>
+        <sub-article article-type="referee-report" id="sa1">
+            <front-stub>
+                <article-id pub-id-type="doi">10.7554/eLife.109901.3.sa1</article-id>
+                <title-group>
+                    <article-title>Reviewer #1 (Public review):</article-title>
+                </title-group>
+                <contrib-group>
+                    <contrib contrib-type="author">
+                        <name>
+                            <surname>de Beauvoir</surname>
+                            <given-names>Simone</given-names>
+                        </name>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                    <contrib contrib-type="author">
+                        <anonymous/>
+                        <role specific-use="referee">Reviewer</role>
+                    </contrib>
+                </contrib-group>
+            </front-stub>
+        </sub-article>
+    </article>
+</root>

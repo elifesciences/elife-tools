@@ -4349,6 +4349,23 @@ def editors_json(soup):
             editor_json = author_person(contributor, None, None, None, None, None, None)
         if editor_json:
             editors_json_data.append(editor_json)
+
+    # collect reviewers from sub-article XML
+    sub_article_list = sub_articles(soup)
+    for sub_article in sub_article_list:
+        for contributor in sub_article.get("contributors", []):
+            # include author of referee-report if role is Reviewer and has a name
+            if (
+                contributor.get("type") == "author"
+                and contributor.get("role") == "Reviewer"
+            ):
+                editor_json = author_person(
+                    contributor, None, None, None, None, None, None
+                )
+                # check the reviewer has a name
+                if editor_json and editor_json.get("name").get("preferred"):
+                    editors_json_data.append(editor_json)
+
     editors_json_data_rewritten = elifetools.json_rewrite.rewrite_json(
         "editors_json", soup, editors_json_data
     )
